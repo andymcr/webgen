@@ -1,0 +1,157 @@
+-- @atlcompiler emftvm 
+--
+-- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+
+module CopyCriteria;
+create jsf : JSF from partialJsf : JSF;
+
+ 
+
+helper context JSF!Expression def: isJsfContainer() : Boolean
+	= if self.refImmediateComposite().oclIsUndefined() then
+			false
+		else if self.refImmediateComposite().oclIsKindOf(JSF!IncludedElement) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(JSF!IncludedAssociation) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(JSF!Selection) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(JSF!Expression) then
+			self.refImmediateComposite().isJsfContainer()
+		else if self.refImmediateComposite().oclIsKindOf(JSF!Order) then
+			self.refImmediateComposite().isJsfContainer()
+		else
+			false
+		endif endif endif endif endif endif;
+
+
+helper context JSF!Order def: isJsfContainer() : Boolean
+	= if self.refImmediateComposite().oclIsUndefined() then
+			false
+		else if self.refImmediateComposite().oclIsKindOf(JSF!Selection) then
+			true
+		else
+			false
+		endif endif;
+
+
+abstract rule Literal {
+	from partialJsf : JSF!Literal (partialJsf.isJsfContainer())
+	to jsf : JSF!Literal (
+	)
+}
+
+-- @extends Literal
+rule NullLiteral {
+	from partialJsf : JSF!NullLiteral (partialJsf.isJsfContainer())
+	to jsf : JSF!NullLiteral (
+	)
+}
+
+-- @extends Literal
+rule IntegerLiteral {
+	from partialJsf : JSF!IntegerLiteral (partialJsf.isJsfContainer())
+	to jsf : JSF!IntegerLiteral (
+		value <- partialJsf.value
+	)
+}
+
+-- @extends Literal
+rule StringLiteral {
+	from partialJsf : JSF!StringLiteral (partialJsf.isJsfContainer())
+	to jsf : JSF!StringLiteral (
+		value <- partialJsf.value
+	)
+}
+
+-- @extends Literal
+rule CurrentTime {
+	from partialJsf : JSF!CurrentTime (partialJsf.isJsfContainer())
+	to jsf : JSF!CurrentTime (
+	)
+}
+
+
+rule Function {
+	from partialJsf : JSF!Function (partialJsf.isJsfContainer())
+	to jsf : JSF!Function (
+		name <- partialJsf.name
+	)
+}
+
+
+abstract rule Predicate {
+	from partialJsf : JSF!Predicate
+	to jsf : JSF!Predicate (
+		negated <- partialJsf.negated
+	)
+}
+
+-- @extends Predicate
+rule PredicateBooleanOperator {
+	from partialJsf : JSF!PredicateBooleanOperator (partialJsf.isJsfContainer())
+	to jsf : JSF!PredicateBooleanOperator (
+		expressions <- partialJsf.expressions,
+		operator <- partialJsf.operator
+	)
+}
+
+-- @extends Predicate
+rule PredicateEqualityOperator {
+	from partialJsf : JSF!PredicateEqualityOperator (partialJsf.isJsfContainer())
+	to jsf : JSF!PredicateEqualityOperator (
+		left <- partialJsf.left,
+		right <- partialJsf.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateComparisonOperator {
+	from partialJsf : JSF!PredicateComparisonOperator (partialJsf.isJsfContainer())
+	to jsf : JSF!PredicateComparisonOperator (
+		left <- partialJsf.left,
+		operator <- partialJsf.operator,
+		right <- partialJsf.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsOperator {
+	from partialJsf : JSF!PredicateIsOperator (partialJsf.isJsfContainer())
+	to jsf : JSF!PredicateIsOperator (
+		left <- partialJsf.left,
+		right <- partialJsf.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateLikeOperator {
+	from partialJsf : JSF!PredicateLikeOperator (partialJsf.isJsfContainer())
+	to jsf : JSF!PredicateLikeOperator (
+		left <- partialJsf.left,
+		right <- partialJsf.right
+	)
+}
+
+
+abstract rule Order {
+	from partialJsf : JSF!Order (partialJsf.isJsfContainer())
+	to jsf : JSF!Order (
+		path <- partialJsf.path
+	)
+}
+
+-- @extends Order
+rule Asc {
+	from partialJsf : JSF!Asc (partialJsf.isJsfContainer())
+	to jsf : JSF!Asc (
+	)
+}
+
+-- @extends Order
+rule Desc {
+	from partialJsf : JSF!Desc (partialJsf.isJsfContainer())
+	to jsf : JSF!Desc (
+	)
+}
+

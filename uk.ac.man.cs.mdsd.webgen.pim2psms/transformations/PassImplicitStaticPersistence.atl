@@ -1,0 +1,95 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+-- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+
+module PassImplicitStaticPersistence;
+create orm : ORM from website : Website, partialOrm : ORM;
+
+uses WebsiteHelpers;
+uses CopyPartialOrm;
+
+
+helper context Website!WebGenModel def: getDataType(name : String) : ORM!DataType
+	= let dataType : ORM!DataType = thisModule.findPartialOrmDataType(name)
+		in if not dataType.oclIsUndefined() then
+			dataType
+		else
+			if name = 'String' then
+				thisModule.implicitStringDataType(self)
+			else if name = 'TextBlock' then
+				thisModule.implicitTextBlockDataType(self)
+			else
+				OclUndefined
+			endif endif
+		endif;
+
+
+rule OrmModel {
+	from website : Website!WebGenModel, partialOrm : ORM!OrmModel
+	to orm : ORM!OrmModel (
+		collectionTypes <- partialOrm.collectionTypes,
+		dataTypes <- partialOrm.dataTypes,
+		entities <- partialOrm.entities
+			->union(if website.websiteProperties.staticUnitsEditable then
+						Sequence{thisModule.implicitStaticEntity(website)}
+					else
+						Sequence{}
+					endif),
+		databaseTechnology <- partialOrm.databaseTechnology
+	)
+}
+
+unique lazy rule implicitStringDataType {
+	from website: Website!WebGenModel
+	to orm : ORM!DataType (
+		name <- 'String',
+		displayLabel <- 'String'
+	)
+	do {
+		orm;
+	}
+}
+
+unique lazy rule implicitTextBlockDataType {
+	from website: Website!WebGenModel
+	to orm : ORM!DataType (
+		name <- 'TextBlock',
+		displayLabel <- 'Text Block'
+	)
+	do {
+		orm;
+	}
+}
+
+
+unique lazy rule implicitStaticEntity {
+	from website: Website!WebGenModel
+	to orm : ORM!Entity (
+		name <- 'StaticText',
+		displayLabel <- 'Static Text',
+		features <- Sequence{name, content}
+	),
+	name : ORM!SingletonElement (
+		name <- 'name',
+		displayLabel <- 'Name',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		"unique" <- true,
+		inputField <- true,
+		inputClass <- 'input_attribute'
+	),
+	content : ORM!SingletonElement (
+		name <- 'content',
+		displayLabel <- 'Content',
+		dataType <- website.getDataType('TextBlock'),
+		required <- true,
+		"unique" <- false,
+		inputField <- true,
+		inputClass <- 'input_attribute'
+	)
+	do {
+		orm;
+	}
+}

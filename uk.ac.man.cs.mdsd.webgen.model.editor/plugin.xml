@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id: plugin.xml,v 1.1 2010/03/23 10:54:27 andy Exp $
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="uk.ac.man.cs.mdsd.webgen.website.presentation.WebsiteModelWizardID"
+            name="%_UI_WebsiteModelWizard_label"
+            class="uk.ac.man.cs.mdsd.webgen.website.presentation.WebsiteModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/WebsiteModelFile.gif">
+         <description>%_UI_WebsiteModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="uk.ac.man.cs.mdsd.webgen.website.presentation.WebsiteEditorID"
+            name="%_UI_WebsiteEditor_label"
+            icon="icons/full/obj16/WebsiteModelFile.gif"
+            extensions="website"
+            class="uk.ac.man.cs.mdsd.webgen.website.presentation.WebsiteEditor"
+            contributorClass="uk.ac.man.cs.mdsd.webgen.website.presentation.WebsiteActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

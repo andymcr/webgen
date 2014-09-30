@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="uk.ac.man.cs.mdsd.webgen.pim2psms.websiteModel">
+         <iterate
+               ifEmpty="false"
+               operator="and">
+            <and>
+               <instanceof
+                     value="org.eclipse.core.resources.IFile">
+               </instanceof>
+               <test
+                     property="org.eclipse.core.resources.extension"
+                     value="website">
+               </test>
+            </and>
+         </iterate>
+      </definition>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+         <command
+               commandId="uk.ac.man.cs.mdsd.webgen.pim2psms.transformation"
+               label="Generate JSF and ORM"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="activeMenuSelection">
+                  <reference
+                        definitionId="uk.ac.man.cs.mdsd.webgen.pim2psms.websiteModel">
+                  </reference>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Transform website model to JSF and ORM models"
+            id="uk.ac.man.cs.mdsd.webgen.pim2psms.transformation"
+            name="transform">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="uk.ac.man.cs.mdsd.webgen.pim2psms.TransformationHandler"
+            commandId="uk.ac.man.cs.mdsd.webgen.pim2psms.transformation">
+      </handler>
+   </extension>
+
+</plugin>

@@ -1,0 +1,390 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+-- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+
+module PassImplicitAuthenticationPersistence;
+create orm : ORM from website : Website, partialOrm : ORM;
+
+uses WebsiteHelpers;
+uses CopyPartialOrm;
+
+
+helper context Website!Authentication def: getDataType(name : String) : ORM!DataType
+	= let dataType : ORM!DataType = thisModule.findPartialOrmDataType(name)
+		in if not dataType.oclIsUndefined() then
+			dataType
+		else
+			if name = 'Boolean' then
+				thisModule.implicitBooleanDataType(self)
+			else if name = 'Email' then
+				thisModule.implicitEmailDataType(self)
+			else if name = 'String' then
+				thisModule.implicitStringDataType(self)
+			else
+				OclUndefined
+			endif endif endif
+		endif;
+
+helper def: findWebsiteAuthentication() : Website!Authentication
+	= Website!Authentication.allInstancesFrom('website')->first();
+
+
+rule OrmModel {
+	from website : Website!WebGenModel, partialOrm : ORM!OrmModel
+	to orm : ORM!OrmModel (
+		collectionTypes <- partialOrm.collectionTypes,
+		dataTypes <- partialOrm.dataTypes
+			->union(
+				if thisModule.findPartialOrmDataType('Boolean').oclIsUndefined() then
+					Sequence{thisModule.implicitBooleanDataType(thisModule.findWebsiteAuthentication())}
+				else
+					Sequence{}
+				endif)
+			->union(
+				if thisModule.findPartialOrmDataType('String').oclIsUndefined() then
+					Sequence{thisModule.implicitStringDataType(thisModule.findWebsiteAuthentication())}
+				else
+					Sequence{}
+				endif),
+		entities <- partialOrm.entities
+			->union(let authentication : Website!Authentication
+				= website.websiteProperties.authentication
+				in if authentication.oclIsUndefined() then
+						Sequence{}
+					else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
+							and authentication.authenticationSource.oclIsUndefined() then
+						Sequence{thisModule.implicitAuthenticationSystemEntity(authentication)}
+					else
+						Sequence{}
+					endif endif)
+			->union(let authentication : Website!Authentication
+				= website.websiteProperties.authentication
+				in if authentication.oclIsUndefined() then
+						Sequence{}
+					else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
+							and authentication.trackLoginAttempts then
+						Sequence{thisModule.implicitLoginAttemptEntity(authentication)}
+					else
+						Sequence{}
+					endif endif)
+			->union(let authentication : Website!Authentication
+				= website.websiteProperties.authentication
+				in if authentication.oclIsUndefined() then
+						Sequence{}
+					else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
+							and authentication.allowAutoLogin then
+						Sequence{thisModule.implicitAutoLoginEntity(authentication)}
+					else
+						Sequence{}
+					endif endif),
+		databaseTechnology <- partialOrm.databaseTechnology
+	)
+}
+
+unique lazy rule implicitBooleanDataType {
+	from website: Website!Authentication
+	to orm : ORM!DataType (
+		name <- 'Boolean',
+		displayLabel <- 'Boolean'
+	)
+	do {
+		orm;
+	}
+}
+
+unique lazy rule implicitEmailDataType {
+	from website: Website!Authentication
+	to orm : ORM!DataType (
+		name <- 'Email',
+		displayLabel <- 'Email'
+	)
+	do {
+		orm;
+	}
+}
+
+unique lazy rule implicitStringDataType {
+	from website: Website!Authentication
+	to orm : ORM!DataType (
+		name <- 'String',
+		displayLabel <- 'String'
+	)
+	do {
+		orm;
+	}
+}
+
+
+unique lazy rule implicitAuthenticationSystemEntity {
+	from website: Website!Authentication
+	to orm : ORM!Entity (
+		name <- 'Authentication',
+		displayLabel <- 'Authentication',
+		features <- Sequence{username, password, salt, email, activated, banned,
+				banReason, newPasswordKey, newPasswordRequested, newEmail,
+				newEmailKey, lastIp, lastLogin}
+			->union(
+				if website.allowAutoLogin then
+					Sequence{thisModule.implicitAutoLoginOpposite(website)}
+				else
+					Sequence{}
+				endif)
+	),
+	username : ORM!SingletonElement (
+		name <- 'username',
+		displayLabel <- 'Username',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		"unique" <- true,
+		inputField <- true,
+		inputClass <- 'input_attribute'
+	),
+	password : ORM!SingletonElement (
+		name <- 'password',
+		displayLabel <- 'Password',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		"unique" <- false,
+		obfuscateFormFields <- true,
+		encrypt <- true,
+		inputField <- true,
+		inputClass <- 'input_attribute'
+	),
+	salt : ORM!SingletonElement (
+		name <- 'salt',
+		displayLabel <- 'SALT',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		"unique" <- false,
+		obfuscateFormFields <- true,
+		inputField <- false,
+		inputClass <- 'input_attribute'
+	),
+	email : ORM!SingletonElement (
+		name <- 'email',
+		displayLabel <- 'Email',
+		dataType <- website.getDataType('Email'),
+		required <- true,
+		"unique" <- true,
+		caseInsensitive <- true,
+		inputField <- true,
+		inputClass <- 'input_attribute'
+	),
+	activated : ORM!SingletonElement (
+		name <- 'activated',
+		displayLabel <- 'Activated',
+		dataType <- website.getDataType('Boolean'),
+		required <- true,
+		"unique" <- false,
+		defaultValue <- activatedDefault,
+		inputField <- true,
+		inputClass <- 'input_checkbox'
+	),
+	activatedDefault : ORM!IntegerLiteral (
+		value <- 1
+	),
+	banned : ORM!SingletonElement (
+		name <- 'banned',
+		displayLabel <- 'Banned',
+		dataType <- website.getDataType('Boolean'),
+		required <- true,
+		"unique" <- false,
+		defaultValue <- bannedDefault,
+		inputField <- true,
+		inputClass <- 'input_checkbox'
+	),
+	bannedDefault : ORM!IntegerLiteral (
+		value <- 0
+	),
+	banReason : ORM!SingletonElement (
+		name <- 'banReason',
+		displayLabel <- 'Ban reason',
+		dataType <- website.getDataType('String'),
+		required <- false,
+		"unique" <- false,
+		inputField <- true,
+		inputClass <- 'input_attribute'
+	),
+	newPasswordKey : ORM!SingletonElement (
+		name <- 'newPasswordKey',
+		displayLabel <- 'New password Key',
+		dataType <- website.getDataType('String'),
+		required <- false,
+		"unique" <- false,
+		inputClass <- 'input_attribute'
+	),
+	newPasswordRequested : ORM!SingletonDate (
+		name <- 'newPasswordRequested',
+		displayLabel <- 'New Password Requested',
+		required <- false,
+		inputField <- false,
+		"unique" <- false,
+		details <- #DateAndTime,
+		inputClass <- 'input_attribute'
+	),
+	newEmail : ORM!SingletonElement (
+		name <- 'newEmail',
+		displayLabel <- 'New Email',
+		dataType <- website.getDataType('Email'),
+		required <- false,
+		"unique" <- false,
+		inputField <- false,
+		inputClass <- 'input_attribute'
+	),
+	newEmailKey : ORM!SingletonElement (
+		name <- 'newEmailKey',
+		displayLabel <- 'New Email Key',
+		dataType <- website.getDataType('String'),
+		required <- false,
+		"unique" <- false,
+		inputField <- false,
+		inputClass <- 'input_attribute'
+	),
+	lastIp : ORM!SingletonElement (
+		name <- 'lastIp',
+		displayLabel <- 'lastIp',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		defaultValue <- lastIpDefault,
+		"unique" <- true,
+		inputField <- false,
+		inputClass <- 'input_attribute'
+	),
+	lastIpDefault : ORM!StringLiteral (
+		value <- '0.0.0.0'
+	),
+	lastLogin : ORM!SingletonDate (
+		name <- 'lastLogin',
+		displayLabel <- 'Last Login',
+		required <- true,
+		defaultValue <- lastLoginDefault,
+		inputField <- false,
+		"unique" <- false,
+		details <- #DateAndTime,
+		inputClass <- 'input_attribute'
+	),
+	lastLoginDefault : ORM!StringLiteral (
+		value <- '0000-00-00 00:00:00'
+	)
+	do {
+		orm;
+	}
+}
+
+unique lazy rule implicitLoginAttemptEntity {
+	from website: Website!Authentication
+	to orm : ORM!Entity (
+		name <- 'LoginAttempt',
+		displayLabel <- 'Login Attempt',
+		features <- Sequence{loginId, ipAddress, time}
+	),
+	loginId : ORM!SingletonElement (
+		name <- 'loginId',
+		displayLabel <- 'Login ID',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		"unique" <- false,
+		inputField <- false,
+		inputClass <- 'input_attribute'
+	),
+	ipAddress : ORM!SingletonElement (
+		name <- 'ipAddress',
+		displayLabel <- 'IP Address',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		"unique" <- false,
+		inputField <- false,
+		inputClass <- 'input_attribute'
+	),
+	time : ORM!SingletonDate (
+		name <- 'time',
+		displayLabel <- 'Attempt Time',
+		required <- true,
+		inputField <- false,
+		"unique" <- false,
+		details <- #DateAndTime,
+		inputClass <- 'input_attribute'
+	)
+	do {
+		orm;
+	}
+}
+
+unique lazy rule implicitAutoLoginEntity {
+	from website: Website!Authentication
+	to orm : ORM!Entity (
+		name <- 'AutoLogin',
+		displayLabel <- 'Automatic Login',
+		features <- Sequence{key, authentication, userAgent, lastIpAddress, lastLogin}
+	),
+	key : ORM!SingletonElement (
+		name <- 'key',
+		displayLabel <- 'Key',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		"unique" <- false,
+		inputField <- false,
+		inputClass <- 'input_attribute'
+	),
+	authentication : ORM!SingletonAssociation (
+		name <- 'authentication',
+		displayLabel <- 'Authentication',
+		opposite <- thisModule.implicitAutoLoginOpposite(website),
+		sourceEnd <- false,
+		bidirectional <- true,
+		containment <- false,
+		required <- true,
+		associationRelationship <- #ManyToOne,
+		inputField <- false,
+		inputClass <- 'input_association'
+	),
+	userAgent : ORM!SingletonElement (
+		name <- 'userAgent',
+		displayLabel <- 'User Agent',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		"unique" <- false,
+		inputField <- false,
+		inputClass <- 'input_attribute'
+	),
+	lastIpAddress : ORM!SingletonElement (
+		name <- 'lastIpAddress',
+		displayLabel <- 'Last IP Address',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		"unique" <- false,
+		inputField <- false,
+		inputClass <- 'input_attribute'
+	),
+	lastLogin : ORM!SingletonDate (
+		name <- 'lastLogin',
+		displayLabel <- 'Last Login',
+		required <- true,
+		inputField <- false,
+		"unique" <- false,
+		details <- #DateAndTime,
+		inputClass <- 'input_attribute'
+	)
+	do {
+		orm;
+	}
+}
+
+unique lazy rule implicitAutoLoginOpposite {
+	from website: Website!Authentication
+	to orm : ORM!CollectionAssociation (
+		name <- 'autoLogin',
+		displayLabel <- 'autoLogin',
+		sourceEnd <- true,
+		bidirectional <- true,
+		containment <- true,
+		associationRelationship <- #OneToMany,
+		inputField <- false,
+		inputClass <- 'input_association'
+	)
+	do {
+		orm;
+	}
+}

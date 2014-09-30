@@ -1,0 +1,46 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+-- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+
+module PassImplicitService;
+create jsf : JSF from orm : ORM, partialJsf : JSF;
+
+uses WebsiteHelpers;
+uses CopyPartialJsf;
+
+
+rule JsfModel {
+	from partialJsf : JSF!JsfModel
+	to jsf : JSF!JsfModel (
+		properties <- partialJsf.properties,
+		persistence <- partialJsf.persistence,
+		services <- partialJsf.services
+			->union(let entities : Set(ORM!Entity)
+				= partialJsf.persistence.entities
+				in entities.asSet()->symmetricDifference(
+					partialJsf.services->collect(s | s.entities)->flatten().asSet()
+					).asSequence()
+				->collect(e | thisModule.implicitService(e))
+			),
+		pages <- partialJsf.pages,
+		menus <- partialJsf.menus
+	)
+}
+
+
+lazy rule implicitService {
+	from orm : ORM!Entity
+	to jsf : JSF!Service (
+-- TODO pularise
+		name <- orm.name, 
+		modelName <- orm.name,
+		view <- false,
+		entities <- Sequence{orm},
+		daosUsed <- Sequence{orm}
+	)
+	do {
+		jsf;
+	}
+} 

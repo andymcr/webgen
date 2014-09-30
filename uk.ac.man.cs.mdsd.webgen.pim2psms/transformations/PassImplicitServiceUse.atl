@@ -1,0 +1,217 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+-- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+
+module PassImplicitServiceUse;
+create jsf : JSF from website : Website, partialJsf : JSF;
+
+uses WebsiteHelpers;
+uses CopyPartialJsf;
+
+
+helper context JSF!Service def: getServiceEntityFeature(name : String) : JSF!ServiceEntityFeature
+	= self.features->any(f | f.name = name);
+
+helper context JSF!UnitFeature def: findServiceEntityFeature() : JSF!ServiceEntityFeature
+	= if not self.serviceFeature.oclIsUndefined() then
+			self.serviceFeature
+		else
+			let service : JSF!Service = thisModule.findJsfService(
+				self.displayedOn.getWebsiteUnit().source.name)
+			in service.getServiceEntityFeature(self.name)
+		endif;
+
+helper def: findWebsitePage(name : String) : Website!Page
+	= Website!Page.allInstancesFrom('website')->any(d | d.name = name);
+
+helper context JSF!DynamicUnit def: getWebsiteUnit() : Website!DynamicUnit
+	= let websiteContainer : Website!UnitContainer
+		= if self.displayedOn.oclIsTypeOf(JSF!Page) then
+				thisModule.findWebsitePage(self.displayedOn.name)
+			else
+				self.displayedOn.getWebsiteIncludedFeature()
+			endif
+		in websiteContainer.units->any(u | u.name = self.name);
+
+helper context JSF!UnitAssociation def: getWebsiteIncludedFeature() : Website!UnitAssociation
+	= self.displayedOn.getWebsiteUnit()
+		.displayFields->any(f | f.name = self.name);
+
+
+-- @extends NamedDisplayElement, ContentUnitFields
+abstract rule ContentUnit {
+	from partialJsf : JSF!ContentUnit
+	to jsf : JSF!ContentUnit (
+	)
+}
+
+-- @extends ContentUnit, StaticUnitFields
+rule StaticUnit {
+	from partialJsf : JSF!StaticUnit
+	to jsf : JSF!StaticUnit (
+		service <-
+			if thisModule.findWebsiteProperties().staticUnitsEditable then
+				thisModule.findJsfService('StaticText')
+			else
+				OclUndefined
+			endif
+	)
+}
+
+-- @extends ContentUnit, DynamicUnitFields
+abstract rule DynamicUnit {
+	from partialJsf : JSF!DynamicUnit
+	to jsf : JSF!DynamicUnit (
+		service <-
+			if not partialJsf.service.oclIsUndefined() then
+				partialJsf.service
+			else
+				thisModule.findJsfService(
+					partialJsf.getWebsiteUnit().source.name)
+			endif
+	)
+}
+
+-- @extends UnitFeature, IncludedElement
+rule UnitElement {
+	from partialJsf : JSF!UnitElement
+	to jsf : JSF!UnitElement (
+		serviceFeature <- partialJsf.findServiceEntityFeature(),
+		placeholder <- partialJsf.placeholder,
+		validationPattern <- partialJsf.validationPattern
+	)
+}
+
+-- @extends UnitFeature, IncludedAssociation, UnitContainer
+rule UnitAssociation {
+	from partialJsf : JSF!UnitAssociation
+	to jsf : JSF!UnitAssociation (
+		serviceFeature <- partialJsf.findServiceEntityFeature(),
+		childFeature <- partialJsf.childFeature,
+		selection <- partialJsf.selection,
+		dynamicLabel <- partialJsf.dynamicLabel,
+		maximumDisplaySize <- partialJsf.maximumDisplaySize,
+		displayOption <- partialJsf.displayOption
+	)
+}
+
+-- @extends DynamicUnit, EditUnitFields
+abstract rule EditUnit {
+	from partialJsf : JSF!EditUnit
+	to jsf : JSF!EditUnit (
+	)
+}
+
+-- @extends EditUnit
+rule CreateUnit {
+	from partialJsf : JSF!CreateUnit
+	to jsf : JSF!CreateUnit (
+	)
+}
+
+-- @extends EditUnit, CreateUpdateUnitFields
+rule CreateUpdateUnit {
+	from partialJsf : JSF!CreateUpdateUnit
+	to jsf : JSF!CreateUpdateUnit (
+	)
+}
+
+-- @extends EditUnit, MapUnitFields
+rule MapUnit {
+	from partialJsf : JSF!MapUnit
+	to jsf : JSF!MapUnit (
+	)
+}
+
+-- @extends EditUnit
+rule UpdateUnit {
+	from partialJsf : JSF!UpdateUnit
+	to jsf : JSF!UpdateUnit (
+	)
+}
+
+-- @extends DynamicUnit, DataUnitFields
+abstract rule DataUnit {
+	from partialJsf : JSF!DataUnit
+	to jsf : JSF!DataUnit (
+	)
+}
+
+-- @extends DataUnit, DetailsUnitFields
+rule DetailsUnit {
+	from partialJsf : JSF!DetailsUnit
+	to jsf : JSF!DetailsUnit (
+	)
+}
+
+-- @extends DataUnit, IndexUnitFields
+abstract rule IndexUnit {
+	from partialJsf : JSF!IndexUnit
+	to jsf : JSF!IndexUnit (
+	)
+}
+
+-- @extends IndexUnit, IndexGridUnitFields
+rule IndexGridUnit {
+	from partialJsf : JSF!IndexGridUnit
+	to jsf : JSF!IndexGridUnit (
+	)
+}
+
+-- @extends IndexUnit, IndexPageDirectionUnitFields
+rule IndexPageDirectionUnit {
+	from partialJsf : JSF!IndexPageDirectionUnit
+	to jsf : JSF!IndexPageDirectionUnit (
+	)
+}
+
+-- @extends IndexUnit, IndexLineDirectionUnitFields
+rule IndexLineDirectionUnit {
+	from partialJsf : JSF!IndexLineDirectionUnit
+	to jsf : JSF!IndexLineDirectionUnit (
+	)
+}
+
+-- @extends DynamicUnit, ControlUnitFields
+abstract rule ControlUnit {
+	from partialJsf : JSF!ControlUnit
+	to jsf : JSF!ControlUnit (
+	)
+}
+
+-- @extends ControlUnit, SearchUnitFields
+rule SearchUnit {
+	from partialJsf : JSF!SearchUnit
+	to jsf : JSF!SearchUnit (
+	)
+}
+
+-- @extends ControlUnit, ActionUnitFields
+rule ActionUnit {
+	from partialJsf : JSF!ActionUnit
+	to jsf : JSF!ActionUnit (
+	)
+}
+
+-- @extends EditUnit
+rule RegistrationUnit {
+	from partialJsf : JSF!RegistrationUnit
+	to jsf : JSF!RegistrationUnit (
+	)
+}
+
+-- @extends ControlUnit, LoginUnitFields
+rule LoginUnit {
+	from partialJsf : JSF!LoginUnit
+	to jsf : JSF!LoginUnit (
+	)
+}
+
+-- @extends ControlUnit
+rule ForgottenPasswordUnit {
+	from partialJsf : JSF!ForgottenPasswordUnit
+	to jsf : JSF!ForgottenPasswordUnit (
+	)
+}

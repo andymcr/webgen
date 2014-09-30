@@ -1,0 +1,242 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+-- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+
+module PassImplicitServiceEntityFeatures;
+create jsf : JSF from orm : ORM, partialJsf : JSF;
+
+uses WebsiteHelpers;
+uses CopyPartialJsf;
+
+
+-- @extends Service
+rule ServiceWithFeatures {
+	from partialJsf : JSF!Service (partialJsf.features->notEmpty())
+	to jsf : JSF!Service (
+		features <- partialJsf.features
+	)
+} 
+
+-- @extends Service
+rule ServiceWithoutFeatures {
+	from partialJsf : JSF!Service (partialJsf.features->isEmpty())
+	to jsf : JSF!Service (
+		features <-
+			let features : Sequence(ORM!Feature)
+				= partialJsf.entities->collect(e | e.features)->flatten()
+				in features
+					->select(f | f.oclIsKindOf(ORM!Attribute))
+					->collect(f | thisModule.implicitServiceEntityElement(f))
+				->union(features
+					->select(f | f.oclIsKindOf(ORM!SingletonAssociation))
+					->select(f | f.sourceEnd or f.bidirectional or f.opposite.containment)
+					->collect(f | thisModule.implicitServiceEntityAssociation(f)))
+				->union(features
+					->select(f | f.oclIsKindOf(ORM!CollectionAssociation))
+					->select(f | f.sourceEnd or f.bidirectional)
+					->collect(f | thisModule.implicitServiceEntityAssociation(f)))
+	)
+} 
+
+lazy abstract rule implicitIncludedFeature {
+	from orm : ORM!Feature
+	to jsf : JSF!IncludedFeature (
+		displayLabel <- orm.displayLabel,
+		headerClass <- orm.headerClass,
+		inputClass <- orm.inputClass,
+		displayClass <- orm.displayClass,
+		footerClass <- orm.footerClass
+	)
+}
+
+-- @extends implicitIncludedFeature
+lazy abstract rule implicitIncludedElement {
+	from orm : ORM!Attribute
+	to jsf : JSF!IncludedElement (
+		obfuscateFormFields <-
+			if orm.oclIsTypeOf(ORM!SingletonElement) then
+				orm.obfuscateFormFields
+			else
+				false
+			endif,
+		defaultValue <-
+			if not orm.defaultValue.oclIsUndefined() then
+				orm.defaultValue.expressionDispatch()
+			else
+				OclUndefined
+			endif
+	)
+}
+
+-- @extends implicitIncludedFeature
+lazy abstract rule implicitIncludedAssociation {
+	from orm : ORM!Association
+	to jsf : JSF!IncludedAssociation (
+	)
+}
+
+-- @extends implicitIncludedFeature
+lazy abstract rule implicitServiceEntityFeature {
+	from orm : ORM!Feature
+	to jsf : JSF!ServiceEntityFeature (
+		name <- orm.name
+	)
+}
+
+-- @extends implicitServiceEntityFeature, implicitIncludedElement
+lazy rule implicitServiceEntityElement {
+	from orm : ORM!SingletonAttribute
+	to jsf : JSF!ServiceEntityElement (
+		feature <- orm,
+		cardinality <-
+			if orm.required and orm.defaultValue.oclIsUndefined() then
+				#Required
+			else
+				#Optional
+			endif,
+		caseInsensitive <-
+			if orm.oclIsTypeOf(ORM!SingletonElement) then
+				orm.caseInsensitive
+			else
+				false
+			endif,
+		encrypt <-
+			if orm.oclIsTypeOf(ORM!SingletonElement) then
+				orm.encrypt
+			else
+				false
+			endif
+	)
+	do {
+		jsf;
+	}
+}
+
+-- @extends implicitServiceEntityFeature, implicitIncludedAssociation
+lazy rule implicitServiceEntityAssociation {
+	from orm : ORM!Association
+	to jsf : JSF!ServiceEntityAssociation (
+		feature <- orm,
+		cardinality <-
+			if orm.oclIsTypeOf(ORM!SingletonAssociation) then
+				if orm.required then
+					#Required
+				else
+					#Optional
+				endif
+			else
+				#Many
+			endif
+--		opposite <- 
+--			if website.feature.targetEntiity.servedBy->empty() then
+--				OclUndefined
+--			else
+--				website.feature.targetEntiity.servedBy->first().feature(website.feature.targetFeatureName)
+--			endif
+	)
+	do {
+		jsf;
+	}
+}
+
+
+helper context ORM!Expression def: expressionDispatch() : JSF!Expression
+	= if self.oclIsUndefined() then
+			OclUndefined
+		else if self.oclIsKindOf(ORM!IntegerLiteral) then
+			thisModule.createIntegerLiteral(self)
+		else if self.oclIsKindOf(ORM!StringLiteral) then
+			thisModule.createStringLiteral(self)
+		else if self.oclIsKindOf(ORM!PredicateBooleanOperator) then
+			thisModule.createPredicateBooleanOperator(self)
+		else if self.oclIsKindOf(ORM!PredicateEqualityOperator) then
+			thisModule.createPredicateEqualityOperator(self)
+		else if self.oclIsKindOf(ORM!PredicateComparisonOperator) then
+			thisModule.createPredicateComparisonOperator(self)
+		else
+			OclUndefined
+		endif endif endif endif endif endif;
+
+lazy abstract rule createLiteral {
+	from orm : ORM!Literal
+	to jsf : JSF!Literal (
+	)
+}
+
+-- @extends createLiteral
+lazy rule createIntegerLiteral {
+	from orm : ORM!IntegerLiteral
+	to jsf : JSF!IntegerLiteral (
+		value <- orm.value
+	)
+	do {
+		jsf;
+	}
+}
+
+-- @extends createLiteral
+lazy rule createStringLiteral {
+	from orm : ORM!StringLiteral
+	to jsf : JSF!StringLiteral (
+		value <- orm.value
+	)
+	do {
+		jsf;
+	}
+}
+
+lazy rule createFunction {
+	from orm : ORM!Function
+	to jsf : JSF!Function (
+		name <- orm.name
+	)
+	do {
+		jsf;
+	}
+}
+
+lazy abstract rule createPredicate {
+	from orm : ORM!Predicate
+	to jsf : JSF!Predicate (
+		negated <- orm.negated
+	)
+}
+
+-- @extends createPredicate
+lazy rule createPredicateBooleanOperator {
+	from orm : ORM!PredicateBooleanOperator
+	to jsf : JSF!PredicateBooleanOperator (
+		expressions <- orm.expressions,
+		operator <- orm.operator
+	)
+	do {
+		jsf;
+	}
+}
+
+-- @extends createPredicate
+lazy rule createPredicateEqualityOperator {
+	from orm : ORM!PredicateEqualityOperator
+	to jsf : JSF!PredicateEqualityOperator (
+		left <- orm.left,
+		right <- orm.right
+	)
+	do {
+		jsf;
+	}
+}
+
+-- @extends createPredicate
+lazy rule createPredicateComparisonOperator {
+	from orm : ORM!PredicateComparisonOperator
+	to jsf : JSF!PredicateComparisonOperator (
+		left <- orm.left,
+		operator <- orm.operator,
+		right <- orm.right
+	)
+	do {
+		jsf;
+	}
+}

@@ -1,0 +1,98 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+-- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+
+module PassAuthentication2;
+create jsf : JSF from partialJsf : JSF;
+
+uses WebsiteHelpers;
+uses CopyPartialJsf;
+
+
+-- @extends UnitField, NamedDisplayElement
+abstract rule InterfaceField {
+	from partialJsf : JSF!InterfaceField
+	to jsf : JSF!InterfaceField (
+		cardinality <- partialJsf.cardinality,
+		defaultValue <- partialJsf.defaultValue,
+		mustMatch <-
+			if not partialJsf.mustMatch.oclIsUndefined() then
+				partialJsf.mustMatch
+			else if partialJsf.name = 'confirmEmail' then
+				partialJsf.displayedOn.displayFields->any(f | f.name = 'email')
+			else if partialJsf.name = 'confirmPassword' then
+				partialJsf.displayedOn.displayFields->any(f | f.name = 'password')
+			else
+				OclUndefined
+			endif endif endif,
+		inputClass <- partialJsf.inputClass
+	)
+}
+
+-- @extends InterfaceField
+rule DataTypeField {
+	from partialJsf : JSF!DataTypeField
+	to jsf : JSF!DataTypeField (
+		dataType <- partialJsf.dataType,
+		obfuscateFormFields <- partialJsf.obfuscateFormFields,
+		caseInsensitive <- partialJsf.caseInsensitive,
+		encrypt <- partialJsf.encrypt
+	)
+}
+
+-- @extends InterfaceField
+rule DateField {
+	from partialJsf : JSF!DateField
+	to jsf : JSF!DateField (
+		details <- partialJsf.details,
+		format <- partialJsf.format
+	)
+}
+
+
+-- @extends EditUnit
+rule RegistrationUnit {
+	from partialJsf : JSF!RegistrationUnit
+	to jsf : JSF!RegistrationUnit (
+	)
+}
+
+-- @extends ControlUnit
+rule LoginUnit {
+	from partialJsf : JSF!LoginUnit
+	to jsf : JSF!LoginUnit (
+		loginIdField <-
+			if not partialJsf.loginIdField.oclIsUndefined() then
+				partialJsf.loginIdField
+			else
+				partialJsf.displayFields->any(f | f.name = 'email')
+			endif,
+		passwordField <-
+			if not partialJsf.passwordField.oclIsUndefined() then
+				partialJsf.passwordField
+			else
+				partialJsf.displayFields->any(f | f.name = 'password')
+			endif,
+		rememberMeField <-
+			if not partialJsf.rememberMeField.oclIsUndefined() then
+				partialJsf.rememberMeField
+			else
+				partialJsf.displayFields->any(f | f.name = 'rememberMe')
+			endif
+	)
+}
+
+-- @extends ControlUnit
+rule ForgottenPasswordUnit {
+	from partialJsf : JSF!ForgottenPasswordUnit
+	to jsf : JSF!ForgottenPasswordUnit (
+		loginIdField <-
+			if not partialJsf.loginIdField.oclIsUndefined() then
+				partialJsf.loginIdField
+			else
+				partialJsf.displayFields->any(f | f.name = 'email')
+			endif
+	)
+}

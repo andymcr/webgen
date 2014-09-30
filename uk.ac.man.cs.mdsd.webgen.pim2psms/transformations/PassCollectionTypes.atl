@@ -1,0 +1,61 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+
+module PassCollectionTypes;
+create orm : ORM from website : Website, partialOrm : ORM;
+
+uses WebsiteHelpers;
+uses CopyPartialOrm;
+
+
+helper def: findWebsiteEntity(name : String) : Website!Entity
+	= Website!Entity.allInstancesFrom('website')->any(e | e.name = name);
+
+helper context Website!Entity def: getWebsiteFeature(featureName : String) : Website!Feature
+	= self.features->any(f | f.name = featureName);
+
+helper def: findOrmCollection(name : String) : ORM!DataType
+	= ORM!CollectionType.allInstancesFrom('partialOrm')
+		->any(c | c.elementType.name = name );
+
+
+-- @extends CollectionAttribute
+rule CollectionElement {
+	from partialOrm : ORM!CollectionElement
+	to orm : ORM!CollectionElement (
+		collectionType <-
+			let parentEntity : Website!Entity
+				= thisModule.findWebsiteEntity(partialOrm.parentEntity.name)
+			in let websiteFeature : Website!Feature
+					= parentEntity.getWebsiteFeature(partialOrm.name)
+				in thisModule.findOrmCollection(
+					websiteFeature.dataType.name )--,
+--					websiteFeature.collectionType())
+	)
+}
+
+-- @extends Association
+rule CollectionAssociation {
+	from partialOrm : ORM!CollectionAssociation
+	to orm : ORM!CollectionAssociation (
+		collectionType <-
+			if partialOrm.sourceEnd then
+				let parentEntity : Website!Entity
+					= thisModule.findWebsiteEntity(partialOrm.parentEntity.name)
+				in thisModule.findOrmCollection(
+					partialOrm.opposite.parentEntity.name) --,
+--					parentEntity.getWebsiteFeature(partialOrm.name).collectionType())
+			else if not partialOrm.sourceEnd and partialOrm.bidirectional then
+				let parentEntity : Website!Entity
+					= thisModule.findWebsiteEntity(partialOrm.opposite.parentEntity.name)
+				in thisModule.findOrmCollection(
+					parentEntity.name )--,
+--					parentEntity.getInverseFeature(partialOrm.name).inverseCollectionType())
+			else
+				OclUndefined
+			endif endif,
+		associationRelationship <- partialOrm.associationRelationship
+	)
+}

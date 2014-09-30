@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jsf and Orm generation
+Bundle-SymbolicName: uk.ac.man.cs.mdsd.webgen.pim2psms;singleton:=true
+Bundle-Version: 0.8.0.qualifier
+Require-Bundle: org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.core.expressions,
+ org.eclipse.ui,
+ org.eclipse.emf.ecore,
+ org.eclipse.m2m.atl.emftvm;bundle-version="3.4.0",
+ uk.ac.man.cs.mdsd.genjsf.model,
+ org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: University of Manchester

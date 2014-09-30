@@ -1,0 +1,440 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+
+module PassExplicitPersistence;
+create orm : ORM from website : Website;
+
+uses WebsiteHelpers;
+
+
+rule Website {
+	from website : Website!WebGenModel
+	to orm : ORM!OrmModel (
+		dataTypes <- website.classifiers->select(c | c.oclIsKindOf(Website!DataType)),
+		entities <- website.classifiers->select(c | c.oclIsKindOf(Website!Entity)),
+		collectionTypes <- website.classifiers
+			->select(c | c.oclIsTypeOf(Website!Entity))
+			->collect(e | e.features)->flatten()
+			->select(f | not f.oclIsKindOf(Website!DateAttribute))
+			->select(f | f.cardinality = #Many)
+			->iterate(f; result : Set(Website!Feature) = Set {} |
+				if f.featureTypeNoted(result) then
+					result
+				else
+					result->including(f)
+				endif)
+			->collect(f | thisModule.CollectionType(f))
+			->union(website.classifiers
+				->select(c | c.oclIsKindOf(Website!Entity))
+				->collect(e | e.features)->flatten()
+				->select(f | f.oclIsKindOf(Website!AssociationWithoutContainment))
+				->select(f | f.targetCardinality = #Many)
+				->iterate(f; result : Set(Website!Feature) = Set {} |
+					if f.inverseFeatureTypeNoted(result) then
+						result
+					else
+						result->including(f)
+					endif)
+				->collect(e | thisModule.InverseCollectionType(e))),
+		databaseTechnology <-
+			if website.websiteProperties.databaseTechnology = #MySql then
+				#MySql
+			else if website.websiteProperties.databaseTechnology = #Oracle then
+				#Oracle
+			else
+				#MySql
+			endif endif
+	)
+}
+
+
+helper context Website!Attribute def: featureTypeNoted(noted : Set(Website!Feature)) : Boolean
+	= noted->select(e | e.oclIsKindOf(Website!Attribute))
+		->exists(e | e.dataType = self.dataType 
+			and e."unique" = self."unique" 
+			and e.ordered = self.ordered);
+
+helper context Website!Association def: featureTypeNoted(noted : Set(Website!Feature)) : Boolean
+	= noted->select(e | e.oclIsKindOf(Website!Association))
+		->exists(e | e.targetEntity = self.targetEntity 
+			and e."unique" = self."unique" 
+			and e.ordered = self.ordered);
+
+helper context Website!Association def: inverseFeatureTypeNoted(noted : Set(Website!Feature)) : Boolean
+	= noted->exists(e | e.parentEntity = self.parentEntity 
+			and e.targetUnique = self.targetUnique);
+
+
+lazy rule CollectionType {
+	from website: Website!Feature
+	to orm : ORM!CollectionType (
+		elementType <- if website.oclIsKindOf(Website!Attribute) then
+				website.dataType
+			else
+				website.targetEntity
+			endif,
+		collectionType <- website.collectionType()
+	)
+	do {
+		orm;
+	}
+}
+
+lazy rule InverseCollectionType {
+	from website: Website!Feature
+	to orm : ORM!CollectionType (
+		elementType <- website.parentEntity,
+		collectionType <- website.inverseCollectionType()
+	)
+	do {
+		orm;
+	}
+}
+
+
+abstract rule NamedElement {
+	from website : Website!NamedElement
+	to orm : ORM!NamedElement (
+		name <- website.name
+	)
+}
+
+-- @extends NamedElement
+abstract rule NamedDisplayElement {
+	from website : Website!NamedDisplayElement
+	to orm : ORM!NamedDisplayElement (
+		displayLabel <-
+			if not website.displayLabel.oclIsUndefined() and website.displayLabel <> '' then
+				website.displayLabel
+			else
+				website.name.createLabel()
+			endif
+	)
+}
+
+
+-- @extends NamedDisplayElement
+rule DataType {
+	from website : Website!DataType (website.oclIsTypeOf(Website!DataType))
+	to orm : ORM!DataType (
+	)
+}
+
+-- @extends NamedDisplayElement
+rule EnumerationType {
+	from website : Website!EnumerationType
+	to orm : ORM!EnumerationType (
+		enumerations <- website.enumerations
+	)
+}
+
+-- @extends NamedDisplayElement
+rule EnumerationLiteral {
+	from website : Website!EnumerationLiteral
+	to orm : ORM!EnumerationLiteral (
+	)
+}
+
+-- @extends NamedDisplayElement
+rule Entity {
+	from website : Website!Entity
+	to orm : ORM!Entity (
+--		features <- website.features, -- via parentEntity in features
+		displayFeatures <- 
+			if website.displayFeatures.notEmpty() then
+				website.displayFeatures
+			else if website.features->exists(f | f.name = 'name') then
+				Sequence{website.features->any(f | f.name = 'name')}
+			else if website.features->exists(f | f.name = 'title') then
+				Sequence{website.features->any(f | f.name = 'title')}
+			else
+				Sequence{}
+			endif endif endif,
+		displayFormat <- website.displayFormat
+	)
+}
+
+-- @extends NamedDisplayElement
+abstract rule Feature {
+	from website : Website!Feature
+	to orm : ORM!Feature (
+		parentEntity <- website.parentEntity,
+		inputField <- false,
+		headerClass <- website.headerClass,
+		inputClass <- website.inputClass,
+		displayClass <- website.displayClass,
+		footerClass <- website.footerClass
+	)
+}
+
+-- @extends Feature
+abstract rule Attribute {
+	from website : Website!Attribute
+	to orm : ORM!Attribute (
+	)
+}
+
+-- @extends Attribute
+abstract rule SingletonAttribute {
+	from website : Website!Attribute (website.cardinality <> #Many)
+	to orm : ORM!SingletonAttribute (
+		required <- website.cardinality = #Required,
+		"unique" <- website."unique",
+		defaultValue <- website.defaultValue,
+		inputField <- true
+	)
+}
+
+-- @extends Attribute
+abstract rule CollectionAttribute {
+	from website : Website!Attribute (website.cardinality = #Many)
+	to orm : ORM!CollectionAttribute (
+		inputField <- true
+	)
+}
+
+-- @extends SingletonAttribute
+rule SingletonElement {
+	from website : Website!DataTypeAttribute (website.cardinality <> #Many)
+	to orm : ORM!SingletonElement (
+		dataType <- website.dataType,
+		obfuscateFormFields <- website.obfuscateFormFields,
+		caseInsensitive <- website.caseInsensitive,
+		encrypt <- website.encrypt
+	)
+}
+
+-- @extends CollectionAttribute
+rule CollectionElement {
+	from website : Website!DataTypeAttribute (website.cardinality = #Many)
+	to orm : ORM!CollectionElement (
+	)
+}
+
+abstract rule DateAttribute {
+	from website : Website!DateAttribute
+	to orm : ORM!DateAttribute (
+		details <-
+			if website.details = #DateOnly then
+				#DateOnly
+			else if website.details = #TimeOnly then
+				#TimeOnly
+			else
+				#DateAndTime
+			endif endif
+	)
+}
+
+-- @extends SingletonAttribute, DateAttribute
+rule SingletonDate {
+	from website : Website!DateAttribute (website.cardinality <> #Many)
+	to orm : ORM!SingletonDate (
+	)
+}
+
+-- @extends CollectionAttribute, DateAttribute
+rule CollectionDate {
+	from website : Website!DateAttribute (website.cardinality = #Many)
+	to orm : ORM!CollectionDate (
+	)
+}
+
+-- @extends SingletonAttribute
+rule SingletonFile {
+	from website : Website!FileAttribute (website.cardinality <> #Many)
+	to orm : ORM!SingletonFile (
+		maximumUploadSize <-
+			if website.maximumUploadSize > 0 then
+				website.maximumUploadSize
+			else
+				thisModule.findWebsiteProperties().defaultMaximumUploadSize
+			endif,
+		validUploadMimeTypes <- website.validUploadMimeTypes,
+		validUploadExtensions <- website.validUploadExtensions,
+		uploadsWithinWebsite <- website.uploadsWithinWebsite,
+		relativeUploadDirectory <-
+			if not website.relativeUploadDirectory.oclIsUndefined() and website.relativeUploadDirectory <> '' then
+				website.relativeUploadDirectory
+			else
+				website.name
+			endif
+	)
+}
+
+-- @extends SingletonAttribute
+rule SingletonLocation {
+	from website : Website!LocationAttribute (website.cardinality <> #Many)
+	to orm : ORM!SingletonLocation (
+	)
+}
+
+-- @extends Feature
+abstract rule Association {
+	from website : Website!Association
+	to orm : ORM!Association (
+		bidirectional <- website.bidirectional
+	)
+}
+
+-- @extends Association
+rule OneToOneAssociationWithoutContainment {
+	from website : Website!AssociationWithoutContainment (website.cardinality <> #Many and website.targetCardinality <> #Many)
+	to orm : ORM!SingletonAssociation (
+		inputField <- true,
+		opposite <- associationEnd,
+		associationRelationship <- #OneToOne,
+		sourceEnd <- true,
+		required <- website.cardinality = #Required
+	),
+	associationEnd : ORM!SingletonAssociation (
+		name <- website.targetFeatureName(),
+		displayLabel <- website.targetDisplayLabel(),
+		parentEntity <- website.targetEntity,
+		associationRelationship <- #OneToOne,
+		sourceEnd <- false,
+		bidirectional <- website.bidirectional,
+		inputField <- website.bidirectional,
+		required <- website.targetCardinality = #Required,
+		headerClass <- website.targetHeaderClass,
+		inputClass <- website.targetInputClass,
+		displayClass <- website.targetDisplayClass,
+		footerClass <- website.targetFooterClass
+	)
+}
+
+-- @extends Association
+rule ManyToOneAssociationWithoutContainment {
+	from website : Website!AssociationWithoutContainment (website.cardinality <> #Many and website.targetCardinality = #Many)
+	to orm : ORM!SingletonAssociation (
+		inputField <- true,
+		opposite <- associationEnd,
+		associationRelationship <- #ManyToOne,
+		sourceEnd <- true,
+		required <- website.cardinality = #Required
+	),
+	associationEnd : ORM!CollectionAssociation (
+		name <- website.targetFeatureName(),
+		displayLabel <- website.targetDisplayLabel(),
+		parentEntity <- website.targetEntity,
+		associationRelationship <- #OneToMany,
+		sourceEnd <- false,
+		bidirectional <- website.bidirectional,
+		inputField <- website.bidirectional,
+		headerClass <- website.targetHeaderClass,
+		inputClass <- website.targetInputClass,
+		displayClass <- website.targetDisplayClass,
+		footerClass <- website.targetFooterClass
+	)
+}
+
+-- @extends Association
+rule OneToManyAssociationWithoutContainment {
+	from website : Website!AssociationWithoutContainment (website.cardinality = #Many and website.targetCardinality <> #Many)
+	to orm : ORM!CollectionAssociation (
+		collectionType <- collectionType,
+		inputField <- true,
+		opposite <- associationEnd,
+		associationRelationship <- #OneToMany,
+		sourceEnd <- true
+	),
+	collectionType : ORM!CollectionType (
+		elementType <- website.targetEntity,
+		collectionType <- website.collectionType()
+	),
+	associationEnd : ORM!SingletonAssociation (
+		name <- website.targetFeatureName(),
+		displayLabel <- website.targetDisplayLabel(),
+		parentEntity <- website.targetEntity,
+		associationRelationship <- #ManyToOne,
+		sourceEnd <- false,
+		bidirectional <- website.bidirectional,
+		inputField <- website.bidirectional,
+		required <- website.targetCardinality = #Required,
+		headerClass <- website.targetHeaderClass,
+		inputClass <- website.targetInputClass,
+		displayClass <- website.targetDisplayClass,
+		footerClass <- website.targetFooterClass
+	)
+}
+
+-- @extends Association
+rule ManyToManyAssociationWithoutContainment {
+	from website : Website!AssociationWithoutContainment (website.cardinality = #Many and website.targetCardinality = #Many)
+	to orm : ORM!CollectionAssociation (
+		collectionType <- collectionType,
+		inputField <- true,
+		opposite <- associationEnd,
+		associationRelationship <- #ManyToMany,
+		sourceEnd <- true
+	),
+	collectionType : ORM!CollectionType (
+		elementType <- website.targetEntity,
+		collectionType <- website.collectionType()
+	),
+	associationEnd : ORM!CollectionAssociation (
+		name <- website.targetFeatureName(),
+		displayLabel <- website.targetDisplayLabel(),
+		parentEntity <- website.targetEntity,
+		associationRelationship <- #ManyToMany,
+		sourceEnd <- false,
+		bidirectional <- website.bidirectional,
+		inputField <- website.bidirectional,
+		headerClass <- website.targetHeaderClass,
+		inputClass <- website.targetInputClass,
+		displayClass <- website.targetDisplayClass,
+		footerClass <- website.targetFooterClass
+	)
+}
+
+-- @extends Association
+rule OneToOneAssociationWithContainment {
+	from website : Website!AssociationWithContainment (website.cardinality <> #Many)
+	to orm : ORM!SingletonAssociation (
+		opposite <- associationEnd,
+		associationRelationship <- #OneToOne,
+		sourceEnd <- true,
+		containment <- true,
+		required <- website.cardinality = #Required
+	),
+	associationEnd : ORM!SingletonAssociation (
+		name <- website.targetFeatureName(),
+		displayLabel <- website.targetDisplayLabel(),
+		parentEntity <- website.targetEntity,
+		associationRelationship <- #OneToOne,
+		sourceEnd <- false,
+		bidirectional <- website.bidirectional,
+		inputField <- false,
+		required <- true,
+		headerClass <- website.targetHeaderClass,
+		inputClass <- website.targetInputClass,
+		displayClass <- website.targetDisplayClass,
+		footerClass <- website.targetFooterClass
+	)
+}
+
+-- @extends Association
+rule OneToManyAssociationWithContainment {
+	from website : Website!AssociationWithContainment (website.cardinality = #Many)
+	to orm : ORM!CollectionAssociation (
+		opposite <- associationEnd,
+		associationRelationship <- #OneToMany,
+		sourceEnd <- true,
+		containment <- true
+	),
+	associationEnd : ORM!SingletonAssociation (
+		name <- website.targetFeatureName(),
+		displayLabel <- website.targetDisplayLabel(),
+		parentEntity <- website.targetEntity,
+		associationRelationship <- #ManyToOne,
+		sourceEnd <- false,
+		bidirectional <- website.bidirectional,
+		inputField <- false,
+		required <- true,
+		headerClass <- website.targetHeaderClass,
+		inputClass <- website.targetInputClass,
+		displayClass <- website.targetDisplayClass,
+		footerClass <- website.targetFooterClass
+	)
+}

@@ -1,0 +1,225 @@
+-- @atlcompiler emftvm 
+--
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+
+module CopyPartialOrm;
+create orm : ORM from partialOrm : ORM;
+
+rule OrmModel {
+	from partialOrm : ORM!OrmModel
+	to orm : ORM!OrmModel (
+		collectionTypes <- partialOrm.collectionTypes,
+		dataTypes <- partialOrm.dataTypes,
+		entities <- partialOrm.entities,
+		databaseTechnology <- partialOrm.databaseTechnology
+	)
+}
+
+
+abstract rule NamedElement {
+	from partialOrm : ORM!NamedElement
+	to orm : ORM!NamedElement (
+		name <- partialOrm.name
+	)
+}
+
+-- @extends NamedElement
+abstract rule NamedDisplayElement {
+	from partialOrm : ORM!NamedDisplayElement
+	to orm : ORM!NamedDisplayElement (
+		displayLabel <- partialOrm.displayLabel
+	)
+}
+
+-- @extends NamedDisplayElement
+abstract rule Classifier {
+	from partialOrm : ORM!Classifier
+	to orm : ORM!Classifier (
+	)
+}
+
+-- @extends NamedElement
+rule CollectionType {
+	from partialOrm : ORM!CollectionType
+	to orm : ORM!CollectionType (
+		collectionType <- partialOrm.collectionType,
+		elementType <- partialOrm.elementType,
+-- TODO, following should be in gen model
+		persistenceType <-
+			if partialOrm.collectionType = #"OrderedSet" then
+				'list'
+			else
+				partialOrm.collectionType.toString().toLower()
+			endif,
+		javaInterfaceType <-
+			if partialOrm.collectionType = #"Set" then
+				'java.util.Set'
+			else
+				'java.util.List'
+			endif,
+		javaImplementationType <-
+			if partialOrm.collectionType = #"Set" then
+				'java.util.HashSet'
+			else
+				'java.util.LinkedList'
+			endif
+	)
+}
+
+-- @extends Classifier
+rule DataType {
+	from partialOrm : ORM!DataType (partialOrm.oclIsTypeOf(ORM!DataType))
+	to orm : ORM!DataType (
+	)
+}
+
+-- @extends Classifier
+rule EnumerationType {
+	from partialOrm : ORM!EnumerationType
+	to orm : ORM!EnumerationType (
+		enumerations <- partialOrm.enumerations
+	)
+}
+
+-- @extends NamedDisplayElement
+rule EnumerationLiteral {
+	from partialOrm : ORM!EnumerationLiteral
+	to orm : ORM!EnumerationLiteral (
+	)
+}
+
+
+-- @extends Classifier
+rule Entity {
+	from partialOrm : ORM!Entity
+	to orm : ORM!Entity	(
+		contains <- partialOrm.contains,
+		features <- partialOrm.features,
+		displayFeatures <- partialOrm.displayFeatures,
+		displayFormat <- partialOrm.displayFormat
+	)
+}
+
+-- @extends NamedDisplayElement
+abstract rule Feature {
+	from partialOrm : ORM!Feature
+	to orm : ORM!Feature (
+		inputField <- partialOrm.inputField,
+		headerClass <- partialOrm.headerClass,
+		inputClass <- partialOrm.inputClass,
+		displayClass <- partialOrm.displayClass,
+		footerClass <- partialOrm.footerClass
+	)
+}
+
+-- @extends Feature
+abstract rule Attribute {
+	from partialOrm : ORM!Attribute
+	to orm : ORM!Attribute (
+	)
+}
+
+-- @extends Attribute
+abstract rule SingletonAttribute {
+	from partialOrm : ORM!SingletonAttribute
+	to orm : ORM!SingletonAttribute (
+		required <- partialOrm.required,
+		"unique" <- partialOrm."unique",
+		defaultValue <- partialOrm.defaultValue
+	)
+}
+
+-- @extends Attribute
+abstract rule CollectionAttribute {
+	from partialOrm : ORM!CollectionAttribute
+	to orm : ORM!CollectionAttribute (
+	)
+}
+
+-- @extends SingletonAttribute
+rule SingletonElement {
+	from partialOrm : ORM!SingletonElement
+	to orm : ORM!SingletonElement (
+		dataType <- partialOrm.dataType,
+		obfuscateFormFields <- partialOrm.obfuscateFormFields,
+		caseInsensitive <- partialOrm.caseInsensitive,
+		encrypt <- partialOrm.encrypt
+	)
+}
+
+-- @extends CollectionAttribute
+rule CollectionElement {
+	from partialOrm : ORM!CollectionElement
+	to orm : ORM!CollectionElement (
+		collectionType <- partialOrm.collectionType
+	)
+}
+
+abstract rule DateAttribute {
+	from partialOrm : ORM!DateAttribute
+	to orm : ORM!DateAttribute (
+		details <- partialOrm.details
+	)
+}
+
+-- @extends SingletonAttribute, DateAttribute
+rule SingletonDate {
+	from partialOrm : ORM!SingletonDate
+	to orm : ORM!SingletonDate (
+	)
+}
+
+-- @extends CollectionAttribute, DateAttribute
+rule CollectionDate {
+	from partialOrm : ORM!CollectionDate
+	to orm : ORM!CollectionDate (
+	)
+}
+
+-- @extends SingletonAttribute
+rule SingletonFile {
+	from partialOrm : ORM!SingletonFile
+	to orm : ORM!SingletonFile (
+		maximumUploadSize <- partialOrm.maximumUploadSize,
+		validUploadMimeTypes <- partialOrm.validUploadMimeTypes,
+		validUploadExtensions <- partialOrm.validUploadExtensions,
+		uploadsWithinWebsite <- partialOrm.uploadsWithinWebsite,
+		relativeUploadDirectory <- partialOrm.relativeUploadDirectory
+	)
+}
+
+-- @extends SingletonAttribute
+rule SingletonLocation {
+	from partialOrm : ORM!SingletonLocation
+	to orm : ORM!SingletonLocation (
+	)
+}
+
+-- @extends Feature
+abstract rule Association {
+	from partialOrm : ORM!Association
+	to orm : ORM!Association (
+		opposite <- partialOrm.opposite,
+		sourceEnd <- partialOrm.sourceEnd,
+		bidirectional <- partialOrm.bidirectional,
+		containment <- partialOrm.containment
+	)
+}
+
+-- @extends Association
+rule SingletonAssociation {
+	from partialOrm : ORM!SingletonAssociation
+	to orm : ORM!SingletonAssociation (
+		required <- partialOrm.required,
+		associationRelationship <- partialOrm.associationRelationship
+	)
+}
+
+-- @extends Association
+rule CollectionAssociation {
+	from partialOrm : ORM!CollectionAssociation
+	to orm : ORM!CollectionAssociation (
+		collectionType <- partialOrm.collectionType,
+		associationRelationship <- partialOrm.associationRelationship
+	)
+}

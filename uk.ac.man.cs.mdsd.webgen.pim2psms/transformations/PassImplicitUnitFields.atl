@@ -1,0 +1,198 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+-- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+
+module PassImplicitUnitFields;
+create jsf : JSF from orm : ORM, partialJsf : JSF;
+
+uses WebsiteHelpers;
+uses CopyPartialJsf;
+
+
+-- @extends NamedDisplayElement, ContentUnitFields
+abstract rule ContentUnit {
+	from partialJsf : JSF!ContentUnit
+	to jsf : JSF!ContentUnit (
+	)
+}
+
+-- @extends ContentUnit, StaticUnitFields
+rule StaticUnit {
+	from partialJsf : JSF!StaticUnit
+	to jsf : JSF!StaticUnit (
+	)
+}
+
+-- @extends ContentUnit, DynamicUnitFields
+abstract rule DynamicUnit {
+	from partialJsf : JSF!DynamicUnit
+	to jsf : JSF!DynamicUnit (
+		displayFields <-
+			if partialJsf.displayFields->notEmpty() then
+				partialJsf.displayFields
+			else
+				partialJsf.service.features
+					->select(f | f.oclIsTypeOf(JSF!ServiceEntityElement))
+					->select(f | f.forcedValue.oclIsUndefined())
+					->collect(f | thisModule.implicitUnitElement(f))
+				->union(partialJsf.service.features
+					->select(f | f.oclIsTypeOf(JSF!ServiceAssociation))
+					->select(f | f.forcedValue.oclIsUndefined())
+					->select(f | not partialJsf.oclIsTypeOf(JSF!IndexUnit) and not partialJsf.oclIsTypeOf(JSF!CreateUnit))
+					->collect(f | thisModule.implicitUnitAssociation(f)))
+				endif
+	)
+}
+
+lazy abstract rule implicitUnitFeature {
+	from partialJsf : JSF!ServiceEntityFeature
+	to jsf : JSF!UnitFeature (
+		name <- partialJsf.name,
+		cardinality <- partialJsf.cardinality,
+		onlyDisplayWhenNotEmpty <- false,
+		-- from IncludedFeature
+		displayLabel <- partialJsf.displayLabel,
+		headerClass <- partialJsf.headerClass,
+		inputClass <- partialJsf.inputClass,
+		displayClass <- partialJsf.displayClass,
+		footerClass <- partialJsf.footerClass
+	)
+}
+
+--@extends implicitUnitFeature
+lazy rule implicitUnitElement {
+	from partialJsf : JSF!ServiceEntityElement
+	to jsf : JSF!UnitElement (
+		serviceFeature <- partialJsf,
+		dateFormat <- partialJsf.dateFormat
+	)
+	do {
+		jsf;
+	}
+}
+
+--@extends implicitUnitFeature
+lazy rule implicitUnitAssociation {
+	from partialJsf : JSF!ServiceAssociation
+	to jsf : JSF!UnitAssociation (
+		serviceFeature <- partialJsf
+	)
+	do {
+		jsf;
+	}
+}
+
+
+-- @extends DynamicUnit, EditUnitFields
+abstract rule EditUnit {
+	from partialJsf : JSF!EditUnit
+	to jsf : JSF!EditUnit (
+	)
+}
+
+-- @extends EditUnit
+rule CreateUnit {
+	from partialJsf : JSF!CreateUnit
+	to jsf : JSF!CreateUnit (
+	)
+}
+
+-- @extends EditUnit, CreateUpdateUnitFields
+rule CreateUpdateUnit {
+	from partialJsf : JSF!CreateUpdateUnit
+	to jsf : JSF!CreateUpdateUnit (
+	)
+}
+
+-- @extends EditUnit
+rule UpdateUnit {
+	from partialJsf : JSF!UpdateUnit
+	to jsf : JSF!UpdateUnit (
+	)
+}
+
+-- @extends DynamicUnit, DataUnitFields
+abstract rule DataUnit {
+	from partialJsf : JSF!DataUnit
+	to jsf : JSF!DataUnit (
+	)
+}
+
+-- @extends DataUnit, DetailsUnitFields
+rule DetailsUnit {
+	from partialJsf : JSF!DetailsUnit
+	to jsf : JSF!DetailsUnit (
+	)
+}
+
+-- @extends DataUnit, IndexUnitFields
+abstract rule IndexUnit {
+	from partialJsf : JSF!IndexUnit
+	to jsf : JSF!IndexUnit (
+	)
+}
+
+-- @extends IndexUnit
+rule IndexGridUnit {
+	from partialJsf : JSF!IndexGridUnit
+	to jsf : JSF!IndexGridUnit (
+	)
+}
+
+-- @extends IndexUnit
+rule IndexPageDirectionUnit {
+	from partialJsf : JSF!IndexPageDirectionUnit
+	to jsf : JSF!IndexPageDirectionUnit (
+	)
+}
+
+-- @extends IndexUnit
+rule IndexLineDirectionUnit {
+	from partialJsf : JSF!IndexLineDirectionUnit
+	to jsf : JSF!IndexLineDirectionUnit (
+	)
+}
+
+-- @extends DynamicUnit, ControlUnitFields
+abstract rule ControlUnit {
+	from partialJsf : JSF!ControlUnit
+	to jsf : JSF!ControlUnit (
+	)
+}
+
+-- @extends ControlUnit, SearchUnitFields
+rule SearchUnit {
+	from partialJsf : JSF!SearchUnit
+	to jsf : JSF!SearchUnit (
+	)
+}
+
+-- @extends ControlUnit, ActionUnitFields
+rule ActionUnit {
+	from partialJsf : JSF!ActionUnit
+	to jsf : JSF!ActionUnit (
+	)
+}
+
+-- @extends EditUnit
+rule RegistrationUnit {
+	from partialJsf : JSF!RegistrationUnit
+	to jsf : JSF!RegistrationUnit (
+	)
+}
+
+-- @extends ControlUnit, LoginUnitFields
+rule LoginUnit {
+	from partialJsf : JSF!LoginUnit
+	to jsf : JSF!LoginUnit (
+	)
+}
+
+-- @extends ControlUnit
+rule ForgottenPasswordUnit {
+	from partialJsf : JSF!ForgottenPasswordUnit
+	to jsf : JSF!ForgottenPasswordUnit (
+	)
+}

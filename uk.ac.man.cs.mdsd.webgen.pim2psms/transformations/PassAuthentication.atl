@@ -1,0 +1,471 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+-- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+
+module PassAuthentication;
+create jsf : JSF from website : Website, orm : ORM, partialJsf : JSF;
+
+uses WebsiteHelpers;
+uses CopyPartialJsf;
+
+
+helper def: findWebsiteProperties() : Website!WebsiteProperties
+	= Website!WebsiteProperties.allInstancesFrom('website')->first();
+
+
+rule JsfModel {
+	from website : Website!WebGenModel, partialJsf : JSF!JsfModel
+	to jsf : JSF!JsfModel (
+		properties <- partialJsf.properties,
+		persistence <- partialJsf.persistence,
+		services <- partialJsf.services,
+		pages <- partialJsf.pages
+			->union(
+				if website.websiteProperties.authentication.oclIsUndefined() then
+					Sequence{}
+				else if website.websiteProperties.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
+					let authentication : Website!LocalAuthenticationSystem
+						= website.websiteProperties.authentication.oclAsType(Website!LocalAuthenticationSystem)
+					in if authentication.loginUnit.oclIsUndefined() then
+							Sequence{thisModule.implicitLoginPage(authentication)}
+						else
+							Sequence{}
+						endif
+				else
+					Sequence{}
+				endif endif)
+			->union(
+				if website.websiteProperties.authentication.oclIsUndefined() then
+					Sequence{}
+				else if website.websiteProperties.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
+					let authentication : Website!LocalAuthenticationSystem
+						= website.websiteProperties.authentication.oclAsType(Website!LocalAuthenticationSystem)
+					in if authentication.authenticationSource.oclIsUndefined() then
+							Sequence{
+								thisModule.implicitRegistrationPage(authentication),
+								thisModule.implicitManageAuthenticationsPage(authentication)}
+						else
+							Sequence{}
+						endif
+				else
+					Sequence{}
+				endif endif),
+		menus <- partialJsf.menus
+	)
+}
+
+rule JsfProperties {
+	from partialJsf : JSF!JsfProperties
+	to jsf : JSF!JsfProperties (
+		siteName <- partialJsf.siteName,
+		siteTitle <- partialJsf.siteTitle,
+		webmasterEmail <- partialJsf.webmasterEmail,
+		copyrightText <- partialJsf.copyrightText,
+		metaDescription <- partialJsf.metaDescription,
+		frameworkTechnology <- partialJsf.frameworkTechnology,
+		authentication <- thisModule.findWebsiteProperties().authentication,
+		topNavigationId <- partialJsf.topNavigationId,
+		staticUnitsEditable <- partialJsf.staticUnitsEditable
+	)
+}
+
+
+abstract rule Authentication {
+	from website : Website!Authentication
+	to jsf : JSF!Authentication (
+		loginLabel <- website.loginLabel,
+		logoutLabel <- website.logoutLabel
+	)
+}
+
+-- @extends Authentication
+rule LocalAuthenticationSystem {
+	from website : Website!LocalAuthenticationSystem
+	to jsf : JSF!LocalAuthenticationSystem (
+		userService <- thisModule.findJsfService(website.userSource.name),
+		userAuthenticationKey <-
+			thisModule.findJsfService(website.userSource.name)
+				.features->any(f | f.name = website.userAuthenticationKey.name),
+		authenticationService <-
+			if not website.authenticationSource.oclIsUndefined() then
+				if website.authenticationSource.oclIsTypeOf(Website!Service) then
+					website.authenticationSource
+				else
+					thisModule.findJsfService(website.authenticationSource.name)
+				endif
+			else
+				thisModule.findJsfService('Authentication')
+			endif,
+		loginAttemptService <-
+			if website.trackLoginAttempts then
+				thisModule.findJsfService('LoginAttempt')
+			else
+				OclUndefined
+			endif,
+		allowSelfRegistration <- website.allowSelfRegistration,
+		autoLoginService <-
+			if website.allowAutoLogin then
+				thisModule.findJsfService('AutoLogin')
+			else
+				OclUndefined
+			endif,
+		useEmailActivation <- website.useEmailActivation,
+		sendWelcomeEmail <- website.sendWelcomeEmail,
+		useCaptcha <- website.useCaptcha,
+		registrationUnit <-
+			if not website.registrationUnit.oclIsUndefined() then
+				website.registrationUnit
+			else
+				thisModule.implicitRegistrationUnit(website)
+			endif,
+		loginUnit <-
+			if not website.loginUnit.oclIsUndefined() then
+				website.loginUnit
+			else
+				thisModule.implicitLoginUnit(website)
+			endif,
+		forgottenPasswordUnit <-
+			if not website.forgottenPasswordUnit.oclIsUndefined() then
+				website.forgottenPasswordUnit
+			else if not website.loginUnit.oclIsUndefined() then
+				thisModule.implicitForgottenPasswordUnit(website)
+			else
+				OclUndefined
+			endif endif
+	)
+}
+
+-- @extends Authentication
+rule CasAuthentication {
+	from website : Website!CasAuthentication
+	to jsf : JSF!CasAuthentication (
+	)
+}
+
+
+unique lazy rule implicitRegistrationUnit {
+	from website : Website!LocalAuthenticationSystem
+	to jsf : JSF!RegistrationUnit (
+		name <- 'registerUser',
+		displayLabel <- 'Register User',
+		service <- thisModule.findJsfService('Authentication'),
+		omitCaption <- false,
+		confirmDestination <- 
+			if not website.loginUnit.oclIsUndefined() then
+				website.loginUnit.refImmediateComposite()
+			else
+				thisModule.implicitLoginPage(website)
+			endif,
+		confirmLabel <- 'Register',
+		displayFields <-
+			let includedFeatures : Sequence(JSF!IncludedFeature)
+				= thisModule.findJsfService('Authentication').features
+					->select(f | f.name = 'username' or f.name = 'email' or f.name = 'password')
+				in includedFeatures->select(f | f.name = 'username')
+					->collect(f | thisModule.implicitUnitElement(f))
+				->union(includedFeatures->select(f | f.name = 'email')
+					->collect(f | thisModule.implicitUnitElement(f)))
+				->union(Sequence{confirmEmail})
+				->union(includedFeatures->select(f | f.name = 'password')
+					->collect(f | thisModule.implicitUnitElement(f)))
+				->union(Sequence{confirmPassword})
+				->union(if website.useCaptcha then
+						Sequence{thisModule.implicitCaptchaField(website)}
+					else
+						Sequence{}
+					endif),
+		styleClass <- 'unit register_unit framed',
+		headerClass <- 'unit_header',
+		captionClass <- 'unit_caption',
+		controlClass <- 'unit_control',
+		footerClass <- 'unit_footer',
+		errorClass <- 'error',
+		layoutClass <- 'input_form'
+	),
+	confirmEmail : JSF!DataTypeField (
+		name <- 'confirmEmail',
+		dataType <- thisModule.findOrmDataType('Email'),
+		cardinality <- #Required,
+		caseInsensitive <- true,
+		displayLabel <- 'Confirm Email',
+		inputClass <- 'input_attribute'
+		),
+	confirmPassword : JSF!DataTypeField (
+		name <- 'confirmPassword',
+		dataType <- thisModule.findOrmDataType('String'),
+		cardinality <- #Required,
+		obfuscateFormFields <- true,
+		encrypt <- true,
+		displayLabel <- 'Confirm Password',
+		inputClass <- 'input_attribute'
+	)
+	do {
+		jsf;
+	}
+}
+
+unique lazy rule implicitLoginUnit {
+	from website : Website!LocalAuthenticationSystem
+	to jsf : JSF!LoginUnit (
+		name <- 'Login',
+		displayLabel <- 'Login',
+		service <- thisModule.findJsfService('Authentication'),
+		omitCaption <- false,
+		submitLabel <- 'Login',
+		displayFields <-
+			let includedFeatures : Sequence(JSF!IncludedFeature)
+				= thisModule.findJsfService('Authentication').features
+					->select(f | f.name = 'email' or f.name = 'password')
+				in includedFeatures->select(f | f.name = 'email')
+					->collect(f | thisModule.implicitUnitElement(f))
+				->union(includedFeatures->select(f | f.name = 'password')
+					->collect(f | thisModule.implicitUnitElement(f)))
+				->union(if website.allowAutoLogin then
+						Sequence{thisModule.implicitRememberMeField(website)}
+					else
+						Sequence{}
+					endif),
+-- assigned in next pass		loginIdField <- OclUndefined,
+-- assigned in next pass		passwordField <- OclUndefined,
+-- assigned in next pass		rememberMeField <- rememberMe,
+		styleClass <- 'unit login_unit framed',
+		headerClass <- 'unit_header',
+		captionClass <- 'unit_caption',
+		controlClass <- 'unit_control',
+		footerClass <- 'unit_footer',
+		errorClass <- 'error',
+		layoutClass <- 'control_form'
+	)
+	do {
+		jsf;
+	}
+}
+
+unique lazy rule implicitRememberMeField {
+	from website : Website!LocalAuthenticationSystem
+	to jsf : JSF!DataTypeField (
+		name <- 'rememberMe',
+		dataType <- thisModule.findOrmDataType('Boolean'),
+		cardinality <- #Optional,
+		displayLabel <- 'Remember Me',
+		inputClass <- 'input_checkbox'
+	)
+	do {
+		jsf;
+	}
+}
+
+unique lazy rule implicitForgottenPasswordUnit {
+	from website : Website!LocalAuthenticationSystem
+	to jsf : JSF!ForgottenPasswordUnit (
+		name <- 'ForgottenPassword',
+		displayLabel <- 'Recover Forgotten Password',
+		service <- thisModule.findJsfService('Authentication'),
+		omitCaption <- false,
+		submitLabel <- 'Recover Password',
+		displayFields <-
+			let includedFeatures : Sequence(JSF!IncludedFeature)
+				= thisModule.findJsfService('Authentication').features
+					->select(f | f.name = 'email')
+				in includedFeatures
+					->collect(f | thisModule.implicitUnitElement(f)),
+-- assigned in next pass		loginIdField <- OclUndefined,
+		styleClass <- 'unit forgotten_password_unit framed',
+		headerClass <- 'unit_header',
+		captionClass <- 'unit_caption',
+		controlClass <- 'unit_control',
+		footerClass <- 'unit_footer',
+		errorClass <- 'error',
+		layoutClass <- 'control_form'
+	)
+	do {
+		jsf;
+	}
+}
+
+
+lazy abstract rule implicitIncludedFeature {
+	from partialJsf : JSF!IncludedFeature
+	to jsf : JSF!IncludedFeature (
+		displayLabel <- partialJsf.displayLabel,
+		headerClass <- partialJsf.headerClass,
+		inputClass <- partialJsf.inputClass,
+		displayClass <- partialJsf.displayClass,
+		footerClass <- partialJsf.footerClass
+	)
+}
+
+-- @extends implicitIncludedFeature
+lazy abstract rule implicitIncludedElement {
+	from partialJsf : JSF!IncludedElement
+	to jsf : JSF!IncludedElement (
+		obfuscateFormFields <- partialJsf.obfuscateFormFields,
+		dateFormat <- partialJsf.dateFormat
+	)
+}
+
+-- @extends implicitIncludedFeature
+lazy abstract rule implicitIncludedAssociation {
+	from partialJsf : JSF!IncludedAssociation
+	to jsf : JSF!IncludedAssociation (
+	)
+}
+
+--@extends implicitIncludedFeature
+lazy abstract rule implicitUnitFeature {
+	from partialJsf : JSF!ServiceEntityFeature
+	to jsf : JSF!UnitFeature (
+		name <- partialJsf.name,
+		cardinality <- partialJsf.cardinality,
+		onlyDisplayWhenNotEmpty <- false
+	)
+}
+
+-- @extends implicitUnitFeature, implicitIncludedElement
+lazy rule implicitUnitElement {
+	from partialJsf : JSF!ServiceEntityElement
+	to jsf : JSF!UnitElement (
+		serviceFeature <- partialJsf
+	)
+	do {
+		jsf;
+	}
+}
+
+lazy rule implicitCaptchaField {
+	from website : Website!LocalAuthenticationSystem
+	to jsf : JSF!CaptchaField (
+		name <- 'captcha',
+		publicKey <- website.captchaPublicKey,
+		privateKey <- website.captchaPrivateKey
+	)
+	do {
+		jsf;
+	}
+}
+
+unique lazy rule implicitRegistrationPage {
+	from website : Website!LocalAuthenticationSystem
+	to jsf : JSF!Page (
+		name <- 'RegisterAuthentication',
+		displayLabel <- 'Register Authentication',
+		units <- Sequence{thisModule.implicitRegistrationUnit(website)},
+		authenticated <- not website.allowSelfRegistration,
+		navigationLabel <- 'Register',
+		sideMenu <-
+			let sideMenu : Website!Menu
+				= thisModule.findWebsiteProperties().sideMenu
+			in if sideMenu.oclIsUndefined() then
+					OclUndefined
+				else
+					thisModule.findPartialJsfMenu(sideMenu.name)
+				endif
+	)
+	do {
+		jsf;
+	}
+}
+
+unique lazy rule implicitLoginPage {
+	from website : Website!LocalAuthenticationSystem
+	to jsf : JSF!Page (
+		name <- 'Authentication',
+		displayLabel <- 'Login',
+		units <- Sequence{thisModule.implicitLoginUnit(website)}
+			->union(
+				if website.forgottenPasswordUnit.oclIsUndefined() then
+					Sequence{thisModule.implicitForgottenPasswordUnit(website)}
+				else
+					Sequence{}
+				endif),
+		authenticated <- false,
+		navigationLabel <- 'Login',
+		sideMenu <-
+			let sideMenu : Website!Menu
+				= thisModule.findWebsiteProperties().sideMenu
+			in if sideMenu.oclIsUndefined() then
+					OclUndefined
+				else
+					thisModule.findPartialJsfMenu(sideMenu.name)
+				endif
+	)
+	do {
+		jsf;
+	}
+}
+
+unique lazy rule implicitManageAuthenticationsPage {
+	from website : Website!LocalAuthenticationSystem
+	to jsf : JSF!Page (
+		name <- 'ManageAuthentications',
+		displayLabel <- 'Manage Authentications',
+		units <- Sequence{users, editUser},
+		authenticated <- true,
+		topMenuOption <- #IncludeWhenAuthenticated,
+		topMenuRank <- 100,
+		navigationLabel <- 'Authentications',
+		sideMenu <-
+			let sideMenu : Website!Menu
+				= thisModule.findWebsiteProperties().sideMenu
+			in if sideMenu.oclIsUndefined() then
+					OclUndefined
+				else
+					thisModule.findPartialJsfMenu(sideMenu.name)
+				endif
+	),
+	users : JSF!IndexGridUnit (
+		name <- 'users',
+		displayLabel <- 'Users',
+		service <- thisModule.findJsfService('Authentication'),
+		omitCaption <- false,
+		defaultPaginationSize <- 10,
+		nextPageLabel <- '>',
+		previousPageLabel <- '<',
+		displayFields <-
+			let includedFeatures : Sequence(JSF!IncludedFeature)
+				= thisModule.findJsfService('Authentication').features
+					->select(f | f.name = 'username' or f.name = 'email' or f.name = 'lastLogin')
+				in includedFeatures
+					->collect(f | thisModule.implicitUnitElement(f)),
+		actions <- Sequence{editUserAction},
+		styleClass <- 'unit index_unit framed',
+		headerClass <- 'unit_header',
+		captionClass <- 'unit_caption',
+		controlClass <- 'unit_control',
+		footerClass <- 'unit_footer',
+		errorClass <- 'error',
+		layoutClass <- 'index_layout',
+		rowClasses <- 'odd_row even_row'
+	),
+	editUserAction : JSF!SelectAction (
+		name <- 'edit',
+		displayLabel <- 'Edit',
+		target <- editUser
+	),
+	editUser : JSF!UpdateUnit (
+		name <- 'editUser',
+		displayLabel <- 'Edit User',
+		service <- thisModule.findJsfService('Authentication'),
+		omitCaption <- false,
+		confirmLabel <- 'Save',
+		displayFields <-
+			let includedFeatures : Sequence(JSF!IncludedFeature)
+				= thisModule.findJsfService('Authentication').features
+					->select(f | f.name <> 'password')
+				in includedFeatures
+					->select(f | f.oclIsKindOf(JSF!IncludedElement))
+					->collect(f | thisModule.implicitUnitElement(f)),
+		styleClass <- 'unit update_unit framed',
+		headerClass <- 'unit_header',
+		captionClass <- 'unit_caption',
+		controlClass <- 'unit_control',
+		footerClass <- 'unit_footer',
+		errorClass <- 'error',
+		layoutClass <- 'input_form'
+	)
+	do {
+		jsf;
+	}
+}

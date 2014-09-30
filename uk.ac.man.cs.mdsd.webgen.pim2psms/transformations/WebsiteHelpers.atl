@@ -1,0 +1,83 @@
+-- @atlcompiler emftvm
+
+library WebsiteHelpers;
+
+helper context String def: lowercaseFirst() : String
+	= self.substring(1, 1).toLower().concat(self.substring(2, self.size()));
+
+helper context String def: uppercaseFirst() : String
+	= self.substring(1, 1).toUpper().concat(self.substring(2, self.size()));
+
+helper context String def: createLabel() : String
+	= if self.trim().replaceAll('[A-Z]', '') = '' then
+			self
+		else
+			self.replaceAll('([A-Z])', ' $1').trim().uppercaseFirst()
+		endif;
+
+
+helper def: findWebsiteProperties() : Website!WebsiteProperties
+	= Website!WebGenModel.allInstancesFrom('website')->first().websiteProperties;
+
+
+helper context Website!Association def: targetFeatureName() : String
+	= if not self.targetFeatureName.oclIsUndefined() and self.targetFeatureName <> '' then
+			self.targetFeatureName
+		else
+			'inv'.concat(self.name.uppercaseFirst())
+		endif;
+
+helper context Website!Association def: targetDisplayLabel() : String
+	= if not self.targetDisplayLabel.oclIsUndefined() and self.targetDisplayLabel <> '' then
+			self.targetDisplayLabel
+		else
+			self.targetFeatureName().createLabel()
+		endif;
+
+
+helper context Website!Feature def: collectionType() : ORM!CollectionType
+    = if self."unique" then
+		if self.ordered then
+			#"OrderedSet"
+		else
+			#"Set"
+		endif
+	else
+		if self.ordered then
+			#List
+		else
+			#"Bag"
+		endif
+	endif;
+
+helper context Website!Feature def: inverseCollectionType() : ORM!CollectionType
+    = if self.targetUnique then
+		#"Set"
+	else
+		#"Bag"
+	endif;
+
+
+helper def: findOrmDataType(name : String) : ORM!DataType
+	= ORM!DataType.allInstancesFrom('orm')->any(d | d.name = name);
+
+helper def: findPartialOrmDataType(name : String) : ORM!DataType
+	= ORM!DataType.allInstancesFrom('partialOrm')->any(d | d.name = name);
+
+helper def: findOrmEntity(name : String) : ORM!Entity
+	= ORM!Entity.allInstancesFrom('orm')->any(e | e.name = name);
+
+helper def: findPartialOrmEntity(name : String) : ORM!Entity
+	= ORM!Entity.allInstancesFrom('partialOrm')->any(d | d.name = name);
+
+helper context ORM!Entity def: getOrmFeature(featureName : String) : Website!Feature
+	= self.features->any(f | f.name = featureName);
+
+
+helper def: findJsfService(name : String) : JSF!Service
+	= JSF!Service.allInstancesFrom('partialJsf')->any(d | d.name = name);
+
+
+helper def: findPartialJsfMenu(name : String) : JSF!Menu
+	= JSF!Menu.allInstancesFrom('partialJsf')->select(m | m.name = name)->first();
+

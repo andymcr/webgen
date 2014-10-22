@@ -47,8 +47,14 @@ rule OrmModel {
 					Sequence{thisModule.implicitStringDataType(thisModule.findWebsiteAuthentication())}
 				else
 					Sequence{}
+				endif)
+			->union(
+				if thisModule.findPartialOrmDataType('Email').oclIsUndefined() then
+					Sequence{thisModule.implicitEmailDataType(thisModule.findWebsiteAuthentication())}
+				else
+					Sequence{}
 				endif),
-		entities <- partialOrm.entities
+				entities <- partialOrm.entities
 			->union(let authentication : Website!Authentication
 				= website.websiteProperties.authentication
 				in if authentication.oclIsUndefined() then

@@ -162,13 +162,15 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//DateAttribute/details"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DateAttribute/format"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//FileAttribute">
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//FileAttribute/maximumUploadSize"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//FileAttribute/validUploadMimeTypes"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//FileAttribute/validUploadExtensions"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//FileAttribute/uploadsWithinWebsite"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//FileAttribute/relativeUploadDirectory"/>
+    <genClasses image="false" ecoreClass="website.ecore#//ResourceAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ResourceAttribute/maximumUploadSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ResourceAttribute/validUploadMimeTypes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ResourceAttribute/validUploadExtensions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ResourceAttribute/uploadsWithinWebsite"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ResourceAttribute/relativeUploadDirectory"/>
     </genClasses>
+    <genClasses ecoreClass="website.ecore#//FileAttribute"/>
+    <genClasses ecoreClass="website.ecore#//ImageAttribute"/>
     <genClasses ecoreClass="website.ecore#//LocationAttribute"/>
     <genClasses ecoreClass="website.ecore#//Association">
       <genFeatures property="None" notify="false" createChild="false" propertyCategory="Model"

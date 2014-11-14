@@ -218,7 +218,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FileAttribute" eSuperTypes="#//Attribute">
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceAttribute" abstract="true" eSuperTypes="#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumUploadSize" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validUploadMimeTypes" ordered="false"
@@ -230,6 +230,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="relativeUploadDirectory"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FileAttribute" eSuperTypes="#//ResourceAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageAttribute" eSuperTypes="#//ResourceAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="LocationAttribute" eSuperTypes="#//Attribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="Association" abstract="true" eSuperTypes="#//Feature">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -390,7 +392,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicLabel" eType="#//ModelLabel"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceViewAssociation" eSuperTypes="#//NamedDisplayElement #//ServiceAssociation">
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceViewAssociation" eSuperTypes="#//NamedElement #//ServiceAssociation #//IncludedFeature">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="targetMustBeInView"/>
     </eAnnotations>
@@ -623,7 +625,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if serviceFeature.oclIsUndefined() then&#xD;&#xA;&#x9;if feature.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;feature.name&#xD;&#xA;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;serviceFeature.name&#xD;&#xA;endif"/>
+        <details key="derivation" value="if serviceFeature.oclIsUndefined() then&#xD;&#xA;&#x9;if feature.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;feature.name&#xD;&#xA;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;if serviceFeature.alias.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;serviceFeature.name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;serviceFeature.alias&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceFeature" ordered="false"

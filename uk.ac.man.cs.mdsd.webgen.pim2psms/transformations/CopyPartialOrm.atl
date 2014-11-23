@@ -177,14 +177,28 @@ rule CollectionDate {
 }
 
 -- @extends SingletonAttribute
-rule SingletonFile {
-	from partialOrm : ORM!SingletonFile
-	to orm : ORM!SingletonFile (
+abstract rule SingletonResource {
+	from partialOrm : ORM!SingletonResource
+	to orm : ORM!SingletonResource (
 		maximumUploadSize <- partialOrm.maximumUploadSize,
 		validUploadMimeTypes <- partialOrm.validUploadMimeTypes,
 		validUploadExtensions <- partialOrm.validUploadExtensions,
 		uploadsWithinWebsite <- partialOrm.uploadsWithinWebsite,
 		relativeUploadDirectory <- partialOrm.relativeUploadDirectory
+	)
+}
+
+-- @extends SingletonResource
+rule SingletonFile {
+	from partialOrm : ORM!SingletonFile
+	to orm : ORM!SingletonFile (
+	)
+}
+
+-- @extends SingletonResource
+rule SingletonImage {
+	from partialOrm : ORM!SingletonImage
+	to orm : ORM!SingletonImage (
 	)
 }
 

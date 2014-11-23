@@ -258,7 +258,7 @@
             href="website.ecore#//Entity/features"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//LocationAttribute"/>
+              href="website.ecore#//ImageAttribute"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -270,11 +270,32 @@
               xsi:type="gmftool:CreationTool"
               href="website.gmftool#//@palette/@tools.6/@tools.7"/>
           <diagramNode
+              href="website.gmfgraph#ImageAttribute"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.4/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="website.ecore#//Entity/features"/>
+        <ownedChild>
+          <domainMetaElement
+              href="website.ecore#//LocationAttribute"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="website.gmfgraph#AttributeNameLabel"/>
+            <features
+                href="website.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="website.gmftool#//@palette/@tools.6/@tools.8"/>
+          <diagramNode
               href="website.gmfgraph#LocationAttribute"/>
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.1 //@nodes.4/@ownedChild/@children.2 //@nodes.4/@ownedChild/@children.3">
+          children="//@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.1 //@nodes.4/@ownedChild/@children.2 //@nodes.4/@ownedChild/@children.4 //@nodes.4/@ownedChild/@children.3">
         <compartment
             href="website.gmfgraph#AttributeCompartment"/>
       </compartments>
@@ -2685,7 +2706,7 @@
         href="website.ecore#//Entity/features"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="website.gmftool#//@palette/@tools.6/@tools.8"/>
+        href="website.gmftool#//@palette/@tools.6/@tools.9"/>
     <diagramLink
         href="website.gmfgraph#UncontainedAssociation"/>
     <linkMetaFeature
@@ -2716,7 +2737,7 @@
         href="website.ecore#//Entity/features"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="website.gmftool#//@palette/@tools.6/@tools.9"/>
+        href="website.gmftool#//@palette/@tools.6/@tools.10"/>
     <diagramLink
         href="website.gmfgraph#ContainedAssociation"/>
     <linkMetaFeature

@@ -125,6 +125,15 @@ public interface OrmFactory extends EFactory {
 	SingletonFile createSingletonFile();
 
 	/**
+	 * Returns a new object of class '<em>Singleton Image</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Singleton Image</em>'.
+	 * @generated
+	 */
+	SingletonImage createSingletonImage();
+
+	/**
 	 * Returns a new object of class '<em>Singleton Location</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

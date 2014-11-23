@@ -1403,14 +1403,14 @@ public interface OrmPackage extends EPackage {
 	int COLLECTION_DATE_FEATURE_COUNT = COLLECTION_ATTRIBUTE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonFileImpl <em>Singleton File</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonResourceImpl <em>Singleton Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.orm.impl.SingletonFileImpl
-	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getSingletonFile()
+	 * @see uk.ac.man.cs.mdsd.orm.impl.SingletonResourceImpl
+	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getSingletonResource()
 	 * @generated
 	 */
-	int SINGLETON_FILE = 18;
+	int SINGLETON_RESOURCE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1419,7 +1419,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__NAME = SINGLETON_ATTRIBUTE__NAME;
+	int SINGLETON_RESOURCE__NAME = SINGLETON_ATTRIBUTE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -1428,7 +1428,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__DISPLAY_LABEL = SINGLETON_ATTRIBUTE__DISPLAY_LABEL;
+	int SINGLETON_RESOURCE__DISPLAY_LABEL = SINGLETON_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
@@ -1437,7 +1437,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__PARENT_ENTITY = SINGLETON_ATTRIBUTE__PARENT_ENTITY;
+	int SINGLETON_RESOURCE__PARENT_ENTITY = SINGLETON_ATTRIBUTE__PARENT_ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Input Field</b></em>' attribute.
@@ -1446,7 +1446,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__INPUT_FIELD = SINGLETON_ATTRIBUTE__INPUT_FIELD;
+	int SINGLETON_RESOURCE__INPUT_FIELD = SINGLETON_ATTRIBUTE__INPUT_FIELD;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -1455,7 +1455,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__HEADER_CLASS = SINGLETON_ATTRIBUTE__HEADER_CLASS;
+	int SINGLETON_RESOURCE__HEADER_CLASS = SINGLETON_ATTRIBUTE__HEADER_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -1464,7 +1464,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__INPUT_CLASS = SINGLETON_ATTRIBUTE__INPUT_CLASS;
+	int SINGLETON_RESOURCE__INPUT_CLASS = SINGLETON_ATTRIBUTE__INPUT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -1473,7 +1473,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__DISPLAY_CLASS = SINGLETON_ATTRIBUTE__DISPLAY_CLASS;
+	int SINGLETON_RESOURCE__DISPLAY_CLASS = SINGLETON_ATTRIBUTE__DISPLAY_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -1482,7 +1482,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__FOOTER_CLASS = SINGLETON_ATTRIBUTE__FOOTER_CLASS;
+	int SINGLETON_RESOURCE__FOOTER_CLASS = SINGLETON_ATTRIBUTE__FOOTER_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -1491,7 +1491,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__REQUIRED = SINGLETON_ATTRIBUTE__REQUIRED;
+	int SINGLETON_RESOURCE__REQUIRED = SINGLETON_ATTRIBUTE__REQUIRED;
 
 	/**
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
@@ -1500,7 +1500,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__UNIQUE = SINGLETON_ATTRIBUTE__UNIQUE;
+	int SINGLETON_RESOURCE__UNIQUE = SINGLETON_ATTRIBUTE__UNIQUE;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
@@ -1509,7 +1509,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__DEFAULT_VALUE = SINGLETON_ATTRIBUTE__DEFAULT_VALUE;
+	int SINGLETON_RESOURCE__DEFAULT_VALUE = SINGLETON_ATTRIBUTE__DEFAULT_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
@@ -1518,7 +1518,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__MAXIMUM_UPLOAD_SIZE = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 0;
+	int SINGLETON_RESOURCE__MAXIMUM_UPLOAD_SIZE = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Valid Upload Mime Types</b></em>' attribute list.
@@ -1527,7 +1527,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__VALID_UPLOAD_MIME_TYPES = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 1;
+	int SINGLETON_RESOURCE__VALID_UPLOAD_MIME_TYPES = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Valid Upload Extensions</b></em>' attribute list.
@@ -1536,7 +1536,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__VALID_UPLOAD_EXTENSIONS = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 2;
+	int SINGLETON_RESOURCE__VALID_UPLOAD_EXTENSIONS = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Uploads Within Website</b></em>' attribute.
@@ -1545,7 +1545,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__UPLOADS_WITHIN_WEBSITE = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 3;
+	int SINGLETON_RESOURCE__UPLOADS_WITHIN_WEBSITE = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Relative Upload Directory</b></em>' attribute.
@@ -1554,7 +1554,170 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE__RELATIVE_UPLOAD_DIRECTORY = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 4;
+	int SINGLETON_RESOURCE__RELATIVE_UPLOAD_DIRECTORY = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Singleton Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_RESOURCE_FEATURE_COUNT = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 5;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonFileImpl <em>Singleton File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.orm.impl.SingletonFileImpl
+	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getSingletonFile()
+	 * @generated
+	 */
+	int SINGLETON_FILE = 19;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__NAME = SINGLETON_RESOURCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__DISPLAY_LABEL = SINGLETON_RESOURCE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__PARENT_ENTITY = SINGLETON_RESOURCE__PARENT_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Input Field</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__INPUT_FIELD = SINGLETON_RESOURCE__INPUT_FIELD;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__HEADER_CLASS = SINGLETON_RESOURCE__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__INPUT_CLASS = SINGLETON_RESOURCE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__DISPLAY_CLASS = SINGLETON_RESOURCE__DISPLAY_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__FOOTER_CLASS = SINGLETON_RESOURCE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__REQUIRED = SINGLETON_RESOURCE__REQUIRED;
+
+	/**
+	 * The feature id for the '<em><b>Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__UNIQUE = SINGLETON_RESOURCE__UNIQUE;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__DEFAULT_VALUE = SINGLETON_RESOURCE__DEFAULT_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__MAXIMUM_UPLOAD_SIZE = SINGLETON_RESOURCE__MAXIMUM_UPLOAD_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Valid Upload Mime Types</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__VALID_UPLOAD_MIME_TYPES = SINGLETON_RESOURCE__VALID_UPLOAD_MIME_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Valid Upload Extensions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__VALID_UPLOAD_EXTENSIONS = SINGLETON_RESOURCE__VALID_UPLOAD_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Uploads Within Website</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__UPLOADS_WITHIN_WEBSITE = SINGLETON_RESOURCE__UPLOADS_WITHIN_WEBSITE;
+
+	/**
+	 * The feature id for the '<em><b>Relative Upload Directory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__RELATIVE_UPLOAD_DIRECTORY = SINGLETON_RESOURCE__RELATIVE_UPLOAD_DIRECTORY;
 
 	/**
 	 * The number of structural features of the '<em>Singleton File</em>' class.
@@ -1563,7 +1726,170 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_FILE_FEATURE_COUNT = SINGLETON_ATTRIBUTE_FEATURE_COUNT + 5;
+	int SINGLETON_FILE_FEATURE_COUNT = SINGLETON_RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonImageImpl <em>Singleton Image</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.orm.impl.SingletonImageImpl
+	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getSingletonImage()
+	 * @generated
+	 */
+	int SINGLETON_IMAGE = 20;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__NAME = SINGLETON_RESOURCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__DISPLAY_LABEL = SINGLETON_RESOURCE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__PARENT_ENTITY = SINGLETON_RESOURCE__PARENT_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Input Field</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__INPUT_FIELD = SINGLETON_RESOURCE__INPUT_FIELD;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__HEADER_CLASS = SINGLETON_RESOURCE__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__INPUT_CLASS = SINGLETON_RESOURCE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__DISPLAY_CLASS = SINGLETON_RESOURCE__DISPLAY_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__FOOTER_CLASS = SINGLETON_RESOURCE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__REQUIRED = SINGLETON_RESOURCE__REQUIRED;
+
+	/**
+	 * The feature id for the '<em><b>Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__UNIQUE = SINGLETON_RESOURCE__UNIQUE;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__DEFAULT_VALUE = SINGLETON_RESOURCE__DEFAULT_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__MAXIMUM_UPLOAD_SIZE = SINGLETON_RESOURCE__MAXIMUM_UPLOAD_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Valid Upload Mime Types</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__VALID_UPLOAD_MIME_TYPES = SINGLETON_RESOURCE__VALID_UPLOAD_MIME_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Valid Upload Extensions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__VALID_UPLOAD_EXTENSIONS = SINGLETON_RESOURCE__VALID_UPLOAD_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Uploads Within Website</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__UPLOADS_WITHIN_WEBSITE = SINGLETON_RESOURCE__UPLOADS_WITHIN_WEBSITE;
+
+	/**
+	 * The feature id for the '<em><b>Relative Upload Directory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__RELATIVE_UPLOAD_DIRECTORY = SINGLETON_RESOURCE__RELATIVE_UPLOAD_DIRECTORY;
+
+	/**
+	 * The number of structural features of the '<em>Singleton Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE_FEATURE_COUNT = SINGLETON_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonLocationImpl <em>Singleton Location</em>}' class.
@@ -1573,7 +1899,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getSingletonLocation()
 	 * @generated
 	 */
-	int SINGLETON_LOCATION = 19;
+	int SINGLETON_LOCATION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1691,7 +2017,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getAssociation()
 	 * @generated
 	 */
-	int ASSOCIATION = 20;
+	int ASSOCIATION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1818,7 +2144,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getSingletonAssociation()
 	 * @generated
 	 */
-	int SINGLETON_ASSOCIATION = 21;
+	int SINGLETON_ASSOCIATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1963,7 +2289,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getCollectionAssociation()
 	 * @generated
 	 */
-	int COLLECTION_ASSOCIATION = 22;
+	int COLLECTION_ASSOCIATION = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2108,7 +2434,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 23;
+	int CARDINALITY = 25;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.DatabaseTechnologies <em>Database Technologies</em>}' enum.
@@ -2118,7 +2444,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getDatabaseTechnologies()
 	 * @generated
 	 */
-	int DATABASE_TECHNOLOGIES = 24;
+	int DATABASE_TECHNOLOGIES = 26;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.CollectionTypes <em>Collection Types</em>}' enum.
@@ -2128,7 +2454,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getCollectionTypes()
 	 * @generated
 	 */
-	int COLLECTION_TYPES = 25;
+	int COLLECTION_TYPES = 27;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.DateDetails <em>Date Details</em>}' enum.
@@ -2138,7 +2464,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 26;
+	int DATE_DETAILS = 28;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.SingletonAssociationRelationships <em>Singleton Association Relationships</em>}' enum.
@@ -2148,7 +2474,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getSingletonAssociationRelationships()
 	 * @generated
 	 */
-	int SINGLETON_ASSOCIATION_RELATIONSHIPS = 27;
+	int SINGLETON_ASSOCIATION_RELATIONSHIPS = 29;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.CollectionAssociationRelationships <em>Collection Association Relationships</em>}' enum.
@@ -2158,7 +2484,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getCollectionAssociationRelationships()
 	 * @generated
 	 */
-	int COLLECTION_ASSOCIATION_RELATIONSHIPS = 28;
+	int COLLECTION_ASSOCIATION_RELATIONSHIPS = 30;
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.orm.OrmModel <em>Model</em>}'.
@@ -2704,6 +3030,71 @@ public interface OrmPackage extends EPackage {
 	EClass getCollectionDate();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.orm.SingletonResource <em>Singleton Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Singleton Resource</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.SingletonResource
+	 * @generated
+	 */
+	EClass getSingletonResource();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.SingletonResource#getMaximumUploadSize <em>Maximum Upload Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Maximum Upload Size</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.SingletonResource#getMaximumUploadSize()
+	 * @see #getSingletonResource()
+	 * @generated
+	 */
+	EAttribute getSingletonResource_MaximumUploadSize();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link uk.ac.man.cs.mdsd.orm.SingletonResource#getValidUploadMimeTypes <em>Valid Upload Mime Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Valid Upload Mime Types</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.SingletonResource#getValidUploadMimeTypes()
+	 * @see #getSingletonResource()
+	 * @generated
+	 */
+	EAttribute getSingletonResource_ValidUploadMimeTypes();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link uk.ac.man.cs.mdsd.orm.SingletonResource#getValidUploadExtensions <em>Valid Upload Extensions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Valid Upload Extensions</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.SingletonResource#getValidUploadExtensions()
+	 * @see #getSingletonResource()
+	 * @generated
+	 */
+	EAttribute getSingletonResource_ValidUploadExtensions();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.SingletonResource#isUploadsWithinWebsite <em>Uploads Within Website</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uploads Within Website</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.SingletonResource#isUploadsWithinWebsite()
+	 * @see #getSingletonResource()
+	 * @generated
+	 */
+	EAttribute getSingletonResource_UploadsWithinWebsite();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.SingletonResource#getRelativeUploadDirectory <em>Relative Upload Directory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Relative Upload Directory</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.SingletonResource#getRelativeUploadDirectory()
+	 * @see #getSingletonResource()
+	 * @generated
+	 */
+	EAttribute getSingletonResource_RelativeUploadDirectory();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.orm.SingletonFile <em>Singleton File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2714,59 +3105,14 @@ public interface OrmPackage extends EPackage {
 	EClass getSingletonFile();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.SingletonFile#getMaximumUploadSize <em>Maximum Upload Size</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.orm.SingletonImage <em>Singleton Image</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Maximum Upload Size</em>'.
-	 * @see uk.ac.man.cs.mdsd.orm.SingletonFile#getMaximumUploadSize()
-	 * @see #getSingletonFile()
+	 * @return the meta object for class '<em>Singleton Image</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.SingletonImage
 	 * @generated
 	 */
-	EAttribute getSingletonFile_MaximumUploadSize();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link uk.ac.man.cs.mdsd.orm.SingletonFile#getValidUploadMimeTypes <em>Valid Upload Mime Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Valid Upload Mime Types</em>'.
-	 * @see uk.ac.man.cs.mdsd.orm.SingletonFile#getValidUploadMimeTypes()
-	 * @see #getSingletonFile()
-	 * @generated
-	 */
-	EAttribute getSingletonFile_ValidUploadMimeTypes();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link uk.ac.man.cs.mdsd.orm.SingletonFile#getValidUploadExtensions <em>Valid Upload Extensions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Valid Upload Extensions</em>'.
-	 * @see uk.ac.man.cs.mdsd.orm.SingletonFile#getValidUploadExtensions()
-	 * @see #getSingletonFile()
-	 * @generated
-	 */
-	EAttribute getSingletonFile_ValidUploadExtensions();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.SingletonFile#isUploadsWithinWebsite <em>Uploads Within Website</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uploads Within Website</em>'.
-	 * @see uk.ac.man.cs.mdsd.orm.SingletonFile#isUploadsWithinWebsite()
-	 * @see #getSingletonFile()
-	 * @generated
-	 */
-	EAttribute getSingletonFile_UploadsWithinWebsite();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.SingletonFile#getRelativeUploadDirectory <em>Relative Upload Directory</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Relative Upload Directory</em>'.
-	 * @see uk.ac.man.cs.mdsd.orm.SingletonFile#getRelativeUploadDirectory()
-	 * @see #getSingletonFile()
-	 * @generated
-	 */
-	EAttribute getSingletonFile_RelativeUploadDirectory();
+	EClass getSingletonImage();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.orm.SingletonLocation <em>Singleton Location</em>}'.
@@ -3423,6 +3769,56 @@ public interface OrmPackage extends EPackage {
 		EClass COLLECTION_DATE = eINSTANCE.getCollectionDate();
 
 		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonResourceImpl <em>Singleton Resource</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.orm.impl.SingletonResourceImpl
+		 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getSingletonResource()
+		 * @generated
+		 */
+		EClass SINGLETON_RESOURCE = eINSTANCE.getSingletonResource();
+
+		/**
+		 * The meta object literal for the '<em><b>Maximum Upload Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SINGLETON_RESOURCE__MAXIMUM_UPLOAD_SIZE = eINSTANCE.getSingletonResource_MaximumUploadSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Valid Upload Mime Types</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SINGLETON_RESOURCE__VALID_UPLOAD_MIME_TYPES = eINSTANCE.getSingletonResource_ValidUploadMimeTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Valid Upload Extensions</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SINGLETON_RESOURCE__VALID_UPLOAD_EXTENSIONS = eINSTANCE.getSingletonResource_ValidUploadExtensions();
+
+		/**
+		 * The meta object literal for the '<em><b>Uploads Within Website</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SINGLETON_RESOURCE__UPLOADS_WITHIN_WEBSITE = eINSTANCE.getSingletonResource_UploadsWithinWebsite();
+
+		/**
+		 * The meta object literal for the '<em><b>Relative Upload Directory</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SINGLETON_RESOURCE__RELATIVE_UPLOAD_DIRECTORY = eINSTANCE.getSingletonResource_RelativeUploadDirectory();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonFileImpl <em>Singleton File</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3433,44 +3829,14 @@ public interface OrmPackage extends EPackage {
 		EClass SINGLETON_FILE = eINSTANCE.getSingletonFile();
 
 		/**
-		 * The meta object literal for the '<em><b>Maximum Upload Size</b></em>' attribute feature.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonImageImpl <em>Singleton Image</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.orm.impl.SingletonImageImpl
+		 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getSingletonImage()
 		 * @generated
 		 */
-		EAttribute SINGLETON_FILE__MAXIMUM_UPLOAD_SIZE = eINSTANCE.getSingletonFile_MaximumUploadSize();
-
-		/**
-		 * The meta object literal for the '<em><b>Valid Upload Mime Types</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SINGLETON_FILE__VALID_UPLOAD_MIME_TYPES = eINSTANCE.getSingletonFile_ValidUploadMimeTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Valid Upload Extensions</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SINGLETON_FILE__VALID_UPLOAD_EXTENSIONS = eINSTANCE.getSingletonFile_ValidUploadExtensions();
-
-		/**
-		 * The meta object literal for the '<em><b>Uploads Within Website</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SINGLETON_FILE__UPLOADS_WITHIN_WEBSITE = eINSTANCE.getSingletonFile_UploadsWithinWebsite();
-
-		/**
-		 * The meta object literal for the '<em><b>Relative Upload Directory</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SINGLETON_FILE__RELATIVE_UPLOAD_DIRECTORY = eINSTANCE.getSingletonFile_RelativeUploadDirectory();
+		EClass SINGLETON_IMAGE = eINSTANCE.getSingletonImage();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonLocationImpl <em>Singleton Location</em>}' class.

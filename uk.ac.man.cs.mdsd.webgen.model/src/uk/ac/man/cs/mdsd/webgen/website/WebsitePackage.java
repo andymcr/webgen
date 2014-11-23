@@ -377,7 +377,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAssociation()
 	 * @generated
 	 */
-	int ASSOCIATION = 18;
+	int ASSOCIATION = 20;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationWithoutContainmentImpl <em>Association Without Containment</em>}' class.
@@ -387,7 +387,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAssociationWithoutContainment()
 	 * @generated
 	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT = 19;
+	int ASSOCIATION_WITHOUT_CONTAINMENT = 21;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationWithContainmentImpl <em>Association With Containment</em>}' class.
@@ -397,7 +397,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAssociationWithContainment()
 	 * @generated
 	 */
-	int ASSOCIATION_WITH_CONTAINMENT = 20;
+	int ASSOCIATION_WITH_CONTAINMENT = 22;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectTargetImpl <em>Select Target</em>}' class.
@@ -407,7 +407,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelectTarget()
 	 * @generated
 	 */
-	int SELECT_TARGET = 85;
+	int SELECT_TARGET = 87;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl <em>Page</em>}' class.
@@ -417,7 +417,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPage()
 	 * @generated
 	 */
-	int PAGE = 33;
+	int PAGE = 35;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageLinkImpl <em>Page Link</em>}' class.
@@ -427,7 +427,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPageLink()
 	 * @generated
 	 */
-	int PAGE_LINK = 34;
+	int PAGE_LINK = 36;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl <em>Service</em>}' class.
@@ -437,7 +437,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getService()
 	 * @generated
 	 */
-	int SERVICE = 24;
+	int SERVICE = 26;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl <em>Content Unit</em>}' class.
@@ -447,7 +447,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getContentUnit()
 	 * @generated
 	 */
-	int CONTENT_UNIT = 49;
+	int CONTENT_UNIT = 51;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature <em>Included Feature</em>}' class.
@@ -457,7 +457,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIncludedFeature()
 	 * @generated
 	 */
-	int INCLUDED_FEATURE = 21;
+	int INCLUDED_FEATURE = 23;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitSource <em>Unit Source</em>}' class.
@@ -467,7 +467,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitSource()
 	 * @generated
 	 */
-	int UNIT_SOURCE = 47;
+	int UNIT_SOURCE = 49;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl <em>Edit Unit</em>}' class.
@@ -477,7 +477,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getEditUnit()
 	 * @generated
 	 */
-	int EDIT_UNIT = 68;
+	int EDIT_UNIT = 70;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUnitImpl <em>Create Unit</em>}' class.
@@ -487,7 +487,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCreateUnit()
 	 * @generated
 	 */
-	int CREATE_UNIT = 69;
+	int CREATE_UNIT = 71;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataUnitImpl <em>Data Unit</em>}' class.
@@ -497,7 +497,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDataUnit()
 	 * @generated
 	 */
-	int DATA_UNIT = 73;
+	int DATA_UNIT = 75;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UpdateUnitImpl <em>Update Unit</em>}' class.
@@ -507,7 +507,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUpdateUnit()
 	 * @generated
 	 */
-	int UPDATE_UNIT = 71;
+	int UPDATE_UNIT = 73;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl <em>Details Unit</em>}' class.
@@ -517,7 +517,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDetailsUnit()
 	 * @generated
 	 */
-	int DETAILS_UNIT = 74;
+	int DETAILS_UNIT = 76;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl <em>Index Unit</em>}' class.
@@ -527,7 +527,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIndexUnit()
 	 * @generated
 	 */
-	int INDEX_UNIT = 75;
+	int INDEX_UNIT = 77;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectActionImpl <em>Select Action</em>}' class.
@@ -537,7 +537,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 86;
+	int SELECT_ACTION = 88;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DeleteActionImpl <em>Delete Action</em>}' class.
@@ -547,7 +547,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 87;
+	int DELETE_ACTION = 89;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl <em>Authentication</em>}' class.
@@ -1609,14 +1609,14 @@ public interface WebsitePackage extends EPackage {
 	int DATE_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FileAttributeImpl <em>File Attribute</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl <em>Resource Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.FileAttributeImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFileAttribute()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getResourceAttribute()
 	 * @generated
 	 */
-	int FILE_ATTRIBUTE = 16;
+	int RESOURCE_ATTRIBUTE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1625,7 +1625,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
+	int RESOURCE_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -1634,7 +1634,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__DISPLAY_LABEL = ATTRIBUTE__DISPLAY_LABEL;
+	int RESOURCE_ATTRIBUTE__DISPLAY_LABEL = ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
@@ -1643,7 +1643,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__PARENT_ENTITY = ATTRIBUTE__PARENT_ENTITY;
+	int RESOURCE_ATTRIBUTE__PARENT_ENTITY = ATTRIBUTE__PARENT_ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -1652,7 +1652,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__CARDINALITY = ATTRIBUTE__CARDINALITY;
+	int RESOURCE_ATTRIBUTE__CARDINALITY = ATTRIBUTE__CARDINALITY;
 
 	/**
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
@@ -1661,7 +1661,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__UNIQUE = ATTRIBUTE__UNIQUE;
+	int RESOURCE_ATTRIBUTE__UNIQUE = ATTRIBUTE__UNIQUE;
 
 	/**
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
@@ -1670,7 +1670,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__ORDERED = ATTRIBUTE__ORDERED;
+	int RESOURCE_ATTRIBUTE__ORDERED = ATTRIBUTE__ORDERED;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -1679,7 +1679,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__HEADER_CLASS = ATTRIBUTE__HEADER_CLASS;
+	int RESOURCE_ATTRIBUTE__HEADER_CLASS = ATTRIBUTE__HEADER_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -1688,7 +1688,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__DISPLAY_CLASS = ATTRIBUTE__DISPLAY_CLASS;
+	int RESOURCE_ATTRIBUTE__DISPLAY_CLASS = ATTRIBUTE__DISPLAY_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -1697,7 +1697,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__FOOTER_CLASS = ATTRIBUTE__FOOTER_CLASS;
+	int RESOURCE_ATTRIBUTE__FOOTER_CLASS = ATTRIBUTE__FOOTER_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
@@ -1706,7 +1706,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__DEFAULT_VALUE = ATTRIBUTE__DEFAULT_VALUE;
+	int RESOURCE_ATTRIBUTE__DEFAULT_VALUE = ATTRIBUTE__DEFAULT_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -1715,7 +1715,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__PLACEHOLDER = ATTRIBUTE__PLACEHOLDER;
+	int RESOURCE_ATTRIBUTE__PLACEHOLDER = ATTRIBUTE__PLACEHOLDER;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -1724,7 +1724,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__VALIDATION_PATTERN = ATTRIBUTE__VALIDATION_PATTERN;
+	int RESOURCE_ATTRIBUTE__VALIDATION_PATTERN = ATTRIBUTE__VALIDATION_PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -1733,7 +1733,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__INPUT_CLASS = ATTRIBUTE__INPUT_CLASS;
+	int RESOURCE_ATTRIBUTE__INPUT_CLASS = ATTRIBUTE__INPUT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
@@ -1742,7 +1742,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE = ATTRIBUTE_FEATURE_COUNT + 0;
+	int RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE = ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Valid Upload Mime Types</b></em>' attribute list.
@@ -1751,7 +1751,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES = ATTRIBUTE_FEATURE_COUNT + 1;
+	int RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES = ATTRIBUTE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Valid Upload Extensions</b></em>' attribute list.
@@ -1760,7 +1760,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS = ATTRIBUTE_FEATURE_COUNT + 2;
+	int RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS = ATTRIBUTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Uploads Within Website</b></em>' attribute.
@@ -1769,7 +1769,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE = ATTRIBUTE_FEATURE_COUNT + 3;
+	int RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE = ATTRIBUTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Relative Upload Directory</b></em>' attribute.
@@ -1778,7 +1778,188 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY = ATTRIBUTE_FEATURE_COUNT + 4;
+	int RESOURCE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY = ATTRIBUTE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Resource Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 5;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FileAttributeImpl <em>File Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.FileAttributeImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFileAttribute()
+	 * @generated
+	 */
+	int FILE_ATTRIBUTE = 17;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__NAME = RESOURCE_ATTRIBUTE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__DISPLAY_LABEL = RESOURCE_ATTRIBUTE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__PARENT_ENTITY = RESOURCE_ATTRIBUTE__PARENT_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__CARDINALITY = RESOURCE_ATTRIBUTE__CARDINALITY;
+
+	/**
+	 * The feature id for the '<em><b>Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__UNIQUE = RESOURCE_ATTRIBUTE__UNIQUE;
+
+	/**
+	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__ORDERED = RESOURCE_ATTRIBUTE__ORDERED;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__HEADER_CLASS = RESOURCE_ATTRIBUTE__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__DISPLAY_CLASS = RESOURCE_ATTRIBUTE__DISPLAY_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__FOOTER_CLASS = RESOURCE_ATTRIBUTE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__DEFAULT_VALUE = RESOURCE_ATTRIBUTE__DEFAULT_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__PLACEHOLDER = RESOURCE_ATTRIBUTE__PLACEHOLDER;
+
+	/**
+	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__VALIDATION_PATTERN = RESOURCE_ATTRIBUTE__VALIDATION_PATTERN;
+
+	/**
+	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__INPUT_CLASS = RESOURCE_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE = RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Valid Upload Mime Types</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES = RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Valid Upload Extensions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS = RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Uploads Within Website</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE = RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE;
+
+	/**
+	 * The feature id for the '<em><b>Relative Upload Directory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY = RESOURCE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY;
 
 	/**
 	 * The number of structural features of the '<em>File Attribute</em>' class.
@@ -1787,7 +1968,188 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 5;
+	int FILE_ATTRIBUTE_FEATURE_COUNT = RESOURCE_ATTRIBUTE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageAttributeImpl <em>Image Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ImageAttributeImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getImageAttribute()
+	 * @generated
+	 */
+	int IMAGE_ATTRIBUTE = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__NAME = RESOURCE_ATTRIBUTE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__DISPLAY_LABEL = RESOURCE_ATTRIBUTE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__PARENT_ENTITY = RESOURCE_ATTRIBUTE__PARENT_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__CARDINALITY = RESOURCE_ATTRIBUTE__CARDINALITY;
+
+	/**
+	 * The feature id for the '<em><b>Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__UNIQUE = RESOURCE_ATTRIBUTE__UNIQUE;
+
+	/**
+	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__ORDERED = RESOURCE_ATTRIBUTE__ORDERED;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__HEADER_CLASS = RESOURCE_ATTRIBUTE__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__DISPLAY_CLASS = RESOURCE_ATTRIBUTE__DISPLAY_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__FOOTER_CLASS = RESOURCE_ATTRIBUTE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__DEFAULT_VALUE = RESOURCE_ATTRIBUTE__DEFAULT_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__PLACEHOLDER = RESOURCE_ATTRIBUTE__PLACEHOLDER;
+
+	/**
+	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__VALIDATION_PATTERN = RESOURCE_ATTRIBUTE__VALIDATION_PATTERN;
+
+	/**
+	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__INPUT_CLASS = RESOURCE_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE = RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Valid Upload Mime Types</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES = RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Valid Upload Extensions</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS = RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Uploads Within Website</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE = RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE;
+
+	/**
+	 * The feature id for the '<em><b>Relative Upload Directory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY = RESOURCE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY;
+
+	/**
+	 * The number of structural features of the '<em>Image Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE_FEATURE_COUNT = RESOURCE_ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocationAttributeImpl <em>Location Attribute</em>}' class.
@@ -1797,7 +2159,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getLocationAttribute()
 	 * @generated
 	 */
-	int LOCATION_ATTRIBUTE = 17;
+	int LOCATION_ATTRIBUTE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2545,7 +2907,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIncludedElement()
 	 * @generated
 	 */
-	int INCLUDED_ELEMENT = 22;
+	int INCLUDED_ELEMENT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2663,7 +3025,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIncludedAssociation()
 	 * @generated
 	 */
-	int INCLUDED_ASSOCIATION = 23;
+	int INCLUDED_ASSOCIATION = 25;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2835,7 +3197,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getModelLabel()
 	 * @generated
 	 */
-	int MODEL_LABEL = 25;
+	int MODEL_LABEL = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2890,7 +3252,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceFeature()
 	 * @generated
 	 */
-	int SERVICE_FEATURE = 27;
+	int SERVICE_FEATURE = 29;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation <em>Service Association</em>}' class.
@@ -2900,7 +3262,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceAssociation()
 	 * @generated
 	 */
-	int SERVICE_ASSOCIATION = 30;
+	int SERVICE_ASSOCIATION = 32;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl <em>Service View Association</em>}' class.
@@ -2910,7 +3272,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceViewAssociation()
 	 * @generated
 	 */
-	int SERVICE_VIEW_ASSOCIATION = 32;
+	int SERVICE_VIEW_ASSOCIATION = 34;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl <em>Selection</em>}' class.
@@ -2920,7 +3282,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelection()
 	 * @generated
 	 */
-	int SELECTION = 26;
+	int SELECTION = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3002,7 +3364,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceEntityFeature()
 	 * @generated
 	 */
-	int SERVICE_ENTITY_FEATURE = 28;
+	int SERVICE_ENTITY_FEATURE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3120,7 +3482,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceEntityElement()
 	 * @generated
 	 */
-	int SERVICE_ENTITY_ELEMENT = 29;
+	int SERVICE_ENTITY_ELEMENT = 31;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3346,7 +3708,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceEntityAssociation()
 	 * @generated
 	 */
-	int SERVICE_ENTITY_ASSOCIATION = 31;
+	int SERVICE_ENTITY_ASSOCIATION = 33;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3499,16 +3861,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__NAME = NAMED_DISPLAY_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_VIEW_ASSOCIATION__DISPLAY_LABEL = NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
+	int SERVICE_VIEW_ASSOCIATION__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -3517,7 +3870,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+	int SERVICE_VIEW_ASSOCIATION__PART_OF = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -3526,7 +3879,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__DATE_FORMAT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int SERVICE_VIEW_ASSOCIATION__DATE_FORMAT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -3535,7 +3888,79 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__SELECTION = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int SERVICE_VIEW_ASSOCIATION__SELECTION = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_VIEW_ASSOCIATION__DISPLAY_LABEL = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_VIEW_ASSOCIATION__REQUIRED = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_VIEW_ASSOCIATION__FORCED_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Footer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_VIEW_ASSOCIATION__FOOTER = NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_VIEW_ASSOCIATION__HEADER_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_VIEW_ASSOCIATION__INPUT_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_VIEW_ASSOCIATION__DISPLAY_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_VIEW_ASSOCIATION__FOOTER_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Target Feature</b></em>' reference.
@@ -3544,7 +3969,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE = NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Service View Association</em>' class.
@@ -3553,7 +3978,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int SERVICE_VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3671,7 +4096,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMenu()
 	 * @generated
 	 */
-	int MENU = 35;
+	int MENU = 37;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuEntryImpl <em>Menu Entry</em>}' class.
@@ -3681,7 +4106,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMenuEntry()
 	 * @generated
 	 */
-	int MENU_ENTRY = 36;
+	int MENU_ENTRY = 38;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuIncludedFeatureImpl <em>Menu Included Feature</em>}' class.
@@ -3691,7 +4116,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMenuIncludedFeature()
 	 * @generated
 	 */
-	int MENU_INCLUDED_FEATURE = 43;
+	int MENU_INCLUDED_FEATURE = 45;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuIncludedElementImpl <em>Menu Included Element</em>}' class.
@@ -3701,7 +4126,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMenuIncludedElement()
 	 * @generated
 	 */
-	int MENU_INCLUDED_ELEMENT = 44;
+	int MENU_INCLUDED_ELEMENT = 46;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.StaticMenuImpl <em>Static Menu</em>}' class.
@@ -3711,7 +4136,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getStaticMenu()
 	 * @generated
 	 */
-	int STATIC_MENU = 37;
+	int STATIC_MENU = 39;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicMenuImpl <em>Dynamic Menu</em>}' class.
@@ -3721,7 +4146,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDynamicMenu()
 	 * @generated
 	 */
-	int DYNAMIC_MENU = 42;
+	int DYNAMIC_MENU = 44;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitContainerImpl <em>Unit Container</em>}' class.
@@ -3731,7 +4156,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitContainer()
 	 * @generated
 	 */
-	int UNIT_CONTAINER = 46;
+	int UNIT_CONTAINER = 48;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField <em>Unit Field</em>}' class.
@@ -3741,7 +4166,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitField()
 	 * @generated
 	 */
-	int UNIT_FIELD = 56;
+	int UNIT_FIELD = 58;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl <em>Interface Field</em>}' class.
@@ -3751,7 +4176,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 63;
+	int INTERFACE_FIELD = 65;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl <em>Create Update Unit</em>}' class.
@@ -3761,7 +4186,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCreateUpdateUnit()
 	 * @generated
 	 */
-	int CREATE_UPDATE_UNIT = 70;
+	int CREATE_UPDATE_UNIT = 72;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.StaticUnitImpl <em>Static Unit</em>}' class.
@@ -3771,7 +4196,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getStaticUnit()
 	 * @generated
 	 */
-	int STATIC_UNIT = 50;
+	int STATIC_UNIT = 52;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl <em>Dynamic Unit</em>}' class.
@@ -3781,7 +4206,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDynamicUnit()
 	 * @generated
 	 */
-	int DYNAMIC_UNIT = 55;
+	int DYNAMIC_UNIT = 57;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuIncludedAssociationImpl <em>Menu Included Association</em>}' class.
@@ -3791,7 +4216,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMenuIncludedAssociation()
 	 * @generated
 	 */
-	int MENU_INCLUDED_ASSOCIATION = 45;
+	int MENU_INCLUDED_ASSOCIATION = 47;
 
 	/**
 	 * The feature id for the '<em><b>Target Page</b></em>' reference.
@@ -3981,7 +4406,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFixedPageMenuEntry()
 	 * @generated
 	 */
-	int FIXED_PAGE_MENU_ENTRY = 38;
+	int FIXED_PAGE_MENU_ENTRY = 40;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -4036,7 +4461,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFixedActionMenuEntry()
 	 * @generated
 	 */
-	int FIXED_ACTION_MENU_ENTRY = 39;
+	int FIXED_ACTION_MENU_ENTRY = 41;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -4091,7 +4516,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFixedCommandMenuEntry()
 	 * @generated
 	 */
-	int FIXED_COMMAND_MENU_ENTRY = 40;
+	int FIXED_COMMAND_MENU_ENTRY = 42;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -4146,7 +4571,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getEditStaticTextMenuEntry()
 	 * @generated
 	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY = 41;
+	int EDIT_STATIC_TEXT_MENU_ENTRY = 43;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -4435,7 +4860,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitTitle()
 	 * @generated
 	 */
-	int UNIT_TITLE = 48;
+	int UNIT_TITLE = 50;
 
 	/**
 	 * The number of structural features of the '<em>Unit Title</em>' class.
@@ -4607,7 +5032,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCommandUnit()
 	 * @generated
 	 */
-	int COMMAND_UNIT = 51;
+	int COMMAND_UNIT = 53;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4707,7 +5132,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCommand()
 	 * @generated
 	 */
-	int COMMAND = 52;
+	int COMMAND = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4744,7 +5169,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUserCommand()
 	 * @generated
 	 */
-	int USER_COMMAND = 53;
+	int USER_COMMAND = 55;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4781,7 +5206,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCreateSitemapUnit()
 	 * @generated
 	 */
-	int CREATE_SITEMAP_UNIT = 54;
+	int CREATE_SITEMAP_UNIT = 56;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5061,7 +5486,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitFeature()
 	 * @generated
 	 */
-	int UNIT_FEATURE = 57;
+	int UNIT_FEATURE = 59;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -5215,7 +5640,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitElement()
 	 * @generated
 	 */
-	int UNIT_ELEMENT = 58;
+	int UNIT_ELEMENT = 60;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -5432,7 +5857,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitAssociation()
 	 * @generated
 	 */
-	int UNIT_ASSOCIATION = 59;
+	int UNIT_ASSOCIATION = 61;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -5649,7 +6074,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitChildFeature()
 	 * @generated
 	 */
-	int UNIT_CHILD_FEATURE = 60;
+	int UNIT_CHILD_FEATURE = 62;
 
 	/**
 	 * The number of structural features of the '<em>Unit Child Feature</em>' class.
@@ -5668,7 +6093,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitChildElement()
 	 * @generated
 	 */
-	int UNIT_CHILD_ELEMENT = 61;
+	int UNIT_CHILD_ELEMENT = 63;
 
 	/**
 	 * The feature id for the '<em><b>Service Feature</b></em>' reference.
@@ -5696,7 +6121,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitChildAssociation()
 	 * @generated
 	 */
-	int UNIT_CHILD_ASSOCIATION = 62;
+	int UNIT_CHILD_ASSOCIATION = 64;
 
 	/**
 	 * The feature id for the '<em><b>Service Feature</b></em>' reference.
@@ -5814,7 +6239,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDataTypeField()
 	 * @generated
 	 */
-	int DATA_TYPE_FIELD = 64;
+	int DATA_TYPE_FIELD = 66;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5932,7 +6357,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDateField()
 	 * @generated
 	 */
-	int DATE_FIELD = 65;
+	int DATE_FIELD = 67;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6041,7 +6466,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCaptchaField()
 	 * @generated
 	 */
-	int CAPTCHA_FIELD = 66;
+	int CAPTCHA_FIELD = 68;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6114,7 +6539,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitSupportAction()
 	 * @generated
 	 */
-	int UNIT_SUPPORT_ACTION = 67;
+	int UNIT_SUPPORT_ACTION = 69;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6952,7 +7377,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMapUnit()
 	 * @generated
 	 */
-	int MAP_UNIT = 72;
+	int MAP_UNIT = 74;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7817,7 +8242,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 76;
+	int CONTROL_UNIT = 78;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8007,7 +8432,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 77;
+	int SEARCH_UNIT = 79;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8215,7 +8640,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getActionUnit()
 	 * @generated
 	 */
-	int ACTION_UNIT = 78;
+	int ACTION_UNIT = 80;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8423,7 +8848,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 79;
+	int AUTHENTICATION_UNIT = 81;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -8442,7 +8867,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 80;
+	int REGISTRATION_UNIT = 82;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8641,7 +9066,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 81;
+	int LOGIN_UNIT = 83;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8840,7 +9265,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 82;
+	int FORGOTTEN_PASSWORD_UNIT = 84;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9039,7 +9464,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 83;
+	int INLINE_ACTION_CONTAINER = 85;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -9067,7 +9492,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 84;
+	int INLINE_ACTION = 86;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9329,7 +9754,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 88;
+	int FEATURE_SUPPORT_ACTION = 90;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9420,7 +9845,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getModelReference()
 	 * @generated
 	 */
-	int MODEL_REFERENCE = 89;
+	int MODEL_REFERENCE = 91;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' reference.
@@ -9448,7 +9873,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 90;
+	int FEATURE_REFERENCE = 92;
 
 	/**
 	 * The feature id for the '<em><b>Field</b></em>' reference.
@@ -9476,7 +9901,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCurrentUserReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 91;
+	int CURRENT_USER_REFERENCE = 93;
 
 	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
@@ -9495,7 +9920,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDatabaseTechnologies()
 	 * @generated
 	 */
-	int DATABASE_TECHNOLOGIES = 92;
+	int DATABASE_TECHNOLOGIES = 94;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
@@ -9505,7 +9930,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 93;
+	int FRAMEWORK_TECHNOLOGIES = 95;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Cardinality <em>Cardinality</em>}' enum.
@@ -9515,7 +9940,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 94;
+	int CARDINALITY = 96;
 
 
 	/**
@@ -9526,7 +9951,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 95;
+	int DATE_DETAILS = 97;
 
 
 	/**
@@ -9537,7 +9962,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 96;
+	int PAGE_TOP_MENU_OPTIONS = 98;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -9547,7 +9972,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 97;
+	int COLLECTION_DISPLAY_OPTIONS = 99;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -9557,7 +9982,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 98;
+	int INDEX_DISPLAY_OPTION = 100;
 
 
 	/**
@@ -10219,6 +10644,71 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getDateAttribute_Format();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute <em>Resource Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Resource Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute
+	 * @generated
+	 */
+	EClass getResourceAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getMaximumUploadSize <em>Maximum Upload Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Maximum Upload Size</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getMaximumUploadSize()
+	 * @see #getResourceAttribute()
+	 * @generated
+	 */
+	EAttribute getResourceAttribute_MaximumUploadSize();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getValidUploadMimeTypes <em>Valid Upload Mime Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Valid Upload Mime Types</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getValidUploadMimeTypes()
+	 * @see #getResourceAttribute()
+	 * @generated
+	 */
+	EAttribute getResourceAttribute_ValidUploadMimeTypes();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getValidUploadExtensions <em>Valid Upload Extensions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Valid Upload Extensions</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getValidUploadExtensions()
+	 * @see #getResourceAttribute()
+	 * @generated
+	 */
+	EAttribute getResourceAttribute_ValidUploadExtensions();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#isUploadsWithinWebsite <em>Uploads Within Website</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uploads Within Website</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#isUploadsWithinWebsite()
+	 * @see #getResourceAttribute()
+	 * @generated
+	 */
+	EAttribute getResourceAttribute_UploadsWithinWebsite();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getRelativeUploadDirectory <em>Relative Upload Directory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Relative Upload Directory</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getRelativeUploadDirectory()
+	 * @see #getResourceAttribute()
+	 * @generated
+	 */
+	EAttribute getResourceAttribute_RelativeUploadDirectory();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.FileAttribute <em>File Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10229,59 +10719,14 @@ public interface WebsitePackage extends EPackage {
 	EClass getFileAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.FileAttribute#getMaximumUploadSize <em>Maximum Upload Size</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ImageAttribute <em>Image Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Maximum Upload Size</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.FileAttribute#getMaximumUploadSize()
-	 * @see #getFileAttribute()
+	 * @return the meta object for class '<em>Image Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageAttribute
 	 * @generated
 	 */
-	EAttribute getFileAttribute_MaximumUploadSize();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link uk.ac.man.cs.mdsd.webgen.website.FileAttribute#getValidUploadMimeTypes <em>Valid Upload Mime Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Valid Upload Mime Types</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.FileAttribute#getValidUploadMimeTypes()
-	 * @see #getFileAttribute()
-	 * @generated
-	 */
-	EAttribute getFileAttribute_ValidUploadMimeTypes();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link uk.ac.man.cs.mdsd.webgen.website.FileAttribute#getValidUploadExtensions <em>Valid Upload Extensions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Valid Upload Extensions</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.FileAttribute#getValidUploadExtensions()
-	 * @see #getFileAttribute()
-	 * @generated
-	 */
-	EAttribute getFileAttribute_ValidUploadExtensions();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.FileAttribute#isUploadsWithinWebsite <em>Uploads Within Website</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uploads Within Website</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.FileAttribute#isUploadsWithinWebsite()
-	 * @see #getFileAttribute()
-	 * @generated
-	 */
-	EAttribute getFileAttribute_UploadsWithinWebsite();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.FileAttribute#getRelativeUploadDirectory <em>Relative Upload Directory</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Relative Upload Directory</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.FileAttribute#getRelativeUploadDirectory()
-	 * @see #getFileAttribute()
-	 * @generated
-	 */
-	EAttribute getFileAttribute_RelativeUploadDirectory();
+	EClass getImageAttribute();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.LocationAttribute <em>Location Attribute</em>}'.
@@ -13837,6 +14282,56 @@ public interface WebsitePackage extends EPackage {
 		EAttribute DATE_ATTRIBUTE__FORMAT = eINSTANCE.getDateAttribute_Format();
 
 		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl <em>Resource Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getResourceAttribute()
+		 * @generated
+		 */
+		EClass RESOURCE_ATTRIBUTE = eINSTANCE.getResourceAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Maximum Upload Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE = eINSTANCE.getResourceAttribute_MaximumUploadSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Valid Upload Mime Types</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES = eINSTANCE.getResourceAttribute_ValidUploadMimeTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Valid Upload Extensions</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS = eINSTANCE.getResourceAttribute_ValidUploadExtensions();
+
+		/**
+		 * The meta object literal for the '<em><b>Uploads Within Website</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE = eINSTANCE.getResourceAttribute_UploadsWithinWebsite();
+
+		/**
+		 * The meta object literal for the '<em><b>Relative Upload Directory</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY = eINSTANCE.getResourceAttribute_RelativeUploadDirectory();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FileAttributeImpl <em>File Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13847,44 +14342,14 @@ public interface WebsitePackage extends EPackage {
 		EClass FILE_ATTRIBUTE = eINSTANCE.getFileAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Maximum Upload Size</b></em>' attribute feature.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageAttributeImpl <em>Image Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ImageAttributeImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getImageAttribute()
 		 * @generated
 		 */
-		EAttribute FILE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE = eINSTANCE.getFileAttribute_MaximumUploadSize();
-
-		/**
-		 * The meta object literal for the '<em><b>Valid Upload Mime Types</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FILE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES = eINSTANCE.getFileAttribute_ValidUploadMimeTypes();
-
-		/**
-		 * The meta object literal for the '<em><b>Valid Upload Extensions</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FILE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS = eINSTANCE.getFileAttribute_ValidUploadExtensions();
-
-		/**
-		 * The meta object literal for the '<em><b>Uploads Within Website</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FILE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE = eINSTANCE.getFileAttribute_UploadsWithinWebsite();
-
-		/**
-		 * The meta object literal for the '<em><b>Relative Upload Directory</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FILE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY = eINSTANCE.getFileAttribute_RelativeUploadDirectory();
+		EClass IMAGE_ATTRIBUTE = eINSTANCE.getImageAttribute();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocationAttributeImpl <em>Location Attribute</em>}' class.

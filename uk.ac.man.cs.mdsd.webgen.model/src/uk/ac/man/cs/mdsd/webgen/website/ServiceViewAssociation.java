@@ -20,7 +20,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL targetMustBeInView='not targetFeature.oclIsUndefined() implies targetFeature.partOf.view'"
  * @generated
  */
-public interface ServiceViewAssociation extends NamedDisplayElement, ServiceAssociation {
+public interface ServiceViewAssociation extends NamedElement, ServiceAssociation, IncludedFeature {
 	/**
 	 * Returns the value of the '<em><b>Target Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->

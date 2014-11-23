@@ -122,8 +122,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateDataTypeAttribute((DataTypeAttribute)value, diagnostics, context);
 			case WebsitePackage.DATE_ATTRIBUTE:
 				return validateDateAttribute((DateAttribute)value, diagnostics, context);
+			case WebsitePackage.RESOURCE_ATTRIBUTE:
+				return validateResourceAttribute((ResourceAttribute)value, diagnostics, context);
 			case WebsitePackage.FILE_ATTRIBUTE:
 				return validateFileAttribute((FileAttribute)value, diagnostics, context);
+			case WebsitePackage.IMAGE_ATTRIBUTE:
+				return validateImageAttribute((ImageAttribute)value, diagnostics, context);
 			case WebsitePackage.LOCATION_ATTRIBUTE:
 				return validateLocationAttribute((LocationAttribute)value, diagnostics, context);
 			case WebsitePackage.ASSOCIATION:
@@ -713,6 +717,25 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateResourceAttribute(ResourceAttribute resourceAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(resourceAttribute, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(resourceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(resourceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(resourceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(resourceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(resourceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(resourceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(resourceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(resourceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(resourceAttribute, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateFileAttribute(FileAttribute fileAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(fileAttribute, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(fileAttribute, diagnostics, context);
@@ -724,6 +747,25 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fileAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fileAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(fileAttribute, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateImageAttribute(ImageAttribute imageAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(imageAttribute, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(imageAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(imageAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(imageAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(imageAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(imageAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(imageAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(imageAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(imageAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(imageAttribute, diagnostics, context);
 		return result;
 	}
 

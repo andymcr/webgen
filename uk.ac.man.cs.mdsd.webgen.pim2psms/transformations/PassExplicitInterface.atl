@@ -69,6 +69,33 @@ helper context Website!ServiceEntityFeature def: cardinality(localRequired : Boo
 			endif
 		endif;
 
+helper context Website!ServiceEntityFeature def: targetCardinality() : Boolean
+		= if self.partOf.encapsulates->includes(self.feature.parentEntity) then
+			if self.feature.oclIsTypeOf(Website!AssociationWithContainment) then
+				#Required
+			else
+				if self.feature.targetCardinality = #Optional then
+					#Optional
+				else if self.feature.targetCardinality = #Required then
+					#Required
+				else 
+					#Many
+				endif endif
+			endif
+		else
+			if self.feature.cardinality = #Optional then
+				if self.required then
+					#Required
+				else
+					#Optional
+				endif
+			else if self.feature.cardinality = #Required then
+				#Required
+			else 
+				#Many
+			endif endif
+		endif;
+
 helper context Website!ServiceEntityFeature def: entityFeature() : ORM!Feature
 	= if self.partOf.encapsulates->includes(self.feature.parentEntity) then
 			thisModule.findOrmEntity(self.feature.parentEntity.name).getOrmFeature(self.feature.name)
@@ -159,23 +186,26 @@ helper context Website!UnitElement def: unitElementLabel() : String
 helper context Website!UnitAssociation def: unitAssociationLabel() : String
 	= if not self.displayLabel.oclIsUndefined() and  self.displayLabel <> '' then
 			self.displayLabel
-		else let  featureLabel : String
-			= let feature : Website!Feature = self.unitFeature()
-				in if not feature.displayLabel.oclIsUndefined() and feature.displayLabel <> '' then
-						feature.displayLabel
-					else
-						feature.name.createLabel()
-					endif
-			in if not self.serviceFeature.oclIsUndefined() then
-					if not self.serviceFeature.displayLabel.oclIsUndefined() and self.serviceFeature.displayLabel <> '' then
-						self.serviceFeature.displayLabel
+		else if self.serviceFeature.oclIsTypeOf(Website!ServiceEntityAssociation) then
+			let  featureLabel : String
+				= let feature : Website!Feature = self.unitFeature()
+					in if not feature.displayLabel.oclIsUndefined() and feature.displayLabel <> '' then
+							feature.displayLabel
+						else
+							feature.name.createLabel()
+						endif
+				in if not self.serviceFeature.oclIsUndefined() then
+						if not self.serviceFeature.displayLabel.oclIsUndefined() and self.serviceFeature.displayLabel <> '' then
+							self.serviceFeature.displayLabel
+						else
+							featureLabel
+						endif
 					else
 						featureLabel
 					endif
-				else
-					featureLabel
-				endif
-		endif;
+		else
+				''
+		endif endif;
 
 helper context Website!ServiceEntityFeature def: serviceDateFormat() : String
 	= if not self.feature.oclIsTypeOf(Website!DateAttribute) then
@@ -207,28 +237,44 @@ helper context Website!IncludedFeature def: jsfHeaderClass() : String
 	= if not self.headerClass.oclIsUndefined() and self.headerClass <> '' then
 			self.headerClass
 		else
-			self.feature.headerClass
+			if self.feature.oclIsUndefined() then
+				''
+			else
+				self.feature.headerClass
+			endif
 		endif;
 
 helper context Website!IncludedFeature def: jsfInputClass() : String
 	= if not self.inputClass.oclIsUndefined() and self.inputClass <> '' then
 			self.inputClass
 		else
-			self.feature.inputClass
+			if self.feature.oclIsUndefined() then
+				''
+			else
+				self.feature.inputClass
+			endif
 		endif;
 
 helper context Website!IncludedFeature def: jsfDisplayClass() : String
 	= if not self.displayClass.oclIsUndefined() and self.displayClass <> '' then
 			self.displayClass
 		else
-			self.feature.displayClass
+			if self.feature.oclIsUndefined() then
+				''
+			else
+				self.feature.displayClass
+			endif
 		endif;
 
 helper context Website!IncludedFeature def: jsfFooterClass() : String
 	= if not self.footerClass.oclIsUndefined() and self.footerClass <> '' then
 			self.footerClass
 		else
-			self.feature.footerClass
+			if self.feature.oclIsUndefined() then
+				''
+			else
+				self.feature.footerClass
+			endif
 		endif;
 
 helper context Website!Attribute def: placeholder() : String
@@ -389,7 +435,7 @@ abstract rule ServiceFeature {
 			if website.oclIsKindOf(Website!ServiceEntityFeature) then
 				website.cardinality(website.required)
 			else
-				#Required
+				website.targetFeature.targetCardinality()
 			endif,
 		dateFormat <-
 			if website.oclIsKindOf(Website!ServiceEntityFeature) then
@@ -675,7 +721,11 @@ abstract rule UnitField {
 	to jsf : JSF!UnitField (
 		cardinality <-
 			if website.oclIsKindOf(Website!UnitFeature) then
-				website.serviceFeature.cardinality(website.required)
+				if website.serviceFeature.oclIsKindOf(Website!ServiceEntityFeature) then
+					website.serviceFeature.cardinality(website.required)
+				else
+					website.serviceFeature.targetFeature.targetCardinality()
+				endif
 			else
 				if website.required then
 					#Required
@@ -683,7 +733,12 @@ abstract rule UnitField {
 					#Optional
 				endif
 			endif,
-		dateFormat <- website.unitDateFormat()
+		dateFormat <-
+			if website.serviceFeature.oclIsKindOf(Website!ServiceEntityFeature) then
+				website.unitDateFormat()
+			else
+				OclUndefined
+			endif
 	)
 }
 
@@ -735,16 +790,20 @@ rule UnitAssociation {
 	to jsf : JSF!UnitAssociation (
 		serviceFeature <- website.serviceFeature,
 		name <-
-			let parentEntities : Sequence(Website!Entiity)
-				= if website.displayedOn.source.oclIsTypeOf(Website!Entity) then
-						Sequence{website.displayedOn.source}
-					else
-						website.displayedOn.source.encapsulates
-					endif
-			in if parentEntities->contains(website.feature.parentEntity) then
-				website.name
+			if website.serviceFeature.oclIsTypeOf(Website!ServiceEntityAssociation) then
+				let parentEntities : Sequence(Website!Entiity)
+					= if website.displayedOn.source.oclIsTypeOf(Website!Entity) then
+							Sequence{website.displayedOn.source}
+						else
+							website.displayedOn.source.encapsulates
+						endif
+				in if parentEntities->contains(website.feature.parentEntity) then
+					website.name
+				else
+					website.feature.targetFeatureName()
+				endif
 			else
-				website.feature.targetFeatureName()
+				''
 			endif,
 		displayLabel <- website.unitAssociationLabel(),
 		childFeature <- website.childFeature,

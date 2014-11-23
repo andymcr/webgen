@@ -96,13 +96,15 @@
     </genClasses>
     <genClasses ecoreClass="orm.ecore#//SingletonDate"/>
     <genClasses ecoreClass="orm.ecore#//CollectionDate"/>
-    <genClasses ecoreClass="orm.ecore#//SingletonFile">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonFile/maximumUploadSize"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonFile/validUploadMimeTypes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonFile/validUploadExtensions"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonFile/uploadsWithinWebsite"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonFile/relativeUploadDirectory"/>
+    <genClasses image="false" ecoreClass="orm.ecore#//SingletonResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonResource/maximumUploadSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonResource/validUploadMimeTypes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonResource/validUploadExtensions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonResource/uploadsWithinWebsite"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonResource/relativeUploadDirectory"/>
     </genClasses>
+    <genClasses ecoreClass="orm.ecore#//SingletonFile"/>
+    <genClasses ecoreClass="orm.ecore#//SingletonImage"/>
     <genClasses ecoreClass="orm.ecore#//SingletonLocation"/>
     <genClasses image="false" ecoreClass="orm.ecore#//Association">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference orm.ecore#//Association/opposite"/>

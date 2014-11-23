@@ -7,17 +7,35 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 
 public abstract class WebgenItemProvider extends ItemProviderAdapter {
 	public WebgenItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+	}
+
+	protected Entity getType(final ServiceAssociation association) {
+		if (association instanceof ServiceEntityAssociation) {
+			final ServiceEntityAssociation entityAssociation = (ServiceEntityAssociation) association;
+			final Service localService = entityAssociation.getPartOf();
+			final Association feature = entityAssociation.getFeature();
+			if (localService.getEncapsulates().contains(feature.getParentEntity())) {
+				return feature.getTargetEntity();
+			} else {
+				return feature.getParentEntity();
+			}
+		}
+
+		return null;
 	}
 
 	protected List<Feature> getSourceFeatures(final DynamicUnit unit) {

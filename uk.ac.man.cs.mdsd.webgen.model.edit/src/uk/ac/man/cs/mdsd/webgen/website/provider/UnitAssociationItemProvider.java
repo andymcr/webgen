@@ -143,14 +143,14 @@ public class UnitAssociationItemProvider
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof UnitAssociation) {
-					final List<ServiceEntityAssociation> includedAssocations = new LinkedList<ServiceEntityAssociation>();
+					final List<ServiceAssociation> includedAssocations = new LinkedList<ServiceAssociation>();
 					final DynamicUnit unit = ((UnitAssociation) object).getDisplayedOn();
-						if (unit.getSource() instanceof Service) {
-							for (ServiceFeature includedFeature : ((Service) unit.getSource()).getFeatures()) {
-								if (includedFeature instanceof ServiceEntityAssociation) {
-									includedAssocations.add((ServiceEntityAssociation) includedFeature);
-								}
+					if (unit.getSource() instanceof Service) {
+						for (ServiceFeature includedFeature : ((Service) unit.getSource()).getFeatures()) {
+							if (includedFeature instanceof ServiceAssociation) {
+								includedAssocations.add((ServiceAssociation) includedFeature);
 							}
+						}
 					}
 					return includedAssocations;
 				}

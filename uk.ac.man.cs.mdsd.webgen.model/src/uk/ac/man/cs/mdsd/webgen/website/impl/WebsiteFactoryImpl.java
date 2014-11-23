@@ -72,6 +72,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE: return createDataTypeAttribute();
 			case WebsitePackage.DATE_ATTRIBUTE: return createDateAttribute();
 			case WebsitePackage.FILE_ATTRIBUTE: return createFileAttribute();
+			case WebsitePackage.IMAGE_ATTRIBUTE: return createImageAttribute();
 			case WebsitePackage.LOCATION_ATTRIBUTE: return createLocationAttribute();
 			case WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT: return createAssociationWithoutContainment();
 			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT: return createAssociationWithContainment();
@@ -287,6 +288,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public FileAttribute createFileAttribute() {
 		FileAttributeImpl fileAttribute = new FileAttributeImpl();
 		return fileAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageAttribute createImageAttribute() {
+		ImageAttributeImpl imageAttribute = new ImageAttributeImpl();
+		return imageAttribute;
 	}
 
 	/**

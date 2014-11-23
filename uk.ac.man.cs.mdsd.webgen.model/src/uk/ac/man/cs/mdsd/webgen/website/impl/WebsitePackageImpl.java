@@ -62,6 +62,7 @@ import uk.ac.man.cs.mdsd.webgen.website.FixedCommandMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.FixedPageMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
+import uk.ac.man.cs.mdsd.webgen.website.ImageAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedElement;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedFeature;
@@ -87,6 +88,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.PageLink;
 import uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit;
+import uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.SearchUnit;
 import uk.ac.man.cs.mdsd.webgen.website.SelectAction;
 import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
@@ -244,7 +246,21 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass resourceAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass fileAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass imageAttributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1447,6 +1463,60 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getResourceAttribute() {
+		return resourceAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResourceAttribute_MaximumUploadSize() {
+		return (EAttribute)resourceAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResourceAttribute_ValidUploadMimeTypes() {
+		return (EAttribute)resourceAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResourceAttribute_ValidUploadExtensions() {
+		return (EAttribute)resourceAttributeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResourceAttribute_UploadsWithinWebsite() {
+		return (EAttribute)resourceAttributeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResourceAttribute_RelativeUploadDirectory() {
+		return (EAttribute)resourceAttributeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFileAttribute() {
 		return fileAttributeEClass;
 	}
@@ -1456,44 +1526,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFileAttribute_MaximumUploadSize() {
-		return (EAttribute)fileAttributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFileAttribute_ValidUploadMimeTypes() {
-		return (EAttribute)fileAttributeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFileAttribute_ValidUploadExtensions() {
-		return (EAttribute)fileAttributeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFileAttribute_UploadsWithinWebsite() {
-		return (EAttribute)fileAttributeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFileAttribute_RelativeUploadDirectory() {
-		return (EAttribute)fileAttributeEClass.getEStructuralFeatures().get(4);
+	public EClass getImageAttribute() {
+		return imageAttributeEClass;
 	}
 
 	/**
@@ -4158,12 +4192,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(dateAttributeEClass, DATE_ATTRIBUTE__DETAILS);
 		createEAttribute(dateAttributeEClass, DATE_ATTRIBUTE__FORMAT);
 
+		resourceAttributeEClass = createEClass(RESOURCE_ATTRIBUTE);
+		createEAttribute(resourceAttributeEClass, RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE);
+		createEAttribute(resourceAttributeEClass, RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES);
+		createEAttribute(resourceAttributeEClass, RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS);
+		createEAttribute(resourceAttributeEClass, RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE);
+		createEAttribute(resourceAttributeEClass, RESOURCE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY);
+
 		fileAttributeEClass = createEClass(FILE_ATTRIBUTE);
-		createEAttribute(fileAttributeEClass, FILE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE);
-		createEAttribute(fileAttributeEClass, FILE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES);
-		createEAttribute(fileAttributeEClass, FILE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS);
-		createEAttribute(fileAttributeEClass, FILE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE);
-		createEAttribute(fileAttributeEClass, FILE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY);
+
+		imageAttributeEClass = createEClass(IMAGE_ATTRIBUTE);
 
 		locationAttributeEClass = createEClass(LOCATION_ATTRIBUTE);
 
@@ -4551,7 +4589,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		attributeEClass.getESuperTypes().add(this.getUnitTitle());
 		dataTypeAttributeEClass.getESuperTypes().add(this.getAttribute());
 		dateAttributeEClass.getESuperTypes().add(this.getAttribute());
-		fileAttributeEClass.getESuperTypes().add(this.getAttribute());
+		resourceAttributeEClass.getESuperTypes().add(this.getAttribute());
+		fileAttributeEClass.getESuperTypes().add(this.getResourceAttribute());
+		imageAttributeEClass.getESuperTypes().add(this.getResourceAttribute());
 		locationAttributeEClass.getESuperTypes().add(this.getAttribute());
 		associationEClass.getESuperTypes().add(this.getFeature());
 		associationWithoutContainmentEClass.getESuperTypes().add(this.getAssociation());
@@ -4571,8 +4611,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		serviceEntityAssociationEClass.getESuperTypes().add(this.getServiceEntityFeature());
 		serviceEntityAssociationEClass.getESuperTypes().add(this.getServiceAssociation());
 		serviceEntityAssociationEClass.getESuperTypes().add(this.getIncludedAssociation());
-		serviceViewAssociationEClass.getESuperTypes().add(this.getNamedDisplayElement());
+		serviceViewAssociationEClass.getESuperTypes().add(this.getNamedElement());
 		serviceViewAssociationEClass.getESuperTypes().add(this.getServiceAssociation());
+		serviceViewAssociationEClass.getESuperTypes().add(this.getIncludedFeature());
 		pageEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		pageEClass.getESuperTypes().add(this.getUnitContainer());
 		menuEClass.getESuperTypes().add(this.getNamedDisplayElement());
@@ -4741,12 +4782,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getDateAttribute_Details(), this.getDateDetails(), "details", "DateOnly", 1, 1, DateAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDateAttribute_Format(), ecorePackage.getEString(), "format", null, 0, 1, DateAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEClass(resourceAttributeEClass, ResourceAttribute.class, "ResourceAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getResourceAttribute_MaximumUploadSize(), ecorePackage.getEInt(), "maximumUploadSize", "-1", 0, 1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getResourceAttribute_ValidUploadMimeTypes(), ecorePackage.getEString(), "validUploadMimeTypes", null, 0, -1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getResourceAttribute_ValidUploadExtensions(), ecorePackage.getEString(), "validUploadExtensions", null, 0, -1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getResourceAttribute_UploadsWithinWebsite(), ecorePackage.getEBoolean(), "uploadsWithinWebsite", null, 0, 1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getResourceAttribute_RelativeUploadDirectory(), ecorePackage.getEString(), "relativeUploadDirectory", null, 0, 1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		initEClass(fileAttributeEClass, FileAttribute.class, "FileAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFileAttribute_MaximumUploadSize(), ecorePackage.getEInt(), "maximumUploadSize", "-1", 0, 1, FileAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getFileAttribute_ValidUploadMimeTypes(), ecorePackage.getEString(), "validUploadMimeTypes", null, 0, -1, FileAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getFileAttribute_ValidUploadExtensions(), ecorePackage.getEString(), "validUploadExtensions", null, 0, -1, FileAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getFileAttribute_UploadsWithinWebsite(), ecorePackage.getEBoolean(), "uploadsWithinWebsite", null, 0, 1, FileAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getFileAttribute_RelativeUploadDirectory(), ecorePackage.getEString(), "relativeUploadDirectory", null, 0, 1, FileAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(imageAttributeEClass, ImageAttribute.class, "ImageAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(locationAttributeEClass, LocationAttribute.class, "LocationAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -5404,7 +5449,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getUnitElement_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if serviceFeature.oclIsUndefined() then\r\n\tif feature.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tfeature.name\r\n\tendif\r\nelse\r\n\tserviceFeature.name\r\nendif"
+			 "derivation", "if serviceFeature.oclIsUndefined() then\r\n\tif feature.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tfeature.name\r\n\tendif\r\nelse\r\n\tif serviceFeature.alias.oclIsUndefined() then\r\n\t\tserviceFeature.name\r\n\telse\r\n\t\tserviceFeature.alias\r\n\tendif\r\nendif"
 		   });			
 		addAnnotation
 		  (unitAssociationEClass, 

@@ -144,8 +144,16 @@ public class OrmAdapterFactory extends AdapterFactoryImpl {
 				return createCollectionDateAdapter();
 			}
 			@Override
+			public Adapter caseSingletonResource(SingletonResource object) {
+				return createSingletonResourceAdapter();
+			}
+			@Override
 			public Adapter caseSingletonFile(SingletonFile object) {
 				return createSingletonFileAdapter();
+			}
+			@Override
+			public Adapter caseSingletonImage(SingletonImage object) {
+				return createSingletonImageAdapter();
 			}
 			@Override
 			public Adapter caseSingletonLocation(SingletonLocation object) {
@@ -436,6 +444,20 @@ public class OrmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.orm.SingletonResource <em>Singleton Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.orm.SingletonResource
+	 * @generated
+	 */
+	public Adapter createSingletonResourceAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.orm.SingletonFile <em>Singleton File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -446,6 +468,20 @@ public class OrmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSingletonFileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.orm.SingletonImage <em>Singleton Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.orm.SingletonImage
+	 * @generated
+	 */
+	public Adapter createSingletonImageAdapter() {
 		return null;
 	}
 

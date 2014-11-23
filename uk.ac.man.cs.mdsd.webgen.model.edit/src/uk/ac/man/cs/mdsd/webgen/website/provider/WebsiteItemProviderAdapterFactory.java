@@ -343,6 +343,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ImageAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageAttributeItemProvider imageAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ImageAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageAttributeAdapter() {
+		if (imageAttributeItemProvider == null) {
+			imageAttributeItemProvider = new ImageAttributeItemProvider(this);
+		}
+
+		return imageAttributeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.LocationAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1556,6 +1579,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (dataTypeAttributeItemProvider != null) dataTypeAttributeItemProvider.dispose();
 		if (dateAttributeItemProvider != null) dateAttributeItemProvider.dispose();
 		if (fileAttributeItemProvider != null) fileAttributeItemProvider.dispose();
+		if (imageAttributeItemProvider != null) imageAttributeItemProvider.dispose();
 		if (locationAttributeItemProvider != null) locationAttributeItemProvider.dispose();
 		if (associationWithoutContainmentItemProvider != null) associationWithoutContainmentItemProvider.dispose();
 		if (associationWithContainmentItemProvider != null) associationWithContainmentItemProvider.dispose();

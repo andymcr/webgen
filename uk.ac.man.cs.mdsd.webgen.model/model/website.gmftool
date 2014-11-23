@@ -389,6 +389,14 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Image Attribute">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Location Attribute"
           description="Add a location attribute to an entity">
         <smallIcon

@@ -244,6 +244,7 @@
       <defaultSize dx="80" dy="20"/>
     </facets>
   </nodes>
+  <nodes name="ImageAttribute" figure="AttributeFigure"/>
   <nodes name="InterfaceAssociation" figure="InterfaceFieldFigure">
     <facets xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize dx="80" dy="30"/>

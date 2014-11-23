@@ -138,8 +138,16 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createDateAttributeAdapter();
 			}
 			@Override
+			public Adapter caseResourceAttribute(ResourceAttribute object) {
+				return createResourceAttributeAdapter();
+			}
+			@Override
 			public Adapter caseFileAttribute(FileAttribute object) {
 				return createFileAttributeAdapter();
+			}
+			@Override
+			public Adapter caseImageAttribute(ImageAttribute object) {
+				return createImageAttributeAdapter();
 			}
 			@Override
 			public Adapter caseLocationAttribute(LocationAttribute object) {
@@ -694,6 +702,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute <em>Resource Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute
+	 * @generated
+	 */
+	public Adapter createResourceAttributeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.FileAttribute <em>File Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -704,6 +726,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFileAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ImageAttribute <em>Image Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageAttribute
+	 * @generated
+	 */
+	public Adapter createImageAttributeAdapter() {
 		return null;
 	}
 

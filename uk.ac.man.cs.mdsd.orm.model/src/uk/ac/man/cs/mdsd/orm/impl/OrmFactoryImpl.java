@@ -72,6 +72,7 @@ public class OrmFactoryImpl extends EFactoryImpl implements OrmFactory {
 			case OrmPackage.SINGLETON_DATE: return createSingletonDate();
 			case OrmPackage.COLLECTION_DATE: return createCollectionDate();
 			case OrmPackage.SINGLETON_FILE: return createSingletonFile();
+			case OrmPackage.SINGLETON_IMAGE: return createSingletonImage();
 			case OrmPackage.SINGLETON_LOCATION: return createSingletonLocation();
 			case OrmPackage.SINGLETON_ASSOCIATION: return createSingletonAssociation();
 			case OrmPackage.COLLECTION_ASSOCIATION: return createCollectionAssociation();
@@ -238,6 +239,16 @@ public class OrmFactoryImpl extends EFactoryImpl implements OrmFactory {
 	public SingletonFile createSingletonFile() {
 		SingletonFileImpl singletonFile = new SingletonFileImpl();
 		return singletonFile;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SingletonImage createSingletonImage() {
+		SingletonImageImpl singletonImage = new SingletonImageImpl();
+		return singletonImage;
 	}
 
 	/**

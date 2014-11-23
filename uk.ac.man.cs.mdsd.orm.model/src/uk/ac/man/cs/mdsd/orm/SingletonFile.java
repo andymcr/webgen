@@ -2,138 +2,16 @@
  */
 package uk.ac.man.cs.mdsd.orm;
 
-import org.eclipse.emf.common.util.EList;
-
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Singleton File</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.orm.SingletonFile#getMaximumUploadSize <em>Maximum Upload Size</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.orm.SingletonFile#getValidUploadMimeTypes <em>Valid Upload Mime Types</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.orm.SingletonFile#getValidUploadExtensions <em>Valid Upload Extensions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.orm.SingletonFile#isUploadsWithinWebsite <em>Uploads Within Website</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.orm.SingletonFile#getRelativeUploadDirectory <em>Relative Upload Directory</em>}</li>
- * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getSingletonFile()
  * @model
  * @generated
  */
-public interface SingletonFile extends SingletonAttribute {
-
-	/**
-	 * Returns the value of the '<em><b>Maximum Upload Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Maximum Upload Size</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Maximum Upload Size</em>' attribute.
-	 * @see #setMaximumUploadSize(int)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getSingletonFile_MaximumUploadSize()
-	 * @model
-	 * @generated
-	 */
-	int getMaximumUploadSize();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.SingletonFile#getMaximumUploadSize <em>Maximum Upload Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Maximum Upload Size</em>' attribute.
-	 * @see #getMaximumUploadSize()
-	 * @generated
-	 */
-	void setMaximumUploadSize(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Valid Upload Mime Types</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Valid Upload Mime Types</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Valid Upload Mime Types</em>' attribute list.
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getSingletonFile_ValidUploadMimeTypes()
-	 * @model
-	 * @generated
-	 */
-	EList<String> getValidUploadMimeTypes();
-
-	/**
-	 * Returns the value of the '<em><b>Valid Upload Extensions</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Valid Upload Extensions</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Valid Upload Extensions</em>' attribute list.
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getSingletonFile_ValidUploadExtensions()
-	 * @model
-	 * @generated
-	 */
-	EList<String> getValidUploadExtensions();
-
-	/**
-	 * Returns the value of the '<em><b>Uploads Within Website</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Uploads Within Website</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uploads Within Website</em>' attribute.
-	 * @see #setUploadsWithinWebsite(boolean)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getSingletonFile_UploadsWithinWebsite()
-	 * @model
-	 * @generated
-	 */
-	boolean isUploadsWithinWebsite();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.SingletonFile#isUploadsWithinWebsite <em>Uploads Within Website</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uploads Within Website</em>' attribute.
-	 * @see #isUploadsWithinWebsite()
-	 * @generated
-	 */
-	void setUploadsWithinWebsite(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Relative Upload Directory</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Relative Upload Directory</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Relative Upload Directory</em>' attribute.
-	 * @see #setRelativeUploadDirectory(String)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getSingletonFile_RelativeUploadDirectory()
-	 * @model
-	 * @generated
-	 */
-	String getRelativeUploadDirectory();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.SingletonFile#getRelativeUploadDirectory <em>Relative Upload Directory</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Relative Upload Directory</em>' attribute.
-	 * @see #getRelativeUploadDirectory()
-	 * @generated
-	 */
-	void setRelativeUploadDirectory(String value);
+public interface SingletonFile extends SingletonResource {
 } // SingletonFile

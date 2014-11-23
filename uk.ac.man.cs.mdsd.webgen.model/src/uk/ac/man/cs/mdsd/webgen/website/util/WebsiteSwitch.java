@@ -201,14 +201,38 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.RESOURCE_ATTRIBUTE: {
+				ResourceAttribute resourceAttribute = (ResourceAttribute)theEObject;
+				T result = caseResourceAttribute(resourceAttribute);
+				if (result == null) result = caseAttribute(resourceAttribute);
+				if (result == null) result = caseFeature(resourceAttribute);
+				if (result == null) result = caseUnitTitle(resourceAttribute);
+				if (result == null) result = caseNamedDisplayElement(resourceAttribute);
+				if (result == null) result = caseNamedElement(resourceAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.FILE_ATTRIBUTE: {
 				FileAttribute fileAttribute = (FileAttribute)theEObject;
 				T result = caseFileAttribute(fileAttribute);
+				if (result == null) result = caseResourceAttribute(fileAttribute);
 				if (result == null) result = caseAttribute(fileAttribute);
 				if (result == null) result = caseFeature(fileAttribute);
 				if (result == null) result = caseUnitTitle(fileAttribute);
 				if (result == null) result = caseNamedDisplayElement(fileAttribute);
 				if (result == null) result = caseNamedElement(fileAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.IMAGE_ATTRIBUTE: {
+				ImageAttribute imageAttribute = (ImageAttribute)theEObject;
+				T result = caseImageAttribute(imageAttribute);
+				if (result == null) result = caseResourceAttribute(imageAttribute);
+				if (result == null) result = caseAttribute(imageAttribute);
+				if (result == null) result = caseFeature(imageAttribute);
+				if (result == null) result = caseUnitTitle(imageAttribute);
+				if (result == null) result = caseNamedDisplayElement(imageAttribute);
+				if (result == null) result = caseNamedElement(imageAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -340,9 +364,9 @@ public class WebsiteSwitch<T> extends Switch<T> {
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION: {
 				ServiceViewAssociation serviceViewAssociation = (ServiceViewAssociation)theEObject;
 				T result = caseServiceViewAssociation(serviceViewAssociation);
-				if (result == null) result = caseNamedDisplayElement(serviceViewAssociation);
-				if (result == null) result = caseServiceAssociation(serviceViewAssociation);
 				if (result == null) result = caseNamedElement(serviceViewAssociation);
+				if (result == null) result = caseServiceAssociation(serviceViewAssociation);
+				if (result == null) result = caseIncludedFeature(serviceViewAssociation);
 				if (result == null) result = caseServiceFeature(serviceViewAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1116,6 +1140,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResourceAttribute(ResourceAttribute object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>File Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1127,6 +1166,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFileAttribute(FileAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Image Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Image Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImageAttribute(ImageAttribute object) {
 		return null;
 	}
 

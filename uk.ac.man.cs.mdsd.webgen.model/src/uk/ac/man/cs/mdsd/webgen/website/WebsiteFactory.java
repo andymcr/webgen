@@ -125,6 +125,15 @@ public interface WebsiteFactory extends EFactory {
 	FileAttribute createFileAttribute();
 
 	/**
+	 * Returns a new object of class '<em>Image Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Image Attribute</em>'.
+	 * @generated
+	 */
+	ImageAttribute createImageAttribute();
+
+	/**
 	 * Returns a new object of class '<em>Location Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -46,7 +46,9 @@ import uk.ac.man.cs.mdsd.orm.SingletonAttribute;
 import uk.ac.man.cs.mdsd.orm.SingletonDate;
 import uk.ac.man.cs.mdsd.orm.SingletonElement;
 import uk.ac.man.cs.mdsd.orm.SingletonFile;
+import uk.ac.man.cs.mdsd.orm.SingletonImage;
 import uk.ac.man.cs.mdsd.orm.SingletonLocation;
+import uk.ac.man.cs.mdsd.orm.SingletonResource;
 import uk.ac.man.cs.mdsd.orm.util.OrmValidator;
 
 /**
@@ -187,7 +189,21 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass singletonResourceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass singletonFileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass singletonImageEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -796,6 +812,60 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSingletonResource() {
+		return singletonResourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSingletonResource_MaximumUploadSize() {
+		return (EAttribute)singletonResourceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSingletonResource_ValidUploadMimeTypes() {
+		return (EAttribute)singletonResourceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSingletonResource_ValidUploadExtensions() {
+		return (EAttribute)singletonResourceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSingletonResource_UploadsWithinWebsite() {
+		return (EAttribute)singletonResourceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSingletonResource_RelativeUploadDirectory() {
+		return (EAttribute)singletonResourceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSingletonFile() {
 		return singletonFileEClass;
 	}
@@ -805,44 +875,8 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSingletonFile_MaximumUploadSize() {
-		return (EAttribute)singletonFileEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSingletonFile_ValidUploadMimeTypes() {
-		return (EAttribute)singletonFileEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSingletonFile_ValidUploadExtensions() {
-		return (EAttribute)singletonFileEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSingletonFile_UploadsWithinWebsite() {
-		return (EAttribute)singletonFileEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSingletonFile_RelativeUploadDirectory() {
-		return (EAttribute)singletonFileEClass.getEStructuralFeatures().get(4);
+	public EClass getSingletonImage() {
+		return singletonImageEClass;
 	}
 
 	/**
@@ -1104,12 +1138,16 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 
 		collectionDateEClass = createEClass(COLLECTION_DATE);
 
+		singletonResourceEClass = createEClass(SINGLETON_RESOURCE);
+		createEAttribute(singletonResourceEClass, SINGLETON_RESOURCE__MAXIMUM_UPLOAD_SIZE);
+		createEAttribute(singletonResourceEClass, SINGLETON_RESOURCE__VALID_UPLOAD_MIME_TYPES);
+		createEAttribute(singletonResourceEClass, SINGLETON_RESOURCE__VALID_UPLOAD_EXTENSIONS);
+		createEAttribute(singletonResourceEClass, SINGLETON_RESOURCE__UPLOADS_WITHIN_WEBSITE);
+		createEAttribute(singletonResourceEClass, SINGLETON_RESOURCE__RELATIVE_UPLOAD_DIRECTORY);
+
 		singletonFileEClass = createEClass(SINGLETON_FILE);
-		createEAttribute(singletonFileEClass, SINGLETON_FILE__MAXIMUM_UPLOAD_SIZE);
-		createEAttribute(singletonFileEClass, SINGLETON_FILE__VALID_UPLOAD_MIME_TYPES);
-		createEAttribute(singletonFileEClass, SINGLETON_FILE__VALID_UPLOAD_EXTENSIONS);
-		createEAttribute(singletonFileEClass, SINGLETON_FILE__UPLOADS_WITHIN_WEBSITE);
-		createEAttribute(singletonFileEClass, SINGLETON_FILE__RELATIVE_UPLOAD_DIRECTORY);
+
+		singletonImageEClass = createEClass(SINGLETON_IMAGE);
 
 		singletonLocationEClass = createEClass(SINGLETON_LOCATION);
 
@@ -1184,7 +1222,9 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		singletonDateEClass.getESuperTypes().add(this.getDateAttribute());
 		collectionDateEClass.getESuperTypes().add(this.getCollectionAttribute());
 		collectionDateEClass.getESuperTypes().add(this.getDateAttribute());
-		singletonFileEClass.getESuperTypes().add(this.getSingletonAttribute());
+		singletonResourceEClass.getESuperTypes().add(this.getSingletonAttribute());
+		singletonFileEClass.getESuperTypes().add(this.getSingletonResource());
+		singletonImageEClass.getESuperTypes().add(this.getSingletonResource());
 		singletonLocationEClass.getESuperTypes().add(this.getSingletonAttribute());
 		associationEClass.getESuperTypes().add(this.getFeature());
 		singletonAssociationEClass.getESuperTypes().add(this.getAssociation());
@@ -1260,12 +1300,16 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 
 		initEClass(collectionDateEClass, CollectionDate.class, "CollectionDate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(singletonResourceEClass, SingletonResource.class, "SingletonResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSingletonResource_MaximumUploadSize(), ecorePackage.getEInt(), "maximumUploadSize", null, 0, 1, SingletonResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSingletonResource_ValidUploadMimeTypes(), ecorePackage.getEString(), "validUploadMimeTypes", null, 0, -1, SingletonResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSingletonResource_ValidUploadExtensions(), ecorePackage.getEString(), "validUploadExtensions", null, 0, -1, SingletonResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSingletonResource_UploadsWithinWebsite(), ecorePackage.getEBoolean(), "uploadsWithinWebsite", null, 0, 1, SingletonResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSingletonResource_RelativeUploadDirectory(), ecorePackage.getEString(), "relativeUploadDirectory", null, 0, 1, SingletonResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(singletonFileEClass, SingletonFile.class, "SingletonFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSingletonFile_MaximumUploadSize(), ecorePackage.getEInt(), "maximumUploadSize", null, 0, 1, SingletonFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSingletonFile_ValidUploadMimeTypes(), ecorePackage.getEString(), "validUploadMimeTypes", null, 0, -1, SingletonFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSingletonFile_ValidUploadExtensions(), ecorePackage.getEString(), "validUploadExtensions", null, 0, -1, SingletonFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSingletonFile_UploadsWithinWebsite(), ecorePackage.getEBoolean(), "uploadsWithinWebsite", null, 0, 1, SingletonFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSingletonFile_RelativeUploadDirectory(), ecorePackage.getEString(), "relativeUploadDirectory", null, 0, 1, SingletonFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(singletonImageEClass, SingletonImage.class, "SingletonImage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(singletonLocationEClass, SingletonLocation.class, "SingletonLocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

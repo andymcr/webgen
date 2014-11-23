@@ -126,8 +126,12 @@ public class OrmValidator extends EObjectValidator {
 				return validateSingletonDate((SingletonDate)value, diagnostics, context);
 			case OrmPackage.COLLECTION_DATE:
 				return validateCollectionDate((CollectionDate)value, diagnostics, context);
+			case OrmPackage.SINGLETON_RESOURCE:
+				return validateSingletonResource((SingletonResource)value, diagnostics, context);
 			case OrmPackage.SINGLETON_FILE:
 				return validateSingletonFile((SingletonFile)value, diagnostics, context);
+			case OrmPackage.SINGLETON_IMAGE:
+				return validateSingletonImage((SingletonImage)value, diagnostics, context);
 			case OrmPackage.SINGLETON_LOCATION:
 				return validateSingletonLocation((SingletonLocation)value, diagnostics, context);
 			case OrmPackage.ASSOCIATION:
@@ -320,8 +324,26 @@ public class OrmValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateSingletonResource(SingletonResource singletonResource, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(singletonResource, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateSingletonFile(SingletonFile singletonFile, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(singletonFile, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSingletonImage(SingletonImage singletonImage, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(singletonImage, diagnostics, context);
 	}
 
 	/**

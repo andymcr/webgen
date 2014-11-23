@@ -228,14 +228,38 @@ public class OrmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case OrmPackage.SINGLETON_RESOURCE: {
+				SingletonResource singletonResource = (SingletonResource)theEObject;
+				T result = caseSingletonResource(singletonResource);
+				if (result == null) result = caseSingletonAttribute(singletonResource);
+				if (result == null) result = caseAttribute(singletonResource);
+				if (result == null) result = caseFeature(singletonResource);
+				if (result == null) result = caseNamedDisplayElement(singletonResource);
+				if (result == null) result = caseNamedElement(singletonResource);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case OrmPackage.SINGLETON_FILE: {
 				SingletonFile singletonFile = (SingletonFile)theEObject;
 				T result = caseSingletonFile(singletonFile);
+				if (result == null) result = caseSingletonResource(singletonFile);
 				if (result == null) result = caseSingletonAttribute(singletonFile);
 				if (result == null) result = caseAttribute(singletonFile);
 				if (result == null) result = caseFeature(singletonFile);
 				if (result == null) result = caseNamedDisplayElement(singletonFile);
 				if (result == null) result = caseNamedElement(singletonFile);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OrmPackage.SINGLETON_IMAGE: {
+				SingletonImage singletonImage = (SingletonImage)theEObject;
+				T result = caseSingletonImage(singletonImage);
+				if (result == null) result = caseSingletonResource(singletonImage);
+				if (result == null) result = caseSingletonAttribute(singletonImage);
+				if (result == null) result = caseAttribute(singletonImage);
+				if (result == null) result = caseFeature(singletonImage);
+				if (result == null) result = caseNamedDisplayElement(singletonImage);
+				if (result == null) result = caseNamedElement(singletonImage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -554,6 +578,21 @@ public class OrmSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Singleton Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Singleton Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSingletonResource(SingletonResource object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Singleton File</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -565,6 +604,21 @@ public class OrmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSingletonFile(SingletonFile object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Singleton Image</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Singleton Image</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSingletonImage(SingletonImage object) {
 		return null;
 	}
 

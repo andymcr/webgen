@@ -242,9 +242,9 @@ rule CollectionDate {
 }
 
 -- @extends SingletonAttribute
-rule SingletonFile {
-	from website : Website!FileAttribute (website.cardinality <> #Many)
-	to orm : ORM!SingletonFile (
+abstract rule SingletonResource {
+	from website : Website!ResourceAttribute (website.cardinality <> #Many)
+	to orm : ORM!SingletonResource (
 		maximumUploadSize <-
 			if website.maximumUploadSize > 0 then
 				website.maximumUploadSize
@@ -260,6 +260,20 @@ rule SingletonFile {
 			else
 				website.name
 			endif
+	)
+}
+
+-- @extends SingletonResource
+rule SingletonFile {
+	from website : Website!FileAttribute (website.cardinality <> #Many)
+	to orm : ORM!SingletonFile (
+	)
+}
+
+-- @extends SingletonResource
+rule SingletonImage {
+	from website : Website!ImageAttribute (website.cardinality <> #Many)
+	to orm : ORM!SingletonImage (
 	)
 }
 

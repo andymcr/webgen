@@ -449,7 +449,8 @@ abstract rule ServiceEntityFeature {
 rule ServiceEntityElement {
 	from jsf : JSF!ServiceEntityElement
 	to gen : GEN!GenServiceEntityElement (
-		genFeature <- jsf.feature
+		genFeature <- jsf.feature,
+		columnName <- jsf.name.createElementColumnName()
 	)
 	do {
 		gen.refSetValue('jsfFeature', jsf);
@@ -482,7 +483,7 @@ rule ServiceViewAssociation {
 		genTargetFeature <- jsf.targetFeature
 	)
 	do {
-		gen.refSetValue('jsfTargetFeature', jsf);
+		gen.refSetValue('jsfFeature', jsf);
 	}
 }
 

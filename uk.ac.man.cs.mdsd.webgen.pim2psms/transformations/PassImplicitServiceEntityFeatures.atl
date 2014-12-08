@@ -96,6 +96,18 @@ lazy rule implicitServiceEntityElement {
 			else
 				#Optional
 			endif,
+		dateFormat <-
+			if not orm.oclIsTypeOf(ORM!SingletonDate) then
+				OclUndefined
+			else
+				if orm.details = #DateOnly then
+					thisModule.findWebsiteProperties().defaultDateFormat
+				else if orm.details = #TimeOnly then
+					thisModule.findWebsiteProperties().defaultTimeFormat
+				else
+					thisModule.findWebsiteProperties().defaultDateTimeFormat
+				endif endif
+			endif,
 		caseInsensitive <-
 			if orm.oclIsTypeOf(ORM!SingletonElement) then
 				orm.caseInsensitive

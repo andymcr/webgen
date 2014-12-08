@@ -186,7 +186,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DEFAULT_DATE_FORMAT_EDEFAULT = null;
+	protected static final String DEFAULT_DATE_FORMAT_EDEFAULT = "jS F Y";
 
 	/**
 	 * The cached value of the '{@link #getDefaultDateFormat() <em>Default Date Format</em>}' attribute.
@@ -206,7 +206,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DEFAULT_TIME_FORMAT_EDEFAULT = null;
+	protected static final String DEFAULT_TIME_FORMAT_EDEFAULT = "G.i";
 
 	/**
 	 * The cached value of the '{@link #getDefaultTimeFormat() <em>Default Time Format</em>}' attribute.
@@ -226,7 +226,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DEFAULT_DATE_TIME_FORMAT_EDEFAULT = null;
+	protected static final String DEFAULT_DATE_TIME_FORMAT_EDEFAULT = "jS F Y G.i";
 
 	/**
 	 * The cached value of the '{@link #getDefaultDateTimeFormat() <em>Default Date Time Format</em>}' attribute.

@@ -224,6 +224,7 @@ public interface WebsiteProperties extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Default Date Format</b></em>' attribute.
+	 * The default value is <code>"jS F Y"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Default Date Format</em>' attribute isn't clear,
@@ -233,7 +234,7 @@ public interface WebsiteProperties extends EObject {
 	 * @return the value of the '<em>Default Date Format</em>' attribute.
 	 * @see #setDefaultDateFormat(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_DefaultDateFormat()
-	 * @model ordered="false"
+	 * @model default="jS F Y" ordered="false"
 	 * @generated
 	 */
 	String getDefaultDateFormat();
@@ -250,6 +251,7 @@ public interface WebsiteProperties extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Default Time Format</b></em>' attribute.
+	 * The default value is <code>"G.i"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Default Time Format</em>' attribute isn't clear,
@@ -259,7 +261,7 @@ public interface WebsiteProperties extends EObject {
 	 * @return the value of the '<em>Default Time Format</em>' attribute.
 	 * @see #setDefaultTimeFormat(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_DefaultTimeFormat()
-	 * @model ordered="false"
+	 * @model default="G.i" ordered="false"
 	 * @generated
 	 */
 	String getDefaultTimeFormat();
@@ -276,6 +278,7 @@ public interface WebsiteProperties extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Default Date Time Format</b></em>' attribute.
+	 * The default value is <code>"jS F Y G.i"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Default Date Time Format</em>' attribute isn't clear,
@@ -285,7 +288,7 @@ public interface WebsiteProperties extends EObject {
 	 * @return the value of the '<em>Default Date Time Format</em>' attribute.
 	 * @see #setDefaultDateTimeFormat(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_DefaultDateTimeFormat()
-	 * @model ordered="false"
+	 * @model default="jS F Y G.i" ordered="false"
 	 * @generated
 	 */
 	String getDefaultDateTimeFormat();

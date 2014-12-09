@@ -14,8 +14,8 @@ uses ConfigCriteria;
 helper def: findOrmModel() : ORM!OrmModel
 	=  ORM!OrmModel.allInstancesFrom('orm')->first();
 
-helper def: findJsfProperties() : JSF!JsfProperties
-	=  JSF!JsfModel.allInstancesFrom('jsf')->first().properties;
+helper def: findJsfProperties() : JSF!JsfModel
+	=  JSF!JsfModel.allInstancesFrom('jsf')->first();
 
 
 helper context ORM!SingletonAssociation def: isDependentEnd() : Boolean

@@ -11,17 +11,10 @@ uses CopyCriteria;
 rule JsfModel {
 	from partialJsf : JSF!JsfModel
 	to jsf : JSF!JsfModel (
-		properties <- partialJsf.properties,
 		persistence <- partialJsf.persistence,
 		services <- partialJsf.services,
 		pages <- partialJsf.pages,
-		menus <- partialJsf.menus
-	)
-}
-
-rule JsfProperties {
-	from partialJsf : JSF!JsfProperties
-	to jsf : JSF!JsfProperties (
+		menus <- partialJsf.menus,
 		siteName <- partialJsf.siteName,
 		siteTitle <- partialJsf.siteTitle,
 		webmasterEmail <- partialJsf.webmasterEmail,

@@ -52,13 +52,7 @@ rule JsfModel {
 				else
 					Sequence{}
 				endif endif),
-		menus <- partialJsf.menus
-	)
-}
-
-rule JsfProperties {
-	from partialJsf : JSF!JsfProperties
-	to jsf : JSF!JsfProperties (
+		menus <- partialJsf.menus,
 		siteName <- partialJsf.siteName,
 		siteTitle <- partialJsf.siteTitle,
 		webmasterEmail <- partialJsf.webmasterEmail,

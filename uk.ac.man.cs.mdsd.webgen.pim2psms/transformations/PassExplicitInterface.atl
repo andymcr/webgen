@@ -303,13 +303,10 @@ helper context Website!Attribute def: validationPattern() : String
 rule JsfModel {
 	from website : Website!WebGenModel, orm : ORM!OrmModel
 	to jsf : JSF!JsfModel (
-		properties <- jsfProperties,
 		persistence <- orm,
 		services <- website.services,
 		pages <- website.pages,
-		menus <- website.menus
-	),
-	jsfProperties : JSF!JsfProperties (
+		menus <- website.menus,
 		siteName <- website.websiteProperties.projectName,
 		siteTitle <- website.websiteProperties.siteTitle,
 		webmasterEmail <- website.websiteProperties.webmasterEmail,

@@ -734,7 +734,7 @@ abstract rule UnitField {
 				endif
 			endif,
 		dateFormat <-
-			if website.oclIsKindOf(Website!UnitFeature) then
+			if website.oclIsKindOf(Website!UnitElement) then
 				website.unitDateFormat()
 			else
 				OclUndefined

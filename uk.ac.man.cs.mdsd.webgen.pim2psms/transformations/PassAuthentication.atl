@@ -18,7 +18,6 @@ helper def: findWebsiteProperties() : Website!WebsiteProperties
 rule JsfModel {
 	from website : Website!WebGenModel, partialJsf : JSF!JsfModel
 	to jsf : JSF!JsfModel (
-		properties <- partialJsf.properties,
 		persistence <- partialJsf.persistence,
 		services <- partialJsf.services,
 		pages <- partialJsf.pages

@@ -81,17 +81,17 @@ rule Website {
 		genCollectionTypes <- orm.collectionTypes,
 		genDataTypes <- orm.dataTypes,
 		genEntities <- orm.entities,
-		genAuthentication <- jsf.properties.authentication,
+		genAuthentication <- jsf.authentication,
 		genServices <- jsf.services,
 		genPages <- jsf.pages,
 		genMenus <- jsf.menus,
-		baseURL <- jsf.properties.siteName,
+		baseURL <- jsf.siteName,
 --		basePackage <- orm.persistenceProperties.projectName,
 		databaseName <-
 			if orm.databaseTechnology = #Oracle then
 				''
 			else
-				jsf.properties.siteName
+				jsf.siteName
 			endif,
 		databaseUsername <- 'webgen',
 		databasePassword <- 'genweb',

@@ -14,7 +14,6 @@ uses CopyPartialJsf;
 rule JsfModel {
 	from website : Website!WebGenModel, partialJsf : JSF!JsfModel
 	to jsf : JSF!JsfModel (
-		properties <- partialJsf.properties,
 		persistence <- partialJsf.persistence,
 		services <- partialJsf.services,
 		pages <- partialJsf.pages
@@ -24,7 +23,17 @@ rule JsfModel {
 				else
 					Sequence{}
 				endif),
-		menus <- partialJsf.menus
+		menus <- partialJsf.menus,
+		siteName <- partialJsf.siteName,
+		siteTitle <- partialJsf.siteTitle,
+		webmasterEmail <- partialJsf.webmasterEmail,
+		copyrightText <- partialJsf.copyrightText,
+		metaDescription <- partialJsf.metaDescription,
+		frameworkTechnology <- partialJsf.frameworkTechnology,
+		authentication <- partialJsf.authentication,
+		topNavigationId <- partialJsf.topNavigationId,
+		sideMenu <- partialJsf.sideMenu,
+		staticUnitsEditable <- partialJsf.staticUnitsEditable
 	)
 }
 

@@ -14,7 +14,6 @@ uses CopyPartialJsf;
 rule JsfModel {
 	from partialJsf : JSF!JsfModel
 	to jsf : JSF!JsfModel (
-		properties <- partialJsf.properties,
 		persistence <- partialJsf.persistence,
 		services <- partialJsf.services
 			->union(let entities : Set(ORM!Entity)
@@ -25,7 +24,17 @@ rule JsfModel {
 				->collect(e | thisModule.implicitService(e))
 			),
 		pages <- partialJsf.pages,
-		menus <- partialJsf.menus
+		menus <- partialJsf.menus,
+		siteName <- partialJsf.siteName,
+		siteTitle <- partialJsf.siteTitle,
+		webmasterEmail <- partialJsf.webmasterEmail,
+		copyrightText <- partialJsf.copyrightText,
+		metaDescription <- partialJsf.metaDescription,
+		frameworkTechnology <- partialJsf.frameworkTechnology,
+		authentication <- partialJsf.authentication,
+		topNavigationId <- partialJsf.topNavigationId,
+		sideMenu <- partialJsf.sideMenu,
+		staticUnitsEditable <- partialJsf.staticUnitsEditable
 	)
 }
 

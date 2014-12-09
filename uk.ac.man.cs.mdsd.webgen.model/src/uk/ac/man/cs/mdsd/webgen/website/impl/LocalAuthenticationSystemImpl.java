@@ -27,14 +27,12 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getUserSource <em>User Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getUserAuthenticationKey <em>User Authentication Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getAuthenticationSource <em>Authentication Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isUseCaptcha <em>Use Captcha</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isTrackLoginAttempts <em>Track Login Attempts</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isAllowAutoLogin <em>Allow Auto Login</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isUseEmailActivation <em>Use Email Activation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isSendWelcomeEmail <em>Send Welcome Email</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isUseCaptcha <em>Use Captcha</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getCaptchaPublicKey <em>Captcha Public Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getCaptchaPrivateKey <em>Captcha Private Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getRegistrationUnit <em>Registration Unit</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getLoginUnit <em>Login Unit</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getForgottenPasswordUnit <em>Forgotten Password Unit</em>}</li>
@@ -73,6 +71,26 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @ordered
 	 */
 	protected UnitSource authenticationSource;
+
+	/**
+	 * The default value of the '{@link #isUseCaptcha() <em>Use Captcha</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseCaptcha()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean USE_CAPTCHA_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isUseCaptcha() <em>Use Captcha</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseCaptcha()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean useCaptcha = USE_CAPTCHA_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isAllowSelfRegistration() <em>Allow Self Registration</em>}' attribute.
@@ -173,66 +191,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @ordered
 	 */
 	protected boolean sendWelcomeEmail = SEND_WELCOME_EMAIL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isUseCaptcha() <em>Use Captcha</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUseCaptcha()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean USE_CAPTCHA_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isUseCaptcha() <em>Use Captcha</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUseCaptcha()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean useCaptcha = USE_CAPTCHA_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCaptchaPublicKey() <em>Captcha Public Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCaptchaPublicKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CAPTCHA_PUBLIC_KEY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCaptchaPublicKey() <em>Captcha Public Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCaptchaPublicKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected String captchaPublicKey = CAPTCHA_PUBLIC_KEY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCaptchaPrivateKey() <em>Captcha Private Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCaptchaPrivateKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CAPTCHA_PRIVATE_KEY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCaptchaPrivateKey() <em>Captcha Private Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCaptchaPrivateKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected String captchaPrivateKey = CAPTCHA_PRIVATE_KEY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getRegistrationUnit() <em>Registration Unit</em>}' reference.
@@ -402,6 +360,27 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isUseCaptcha() {
+		return useCaptcha;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUseCaptcha(boolean newUseCaptcha) {
+		boolean oldUseCaptcha = useCaptcha;
+		useCaptcha = newUseCaptcha;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA, oldUseCaptcha, useCaptcha));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isAllowSelfRegistration() {
 		return allowSelfRegistration;
 	}
@@ -500,69 +479,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		sendWelcomeEmail = newSendWelcomeEmail;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL, oldSendWelcomeEmail, sendWelcomeEmail));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isUseCaptcha() {
-		return useCaptcha;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUseCaptcha(boolean newUseCaptcha) {
-		boolean oldUseCaptcha = useCaptcha;
-		useCaptcha = newUseCaptcha;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA, oldUseCaptcha, useCaptcha));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getCaptchaPublicKey() {
-		return captchaPublicKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCaptchaPublicKey(String newCaptchaPublicKey) {
-		String oldCaptchaPublicKey = captchaPublicKey;
-		captchaPublicKey = newCaptchaPublicKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PUBLIC_KEY, oldCaptchaPublicKey, captchaPublicKey));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getCaptchaPrivateKey() {
-		return captchaPrivateKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCaptchaPrivateKey(String newCaptchaPrivateKey) {
-		String oldCaptchaPrivateKey = captchaPrivateKey;
-		captchaPrivateKey = newCaptchaPrivateKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PRIVATE_KEY, oldCaptchaPrivateKey, captchaPrivateKey));
 	}
 
 	/**
@@ -696,6 +612,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE:
 				if (resolve) return getAuthenticationSource();
 				return basicGetAuthenticationSource();
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
+				return isUseCaptcha();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				return isAllowSelfRegistration();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS:
@@ -706,12 +624,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return isUseEmailActivation();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
 				return isSendWelcomeEmail();
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
-				return isUseCaptcha();
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PUBLIC_KEY:
-				return getCaptchaPublicKey();
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PRIVATE_KEY:
-				return getCaptchaPrivateKey();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT:
 				if (resolve) return getRegistrationUnit();
 				return basicGetRegistrationUnit();
@@ -742,6 +654,9 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE:
 				setAuthenticationSource((UnitSource)newValue);
 				return;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
+				setUseCaptcha((Boolean)newValue);
+				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				setAllowSelfRegistration((Boolean)newValue);
 				return;
@@ -756,15 +671,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
 				setSendWelcomeEmail((Boolean)newValue);
-				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
-				setUseCaptcha((Boolean)newValue);
-				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PUBLIC_KEY:
-				setCaptchaPublicKey((String)newValue);
-				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PRIVATE_KEY:
-				setCaptchaPrivateKey((String)newValue);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT:
 				setRegistrationUnit((RegistrationUnit)newValue);
@@ -796,6 +702,9 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE:
 				setAuthenticationSource((UnitSource)null);
 				return;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
+				setUseCaptcha(USE_CAPTCHA_EDEFAULT);
+				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				setAllowSelfRegistration(ALLOW_SELF_REGISTRATION_EDEFAULT);
 				return;
@@ -810,15 +719,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
 				setSendWelcomeEmail(SEND_WELCOME_EMAIL_EDEFAULT);
-				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
-				setUseCaptcha(USE_CAPTCHA_EDEFAULT);
-				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PUBLIC_KEY:
-				setCaptchaPublicKey(CAPTCHA_PUBLIC_KEY_EDEFAULT);
-				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PRIVATE_KEY:
-				setCaptchaPrivateKey(CAPTCHA_PRIVATE_KEY_EDEFAULT);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT:
 				setRegistrationUnit((RegistrationUnit)null);
@@ -847,6 +747,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return userAuthenticationKey != null;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE:
 				return authenticationSource != null;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
+				return useCaptcha != USE_CAPTCHA_EDEFAULT;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				return allowSelfRegistration != ALLOW_SELF_REGISTRATION_EDEFAULT;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS:
@@ -857,12 +759,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return useEmailActivation != USE_EMAIL_ACTIVATION_EDEFAULT;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
 				return sendWelcomeEmail != SEND_WELCOME_EMAIL_EDEFAULT;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
-				return useCaptcha != USE_CAPTCHA_EDEFAULT;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PUBLIC_KEY:
-				return CAPTCHA_PUBLIC_KEY_EDEFAULT == null ? captchaPublicKey != null : !CAPTCHA_PUBLIC_KEY_EDEFAULT.equals(captchaPublicKey);
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PRIVATE_KEY:
-				return CAPTCHA_PRIVATE_KEY_EDEFAULT == null ? captchaPrivateKey != null : !CAPTCHA_PRIVATE_KEY_EDEFAULT.equals(captchaPrivateKey);
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT:
 				return registrationUnit != null;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT:
@@ -883,7 +779,9 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (allowSelfRegistration: ");
+		result.append(" (useCaptcha: ");
+		result.append(useCaptcha);
+		result.append(", allowSelfRegistration: ");
 		result.append(allowSelfRegistration);
 		result.append(", trackLoginAttempts: ");
 		result.append(trackLoginAttempts);
@@ -893,12 +791,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		result.append(useEmailActivation);
 		result.append(", sendWelcomeEmail: ");
 		result.append(sendWelcomeEmail);
-		result.append(", useCaptcha: ");
-		result.append(useCaptcha);
-		result.append(", captchaPublicKey: ");
-		result.append(captchaPublicKey);
-		result.append(", captchaPrivateKey: ");
-		result.append(captchaPrivateKey);
 		result.append(')');
 		return result.toString();
 	}

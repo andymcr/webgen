@@ -58,8 +58,6 @@ public class CaptchaFieldItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDateFormatPropertyDescriptor(object);
-			addPublicKeyPropertyDescriptor(object);
-			addPrivateKeyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,50 +76,6 @@ public class CaptchaFieldItemProvider
 				 getString("_UI_UnitField_dateFormat_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_dateFormat_feature", "_UI_UnitField_type"),
 				 WebsitePackage.Literals.UNIT_FIELD__DATE_FORMAT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Public Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPublicKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CaptchaField_publicKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CaptchaField_publicKey_feature", "_UI_CaptchaField_type"),
-				 WebsitePackage.Literals.CAPTCHA_FIELD__PUBLIC_KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Private Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPrivateKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CaptchaField_privateKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CaptchaField_privateKey_feature", "_UI_CaptchaField_type"),
-				 WebsitePackage.Literals.CAPTCHA_FIELD__PRIVATE_KEY,
 				 true,
 				 false,
 				 false,
@@ -168,8 +122,6 @@ public class CaptchaFieldItemProvider
 
 		switch (notification.getFeatureID(CaptchaField.class)) {
 			case WebsitePackage.CAPTCHA_FIELD__DATE_FORMAT:
-			case WebsitePackage.CAPTCHA_FIELD__PUBLIC_KEY:
-			case WebsitePackage.CAPTCHA_FIELD__PRIVATE_KEY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

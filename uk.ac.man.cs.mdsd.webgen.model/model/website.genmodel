@@ -70,12 +70,15 @@
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/defaultMaximumUploadSize"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databaseTechnology"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/frameworkTechnology"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSiteKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSecretKey"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/topNavigationId"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebsiteProperties/sideMenu"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/staticUnitsEditable"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//Authentication">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Authentication/authenticates"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Authentication/loginLabel"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Authentication/logoutLabel"/>
     </genClasses>
@@ -86,16 +89,12 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/userAuthenticationKey"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/authenticationSource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/useCaptcha"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/allowSelfRegistration"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/trackLoginAttempts"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/allowAutoLogin"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/useEmailActivation"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/sendWelcomeEmail"/>
-      <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/useCaptcha"/>
-      <genFeatures createChild="false" propertyCategory="Authentication" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/captchaPublicKey"/>
-      <genFeatures createChild="false" propertyCategory="Authentication" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/captchaPrivateKey"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/registrationUnit"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
@@ -421,10 +420,7 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//DateField/details"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DateField/format"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//CaptchaField">
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//CaptchaField/publicKey"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//CaptchaField/privateKey"/>
-    </genClasses>
+    <genClasses ecoreClass="website.ecore#//CaptchaField"/>
     <genClasses ecoreClass="website.ecore#//UnitSupportAction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//UnitSupportAction/confirmMessage"/>
     </genClasses>

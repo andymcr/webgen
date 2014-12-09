@@ -254,13 +254,31 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 12;
 
 	/**
+	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 13;
+
+	/**
+	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 14;
+
+	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 13;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 15;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -269,7 +287,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SIDE_MENU = 14;
+	int WEBSITE_PROPERTIES__SIDE_MENU = 16;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -278,7 +296,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 15;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 17;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -287,7 +305,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 16;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 18;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -560,13 +578,22 @@ public interface WebsitePackage extends EPackage {
 	int AUTHENTICATION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Authenticates</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION__AUTHENTICATES = 0;
+
+	/**
 	 * The feature id for the '<em><b>Login Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION__LOGIN_LABEL = 0;
+	int AUTHENTICATION__LOGIN_LABEL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Logout Label</b></em>' attribute.
@@ -575,7 +602,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION__LOGOUT_LABEL = 1;
+	int AUTHENTICATION__LOGOUT_LABEL = 2;
 
 	/**
 	 * The number of structural features of the '<em>Authentication</em>' class.
@@ -584,7 +611,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_FEATURE_COUNT = 2;
+	int AUTHENTICATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl <em>Local Authentication System</em>}' class.
@@ -595,6 +622,15 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	int LOCAL_AUTHENTICATION_SYSTEM = 3;
+
+	/**
+	 * The feature id for the '<em><b>Authenticates</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATES = AUTHENTICATION__AUTHENTICATES;
 
 	/**
 	 * The feature id for the '<em><b>Login Label</b></em>' attribute.
@@ -642,13 +678,22 @@ public interface WebsitePackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE = AUTHENTICATION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Use Captcha</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA = AUTHENTICATION_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Allow Self Registration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION = AUTHENTICATION_FEATURE_COUNT + 3;
+	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION = AUTHENTICATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Track Login Attempts</b></em>' attribute.
@@ -657,7 +702,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS = AUTHENTICATION_FEATURE_COUNT + 4;
+	int LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS = AUTHENTICATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Allow Auto Login</b></em>' attribute.
@@ -666,7 +711,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN = AUTHENTICATION_FEATURE_COUNT + 5;
+	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN = AUTHENTICATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Use Email Activation</b></em>' attribute.
@@ -675,7 +720,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION = AUTHENTICATION_FEATURE_COUNT + 6;
+	int LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION = AUTHENTICATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Send Welcome Email</b></em>' attribute.
@@ -684,34 +729,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL = AUTHENTICATION_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Use Captcha</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA = AUTHENTICATION_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Captcha Public Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PUBLIC_KEY = AUTHENTICATION_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Captcha Private Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PRIVATE_KEY = AUTHENTICATION_FEATURE_COUNT + 10;
+	int LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL = AUTHENTICATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Registration Unit</b></em>' reference.
@@ -720,7 +738,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT = AUTHENTICATION_FEATURE_COUNT + 11;
+	int LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT = AUTHENTICATION_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Login Unit</b></em>' reference.
@@ -729,7 +747,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT = AUTHENTICATION_FEATURE_COUNT + 12;
+	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT = AUTHENTICATION_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Forgotten Password Unit</b></em>' reference.
@@ -738,7 +756,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT = AUTHENTICATION_FEATURE_COUNT + 13;
+	int LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT = AUTHENTICATION_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Local Authentication System</em>' class.
@@ -747,7 +765,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 14;
+	int LOCAL_AUTHENTICATION_SYSTEM_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 12;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CasAuthenticationImpl <em>Cas Authentication</em>}' class.
@@ -758,6 +776,15 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	int CAS_AUTHENTICATION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Authenticates</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAS_AUTHENTICATION__AUTHENTICATES = AUTHENTICATION__AUTHENTICATES;
 
 	/**
 	 * The feature id for the '<em><b>Login Label</b></em>' attribute.
@@ -6505,31 +6532,13 @@ public interface WebsitePackage extends EPackage {
 	int CAPTCHA_FIELD__DATE_FORMAT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Public Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAPTCHA_FIELD__PUBLIC_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Private Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAPTCHA_FIELD__PRIVATE_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Captcha Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAPTCHA_FIELD_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int CAPTCHA_FIELD_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitSupportActionImpl <em>Unit Support Action</em>}' class.
@@ -10204,6 +10213,28 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_FrameworkTechnology();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSiteKey <em>Captcha Site Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Captcha Site Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSiteKey()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_CaptchaSiteKey();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSecretKey <em>Captcha Secret Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Captcha Secret Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSecretKey()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_CaptchaSecretKey();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTopNavigationId <em>Top Navigation Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12172,28 +12203,6 @@ public interface WebsitePackage extends EPackage {
 	EClass getCaptchaField();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.CaptchaField#getPublicKey <em>Public Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Public Key</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.CaptchaField#getPublicKey()
-	 * @see #getCaptchaField()
-	 * @generated
-	 */
-	EAttribute getCaptchaField_PublicKey();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.CaptchaField#getPrivateKey <em>Private Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Private Key</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.CaptchaField#getPrivateKey()
-	 * @see #getCaptchaField()
-	 * @generated
-	 */
-	EAttribute getCaptchaField_PrivateKey();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction <em>Unit Support Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13500,6 +13509,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getAuthentication();
 
 	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.website.Authentication#getAuthenticates <em>Authenticates</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Authenticates</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Authentication#getAuthenticates()
+	 * @see #getAuthentication()
+	 * @generated
+	 */
+	EReference getAuthentication_Authenticates();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Authentication#getLoginLabel <em>Login Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13565,6 +13585,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getLocalAuthenticationSystem_AuthenticationSource();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Use Captcha</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha()
+	 * @see #getLocalAuthenticationSystem()
+	 * @generated
+	 */
+	EAttribute getLocalAuthenticationSystem_UseCaptcha();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isAllowSelfRegistration <em>Allow Self Registration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13618,39 +13649,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLocalAuthenticationSystem_SendWelcomeEmail();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Use Captcha</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha()
-	 * @see #getLocalAuthenticationSystem()
-	 * @generated
-	 */
-	EAttribute getLocalAuthenticationSystem_UseCaptcha();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getCaptchaPublicKey <em>Captcha Public Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Captcha Public Key</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getCaptchaPublicKey()
-	 * @see #getLocalAuthenticationSystem()
-	 * @generated
-	 */
-	EAttribute getLocalAuthenticationSystem_CaptchaPublicKey();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getCaptchaPrivateKey <em>Captcha Private Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Captcha Private Key</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getCaptchaPrivateKey()
-	 * @see #getLocalAuthenticationSystem()
-	 * @generated
-	 */
-	EAttribute getLocalAuthenticationSystem_CaptchaPrivateKey();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getRegistrationUnit <em>Registration Unit</em>}'.
@@ -13930,6 +13928,22 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = eINSTANCE.getWebsiteProperties_FrameworkTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Captcha Site Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = eINSTANCE.getWebsiteProperties_CaptchaSiteKey();
+
+		/**
+		 * The meta object literal for the '<em><b>Captcha Secret Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = eINSTANCE.getWebsiteProperties_CaptchaSecretKey();
 
 		/**
 		 * The meta object literal for the '<em><b>Top Navigation Id</b></em>' attribute feature.
@@ -15516,22 +15530,6 @@ public interface WebsitePackage extends EPackage {
 		EClass CAPTCHA_FIELD = eINSTANCE.getCaptchaField();
 
 		/**
-		 * The meta object literal for the '<em><b>Public Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CAPTCHA_FIELD__PUBLIC_KEY = eINSTANCE.getCaptchaField_PublicKey();
-
-		/**
-		 * The meta object literal for the '<em><b>Private Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CAPTCHA_FIELD__PRIVATE_KEY = eINSTANCE.getCaptchaField_PrivateKey();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitSupportActionImpl <em>Unit Support Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16580,6 +16578,14 @@ public interface WebsitePackage extends EPackage {
 		EClass AUTHENTICATION = eINSTANCE.getAuthentication();
 
 		/**
+		 * The meta object literal for the '<em><b>Authenticates</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATION__AUTHENTICATES = eINSTANCE.getAuthentication_Authenticates();
+
+		/**
 		 * The meta object literal for the '<em><b>Login Label</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16630,6 +16636,14 @@ public interface WebsitePackage extends EPackage {
 		EReference LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE = eINSTANCE.getLocalAuthenticationSystem_AuthenticationSource();
 
 		/**
+		 * The meta object literal for the '<em><b>Use Captcha</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA = eINSTANCE.getLocalAuthenticationSystem_UseCaptcha();
+
+		/**
 		 * The meta object literal for the '<em><b>Allow Self Registration</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16668,30 +16682,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL = eINSTANCE.getLocalAuthenticationSystem_SendWelcomeEmail();
-
-		/**
-		 * The meta object literal for the '<em><b>Use Captcha</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA = eINSTANCE.getLocalAuthenticationSystem_UseCaptcha();
-
-		/**
-		 * The meta object literal for the '<em><b>Captcha Public Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PUBLIC_KEY = eINSTANCE.getLocalAuthenticationSystem_CaptchaPublicKey();
-
-		/**
-		 * The meta object literal for the '<em><b>Captcha Private Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PRIVATE_KEY = eINSTANCE.getLocalAuthenticationSystem_CaptchaPrivateKey();
 
 		/**
 		 * The meta object literal for the '<em><b>Registration Unit</b></em>' reference feature.

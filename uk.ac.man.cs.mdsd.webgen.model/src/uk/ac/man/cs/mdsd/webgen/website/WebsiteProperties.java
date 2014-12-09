@@ -29,6 +29,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultMaximumUploadSize <em>Default Maximum Upload Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseTechnology <em>Database Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
@@ -172,6 +174,7 @@ public interface WebsiteProperties extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Authentication</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Authentication#getAuthenticates <em>Authenticates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Authentication</em>' attribute isn't clear,
@@ -181,7 +184,8 @@ public interface WebsiteProperties extends EObject {
 	 * @return the value of the '<em>Authentication</em>' containment reference.
 	 * @see #setAuthentication(Authentication)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_Authentication()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Authentication#getAuthenticates
+	 * @model opposite="authenticates" containment="true"
 	 * @generated
 	 */
 	Authentication getAuthentication();
@@ -387,6 +391,58 @@ public interface WebsiteProperties extends EObject {
 	 * @generated
 	 */
 	void setFrameworkTechnology(FrameworkTechnologies value);
+
+	/**
+	 * Returns the value of the '<em><b>Captcha Site Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Captcha Site Key</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Captcha Site Key</em>' attribute.
+	 * @see #setCaptchaSiteKey(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_CaptchaSiteKey()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getCaptchaSiteKey();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSiteKey <em>Captcha Site Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Captcha Site Key</em>' attribute.
+	 * @see #getCaptchaSiteKey()
+	 * @generated
+	 */
+	void setCaptchaSiteKey(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Captcha Secret Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Captcha Secret Key</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Captcha Secret Key</em>' attribute.
+	 * @see #setCaptchaSecretKey(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_CaptchaSecretKey()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getCaptchaSecretKey();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSecretKey <em>Captcha Secret Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Captcha Secret Key</em>' attribute.
+	 * @see #getCaptchaSecretKey()
+	 * @generated
+	 */
+	void setCaptchaSecretKey(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Top Navigation Id</b></em>' attribute.

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Authentication#getAuthenticates <em>Authenticates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Authentication#getLoginLabel <em>Login Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Authentication#getLogoutLabel <em>Logout Label</em>}</li>
  * </ul>
@@ -26,6 +27,34 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Authentication extends EObject {
+
+	/**
+	 * Returns the value of the '<em><b>Authenticates</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAuthentication <em>Authentication</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Authenticates</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Authenticates</em>' container reference.
+	 * @see #setAuthenticates(WebsiteProperties)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAuthentication_Authenticates()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAuthentication
+	 * @model opposite="authentication" required="true" transient="false"
+	 * @generated
+	 */
+	WebsiteProperties getAuthenticates();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Authentication#getAuthenticates <em>Authenticates</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Authenticates</em>' container reference.
+	 * @see #getAuthenticates()
+	 * @generated
+	 */
+	void setAuthenticates(WebsiteProperties value);
 
 	/**
 	 * Returns the value of the '<em><b>Login Label</b></em>' attribute.

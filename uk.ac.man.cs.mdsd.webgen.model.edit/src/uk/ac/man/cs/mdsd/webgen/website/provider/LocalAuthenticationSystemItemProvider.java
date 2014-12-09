@@ -70,14 +70,12 @@ public class LocalAuthenticationSystemItemProvider
 			addUserSourcePropertyDescriptor(object);
 			addUserAuthenticationKeyPropertyDescriptor(object);
 			addAuthenticationSourcePropertyDescriptor(object);
+			addUseCaptchaPropertyDescriptor(object);
 			addAllowSelfRegistrationPropertyDescriptor(object);
 			addTrackLoginAttemptsPropertyDescriptor(object);
 			addAllowAutoLoginPropertyDescriptor(object);
 			addUseEmailActivationPropertyDescriptor(object);
 			addSendWelcomeEmailPropertyDescriptor(object);
-			addUseCaptchaPropertyDescriptor(object);
-			addCaptchaPublicKeyPropertyDescriptor(object);
-			addCaptchaPrivateKeyPropertyDescriptor(object);
 			addRegistrationUnitPropertyDescriptor(object);
 			addLoginUnitPropertyDescriptor(object);
 			addForgottenPasswordUnitPropertyDescriptor(object);
@@ -198,6 +196,28 @@ public class LocalAuthenticationSystemItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Use Captcha feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUseCaptchaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_useCaptcha_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_useCaptcha_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Allow Self Registration feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -308,72 +328,6 @@ public class LocalAuthenticationSystemItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Use Captcha feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUseCaptchaPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_useCaptcha_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_useCaptcha_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_AuthenticationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Captcha Public Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptchaPublicKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_captchaPublicKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_captchaPublicKey_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PUBLIC_KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_AuthenticationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Captcha Private Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaptchaPrivateKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_captchaPrivateKey_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_captchaPrivateKey_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PRIVATE_KEY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_AuthenticationPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Registration Unit feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -476,14 +430,12 @@ public class LocalAuthenticationSystemItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LocalAuthenticationSystem.class)) {
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PUBLIC_KEY:
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PRIVATE_KEY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

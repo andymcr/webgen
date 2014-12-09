@@ -56,7 +56,6 @@ rule LocalAuthenticationSystem {
 		autoLoginService <- partialJsf.autoLoginService,
 		useEmailActivation <- partialJsf.useEmailActivation,
 		sendWelcomeEmail <- partialJsf.sendWelcomeEmail,
-		useCaptcha <- partialJsf.useCaptcha,
 		registrationUnit <- partialJsf.registrationUnit,
 		loginUnit <- partialJsf.loginUnit,
 		forgottenPasswordUnit <- partialJsf.forgottenPasswordUnit
@@ -498,8 +497,6 @@ rule DateField {
 rule CaptchaField {
 	from partialJsf : JSF!CaptchaField
 	to jsf : JSF!CaptchaField (
-		publicKey <- partialJsf.publicKey,
-		privateKey <- partialJsf.privateKey
 	)
 }
 

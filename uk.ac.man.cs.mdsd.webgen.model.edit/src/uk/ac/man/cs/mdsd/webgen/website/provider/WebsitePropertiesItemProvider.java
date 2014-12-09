@@ -76,6 +76,8 @@ public class WebsitePropertiesItemProvider
 			addDefaultMaximumUploadSizePropertyDescriptor(object);
 			addDatabaseTechnologyPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
+			addCaptchaSiteKeyPropertyDescriptor(object);
+			addCaptchaSecretKeyPropertyDescriptor(object);
 			addTopNavigationIdPropertyDescriptor(object);
 			addSideMenuPropertyDescriptor(object);
 			addStaticUnitsEditablePropertyDescriptor(object);
@@ -370,6 +372,50 @@ public class WebsitePropertiesItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Captcha Site Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCaptchaSiteKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_captchaSiteKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_captchaSiteKey_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Captcha Secret Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCaptchaSecretKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_captchaSecretKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_captchaSecretKey_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Top Navigation Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -485,6 +531,8 @@ public class WebsitePropertiesItemProvider
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE:
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
+			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
+			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 			case WebsitePackage.WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

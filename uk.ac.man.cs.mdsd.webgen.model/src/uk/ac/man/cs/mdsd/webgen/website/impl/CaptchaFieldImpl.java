@@ -26,8 +26,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CaptchaFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CaptchaFieldImpl#getDateFormat <em>Date Format</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CaptchaFieldImpl#getPublicKey <em>Public Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CaptchaFieldImpl#getPrivateKey <em>Private Key</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,46 +51,6 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 	 * @ordered
 	 */
 	protected String dateFormat = DATE_FORMAT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPublicKey() <em>Public Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPublicKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PUBLIC_KEY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPublicKey() <em>Public Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPublicKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected String publicKey = PUBLIC_KEY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPrivateKey() <em>Private Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrivateKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRIVATE_KEY_EDEFAULT = "input_attribute";
-
-	/**
-	 * The cached value of the '{@link #getPrivateKey() <em>Private Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrivateKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected String privateKey = PRIVATE_KEY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,48 +138,6 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPublicKey() {
-		return publicKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPublicKey(String newPublicKey) {
-		String oldPublicKey = publicKey;
-		publicKey = newPublicKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CAPTCHA_FIELD__PUBLIC_KEY, oldPublicKey, publicKey));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPrivateKey() {
-		return privateKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPrivateKey(String newPrivateKey) {
-		String oldPrivateKey = privateKey;
-		privateKey = newPrivateKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CAPTCHA_FIELD__PRIVATE_KEY, oldPrivateKey, privateKey));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -273,10 +189,6 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 				return getDisplayedOn();
 			case WebsitePackage.CAPTCHA_FIELD__DATE_FORMAT:
 				return getDateFormat();
-			case WebsitePackage.CAPTCHA_FIELD__PUBLIC_KEY:
-				return getPublicKey();
-			case WebsitePackage.CAPTCHA_FIELD__PRIVATE_KEY:
-				return getPrivateKey();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -294,12 +206,6 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 				return;
 			case WebsitePackage.CAPTCHA_FIELD__DATE_FORMAT:
 				setDateFormat((String)newValue);
-				return;
-			case WebsitePackage.CAPTCHA_FIELD__PUBLIC_KEY:
-				setPublicKey((String)newValue);
-				return;
-			case WebsitePackage.CAPTCHA_FIELD__PRIVATE_KEY:
-				setPrivateKey((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -319,12 +225,6 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 			case WebsitePackage.CAPTCHA_FIELD__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
-			case WebsitePackage.CAPTCHA_FIELD__PUBLIC_KEY:
-				setPublicKey(PUBLIC_KEY_EDEFAULT);
-				return;
-			case WebsitePackage.CAPTCHA_FIELD__PRIVATE_KEY:
-				setPrivateKey(PRIVATE_KEY_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -341,10 +241,6 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 				return getDisplayedOn() != null;
 			case WebsitePackage.CAPTCHA_FIELD__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
-			case WebsitePackage.CAPTCHA_FIELD__PUBLIC_KEY:
-				return PUBLIC_KEY_EDEFAULT == null ? publicKey != null : !PUBLIC_KEY_EDEFAULT.equals(publicKey);
-			case WebsitePackage.CAPTCHA_FIELD__PRIVATE_KEY:
-				return PRIVATE_KEY_EDEFAULT == null ? privateKey != null : !PRIVATE_KEY_EDEFAULT.equals(privateKey);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -395,10 +291,6 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (dateFormat: ");
 		result.append(dateFormat);
-		result.append(", publicKey: ");
-		result.append(publicKey);
-		result.append(", privateKey: ");
-		result.append(privateKey);
 		result.append(')');
 		return result.toString();
 	}

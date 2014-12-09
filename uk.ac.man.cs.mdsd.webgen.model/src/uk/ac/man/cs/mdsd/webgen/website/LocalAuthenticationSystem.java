@@ -15,14 +15,12 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserSource <em>User Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserAuthenticationKey <em>User Authentication Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthenticationSource <em>Authentication Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isTrackLoginAttempts <em>Track Login Attempts</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isAllowAutoLogin <em>Allow Auto Login</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseEmailActivation <em>Use Email Activation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isSendWelcomeEmail <em>Send Welcome Email</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getCaptchaPublicKey <em>Captcha Public Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getCaptchaPrivateKey <em>Captcha Private Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getRegistrationUnit <em>Registration Unit</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getLoginUnit <em>Login Unit</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getForgottenPasswordUnit <em>Forgotten Password Unit</em>}</li>
@@ -31,7 +29,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='entitySourceOnlyIfNotEncapsulated authenticationKeyFromUserSource authenticationKeyRequiredAttribute captchaRequiresKeys'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL authenticationKeyFromUserSource='not userSource.oclIsUndefined() implies\r\nlet features : Collection(Feature)\r\n\t= if userSource.oclIsTypeOf(Entity) then\r\n\t\t\tuserSource.oclAsType(Entity).features \r\n\t\telse\r\n\t\t\tlet service : Service = userSource.oclAsType(Service)\r\n\t\t\tin if service.features->isEmpty() then\r\n\t\t\t\t\tservice.encapsulates->collect(e | e.features)\r\n\t\t\t\telse\r\n\t\t\t\t\tservice.features\r\n\t\t\t\t\t\t->select(f | f.oclIsKindOf(ServiceEntityFeature))\r\n\t\t\t\t\t\t->collect(f |\r\n\t\t\t\t\t\t\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n\t\t\t\t\t\t\t\tf.oclAsType(ServiceEntityElement).feature\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n\t\t\t\t\t\t\tendif) \r\n\t\t\t\tendif\r\n\t\tendif\r\n\tin features->includes(userAuthenticationKey)' authenticationKeyRequiredAttribute='if userAuthenticationKey.oclIsUndefined() then false else userAuthenticationKey.cardinality = Cardinality::Required endif' captchaRequiresKeys='useCaptcha implies not captchaPublicKey.oclIsUndefined() and not captchaPrivateKey.oclIsUndefined()' entitySourceOnlyIfNotEncapsulated='userSource.oclIsTypeOf(Entity) implies userSource.oclAsType(Entity).servedBy->isEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL authenticationKeyFromUserSource='not userSource.oclIsUndefined() implies\r\nlet features : Collection(Feature)\r\n\t= if userSource.oclIsTypeOf(Entity) then\r\n\t\t\tuserSource.oclAsType(Entity).features \r\n\t\telse\r\n\t\t\tlet service : Service = userSource.oclAsType(Service)\r\n\t\t\tin if service.features->isEmpty() then\r\n\t\t\t\t\tservice.encapsulates->collect(e | e.features)\r\n\t\t\t\telse\r\n\t\t\t\t\tservice.features\r\n\t\t\t\t\t\t->select(f | f.oclIsKindOf(ServiceEntityFeature))\r\n\t\t\t\t\t\t->collect(f |\r\n\t\t\t\t\t\t\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n\t\t\t\t\t\t\t\tf.oclAsType(ServiceEntityElement).feature\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n\t\t\t\t\t\t\tendif) \r\n\t\t\t\tendif\r\n\t\tendif\r\n\tin features->includes(userAuthenticationKey)' authenticationKeyRequiredAttribute='if userAuthenticationKey.oclIsUndefined() then false else userAuthenticationKey.cardinality = Cardinality::Required endif' captchaRequiresKeys='useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()' entitySourceOnlyIfNotEncapsulated='userSource.oclIsTypeOf(Entity) implies userSource.oclAsType(Entity).servedBy->isEmpty()'"
  * @generated
  */
 public interface LocalAuthenticationSystem extends Authentication {
@@ -112,6 +110,33 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @generated
 	 */
 	void setAuthenticationSource(UnitSource value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Captcha</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Use Captcha</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Use Captcha</em>' attribute.
+	 * @see #setUseCaptcha(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_UseCaptcha()
+	 * @model default="true" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isUseCaptcha();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Use Captcha</em>' attribute.
+	 * @see #isUseCaptcha()
+	 * @generated
+	 */
+	void setUseCaptcha(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Allow Self Registration</b></em>' attribute.
@@ -247,85 +272,6 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @generated
 	 */
 	void setSendWelcomeEmail(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Use Captcha</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Use Captcha</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Use Captcha</em>' attribute.
-	 * @see #setUseCaptcha(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_UseCaptcha()
-	 * @model default="false" required="true" ordered="false"
-	 * @generated
-	 */
-	boolean isUseCaptcha();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Use Captcha</em>' attribute.
-	 * @see #isUseCaptcha()
-	 * @generated
-	 */
-	void setUseCaptcha(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Captcha Public Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Captcha Public Key</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Captcha Public Key</em>' attribute.
-	 * @see #setCaptchaPublicKey(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_CaptchaPublicKey()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getCaptchaPublicKey();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getCaptchaPublicKey <em>Captcha Public Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Captcha Public Key</em>' attribute.
-	 * @see #getCaptchaPublicKey()
-	 * @generated
-	 */
-	void setCaptchaPublicKey(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Captcha Private Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Captcha Private Key</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Captcha Private Key</em>' attribute.
-	 * @see #setCaptchaPrivateKey(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_CaptchaPrivateKey()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getCaptchaPrivateKey();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getCaptchaPrivateKey <em>Captcha Private Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Captcha Private Key</em>' attribute.
-	 * @see #getCaptchaPrivateKey()
-	 * @generated
-	 */
-	void setCaptchaPrivateKey(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Registration Unit</b></em>' reference.

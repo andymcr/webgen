@@ -39,6 +39,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDefaultMaximumUploadSize <em>Default Maximum Upload Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDatabaseTechnology <em>Database Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
@@ -299,6 +301,46 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	protected FrameworkTechnologies frameworkTechnology = FRAMEWORK_TECHNOLOGY_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getCaptchaSiteKey() <em>Captcha Site Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCaptchaSiteKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CAPTCHA_SITE_KEY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCaptchaSiteKey() <em>Captcha Site Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCaptchaSiteKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected String captchaSiteKey = CAPTCHA_SITE_KEY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCaptchaSecretKey() <em>Captcha Secret Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCaptchaSecretKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CAPTCHA_SECRET_KEY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCaptchaSecretKey() <em>Captcha Secret Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCaptchaSecretKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected String captchaSecretKey = CAPTCHA_SECRET_KEY_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getTopNavigationId() <em>Top Navigation Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -505,9 +547,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		if (newAuthentication != authentication) {
 			NotificationChain msgs = null;
 			if (authentication != null)
-				msgs = ((InternalEObject)authentication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION, null, msgs);
+				msgs = ((InternalEObject)authentication).eInverseRemove(this, WebsitePackage.AUTHENTICATION__AUTHENTICATES, Authentication.class, msgs);
 			if (newAuthentication != null)
-				msgs = ((InternalEObject)newAuthentication).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION, null, msgs);
+				msgs = ((InternalEObject)newAuthentication).eInverseAdd(this, WebsitePackage.AUTHENTICATION__AUTHENTICATES, Authentication.class, msgs);
 			msgs = basicSetAuthentication(newAuthentication, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -667,6 +709,48 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getCaptchaSiteKey() {
+		return captchaSiteKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCaptchaSiteKey(String newCaptchaSiteKey) {
+		String oldCaptchaSiteKey = captchaSiteKey;
+		captchaSiteKey = newCaptchaSiteKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY, oldCaptchaSiteKey, captchaSiteKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getCaptchaSecretKey() {
+		return captchaSecretKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCaptchaSecretKey(String newCaptchaSecretKey) {
+		String oldCaptchaSecretKey = captchaSecretKey;
+		captchaSecretKey = newCaptchaSecretKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY, oldCaptchaSecretKey, captchaSecretKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTopNavigationId() {
 		return topNavigationId;
 	}
@@ -748,6 +832,22 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION:
+				if (authentication != null)
+					msgs = ((InternalEObject)authentication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION, null, msgs);
+				return basicSetAuthentication((Authentication)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case WebsitePackage.WEBSITE_PROPERTIES__AUTHENTICATION:
@@ -790,6 +890,10 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return getDatabaseTechnology();
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
+			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
+				return getCaptchaSiteKey();
+			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
+				return getCaptchaSecretKey();
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				return getTopNavigationId();
 			case WebsitePackage.WEBSITE_PROPERTIES__SIDE_MENU:
@@ -847,6 +951,12 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
+				setCaptchaSiteKey((String)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
+				setCaptchaSecretKey((String)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				setTopNavigationId((String)newValue);
@@ -908,6 +1018,12 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
+				setCaptchaSiteKey(CAPTCHA_SITE_KEY_EDEFAULT);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
+				setCaptchaSecretKey(CAPTCHA_SECRET_KEY_EDEFAULT);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				setTopNavigationId(TOP_NAVIGATION_ID_EDEFAULT);
 				return;
@@ -955,6 +1071,10 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return databaseTechnology != DATABASE_TECHNOLOGY_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
+			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
+				return CAPTCHA_SITE_KEY_EDEFAULT == null ? captchaSiteKey != null : !CAPTCHA_SITE_KEY_EDEFAULT.equals(captchaSiteKey);
+			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
+				return CAPTCHA_SECRET_KEY_EDEFAULT == null ? captchaSecretKey != null : !CAPTCHA_SECRET_KEY_EDEFAULT.equals(captchaSecretKey);
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				return TOP_NAVIGATION_ID_EDEFAULT == null ? topNavigationId != null : !TOP_NAVIGATION_ID_EDEFAULT.equals(topNavigationId);
 			case WebsitePackage.WEBSITE_PROPERTIES__SIDE_MENU:
@@ -999,6 +1119,10 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(databaseTechnology);
 		result.append(", frameworkTechnology: ");
 		result.append(frameworkTechnology);
+		result.append(", captchaSiteKey: ");
+		result.append(captchaSiteKey);
+		result.append(", captchaSecretKey: ");
+		result.append(captchaSecretKey);
 		result.append(", topNavigationId: ");
 		result.append(topNavigationId);
 		result.append(", staticUnitsEditable: ");

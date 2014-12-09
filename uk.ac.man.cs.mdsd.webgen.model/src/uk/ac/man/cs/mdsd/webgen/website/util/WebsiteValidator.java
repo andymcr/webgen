@@ -3428,7 +3428,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_REQUIRES_KEYS__EEXPRESSION = "useCaptcha implies not captchaPublicKey.oclIsUndefined() and not captchaPrivateKey.oclIsUndefined()";
+	protected static final String LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_REQUIRES_KEYS__EEXPRESSION = "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()";
 
 	/**
 	 * Validates the captchaRequiresKeys constraint of '<em>Local Authentication System</em>'.

@@ -113,7 +113,6 @@ rule LocalAuthenticationSystem {
 			endif,
 		useEmailActivation <- website.useEmailActivation,
 		sendWelcomeEmail <- website.sendWelcomeEmail,
-		useCaptcha <- website.useCaptcha,
 		registrationUnit <-
 			if not website.registrationUnit.oclIsUndefined() then
 				website.registrationUnit
@@ -337,9 +336,7 @@ lazy rule implicitUnitElement {
 lazy rule implicitCaptchaField {
 	from website : Website!LocalAuthenticationSystem
 	to jsf : JSF!CaptchaField (
-		name <- 'captcha',
-		publicKey <- website.captchaPublicKey,
-		privateKey <- website.captchaPrivateKey
+		name <- 'captcha'
 	)
 	do {
 		jsf;

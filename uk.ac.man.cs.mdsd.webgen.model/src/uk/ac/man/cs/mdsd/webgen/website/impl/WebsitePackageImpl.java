@@ -1094,7 +1094,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_TopNavigationId() {
+	public EAttribute getWebsiteProperties_CaptchaSiteKey() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -1103,8 +1103,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWebsiteProperties_CaptchaSecretKey() {
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWebsiteProperties_TopNavigationId() {
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWebsiteProperties_SideMenu() {
-		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(14);
+		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -1113,7 +1131,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getWebsiteProperties_StaticUnitsEditable() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(15);
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -2750,24 +2768,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCaptchaField_PublicKey() {
-		return (EAttribute)captchaFieldEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCaptchaField_PrivateKey() {
-		return (EAttribute)captchaFieldEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getUnitSupportAction() {
 		return unitSupportActionEClass;
 	}
@@ -3866,8 +3866,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAuthentication_Authenticates() {
+		return (EReference)authenticationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getAuthentication_LoginLabel() {
-		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3876,7 +3885,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getAuthentication_LogoutLabel() {
-		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3920,7 +3929,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_AllowSelfRegistration() {
+	public EAttribute getLocalAuthenticationSystem_UseCaptcha() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -3929,7 +3938,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_TrackLoginAttempts() {
+	public EAttribute getLocalAuthenticationSystem_AllowSelfRegistration() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -3938,7 +3947,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_AllowAutoLogin() {
+	public EAttribute getLocalAuthenticationSystem_TrackLoginAttempts() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -3947,7 +3956,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_UseEmailActivation() {
+	public EAttribute getLocalAuthenticationSystem_AllowAutoLogin() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -3956,7 +3965,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_SendWelcomeEmail() {
+	public EAttribute getLocalAuthenticationSystem_UseEmailActivation() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -3965,7 +3974,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_UseCaptcha() {
+	public EAttribute getLocalAuthenticationSystem_SendWelcomeEmail() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -3974,26 +3983,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_CaptchaPublicKey() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLocalAuthenticationSystem_CaptchaPrivateKey() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getLocalAuthenticationSystem_RegistrationUnit() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(11);
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -4002,7 +3993,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getLocalAuthenticationSystem_LoginUnit() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(12);
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -4011,7 +4002,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getLocalAuthenticationSystem_ForgottenPasswordUnit() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(13);
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -4117,11 +4108,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY);
+		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY);
+		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__TOP_NAVIGATION_ID);
 		createEReference(websitePropertiesEClass, WEBSITE_PROPERTIES__SIDE_MENU);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE);
 
 		authenticationEClass = createEClass(AUTHENTICATION);
+		createEReference(authenticationEClass, AUTHENTICATION__AUTHENTICATES);
 		createEAttribute(authenticationEClass, AUTHENTICATION__LOGIN_LABEL);
 		createEAttribute(authenticationEClass, AUTHENTICATION__LOGOUT_LABEL);
 
@@ -4129,14 +4123,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USER_SOURCE);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE);
+		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL);
-		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA);
-		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PUBLIC_KEY);
-		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__CAPTCHA_PRIVATE_KEY);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT);
@@ -4427,8 +4419,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(dateFieldEClass, DATE_FIELD__FORMAT);
 
 		captchaFieldEClass = createEClass(CAPTCHA_FIELD);
-		createEAttribute(captchaFieldEClass, CAPTCHA_FIELD__PUBLIC_KEY);
-		createEAttribute(captchaFieldEClass, CAPTCHA_FIELD__PRIVATE_KEY);
 
 		unitSupportActionEClass = createEClass(UNIT_SUPPORT_ACTION);
 		createEAttribute(unitSupportActionEClass, UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE);
@@ -4699,7 +4689,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebsiteProperties_CopyrightText(), ecorePackage.getEString(), "copyrightText", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_MetaDescription(), ecorePackage.getEString(), "metaDescription", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_ProjectName(), ecorePackage.getEString(), "projectName", null, 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWebsiteProperties_Authentication(), this.getAuthentication(), null, "authentication", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWebsiteProperties_Authentication(), this.getAuthentication(), this.getAuthentication_Authenticates(), "authentication", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_TestProjectName(), ecorePackage.getEString(), "testProjectName", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_DefaultDateFormat(), ecorePackage.getEString(), "defaultDateFormat", "jS F Y", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_DefaultTimeFormat(), ecorePackage.getEString(), "defaultTimeFormat", "G.i", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -4707,11 +4697,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebsiteProperties_DefaultMaximumUploadSize(), ecorePackage.getEInt(), "defaultMaximumUploadSize", "2000000", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_DatabaseTechnology(), this.getDatabaseTechnologies(), "databaseTechnology", null, 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_FrameworkTechnology(), this.getFrameworkTechnologies(), "frameworkTechnology", null, 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getWebsiteProperties_CaptchaSiteKey(), ecorePackage.getEString(), "captchaSiteKey", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getWebsiteProperties_CaptchaSecretKey(), ecorePackage.getEString(), "captchaSecretKey", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_TopNavigationId(), ecorePackage.getEString(), "topNavigationId", "topnav", 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getWebsiteProperties_SideMenu(), this.getMenu(), null, "sideMenu", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_StaticUnitsEditable(), ecorePackage.getEBoolean(), "staticUnitsEditable", "false", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAuthentication_Authenticates(), this.getWebsiteProperties(), this.getWebsiteProperties_Authentication(), "authenticates", null, 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthentication_LoginLabel(), ecorePackage.getEString(), "loginLabel", "Login", 0, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAuthentication_LogoutLabel(), ecorePackage.getEString(), "logoutLabel", "Logout", 0, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -4719,14 +4712,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getLocalAuthenticationSystem_UserSource(), this.getUnitSource(), null, "userSource", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_UserAuthenticationKey(), this.getFeature(), null, "userAuthenticationKey", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_AuthenticationSource(), this.getUnitSource(), null, "authenticationSource", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getLocalAuthenticationSystem_UseCaptcha(), ecorePackage.getEBoolean(), "useCaptcha", "true", 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_AllowSelfRegistration(), ecorePackage.getEBoolean(), "allowSelfRegistration", "false", 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_TrackLoginAttempts(), ecorePackage.getEBoolean(), "trackLoginAttempts", "true", 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_AllowAutoLogin(), ecorePackage.getEBoolean(), "allowAutoLogin", "false", 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_UseEmailActivation(), ecorePackage.getEBoolean(), "useEmailActivation", "true", 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_SendWelcomeEmail(), ecorePackage.getEBoolean(), "sendWelcomeEmail", "true", 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getLocalAuthenticationSystem_UseCaptcha(), ecorePackage.getEBoolean(), "useCaptcha", "false", 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getLocalAuthenticationSystem_CaptchaPublicKey(), ecorePackage.getEString(), "captchaPublicKey", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getLocalAuthenticationSystem_CaptchaPrivateKey(), ecorePackage.getEString(), "captchaPrivateKey", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_RegistrationUnit(), this.getRegistrationUnit(), null, "registrationUnit", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_LoginUnit(), this.getLoginUnit(), null, "loginUnit", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_ForgottenPasswordUnit(), this.getForgottenPasswordUnit(), null, "forgottenPasswordUnit", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5017,8 +5008,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getDateField_Format(), ecorePackage.getEString(), "format", null, 0, 1, DateField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(captchaFieldEClass, CaptchaField.class, "CaptchaField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCaptchaField_PublicKey(), ecorePackage.getEString(), "publicKey", null, 0, 1, CaptchaField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCaptchaField_PrivateKey(), ecorePackage.getEString(), "privateKey", "input_attribute", 0, 1, CaptchaField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(unitSupportActionEClass, UnitSupportAction.class, "UnitSupportAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnitSupportAction_ConfirmMessage(), ecorePackage.getEString(), "confirmMessage", null, 0, 1, UnitSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5324,7 +5313,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   new String[] {
 			 "authenticationKeyFromUserSource", "not userSource.oclIsUndefined() implies\r\nlet features : Collection(Feature)\r\n\t= if userSource.oclIsTypeOf(Entity) then\r\n\t\t\tuserSource.oclAsType(Entity).features \r\n\t\telse\r\n\t\t\tlet service : Service = userSource.oclAsType(Service)\r\n\t\t\tin if service.features->isEmpty() then\r\n\t\t\t\t\tservice.encapsulates->collect(e | e.features)\r\n\t\t\t\telse\r\n\t\t\t\t\tservice.features\r\n\t\t\t\t\t\t->select(f | f.oclIsKindOf(ServiceEntityFeature))\r\n\t\t\t\t\t\t->collect(f |\r\n\t\t\t\t\t\t\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n\t\t\t\t\t\t\t\tf.oclAsType(ServiceEntityElement).feature\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n\t\t\t\t\t\t\tendif) \r\n\t\t\t\tendif\r\n\t\tendif\r\n\tin features->includes(userAuthenticationKey)",
 			 "authenticationKeyRequiredAttribute", "if userAuthenticationKey.oclIsUndefined() then false else userAuthenticationKey.cardinality = Cardinality::Required endif",
-			 "captchaRequiresKeys", "useCaptcha implies not captchaPublicKey.oclIsUndefined() and not captchaPrivateKey.oclIsUndefined()",
+			 "captchaRequiresKeys", "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()",
 			 "entitySourceOnlyIfNotEncapsulated", "userSource.oclIsTypeOf(Entity) implies userSource.oclAsType(Entity).servedBy->isEmpty()"
 		   });			
 		addAnnotation

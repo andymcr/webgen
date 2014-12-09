@@ -49,7 +49,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authentication" eType="#//Authentication"
-        containment="true"/>
+        containment="true" eOpposite="#//Authentication/authenticates"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="testProjectName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultDateFormat" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="jS F Y"/>
@@ -65,6 +65,10 @@
         lowerBound="1" eType="#//DatabaseTechnologies"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameworkTechnology" ordered="false"
         lowerBound="1" eType="#//FrameworkTechnologies"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSiteKey" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSecretKey" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="topNavigationId" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="topnav"/>
@@ -74,6 +78,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Authentication" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="authenticates" lowerBound="1"
+        eType="#//WebsiteProperties" eOpposite="#//WebsiteProperties/authentication"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="loginLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="Login"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="logoutLabel" ordered="false"
@@ -86,7 +92,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="authenticationKeyFromUserSource" value="not userSource.oclIsUndefined() implies&#xD;&#xA;let features : Collection(Feature)&#xD;&#xA;&#x9;= if userSource.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;&#x9;&#x9;userSource.oclAsType(Entity).features &#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;let service : Service = userSource.oclAsType(Service)&#xD;&#xA;&#x9;&#x9;&#x9;in if service.features->isEmpty() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;service.encapsulates->collect(e | e.features)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;service.features&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;->select(f | f.oclIsKindOf(ServiceEntityFeature))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;->collect(f |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if f.oclIsTypeOf(ServiceEntityElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;f.oclAsType(ServiceEntityElement).feature&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;f.oclAsType(ServiceEntityAssociation).feature&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif) &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;in features->includes(userAuthenticationKey)"/>
       <details key="authenticationKeyRequiredAttribute" value="if userAuthenticationKey.oclIsUndefined() then false else userAuthenticationKey.cardinality = Cardinality::Required endif"/>
-      <details key="captchaRequiresKeys" value="useCaptcha implies not captchaPublicKey.oclIsUndefined() and not captchaPrivateKey.oclIsUndefined()"/>
+      <details key="captchaRequiresKeys" value="useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()"/>
       <details key="entitySourceOnlyIfNotEncapsulated" value="userSource.oclIsTypeOf(Entity) implies userSource.oclAsType(Entity).servedBy->isEmpty()"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="userSource" ordered="false"
@@ -95,6 +101,9 @@
         ordered="false" lowerBound="1" eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authenticationSource" ordered="false"
         eType="#//UnitSource"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useCaptcha" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="allowSelfRegistration"
         ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
@@ -110,13 +119,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sendWelcomeEmail" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useCaptcha" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaPublicKey" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaPrivateKey" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="registrationUnit" ordered="false"
         eType="#//RegistrationUnit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="loginUnit" ordered="false"
@@ -695,12 +697,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CaptchaField" eSuperTypes="#//NamedDisplayElement #//UnitField">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publicKey" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="privateKey" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="input_attribute"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CaptchaField" eSuperTypes="#//NamedDisplayElement #//UnitField"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnitSupportAction" eSuperTypes="#//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmMessage" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

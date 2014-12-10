@@ -85,7 +85,6 @@ rule Website {
 		genServices <- jsf.services,
 		genPages <- jsf.pages,
 		genMenus <- jsf.menus,
-		baseURL <- jsf.siteName,
 --		basePackage <- orm.persistenceProperties.projectName,
 		databaseName <-
 			if orm.databaseTechnology = #Oracle then

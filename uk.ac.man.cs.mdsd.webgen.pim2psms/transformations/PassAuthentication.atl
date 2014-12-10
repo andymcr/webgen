@@ -64,6 +64,8 @@ rule JsfModel {
 		metaDescription <- partialJsf.metaDescription,
 		frameworkTechnology <- partialJsf.frameworkTechnology,
 		authentication <- thisModule.findWebsiteProperties().authentication,
+		captchaSiteKey <- partialJsf.captchaSiteKey,
+		captchaSecretKey <- partialJsf.captchaSecretKey,
 		topNavigationId <- partialJsf.topNavigationId,
 		staticUnitsEditable <- partialJsf.staticUnitsEditable
 	)

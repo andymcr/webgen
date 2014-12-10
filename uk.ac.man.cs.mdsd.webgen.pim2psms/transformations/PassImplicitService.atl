@@ -32,6 +32,8 @@ rule JsfModel {
 		metaDescription <- partialJsf.metaDescription,
 		frameworkTechnology <- partialJsf.frameworkTechnology,
 		authentication <- partialJsf.authentication,
+		captchaSiteKey <- partialJsf.captchaSiteKey,
+		captchaSecretKey <- partialJsf.captchaSecretKey,
 		topNavigationId <- partialJsf.topNavigationId,
 		sideMenu <- partialJsf.sideMenu,
 		staticUnitsEditable <- partialJsf.staticUnitsEditable

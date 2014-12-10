@@ -389,7 +389,7 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SitePropertyCategory"),
 				 null));
 	}
 
@@ -411,7 +411,7 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_SitePropertyCategory"),
 				 null));
 	}
 

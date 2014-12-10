@@ -70,8 +70,8 @@
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/defaultMaximumUploadSize"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databaseTechnology"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/frameworkTechnology"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSiteKey"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSecretKey"/>
+      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSiteKey"/>
+      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSecretKey"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/topNavigationId"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebsiteProperties/sideMenu"/>

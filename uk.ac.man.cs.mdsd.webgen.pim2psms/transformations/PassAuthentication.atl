@@ -42,9 +42,14 @@ rule JsfModel {
 					let authentication : Website!LocalAuthenticationSystem
 						= website.websiteProperties.authentication.oclAsType(Website!LocalAuthenticationSystem)
 					in if authentication.authenticationSource.oclIsUndefined() then
-							Sequence{
-								thisModule.implicitRegistrationPage(authentication),
-								thisModule.implicitManageAuthenticationsPage(authentication)}
+							if authentication.allowSelfRegistration  then
+								Sequence{
+									thisModule.implicitRegistrationPage(authentication),
+									thisModule.implicitManageAuthenticationsPage(authentication)}
+							else
+								Sequence{
+									thisModule.implicitManageAuthenticationsPage(authentication)}
+								endif
 						else
 							Sequence{}
 						endif
@@ -109,9 +114,11 @@ rule LocalAuthenticationSystem {
 		registrationUnit <-
 			if not website.registrationUnit.oclIsUndefined() then
 				website.registrationUnit
-			else
+			else if website.allowSelfRegistration then
 				thisModule.implicitRegistrationUnit(website)
-			endif,
+			else
+				OclUndefined
+			endif endif,
 		loginUnit <-
 			if not website.loginUnit.oclIsUndefined() then
 				website.loginUnit

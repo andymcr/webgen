@@ -362,7 +362,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if feature.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;feature.name&#xD;&#xA;endif"/>
+        <details key="derivation" value="if feature.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else if self.alias.oclIsUndefined() then&#xD;&#xA;&#x9;feature.name&#xD;&#xA;else if self.alias &lt;> '' then&#xD;&#xA;&#x9;self.alias&#xD;&#xA;else&#xD;&#xA;&#x9;feature.name&#xD;&#xA;endif endif endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="caseInsensitive" ordered="false"
@@ -390,7 +390,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if feature.oclIsUndefined() or partOf.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;if partOf.encapsulates->includes(feature.parentEntity) then&#xD;&#xA;&#x9;&#x9;feature.name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;feature.targetFeatureName &#xD;&#xA;endif endif"/>
+        <details key="derivation" value="if feature.oclIsUndefined() or partOf.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else &#xD;&#xA;&#x9;let featureName : String&#xD;&#xA;&#x9;&#x9;= if partOf.encapsulates->includes(feature.parentEntity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;feature.name&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;feature.targetFeatureName &#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;in if self.alias.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;featureName&#xD;&#xA;&#x9;&#x9;else if self.alias &lt;> '' then&#xD;&#xA;&#x9;&#x9;&#x9;self.alias&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;featureName&#xD;&#xA;&#x9;&#x9;endif endif&#xD;&#xA;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicLabel" eType="#//ModelLabel"/>

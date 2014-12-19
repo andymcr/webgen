@@ -33,7 +33,7 @@ public interface ServiceEntityAssociation extends ServiceEntityFeature, ServiceA
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceEntityAssociation_Name()
 	 * @model changeable="false" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if feature.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\tfeature.name\r\n\telse\r\n\t\tfeature.targetFeatureName \r\nendif endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if feature.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet featureName : String\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.name\r\n\t\t\telse\r\n\t\t\t\tfeature.targetFeatureName \r\n\t\t\tendif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tfeatureName\r\n\t\telse if self.alias <> \'\' then\r\n\t\t\tself.alias\r\n\t\telse\r\n\t\t\tfeatureName\r\n\t\tendif endif\r\nendif'"
 	 * @generated
 	 */
 	String getName();

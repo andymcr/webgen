@@ -5355,7 +5355,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getServiceEntityElement_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if feature.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tfeature.name\r\nendif"
+			 "derivation", "if feature.oclIsUndefined() then\r\n\t\'\'\r\nelse if self.alias.oclIsUndefined() then\r\n\tfeature.name\r\nelse if self.alias <> \'\' then\r\n\tself.alias\r\nelse\r\n\tfeature.name\r\nendif endif endif"
 		   });			
 		addAnnotation
 		  (serviceEntityAssociationEClass, 
@@ -5369,7 +5369,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getServiceEntityAssociation_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if feature.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\tfeature.name\r\n\telse\r\n\t\tfeature.targetFeatureName \r\nendif endif"
+			 "derivation", "if feature.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet featureName : String\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.name\r\n\t\t\telse\r\n\t\t\t\tfeature.targetFeatureName \r\n\t\t\tendif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tfeatureName\r\n\t\telse if self.alias <> \'\' then\r\n\t\t\tself.alias\r\n\t\telse\r\n\t\t\tfeatureName\r\n\t\tendif endif\r\nendif"
 		   });			
 		addAnnotation
 		  (serviceViewAssociationEClass, 

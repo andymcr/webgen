@@ -35,7 +35,7 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceEntityElement_Name()
 	 * @model changeable="false" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if feature.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tfeature.name\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if feature.oclIsUndefined() then\r\n\t\'\'\r\nelse if self.alias.oclIsUndefined() then\r\n\tfeature.name\r\nelse if self.alias <> \'\' then\r\n\tself.alias\r\nelse\r\n\tfeature.name\r\nendif endif endif'"
 	 * @generated
 	 */
 	String getName();

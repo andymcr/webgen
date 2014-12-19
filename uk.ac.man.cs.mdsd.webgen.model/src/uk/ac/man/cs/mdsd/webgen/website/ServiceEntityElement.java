@@ -12,6 +12,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#isUseFeatureSource <em>Use Feature Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#isCaseInsensitive <em>Case Insensitive</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#isEncrypt <em>Encrypt</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#getPlaceholder <em>Placeholder</em>}</li>
@@ -39,6 +40,22 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	 * @generated
 	 */
 	String getName();
+
+	/**
+	 * Returns the value of the '<em><b>Use Feature Source</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Use Feature Source</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Use Feature Source</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceEntityElement_UseFeatureSource()
+	 * @model default="true" changeable="false"
+	 * @generated
+	 */
+	boolean isUseFeatureSource();
 
 	/**
 	 * Returns the value of the '<em><b>Case Insensitive</b></em>' attribute.

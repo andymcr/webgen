@@ -65,6 +65,7 @@ public class ServiceEntityAssociationItemProvider
 			addSelectionPropertyDescriptor(object);
 			addFeaturePropertyDescriptor(object);
 			addDynamicLabelPropertyDescriptor(object);
+			addUseFeatureSourcePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -150,7 +151,29 @@ public class ServiceEntityAssociationItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Use Feature Source feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUseFeatureSourcePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServiceEntityAssociation_useFeatureSource_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceEntityAssociation_useFeatureSource_feature", "_UI_ServiceEntityAssociation_type"),
+				 WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -192,6 +215,7 @@ public class ServiceEntityAssociationItemProvider
 
 		switch (notification.getFeatureID(ServiceEntityAssociation.class)) {
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__NAME:
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -2471,7 +2471,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getServiceEntityElement_CaseInsensitive() {
+	public EAttribute getServiceEntityElement_UseFeatureSource() {
 		return (EAttribute)serviceEntityElementEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2480,7 +2480,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getServiceEntityElement_Encrypt() {
+	public EAttribute getServiceEntityElement_CaseInsensitive() {
 		return (EAttribute)serviceEntityElementEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -2489,7 +2489,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getServiceEntityElement_Placeholder() {
+	public EAttribute getServiceEntityElement_Encrypt() {
 		return (EAttribute)serviceEntityElementEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -2498,8 +2498,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getServiceEntityElement_ValidationPattern() {
+	public EAttribute getServiceEntityElement_Placeholder() {
 		return (EAttribute)serviceEntityElementEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServiceEntityElement_ValidationPattern() {
+		return (EAttribute)serviceEntityElementEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2545,6 +2554,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EReference getServiceEntityAssociation_DynamicLabel() {
 		return (EReference)serviceEntityAssociationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getServiceEntityAssociation_UseFeatureSource() {
+		return (EAttribute)serviceEntityAssociationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -4259,6 +4277,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		serviceEntityElementEClass = createEClass(SERVICE_ENTITY_ELEMENT);
 		createEAttribute(serviceEntityElementEClass, SERVICE_ENTITY_ELEMENT__NAME);
+		createEAttribute(serviceEntityElementEClass, SERVICE_ENTITY_ELEMENT__USE_FEATURE_SOURCE);
 		createEAttribute(serviceEntityElementEClass, SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE);
 		createEAttribute(serviceEntityElementEClass, SERVICE_ENTITY_ELEMENT__ENCRYPT);
 		createEAttribute(serviceEntityElementEClass, SERVICE_ENTITY_ELEMENT__PLACEHOLDER);
@@ -4270,6 +4289,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		serviceEntityAssociationEClass = createEClass(SERVICE_ENTITY_ASSOCIATION);
 		createEAttribute(serviceEntityAssociationEClass, SERVICE_ENTITY_ASSOCIATION__NAME);
 		createEReference(serviceEntityAssociationEClass, SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL);
+		createEAttribute(serviceEntityAssociationEClass, SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE);
 
 		serviceViewAssociationEClass = createEClass(SERVICE_VIEW_ASSOCIATION);
 		createEReference(serviceViewAssociationEClass, SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE);
@@ -4848,6 +4868,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(serviceEntityElementEClass, ServiceEntityElement.class, "ServiceEntityElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceEntityElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServiceEntityElement.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getServiceEntityElement_UseFeatureSource(), ecorePackage.getEBoolean(), "useFeatureSource", "true", 0, 1, ServiceEntityElement.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceEntityElement_CaseInsensitive(), ecorePackage.getEBoolean(), "caseInsensitive", "false", 0, 1, ServiceEntityElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getServiceEntityElement_Encrypt(), ecorePackage.getEBoolean(), "encrypt", "false", 0, 1, ServiceEntityElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getServiceEntityElement_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, ServiceEntityElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -4859,6 +4880,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(serviceEntityAssociationEClass, ServiceEntityAssociation.class, "ServiceEntityAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceEntityAssociation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServiceEntityAssociation.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getServiceEntityAssociation_DynamicLabel(), this.getModelLabel(), null, "dynamicLabel", null, 0, 1, ServiceEntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceEntityAssociation_UseFeatureSource(), ecorePackage.getEBoolean(), "useFeatureSource", null, 0, 1, ServiceEntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceViewAssociationEClass, ServiceViewAssociation.class, "ServiceViewAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceViewAssociation_TargetFeature(), this.getServiceAssociation(), null, "targetFeature", null, 1, 1, ServiceViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5369,7 +5391,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getServiceEntityAssociation_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if feature.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet featureName : String\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.name\r\n\t\t\telse\r\n\t\t\t\tfeature.targetFeatureName \r\n\t\t\tendif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tfeatureName\r\n\t\telse if self.alias <> \'\' then\r\n\t\t\tself.alias\r\n\t\telse\r\n\t\t\tfeatureName\r\n\t\tendif endif\r\nendif"
+			 "derivation", "if feature.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet featureName : String\r\n\t\t= if self.useFeatureSource then\r\n\t\t\t\tfeature.name\r\n\t\t\telse\r\n\t\t\t\tfeature.targetFeatureName \r\n\t\t\tendif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tfeatureName\r\n\t\telse if self.alias <> \'\' then\r\n\t\t\tself.alias\r\n\t\telse\r\n\t\t\tfeatureName\r\n\t\tendif endif\r\nendif"
 		   });			
 		addAnnotation
 		  (serviceViewAssociationEClass, 
@@ -5438,7 +5460,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getUnitElement_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if serviceFeature.oclIsUndefined() then\r\n\tif feature.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tfeature.name\r\n\tendif\r\nelse\r\n\tif serviceFeature.alias.oclIsUndefined() then\r\n\t\tserviceFeature.name\r\n\telse\r\n\t\tserviceFeature.alias\r\n\tendif\r\nendif"
+			 "derivation", "if serviceFeature.oclIsUndefined() then\r\n\tif feature.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tfeature.name\r\n\tendif\r\nelse\r\n\tserviceFeature.name\r\nendif"
 		   });			
 		addAnnotation
 		  (unitAssociationEClass, 

@@ -468,7 +468,8 @@ rule ServiceEntityAssociation {
 	from jsf : JSF!ServiceEntityAssociation
 	to gen : GEN!GenServiceEntityAssociation (
 		genFeature <- jsf.feature,
-		genForcedValue <- jsf.forcedValue
+		genForcedValue <- jsf.forcedValue,
+		columnName <- jsf.name.createAssociationColumnName()
 	)
 	do {
 		gen.refSetValue('jsfFeature', jsf);

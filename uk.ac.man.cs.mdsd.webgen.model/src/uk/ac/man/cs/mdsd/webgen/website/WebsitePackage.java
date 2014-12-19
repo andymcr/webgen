@@ -3647,13 +3647,22 @@ public interface WebsitePackage extends EPackage {
 	int SERVICE_ENTITY_ELEMENT__NAME = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Use Feature Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ENTITY_ELEMENT__USE_FEATURE_SOURCE = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Case Insensitive</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 4;
+	int SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Encrypt</b></em>' attribute.
@@ -3662,7 +3671,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ELEMENT__ENCRYPT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 5;
+	int SERVICE_ENTITY_ELEMENT__ENCRYPT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -3671,7 +3680,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ELEMENT__PLACEHOLDER = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 6;
+	int SERVICE_ENTITY_ELEMENT__PLACEHOLDER = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -3680,7 +3689,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 7;
+	int SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Service Entity Element</em>' class.
@@ -3689,7 +3698,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ELEMENT_FEATURE_COUNT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 8;
+	int SERVICE_ENTITY_ELEMENT_FEATURE_COUNT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -3873,13 +3882,22 @@ public interface WebsitePackage extends EPackage {
 	int SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Use Feature Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Service Entity Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ASSOCIATION_FEATURE_COUNT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 4;
+	int SERVICE_ENTITY_ASSOCIATION_FEATURE_COUNT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11849,6 +11867,17 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getServiceEntityElement_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#isUseFeatureSource <em>Use Feature Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Use Feature Source</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#isUseFeatureSource()
+	 * @see #getServiceEntityElement()
+	 * @generated
+	 */
+	EAttribute getServiceEntityElement_UseFeatureSource();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#isCaseInsensitive <em>Case Insensitive</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11944,6 +11973,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getServiceEntityAssociation_DynamicLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation#isUseFeatureSource <em>Use Feature Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Use Feature Source</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation#isUseFeatureSource()
+	 * @see #getServiceEntityAssociation()
+	 * @generated
+	 */
+	EAttribute getServiceEntityAssociation_UseFeatureSource();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation <em>Service View Association</em>}'.
@@ -15248,6 +15288,14 @@ public interface WebsitePackage extends EPackage {
 		EAttribute SERVICE_ENTITY_ELEMENT__NAME = eINSTANCE.getServiceEntityElement_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Use Feature Source</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_ENTITY_ELEMENT__USE_FEATURE_SOURCE = eINSTANCE.getServiceEntityElement_UseFeatureSource();
+
+		/**
 		 * The meta object literal for the '<em><b>Case Insensitive</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -15322,6 +15370,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL = eINSTANCE.getServiceEntityAssociation_DynamicLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Use Feature Source</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE = eINSTANCE.getServiceEntityAssociation_UseFeatureSource();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl <em>Service View Association</em>}' class.

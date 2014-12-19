@@ -313,6 +313,7 @@ public class ServiceEntityElementItemProvider
 		switch (notification.getFeatureID(ServiceEntityElement.class)) {
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__OBFUSCATE_FORM_FIELDS:
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__NAME:
+			case WebsitePackage.SERVICE_ENTITY_ELEMENT__USE_FEATURE_SOURCE:
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE:
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:

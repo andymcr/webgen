@@ -28,6 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#isUseFeatureSource <em>Use Feature Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#isCaseInsensitive <em>Case Insensitive</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#isEncrypt <em>Encrypt</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#getPlaceholder <em>Placeholder</em>}</li>
@@ -87,6 +88,26 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.SERVICE_ENTITY_ELEMENT__NAME).getSettingDelegate();
+
+	/**
+	 * The default value of the '{@link #isUseFeatureSource() <em>Use Feature Source</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseFeatureSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean USE_FEATURE_SOURCE_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isUseFeatureSource() <em>Use Feature Source</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseFeatureSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean useFeatureSource = USE_FEATURE_SOURCE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isCaseInsensitive() <em>Case Insensitive</em>}' attribute.
@@ -317,6 +338,15 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isUseFeatureSource() {
+		return useFeatureSource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isCaseInsensitive() {
 		return caseInsensitive;
 	}
@@ -427,6 +457,8 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 				return getDefaultValue();
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__NAME:
 				return getName();
+			case WebsitePackage.SERVICE_ENTITY_ELEMENT__USE_FEATURE_SOURCE:
+				return isUseFeatureSource();
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE:
 				return isCaseInsensitive();
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
@@ -521,6 +553,8 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 				return defaultValue != null;
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__NAME:
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.SERVICE_ENTITY_ELEMENT__USE_FEATURE_SOURCE:
+				return useFeatureSource != USE_FEATURE_SOURCE_EDEFAULT;
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE:
 				return caseInsensitive != CASE_INSENSITIVE_EDEFAULT;
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
@@ -581,6 +615,8 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (obfuscateFormFields: ");
 		result.append(obfuscateFormFields);
+		result.append(", useFeatureSource: ");
+		result.append(useFeatureSource);
 		result.append(", caseInsensitive: ");
 		result.append(caseInsensitive);
 		result.append(", encrypt: ");

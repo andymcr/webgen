@@ -30,6 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getFeature <em>Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getDynamicLabel <em>Dynamic Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#isUseFeatureSource <em>Use Feature Source</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,6 +76,26 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	 * @ordered
 	 */
 	protected ModelLabel dynamicLabel;
+
+	/**
+	 * The default value of the '{@link #isUseFeatureSource() <em>Use Feature Source</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseFeatureSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean USE_FEATURE_SOURCE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isUseFeatureSource() <em>Use Feature Source</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseFeatureSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean useFeatureSource = USE_FEATURE_SOURCE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,17 +190,15 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 		feature = newFeature;
 		// eContainer may be undefined when loading resource (used by getPartOf)
 		if ((newFeature != null) && (eContainer() != null)) {
-			boolean featureRequired;
 			if (getPartOf().getEncapsulates().contains(newFeature.getParentEntity())) {
-				featureRequired = newFeature.getCardinality() == Cardinality.REQUIRED;
+				if (!getPartOf().getEncapsulates().contains(newFeature.getTargetEntity())) {
+					setUseFeatureSource(true);
+				}
 			} else {
-				if (newFeature instanceof AssociationWithContainment) {
-					featureRequired = true;
-				} else {
-					featureRequired = ((AssociationWithoutContainment) newFeature).getTargetCardinality() == Cardinality.REQUIRED;
+				if (getPartOf().getEncapsulates().contains(newFeature.getTargetEntity())) {
+					setUseFeatureSource(false);
 				}
 			}
-			setRequired(isRequired() || featureRequired);
 		}
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_ENTITY_ASSOCIATION__FEATURE, oldFeature, feature));
@@ -239,6 +258,38 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isUseFeatureSource() {
+		return useFeatureSource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setUseFeatureSource(boolean newUseFeatureSource) {
+		boolean oldUseFeatureSource = useFeatureSource;
+		useFeatureSource = newUseFeatureSource;
+		boolean featureRequired;
+		if (useFeatureSource) {
+			featureRequired = getFeature().getCardinality() == Cardinality.REQUIRED;
+		} else {
+			if (getFeature() instanceof AssociationWithContainment) {
+				featureRequired = true;
+			} else {
+				featureRequired = ((AssociationWithoutContainment) getFeature()).getTargetCardinality() == Cardinality.REQUIRED;
+			}
+		}
+		setRequired(isRequired() || featureRequired);
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE, oldUseFeatureSource, useFeatureSource));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -253,6 +304,8 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL:
 				if (resolve) return getDynamicLabel();
 				return basicGetDynamicLabel();
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE:
+				return isUseFeatureSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -273,6 +326,9 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 				return;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL:
 				setDynamicLabel((ModelLabel)newValue);
+				return;
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE:
+				setUseFeatureSource((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -295,6 +351,9 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL:
 				setDynamicLabel((ModelLabel)null);
 				return;
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE:
+				setUseFeatureSource(USE_FEATURE_SOURCE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -315,6 +374,8 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL:
 				return dynamicLabel != null;
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE:
+				return useFeatureSource != USE_FEATURE_SOURCE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -361,6 +422,22 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (useFeatureSource: ");
+		result.append(useFeatureSource);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ServiceEntityAssociationImpl

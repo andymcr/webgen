@@ -296,9 +296,26 @@ rule CollectionDate {
 }
 
 -- @extends SingletonAttribute
+abstract rule SingletonResource {
+	from orm : ORM!SingletonResource
+	to gen : GEN!GenSingletonResource (
+	)
+}
+
+-- @extends SingletonResource
 rule SingletonFile {
 	from orm : ORM!SingletonFile
 	to gen : GEN!GenSingletonFile (
+	)
+	do {
+		gen.refSetValue('ormFeature', orm);
+	}
+}
+
+-- @extends SingletonResource
+rule SingletonImage {
+	from orm : ORM!SingletonImage
+	to gen : GEN!GenSingletonImage (
 	)
 	do {
 		gen.refSetValue('ormFeature', orm);

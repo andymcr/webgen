@@ -19,6 +19,11 @@
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//FrameworkTechnologies/Kohana"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//FrameworkTechnologies/Laravel"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//AjaxTechnologies">
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/None"/>
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/jQuery"/>
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/AngularJS"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//Cardinality">
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//Cardinality/Optional"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//Cardinality/Required"/>
@@ -70,6 +75,7 @@
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/defaultMaximumUploadSize"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databaseTechnology"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/frameworkTechnology"/>
+      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/ajaxTechnology"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSiteKey"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSecretKey"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/topNavigationId"/>
@@ -395,6 +401,8 @@
           ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/selection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/dynamicLabel"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/filters"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//UnitChildFeature"/>
     <genClasses ecoreClass="website.ecore#//UnitChildElement">

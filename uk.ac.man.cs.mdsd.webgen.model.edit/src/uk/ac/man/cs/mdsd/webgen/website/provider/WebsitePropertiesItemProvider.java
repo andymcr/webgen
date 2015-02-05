@@ -76,6 +76,7 @@ public class WebsitePropertiesItemProvider
 			addDefaultMaximumUploadSizePropertyDescriptor(object);
 			addDatabaseTechnologyPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
+			addAjaxTechnologyPropertyDescriptor(object);
 			addCaptchaSiteKeyPropertyDescriptor(object);
 			addCaptchaSecretKeyPropertyDescriptor(object);
 			addTopNavigationIdPropertyDescriptor(object);
@@ -372,6 +373,28 @@ public class WebsitePropertiesItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Ajax Technology feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAjaxTechnologyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_ajaxTechnology_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_ajaxTechnology_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SitePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Captcha Site Key feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -531,6 +554,7 @@ public class WebsitePropertiesItemProvider
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE:
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
+			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:

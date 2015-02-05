@@ -723,6 +723,7 @@ rule UnitAssociation {
 		genChildFeature <- jsf.childFeature,
 		genSelection <- jsf.selection,
 		genDynamicLabel <- jsf.dynamicLabel,
+		genFilters <- jsf.filters,
 		selectOneOfOption <- #Menu,
 		selectManyOption <- #List
 	)

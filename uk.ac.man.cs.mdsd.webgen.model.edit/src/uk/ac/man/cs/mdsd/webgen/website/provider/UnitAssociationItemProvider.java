@@ -73,6 +73,7 @@ public class UnitAssociationItemProvider
 			addServiceFeaturePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addDynamicLabelPropertyDescriptor(object);
+			addFiltersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -221,6 +222,28 @@ public class UnitAssociationItemProvider
 				 getString("_UI_UnitAssociation_dynamicLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_dynamicLabel_feature", "_UI_UnitAssociation_type"),
 				 WebsitePackage.Literals.UNIT_ASSOCIATION__DYNAMIC_LABEL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Filters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFiltersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitAssociation_filters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_filters_feature", "_UI_UnitAssociation_type"),
+				 WebsitePackage.Literals.UNIT_ASSOCIATION__FILTERS,
 				 true,
 				 false,
 				 true,

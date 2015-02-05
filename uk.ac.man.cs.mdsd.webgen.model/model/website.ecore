@@ -37,6 +37,11 @@
     <eLiterals name="Kohana" value="3"/>
     <eLiterals name="Laravel" value="4"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AjaxTechnologies">
+    <eLiterals name="None"/>
+    <eLiterals name="jQuery" value="1"/>
+    <eLiterals name="AngularJS" value="2"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WebsiteProperties">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="siteTitle" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -65,6 +70,8 @@
         lowerBound="1" eType="#//DatabaseTechnologies"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameworkTechnology" ordered="false"
         lowerBound="1" eType="#//FrameworkTechnologies"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ajaxTechnology" eType="#//AjaxTechnologies"
+        defaultValueLiteral="None"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSiteKey" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSecretKey" ordered="false"
@@ -664,6 +671,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicLabel" ordered="false"
         eType="#//ModelLabel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
+        eType="#//UnitTitle"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnitChildFeature" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnitChildElement" eSuperTypes="#//UnitChildFeature">

@@ -21,6 +21,7 @@ rule JsfModel {
 		copyrightText <- partialJsf.copyrightText,
 		metaDescription <- partialJsf.metaDescription,
 		frameworkTechnology <- partialJsf.frameworkTechnology,
+		ajaxTechnology <- partialJsf.ajaxTechnology,
 		authentication <- partialJsf.authentication,
 		captchaSiteKey <- partialJsf.captchaSiteKey,
 		captchaSecretKey <- partialJsf.captchaSecretKey,
@@ -431,7 +432,8 @@ rule UnitAssociation {
 		serviceFeature <- partialJsf.serviceFeature,
 		childFeature <- partialJsf.childFeature,
 		selection <- partialJsf.selection,
-		dynamicLabel <- partialJsf.dynamicLabel
+		dynamicLabel <- partialJsf.dynamicLabel,
+		filters <- partialJsf.filters
 	)
 }
 

@@ -31,6 +31,7 @@ rule JsfModel {
 		copyrightText <- partialJsf.copyrightText,
 		metaDescription <- partialJsf.metaDescription,
 		frameworkTechnology <- partialJsf.frameworkTechnology,
+		ajaxTechnology <- partialJsf.ajaxTechnology,
 		authentication <- partialJsf.authentication,
 		captchaSiteKey <- partialJsf.captchaSiteKey,
 		captchaSecretKey <- partialJsf.captchaSecretKey,

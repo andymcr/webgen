@@ -138,6 +138,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return createDatabaseTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return createFrameworkTechnologiesFromString(eDataType, initialValue);
+			case WebsitePackage.AJAX_TECHNOLOGIES:
+				return createAjaxTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.CARDINALITY:
 				return createCardinalityFromString(eDataType, initialValue);
 			case WebsitePackage.DATE_DETAILS:
@@ -165,6 +167,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return convertDatabaseTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return convertFrameworkTechnologiesToString(eDataType, instanceValue);
+			case WebsitePackage.AJAX_TECHNOLOGIES:
+				return convertAjaxTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.CARDINALITY:
 				return convertCardinalityToString(eDataType, instanceValue);
 			case WebsitePackage.DATE_DETAILS:
@@ -817,6 +821,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * @generated
 	 */
 	public String convertFrameworkTechnologiesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AjaxTechnologies createAjaxTechnologiesFromString(EDataType eDataType, String initialValue) {
+		AjaxTechnologies result = AjaxTechnologies.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertAjaxTechnologiesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -320,6 +320,7 @@ rule JsfModel {
 		captchaSiteKey <- website.websiteProperties.captchaSiteKey,
 		captchaSecretKey <- website.websiteProperties.captchaSecretKey,
 		frameworkTechnology <- website.websiteProperties.frameworkTechnology,
+		ajaxTechnology <- website.websiteProperties.ajaxTechnology,
 		topNavigationId <- website.websiteProperties.topNavigationId,
 		sideMenu <- website.websiteProperties.sideMenu,
 		staticUnitsEditable <- website.websiteProperties.staticUnitsEditable
@@ -826,6 +827,7 @@ rule UnitAssociation {
 					OclUndefined
 				endif endif
 			endif,
+		filters <- website.filters,
 		maximumDisplaySize <- website.maximumDisplaySize,
 		displayOption <-
 			if website.collectionDisplayOption = #LineDirection then

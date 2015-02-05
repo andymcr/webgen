@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import java.util.List;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -16,6 +18,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getDynamicLabel <em>Dynamic Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getFilters <em>Filters</em>}</li>
  * </ul>
  * </p>
  *
@@ -144,5 +147,21 @@ public interface UnitAssociation extends UnitFeature, IncludedAssociation, UnitC
 	 * @generated
 	 */
 	void setDynamicLabel(ModelLabel value);
+
+	/**
+	 * Returns the value of the '<em><b>Filters</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.UnitTitle}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Filters</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Filters</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation_Filters()
+	 * @model
+	 * @generated
+	 */
+	List<UnitTitle> getFilters();
 
 } // UnitAssociation

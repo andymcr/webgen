@@ -92,6 +92,7 @@ rule UnitAssociation {
 		childFeature <- partialJsf.childFeature,
 		selection <- partialJsf.selection,
 		dynamicLabel <- partialJsf.dynamicLabel,
+		filters <- partialJsf.filters,
 		maximumDisplaySize <- partialJsf.maximumDisplaySize,
 		displayOption <- partialJsf.displayOption
 	)

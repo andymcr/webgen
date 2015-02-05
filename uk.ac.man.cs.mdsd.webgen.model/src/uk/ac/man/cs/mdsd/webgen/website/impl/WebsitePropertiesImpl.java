@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Authentication;
 import uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
@@ -39,6 +40,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDefaultMaximumUploadSize <em>Default Maximum Upload Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDatabaseTechnology <em>Database Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTopNavigationId <em>Top Navigation Id</em>}</li>
@@ -299,6 +301,26 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @ordered
 	 */
 	protected FrameworkTechnologies frameworkTechnology = FRAMEWORK_TECHNOLOGY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAjaxTechnology() <em>Ajax Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAjaxTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final AjaxTechnologies AJAX_TECHNOLOGY_EDEFAULT = AjaxTechnologies.NONE;
+
+	/**
+	 * The cached value of the '{@link #getAjaxTechnology() <em>Ajax Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAjaxTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected AjaxTechnologies ajaxTechnology = AJAX_TECHNOLOGY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCaptchaSiteKey() <em>Captcha Site Key</em>}' attribute.
@@ -709,6 +731,27 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public AjaxTechnologies getAjaxTechnology() {
+		return ajaxTechnology;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAjaxTechnology(AjaxTechnologies newAjaxTechnology) {
+		AjaxTechnologies oldAjaxTechnology = ajaxTechnology;
+		ajaxTechnology = newAjaxTechnology == null ? AJAX_TECHNOLOGY_EDEFAULT : newAjaxTechnology;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY, oldAjaxTechnology, ajaxTechnology));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getCaptchaSiteKey() {
 		return captchaSiteKey;
 	}
@@ -890,6 +933,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return getDatabaseTechnology();
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
+			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
+				return getAjaxTechnology();
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
 				return getCaptchaSiteKey();
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
@@ -951,6 +996,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
+				setAjaxTechnology((AjaxTechnologies)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
 				setCaptchaSiteKey((String)newValue);
@@ -1018,6 +1066,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
+				setAjaxTechnology(AJAX_TECHNOLOGY_EDEFAULT);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
 				setCaptchaSiteKey(CAPTCHA_SITE_KEY_EDEFAULT);
 				return;
@@ -1071,6 +1122,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return databaseTechnology != DATABASE_TECHNOLOGY_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
+			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
+				return ajaxTechnology != AJAX_TECHNOLOGY_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
 				return CAPTCHA_SITE_KEY_EDEFAULT == null ? captchaSiteKey != null : !CAPTCHA_SITE_KEY_EDEFAULT.equals(captchaSiteKey);
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
@@ -1119,6 +1172,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(databaseTechnology);
 		result.append(", frameworkTechnology: ");
 		result.append(frameworkTechnology);
+		result.append(", ajaxTechnology: ");
+		result.append(ajaxTechnology);
 		result.append(", captchaSiteKey: ");
 		result.append(captchaSiteKey);
 		result.append(", captchaSecretKey: ");

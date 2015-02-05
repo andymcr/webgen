@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.Association;
@@ -34,6 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.UnitChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
+import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -50,6 +52,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getDynamicLabel <em>Dynamic Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getFilters <em>Filters</em>}</li>
  * </ul>
  * </p>
  *
@@ -125,6 +128,16 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @ordered
 	 */
 	protected ModelLabel dynamicLabel;
+
+	/**
+	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFilters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<UnitTitle> filters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -426,6 +439,18 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<UnitTitle> getFilters() {
+		if (filters == null) {
+			filters = new EObjectResolvingEList<UnitTitle>(UnitTitle.class, this, WebsitePackage.UNIT_ASSOCIATION__FILTERS);
+		}
+		return filters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -478,6 +503,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebsitePackage.UNIT_ASSOCIATION__DYNAMIC_LABEL:
 				if (resolve) return getDynamicLabel();
 				return basicGetDynamicLabel();
+			case WebsitePackage.UNIT_ASSOCIATION__FILTERS:
+				return getFilters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -510,6 +537,10 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebsitePackage.UNIT_ASSOCIATION__DYNAMIC_LABEL:
 				setDynamicLabel((ModelLabel)newValue);
 				return;
+			case WebsitePackage.UNIT_ASSOCIATION__FILTERS:
+				getFilters().clear();
+				getFilters().addAll((Collection<? extends UnitTitle>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -540,6 +571,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebsitePackage.UNIT_ASSOCIATION__DYNAMIC_LABEL:
 				setDynamicLabel((ModelLabel)null);
 				return;
+			case WebsitePackage.UNIT_ASSOCIATION__FILTERS:
+				getFilters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -566,6 +600,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return selection != null;
 			case WebsitePackage.UNIT_ASSOCIATION__DYNAMIC_LABEL:
 				return dynamicLabel != null;
+			case WebsitePackage.UNIT_ASSOCIATION__FILTERS:
+				return filters != null && !filters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -254,13 +254,22 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 12;
 
 	/**
+	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 13;
+
+	/**
 	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 13;
+	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
@@ -269,7 +278,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 14;
+	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 15;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -278,7 +287,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 15;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 16;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -287,7 +296,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SIDE_MENU = 16;
+	int WEBSITE_PROPERTIES__SIDE_MENU = 17;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -296,7 +305,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 17;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 18;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -305,7 +314,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 18;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 19;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -6103,13 +6112,22 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_ASSOCIATION__DYNAMIC_LABEL = UNIT_FEATURE_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Filters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__FILTERS = UNIT_FEATURE_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Unit Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION_FEATURE_COUNT = UNIT_FEATURE_FEATURE_COUNT + 7;
+	int UNIT_ASSOCIATION_FEATURE_COUNT = UNIT_FEATURE_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitChildFeatureImpl <em>Unit Child Feature</em>}' class.
@@ -9960,6 +9978,16 @@ public interface WebsitePackage extends EPackage {
 	int FRAMEWORK_TECHNOLOGIES = 95;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAjaxTechnologies()
+	 * @generated
+	 */
+	int AJAX_TECHNOLOGIES = 96;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Cardinality <em>Cardinality</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9967,7 +9995,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 96;
+	int CARDINALITY = 97;
 
 
 	/**
@@ -9978,7 +10006,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 97;
+	int DATE_DETAILS = 98;
 
 
 	/**
@@ -9989,7 +10017,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 98;
+	int PAGE_TOP_MENU_OPTIONS = 99;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -9999,7 +10027,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 99;
+	int COLLECTION_DISPLAY_OPTIONS = 100;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -10009,7 +10037,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 100;
+	int INDEX_DISPLAY_OPTION = 101;
 
 
 	/**
@@ -10229,6 +10257,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWebsiteProperties_FrameworkTechnology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAjaxTechnology <em>Ajax Technology</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ajax Technology</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAjaxTechnology()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_AjaxTechnology();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSiteKey <em>Captcha Site Key</em>}'.
@@ -11609,6 +11648,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getUnitAssociation_DynamicLabel();
+
+	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getFilters <em>Filters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Filters</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getFilters()
+	 * @see #getUnitAssociation()
+	 * @generated
+	 */
+	EReference getUnitAssociation_Filters();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.UnitChildFeature <em>Unit Child Feature</em>}'.
@@ -13539,6 +13589,16 @@ public interface WebsitePackage extends EPackage {
 	EEnum getFrameworkTechnologies();
 
 	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies <em>Ajax Technologies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Ajax Technologies</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies
+	 * @generated
+	 */
+	EEnum getAjaxTechnologies();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Authentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13968,6 +14028,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = eINSTANCE.getWebsiteProperties_FrameworkTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Ajax Technology</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = eINSTANCE.getWebsiteProperties_AjaxTechnology();
 
 		/**
 		 * The meta object literal for the '<em><b>Captcha Site Key</b></em>' attribute feature.
@@ -15078,6 +15146,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference UNIT_ASSOCIATION__DYNAMIC_LABEL = eINSTANCE.getUnitAssociation_DynamicLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Filters</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNIT_ASSOCIATION__FILTERS = eINSTANCE.getUnitAssociation_Filters();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitChildFeatureImpl <em>Unit Child Feature</em>}' class.
@@ -16622,6 +16698,16 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum FRAMEWORK_TECHNOLOGIES = eINSTANCE.getFrameworkTechnologies();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAjaxTechnologies()
+		 * @generated
+		 */
+		EEnum AJAX_TECHNOLOGIES = eINSTANCE.getAjaxTechnologies();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl <em>Authentication</em>}' class.

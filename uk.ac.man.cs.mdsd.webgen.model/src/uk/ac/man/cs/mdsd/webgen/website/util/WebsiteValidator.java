@@ -282,6 +282,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateDatabaseTechnologies((DatabaseTechnologies)value, diagnostics, context);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return validateFrameworkTechnologies((FrameworkTechnologies)value, diagnostics, context);
+			case WebsitePackage.AJAX_TECHNOLOGIES:
+				return validateAjaxTechnologies((AjaxTechnologies)value, diagnostics, context);
 			case WebsitePackage.CARDINALITY:
 				return validateCardinality((Cardinality)value, diagnostics, context);
 			case WebsitePackage.DATE_DETAILS:
@@ -3282,6 +3284,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateFrameworkTechnologies(FrameworkTechnologies frameworkTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAjaxTechnologies(AjaxTechnologies ajaxTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

@@ -439,6 +439,7 @@ rule ModelLabel {
 rule Selection {
 	from jsf : JSF!Selection
 	to gen : GEN!GenSelection (
+		genJoins <- jsf.joins,
 		genFilter <- jsf.filter,
 		genOrdering <- jsf.ordering
 	)

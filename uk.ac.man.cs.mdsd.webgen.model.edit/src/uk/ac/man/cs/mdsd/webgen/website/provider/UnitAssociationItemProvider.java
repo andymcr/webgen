@@ -29,8 +29,10 @@ import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -234,22 +236,38 @@ public class UnitAssociationItemProvider
 	 * This adds a property descriptor for the Filters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addFiltersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_filters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_filters_feature", "_UI_UnitAssociation_type"),
-				 WebsitePackage.Literals.UNIT_ASSOCIATION__FILTERS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_UnitAssociation_filters_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_filters_feature", "_UI_UnitAssociation_type"),
+			WebsitePackage.Literals.UNIT_ASSOCIATION__FILTERS,
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof UnitAssociation) {
+						final Service service = getService((UnitAssociation) object);
+						if (service != null) {
+							final List<UnitTitle> filters = new LinkedList<UnitTitle>();
+							for (ServiceFeature feature : service.getFeatures()) {
+								if (feature instanceof ServiceEntityElement) {
+									filters.add(((ServiceEntityElement)feature).getFeature());
+								}
+							}
+							filters.addAll(service.getDisplayLabels());
+
+							return filters;
+						}
+					}
+
+					return Collections.emptyList();
+				}
+			});
 	}
 
 	/**

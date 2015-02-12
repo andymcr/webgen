@@ -21,7 +21,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import uk.ac.man.cs.mdsd.webgen.website.FeatureReference;
-import uk.ac.man.cs.mdsd.webgen.website.IncludedElement;
+import uk.ac.man.cs.mdsd.webgen.website.IncludedFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -84,13 +84,13 @@ public class FeatureReferenceItemProvider
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
-					final Set<IncludedElement> features = new HashSet<IncludedElement>();
+					final Set<IncludedFeature> features = new HashSet<IncludedFeature>();
 					if (object instanceof FeatureReference) {
 						final Service service = getCriteriaServiceContext(object);
 						if (service != null) {
 							for (ServiceFeature feature : service.getFeatures()) {
-								if (feature instanceof IncludedElement) {
-									features.add((IncludedElement) feature);
+								if (feature instanceof IncludedFeature) {
+									features.add((IncludedFeature) feature);
 								}
 							}
 						}

@@ -138,6 +138,7 @@ rule ModelLabel {
 rule Selection {
 	from partialJsf : JSF!Selection
 	to jsf : JSF!Selection (
+		joins <- partialJsf.joins,
 		filter <- partialJsf.filter,
 		ordering <- partialJsf.ordering,
 		limit <- partialJsf.limit

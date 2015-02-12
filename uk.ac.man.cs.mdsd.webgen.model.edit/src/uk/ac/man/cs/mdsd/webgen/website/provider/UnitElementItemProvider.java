@@ -405,6 +405,11 @@ public class UnitElementItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 	}
 
 	/**

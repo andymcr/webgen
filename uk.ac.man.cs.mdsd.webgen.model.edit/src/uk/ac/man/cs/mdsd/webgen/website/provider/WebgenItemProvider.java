@@ -1,5 +1,6 @@
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,6 +18,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
+import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 
 public abstract class WebgenItemProvider extends ItemProviderAdapter {
 	public WebgenItemProvider(AdapterFactory adapterFactory) {
@@ -36,6 +38,42 @@ public abstract class WebgenItemProvider extends ItemProviderAdapter {
 		}
 
 		return null;
+	}
+
+	protected Service getService(final ServiceAssociation association) {
+		if (association instanceof ServiceEntityAssociation) {
+			final ServiceEntityAssociation entityAssociation = (ServiceEntityAssociation) association;
+			final Service localService = entityAssociation.getPartOf();
+			final Association feature = entityAssociation.getFeature();
+			if (localService.getEncapsulates().contains(feature.getParentEntity())) {
+				return localService;
+			}
+			final List<Service> remoteServices = feature.getParentEntity().getServedBy();
+			if (remoteServices.size() > 0) {
+				return remoteServices.get(0);
+			}
+		}
+
+		return null;
+	}
+
+	protected Service getService(final UnitAssociation association) {
+		if (association.getServiceFeature() != null) {
+			return getService(association.getServiceFeature());
+		}
+
+		return null;
+	}
+
+	protected Collection<ServiceAssociation> getAssociations(final Service service) {
+		final List<ServiceAssociation> associations = new LinkedList<ServiceAssociation>();
+		for (ServiceFeature feature : service.getFeatures()) {
+			if (feature instanceof ServiceAssociation) {
+				associations.add((ServiceAssociation) feature);
+			}
+		}
+
+		return associations;
 	}
 
 	protected List<Feature> getSourceFeatures(final DynamicUnit unit) {

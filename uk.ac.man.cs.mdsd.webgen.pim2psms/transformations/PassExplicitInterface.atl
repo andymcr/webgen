@@ -422,6 +422,7 @@ rule ModelLabel {
 rule Selection {
 	from website : Website!Selection
 	to jsf : JSF!Selection (
+		joins <- website.joins,
 		filter <- website.filter,
 		ordering <- website.ordering,
 		limit <- website.limit
@@ -1273,6 +1274,14 @@ rule PredicateLikeOperator {
 	to jsf : JSF!PredicateLikeOperator (
 		left <- website.left,
 		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsEmptyOperator {
+	from website : Website!PredicateIsEmpty
+	to jsf : JSF!PredicateIsEmpty (
+		feature <- website.feature
 	)
 }
 

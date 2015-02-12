@@ -130,6 +130,17 @@ rule PredicateLikeOperator {
 	}
 }
 
+-- @extends Predicate
+rule PredicateIsEmptyOperator {
+	from jsf : JSF!PredicateIsEmpty
+	to gen : GEN!GenPredicateIsEmpty (
+		genFeature <- jsf.feature
+	)
+	do {
+		gen.refSetValue('criteriaPredicate', jsf);
+	}
+}
+
 
 rule ModelReference {
 	from jsf : JSF!ModelReference

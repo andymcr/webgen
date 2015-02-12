@@ -234,6 +234,7 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ModelLabel/features"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Selection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Selection/joins"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//Selection/filter"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//Selection/ordering"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//Selection/limit"/>

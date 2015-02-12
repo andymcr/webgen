@@ -524,6 +524,11 @@ public class UnitFeatureItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(WebsitePackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
 				 WebsiteFactory.eINSTANCE.createSelectAction()));
 

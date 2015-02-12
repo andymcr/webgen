@@ -4,13 +4,12 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,9 +21,10 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
-
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
+import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
+
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Selection} object.
@@ -61,9 +61,38 @@ public class SelectionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Joins feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addJoinsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_Selection_joins_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_Selection_joins_feature", "_UI_Selection_type"),
+			 WebsitePackage.Literals.SELECTION__JOINS,
+			 true, false, true, null,
+			 getString("_UI_ModelPropertyCategory"),
+			 null) {
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				if (object instanceof Selection) {
+					final Service service = (Service) ((Selection) object).eContainer();
+					return getAssociations(service);
+				}
+
+				return Collections.emptyList();
+			}
+		});
 	}
 
 	/**
@@ -202,6 +231,11 @@ public class SelectionItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__FILTER,
 				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.SELECTION__FILTER,
+				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter

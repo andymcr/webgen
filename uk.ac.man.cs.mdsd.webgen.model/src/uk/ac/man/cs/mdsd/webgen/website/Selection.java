@@ -15,6 +15,7 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getLimit <em>Limit</em>}</li>
@@ -26,6 +27,22 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  * @generated
  */
 public interface Selection extends NamedElement {
+	/**
+	 * Returns the value of the '<em><b>Joins</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Joins</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Joins</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelection_Joins()
+	 * @model
+	 * @generated
+	 */
+	List<ServiceAssociation> getJoins();
+
 	/**
 	 * Returns the value of the '<em><b>Filter</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

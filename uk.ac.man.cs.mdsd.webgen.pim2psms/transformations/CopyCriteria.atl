@@ -133,6 +133,14 @@ rule PredicateLikeOperator {
 	)
 }
 
+-- @extends Predicate
+rule PredicateIsEmpty {
+	from partialJsf : JSF!PredicateIsEmpty (partialJsf.isJsfContainer())
+	to jsf : JSF!PredicateIsEmpty (
+		feature <- partialJsf.feature
+	)
+}
+
 
 abstract rule Order {
 	from partialJsf : JSF!Order (partialJsf.isJsfContainer())

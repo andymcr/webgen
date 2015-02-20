@@ -61,10 +61,56 @@ public class DataTypeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPersistentTypePropertyDescriptor(object);
+			addOrmTypePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Persistent Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPersistentTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataType_persistentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_persistentType_feature", "_UI_DataType_type"),
+				 WebsitePackage.Literals.DATA_TYPE__PERSISTENT_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Orm Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOrmTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataType_ormType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_ormType_feature", "_UI_DataType_type"),
+				 WebsitePackage.Literals.DATA_TYPE__ORM_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -148,6 +194,8 @@ public class DataTypeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DataType.class)) {
+			case WebsitePackage.DATA_TYPE__PERSISTENT_TYPE:
+			case WebsitePackage.DATA_TYPE__ORM_TYPE:
 			case WebsitePackage.DATA_TYPE__PLACEHOLDER:
 			case WebsitePackage.DATA_TYPE__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

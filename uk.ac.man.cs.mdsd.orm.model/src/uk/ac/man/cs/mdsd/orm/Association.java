@@ -19,6 +19,7 @@ package uk.ac.man.cs.mdsd.orm;
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Association#isSourceEnd <em>Source End</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Association#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Association#isContainment <em>Containment</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.Association#getPivotTableName <em>Pivot Table Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -134,5 +135,31 @@ public interface Association extends Feature {
 	 * @generated
 	 */
 	void setContainment(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Pivot Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pivot Table Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pivot Table Name</em>' attribute.
+	 * @see #setPivotTableName(String)
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_PivotTableName()
+	 * @model
+	 * @generated
+	 */
+	String getPivotTableName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#getPivotTableName <em>Pivot Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pivot Table Name</em>' attribute.
+	 * @see #getPivotTableName()
+	 * @generated
+	 */
+	void setPivotTableName(String value);
 
 } // Association

@@ -16,6 +16,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getParentEntity <em>Parent Entity</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getColumnName <em>Column Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isOrdered <em>Ordered</em>}</li>
@@ -57,6 +58,32 @@ public interface Feature extends NamedDisplayElement {
 	 * @generated
 	 */
 	void setParentEntity(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Column Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Column Name</em>' attribute.
+	 * @see #setColumnName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature_ColumnName()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getColumnName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getColumnName <em>Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Column Name</em>' attribute.
+	 * @see #getColumnName()
+	 * @generated
+	 */
+	void setColumnName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' attribute.

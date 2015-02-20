@@ -144,6 +144,8 @@ public class OrmValidator extends EObjectValidator {
 				return validateCardinality((Cardinality)value, diagnostics, context);
 			case OrmPackage.DATABASE_TECHNOLOGIES:
 				return validateDatabaseTechnologies((DatabaseTechnologies)value, diagnostics, context);
+			case OrmPackage.ORM_TECHNOLOGIES:
+				return validateOrmTechnologies((OrmTechnologies)value, diagnostics, context);
 			case OrmPackage.COLLECTION_TYPES:
 				return validateCollectionTypes((CollectionTypes)value, diagnostics, context);
 			case OrmPackage.DATE_DETAILS:
@@ -486,6 +488,15 @@ public class OrmValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDatabaseTechnologies(DatabaseTechnologies databaseTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOrmTechnologies(OrmTechnologies ormTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

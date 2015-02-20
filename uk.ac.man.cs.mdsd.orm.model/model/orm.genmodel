@@ -15,6 +15,13 @@
       <genEnumLiterals ecoreEnumLiteral="orm.ecore#//DatabaseTechnologies/MySql"/>
       <genEnumLiterals ecoreEnumLiteral="orm.ecore#//DatabaseTechnologies/Oracle"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="orm.ecore#//OrmTechnologies">
+      <genEnumLiterals ecoreEnumLiteral="orm.ecore#//OrmTechnologies/JPA"/>
+      <genEnumLiterals ecoreEnumLiteral="orm.ecore#//OrmTechnologies/DataMapper"/>
+      <genEnumLiterals ecoreEnumLiteral="orm.ecore#//OrmTechnologies/Idiorm"/>
+      <genEnumLiterals ecoreEnumLiteral="orm.ecore#//OrmTechnologies/Kohana"/>
+      <genEnumLiterals ecoreEnumLiteral="orm.ecore#//OrmTechnologies/Doctrine"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="orm.ecore#//CollectionTypes">
       <genEnumLiterals ecoreEnumLiteral="orm.ecore#//CollectionTypes/Bag"/>
       <genEnumLiterals ecoreEnumLiteral="orm.ecore#//CollectionTypes/List"/>
@@ -39,6 +46,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference orm.ecore#//OrmModel/entities"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference orm.ecore#//OrmModel/collectionTypes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//OrmModel/databaseTechnology"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//OrmModel/ormTechnology"/>
     </genClasses>
     <genClasses image="false" ecoreClass="orm.ecore#//NamedElement">
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//NamedElement/name"/>
@@ -61,6 +69,9 @@
     <genClasses ecoreClass="orm.ecore#//EnumerationLiteral"/>
     <genClasses ecoreClass="orm.ecore#//Entity">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference orm.ecore#//Entity/partOf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Entity/tableName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference orm.ecore#//Entity/keys"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Entity/autoKeyName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference orm.ecore#//Entity/contains"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference orm.ecore#//Entity/container"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference orm.ecore#//Entity/features"/>
@@ -68,6 +79,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Entity/displayFormat"/>
     </genClasses>
     <genClasses image="false" ecoreClass="orm.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Feature/columnName"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference orm.ecore#//Feature/parentEntity"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Feature/inputField"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Feature/headerClass"/>
@@ -75,7 +87,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Feature/displayClass"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Feature/footerClass"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="orm.ecore#//Attribute"/>
+    <genClasses image="false" ecoreClass="orm.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Attribute/persistentType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Attribute/ormType"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="orm.ecore#//SingletonAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonAttribute/required"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonAttribute/unique"/>
@@ -111,6 +126,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Association/sourceEnd"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Association/bidirectional"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Association/containment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//Association/pivotTableName"/>
     </genClasses>
     <genClasses ecoreClass="orm.ecore#//SingletonAssociation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//SingletonAssociation/required"/>

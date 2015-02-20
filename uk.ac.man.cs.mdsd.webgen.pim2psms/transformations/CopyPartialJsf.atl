@@ -117,6 +117,7 @@ rule Service {
 	to jsf : JSF!Service (
 		modelName <- partialJsf.modelName,
 		view <- partialJsf.view,
+		viewName <- partialJsf.viewName,
 		entities <- partialJsf.entities,
 		daosUsed <- partialJsf.daosUsed,
 		displayLabels <- partialJsf.displayLabels,

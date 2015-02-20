@@ -127,6 +127,8 @@ unique lazy rule implicitAuthenticationSystemEntity {
 	from website: Website!Authentication
 	to orm : ORM!Entity (
 		name <- 'Authentication',
+		tableName <- 'authentications',
+		autoKeyName <- 'id',
 		displayLabel <- 'Authentication',
 		features <- Sequence{username, password, salt, email, activated, banned,
 				banReason, newPasswordKey, newPasswordRequested, newEmail,
@@ -144,6 +146,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		dataType <- website.getDataType('String'),
 		required <- true,
 		"unique" <- true,
+		columnName <- 'username',
 		inputField <- true,
 		inputClass <- 'input_attribute'
 	),
@@ -155,6 +158,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- false,
 		obfuscateFormFields <- true,
 		encrypt <- true,
+		columnName <- 'password',
 		inputField <- true,
 		inputClass <- 'input_attribute'
 	),
@@ -165,6 +169,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		required <- true,
 		"unique" <- false,
 		obfuscateFormFields <- true,
+		columnName <- 'salt',
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -175,6 +180,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		required <- true,
 		"unique" <- true,
 		caseInsensitive <- true,
+		columnName <- 'email',
 		inputField <- true,
 		inputClass <- 'input_attribute'
 	),
@@ -185,6 +191,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		required <- true,
 		"unique" <- false,
 		defaultValue <- activatedDefault,
+		columnName <- 'activated',
 		inputField <- true,
 		inputClass <- 'input_checkbox'
 	),
@@ -198,6 +205,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		required <- true,
 		"unique" <- false,
 		defaultValue <- bannedDefault,
+		columnName <- 'banned',
 		inputField <- true,
 		inputClass <- 'input_checkbox'
 	),
@@ -210,6 +218,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		dataType <- website.getDataType('String'),
 		required <- false,
 		"unique" <- false,
+		columnName <- 'ban_reason',
 		inputField <- true,
 		inputClass <- 'input_attribute'
 	),
@@ -219,6 +228,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		dataType <- website.getDataType('String'),
 		required <- false,
 		"unique" <- false,
+		columnName <- 'new_password_key',
 		inputClass <- 'input_attribute'
 	),
 	newPasswordRequested : ORM!SingletonDate (
@@ -228,6 +238,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		inputField <- false,
 		"unique" <- false,
 		details <- #DateAndTime,
+		columnName <- 'new_password_requested',
 		inputClass <- 'input_attribute'
 	),
 	newEmail : ORM!SingletonElement (
@@ -236,6 +247,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		dataType <- website.getDataType('Email'),
 		required <- false,
 		"unique" <- false,
+		columnName <- 'new_email',
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -245,6 +257,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		dataType <- website.getDataType('String'),
 		required <- false,
 		"unique" <- false,
+		columnName <- 'new_email_key',
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -255,6 +268,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		required <- true,
 		defaultValue <- lastIpDefault,
 		"unique" <- true,
+		columnName <- 'last_ip',
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -269,6 +283,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		inputField <- false,
 		"unique" <- false,
 		details <- #DateAndTime,
+		columnName <- 'last_login',
 		inputClass <- 'input_attribute'
 	),
 	lastLoginDefault : ORM!StringLiteral (
@@ -283,6 +298,8 @@ unique lazy rule implicitLoginAttemptEntity {
 	from website: Website!Authentication
 	to orm : ORM!Entity (
 		name <- 'LoginAttempt',
+		tableName <- 'loginattempts',
+		autoKeyName <- 'id',
 		displayLabel <- 'Login Attempt',
 		features <- Sequence{loginId, ipAddress, time}
 	),
@@ -292,6 +309,7 @@ unique lazy rule implicitLoginAttemptEntity {
 		dataType <- website.getDataType('String'),
 		required <- true,
 		"unique" <- false,
+		columnName <- 'login_id',
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -301,6 +319,7 @@ unique lazy rule implicitLoginAttemptEntity {
 		dataType <- website.getDataType('String'),
 		required <- true,
 		"unique" <- false,
+		columnName <- 'ip_address',
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -310,6 +329,7 @@ unique lazy rule implicitLoginAttemptEntity {
 		required <- true,
 		inputField <- false,
 		"unique" <- false,
+		columnName <- 'time',
 		details <- #DateAndTime,
 		inputClass <- 'input_attribute'
 	)
@@ -322,6 +342,8 @@ unique lazy rule implicitAutoLoginEntity {
 	from website: Website!Authentication
 	to orm : ORM!Entity (
 		name <- 'AutoLogin',
+		tableName <- 'autologins',
+		autoKeyName <- 'id',
 		displayLabel <- 'Automatic Login',
 		features <- Sequence{key, authentication, userAgent, lastIpAddress, lastLogin}
 	),
@@ -331,6 +353,7 @@ unique lazy rule implicitAutoLoginEntity {
 		dataType <- website.getDataType('String'),
 		required <- true,
 		"unique" <- false,
+		columnName <- 'key',
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -343,6 +366,7 @@ unique lazy rule implicitAutoLoginEntity {
 		containment <- false,
 		required <- true,
 		associationRelationship <- #ManyToOne,
+		columnName <- 'authentication_id',
 		inputField <- false,
 		inputClass <- 'input_association'
 	),
@@ -352,6 +376,7 @@ unique lazy rule implicitAutoLoginEntity {
 		dataType <- website.getDataType('String'),
 		required <- true,
 		"unique" <- false,
+		columnName <- 'user_agent',
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -361,6 +386,7 @@ unique lazy rule implicitAutoLoginEntity {
 		dataType <- website.getDataType('String'),
 		required <- true,
 		"unique" <- false,
+		columnName <- 'last_ip_address',
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -371,6 +397,7 @@ unique lazy rule implicitAutoLoginEntity {
 		inputField <- false,
 		"unique" <- false,
 		details <- #DateAndTime,
+		columnName <- 'last_login',
 		inputClass <- 'input_attribute'
 	)
 	do {

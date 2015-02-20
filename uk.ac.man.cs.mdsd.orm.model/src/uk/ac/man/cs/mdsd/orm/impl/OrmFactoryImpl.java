@@ -93,6 +93,8 @@ public class OrmFactoryImpl extends EFactoryImpl implements OrmFactory {
 				return createCardinalityFromString(eDataType, initialValue);
 			case OrmPackage.DATABASE_TECHNOLOGIES:
 				return createDatabaseTechnologiesFromString(eDataType, initialValue);
+			case OrmPackage.ORM_TECHNOLOGIES:
+				return createOrmTechnologiesFromString(eDataType, initialValue);
 			case OrmPackage.COLLECTION_TYPES:
 				return createCollectionTypesFromString(eDataType, initialValue);
 			case OrmPackage.DATE_DETAILS:
@@ -118,6 +120,8 @@ public class OrmFactoryImpl extends EFactoryImpl implements OrmFactory {
 				return convertCardinalityToString(eDataType, instanceValue);
 			case OrmPackage.DATABASE_TECHNOLOGIES:
 				return convertDatabaseTechnologiesToString(eDataType, instanceValue);
+			case OrmPackage.ORM_TECHNOLOGIES:
+				return convertOrmTechnologiesToString(eDataType, instanceValue);
 			case OrmPackage.COLLECTION_TYPES:
 				return convertCollectionTypesToString(eDataType, instanceValue);
 			case OrmPackage.DATE_DETAILS:
@@ -318,6 +322,26 @@ public class OrmFactoryImpl extends EFactoryImpl implements OrmFactory {
 	 * @generated
 	 */
 	public String convertDatabaseTechnologiesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrmTechnologies createOrmTechnologiesFromString(EDataType eDataType, String initialValue) {
+		OrmTechnologies result = OrmTechnologies.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOrmTechnologiesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

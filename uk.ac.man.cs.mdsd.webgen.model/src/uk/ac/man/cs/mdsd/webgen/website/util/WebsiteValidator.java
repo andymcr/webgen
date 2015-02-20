@@ -280,6 +280,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateCurrentUserReference((CurrentUserReference)value, diagnostics, context);
 			case WebsitePackage.DATABASE_TECHNOLOGIES:
 				return validateDatabaseTechnologies((DatabaseTechnologies)value, diagnostics, context);
+			case WebsitePackage.ORM_TECHNOLOGIES:
+				return validateOrmTechnologies((OrmTechnologies)value, diagnostics, context);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return validateFrameworkTechnologies((FrameworkTechnologies)value, diagnostics, context);
 			case WebsitePackage.AJAX_TECHNOLOGIES:
@@ -577,6 +579,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntity_featureNameUniqueWithinEntity(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntity_displayOnlyLocalFeatures(entity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntity_keysFromLocalFeatures(entity, diagnostics, context);
 		return result;
 	}
 
@@ -633,6 +636,35 @@ public class WebsiteValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "displayOnlyLocalFeatures",
 				 ENTITY__DISPLAY_ONLY_LOCAL_FEATURES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the keysFromLocalFeatures constraint of '<em>Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ENTITY__KEYS_FROM_LOCAL_FEATURES__EEXPRESSION = "features->union(associationEnds)->includesAll(keys)";
+
+	/**
+	 * Validates the keysFromLocalFeatures constraint of '<em>Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEntity_keysFromLocalFeatures(Entity entity, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.ENTITY,
+				 entity,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "keysFromLocalFeatures",
+				 ENTITY__KEYS_FROM_LOCAL_FEATURES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -3275,6 +3307,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDatabaseTechnologies(DatabaseTechnologies databaseTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOrmTechnologies(OrmTechnologies ormTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

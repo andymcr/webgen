@@ -63,11 +63,62 @@ public class EntityItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTableNamePropertyDescriptor(object);
+			addKeysPropertyDescriptor(object);
 			addServedByPropertyDescriptor(object);
 			addDisplayFeaturesPropertyDescriptor(object);
 			addDisplayFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Table Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTableNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Entity_tableName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_tableName_feature", "_UI_Entity_type"),
+				 WebsitePackage.Literals.ENTITY__TABLE_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Keys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addKeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_Entity_keys_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Entity_keys_feature", "_UI_Entity_type"),
+			WebsitePackage.Literals.ENTITY__KEYS,
+			true, false, true, null,
+			getString("_UI_PersistencePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof Entity) {
+						return ((Entity) object).getFeatures();
+					} else {
+						return super.getChoiceOfValues(object);
+					}
+				}
+			});
 	}
 
 	/**
@@ -208,6 +259,7 @@ public class EntityItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Entity.class)) {
+			case WebsitePackage.ENTITY__TABLE_NAME:
 			case WebsitePackage.ENTITY__DISPLAY_FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

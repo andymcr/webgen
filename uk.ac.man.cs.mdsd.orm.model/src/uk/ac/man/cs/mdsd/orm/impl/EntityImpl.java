@@ -36,6 +36,9 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.EntityImpl#getPartOf <em>Part Of</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.EntityImpl#getTableName <em>Table Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.EntityImpl#getKeys <em>Keys</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.EntityImpl#getAutoKeyName <em>Auto Key Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.EntityImpl#getContains <em>Contains</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.EntityImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.EntityImpl#getFeatures <em>Features</em>}</li>
@@ -47,6 +50,56 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  * @generated
  */
 public class EntityImpl extends ClassifierImpl implements Entity {
+	/**
+	 * The default value of the '{@link #getTableName() <em>Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTableName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TABLE_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTableName() <em>Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTableName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String tableName = TABLE_NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeys()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Feature> keys;
+
+	/**
+	 * The default value of the '{@link #getAutoKeyName() <em>Auto Key Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAutoKeyName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String AUTO_KEY_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAutoKeyName() <em>Auto Key Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAutoKeyName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String autoKeyName = AUTO_KEY_NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getContains() <em>Contains</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -165,6 +218,60 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.ENTITY__PART_OF, newPartOf, newPartOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTableName() {
+		return tableName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTableName(String newTableName) {
+		String oldTableName = tableName;
+		tableName = newTableName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.ENTITY__TABLE_NAME, oldTableName, tableName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Feature> getKeys() {
+		if (keys == null) {
+			keys = new EObjectResolvingEList<Feature>(Feature.class, this, OrmPackage.ENTITY__KEYS);
+		}
+		return keys;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAutoKeyName() {
+		return autoKeyName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAutoKeyName(String newAutoKeyName) {
+		String oldAutoKeyName = autoKeyName;
+		autoKeyName = newAutoKeyName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.ENTITY__AUTO_KEY_NAME, oldAutoKeyName, autoKeyName));
 	}
 
 	/**
@@ -353,6 +460,12 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 		switch (featureID) {
 			case OrmPackage.ENTITY__PART_OF:
 				return getPartOf();
+			case OrmPackage.ENTITY__TABLE_NAME:
+				return getTableName();
+			case OrmPackage.ENTITY__KEYS:
+				return getKeys();
+			case OrmPackage.ENTITY__AUTO_KEY_NAME:
+				return getAutoKeyName();
 			case OrmPackage.ENTITY__CONTAINS:
 				return getContains();
 			case OrmPackage.ENTITY__CONTAINER:
@@ -379,6 +492,16 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 		switch (featureID) {
 			case OrmPackage.ENTITY__PART_OF:
 				setPartOf((OrmModel)newValue);
+				return;
+			case OrmPackage.ENTITY__TABLE_NAME:
+				setTableName((String)newValue);
+				return;
+			case OrmPackage.ENTITY__KEYS:
+				getKeys().clear();
+				getKeys().addAll((Collection<? extends Feature>)newValue);
+				return;
+			case OrmPackage.ENTITY__AUTO_KEY_NAME:
+				setAutoKeyName((String)newValue);
 				return;
 			case OrmPackage.ENTITY__CONTAINS:
 				getContains().clear();
@@ -413,6 +536,15 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 			case OrmPackage.ENTITY__PART_OF:
 				setPartOf((OrmModel)null);
 				return;
+			case OrmPackage.ENTITY__TABLE_NAME:
+				setTableName(TABLE_NAME_EDEFAULT);
+				return;
+			case OrmPackage.ENTITY__KEYS:
+				getKeys().clear();
+				return;
+			case OrmPackage.ENTITY__AUTO_KEY_NAME:
+				setAutoKeyName(AUTO_KEY_NAME_EDEFAULT);
+				return;
 			case OrmPackage.ENTITY__CONTAINS:
 				getContains().clear();
 				return;
@@ -442,6 +574,12 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 		switch (featureID) {
 			case OrmPackage.ENTITY__PART_OF:
 				return getPartOf() != null;
+			case OrmPackage.ENTITY__TABLE_NAME:
+				return TABLE_NAME_EDEFAULT == null ? tableName != null : !TABLE_NAME_EDEFAULT.equals(tableName);
+			case OrmPackage.ENTITY__KEYS:
+				return keys != null && !keys.isEmpty();
+			case OrmPackage.ENTITY__AUTO_KEY_NAME:
+				return AUTO_KEY_NAME_EDEFAULT == null ? autoKeyName != null : !AUTO_KEY_NAME_EDEFAULT.equals(autoKeyName);
 			case OrmPackage.ENTITY__CONTAINS:
 				return contains != null && !contains.isEmpty();
 			case OrmPackage.ENTITY__CONTAINER:
@@ -466,7 +604,11 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (displayFormat: ");
+		result.append(" (tableName: ");
+		result.append(tableName);
+		result.append(", autoKeyName: ");
+		result.append(autoKeyName);
+		result.append(", displayFormat: ");
 		result.append(displayFormat);
 		result.append(')');
 		return result.toString();

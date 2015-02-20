@@ -28,6 +28,7 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.AssociationImpl#isSourceEnd <em>Source End</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.AssociationImpl#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.AssociationImpl#isContainment <em>Containment</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.AssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -103,6 +104,26 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 	 * @ordered
 	 */
 	protected boolean containment = CONTAINMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPivotTableName() <em>Pivot Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPivotTableName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PIVOT_TABLE_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPivotTableName() <em>Pivot Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPivotTableName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String pivotTableName = PIVOT_TABLE_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,6 +272,27 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPivotTableName() {
+		return pivotTableName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPivotTableName(String newPivotTableName) {
+		String oldPivotTableName = pivotTableName;
+		pivotTableName = newPivotTableName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.ASSOCIATION__PIVOT_TABLE_NAME, oldPivotTableName, pivotTableName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -293,6 +335,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 				return isBidirectional();
 			case OrmPackage.ASSOCIATION__CONTAINMENT:
 				return isContainment();
+			case OrmPackage.ASSOCIATION__PIVOT_TABLE_NAME:
+				return getPivotTableName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -316,6 +360,9 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 				return;
 			case OrmPackage.ASSOCIATION__CONTAINMENT:
 				setContainment((Boolean)newValue);
+				return;
+			case OrmPackage.ASSOCIATION__PIVOT_TABLE_NAME:
+				setPivotTableName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -341,6 +388,9 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 			case OrmPackage.ASSOCIATION__CONTAINMENT:
 				setContainment(CONTAINMENT_EDEFAULT);
 				return;
+			case OrmPackage.ASSOCIATION__PIVOT_TABLE_NAME:
+				setPivotTableName(PIVOT_TABLE_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -361,6 +411,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 				return bidirectional != BIDIRECTIONAL_EDEFAULT;
 			case OrmPackage.ASSOCIATION__CONTAINMENT:
 				return containment != CONTAINMENT_EDEFAULT;
+			case OrmPackage.ASSOCIATION__PIVOT_TABLE_NAME:
+				return PIVOT_TABLE_NAME_EDEFAULT == null ? pivotTableName != null : !PIVOT_TABLE_NAME_EDEFAULT.equals(pivotTableName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -381,6 +433,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 		result.append(bidirectional);
 		result.append(", containment: ");
 		result.append(containment);
+		result.append(", pivotTableName: ");
+		result.append(pivotTableName);
 		result.append(')');
 		return result.toString();
 	}

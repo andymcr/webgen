@@ -18,6 +18,7 @@ import java.util.List;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getModelName <em>Model Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#isView <em>View</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getViewName <em>View Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getEncapsulates <em>Encapsulates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getDisplayLabels <em>Display Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getSelections <em>Selections</em>}</li>
@@ -82,6 +83,32 @@ public interface Service extends NamedElement, UnitSource {
 	 * @generated
 	 */
 	void setView(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>View Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>View Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>View Name</em>' attribute.
+	 * @see #setViewName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getService_ViewName()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getViewName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getViewName <em>View Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>View Name</em>' attribute.
+	 * @see #getViewName()
+	 * @generated
+	 */
+	void setViewName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Encapsulates</b></em>' reference list.

@@ -108,13 +108,22 @@ public interface OrmPackage extends EPackage {
 	int ORM_MODEL__DATABASE_TECHNOLOGY = 3;
 
 	/**
+	 * The feature id for the '<em><b>Orm Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORM_MODEL__ORM_TECHNOLOGY = 4;
+
+	/**
 	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORM_MODEL_FEATURE_COUNT = 4;
+	int ORM_MODEL_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -449,13 +458,40 @@ public interface OrmPackage extends EPackage {
 	int ENTITY__PART_OF = CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__TABLE_NAME = CLASSIFIER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Keys</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__KEYS = CLASSIFIER_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Auto Key Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__AUTO_KEY_NAME = CLASSIFIER_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Contains</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__CONTAINS = CLASSIFIER_FEATURE_COUNT + 1;
+	int ENTITY__CONTAINS = CLASSIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' reference.
@@ -464,7 +500,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__CONTAINER = CLASSIFIER_FEATURE_COUNT + 2;
+	int ENTITY__CONTAINER = CLASSIFIER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -473,7 +509,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__FEATURES = CLASSIFIER_FEATURE_COUNT + 3;
+	int ENTITY__FEATURES = CLASSIFIER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Display Features</b></em>' reference list.
@@ -482,7 +518,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__DISPLAY_FEATURES = CLASSIFIER_FEATURE_COUNT + 4;
+	int ENTITY__DISPLAY_FEATURES = CLASSIFIER_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Format</b></em>' attribute.
@@ -491,7 +527,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__DISPLAY_FORMAT = CLASSIFIER_FEATURE_COUNT + 5;
+	int ENTITY__DISPLAY_FORMAT = CLASSIFIER_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -500,7 +536,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 6;
+	int ENTITY_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.impl.FeatureImpl <em>Feature</em>}' class.
@@ -531,13 +567,22 @@ public interface OrmPackage extends EPackage {
 	int FEATURE__DISPLAY_LABEL = NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__COLUMN_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__PARENT_ENTITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+	int FEATURE__PARENT_ENTITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Input Field</b></em>' attribute.
@@ -546,7 +591,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__INPUT_FIELD = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int FEATURE__INPUT_FIELD = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -555,7 +600,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int FEATURE__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -564,7 +609,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int FEATURE__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -573,7 +618,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int FEATURE__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -582,7 +627,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int FEATURE__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
@@ -591,7 +636,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int FEATURE_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -620,6 +665,15 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE__DISPLAY_LABEL = FEATURE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__COLUMN_NAME = FEATURE__COLUMN_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
@@ -676,13 +730,31 @@ public interface OrmPackage extends EPackage {
 	int ATTRIBUTE__FOOTER_CLASS = FEATURE__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__PERSISTENT_TYPE = FEATURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__ORM_TYPE = FEATURE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 0;
+	int ATTRIBUTE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonAttributeImpl <em>Singleton Attribute</em>}' class.
@@ -711,6 +783,15 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_ATTRIBUTE__DISPLAY_LABEL = ATTRIBUTE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_ATTRIBUTE__COLUMN_NAME = ATTRIBUTE__COLUMN_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
@@ -765,6 +846,24 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_ATTRIBUTE__FOOTER_CLASS = ATTRIBUTE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_ATTRIBUTE__PERSISTENT_TYPE = ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_ATTRIBUTE__ORM_TYPE = ATTRIBUTE__ORM_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -831,6 +930,15 @@ public interface OrmPackage extends EPackage {
 	int COLLECTION_ATTRIBUTE__DISPLAY_LABEL = ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_ATTRIBUTE__COLUMN_NAME = ATTRIBUTE__COLUMN_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -885,6 +993,24 @@ public interface OrmPackage extends EPackage {
 	int COLLECTION_ATTRIBUTE__FOOTER_CLASS = ATTRIBUTE__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_ATTRIBUTE__PERSISTENT_TYPE = ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_ATTRIBUTE__ORM_TYPE = ATTRIBUTE__ORM_TYPE;
+
+	/**
 	 * The number of structural features of the '<em>Collection Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -920,6 +1046,15 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_ELEMENT__DISPLAY_LABEL = SINGLETON_ATTRIBUTE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_ELEMENT__COLUMN_NAME = SINGLETON_ATTRIBUTE__COLUMN_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
@@ -974,6 +1109,24 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_ELEMENT__FOOTER_CLASS = SINGLETON_ATTRIBUTE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_ELEMENT__PERSISTENT_TYPE = SINGLETON_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_ELEMENT__ORM_TYPE = SINGLETON_ATTRIBUTE__ORM_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -1076,6 +1229,15 @@ public interface OrmPackage extends EPackage {
 	int COLLECTION_ELEMENT__DISPLAY_LABEL = COLLECTION_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_ELEMENT__COLUMN_NAME = COLLECTION_ATTRIBUTE__COLUMN_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1128,6 +1290,24 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int COLLECTION_ELEMENT__FOOTER_CLASS = COLLECTION_ATTRIBUTE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_ELEMENT__PERSISTENT_TYPE = COLLECTION_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_ELEMENT__ORM_TYPE = COLLECTION_ATTRIBUTE__ORM_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Collection Type</b></em>' reference.
@@ -1204,6 +1384,15 @@ public interface OrmPackage extends EPackage {
 	int SINGLETON_DATE__DISPLAY_LABEL = SINGLETON_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_DATE__COLUMN_NAME = SINGLETON_ATTRIBUTE__COLUMN_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1256,6 +1445,24 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_DATE__FOOTER_CLASS = SINGLETON_ATTRIBUTE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_DATE__PERSISTENT_TYPE = SINGLETON_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_DATE__ORM_TYPE = SINGLETON_ATTRIBUTE__ORM_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -1331,6 +1538,15 @@ public interface OrmPackage extends EPackage {
 	int COLLECTION_DATE__DISPLAY_LABEL = COLLECTION_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_DATE__COLUMN_NAME = COLLECTION_ATTRIBUTE__COLUMN_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1385,6 +1601,24 @@ public interface OrmPackage extends EPackage {
 	int COLLECTION_DATE__FOOTER_CLASS = COLLECTION_ATTRIBUTE__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_DATE__PERSISTENT_TYPE = COLLECTION_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_DATE__ORM_TYPE = COLLECTION_ATTRIBUTE__ORM_TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Details</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1429,6 +1663,15 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_RESOURCE__DISPLAY_LABEL = SINGLETON_ATTRIBUTE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_RESOURCE__COLUMN_NAME = SINGLETON_ATTRIBUTE__COLUMN_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
@@ -1483,6 +1726,24 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_RESOURCE__FOOTER_CLASS = SINGLETON_ATTRIBUTE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_RESOURCE__PERSISTENT_TYPE = SINGLETON_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_RESOURCE__ORM_TYPE = SINGLETON_ATTRIBUTE__ORM_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -1594,6 +1855,15 @@ public interface OrmPackage extends EPackage {
 	int SINGLETON_FILE__DISPLAY_LABEL = SINGLETON_RESOURCE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__COLUMN_NAME = SINGLETON_RESOURCE__COLUMN_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1646,6 +1916,24 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_FILE__FOOTER_CLASS = SINGLETON_RESOURCE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__PERSISTENT_TYPE = SINGLETON_RESOURCE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_FILE__ORM_TYPE = SINGLETON_RESOURCE__ORM_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -1757,6 +2045,15 @@ public interface OrmPackage extends EPackage {
 	int SINGLETON_IMAGE__DISPLAY_LABEL = SINGLETON_RESOURCE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__COLUMN_NAME = SINGLETON_RESOURCE__COLUMN_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1809,6 +2106,24 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_IMAGE__FOOTER_CLASS = SINGLETON_RESOURCE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__PERSISTENT_TYPE = SINGLETON_RESOURCE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_IMAGE__ORM_TYPE = SINGLETON_RESOURCE__ORM_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -1920,6 +2235,15 @@ public interface OrmPackage extends EPackage {
 	int SINGLETON_LOCATION__DISPLAY_LABEL = SINGLETON_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_LOCATION__COLUMN_NAME = SINGLETON_ATTRIBUTE__COLUMN_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1972,6 +2296,24 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_LOCATION__FOOTER_CLASS = SINGLETON_ATTRIBUTE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_LOCATION__PERSISTENT_TYPE = SINGLETON_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_LOCATION__ORM_TYPE = SINGLETON_ATTRIBUTE__ORM_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -2036,6 +2378,15 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION__DISPLAY_LABEL = FEATURE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__COLUMN_NAME = FEATURE__COLUMN_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
@@ -2128,13 +2479,22 @@ public interface OrmPackage extends EPackage {
 	int ASSOCIATION__CONTAINMENT = FEATURE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Pivot Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__PIVOT_TABLE_NAME = FEATURE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 4;
+	int ASSOCIATION_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonAssociationImpl <em>Singleton Association</em>}' class.
@@ -2163,6 +2523,15 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SINGLETON_ASSOCIATION__DISPLAY_LABEL = ASSOCIATION__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_ASSOCIATION__COLUMN_NAME = ASSOCIATION__COLUMN_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
@@ -2255,6 +2624,15 @@ public interface OrmPackage extends EPackage {
 	int SINGLETON_ASSOCIATION__CONTAINMENT = ASSOCIATION__CONTAINMENT;
 
 	/**
+	 * The feature id for the '<em><b>Pivot Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLETON_ASSOCIATION__PIVOT_TABLE_NAME = ASSOCIATION__PIVOT_TABLE_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2308,6 +2686,15 @@ public interface OrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int COLLECTION_ASSOCIATION__DISPLAY_LABEL = ASSOCIATION__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_ASSOCIATION__COLUMN_NAME = ASSOCIATION__COLUMN_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Parent Entity</b></em>' container reference.
@@ -2400,6 +2787,15 @@ public interface OrmPackage extends EPackage {
 	int COLLECTION_ASSOCIATION__CONTAINMENT = ASSOCIATION__CONTAINMENT;
 
 	/**
+	 * The feature id for the '<em><b>Pivot Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_ASSOCIATION__PIVOT_TABLE_NAME = ASSOCIATION__PIVOT_TABLE_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Collection Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2447,6 +2843,16 @@ public interface OrmPackage extends EPackage {
 	int DATABASE_TECHNOLOGIES = 26;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.OrmTechnologies <em>Technologies</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.orm.OrmTechnologies
+	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getOrmTechnologies()
+	 * @generated
+	 */
+	int ORM_TECHNOLOGIES = 27;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.CollectionTypes <em>Collection Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2454,7 +2860,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getCollectionTypes()
 	 * @generated
 	 */
-	int COLLECTION_TYPES = 27;
+	int COLLECTION_TYPES = 28;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.DateDetails <em>Date Details</em>}' enum.
@@ -2464,7 +2870,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 28;
+	int DATE_DETAILS = 29;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.SingletonAssociationRelationships <em>Singleton Association Relationships</em>}' enum.
@@ -2474,7 +2880,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getSingletonAssociationRelationships()
 	 * @generated
 	 */
-	int SINGLETON_ASSOCIATION_RELATIONSHIPS = 29;
+	int SINGLETON_ASSOCIATION_RELATIONSHIPS = 30;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.CollectionAssociationRelationships <em>Collection Association Relationships</em>}' enum.
@@ -2484,7 +2890,7 @@ public interface OrmPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getCollectionAssociationRelationships()
 	 * @generated
 	 */
-	int COLLECTION_ASSOCIATION_RELATIONSHIPS = 30;
+	int COLLECTION_ASSOCIATION_RELATIONSHIPS = 31;
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.orm.OrmModel <em>Model</em>}'.
@@ -2517,6 +2923,17 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getOrmModel_DatabaseTechnology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getOrmTechnology <em>Orm Technology</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Orm Technology</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.OrmModel#getOrmTechnology()
+	 * @see #getOrmModel()
+	 * @generated
+	 */
+	EAttribute getOrmModel_OrmTechnology();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDataTypes <em>Data Types</em>}'.
@@ -2720,6 +3137,39 @@ public interface OrmPackage extends EPackage {
 	EReference getEntity_PartOf();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.Entity#getTableName <em>Table Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Table Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.Entity#getTableName()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_TableName();
+
+	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.orm.Entity#getKeys <em>Keys</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Keys</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.Entity#getKeys()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EReference getEntity_Keys();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.Entity#getAutoKeyName <em>Auto Key Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Auto Key Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.Entity#getAutoKeyName()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_AutoKeyName();
+
+	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.orm.Entity#getContains <em>Contains</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2783,6 +3233,17 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFeature();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.Feature#getColumnName <em>Column Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Column Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.Feature#getColumnName()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_ColumnName();
 
 	/**
 	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.orm.Feature#getParentEntity <em>Parent Entity</em>}'.
@@ -2859,6 +3320,28 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.Attribute#getPersistentType <em>Persistent Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Persistent Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.Attribute#getPersistentType()
+	 * @see #getAttribute()
+	 * @generated
+	 */
+	EAttribute getAttribute_PersistentType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.Attribute#getOrmType <em>Orm Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Orm Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.Attribute#getOrmType()
+	 * @see #getAttribute()
+	 * @generated
+	 */
+	EAttribute getAttribute_OrmType();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.orm.SingletonAttribute <em>Singleton Attribute</em>}'.
@@ -3179,6 +3662,17 @@ public interface OrmPackage extends EPackage {
 	EAttribute getAssociation_Containment();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.Association#getPivotTableName <em>Pivot Table Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pivot Table Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.Association#getPivotTableName()
+	 * @see #getAssociation()
+	 * @generated
+	 */
+	EAttribute getAssociation_PivotTableName();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.orm.SingletonAssociation <em>Singleton Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3261,6 +3755,16 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getDatabaseTechnologies();
+
+	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.orm.OrmTechnologies <em>Technologies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Technologies</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.OrmTechnologies
+	 * @generated
+	 */
+	EEnum getOrmTechnologies();
 
 	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.orm.CollectionTypes <em>Collection Types</em>}'.
@@ -3349,6 +3853,14 @@ public interface OrmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ORM_MODEL__DATABASE_TECHNOLOGY = eINSTANCE.getOrmModel_DatabaseTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Orm Technology</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORM_MODEL__ORM_TECHNOLOGY = eINSTANCE.getOrmModel_OrmTechnology();
 
 		/**
 		 * The meta object literal for the '<em><b>Data Types</b></em>' containment reference list feature.
@@ -3519,6 +4031,30 @@ public interface OrmPackage extends EPackage {
 		EReference ENTITY__PART_OF = eINSTANCE.getEntity_PartOf();
 
 		/**
+		 * The meta object literal for the '<em><b>Table Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__TABLE_NAME = eINSTANCE.getEntity_TableName();
+
+		/**
+		 * The meta object literal for the '<em><b>Keys</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__KEYS = eINSTANCE.getEntity_Keys();
+
+		/**
+		 * The meta object literal for the '<em><b>Auto Key Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__AUTO_KEY_NAME = eINSTANCE.getEntity_AutoKeyName();
+
+		/**
 		 * The meta object literal for the '<em><b>Contains</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3567,6 +4103,14 @@ public interface OrmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FEATURE = eINSTANCE.getFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Column Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__COLUMN_NAME = eINSTANCE.getFeature_ColumnName();
 
 		/**
 		 * The meta object literal for the '<em><b>Parent Entity</b></em>' container reference feature.
@@ -3625,6 +4169,22 @@ public interface OrmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ATTRIBUTE = eINSTANCE.getAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Persistent Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ATTRIBUTE__PERSISTENT_TYPE = eINSTANCE.getAttribute_PersistentType();
+
+		/**
+		 * The meta object literal for the '<em><b>Orm Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ATTRIBUTE__ORM_TYPE = eINSTANCE.getAttribute_OrmType();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonAttributeImpl <em>Singleton Attribute</em>}' class.
@@ -3891,6 +4451,14 @@ public interface OrmPackage extends EPackage {
 		EAttribute ASSOCIATION__CONTAINMENT = eINSTANCE.getAssociation_Containment();
 
 		/**
+		 * The meta object literal for the '<em><b>Pivot Table Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATION__PIVOT_TABLE_NAME = eINSTANCE.getAssociation_PivotTableName();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.orm.impl.SingletonAssociationImpl <em>Singleton Association</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3961,6 +4529,16 @@ public interface OrmPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum DATABASE_TECHNOLOGIES = eINSTANCE.getDatabaseTechnologies();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.orm.OrmTechnologies <em>Technologies</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.orm.OrmTechnologies
+		 * @see uk.ac.man.cs.mdsd.orm.impl.OrmPackageImpl#getOrmTechnologies()
+		 * @generated
+		 */
+		EEnum ORM_TECHNOLOGIES = eINSTANCE.getOrmTechnologies();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.orm.CollectionTypes <em>Collection Types</em>}' enum.

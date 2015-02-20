@@ -27,6 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getParentEntity <em>Parent Entity</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getColumnName <em>Column Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#isOrdered <em>Ordered</em>}</li>
@@ -39,6 +40,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class FeatureImpl extends NamedDisplayElementImpl implements Feature {
+	/**
+	 * The default value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumnName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COLUMN_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumnName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String columnName = COLUMN_NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -224,6 +245,27 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getColumnName() {
+		return columnName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setColumnName(String newColumnName) {
+		String oldColumnName = columnName;
+		columnName = newColumnName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FEATURE__COLUMN_NAME, oldColumnName, columnName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Cardinality getCardinality() {
 		return cardinality;
 	}
@@ -399,6 +441,8 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 		switch (featureID) {
 			case WebsitePackage.FEATURE__PARENT_ENTITY:
 				return getParentEntity();
+			case WebsitePackage.FEATURE__COLUMN_NAME:
+				return getColumnName();
 			case WebsitePackage.FEATURE__CARDINALITY:
 				return getCardinality();
 			case WebsitePackage.FEATURE__UNIQUE:
@@ -425,6 +469,9 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 		switch (featureID) {
 			case WebsitePackage.FEATURE__PARENT_ENTITY:
 				setParentEntity((Entity)newValue);
+				return;
+			case WebsitePackage.FEATURE__COLUMN_NAME:
+				setColumnName((String)newValue);
 				return;
 			case WebsitePackage.FEATURE__CARDINALITY:
 				setCardinality((Cardinality)newValue);
@@ -459,6 +506,9 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 			case WebsitePackage.FEATURE__PARENT_ENTITY:
 				setParentEntity((Entity)null);
 				return;
+			case WebsitePackage.FEATURE__COLUMN_NAME:
+				setColumnName(COLUMN_NAME_EDEFAULT);
+				return;
 			case WebsitePackage.FEATURE__CARDINALITY:
 				setCardinality(CARDINALITY_EDEFAULT);
 				return;
@@ -491,6 +541,8 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 		switch (featureID) {
 			case WebsitePackage.FEATURE__PARENT_ENTITY:
 				return getParentEntity() != null;
+			case WebsitePackage.FEATURE__COLUMN_NAME:
+				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
 			case WebsitePackage.FEATURE__CARDINALITY:
 				return cardinality != CARDINALITY_EDEFAULT;
 			case WebsitePackage.FEATURE__UNIQUE:
@@ -517,7 +569,9 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (cardinality: ");
+		result.append(" (columnName: ");
+		result.append(columnName);
+		result.append(", cardinality: ");
 		result.append(cardinality);
 		result.append(", unique: ");
 		result.append(unique);

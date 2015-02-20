@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.FeatureImpl#getColumnName <em>Column Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.FeatureImpl#getParentEntity <em>Parent Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.FeatureImpl#getInputField <em>Input Field</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.FeatureImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -36,6 +37,24 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  * @generated
  */
 public abstract class FeatureImpl extends NamedDisplayElementImpl implements Feature {
+	/**
+	 * The default value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumnName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COLUMN_NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumnName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String columnName = COLUMN_NAME_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getInputField() <em>Input Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -144,6 +163,27 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 	@Override
 	protected EClass eStaticClass() {
 		return OrmPackage.Literals.FEATURE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getColumnName() {
+		return columnName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setColumnName(String newColumnName) {
+		String oldColumnName = columnName;
+		columnName = newColumnName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.FEATURE__COLUMN_NAME, oldColumnName, columnName));
 	}
 
 	/**
@@ -344,6 +384,8 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OrmPackage.FEATURE__COLUMN_NAME:
+				return getColumnName();
 			case OrmPackage.FEATURE__PARENT_ENTITY:
 				return getParentEntity();
 			case OrmPackage.FEATURE__INPUT_FIELD:
@@ -368,6 +410,9 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OrmPackage.FEATURE__COLUMN_NAME:
+				setColumnName((String)newValue);
+				return;
 			case OrmPackage.FEATURE__PARENT_ENTITY:
 				setParentEntity((Entity)newValue);
 				return;
@@ -398,6 +443,9 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OrmPackage.FEATURE__COLUMN_NAME:
+				setColumnName(COLUMN_NAME_EDEFAULT);
+				return;
 			case OrmPackage.FEATURE__PARENT_ENTITY:
 				setParentEntity((Entity)null);
 				return;
@@ -428,6 +476,8 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OrmPackage.FEATURE__COLUMN_NAME:
+				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
 			case OrmPackage.FEATURE__PARENT_ENTITY:
 				return getParentEntity() != null;
 			case OrmPackage.FEATURE__INPUT_FIELD:
@@ -454,7 +504,9 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (inputField: ");
+		result.append(" (columnName: ");
+		result.append(columnName);
+		result.append(", inputField: ");
 		result.append(inputField);
 		result.append(", headerClass: ");
 		result.append(headerClass);

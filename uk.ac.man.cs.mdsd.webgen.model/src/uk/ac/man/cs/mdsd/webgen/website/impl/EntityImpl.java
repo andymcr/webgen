@@ -37,6 +37,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getTableName <em>Table Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getAssociationEnds <em>Association Ends</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getServedBy <em>Served By</em>}</li>
@@ -48,6 +50,36 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class EntityImpl extends ClassifierImpl implements Entity {
+	/**
+	 * The default value of the '{@link #getTableName() <em>Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTableName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TABLE_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTableName() <em>Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTableName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String tableName = TABLE_NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeys()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Feature> keys;
+
 	/**
 	 * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -123,6 +155,39 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.ENTITY;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTableName() {
+		return tableName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTableName(String newTableName) {
+		String oldTableName = tableName;
+		tableName = newTableName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY__TABLE_NAME, oldTableName, tableName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<Feature> getKeys() {
+		if (keys == null) {
+			keys = new EObjectResolvingEList<Feature>(Feature.class, this, WebsitePackage.ENTITY__KEYS);
+		}
+		return keys;
 	}
 
 	/**
@@ -252,6 +317,10 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY__TABLE_NAME:
+				return getTableName();
+			case WebsitePackage.ENTITY__KEYS:
+				return getKeys();
 			case WebsitePackage.ENTITY__FEATURES:
 				return getFeatures();
 			case WebsitePackage.ENTITY__ASSOCIATION_ENDS:
@@ -275,6 +344,13 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY__TABLE_NAME:
+				setTableName((String)newValue);
+				return;
+			case WebsitePackage.ENTITY__KEYS:
+				getKeys().clear();
+				getKeys().addAll((Collection<? extends Feature>)newValue);
+				return;
 			case WebsitePackage.ENTITY__FEATURES:
 				getFeatures().clear();
 				getFeatures().addAll((Collection<? extends Feature>)newValue);
@@ -306,6 +382,12 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY__TABLE_NAME:
+				setTableName(TABLE_NAME_EDEFAULT);
+				return;
+			case WebsitePackage.ENTITY__KEYS:
+				getKeys().clear();
+				return;
 			case WebsitePackage.ENTITY__FEATURES:
 				getFeatures().clear();
 				return;
@@ -333,6 +415,10 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY__TABLE_NAME:
+				return TABLE_NAME_EDEFAULT == null ? tableName != null : !TABLE_NAME_EDEFAULT.equals(tableName);
+			case WebsitePackage.ENTITY__KEYS:
+				return keys != null && !keys.isEmpty();
 			case WebsitePackage.ENTITY__FEATURES:
 				return features != null && !features.isEmpty();
 			case WebsitePackage.ENTITY__ASSOCIATION_ENDS:
@@ -357,7 +443,9 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (displayFormat: ");
+		result.append(" (tableName: ");
+		result.append(tableName);
+		result.append(", displayFormat: ");
 		result.append(displayFormat);
 		result.append(')');
 		return result.toString();

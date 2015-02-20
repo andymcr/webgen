@@ -93,6 +93,9 @@ rule EnumerationLiteral {
 rule Entity {
 	from partialOrm : ORM!Entity
 	to orm : ORM!Entity	(
+		tableName <- partialOrm.tableName,
+		keys <- partialOrm.keys,
+		autoKeyName <- partialOrm.autoKeyName,
 		contains <- partialOrm.contains,
 		features <- partialOrm.features,
 		displayFeatures <- partialOrm.displayFeatures,
@@ -104,6 +107,7 @@ rule Entity {
 abstract rule Feature {
 	from partialOrm : ORM!Feature
 	to orm : ORM!Feature (
+		columnName <- partialOrm.columnName,
 		inputField <- partialOrm.inputField,
 		headerClass <- partialOrm.headerClass,
 		inputClass <- partialOrm.inputClass,
@@ -216,7 +220,8 @@ abstract rule Association {
 		opposite <- partialOrm.opposite,
 		sourceEnd <- partialOrm.sourceEnd,
 		bidirectional <- partialOrm.bidirectional,
-		containment <- partialOrm.containment
+		containment <- partialOrm.containment,
+		pivotTableName <- partialOrm.pivotTableName
 	)
 }
 

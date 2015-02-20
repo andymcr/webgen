@@ -62,6 +62,7 @@ public class AssociationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addBidirectionalPropertyDescriptor(object);
+			addPivotTableNamePropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addTargetFeatureNamePropertyDescriptor(object);
 			addTargetDisplayLabelPropertyDescriptor(object);
@@ -92,6 +93,28 @@ public class AssociationItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pivot Table Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPivotTableNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_pivotTableName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_pivotTableName_feature", "_UI_Association_type"),
+				 WebsitePackage.Literals.ASSOCIATION__PIVOT_TABLE_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
 				 null));
 	}
 
@@ -287,6 +310,7 @@ public class AssociationItemProvider
 
 		switch (notification.getFeatureID(Association.class)) {
 			case WebsitePackage.ASSOCIATION__BIDIRECTIONAL:
+			case WebsitePackage.ASSOCIATION__PIVOT_TABLE_NAME:
 			case WebsitePackage.ASSOCIATION__INPUT_CLASS:
 			case WebsitePackage.ASSOCIATION__TARGET_FEATURE_NAME:
 			case WebsitePackage.ASSOCIATION__TARGET_DISPLAY_LABEL:

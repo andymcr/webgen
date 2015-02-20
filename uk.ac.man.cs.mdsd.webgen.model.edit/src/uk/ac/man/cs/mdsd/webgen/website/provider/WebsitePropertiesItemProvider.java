@@ -75,6 +75,7 @@ public class WebsitePropertiesItemProvider
 			addDefaultDateTimeFormatPropertyDescriptor(object);
 			addDefaultMaximumUploadSizePropertyDescriptor(object);
 			addDatabaseTechnologyPropertyDescriptor(object);
+			addOrmTechnologyPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
 			addAjaxTechnologyPropertyDescriptor(object);
 			addCaptchaSiteKeyPropertyDescriptor(object);
@@ -351,6 +352,28 @@ public class WebsitePropertiesItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Orm Technology feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOrmTechnologyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_ormTechnology_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_ormTechnology_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__ORM_TECHNOLOGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Framework Technology feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -553,6 +576,7 @@ public class WebsitePropertiesItemProvider
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT:
 			case WebsitePackage.WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE:
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY:
+			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:

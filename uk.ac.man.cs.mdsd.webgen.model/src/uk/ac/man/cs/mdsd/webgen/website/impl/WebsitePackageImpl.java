@@ -85,6 +85,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelReference;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
+import uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.PageLink;
 import uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions;
@@ -800,6 +801,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EEnum ormTechnologiesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum frameworkTechnologiesEEnum = null;
 
 	/**
@@ -1093,7 +1101,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_FrameworkTechnology() {
+	public EAttribute getWebsiteProperties_OrmTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -1102,7 +1110,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_AjaxTechnology() {
+	public EAttribute getWebsiteProperties_FrameworkTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -1111,7 +1119,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_CaptchaSiteKey() {
+	public EAttribute getWebsiteProperties_AjaxTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -1120,7 +1128,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_CaptchaSecretKey() {
+	public EAttribute getWebsiteProperties_CaptchaSiteKey() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(15);
 	}
 
@@ -1129,7 +1137,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_TopNavigationId() {
+	public EAttribute getWebsiteProperties_CaptchaSecretKey() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -1138,8 +1146,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWebsiteProperties_TopNavigationId() {
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWebsiteProperties_SideMenu() {
-		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(17);
+		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -1148,7 +1165,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getWebsiteProperties_StaticUnitsEditable() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(18);
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -1210,7 +1227,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataType_Placeholder() {
+	public EAttribute getDataType_PersistentType() {
 		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1219,8 +1236,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataType_ValidationPattern() {
+	public EAttribute getDataType_OrmType() {
 		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataType_Placeholder() {
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataType_ValidationPattern() {
+		return (EAttribute)dataTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1264,8 +1299,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_Features() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(0);
+	public EAttribute getEntity_TableName() {
+		return (EAttribute)entityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1273,7 +1308,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_AssociationEnds() {
+	public EReference getEntity_Keys() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1282,7 +1317,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_ServedBy() {
+	public EReference getEntity_Features() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1291,7 +1326,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_DisplayFeatures() {
+	public EReference getEntity_AssociationEnds() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1300,8 +1335,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEntity_ServedBy() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntity_DisplayFeatures() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getEntity_DisplayFormat() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)entityEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1327,7 +1380,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_Cardinality() {
+	public EAttribute getFeature_ColumnName() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1336,7 +1389,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_Unique() {
+	public EAttribute getFeature_Cardinality() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1345,7 +1398,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_Ordered() {
+	public EAttribute getFeature_Unique() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1354,7 +1407,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_HeaderClass() {
+	public EAttribute getFeature_Ordered() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1363,7 +1416,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_DisplayClass() {
+	public EAttribute getFeature_HeaderClass() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1372,8 +1425,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_FooterClass() {
+	public EAttribute getFeature_DisplayClass() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeature_FooterClass() {
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1444,7 +1506,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataTypeAttribute_ObfuscateFormFields() {
+	public EAttribute getDataTypeAttribute_PersistentType() {
 		return (EAttribute)dataTypeAttributeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1453,7 +1515,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataTypeAttribute_CaseInsensitive() {
+	public EAttribute getDataTypeAttribute_OrmType() {
 		return (EAttribute)dataTypeAttributeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1462,8 +1524,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataTypeAttribute_Encrypt() {
+	public EAttribute getDataTypeAttribute_ObfuscateFormFields() {
 		return (EAttribute)dataTypeAttributeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataTypeAttribute_CaseInsensitive() {
+		return (EAttribute)dataTypeAttributeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataTypeAttribute_Encrypt() {
+		return (EAttribute)dataTypeAttributeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1606,7 +1686,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssociation_InputClass() {
+	public EAttribute getAssociation_PivotTableName() {
 		return (EAttribute)associationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1615,7 +1695,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssociation_TargetFeatureName() {
+	public EAttribute getAssociation_InputClass() {
 		return (EAttribute)associationEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1624,7 +1704,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssociation_TargetDisplayLabel() {
+	public EAttribute getAssociation_TargetFeatureName() {
 		return (EAttribute)associationEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1633,7 +1713,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssociation_TargetHeaderClass() {
+	public EAttribute getAssociation_TargetDisplayLabel() {
 		return (EAttribute)associationEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1642,7 +1722,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssociation_TargetInputClass() {
+	public EAttribute getAssociation_TargetHeaderClass() {
 		return (EAttribute)associationEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1651,7 +1731,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssociation_TargetDisplayClass() {
+	public EAttribute getAssociation_TargetInputClass() {
 		return (EAttribute)associationEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1660,8 +1740,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssociation_TargetFooterClass() {
+	public EAttribute getAssociation_TargetDisplayClass() {
 		return (EAttribute)associationEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAssociation_TargetFooterClass() {
+		return (EAttribute)associationEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2362,8 +2451,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getService_ViewName() {
+		return (EAttribute)serviceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getService_Encapsulates() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(2);
+		return (EReference)serviceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2372,7 +2470,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getService_DisplayLabels() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(3);
+		return (EReference)serviceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2417,7 +2515,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getService_Selections() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(4);
+		return (EReference)serviceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2426,7 +2524,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getService_Features() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(5);
+		return (EReference)serviceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3901,6 +3999,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getOrmTechnologies() {
+		return ormTechnologiesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getFrameworkTechnologies() {
 		return frameworkTechnologiesEEnum;
 	}
@@ -4169,6 +4276,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY);
+		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__ORM_TECHNOLOGY);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__AJAX_TECHNOLOGY);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY);
@@ -4207,6 +4315,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		classifierEClass = createEClass(CLASSIFIER);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
+		createEAttribute(dataTypeEClass, DATA_TYPE__PERSISTENT_TYPE);
+		createEAttribute(dataTypeEClass, DATA_TYPE__ORM_TYPE);
 		createEAttribute(dataTypeEClass, DATA_TYPE__PLACEHOLDER);
 		createEAttribute(dataTypeEClass, DATA_TYPE__VALIDATION_PATTERN);
 
@@ -4216,6 +4326,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		enumerationLiteralEClass = createEClass(ENUMERATION_LITERAL);
 
 		entityEClass = createEClass(ENTITY);
+		createEAttribute(entityEClass, ENTITY__TABLE_NAME);
+		createEReference(entityEClass, ENTITY__KEYS);
 		createEReference(entityEClass, ENTITY__FEATURES);
 		createEReference(entityEClass, ENTITY__ASSOCIATION_ENDS);
 		createEReference(entityEClass, ENTITY__SERVED_BY);
@@ -4224,6 +4336,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		featureEClass = createEClass(FEATURE);
 		createEReference(featureEClass, FEATURE__PARENT_ENTITY);
+		createEAttribute(featureEClass, FEATURE__COLUMN_NAME);
 		createEAttribute(featureEClass, FEATURE__CARDINALITY);
 		createEAttribute(featureEClass, FEATURE__UNIQUE);
 		createEAttribute(featureEClass, FEATURE__ORDERED);
@@ -4239,6 +4352,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		dataTypeAttributeEClass = createEClass(DATA_TYPE_ATTRIBUTE);
 		createEReference(dataTypeAttributeEClass, DATA_TYPE_ATTRIBUTE__DATA_TYPE);
+		createEAttribute(dataTypeAttributeEClass, DATA_TYPE_ATTRIBUTE__PERSISTENT_TYPE);
+		createEAttribute(dataTypeAttributeEClass, DATA_TYPE_ATTRIBUTE__ORM_TYPE);
 		createEAttribute(dataTypeAttributeEClass, DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS);
 		createEAttribute(dataTypeAttributeEClass, DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE);
 		createEAttribute(dataTypeAttributeEClass, DATA_TYPE_ATTRIBUTE__ENCRYPT);
@@ -4263,6 +4378,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		associationEClass = createEClass(ASSOCIATION);
 		createEReference(associationEClass, ASSOCIATION__TARGET_ENTITY);
 		createEAttribute(associationEClass, ASSOCIATION__BIDIRECTIONAL);
+		createEAttribute(associationEClass, ASSOCIATION__PIVOT_TABLE_NAME);
 		createEAttribute(associationEClass, ASSOCIATION__INPUT_CLASS);
 		createEAttribute(associationEClass, ASSOCIATION__TARGET_FEATURE_NAME);
 		createEAttribute(associationEClass, ASSOCIATION__TARGET_DISPLAY_LABEL);
@@ -4298,6 +4414,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		serviceEClass = createEClass(SERVICE);
 		createEAttribute(serviceEClass, SERVICE__MODEL_NAME);
 		createEAttribute(serviceEClass, SERVICE__VIEW);
+		createEAttribute(serviceEClass, SERVICE__VIEW_NAME);
 		createEReference(serviceEClass, SERVICE__ENCAPSULATES);
 		createEReference(serviceEClass, SERVICE__DISPLAY_LABELS);
 		createEReference(serviceEClass, SERVICE__SELECTIONS);
@@ -4593,6 +4710,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		// Create enums
 		databaseTechnologiesEEnum = createEEnum(DATABASE_TECHNOLOGIES);
+		ormTechnologiesEEnum = createEEnum(ORM_TECHNOLOGIES);
 		frameworkTechnologiesEEnum = createEEnum(FRAMEWORK_TECHNOLOGIES);
 		ajaxTechnologiesEEnum = createEEnum(AJAX_TECHNOLOGIES);
 		cardinalityEEnum = createEEnum(CARDINALITY);
@@ -4764,6 +4882,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebsiteProperties_DefaultDateTimeFormat(), ecorePackage.getEString(), "defaultDateTimeFormat", "jS F Y G.i", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_DefaultMaximumUploadSize(), ecorePackage.getEInt(), "defaultMaximumUploadSize", "2000000", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_DatabaseTechnology(), this.getDatabaseTechnologies(), "databaseTechnology", null, 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getWebsiteProperties_OrmTechnology(), this.getOrmTechnologies(), "ormTechnology", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_FrameworkTechnology(), this.getFrameworkTechnologies(), "frameworkTechnology", null, 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_AjaxTechnology(), this.getAjaxTechnologies(), "ajaxTechnology", "None", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_CaptchaSiteKey(), ecorePackage.getEString(), "captchaSiteKey", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -4802,6 +4921,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(classifierEClass, Classifier.class, "Classifier", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataType_PersistentType(), ecorePackage.getEString(), "persistentType", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataType_OrmType(), ecorePackage.getEString(), "ormType", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataType_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDataType_ValidationPattern(), ecorePackage.getEString(), "validationPattern", null, 0, 1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -4811,6 +4932,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(enumerationLiteralEClass, EnumerationLiteral.class, "EnumerationLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEntity_TableName(), ecorePackage.getEString(), "tableName", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_Keys(), this.getFeature(), null, "keys", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Features(), this.getFeature(), this.getFeature_ParentEntity(), "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_AssociationEnds(), this.getAssociation(), this.getAssociation_TargetEntity(), "associationEnds", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_ServedBy(), this.getService(), this.getService_Encapsulates(), "servedBy", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4819,6 +4942,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(featureEClass, Feature.class, "Feature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFeature_ParentEntity(), this.getEntity(), this.getEntity_Features(), "parentEntity", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_ColumnName(), ecorePackage.getEString(), "columnName", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getFeature_Cardinality(), this.getCardinality(), "cardinality", "Optional", 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_Unique(), ecorePackage.getEBoolean(), "unique", "true", 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_Ordered(), ecorePackage.getEBoolean(), "ordered", "false", 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4834,6 +4958,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(dataTypeAttributeEClass, DataTypeAttribute.class, "DataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataTypeAttribute_DataType(), this.getDataType(), null, "dataType", null, 1, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDataTypeAttribute_PersistentType(), ecorePackage.getEString(), "persistentType", null, 0, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataTypeAttribute_OrmType(), ecorePackage.getEString(), "ormType", null, 0, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataTypeAttribute_ObfuscateFormFields(), ecorePackage.getEBoolean(), "obfuscateFormFields", "false", 0, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDataTypeAttribute_CaseInsensitive(), ecorePackage.getEBoolean(), "caseInsensitive", "false", 0, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDataTypeAttribute_Encrypt(), ecorePackage.getEBoolean(), "encrypt", "false", 0, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -4858,6 +4984,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(associationEClass, Association.class, "Association", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssociation_TargetEntity(), this.getEntity(), this.getEntity_AssociationEnds(), "targetEntity", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssociation_Bidirectional(), ecorePackage.getEBooleanObject(), "bidirectional", "false", 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssociation_PivotTableName(), ecorePackage.getEString(), "pivotTableName", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssociation_InputClass(), ecorePackage.getEString(), "inputClass", "input_association", 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssociation_TargetFeatureName(), ecorePackage.getEString(), "targetFeatureName", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssociation_TargetDisplayLabel(), ecorePackage.getEString(), "targetDisplayLabel", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4893,6 +5020,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getService_ModelName(), ecorePackage.getEString(), "modelName", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_View(), ecorePackage.getEBoolean(), "view", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getService_ViewName(), ecorePackage.getEString(), "viewName", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getService_Encapsulates(), this.getEntity(), this.getEntity_ServedBy(), "encapsulates", null, 1, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_DisplayLabels(), this.getModelLabel(), this.getModelLabel_LabelFor(), "displayLabels", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Selections(), this.getSelection(), null, "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5191,6 +5319,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		addEEnumLiteral(databaseTechnologiesEEnum, DatabaseTechnologies.MY_SQL);
 		addEEnumLiteral(databaseTechnologiesEEnum, DatabaseTechnologies.ORACLE);
 
+		initEEnum(ormTechnologiesEEnum, OrmTechnologies.class, "OrmTechnologies");
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.JPA);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DATA_MAPPER);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.IDIORM);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DOCTRINE);
+
 		initEEnum(frameworkTechnologiesEEnum, FrameworkTechnologies.class, "FrameworkTechnologies");
 		addEEnumLiteral(frameworkTechnologiesEEnum, FrameworkTechnologies.JSF);
 		addEEnumLiteral(frameworkTechnologiesEEnum, FrameworkTechnologies.CAKE_PHP);
@@ -5275,7 +5409,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (entityEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "featureNameUniqueWithinEntity displayOnlyLocalFeatures"
+			 "constraints", "featureNameUniqueWithinEntity displayOnlyLocalFeatures keysFromLocalFeatures"
 		   });			
 		addAnnotation
 		  (associationEClass, 
@@ -5405,7 +5539,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "featureNameUniqueWithinEntity", "features->isUnique(name)",
-			 "displayOnlyLocalFeatures", "features->union(associationEnds)->includesAll(displayFeatures)"
+			 "displayOnlyLocalFeatures", "features->union(associationEnds)->includesAll(displayFeatures)",
+			 "keysFromLocalFeatures", "features->union(associationEnds)->includesAll(keys)"
 		   });			
 		addAnnotation
 		  (associationEClass, 

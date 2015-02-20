@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.orm.DatabaseTechnologies;
 import uk.ac.man.cs.mdsd.orm.Entity;
 import uk.ac.man.cs.mdsd.orm.OrmModel;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
+import uk.ac.man.cs.mdsd.orm.OrmTechnologies;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,6 +42,7 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.OrmModelImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.OrmModelImpl#getCollectionTypes <em>Collection Types</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.OrmModelImpl#getDatabaseTechnology <em>Database Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.OrmModelImpl#getOrmTechnology <em>Orm Technology</em>}</li>
  * </ul>
  * </p>
  *
@@ -98,6 +100,26 @@ public class OrmModelImpl extends EObjectImpl implements OrmModel {
 	protected DatabaseTechnologies databaseTechnology = DATABASE_TECHNOLOGY_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getOrmTechnology() <em>Orm Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrmTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final OrmTechnologies ORM_TECHNOLOGY_EDEFAULT = OrmTechnologies.JPA;
+
+	/**
+	 * The cached value of the '{@link #getOrmTechnology() <em>Orm Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrmTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrmTechnologies ormTechnology = ORM_TECHNOLOGY_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -147,6 +169,27 @@ public class OrmModelImpl extends EObjectImpl implements OrmModel {
 		databaseTechnology = newDatabaseTechnology == null ? DATABASE_TECHNOLOGY_EDEFAULT : newDatabaseTechnology;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.ORM_MODEL__DATABASE_TECHNOLOGY, oldDatabaseTechnology, databaseTechnology));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrmTechnologies getOrmTechnology() {
+		return ormTechnology;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOrmTechnology(OrmTechnologies newOrmTechnology) {
+		OrmTechnologies oldOrmTechnology = ormTechnology;
+		ormTechnology = newOrmTechnology == null ? ORM_TECHNOLOGY_EDEFAULT : newOrmTechnology;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.ORM_MODEL__ORM_TECHNOLOGY, oldOrmTechnology, ormTechnology));
 	}
 
 	/**
@@ -222,6 +265,8 @@ public class OrmModelImpl extends EObjectImpl implements OrmModel {
 				return getCollectionTypes();
 			case OrmPackage.ORM_MODEL__DATABASE_TECHNOLOGY:
 				return getDatabaseTechnology();
+			case OrmPackage.ORM_MODEL__ORM_TECHNOLOGY:
+				return getOrmTechnology();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -250,6 +295,9 @@ public class OrmModelImpl extends EObjectImpl implements OrmModel {
 			case OrmPackage.ORM_MODEL__DATABASE_TECHNOLOGY:
 				setDatabaseTechnology((DatabaseTechnologies)newValue);
 				return;
+			case OrmPackage.ORM_MODEL__ORM_TECHNOLOGY:
+				setOrmTechnology((OrmTechnologies)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -274,6 +322,9 @@ public class OrmModelImpl extends EObjectImpl implements OrmModel {
 			case OrmPackage.ORM_MODEL__DATABASE_TECHNOLOGY:
 				setDatabaseTechnology(DATABASE_TECHNOLOGY_EDEFAULT);
 				return;
+			case OrmPackage.ORM_MODEL__ORM_TECHNOLOGY:
+				setOrmTechnology(ORM_TECHNOLOGY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -294,6 +345,8 @@ public class OrmModelImpl extends EObjectImpl implements OrmModel {
 				return collectionTypes != null && !collectionTypes.isEmpty();
 			case OrmPackage.ORM_MODEL__DATABASE_TECHNOLOGY:
 				return databaseTechnology != DATABASE_TECHNOLOGY_EDEFAULT;
+			case OrmPackage.ORM_MODEL__ORM_TECHNOLOGY:
+				return ormTechnology != ORM_TECHNOLOGY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -310,6 +363,8 @@ public class OrmModelImpl extends EObjectImpl implements OrmModel {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (databaseTechnology: ");
 		result.append(databaseTechnology);
+		result.append(", ormTechnology: ");
+		result.append(ormTechnology);
 		result.append(')');
 		return result.toString();
 	}

@@ -17,6 +17,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getBidirectional <em>Bidirectional</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getPivotTableName <em>Pivot Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getTargetFeatureName <em>Target Feature Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getTargetDisplayLabel <em>Target Display Label</em>}</li>
@@ -88,6 +89,32 @@ public interface Association extends Feature {
 	 * @generated
 	 */
 	void setBidirectional(Boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Pivot Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pivot Table Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pivot Table Name</em>' attribute.
+	 * @see #setPivotTableName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation_PivotTableName()
+	 * @model
+	 * @generated
+	 */
+	String getPivotTableName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Association#getPivotTableName <em>Pivot Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pivot Table Name</em>' attribute.
+	 * @see #getPivotTableName()
+	 * @generated
+	 */
+	void setPivotTableName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Input Class</b></em>' attribute.

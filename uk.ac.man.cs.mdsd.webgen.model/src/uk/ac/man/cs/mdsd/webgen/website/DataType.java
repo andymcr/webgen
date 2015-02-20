@@ -15,6 +15,8 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getPersistentType <em>Persistent Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getOrmType <em>Orm Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
@@ -25,6 +27,58 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @generated
  */
 public interface DataType extends Classifier {
+
+	/**
+	 * Returns the value of the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Persistent Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Persistent Type</em>' attribute.
+	 * @see #setPersistentType(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDataType_PersistentType()
+	 * @model
+	 * @generated
+	 */
+	String getPersistentType();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getPersistentType <em>Persistent Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Persistent Type</em>' attribute.
+	 * @see #getPersistentType()
+	 * @generated
+	 */
+	void setPersistentType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Orm Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Orm Type</em>' attribute.
+	 * @see #setOrmType(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDataType_OrmType()
+	 * @model
+	 * @generated
+	 */
+	String getOrmType();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getOrmType <em>Orm Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Orm Type</em>' attribute.
+	 * @see #getOrmType()
+	 * @generated
+	 */
+	void setOrmType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.

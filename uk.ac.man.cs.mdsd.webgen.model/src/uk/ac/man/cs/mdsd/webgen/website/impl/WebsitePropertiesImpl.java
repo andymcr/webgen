@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Authentication;
 import uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Menu;
+import uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
 
@@ -39,6 +40,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDefaultDateTimeFormat <em>Default Date Time Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDefaultMaximumUploadSize <em>Default Maximum Upload Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDatabaseTechnology <em>Database Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getOrmTechnology <em>Orm Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
@@ -281,6 +283,26 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @ordered
 	 */
 	protected DatabaseTechnologies databaseTechnology = DATABASE_TECHNOLOGY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOrmTechnology() <em>Orm Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrmTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final OrmTechnologies ORM_TECHNOLOGY_EDEFAULT = OrmTechnologies.JPA;
+
+	/**
+	 * The cached value of the '{@link #getOrmTechnology() <em>Orm Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrmTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected OrmTechnologies ormTechnology = ORM_TECHNOLOGY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.
@@ -710,6 +732,27 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public OrmTechnologies getOrmTechnology() {
+		return ormTechnology;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOrmTechnology(OrmTechnologies newOrmTechnology) {
+		OrmTechnologies oldOrmTechnology = ormTechnology;
+		ormTechnology = newOrmTechnology == null ? ORM_TECHNOLOGY_EDEFAULT : newOrmTechnology;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY, oldOrmTechnology, ormTechnology));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public FrameworkTechnologies getFrameworkTechnology() {
 		return frameworkTechnology;
 	}
@@ -931,6 +974,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return getDefaultMaximumUploadSize();
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY:
 				return getDatabaseTechnology();
+			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
+				return getOrmTechnology();
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
@@ -993,6 +1038,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY:
 				setDatabaseTechnology((DatabaseTechnologies)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
+				setOrmTechnology((OrmTechnologies)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
@@ -1063,6 +1111,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY:
 				setDatabaseTechnology(DATABASE_TECHNOLOGY_EDEFAULT);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
+				setOrmTechnology(ORM_TECHNOLOGY_EDEFAULT);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
 				return;
@@ -1120,6 +1171,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return defaultMaximumUploadSize != DEFAULT_MAXIMUM_UPLOAD_SIZE_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY:
 				return databaseTechnology != DATABASE_TECHNOLOGY_EDEFAULT;
+			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
+				return ormTechnology != ORM_TECHNOLOGY_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
@@ -1170,6 +1223,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(defaultMaximumUploadSize);
 		result.append(", databaseTechnology: ");
 		result.append(databaseTechnology);
+		result.append(", ormTechnology: ");
+		result.append(ormTechnology);
 		result.append(", frameworkTechnology: ");
 		result.append(frameworkTechnology);
 		result.append(", ajaxTechnology: ");

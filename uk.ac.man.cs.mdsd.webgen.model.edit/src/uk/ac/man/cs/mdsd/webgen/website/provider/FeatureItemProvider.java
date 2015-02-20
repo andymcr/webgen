@@ -61,6 +61,7 @@ public class FeatureItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addColumnNamePropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
 			addOrderedPropertyDescriptor(object);
@@ -69,6 +70,28 @@ public class FeatureItemProvider
 			addFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Column Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addColumnNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_columnName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_columnName_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__COLUMN_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -229,6 +252,7 @@ public class FeatureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Feature.class)) {
+			case WebsitePackage.FEATURE__COLUMN_NAME:
 			case WebsitePackage.FEATURE__CARDINALITY:
 			case WebsitePackage.FEATURE__UNIQUE:
 			case WebsitePackage.FEATURE__ORDERED:

@@ -16,6 +16,8 @@ import java.util.List;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getTableName <em>Table Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getAssociationEnds <em>Association Ends</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getServedBy <em>Served By</em>}</li>
@@ -25,11 +27,53 @@ import java.util.List;
  * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='featureNameUniqueWithinEntity displayOnlyLocalFeatures'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featureNameUniqueWithinEntity='features->isUnique(name)' displayOnlyLocalFeatures='features->union(associationEnds)->includesAll(displayFeatures)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='featureNameUniqueWithinEntity displayOnlyLocalFeatures keysFromLocalFeatures'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featureNameUniqueWithinEntity='features->isUnique(name)' displayOnlyLocalFeatures='features->union(associationEnds)->includesAll(displayFeatures)' keysFromLocalFeatures='features->union(associationEnds)->includesAll(keys)'"
  * @generated
  */
 public interface Entity extends Classifier, UnitSource {
+	/**
+	 * Returns the value of the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Table Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Table Name</em>' attribute.
+	 * @see #setTableName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_TableName()
+	 * @model
+	 * @generated
+	 */
+	String getTableName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getTableName <em>Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Table Name</em>' attribute.
+	 * @see #getTableName()
+	 * @generated
+	 */
+	void setTableName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Keys</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Feature}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Keys</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Keys</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_Keys()
+	 * @model
+	 * @generated
+	 */
+	List<Feature> getKeys();
+
 	/**
 	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Feature}.

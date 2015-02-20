@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getCollectionTypes <em>Collection Types</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseTechnology <em>Database Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getOrmTechnology <em>Orm Technology</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,6 +76,35 @@ public interface OrmModel extends EObject {
 	 * @generated
 	 */
 	void setDatabaseTechnology(DatabaseTechnologies value);
+
+	/**
+	 * Returns the value of the '<em><b>Orm Technology</b></em>' attribute.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.orm.OrmTechnologies}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Orm Technology</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Orm Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.orm.OrmTechnologies
+	 * @see #setOrmTechnology(OrmTechnologies)
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getOrmModel_OrmTechnology()
+	 * @model
+	 * @generated
+	 */
+	OrmTechnologies getOrmTechnology();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getOrmTechnology <em>Orm Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Orm Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.orm.OrmTechnologies
+	 * @see #getOrmTechnology()
+	 * @generated
+	 */
+	void setOrmTechnology(OrmTechnologies value);
 
 	/**
 	 * Returns the value of the '<em><b>Data Types</b></em>' containment reference list.

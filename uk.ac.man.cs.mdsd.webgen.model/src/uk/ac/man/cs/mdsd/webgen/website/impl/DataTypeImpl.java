@@ -20,6 +20,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getPersistentType <em>Persistent Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getOrmType <em>Orm Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
@@ -28,6 +30,42 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class DataTypeImpl extends ClassifierImpl implements DataType {
+	/**
+	 * The default value of the '{@link #getPersistentType() <em>Persistent Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPersistentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PERSISTENT_TYPE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getPersistentType() <em>Persistent Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPersistentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String persistentType = PERSISTENT_TYPE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getOrmType() <em>Orm Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrmType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ORM_TYPE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getOrmType() <em>Orm Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrmType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ormType = ORM_TYPE_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -89,6 +127,48 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPersistentType() {
+		return persistentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPersistentType(String newPersistentType) {
+		String oldPersistentType = persistentType;
+		persistentType = newPersistentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DATA_TYPE__PERSISTENT_TYPE, oldPersistentType, persistentType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getOrmType() {
+		return ormType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOrmType(String newOrmType) {
+		String oldOrmType = ormType;
+		ormType = newOrmType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DATA_TYPE__ORM_TYPE, oldOrmType, ormType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPlaceholder() {
 		return placeholder;
 	}
@@ -134,6 +214,10 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.DATA_TYPE__PERSISTENT_TYPE:
+				return getPersistentType();
+			case WebsitePackage.DATA_TYPE__ORM_TYPE:
+				return getOrmType();
 			case WebsitePackage.DATA_TYPE__PLACEHOLDER:
 				return getPlaceholder();
 			case WebsitePackage.DATA_TYPE__VALIDATION_PATTERN:
@@ -150,6 +234,12 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.DATA_TYPE__PERSISTENT_TYPE:
+				setPersistentType((String)newValue);
+				return;
+			case WebsitePackage.DATA_TYPE__ORM_TYPE:
+				setOrmType((String)newValue);
+				return;
 			case WebsitePackage.DATA_TYPE__PLACEHOLDER:
 				setPlaceholder((String)newValue);
 				return;
@@ -168,6 +258,12 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.DATA_TYPE__PERSISTENT_TYPE:
+				setPersistentType(PERSISTENT_TYPE_EDEFAULT);
+				return;
+			case WebsitePackage.DATA_TYPE__ORM_TYPE:
+				setOrmType(ORM_TYPE_EDEFAULT);
+				return;
 			case WebsitePackage.DATA_TYPE__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
@@ -186,6 +282,10 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.DATA_TYPE__PERSISTENT_TYPE:
+				return PERSISTENT_TYPE_EDEFAULT == null ? persistentType != null : !PERSISTENT_TYPE_EDEFAULT.equals(persistentType);
+			case WebsitePackage.DATA_TYPE__ORM_TYPE:
+				return ORM_TYPE_EDEFAULT == null ? ormType != null : !ORM_TYPE_EDEFAULT.equals(ormType);
 			case WebsitePackage.DATA_TYPE__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case WebsitePackage.DATA_TYPE__VALIDATION_PATTERN:
@@ -204,7 +304,11 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (placeholder: ");
+		result.append(" (persistentType: ");
+		result.append(persistentType);
+		result.append(", ormType: ");
+		result.append(ormType);
+		result.append(", placeholder: ");
 		result.append(placeholder);
 		result.append(", validationPattern: ");
 		result.append(validationPattern);

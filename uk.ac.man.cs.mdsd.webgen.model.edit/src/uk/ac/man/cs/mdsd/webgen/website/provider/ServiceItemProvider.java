@@ -64,6 +64,7 @@ public class ServiceItemProvider
 
 			addModelNamePropertyDescriptor(object);
 			addViewPropertyDescriptor(object);
+			addViewNamePropertyDescriptor(object);
 			addEncapsulatesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -110,6 +111,28 @@ public class ServiceItemProvider
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the View Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addViewNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Service_viewName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Service_viewName_feature", "_UI_Service_type"),
+				 WebsitePackage.Literals.SERVICE__VIEW_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
 				 null));
 	}
 
@@ -206,6 +229,7 @@ public class ServiceItemProvider
 		switch (notification.getFeatureID(Service.class)) {
 			case WebsitePackage.SERVICE__MODEL_NAME:
 			case WebsitePackage.SERVICE__VIEW:
+			case WebsitePackage.SERVICE__VIEW_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.SERVICE__DISPLAY_LABELS:

@@ -17,6 +17,9 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Entity#getPartOf <em>Part Of</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.Entity#getTableName <em>Table Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.Entity#getKeys <em>Keys</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.Entity#getAutoKeyName <em>Auto Key Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Entity#getContains <em>Contains</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Entity#getContainer <em>Container</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Entity#getFeatures <em>Features</em>}</li>
@@ -57,6 +60,74 @@ public interface Entity extends Classifier {
 	 * @generated
 	 */
 	void setPartOf(OrmModel value);
+
+	/**
+	 * Returns the value of the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Table Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Table Name</em>' attribute.
+	 * @see #setTableName(String)
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getEntity_TableName()
+	 * @model
+	 * @generated
+	 */
+	String getTableName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Entity#getTableName <em>Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Table Name</em>' attribute.
+	 * @see #getTableName()
+	 * @generated
+	 */
+	void setTableName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Keys</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.Feature}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Keys</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Keys</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getEntity_Keys()
+	 * @model
+	 * @generated
+	 */
+	EList<Feature> getKeys();
+
+	/**
+	 * Returns the value of the '<em><b>Auto Key Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Auto Key Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Auto Key Name</em>' attribute.
+	 * @see #setAutoKeyName(String)
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getEntity_AutoKeyName()
+	 * @model
+	 * @generated
+	 */
+	String getAutoKeyName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Entity#getAutoKeyName <em>Auto Key Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Auto Key Name</em>' attribute.
+	 * @see #getAutoKeyName()
+	 * @generated
+	 */
+	void setAutoKeyName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Contains</b></em>' reference list.

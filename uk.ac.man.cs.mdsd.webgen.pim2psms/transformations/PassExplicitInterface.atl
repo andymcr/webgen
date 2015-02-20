@@ -10,6 +10,21 @@ create jsf : JSF from website : Website, orm : ORM;
 uses WebsiteHelpers;
 
 
+helper context String def: createName() : String
+	= if self.trim().replaceAll('[A-Z]', '') = '' then
+			self.trim()
+		else
+			self.trim().lowercaseFirst().replaceAll('([A-Z])', '_$1')
+		endif;
+
+helper context String def: createViewName() : String
+	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
+		in if properties.databaseTechnology = #Oracle then
+				self.toUpper()
+			else
+				self.toLower()
+			endif;
+
 helper context Website!Page def: pageSideMenu() : Website!Menu
 	= if not self.sideMenu.oclIsUndefined() then
 			self.sideMenu
@@ -390,6 +405,12 @@ rule Service {
 				website.encapsulates->first().name
 			endif,
 		view <- website.view,
+		viewName <-
+			if not website.viewName.oclIsUndefined() and website.viewName <> '' then
+				website.viewName
+			else
+				website.name.createViewName()
+			endif,
 		entities <-
 			website.encapsulates
 				->collect(e | thisModule.findOrmEntity(e.name)),

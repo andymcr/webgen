@@ -136,6 +136,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 		switch (eDataType.getClassifierID()) {
 			case WebsitePackage.DATABASE_TECHNOLOGIES:
 				return createDatabaseTechnologiesFromString(eDataType, initialValue);
+			case WebsitePackage.ORM_TECHNOLOGIES:
+				return createOrmTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return createFrameworkTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.AJAX_TECHNOLOGIES:
@@ -165,6 +167,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 		switch (eDataType.getClassifierID()) {
 			case WebsitePackage.DATABASE_TECHNOLOGIES:
 				return convertDatabaseTechnologiesToString(eDataType, instanceValue);
+			case WebsitePackage.ORM_TECHNOLOGIES:
+				return convertOrmTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return convertFrameworkTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.AJAX_TECHNOLOGIES:
@@ -801,6 +805,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * @generated
 	 */
 	public String convertDatabaseTechnologiesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrmTechnologies createOrmTechnologiesFromString(EDataType eDataType, String initialValue) {
+		OrmTechnologies result = OrmTechnologies.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOrmTechnologiesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

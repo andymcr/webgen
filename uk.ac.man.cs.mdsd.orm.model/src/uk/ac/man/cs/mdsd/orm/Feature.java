@@ -15,6 +15,7 @@ package uk.ac.man.cs.mdsd.orm;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.Feature#getColumnName <em>Column Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Feature#getParentEntity <em>Parent Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Feature#getInputField <em>Input Field</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Feature#getHeaderClass <em>Header Class</em>}</li>
@@ -29,6 +30,32 @@ package uk.ac.man.cs.mdsd.orm;
  * @generated
  */
 public interface Feature extends NamedDisplayElement {
+
+	/**
+	 * Returns the value of the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Column Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Column Name</em>' attribute.
+	 * @see #setColumnName(String)
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getFeature_ColumnName()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getColumnName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Feature#getColumnName <em>Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Column Name</em>' attribute.
+	 * @see #getColumnName()
+	 * @generated
+	 */
+	void setColumnName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent Entity</b></em>' container reference.

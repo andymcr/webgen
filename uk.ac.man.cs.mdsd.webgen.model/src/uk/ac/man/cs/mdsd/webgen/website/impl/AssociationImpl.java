@@ -27,6 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationImpl#getBidirectional <em>Bidirectional</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationImpl#getTargetFeatureName <em>Target Feature Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationImpl#getTargetDisplayLabel <em>Target Display Label</em>}</li>
@@ -69,6 +70,26 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 	 * @ordered
 	 */
 	protected Boolean bidirectional = BIDIRECTIONAL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPivotTableName() <em>Pivot Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPivotTableName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PIVOT_TABLE_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPivotTableName() <em>Pivot Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPivotTableName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String pivotTableName = PIVOT_TABLE_NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
@@ -315,6 +336,27 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPivotTableName() {
+		return pivotTableName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPivotTableName(String newPivotTableName) {
+		String oldPivotTableName = pivotTableName;
+		pivotTableName = newPivotTableName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ASSOCIATION__PIVOT_TABLE_NAME, oldPivotTableName, pivotTableName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getInputClass() {
 		return inputClass;
 	}
@@ -500,6 +542,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 				return basicGetTargetEntity();
 			case WebsitePackage.ASSOCIATION__BIDIRECTIONAL:
 				return getBidirectional();
+			case WebsitePackage.ASSOCIATION__PIVOT_TABLE_NAME:
+				return getPivotTableName();
 			case WebsitePackage.ASSOCIATION__INPUT_CLASS:
 				return getInputClass();
 			case WebsitePackage.ASSOCIATION__TARGET_FEATURE_NAME:
@@ -531,6 +575,9 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 				return;
 			case WebsitePackage.ASSOCIATION__BIDIRECTIONAL:
 				setBidirectional((Boolean)newValue);
+				return;
+			case WebsitePackage.ASSOCIATION__PIVOT_TABLE_NAME:
+				setPivotTableName((String)newValue);
 				return;
 			case WebsitePackage.ASSOCIATION__INPUT_CLASS:
 				setInputClass((String)newValue);
@@ -571,6 +618,9 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 			case WebsitePackage.ASSOCIATION__BIDIRECTIONAL:
 				setBidirectional(BIDIRECTIONAL_EDEFAULT);
 				return;
+			case WebsitePackage.ASSOCIATION__PIVOT_TABLE_NAME:
+				setPivotTableName(PIVOT_TABLE_NAME_EDEFAULT);
+				return;
 			case WebsitePackage.ASSOCIATION__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
@@ -608,6 +658,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 				return targetEntity != null;
 			case WebsitePackage.ASSOCIATION__BIDIRECTIONAL:
 				return BIDIRECTIONAL_EDEFAULT == null ? bidirectional != null : !BIDIRECTIONAL_EDEFAULT.equals(bidirectional);
+			case WebsitePackage.ASSOCIATION__PIVOT_TABLE_NAME:
+				return PIVOT_TABLE_NAME_EDEFAULT == null ? pivotTableName != null : !PIVOT_TABLE_NAME_EDEFAULT.equals(pivotTableName);
 			case WebsitePackage.ASSOCIATION__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 			case WebsitePackage.ASSOCIATION__TARGET_FEATURE_NAME:
@@ -638,6 +690,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (bidirectional: ");
 		result.append(bidirectional);
+		result.append(", pivotTableName: ");
+		result.append(pivotTableName);
 		result.append(", inputClass: ");
 		result.append(inputClass);
 		result.append(", targetFeatureName: ");

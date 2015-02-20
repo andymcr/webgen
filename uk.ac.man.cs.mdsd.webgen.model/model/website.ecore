@@ -30,6 +30,12 @@
     <eLiterals name="MySql"/>
     <eLiterals name="Oracle" value="1"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OrmTechnologies">
+    <eLiterals name="JPA"/>
+    <eLiterals name="DataMapper" value="1"/>
+    <eLiterals name="Idiorm" value="2"/>
+    <eLiterals name="Doctrine" value="3" literal="Doctrine"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="FrameworkTechnologies">
     <eLiterals name="JSF"/>
     <eLiterals name="CakePHP" value="1"/>
@@ -68,6 +74,7 @@
         defaultValueLiteral="2000000"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseTechnology" ordered="false"
         lowerBound="1" eType="#//DatabaseTechnologies"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ormTechnology" eType="#//OrmTechnologies"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameworkTechnology" ordered="false"
         lowerBound="1" eType="#//FrameworkTechnologies"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ajaxTechnology" eType="#//AjaxTechnologies"
@@ -150,6 +157,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true" eSuperTypes="#//NamedDisplayElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataType" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="persistentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ormType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validationPattern" ordered="false"
@@ -162,12 +171,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral" eSuperTypes="#//NamedDisplayElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//Classifier #//UnitSource">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="featureNameUniqueWithinEntity displayOnlyLocalFeatures"/>
+      <details key="constraints" value="featureNameUniqueWithinEntity displayOnlyLocalFeatures keysFromLocalFeatures"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="featureNameUniqueWithinEntity" value="features->isUnique(name)"/>
       <details key="displayOnlyLocalFeatures" value="features->union(associationEnds)->includesAll(displayFeatures)"/>
+      <details key="keysFromLocalFeatures" value="features->union(associationEnds)->includesAll(keys)"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keys" upperBound="-1" eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//Feature" containment="true" eOpposite="#//Feature/parentEntity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="associationEnds" upperBound="-1"
@@ -186,6 +198,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Feature" abstract="true" eSuperTypes="#//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentEntity" lowerBound="1"
         eType="#//Entity" eOpposite="#//Entity/features"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" lowerBound="1"
         eType="#//Cardinality" defaultValueLiteral="Optional"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unique" lowerBound="1"
@@ -210,6 +224,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeAttribute" eSuperTypes="#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" ordered="false"
         lowerBound="1" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="persistentType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ormType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="obfuscateFormFields" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="caseInsensitive" ordered="false"
@@ -255,6 +271,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bidirectional" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pivotTableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="input_association"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetFeatureName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -327,6 +344,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelName" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="viewName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" lowerBound="1"
         upperBound="-1" eType="#//Entity" eOpposite="#//Entity/servedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayLabels" upperBound="-1"

@@ -40,6 +40,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
 import uk.ac.man.cs.mdsd.orm.OrmFactory;
 import uk.ac.man.cs.mdsd.orm.OrmModel;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
+import uk.ac.man.cs.mdsd.orm.OrmTechnologies;
 import uk.ac.man.cs.mdsd.orm.SingletonAssociation;
 import uk.ac.man.cs.mdsd.orm.SingletonAssociationRelationships;
 import uk.ac.man.cs.mdsd.orm.SingletonAttribute;
@@ -252,6 +253,13 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EEnum ormTechnologiesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum collectionTypesEEnum = null;
 
 	/**
@@ -373,6 +381,15 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 */
 	public EAttribute getOrmModel_DatabaseTechnology() {
 		return (EAttribute)ormModelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOrmModel_OrmTechnology() {
+		return (EAttribute)ormModelEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -551,8 +568,8 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_Contains() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(1);
+	public EAttribute getEntity_TableName() {
+		return (EAttribute)entityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -560,7 +577,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_Container() {
+	public EReference getEntity_Keys() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -569,8 +586,8 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_Features() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(3);
+	public EAttribute getEntity_AutoKeyName() {
+		return (EAttribute)entityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -578,7 +595,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_DisplayFeatures() {
+	public EReference getEntity_Contains() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -587,8 +604,35 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEntity_Container() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntity_Features() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntity_DisplayFeatures() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getEntity_DisplayFormat() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)entityEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -605,8 +649,17 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getFeature_ColumnName() {
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getFeature_ParentEntity() {
-		return (EReference)featureEClass.getEStructuralFeatures().get(0);
+		return (EReference)featureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -615,15 +668,6 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * @generated
 	 */
 	public EAttribute getFeature_InputField() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeature_HeaderClass() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -632,7 +676,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_InputClass() {
+	public EAttribute getFeature_HeaderClass() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -641,7 +685,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_DisplayClass() {
+	public EAttribute getFeature_InputClass() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -650,8 +694,17 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_FooterClass() {
+	public EAttribute getFeature_DisplayClass() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeature_FooterClass() {
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -661,6 +714,24 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 */
 	public EClass getAttribute() {
 		return attributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAttribute_PersistentType() {
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAttribute_OrmType() {
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -938,6 +1009,15 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAssociation_PivotTableName() {
+		return (EAttribute)associationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSingletonAssociation() {
 		return singletonAssociationEClass;
 	}
@@ -1010,6 +1090,15 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getOrmTechnologies() {
+		return ormTechnologiesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCollectionTypes() {
 		return collectionTypesEEnum;
 	}
@@ -1074,6 +1163,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		createEReference(ormModelEClass, ORM_MODEL__ENTITIES);
 		createEReference(ormModelEClass, ORM_MODEL__COLLECTION_TYPES);
 		createEAttribute(ormModelEClass, ORM_MODEL__DATABASE_TECHNOLOGY);
+		createEAttribute(ormModelEClass, ORM_MODEL__ORM_TECHNOLOGY);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -1099,6 +1189,9 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 
 		entityEClass = createEClass(ENTITY);
 		createEReference(entityEClass, ENTITY__PART_OF);
+		createEAttribute(entityEClass, ENTITY__TABLE_NAME);
+		createEReference(entityEClass, ENTITY__KEYS);
+		createEAttribute(entityEClass, ENTITY__AUTO_KEY_NAME);
 		createEReference(entityEClass, ENTITY__CONTAINS);
 		createEReference(entityEClass, ENTITY__CONTAINER);
 		createEReference(entityEClass, ENTITY__FEATURES);
@@ -1106,6 +1199,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		createEAttribute(entityEClass, ENTITY__DISPLAY_FORMAT);
 
 		featureEClass = createEClass(FEATURE);
+		createEAttribute(featureEClass, FEATURE__COLUMN_NAME);
 		createEReference(featureEClass, FEATURE__PARENT_ENTITY);
 		createEAttribute(featureEClass, FEATURE__INPUT_FIELD);
 		createEAttribute(featureEClass, FEATURE__HEADER_CLASS);
@@ -1114,6 +1208,8 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		createEAttribute(featureEClass, FEATURE__FOOTER_CLASS);
 
 		attributeEClass = createEClass(ATTRIBUTE);
+		createEAttribute(attributeEClass, ATTRIBUTE__PERSISTENT_TYPE);
+		createEAttribute(attributeEClass, ATTRIBUTE__ORM_TYPE);
 
 		singletonAttributeEClass = createEClass(SINGLETON_ATTRIBUTE);
 		createEAttribute(singletonAttributeEClass, SINGLETON_ATTRIBUTE__REQUIRED);
@@ -1156,6 +1252,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		createEAttribute(associationEClass, ASSOCIATION__SOURCE_END);
 		createEAttribute(associationEClass, ASSOCIATION__BIDIRECTIONAL);
 		createEAttribute(associationEClass, ASSOCIATION__CONTAINMENT);
+		createEAttribute(associationEClass, ASSOCIATION__PIVOT_TABLE_NAME);
 
 		singletonAssociationEClass = createEClass(SINGLETON_ASSOCIATION);
 		createEAttribute(singletonAssociationEClass, SINGLETON_ASSOCIATION__REQUIRED);
@@ -1168,6 +1265,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		// Create enums
 		cardinalityEEnum = createEEnum(CARDINALITY);
 		databaseTechnologiesEEnum = createEEnum(DATABASE_TECHNOLOGIES);
+		ormTechnologiesEEnum = createEEnum(ORM_TECHNOLOGIES);
 		collectionTypesEEnum = createEEnum(COLLECTION_TYPES);
 		dateDetailsEEnum = createEEnum(DATE_DETAILS);
 		singletonAssociationRelationshipsEEnum = createEEnum(SINGLETON_ASSOCIATION_RELATIONSHIPS);
@@ -1236,6 +1334,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		initEReference(getOrmModel_Entities(), this.getEntity(), this.getEntity_PartOf(), "entities", null, 0, -1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOrmModel_CollectionTypes(), this.getCollectionType(), null, "collectionTypes", null, 0, -1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOrmModel_DatabaseTechnology(), this.getDatabaseTechnologies(), "databaseTechnology", "MySql", 0, 1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getOrmModel_OrmTechnology(), this.getOrmTechnologies(), "ormTechnology", null, 0, 1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1261,6 +1360,9 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntity_PartOf(), this.getOrmModel(), this.getOrmModel_Entities(), "partOf", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEntity_TableName(), ecorePackage.getEString(), "tableName", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_Keys(), this.getFeature(), null, "keys", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntity_AutoKeyName(), ecorePackage.getEString(), "autoKeyName", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Contains(), this.getEntity(), this.getEntity_Container(), "contains", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Container(), this.getEntity(), this.getEntity_Contains(), "container", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Features(), this.getFeature(), this.getFeature_ParentEntity(), "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1268,6 +1370,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		initEAttribute(getEntity_DisplayFormat(), ecorePackage.getEString(), "displayFormat", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureEClass, Feature.class, "Feature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFeature_ColumnName(), ecorePackage.getEString(), "columnName", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeature_ParentEntity(), this.getEntity(), this.getEntity_Features(), "parentEntity", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_InputField(), ecorePackage.getEBooleanObject(), "inputField", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_HeaderClass(), ecorePackage.getEString(), "headerClass", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1276,6 +1379,8 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		initEAttribute(getFeature_FooterClass(), ecorePackage.getEString(), "footerClass", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAttribute_PersistentType(), ecorePackage.getEString(), "persistentType", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_OrmType(), ecorePackage.getEString(), "ormType", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(singletonAttributeEClass, SingletonAttribute.class, "SingletonAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSingletonAttribute_Required(), ecorePackage.getEBoolean(), "required", null, 0, 1, SingletonAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1318,6 +1423,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		initEAttribute(getAssociation_SourceEnd(), ecorePackage.getEBoolean(), "sourceEnd", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssociation_Bidirectional(), ecorePackage.getEBoolean(), "bidirectional", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssociation_Containment(), ecorePackage.getEBoolean(), "containment", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssociation_PivotTableName(), ecorePackage.getEString(), "pivotTableName", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(singletonAssociationEClass, SingletonAssociation.class, "SingletonAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSingletonAssociation_Required(), ecorePackage.getEBoolean(), "required", null, 0, 1, SingletonAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1336,6 +1442,13 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		initEEnum(databaseTechnologiesEEnum, DatabaseTechnologies.class, "DatabaseTechnologies");
 		addEEnumLiteral(databaseTechnologiesEEnum, DatabaseTechnologies.MY_SQL);
 		addEEnumLiteral(databaseTechnologiesEEnum, DatabaseTechnologies.ORACLE);
+
+		initEEnum(ormTechnologiesEEnum, OrmTechnologies.class, "OrmTechnologies");
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.JPA);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DATA_MAPPER);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.IDIORM);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.KOHANA);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DOCTRINE);
 
 		initEEnum(collectionTypesEEnum, CollectionTypes.class, "CollectionTypes");
 		addEEnumLiteral(collectionTypesEEnum, CollectionTypes.BAG);

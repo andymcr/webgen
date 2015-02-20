@@ -39,6 +39,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getModelName <em>Model Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#isView <em>View</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getViewName <em>View Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getEncapsulates <em>Encapsulates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getDisplayLabels <em>Display Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
@@ -88,6 +89,26 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @ordered
 	 */
 	protected boolean view = VIEW_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getViewName() <em>View Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getViewName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VIEW_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getViewName() <em>View Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getViewName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String viewName = VIEW_NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getEncapsulates() <em>Encapsulates</em>}' reference list.
@@ -195,6 +216,27 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getViewName() {
+		return viewName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setViewName(String newViewName) {
+		String oldViewName = viewName;
+		viewName = newViewName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE__VIEW_NAME, oldViewName, viewName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<Entity> getEncapsulates() {
 		if (encapsulates == null) {
 			encapsulates = new EObjectWithInverseResolvingEList.ManyInverse<Entity>(Entity.class, this, WebsitePackage.SERVICE__ENCAPSULATES, WebsitePackage.ENTITY__SERVED_BY);
@@ -289,6 +331,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return getModelName();
 			case WebsitePackage.SERVICE__VIEW:
 				return isView();
+			case WebsitePackage.SERVICE__VIEW_NAME:
+				return getViewName();
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return getEncapsulates();
 			case WebsitePackage.SERVICE__DISPLAY_LABELS:
@@ -315,6 +359,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return;
 			case WebsitePackage.SERVICE__VIEW:
 				setView((Boolean)newValue);
+				return;
+			case WebsitePackage.SERVICE__VIEW_NAME:
+				setViewName((String)newValue);
 				return;
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
@@ -350,6 +397,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case WebsitePackage.SERVICE__VIEW:
 				setView(VIEW_EDEFAULT);
 				return;
+			case WebsitePackage.SERVICE__VIEW_NAME:
+				setViewName(VIEW_NAME_EDEFAULT);
+				return;
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
 				return;
@@ -378,6 +428,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return MODEL_NAME_EDEFAULT == null ? modelName != null : !MODEL_NAME_EDEFAULT.equals(modelName);
 			case WebsitePackage.SERVICE__VIEW:
 				return view != VIEW_EDEFAULT;
+			case WebsitePackage.SERVICE__VIEW_NAME:
+				return VIEW_NAME_EDEFAULT == null ? viewName != null : !VIEW_NAME_EDEFAULT.equals(viewName);
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return encapsulates != null && !encapsulates.isEmpty();
 			case WebsitePackage.SERVICE__DISPLAY_LABELS:
@@ -404,6 +456,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		result.append(modelName);
 		result.append(", view: ");
 		result.append(view);
+		result.append(", viewName: ");
+		result.append(viewName);
 		result.append(')');
 		return result.toString();
 	}

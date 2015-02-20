@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultDateTimeFormat <em>Default Date Time Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDefaultMaximumUploadSize <em>Default Maximum Upload Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseTechnology <em>Database Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getOrmTechnology <em>Orm Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
@@ -363,6 +364,35 @@ public interface WebsiteProperties extends EObject {
 	 * @generated
 	 */
 	void setDatabaseTechnology(DatabaseTechnologies value);
+
+	/**
+	 * Returns the value of the '<em><b>Orm Technology</b></em>' attribute.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Orm Technology</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Orm Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies
+	 * @see #setOrmTechnology(OrmTechnologies)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_OrmTechnology()
+	 * @model
+	 * @generated
+	 */
+	OrmTechnologies getOrmTechnology();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getOrmTechnology <em>Orm Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Orm Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies
+	 * @see #getOrmTechnology()
+	 * @generated
+	 */
+	void setOrmTechnology(OrmTechnologies value);
 
 	/**
 	 * Returns the value of the '<em><b>Framework Technology</b></em>' attribute.

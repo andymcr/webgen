@@ -38,6 +38,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityFeatureImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityFeatureImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityFeatureImpl#getAlias <em>Alias</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityFeatureImpl#getViewColumnName <em>View Column Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -233,6 +234,26 @@ public abstract class ServiceEntityFeatureImpl extends EObjectImpl implements Se
 	 * @ordered
 	 */
 	protected String alias = ALIAS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getViewColumnName() <em>View Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getViewColumnName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VIEW_COLUMN_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getViewColumnName() <em>View Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getViewColumnName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String viewColumnName = VIEW_COLUMN_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -531,6 +552,27 @@ public abstract class ServiceEntityFeatureImpl extends EObjectImpl implements Se
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getViewColumnName() {
+		return viewColumnName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setViewColumnName(String newViewColumnName) {
+		String oldViewColumnName = viewColumnName;
+		viewColumnName = newViewColumnName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME, oldViewColumnName, viewColumnName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -602,6 +644,8 @@ public abstract class ServiceEntityFeatureImpl extends EObjectImpl implements Se
 				return getDateFormat();
 			case WebsitePackage.SERVICE_ENTITY_FEATURE__ALIAS:
 				return getAlias();
+			case WebsitePackage.SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME:
+				return getViewColumnName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -646,6 +690,9 @@ public abstract class ServiceEntityFeatureImpl extends EObjectImpl implements Se
 				return;
 			case WebsitePackage.SERVICE_ENTITY_FEATURE__ALIAS:
 				setAlias((String)newValue);
+				return;
+			case WebsitePackage.SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME:
+				setViewColumnName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -692,6 +739,9 @@ public abstract class ServiceEntityFeatureImpl extends EObjectImpl implements Se
 			case WebsitePackage.SERVICE_ENTITY_FEATURE__ALIAS:
 				setAlias(ALIAS_EDEFAULT);
 				return;
+			case WebsitePackage.SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME:
+				setViewColumnName(VIEW_COLUMN_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -726,6 +776,8 @@ public abstract class ServiceEntityFeatureImpl extends EObjectImpl implements Se
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 			case WebsitePackage.SERVICE_ENTITY_FEATURE__ALIAS:
 				return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
+			case WebsitePackage.SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME:
+				return VIEW_COLUMN_NAME_EDEFAULT == null ? viewColumnName != null : !VIEW_COLUMN_NAME_EDEFAULT.equals(viewColumnName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -792,6 +844,8 @@ public abstract class ServiceEntityFeatureImpl extends EObjectImpl implements Se
 		result.append(dateFormat);
 		result.append(", alias: ");
 		result.append(alias);
+		result.append(", viewColumnName: ");
+		result.append(viewColumnName);
 		result.append(')');
 		return result.toString();
 	}

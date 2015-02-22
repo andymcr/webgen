@@ -8,6 +8,13 @@ helper context String def: lowercaseFirst() : String
 helper context String def: uppercaseFirst() : String
 	= self.substring(1, 1).toUpper().concat(self.substring(2, self.size()));
 
+helper context String def: createName() : String
+	= if self.trim().replaceAll('[A-Z]', '') = '' then
+			self.trim()
+		else
+			self.trim().lowercaseFirst().replaceAll('([A-Z])', '_$1')
+		endif;
+
 helper context String def: createLabel() : String
 	= if self.trim().replaceAll('[A-Z]', '') = '' then
 			self
@@ -19,6 +26,36 @@ helper context String def: createLabel() : String
 helper def: findWebsiteProperties() : Website!WebsiteProperties
 	= Website!WebGenModel.allInstancesFrom('website')->first().websiteProperties;
 
+
+helper context String def: createTableName() : String
+	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
+		in if properties.databaseTechnology = #Oracle then
+				self.toUpper()
+			else
+				self.toLower()
+			endif;
+
+helper context String def: createElementColumnName() : String
+	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
+		in if properties.databaseTechnology = #Oracle then
+				self.createName().toUpper()
+			else
+				self.createName().toLower()
+			endif;
+
+helper context String def: createAssociationColumnName() : String
+	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
+		in let name : String
+				= if properties.frameworkTechnology = #Kohana then
+						self.createName().concat('_id')
+					else
+						self.createName()
+					endif
+			in if properties.databaseTechnology = #Oracle then
+					name.toUpper()
+				else
+					name.toLower()
+				endif;
 
 helper context Website!Association def: targetFeatureName() : String
 	= if not self.targetFeatureName.oclIsUndefined() and self.targetFeatureName <> '' then

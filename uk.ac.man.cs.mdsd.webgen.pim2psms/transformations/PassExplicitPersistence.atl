@@ -8,43 +8,6 @@ create orm : ORM from website : Website;
 
 uses WebsiteHelpers;
 
-helper context String def: createName() : String
-	= if self.trim().replaceAll('[A-Z]', '') = '' then
-			self.trim()
-		else
-			self.trim().lowercaseFirst().replaceAll('([A-Z])', '_$1')
-		endif;
-
-helper context String def: createTableName() : String
-	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
-		in if properties.databaseTechnology = #Oracle then
-				self.toUpper()
-			else
-				self.toLower()
-			endif;
-
-helper context String def: createElementColumnName() : String
-	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
-		in if properties.databaseTechnology = #Oracle then
-				self.createName().toUpper()
-			else
-				self.createName().toLower()
-			endif;
-
-helper context String def: createAssociationColumnName() : String
-	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
-		in let name : String
-				= if properties.frameworkTechnology = #Kohana then
-						self.createName().concat('_id')
-					else
-						self.createName()
-					endif
-			in if properties.databaseTechnology = #Oracle then
-					name.toUpper()
-				else
-					name.toLower()
-				endif;
-
 helper context Website!Association def: createPivotTableName() : String
 	= let name : String
 			= if not self.pivotTableName.oclIsUndefined() and self.pivotTableName <> '' then
@@ -575,7 +538,12 @@ rule OneToManyAssociationWithContainment {
 		associationRelationship <- #ManyToOne,
 		sourceEnd <- false,
 		bidirectional <- website.bidirectional,
-		columnName <- website.targetFeatureName().createAssociationColumnName(),
+		columnName <-
+			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
+				website.columnName
+			else
+				website.targetFeatureName().createAssociationColumnName()
+			endif,
 		inputField <- false,
 		required <- true,
 		pivotTableName <- website.createPivotTableName(),

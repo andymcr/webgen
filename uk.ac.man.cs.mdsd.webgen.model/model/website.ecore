@@ -385,6 +385,8 @@
       eSuperTypes="#//IncludedFeature #//ServiceFeature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="viewColumnName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceEntityElement" eSuperTypes="#//ServiceEntityFeature #//IncludedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

@@ -3727,13 +3727,22 @@ public interface WebsitePackage extends EPackage {
 	int SERVICE_ENTITY_FEATURE__ALIAS = INCLUDED_FEATURE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>View Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME = INCLUDED_FEATURE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Service Entity Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_FEATURE_FEATURE_COUNT = INCLUDED_FEATURE_FEATURE_COUNT + 3;
+	int SERVICE_ENTITY_FEATURE_FEATURE_COUNT = INCLUDED_FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl <em>Service Entity Element</em>}' class.
@@ -3843,6 +3852,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_ENTITY_ELEMENT__ALIAS = SERVICE_ENTITY_FEATURE__ALIAS;
+
+	/**
+	 * The feature id for the '<em><b>View Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ENTITY_ELEMENT__VIEW_COLUMN_NAME = SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -4078,6 +4096,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_ENTITY_ASSOCIATION__ALIAS = SERVICE_ENTITY_FEATURE__ALIAS;
+
+	/**
+	 * The feature id for the '<em><b>View Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ENTITY_ASSOCIATION__VIEW_COLUMN_NAME = SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -12241,6 +12268,17 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getServiceEntityFeature_Alias();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityFeature#getViewColumnName <em>View Column Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>View Column Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceEntityFeature#getViewColumnName()
+	 * @see #getServiceEntityFeature()
+	 * @generated
+	 */
+	EAttribute getServiceEntityFeature_ViewColumnName();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement <em>Service Entity Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15790,6 +15828,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE_ENTITY_FEATURE__ALIAS = eINSTANCE.getServiceEntityFeature_Alias();
+
+		/**
+		 * The meta object literal for the '<em><b>View Column Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME = eINSTANCE.getServiceEntityFeature_ViewColumnName();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl <em>Service Entity Element</em>}' class.

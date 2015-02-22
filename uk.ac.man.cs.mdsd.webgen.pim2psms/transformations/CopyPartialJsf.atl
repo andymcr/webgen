@@ -185,7 +185,8 @@ rule ServiceEntityAssociation {
 	from partialJsf : JSF!ServiceEntityAssociation
 	to jsf : JSF!ServiceEntityAssociation (
 		feature <- partialJsf.feature,
-		opposite <- partialJsf.opposite
+		opposite <- partialJsf.opposite,
+		viewColumnName <- partialJsf.viewColumnName
 	)
 }
 

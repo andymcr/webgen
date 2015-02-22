@@ -472,6 +472,21 @@ abstract rule ServiceFeature {
 abstract rule ServiceEntityFeature {
 	from website : Website!ServiceEntityFeature
 	to jsf : JSF!ServiceEntityFeature (
+		name <-
+			if not website.alias.oclIsUndefined() and website.alias <> '' then
+				website.alias
+			else
+				website.entityFeature().name
+			endif,
+		displayLabel <- website.entityFeatureLabel(),
+		viewColumnName <-
+			if not website.viewColumnName.oclIsUndefined() and website.viewColumnName <> '' then
+				website.viewColumnName
+			else if not website.alias.oclIsUndefined() and website.alias <> '' then
+				website.alias.createAssociationColumnName()
+			else
+				OclUndefined
+			endif endif
 	)
 }
 
@@ -479,13 +494,6 @@ abstract rule ServiceEntityFeature {
 rule ServiceEntityElement {
 	from website : Website!ServiceEntityElement
 	to jsf : JSF!ServiceEntityElement (
-		name <-
-			if not website.alias.oclIsUndefined() then
-				website.alias
-			else
-				website.entityFeature().name
-			endif,
-		displayLabel <- website.entityFeatureLabel(),
 		feature <- website.entityFeature(),
 		caseInsensitive <- website.caseInsensitive,
 		encrypt <- website.encrypt,
@@ -505,14 +513,7 @@ abstract rule ServiceAssociation {
 rule ServiceEntityAssociation {
 	from website : Website!ServiceEntityAssociation
 	to jsf : JSF!ServiceEntityAssociation (
-		name <-
-			if not website.alias.oclIsUndefined() and website.alias <> '' then
-				website.alias
-			else
-				website.entityFeature().name
-			endif,
 		feature <- website.entityFeature(),
-		displayLabel <-	website.entityFeatureLabel(),
 		forcedValue <- website.forcedValue
 --		opposite <- 
 --			if website.feature.targetEntiity.servedBy->empty() then

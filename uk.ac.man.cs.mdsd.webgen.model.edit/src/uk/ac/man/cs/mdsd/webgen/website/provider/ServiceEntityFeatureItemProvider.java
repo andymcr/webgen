@@ -74,6 +74,7 @@ public class ServiceEntityFeatureItemProvider
 			addFooterClassPropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addAliasPropertyDescriptor(object);
+			addViewColumnNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -299,6 +300,28 @@ public class ServiceEntityFeatureItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the View Column Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addViewColumnNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServiceEntityFeature_viewColumnName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceEntityFeature_viewColumnName_feature", "_UI_ServiceEntityFeature_type"),
+				 WebsitePackage.Literals.SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -336,7 +359,7 @@ public class ServiceEntityFeatureItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ServiceEntityFeature)object).getDisplayLabel();
+		String label = ((ServiceEntityFeature)object).getViewColumnName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ServiceEntityFeature_type") :
 			getString("_UI_ServiceEntityFeature_type") + " " + label;
@@ -363,6 +386,7 @@ public class ServiceEntityFeatureItemProvider
 			case WebsitePackage.SERVICE_ENTITY_FEATURE__FOOTER_CLASS:
 			case WebsitePackage.SERVICE_ENTITY_FEATURE__DATE_FORMAT:
 			case WebsitePackage.SERVICE_ENTITY_FEATURE__ALIAS:
+			case WebsitePackage.SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.SERVICE_ENTITY_FEATURE__FORCED_VALUE:

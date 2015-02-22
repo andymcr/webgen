@@ -262,6 +262,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//ServiceEntityFeature">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//ServiceEntityFeature/alias"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//ServiceEntityFeature/viewColumnName"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//ServiceEntityElement">
       <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//ServiceEntityElement/name"/>

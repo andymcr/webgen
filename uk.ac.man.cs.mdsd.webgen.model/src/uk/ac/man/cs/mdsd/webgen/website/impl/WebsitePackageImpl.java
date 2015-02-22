@@ -2577,6 +2577,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getServiceEntityFeature_ViewColumnName() {
+		return (EAttribute)serviceEntityFeatureEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getServiceEntityElement() {
 		return serviceEntityElementEClass;
 	}
@@ -4437,6 +4446,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		serviceEntityFeatureEClass = createEClass(SERVICE_ENTITY_FEATURE);
 		createEAttribute(serviceEntityFeatureEClass, SERVICE_ENTITY_FEATURE__ALIAS);
+		createEAttribute(serviceEntityFeatureEClass, SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME);
 
 		serviceEntityElementEClass = createEClass(SERVICE_ENTITY_ELEMENT);
 		createEAttribute(serviceEntityElementEClass, SERVICE_ENTITY_ELEMENT__NAME);
@@ -5043,6 +5053,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(serviceEntityFeatureEClass, ServiceEntityFeature.class, "ServiceEntityFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceEntityFeature_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, ServiceEntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getServiceEntityFeature_ViewColumnName(), ecorePackage.getEString(), "viewColumnName", null, 0, 1, ServiceEntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceEntityElementEClass, ServiceEntityElement.class, "ServiceEntityElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceEntityElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServiceEntityElement.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);

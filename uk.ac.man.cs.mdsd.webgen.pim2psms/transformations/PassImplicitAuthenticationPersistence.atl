@@ -27,6 +27,18 @@ helper context Website!Authentication def: getDataType(name : String) : ORM!Data
 			endif endif endif
 		endif;
 
+helper context Website!Authentication def: getPersistentType(name : String) : String
+	= let dataType : ORM!DataType = self.getDataType(name)
+		in if not dataType.oclIsUndefined() then
+			name
+		else
+			if dataType.persistentType.oclIsUndefined() then
+				name
+			else
+				dataType.persistentType
+			endif
+		endif;
+
 helper def: findWebsiteAuthentication() : Website!Authentication
 	= Website!Authentication.allInstancesFrom('website')->first();
 
@@ -147,6 +159,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		required <- true,
 		"unique" <- true,
 		columnName <- 'username',
+		persistentType <- website.getPersistentType('String'),
 		inputField <- true,
 		inputClass <- 'input_attribute'
 	),
@@ -159,6 +172,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		obfuscateFormFields <- true,
 		encrypt <- true,
 		columnName <- 'password',
+		persistentType <- website.getPersistentType('String'),
 		inputField <- true,
 		inputClass <- 'input_attribute'
 	),
@@ -170,6 +184,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- false,
 		obfuscateFormFields <- true,
 		columnName <- 'salt',
+		persistentType <- website.getPersistentType('String'),
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -181,6 +196,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- true,
 		caseInsensitive <- true,
 		columnName <- 'email',
+		persistentType <- website.getPersistentType('Email'),
 		inputField <- true,
 		inputClass <- 'input_attribute'
 	),
@@ -192,6 +208,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- false,
 		defaultValue <- activatedDefault,
 		columnName <- 'activated',
+		persistentType <- website.getPersistentType('Boolean'),
 		inputField <- true,
 		inputClass <- 'input_checkbox'
 	),
@@ -206,6 +223,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- false,
 		defaultValue <- bannedDefault,
 		columnName <- 'banned',
+		persistentType <- website.getPersistentType('Boolean'),
 		inputField <- true,
 		inputClass <- 'input_checkbox'
 	),
@@ -219,6 +237,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		required <- false,
 		"unique" <- false,
 		columnName <- 'ban_reason',
+		persistentType <- website.getPersistentType('String'),
 		inputField <- true,
 		inputClass <- 'input_attribute'
 	),
@@ -229,6 +248,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		required <- false,
 		"unique" <- false,
 		columnName <- 'new_password_key',
+		persistentType <- website.getPersistentType('String'),
 		inputClass <- 'input_attribute'
 	),
 	newPasswordRequested : ORM!SingletonDate (
@@ -248,6 +268,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		required <- false,
 		"unique" <- false,
 		columnName <- 'new_email',
+		persistentType <- website.getPersistentType('Email'),
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -258,6 +279,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		required <- false,
 		"unique" <- false,
 		columnName <- 'new_email_key',
+		persistentType <- website.getPersistentType('String'),
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -269,6 +291,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		defaultValue <- lastIpDefault,
 		"unique" <- true,
 		columnName <- 'last_ip',
+		persistentType <- website.getPersistentType('String'),
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -310,6 +333,7 @@ unique lazy rule implicitLoginAttemptEntity {
 		required <- true,
 		"unique" <- false,
 		columnName <- 'login_id',
+		persistentType <- website.getPersistentType('String'),
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -320,6 +344,7 @@ unique lazy rule implicitLoginAttemptEntity {
 		required <- true,
 		"unique" <- false,
 		columnName <- 'ip_address',
+		persistentType <- website.getPersistentType('String'),
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -354,6 +379,7 @@ unique lazy rule implicitAutoLoginEntity {
 		required <- true,
 		"unique" <- false,
 		columnName <- 'key',
+		persistentType <- website.getPersistentType('String'),
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -377,6 +403,7 @@ unique lazy rule implicitAutoLoginEntity {
 		required <- true,
 		"unique" <- false,
 		columnName <- 'user_agent',
+		persistentType <- website.getPersistentType('String'),
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),
@@ -387,6 +414,7 @@ unique lazy rule implicitAutoLoginEntity {
 		required <- true,
 		"unique" <- false,
 		columnName <- 'last_ip_address',
+		persistentType <- website.getPersistentType('String'),
 		inputField <- false,
 		inputClass <- 'input_attribute'
 	),

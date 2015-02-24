@@ -120,6 +120,7 @@ abstract rule Feature {
 abstract rule Attribute {
 	from partialOrm : ORM!Attribute
 	to orm : ORM!Attribute (
+		persistentType <- partialOrm.persistentType
 	)
 }
 

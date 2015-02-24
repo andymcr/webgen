@@ -22,6 +22,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getCollectionTypes <em>Collection Types</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseTechnology <em>Database Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabasePrefix <em>Database Prefix</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseHost <em>Database Host</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseName <em>Database Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseUsername <em>Database Username</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabasePassword <em>Database Password</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.OrmModel#getOrmTechnology <em>Orm Technology</em>}</li>
  * </ul>
  * </p>
@@ -76,6 +81,136 @@ public interface OrmModel extends EObject {
 	 * @generated
 	 */
 	void setDatabaseTechnology(DatabaseTechnologies value);
+
+	/**
+	 * Returns the value of the '<em><b>Database Prefix</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Database Prefix</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Database Prefix</em>' attribute.
+	 * @see #setDatabasePrefix(String)
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getOrmModel_DatabasePrefix()
+	 * @model
+	 * @generated
+	 */
+	String getDatabasePrefix();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabasePrefix <em>Database Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Database Prefix</em>' attribute.
+	 * @see #getDatabasePrefix()
+	 * @generated
+	 */
+	void setDatabasePrefix(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Database Host</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Database Host</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Database Host</em>' attribute.
+	 * @see #setDatabaseHost(String)
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getOrmModel_DatabaseHost()
+	 * @model
+	 * @generated
+	 */
+	String getDatabaseHost();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseHost <em>Database Host</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Database Host</em>' attribute.
+	 * @see #getDatabaseHost()
+	 * @generated
+	 */
+	void setDatabaseHost(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Database Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Database Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Database Name</em>' attribute.
+	 * @see #setDatabaseName(String)
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getOrmModel_DatabaseName()
+	 * @model
+	 * @generated
+	 */
+	String getDatabaseName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseName <em>Database Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Database Name</em>' attribute.
+	 * @see #getDatabaseName()
+	 * @generated
+	 */
+	void setDatabaseName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Database Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Database Username</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Database Username</em>' attribute.
+	 * @see #setDatabaseUsername(String)
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getOrmModel_DatabaseUsername()
+	 * @model
+	 * @generated
+	 */
+	String getDatabaseUsername();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseUsername <em>Database Username</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Database Username</em>' attribute.
+	 * @see #getDatabaseUsername()
+	 * @generated
+	 */
+	void setDatabaseUsername(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Database Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Database Password</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Database Password</em>' attribute.
+	 * @see #setDatabasePassword(String)
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getOrmModel_DatabasePassword()
+	 * @model
+	 * @generated
+	 */
+	String getDatabasePassword();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabasePassword <em>Database Password</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Database Password</em>' attribute.
+	 * @see #getDatabasePassword()
+	 * @generated
+	 */
+	void setDatabasePassword(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Orm Technology</b></em>' attribute.

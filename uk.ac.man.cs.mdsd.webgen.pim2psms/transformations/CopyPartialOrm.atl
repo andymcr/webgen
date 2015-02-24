@@ -11,7 +11,12 @@ rule OrmModel {
 		collectionTypes <- partialOrm.collectionTypes,
 		dataTypes <- partialOrm.dataTypes,
 		entities <- partialOrm.entities,
-		databaseTechnology <- partialOrm.databaseTechnology
+		databaseTechnology <- partialOrm.databaseTechnology,
+		databasePrefix <- partialOrm.databasePrefix,
+		databaseHost <- partialOrm.databaseHost,
+		databaseName <- partialOrm.databaseName,
+		databaseUsername <- partialOrm.databaseUsername,
+		databasePassword <- partialOrm.databasePassword
 	)
 }
 

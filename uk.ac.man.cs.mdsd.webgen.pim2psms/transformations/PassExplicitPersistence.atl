@@ -59,7 +59,12 @@ rule Website {
 				#Oracle
 			else
 				#MySql
-			endif endif
+			endif endif,
+		databasePrefix <- website.websiteProperties.databasePrefix,
+		databaseHost <- website.websiteProperties.databaseHost,
+		databaseName <- website.websiteProperties.databaseName,
+		databaseUsername <- website.websiteProperties.databaseUsername,
+		databasePassword <- website.websiteProperties.databasePassword
 	)
 }
 

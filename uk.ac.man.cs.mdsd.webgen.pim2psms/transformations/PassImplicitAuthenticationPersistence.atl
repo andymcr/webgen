@@ -97,7 +97,12 @@ rule OrmModel {
 					else
 						Sequence{}
 					endif endif),
-		databaseTechnology <- partialOrm.databaseTechnology
+		databaseTechnology <- partialOrm.databaseTechnology,
+		databasePrefix <- partialOrm.databasePrefix,
+		databaseHost <- partialOrm.databaseHost,
+		databaseName <- partialOrm.databaseName,
+		databaseUsername <- partialOrm.databaseUsername,
+		databasePassword <- partialOrm.databasePassword
 	)
 }
 

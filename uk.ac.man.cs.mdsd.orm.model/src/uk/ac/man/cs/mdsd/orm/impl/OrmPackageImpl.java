@@ -388,8 +388,53 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOrmModel_OrmTechnology() {
+	public EAttribute getOrmModel_DatabasePrefix() {
 		return (EAttribute)ormModelEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOrmModel_DatabaseHost() {
+		return (EAttribute)ormModelEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOrmModel_DatabaseName() {
+		return (EAttribute)ormModelEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOrmModel_DatabaseUsername() {
+		return (EAttribute)ormModelEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOrmModel_DatabasePassword() {
+		return (EAttribute)ormModelEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOrmModel_OrmTechnology() {
+		return (EAttribute)ormModelEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1163,6 +1208,11 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		createEReference(ormModelEClass, ORM_MODEL__ENTITIES);
 		createEReference(ormModelEClass, ORM_MODEL__COLLECTION_TYPES);
 		createEAttribute(ormModelEClass, ORM_MODEL__DATABASE_TECHNOLOGY);
+		createEAttribute(ormModelEClass, ORM_MODEL__DATABASE_PREFIX);
+		createEAttribute(ormModelEClass, ORM_MODEL__DATABASE_HOST);
+		createEAttribute(ormModelEClass, ORM_MODEL__DATABASE_NAME);
+		createEAttribute(ormModelEClass, ORM_MODEL__DATABASE_USERNAME);
+		createEAttribute(ormModelEClass, ORM_MODEL__DATABASE_PASSWORD);
 		createEAttribute(ormModelEClass, ORM_MODEL__ORM_TECHNOLOGY);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
@@ -1334,6 +1384,11 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		initEReference(getOrmModel_Entities(), this.getEntity(), this.getEntity_PartOf(), "entities", null, 0, -1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOrmModel_CollectionTypes(), this.getCollectionType(), null, "collectionTypes", null, 0, -1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOrmModel_DatabaseTechnology(), this.getDatabaseTechnologies(), "databaseTechnology", "MySql", 0, 1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getOrmModel_DatabasePrefix(), ecorePackage.getEString(), "databasePrefix", null, 0, 1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOrmModel_DatabaseHost(), ecorePackage.getEString(), "databaseHost", null, 0, 1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOrmModel_DatabaseName(), ecorePackage.getEString(), "databaseName", null, 0, 1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOrmModel_DatabaseUsername(), ecorePackage.getEString(), "databaseUsername", null, 0, 1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOrmModel_DatabasePassword(), ecorePackage.getEString(), "databasePassword", null, 0, 1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOrmModel_OrmTechnology(), this.getOrmTechnologies(), "ormTechnology", null, 0, 1, OrmModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

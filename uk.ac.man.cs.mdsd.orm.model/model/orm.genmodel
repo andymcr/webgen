@@ -46,6 +46,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference orm.ecore#//OrmModel/entities"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference orm.ecore#//OrmModel/collectionTypes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//OrmModel/databaseTechnology"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//OrmModel/databasePrefix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//OrmModel/databaseHost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//OrmModel/databaseName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//OrmModel/databaseUsername"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//OrmModel/databasePassword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute orm.ecore#//OrmModel/ormTechnology"/>
     </genClasses>
     <genClasses image="false" ecoreClass="orm.ecore#//NamedElement">

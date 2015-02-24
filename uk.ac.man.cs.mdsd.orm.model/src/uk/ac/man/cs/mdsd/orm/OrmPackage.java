@@ -108,13 +108,58 @@ public interface OrmPackage extends EPackage {
 	int ORM_MODEL__DATABASE_TECHNOLOGY = 3;
 
 	/**
+	 * The feature id for the '<em><b>Database Prefix</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORM_MODEL__DATABASE_PREFIX = 4;
+
+	/**
+	 * The feature id for the '<em><b>Database Host</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORM_MODEL__DATABASE_HOST = 5;
+
+	/**
+	 * The feature id for the '<em><b>Database Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORM_MODEL__DATABASE_NAME = 6;
+
+	/**
+	 * The feature id for the '<em><b>Database Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORM_MODEL__DATABASE_USERNAME = 7;
+
+	/**
+	 * The feature id for the '<em><b>Database Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORM_MODEL__DATABASE_PASSWORD = 8;
+
+	/**
 	 * The feature id for the '<em><b>Orm Technology</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORM_MODEL__ORM_TECHNOLOGY = 4;
+	int ORM_MODEL__ORM_TECHNOLOGY = 9;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -123,7 +168,7 @@ public interface OrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORM_MODEL_FEATURE_COUNT = 5;
+	int ORM_MODEL_FEATURE_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -2925,6 +2970,61 @@ public interface OrmPackage extends EPackage {
 	EAttribute getOrmModel_DatabaseTechnology();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabasePrefix <em>Database Prefix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Prefix</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.OrmModel#getDatabasePrefix()
+	 * @see #getOrmModel()
+	 * @generated
+	 */
+	EAttribute getOrmModel_DatabasePrefix();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseHost <em>Database Host</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Host</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseHost()
+	 * @see #getOrmModel()
+	 * @generated
+	 */
+	EAttribute getOrmModel_DatabaseHost();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseName <em>Database Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseName()
+	 * @see #getOrmModel()
+	 * @generated
+	 */
+	EAttribute getOrmModel_DatabaseName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseUsername <em>Database Username</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Username</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.OrmModel#getDatabaseUsername()
+	 * @see #getOrmModel()
+	 * @generated
+	 */
+	EAttribute getOrmModel_DatabaseUsername();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getDatabasePassword <em>Database Password</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Password</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.OrmModel#getDatabasePassword()
+	 * @see #getOrmModel()
+	 * @generated
+	 */
+	EAttribute getOrmModel_DatabasePassword();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.OrmModel#getOrmTechnology <em>Orm Technology</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3853,6 +3953,46 @@ public interface OrmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ORM_MODEL__DATABASE_TECHNOLOGY = eINSTANCE.getOrmModel_DatabaseTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Prefix</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORM_MODEL__DATABASE_PREFIX = eINSTANCE.getOrmModel_DatabasePrefix();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Host</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORM_MODEL__DATABASE_HOST = eINSTANCE.getOrmModel_DatabaseHost();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORM_MODEL__DATABASE_NAME = eINSTANCE.getOrmModel_DatabaseName();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Username</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORM_MODEL__DATABASE_USERNAME = eINSTANCE.getOrmModel_DatabaseUsername();
+
+		/**
+		 * The meta object literal for the '<em><b>Database Password</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ORM_MODEL__DATABASE_PASSWORD = eINSTANCE.getOrmModel_DatabasePassword();
 
 		/**
 		 * The meta object literal for the '<em><b>Orm Technology</b></em>' attribute feature.

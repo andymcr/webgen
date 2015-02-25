@@ -64,6 +64,7 @@ public class WebsitePropertiesItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSiteTitlePropertyDescriptor(object);
+			addDevelopmentVersionPropertyDescriptor(object);
 			addBaseURLPropertyDescriptor(object);
 			addRewriteURLsPropertyDescriptor(object);
 			addWebmasterEmailPropertyDescriptor(object);
@@ -112,6 +113,28 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SitePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Development Version feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDevelopmentVersionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_developmentVersion_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_developmentVersion_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DEVELOPMENT_VERSION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_SitePropertyCategory"),
 				 null));
 	}
@@ -726,6 +749,7 @@ public class WebsitePropertiesItemProvider
 
 		switch (notification.getFeatureID(WebsiteProperties.class)) {
 			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TITLE:
+			case WebsitePackage.WEBSITE_PROPERTIES__DEVELOPMENT_VERSION:
 			case WebsitePackage.WEBSITE_PROPERTIES__BASE_URL:
 			case WebsitePackage.WEBSITE_PROPERTIES__REWRITE_UR_LS:
 			case WebsitePackage.WEBSITE_PROPERTIES__WEBMASTER_EMAIL:

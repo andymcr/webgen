@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  * The following features are implemented:
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getSiteTitle <em>Site Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isDevelopmentVersion <em>Development Version</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getBaseURL <em>Base URL</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isRewriteURLs <em>Rewrite UR Ls</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getWebmasterEmail <em>Webmaster Email</em>}</li>
@@ -80,6 +81,26 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @ordered
 	 */
 	protected String siteTitle = SITE_TITLE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isDevelopmentVersion() <em>Development Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDevelopmentVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DEVELOPMENT_VERSION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDevelopmentVersion() <em>Development Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDevelopmentVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean developmentVersion = DEVELOPMENT_VERSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBaseURL() <em>Base URL</em>}' attribute.
@@ -619,6 +640,27 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		siteTitle = newSiteTitle;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__SITE_TITLE, oldSiteTitle, siteTitle));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isDevelopmentVersion() {
+		return developmentVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDevelopmentVersion(boolean newDevelopmentVersion) {
+		boolean oldDevelopmentVersion = developmentVersion;
+		developmentVersion = newDevelopmentVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__DEVELOPMENT_VERSION, oldDevelopmentVersion, developmentVersion));
 	}
 
 	/**
@@ -1246,6 +1288,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		switch (featureID) {
 			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TITLE:
 				return getSiteTitle();
+			case WebsitePackage.WEBSITE_PROPERTIES__DEVELOPMENT_VERSION:
+				return isDevelopmentVersion();
 			case WebsitePackage.WEBSITE_PROPERTIES__BASE_URL:
 				return getBaseURL();
 			case WebsitePackage.WEBSITE_PROPERTIES__REWRITE_UR_LS:
@@ -1313,6 +1357,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		switch (featureID) {
 			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TITLE:
 				setSiteTitle((String)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__DEVELOPMENT_VERSION:
+				setDevelopmentVersion((Boolean)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__BASE_URL:
 				setBaseURL((String)newValue);
@@ -1407,6 +1454,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TITLE:
 				setSiteTitle(SITE_TITLE_EDEFAULT);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__DEVELOPMENT_VERSION:
+				setDevelopmentVersion(DEVELOPMENT_VERSION_EDEFAULT);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__BASE_URL:
 				setBaseURL(BASE_URL_EDEFAULT);
 				return;
@@ -1499,6 +1549,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		switch (featureID) {
 			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TITLE:
 				return SITE_TITLE_EDEFAULT == null ? siteTitle != null : !SITE_TITLE_EDEFAULT.equals(siteTitle);
+			case WebsitePackage.WEBSITE_PROPERTIES__DEVELOPMENT_VERSION:
+				return developmentVersion != DEVELOPMENT_VERSION_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__BASE_URL:
 				return BASE_URL_EDEFAULT == null ? baseURL != null : !BASE_URL_EDEFAULT.equals(baseURL);
 			case WebsitePackage.WEBSITE_PROPERTIES__REWRITE_UR_LS:
@@ -1567,6 +1619,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (siteTitle: ");
 		result.append(siteTitle);
+		result.append(", developmentVersion: ");
+		result.append(developmentVersion);
 		result.append(", baseURL: ");
 		result.append(baseURL);
 		result.append(", rewriteURLs: ");

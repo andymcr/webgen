@@ -324,6 +324,7 @@ rule JsfModel {
 		menus <- website.menus,
 		siteName <- website.websiteProperties.projectName,
 		siteTitle <- website.websiteProperties.siteTitle,
+		developmentVersion <- website.websiteProperties.developmentVersion,
 		baseURL <- website.websiteProperties.baseURL,
 		rewriteURLs <- website.websiteProperties.rewriteURLs,
 		webmasterEmail <- website.websiteProperties.webmasterEmail,
@@ -485,7 +486,7 @@ abstract rule ServiceEntityFeature {
 			if not website.viewColumnName.oclIsUndefined() and website.viewColumnName <> '' then
 				website.viewColumnName
 			else if not website.alias.oclIsUndefined() and website.alias <> '' then
-				website.alias.createAssociationColumnName()
+				website.alias.createElementColumnName()
 			else
 				OclUndefined
 			endif endif
@@ -516,13 +517,21 @@ rule ServiceEntityAssociation {
 	from website : Website!ServiceEntityAssociation
 	to jsf : JSF!ServiceEntityAssociation (
 		feature <- website.entityFeature(),
-		forcedValue <- website.forcedValue
+		forcedValue <- website.forcedValue,
 --		opposite <- 
 --			if website.feature.targetEntiity.servedBy->empty() then
 --				OclUndefined
 --			else
 --				website.feature.targetEntiity.servedBy->first().feature(website.feature.targetFeatureName)
 --			endif
+		viewColumnName <-
+			if not website.viewColumnName.oclIsUndefined() and website.viewColumnName <> '' then
+				website.viewColumnName
+			else if not website.alias.oclIsUndefined() and website.alias <> '' then
+				website.alias.createAssociationColumnName()
+			else
+				OclUndefined
+			endif endif
 	)
 }
 

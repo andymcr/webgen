@@ -59,6 +59,7 @@ rule JsfModel {
 		menus <- partialJsf.menus,
 		siteName <- partialJsf.siteName,
 		siteTitle <- partialJsf.siteTitle,
+		developmentVersion <- partialJsf.developmentVersion,
 		baseURL <- partialJsf.baseURL,
 		rewriteURLs <- partialJsf.rewriteURLs,
 		webmasterEmail <- partialJsf.webmasterEmail,

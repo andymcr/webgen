@@ -17,6 +17,7 @@ rule JsfModel {
 		menus <- partialJsf.menus,
 		siteName <- partialJsf.siteName,
 		siteTitle <- partialJsf.siteTitle,
+		developmentVersion <- partialJsf.developmentVersion,
 		baseURL <- partialJsf.baseURL,
 		rewriteURLs <- partialJsf.rewriteURLs,
 		webmasterEmail <- partialJsf.webmasterEmail,
@@ -160,7 +161,7 @@ abstract rule ServiceFeature {
 abstract rule ServiceEntityFeature {
 	from partialJsf : JSF!ServiceEntityFeature
 	to jsf : JSF!ServiceEntityFeature (
-	)
+		viewColumnName <- partialJsf.viewColumnName	)
 }
 
 -- @extends ServiceEntityFeature, IncludedElement
@@ -187,8 +188,7 @@ rule ServiceEntityAssociation {
 	from partialJsf : JSF!ServiceEntityAssociation
 	to jsf : JSF!ServiceEntityAssociation (
 		feature <- partialJsf.feature,
-		opposite <- partialJsf.opposite,
-		viewColumnName <- partialJsf.viewColumnName
+		opposite <- partialJsf.opposite
 	)
 }
 

@@ -1002,7 +1002,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_BaseURL() {
+	public EAttribute getWebsiteProperties_DevelopmentVersion() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1011,7 +1011,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_RewriteURLs() {
+	public EAttribute getWebsiteProperties_BaseURL() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1020,7 +1020,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_WebmasterEmail() {
+	public EAttribute getWebsiteProperties_RewriteURLs() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1029,7 +1029,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_CopyrightText() {
+	public EAttribute getWebsiteProperties_WebmasterEmail() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1038,7 +1038,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_MetaDescription() {
+	public EAttribute getWebsiteProperties_CopyrightText() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1047,7 +1047,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_ProjectName() {
+	public EAttribute getWebsiteProperties_MetaDescription() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1056,8 +1056,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWebsiteProperties_ProjectName() {
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWebsiteProperties_Authentication() {
-		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(7);
+		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1066,15 +1075,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getWebsiteProperties_TestProjectName() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWebsiteProperties_DefaultDateFormat() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -1083,7 +1083,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DefaultTimeFormat() {
+	public EAttribute getWebsiteProperties_DefaultDateFormat() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -1092,7 +1092,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DefaultDateTimeFormat() {
+	public EAttribute getWebsiteProperties_DefaultTimeFormat() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -1101,7 +1101,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DefaultMaximumUploadSize() {
+	public EAttribute getWebsiteProperties_DefaultDateTimeFormat() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -1110,7 +1110,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabaseTechnology() {
+	public EAttribute getWebsiteProperties_DefaultMaximumUploadSize() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -1119,7 +1119,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabasePrefix() {
+	public EAttribute getWebsiteProperties_DatabaseTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -1128,7 +1128,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabaseHost() {
+	public EAttribute getWebsiteProperties_DatabasePrefix() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(15);
 	}
 
@@ -1137,7 +1137,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabaseName() {
+	public EAttribute getWebsiteProperties_DatabaseHost() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -1146,7 +1146,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabaseUsername() {
+	public EAttribute getWebsiteProperties_DatabaseName() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -1155,7 +1155,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_DatabasePassword() {
+	public EAttribute getWebsiteProperties_DatabaseUsername() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(18);
 	}
 
@@ -1164,7 +1164,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_OrmTechnology() {
+	public EAttribute getWebsiteProperties_DatabasePassword() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(19);
 	}
 
@@ -1173,7 +1173,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_FrameworkTechnology() {
+	public EAttribute getWebsiteProperties_OrmTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(20);
 	}
 
@@ -1182,7 +1182,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_AjaxTechnology() {
+	public EAttribute getWebsiteProperties_FrameworkTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(21);
 	}
 
@@ -1191,7 +1191,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_CaptchaSiteKey() {
+	public EAttribute getWebsiteProperties_AjaxTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(22);
 	}
 
@@ -1200,7 +1200,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_CaptchaSecretKey() {
+	public EAttribute getWebsiteProperties_CaptchaSiteKey() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(23);
 	}
 
@@ -1209,7 +1209,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_TopNavigationId() {
+	public EAttribute getWebsiteProperties_CaptchaSecretKey() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(24);
 	}
 
@@ -1218,8 +1218,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWebsiteProperties_TopNavigationId() {
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWebsiteProperties_SideMenu() {
-		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(25);
+		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(26);
 	}
 
 	/**
@@ -1228,7 +1237,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getWebsiteProperties_StaticUnitsEditable() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(26);
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(27);
 	}
 
 	/**
@@ -4337,6 +4346,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		websitePropertiesEClass = createEClass(WEBSITE_PROPERTIES);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__SITE_TITLE);
+		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DEVELOPMENT_VERSION);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__BASE_URL);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__REWRITE_UR_LS);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__WEBMASTER_EMAIL);
@@ -4951,6 +4961,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(websitePropertiesEClass, WebsiteProperties.class, "WebsiteProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWebsiteProperties_SiteTitle(), ecorePackage.getEString(), "siteTitle", null, 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebsiteProperties_DevelopmentVersion(), ecorePackage.getEBoolean(), "developmentVersion", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_BaseURL(), ecorePackage.getEString(), "baseURL", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_RewriteURLs(), ecorePackage.getEBoolean(), "rewriteURLs", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_WebmasterEmail(), ecorePackage.getEString(), "webmasterEmail", null, 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

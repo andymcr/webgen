@@ -64,6 +64,8 @@ public class WebsitePropertiesItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSiteTitlePropertyDescriptor(object);
+			addBaseURLPropertyDescriptor(object);
+			addRewriteURLsPropertyDescriptor(object);
 			addWebmasterEmailPropertyDescriptor(object);
 			addCopyrightTextPropertyDescriptor(object);
 			addMetaDescriptionPropertyDescriptor(object);
@@ -110,6 +112,50 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SitePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Base URL feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBaseURLPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_baseURL_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_baseURL_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__BASE_URL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SitePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rewrite UR Ls feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRewriteURLsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_rewriteURLs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_rewriteURLs_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__REWRITE_UR_LS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_SitePropertyCategory"),
 				 null));
 	}
@@ -484,7 +530,7 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_FrameworkPropertyCategory"),
 				 null));
 	}
 
@@ -506,7 +552,7 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SitePropertyCategory"),
+				 getString("_UI_FrameworkPropertyCategory"),
 				 null));
 	}
 
@@ -528,7 +574,7 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_SitePropertyCategory"),
+				 getString("_UI_FrameworkPropertyCategory"),
 				 null));
 	}
 
@@ -680,6 +726,8 @@ public class WebsitePropertiesItemProvider
 
 		switch (notification.getFeatureID(WebsiteProperties.class)) {
 			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TITLE:
+			case WebsitePackage.WEBSITE_PROPERTIES__BASE_URL:
+			case WebsitePackage.WEBSITE_PROPERTIES__REWRITE_UR_LS:
 			case WebsitePackage.WEBSITE_PROPERTIES__WEBMASTER_EMAIL:
 			case WebsitePackage.WEBSITE_PROPERTIES__COPYRIGHT_TEXT:
 			case WebsitePackage.WEBSITE_PROPERTIES__META_DESCRIPTION:

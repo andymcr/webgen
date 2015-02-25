@@ -64,6 +64,8 @@
     <genClasses ecoreClass="website.ecore#//WebsiteProperties">
       <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/siteTitle"/>
+      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/baseURL"/>
+      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/rewriteURLs"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/webmasterEmail"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/copyrightText"/>
       <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
@@ -85,9 +87,9 @@
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databaseName"/>
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databaseUsername"/>
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databasePassword"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/ormTechnology"/>
-      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/frameworkTechnology"/>
-      <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/ajaxTechnology"/>
+      <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/ormTechnology"/>
+      <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/frameworkTechnology"/>
+      <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/ajaxTechnology"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSiteKey"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSecretKey"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/topNavigationId"/>

@@ -146,13 +146,31 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__SITE_TITLE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Base URL</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__BASE_URL = 1;
+
+	/**
+	 * The feature id for the '<em><b>Rewrite UR Ls</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__REWRITE_UR_LS = 2;
+
+	/**
 	 * The feature id for the '<em><b>Webmaster Email</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__WEBMASTER_EMAIL = 1;
+	int WEBSITE_PROPERTIES__WEBMASTER_EMAIL = 3;
 
 	/**
 	 * The feature id for the '<em><b>Copyright Text</b></em>' attribute.
@@ -161,7 +179,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__COPYRIGHT_TEXT = 2;
+	int WEBSITE_PROPERTIES__COPYRIGHT_TEXT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Meta Description</b></em>' attribute.
@@ -170,7 +188,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__META_DESCRIPTION = 3;
+	int WEBSITE_PROPERTIES__META_DESCRIPTION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Project Name</b></em>' attribute.
@@ -179,7 +197,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__PROJECT_NAME = 4;
+	int WEBSITE_PROPERTIES__PROJECT_NAME = 6;
 
 	/**
 	 * The feature id for the '<em><b>Authentication</b></em>' containment reference.
@@ -188,7 +206,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__AUTHENTICATION = 5;
+	int WEBSITE_PROPERTIES__AUTHENTICATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Test Project Name</b></em>' attribute.
@@ -197,7 +215,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TEST_PROJECT_NAME = 6;
+	int WEBSITE_PROPERTIES__TEST_PROJECT_NAME = 8;
 
 	/**
 	 * The feature id for the '<em><b>Default Date Format</b></em>' attribute.
@@ -206,7 +224,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT = 7;
+	int WEBSITE_PROPERTIES__DEFAULT_DATE_FORMAT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Default Time Format</b></em>' attribute.
@@ -215,7 +233,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT = 8;
+	int WEBSITE_PROPERTIES__DEFAULT_TIME_FORMAT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Default Date Time Format</b></em>' attribute.
@@ -224,7 +242,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT = 9;
+	int WEBSITE_PROPERTIES__DEFAULT_DATE_TIME_FORMAT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Default Maximum Upload Size</b></em>' attribute.
@@ -233,7 +251,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE = 10;
+	int WEBSITE_PROPERTIES__DEFAULT_MAXIMUM_UPLOAD_SIZE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Database Technology</b></em>' attribute.
@@ -242,7 +260,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY = 11;
+	int WEBSITE_PROPERTIES__DATABASE_TECHNOLOGY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Database Prefix</b></em>' attribute.
@@ -251,7 +269,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DATABASE_PREFIX = 12;
+	int WEBSITE_PROPERTIES__DATABASE_PREFIX = 14;
 
 	/**
 	 * The feature id for the '<em><b>Database Host</b></em>' attribute.
@@ -260,7 +278,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DATABASE_HOST = 13;
+	int WEBSITE_PROPERTIES__DATABASE_HOST = 15;
 
 	/**
 	 * The feature id for the '<em><b>Database Name</b></em>' attribute.
@@ -269,7 +287,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DATABASE_NAME = 14;
+	int WEBSITE_PROPERTIES__DATABASE_NAME = 16;
 
 	/**
 	 * The feature id for the '<em><b>Database Username</b></em>' attribute.
@@ -278,7 +296,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DATABASE_USERNAME = 15;
+	int WEBSITE_PROPERTIES__DATABASE_USERNAME = 17;
 
 	/**
 	 * The feature id for the '<em><b>Database Password</b></em>' attribute.
@@ -287,7 +305,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DATABASE_PASSWORD = 16;
+	int WEBSITE_PROPERTIES__DATABASE_PASSWORD = 18;
 
 	/**
 	 * The feature id for the '<em><b>Orm Technology</b></em>' attribute.
@@ -296,7 +314,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__ORM_TECHNOLOGY = 17;
+	int WEBSITE_PROPERTIES__ORM_TECHNOLOGY = 19;
 
 	/**
 	 * The feature id for the '<em><b>Framework Technology</b></em>' attribute.
@@ -305,7 +323,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 18;
+	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 20;
 
 	/**
 	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
@@ -314,7 +332,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 19;
+	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 21;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
@@ -323,7 +341,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 20;
+	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 22;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
@@ -332,7 +350,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 21;
+	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 23;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -341,7 +359,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 22;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 24;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -350,7 +368,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SIDE_MENU = 23;
+	int WEBSITE_PROPERTIES__SIDE_MENU = 25;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -359,7 +377,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 24;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 26;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -368,7 +386,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 25;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 27;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -10434,6 +10452,28 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_SiteTitle();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getBaseURL <em>Base URL</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Base URL</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getBaseURL()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_BaseURL();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isRewriteURLs <em>Rewrite UR Ls</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Rewrite UR Ls</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isRewriteURLs()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_RewriteURLs();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getWebmasterEmail <em>Webmaster Email</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14436,6 +14476,22 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WEBSITE_PROPERTIES__SITE_TITLE = eINSTANCE.getWebsiteProperties_SiteTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Base URL</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__BASE_URL = eINSTANCE.getWebsiteProperties_BaseURL();
+
+		/**
+		 * The meta object literal for the '<em><b>Rewrite UR Ls</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__REWRITE_UR_LS = eINSTANCE.getWebsiteProperties_RewriteURLs();
 
 		/**
 		 * The meta object literal for the '<em><b>Webmaster Email</b></em>' attribute feature.

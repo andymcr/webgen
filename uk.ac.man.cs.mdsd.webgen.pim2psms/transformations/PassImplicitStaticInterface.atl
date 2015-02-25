@@ -26,6 +26,8 @@ rule JsfModel {
 		menus <- partialJsf.menus,
 		siteName <- partialJsf.siteName,
 		siteTitle <- partialJsf.siteTitle,
+		baseURL <- partialJsf.baseURL,
+		rewriteURLs <- partialJsf.rewriteURLs,
 		webmasterEmail <- partialJsf.webmasterEmail,
 		copyrightText <- partialJsf.copyrightText,
 		metaDescription <- partialJsf.metaDescription,

@@ -362,13 +362,22 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 24;
 
 	/**
+	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 25;
+
+	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 25;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 26;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -377,7 +386,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SIDE_MENU = 26;
+	int WEBSITE_PROPERTIES__SIDE_MENU = 27;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -386,7 +395,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 27;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 28;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -395,7 +404,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 28;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 29;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -10725,6 +10734,17 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_CaptchaSecretKey();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTextEditorURL <em>Text Editor URL</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Text Editor URL</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTextEditorURL()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_TextEditorURL();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTopNavigationId <em>Top Navigation Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14688,6 +14708,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = eINSTANCE.getWebsiteProperties_CaptchaSecretKey();
+
+		/**
+		 * The meta object literal for the '<em><b>Text Editor URL</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__TEXT_EDITOR_URL = eINSTANCE.getWebsiteProperties_TextEditorURL();
 
 		/**
 		 * The meta object literal for the '<em><b>Top Navigation Id</b></em>' attribute feature.

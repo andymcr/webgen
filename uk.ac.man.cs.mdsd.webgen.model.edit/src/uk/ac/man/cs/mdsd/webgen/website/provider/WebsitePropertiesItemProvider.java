@@ -88,6 +88,7 @@ public class WebsitePropertiesItemProvider
 			addAjaxTechnologyPropertyDescriptor(object);
 			addCaptchaSiteKeyPropertyDescriptor(object);
 			addCaptchaSecretKeyPropertyDescriptor(object);
+			addTextEditorURLPropertyDescriptor(object);
 			addTopNavigationIdPropertyDescriptor(object);
 			addSideMenuPropertyDescriptor(object);
 			addStaticUnitsEditablePropertyDescriptor(object);
@@ -646,6 +647,28 @@ public class WebsitePropertiesItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Text Editor URL feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTextEditorURLPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_textEditorURL_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_textEditorURL_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__TEXT_EDITOR_URL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SitePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Top Navigation Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -773,6 +796,7 @@ public class WebsitePropertiesItemProvider
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
+			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 			case WebsitePackage.WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

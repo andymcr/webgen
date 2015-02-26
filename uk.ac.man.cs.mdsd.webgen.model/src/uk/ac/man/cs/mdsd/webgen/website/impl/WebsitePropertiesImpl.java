@@ -53,6 +53,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTextEditorURL <em>Text Editor URL</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
@@ -551,6 +552,26 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @ordered
 	 */
 	protected String captchaSecretKey = CAPTCHA_SECRET_KEY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTextEditorURL() <em>Text Editor URL</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTextEditorURL()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEXT_EDITOR_URL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTextEditorURL() <em>Text Editor URL</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTextEditorURL()
+	 * @generated
+	 * @ordered
+	 */
+	protected String textEditorURL = TEXT_EDITOR_URL_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTopNavigationId() <em>Top Navigation Id</em>}' attribute.
@@ -1173,6 +1194,27 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTextEditorURL() {
+		return textEditorURL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTextEditorURL(String newTextEditorURL) {
+		String oldTextEditorURL = textEditorURL;
+		textEditorURL = newTextEditorURL;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL, oldTextEditorURL, textEditorURL));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTopNavigationId() {
 		return topNavigationId;
 	}
@@ -1336,6 +1378,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return getCaptchaSiteKey();
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
 				return getCaptchaSecretKey();
+			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
+				return getTextEditorURL();
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				return getTopNavigationId();
 			case WebsitePackage.WEBSITE_PROPERTIES__SIDE_MENU:
@@ -1429,6 +1473,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
 				setCaptchaSecretKey((String)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
+				setTextEditorURL((String)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				setTopNavigationId((String)newValue);
@@ -1526,6 +1573,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
 				setCaptchaSecretKey(CAPTCHA_SECRET_KEY_EDEFAULT);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
+				setTextEditorURL(TEXT_EDITOR_URL_EDEFAULT);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				setTopNavigationId(TOP_NAVIGATION_ID_EDEFAULT);
 				return;
@@ -1597,6 +1647,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return CAPTCHA_SITE_KEY_EDEFAULT == null ? captchaSiteKey != null : !CAPTCHA_SITE_KEY_EDEFAULT.equals(captchaSiteKey);
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
 				return CAPTCHA_SECRET_KEY_EDEFAULT == null ? captchaSecretKey != null : !CAPTCHA_SECRET_KEY_EDEFAULT.equals(captchaSecretKey);
+			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
+				return TEXT_EDITOR_URL_EDEFAULT == null ? textEditorURL != null : !TEXT_EDITOR_URL_EDEFAULT.equals(textEditorURL);
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				return TOP_NAVIGATION_ID_EDEFAULT == null ? topNavigationId != null : !TOP_NAVIGATION_ID_EDEFAULT.equals(topNavigationId);
 			case WebsitePackage.WEBSITE_PROPERTIES__SIDE_MENU:
@@ -1665,6 +1717,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(captchaSiteKey);
 		result.append(", captchaSecretKey: ");
 		result.append(captchaSecretKey);
+		result.append(", textEditorURL: ");
+		result.append(textEditorURL);
 		result.append(", topNavigationId: ");
 		result.append(topNavigationId);
 		result.append(", staticUnitsEditable: ");

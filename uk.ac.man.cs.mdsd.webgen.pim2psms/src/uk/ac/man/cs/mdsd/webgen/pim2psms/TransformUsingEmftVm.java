@@ -4,11 +4,7 @@ import java.io.IOException;
 import java.util.Collections;
 
 import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.m2m.atl.emftvm.EmftvmFactory;
@@ -19,15 +15,12 @@ import org.eclipse.m2m.atl.emftvm.util.DefaultModuleResolver;
 import org.eclipse.m2m.atl.emftvm.util.ModuleResolver;
 import org.eclipse.m2m.atl.emftvm.util.TimingData;
 
-import uk.ac.man.cs.mdsd.genjsf.GenJsfModel;
-
 
 public class TransformUsingEmftVm {
 	private ResourceSet resourceSet = new ResourceSetImpl();
 	private Metamodel websiteMetamodel;
 	private Metamodel ormMetamodel;
 	private Metamodel jsfMetamodel;
-	private Metamodel genMetamodel;
 	private Model websiteModel;
 	private ModuleResolver moduleResolver;
 
@@ -59,16 +52,6 @@ public class TransformUsingEmftVm {
 		}
 
 		return jsfMetamodel;
-	}
-
-	protected Metamodel getGenMetamodel() {
-		if (genMetamodel == null) {
-			genMetamodel = EmftvmFactory.eINSTANCE.createMetamodel();
-			genMetamodel.setResource(resourceSet.getResource(
-				URI.createURI("http://www.cs.man.ac.uk/mdsd/2010/GenJsf"), true));
-		}
-
-		return genMetamodel;
 	}
 
 	public Model getWebsiteModel() {
@@ -106,7 +89,6 @@ xxx = websiteModelFile.getFullPath().toString();
 		env.registerMetaModel("Website", getWebsiteMetamodel());
 		env.registerMetaModel("ORM", getOrmMetamodel());
 		env.registerMetaModel("JSF", getJsfMetamodel());
-		env.registerMetaModel("GEN", getGenMetamodel());
 
 		return env;
 		
@@ -159,22 +141,6 @@ xxx = websiteModelFile.getFullPath().toString();
 				traceModel);
 	}
 
-	protected Model executeConfigPass(final String moduleName,
-			final String modelFileExtension, final Model partialModel,
-			final Model ormModel, final Model jsfModel,
-			final Model traceModel) {
-		final ExecEnv env = createEnvironment();
-		env.registerInputModel("orm", ormModel);
-		env.registerInputModel("jsf", jsfModel);
-
-		if (partialModel != null) {
-			env.registerInputModel("partialGen", partialModel);
-		}
-
-		return executePass(env, moduleName, "gen", modelFileExtension,
-				traceModel);
-	}
-
 	public void execute() throws IOException {
 		final Model ormModelP1 = executeOrmPass("PassExplicitPersistence",
 			"_orm_p1", null, null);
@@ -219,43 +185,6 @@ xxx = websiteModelFile.getFullPath().toString();
 		final Model jsfModel = executeJsfPass("PassAuthentication2",
 			"_jsf", jsfModelP7, ormModel, traceModelP8);
 		jsfModel.getResource().save(Collections.emptyMap());
-
-		final Model traceModelConfig = createModel("_trace_gen");
-		final Model genModel = executeConfigPass("PassConfig",
-			"_genjsf", null, ormModel, jsfModel, traceModelConfig);
-
-		final GenJsfModel genJsfModel
-			= getModelFromResource(genModel.getResource());
-		final GenJsfModel originalGenJsfModel = getModelFromFile("_genjsf");
-		if ((originalGenJsfModel != null) && (genJsfModel != null)) {
-			genJsfModel.reconcile(originalGenJsfModel);
-		}
-		genModel.getResource().save(Collections.emptyMap());
-	}
-
-	// TODO make this good code
-	private GenJsfModel getModelFromFile(final String fileExtension) {
-		final IPath filePath = new Path((yyy.getFullPath().removeFirstSegments(yyy.getFullPath().segmentCount() - 1)).toString().concat(fileExtension));
-		final IFile file = yyy.getParent().getFile(filePath);
-		if (!file.exists()) {
-			return null;
-		} else {
-			final IPath filePathB = new Path(xxx.concat(fileExtension));
-			return getModelFromResource(new ResourceSetImpl().getResource(
-				URI.createFileURI(filePathB.toString()), true));
-		}
-	}
-
-	private GenJsfModel getModelFromResource(final Resource resource) {
-		if (resource != null) {
-			for (EObject eObject : resource.getContents()) {
-				if (eObject instanceof GenJsfModel) {
-					return (GenJsfModel) eObject;
-				}
-			}
-		}
-
-		return null;
 	}
 
 }

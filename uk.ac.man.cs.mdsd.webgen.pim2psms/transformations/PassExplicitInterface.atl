@@ -245,7 +245,28 @@ helper context Website!IncludedFeature def: unitDateFormat() : String
 	= if not self.dateFormat.oclIsUndefined() and self.dateFormat <> '' then
 			self.dateFormat
 		else
+			if not self.oclIsTypeOf(Website!UnitAssociation) then
+				self.serviceFeature.serviceDateFormat()
+			else
+				let association : Website!UnitAssociation = self.oclAsType(Website!UnitAssociation)
+				in if association.childFeature.oclIsUndefined() then
+						OclUndefined
+					else
+						association.childFeature.unitChildDateFormat()
+					endif
+			endif
+		endif;
+
+helper context Website!UnitChildFeature def: unitChildDateFormat() : String
+	= if self.oclIsTypeOf(Website!UnitChildElement) then
 			self.serviceFeature.serviceDateFormat()
+		else
+			let association : Website!UnitChildAssociation = self.oclAsType(Website!UnitChildAssociation)
+			in if association.childFeature.oclIsUndefined() then
+					OclUndefined
+				else
+					association.childFeature.unitChildDateFormat()
+				endif
 		endif;
 
 helper context Website!IncludedFeature def: jsfHeaderClass() : String
@@ -768,12 +789,7 @@ abstract rule UnitField {
 					#Optional
 				endif
 			endif,
-		dateFormat <-
-			if website.oclIsKindOf(Website!UnitElement) then
-				website.unitDateFormat()
-			else
-				OclUndefined
-			endif
+		dateFormat <- website.unitDateFormat()
 	)
 }
 

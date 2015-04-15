@@ -34,7 +34,9 @@
     <eLiterals name="JPA"/>
     <eLiterals name="DataMapper" value="1"/>
     <eLiterals name="Idiorm" value="2"/>
-    <eLiterals name="Doctrine" value="3" literal="Doctrine"/>
+    <eLiterals name="Kohana" value="3" literal="Kohana"/>
+    <eLiterals name="DoctrineORM" value="4"/>
+    <eLiterals name="DoctrineODM" value="5" literal="DoctrineODM"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="FrameworkTechnologies">
     <eLiterals name="JSF"/>
@@ -42,6 +44,7 @@
     <eLiterals name="CodeIgniter" value="2"/>
     <eLiterals name="Kohana" value="3"/>
     <eLiterals name="Laravel" value="4"/>
+    <eLiterals name="Symfony" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AjaxTechnologies">
     <eLiterals name="None"/>

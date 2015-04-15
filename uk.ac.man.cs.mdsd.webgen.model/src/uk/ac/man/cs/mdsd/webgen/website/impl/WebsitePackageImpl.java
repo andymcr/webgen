@@ -5433,7 +5433,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.JPA);
 		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DATA_MAPPER);
 		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.IDIORM);
-		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DOCTRINE);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.KOHANA);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DOCTRINE_ORM);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DOCTRINE_ODM);
 
 		initEEnum(frameworkTechnologiesEEnum, FrameworkTechnologies.class, "FrameworkTechnologies");
 		addEEnumLiteral(frameworkTechnologiesEEnum, FrameworkTechnologies.JSF);
@@ -5441,6 +5443,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		addEEnumLiteral(frameworkTechnologiesEEnum, FrameworkTechnologies.CODE_IGNITER);
 		addEEnumLiteral(frameworkTechnologiesEEnum, FrameworkTechnologies.KOHANA);
 		addEEnumLiteral(frameworkTechnologiesEEnum, FrameworkTechnologies.LARAVEL);
+		addEEnumLiteral(frameworkTechnologiesEEnum, FrameworkTechnologies.SYMFONY);
 
 		initEEnum(ajaxTechnologiesEEnum, AjaxTechnologies.class, "AjaxTechnologies");
 		addEEnumLiteral(ajaxTechnologiesEEnum, AjaxTechnologies.NONE);

@@ -66,7 +66,15 @@ public enum FrameworkTechnologies implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LARAVEL(4, "Laravel", "Laravel");
+	LARAVEL(4, "Laravel", "Laravel"), /**
+	 * The '<em><b>Symfony</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SYMFONY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SYMFONY(5, "Symfony", "Symfony");
 
 	/**
 	 * The '<em><b>JSF</b></em>' literal value.
@@ -144,6 +152,21 @@ public enum FrameworkTechnologies implements Enumerator {
 	public static final int LARAVEL_VALUE = 4;
 
 	/**
+	 * The '<em><b>Symfony</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Symfony</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #SYMFONY
+	 * @model name="Symfony"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SYMFONY_VALUE = 5;
+
+	/**
 	 * An array of all the '<em><b>Framework Technologies</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,6 +179,7 @@ public enum FrameworkTechnologies implements Enumerator {
 			CODE_IGNITER,
 			KOHANA,
 			LARAVEL,
+			SYMFONY,
 		};
 
 	/**
@@ -211,6 +235,7 @@ public enum FrameworkTechnologies implements Enumerator {
 			case CODE_IGNITER_VALUE: return CODE_IGNITER;
 			case KOHANA_VALUE: return KOHANA;
 			case LARAVEL_VALUE: return LARAVEL;
+			case SYMFONY_VALUE: return SYMFONY;
 		}
 		return null;
 	}

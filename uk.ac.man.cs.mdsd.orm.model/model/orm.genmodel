@@ -20,7 +20,8 @@
       <genEnumLiterals ecoreEnumLiteral="orm.ecore#//OrmTechnologies/DataMapper"/>
       <genEnumLiterals ecoreEnumLiteral="orm.ecore#//OrmTechnologies/Idiorm"/>
       <genEnumLiterals ecoreEnumLiteral="orm.ecore#//OrmTechnologies/Kohana"/>
-      <genEnumLiterals ecoreEnumLiteral="orm.ecore#//OrmTechnologies/Doctrine"/>
+      <genEnumLiterals ecoreEnumLiteral="orm.ecore#//OrmTechnologies/DoctrineORM"/>
+      <genEnumLiterals ecoreEnumLiteral="orm.ecore#//OrmTechnologies/DoctrineODM"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="orm.ecore#//CollectionTypes">
       <genEnumLiterals ecoreEnumLiteral="orm.ecore#//CollectionTypes/Bag"/>

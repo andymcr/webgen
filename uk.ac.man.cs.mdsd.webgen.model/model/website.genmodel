@@ -16,7 +16,9 @@
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//OrmTechnologies/JPA"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//OrmTechnologies/DataMapper"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//OrmTechnologies/Idiorm"/>
-      <genEnumLiterals ecoreEnumLiteral="website.ecore#//OrmTechnologies/Doctrine"/>
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//OrmTechnologies/Kohana"/>
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//OrmTechnologies/DoctrineORM"/>
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//OrmTechnologies/DoctrineODM"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//FrameworkTechnologies">
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//FrameworkTechnologies/JSF"/>
@@ -24,6 +26,7 @@
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//FrameworkTechnologies/CodeIgniter"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//FrameworkTechnologies/Kohana"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//FrameworkTechnologies/Laravel"/>
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//FrameworkTechnologies/Symfony"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//AjaxTechnologies">
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/None"/>

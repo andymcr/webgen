@@ -1503,7 +1503,8 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DATA_MAPPER);
 		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.IDIORM);
 		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.KOHANA);
-		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DOCTRINE);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DOCTRINE_ORM);
+		addEEnumLiteral(ormTechnologiesEEnum, OrmTechnologies.DOCTRINE_ODM);
 
 		initEEnum(collectionTypesEEnum, CollectionTypes.class, "CollectionTypes");
 		addEEnumLiteral(collectionTypesEEnum, CollectionTypes.BAG);

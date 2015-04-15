@@ -57,14 +57,22 @@ public enum OrmTechnologies implements Enumerator {
 	 * @ordered
 	 */
 	KOHANA(3, "Kohana", "Kohana"), /**
-	 * The '<em><b>Doctrine</b></em>' literal object.
+	 * The '<em><b>Doctrine ORM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DOCTRINE_VALUE
+	 * @see #DOCTRINE_ORM_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DOCTRINE(4, "Doctrine", "Doctrine");
+	DOCTRINE_ORM(4, "DoctrineORM", "DoctrineORM"), /**
+	 * The '<em><b>Doctrine ODM</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DOCTRINE_ODM_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DOCTRINE_ODM(5, "DoctrineODM", "DoctrineODM");
 
 	/**
 	 * The '<em><b>JPA</b></em>' literal value.
@@ -127,19 +135,34 @@ public enum OrmTechnologies implements Enumerator {
 	public static final int KOHANA_VALUE = 3;
 
 	/**
-	 * The '<em><b>Doctrine</b></em>' literal value.
+	 * The '<em><b>Doctrine ORM</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Doctrine</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Doctrine ORM</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DOCTRINE
-	 * @model name="Doctrine"
+	 * @see #DOCTRINE_ORM
+	 * @model name="DoctrineORM"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DOCTRINE_VALUE = 4;
+	public static final int DOCTRINE_ORM_VALUE = 4;
+
+	/**
+	 * The '<em><b>Doctrine ODM</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Doctrine ODM</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DOCTRINE_ODM
+	 * @model name="DoctrineODM"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DOCTRINE_ODM_VALUE = 5;
 
 	/**
 	 * An array of all the '<em><b>Technologies</b></em>' enumerators.
@@ -153,7 +176,8 @@ public enum OrmTechnologies implements Enumerator {
 			DATA_MAPPER,
 			IDIORM,
 			KOHANA,
-			DOCTRINE,
+			DOCTRINE_ORM,
+			DOCTRINE_ODM,
 		};
 
 	/**
@@ -208,7 +232,8 @@ public enum OrmTechnologies implements Enumerator {
 			case DATA_MAPPER_VALUE: return DATA_MAPPER;
 			case IDIORM_VALUE: return IDIORM;
 			case KOHANA_VALUE: return KOHANA;
-			case DOCTRINE_VALUE: return DOCTRINE;
+			case DOCTRINE_ORM_VALUE: return DOCTRINE_ORM;
+			case DOCTRINE_ODM_VALUE: return DOCTRINE_ODM;
 		}
 		return null;
 	}

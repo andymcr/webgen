@@ -64,7 +64,8 @@ rule Website {
 		databaseHost <- website.websiteProperties.databaseHost,
 		databaseName <- website.websiteProperties.databaseName,
 		databaseUsername <- website.websiteProperties.databaseUsername,
-		databasePassword <- website.websiteProperties.databasePassword
+		databasePassword <- website.websiteProperties.databasePassword,
+		ormTechnology <- website.websiteProperties.ormTechnology
 	)
 }
 

@@ -42,7 +42,8 @@ rule OrmModel {
 		databaseHost <- partialOrm.databaseHost,
 		databaseName <- partialOrm.databaseName,
 		databaseUsername <- partialOrm.databaseUsername,
-		databasePassword <- partialOrm.databasePassword
+		databasePassword <- partialOrm.databasePassword,
+		ormTechnology <- partialOrm.ormTechnology
 	)
 }
 

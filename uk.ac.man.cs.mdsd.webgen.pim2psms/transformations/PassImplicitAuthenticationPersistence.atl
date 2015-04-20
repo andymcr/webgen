@@ -39,10 +39,6 @@ helper context Website!Authentication def: getPersistentType(name : String) : St
 			endif
 		endif;
 
-helper def: findWebsiteAuthentication() : Website!Authentication
-	= Website!Authentication.allInstancesFrom('website')->first();
-
-
 rule OrmModel {
 	from website : Website!WebGenModel, partialOrm : ORM!OrmModel
 	to orm : ORM!OrmModel (
@@ -50,19 +46,19 @@ rule OrmModel {
 		dataTypes <- partialOrm.dataTypes
 			->union(
 				if thisModule.findPartialOrmDataType('Boolean').oclIsUndefined() then
-					Sequence{thisModule.implicitBooleanDataType(thisModule.findWebsiteAuthentication())}
+					Sequence{thisModule.implicitBooleanDataType(website)}
 				else
 					Sequence{}
 				endif)
 			->union(
 				if thisModule.findPartialOrmDataType('String').oclIsUndefined() then
-					Sequence{thisModule.implicitStringDataType(thisModule.findWebsiteAuthentication())}
+					Sequence{thisModule.implicitStringDataType(website)}
 				else
 					Sequence{}
 				endif)
 			->union(
 				if thisModule.findPartialOrmDataType('Email').oclIsUndefined() then
-					Sequence{thisModule.implicitEmailDataType(thisModule.findWebsiteAuthentication())}
+					Sequence{thisModule.implicitEmailDataType(website)}
 				else
 					Sequence{}
 				endif),
@@ -108,7 +104,7 @@ rule OrmModel {
 }
 
 unique lazy rule implicitBooleanDataType {
-	from website: Website!Authentication
+	from website: Website!WebGenModel
 	to orm : ORM!DataType (
 		name <- 'Boolean',
 		displayLabel <- 'Boolean'
@@ -119,7 +115,7 @@ unique lazy rule implicitBooleanDataType {
 }
 
 unique lazy rule implicitEmailDataType {
-	from website: Website!Authentication
+	from website: Website!WebGenModel
 	to orm : ORM!DataType (
 		name <- 'Email',
 		displayLabel <- 'Email'
@@ -130,7 +126,7 @@ unique lazy rule implicitEmailDataType {
 }
 
 unique lazy rule implicitStringDataType {
-	from website: Website!Authentication
+	from website: Website!WebGenModel
 	to orm : ORM!DataType (
 		name <- 'String',
 		displayLabel <- 'String'

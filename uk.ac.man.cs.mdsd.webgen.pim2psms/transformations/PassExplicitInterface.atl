@@ -136,6 +136,19 @@ helper context Website!ServiceEntityElement def: placeholder() : String
 			self.feature.placeholder()
 		endif;
 
+helper context Website!ServiceAssociation def: targetService() : Website!Service
+	= if not self.oppositeFeature.oclIsUndefined() then
+			self.oppositeFeature.partOf
+		else
+			let services : Sequence(Website!Service)
+				= if self.useFeatureSource then
+						self.feature.targetEntity.servedBy
+					else
+						self.feature.parentEntity.servedBy
+					endif
+				in services->first()
+		endif;
+
 helper context Website!ServiceEntityElement def: validationPattern() : String
 	= if not self.validationPattern.oclIsUndefined() and self.validationPattern <> '' then
 			self.validationPattern
@@ -482,7 +495,7 @@ abstract rule ServiceFeature {
 			if website.oclIsKindOf(Website!ServiceEntityFeature) then
 				website.cardinality(website.required)
 			else
-				website.targetFeature.targetCardinality()
+				website.oppositeFeature.targetCardinality()
 			endif,
 		dateFormat <-
 			if website.oclIsKindOf(Website!ServiceEntityFeature) then
@@ -531,6 +544,15 @@ rule ServiceEntityElement {
 abstract rule ServiceAssociation {
 	from website : Website!ServiceAssociation
 	to jsf : JSF!ServiceAssociation (
+		oppositeFeature <-
+			if not website.oppositeFeature.oclIsUndefined() then
+				website.oppositeFeature
+			else
+				let service : Website!Service = website.targetService()
+				in service.features
+					->select(f | f.oclIsKindOf(Website!ServiceEntityAssociation))
+					->any(a | a.targetService() = website.partOf)
+			endif
 	)
 }
 
@@ -540,12 +562,6 @@ rule ServiceEntityAssociation {
 	to jsf : JSF!ServiceEntityAssociation (
 		feature <- website.entityFeature(),
 		forcedValue <- website.forcedValue,
---		opposite <- 
---			if website.feature.targetEntiity.servedBy->empty() then
---				OclUndefined
---			else
---				website.feature.targetEntiity.servedBy->first().feature(website.feature.targetFeatureName)
---			endif
 		viewColumnName <-
 			if not website.viewColumnName.oclIsUndefined() and website.viewColumnName <> '' then
 				website.viewColumnName
@@ -553,7 +569,13 @@ rule ServiceEntityAssociation {
 				website.alias.createAssociationColumnName()
 			else
 				OclUndefined
-			endif endif
+			endif endif,
+		oppositeService <-
+			if not website.oppositeService.oclIsUndefined() then
+				website.oppositeService
+			else
+				website.targetService()
+			endif
 	)
 }
 
@@ -561,7 +583,7 @@ rule ServiceEntityAssociation {
 rule ServiceViewAssociation {
 	from website : Website!ServiceViewAssociation
 	to jsf : JSF!ServiceViewAssociation (
-		targetFeature <- website.targetFeature
+		oppositeService <- website.oppositeService
 	)
 }
 
@@ -780,7 +802,7 @@ abstract rule UnitField {
 				if website.serviceFeature.oclIsKindOf(Website!ServiceEntityFeature) then
 					website.serviceFeature.cardinality(website.required)
 				else
-					website.serviceFeature.targetFeature.targetCardinality()
+					website.serviceFeature.oppositeFeature.targetCardinality()
 				endif
 			else
 				if website.required then

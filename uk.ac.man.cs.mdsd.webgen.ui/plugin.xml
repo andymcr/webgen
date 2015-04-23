@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            class="uk.ac.man.cs.mdsd.webgen.ui.wizards.NewWebgenProjectWizard"
+            id="uk.ac.man.cs.mdsd.webgen.ui.create_project"
+            name="New Webgen Project"
+            project="true">
+      </wizard>
+   </extension>
+
+</plugin>

@@ -181,6 +181,8 @@ rule ServiceEntityElement {
 abstract rule ServiceAssociation {
 	from partialJsf : JSF!ServiceAssociation
 	to jsf : JSF!ServiceAssociation (
+		oppositeService <- partialJsf.oppositeService,
+		oppositeFeature <- partialJsf.oppositeFeature
 	)
 }
 
@@ -188,8 +190,7 @@ abstract rule ServiceAssociation {
 rule ServiceEntityAssociation {
 	from partialJsf : JSF!ServiceEntityAssociation
 	to jsf : JSF!ServiceEntityAssociation (
-		feature <- partialJsf.feature,
-		opposite <- partialJsf.opposite
+		feature <- partialJsf.feature
 	)
 }
 
@@ -197,7 +198,6 @@ rule ServiceEntityAssociation {
 rule ServiceViewAssociation {
 	from partialJsf : JSF!ServiceViewAssociation
 	to jsf : JSF!ServiceViewAssociation (
-		targetFeature <- partialJsf.targetFeature
 	)
 }
 

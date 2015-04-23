@@ -65,6 +65,27 @@ public abstract class WebgenItemProvider extends ItemProviderAdapter {
 		return null;
 	}
 
+	protected List<ServiceAssociation> getAssociationsMatchingService(final Service service,
+			final Service targetService) {
+		final List<ServiceAssociation> associations = new LinkedList<ServiceAssociation>();
+		for (ServiceAssociation association : getAssociations(service)) {
+			if ( association.getOppositeService() != null) {
+				if (targetService.equals(association.getOppositeService())) {
+					associations.add(association);
+				}
+			} else {
+				if (association instanceof ServiceEntityAssociation) {
+					if (targetService.getEncapsulates().contains(
+							getType(association))) {
+						associations.add(association);
+					}
+				}
+			}
+		}
+
+		return associations;
+	}
+
 	protected Collection<ServiceAssociation> getAssociations(final Service service) {
 		final List<ServiceAssociation> associations = new LinkedList<ServiceAssociation>();
 		for (ServiceFeature feature : service.getFeatures()) {

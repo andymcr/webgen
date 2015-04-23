@@ -24,7 +24,9 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -62,12 +64,98 @@ public class ServiceEntityAssociationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOppositeServicePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addFeaturePropertyDescriptor(object);
 			addDynamicLabelPropertyDescriptor(object);
 			addUseFeatureSourcePropertyDescriptor(object);
+			addOppositeFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Opposite Service feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addOppositeServicePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_ServiceAssociation_oppositeService_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociation_oppositeService_feature", "_UI_ServiceAssociation_type"),
+			WebsitePackage.Literals.SERVICE_ASSOCIATION__OPPOSITE_SERVICE,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				if (object instanceof ServiceEntityAssociation) {
+					final ServiceEntityAssociation association = (ServiceEntityAssociation) object;
+					final Service parentService = association.getPartOf();
+					final List<Service> oppositeServices = new LinkedList<Service>();
+					if (parentService.eContainer() instanceof WebGenModel) {
+						WebGenModel model = (WebGenModel) parentService.eContainer();
+						for (Service service : model.getServices()) {
+							if (association.getFeature() == null) {
+								if (getAssociationsMatchingService(service, parentService).size() > 0) {
+									oppositeServices.add(service);
+								}
+							} else {
+								if (service.getEncapsulates().contains(getType(association))) {
+									oppositeServices.add(service);
+								}
+							}
+						}
+					}
+					return oppositeServices;
+				}
+				return Collections.emptyList();
+			}
+		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Opposite Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addOppositeFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_ServiceEntityAssociation_oppositeFeature_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ServiceEntityAssociation_oppositeFeature_feature", "_UI_ServiceEntityAssociation_type"),
+			WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_FEATURE,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				if (object instanceof ServiceEntityAssociation) {
+					final ServiceEntityAssociation association = (ServiceEntityAssociation) object;
+					final Service parentService = association.getPartOf();
+					final List<ServiceAssociation> oppositeFeatures
+						= new LinkedList<ServiceAssociation>();
+					if (association.getOppositeService() != null) {
+						oppositeFeatures.addAll(getAssociationsMatchingService(
+							association.getOppositeService(), parentService));
+					} else {
+						if (parentService.eContainer() instanceof WebGenModel) {
+							WebGenModel model = (WebGenModel) parentService.eContainer();
+							for (Service service : model.getServices()) {
+								oppositeFeatures.addAll(getAssociationsMatchingService(service, parentService));
+							}
+						}
+					}
+					return oppositeFeatures;
+				}
+				return Collections.emptyList();
+			}
+		});
 	}
 
 	/**

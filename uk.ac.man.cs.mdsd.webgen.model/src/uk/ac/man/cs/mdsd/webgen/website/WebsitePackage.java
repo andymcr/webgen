@@ -4052,13 +4052,22 @@ public interface WebsitePackage extends EPackage {
 	int SERVICE_ASSOCIATION__DATE_FORMAT = SERVICE_FEATURE__DATE_FORMAT;
 
 	/**
+	 * The feature id for the '<em><b>Opposite Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ASSOCIATION__OPPOSITE_SERVICE = SERVICE_FEATURE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ASSOCIATION__SELECTION = SERVICE_FEATURE_FEATURE_COUNT + 0;
+	int SERVICE_ASSOCIATION__SELECTION = SERVICE_FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Service Association</em>' class.
@@ -4067,7 +4076,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ASSOCIATION_FEATURE_COUNT = SERVICE_FEATURE_FEATURE_COUNT + 1;
+	int SERVICE_ASSOCIATION_FEATURE_COUNT = SERVICE_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl <em>Service Entity Association</em>}' class.
@@ -4188,13 +4197,22 @@ public interface WebsitePackage extends EPackage {
 	int SERVICE_ENTITY_ASSOCIATION__VIEW_COLUMN_NAME = SERVICE_ENTITY_FEATURE__VIEW_COLUMN_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Opposite Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ENTITY_ASSOCIATION__OPPOSITE_SERVICE = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ASSOCIATION__SELECTION = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 0;
+	int SERVICE_ENTITY_ASSOCIATION__SELECTION = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -4203,7 +4221,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ASSOCIATION__FEATURE = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 1;
+	int SERVICE_ENTITY_ASSOCIATION__FEATURE = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4212,7 +4230,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ASSOCIATION__NAME = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 2;
+	int SERVICE_ENTITY_ASSOCIATION__NAME = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Label</b></em>' reference.
@@ -4221,7 +4239,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 3;
+	int SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Use Feature Source</b></em>' attribute.
@@ -4230,7 +4248,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 4;
+	int SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Opposite Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ENTITY_ASSOCIATION__OPPOSITE_FEATURE = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Service Entity Association</em>' class.
@@ -4239,7 +4266,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ASSOCIATION_FEATURE_COUNT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 5;
+	int SERVICE_ENTITY_ASSOCIATION_FEATURE_COUNT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4269,13 +4296,22 @@ public interface WebsitePackage extends EPackage {
 	int SERVICE_VIEW_ASSOCIATION__DATE_FORMAT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Opposite Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__SELECTION = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SERVICE_VIEW_ASSOCIATION__SELECTION = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -4284,7 +4320,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__DISPLAY_LABEL = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SERVICE_VIEW_ASSOCIATION__DISPLAY_LABEL = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -4293,7 +4329,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__REQUIRED = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int SERVICE_VIEW_ASSOCIATION__REQUIRED = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
@@ -4302,7 +4338,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__FORCED_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int SERVICE_VIEW_ASSOCIATION__FORCED_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -4311,7 +4347,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__FOOTER = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int SERVICE_VIEW_ASSOCIATION__FOOTER = NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -4320,7 +4356,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__HEADER_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int SERVICE_VIEW_ASSOCIATION__HEADER_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -4329,7 +4365,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__INPUT_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int SERVICE_VIEW_ASSOCIATION__INPUT_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -4338,7 +4374,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__DISPLAY_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int SERVICE_VIEW_ASSOCIATION__DISPLAY_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -4347,16 +4383,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__FOOTER_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int SERVICE_VIEW_ASSOCIATION__FOOTER_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Target Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Opposite Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE = NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE = NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Service View Association</em>' class.
@@ -4365,7 +4401,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int SERVICE_VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -12545,6 +12581,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getServiceAssociation();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getOppositeService <em>Opposite Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Opposite Service</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getOppositeService()
+	 * @see #getServiceAssociation()
+	 * @generated
+	 */
+	EReference getServiceAssociation_OppositeService();
+
+	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getSelection <em>Selection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12599,6 +12646,17 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getServiceEntityAssociation_UseFeatureSource();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation#getOppositeFeature <em>Opposite Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Opposite Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation#getOppositeFeature()
+	 * @see #getServiceEntityAssociation()
+	 * @generated
+	 */
+	EReference getServiceEntityAssociation_OppositeFeature();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation <em>Service View Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12609,15 +12667,15 @@ public interface WebsitePackage extends EPackage {
 	EClass getServiceViewAssociation();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation#getTargetFeature <em>Target Feature</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation#getOppositeFeature <em>Opposite Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation#getTargetFeature()
+	 * @return the meta object for the reference '<em>Opposite Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation#getOppositeFeature()
 	 * @see #getServiceViewAssociation()
 	 * @generated
 	 */
-	EReference getServiceViewAssociation_TargetFeature();
+	EReference getServiceViewAssociation_OppositeFeature();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Selection <em>Selection</em>}'.
@@ -16158,6 +16216,14 @@ public interface WebsitePackage extends EPackage {
 		EClass SERVICE_ASSOCIATION = eINSTANCE.getServiceAssociation();
 
 		/**
+		 * The meta object literal for the '<em><b>Opposite Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_ASSOCIATION__OPPOSITE_SERVICE = eINSTANCE.getServiceAssociation_OppositeService();
+
+		/**
 		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16200,6 +16266,14 @@ public interface WebsitePackage extends EPackage {
 		EAttribute SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE = eINSTANCE.getServiceEntityAssociation_UseFeatureSource();
 
 		/**
+		 * The meta object literal for the '<em><b>Opposite Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_ENTITY_ASSOCIATION__OPPOSITE_FEATURE = eINSTANCE.getServiceEntityAssociation_OppositeFeature();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl <em>Service View Association</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16210,12 +16284,12 @@ public interface WebsitePackage extends EPackage {
 		EClass SERVICE_VIEW_ASSOCIATION = eINSTANCE.getServiceViewAssociation();
 
 		/**
-		 * The meta object literal for the '<em><b>Target Feature</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Opposite Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE = eINSTANCE.getServiceViewAssociation_TargetFeature();
+		EReference SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE = eINSTANCE.getServiceViewAssociation_OppositeFeature();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl <em>Selection</em>}' class.

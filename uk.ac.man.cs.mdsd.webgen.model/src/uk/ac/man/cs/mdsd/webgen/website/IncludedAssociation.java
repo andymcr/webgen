@@ -30,7 +30,7 @@ public interface IncludedAssociation extends IncludedFeature {
 	 * @return the value of the '<em>Feature</em>' reference.
 	 * @see #setFeature(Association)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIncludedAssociation_Feature()
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	Association getFeature();

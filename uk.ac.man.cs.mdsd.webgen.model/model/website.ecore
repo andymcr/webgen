@@ -342,7 +342,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="IncludedAssociation" abstract="true"
       interface="true" eSuperTypes="#//IncludedFeature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" ordered="false"
-        lowerBound="1" eType="#//Association"/>
+        eType="#//Association"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//NamedElement #//UnitSource">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -420,16 +420,19 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceAssociation" abstract="true"
       interface="true" eSuperTypes="#//ServiceFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oppositeService" eType="#//Service"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceEntityAssociation" eSuperTypes="#//ServiceEntityFeature #//ServiceAssociation #//IncludedAssociation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="cannotReduceCardinality canOnlyForceSingletonValues selectionFromCorrectService"/>
+      <details key="constraints" value="cannotReduceCardinality canOnlyForceSingletonValues selectionFromCorrectService implicitOppositeServiceMustBeUnambiguous featureRequired"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="cannotReduceCardinality" value="not feature.oclIsUndefined() implies&#xD;&#xA;&#x9;if partOf.encapsulates->includes(feature.parentEntity) then&#xD;&#xA;&#x9;&#x9;feature.cardinality = Cardinality::Required implies required&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if feature.oclIsTypeOf(AssociationWithContainment) then&#xD;&#xA;&#x9;&#x9;&#x9;required&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;feature.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required implies required&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif"/>
       <details key="canOnlyForceSingletonValues" value="not feature.oclIsUndefined() and not forcedValue.oclIsUndefined() implies&#xD;&#xA;&#x9;if partOf.encapsulates->includes(feature.parentEntity) then&#xD;&#xA;&#x9;&#x9;feature.cardinality &lt;> Cardinality::Many&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if feature.oclIsTypeOf(AssociationWithContainment) then&#xD;&#xA;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;feature.oclAsType(AssociationWithoutContainment).targetCardinality &lt;> Cardinality::Many&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif"/>
       <details key="selectionFromCorrectService" value="if selection.oclIsUndefined() then&#xD;&#xA;&#x9;true&#xD;&#xA;else if feature.oclIsUndefined() then&#xD;&#xA;&#x9;true&#xD;&#xA;else&#xD;&#xA;&#x9;let target : Entity&#xD;&#xA;&#x9;&#x9;= if partOf.encapsulates->includes(feature.parentEntity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;feature.targetEntity&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;feature.parentEntity&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;in target.servedBy->collect(s | s.selections)->includes(selection)&#xD;&#xA;endif endif"/>
+      <details key="implicitOppositeServiceMustBeUnambiguous" value="oppositeService.oclIsUndefined() and not feature.oclIsUndefined() implies&#xD;&#xA;&#x9;let entity: Entity&#xD;&#xA;&#x9;&#x9;= if partOf.encapsulates->includes(feature.parentEntity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;feature.targetEntity&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;feature.parentEntity&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;in entity.servedBy->size() &lt; 2"/>
+      <details key="featuredRequired" value="not feature.oclIsUndefined()"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" derived="true">
@@ -439,15 +442,17 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicLabel" eType="#//ModelLabel"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="useFeatureSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oppositeFeature" ordered="false"
+        eType="#//ServiceAssociation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceViewAssociation" eSuperTypes="#//NamedElement #//ServiceAssociation #//IncludedFeature">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="targetMustBeInView"/>
+      <details key="constraints" value="oppositeMustBeInView"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="targetMustBeInView" value="not targetFeature.oclIsUndefined() implies targetFeature.partOf.view"/>
+      <details key="oppositeMustBeInView" value="not oppositeFeature.oclIsUndefined() implies oppositeFeature.partOf.view"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetFeature" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oppositeFeature" ordered="false"
         lowerBound="1" eType="#//ServiceAssociation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PageTopMenuOptions">
@@ -613,7 +618,7 @@
       <details key="constraints" value="serviceFeaturesMustBeFromSource onlyReferenceFeaturesOnce entitySourceOnlyIfNotEncapsulated serviceSourceImpliesServiceFeaturesSet"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="serviceFeaturesMustBeFromSource" value="let features : Collection(Feature)&#xD;&#xA;&#x9;= if source.oclIsTypeOf(Entity) then &#xD;&#xA;&#x9;&#x9;&#x9;source.oclAsType(Entity).features&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;->union(source.oclAsType(Entity).associationEnds)&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;source.oclAsType(Service).features&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;->select(f | f.oclIsKindOf(ServiceEntityFeature))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;->collect(f |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if f.oclIsTypeOf(ServiceEntityElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;f.oclAsType(ServiceEntityElement).feature&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;f.oclAsType(ServiceEntityAssociation).feature&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;&#x9;endif &#xD;&#xA;&#x9;in displayFields&#xD;&#xA;&#x9;&#x9;->select(f | f.oclIsKindOf(UnitFeature))&#xD;&#xA;&#x9;&#x9;.oclAsType(UnitFeature)&#xD;&#xA;&#x9;&#x9;->forAll(f | &#xD;&#xA;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;features->includes(f.oclAsType(UnitElement).feature)&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;features->includes(f.oclAsType(UnitAssociation).feature)&#xD;&#xA;&#x9;&#x9;&#x9;endif)"/>
+      <details key="serviceFeaturesMustBeFromSource" value="let features : Collection(Feature)&#xD;&#xA;&#x9;= if source.oclIsTypeOf(Entity) then &#xD;&#xA;&#x9;&#x9;&#x9;source.oclAsType(Entity).features&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;->union(source.oclAsType(Entity).associationEnds)&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;source.oclAsType(Service).features&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;->select(f | f.oclIsKindOf(ServiceEntityFeature))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;->collect(f |&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if f.oclIsTypeOf(ServiceEntityElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;f.oclAsType(ServiceEntityElement).feature&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;f.oclAsType(ServiceEntityAssociation).feature&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;&#x9;endif &#xD;&#xA;&#x9;in displayFields&#xD;&#xA;&#x9;&#x9;->select(f | f.oclIsKindOf(UnitFeature))&#xD;&#xA;&#x9;&#x9;.oclAsType(UnitFeature)&#xD;&#xA;&#x9;&#x9;->select(f | &#xD;&#xA;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;f.oclAsType(UnitAssociation).feature.oclIsTypeOf(ServiceEntityAssociation)&#xD;&#xA;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;&#x9;->forAll(f | &#xD;&#xA;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;features->includes(f.oclAsType(UnitElement).feature)&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;features->includes(f.oclAsType(UnitAssociation).feature)&#xD;&#xA;&#x9;&#x9;&#x9;endif)"/>
       <details key="onlyReferenceFeaturesOnce" value="displayFields&#xD;&#xA;&#x9;->select(f | f.oclIsKindOf(UnitFeature))&#xD;&#xA;&#x9;.oclAsType(UnitFeature)&#xD;&#xA;&#x9;->select(f | if not f.oclIsTypeOf(UnitAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;f.oclAsType(UnitAssociation).childFeature.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;endif)&#xD;&#xA;&#x9;->isUnique(f |&#xD;&#xA;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;f.oclAsType(UnitElement).feature&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;f.oclAsType(UnitAssociation).feature&#xD;&#xA;&#x9;&#x9;endif)"/>
       <details key="entitySourceOnlyIfNotEncapsulated" value="source.oclIsTypeOf(Entity) implies source.oclAsType(Entity).servedBy->isEmpty()"/>
       <details key="serviceSourceImpliesServiceFeaturesSet" value="source.oclIsTypeOf(Service) implies &#xD;&#xA;displayFields&#xD;&#xA;&#x9;->select(f|f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)&#xD;&#xA;&#x9;->forAll(f |&#xD;&#xA;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;not f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;not f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;endif)"/>
@@ -685,13 +690,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnitAssociation" eSuperTypes="#//UnitFeature #//IncludedAssociation #//UnitContainer">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="cannotReduceCardinality canOnlyForceSingletonValues serviceFeatureMustBeConsistent selectionFromCorrectService"/>
+      <details key="constraints" value="cannotReduceCardinality canOnlyForceSingletonValues serviceFeatureMustBeConsistent selectionFromCorrectService entityAssociationsRequireFeature"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="cannotReduceCardinality" value="let featureRequired : Boolean&#xD;&#xA;= if feature.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;let entities : OrderedSet(Entity)&#xD;&#xA;&#x9;&#x9;= if displayedOn.source.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;OrderedSet{}&#xD;&#xA;&#x9;&#x9;&#x9;else if displayedOn.source.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;OrderedSet{displayedOn.source.oclAsType(Entity)}&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;displayedOn.source.oclAsType(Service).encapsulates&#xD;&#xA;&#x9;&#x9;&#x9;endif endif&#xD;&#xA;&#x9;&#x9;in if entities->includes(feature.parentEntity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;feature.cardinality = Cardinality::Required&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if feature.oclIsTypeOf(AssociationWithContainment) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;feature.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;in if serviceFeature.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;else if serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then&#xD;&#xA;&#x9;&#x9;featureRequired implies serviceFeature.oclAsType(ServiceEntityAssociation).required&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;featureRequired implies true -- serviceFeature.oclAsType(ServiceViewAssociation).cardinality = Cardinality::Required&#xD;&#xA;&#x9;endif endif&#xD;&#xA;"/>
       <details key="canOnlyForceSingletonValues" value="not feature.oclIsUndefined() and not forcedValue.oclIsUndefined() implies&#xD;&#xA;&#x9;let entities : OrderedSet(Entity)&#xD;&#xA;&#x9;&#x9;= if displayedOn.source.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;OrderedSet{displayedOn.source.oclAsType(Entity)}&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;displayedOn.source.oclAsType(Service).encapsulates&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;in if entities->includes(feature.parentEntity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;feature.cardinality &lt;> Cardinality::Many&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if feature.oclIsTypeOf(AssociationWithContainment) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;true&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;feature.oclAsType(AssociationWithoutContainment).targetCardinality &lt;> Cardinality::Many&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;endif"/>
       <details key="serviceFeatureMustBeConsistent" value="not feature.oclIsUndefined() and not serviceFeature.oclIsUndefined()&#xD;&#xA;implies if serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then&#xD;&#xA;&#x9;&#x9;feature = serviceFeature.oclAsType(ServiceEntityAssociation).feature&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif"/>
       <details key="selectionFromCorrectService" value="if selection.oclIsUndefined() then&#xD;&#xA;&#x9;true&#xD;&#xA;else if serviceFeature.oclIsUndefined() then&#xD;&#xA;&#x9;true&#xD;&#xA;else if not serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then&#xD;&#xA;&#x9;true&#xD;&#xA;else if serviceFeature.oclAsType(ServiceEntityAssociation).feature.oclIsUndefined() then&#xD;&#xA;&#x9;true&#xD;&#xA;else&#xD;&#xA;&#x9;let target : Entity&#xD;&#xA;&#x9;= if serviceFeature.partOf.encapsulates->includes(serviceFeature.oclAsType(ServiceEntityAssociation).feature.parentEntity) then&#xD;&#xA;&#x9;&#x9;&#x9;serviceFeature.oclAsType(ServiceEntityAssociation).feature.targetEntity&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;serviceFeature.oclAsType(ServiceEntityAssociation).feature.parentEntity&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;in target.servedBy->collect(s | s.selections)->includes(selection)&#xD;&#xA;endif endif endif endif"/>
+      <details key="entityAssociationsRequireFeature" value="not serviceFeature.oclIsUndefined() implies&#xD;&#xA;&#x9;serviceFeature.oclIsTypeOf(ServiceEntityAssociation) implies&#xD;&#xA;&#x9;&#x9;not feature.oclIsUndefined()"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" derived="true">

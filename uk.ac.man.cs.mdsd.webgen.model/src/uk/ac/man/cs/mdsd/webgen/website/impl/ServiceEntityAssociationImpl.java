@@ -15,6 +15,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
+import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -26,17 +27,29 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getOppositeService <em>Opposite Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getFeature <em>Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getDynamicLabel <em>Dynamic Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#isUseFeatureSource <em>Use Feature Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getOppositeFeature <em>Opposite Feature</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl implements ServiceEntityAssociation {
+	/**
+	 * The cached value of the '{@link #getOppositeService() <em>Opposite Service</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOppositeService()
+	 * @generated
+	 * @ordered
+	 */
+	protected Service oppositeService;
+
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -98,6 +111,16 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	protected boolean useFeatureSource = USE_FEATURE_SOURCE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getOppositeFeature() <em>Opposite Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOppositeFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServiceAssociation oppositeFeature;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -114,6 +137,95 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service getOppositeService() {
+		if (oppositeService != null && oppositeService.eIsProxy()) {
+			InternalEObject oldOppositeService = (InternalEObject)oppositeService;
+			oppositeService = (Service)eResolveProxy(oldOppositeService);
+			if (oppositeService != oldOppositeService) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_SERVICE, oldOppositeService, oppositeService));
+			}
+		}
+		return oppositeService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service basicGetOppositeService() {
+		return oppositeService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setOppositeService(Service newOppositeService) {
+		Service oldOppositeService = oppositeService;
+		oppositeService = newOppositeService;
+		if ((getOppositeFeature() != null) && (oppositeService != null)
+				&& !oppositeService.getFeatures().contains(getOppositeFeature())) {
+			setOppositeFeature(null);
+		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_SERVICE, oldOppositeService, oppositeService));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceAssociation getOppositeFeature() {
+		if (oppositeFeature != null && oppositeFeature.eIsProxy()) {
+			InternalEObject oldOppositeFeature = (InternalEObject)oppositeFeature;
+			oppositeFeature = (ServiceAssociation)eResolveProxy(oldOppositeFeature);
+			if (oppositeFeature != oldOppositeFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_FEATURE, oldOppositeFeature, oppositeFeature));
+			}
+		}
+		return oppositeFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceAssociation basicGetOppositeFeature() {
+		return oppositeFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setOppositeFeature(ServiceAssociation newOppositeFeature) {
+		ServiceAssociation oldOppositeFeature = oppositeFeature;
+		oppositeFeature = newOppositeFeature;
+		if (oppositeFeature != null) {
+			if (getOppositeService() == null) {
+				setOppositeService(oppositeFeature.getPartOf());
+			} else {
+				if (!getOppositeService().equals(oppositeFeature.getPartOf())) {
+					setOppositeService(oppositeFeature.getPartOf());
+				}
+			}
+		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_FEATURE, oldOppositeFeature, oppositeFeature));
 	}
 
 	/**
@@ -293,6 +405,9 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_SERVICE:
+				if (resolve) return getOppositeService();
+				return basicGetOppositeService();
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -306,6 +421,9 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 				return basicGetDynamicLabel();
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE:
 				return isUseFeatureSource();
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_FEATURE:
+				if (resolve) return getOppositeFeature();
+				return basicGetOppositeFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -318,6 +436,9 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_SERVICE:
+				setOppositeService((Service)newValue);
+				return;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__SELECTION:
 				setSelection((Selection)newValue);
 				return;
@@ -329,6 +450,9 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 				return;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE:
 				setUseFeatureSource((Boolean)newValue);
+				return;
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_FEATURE:
+				setOppositeFeature((ServiceAssociation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -342,6 +466,9 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_SERVICE:
+				setOppositeService((Service)null);
+				return;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__SELECTION:
 				setSelection((Selection)null);
 				return;
@@ -353,6 +480,9 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 				return;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE:
 				setUseFeatureSource(USE_FEATURE_SOURCE_EDEFAULT);
+				return;
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_FEATURE:
+				setOppositeFeature((ServiceAssociation)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -366,6 +496,8 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_SERVICE:
+				return oppositeService != null;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__SELECTION:
 				return selection != null;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__FEATURE:
@@ -376,6 +508,8 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 				return dynamicLabel != null;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE:
 				return useFeatureSource != USE_FEATURE_SOURCE_EDEFAULT;
+			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_FEATURE:
+				return oppositeFeature != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -389,6 +523,7 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == ServiceAssociation.class) {
 			switch (derivedFeatureID) {
+				case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_SERVICE: return WebsitePackage.SERVICE_ASSOCIATION__OPPOSITE_SERVICE;
 				case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__SELECTION: return WebsitePackage.SERVICE_ASSOCIATION__SELECTION;
 				default: return -1;
 			}
@@ -411,6 +546,7 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == ServiceAssociation.class) {
 			switch (baseFeatureID) {
+				case WebsitePackage.SERVICE_ASSOCIATION__OPPOSITE_SERVICE: return WebsitePackage.SERVICE_ENTITY_ASSOCIATION__OPPOSITE_SERVICE;
 				case WebsitePackage.SERVICE_ASSOCIATION__SELECTION: return WebsitePackage.SERVICE_ENTITY_ASSOCIATION__SELECTION;
 				default: return -1;
 			}

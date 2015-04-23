@@ -24,8 +24,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
@@ -67,6 +65,7 @@ public class ServiceViewAssociationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDateFormatPropertyDescriptor(object);
+			addOppositeServicePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addDisplayLabelPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
@@ -76,7 +75,7 @@ public class ServiceViewAssociationItemProvider
 			addInputClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
-			addTargetFeaturePropertyDescriptor(object);
+			addOppositeFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -101,6 +100,86 @@ public class ServiceViewAssociationItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
 				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Opposite Service feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addOppositeServicePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_ServiceAssociation_oppositeService_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociation_oppositeService_feature", "_UI_ServiceAssociation_type"),
+			WebsitePackage.Literals.SERVICE_ASSOCIATION__OPPOSITE_SERVICE,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				if (object instanceof ServiceViewAssociation) {
+					final List<Service> oppositeServices = new LinkedList<Service>();
+					final Service parentService = ((ServiceViewAssociation) object).getPartOf();
+					if (parentService.eContainer() instanceof WebGenModel) {
+						WebGenModel model = (WebGenModel) parentService.eContainer();
+						for (Service service : model.getServices()) {
+							if (service.isView()
+									&& getAssociationsMatchingService(service, parentService).size() > 0) {
+								oppositeServices.add(service);
+							}
+						}
+					}
+					return oppositeServices;
+				}
+				return Collections.emptyList();
+			}
+		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Opposite Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addOppositeFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_ServiceViewAssociation_oppositeFeature_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ServiceViewAssociation_oppositeFeature_feature", "_UI_ServiceAssociation_type"),
+			WebsitePackage.Literals.SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof ServiceViewAssociation) {
+						final ServiceViewAssociation association = (ServiceViewAssociation) object;
+						final Service parentService = association.getPartOf();
+						final List<ServiceAssociation> oppositeFeatures
+							= new LinkedList<ServiceAssociation>();
+						if (association.getOppositeService() != null) {
+							oppositeFeatures.addAll(getAssociationsMatchingService(
+								association.getOppositeService(), parentService));
+						} else {
+							if (parentService.eContainer() instanceof WebGenModel) {
+								WebGenModel model = (WebGenModel) parentService.eContainer();
+								for (Service service : model.getServices()) {
+									if (service.isView()) {
+										oppositeFeatures.addAll(getAssociationsMatchingService(service, parentService));
+									}
+								}
+							}
+						}
+						return oppositeFeatures;
+					}
+					return Collections.emptyList();
+				}
+			});
 	}
 
 	/**
@@ -299,50 +378,6 @@ public class ServiceViewAssociationItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_StylePropertyCategory"),
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Target Feature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addTargetFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_ServiceViewAssociation_targetFeature_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ServiceViewAssociation_targetFeature_feature", "_UI_ServiceViewAssociation_type"),
-			WebsitePackage.Literals.SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof ServiceViewAssociation) {
-						final Service localService = (Service) ((ServiceViewAssociation) object).eContainer();
-						final List<ServiceAssociation> targetFeatures = new LinkedList<ServiceAssociation>();
-						final Service parentService = ((ServiceViewAssociation) object).getPartOf();
-						if (parentService.eContainer() instanceof WebGenModel) {
-							WebGenModel model = (WebGenModel) parentService.eContainer();
-							for (Service service : model.getServices()) {
-								if (service.isView()) {
-									for (ServiceFeature feature : service.getFeatures()) {
-										if (feature instanceof ServiceEntityAssociation) {
-											if (localService.getEncapsulates().contains(
-													getType((ServiceEntityAssociation) feature))) {
-												targetFeatures.add((ServiceAssociation) feature);
-											}
-										}
-									}
-								}
-							}
-						}
-						return targetFeatures;
-					}
-					return Collections.emptyList();
-				}
-			});
 	}
 
 	/**

@@ -2739,8 +2739,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getServiceAssociation_Selection() {
+	public EReference getServiceAssociation_OppositeService() {
 		return (EReference)serviceAssociationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getServiceAssociation_Selection() {
+		return (EReference)serviceAssociationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2784,6 +2793,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getServiceEntityAssociation_OppositeFeature() {
+		return (EReference)serviceEntityAssociationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getServiceViewAssociation() {
 		return serviceViewAssociationEClass;
 	}
@@ -2793,7 +2811,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getServiceViewAssociation_TargetFeature() {
+	public EReference getServiceViewAssociation_OppositeFeature() {
 		return (EReference)serviceViewAssociationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -4547,15 +4565,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(serviceEntityElementEClass, SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN);
 
 		serviceAssociationEClass = createEClass(SERVICE_ASSOCIATION);
+		createEReference(serviceAssociationEClass, SERVICE_ASSOCIATION__OPPOSITE_SERVICE);
 		createEReference(serviceAssociationEClass, SERVICE_ASSOCIATION__SELECTION);
 
 		serviceEntityAssociationEClass = createEClass(SERVICE_ENTITY_ASSOCIATION);
 		createEAttribute(serviceEntityAssociationEClass, SERVICE_ENTITY_ASSOCIATION__NAME);
 		createEReference(serviceEntityAssociationEClass, SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL);
 		createEAttribute(serviceEntityAssociationEClass, SERVICE_ENTITY_ASSOCIATION__USE_FEATURE_SOURCE);
+		createEReference(serviceEntityAssociationEClass, SERVICE_ENTITY_ASSOCIATION__OPPOSITE_FEATURE);
 
 		serviceViewAssociationEClass = createEClass(SERVICE_VIEW_ASSOCIATION);
-		createEReference(serviceViewAssociationEClass, SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE);
+		createEReference(serviceViewAssociationEClass, SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE);
 
 		pageEClass = createEClass(PAGE);
 		createEReference(pageEClass, PAGE__PARENT_PAGE);
@@ -5124,7 +5144,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getIncludedElement_DefaultValue(), theCriteriaPackage.getExpression(), null, "defaultValue", null, 0, 1, IncludedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(includedAssociationEClass, IncludedAssociation.class, "IncludedAssociation", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIncludedAssociation_Feature(), this.getAssociation(), null, "feature", null, 1, 1, IncludedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getIncludedAssociation_Feature(), this.getAssociation(), null, "feature", null, 0, 1, IncludedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getService_ModelName(), ecorePackage.getEString(), "modelName", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5163,15 +5183,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getServiceEntityElement_ValidationPattern(), ecorePackage.getEString(), "validationPattern", null, 0, 1, ServiceEntityElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceAssociationEClass, ServiceAssociation.class, "ServiceAssociation", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceAssociation_OppositeService(), this.getService(), null, "oppositeService", null, 0, 1, ServiceAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getServiceAssociation_Selection(), this.getSelection(), null, "selection", null, 0, 1, ServiceAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceEntityAssociationEClass, ServiceEntityAssociation.class, "ServiceEntityAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceEntityAssociation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServiceEntityAssociation.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getServiceEntityAssociation_DynamicLabel(), this.getModelLabel(), null, "dynamicLabel", null, 0, 1, ServiceEntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceEntityAssociation_UseFeatureSource(), ecorePackage.getEBoolean(), "useFeatureSource", null, 0, 1, ServiceEntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceEntityAssociation_OppositeFeature(), this.getServiceAssociation(), null, "oppositeFeature", null, 0, 1, ServiceEntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceViewAssociationEClass, ServiceViewAssociation.class, "ServiceViewAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getServiceViewAssociation_TargetFeature(), this.getServiceAssociation(), null, "targetFeature", null, 1, 1, ServiceViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getServiceViewAssociation_OppositeFeature(), this.getServiceAssociation(), null, "oppositeFeature", null, 1, 1, ServiceViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPage_ParentPage(), this.getPageLink(), null, "parentPage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5546,13 +5568,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (serviceEntityAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "cannotReduceCardinality canOnlyForceSingletonValues selectionFromCorrectService"
+			 "constraints", "cannotReduceCardinality canOnlyForceSingletonValues selectionFromCorrectService implicitOppositeServiceMustBeUnambiguous featureRequired"
 		   });				
 		addAnnotation
 		  (serviceViewAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "targetMustBeInView"
+			 "constraints", "oppositeMustBeInView"
 		   });			
 		addAnnotation
 		  (pageEClass, 
@@ -5594,7 +5616,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (unitAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "cannotReduceCardinality canOnlyForceSingletonValues serviceFeatureMustBeConsistent selectionFromCorrectService"
+			 "constraints", "cannotReduceCardinality canOnlyForceSingletonValues serviceFeatureMustBeConsistent selectionFromCorrectService entityAssociationsRequireFeature"
 		   });				
 		addAnnotation
 		  (dataUnitEClass, 
@@ -5689,7 +5711,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   new String[] {
 			 "cannotReduceCardinality", "not feature.oclIsUndefined() implies\r\n\tif partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\tfeature.cardinality = Cardinality::Required implies required\r\n\telse\r\n\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\trequired\r\n\t\telse\r\n\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required implies required\r\n\t\tendif\r\n\tendif",
 			 "canOnlyForceSingletonValues", "not feature.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n\tif partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\tfeature.cardinality <> Cardinality::Many\r\n\telse\r\n\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\ttrue\r\n\t\telse\r\n\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n\t\tendif\r\n\tendif",
-			 "selectionFromCorrectService", "if selection.oclIsUndefined() then\r\n\ttrue\r\nelse if feature.oclIsUndefined() then\r\n\ttrue\r\nelse\r\n\tlet target : Entity\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.targetEntity\r\n\t\t\telse\r\n\t\t\t\tfeature.parentEntity\r\n\t\t\tendif\r\n\tin target.servedBy->collect(s | s.selections)->includes(selection)\r\nendif endif"
+			 "selectionFromCorrectService", "if selection.oclIsUndefined() then\r\n\ttrue\r\nelse if feature.oclIsUndefined() then\r\n\ttrue\r\nelse\r\n\tlet target : Entity\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.targetEntity\r\n\t\t\telse\r\n\t\t\t\tfeature.parentEntity\r\n\t\t\tendif\r\n\tin target.servedBy->collect(s | s.selections)->includes(selection)\r\nendif endif",
+			 "implicitOppositeServiceMustBeUnambiguous", "oppositeService.oclIsUndefined() and not feature.oclIsUndefined() implies\r\n\tlet entity: Entity\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.targetEntity\r\n\t\t\telse\r\n\t\t\t\tfeature.parentEntity\r\n\t\t\tendif\r\n\tin entity.servedBy->size() < 2",
+			 "featuredRequired", "not feature.oclIsUndefined()"
 		   });		
 		addAnnotation
 		  (getServiceEntityAssociation_Name(), 
@@ -5701,7 +5725,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (serviceViewAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "targetMustBeInView", "not targetFeature.oclIsUndefined() implies targetFeature.partOf.view"
+			 "oppositeMustBeInView", "not oppositeFeature.oclIsUndefined() implies oppositeFeature.partOf.view"
 		   });			
 		addAnnotation
 		  (pageEClass, 
@@ -5742,7 +5766,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (dynamicUnitEClass, 
 		   source, 
 		   new String[] {
-			 "serviceFeaturesMustBeFromSource", "let features : Collection(Feature)\r\n\t= if source.oclIsTypeOf(Entity) then \r\n\t\t\tsource.oclAsType(Entity).features\r\n\t\t\t\t->union(source.oclAsType(Entity).associationEnds)\r\n\t\telse\r\n\t\t\tsource.oclAsType(Service).features\r\n\t\t\t\t->select(f | f.oclIsKindOf(ServiceEntityFeature))\r\n\t\t\t\t->collect(f |\r\n\t\t\t\t\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n\t\t\t\t\t\tf.oclAsType(ServiceEntityElement).feature\r\n\t\t\t\t\telse\r\n\t\t\t\t\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n\t\t\t\t\tendif)\r\n\t\tendif \r\n\tin displayFields\r\n\t\t->select(f | f.oclIsKindOf(UnitFeature))\r\n\t\t.oclAsType(UnitFeature)\r\n\t\t->forAll(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\tfeatures->includes(f.oclAsType(UnitElement).feature)\r\n\t\t\telse\r\n\t\t\t\tfeatures->includes(f.oclAsType(UnitAssociation).feature)\r\n\t\t\tendif)",
+			 "serviceFeaturesMustBeFromSource", "let features : Collection(Feature)\r\n\t= if source.oclIsTypeOf(Entity) then \r\n\t\t\tsource.oclAsType(Entity).features\r\n\t\t\t\t->union(source.oclAsType(Entity).associationEnds)\r\n\t\telse\r\n\t\t\tsource.oclAsType(Service).features\r\n\t\t\t\t->select(f | f.oclIsKindOf(ServiceEntityFeature))\r\n\t\t\t\t->collect(f |\r\n\t\t\t\t\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n\t\t\t\t\t\tf.oclAsType(ServiceEntityElement).feature\r\n\t\t\t\t\telse\r\n\t\t\t\t\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n\t\t\t\t\tendif)\r\n\t\tendif \r\n\tin displayFields\r\n\t\t->select(f | f.oclIsKindOf(UnitFeature))\r\n\t\t.oclAsType(UnitFeature)\r\n\t\t->select(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\ttrue\r\n\t\t\telse\r\n\t\t\t\tf.oclAsType(UnitAssociation).feature.oclIsTypeOf(ServiceEntityAssociation)\r\n\t\t\tendif)\r\n\t\t->forAll(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\tfeatures->includes(f.oclAsType(UnitElement).feature)\r\n\t\t\telse\r\n\t\t\t\tfeatures->includes(f.oclAsType(UnitAssociation).feature)\r\n\t\t\tendif)",
 			 "onlyReferenceFeaturesOnce", "displayFields\r\n\t->select(f | f.oclIsKindOf(UnitFeature))\r\n\t.oclAsType(UnitFeature)\r\n\t->select(f | if not f.oclIsTypeOf(UnitAssociation) then\r\n\t\t\ttrue\r\n\t\telse\r\n\t\t\tf.oclAsType(UnitAssociation).childFeature.oclIsUndefined()\r\n\t\tendif)\r\n\t->isUnique(f |\r\n\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\tf.oclAsType(UnitElement).feature\r\n\t\telse\r\n\t\t\tf.oclAsType(UnitAssociation).feature\r\n\t\tendif)",
 			 "entitySourceOnlyIfNotEncapsulated", "source.oclIsTypeOf(Entity) implies source.oclAsType(Entity).servedBy->isEmpty()",
 			 "serviceSourceImpliesServiceFeaturesSet", "source.oclIsTypeOf(Service) implies \r\ndisplayFields\r\n\t->select(f|f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t->forAll(f |\r\n\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\tnot f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()\r\n\t\telse\r\n\t\t\tnot f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()\r\n\t\tendif)"
@@ -5773,7 +5797,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "cannotReduceCardinality", "let featureRequired : Boolean\r\n= if feature.oclIsUndefined() then\r\n\t\tfalse\r\n\telse\r\n\t\tlet entities : OrderedSet(Entity)\r\n\t\t= if displayedOn.source.oclIsUndefined() then\r\n\t\t\t\tOrderedSet{}\r\n\t\t\telse if displayedOn.source.oclIsTypeOf(Entity) then\r\n\t\t\t\tOrderedSet{displayedOn.source.oclAsType(Entity)}\r\n\t\t\telse\r\n\t\t\t\tdisplayedOn.source.oclAsType(Service).encapsulates\r\n\t\t\tendif endif\r\n\t\tin if entities->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.cardinality = Cardinality::Required\r\n\t\t\telse\r\n\t\t\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\t\t\ttrue\r\n\t\t\t\telse\r\n\t\t\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required\r\n\t\t\t\tendif\r\n\t\t\tendif\r\n\t\tendif\r\nin if serviceFeature.oclIsUndefined() then\r\n\t\ttrue\r\n\telse if serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then\r\n\t\tfeatureRequired implies serviceFeature.oclAsType(ServiceEntityAssociation).required\r\n\telse\r\n\t\tfeatureRequired implies true -- serviceFeature.oclAsType(ServiceViewAssociation).cardinality = Cardinality::Required\r\n\tendif endif\r\n",
 			 "canOnlyForceSingletonValues", "not feature.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n\tlet entities : OrderedSet(Entity)\r\n\t\t= if displayedOn.source.oclIsTypeOf(Entity) then\r\n\t\t\t\tOrderedSet{displayedOn.source.oclAsType(Entity)}\r\n\t\t\telse\r\n\t\t\t\tdisplayedOn.source.oclAsType(Service).encapsulates\r\n\t\t\tendif\r\n\t\tin if entities->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\t\t\ttrue\r\n\t\t\t\telse\r\n\t\t\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n\t\t\t\tendif\r\n\t\t\tendif",
 			 "serviceFeatureMustBeConsistent", "not feature.oclIsUndefined() and not serviceFeature.oclIsUndefined()\r\nimplies if serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then\r\n\t\tfeature = serviceFeature.oclAsType(ServiceEntityAssociation).feature\r\n\telse\r\n\t\ttrue\r\n\tendif",
-			 "selectionFromCorrectService", "if selection.oclIsUndefined() then\r\n\ttrue\r\nelse if serviceFeature.oclIsUndefined() then\r\n\ttrue\r\nelse if not serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then\r\n\ttrue\r\nelse if serviceFeature.oclAsType(ServiceEntityAssociation).feature.oclIsUndefined() then\r\n\ttrue\r\nelse\r\n\tlet target : Entity\r\n\t= if serviceFeature.partOf.encapsulates->includes(serviceFeature.oclAsType(ServiceEntityAssociation).feature.parentEntity) then\r\n\t\t\tserviceFeature.oclAsType(ServiceEntityAssociation).feature.targetEntity\r\n\t\telse\r\n\t\t\tserviceFeature.oclAsType(ServiceEntityAssociation).feature.parentEntity\r\n\t\tendif\r\n\tin target.servedBy->collect(s | s.selections)->includes(selection)\r\nendif endif endif endif"
+			 "selectionFromCorrectService", "if selection.oclIsUndefined() then\r\n\ttrue\r\nelse if serviceFeature.oclIsUndefined() then\r\n\ttrue\r\nelse if not serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then\r\n\ttrue\r\nelse if serviceFeature.oclAsType(ServiceEntityAssociation).feature.oclIsUndefined() then\r\n\ttrue\r\nelse\r\n\tlet target : Entity\r\n\t= if serviceFeature.partOf.encapsulates->includes(serviceFeature.oclAsType(ServiceEntityAssociation).feature.parentEntity) then\r\n\t\t\tserviceFeature.oclAsType(ServiceEntityAssociation).feature.targetEntity\r\n\t\telse\r\n\t\t\tserviceFeature.oclAsType(ServiceEntityAssociation).feature.parentEntity\r\n\t\tendif\r\n\tin target.servedBy->collect(s | s.selections)->includes(selection)\r\nendif endif endif endif",
+			 "entityAssociationsRequireFeature", "not serviceFeature.oclIsUndefined() implies\r\n\tserviceFeature.oclIsTypeOf(ServiceEntityAssociation) implies\r\n\t\tnot feature.oclIsUndefined()"
 		   });		
 		addAnnotation
 		  (getUnitAssociation_Name(), 

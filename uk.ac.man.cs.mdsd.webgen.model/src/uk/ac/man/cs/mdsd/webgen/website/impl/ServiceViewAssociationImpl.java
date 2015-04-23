@@ -30,6 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getDateFormat <em>Date Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getOppositeService <em>Opposite Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#isRequired <em>Required</em>}</li>
@@ -39,7 +40,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getFooterClass <em>Footer Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getTargetFeature <em>Target Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getOppositeFeature <em>Opposite Feature</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,6 +66,16 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 	 * @ordered
 	 */
 	protected String dateFormat = DATE_FORMAT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOppositeService() <em>Opposite Service</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOppositeService()
+	 * @generated
+	 * @ordered
+	 */
+	protected Service oppositeService;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -227,14 +238,14 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 	protected String footerClass = FOOTER_CLASS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTargetFeature() <em>Target Feature</em>}' reference.
+	 * The cached value of the '{@link #getOppositeFeature() <em>Opposite Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetFeature()
+	 * @see #getOppositeFeature()
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceAssociation targetFeature;
+	protected ServiceAssociation oppositeFeature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -494,6 +505,95 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Service getOppositeService() {
+		if (oppositeService != null && oppositeService.eIsProxy()) {
+			InternalEObject oldOppositeService = (InternalEObject)oppositeService;
+			oppositeService = (Service)eResolveProxy(oldOppositeService);
+			if (oppositeService != oldOppositeService) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE, oldOppositeService, oppositeService));
+			}
+		}
+		return oppositeService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service basicGetOppositeService() {
+		return oppositeService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setOppositeService(Service newOppositeService) {
+		Service oldOppositeService = oppositeService;
+		oppositeService = newOppositeService;
+		if ((getOppositeFeature() != null) && (oppositeService != null)
+				&& !oppositeService.getFeatures().contains(getOppositeFeature())) {
+			setOppositeFeature(null);
+		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE, oldOppositeService, oppositeService));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceAssociation getOppositeFeature() {
+		if (oppositeFeature != null && oppositeFeature.eIsProxy()) {
+			InternalEObject oldOppositeFeature = (InternalEObject)oppositeFeature;
+			oppositeFeature = (ServiceAssociation)eResolveProxy(oldOppositeFeature);
+			if (oppositeFeature != oldOppositeFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE, oldOppositeFeature, oppositeFeature));
+			}
+		}
+		return oppositeFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceAssociation basicGetOppositeFeature() {
+		return oppositeFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setOppositeFeature(ServiceAssociation newOppositeFeature) {
+		ServiceAssociation oldOppositeFeature = oppositeFeature;
+		oppositeFeature = newOppositeFeature;
+		if (oppositeFeature != null) {
+			if (getOppositeService() == null) {
+				setOppositeService(oppositeFeature.getPartOf());
+			} else {
+				if (!getOppositeService().equals(oppositeFeature.getPartOf())) {
+					setOppositeService(oppositeFeature.getPartOf());
+				}
+			}
+		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE, oldOppositeFeature, oppositeFeature));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Selection getSelection() {
 		if (selection != null && selection.eIsProxy()) {
 			InternalEObject oldSelection = (InternalEObject)selection;
@@ -546,44 +646,6 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 		displayLabel = newDisplayLabel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_VIEW_ASSOCIATION__DISPLAY_LABEL, oldDisplayLabel, displayLabel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAssociation getTargetFeature() {
-		if (targetFeature != null && targetFeature.eIsProxy()) {
-			InternalEObject oldTargetFeature = (InternalEObject)targetFeature;
-			targetFeature = (ServiceAssociation)eResolveProxy(oldTargetFeature);
-			if (targetFeature != oldTargetFeature) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE, oldTargetFeature, targetFeature));
-			}
-		}
-		return targetFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAssociation basicGetTargetFeature() {
-		return targetFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTargetFeature(ServiceAssociation newTargetFeature) {
-		ServiceAssociation oldTargetFeature = targetFeature;
-		targetFeature = newTargetFeature;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE, oldTargetFeature, targetFeature));
 	}
 
 	/**
@@ -644,6 +706,9 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 				return getPartOf();
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT:
 				return getDateFormat();
+			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE:
+				if (resolve) return getOppositeService();
+				return basicGetOppositeService();
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -663,9 +728,9 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 				return getDisplayClass();
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__FOOTER_CLASS:
 				return getFooterClass();
-			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE:
-				if (resolve) return getTargetFeature();
-				return basicGetTargetFeature();
+			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE:
+				if (resolve) return getOppositeFeature();
+				return basicGetOppositeFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -683,6 +748,9 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 				return;
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT:
 				setDateFormat((String)newValue);
+				return;
+			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE:
+				setOppositeService((Service)newValue);
 				return;
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__SELECTION:
 				setSelection((Selection)newValue);
@@ -711,8 +779,8 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__FOOTER_CLASS:
 				setFooterClass((String)newValue);
 				return;
-			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE:
-				setTargetFeature((ServiceAssociation)newValue);
+			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE:
+				setOppositeFeature((ServiceAssociation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -731,6 +799,9 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 				return;
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
+				return;
+			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE:
+				setOppositeService((Service)null);
 				return;
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__SELECTION:
 				setSelection((Selection)null);
@@ -759,8 +830,8 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__FOOTER_CLASS:
 				setFooterClass(FOOTER_CLASS_EDEFAULT);
 				return;
-			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE:
-				setTargetFeature((ServiceAssociation)null);
+			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE:
+				setOppositeFeature((ServiceAssociation)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -778,6 +849,8 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 				return getPartOf() != null;
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
+			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE:
+				return oppositeService != null;
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__SELECTION:
 				return selection != null;
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__DISPLAY_LABEL:
@@ -796,8 +869,8 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 				return DISPLAY_CLASS_EDEFAULT == null ? displayClass != null : !DISPLAY_CLASS_EDEFAULT.equals(displayClass);
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__FOOTER_CLASS:
 				return FOOTER_CLASS_EDEFAULT == null ? footerClass != null : !FOOTER_CLASS_EDEFAULT.equals(footerClass);
-			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__TARGET_FEATURE:
-				return targetFeature != null;
+			case WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE:
+				return oppositeFeature != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -818,6 +891,7 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 		}
 		if (baseClass == ServiceAssociation.class) {
 			switch (derivedFeatureID) {
+				case WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE: return WebsitePackage.SERVICE_ASSOCIATION__OPPOSITE_SERVICE;
 				case WebsitePackage.SERVICE_VIEW_ASSOCIATION__SELECTION: return WebsitePackage.SERVICE_ASSOCIATION__SELECTION;
 				default: return -1;
 			}
@@ -854,6 +928,7 @@ public class ServiceViewAssociationImpl extends NamedElementImpl implements Serv
 		}
 		if (baseClass == ServiceAssociation.class) {
 			switch (baseFeatureID) {
+				case WebsitePackage.SERVICE_ASSOCIATION__OPPOSITE_SERVICE: return WebsitePackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE;
 				case WebsitePackage.SERVICE_ASSOCIATION__SELECTION: return WebsitePackage.SERVICE_VIEW_ASSOCIATION__SELECTION;
 				default: return -1;
 			}

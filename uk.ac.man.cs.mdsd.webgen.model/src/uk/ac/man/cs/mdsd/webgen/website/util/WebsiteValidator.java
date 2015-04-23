@@ -1576,6 +1576,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateUnitAssociation_canOnlyForceSingletonValues(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitAssociation_serviceFeatureMustBeConsistent(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitAssociation_selectionFromCorrectService(unitAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateUnitAssociation_entityAssociationsRequireFeature(unitAssociation, diagnostics, context);
 		return result;
 	}
 
@@ -1755,6 +1756,37 @@ public class WebsiteValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "selectionFromCorrectService",
 				 UNIT_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the entityAssociationsRequireFeature constraint of '<em>Unit Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String UNIT_ASSOCIATION__ENTITY_ASSOCIATIONS_REQUIRE_FEATURE__EEXPRESSION = "not serviceFeature.oclIsUndefined() implies\r\n" +
+		"\tserviceFeature.oclIsTypeOf(ServiceEntityAssociation) implies\r\n" +
+		"\t\tnot feature.oclIsUndefined()";
+
+	/**
+	 * Validates the entityAssociationsRequireFeature constraint of '<em>Unit Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUnitAssociation_entityAssociationsRequireFeature(UnitAssociation unitAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.UNIT_ASSOCIATION,
+				 unitAssociation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "entityAssociationsRequireFeature",
+				 UNIT_ASSOCIATION__ENTITY_ASSOCIATIONS_REQUIRE_FEATURE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1995,6 +2027,8 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateServiceEntityAssociation_cannotReduceCardinality(serviceEntityAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateServiceEntityAssociation_canOnlyForceSingletonValues(serviceEntityAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateServiceEntityAssociation_selectionFromCorrectService(serviceEntityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateServiceEntityAssociation_implicitOppositeServiceMustBeUnambiguous(serviceEntityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateServiceEntityAssociation_featureRequired(serviceEntityAssociation, diagnostics, context);
 		return result;
 	}
 
@@ -2116,6 +2150,70 @@ public class WebsiteValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the implicitOppositeServiceMustBeUnambiguous constraint of '<em>Service Entity Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SERVICE_ENTITY_ASSOCIATION__IMPLICIT_OPPOSITE_SERVICE_MUST_BE_UNAMBIGUOUS__EEXPRESSION = "oppositeService.oclIsUndefined() and not feature.oclIsUndefined() implies\r\n" +
+		"\tlet entity: Entity\r\n" +
+		"\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n" +
+		"\t\t\t\tfeature.targetEntity\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tfeature.parentEntity\r\n" +
+		"\t\t\tendif\r\n" +
+		"\tin entity.servedBy->size() < 2";
+
+	/**
+	 * Validates the implicitOppositeServiceMustBeUnambiguous constraint of '<em>Service Entity Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateServiceEntityAssociation_implicitOppositeServiceMustBeUnambiguous(ServiceEntityAssociation serviceEntityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION,
+				 serviceEntityAssociation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "implicitOppositeServiceMustBeUnambiguous",
+				 SERVICE_ENTITY_ASSOCIATION__IMPLICIT_OPPOSITE_SERVICE_MUST_BE_UNAMBIGUOUS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * Validates the featureRequired constraint of '<em>Service Entity Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateServiceEntityAssociation_featureRequired(ServiceEntityAssociation serviceEntityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "featureRequired", getObjectLabel(serviceEntityAssociation, context) },
+						 new Object[] { serviceEntityAssociation },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2131,25 +2229,25 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(serviceViewAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(serviceViewAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(serviceViewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateServiceViewAssociation_targetMustBeInView(serviceViewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateServiceViewAssociation_oppositeMustBeInView(serviceViewAssociation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the targetMustBeInView constraint of '<em>Service View Association</em>'.
+	 * The cached validation expression for the oppositeMustBeInView constraint of '<em>Service View Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SERVICE_VIEW_ASSOCIATION__TARGET_MUST_BE_IN_VIEW__EEXPRESSION = "not targetFeature.oclIsUndefined() implies targetFeature.partOf.view";
+	protected static final String SERVICE_VIEW_ASSOCIATION__OPPOSITE_MUST_BE_IN_VIEW__EEXPRESSION = "not oppositeFeature.oclIsUndefined() implies oppositeFeature.partOf.view";
 
 	/**
-	 * Validates the targetMustBeInView constraint of '<em>Service View Association</em>'.
+	 * Validates the oppositeMustBeInView constraint of '<em>Service View Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateServiceViewAssociation_targetMustBeInView(ServiceViewAssociation serviceViewAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateServiceViewAssociation_oppositeMustBeInView(ServiceViewAssociation serviceViewAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(WebsitePackage.Literals.SERVICE_VIEW_ASSOCIATION,
@@ -2157,8 +2255,8 @@ public class WebsiteValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "targetMustBeInView",
-				 SERVICE_VIEW_ASSOCIATION__TARGET_MUST_BE_IN_VIEW__EEXPRESSION,
+				 "oppositeMustBeInView",
+				 SERVICE_VIEW_ASSOCIATION__OPPOSITE_MUST_BE_IN_VIEW__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -2731,6 +2829,12 @@ public class WebsiteValidator extends EObjectValidator {
 		"\tin displayFields\r\n" +
 		"\t\t->select(f | f.oclIsKindOf(UnitFeature))\r\n" +
 		"\t\t.oclAsType(UnitFeature)\r\n" +
+		"\t\t->select(f | \r\n" +
+		"\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
+		"\t\t\t\ttrue\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tf.oclAsType(UnitAssociation).feature.oclIsTypeOf(ServiceEntityAssociation)\r\n" +
+		"\t\t\tendif)\r\n" +
 		"\t\t->forAll(f | \r\n" +
 		"\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
 		"\t\t\t\tfeatures->includes(f.oclAsType(UnitElement).feature)\r\n" +

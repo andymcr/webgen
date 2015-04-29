@@ -5713,7 +5713,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "canOnlyForceSingletonValues", "not feature.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n\tif partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\tfeature.cardinality <> Cardinality::Many\r\n\telse\r\n\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\ttrue\r\n\t\telse\r\n\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n\t\tendif\r\n\tendif",
 			 "selectionFromCorrectService", "if selection.oclIsUndefined() then\r\n\ttrue\r\nelse if feature.oclIsUndefined() then\r\n\ttrue\r\nelse\r\n\tlet target : Entity\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.targetEntity\r\n\t\t\telse\r\n\t\t\t\tfeature.parentEntity\r\n\t\t\tendif\r\n\tin target.servedBy->collect(s | s.selections)->includes(selection)\r\nendif endif",
 			 "implicitOppositeServiceMustBeUnambiguous", "oppositeService.oclIsUndefined() and not feature.oclIsUndefined() implies\r\n\tlet entity: Entity\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.targetEntity\r\n\t\t\telse\r\n\t\t\t\tfeature.parentEntity\r\n\t\t\tendif\r\n\tin entity.servedBy->size() < 2",
-			 "featuredRequired", "not feature.oclIsUndefined()"
+			 "featureRequired", "not feature.oclIsUndefined()"
 		   });		
 		addAnnotation
 		  (getServiceEntityAssociation_Name(), 

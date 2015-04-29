@@ -263,10 +263,13 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ModelLabel/features"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Selection">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Selection/joins"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//Selection/filter"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//Selection/ordering"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//Selection/limit"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//Selection/joins"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference website.ecore#//Selection/filter"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference website.ecore#//Selection/ordering"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//Selection/limit"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//ServiceFeature">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ServiceFeature/partOf"/>

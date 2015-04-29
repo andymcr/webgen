@@ -2186,31 +2186,32 @@ public class WebsiteValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the featureRequired constraint of '<em>Service Entity Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SERVICE_ENTITY_ASSOCIATION__FEATURE_REQUIRED__EEXPRESSION = "not feature.oclIsUndefined()";
+
+	/**
 	 * Validates the featureRequired constraint of '<em>Service Entity Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateServiceEntityAssociation_featureRequired(ServiceEntityAssociation serviceEntityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "featureRequired", getObjectLabel(serviceEntityAssociation, context) },
-						 new Object[] { serviceEntityAssociation },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION,
+				 serviceEntityAssociation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "featureRequired",
+				 SERVICE_ENTITY_ASSOCIATION__FEATURE_REQUIRED__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

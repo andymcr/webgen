@@ -248,7 +248,12 @@ rule SingletonElement {
 			else if not website.dataType.ormType.oclIsUndefined() and website.dataType.ormType <> '' then
 				website.dataType.ormType
 			else
-				website.dataType.name
+				let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
+				in if properties.ormTechnology = #DoctrineORM then
+						website.dataType.name.toLowerCase()
+					else
+						website.dataType.name
+						endif
 			endif endif,
 			obfuscateFormFields <- website.obfuscateFormFields,
 		caseInsensitive <- website.caseInsensitive,

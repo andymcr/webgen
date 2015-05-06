@@ -46,7 +46,8 @@ helper context String def: createElementColumnName() : String
 helper context String def: createAssociationColumnName() : String
 	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
 		in let name : String
-				= if properties.frameworkTechnology = #Kohana then
+				= if properties.ormTechnology = #Kohana 
+							or properties.ormTechnology = #DoctrineORM then
 						self.createName().concat('_id')
 					else
 						self.createName()

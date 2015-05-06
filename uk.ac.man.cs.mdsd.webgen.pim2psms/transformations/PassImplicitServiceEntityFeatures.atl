@@ -11,6 +11,11 @@ uses WebsiteHelpers;
 uses CopyPartialJsf;
 
 
+helper def: findEntityService(entity : ORM!Entity) : JSF!Service
+	= JSF!Service.allInstancesFrom('partialJsf')
+		->any(s | s.entities->select(e | e.name = entity.name)->notEmpty());
+
+
 -- @extends Service
 rule ServiceWithFeatures {
 	from partialJsf : JSF!Service (partialJsf.features->notEmpty())
@@ -140,13 +145,8 @@ lazy rule implicitServiceEntityAssociation {
 				endif
 			else
 				#Many
-			endif
---		opposite <- 
---			if website.feature.targetEntiity.servedBy->empty() then
---				OclUndefined
---			else
---				website.feature.targetEntiity.servedBy->first().feature(website.feature.targetFeatureName)
---			endif
+			endif,
+		oppositeService <- thisModule.findEntityService(orm.opposite.parentEntity)
 	)
 	do {
 		jsf;

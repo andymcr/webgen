@@ -38,9 +38,9 @@ abstract rule DynamicUnit {
 					->select(f | f.forcedValue.oclIsUndefined())
 					->collect(f | thisModule.implicitUnitElement(f))
 				->union(partialJsf.service.features
-					->select(f | f.oclIsTypeOf(JSF!ServiceAssociation))
+					->select(f | f.oclIsKindOf(JSF!ServiceAssociation))
 					->select(f | f.forcedValue.oclIsUndefined())
-					->select(f | not partialJsf.oclIsTypeOf(JSF!IndexUnit) and not partialJsf.oclIsTypeOf(JSF!CreateUnit))
+					->select(f | not partialJsf.oclIsKindOf(JSF!IndexUnit) and not partialJsf.oclIsTypeOf(JSF!CreateUnit))
 					->collect(f | thisModule.implicitUnitAssociation(f)))
 				endif
 	)

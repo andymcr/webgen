@@ -16,21 +16,27 @@ helper context Website!Authentication def: getDataType(name : String) : ORM!Data
 		in if not dataType.oclIsUndefined() then
 			dataType
 		else
-			if name = 'Boolean' then
-				thisModule.implicitBooleanDataType(self)
-			else if name = 'Email' then
-				thisModule.implicitEmailDataType(self)
-			else if name = 'String' then
-				thisModule.implicitStringDataType(self)
-			else
-				OclUndefined
-			endif endif endif
+			let webGenModel : Website!WebGenModel = thisModule.findWebGenModel()
+			in if name = 'Boolean' then
+					thisModule.implicitBooleanDataType(webGenModel)
+				else if name = 'Email' then
+					thisModule.implicitEmailDataType(webGenModel)
+				else if name = 'String' then
+					thisModule.implicitStringDataType(webGenModel)
+				else
+					OclUndefined
+				endif endif endif
 		endif;
 
 helper context Website!Authentication def: getPersistentType(name : String) : String
-	= let dataType : ORM!DataType = self.getDataType(name)
-		in if not dataType.oclIsUndefined() then
-			name
+	= let dataType : Website!DataType
+			= Website!DataType.allInstancesFrom('website')->any(d | d.name = name)
+		in if dataType.oclIsUndefined() then
+			if name = 'Email' then
+				'String'
+			else
+				name
+			endif
 		else
 			if dataType.persistentType.oclIsUndefined() then
 				name
@@ -389,7 +395,7 @@ unique lazy rule implicitAutoLoginEntity {
 		name <- 'authentication',
 		displayLabel <- 'Authentication',
 		opposite <- thisModule.implicitAutoLoginOpposite(website),
-		sourceEnd <- false,
+		owningEnd <- true,
 		bidirectional <- true,
 		containment <- false,
 		required <- true,
@@ -440,7 +446,7 @@ unique lazy rule implicitAutoLoginOpposite {
 	to orm : ORM!CollectionAssociation (
 		name <- 'autoLogin',
 		displayLabel <- 'autoLogin',
-		sourceEnd <- true,
+		owningEnd <- false,
 		bidirectional <- true,
 		containment <- true,
 		associationRelationship <- #OneToMany,

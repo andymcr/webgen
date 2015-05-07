@@ -23,8 +23,11 @@ helper context String def: createLabel() : String
 		endif;
 
 
+helper def: findWebGenModel() : Website!WebGenModel
+	= Website!WebGenModel.allInstancesFrom('website')->first();
+
 helper def: findWebsiteProperties() : Website!WebsiteProperties
-	= Website!WebGenModel.allInstancesFrom('website')->first().websiteProperties;
+	= thisModule.findWebGenModel().websiteProperties;
 
 
 helper context String def: createTableName() : String

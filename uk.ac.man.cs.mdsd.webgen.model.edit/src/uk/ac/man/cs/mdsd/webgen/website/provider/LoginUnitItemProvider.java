@@ -34,7 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class LoginUnitItemProvider
-	extends WebgenItemProvider
+	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

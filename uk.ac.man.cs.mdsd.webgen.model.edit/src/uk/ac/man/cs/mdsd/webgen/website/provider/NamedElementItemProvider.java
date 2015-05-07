@@ -35,7 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class NamedElementItemProvider
-	extends WebgenItemProvider
+	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

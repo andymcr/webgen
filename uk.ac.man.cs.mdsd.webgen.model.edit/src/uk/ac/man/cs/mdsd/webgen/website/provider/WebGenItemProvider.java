@@ -1,6 +1,7 @@
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,9 +20,10 @@ import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 
-public abstract class WebgenItemProvider extends ItemProviderAdapter {
-	public WebgenItemProvider(AdapterFactory adapterFactory) {
+public abstract class WebGenItemProvider extends ItemProviderAdapter {
+	public WebGenItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -40,15 +42,27 @@ public abstract class WebgenItemProvider extends ItemProviderAdapter {
 		return null;
 	}
 
+	protected List<Service> getAllServices(final ServiceAssociation association) {
+		final Service parentService = association.getPartOf();
+		if (parentService.eContainer() instanceof WebGenModel) {
+			WebGenModel model = (WebGenModel) parentService.eContainer();
+			return model.getServices();
+		} else {
+			return Collections.emptyList();
+		}
+	}
+
 	protected Service getService(final ServiceAssociation association) {
 		if (association instanceof ServiceEntityAssociation) {
 			final ServiceEntityAssociation entityAssociation = (ServiceEntityAssociation) association;
+			final Entity targetEntity = entityAssociation.isUseFeatureSource()
+					? entityAssociation.getFeature().getParentEntity()
+					: entityAssociation.getFeature().getTargetEntity();
 			final Service localService = entityAssociation.getPartOf();
-			final Association feature = entityAssociation.getFeature();
-			if (localService.getEncapsulates().contains(feature.getParentEntity())) {
+			if (localService.getEncapsulates().contains(targetEntity)) {
 				return localService;
 			}
-			final List<Service> remoteServices = feature.getParentEntity().getServedBy();
+			final List<Service> remoteServices = targetEntity.getServedBy();
 			if (remoteServices.size() > 0) {
 				return remoteServices.get(0);
 			}

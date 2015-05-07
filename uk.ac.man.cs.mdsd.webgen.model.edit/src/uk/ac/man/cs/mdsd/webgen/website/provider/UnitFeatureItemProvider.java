@@ -36,7 +36,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class UnitFeatureItemProvider
-	extends WebgenItemProvider
+	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

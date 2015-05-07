@@ -93,20 +93,13 @@ public class ServiceEntityAssociationItemProvider
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof ServiceEntityAssociation) {
 					final ServiceEntityAssociation association = (ServiceEntityAssociation) object;
-					final Service parentService = association.getPartOf();
+					final Entity targetEntity = association.isUseFeatureSource()
+							? association.getFeature().getParentEntity()
+							: association.getFeature().getTargetEntity();
 					final List<Service> oppositeServices = new LinkedList<Service>();
-					if (parentService.eContainer() instanceof WebGenModel) {
-						WebGenModel model = (WebGenModel) parentService.eContainer();
-						for (Service service : model.getServices()) {
-							if (association.getFeature() == null) {
-								if (getAssociationsMatchingService(service, parentService).size() > 0) {
-									oppositeServices.add(service);
-								}
-							} else {
-								if (service.getEncapsulates().contains(getType(association))) {
-									oppositeServices.add(service);
-								}
-							}
+					for (Service service : getAllServices(association)) {
+						if (service.getEncapsulates().contains(targetEntity)) {
+							oppositeServices.add(service);
 						}
 					}
 					return oppositeServices;

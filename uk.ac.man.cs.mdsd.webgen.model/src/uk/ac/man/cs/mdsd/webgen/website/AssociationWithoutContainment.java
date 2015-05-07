@@ -21,7 +21,8 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationWithoutContainment()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='oneToManyAssociationsMustBeBidirectional'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL oneToManyAssociationsMustBeBidirectional='cardinality = Cardinality::Optional and targetCardinality = Cardinality::Required implies bidirectional'"
  * @generated
  */
 public interface AssociationWithoutContainment extends Association {

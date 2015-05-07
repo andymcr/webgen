@@ -254,32 +254,32 @@ helper context Website!ServiceEntityFeature def: serviceDateFormat() : String
 			endif endif
 		endif;
 
-helper context Website!IncludedFeature def: unitDateFormat() : String
+helper context Website!UnitField def: unitDateFormat() : String
 	= if not self.dateFormat.oclIsUndefined() and self.dateFormat <> '' then
 			self.dateFormat
 		else
-			if not self.oclIsTypeOf(Website!UnitAssociation) then
+			if self.oclIsTypeOf(Website!UnitElement) then
 				self.serviceFeature.serviceDateFormat()
+			else if self.oclIsTypeOf(Website!UnitAssociation) then
+				if self.childFeature.oclIsUndefined() then
+					OclUndefined
+				else
+					self.childFeature.unitChildDateFormat()
+				endif
 			else
-				let association : Website!UnitAssociation = self.oclAsType(Website!UnitAssociation)
-				in if association.childFeature.oclIsUndefined() then
-						OclUndefined
-					else
-						association.childFeature.unitChildDateFormat()
-					endif
-			endif
+				OclUndefined
+			endif endif
 		endif;
 
 helper context Website!UnitChildFeature def: unitChildDateFormat() : String
 	= if self.oclIsTypeOf(Website!UnitChildElement) then
 			self.serviceFeature.serviceDateFormat()
 		else
-			let association : Website!UnitChildAssociation = self.oclAsType(Website!UnitChildAssociation)
-			in if association.childFeature.oclIsUndefined() then
-					OclUndefined
-				else
-					association.childFeature.unitChildDateFormat()
-				endif
+			if self.childFeature.oclIsUndefined() then
+				OclUndefined
+			else
+				self.childFeature.unitChildDateFormat()
+			endif
 		endif;
 
 helper context Website!IncludedFeature def: jsfHeaderClass() : String
@@ -460,7 +460,7 @@ rule Service {
 				->union(entities
 					->collect(e | e.features)->flatten()
 					->select(f | f.oclIsKindOf(ORM!Association))
-					->select(f | f.sourceEnd or f.bidirectional)
+					->select(f | f.owningEnd or f.bidirectional)
 					->collect(f | f.opposite.parentEntity)),
 		displayLabels <- website.displayLabels,
 		selections <- website.selections,

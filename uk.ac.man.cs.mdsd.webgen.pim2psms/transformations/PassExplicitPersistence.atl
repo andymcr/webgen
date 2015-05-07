@@ -327,7 +327,7 @@ abstract rule SingletonResource {
 	from website : Website!ResourceAttribute (website.cardinality <> #Many)
 	to orm : ORM!SingletonResource (
 		persistentType <- 'string',
-		ormType <- 'stringe',
+		ormType <- 'String',
 		maximumUploadSize <-
 			if website.maximumUploadSize > 0 then
 				website.maximumUploadSize
@@ -377,7 +377,8 @@ abstract rule Association {
 				website.columnName
 			else
 				website.name.createAssociationColumnName()
-			endif
+			endif,
+		pivotTableName <- website.createPivotTableName()
 	)
 }
 
@@ -388,22 +389,21 @@ rule OneToOneAssociationWithoutContainment {
 		inputField <- true,
 		opposite <- associationEnd,
 		associationRelationship <- #OneToOne,
-		sourceEnd <- true,
-		required <- website.cardinality = #Required,
-		pivotTableName <- website.createPivotTableName()
+		owningEnd <- website.cardinality = #Required or website.targetCardinality <> #Required,
+		required <- website.cardinality = #Required
 	),
 	associationEnd : ORM!SingletonAssociation (
 		name <- website.targetFeatureName(),
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #OneToOne,
-		sourceEnd <- false,
+		owningEnd <- website.cardinality <> #Required and website.targetCardinality = #Required,
 		bidirectional <- website.bidirectional,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
 				website.columnName
 			else
-				website.name.createAssociationColumnName()
+				website.targetFeatureName().createAssociationColumnName()
 			endif,
 		inputField <- website.bidirectional,
 		required <- website.targetCardinality = #Required,
@@ -422,18 +422,16 @@ rule ManyToOneAssociationWithoutContainment {
 		inputField <- true,
 		opposite <- associationEnd,
 		associationRelationship <- #ManyToOne,
-		sourceEnd <- true,
-		required <- website.cardinality = #Required,
-		pivotTableName <- website.createPivotTableName()
+		owningEnd <- true,
+		required <- website.cardinality = #Required
 	),
 	associationEnd : ORM!CollectionAssociation (
 		name <- website.targetFeatureName(),
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #OneToMany,
-		sourceEnd <- false,
+		owningEnd <- false,
 		bidirectional <- website.bidirectional,
-		columnName <- website.targetFeatureName().createAssociationColumnName(),
 		inputField <- website.bidirectional,
 		pivotTableName <- website.createPivotTableName(),
 		headerClass <- website.targetHeaderClass,
@@ -451,8 +449,7 @@ rule OneToManyAssociationWithoutContainment {
 		inputField <- true,
 		opposite <- associationEnd,
 		associationRelationship <- #OneToMany,
-		sourceEnd <- true,
-		pivotTableName <- website.createPivotTableName()
+		owningEnd <- false
 	),
 	collectionType : ORM!CollectionType (
 		elementType <- website.targetEntity,
@@ -463,9 +460,14 @@ rule OneToManyAssociationWithoutContainment {
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #ManyToOne,
-		sourceEnd <- false,
+		owningEnd <- true,
 		bidirectional <- website.bidirectional,
-		columnName <- website.targetFeatureName().createAssociationColumnName(),
+		columnName <-
+			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
+				website.columnName
+			else
+				website.targetFeatureName().createAssociationColumnName()
+			endif,
 		inputField <- website.bidirectional,
 		required <- website.targetCardinality = #Required,
 		pivotTableName <- website.createPivotTableName(),
@@ -484,8 +486,7 @@ rule ManyToManyAssociationWithoutContainment {
 		inputField <- true,
 		opposite <- associationEnd,
 		associationRelationship <- #ManyToMany,
-		sourceEnd <- true,
-		pivotTableName <- website.createPivotTableName()
+		owningEnd <- true
 	),
 	collectionType : ORM!CollectionType (
 		elementType <- website.targetEntity,
@@ -496,7 +497,7 @@ rule ManyToManyAssociationWithoutContainment {
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #ManyToMany,
-		sourceEnd <- false,
+		owningEnd <- false,
 		pivotTableName <- website.createPivotTableName(),
 		bidirectional <- website.bidirectional,
 		columnName <- website.targetFeatureName().createAssociationColumnName(),
@@ -514,23 +515,22 @@ rule OneToOneAssociationWithContainment {
 	to orm : ORM!SingletonAssociation (
 		opposite <- associationEnd,
 		associationRelationship <- #OneToOne,
-		sourceEnd <- true,
+		owningEnd <- false,
 		containment <- true,
-		required <- website.cardinality = #Required,
-		pivotTableName <- website.createPivotTableName()
+		required <- website.cardinality = #Required
 	),
 	associationEnd : ORM!SingletonAssociation (
 		name <- website.targetFeatureName(),
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #OneToOne,
-		sourceEnd <- false,
+		owningEnd <- true,
 		bidirectional <- website.bidirectional,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
 				website.columnName
 			else
-				website.name.createAssociationColumnName()
+				website.targetFeatureName().createAssociationColumnName()
 			endif,
 		inputField <- false,
 		required <- true,
@@ -548,16 +548,15 @@ rule OneToManyAssociationWithContainment {
 	to orm : ORM!CollectionAssociation (
 		opposite <- associationEnd,
 		associationRelationship <- #OneToMany,
-		sourceEnd <- true,
-		containment <- true,
-		pivotTableName <- website.createPivotTableName()
+		owningEnd <- false,
+		containment <- true
 	),
 	associationEnd : ORM!SingletonAssociation (
 		name <- website.targetFeatureName(),
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #ManyToOne,
-		sourceEnd <- false,
+		owningEnd <- true,
 		bidirectional <- website.bidirectional,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then

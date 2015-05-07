@@ -36,11 +36,11 @@ rule ServiceWithoutFeatures {
 					->collect(f | thisModule.implicitServiceEntityElement(f))
 				->union(features
 					->select(f | f.oclIsKindOf(ORM!SingletonAssociation))
-					->select(f | f.sourceEnd or f.bidirectional or f.opposite.containment)
+					->select(f | f.owningEnd or f.bidirectional or f.opposite.containment)
 					->collect(f | thisModule.implicitServiceEntityAssociation(f)))
 				->union(features
 					->select(f | f.oclIsKindOf(ORM!CollectionAssociation))
-					->select(f | f.sourceEnd or f.bidirectional)
+					->select(f | f.owningEnd or f.bidirectional)
 					->collect(f | thisModule.implicitServiceEntityAssociation(f)))
 	)
 } 

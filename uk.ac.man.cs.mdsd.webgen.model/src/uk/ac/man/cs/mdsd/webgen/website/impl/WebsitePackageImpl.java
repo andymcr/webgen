@@ -5547,10 +5547,10 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "constraints", "featureNameUniqueWithinEntity displayOnlyLocalFeatures keysFromLocalFeatures"
 		   });			
 		addAnnotation
-		  (associationEClass, 
+		  (associationWithoutContainmentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "bidirectionalAndContainedAssocationsNeedsTargetFeatureName"
+			 "constraints", "oneToManyAssociationsMustBeBidirectional"
 		   });			
 		addAnnotation
 		  (includedElementEClass, 
@@ -5678,10 +5678,10 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "keysFromLocalFeatures", "features->union(associationEnds)->includesAll(keys)"
 		   });			
 		addAnnotation
-		  (associationEClass, 
+		  (associationWithoutContainmentEClass, 
 		   source, 
 		   new String[] {
-			 "bidirectionalAndContainedAssocationsNeedsTargetFeatureName", "bidirectional or self.oclIsKindOf(AssociationWithContainment) implies not targetFeatureName.oclIsUndefined() and targetFeatureName.size() > 0"
+			 "oneToManyAssociationsMustBeBidirectional", "cardinality = Cardinality::Optional and targetCardinality = Cardinality::Required implies bidirectional"
 		   });			
 		addAnnotation
 		  (includedElementEClass, 

@@ -226,7 +226,7 @@ abstract rule Association {
 	from partialOrm : ORM!Association
 	to orm : ORM!Association (
 		opposite <- partialOrm.opposite,
-		sourceEnd <- partialOrm.sourceEnd,
+		owningEnd <- partialOrm.owningEnd,
 		bidirectional <- partialOrm.bidirectional,
 		containment <- partialOrm.containment,
 		pivotTableName <- partialOrm.pivotTableName

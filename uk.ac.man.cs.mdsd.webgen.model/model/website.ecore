@@ -272,12 +272,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="ImageAttribute" eSuperTypes="#//ResourceAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="LocationAttribute" eSuperTypes="#//Attribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="Association" abstract="true" eSuperTypes="#//Feature">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="bidirectionalAndContainedAssocationsNeedsTargetFeatureName"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="bidirectionalAndContainedAssocationsNeedsTargetFeatureName" value="bidirectional or self.oclIsKindOf(AssociationWithContainment) implies not targetFeatureName.oclIsUndefined() and targetFeatureName.size() > 0"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetEntity" lowerBound="1"
         eType="#//Entity" eOpposite="#//Entity/associationEnds"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bidirectional" lowerBound="1"
@@ -295,6 +289,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetFooterClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssociationWithoutContainment" eSuperTypes="#//Association">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="oneToManyAssociationsMustBeBidirectional"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="oneToManyAssociationsMustBeBidirectional" value="cardinality = Cardinality::Optional and targetCardinality = Cardinality::Required implies bidirectional"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetCardinality" lowerBound="1"
         eType="#//Cardinality" defaultValueLiteral="Required"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetUnique" lowerBound="1"

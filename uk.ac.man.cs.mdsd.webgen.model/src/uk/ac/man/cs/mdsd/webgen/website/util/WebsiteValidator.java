@@ -838,37 +838,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(association, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(association, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(association, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssociation_bidirectionalAndContainedAssocationsNeedsTargetFeatureName(association, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the bidirectionalAndContainedAssocationsNeedsTargetFeatureName constraint of '<em>Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSOCIATION__BIDIRECTIONAL_AND_CONTAINED_ASSOCATIONS_NEEDS_TARGET_FEATURE_NAME__EEXPRESSION = "bidirectional or self.oclIsKindOf(AssociationWithContainment) implies not targetFeatureName.oclIsUndefined() and targetFeatureName.size() > 0";
-
-	/**
-	 * Validates the bidirectionalAndContainedAssocationsNeedsTargetFeatureName constraint of '<em>Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssociation_bidirectionalAndContainedAssocationsNeedsTargetFeatureName(Association association, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.ASSOCIATION,
-				 association,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "bidirectionalAndContainedAssocationsNeedsTargetFeatureName",
-				 ASSOCIATION__BIDIRECTIONAL_AND_CONTAINED_ASSOCATIONS_NEEDS_TARGET_FEATURE_NAME__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
@@ -887,8 +857,37 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(associationWithoutContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(associationWithoutContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(associationWithoutContainment, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssociation_bidirectionalAndContainedAssocationsNeedsTargetFeatureName(associationWithoutContainment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssociationWithoutContainment_oneToManyAssociationsMustBeBidirectional(associationWithoutContainment, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the oneToManyAssociationsMustBeBidirectional constraint of '<em>Association Without Containment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSOCIATION_WITHOUT_CONTAINMENT__ONE_TO_MANY_ASSOCIATIONS_MUST_BE_BIDIRECTIONAL__EEXPRESSION = "cardinality = Cardinality::Optional and targetCardinality = Cardinality::Required implies bidirectional";
+
+	/**
+	 * Validates the oneToManyAssociationsMustBeBidirectional constraint of '<em>Association Without Containment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssociationWithoutContainment_oneToManyAssociationsMustBeBidirectional(AssociationWithoutContainment associationWithoutContainment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.ASSOCIATION_WITHOUT_CONTAINMENT,
+				 associationWithoutContainment,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "oneToManyAssociationsMustBeBidirectional",
+				 ASSOCIATION_WITHOUT_CONTAINMENT__ONE_TO_MANY_ASSOCIATIONS_MUST_BE_BIDIRECTIONAL__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -907,7 +906,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(associationWithContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(associationWithContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(associationWithContainment, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssociation_bidirectionalAndContainedAssocationsNeedsTargetFeatureName(associationWithContainment, diagnostics, context);
 		return result;
 	}
 

@@ -30,8 +30,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='bidirectionalAndContainedAssocationsNeedsTargetFeatureName'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL bidirectionalAndContainedAssocationsNeedsTargetFeatureName='bidirectional or self.oclIsKindOf(AssociationWithContainment) implies not targetFeatureName.oclIsUndefined() and targetFeatureName.size() > 0'"
  * @generated
  */
 public interface Association extends Feature {

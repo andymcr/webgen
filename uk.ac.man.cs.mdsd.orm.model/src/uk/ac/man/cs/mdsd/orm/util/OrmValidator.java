@@ -372,25 +372,25 @@ public class OrmValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(association, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(association, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(association, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssociation_onlyOneSourceEnd(association, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssociation_onlyOneOwningEnd(association, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the onlyOneSourceEnd constraint of '<em>Association</em>'.
+	 * The cached validation expression for the onlyOneOwningEnd constraint of '<em>Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSOCIATION__ONLY_ONE_SOURCE_END__EEXPRESSION = "sourceEnd xor opposite.sourceEnd";
+	protected static final String ASSOCIATION__ONLY_ONE_OWNING_END__EEXPRESSION = "owningEnd xor opposite.owningEnd";
 
 	/**
-	 * Validates the onlyOneSourceEnd constraint of '<em>Association</em>'.
+	 * Validates the onlyOneOwningEnd constraint of '<em>Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAssociation_onlyOneSourceEnd(Association association, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateAssociation_onlyOneOwningEnd(Association association, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(OrmPackage.Literals.ASSOCIATION,
@@ -398,8 +398,8 @@ public class OrmValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "onlyOneSourceEnd",
-				 ASSOCIATION__ONLY_ONE_SOURCE_END__EEXPRESSION,
+				 "onlyOneOwningEnd",
+				 ASSOCIATION__ONLY_ONE_OWNING_END__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -420,7 +420,7 @@ public class OrmValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(singletonAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(singletonAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(singletonAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssociation_onlyOneSourceEnd(singletonAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssociation_onlyOneOwningEnd(singletonAssociation, diagnostics, context);
 		return result;
 	}
 
@@ -439,7 +439,7 @@ public class OrmValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(collectionAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(collectionAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(collectionAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssociation_onlyOneSourceEnd(collectionAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssociation_onlyOneOwningEnd(collectionAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCollectionAssociation_x(collectionAssociation, diagnostics, context);
 		return result;
 	}

@@ -16,7 +16,7 @@ package uk.ac.man.cs.mdsd.orm;
  * The following features are supported:
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Association#getOpposite <em>Opposite</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.orm.Association#isSourceEnd <em>Source End</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.Association#isOwningEnd <em>Owning End</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Association#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Association#isContainment <em>Containment</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.Association#getPivotTableName <em>Pivot Table Name</em>}</li>
@@ -25,8 +25,8 @@ package uk.ac.man.cs.mdsd.orm;
  *
  * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='onlyOneSourceEnd'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL onlyOneSourceEnd='sourceEnd xor opposite.sourceEnd'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='onlyOneOwningEnd'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL onlyOneOwningEnd='owningEnd xor opposite.owningEnd'"
  * @generated
  */
 public interface Association extends Feature {
@@ -59,30 +59,30 @@ public interface Association extends Feature {
 	void setOpposite(Association value);
 
 	/**
-	 * Returns the value of the '<em><b>Source End</b></em>' attribute.
+	 * Returns the value of the '<em><b>Owning End</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source End</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Owning End</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source End</em>' attribute.
-	 * @see #setSourceEnd(boolean)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_SourceEnd()
+	 * @return the value of the '<em>Owning End</em>' attribute.
+	 * @see #setOwningEnd(boolean)
+	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_OwningEnd()
 	 * @model required="true"
 	 * @generated
 	 */
-	boolean isSourceEnd();
+	boolean isOwningEnd();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#isSourceEnd <em>Source End</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#isOwningEnd <em>Owning End</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source End</em>' attribute.
-	 * @see #isSourceEnd()
+	 * @param value the new value of the '<em>Owning End</em>' attribute.
+	 * @see #isOwningEnd()
 	 * @generated
 	 */
-	void setSourceEnd(boolean value);
+	void setOwningEnd(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Bidirectional</b></em>' attribute.

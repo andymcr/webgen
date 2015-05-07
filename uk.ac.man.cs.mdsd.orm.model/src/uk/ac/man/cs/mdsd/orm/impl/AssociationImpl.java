@@ -25,7 +25,7 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.AssociationImpl#getOpposite <em>Opposite</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.AssociationImpl#isSourceEnd <em>Source End</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.AssociationImpl#isOwningEnd <em>Owning End</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.AssociationImpl#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.AssociationImpl#isContainment <em>Containment</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.orm.impl.AssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
@@ -46,24 +46,24 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 	protected Association opposite;
 
 	/**
-	 * The default value of the '{@link #isSourceEnd() <em>Source End</em>}' attribute.
+	 * The default value of the '{@link #isOwningEnd() <em>Owning End</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSourceEnd()
+	 * @see #isOwningEnd()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SOURCE_END_EDEFAULT = false;
+	protected static final boolean OWNING_END_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isSourceEnd() <em>Source End</em>}' attribute.
+	 * The cached value of the '{@link #isOwningEnd() <em>Owning End</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSourceEnd()
+	 * @see #isOwningEnd()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean sourceEnd = SOURCE_END_EDEFAULT;
+	protected boolean owningEnd = OWNING_END_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
@@ -209,8 +209,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSourceEnd() {
-		return sourceEnd;
+	public boolean isOwningEnd() {
+		return owningEnd;
 	}
 
 	/**
@@ -218,11 +218,11 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSourceEnd(boolean newSourceEnd) {
-		boolean oldSourceEnd = sourceEnd;
-		sourceEnd = newSourceEnd;
+	public void setOwningEnd(boolean newOwningEnd) {
+		boolean oldOwningEnd = owningEnd;
+		owningEnd = newOwningEnd;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.ASSOCIATION__SOURCE_END, oldSourceEnd, sourceEnd));
+			eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.ASSOCIATION__OWNING_END, oldOwningEnd, owningEnd));
 	}
 
 	/**
@@ -329,8 +329,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 			case OrmPackage.ASSOCIATION__OPPOSITE:
 				if (resolve) return getOpposite();
 				return basicGetOpposite();
-			case OrmPackage.ASSOCIATION__SOURCE_END:
-				return isSourceEnd();
+			case OrmPackage.ASSOCIATION__OWNING_END:
+				return isOwningEnd();
 			case OrmPackage.ASSOCIATION__BIDIRECTIONAL:
 				return isBidirectional();
 			case OrmPackage.ASSOCIATION__CONTAINMENT:
@@ -352,8 +352,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 			case OrmPackage.ASSOCIATION__OPPOSITE:
 				setOpposite((Association)newValue);
 				return;
-			case OrmPackage.ASSOCIATION__SOURCE_END:
-				setSourceEnd((Boolean)newValue);
+			case OrmPackage.ASSOCIATION__OWNING_END:
+				setOwningEnd((Boolean)newValue);
 				return;
 			case OrmPackage.ASSOCIATION__BIDIRECTIONAL:
 				setBidirectional((Boolean)newValue);
@@ -379,8 +379,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 			case OrmPackage.ASSOCIATION__OPPOSITE:
 				setOpposite((Association)null);
 				return;
-			case OrmPackage.ASSOCIATION__SOURCE_END:
-				setSourceEnd(SOURCE_END_EDEFAULT);
+			case OrmPackage.ASSOCIATION__OWNING_END:
+				setOwningEnd(OWNING_END_EDEFAULT);
 				return;
 			case OrmPackage.ASSOCIATION__BIDIRECTIONAL:
 				setBidirectional(BIDIRECTIONAL_EDEFAULT);
@@ -405,8 +405,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 		switch (featureID) {
 			case OrmPackage.ASSOCIATION__OPPOSITE:
 				return opposite != null;
-			case OrmPackage.ASSOCIATION__SOURCE_END:
-				return sourceEnd != SOURCE_END_EDEFAULT;
+			case OrmPackage.ASSOCIATION__OWNING_END:
+				return owningEnd != OWNING_END_EDEFAULT;
 			case OrmPackage.ASSOCIATION__BIDIRECTIONAL:
 				return bidirectional != BIDIRECTIONAL_EDEFAULT;
 			case OrmPackage.ASSOCIATION__CONTAINMENT:
@@ -427,8 +427,8 @@ public abstract class AssociationImpl extends FeatureImpl implements Association
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (sourceEnd: ");
-		result.append(sourceEnd);
+		result.append(" (owningEnd: ");
+		result.append(owningEnd);
 		result.append(", bidirectional: ");
 		result.append(bidirectional);
 		result.append(", containment: ");

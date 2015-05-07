@@ -1027,7 +1027,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssociation_SourceEnd() {
+	public EAttribute getAssociation_OwningEnd() {
 		return (EAttribute)associationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1299,7 +1299,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 
 		associationEClass = createEClass(ASSOCIATION);
 		createEReference(associationEClass, ASSOCIATION__OPPOSITE);
-		createEAttribute(associationEClass, ASSOCIATION__SOURCE_END);
+		createEAttribute(associationEClass, ASSOCIATION__OWNING_END);
 		createEAttribute(associationEClass, ASSOCIATION__BIDIRECTIONAL);
 		createEAttribute(associationEClass, ASSOCIATION__CONTAINMENT);
 		createEAttribute(associationEClass, ASSOCIATION__PIVOT_TABLE_NAME);
@@ -1475,7 +1475,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 
 		initEClass(associationEClass, Association.class, "Association", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssociation_Opposite(), this.getAssociation(), this.getAssociation_Opposite(), "opposite", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociation_SourceEnd(), ecorePackage.getEBoolean(), "sourceEnd", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssociation_OwningEnd(), ecorePackage.getEBoolean(), "owningEnd", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssociation_Bidirectional(), ecorePackage.getEBoolean(), "bidirectional", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssociation_Containment(), ecorePackage.getEBoolean(), "containment", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssociation_PivotTableName(), ecorePackage.getEString(), "pivotTableName", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1555,7 +1555,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		  (associationEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "onlyOneSourceEnd"
+			 "constraints", "onlyOneOwningEnd"
 		   });			
 		addAnnotation
 		  (collectionAssociationEClass, 
@@ -1577,7 +1577,7 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
 		  (associationEClass, 
 		   source, 
 		   new String[] {
-			 "onlyOneSourceEnd", "sourceEnd xor opposite.sourceEnd"
+			 "onlyOneOwningEnd", "owningEnd xor opposite.owningEnd"
 		   });			
 		addAnnotation
 		  (collectionAssociationEClass, 

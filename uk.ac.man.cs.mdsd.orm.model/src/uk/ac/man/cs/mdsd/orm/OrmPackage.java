@@ -2497,13 +2497,13 @@ public interface OrmPackage extends EPackage {
 	int ASSOCIATION__OPPOSITE = FEATURE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Source End</b></em>' attribute.
+	 * The feature id for the '<em><b>Owning End</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__SOURCE_END = FEATURE_FEATURE_COUNT + 1;
+	int ASSOCIATION__OWNING_END = FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Bidirectional</b></em>' attribute.
@@ -2642,13 +2642,13 @@ public interface OrmPackage extends EPackage {
 	int SINGLETON_ASSOCIATION__OPPOSITE = ASSOCIATION__OPPOSITE;
 
 	/**
-	 * The feature id for the '<em><b>Source End</b></em>' attribute.
+	 * The feature id for the '<em><b>Owning End</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLETON_ASSOCIATION__SOURCE_END = ASSOCIATION__SOURCE_END;
+	int SINGLETON_ASSOCIATION__OWNING_END = ASSOCIATION__OWNING_END;
 
 	/**
 	 * The feature id for the '<em><b>Bidirectional</b></em>' attribute.
@@ -2805,13 +2805,13 @@ public interface OrmPackage extends EPackage {
 	int COLLECTION_ASSOCIATION__OPPOSITE = ASSOCIATION__OPPOSITE;
 
 	/**
-	 * The feature id for the '<em><b>Source End</b></em>' attribute.
+	 * The feature id for the '<em><b>Owning End</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_ASSOCIATION__SOURCE_END = ASSOCIATION__SOURCE_END;
+	int COLLECTION_ASSOCIATION__OWNING_END = ASSOCIATION__OWNING_END;
 
 	/**
 	 * The feature id for the '<em><b>Bidirectional</b></em>' attribute.
@@ -3729,15 +3729,15 @@ public interface OrmPackage extends EPackage {
 	EReference getAssociation_Opposite();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.Association#isSourceEnd <em>Source End</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.Association#isOwningEnd <em>Owning End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Source End</em>'.
-	 * @see uk.ac.man.cs.mdsd.orm.Association#isSourceEnd()
+	 * @return the meta object for the attribute '<em>Owning End</em>'.
+	 * @see uk.ac.man.cs.mdsd.orm.Association#isOwningEnd()
 	 * @see #getAssociation()
 	 * @generated
 	 */
-	EAttribute getAssociation_SourceEnd();
+	EAttribute getAssociation_OwningEnd();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.orm.Association#isBidirectional <em>Bidirectional</em>}'.
@@ -4567,12 +4567,12 @@ public interface OrmPackage extends EPackage {
 		EReference ASSOCIATION__OPPOSITE = eINSTANCE.getAssociation_Opposite();
 
 		/**
-		 * The meta object literal for the '<em><b>Source End</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Owning End</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASSOCIATION__SOURCE_END = eINSTANCE.getAssociation_SourceEnd();
+		EAttribute ASSOCIATION__OWNING_END = eINSTANCE.getAssociation_OwningEnd();
 
 		/**
 		 * The meta object literal for the '<em><b>Bidirectional</b></em>' attribute feature.

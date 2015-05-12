@@ -532,7 +532,7 @@ rule OneToOneAssociationWithContainment {
 			else
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
-		inputField <- false,
+		inputField <- true,
 		required <- true,
 		pivotTableName <- website.createPivotTableName(),
 		headerClass <- website.targetHeaderClass,
@@ -564,7 +564,6 @@ rule OneToManyAssociationWithContainment {
 			else
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
-		inputField <- false,
 		required <- true,
 		pivotTableName <- website.createPivotTableName(),
 		headerClass <- website.targetHeaderClass,

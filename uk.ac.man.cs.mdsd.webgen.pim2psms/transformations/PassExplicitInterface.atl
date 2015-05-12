@@ -131,7 +131,7 @@ helper context Website!Association def: associationTargetLabel() : String
 	= if not self.targetDisplayLabel.oclIsUndefined() and self.targetDisplayLabel <> '' then
 			self.targetDisplayLabel
 		else
-			self.targetFeatureName.createLabel()
+			self.targetFeatureName().createLabel()
 		endif;
 
 helper context Website!ServiceEntityFeature def: serviceEntityFeatureLabel() : String
@@ -217,7 +217,11 @@ helper context Website!UnitFeature def: unitEntityFeatureLabel() : String
 
 helper context Website!UnitFeature def: unitAssociationLabel() : String
 	= if self.serviceFeature.oclIsUndefined() then
-			self.feature.namedElementLabel()
+			if self.displayedOn.source = self.feature.parentEntity then
+				self.feature.namedElementLabel()
+			else
+				self.feature.associationTargetLabel()
+			endif
 		else if self.serviceFeature.oclIsKindOf(Website!ServiceEntityFeature) then
 			self.unitEntityFeatureLabel()
 		else

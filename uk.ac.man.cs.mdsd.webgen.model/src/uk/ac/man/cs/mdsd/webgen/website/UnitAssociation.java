@@ -39,7 +39,7 @@ public interface UnitAssociation extends UnitFeature, IncludedAssociation, UnitC
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation_Name()
 	 * @model changeable="false" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if serviceFeature.oclIsUndefined() then\r\n\tif feature.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tfeature.name\r\n\tendif\r\nelse\r\n\tif serviceFeature.oclIsKindOf(ServiceEntityAssociation) then\r\n\t\tserviceFeature.oclAsType(ServiceEntityAssociation).name\r\n\telse\r\n\t\tserviceFeature.oclAsType(ServiceViewAssociation).name\r\n\tendif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if serviceFeature.oclIsUndefined() then\r\n\tif feature.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse if feature.parentEntity = displayedOn.source then\r\n\t\tfeature.name\r\n\telse\r\n\t\tif feature.targetFeatureName.oclIsUndefined() then\r\n\t\t\tlet prefix : String\r\n\t\t\t\t= \'inv\'.concat(feature.name.substring(1, 1).toUpper())\r\n\t\t\t\tin if feature.name.size() > 1 then\r\n\t\t\t\t\t\tprefix.concat(feature.name.substring(2, feature.name.size()))\r\n\t\t\t\t\telse\r\n\t\t\t\t\t\tprefix\r\n\t\t\t\t\tendif\r\n\t\telse\r\n\t\t\tfeature.targetFeatureName\r\n\t\tendif\r\n\tendif endif\r\nelse\r\n\tif serviceFeature.oclIsKindOf(ServiceEntityAssociation) then\r\n\t\tserviceFeature.oclAsType(ServiceEntityAssociation).name\r\n\telse\r\n\t\tserviceFeature.oclAsType(ServiceViewAssociation).name\r\n\tendif\r\nendif'"
 	 * @generated
 	 */
 	String getName();

@@ -425,6 +425,7 @@ public interface WebsiteProperties extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Database Technology</b></em>' attribute.
+	 * The default value is <code>"MySql"</code>.
 	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -436,7 +437,7 @@ public interface WebsiteProperties extends EObject {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies
 	 * @see #setDatabaseTechnology(DatabaseTechnologies)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_DatabaseTechnology()
-	 * @model required="true" ordered="false"
+	 * @model default="MySql" required="true" ordered="false"
 	 * @generated
 	 */
 	DatabaseTechnologies getDatabaseTechnology();
@@ -584,6 +585,7 @@ public interface WebsiteProperties extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Orm Technology</b></em>' attribute.
+	 * The default value is <code>"Kohana"</code>.
 	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -595,7 +597,7 @@ public interface WebsiteProperties extends EObject {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies
 	 * @see #setOrmTechnology(OrmTechnologies)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_OrmTechnology()
-	 * @model
+	 * @model default="Kohana"
 	 * @generated
 	 */
 	OrmTechnologies getOrmTechnology();
@@ -613,6 +615,7 @@ public interface WebsiteProperties extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Framework Technology</b></em>' attribute.
+	 * The default value is <code>"Kohana"</code>.
 	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -624,7 +627,7 @@ public interface WebsiteProperties extends EObject {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies
 	 * @see #setFrameworkTechnology(FrameworkTechnologies)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_FrameworkTechnology()
-	 * @model required="true" ordered="false"
+	 * @model default="Kohana" required="true" ordered="false"
 	 * @generated
 	 */
 	FrameworkTechnologies getFrameworkTechnology();

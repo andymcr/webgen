@@ -461,7 +461,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected static final OrmTechnologies ORM_TECHNOLOGY_EDEFAULT = OrmTechnologies.JPA;
+	protected static final OrmTechnologies ORM_TECHNOLOGY_EDEFAULT = OrmTechnologies.KOHANA;
 
 	/**
 	 * The cached value of the '{@link #getOrmTechnology() <em>Orm Technology</em>}' attribute.
@@ -481,7 +481,7 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @generated
 	 * @ordered
 	 */
-	protected static final FrameworkTechnologies FRAMEWORK_TECHNOLOGY_EDEFAULT = FrameworkTechnologies.JSF;
+	protected static final FrameworkTechnologies FRAMEWORK_TECHNOLOGY_EDEFAULT = FrameworkTechnologies.KOHANA;
 
 	/**
 	 * The cached value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.

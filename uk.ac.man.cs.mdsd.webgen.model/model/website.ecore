@@ -79,15 +79,16 @@
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="2000000"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseTechnology" ordered="false"
-        lowerBound="1" eType="#//DatabaseTechnologies"/>
+        lowerBound="1" eType="#//DatabaseTechnologies" defaultValueLiteral="MySql"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="databasePrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseHost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseUsername" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="databasePassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ormTechnology" eType="#//OrmTechnologies"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ormTechnology" eType="#//OrmTechnologies"
+        defaultValueLiteral="Kohana"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameworkTechnology" ordered="false"
-        lowerBound="1" eType="#//FrameworkTechnologies"/>
+        lowerBound="1" eType="#//FrameworkTechnologies" defaultValueLiteral="Kohana"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ajaxTechnology" eType="#//AjaxTechnologies"
         defaultValueLiteral="None"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSiteKey" ordered="false"
@@ -702,7 +703,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if serviceFeature.oclIsUndefined() then&#xD;&#xA;&#x9;if feature.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;feature.name&#xD;&#xA;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;if serviceFeature.oclIsKindOf(ServiceEntityAssociation) then&#xD;&#xA;&#x9;&#x9;serviceFeature.oclAsType(ServiceEntityAssociation).name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;serviceFeature.oclAsType(ServiceViewAssociation).name&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+        <details key="derivation" value="if serviceFeature.oclIsUndefined() then&#xD;&#xA;&#x9;if feature.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else if feature.parentEntity = displayedOn.source then&#xD;&#xA;&#x9;&#x9;feature.name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if feature.targetFeatureName.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;let prefix : String&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;= 'inv'.concat(feature.name.substring(1, 1).toUpper())&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;in if feature.name.size() > 1 then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;prefix.concat(feature.name.substring(2, feature.name.size()))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;prefix&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;feature.targetFeatureName&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif endif&#xD;&#xA;else&#xD;&#xA;&#x9;if serviceFeature.oclIsKindOf(ServiceEntityAssociation) then&#xD;&#xA;&#x9;&#x9;serviceFeature.oclAsType(ServiceEntityAssociation).name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;serviceFeature.oclAsType(ServiceViewAssociation).name&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceFeature" ordered="false"

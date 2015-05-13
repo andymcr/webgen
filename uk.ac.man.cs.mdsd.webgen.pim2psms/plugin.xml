@@ -27,7 +27,7 @@
             locationURI="popup:org.eclipse.ui.popup.any">
          <command
                commandId="uk.ac.man.cs.mdsd.webgen.pim2psms.transformation"
-               label="Generate JSF and ORM"
+               label="Generate WAF and ORM PSMs"
                style="push">
             <visibleWhen
                   checkEnabled="false">

@@ -2,51 +2,51 @@
 --
 -- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
--- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+-- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
 
 module PassImplicitStaticInterface;
-create jsf : JSF from website : Website, orm : ORM, partialJsf : JSF;
+create waf : WAF from website : Website, orm : ORM, partialWaf : WAF;
 
 uses WebsiteHelpers;
-uses CopyPartialJsf;
+uses CopyPartialWaf;
 
 
-rule JsfModel {
-	from website : Website!WebGenModel, partialJsf : JSF!JsfModel
-	to jsf : JSF!JsfModel (
-		persistence <- partialJsf.persistence,
-		services <- partialJsf.services,
-		pages <- partialJsf.pages
+rule WafModel {
+	from website : Website!WebGenModel, partialWaf : WAF!WafModel
+	to waf : WAF!WafModel (
+		persistence <- partialWaf.persistence,
+		services <- partialWaf.services,
+		pages <- partialWaf.pages
 			->union(
 				if website.websiteProperties.staticUnitsEditable then
-					Sequence{thisModule.implicitStaticTextPage(partialJsf)}
+					Sequence{thisModule.implicitStaticTextPage(partialWaf)}
 				else
 					Sequence{}
 				endif),
-		menus <- partialJsf.menus,
-		siteName <- partialJsf.siteName,
-		siteTitle <- partialJsf.siteTitle,
-		developmentVersion <- partialJsf.developmentVersion,
-		baseURL <- partialJsf.baseURL,
-		rewriteURLs <- partialJsf.rewriteURLs,
-		webmasterEmail <- partialJsf.webmasterEmail,
-		copyrightText <- partialJsf.copyrightText,
-		metaDescription <- partialJsf.metaDescription,
-		frameworkTechnology <- partialJsf.frameworkTechnology,
-		ajaxTechnology <- partialJsf.ajaxTechnology,
-		authentication <- partialJsf.authentication,
-		captchaSiteKey <- partialJsf.captchaSiteKey,
-		captchaSecretKey <- partialJsf.captchaSecretKey,
-		textEditorURL <- partialJsf.textEditorURL,
-		topNavigationId <- partialJsf.topNavigationId,
-		sideMenu <- partialJsf.sideMenu,
-		staticUnitsEditable <- partialJsf.staticUnitsEditable
+		menus <- partialWaf.menus,
+		siteName <- partialWaf.siteName,
+		siteTitle <- partialWaf.siteTitle,
+		developmentVersion <- partialWaf.developmentVersion,
+		baseURL <- partialWaf.baseURL,
+		rewriteURLs <- partialWaf.rewriteURLs,
+		webmasterEmail <- partialWaf.webmasterEmail,
+		copyrightText <- partialWaf.copyrightText,
+		metaDescription <- partialWaf.metaDescription,
+		frameworkTechnology <- partialWaf.frameworkTechnology,
+		ajaxTechnology <- partialWaf.ajaxTechnology,
+		authentication <- partialWaf.authentication,
+		captchaSiteKey <- partialWaf.captchaSiteKey,
+		captchaSecretKey <- partialWaf.captchaSecretKey,
+		textEditorURL <- partialWaf.textEditorURL,
+		topNavigationId <- partialWaf.topNavigationId,
+		sideMenu <- partialWaf.sideMenu,
+		staticUnitsEditable <- partialWaf.staticUnitsEditable
 	)
 }
 
 unique lazy rule implicitStaticTextPage {
-	from partialJsf : JSF!JsfModel
-	to jsf : JSF!Page (
+	from partialWaf : WAF!WafModel
+	to waf : WAF!Page (
 		name <- 'ManageStaticText',
 		displayLabel <- 'Manage Static Text',
 		units <- Sequence{text, editText},
@@ -55,20 +55,20 @@ unique lazy rule implicitStaticTextPage {
 		topMenuRank <- 100,
 		navigationLabel <- 'Static Text',
 		sideMenu <-
-			thisModule.findPartialJsfMenu(
+			thisModule.findPartialWafMenu(
 				thisModule.findWebsiteProperties().sideMenu.name)
 	),
-	text : JSF!IndexGridUnit (
+	text : WAF!IndexGridUnit (
 		name <- 'Text',
 		displayLabel <- 'Text',
-		service <- thisModule.findJsfService('StaticText'),
+		service <- thisModule.findWafService('StaticText'),
 		omitCaption <- false,
 		defaultPaginationSize <- 10,
 		nextPageLabel <- '&gt;',
 		previousPageLabel <- '%lt;',
 		displayFields <-
-			let includedFeatures : Sequence(JSF!IncludedFeature)
-				= thisModule.findJsfService('StaticText').features
+			let includedFeatures : Sequence(WAF!IncludedFeature)
+				= thisModule.findWafService('StaticText').features
 					->select(f | f.name = 'name')
 				in includedFeatures
 					->collect(f | thisModule.implicitUnitElement(f)),
@@ -82,20 +82,20 @@ unique lazy rule implicitStaticTextPage {
 		layoutClass <- 'index_layout',
 		rowClasses <- 'odd_row even_row'
 	),
-	editTextAction : JSF!SelectAction (
+	editTextAction : WAF!SelectAction (
 		name <- 'edit',
 		displayLabel <- 'Edit',
 		target <- editText
 	),
-	editText : JSF!CreateUpdateUnit (
+	editText : WAF!CreateUpdateUnit (
 		name <- 'AddEditText',
 		displayLabel <- 'Add/Edit Static Text',
-		service <- thisModule.findJsfService('StaticText'),
+		service <- thisModule.findWafService('StaticText'),
 		omitCaption <- false,
 		confirmLabel <- 'Save',
 		clearLabel <- 'Clear',
 		displayFields <-
-			thisModule.findJsfService('StaticText').features
+			thisModule.findWafService('StaticText').features
 				->collect(f | thisModule.implicitUnitElement(f)),
 		styleClass <- 'unit update_unit framed',
 		headerClass <- 'unit_header',
@@ -106,47 +106,47 @@ unique lazy rule implicitStaticTextPage {
 		layoutClass <- 'input_form'
 	)
 	do {
-		jsf;
+		waf;
 	}
 }
 
 lazy abstract rule implicitIncludedFeature {
-	from partialJsf : JSF!IncludedFeature
-	to jsf : JSF!IncludedFeature (
-		displayLabel <- partialJsf.displayLabel,
-		headerClass <- partialJsf.headerClass,
-		inputClass <- partialJsf.inputClass,
-		displayClass <- partialJsf.displayClass,
-		footerClass <- partialJsf.footerClass
+	from partialWaf : WAF!IncludedFeature
+	to waf : WAF!IncludedFeature (
+		displayLabel <- partialWaf.displayLabel,
+		headerClass <- partialWaf.headerClass,
+		inputClass <- partialWaf.inputClass,
+		displayClass <- partialWaf.displayClass,
+		footerClass <- partialWaf.footerClass
 	)
 }
 
 -- @extends implicitIncludedFeature
 lazy abstract rule implicitIncludedElement {
-	from partialJsf : JSF!IncludedElement
-	to jsf : JSF!IncludedElement (
-		obfuscateFormFields <- partialJsf.obfuscateFormFields,
-		dateFormat <- partialJsf.dateFormat
+	from partialWaf : WAF!IncludedElement
+	to waf : WAF!IncludedElement (
+		obfuscateFormFields <- partialWaf.obfuscateFormFields,
+		dateFormat <- partialWaf.dateFormat
 	)
 }
 
 --@extends implicitIncludedFeature
 lazy abstract rule implicitUnitFeature {
-	from partialJsf : JSF!ServiceEntityFeature
-	to jsf : JSF!UnitFeature (
-		name <- partialJsf.name,
-		cardinality <- partialJsf.cardinality,
+	from partialWaf : WAF!ServiceEntityFeature
+	to waf : WAF!UnitFeature (
+		name <- partialWaf.name,
+		cardinality <- partialWaf.cardinality,
 		onlyDisplayWhenNotEmpty <- false
 	)
 }
 
 -- @extends implicitUnitFeature, implicitIncludedElement
 lazy rule implicitUnitElement {
-	from partialJsf : JSF!ServiceEntityElement
-	to jsf : JSF!UnitElement (
-		serviceFeature <- partialJsf
+	from partialWaf : WAF!ServiceEntityElement
+	to waf : WAF!UnitElement (
+		serviceFeature <- partialWaf
 	)
 	do {
-		jsf;
+		waf;
 	}
 }

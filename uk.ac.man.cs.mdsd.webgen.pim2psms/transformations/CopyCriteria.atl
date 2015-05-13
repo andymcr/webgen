@@ -1,34 +1,34 @@
 -- @atlcompiler emftvm 
 --
--- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+-- @path WAF=/uk.ac.man.cs.mdsd.Waf.model/model/Waf.ecore
 
 module CopyCriteria;
-create jsf : JSF from partialJsf : JSF;
+create waf : WAF from partialWaf : WAF;
 
  
 
-helper context JSF!Expression def: isJsfContainer() : Boolean
+helper context WAF!Expression def: isWafContainer() : Boolean
 	= if self.refImmediateComposite().oclIsUndefined() then
 			false
-		else if self.refImmediateComposite().oclIsKindOf(JSF!IncludedElement) then
+		else if self.refImmediateComposite().oclIsKindOf(WAF!IncludedElement) then
 			true
-		else if self.refImmediateComposite().oclIsKindOf(JSF!IncludedAssociation) then
+		else if self.refImmediateComposite().oclIsKindOf(WAF!IncludedAssociation) then
 			true
-		else if self.refImmediateComposite().oclIsKindOf(JSF!Selection) then
+		else if self.refImmediateComposite().oclIsKindOf(WAF!Selection) then
 			true
-		else if self.refImmediateComposite().oclIsKindOf(JSF!Expression) then
-			self.refImmediateComposite().isJsfContainer()
-		else if self.refImmediateComposite().oclIsKindOf(JSF!Order) then
-			self.refImmediateComposite().isJsfContainer()
+		else if self.refImmediateComposite().oclIsKindOf(WAF!Expression) then
+			self.refImmediateComposite().isWafContainer()
+		else if self.refImmediateComposite().oclIsKindOf(WAF!Order) then
+			self.refImmediateComposite().isWafContainer()
 		else
 			false
 		endif endif endif endif endif endif;
 
 
-helper context JSF!Order def: isJsfContainer() : Boolean
+helper context WAF!Order def: isWafContainer() : Boolean
 	= if self.refImmediateComposite().oclIsUndefined() then
 			false
-		else if self.refImmediateComposite().oclIsKindOf(JSF!Selection) then
+		else if self.refImmediateComposite().oclIsKindOf(WAF!Selection) then
 			true
 		else
 			false
@@ -36,130 +36,130 @@ helper context JSF!Order def: isJsfContainer() : Boolean
 
 
 abstract rule Literal {
-	from partialJsf : JSF!Literal (partialJsf.isJsfContainer())
-	to jsf : JSF!Literal (
+	from partialWaf : WAF!Literal (partialWaf.isWafContainer())
+	to waf : WAF!Literal (
 	)
 }
 
 -- @extends Literal
 rule NullLiteral {
-	from partialJsf : JSF!NullLiteral (partialJsf.isJsfContainer())
-	to jsf : JSF!NullLiteral (
+	from partialWaf : WAF!NullLiteral (partialWaf.isWafContainer())
+	to waf : WAF!NullLiteral (
 	)
 }
 
 -- @extends Literal
 rule IntegerLiteral {
-	from partialJsf : JSF!IntegerLiteral (partialJsf.isJsfContainer())
-	to jsf : JSF!IntegerLiteral (
-		value <- partialJsf.value
+	from partialWaf : WAF!IntegerLiteral (partialWaf.isWafContainer())
+	to waf : WAF!IntegerLiteral (
+		value <- partialWaf.value
 	)
 }
 
 -- @extends Literal
 rule StringLiteral {
-	from partialJsf : JSF!StringLiteral (partialJsf.isJsfContainer())
-	to jsf : JSF!StringLiteral (
-		value <- partialJsf.value
+	from partialWaf : WAF!StringLiteral (partialWaf.isWafContainer())
+	to waf : WAF!StringLiteral (
+		value <- partialWaf.value
 	)
 }
 
 -- @extends Literal
 rule CurrentTime {
-	from partialJsf : JSF!CurrentTime (partialJsf.isJsfContainer())
-	to jsf : JSF!CurrentTime (
+	from partialWaf : WAF!CurrentTime (partialWaf.isWafContainer())
+	to waf : WAF!CurrentTime (
 	)
 }
 
 
 rule Function {
-	from partialJsf : JSF!Function (partialJsf.isJsfContainer())
-	to jsf : JSF!Function (
-		name <- partialJsf.name
+	from partialWaf : WAF!Function (partialWaf.isWafContainer())
+	to waf : WAF!Function (
+		name <- partialWaf.name
 	)
 }
 
 
 abstract rule Predicate {
-	from partialJsf : JSF!Predicate
-	to jsf : JSF!Predicate (
-		negated <- partialJsf.negated
+	from partialWaf : WAF!Predicate
+	to waf : WAF!Predicate (
+		negated <- partialWaf.negated
 	)
 }
 
 -- @extends Predicate
 rule PredicateBooleanOperator {
-	from partialJsf : JSF!PredicateBooleanOperator (partialJsf.isJsfContainer())
-	to jsf : JSF!PredicateBooleanOperator (
-		expressions <- partialJsf.expressions,
-		operator <- partialJsf.operator
+	from partialWaf : WAF!PredicateBooleanOperator (partialWaf.isWafContainer())
+	to waf : WAF!PredicateBooleanOperator (
+		expressions <- partialWaf.expressions,
+		operator <- partialWaf.operator
 	)
 }
 
 -- @extends Predicate
 rule PredicateEqualityOperator {
-	from partialJsf : JSF!PredicateEqualityOperator (partialJsf.isJsfContainer())
-	to jsf : JSF!PredicateEqualityOperator (
-		left <- partialJsf.left,
-		right <- partialJsf.right
+	from partialWaf : WAF!PredicateEqualityOperator (partialWaf.isWafContainer())
+	to waf : WAF!PredicateEqualityOperator (
+		left <- partialWaf.left,
+		right <- partialWaf.right
 	)
 }
 
 -- @extends Predicate
 rule PredicateComparisonOperator {
-	from partialJsf : JSF!PredicateComparisonOperator (partialJsf.isJsfContainer())
-	to jsf : JSF!PredicateComparisonOperator (
-		left <- partialJsf.left,
-		operator <- partialJsf.operator,
-		right <- partialJsf.right
+	from partialWaf : WAF!PredicateComparisonOperator (partialWaf.isWafContainer())
+	to waf : WAF!PredicateComparisonOperator (
+		left <- partialWaf.left,
+		operator <- partialWaf.operator,
+		right <- partialWaf.right
 	)
 }
 
 -- @extends Predicate
 rule PredicateIsOperator {
-	from partialJsf : JSF!PredicateIsOperator (partialJsf.isJsfContainer())
-	to jsf : JSF!PredicateIsOperator (
-		left <- partialJsf.left,
-		right <- partialJsf.right
+	from partialWaf : WAF!PredicateIsOperator (partialWaf.isWafContainer())
+	to waf : WAF!PredicateIsOperator (
+		left <- partialWaf.left,
+		right <- partialWaf.right
 	)
 }
 
 -- @extends Predicate
 rule PredicateLikeOperator {
-	from partialJsf : JSF!PredicateLikeOperator (partialJsf.isJsfContainer())
-	to jsf : JSF!PredicateLikeOperator (
-		left <- partialJsf.left,
-		right <- partialJsf.right
+	from partialWaf : WAF!PredicateLikeOperator (partialWaf.isWafContainer())
+	to waf : WAF!PredicateLikeOperator (
+		left <- partialWaf.left,
+		right <- partialWaf.right
 	)
 }
 
 -- @extends Predicate
 rule PredicateIsEmpty {
-	from partialJsf : JSF!PredicateIsEmpty (partialJsf.isJsfContainer())
-	to jsf : JSF!PredicateIsEmpty (
-		feature <- partialJsf.feature
+	from partialWaf : WAF!PredicateIsEmpty (partialWaf.isWafContainer())
+	to waf : WAF!PredicateIsEmpty (
+		feature <- partialWaf.feature
 	)
 }
 
 
 abstract rule Order {
-	from partialJsf : JSF!Order (partialJsf.isJsfContainer())
-	to jsf : JSF!Order (
-		path <- partialJsf.path
+	from partialWaf : WAF!Order (partialWaf.isWafContainer())
+	to waf : WAF!Order (
+		path <- partialWaf.path
 	)
 }
 
 -- @extends Order
 rule Asc {
-	from partialJsf : JSF!Asc (partialJsf.isJsfContainer())
-	to jsf : JSF!Asc (
+	from partialWaf : WAF!Asc (partialWaf.isWafContainer())
+	to waf : WAF!Asc (
 	)
 }
 
 -- @extends Order
 rule Desc {
-	from partialJsf : JSF!Desc (partialJsf.isJsfContainer())
-	to jsf : JSF!Desc (
+	from partialWaf : WAF!Desc (partialWaf.isWafContainer())
+	to waf : WAF!Desc (
 	)
 }
 

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Jsf and Orm generation
+Bundle-Name: WAF and ORM PSM generation
 Bundle-SymbolicName: uk.ac.man.cs.mdsd.webgen.pim2psms;singleton:=true
 Bundle-Version: 0.8.0.qualifier
 Require-Bundle: org.eclipse.core.resources,

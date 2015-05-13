@@ -2,23 +2,23 @@
 --
 -- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
--- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+-- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
 
 module PassImplicitServiceUse;
-create jsf : JSF from website : Website, partialJsf : JSF;
+create waf : WAF from website : Website, partialWaf : WAF;
 
 uses WebsiteHelpers;
-uses CopyPartialJsf;
+uses CopyPartialWaf;
 
 
-helper context JSF!Service def: getServiceEntityFeature(name : String) : JSF!ServiceEntityFeature
+helper context WAF!Service def: getServiceEntityFeature(name : String) : WAF!ServiceEntityFeature
 	= self.features->any(f | f.name = name);
 
-helper context JSF!UnitFeature def: findServiceEntityFeature() : JSF!ServiceEntityFeature
+helper context WAF!UnitFeature def: findServiceEntityFeature() : WAF!ServiceEntityFeature
 	= if not self.serviceFeature.oclIsUndefined() then
 			self.serviceFeature
 		else
-			let service : JSF!Service = thisModule.findJsfService(
+			let service : WAF!Service = thisModule.findWafService(
 				self.displayedOn.getWebsiteUnit().source.name)
 			in service.getServiceEntityFeature(self.name)
 		endif;
@@ -26,34 +26,34 @@ helper context JSF!UnitFeature def: findServiceEntityFeature() : JSF!ServiceEnti
 helper def: findWebsitePage(name : String) : Website!Page
 	= Website!Page.allInstancesFrom('website')->any(d | d.name = name);
 
-helper context JSF!DynamicUnit def: getWebsiteUnit() : Website!DynamicUnit
+helper context WAF!DynamicUnit def: getWebsiteUnit() : Website!DynamicUnit
 	= let websiteContainer : Website!UnitContainer
-		= if self.displayedOn.oclIsTypeOf(JSF!Page) then
+		= if self.displayedOn.oclIsTypeOf(WAF!Page) then
 				thisModule.findWebsitePage(self.displayedOn.name)
 			else
 				self.displayedOn.getWebsiteIncludedFeature()
 			endif
 		in websiteContainer.units->any(u | u.name = self.name);
 
-helper context JSF!UnitAssociation def: getWebsiteIncludedFeature() : Website!UnitAssociation
+helper context WAF!UnitAssociation def: getWebsiteIncludedFeature() : Website!UnitAssociation
 	= self.displayedOn.getWebsiteUnit()
 		.displayFields->any(f | f.name = self.name);
 
 
 -- @extends NamedDisplayElement, ContentUnitFields
 abstract rule ContentUnit {
-	from partialJsf : JSF!ContentUnit
-	to jsf : JSF!ContentUnit (
+	from partialWaf : WAF!ContentUnit
+	to waf : WAF!ContentUnit (
 	)
 }
 
 -- @extends ContentUnit, StaticUnitFields
 rule StaticUnit {
-	from partialJsf : JSF!StaticUnit
-	to jsf : JSF!StaticUnit (
+	from partialWaf : WAF!StaticUnit
+	to waf : WAF!StaticUnit (
 		service <-
 			if thisModule.findWebsiteProperties().staticUnitsEditable then
-				thisModule.findJsfService('StaticText')
+				thisModule.findWafService('StaticText')
 			else
 				OclUndefined
 			endif
@@ -62,157 +62,157 @@ rule StaticUnit {
 
 -- @extends ContentUnit, DynamicUnitFields
 abstract rule DynamicUnit {
-	from partialJsf : JSF!DynamicUnit
-	to jsf : JSF!DynamicUnit (
+	from partialWaf : WAF!DynamicUnit
+	to waf : WAF!DynamicUnit (
 		service <-
-			if not partialJsf.service.oclIsUndefined() then
-				partialJsf.service
+			if not partialWaf.service.oclIsUndefined() then
+				partialWaf.service
 			else
-				thisModule.findJsfService(
-					partialJsf.getWebsiteUnit().source.name)
+				thisModule.findWafService(
+					partialWaf.getWebsiteUnit().source.name)
 			endif
 	)
 }
 
 -- @extends UnitFeature, IncludedElement
 rule UnitElement {
-	from partialJsf : JSF!UnitElement
-	to jsf : JSF!UnitElement (
-		serviceFeature <- partialJsf.findServiceEntityFeature(),
-		placeholder <- partialJsf.placeholder,
-		validationPattern <- partialJsf.validationPattern
+	from partialWaf : WAF!UnitElement
+	to waf : WAF!UnitElement (
+		serviceFeature <- partialWaf.findServiceEntityFeature(),
+		placeholder <- partialWaf.placeholder,
+		validationPattern <- partialWaf.validationPattern
 	)
 }
 
 -- @extends UnitFeature, IncludedAssociation, UnitContainer
 rule UnitAssociation {
-	from partialJsf : JSF!UnitAssociation
-	to jsf : JSF!UnitAssociation (
-		serviceFeature <- partialJsf.findServiceEntityFeature(),
-		childFeature <- partialJsf.childFeature,
-		selection <- partialJsf.selection,
-		dynamicLabel <- partialJsf.dynamicLabel,
-		filters <- partialJsf.filters,
-		maximumDisplaySize <- partialJsf.maximumDisplaySize,
-		displayOption <- partialJsf.displayOption
+	from partialWaf : WAF!UnitAssociation
+	to waf : WAF!UnitAssociation (
+		serviceFeature <- partialWaf.findServiceEntityFeature(),
+		childFeature <- partialWaf.childFeature,
+		selection <- partialWaf.selection,
+		dynamicLabel <- partialWaf.dynamicLabel,
+		filters <- partialWaf.filters,
+		maximumDisplaySize <- partialWaf.maximumDisplaySize,
+		displayOption <- partialWaf.displayOption
 	)
 }
 
 -- @extends DynamicUnit, EditUnitFields
 abstract rule EditUnit {
-	from partialJsf : JSF!EditUnit
-	to jsf : JSF!EditUnit (
+	from partialWaf : WAF!EditUnit
+	to waf : WAF!EditUnit (
 	)
 }
 
 -- @extends EditUnit
 rule CreateUnit {
-	from partialJsf : JSF!CreateUnit
-	to jsf : JSF!CreateUnit (
+	from partialWaf : WAF!CreateUnit
+	to waf : WAF!CreateUnit (
 	)
 }
 
 -- @extends EditUnit, CreateUpdateUnitFields
 rule CreateUpdateUnit {
-	from partialJsf : JSF!CreateUpdateUnit
-	to jsf : JSF!CreateUpdateUnit (
+	from partialWaf : WAF!CreateUpdateUnit
+	to waf : WAF!CreateUpdateUnit (
 	)
 }
 
 -- @extends EditUnit, MapUnitFields
 rule MapUnit {
-	from partialJsf : JSF!MapUnit
-	to jsf : JSF!MapUnit (
+	from partialWaf : WAF!MapUnit
+	to waf : WAF!MapUnit (
 	)
 }
 
 -- @extends EditUnit
 rule UpdateUnit {
-	from partialJsf : JSF!UpdateUnit
-	to jsf : JSF!UpdateUnit (
+	from partialWaf : WAF!UpdateUnit
+	to waf : WAF!UpdateUnit (
 	)
 }
 
 -- @extends DynamicUnit, DataUnitFields
 abstract rule DataUnit {
-	from partialJsf : JSF!DataUnit
-	to jsf : JSF!DataUnit (
+	from partialWaf : WAF!DataUnit
+	to waf : WAF!DataUnit (
 	)
 }
 
 -- @extends DataUnit, DetailsUnitFields
 rule DetailsUnit {
-	from partialJsf : JSF!DetailsUnit
-	to jsf : JSF!DetailsUnit (
+	from partialWaf : WAF!DetailsUnit
+	to waf : WAF!DetailsUnit (
 	)
 }
 
 -- @extends DataUnit, IndexUnitFields
 abstract rule IndexUnit {
-	from partialJsf : JSF!IndexUnit
-	to jsf : JSF!IndexUnit (
+	from partialWaf : WAF!IndexUnit
+	to waf : WAF!IndexUnit (
 	)
 }
 
 -- @extends IndexUnit, IndexGridUnitFields
 rule IndexGridUnit {
-	from partialJsf : JSF!IndexGridUnit
-	to jsf : JSF!IndexGridUnit (
+	from partialWaf : WAF!IndexGridUnit
+	to waf : WAF!IndexGridUnit (
 	)
 }
 
 -- @extends IndexUnit, IndexPageDirectionUnitFields
 rule IndexPageDirectionUnit {
-	from partialJsf : JSF!IndexPageDirectionUnit
-	to jsf : JSF!IndexPageDirectionUnit (
+	from partialWaf : WAF!IndexPageDirectionUnit
+	to waf : WAF!IndexPageDirectionUnit (
 	)
 }
 
 -- @extends IndexUnit, IndexLineDirectionUnitFields
 rule IndexLineDirectionUnit {
-	from partialJsf : JSF!IndexLineDirectionUnit
-	to jsf : JSF!IndexLineDirectionUnit (
+	from partialWaf : WAF!IndexLineDirectionUnit
+	to waf : WAF!IndexLineDirectionUnit (
 	)
 }
 
 -- @extends DynamicUnit, ControlUnitFields
 abstract rule ControlUnit {
-	from partialJsf : JSF!ControlUnit
-	to jsf : JSF!ControlUnit (
+	from partialWaf : WAF!ControlUnit
+	to waf : WAF!ControlUnit (
 	)
 }
 
 -- @extends ControlUnit, SearchUnitFields
 rule SearchUnit {
-	from partialJsf : JSF!SearchUnit
-	to jsf : JSF!SearchUnit (
+	from partialWaf : WAF!SearchUnit
+	to waf : WAF!SearchUnit (
 	)
 }
 
 -- @extends ControlUnit, ActionUnitFields
 rule ActionUnit {
-	from partialJsf : JSF!ActionUnit
-	to jsf : JSF!ActionUnit (
+	from partialWaf : WAF!ActionUnit
+	to waf : WAF!ActionUnit (
 	)
 }
 
 -- @extends EditUnit
 rule RegistrationUnit {
-	from partialJsf : JSF!RegistrationUnit
-	to jsf : JSF!RegistrationUnit (
+	from partialWaf : WAF!RegistrationUnit
+	to waf : WAF!RegistrationUnit (
 	)
 }
 
 -- @extends ControlUnit, LoginUnitFields
 rule LoginUnit {
-	from partialJsf : JSF!LoginUnit
-	to jsf : JSF!LoginUnit (
+	from partialWaf : WAF!LoginUnit
+	to waf : WAF!LoginUnit (
 	)
 }
 
 -- @extends ControlUnit
 rule ForgottenPasswordUnit {
-	from partialJsf : JSF!ForgottenPasswordUnit
-	to jsf : JSF!ForgottenPasswordUnit (
+	from partialWaf : WAF!ForgottenPasswordUnit
+	to waf : WAF!ForgottenPasswordUnit (
 	)
 }

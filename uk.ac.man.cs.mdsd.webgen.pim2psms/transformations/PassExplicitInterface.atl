@@ -2,10 +2,10 @@
 --
 -- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
--- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+-- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
 
 module PassExplicitInterface;
-create jsf : JSF from website : Website, orm : ORM;
+create waf : WAF from website : Website, orm : ORM;
 
 uses WebsiteHelpers;
 
@@ -286,7 +286,7 @@ helper context Website!UnitChildFeature def: unitChildDateFormat() : String
 			endif
 		endif;
 
-helper context Website!IncludedFeature def: jsfHeaderClass() : String
+helper context Website!IncludedFeature def: wafHeaderClass() : String
 	= if not self.headerClass.oclIsUndefined() and self.headerClass <> '' then
 			self.headerClass
 		else
@@ -297,7 +297,7 @@ helper context Website!IncludedFeature def: jsfHeaderClass() : String
 			endif
 		endif;
 
-helper context Website!IncludedFeature def: jsfInputClass() : String
+helper context Website!IncludedFeature def: wafInputClass() : String
 	= if not self.inputClass.oclIsUndefined() and self.inputClass <> '' then
 			self.inputClass
 		else
@@ -308,7 +308,7 @@ helper context Website!IncludedFeature def: jsfInputClass() : String
 			endif
 		endif;
 
-helper context Website!IncludedFeature def: jsfDisplayClass() : String
+helper context Website!IncludedFeature def: wafDisplayClass() : String
 	= if not self.displayClass.oclIsUndefined() and self.displayClass <> '' then
 			self.displayClass
 		else
@@ -319,7 +319,7 @@ helper context Website!IncludedFeature def: jsfDisplayClass() : String
 			endif
 		endif;
 
-helper context Website!IncludedFeature def: jsfFooterClass() : String
+helper context Website!IncludedFeature def: wafFooterClass() : String
 	= if not self.footerClass.oclIsUndefined() and self.footerClass <> '' then
 			self.footerClass
 		else
@@ -353,9 +353,9 @@ helper context Website!Attribute def: validationPattern() : String
 		endif;
 
 
-rule JsfModel {
+rule WafModel {
 	from website : Website!WebGenModel, orm : ORM!OrmModel
-	to jsf : JSF!JsfModel (
+	to waf : WAF!WafModel (
 		persistence <- orm,
 		services <- website.services,
 		pages <- website.pages,
@@ -387,7 +387,7 @@ rule JsfModel {
 
 abstract rule NamedElement {
 	from website : Website!NamedElement
-	to jsf : JSF!NamedElement (
+	to waf : WAF!NamedElement (
 		name <- website.name
 	)
 }
@@ -395,7 +395,7 @@ abstract rule NamedElement {
 -- @extends NamedElement
 abstract rule NamedDisplayElement {
 	from website : Website!NamedDisplayElement
-	to jsf : JSF!NamedDisplayElement (
+	to waf : WAF!NamedDisplayElement (
 		displayLabel <- website.namedElementLabel()
 	)
 }
@@ -403,22 +403,22 @@ abstract rule NamedDisplayElement {
 
 abstract rule IncludedFeature {
 	from website : Website!IncludedFeature
-	to jsf : JSF!IncludedFeature (
+	to waf : WAF!IncludedFeature (
 		name <- website.name,
 		forcedValue <- website.forcedValue,
 		footer <- website.footer,
 -- TBC xClass or targetXClass?
-		headerClass <- website.jsfHeaderClass(),
-		inputClass <- website.jsfInputClass(),
-		displayClass <- website.jsfDisplayClass(),
-		footerClass <- website.jsfFooterClass()
+		headerClass <- website.wafHeaderClass(),
+		inputClass <- website.wafInputClass(),
+		displayClass <- website.wafDisplayClass(),
+		footerClass <- website.wafFooterClass()
 	)
 }
 
 -- @extends IncludedFeature
 abstract rule IncludedElement {
 	from website : Website!IncludedElement
-	to jsf : JSF!IncludedElement (
+	to waf : WAF!IncludedElement (
 		obfuscateFormFields <- website.obfuscateFormFields,
 		defaultValue <- website.defaultValue
 	)
@@ -427,7 +427,7 @@ abstract rule IncludedElement {
 -- @extends IncludedFeature
 abstract rule IncludedAssociation {
 	from website : Website!IncludedAssociation
-	to jsf : JSF!IncludedAssociation (
+	to waf : WAF!IncludedAssociation (
 	)
 }
 
@@ -435,7 +435,7 @@ abstract rule IncludedAssociation {
 -- @extends NamedElement
 rule Service {
 	from website : Website!Service
-	to jsf : JSF!Service (
+	to waf : WAF!Service (
 		modelName <-
 			if not website.modelName.oclIsUndefined() then
 				website.modelName
@@ -471,7 +471,7 @@ rule Service {
 -- @extends NamedElement
 rule ModelLabel {
 	from website : Website!ModelLabel
-	to jsf : JSF!ModelLabel (
+	to waf : WAF!ModelLabel (
 		format <- website.format,
 		features <- website.features
 	)
@@ -480,7 +480,7 @@ rule ModelLabel {
 -- @extends NamedElement
 rule Selection {
 	from website : Website!Selection
-	to jsf : JSF!Selection (
+	to waf : WAF!Selection (
 		joins <- website.joins,
 		filter <- website.filter,
 		ordering <- website.ordering,
@@ -490,7 +490,7 @@ rule Selection {
 
 abstract rule ServiceFeature {
 	from website : Website!ServiceFeature
-	to jsf : JSF!ServiceFeature (
+	to waf : WAF!ServiceFeature (
 		cardinality <-
 			if website.oclIsKindOf(Website!ServiceEntityFeature) then
 				website.serviceCardinality(website.required)
@@ -509,7 +509,7 @@ abstract rule ServiceFeature {
 -- @extends IncludedFeature, ServiceFeature
 abstract rule ServiceEntityFeature {
 	from website : Website!ServiceEntityFeature
-	to jsf : JSF!ServiceEntityFeature (
+	to waf : WAF!ServiceEntityFeature (
 		name <-
 			if not website.alias.oclIsUndefined() and website.alias <> '' then
 				website.alias
@@ -531,7 +531,7 @@ abstract rule ServiceEntityFeature {
 -- @extends ServiceEntityFeature, IncludedElement
 rule ServiceEntityElement {
 	from website : Website!ServiceEntityElement
-	to jsf : JSF!ServiceEntityElement (
+	to waf : WAF!ServiceEntityElement (
 		feature <- website.entityFeature(),
 		caseInsensitive <- website.caseInsensitive,
 		encrypt <- website.encrypt,
@@ -543,7 +543,7 @@ rule ServiceEntityElement {
 -- @extends ServiceFeature
 abstract rule ServiceAssociation {
 	from website : Website!ServiceAssociation
-	to jsf : JSF!ServiceAssociation (
+	to waf : WAF!ServiceAssociation (
 		oppositeFeature <-
 			if not website.oppositeFeature.oclIsUndefined() then
 				website.oppositeFeature
@@ -559,7 +559,7 @@ abstract rule ServiceAssociation {
 -- @extends ServiceEntityFeature, ServiceAssociation, IncludedAssociation
 rule ServiceEntityAssociation {
 	from website : Website!ServiceEntityAssociation
-	to jsf : JSF!ServiceEntityAssociation (
+	to waf : WAF!ServiceEntityAssociation (
 		feature <- website.entityFeature(),
 		forcedValue <- website.forcedValue,
 		viewColumnName <-
@@ -582,7 +582,7 @@ rule ServiceEntityAssociation {
 -- @extends NamedElement, ServiceAssociation
 rule ServiceViewAssociation {
 	from website : Website!ServiceViewAssociation
-	to jsf : JSF!ServiceViewAssociation (
+	to waf : WAF!ServiceViewAssociation (
 		oppositeService <- website.oppositeService
 	)
 }
@@ -590,7 +590,7 @@ rule ServiceViewAssociation {
 -- @extends NamedDisplayElement, UnitContainer
 rule Page {
 	from website : Website!Page
-	to jsf : JSF!Page (
+	to waf : WAF!Page (
 		authenticated <- website.authenticated,
 		parentPage <-
 			if website.parentPage.oclIsUndefined() then
@@ -622,7 +622,7 @@ rule Page {
 -- @extends NamedDisplayElement
 abstract rule Menu {
 	from website : Website!Menu
-	to jsf : JSF!Menu (
+	to waf : WAF!Menu (
 		entries <- website.entries,
 		omitCaption <-
 			if not website.omitCaption.oclIsUndefined() then
@@ -638,21 +638,21 @@ abstract rule Menu {
 
 abstract rule MenuEntry {
 	from website : Website!MenuEntry
-	to jsf : JSF!MenuEntry (
+	to waf : WAF!MenuEntry (
 	)
 }
 
 -- @extends Menu
 rule StaticMenu {
 	from website : Website!StaticMenu
-	to jsf : JSF!StaticMenu (
+	to waf : WAF!StaticMenu (
 	)
 }
 
 -- @extends MenuEntry, NamedDisplayElement
 rule FixedPageMenuEntry {
 	from website : Website!FixedPageMenuEntry
-	to jsf : JSF!FixedPageMenuEntry (
+	to waf : WAF!FixedPageMenuEntry (
 		destination <- website.destination
 	)
 }
@@ -660,7 +660,7 @@ rule FixedPageMenuEntry {
 -- @extends MenuEntry, NamedDisplayElement
 rule FixedActionMenuEntry {
 	from website : Website!FixedActionMenuEntry
-	to jsf : JSF!FixedActionMenuEntry (
+	to waf : WAF!FixedActionMenuEntry (
 		destination <- website.destination
 	)
 }
@@ -668,7 +668,7 @@ rule FixedActionMenuEntry {
 -- @extends MenuEntry, NamedDisplayElement
 rule FixedCommandMenuEntry {
 	from website : Website!FixedCommandMenuEntry
-	to jsf : JSF!FixedCommandMenuEntry (
+	to waf : WAF!FixedCommandMenuEntry (
 		destination <- website.destination
 	)
 }
@@ -676,14 +676,14 @@ rule FixedCommandMenuEntry {
 -- @extends MenuEntry, NamedDisplayElement
 rule EditStaticTextMenuEntry {
 	from website : Website!EditStaticTextMenuEntry
-	to jsf : JSF!EditStaticTextMenuEntry (
+	to waf : WAF!EditStaticTextMenuEntry (
 	)
 }
 
 -- @extends Menu
 rule DynamicMenu {
 	from website : Website!DynamicMenu
-	to jsf : JSF!DynamicMenu (
+	to waf : WAF!DynamicMenu (
 		service <- website.service,
 		selection <- website.selection,
 		dynamicTitle <- website.dynamicTitle
@@ -693,7 +693,7 @@ rule DynamicMenu {
 -- @extends MenuEntry
 abstract rule MenuIncludedFeature {
 	from website : Website!MenuIncludedFeature
-	to jsf : JSF!MenuIncludedFeature (
+	to waf : WAF!MenuIncludedFeature (
 		displayLabel <-
 			if not website.displayLabel.oclIsUndefined() and website.displayLabel <> '' then
 				website.displayLabel
@@ -706,13 +706,13 @@ abstract rule MenuIncludedFeature {
 -- @extends MenuIncludedFeature
 rule MenuIncludedElement {
 	from website : Website!MenuIncludedElement
-	to jsf : JSF!MenuIncludedElement (
+	to waf : WAF!MenuIncludedElement (
 	)
 }
 
 abstract rule UnitContainer {
 	from website : Website!UnitContainer
-	to jsf : JSF!UnitContainer (
+	to waf : WAF!UnitContainer (
 		units <- website.units
 	)
 }
@@ -720,7 +720,7 @@ abstract rule UnitContainer {
 -- @extends NamedDisplayElement
 abstract rule ContentUnit {
 	from website : Website!ContentUnit
-	to jsf : JSF!ContentUnit (
+	to waf : WAF!ContentUnit (
 		purposeSummary <- website.purposeSummary,
 		omitCaption <-
 			if not website.omitCaption.oclIsUndefined() then
@@ -737,7 +737,7 @@ abstract rule ContentUnit {
 -- @extends ContentUnit
 rule StaticUnit {
 	from website : Website!StaticUnit
-	to jsf : JSF!StaticUnit (
+	to waf : WAF!StaticUnit (
 		content <- website.content
 	)
 }
@@ -745,7 +745,7 @@ rule StaticUnit {
 -- @extends ContentUnit
 rule CommandUnit {
 	from website : Website!CommandUnit
-	to jsf : JSF!CommandUnit (
+	to waf : WAF!CommandUnit (
 		commands <- website.commands
 	)
 }
@@ -753,21 +753,21 @@ rule CommandUnit {
 -- @extends NamedElement
 abstract rule Command {
 	from website : Website!Command
-	to jsf : JSF!Command (
+	to waf : WAF!Command (
 	)
 }
 
 -- @extends Command
 rule UserCommand {
 	from website : Website!UserCommand
-	to jsf : JSF!UserCommand (
+	to waf : WAF!UserCommand (
 	)
 }
 
 -- @extends ContentUnit
 rule CreateSitemapUnit {
 	from website : Website!CreateSitemapUnit
-	to jsf : JSF!CreateSitemapUnit (
+	to waf : WAF!CreateSitemapUnit (
 		deployedURL <- website.deployedURL,
 		filename <- website.filename
 	)
@@ -776,7 +776,7 @@ rule CreateSitemapUnit {
 -- @extends ContentUnit
 abstract rule DynamicUnit {
 	from website : Website!DynamicUnit
-	to jsf : JSF!DynamicUnit (
+	to waf : WAF!DynamicUnit (
 		service <-
 			if website.source.oclIsTypeOf(Website!Service) then
 				website.source
@@ -796,7 +796,7 @@ abstract rule DynamicUnit {
 
 abstract rule UnitField {
 	from website : Website!UnitField
-	to jsf : JSF!UnitField (
+	to waf : WAF!UnitField (
 		cardinality <- website.unitCardinality(),
 		dateFormat <- website.unitDateFormat()
 	)
@@ -805,7 +805,7 @@ abstract rule UnitField {
 -- @extends UnitField, IncludedFeature, InlineActionContainer
 abstract rule UnitFeature {
 	from website : Website!UnitFeature
-	to jsf : JSF!UnitFeature (
+	to waf : WAF!UnitFeature (
 		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
 		displayOption <-
 			if website.collectionDisplayOption = #LineDirection then
@@ -821,7 +821,7 @@ abstract rule UnitFeature {
 -- @extends UnitFeature, IncludedElement
 rule UnitElement {
 	from website : Website!UnitElement
-	to jsf : JSF!UnitElement (
+	to waf : WAF!UnitElement (
 		serviceFeature <- website.serviceFeature,
 		displayLabel <- website.unitEntityFeatureLabel(),
 		placeholder <-
@@ -846,7 +846,7 @@ rule UnitElement {
 -- @extends UnitFeature, IncludedAssociation, UnitContainer
 rule UnitAssociation {
 	from website : Website!UnitAssociation
-	to jsf : JSF!UnitAssociation (
+	to waf : WAF!UnitAssociation (
 		serviceFeature <- website.serviceFeature,
 		displayLabel <- website.unitAssociationLabel(),
 		childFeature <- website.childFeature,
@@ -883,14 +883,14 @@ rule UnitAssociation {
 
 abstract rule UnitChildFeature {
 	from website : Website!UnitChildFeature
-	to jsf : JSF!UnitChildFeature (
+	to waf : WAF!UnitChildFeature (
 	)
 }
 
 -- @extends UnitChildFeature
 rule UnitChildElement {
 	from website : Website!UnitChildElement
-	to jsf : JSF!UnitChildElement (
+	to waf : WAF!UnitChildElement (
 		serviceFeature <- website.serviceFeature
 	)
 }
@@ -898,7 +898,7 @@ rule UnitChildElement {
 -- @extends UnitChildFeature
 rule UnitChildAssociation {
 	from website : Website!UnitChildAssociation
-	to jsf : JSF!UnitChildAssociation (
+	to waf : WAF!UnitChildAssociation (
 		serviceFeature <- website.serviceFeature,
 		childFeature <- website.childFeature
 	)
@@ -907,7 +907,7 @@ rule UnitChildAssociation {
 -- @extends UnitField, NamedDisplayElement
 abstract rule InterfaceField {
 	from website : Website!InterfaceField
-	to jsf : JSF!InterfaceField (
+	to waf : WAF!InterfaceField (
 		cardinality <-
 			if website.required.oclIsUndefined() then
 				#Optional
@@ -927,7 +927,7 @@ abstract rule InterfaceField {
 -- @extends InterfaceField
 rule DataTypeField {
 	from website : Website!DataTypeField
-	to jsf : JSF!DataTypeField (
+	to waf : WAF!DataTypeField (
 		dataType <- thisModule.findOrmDataType(website.dataType.name),
 		obfuscateFormFields <- website.obfuscateFormFields,
 		encrypt <- website.encrypt
@@ -937,7 +937,7 @@ rule DataTypeField {
 -- @extends InterfaceField
 rule DateField {
 	from website : Website!DateField
-	to jsf : JSF!DateField (
+	to waf : WAF!DateField (
 		details <- website.details,
 		format <- website.format
 	)
@@ -946,7 +946,7 @@ rule DateField {
 -- @extends NamedDisplayElement
 rule UnitSupportAction {
 	from website : Website!UnitSupportAction
-	to jsf : JSF!UnitSupportAction (
+	to waf : WAF!UnitSupportAction (
 		confirmMessage <- website.confirmMessage
 	)
 }
@@ -955,7 +955,7 @@ rule UnitSupportAction {
 -- @extends DynamicUnit
 abstract rule EditUnit {
 	from website : Website!EditUnit
-	to jsf : JSF!EditUnit (
+	to waf : WAF!EditUnit (
 		confirmDestination <- website.confirmDestination,
 		confirmLabel <-
 			if not website.confirmLabel.oclIsUndefined() and website.confirmLabel <> '' then
@@ -986,14 +986,14 @@ abstract rule EditUnit {
 -- @extends EditUnit
 rule CreateUnit {
 	from website : Website!CreateUnit
-	to jsf : JSF!CreateUnit (
+	to waf : WAF!CreateUnit (
 	)
 }
 
 -- @extends EditUnit
 rule CreateUpdateUnit {
 	from website : Website!CreateUpdateUnit
-	to jsf : JSF!CreateUpdateUnit (
+	to waf : WAF!CreateUpdateUnit (
 		clearLabel <- website.clearLabel
 	)
 }
@@ -1001,7 +1001,7 @@ rule CreateUpdateUnit {
 -- @extends EditUnit
 rule MapUnit {
 	from website : Website!MapUnit
-	to jsf : JSF!MapUnit (
+	to waf : WAF!MapUnit (
 		readOnly <- website.readOnly,
 		defaultZoomLevel <- website.defaultZoomLevel,
 		location <- website.location,
@@ -1012,14 +1012,14 @@ rule MapUnit {
 -- @extends EditUnit
 rule UpdateUnit {
 	from website : Website!UpdateUnit
-	to jsf : JSF!UpdateUnit (
+	to waf : WAF!UpdateUnit (
 	)
 }
 
 -- @extends DynamicUnit
 abstract rule DataUnit {
 	from website : Website!DataUnit
-	to jsf : JSF!DataUnit (
+	to waf : WAF!DataUnit (
 		selection <- website.selection,
 		dynamicTitle <-
 			if website.dynamicTitle.oclIsUndefined() then
@@ -1039,7 +1039,7 @@ abstract rule DataUnit {
 -- @extends DataUnit
 rule DetailsUnit {
 	from website : Website!DetailsUnit
-	to jsf : JSF!DetailsUnit (
+	to waf : WAF!DetailsUnit (
 		omitFieldLabels <- website.omitFieldLabels
 	)
 }
@@ -1047,7 +1047,7 @@ rule DetailsUnit {
 -- @extends DataUnit, InlineActionContainer
 abstract rule IndexUnit {
 	from website : Website!IndexUnit
-	to jsf : JSF!IndexUnit (
+	to waf : WAF!IndexUnit (
 		omitColumnLabels <- website.omitColumnLabels,
 		defaultPaginationSize <- website.defaultPaginationSize,
 		nextPageLabel <- website.nextPageLabel,
@@ -1062,28 +1062,28 @@ abstract rule IndexUnit {
 -- @extends IndexUnit
 rule IndexGridUnit {
 	from website : Website!IndexUnit (website.displayOption = #Grid)
-	to jsf : JSF!IndexGridUnit (
+	to waf : WAF!IndexGridUnit (
 	)
 }
 
 -- @extends IndexUnit
 rule IndexPageDirectionUnit {
 	from website : Website!IndexUnit (website.displayOption = #PageDirection)
-	to jsf : JSF!IndexPageDirectionUnit (
+	to waf : WAF!IndexPageDirectionUnit (
 	)
 }
 
 -- @extends IndexUnit
 rule IndexLineDirectionUnit {
 	from website : Website!IndexUnit (website.displayOption = #LineDirection)
-	to jsf : JSF!IndexLineDirectionUnit (
+	to waf : WAF!IndexLineDirectionUnit (
 	)
 }
 
 -- @extends DynamicUnit
 abstract rule ControlUnit {
 	from website : Website!ControlUnit
-	to jsf : JSF!ControlUnit (
+	to waf : WAF!ControlUnit (
 		submitLabel <-
 			if not website.submitLabel.oclIsUndefined() and website.submitLabel <> '' then
 				website.submitLabel
@@ -1108,7 +1108,7 @@ abstract rule ControlUnit {
 -- @extends ControlUnit
 rule SearchUnit {
 	from website : Website!SearchUnit
-	to jsf : JSF!SearchUnit (
+	to waf : WAF!SearchUnit (
 		resultsDestination <- website.resultsDestination
 	)
 }
@@ -1116,7 +1116,7 @@ rule SearchUnit {
 -- @extends ControlUnit
 rule ActionUnit {
 	from website : Website!ActionUnit
-	to jsf : JSF!ActionUnit (
+	to waf : WAF!ActionUnit (
 		omitFieldLabels <- website.omitFieldLabels
 	)
 }
@@ -1124,14 +1124,14 @@ rule ActionUnit {
 -- @extends EditUnit
 rule RegistrationUnit {
 	from website : Website!RegistrationUnit
-	to jsf : JSF!RegistrationUnit (
+	to waf : WAF!RegistrationUnit (
 	)
 }
 
 -- @extends ControlUnit
 rule LoginUnit {
 	from website : Website!LoginUnit
-	to jsf : JSF!LoginUnit (
+	to waf : WAF!LoginUnit (
 		loginIdField <- website.loginIdField,
 		passwordField <- website.passwordField,
 		rememberMeField <- website.rememberMeField
@@ -1141,7 +1141,7 @@ rule LoginUnit {
 -- @extends ControlUnit
 rule ForgottenPasswordUnit {
 	from website : Website!ForgottenPasswordUnit
-	to jsf : JSF!ForgottenPasswordUnit (
+	to waf : WAF!ForgottenPasswordUnit (
 		loginIdField <- website.loginIdField
 	)
 }
@@ -1149,7 +1149,7 @@ rule ForgottenPasswordUnit {
 
 abstract rule InlineActionContainer {
 	from website : Website!InlineActionContainer
-	to jsf : JSF!InlineActionContainer (
+	to waf : WAF!InlineActionContainer (
 		actions <- website.actions
 	)
 }
@@ -1157,7 +1157,7 @@ abstract rule InlineActionContainer {
 -- @extends NamedDisplayElement
 abstract rule InlineAction {
 	from website : Website!InlineAction
-	to jsf : JSF!InlineAction (
+	to waf : WAF!InlineAction (
 		header <- website.header,
 		footer <- website.footer,
 		headerClass <- website.headerClass,
@@ -1168,7 +1168,7 @@ abstract rule InlineAction {
 -- @extends InlineAction
 rule SelectAction {
 	from website : Website!SelectAction
-	to jsf : JSF!SelectAction (
+	to waf : WAF!SelectAction (
 		target <- website.target
 	)
 }
@@ -1176,7 +1176,7 @@ rule SelectAction {
 -- @extends InlineAction
 rule DeleteAction {
 	from website : Website!DeleteAction 
-	to jsf : JSF!DeleteAction (
+	to waf : WAF!DeleteAction (
 		destination <- website.destination,
 		confirmMessage <- 
 			if not website.confirmMessage.oclIsUndefined() then
@@ -1192,7 +1192,7 @@ rule DeleteAction {
 -- @extends InlineAction
 rule FeatureSupportAction {
 	from website : Website!FeatureSupportAction 
-	to jsf : JSF!FeatureSupportAction (
+	to waf : WAF!FeatureSupportAction (
 		confirmMessage <-
 			if not website.confirmMessage.oclIsUndefined() and website.confirmMessage <> '' then
 				website.confirmMessage
@@ -1205,21 +1205,21 @@ rule FeatureSupportAction {
 
 abstract rule Literal {
 	from website : Website!Literal
-	to jsf : JSF!Literal (
+	to waf : WAF!Literal (
 	)
 }
 
 -- @extends Literal
 rule NullLiteral {
 	from website : Website!NullLiteral
-	to jsf : JSF!NullLiteral (
+	to waf : WAF!NullLiteral (
 	)
 }
 
 -- @extends Literal
 rule IntegerLiteral {
 	from website : Website!IntegerLiteral
-	to jsf : JSF!IntegerLiteral (
+	to waf : WAF!IntegerLiteral (
 		value <- website.value
 	)
 }
@@ -1227,7 +1227,7 @@ rule IntegerLiteral {
 -- @extends Literal
 rule StringLiteral {
 	from website : Website!StringLiteral
-	to jsf : JSF!StringLiteral (
+	to waf : WAF!StringLiteral (
 		value <- website.value
 	)
 }
@@ -1235,40 +1235,40 @@ rule StringLiteral {
 -- @extends Literal
 rule CurrentTime {
 	from website : Website!CurrentTime
-	to jsf : JSF!CurrentTime (
+	to waf : WAF!CurrentTime (
 	)
 }
 
 rule Function {
 	from website : Website!Function
-	to jsf : JSF!Function (
+	to waf : WAF!Function (
 		name <- website.name
 	)
 }
 
 rule ModelReference {
 	from website : Website!ModelReference
-	to jsf : JSF!ModelReference (
+	to waf : WAF!ModelReference (
 		unit <- website.unit
 	)
 }
 
 rule FeatureReference {
 	from website : Website!FeatureReference
-	to jsf : JSF!FeatureReference (
+	to waf : WAF!FeatureReference (
 		field <- website.field
 	)
 }
 
 rule CurrentUserReference {
 	from website : Website!CurrentUserReference
-	to jsf : JSF!CurrentUserReference (
+	to waf : WAF!CurrentUserReference (
 	)
 }
 
 abstract rule Predicate {
 	from website : Website!Predicate
-	to jsf : JSF!Predicate (
+	to waf : WAF!Predicate (
 		negated <- website.negated
 	)
 }
@@ -1276,7 +1276,7 @@ abstract rule Predicate {
 -- @extends Predicate
 rule PredicateBooleanOperator {
 	from website : Website!PredicateBooleanOperator
-	to jsf : JSF!PredicateBooleanOperator (
+	to waf : WAF!PredicateBooleanOperator (
 		expressions <- website.expressions,
 		operator <- website.operator
 	)
@@ -1285,7 +1285,7 @@ rule PredicateBooleanOperator {
 -- @extends Predicate
 rule PredicateEqualityOperator {
 	from website : Website!PredicateEqualityOperator
-	to jsf : JSF!PredicateEqualityOperator (
+	to waf : WAF!PredicateEqualityOperator (
 		left <- website.left,
 		right <- website.right
 	)
@@ -1294,7 +1294,7 @@ rule PredicateEqualityOperator {
 -- @extends Predicate
 rule PredicateComparisonOperator {
 	from website : Website!PredicateComparisonOperator
-	to jsf : JSF!PredicateComparisonOperator (
+	to waf : WAF!PredicateComparisonOperator (
 		left <- website.left,
 		operator <- website.operator,
 		right <- website.right
@@ -1304,7 +1304,7 @@ rule PredicateComparisonOperator {
 -- @extends Predicate
 rule PredicateIsOperator {
 	from website : Website!PredicateIsOperator
-	to jsf : JSF!PredicateIsOperator (
+	to waf : WAF!PredicateIsOperator (
 		left <- website.left,
 		right <- website.right
 	)
@@ -1313,7 +1313,7 @@ rule PredicateIsOperator {
 -- @extends Predicate
 rule PredicateLikeOperator {
 	from website : Website!PredicateLikeOperator
-	to jsf : JSF!PredicateLikeOperator (
+	to waf : WAF!PredicateLikeOperator (
 		left <- website.left,
 		right <- website.right
 	)
@@ -1322,14 +1322,14 @@ rule PredicateLikeOperator {
 -- @extends Predicate
 rule PredicateIsEmptyOperator {
 	from website : Website!PredicateIsEmpty
-	to jsf : JSF!PredicateIsEmpty (
+	to waf : WAF!PredicateIsEmpty (
 		feature <- website.feature
 	)
 }
 
 abstract rule Order {
 	from website : Website!Order
-	to jsf : JSF!Order (
+	to waf : WAF!Order (
 		path <- website.path
 	)
 }
@@ -1337,13 +1337,13 @@ abstract rule Order {
 -- @extends Order
 rule Asc {
 	from website : Website!Asc
-	to jsf : JSF!Asc (
+	to waf : WAF!Asc (
 	)
 }
 
 -- @extends Order
 rule Desc {
 	from website : Website!Desc
-	to jsf : JSF!Desc (
+	to waf : WAF!Desc (
 	)
 }

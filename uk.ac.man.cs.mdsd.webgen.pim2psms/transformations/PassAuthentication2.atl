@@ -2,97 +2,97 @@
 --
 -- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
--- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+-- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
 
 module PassAuthentication2;
-create jsf : JSF from partialJsf : JSF;
+create waf : WAF from partialWaf : WAF;
 
 uses WebsiteHelpers;
-uses CopyPartialJsf;
+uses CopyPartialWaf;
 
 
 -- @extends UnitField, NamedDisplayElement
 abstract rule InterfaceField {
-	from partialJsf : JSF!InterfaceField
-	to jsf : JSF!InterfaceField (
-		cardinality <- partialJsf.cardinality,
-		defaultValue <- partialJsf.defaultValue,
+	from partialWaf : WAF!InterfaceField
+	to waf : WAF!InterfaceField (
+		cardinality <- partialWaf.cardinality,
+		defaultValue <- partialWaf.defaultValue,
 		mustMatch <-
-			if not partialJsf.mustMatch.oclIsUndefined() then
-				partialJsf.mustMatch
-			else if partialJsf.name = 'confirmEmail' then
-				partialJsf.displayedOn.displayFields->any(f | f.name = 'email')
-			else if partialJsf.name = 'confirmPassword' then
-				partialJsf.displayedOn.displayFields->any(f | f.name = 'password')
+			if not partialWaf.mustMatch.oclIsUndefined() then
+				partialWaf.mustMatch
+			else if partialWaf.name = 'confirmEmail' then
+				partialWaf.displayedOn.displayFields->any(f | f.name = 'email')
+			else if partialWaf.name = 'confirmPassword' then
+				partialWaf.displayedOn.displayFields->any(f | f.name = 'password')
 			else
 				OclUndefined
 			endif endif endif,
-		inputClass <- partialJsf.inputClass
+		inputClass <- partialWaf.inputClass
 	)
 }
 
 -- @extends InterfaceField
 rule DataTypeField {
-	from partialJsf : JSF!DataTypeField
-	to jsf : JSF!DataTypeField (
-		dataType <- partialJsf.dataType,
-		obfuscateFormFields <- partialJsf.obfuscateFormFields,
-		caseInsensitive <- partialJsf.caseInsensitive,
-		encrypt <- partialJsf.encrypt
+	from partialWaf : WAF!DataTypeField
+	to waf : WAF!DataTypeField (
+		dataType <- partialWaf.dataType,
+		obfuscateFormFields <- partialWaf.obfuscateFormFields,
+		caseInsensitive <- partialWaf.caseInsensitive,
+		encrypt <- partialWaf.encrypt
 	)
 }
 
 -- @extends InterfaceField
 rule DateField {
-	from partialJsf : JSF!DateField
-	to jsf : JSF!DateField (
-		details <- partialJsf.details,
-		format <- partialJsf.format
+	from partialWaf : WAF!DateField
+	to waf : WAF!DateField (
+		details <- partialWaf.details,
+		format <- partialWaf.format
 	)
 }
 
 
 -- @extends EditUnit
 rule RegistrationUnit {
-	from partialJsf : JSF!RegistrationUnit
-	to jsf : JSF!RegistrationUnit (
+	from partialWaf : WAF!RegistrationUnit
+	to waf : WAF!RegistrationUnit (
 	)
 }
 
 -- @extends ControlUnit
 rule LoginUnit {
-	from partialJsf : JSF!LoginUnit
-	to jsf : JSF!LoginUnit (
+	from partialWaf : WAF!LoginUnit
+	to waf : WAF!LoginUnit (
 		loginIdField <-
-			if not partialJsf.loginIdField.oclIsUndefined() then
-				partialJsf.loginIdField
+			if not partialWaf.loginIdField.oclIsUndefined() then
+				partialWaf.loginIdField
 			else
-				partialJsf.displayFields->any(f | f.name = 'email')
+				partialWaf.displayFields->any(f | f.name = 'email')
 			endif,
 		passwordField <-
-			if not partialJsf.passwordField.oclIsUndefined() then
-				partialJsf.passwordField
+			if not partialWaf.passwordField.oclIsUndefined() then
+				partialWaf.passwordField
 			else
-				partialJsf.displayFields->any(f | f.name = 'password')
+				partialWaf.displayFields->any(f | f.name = 'password')
 			endif,
 		rememberMeField <-
-			if not partialJsf.rememberMeField.oclIsUndefined() then
-				partialJsf.rememberMeField
+			if not partialWaf.rememberMeField.oclIsUndefined() then
+				partialWaf.rememberMeField
 			else
-				partialJsf.displayFields->any(f | f.name = 'rememberMe')
+				partialWaf.displayFields->any(f | f.name = 'rememberMe')
 			endif
 	)
 }
 
 -- @extends ControlUnit
 rule ForgottenPasswordUnit {
-	from partialJsf : JSF!ForgottenPasswordUnit
-	to jsf : JSF!ForgottenPasswordUnit (
+	from partialWaf : WAF!ForgottenPasswordUnit
+	to waf : WAF!ForgottenPasswordUnit (
 		loginIdField <-
-			if not partialJsf.loginIdField.oclIsUndefined() then
-				partialJsf.loginIdField
+			if not partialWaf.loginIdField.oclIsUndefined() then
+				partialWaf.loginIdField
 			else
-				partialJsf.displayFields->any(f | f.name = 'email')
+				partialWaf.displayFields->any(f | f.name = 'email')
 			endif
 	)
 }

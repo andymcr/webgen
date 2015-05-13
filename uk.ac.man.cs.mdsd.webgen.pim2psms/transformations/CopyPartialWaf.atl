@@ -1,0 +1,813 @@
+-- @atlcompiler emftvm 
+--
+-- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
+
+module CopyPartialWaf;
+create waf : WAF from partailWaf : WAF;
+
+uses CopyCriteria;
+
+
+rule WafModel {
+	from partialWaf : WAF!WafModel
+	to waf : WAF!WafModel (
+		persistence <- partialWaf.persistence,
+		services <- partialWaf.services,
+		pages <- partialWaf.pages,
+		menus <- partialWaf.menus,
+		siteName <- partialWaf.siteName,
+		siteTitle <- partialWaf.siteTitle,
+		developmentVersion <- partialWaf.developmentVersion,
+		baseURL <- partialWaf.baseURL,
+		rewriteURLs <- partialWaf.rewriteURLs,
+		webmasterEmail <- partialWaf.webmasterEmail,
+		copyrightText <- partialWaf.copyrightText,
+		metaDescription <- partialWaf.metaDescription,
+		frameworkTechnology <- partialWaf.frameworkTechnology,
+		ajaxTechnology <- partialWaf.ajaxTechnology,
+		authentication <- partialWaf.authentication,
+		captchaSiteKey <- partialWaf.captchaSiteKey,
+		captchaSecretKey <- partialWaf.captchaSecretKey,
+		textEditorURL <- partialWaf.textEditorURL,
+		topNavigationId <- partialWaf.topNavigationId,
+		sideMenu <- partialWaf.sideMenu,
+		staticUnitsEditable <- partialWaf.staticUnitsEditable
+	)
+}
+
+
+abstract rule Authentication {
+	from partialWaf : WAF!Authentication
+	to waf : WAF!Authentication (
+		loginLabel <- partialWaf.loginLabel,
+		logoutLabel <- partialWaf.logoutLabel
+	)
+}
+
+-- @extends Authentication
+rule LocalAuthenticationSystem {
+	from partialWaf : WAF!LocalAuthenticationSystem
+	to waf : WAF!LocalAuthenticationSystem (
+		userService <- partialWaf.userService,
+		userAuthenticationKey <-partialWaf.userAuthenticationKey,
+		authenticationService <- partialWaf.authenticationService,
+		loginAttemptService <- partialWaf.loginAttemptService,
+		allowSelfRegistration <- partialWaf.allowSelfRegistration,
+		autoLoginService <- partialWaf.autoLoginService,
+		useEmailActivation <- partialWaf.useEmailActivation,
+		sendWelcomeEmail <- partialWaf.sendWelcomeEmail,
+		registrationUnit <- partialWaf.registrationUnit,
+		loginUnit <- partialWaf.loginUnit,
+		forgottenPasswordUnit <- partialWaf.forgottenPasswordUnit
+	)
+}
+
+-- @extends Authentication
+rule CasAuthentication {
+	from partialWaf : Website!CasAuthentication
+	to waf : WAF!CasAuthentication (
+	)
+}
+
+abstract rule NamedElement {
+	from partialWaf : WAF!NamedElement
+	to waf : WAF!NamedElement (
+		name <- partialWaf.name
+	)
+}
+
+-- @extends NamedElement
+abstract rule NamedDisplayElement {
+	from partialWaf : WAF!NamedDisplayElement
+	to waf : WAF!NamedDisplayElement (
+		displayLabel <- partialWaf.displayLabel
+	)
+}
+
+
+abstract rule IncludedFeature {
+	from partialWaf : WAF!IncludedFeature
+	to waf : WAF!IncludedFeature (
+		displayLabel <- partialWaf.displayLabel,
+		forcedValue <- partialWaf.forcedValue,
+		footer <- partialWaf.footer,
+		headerClass <- partialWaf.headerClass,
+		inputClass <- partialWaf.inputClass,
+		displayClass <- partialWaf.displayClass,
+		footerClass <- partialWaf.footerClass
+	)
+}
+
+-- @extends IncludedFeature
+abstract rule IncludedElement {
+	from partialWaf : WAF!IncludedElement
+	to waf : WAF!IncludedElement (
+		obfuscateFormFields <- partialWaf.obfuscateFormFields,
+		defaultValue <- partialWaf.defaultValue
+	)
+}
+
+-- @extends IncludedFeature
+abstract rule IncludedAssociation {
+	from partialWaf : WAF!IncludedAssociation
+	to waf : WAF!IncludedAssociation (
+	)
+}
+
+
+-- @extends NamedElement
+rule Service {
+	from partialWaf : WAF!Service
+	to waf : WAF!Service (
+		modelName <- partialWaf.modelName,
+		view <- partialWaf.view,
+		viewName <- partialWaf.viewName,
+		entities <- partialWaf.entities,
+		daosUsed <- partialWaf.daosUsed,
+		displayLabels <- partialWaf.displayLabels,
+		selections <- partialWaf.selections,
+		features <- partialWaf.features
+	)
+} 
+
+-- @extends NamedElement
+rule ModelLabel {
+	from partialWaf : WAF!ModelLabel
+	to waf : WAF!ModelLabel (
+		format <- partialWaf.format,
+		features <- partialWaf.features
+	)
+}
+
+-- @extends NamedElement
+rule Selection {
+	from partialWaf : WAF!Selection
+	to waf : WAF!Selection (
+		joins <- partialWaf.joins,
+		filter <- partialWaf.filter,
+		ordering <- partialWaf.ordering,
+		limit <- partialWaf.limit
+	)
+}
+
+abstract rule ServiceFeature {
+	from partialWaf : WAF!ServiceFeature
+	to waf : WAF!ServiceFeature (
+		cardinality <- partialWaf.cardinality,
+		dateFormat <- partialWaf.dateFormat
+	)
+}
+
+-- @extends ServiceFeature, IncludedFeature, NamedElement
+abstract rule ServiceEntityFeature {
+	from partialWaf : WAF!ServiceEntityFeature
+	to waf : WAF!ServiceEntityFeature (
+		viewColumnName <- partialWaf.viewColumnName	)
+}
+
+-- @extends ServiceEntityFeature, IncludedElement
+rule ServiceEntityElement {
+	from partialWaf : WAF!ServiceEntityElement
+	to waf : WAF!ServiceEntityElement (
+		feature <- partialWaf.feature,
+		caseInsensitive <- partialWaf.caseInsensitive,
+		encrypt <- partialWaf.encrypt,
+		placeholder <- partialWaf.placeholder,
+		validationPattern <- partialWaf.validationPattern
+	)
+}
+
+-- @extends ServiceFeature
+abstract rule ServiceAssociation {
+	from partialWaf : WAF!ServiceAssociation
+	to waf : WAF!ServiceAssociation (
+		oppositeService <- partialWaf.oppositeService,
+		oppositeFeature <- partialWaf.oppositeFeature
+	)
+}
+
+-- @extends ServiceEntityFeature, ServiceAssociation, IncludedAssociation
+rule ServiceEntityAssociation {
+	from partialWaf : WAF!ServiceEntityAssociation
+	to waf : WAF!ServiceEntityAssociation (
+		feature <- partialWaf.feature
+	)
+}
+
+-- @extends NamedDisplayElement, ServiceAssociation
+rule ServiceViewAssociation {
+	from partialWaf : WAF!ServiceViewAssociation
+	to waf : WAF!ServiceViewAssociation (
+	)
+}
+
+-- @extends NamedDisplayElement, UnitContainer
+rule Page {
+	from partialWaf : WAF!Page
+	to waf : WAF!Page (
+		parentPage <- partialWaf.parentPage,
+		topMenuOption <- partialWaf.topMenuOption,
+		topMenuRank <- partialWaf.topMenuRank,
+		navigationLabel <- partialWaf.navigationLabel,
+		sideMenu <- partialWaf.sideMenu,
+		styleClass <- partialWaf.styleClass,
+		authenticated <- partialWaf.authenticated
+	)
+}
+
+
+-- @extends NamedDisplayElement
+abstract rule Menu {
+	from partialWaf : WAF!Menu
+	to waf : WAF!Menu (
+		entries <- partialWaf.entries,
+		omitCaption <- partialWaf.omitCaption,
+		captionClass <- partialWaf.captionClass,
+		styleClass <- partialWaf.styleClass,
+		layoutClass <- partialWaf.layoutClass
+	)
+}
+
+abstract rule MenuEntry {
+	from partialWaf : WAF!MenuEntry
+	to waf : WAF!MenuEntry (
+	)
+}
+
+-- @extends Menu
+rule StaticMenu {
+	from partialWaf : WAF!StaticMenu
+	to waf : WAF!StaticMenu (
+	)
+}
+
+-- @extends MenuEntry, NamedDisplayElement
+rule FixedPageMenuEntry {
+	from partialWaf : WAF!FixedPageMenuEntry
+	to waf : WAF!FixedPageMenuEntry (
+		destination <- partialWaf.destination
+	)
+}
+
+-- @extends MenuEntry, NamedDisplayElement
+rule FixedActionMenuEntry {
+	from partialWaf : WAF!FixedActionMenuEntry
+	to waf : WAF!FixedActionMenuEntry (
+		destination <- partialWaf.destination
+	)
+}
+
+-- @extends MenuEntry, NamedDisplayElement
+rule FixedCommandMenuEntry {
+	from partialWaf : WAF!FixedCommandMenuEntry
+	to waf : WAF!FixedCommandMenuEntry (
+		destination <- partialWaf.destination
+	)
+}
+
+-- @extends MenuEntry, NamedDisplayElement
+rule EditStaticTextMenuEntry {
+	from partialWaf : WAF!EditStaticTextMenuEntry
+	to waf : WAF!EditStaticTextMenuEntry (
+	)
+}
+
+-- @extends Menu
+rule DynamicMenu {
+	from partialWaf : WAF!DynamicMenu
+	to waf : WAF!DynamicMenu (
+		service <- partialWaf.service,
+		selection <- partialWaf.selection,
+		dynamicTitle <- partialWaf.dynamicTitle
+	)
+}
+
+-- @extends MenuEntry
+abstract rule MenuIncludedFeature {
+	from partialWaf : WAF!MenuIncludedFeature
+	to waf : WAF!MenuIncludedFeature (
+	)
+}
+
+-- @extends MenuIncludedFeature
+rule MenuIncludedElement {
+	from partialWaf : WAF!MenuIncludedElement
+	to waf : WAF!MenuIncludedElement (
+	)
+}
+
+abstract rule UnitContainer {
+	from partialWaf : WAF!UnitContainer
+	to waf : WAF!UnitContainer (
+		units <- partialWaf.units
+	)
+}
+
+abstract rule ContentUnitFields {
+	from partialWaf : WAF!ContentUnit
+	to waf : WAF!ContentUnit (
+		purposeSummary <- partialWaf.purposeSummary,
+		omitCaption <- partialWaf.omitCaption,
+		captionClass <- partialWaf.captionClass,
+		styleClass <- partialWaf.styleClass,
+		layoutClass <- partialWaf.layoutClass
+	)
+}
+
+-- @extends NamedDisplayElement, ContentUnitFields
+abstract rule ContentUnit {
+	from partialWaf : WAF!ContentUnit
+	to waf : WAF!ContentUnit (
+	)
+}
+
+rule StaticUnitFields {
+	from partialWaf : WAF!StaticUnit
+	to waf : WAF!StaticUnit (
+		service <- partialWaf.service,
+		content <- partialWaf.content
+	)
+}
+
+-- @extends ContentUnit, StaticUnitFields
+rule StaticUnit {
+	from partialWaf : WAF!StaticUnit
+	to waf : WAF!StaticUnit (
+	)
+}
+
+rule CommandUnitFields {
+	from partialWaf : WAF!CommandUnit
+	to waf : WAF!CommandUnit (
+		commands <- partialWaf.commands
+	)
+}
+
+-- @extends ContentUnit, CommandUnitFields
+rule CommandUnit {
+	from partialWaf : WAF!CommandUnit
+	to waf : WAF!CommandUnit (
+	)
+}
+
+-- @extends NamedElement
+abstract rule Command {
+	from partialWaf : WAF!Command
+	to waf : WAF!Command (
+	)
+}
+
+-- @extends Command
+rule UserCommand {
+	from partialWaf : WAF!UserCommand
+	to waf : WAF!UserCommand (
+	)
+}
+
+rule CreateSitemapUnitFields {
+	from partialWaf : WAF!CreateSitemapUnit
+	to waf : WAF!CreateSitemapUnit (
+		deployedURL <- partialWaf.deployedURL
+	)
+}
+
+-- @extends ContentUnit, CreateSitemapUnitFields
+rule CreateSitemapUnit {
+	from partialWaf : WAF!CreateSitemapUnit
+	to waf : WAF!CreateSitemapUnit (
+	)
+}
+
+abstract rule DynamicUnitFields {
+	from partialWaf : WAF!ContentUnit
+	to waf : WAF!ContentUnit (
+		service <- partialWaf.service,
+		displayFields <- partialWaf.displayFields,
+		supportActions <- partialWaf.supportActions,
+		header <- partialWaf.header,
+		footer <- partialWaf.footer,
+		headerClass <- partialWaf.headerClass,
+		controlClass <- partialWaf.controlClass,
+		footerClass <- partialWaf.footerClass,
+		errorClass <- partialWaf.errorClass
+	)
+}
+
+-- @extends ContentUnit, DynamicUnitFields
+abstract rule DynamicUnit {
+	from partialWaf : WAF!DynamicUnit
+	to waf : WAF!DynamicUnit (
+	)
+}
+
+abstract rule UnitField {
+	from partialWaf : WAF!UnitField
+	to waf : WAF!UnitField (
+		cardinality <- partialWaf.cardinality,
+		dateFormat <- partialWaf.dateFormat
+	)
+}
+
+-- @extends UnitField, IncludedFeature, InlineActionContainer
+abstract rule UnitFeature {
+	from partialWaf : WAF!UnitFeature
+	to waf : WAF!UnitFeature (
+		name <- partialWaf.name,
+		onlyDisplayWhenNotEmpty <- partialWaf.onlyDisplayWhenNotEmpty,
+		displayOption <- partialWaf.displayOption,
+		linkedAction <- partialWaf.linkedAction,
+		maximumDisplaySize <- partialWaf.maximumDisplaySize,
+		autofocus <- partialWaf.autofocus
+	)
+}
+
+-- @extends UnitFeature, IncludedElement
+rule UnitElement {
+	from partialWaf : WAF!UnitElement
+	to waf : WAF!UnitElement (
+		serviceFeature <- partialWaf.serviceFeature,
+		placeholder <- partialWaf.placeholder,
+		validationPattern <- partialWaf.validationPattern
+	)
+}
+
+-- @extends UnitFeature, IncludedAssociation, UnitContainer
+rule UnitAssociation {
+	from partialWaf : WAF!UnitAssociation
+	to waf : WAF!UnitAssociation (
+		serviceFeature <- partialWaf.serviceFeature,
+		childFeature <- partialWaf.childFeature,
+		selection <- partialWaf.selection,
+		dynamicLabel <- partialWaf.dynamicLabel,
+		filters <- partialWaf.filters
+	)
+}
+
+abstract rule UnitChildFeature {
+	from partialWaf : WAF!UnitChildFeature
+	to waf : WAF!UnitChildFeature (
+	)
+}
+
+-- @extends UnitChildFeature
+rule UnitChildElement {
+	from partialWaf : WAF!UnitChildElement
+	to waf : WAF!UnitChildElement (
+		serviceFeature <- partialWaf.serviceFeature
+	)
+}
+
+-- @extends UnitChildFeature
+rule UnitChildAssocition {
+	from partialWaf : WAF!UnitChildAssociation
+	to waf : WAF!UnitChildAssociation (
+		serviceFeature <- partialWaf.serviceFeature,
+		childFeature <- partialWaf.childFeature
+	)
+}
+
+-- @extends UnitField, NamedDisplayElement
+abstract rule InterfaceField {
+	from partialWaf : WAF!InterfaceField
+	to waf : WAF!InterfaceField (
+		defaultValue <- partialWaf.defaultValue,
+		mustMatch <- partialWaf.mustMatch,
+		inputClass <- partialWaf.inputClass
+	)
+}
+
+-- @extends InterfaceField
+rule DataTypeField {
+	from partialWaf : WAF!DataTypeField
+	to waf : WAF!DataTypeField (
+		dataType <- partialWaf.dataType,
+		obfuscateFormFields <- partialWaf.obfuscateFormFields,
+		caseInsensitive <- partialWaf.caseInsensitive,
+		encrypt <- partialWaf.encrypt
+	)
+}
+
+-- @extends InterfaceField
+rule DateField {
+	from partialWaf : WAF!DateField
+	to waf : WAF!DateField (
+		details <- partialWaf.details,
+		format <- partialWaf.format
+	)
+}
+
+-- @extends UnitField, NamedDisplayElement
+rule CaptchaField {
+	from partialWaf : WAF!CaptchaField
+	to waf : WAF!CaptchaField (
+	)
+}
+
+
+-- @extends NamedDisplayElement
+rule UnitSupportAction {
+	from partialWaf : WAF!UnitSupportAction
+	to waf : WAF!UnitSupportAction (
+		confirmMessage <- partialWaf.confirmMessage
+	)
+}
+
+
+abstract rule EditUnitFields {
+	from partialWaf : WAF!EditUnit
+	to waf : WAF!EditUnit (
+		confirmDestination <- partialWaf.confirmDestination,
+		confirmLabel <- partialWaf.confirmLabel,
+		cancelDestination <- partialWaf.cancelDestination,
+		cancelLabel <- partialWaf.cancelLabel
+	)
+}
+
+-- @extends DynamicUnit, EditUnitFields
+abstract rule EditUnit {
+	from partialWaf : WAF!EditUnit
+	to waf : WAF!EditUnit (
+	)
+}
+
+-- @extends EditUnit
+rule CreateUnit {
+	from partialWaf : WAF!CreateUnit
+	to waf : WAF!CreateUnit (
+	)
+}
+
+abstract rule CreateUpdateUnitFields {
+	from partialWaf : WAF!CreateUpdateUnit
+	to waf : WAF!CreateUpdateUnit (
+		clearLabel <- partialWaf.clearLabel
+	)
+}
+
+-- @extends EditUnit, CreateUpdateUnitFields
+rule CreateUpdateUnit {
+	from partialWaf : WAF!CreateUpdateUnit
+	to waf : WAF!CreateUpdateUnit (
+	)
+}
+
+abstract rule MapUnitFields {
+	from partialWaf : WAF!MapUnit
+	to waf : WAF!MapUnit (
+		readOnly <- partialWaf.readOnly,
+		defaultZoomLevel <- partialWaf.defaultZoomLevel,
+		location <- partialWaf.location,
+		placeName <- partialWaf.placeName
+	)
+}
+
+-- @extends EditUnit, MapUnitFields
+rule MapUnit {
+	from partialWaf : WAF!MapUnit
+	to waf : WAF!MapUnit (
+	)
+}
+
+-- @extends EditUnit
+rule UpdateUnit {
+	from partialWaf : WAF!UpdateUnit
+	to waf : WAF!UpdateUnit (
+	)
+}
+
+abstract rule DataUnitFields {
+	from partialWaf : WAF!DataUnit
+	to waf : WAF!DataUnit (
+		selection <- partialWaf.selection,
+		dynamicTitle <- partialWaf.dynamicTitle
+	)
+}
+
+-- @extends DynamicUnit, DataUnitFields
+abstract rule DataUnit {
+	from partialWaf : WAF!DataUnit
+	to waf : WAF!DataUnit (
+	)
+}
+
+abstract rule DetailsUnitFields {
+	from partialWaf : WAF!DataUnit
+	to waf : WAF!DataUnit (
+		omitFieldLabels <- partialWaf.omitFieldLabels
+	)
+}
+
+-- @extends DataUnit, DetailsUnitFields
+rule DetailsUnit {
+	from partialWaf : WAF!DetailsUnit
+	to waf : WAF!DetailsUnit (
+	)
+}
+
+-- @extends InlineActionContainer
+abstract rule IndexUnitFields {
+	from partialWaf : WAF!IndexUnit
+	to waf : WAF!IndexUnit (
+		omitColumnLabels <- partialWaf.omitColumnLabels,
+		actions <- partialWaf.actions,
+		defaultPaginationSize <- partialWaf.defaultPaginationSize,
+		nextPageLabel <- partialWaf.nextPageLabel,
+		previousPageLabel <- partialWaf.previousPageLabel,
+		useFirstLastPageLinks <- partialWaf.useFirstLastPageLinks,
+		firstPageLabel <- partialWaf.firstPageLabel,
+		lastPageLabel <- partialWaf.lastPageLabel,
+		rowClasses <- partialWaf.rowClasses
+	)
+}
+
+-- @extends DataUnit, IndexUnitFields
+abstract rule IndexUnit {
+	from partialWaf : WAF!IndexUnit
+	to waf : WAF!IndexUnit (
+	)
+}
+
+abstract rule IndexGridUnitFields {
+	from partialWaf : WAF!IndexGridUnit
+	to waf : WAF!IndexGridUnit (
+	)
+}
+
+-- @extends IndexUnit, IndexGridUnitFields
+rule IndexGridUnit {
+	from partialWaf : WAF!IndexGridUnit
+	to waf : WAF!IndexGridUnit (
+	)
+}
+
+abstract rule IndexPageDirectionUnitFields {
+	from partialWaf : WAF!IndexPageDirectionUnit
+	to waf : WAF!IndexPageDirectionUnit (
+	)
+}
+
+-- @extends IndexUnit, IndexPageDirectionUnitFields
+rule IndexPageDirectionUnit {
+	from partialWaf : WAF!IndexPageDirectionUnit
+	to waf : WAF!IndexPageDirectionUnit (
+	)
+}
+
+abstract rule IndexLineDirectionUnitFields {
+	from partialWaf : WAF!IndexLineDirectionUnit
+	to waf : WAF!IndexLineDirectionUnit (
+	)
+}
+
+-- @extends IndexUnit, IndexLineDirectionUnitFields
+rule IndexLineDirectionUnit {
+	from partialWaf : WAF!IndexLineDirectionUnit
+	to waf : WAF!IndexLineDirectionUnit (
+	)
+}
+
+abstract rule ControlUnitFields {
+	from partialWaf : WAF!ControlUnit
+	to waf : WAF!ControlUnit (
+		submitLabel <- partialWaf.submitLabel,
+		cancelDestination <- partialWaf.cancelDestination,
+		cancelLabel <- partialWaf.cancelLabel
+	)
+}
+
+-- @extends DynamicUnit, ControlUnitFields
+abstract rule ControlUnit {
+	from partialWaf : WAF!ControlUnit
+	to waf : WAF!ControlUnit (
+	)
+}
+
+abstract rule SearchUnitFields {
+	from partialWaf : WAF!SearchUnit
+	to waf : WAF!SearchUnit (
+		resultsDestination <- partialWaf.resultsDestination
+	)
+}
+
+-- @extends ControlUnit, SearchUnitFields
+rule SearchUnit {
+	from partialWaf : WAF!SearchUnit
+	to waf : WAF!SearchUnit (
+	)
+}
+
+abstract rule ActionUnitFields {
+	from partialWaf : WAF!ActionUnit
+	to waf : WAF!ActionUnit (
+		omitFieldLabels <- partialWaf.omitFieldLabels
+	)
+}
+
+-- @extends ControlUnit, ActionUnitFields
+rule ActionUnit {
+	from partialWaf : WAF!ActionUnit
+	to waf : WAF!ActionUnit (
+	)
+}
+
+-- @extends EditUnit
+rule RegistrationUnit {
+	from partialWaf : WAF!RegistrationUnit
+	to waf : WAF!RegistrationUnit (
+	)
+}
+
+abstract rule LoginUnitFields {
+	from partialWaf : WAF!LoginUnit
+	to waf : WAF!LoginUnit (
+		loginIdField <- partialWaf.loginIdField,
+		passwordField <- partialWaf.passwordField,
+		rememberMeField <- partialWaf.rememberMeField
+	)
+}
+
+-- @extends ControlUnit, LoginUnitFields
+rule LoginUnit {
+	from partialWaf : WAF!LoginUnit
+	to waf : WAF!LoginUnit (
+	)
+}
+
+abstract rule ForgottenPasswordUnitFields {
+	from partialWaf : WAF!ForgottenPasswordUnit
+	to waf : WAF!ForgottenPasswordUnit (
+		loginIdField <- partialWaf.loginIdField
+	)
+}
+
+-- @extends ControlUnit, ForgottenPasswordUnitFields
+rule ForgottenPasswordUnit {
+	from partialWaf : WAF!ForgottenPasswordUnit
+	to waf : WAF!ForgottenPasswordUnit (
+	)
+}
+
+
+abstract rule InlineActionContainer {
+	from partialWaf : WAF!InlineActionContainer
+	to waf : WAF!InlineActionContainer (
+		actions <- partialWaf.actions
+	)
+}
+
+-- @extends NamedDisplayElement
+abstract rule InlineAction {
+	from partialWaf : WAF!InlineAction
+	to waf : WAF!InlineAction (
+		header <- partialWaf.header,
+		footer <- partialWaf.footer,
+		headerClass <- partialWaf.headerClass,
+		footerClass <- partialWaf.footerClass
+	)
+}
+
+-- @extends InlineAction
+rule SelectAction {
+	from partialWaf : WAF!SelectAction
+	to waf : WAF!SelectAction (
+		target <- partialWaf.target
+	)
+}
+
+-- @extends InlineAction
+rule DeleteAction {
+	from partialWaf : WAF!DeleteAction 
+	to waf : WAF!DeleteAction (
+		destination <- partialWaf.destination,
+		confirmMessage <- partialWaf.confirmMessage
+	)
+}
+
+-- @extends InlineAction
+rule FeatureSupportAction {
+	from partialWaf : WAF!FeatureSupportAction 
+	to waf : WAF!FeatureSupportAction (
+		confirmMessage <- partialWaf.confirmMessage
+	)
+}
+
+
+rule ModelReference {
+	from partialWaf : WAF!ModelReference (partialWaf.isWafContainer())
+	to waf : WAF!ModelReference (
+		unit <- partialWaf.unit
+	)
+}
+
+rule FeatureReference {
+	from partialWaf : WAF!FeatureReference (partialWaf.isWafContainer())
+	to waf : WAF!FeatureReference (
+		field <- partialWaf.field
+	)
+}
+
+rule CurrentUserReference {
+	from partialWaf : WAF!CurrentUserReference (partialWaf.isWafContainer())
+	to waf : WAF!CurrentUserReference (
+	)
+}

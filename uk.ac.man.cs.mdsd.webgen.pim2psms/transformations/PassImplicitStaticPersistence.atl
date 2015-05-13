@@ -2,7 +2,6 @@
 --
 -- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
--- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
 
 module PassImplicitStaticPersistence;
 create orm : ORM from website : Website, partialOrm : ORM;

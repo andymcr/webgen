@@ -2,53 +2,53 @@
 --
 -- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
--- @path JSF=/uk.ac.man.cs.mdsd.jsf.model/model/Jsf.ecore
+-- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
 
 module PassImplicitService;
-create jsf : JSF from orm : ORM, partialJsf : JSF;
+create waf : WAF from orm : ORM, partialWaf : WAF;
 
 uses WebsiteHelpers;
-uses CopyPartialJsf;
+uses CopyPartialWaf;
 
 
-rule JsfModel {
-	from partialJsf : JSF!JsfModel
-	to jsf : JSF!JsfModel (
-		persistence <- partialJsf.persistence,
-		services <- partialJsf.services
+rule WafModel {
+	from partialWaf : WAF!WafModel
+	to waf : WAF!WafModel (
+		persistence <- partialWaf.persistence,
+		services <- partialWaf.services
 			->union(let entities : Set(ORM!Entity)
-				= partialJsf.persistence.entities
+				= partialWaf.persistence.entities
 				in entities.asSet()->symmetricDifference(
-					partialJsf.services->collect(s | s.entities)->flatten().asSet()
+					partialWaf.services->collect(s | s.entities)->flatten().asSet()
 					).asSequence()
 				->collect(e | thisModule.implicitService(e))
 			),
-		pages <- partialJsf.pages,
-		menus <- partialJsf.menus,
-		siteName <- partialJsf.siteName,
-		siteTitle <- partialJsf.siteTitle,
-		developmentVersion <- partialJsf.developmentVersion,
-		baseURL <- partialJsf.baseURL,
-		rewriteURLs <- partialJsf.rewriteURLs,
-		webmasterEmail <- partialJsf.webmasterEmail,
-		copyrightText <- partialJsf.copyrightText,
-		metaDescription <- partialJsf.metaDescription,
-		frameworkTechnology <- partialJsf.frameworkTechnology,
-		ajaxTechnology <- partialJsf.ajaxTechnology,
-		authentication <- partialJsf.authentication,
-		captchaSiteKey <- partialJsf.captchaSiteKey,
-		captchaSecretKey <- partialJsf.captchaSecretKey,
-		textEditorURL <- partialJsf.textEditorURL,
-		topNavigationId <- partialJsf.topNavigationId,
-		sideMenu <- partialJsf.sideMenu,
-		staticUnitsEditable <- partialJsf.staticUnitsEditable
+		pages <- partialWaf.pages,
+		menus <- partialWaf.menus,
+		siteName <- partialWaf.siteName,
+		siteTitle <- partialWaf.siteTitle,
+		developmentVersion <- partialWaf.developmentVersion,
+		baseURL <- partialWaf.baseURL,
+		rewriteURLs <- partialWaf.rewriteURLs,
+		webmasterEmail <- partialWaf.webmasterEmail,
+		copyrightText <- partialWaf.copyrightText,
+		metaDescription <- partialWaf.metaDescription,
+		frameworkTechnology <- partialWaf.frameworkTechnology,
+		ajaxTechnology <- partialWaf.ajaxTechnology,
+		authentication <- partialWaf.authentication,
+		captchaSiteKey <- partialWaf.captchaSiteKey,
+		captchaSecretKey <- partialWaf.captchaSecretKey,
+		textEditorURL <- partialWaf.textEditorURL,
+		topNavigationId <- partialWaf.topNavigationId,
+		sideMenu <- partialWaf.sideMenu,
+		staticUnitsEditable <- partialWaf.staticUnitsEditable
 	)
 }
 
 
 lazy rule implicitService {
 	from orm : ORM!Entity
-	to jsf : JSF!Service (
+	to waf : WAF!Service (
 -- TODO pularise
 		name <- orm.name, 
 		modelName <- orm.name,
@@ -57,6 +57,6 @@ lazy rule implicitService {
 		daosUsed <- Sequence{orm}
 	)
 	do {
-		jsf;
+		waf;
 	}
 } 

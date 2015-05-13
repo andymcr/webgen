@@ -115,10 +115,10 @@ helper context ORM!Entity def: getOrmFeature(featureName : String) : Website!Fea
 	= self.features->any(f | f.name = featureName);
 
 
-helper def: findJsfService(name : String) : JSF!Service
-	= JSF!Service.allInstancesFrom('partialJsf')->any(d | d.name = name);
+helper def: findWafService(name : String) : WAF!Service
+	= WAF!Service.allInstancesFrom('partialWaf')->any(d | d.name = name);
 
 
-helper def: findPartialJsfMenu(name : String) : JSF!Menu
-	= JSF!Menu.allInstancesFrom('partialJsf')->select(m | m.name = name)->first();
+helper def: findPartialWafMenu(name : String) : WAF!Menu
+	= WAF!Menu.allInstancesFrom('partialWaf')->select(m | m.name = name)->first();
 

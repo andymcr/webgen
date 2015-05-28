@@ -18,22 +18,22 @@ import uk.ac.man.cs.mdsd.orm.SingletonLocation;
  */
 public class SingletonLocationImpl extends SingletonAttributeImpl implements SingletonLocation {
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected SingletonLocationImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return OrmPackage.Literals.SINGLETON_LOCATION;
-	}
+    return OrmPackage.Literals.SINGLETON_LOCATION;
+  }
 
 } //SingletonLocationImpl

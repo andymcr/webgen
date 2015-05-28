@@ -18,22 +18,22 @@ import uk.ac.man.cs.mdsd.orm.SingletonImage;
  */
 public class SingletonImageImpl extends SingletonResourceImpl implements SingletonImage {
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected SingletonImageImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return OrmPackage.Literals.SINGLETON_IMAGE;
-	}
+    return OrmPackage.Literals.SINGLETON_IMAGE;
+  }
 
 } //SingletonImageImpl

@@ -18,22 +18,22 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  */
 public abstract class CollectionAttributeImpl extends AttributeImpl implements CollectionAttribute {
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected CollectionAttributeImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return OrmPackage.Literals.COLLECTION_ATTRIBUTE;
-	}
+    return OrmPackage.Literals.COLLECTION_ATTRIBUTE;
+  }
 
 } //CollectionAttributeImpl

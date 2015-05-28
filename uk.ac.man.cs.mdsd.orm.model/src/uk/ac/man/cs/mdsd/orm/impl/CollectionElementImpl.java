@@ -32,129 +32,135 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  */
 public class CollectionElementImpl extends CollectionAttributeImpl implements CollectionElement {
 	/**
-	 * The cached value of the '{@link #getCollectionType() <em>Collection Type</em>}' reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getCollectionType() <em>Collection Type</em>}' reference.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCollectionType()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getCollectionType()
+   * @generated
+   * @ordered
+   */
 	protected CollectionType collectionType;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected CollectionElementImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return OrmPackage.Literals.COLLECTION_ELEMENT;
-	}
+    return OrmPackage.Literals.COLLECTION_ELEMENT;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public CollectionType getCollectionType() {
-		if (collectionType != null && collectionType.eIsProxy()) {
-			InternalEObject oldCollectionType = (InternalEObject)collectionType;
-			collectionType = (CollectionType)eResolveProxy(oldCollectionType);
-			if (collectionType != oldCollectionType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE, oldCollectionType, collectionType));
-			}
-		}
-		return collectionType;
-	}
+    if (collectionType != null && collectionType.eIsProxy())
+    {
+      InternalEObject oldCollectionType = (InternalEObject)collectionType;
+      collectionType = (CollectionType)eResolveProxy(oldCollectionType);
+      if (collectionType != oldCollectionType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE, oldCollectionType, collectionType));
+      }
+    }
+    return collectionType;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public CollectionType basicGetCollectionType() {
-		return collectionType;
-	}
+    return collectionType;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setCollectionType(CollectionType newCollectionType) {
-		CollectionType oldCollectionType = collectionType;
-		collectionType = newCollectionType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE, oldCollectionType, collectionType));
-	}
+    CollectionType oldCollectionType = collectionType;
+    collectionType = newCollectionType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE, oldCollectionType, collectionType));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE:
-				if (resolve) return getCollectionType();
-				return basicGetCollectionType();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE:
+        if (resolve) return getCollectionType();
+        return basicGetCollectionType();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE:
-				setCollectionType((CollectionType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE:
+        setCollectionType((CollectionType)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE:
-				setCollectionType((CollectionType)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE:
+        setCollectionType((CollectionType)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE:
-				return collectionType != null;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.COLLECTION_ELEMENT__COLLECTION_TYPE:
+        return collectionType != null;
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //CollectionElementImpl

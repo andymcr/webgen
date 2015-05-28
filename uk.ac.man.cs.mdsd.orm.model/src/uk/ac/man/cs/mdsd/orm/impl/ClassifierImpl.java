@@ -22,22 +22,22 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  */
 public abstract class ClassifierImpl extends NamedDisplayElementImpl implements Classifier {
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected ClassifierImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return OrmPackage.Literals.CLASSIFIER;
-	}
+    return OrmPackage.Literals.CLASSIFIER;
+  }
 
 } //ClassifierImpl

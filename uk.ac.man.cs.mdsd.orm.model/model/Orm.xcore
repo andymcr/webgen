@@ -9,6 +9,7 @@
 @GenModel(
 	modelDirectory="/uk.ac.man.cs.mdsd.orm.model/src",
 	editDirectory="/uk.ac.man.cs.mdsd.orm.edit/src",
+	editPluginID="uk.ac.man.cs.mdsd.orm.edit",
 	childCreationExtenders="true",
 	complianceLevel="6.0")
 package uk.ac.man.cs.mdsd.orm

@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EReference;
  * @see uk.ac.man.cs.mdsd.orm.OrmFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
- *        annotation="http://www.eclipse.org/emf/2002/GenModel modelDirectory='/uk.ac.man.cs.mdsd.orm.model/src' editDirectory='/uk.ac.man.cs.mdsd.orm.edit/src' childCreationExtenders='true' complianceLevel='6.0' basePackage='uk.ac.man.cs.mdsd'"
+ *        annotation="http://www.eclipse.org/emf/2002/GenModel modelDirectory='/uk.ac.man.cs.mdsd.orm.model/src' editDirectory='/uk.ac.man.cs.mdsd.orm.edit/src' editPluginID='uk.ac.man.cs.mdsd.orm.edit' childCreationExtenders='true' complianceLevel='6.0' basePackage='uk.ac.man.cs.mdsd'"
  *        annotation="http://www.eclipse.org/emf/2011/Xcore Ecore='http://www.eclipse.org/emf/2002/Ecore' GenModel='http://www.eclipse.org/emf/2002/GenModel' OCL='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */

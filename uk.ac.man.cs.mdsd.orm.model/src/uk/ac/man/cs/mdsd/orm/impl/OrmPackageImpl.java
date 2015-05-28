@@ -331,8 +331,8 @@ public class OrmPackageImpl extends EPackageImpl implements OrmPackage {
     isInited = true;
 
     // Initialize simple dependencies
-    EcorePackage.eINSTANCE.eClass();
     CriteriaPackage.eINSTANCE.eClass();
+    EcorePackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theOrmPackage.createPackageContents();

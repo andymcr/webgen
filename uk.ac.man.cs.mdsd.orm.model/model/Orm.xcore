@@ -1,0 +1,204 @@
+@Ecore(
+	nsURI="http://www.cs.man.ac.uk/mdsd/2010/ObjectRelationalMapping"
+)
+@Ecore(
+	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
+)
+@GenModel(
+	modelDirectory="/uk.ac.man.cs.mdsd.orm.model/src",
+	editDirectory="/uk.ac.man.cs.mdsd.orm.edit/src",
+	childCreationExtenders="true",
+	complianceLevel="6.0")
+package uk.ac.man.cs.mdsd.orm
+
+import uk.ac.man.cs.mdsd.criteria.Expression
+
+annotation "http://www.eclipse.org/emf/2002/Ecore" as Ecore
+annotation "http://www.eclipse.org/emf/2002/GenModel" as GenModel
+annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
+
+class OrmModel {
+	contains DataType[] dataTypes
+	contains Entity[] entities opposite partOf
+	contains CollectionType[] collectionTypes
+	unordered DatabaseTechnologies databaseTechnology = "MySql"
+	String databasePrefix
+	String databaseHost
+	String databaseName
+	String databaseUsername
+	String databasePassword
+	OrmTechnologies ormTechnology
+}
+
+enum Cardinality {
+	Optional
+	Required = 1
+	Many = 2
+}
+
+enum DatabaseTechnologies {
+	MySql
+	Oracle = 1
+}
+
+enum OrmTechnologies {
+	JPA
+	DataMapper = 1
+	Idiorm = 2
+	Kohana = 3
+	DoctrineORM = 4
+	DoctrineODM = 5
+}
+
+abstract class NamedElement {
+	@GenModel(property="None")
+	String[1] name
+}
+
+abstract class NamedDisplayElement extends NamedElement {
+	@GenModel(property="None")
+	String[1] displayLabel
+}
+
+abstract class Classifier extends NamedDisplayElement {
+}
+
+enum CollectionTypes {
+	Bag
+	List
+	OrderedSet
+	Set
+}
+
+class CollectionType extends NamedElement {
+	CollectionTypes collectionType
+	refers Classifier[1] elementType
+	String[1] persistenceType
+	String[1] javaInterfaceType
+	String[1] javaImplementationType
+}
+
+class DataType extends Classifier {
+}
+
+class EnumerationType extends DataType {
+	contains EnumerationLiteral[] enumerations
+}
+
+class EnumerationLiteral extends NamedDisplayElement {
+}
+
+class Entity extends Classifier {
+	container unordered OrmModel[1] partOf opposite entities
+	String tableName
+	refers Feature[] ^keys
+	String autoKeyName
+	refers Entity[] ^contains opposite ^container
+	refers Entity ^container opposite ^contains
+	contains Feature[] features opposite parentEntity
+	refers Feature[] displayFeatures
+	String displayFormat
+}
+
+abstract class Feature extends NamedDisplayElement {
+	String[1] columnName
+	container Entity[1] parentEntity opposite features
+	Boolean inputField
+	String headerClass
+	String inputClass
+	String displayClass
+	String footerClass
+}
+
+abstract class Attribute extends Feature {
+	String[1] persistentType
+	String[1] ormType
+}
+
+abstract class SingletonAttribute extends Attribute {
+	unordered boolean required
+	unordered boolean ^unique
+	@GenModel(createChild="false")
+	contains unordered Expression defaultValue
+}
+
+abstract class CollectionAttribute extends Attribute {
+}
+
+class SingletonElement extends SingletonAttribute {
+	refers unordered DataType[1] dataType
+	unordered boolean obfuscateFormFields
+	unordered boolean caseInsensitive
+	unordered boolean encrypt
+}
+
+class CollectionElement extends CollectionAttribute {
+	refers CollectionType[1] collectionType
+}
+
+enum DateDetails {
+	DateOnly = 1
+	TimeOnly = 2
+	DateAndTime = 3
+}
+
+interface DateAttribute {
+	DateDetails details
+}
+
+class SingletonDate extends SingletonAttribute , DateAttribute {
+}
+
+class CollectionDate extends CollectionAttribute , DateAttribute {
+}
+
+abstract class SingletonResource extends SingletonAttribute {
+	int maximumUploadSize
+	unique String[] validUploadMimeTypes
+	unique String[] validUploadExtensions
+	boolean uploadsWithinWebsite
+	String relativeUploadDirectory
+}
+
+class SingletonFile extends SingletonResource {
+}
+
+class SingletonImage extends SingletonResource {
+}
+
+class SingletonLocation extends SingletonAttribute {
+}
+
+@Ecore(constraints="onlyOneOwningEnd")
+@OCL(onlyOneOwningEnd="owningEnd xor opposite.owningEnd")
+abstract class Association extends Feature {
+	refers Association[1] ^opposite
+	boolean[1] owningEnd
+	boolean[1] bidirectional
+	boolean[1] containment
+	String pivotTableName
+}
+
+enum SingletonAssociationRelationships {
+	OneToOne
+	ManyToOne = 1
+}
+
+class SingletonAssociation extends Association {
+	boolean required
+	SingletonAssociationRelationships associationRelationship
+}
+
+enum CollectionAssociationRelationships {
+	OneToMany
+	ManyToMany = 1
+}
+
+@Ecore(constraints="x")
+@OCL(x="collectionType.elementType = opposite.parentEntity")
+class CollectionAssociation extends Association {
+	refers CollectionType[1] collectionType
+	CollectionAssociationRelationships associationRelationship
+}

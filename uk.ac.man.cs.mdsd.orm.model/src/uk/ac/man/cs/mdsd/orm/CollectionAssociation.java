@@ -27,58 +27,58 @@ package uk.ac.man.cs.mdsd.orm;
  */
 public interface CollectionAssociation extends Association {
 	/**
-	 * Returns the value of the '<em><b>Collection Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Collection Type</b></em>' reference.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Collection Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Collection Type</em>' reference.
-	 * @see #setCollectionType(CollectionType)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getCollectionAssociation_CollectionType()
-	 * @model required="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Collection Type</em>' reference.
+   * @see #setCollectionType(CollectionType)
+   * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getCollectionAssociation_CollectionType()
+   * @model required="true"
+   * @generated
+   */
 	CollectionType getCollectionType();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.CollectionAssociation#getCollectionType <em>Collection Type</em>}' reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.CollectionAssociation#getCollectionType <em>Collection Type</em>}' reference.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Collection Type</em>' reference.
-	 * @see #getCollectionType()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Collection Type</em>' reference.
+   * @see #getCollectionType()
+   * @generated
+   */
 	void setCollectionType(CollectionType value);
 
 	/**
-	 * Returns the value of the '<em><b>Association Relationship</b></em>' attribute.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.orm.CollectionAssociationRelationships}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Association Relationship</b></em>' attribute.
+   * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.orm.CollectionAssociationRelationships}.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Association Relationship</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Association Relationship</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.orm.CollectionAssociationRelationships
-	 * @see #setAssociationRelationship(CollectionAssociationRelationships)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getCollectionAssociation_AssociationRelationship()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Association Relationship</em>' attribute.
+   * @see uk.ac.man.cs.mdsd.orm.CollectionAssociationRelationships
+   * @see #setAssociationRelationship(CollectionAssociationRelationships)
+   * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getCollectionAssociation_AssociationRelationship()
+   * @model unique="false"
+   * @generated
+   */
 	CollectionAssociationRelationships getAssociationRelationship();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.CollectionAssociation#getAssociationRelationship <em>Association Relationship</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.CollectionAssociation#getAssociationRelationship <em>Association Relationship</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Association Relationship</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.orm.CollectionAssociationRelationships
-	 * @see #getAssociationRelationship()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Association Relationship</em>' attribute.
+   * @see uk.ac.man.cs.mdsd.orm.CollectionAssociationRelationships
+   * @see #getAssociationRelationship()
+   * @generated
+   */
 	void setAssociationRelationship(CollectionAssociationRelationships value);
 
 } // CollectionAssociation

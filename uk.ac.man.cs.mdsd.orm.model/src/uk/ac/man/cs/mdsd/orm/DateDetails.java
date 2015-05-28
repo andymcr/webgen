@@ -23,217 +23,223 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum DateDetails implements Enumerator {
 	/**
-	 * The '<em><b>Date Only</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Date Only</b></em>' literal object.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DATE_ONLY_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #DATE_ONLY_VALUE
+   * @generated
+   * @ordered
+   */
 	DATE_ONLY(1, "DateOnly", "DateOnly"),
 
 	/**
-	 * The '<em><b>Time Only</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Time Only</b></em>' literal object.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #TIME_ONLY_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #TIME_ONLY_VALUE
+   * @generated
+   * @ordered
+   */
 	TIME_ONLY(2, "TimeOnly", "TimeOnly"),
 
 	/**
-	 * The '<em><b>Date And Time</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Date And Time</b></em>' literal object.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #DATE_AND_TIME_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #DATE_AND_TIME_VALUE
+   * @generated
+   * @ordered
+   */
 	DATE_AND_TIME(3, "DateAndTime", "DateAndTime");
 
 	/**
-	 * The '<em><b>Date Only</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Date Only</b></em>' literal value.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Date Only</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DATE_ONLY
-	 * @model name="DateOnly"
-	 * @generated
-	 * @ordered
-	 */
+   * @see #DATE_ONLY
+   * @model name="DateOnly"
+   * @generated
+   * @ordered
+   */
 	public static final int DATE_ONLY_VALUE = 1;
 
 	/**
-	 * The '<em><b>Time Only</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Time Only</b></em>' literal value.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Time Only</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #TIME_ONLY
-	 * @model name="TimeOnly"
-	 * @generated
-	 * @ordered
-	 */
+   * @see #TIME_ONLY
+   * @model name="TimeOnly"
+   * @generated
+   * @ordered
+   */
 	public static final int TIME_ONLY_VALUE = 2;
 
 	/**
-	 * The '<em><b>Date And Time</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Date And Time</b></em>' literal value.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Date And Time</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #DATE_AND_TIME
-	 * @model name="DateAndTime"
-	 * @generated
-	 * @ordered
-	 */
+   * @see #DATE_AND_TIME
+   * @model name="DateAndTime"
+   * @generated
+   * @ordered
+   */
 	public static final int DATE_AND_TIME_VALUE = 3;
 
 	/**
-	 * An array of all the '<em><b>Date Details</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
+   * An array of all the '<em><b>Date Details</b></em>' enumerators.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	private static final DateDetails[] VALUES_ARRAY =
-		new DateDetails[] {
-			DATE_ONLY,
-			TIME_ONLY,
-			DATE_AND_TIME,
-		};
+		new DateDetails[]
+    {
+      DATE_ONLY,
+      TIME_ONLY,
+      DATE_AND_TIME,
+    };
 
 	/**
-	 * A public read-only list of all the '<em><b>Date Details</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
+   * A public read-only list of all the '<em><b>Date Details</b></em>' enumerators.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static final List<DateDetails> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Date Details</b></em>' literal with the specified literal value.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Date Details</b></em>' literal with the specified literal value.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static DateDetails get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			DateDetails result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
-				return result;
-			}
-		}
-		return null;
-	}
+    for (int i = 0; i < VALUES_ARRAY.length; ++i)
+    {
+      DateDetails result = VALUES_ARRAY[i];
+      if (result.toString().equals(literal))
+      {
+        return result;
+      }
+    }
+    return null;
+  }
 
 	/**
-	 * Returns the '<em><b>Date Details</b></em>' literal with the specified name.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Date Details</b></em>' literal with the specified name.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static DateDetails getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			DateDetails result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
-				return result;
-			}
-		}
-		return null;
-	}
+    for (int i = 0; i < VALUES_ARRAY.length; ++i)
+    {
+      DateDetails result = VALUES_ARRAY[i];
+      if (result.getName().equals(name))
+      {
+        return result;
+      }
+    }
+    return null;
+  }
 
 	/**
-	 * Returns the '<em><b>Date Details</b></em>' literal with the specified integer value.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Date Details</b></em>' literal with the specified integer value.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static DateDetails get(int value) {
-		switch (value) {
-			case DATE_ONLY_VALUE: return DATE_ONLY;
-			case TIME_ONLY_VALUE: return TIME_ONLY;
-			case DATE_AND_TIME_VALUE: return DATE_AND_TIME;
-		}
-		return null;
-	}
+    switch (value)
+    {
+      case DATE_ONLY_VALUE: return DATE_ONLY;
+      case TIME_ONLY_VALUE: return TIME_ONLY;
+      case DATE_AND_TIME_VALUE: return DATE_AND_TIME;
+    }
+    return null;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	private final int value;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	private final String name;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	private final String literal;
 
 	/**
-	 * Only this class can construct instances.
-	 * <!-- begin-user-doc -->
+   * Only this class can construct instances.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	private DateDetails(int value, String name, String literal) {
-		this.value = value;
-		this.name = name;
-		this.literal = literal;
-	}
+    this.value = value;
+    this.name = name;
+    this.literal = literal;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public int getValue() {
-	  return value;
-	}
+    return value;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public String getName() {
-	  return name;
-	}
+    return name;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public String getLiteral() {
-	  return literal;
-	}
+    return literal;
+  }
 
 	/**
-	 * Returns the literal value of the enumerator, which is its string representation.
-	 * <!-- begin-user-doc -->
+   * Returns the literal value of the enumerator, which is its string representation.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String toString() {
-		return literal;
-	}
+    return literal;
+  }
 	
 } //DateDetails

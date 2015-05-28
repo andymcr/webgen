@@ -23,241 +23,247 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum CollectionTypes implements Enumerator {
 	/**
-	 * The '<em><b>Bag</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Bag</b></em>' literal object.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #BAG_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #BAG_VALUE
+   * @generated
+   * @ordered
+   */
 	BAG(0, "Bag", "Bag"),
 
 	/**
-	 * The '<em><b>List</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>List</b></em>' literal object.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LIST_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #LIST_VALUE
+   * @generated
+   * @ordered
+   */
 	LIST(0, "List", "List"),
 
 	/**
-	 * The '<em><b>Ordered Set</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Ordered Set</b></em>' literal object.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #ORDERED_SET_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #ORDERED_SET_VALUE
+   * @generated
+   * @ordered
+   */
 	ORDERED_SET(0, "OrderedSet", "OrderedSet"),
 
 	/**
-	 * The '<em><b>Set</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Set</b></em>' literal object.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SET_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #SET_VALUE
+   * @generated
+   * @ordered
+   */
 	SET(0, "Set", "Set");
 
 	/**
-	 * The '<em><b>Bag</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Bag</b></em>' literal value.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Bag</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #BAG
-	 * @model name="Bag"
-	 * @generated
-	 * @ordered
-	 */
+   * @see #BAG
+   * @model name="Bag"
+   * @generated
+   * @ordered
+   */
 	public static final int BAG_VALUE = 0;
 
 	/**
-	 * The '<em><b>List</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>List</b></em>' literal value.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>List</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #LIST
-	 * @model name="List"
-	 * @generated
-	 * @ordered
-	 */
+   * @see #LIST
+   * @model name="List"
+   * @generated
+   * @ordered
+   */
 	public static final int LIST_VALUE = 0;
 
 	/**
-	 * The '<em><b>Ordered Set</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Ordered Set</b></em>' literal value.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Ordered Set</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #ORDERED_SET
-	 * @model name="OrderedSet"
-	 * @generated
-	 * @ordered
-	 */
+   * @see #ORDERED_SET
+   * @model name="OrderedSet"
+   * @generated
+   * @ordered
+   */
 	public static final int ORDERED_SET_VALUE = 0;
 
 	/**
-	 * The '<em><b>Set</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Set</b></em>' literal value.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Set</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SET
-	 * @model name="Set"
-	 * @generated
-	 * @ordered
-	 */
+   * @see #SET
+   * @model name="Set"
+   * @generated
+   * @ordered
+   */
 	public static final int SET_VALUE = 0;
 
 	/**
-	 * An array of all the '<em><b>Collection Types</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
+   * An array of all the '<em><b>Collection Types</b></em>' enumerators.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	private static final CollectionTypes[] VALUES_ARRAY =
-		new CollectionTypes[] {
-			BAG,
-			LIST,
-			ORDERED_SET,
-			SET,
-		};
+		new CollectionTypes[]
+    {
+      BAG,
+      LIST,
+      ORDERED_SET,
+      SET,
+    };
 
 	/**
-	 * A public read-only list of all the '<em><b>Collection Types</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
+   * A public read-only list of all the '<em><b>Collection Types</b></em>' enumerators.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static final List<CollectionTypes> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Collection Types</b></em>' literal with the specified literal value.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Collection Types</b></em>' literal with the specified literal value.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static CollectionTypes get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			CollectionTypes result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
-				return result;
-			}
-		}
-		return null;
-	}
+    for (int i = 0; i < VALUES_ARRAY.length; ++i)
+    {
+      CollectionTypes result = VALUES_ARRAY[i];
+      if (result.toString().equals(literal))
+      {
+        return result;
+      }
+    }
+    return null;
+  }
 
 	/**
-	 * Returns the '<em><b>Collection Types</b></em>' literal with the specified name.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Collection Types</b></em>' literal with the specified name.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static CollectionTypes getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			CollectionTypes result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
-				return result;
-			}
-		}
-		return null;
-	}
+    for (int i = 0; i < VALUES_ARRAY.length; ++i)
+    {
+      CollectionTypes result = VALUES_ARRAY[i];
+      if (result.getName().equals(name))
+      {
+        return result;
+      }
+    }
+    return null;
+  }
 
 	/**
-	 * Returns the '<em><b>Collection Types</b></em>' literal with the specified integer value.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Collection Types</b></em>' literal with the specified integer value.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static CollectionTypes get(int value) {
-		switch (value) {
-			case BAG_VALUE: return BAG;
-		}
-		return null;
-	}
+    switch (value)
+    {
+      case BAG_VALUE: return BAG;
+    }
+    return null;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	private final int value;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	private final String name;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	private final String literal;
 
 	/**
-	 * Only this class can construct instances.
-	 * <!-- begin-user-doc -->
+   * Only this class can construct instances.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	private CollectionTypes(int value, String name, String literal) {
-		this.value = value;
-		this.name = name;
-		this.literal = literal;
-	}
+    this.value = value;
+    this.name = name;
+    this.literal = literal;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public int getValue() {
-	  return value;
-	}
+    return value;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public String getName() {
-	  return name;
-	}
+    return name;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public String getLiteral() {
-	  return literal;
-	}
+    return literal;
+  }
 
 	/**
-	 * Returns the literal value of the enumerator, which is its string representation.
-	 * <!-- begin-user-doc -->
+   * Returns the literal value of the enumerator, which is its string representation.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String toString() {
-		return literal;
-	}
+    return literal;
+  }
 	
 } //CollectionTypes

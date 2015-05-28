@@ -27,32 +27,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface DateAttribute extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Details</b></em>' attribute.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.orm.DateDetails}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Details</b></em>' attribute.
+   * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.orm.DateDetails}.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Details</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Details</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.orm.DateDetails
-	 * @see #setDetails(DateDetails)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getDateAttribute_Details()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Details</em>' attribute.
+   * @see uk.ac.man.cs.mdsd.orm.DateDetails
+   * @see #setDetails(DateDetails)
+   * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getDateAttribute_Details()
+   * @model unique="false"
+   * @generated
+   */
 	DateDetails getDetails();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.DateAttribute#getDetails <em>Details</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.DateAttribute#getDetails <em>Details</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Details</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.orm.DateDetails
-	 * @see #getDetails()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Details</em>' attribute.
+   * @see uk.ac.man.cs.mdsd.orm.DateDetails
+   * @see #getDetails()
+   * @generated
+   */
 	void setDetails(DateDetails value);
 
 } // DateAttribute

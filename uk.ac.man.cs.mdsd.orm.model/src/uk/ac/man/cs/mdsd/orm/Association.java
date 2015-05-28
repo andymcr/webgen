@@ -31,135 +31,133 @@ package uk.ac.man.cs.mdsd.orm;
  */
 public interface Association extends Feature {
 	/**
-	 * Returns the value of the '<em><b>Opposite</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.orm.Association#getOpposite <em>Opposite</em>}'.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Opposite</b></em>' reference.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Opposite</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Opposite</em>' reference.
-	 * @see #setOpposite(Association)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_Opposite()
-	 * @see uk.ac.man.cs.mdsd.orm.Association#getOpposite
-	 * @model opposite="opposite" required="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Opposite</em>' reference.
+   * @see #setOpposite(Association)
+   * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_Opposite()
+   * @model required="true"
+   * @generated
+   */
 	Association getOpposite();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#getOpposite <em>Opposite</em>}' reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#getOpposite <em>Opposite</em>}' reference.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Opposite</em>' reference.
-	 * @see #getOpposite()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Opposite</em>' reference.
+   * @see #getOpposite()
+   * @generated
+   */
 	void setOpposite(Association value);
 
 	/**
-	 * Returns the value of the '<em><b>Owning End</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Owning End</b></em>' attribute.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owning End</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owning End</em>' attribute.
-	 * @see #setOwningEnd(boolean)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_OwningEnd()
-	 * @model required="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Owning End</em>' attribute.
+   * @see #setOwningEnd(boolean)
+   * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_OwningEnd()
+   * @model unique="false" required="true"
+   * @generated
+   */
 	boolean isOwningEnd();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#isOwningEnd <em>Owning End</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#isOwningEnd <em>Owning End</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Owning End</em>' attribute.
-	 * @see #isOwningEnd()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Owning End</em>' attribute.
+   * @see #isOwningEnd()
+   * @generated
+   */
 	void setOwningEnd(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Bidirectional</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Bidirectional</b></em>' attribute.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Bidirectional</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bidirectional</em>' attribute.
-	 * @see #setBidirectional(boolean)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_Bidirectional()
-	 * @model required="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Bidirectional</em>' attribute.
+   * @see #setBidirectional(boolean)
+   * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_Bidirectional()
+   * @model unique="false" required="true"
+   * @generated
+   */
 	boolean isBidirectional();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#isBidirectional <em>Bidirectional</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#isBidirectional <em>Bidirectional</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bidirectional</em>' attribute.
-	 * @see #isBidirectional()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Bidirectional</em>' attribute.
+   * @see #isBidirectional()
+   * @generated
+   */
 	void setBidirectional(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Containment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Containment</b></em>' attribute.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Containment</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Containment</em>' attribute.
-	 * @see #setContainment(boolean)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_Containment()
-	 * @model required="true"
-	 * @generated
-	 */
+   * @return the value of the '<em>Containment</em>' attribute.
+   * @see #setContainment(boolean)
+   * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_Containment()
+   * @model unique="false" required="true"
+   * @generated
+   */
 	boolean isContainment();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#isContainment <em>Containment</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#isContainment <em>Containment</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Containment</em>' attribute.
-	 * @see #isContainment()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Containment</em>' attribute.
+   * @see #isContainment()
+   * @generated
+   */
 	void setContainment(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Pivot Table Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Pivot Table Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pivot Table Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pivot Table Name</em>' attribute.
-	 * @see #setPivotTableName(String)
-	 * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_PivotTableName()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Pivot Table Name</em>' attribute.
+   * @see #setPivotTableName(String)
+   * @see uk.ac.man.cs.mdsd.orm.OrmPackage#getAssociation_PivotTableName()
+   * @model unique="false"
+   * @generated
+   */
 	String getPivotTableName();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#getPivotTableName <em>Pivot Table Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link uk.ac.man.cs.mdsd.orm.Association#getPivotTableName <em>Pivot Table Name</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pivot Table Name</em>' attribute.
-	 * @see #getPivotTableName()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Pivot Table Name</em>' attribute.
+   * @see #getPivotTableName()
+   * @generated
+   */
 	void setPivotTableName(String value);
 
 } // Association

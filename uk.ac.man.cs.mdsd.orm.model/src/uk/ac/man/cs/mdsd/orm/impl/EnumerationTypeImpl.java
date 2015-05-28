@@ -37,118 +37,124 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  */
 public class EnumerationTypeImpl extends DataTypeImpl implements EnumerationType {
 	/**
-	 * The cached value of the '{@link #getEnumerations() <em>Enumerations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getEnumerations() <em>Enumerations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEnumerations()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getEnumerations()
+   * @generated
+   * @ordered
+   */
 	protected EList<EnumerationLiteral> enumerations;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected EnumerationTypeImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return OrmPackage.Literals.ENUMERATION_TYPE;
-	}
+    return OrmPackage.Literals.ENUMERATION_TYPE;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public EList<EnumerationLiteral> getEnumerations() {
-		if (enumerations == null) {
-			enumerations = new EObjectContainmentEList<EnumerationLiteral>(EnumerationLiteral.class, this, OrmPackage.ENUMERATION_TYPE__ENUMERATIONS);
-		}
-		return enumerations;
-	}
+    if (enumerations == null)
+    {
+      enumerations = new EObjectContainmentEList<EnumerationLiteral>(EnumerationLiteral.class, this, OrmPackage.ENUMERATION_TYPE__ENUMERATIONS);
+    }
+    return enumerations;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case OrmPackage.ENUMERATION_TYPE__ENUMERATIONS:
-				return ((InternalEList<?>)getEnumerations()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.ENUMERATION_TYPE__ENUMERATIONS:
+        return ((InternalEList<?>)getEnumerations()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrmPackage.ENUMERATION_TYPE__ENUMERATIONS:
-				return getEnumerations();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.ENUMERATION_TYPE__ENUMERATIONS:
+        return getEnumerations();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrmPackage.ENUMERATION_TYPE__ENUMERATIONS:
-				getEnumerations().clear();
-				getEnumerations().addAll((Collection<? extends EnumerationLiteral>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.ENUMERATION_TYPE__ENUMERATIONS:
+        getEnumerations().clear();
+        getEnumerations().addAll((Collection<? extends EnumerationLiteral>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrmPackage.ENUMERATION_TYPE__ENUMERATIONS:
-				getEnumerations().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.ENUMERATION_TYPE__ENUMERATIONS:
+        getEnumerations().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrmPackage.ENUMERATION_TYPE__ENUMERATIONS:
-				return enumerations != null && !enumerations.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.ENUMERATION_TYPE__ENUMERATIONS:
+        return enumerations != null && !enumerations.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //EnumerationTypeImpl

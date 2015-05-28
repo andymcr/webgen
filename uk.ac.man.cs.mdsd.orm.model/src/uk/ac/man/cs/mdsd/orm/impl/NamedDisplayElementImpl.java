@@ -30,137 +30,141 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  */
 public abstract class NamedDisplayElementImpl extends NamedElementImpl implements NamedDisplayElement {
 	/**
-	 * The default value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDisplayLabel()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDisplayLabel()
+   * @generated
+   * @ordered
+   */
 	protected static final String DISPLAY_LABEL_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDisplayLabel()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getDisplayLabel()
+   * @generated
+   * @ordered
+   */
 	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected NamedDisplayElementImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return OrmPackage.Literals.NAMED_DISPLAY_ELEMENT;
-	}
+    return OrmPackage.Literals.NAMED_DISPLAY_ELEMENT;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public String getDisplayLabel() {
-		return displayLabel;
-	}
+    return displayLabel;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setDisplayLabel(String newDisplayLabel) {
-		String oldDisplayLabel = displayLabel;
-		displayLabel = newDisplayLabel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL, oldDisplayLabel, displayLabel));
-	}
+    String oldDisplayLabel = displayLabel;
+    displayLabel = newDisplayLabel;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL, oldDisplayLabel, displayLabel));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL:
-				return getDisplayLabel();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL:
+        return getDisplayLabel();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL:
-				setDisplayLabel((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL:
+        setDisplayLabel((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL:
-				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL:
+        setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL:
-				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case OrmPackage.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL:
+        return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
+    }
+    return super.eIsSet(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (displayLabel: ");
-		result.append(displayLabel);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (displayLabel: ");
+    result.append(displayLabel);
+    result.append(')');
+    return result.toString();
+  }
 
 } //NamedDisplayElementImpl

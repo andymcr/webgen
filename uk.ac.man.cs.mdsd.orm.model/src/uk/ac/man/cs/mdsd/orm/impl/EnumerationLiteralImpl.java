@@ -22,22 +22,22 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  */
 public class EnumerationLiteralImpl extends NamedDisplayElementImpl implements EnumerationLiteral {
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected EnumerationLiteralImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return OrmPackage.Literals.ENUMERATION_LITERAL;
-	}
+    return OrmPackage.Literals.ENUMERATION_LITERAL;
+  }
 
 } //EnumerationLiteralImpl

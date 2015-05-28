@@ -22,22 +22,22 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  */
 public class DataTypeImpl extends ClassifierImpl implements DataType {
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected DataTypeImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return OrmPackage.Literals.DATA_TYPE;
-	}
+    return OrmPackage.Literals.DATA_TYPE;
+  }
 
 } //DataTypeImpl

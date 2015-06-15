@@ -1,0 +1,477 @@
+@Ecore(
+	nsURI="http://www.cs.man.ac.uk/mdsd/2015/y"
+)
+@Ecore(
+	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
+	invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
+)
+@GenModel(
+//	modelDirectory="/uk.ac.man.cs.mdsd.waf.model/src",
+	editDirectory="/uk.ac.man.cs.mdsd.waf.edit/src",
+	editPluginID="uk.ac.man.cs.mdsd.waf.edit",
+	childCreationExtenders="true",
+	complianceLevel="6.0")
+package uk.ac.man.cs.mdsd.waf
+
+import uk.ac.man.cs.mdsd.criteria.Expression
+import uk.ac.man.cs.mdsd.criteria.Order
+import uk.ac.man.cs.mdsd.criteria.Path
+import uk.ac.man.cs.mdsd.criteria.Predicate
+import uk.ac.man.cs.mdsd.orm.Association
+import uk.ac.man.cs.mdsd.orm.Attribute
+import uk.ac.man.cs.mdsd.orm.Cardinality
+import uk.ac.man.cs.mdsd.orm.DataType
+import uk.ac.man.cs.mdsd.orm.DateDetails
+import uk.ac.man.cs.mdsd.orm.Entity
+import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
+import uk.ac.man.cs.mdsd.orm.NamedElement
+import uk.ac.man.cs.mdsd.orm.OrmModel
+
+annotation "http://www.eclipse.org/emf/2002/Ecore" as Ecore
+annotation "http://www.eclipse.org/emf/2002/GenModel" as GenModel
+annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
+
+enum FrameworkTechnologies {
+	JSF
+	CakePHP = 1
+	CodeIgniter = 2
+	Kohana = 3
+	Laravel = 4
+	Symfony = 5
+}
+
+enum AjaxTechnologies {
+	None
+	jQuery = 1
+	AngularJS = 2
+}
+
+class WafModel {
+	refers OrmModel[1] persistence
+	contains Service[] services
+	contains Page[] pages opposite partOf
+	contains Menu[] menus
+	String[1] siteName
+	String[1] siteTitle
+	boolean developmentVersion
+	String baseURL
+	boolean rewriteURLs
+	String webmasterEmail
+	String copyrightText
+	String metaDescription
+	FrameworkTechnologies frameworkTechnology
+	AjaxTechnologies ajaxTechnology
+	contains Authentication authentication
+	String captchaSiteKey
+	String captchaSecretKey
+	String textEditorURL
+	refers Menu sideMenu
+	boolean staticUnitsEditable
+	
+}
+
+
+abstract class Authentication {
+	String[1] loginLabel = ""
+	String logoutLabel = ""
+}
+
+class LocalAuthenticationSystem extends Authentication {
+	refers Service[1] userService
+	refers ServiceEntityElement[1] userAuthenticationKey
+	refers Service authenticationService
+	refers Service loginAttemptService
+	refers Service autoLoginService
+	boolean allowSelfRegistration
+	boolean useEmailActivation = "true"
+	boolean sendWelcomeEmail = "true"
+	refers RegistrationUnit registrationUnit opposite authenticationSystem
+	refers LoginUnit[1] loginUnit opposite authenticationSystem
+	refers ForgottenPasswordUnit forgottenPasswordUnit opposite authenticationSystem
+}
+
+class CasAuthentication extends Authentication {
+}
+
+
+interface IncludedFeature {
+	String displayLabel
+	contains Expression forcedValue
+	String footer
+	String headerClass
+	String inputClass
+	String displayClass
+	String footerClass
+}
+
+interface IncludedElement extends IncludedFeature {
+	boolean obfuscateFormFields
+	contains Expression defaultValue
+}
+
+interface IncludedAssociation extends IncludedFeature {
+}
+
+
+class Service extends NamedElement {
+	refers Entity[] entities
+	refers Entity[] daosUsed
+	String[1] modelName
+	boolean view
+	String viewName
+	contains ModelLabel[] displayLabels opposite labelFor
+	contains Selection[] selections
+	contains ServiceFeature[] features opposite includedBy
+	refers DynamicUnit[] accessedBy opposite service
+}
+
+class ModelLabel extends NamedElement, UnitTitle {
+	container Service[1] labelFor opposite displayLabels
+	String[1] format
+	refers ServiceFeature[] features
+}
+
+class Selection extends NamedElement {
+	refers ServiceAssociation[] joins
+	contains Predicate filter
+	contains Order[] ordering
+	int limit = "0"
+}
+
+interface ServiceFeature {
+	container Service[1] includedBy opposite features
+	Cardinality cardinality
+	String dateFormat
+}
+
+interface ServiceAssociation extends ServiceFeature {
+	refers Service[1] oppositeService
+	refers ServiceAssociation oppositeFeature
+}
+
+abstract class ServiceEntityFeature extends ServiceFeature, NamedElement, IncludedFeature {
+	String viewColumnName
+}
+
+class ServiceEntityElement extends ServiceEntityFeature, IncludedElement, UnitTitle {
+	refers Attribute[1] feature
+	boolean caseInsensitive
+	boolean encrypt
+	String placeholder
+	String validationPattern
+}
+
+class ServiceEntityAssociation extends ServiceEntityFeature, IncludedAssociation, ServiceAssociation {
+	refers Association[1] feature
+}
+
+class ServiceViewAssociation extends NamedDisplayElement, ServiceAssociation {
+}
+
+
+abstract class Menu extends NamedDisplayElement {
+	contains MenuEntry[] entries opposite partOf
+	boolean omitCaption
+	String captionClass
+	String styleClass
+	String layoutClass
+}
+
+class StaticMenu extends Menu {
+}
+
+class DynamicMenu extends Menu {
+	refers Service[1] service
+	refers Selection[1] selection
+	refers ServiceEntityElement dynamicTitle
+}
+
+abstract class MenuEntry {
+	container Menu[1] partOf opposite entries
+}
+
+class FixedPageMenuEntry extends MenuEntry, NamedDisplayElement {
+	refers Page[1] page
+}
+
+class FixedActionMenuEntry extends MenuEntry, NamedDisplayElement {
+	refers DynamicUnit[1] action
+}
+
+abstract class MenuIncludedFeature extends MenuEntry, NamedDisplayElement {
+}
+
+class MenuIncludedElement extends MenuIncludedFeature {
+	refers ServiceEntityElement[1] feature
+}
+
+// Remove  need for this
+class FixedCommandMenuEntry extends MenuEntry, NamedDisplayElement {
+}
+
+class EditStaticTextMenuEntry extends MenuEntry, NamedDisplayElement {
+}
+
+enum PageTopMenuOptions {
+	NeverInclude
+	AlwaysInclude = 1
+	IncludeWhenAuthenticated = 2
+}
+
+class Page extends NamedDisplayElement, UnitContainer {
+	container WafModel partOf opposite pages
+	refers Page parentPage opposite childPages
+	refers Page[] childPages opposite parentPage
+	boolean authenticated
+	PageTopMenuOptions topMenuOption
+	int topMenuRank = "65535"
+	String navigationLabel
+	refers Menu sideMenu
+	String styleClass
+}
+
+interface UnitContainer {
+	contains ContentUnit[] units opposite displayedOn
+}
+
+interface UnitTitle {
+	
+}
+
+interface SelectTarget {
+	refers SelectAction[] targettingActions opposite target
+}
+
+abstract class ContentUnit extends NamedDisplayElement {
+	container UnitContainer[1] displayedOn opposite units
+	String purposeSummary
+	boolean omitCaption
+	String captionClass
+	String styleClass
+	String layoutClass
+}
+
+class StaticUnit extends ContentUnit {
+	refers Service service
+	String[1] content
+}
+
+// Remove need for this
+class CommandUnit extends ContentUnit {
+	contains Command[] commands opposite partOf
+}
+
+abstract class Command extends NamedElement {
+	container CommandUnit[1] partOf opposite commands
+}
+
+abstract class DynamicUnit extends ContentUnit {
+	refers Service[1] service opposite accessedBy
+	contains UnitField[] displayFields opposite displayedOn
+	contains UnitSupportAction[] supportActions
+	String header
+	String footer
+	String headerClass
+	String controlClass
+	String footerClass
+	String errorClass
+}
+
+class UnitSupportAction extends NamedDisplayElement {
+	String confirmMessage
+}
+
+interface UnitField {
+	container DynamicUnit[1] displayedOn opposite displayFields
+	Cardinality cardinality
+	String dateFormat
+}
+
+enum CollectionDisplayOptions {
+	LineDirection
+	PageDirection = 1
+}
+
+abstract class UnitFeature extends NamedElement, IncludedFeature, UnitField, InlineActionContainer {
+	boolean onlyDisplayWhenNotEmpty
+	CollectionDisplayOptions displayOption
+	// what is this for?
+//	contains SelectAction linkedAction
+	int maximumDisplaySize = "-1"
+	boolean autofocus
+}
+
+class UnitElement extends UnitFeature, IncludedElement {
+	refers ServiceEntityElement[1] serviceFeature
+	String placeholder
+	String validationPattern
+}
+
+class UnitAssociation extends UnitFeature, IncludedAssociation, UnitContainer {
+	refers ServiceAssociation[1] serviceFeature
+	contains UnitChildFeature childFeature
+	refers Selection selection
+	refers ModelLabel dynamicLabel
+	// ???
+	refers UnitTitle[] filters
+}
+
+abstract class UnitChildFeature {
+}
+
+class UnitChildElement extends UnitChildFeature {
+	refers ServiceEntityElement[1] serviceFeature
+}
+
+class UnitChildAssociation extends UnitChildFeature {
+	// ServiceEntityAssociation ???
+	refers ServiceAssociation[1] serviceFeature
+	contains UnitChildFeature childFeature
+}
+
+abstract class InterfaceField extends NamedDisplayElement, UnitField {
+	contains Expression defaultValue
+	String inputClass
+	refers UnitField mustMatch
+}
+
+class DataTypeField extends InterfaceField {
+	refers DataType[1] dataType
+	boolean caseInsensitive
+	boolean obfuscateFormFields
+	boolean encrypt
+}
+
+class DateField extends InterfaceField {
+	DateDetails[1] details
+	String format
+}
+
+class CaptchaField extends NamedDisplayElement, UnitField {
+}
+
+abstract class EditUnit extends DynamicUnit {
+	refers Page confirmDestination
+	String[1] confirmLabel
+	refers Page cancelDestination
+	String cancelLabel
+}
+
+class CreateUnit extends EditUnit {
+}
+
+class CreateUpdateUnit extends EditUnit, SelectTarget {
+	String clearLabel
+}
+
+class MapUnit extends EditUnit, SelectTarget {
+	boolean readOnly
+	int defaultZoomLevel
+	refers ServiceEntityElement location
+	refers ServiceEntityElement placeName
+}
+
+class UpdateUnit extends EditUnit, SelectTarget {
+}
+
+abstract class DataUnit extends DynamicUnit {
+	refers Selection selection
+	refers UnitTitle dynamicTitle
+}
+
+class DetailsUnit extends DataUnit, SelectTarget {
+	boolean omitFieldLabels
+}
+
+abstract class IndexUnit extends DataUnit, InlineActionContainer, SelectTarget {
+	boolean omitColumnLabels
+	int defaultPaginationSize
+	String nextPageLabel = ">"
+	String previousPageLabel = "<"
+	boolean useFirstLastPageLinks
+	String firstPageLabel = "<<"
+	String lastPageLabel = ">>"
+	refers SearchUnit targettingSearches opposite resultsDestination
+	String rowClasses
+}
+
+class IndexGridUnit extends IndexUnit {
+}
+
+class IndexPageDirectionUnit extends IndexUnit {	
+}
+
+class IndexLineDirectionUnit extends IndexUnit {
+}
+
+abstract class ControlUnit extends DynamicUnit {
+	String[1] submitLabel
+	refers Page cancelDestination
+	String cancelLabel
+}
+
+class SearchUnit extends ControlUnit {
+	refers IndexUnit[1] resultsDestination opposite targettingSearches
+}
+
+class ActionUnit extends ControlUnit {
+	boolean omitFieldLabels
+}
+
+interface AuthenticationUnit {
+}
+
+class RegistrationUnit extends EditUnit, AuthenticationUnit {
+	refers LocalAuthenticationSystem authenticationSystem opposite registrationUnit
+}
+
+class LoginUnit extends ControlUnit, AuthenticationUnit {
+	refers LocalAuthenticationSystem authenticationSystem opposite loginUnit
+	refers UnitField[1] loginIdField
+	refers UnitField[1] passwordField
+	refers UnitField rememberMeField
+}
+
+class ForgottenPasswordUnit extends ControlUnit, AuthenticationUnit {
+	refers LocalAuthenticationSystem authenticationSystem opposite forgottenPasswordUnit
+	refers UnitField[1] loginIdField
+}
+
+
+interface InlineActionContainer {
+	contains InlineAction[] actions opposite usedBy
+}
+
+abstract class InlineAction extends NamedDisplayElement {
+	container InlineActionContainer[1] usedBy opposite actions
+	String header
+	String footer
+	String headerClass
+	String footerClass
+}
+
+class SelectAction extends InlineAction {
+	refers SelectTarget[1] target opposite targettingActions
+}
+
+class DeleteAction extends InlineAction {
+	refers Page destination
+	String[1] confirmMessage
+}
+
+class FeatureSupportAction extends InlineAction {
+	String[1] confirmMessage
+}
+
+
+class ModelReference { // extends Path {
+	refers DynamicUnit[1] unit
+}
+
+class FeatureReference { // extends Path {
+	refers ServiceEntityFeature feature
+}
+
+class CurrentUserReference { // extends Path {
+}

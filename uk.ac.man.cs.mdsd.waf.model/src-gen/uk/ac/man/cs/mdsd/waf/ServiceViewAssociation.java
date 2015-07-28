@@ -14,6 +14,5 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * @model
  * @generated
  */
-public interface ServiceViewAssociation extends NamedDisplayElement, ServiceAssociation
-{
+public interface ServiceViewAssociation extends NamedDisplayElement, ServiceAssociation {
 } // ServiceViewAssociation

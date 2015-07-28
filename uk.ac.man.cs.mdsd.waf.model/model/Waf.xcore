@@ -1,13 +1,8 @@
 @Ecore(
-	nsURI="http://www.cs.man.ac.uk/mdsd/2015/y"
-)
-@Ecore(
-	validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
-	settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL",
-	invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL"
+	nsURI="http://www.cs.man.ac.uk/mdsd/2015/WebApplicationFramework",
+	nsPrefix="waf"
 )
 @GenModel(
-//	modelDirectory="/uk.ac.man.cs.mdsd.waf.model/src",
 	editDirectory="/uk.ac.man.cs.mdsd.waf.edit/src",
 	editPluginID="uk.ac.man.cs.mdsd.waf.edit",
 	childCreationExtenders="true",
@@ -28,9 +23,6 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
 
-annotation "http://www.eclipse.org/emf/2002/Ecore" as Ecore
-annotation "http://www.eclipse.org/emf/2002/GenModel" as GenModel
-annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 
 enum FrameworkTechnologies {
 	JSF
@@ -66,6 +58,7 @@ class WafModel {
 	String captchaSiteKey
 	String captchaSecretKey
 	String textEditorURL
+	String topNavigationId
 	refers Menu sideMenu
 	boolean staticUnitsEditable
 	
@@ -262,6 +255,7 @@ class CommandUnit extends ContentUnit {
 	contains Command[] commands opposite partOf
 }
 
+// nothing extends
 abstract class Command extends NamedElement {
 	container CommandUnit[1] partOf opposite commands
 }
@@ -465,13 +459,13 @@ class FeatureSupportAction extends InlineAction {
 }
 
 
-class ModelReference { // extends Path {
+class ModelReference extends Path {
 	refers DynamicUnit[1] unit
 }
 
-class FeatureReference { // extends Path {
+class FeatureReference extends Path {
 	refers ServiceEntityFeature feature
 }
 
-class CurrentUserReference { // extends Path {
+class CurrentUserReference extends Path {
 }

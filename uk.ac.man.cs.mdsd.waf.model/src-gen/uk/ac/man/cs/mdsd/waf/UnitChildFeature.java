@@ -14,6 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface UnitChildFeature extends EObject
-{
+public interface UnitChildFeature extends EObject {
 } // UnitChildFeature

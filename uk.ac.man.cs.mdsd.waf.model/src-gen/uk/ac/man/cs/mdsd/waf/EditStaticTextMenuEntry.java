@@ -14,6 +14,5 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * @model
  * @generated
  */
-public interface EditStaticTextMenuEntry extends MenuEntry, NamedDisplayElement
-{
+public interface EditStaticTextMenuEntry extends MenuEntry, NamedDisplayElement {
 } // EditStaticTextMenuEntry

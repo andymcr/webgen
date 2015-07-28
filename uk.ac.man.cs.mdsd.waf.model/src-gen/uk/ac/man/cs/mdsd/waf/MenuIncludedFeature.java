@@ -14,6 +14,5 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * @model abstract="true"
  * @generated
  */
-public interface MenuIncludedFeature extends MenuEntry, NamedDisplayElement
-{
+public interface MenuIncludedFeature extends MenuEntry, NamedDisplayElement {
 } // MenuIncludedFeature

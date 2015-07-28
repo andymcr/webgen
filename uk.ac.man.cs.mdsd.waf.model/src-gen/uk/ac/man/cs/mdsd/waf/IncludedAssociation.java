@@ -13,6 +13,5 @@ package uk.ac.man.cs.mdsd.waf;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface IncludedAssociation extends IncludedFeature
-{
+public interface IncludedAssociation extends IncludedFeature {
 } // IncludedAssociation

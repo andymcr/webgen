@@ -14,6 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface AuthenticationUnit extends EObject
-{
+public interface AuthenticationUnit extends EObject {
 } // AuthenticationUnit

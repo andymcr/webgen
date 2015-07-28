@@ -13,6 +13,5 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface CreateUnit extends EditUnit
-{
+public interface CreateUnit extends EditUnit {
 } // CreateUnit

@@ -14,6 +14,5 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * @model
  * @generated
  */
-public interface FixedCommandMenuEntry extends MenuEntry, NamedDisplayElement
-{
+public interface FixedCommandMenuEntry extends MenuEntry, NamedDisplayElement {
 } // FixedCommandMenuEntry

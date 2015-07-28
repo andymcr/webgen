@@ -13,6 +13,5 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface IndexLineDirectionUnit extends IndexUnit
-{
+public interface IndexLineDirectionUnit extends IndexUnit {
 } // IndexLineDirectionUnit

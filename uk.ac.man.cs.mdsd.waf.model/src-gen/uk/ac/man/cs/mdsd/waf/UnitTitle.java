@@ -14,6 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface UnitTitle extends EObject
-{
+public interface UnitTitle extends EObject {
 } // UnitTitle

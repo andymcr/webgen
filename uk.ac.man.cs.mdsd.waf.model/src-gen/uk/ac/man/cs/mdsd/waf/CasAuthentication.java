@@ -13,6 +13,5 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface CasAuthentication extends Authentication
-{
+public interface CasAuthentication extends Authentication {
 } // CasAuthentication

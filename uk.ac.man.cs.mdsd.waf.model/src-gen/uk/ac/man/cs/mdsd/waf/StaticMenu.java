@@ -13,6 +13,5 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface StaticMenu extends Menu
-{
+public interface StaticMenu extends Menu {
 } // StaticMenu

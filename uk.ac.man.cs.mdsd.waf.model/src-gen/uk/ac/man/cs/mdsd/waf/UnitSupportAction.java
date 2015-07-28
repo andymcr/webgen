@@ -11,41 +11,40 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitSupportAction#getConfirmMessage <em>Confirm Message</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitSupportAction()
  * @model
  * @generated
  */
-public interface UnitSupportAction extends NamedDisplayElement
-{
-  /**
-   * Returns the value of the '<em><b>Confirm Message</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Confirm Message</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Confirm Message</em>' attribute.
-   * @see #setConfirmMessage(String)
-   * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitSupportAction_ConfirmMessage()
-   * @model unique="false"
-   * @generated
-   */
-  String getConfirmMessage();
+public interface UnitSupportAction extends NamedDisplayElement {
+	/**
+	 * Returns the value of the '<em><b>Confirm Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Confirm Message</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Confirm Message</em>' attribute.
+	 * @see #setConfirmMessage(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitSupportAction_ConfirmMessage()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getConfirmMessage();
 
-  /**
-   * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitSupportAction#getConfirmMessage <em>Confirm Message</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Confirm Message</em>' attribute.
-   * @see #getConfirmMessage()
-   * @generated
-   */
-  void setConfirmMessage(String value);
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitSupportAction#getConfirmMessage <em>Confirm Message</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Confirm Message</em>' attribute.
+	 * @see #getConfirmMessage()
+	 * @generated
+	 */
+	void setConfirmMessage(String value);
 
 } // UnitSupportAction

@@ -2,7 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.criteria.Path;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface CurrentUserReference extends EObject
-{
+public interface CurrentUserReference extends Path {
 } // CurrentUserReference

@@ -11,6 +11,7 @@ import uk.ac.man.cs.mdsd.orm.Attribute;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getFeature <em>Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#isCaseInsensitive <em>Case Insensitive</em>}</li>
@@ -18,142 +19,140 @@ import uk.ac.man.cs.mdsd.orm.Attribute;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement()
  * @model
  * @generated
  */
-public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElement, UnitTitle
-{
-  /**
-   * Returns the value of the '<em><b>Feature</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Feature</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Feature</em>' reference.
-   * @see #setFeature(Attribute)
-   * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_Feature()
-   * @model required="true"
-   * @generated
-   */
-  Attribute getFeature();
+public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElement, UnitTitle {
+	/**
+	 * Returns the value of the '<em><b>Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Feature</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Feature</em>' reference.
+	 * @see #setFeature(Attribute)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_Feature()
+	 * @model required="true"
+	 * @generated
+	 */
+	Attribute getFeature();
 
-  /**
-   * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getFeature <em>Feature</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Feature</em>' reference.
-   * @see #getFeature()
-   * @generated
-   */
-  void setFeature(Attribute value);
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getFeature <em>Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Feature</em>' reference.
+	 * @see #getFeature()
+	 * @generated
+	 */
+	void setFeature(Attribute value);
 
-  /**
-   * Returns the value of the '<em><b>Case Insensitive</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Case Insensitive</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Case Insensitive</em>' attribute.
-   * @see #setCaseInsensitive(boolean)
-   * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_CaseInsensitive()
-   * @model unique="false"
-   * @generated
-   */
-  boolean isCaseInsensitive();
+	/**
+	 * Returns the value of the '<em><b>Case Insensitive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Case Insensitive</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Case Insensitive</em>' attribute.
+	 * @see #setCaseInsensitive(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_CaseInsensitive()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isCaseInsensitive();
 
-  /**
-   * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#isCaseInsensitive <em>Case Insensitive</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Case Insensitive</em>' attribute.
-   * @see #isCaseInsensitive()
-   * @generated
-   */
-  void setCaseInsensitive(boolean value);
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#isCaseInsensitive <em>Case Insensitive</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Case Insensitive</em>' attribute.
+	 * @see #isCaseInsensitive()
+	 * @generated
+	 */
+	void setCaseInsensitive(boolean value);
 
-  /**
-   * Returns the value of the '<em><b>Encrypt</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Encrypt</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Encrypt</em>' attribute.
-   * @see #setEncrypt(boolean)
-   * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_Encrypt()
-   * @model unique="false"
-   * @generated
-   */
-  boolean isEncrypt();
+	/**
+	 * Returns the value of the '<em><b>Encrypt</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Encrypt</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Encrypt</em>' attribute.
+	 * @see #setEncrypt(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_Encrypt()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isEncrypt();
 
-  /**
-   * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#isEncrypt <em>Encrypt</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Encrypt</em>' attribute.
-   * @see #isEncrypt()
-   * @generated
-   */
-  void setEncrypt(boolean value);
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#isEncrypt <em>Encrypt</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Encrypt</em>' attribute.
+	 * @see #isEncrypt()
+	 * @generated
+	 */
+	void setEncrypt(boolean value);
 
-  /**
-   * Returns the value of the '<em><b>Placeholder</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Placeholder</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Placeholder</em>' attribute.
-   * @see #setPlaceholder(String)
-   * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_Placeholder()
-   * @model unique="false"
-   * @generated
-   */
-  String getPlaceholder();
+	/**
+	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Placeholder</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Placeholder</em>' attribute.
+	 * @see #setPlaceholder(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_Placeholder()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getPlaceholder();
 
-  /**
-   * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getPlaceholder <em>Placeholder</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Placeholder</em>' attribute.
-   * @see #getPlaceholder()
-   * @generated
-   */
-  void setPlaceholder(String value);
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getPlaceholder <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Placeholder</em>' attribute.
+	 * @see #getPlaceholder()
+	 * @generated
+	 */
+	void setPlaceholder(String value);
 
-  /**
-   * Returns the value of the '<em><b>Validation Pattern</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Validation Pattern</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Validation Pattern</em>' attribute.
-   * @see #setValidationPattern(String)
-   * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_ValidationPattern()
-   * @model unique="false"
-   * @generated
-   */
-  String getValidationPattern();
+	/**
+	 * Returns the value of the '<em><b>Validation Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Validation Pattern</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Validation Pattern</em>' attribute.
+	 * @see #setValidationPattern(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_ValidationPattern()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getValidationPattern();
 
-  /**
-   * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getValidationPattern <em>Validation Pattern</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Validation Pattern</em>' attribute.
-   * @see #getValidationPattern()
-   * @generated
-   */
-  void setValidationPattern(String value);
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getValidationPattern <em>Validation Pattern</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Validation Pattern</em>' attribute.
+	 * @see #getValidationPattern()
+	 * @generated
+	 */
+	void setValidationPattern(String value);
 
 } // ServiceEntityElement

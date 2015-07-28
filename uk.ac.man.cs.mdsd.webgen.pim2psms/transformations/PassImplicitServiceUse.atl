@@ -5,10 +5,9 @@
 -- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
 
 module PassImplicitServiceUse;
-create waf : WAF from website : Website, partialWaf : WAF;
+create dummyWaf : WAF refining waf : WAF, website : Website;
 
 uses WebsiteHelpers;
-uses CopyPartialWaf;
 
 
 helper context WAF!Service def: getServiceEntityFeature(name : String) : WAF!ServiceEntityFeature
@@ -40,14 +39,6 @@ helper context WAF!UnitAssociation def: getWebsiteIncludedFeature() : Website!Un
 		.displayFields->any(f | f.name = self.name);
 
 
--- @extends NamedDisplayElement, ContentUnitFields
-abstract rule ContentUnit {
-	from partialWaf : WAF!ContentUnit
-	to waf : WAF!ContentUnit (
-	)
-}
-
--- @extends ContentUnit, StaticUnitFields
 rule StaticUnit {
 	from partialWaf : WAF!StaticUnit
 	to waf : WAF!StaticUnit (
@@ -60,45 +51,20 @@ rule StaticUnit {
 	)
 }
 
--- @extends ContentUnit, DynamicUnitFields
 abstract rule DynamicUnit {
 	from partialWaf : WAF!DynamicUnit
 	to waf : WAF!DynamicUnit (
 		service <-
-			if not partialWaf.service.oclIsUndefined() then
-				partialWaf.service
+			if not waf.service.oclIsUndefined() then
+				waf.service
 			else
 				thisModule.findWafService(
-					partialWaf.getWebsiteUnit().source.name)
+					waf.getWebsiteUnit().source.name)
 			endif
 	)
 }
 
--- @extends UnitFeature, IncludedElement
-rule UnitElement {
-	from partialWaf : WAF!UnitElement
-	to waf : WAF!UnitElement (
-		serviceFeature <- partialWaf.findServiceEntityFeature(),
-		placeholder <- partialWaf.placeholder,
-		validationPattern <- partialWaf.validationPattern
-	)
-}
-
--- @extends UnitFeature, IncludedAssociation, UnitContainer
-rule UnitAssociation {
-	from partialWaf : WAF!UnitAssociation
-	to waf : WAF!UnitAssociation (
-		serviceFeature <- partialWaf.findServiceEntityFeature(),
-		childFeature <- partialWaf.childFeature,
-		selection <- partialWaf.selection,
-		dynamicLabel <- partialWaf.dynamicLabel,
-		filters <- partialWaf.filters,
-		maximumDisplaySize <- partialWaf.maximumDisplaySize,
-		displayOption <- partialWaf.displayOption
-	)
-}
-
--- @extends DynamicUnit, EditUnitFields
+-- @extends DynamicUnit
 abstract rule EditUnit {
 	from partialWaf : WAF!EditUnit
 	to waf : WAF!EditUnit (
@@ -112,14 +78,14 @@ rule CreateUnit {
 	)
 }
 
--- @extends EditUnit, CreateUpdateUnitFields
+-- @extends EditUnit
 rule CreateUpdateUnit {
 	from partialWaf : WAF!CreateUpdateUnit
 	to waf : WAF!CreateUpdateUnit (
 	)
 }
 
--- @extends EditUnit, MapUnitFields
+-- @extends EditUnit
 rule MapUnit {
 	from partialWaf : WAF!MapUnit
 	to waf : WAF!MapUnit (
@@ -133,63 +99,63 @@ rule UpdateUnit {
 	)
 }
 
--- @extends DynamicUnit, DataUnitFields
+-- @extends DynamicUnit
 abstract rule DataUnit {
 	from partialWaf : WAF!DataUnit
 	to waf : WAF!DataUnit (
 	)
 }
 
--- @extends DataUnit, DetailsUnitFields
+-- @extends DataUnit
 rule DetailsUnit {
 	from partialWaf : WAF!DetailsUnit
 	to waf : WAF!DetailsUnit (
 	)
 }
 
--- @extends DataUnit, IndexUnitFields
+-- @extends DataUnit
 abstract rule IndexUnit {
 	from partialWaf : WAF!IndexUnit
 	to waf : WAF!IndexUnit (
 	)
 }
 
--- @extends IndexUnit, IndexGridUnitFields
+-- @extends IndexUnit
 rule IndexGridUnit {
 	from partialWaf : WAF!IndexGridUnit
 	to waf : WAF!IndexGridUnit (
 	)
 }
 
--- @extends IndexUnit, IndexPageDirectionUnitFields
+-- @extends IndexUnit
 rule IndexPageDirectionUnit {
 	from partialWaf : WAF!IndexPageDirectionUnit
 	to waf : WAF!IndexPageDirectionUnit (
 	)
 }
 
--- @extends IndexUnit, IndexLineDirectionUnitFields
+-- @extends IndexUnit
 rule IndexLineDirectionUnit {
 	from partialWaf : WAF!IndexLineDirectionUnit
 	to waf : WAF!IndexLineDirectionUnit (
 	)
 }
 
--- @extends DynamicUnit, ControlUnitFields
+-- @extends DynamicUnit
 abstract rule ControlUnit {
 	from partialWaf : WAF!ControlUnit
 	to waf : WAF!ControlUnit (
 	)
 }
 
--- @extends ControlUnit, SearchUnitFields
+-- @extends ControlUnit
 rule SearchUnit {
 	from partialWaf : WAF!SearchUnit
 	to waf : WAF!SearchUnit (
 	)
 }
 
--- @extends ControlUnit, ActionUnitFields
+-- @extends ControlUnit
 rule ActionUnit {
 	from partialWaf : WAF!ActionUnit
 	to waf : WAF!ActionUnit (
@@ -203,7 +169,7 @@ rule RegistrationUnit {
 	)
 }
 
--- @extends ControlUnit, LoginUnitFields
+-- @extends ControlUnit
 rule LoginUnit {
 	from partialWaf : WAF!LoginUnit
 	to waf : WAF!LoginUnit (

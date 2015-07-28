@@ -5,18 +5,14 @@
 -- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
 
 module PassAuthentication2;
-create waf : WAF from partialWaf : WAF;
+create dummyWaf : WAF refining waf : WAF;
 
 uses WebsiteHelpers;
-uses CopyPartialWaf;
 
 
--- @extends UnitField, NamedDisplayElement
 abstract rule InterfaceField {
 	from partialWaf : WAF!InterfaceField
 	to waf : WAF!InterfaceField (
-		cardinality <- partialWaf.cardinality,
-		defaultValue <- partialWaf.defaultValue,
 		mustMatch <-
 			if not partialWaf.mustMatch.oclIsUndefined() then
 				partialWaf.mustMatch
@@ -26,8 +22,7 @@ abstract rule InterfaceField {
 				partialWaf.displayedOn.displayFields->any(f | f.name = 'password')
 			else
 				OclUndefined
-			endif endif endif,
-		inputClass <- partialWaf.inputClass
+			endif endif endif
 	)
 }
 
@@ -35,10 +30,6 @@ abstract rule InterfaceField {
 rule DataTypeField {
 	from partialWaf : WAF!DataTypeField
 	to waf : WAF!DataTypeField (
-		dataType <- partialWaf.dataType,
-		obfuscateFormFields <- partialWaf.obfuscateFormFields,
-		caseInsensitive <- partialWaf.caseInsensitive,
-		encrypt <- partialWaf.encrypt
 	)
 }
 
@@ -46,20 +37,10 @@ rule DataTypeField {
 rule DateField {
 	from partialWaf : WAF!DateField
 	to waf : WAF!DateField (
-		details <- partialWaf.details,
-		format <- partialWaf.format
 	)
 }
 
 
--- @extends EditUnit
-rule RegistrationUnit {
-	from partialWaf : WAF!RegistrationUnit
-	to waf : WAF!RegistrationUnit (
-	)
-}
-
--- @extends ControlUnit
 rule LoginUnit {
 	from partialWaf : WAF!LoginUnit
 	to waf : WAF!LoginUnit (
@@ -84,7 +65,6 @@ rule LoginUnit {
 	)
 }
 
--- @extends ControlUnit
 rule ForgottenPasswordUnit {
 	from partialWaf : WAF!ForgottenPasswordUnit
 	to waf : WAF!ForgottenPasswordUnit (

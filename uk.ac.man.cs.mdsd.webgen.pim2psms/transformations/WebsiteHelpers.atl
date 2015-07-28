@@ -116,9 +116,9 @@ helper context ORM!Entity def: getOrmFeature(featureName : String) : Website!Fea
 
 
 helper def: findWafService(name : String) : WAF!Service
-	= WAF!Service.allInstancesFrom('partialWaf')->any(d | d.name = name);
+	= WAF!Service.allInstancesFrom('waf')->any(d | d.name = name);
 
 
-helper def: findPartialWafMenu(name : String) : WAF!Menu
-	= WAF!Menu.allInstancesFrom('partialWaf')->select(m | m.name = name)->first();
+helper def: findWafMenu(name : String) : WAF!Menu
+	= WAF!Menu.allInstancesFrom('waf')->select(m | m.name = name)->first();
 

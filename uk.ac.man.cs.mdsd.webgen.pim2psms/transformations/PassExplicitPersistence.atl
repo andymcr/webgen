@@ -4,9 +4,10 @@
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
 
 module PassExplicitPersistence;
-create orm : ORM from website : Website;
+create partialOrm : ORM from website : Website;
 
 uses WebsiteHelpers;
+
 
 helper context Website!Association def: createPivotTableName() : String
 	= let name : String
@@ -25,7 +26,7 @@ helper context Website!Association def: createPivotTableName() : String
 	
 rule Website {
 	from website : Website!WebGenModel
-	to orm : ORM!OrmModel (
+	to partialOrm : ORM!OrmModel (
 		dataTypes <- website.classifiers->select(c | c.oclIsKindOf(Website!DataType)),
 		entities <- website.classifiers->select(c | c.oclIsKindOf(Website!Entity)),
 		collectionTypes <- website.classifiers
@@ -89,7 +90,7 @@ helper context Website!Association def: inverseFeatureTypeNoted(noted : Set(Webs
 
 lazy rule CollectionType {
 	from website: Website!Feature
-	to orm : ORM!CollectionType (
+	to partialOrm : ORM!CollectionType (
 		elementType <- if website.oclIsKindOf(Website!Attribute) then
 				website.dataType
 			else
@@ -98,25 +99,25 @@ lazy rule CollectionType {
 		collectionType <- website.collectionType()
 	)
 	do {
-		orm;
+		partialOrm;
 	}
 }
 
 lazy rule InverseCollectionType {
 	from website: Website!Feature
-	to orm : ORM!CollectionType (
+	to partialOrm : ORM!CollectionType (
 		elementType <- website.parentEntity,
 		collectionType <- website.inverseCollectionType()
 	)
 	do {
-		orm;
+		partialOrm;
 	}
 }
 
 
 abstract rule NamedElement {
 	from website : Website!NamedElement
-	to orm : ORM!NamedElement (
+	to partialOrm : ORM!NamedElement (
 		name <- website.name
 	)
 }
@@ -124,7 +125,7 @@ abstract rule NamedElement {
 -- @extends NamedElement
 abstract rule NamedDisplayElement {
 	from website : Website!NamedDisplayElement
-	to orm : ORM!NamedDisplayElement (
+	to partialOrm : ORM!NamedDisplayElement (
 		displayLabel <-
 			if not website.displayLabel.oclIsUndefined() and website.displayLabel <> '' then
 				website.displayLabel
@@ -138,14 +139,14 @@ abstract rule NamedDisplayElement {
 -- @extends NamedDisplayElement
 rule DataType {
 	from website : Website!DataType (website.oclIsTypeOf(Website!DataType))
-	to orm : ORM!DataType (
+	to partialOrm : ORM!DataType (
 	)
 }
 
 -- @extends NamedDisplayElement
 rule EnumerationType {
 	from website : Website!EnumerationType
-	to orm : ORM!EnumerationType (
+	to partialOrm : ORM!EnumerationType (
 		enumerations <- website.enumerations
 	)
 }
@@ -153,14 +154,14 @@ rule EnumerationType {
 -- @extends NamedDisplayElement
 rule EnumerationLiteral {
 	from website : Website!EnumerationLiteral
-	to orm : ORM!EnumerationLiteral (
+	to partialOrm : ORM!EnumerationLiteral (
 	)
 }
 
 -- @extends NamedDisplayElement
 rule Entity {
 	from website : Website!Entity
-	to orm : ORM!Entity (
+	to partialOrm : ORM!Entity (
 		tableName <- 
 			if not website.tableName.oclIsUndefined() and website.tableName <> '' then
 				website.tableName
@@ -187,7 +188,7 @@ rule Entity {
 -- @extends NamedDisplayElement
 abstract rule Feature {
 	from website : Website!Feature
-	to orm : ORM!Feature (
+	to partialOrm : ORM!Feature (
 		parentEntity <- website.parentEntity,
 		inputField <- false,
 		headerClass <- website.headerClass,
@@ -200,7 +201,7 @@ abstract rule Feature {
 -- @extends Feature
 abstract rule Attribute {
 	from website : Website!Attribute
-	to orm : ORM!Attribute (
+	to partialOrm : ORM!Attribute (
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
 				website.columnName
@@ -213,7 +214,7 @@ abstract rule Attribute {
 -- @extends Attribute
 abstract rule SingletonAttribute {
 	from website : Website!Attribute (website.cardinality <> #Many)
-	to orm : ORM!SingletonAttribute (
+	to partialOrm : ORM!SingletonAttribute (
 		required <- website.cardinality = #Required,
 		"unique" <- website."unique",
 		defaultValue <- website.defaultValue,
@@ -224,7 +225,7 @@ abstract rule SingletonAttribute {
 -- @extends Attribute
 abstract rule CollectionAttribute {
 	from website : Website!Attribute (website.cardinality = #Many)
-	to orm : ORM!CollectionAttribute (
+	to partialOrm : ORM!CollectionAttribute (
 		inputField <- true
 	)
 }
@@ -232,7 +233,7 @@ abstract rule CollectionAttribute {
 -- @extends SingletonAttribute
 rule SingletonElement {
 	from website : Website!DataTypeAttribute (website.cardinality <> #Many)
-	to orm : ORM!SingletonElement (
+	to partialOrm : ORM!SingletonElement (
 		dataType <- website.dataType,
 		persistentType <- 
 			if not website.persistentType.oclIsUndefined() and website.persistentType <> '' then
@@ -274,13 +275,13 @@ rule SingletonElement {
 -- @extends CollectionAttribute
 rule CollectionElement {
 	from website : Website!DataTypeAttribute (website.cardinality = #Many)
-	to orm : ORM!CollectionElement (
+	to partialOrm : ORM!CollectionElement (
 	)
 }
 
 abstract rule DateAttribute {
 	from website : Website!DateAttribute
-	to orm : ORM!DateAttribute (
+	to partialOrm : ORM!DateAttribute (
 		persistentType <- 
 			if website.details = #DateOnly then
 				'date'
@@ -311,21 +312,21 @@ abstract rule DateAttribute {
 -- @extends SingletonAttribute, DateAttribute
 rule SingletonDate {
 	from website : Website!DateAttribute (website.cardinality <> #Many)
-	to orm : ORM!SingletonDate (
+	to partialOrm : ORM!SingletonDate (
 	)
 }
 
 -- @extends CollectionAttribute, DateAttribute
 rule CollectionDate {
 	from website : Website!DateAttribute (website.cardinality = #Many)
-	to orm : ORM!CollectionDate (
+	to partialOrm : ORM!CollectionDate (
 	)
 }
 
 -- @extends SingletonAttribute
 abstract rule SingletonResource {
 	from website : Website!ResourceAttribute (website.cardinality <> #Many)
-	to orm : ORM!SingletonResource (
+	to partialOrm : ORM!SingletonResource (
 		persistentType <- 'string',
 		ormType <- 'String',
 		maximumUploadSize <-
@@ -349,28 +350,28 @@ abstract rule SingletonResource {
 -- @extends SingletonResource
 rule SingletonFile {
 	from website : Website!FileAttribute (website.cardinality <> #Many)
-	to orm : ORM!SingletonFile (
+	to partialOrm : ORM!SingletonFile (
 	)
 }
 
 -- @extends SingletonResource
 rule SingletonImage {
 	from website : Website!ImageAttribute (website.cardinality <> #Many)
-	to orm : ORM!SingletonImage (
+	to partialOrm : ORM!SingletonImage (
 	)
 }
 
 -- @extends SingletonAttribute
 rule SingletonLocation {
 	from website : Website!LocationAttribute (website.cardinality <> #Many)
-	to orm : ORM!SingletonLocation (
+	to partialOrm : ORM!SingletonLocation (
 	)
 }
 
 -- @extends Feature
 abstract rule Association {
 	from website : Website!Association
-	to orm : ORM!Association (
+	to partialOrm : ORM!Association (
 		bidirectional <- website.bidirectional,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
@@ -385,18 +386,19 @@ abstract rule Association {
 -- @extends Association
 rule OneToOneAssociationWithoutContainment {
 	from website : Website!AssociationWithoutContainment (website.cardinality <> #Many and website.targetCardinality <> #Many)
-	to orm : ORM!SingletonAssociation (
-		inputField <- true,
-		opposite <- associationEnd,
+	to partialOrm : ORM!SingletonAssociation (
 		associationRelationship <- #OneToOne,
+		opposite <- associationEnd,
 		owningEnd <- website.cardinality = #Required or website.targetCardinality <> #Required,
-		required <- website.cardinality = #Required
+		required <- website.cardinality = #Required,
+		inputField <- true
 	),
 	associationEnd : ORM!SingletonAssociation (
 		name <- website.targetFeatureName(),
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #OneToOne,
+		opposite <- partialOrm,
 		owningEnd <- website.cardinality <> #Required and website.targetCardinality = #Required,
 		bidirectional <- website.bidirectional,
 		columnName <-
@@ -418,18 +420,19 @@ rule OneToOneAssociationWithoutContainment {
 -- @extends Association
 rule ManyToOneAssociationWithoutContainment {
 	from website : Website!AssociationWithoutContainment (website.cardinality <> #Many and website.targetCardinality = #Many)
-	to orm : ORM!SingletonAssociation (
-		inputField <- true,
-		opposite <- associationEnd,
+	to partialOrm : ORM!SingletonAssociation (
 		associationRelationship <- #ManyToOne,
+		opposite <- associationEnd,
 		owningEnd <- true,
-		required <- website.cardinality = #Required
+		required <- website.cardinality = #Required,
+		inputField <- true
 	),
 	associationEnd : ORM!CollectionAssociation (
 		name <- website.targetFeatureName(),
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #OneToMany,
+		opposite <- partialOrm,
 		owningEnd <- false,
 		bidirectional <- website.bidirectional,
 		inputField <- website.bidirectional,
@@ -444,12 +447,12 @@ rule ManyToOneAssociationWithoutContainment {
 -- @extends Association
 rule OneToManyAssociationWithoutContainment {
 	from website : Website!AssociationWithoutContainment (website.cardinality = #Many and website.targetCardinality <> #Many)
-	to orm : ORM!CollectionAssociation (
+	to partialOrm : ORM!CollectionAssociation (
 		collectionType <- collectionType,
-		inputField <- true,
-		opposite <- associationEnd,
 		associationRelationship <- #OneToMany,
-		owningEnd <- false
+		opposite <- associationEnd,
+		owningEnd <- false,
+		inputField <- true
 	),
 	collectionType : ORM!CollectionType (
 		elementType <- website.targetEntity,
@@ -460,6 +463,7 @@ rule OneToManyAssociationWithoutContainment {
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #ManyToOne,
+		opposite <- partialOrm,
 		owningEnd <- true,
 		bidirectional <- website.bidirectional,
 		columnName <-
@@ -481,12 +485,12 @@ rule OneToManyAssociationWithoutContainment {
 -- @extends Association
 rule ManyToManyAssociationWithoutContainment {
 	from website : Website!AssociationWithoutContainment (website.cardinality = #Many and website.targetCardinality = #Many)
-	to orm : ORM!CollectionAssociation (
+	to partialOrm : ORM!CollectionAssociation (
 		collectionType <- collectionType,
-		inputField <- true,
-		opposite <- associationEnd,
 		associationRelationship <- #ManyToMany,
-		owningEnd <- true
+		opposite <- associationEnd,
+		owningEnd <- true,
+		inputField <- true
 	),
 	collectionType : ORM!CollectionType (
 		elementType <- website.targetEntity,
@@ -497,6 +501,7 @@ rule ManyToManyAssociationWithoutContainment {
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #ManyToMany,
+		opposite <- partialOrm,
 		owningEnd <- false,
 		pivotTableName <- website.createPivotTableName(),
 		bidirectional <- website.bidirectional,
@@ -512,9 +517,9 @@ rule ManyToManyAssociationWithoutContainment {
 -- @extends Association
 rule OneToOneAssociationWithContainment {
 	from website : Website!AssociationWithContainment (website.cardinality <> #Many)
-	to orm : ORM!SingletonAssociation (
-		opposite <- associationEnd,
+	to partialOrm : ORM!SingletonAssociation (
 		associationRelationship <- #OneToOne,
+		opposite <- associationEnd,
 		owningEnd <- false,
 		containment <- true,
 		required <- website.cardinality = #Required
@@ -524,6 +529,7 @@ rule OneToOneAssociationWithContainment {
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #OneToOne,
+		opposite <- partialOrm,
 		owningEnd <- true,
 		bidirectional <- website.bidirectional,
 		columnName <-
@@ -545,9 +551,9 @@ rule OneToOneAssociationWithContainment {
 -- @extends Association
 rule OneToManyAssociationWithContainment {
 	from website : Website!AssociationWithContainment (website.cardinality = #Many)
-	to orm : ORM!CollectionAssociation (
-		opposite <- associationEnd,
+	to partialOrm : ORM!CollectionAssociation (
 		associationRelationship <- #OneToMany,
+		opposite <- associationEnd,
 		owningEnd <- false,
 		containment <- true
 	),
@@ -556,6 +562,7 @@ rule OneToManyAssociationWithContainment {
 		displayLabel <- website.targetDisplayLabel(),
 		parentEntity <- website.targetEntity,
 		associationRelationship <- #ManyToOne,
+		opposite <- partialOrm,
 		owningEnd <- true,
 		bidirectional <- website.bidirectional,
 		columnName <-

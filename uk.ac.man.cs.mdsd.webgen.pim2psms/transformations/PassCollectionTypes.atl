@@ -4,10 +4,9 @@
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
 
 module PassCollectionTypes;
-create orm : ORM from website : Website, partialOrm : ORM;
+create orm : ORM refining partialOrm : ORM, website : Website;
 
 uses WebsiteHelpers;
-uses CopyPartialOrm;
 
 
 helper def: findWebsiteEntity(name : String) : Website!Entity
@@ -21,7 +20,7 @@ helper def: findOrmCollection(name : String) : ORM!DataType
 		->any(c | c.elementType.name = name );
 
 
--- @extends CollectionAttribute
+-- -- @extends CollectionAttribute
 rule CollectionElement {
 	from partialOrm : ORM!CollectionElement
 	to orm : ORM!CollectionElement (
@@ -36,7 +35,7 @@ rule CollectionElement {
 	)
 }
 
--- @extends Association
+-- -- @extends Association
 rule CollectionAssociation {
 	from partialOrm : ORM!CollectionAssociation
 	to orm : ORM!CollectionAssociation (

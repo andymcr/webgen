@@ -4,10 +4,9 @@
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
 
 module PassImplicitStaticPersistence;
-create orm : ORM from website : Website, partialOrm : ORM;
+create orm : ORM refining partialOrm : ORM, website : Website;
 
 uses WebsiteHelpers;
-uses CopyPartialOrm;
 
 
 helper context Website!WebGenModel def: getDataType(name : String) : ORM!DataType
@@ -26,13 +25,13 @@ helper context Website!WebGenModel def: getDataType(name : String) : ORM!DataTyp
 
 
 rule OrmModel {
-	from website : Website!WebGenModel, partialOrm : ORM!OrmModel
+	from partialOrm : ORM!OrmModel
 	to orm : ORM!OrmModel (
 		collectionTypes <- partialOrm.collectionTypes,
 		dataTypes <- partialOrm.dataTypes,
 		entities <- partialOrm.entities
-			->union(if website.websiteProperties.staticUnitsEditable then
-						Sequence{thisModule.implicitStaticEntity(website)}
+			->union(if thisModule.findWebsiteProperties().staticUnitsEditable then
+						Sequence{thisModule.implicitStaticEntity(thisModule.findWebGenModel())}
 					else
 						Sequence{}
 					endif),

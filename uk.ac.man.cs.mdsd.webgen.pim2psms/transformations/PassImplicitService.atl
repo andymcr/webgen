@@ -5,16 +5,14 @@
 -- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
 
 module PassImplicitService;
-create waf : WAF from orm : ORM, partialWaf : WAF;
+create dummyWaf : WAF refining waf : WAF, orm : ORM;
 
 uses WebsiteHelpers;
-uses CopyPartialWaf;
 
 
 rule WafModel {
 	from partialWaf : WAF!WafModel
 	to waf : WAF!WafModel (
-		persistence <- partialWaf.persistence,
 		services <- partialWaf.services
 			->union(let entities : Set(ORM!Entity)
 				= partialWaf.persistence.entities
@@ -22,26 +20,7 @@ rule WafModel {
 					partialWaf.services->collect(s | s.entities)->flatten().asSet()
 					).asSequence()
 				->collect(e | thisModule.implicitService(e))
-			),
-		pages <- partialWaf.pages,
-		menus <- partialWaf.menus,
-		siteName <- partialWaf.siteName,
-		siteTitle <- partialWaf.siteTitle,
-		developmentVersion <- partialWaf.developmentVersion,
-		baseURL <- partialWaf.baseURL,
-		rewriteURLs <- partialWaf.rewriteURLs,
-		webmasterEmail <- partialWaf.webmasterEmail,
-		copyrightText <- partialWaf.copyrightText,
-		metaDescription <- partialWaf.metaDescription,
-		frameworkTechnology <- partialWaf.frameworkTechnology,
-		ajaxTechnology <- partialWaf.ajaxTechnology,
-		authentication <- partialWaf.authentication,
-		captchaSiteKey <- partialWaf.captchaSiteKey,
-		captchaSecretKey <- partialWaf.captchaSecretKey,
-		textEditorURL <- partialWaf.textEditorURL,
-		topNavigationId <- partialWaf.topNavigationId,
-		sideMenu <- partialWaf.sideMenu,
-		staticUnitsEditable <- partialWaf.staticUnitsEditable
+			)
 	)
 }
 

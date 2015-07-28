@@ -5,18 +5,16 @@
 -- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
 
 module PassImplicitServiceEntityFeatures;
-create waf : WAF from orm : ORM, partialWaf : WAF;
+create dummyWaf : WAF refining waf : WAF, orm : ORM;
 
 uses WebsiteHelpers;
-uses CopyPartialWaf;
 
 
 helper def: findEntityService(entity : ORM!Entity) : WAF!Service
-	= WAF!Service.allInstancesFrom('partialWaf')
+	= WAF!Service.allInstancesFrom('waf')
 		->any(s | s.entities->select(e | e.name = entity.name)->notEmpty());
 
 
--- @extends Service
 rule ServiceWithFeatures {
 	from partialWaf : WAF!Service (partialWaf.features->notEmpty())
 	to waf : WAF!Service (
@@ -24,7 +22,6 @@ rule ServiceWithFeatures {
 	)
 } 
 
--- @extends Service
 rule ServiceWithoutFeatures {
 	from partialWaf : WAF!Service (partialWaf.features->isEmpty())
 	to waf : WAF!Service (

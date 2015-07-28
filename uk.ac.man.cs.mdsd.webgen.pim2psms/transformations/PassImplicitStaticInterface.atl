@@ -5,42 +5,22 @@
 -- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
 
 module PassImplicitStaticInterface;
-create waf : WAF from website : Website, orm : ORM, partialWaf : WAF;
+create dummyWaf : WAF refining waf : WAF, website : Website, orm : ORM;
 
 uses WebsiteHelpers;
-uses CopyPartialWaf;
 
 
 rule WafModel {
-	from website : Website!WebGenModel, partialWaf : WAF!WafModel
+	from partialWaf : WAF!WafModel
 	to waf : WAF!WafModel (
-		persistence <- partialWaf.persistence,
-		services <- partialWaf.services,
-		pages <- partialWaf.pages
-			->union(
-				if website.websiteProperties.staticUnitsEditable then
-					Sequence{thisModule.implicitStaticTextPage(partialWaf)}
-				else
-					Sequence{}
-				endif),
-		menus <- partialWaf.menus,
-		siteName <- partialWaf.siteName,
-		siteTitle <- partialWaf.siteTitle,
-		developmentVersion <- partialWaf.developmentVersion,
-		baseURL <- partialWaf.baseURL,
-		rewriteURLs <- partialWaf.rewriteURLs,
-		webmasterEmail <- partialWaf.webmasterEmail,
-		copyrightText <- partialWaf.copyrightText,
-		metaDescription <- partialWaf.metaDescription,
-		frameworkTechnology <- partialWaf.frameworkTechnology,
-		ajaxTechnology <- partialWaf.ajaxTechnology,
-		authentication <- partialWaf.authentication,
-		captchaSiteKey <- partialWaf.captchaSiteKey,
-		captchaSecretKey <- partialWaf.captchaSecretKey,
-		textEditorURL <- partialWaf.textEditorURL,
-		topNavigationId <- partialWaf.topNavigationId,
-		sideMenu <- partialWaf.sideMenu,
-		staticUnitsEditable <- partialWaf.staticUnitsEditable
+		pages <- 
+			partialWaf.pages
+				->union(
+					if thisModule.findWebsiteProperties().staticUnitsEditable then
+						Sequence{thisModule.implicitStaticTextPage(waf)}
+					else
+						Sequence{}
+					endif)
 	)
 }
 
@@ -55,7 +35,7 @@ unique lazy rule implicitStaticTextPage {
 		topMenuRank <- 100,
 		navigationLabel <- 'Static Text',
 		sideMenu <-
-			thisModule.findPartialWafMenu(
+			thisModule.findWafMenu(
 				thisModule.findWebsiteProperties().sideMenu.name)
 	),
 	text : WAF!IndexGridUnit (

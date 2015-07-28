@@ -5,74 +5,54 @@
 -- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
 
 module PassAuthentication;
-create waf : WAF from website : Website, orm : ORM, partialWaf : WAF;
+create dummyWaf : WAF refining waf : WAF, website : Website, orm : ORM;
 
 uses WebsiteHelpers;
-uses CopyPartialWaf;
-
-
-helper def: findWebsiteProperties() : Website!WebsiteProperties
-	= Website!WebsiteProperties.allInstancesFrom('website')->first();
 
 
 rule WafModel {
-	from website : Website!WebGenModel, partialWaf : WAF!WafModel
+	from partialWaf : WAF!WafModel
 	to waf : WAF!WafModel (
-		persistence <- partialWaf.persistence,
-		services <- partialWaf.services,
-		pages <- partialWaf.pages
-			->union(
-				if website.websiteProperties.authentication.oclIsUndefined() then
-					Sequence{}
-				else if website.websiteProperties.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
-					let authentication : Website!LocalAuthenticationSystem
-						= website.websiteProperties.authentication.oclAsType(Website!LocalAuthenticationSystem)
-					in if authentication.loginUnit.oclIsUndefined() then
-							Sequence{thisModule.implicitLoginPage(authentication)}
-						else
-							Sequence{}
-						endif
-				else
-					Sequence{}
-				endif endif)
-			->union(
-				if website.websiteProperties.authentication.oclIsUndefined() then
-					Sequence{}
-				else if website.websiteProperties.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
-					let authentication : Website!LocalAuthenticationSystem
-						= website.websiteProperties.authentication.oclAsType(Website!LocalAuthenticationSystem)
-					in if authentication.authenticationSource.oclIsUndefined() then
-							if authentication.allowSelfRegistration  then
-								Sequence{
-									thisModule.implicitRegistrationPage(authentication),
-									thisModule.implicitManageAuthenticationsPage(authentication)}
+		pages <-
+			let websiteProperties : Website!WebsiteProperties
+				= thisModule.findWebsiteProperties()
+			in partialWaf.pages
+				->union(
+					if websiteProperties.authentication.oclIsUndefined() then
+						Sequence{}
+					else if websiteProperties.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
+						let authentication : Website!LocalAuthenticationSystem
+							= websiteProperties.authentication.oclAsType(Website!LocalAuthenticationSystem)
+						in if authentication.loginUnit.oclIsUndefined() then
+								Sequence{thisModule.implicitLoginPage(authentication)}
 							else
-								Sequence{
-									thisModule.implicitManageAuthenticationsPage(authentication)}
-								endif
-						else
-							Sequence{}
-						endif
-				else
-					Sequence{}
-				endif endif),
-		menus <- partialWaf.menus,
-		siteName <- partialWaf.siteName,
-		siteTitle <- partialWaf.siteTitle,
-		developmentVersion <- partialWaf.developmentVersion,
-		baseURL <- partialWaf.baseURL,
-		rewriteURLs <- partialWaf.rewriteURLs,
-		webmasterEmail <- partialWaf.webmasterEmail,
-		copyrightText <- partialWaf.copyrightText,
-		metaDescription <- partialWaf.metaDescription,
-		frameworkTechnology <- partialWaf.frameworkTechnology,
-		ajaxTechnology <- partialWaf.ajaxTechnology,
-		authentication <- thisModule.findWebsiteProperties().authentication,
-		captchaSiteKey <- partialWaf.captchaSiteKey,
-		captchaSecretKey <- partialWaf.captchaSecretKey,
-		textEditorURL <- partialWaf.textEditorURL,
-		topNavigationId <- partialWaf.topNavigationId,
-		staticUnitsEditable <- partialWaf.staticUnitsEditable
+								Sequence{}
+							endif
+					else
+						Sequence{}
+					endif endif)
+				->union(
+					if websiteProperties.authentication.oclIsUndefined() then
+						Sequence{}
+					else if websiteProperties.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
+						let authentication : Website!LocalAuthenticationSystem
+							= websiteProperties.authentication.oclAsType(Website!LocalAuthenticationSystem)
+						in if authentication.authenticationSource.oclIsUndefined() then
+								if authentication.allowSelfRegistration  then
+									Sequence{
+										thisModule.implicitRegistrationPage(authentication),
+										thisModule.implicitManageAuthenticationsPage(authentication)}
+								else
+									Sequence{
+										thisModule.implicitManageAuthenticationsPage(authentication)}
+									endif
+							else
+								Sequence{}
+							endif
+					else
+						Sequence{}
+					endif endif),
+		authentication <- thisModule.findWebsiteProperties().authentication
 	)
 }
 
@@ -364,7 +344,7 @@ unique lazy rule implicitRegistrationPage {
 			in if sideMenu.oclIsUndefined() then
 					OclUndefined
 				else
-					thisModule.findPartialWafMenu(sideMenu.name)
+					thisModule.findWafMenu(sideMenu.name)
 				endif
 	)
 	do {
@@ -392,7 +372,7 @@ unique lazy rule implicitLoginPage {
 			in if sideMenu.oclIsUndefined() then
 					OclUndefined
 				else
-					thisModule.findPartialWafMenu(sideMenu.name)
+					thisModule.findWafMenu(sideMenu.name)
 				endif
 	)
 	do {
@@ -416,7 +396,7 @@ unique lazy rule implicitManageAuthenticationsPage {
 			in if sideMenu.oclIsUndefined() then
 					OclUndefined
 				else
-					thisModule.findPartialWafMenu(sideMenu.name)
+					thisModule.findWafMenu(sideMenu.name)
 				endif
 	),
 	users : WAF!IndexGridUnit (

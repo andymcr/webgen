@@ -2,8 +2,11 @@ package uk.ac.man.cs.mdsd.webgen.pim2psms;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -21,6 +24,7 @@ public class TransformUsingEmftVm {
 	private Metamodel websiteMetamodel;
 	private Metamodel ormMetamodel;
 	private Metamodel wafMetamodel;
+	private IPath websiteModelPath;
 	private Model websiteModel;
 	private ModuleResolver moduleResolver;
 
@@ -58,14 +62,11 @@ public class TransformUsingEmftVm {
 		return websiteModel;
 	}
 
-protected IFile yyy;
-protected String xxx;
 	public void setWebsiteModel(final IFile websiteModelFile) {
-yyy = websiteModelFile;
-xxx = websiteModelFile.getFullPath().toString();
+		websiteModelPath = websiteModelFile.getFullPath();
 		websiteModel = EmftvmFactory.eINSTANCE.createModel();
 		websiteModel.setResource(resourceSet.getResource(
-			URI.createFileURI(websiteModelFile.getFullPath().toString()), true));
+			URI.createFileURI(websiteModelPath.toString()), true));
 	}
 
 	protected ModuleResolver getModuleResolver() {
@@ -78,9 +79,17 @@ xxx = websiteModelFile.getFullPath().toString();
 		return moduleResolver;
 	}
 
+	protected URI createModelURI(final String fileExtension) {
+		return URI.createFileURI(websiteModelPath
+			.removeFileExtension()
+			.addFileExtension(fileExtension)
+			.toString());
+	}
+
 	protected Model createModel(final String modelFileExtension) {
 		final Model model = EmftvmFactory.eINSTANCE.createModel();
-		model.setResource(resourceSet.createResource(URI.createFileURI(xxx.concat(modelFileExtension))));
+		model.setResource(resourceSet.createResource(
+			createModelURI(modelFileExtension)));
 		return model;
 	}
 
@@ -94,96 +103,98 @@ xxx = websiteModelFile.getFullPath().toString();
 		
 	}
 
-	protected Model executePass(final ExecEnv env, final String moduleName,
-			final String modelName, final String modelFileExtension,
-			final Model traceModel) {
+	protected void executePass(final ExecEnv env, final String moduleName,
+			final Map<String, Model> inputModels, final Model traceModel) {
+		for (String inputName : inputModels.keySet()) {
+			env.registerInputModel(inputName, inputModels.get(inputName));
+		}
+
 		if (traceModel != null) {
 			env.registerInOutModel("trace", traceModel);
 		}
-
-		final Model passModel = createModel(modelFileExtension);
-		env.registerOutputModel(modelName, passModel);
 
 		env.loadModule(getModuleResolver(), moduleName);
 
 		final TimingData timingData = new TimingData();
 		env.run(timingData);
 		timingData.finish();
+	}
+
+	protected Model executePassCreatingOutputModel(final String moduleName,
+			final String modelName, final String modelFileExtension,
+			final Map<String, Model> inputModels, final Model traceModel) {
+		final ExecEnv env = createEnvironment();
+
+		Model passModel = createModel(modelFileExtension);
+		env.registerOutputModel(modelName, passModel);
+
+		executePass(env, moduleName, inputModels, traceModel);
 
 		return passModel;
 	}
 
-	protected Model executeOrmPass(final String moduleName,
-			final String modelFileExtension, final Model partialModel,
-			final Model traceModel) {
+	protected void executeRefiningPass(final String moduleName,
+			final String modelName, final Model model,
+			final Map<String, Model> inputModels, final Model traceModel) {
 		final ExecEnv env = createEnvironment();
-		env.registerInputModel("website", getWebsiteModel());
+		env.registerInOutModel(modelName, model);
 
-		if (partialModel != null) {
-			env.registerInputModel("partialOrm", partialModel);
-		}
-		return executePass(env, moduleName, "orm", modelFileExtension,
-				traceModel);
-	}
-
-	protected Model executeWafPass(final String moduleName,
-			final String modelFileExtension, final Model partialModel,
-			final Model ormModel, final Model traceModel) {
-		final ExecEnv env = createEnvironment();
-		env.registerInputModel("website", getWebsiteModel());
-		env.registerInputModel("orm", ormModel);
-
-		if (partialModel != null) {
-			env.registerInputModel("partialWaf", partialModel);
-		}
-
-		return executePass(env, moduleName, "waf", modelFileExtension,
-				traceModel);
+		executePass(env, moduleName, inputModels, traceModel);
 	}
 
 	public void execute() throws IOException {
-		final Model ormModelP1 = executeOrmPass("PassExplicitPersistence",
-			"_orm_p1", null, null);
-		final Model ormModelP2 = executeOrmPass("PassCollectionTypes",
-			"_orm_p2", ormModelP1, null);
-		final Model ormModelP3 = executeOrmPass(
-				"PassImplicitStaticPersistence", "_orm_p3", ormModelP2, null);
-		final Model ormModel = executeOrmPass(
-			"PassImplicitAuthenticationPersistence", "_orm", ormModelP3, null);
+		final Map<String, Model> ormInputModels = new HashMap<String, Model>();
+		ormInputModels.put("website", getWebsiteModel());
+		final String ormModelName = "partialOrm";
+		final Model ormModel = executePassCreatingOutputModel("PassExplicitPersistence",
+			ormModelName, "website_orm", ormInputModels, null);
+		executeRefiningPass("PassCollectionTypes", ormModelName, ormModel,
+			ormInputModels, null);
+		executeRefiningPass("PassImplicitStaticPersistence", ormModelName,
+			ormModel, ormInputModels, null);
+		executeRefiningPass("PassImplicitAuthenticationPersistence",
+			ormModelName, ormModel, ormInputModels, null);
+		executeRefiningPass("PassImplicitAuthenticationPersistence2",
+			ormModelName, ormModel, ormInputModels, null);
 		ormModel.getResource().save(Collections.emptyMap());
 
-		final Model traceModelP1 = createModel("_trace_p1");
-		final Model wafModelP1 = executeWafPass("PassExplicitInterface",
-			"_waf_p1", null, ormModel, traceModelP1);
 
-		final Model traceModelP2 = createModel("_trace_p2");
-		final Model wafModelP2 = executeWafPass("PassImplicitService",
-			"_waf_p2", wafModelP1, ormModel, traceModelP2);
+		final Map<String, Model> wafInputModels = new HashMap<String, Model>();
+		wafInputModels.put("website", getWebsiteModel());
+		wafInputModels.put("orm", ormModel);
+		final String wafModelName = "waf";
 
-		final Model traceModelP3 = createModel("_trace_p3");
-		final Model wafModelP3 = executeWafPass(
-			"PassImplicitServiceEntityFeatures", "_waf_p3", wafModelP2,
-			ormModel, traceModelP3);
+		final Model wafTraceModelP1 = createModel("trace_waf_p1");
+		final Model wafModel = executePassCreatingOutputModel("PassExplicitInterface",
+			wafModelName, "waf", wafInputModels, wafTraceModelP1);
 
-		final Model traceModelP4 = createModel("_trace_p4");
-		final Model wafModelP4 = executeWafPass("PassImplicitServiceUse",
-			"_waf_p4", wafModelP3, ormModel, traceModelP4);
+		final Model wafTraceModelP2 = createModel("trace_waf_p2");
+		executeRefiningPass("PassImplicitService", wafModelName, wafModel,
+			wafInputModels, wafTraceModelP2);
 
-		final Model traceModelP5 = createModel("_trace_p5");
-		final Model wafModelP5 = executeWafPass("PassImplicitStaticInterface",
-			"_waf_p5", wafModelP4, ormModel, traceModelP5);
+		final Model wafTraceModelP3 = createModel("trace_waf_p3");
+		executeRefiningPass("PassImplicitServiceEntityFeatures", wafModelName,
+			wafModel, wafInputModels, wafTraceModelP3);
 
-		final Model traceModelP6 = createModel("_trace_p6");
-		final Model wafModelP6 = executeWafPass("PassImplicitUnitFields",
-			"_waf_p6", wafModelP5, ormModel, traceModelP6);
+		final Model wafTraceModelP4 = createModel("trace_waf_p4");
+		executeRefiningPass("PassImplicitServiceUse", wafModelName, wafModel,
+			wafInputModels, wafTraceModelP4);
 
-		final Model traceModelP7 = createModel("_trace_p7");
-		final Model wafModelP7 = executeWafPass("PassAuthentication",
-			"_waf_p7", wafModelP6, ormModel, traceModelP7);
+		final Model wafTraceModelP5 = createModel("trace_waf_p5");
+		executeRefiningPass("PassImplicitStaticInterface", wafModelName,
+			wafModel, wafInputModels, wafTraceModelP5);
 
-		final Model traceModelP8 = createModel("_trace_p8");
-		final Model wafModel = executeWafPass("PassAuthentication2",
-			"_waf", wafModelP7, ormModel, traceModelP8);
+		final Model wafTraceModelP6 = createModel("trace_waf_p6");
+		executeRefiningPass("PassImplicitUnitFields", wafModelName, wafModel,
+			wafInputModels, wafTraceModelP6);
+
+		final Model wafTraceModelP7 = createModel("trace_waf_p7");
+		executeRefiningPass("PassAuthentication", wafModelName, wafModel,
+			wafInputModels, wafTraceModelP7);
+
+		final Model wafTraceModelP8 = createModel("trace_waf_p8");
+		executeRefiningPass("PassAuthentication2", wafModelName, wafModel,
+			wafInputModels, wafTraceModelP8);
 		wafModel.getResource().save(Collections.emptyMap());
 	}
 

@@ -4,10 +4,9 @@
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
 
 module PassImplicitAuthenticationPersistence;
-create orm : ORM from website : Website, partialOrm : ORM;
+create orm : ORM refining partialOrm : ORM, website : Website;
 
 uses WebsiteHelpers;
-uses CopyPartialOrm;
 
 
 helper context Website!Authentication def: getDataType(name : String) : ORM!DataType
@@ -45,59 +44,63 @@ helper context Website!Authentication def: getPersistentType(name : String) : St
 		endif;
 
 rule OrmModel {
-	from website : Website!WebGenModel, partialOrm : ORM!OrmModel
+	from partialOrm : ORM!OrmModel
 	to orm : ORM!OrmModel (
 		collectionTypes <- partialOrm.collectionTypes,
-		dataTypes <- partialOrm.dataTypes
-			->union(
-				if thisModule.findPartialOrmDataType('Boolean').oclIsUndefined() then
-					Sequence{thisModule.implicitBooleanDataType(website)}
-				else
-					Sequence{}
-				endif)
-			->union(
-				if thisModule.findPartialOrmDataType('String').oclIsUndefined() then
-					Sequence{thisModule.implicitStringDataType(website)}
-				else
-					Sequence{}
-				endif)
-			->union(
-				if thisModule.findPartialOrmDataType('Email').oclIsUndefined() then
-					Sequence{thisModule.implicitEmailDataType(website)}
-				else
-					Sequence{}
-				endif),
-				entities <- partialOrm.entities
-			->union(let authentication : Website!Authentication
-				= website.websiteProperties.authentication
-				in if authentication.oclIsUndefined() then
-						Sequence{}
-					else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
-							and authentication.authenticationSource.oclIsUndefined() then
-						Sequence{thisModule.implicitAuthenticationSystemEntity(authentication)}
+		dataTypes <-
+			let website : Website!WebGenModel = thisModule.findWebGenModel()
+			in partialOrm.dataTypes
+				->union(
+					if thisModule.findPartialOrmDataType('Boolean').oclIsUndefined() then
+						Sequence{thisModule.implicitBooleanDataType(website)}
 					else
 						Sequence{}
-					endif endif)
-			->union(let authentication : Website!Authentication
-				= website.websiteProperties.authentication
-				in if authentication.oclIsUndefined() then
-						Sequence{}
-					else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
-							and authentication.trackLoginAttempts then
-						Sequence{thisModule.implicitLoginAttemptEntity(authentication)}
+					endif)
+				->union(
+					if thisModule.findPartialOrmDataType('String').oclIsUndefined() then
+						Sequence{thisModule.implicitStringDataType(website)}
 					else
 						Sequence{}
-					endif endif)
-			->union(let authentication : Website!Authentication
-				= website.websiteProperties.authentication
-				in if authentication.oclIsUndefined() then
-						Sequence{}
-					else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
-							and authentication.allowAutoLogin then
-						Sequence{thisModule.implicitAutoLoginEntity(authentication)}
+					endif)
+				->union(
+					if thisModule.findPartialOrmDataType('Email').oclIsUndefined() then
+						Sequence{thisModule.implicitEmailDataType(website)}
 					else
 						Sequence{}
-					endif endif),
+					endif),
+		entities <-
+			let website : Website!WebGenModel = thisModule.findWebGenModel()
+			in partialOrm.entities
+				->union(let authentication : Website!Authentication
+					= website.websiteProperties.authentication
+					in if authentication.oclIsUndefined() then
+							Sequence{}
+						else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
+								and authentication.authenticationSource.oclIsUndefined() then
+							Sequence{thisModule.implicitAuthenticationSystemEntity(authentication)}
+						else
+							Sequence{}
+						endif endif)
+				->union(let authentication : Website!Authentication
+					= website.websiteProperties.authentication
+					in if authentication.oclIsUndefined() then
+							Sequence{}
+						else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
+								and authentication.trackLoginAttempts then
+							Sequence{thisModule.implicitLoginAttemptEntity(authentication)}
+						else
+							Sequence{}
+						endif endif)
+				->union(let authentication : Website!Authentication
+					= website.websiteProperties.authentication
+					in if authentication.oclIsUndefined() then
+							Sequence{}
+						else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
+								and authentication.allowAutoLogin then
+							Sequence{thisModule.implicitAutoLoginEntity(authentication)}
+						else
+							Sequence{}
+						endif endif),
 		databaseTechnology <- partialOrm.databaseTechnology,
 		databasePrefix <- partialOrm.databasePrefix,
 		databaseHost <- partialOrm.databaseHost,
@@ -377,7 +380,8 @@ unique lazy rule implicitAutoLoginEntity {
 		tableName <- 'autologins',
 		autoKeyName <- 'id',
 		displayLabel <- 'Automatic Login',
-		features <- Sequence{key, authentication, userAgent, lastIpAddress, lastLogin}
+		features <- Sequence{key, thisModule.implicitAuthenticationFeature(website),
+			userAgent, lastIpAddress, lastLogin}
 	),
 	key : ORM!SingletonElement (
 		name <- 'key',
@@ -389,19 +393,6 @@ unique lazy rule implicitAutoLoginEntity {
 		persistentType <- website.getPersistentType('String'),
 		inputField <- false,
 		inputClass <- 'input_attribute'
-	),
-	authentication : ORM!SingletonAssociation (
-		name <- 'authentication',
-		displayLabel <- 'Authentication',
-		opposite <- thisModule.implicitAutoLoginOpposite(website),
-		owningEnd <- true,
-		bidirectional <- true,
-		containment <- false,
-		required <- true,
-		associationRelationship <- #ManyToOne,
-		columnName <- 'authentication_id',
-		inputField <- false,
-		inputClass <- 'input_association'
 	),
 	userAgent : ORM!SingletonElement (
 		name <- 'userAgent',
@@ -440,6 +431,26 @@ unique lazy rule implicitAutoLoginEntity {
 	}
 }
 
+unique lazy rule implicitAuthenticationFeature {
+	from website: Website!Authentication
+	to orm: ORM!SingletonAssociation (
+		name <- 'authentication',
+		displayLabel <- 'Authentication',
+		opposite <- thisModule.implicitAutoLoginOpposite(website),
+		owningEnd <- true,
+		bidirectional <- true,
+		containment <- false,
+		required <- true,
+		associationRelationship <- #ManyToOne,
+		columnName <- 'authentication_id',
+		inputField <- false,
+		inputClass <- 'input_association'
+	)
+	do {
+		orm;
+	}
+}
+
 unique lazy rule implicitAutoLoginOpposite {
 	from website: Website!Authentication
 	to orm : ORM!CollectionAssociation (
@@ -449,6 +460,8 @@ unique lazy rule implicitAutoLoginOpposite {
 		bidirectional <- true,
 		containment <- true,
 		associationRelationship <- #OneToMany,
+-- multual instance creation
+--		opposite <- thisModule.implicitAuthenticationFeature(website),
 		inputField <- false,
 		inputClass <- 'input_association'
 	)

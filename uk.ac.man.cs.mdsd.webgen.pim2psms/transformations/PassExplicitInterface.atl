@@ -378,7 +378,6 @@ rule WafModel {
 		captchaSiteKey <- website.websiteProperties.captchaSiteKey,
 		captchaSecretKey <- website.websiteProperties.captchaSecretKey,
 		textEditorURL <- website.websiteProperties.textEditorURL,
-		topNavigationId <- website.websiteProperties.topNavigationId,
 		sideMenu <- website.websiteProperties.sideMenu,
 		staticUnitsEditable <- website.websiteProperties.staticUnitsEditable
 	)
@@ -653,7 +652,7 @@ rule StaticMenu {
 rule FixedPageMenuEntry {
 	from website : Website!FixedPageMenuEntry
 	to waf : WAF!FixedPageMenuEntry (
-		destination <- website.destination
+		page <- website.destination
 	)
 }
 
@@ -661,7 +660,7 @@ rule FixedPageMenuEntry {
 rule FixedActionMenuEntry {
 	from website : Website!FixedActionMenuEntry
 	to waf : WAF!FixedActionMenuEntry (
-		destination <- website.destination
+		action <- website.destination
 	)
 }
 
@@ -669,7 +668,7 @@ rule FixedActionMenuEntry {
 rule FixedCommandMenuEntry {
 	from website : Website!FixedCommandMenuEntry
 	to waf : WAF!FixedCommandMenuEntry (
-		destination <- website.destination
+--		destination <- website.destination
 	)
 }
 
@@ -757,21 +756,6 @@ abstract rule Command {
 	)
 }
 
--- @extends Command
-rule UserCommand {
-	from website : Website!UserCommand
-	to waf : WAF!UserCommand (
-	)
-}
-
--- @extends ContentUnit
-rule CreateSitemapUnit {
-	from website : Website!CreateSitemapUnit
-	to waf : WAF!CreateSitemapUnit (
-		deployedURL <- website.deployedURL,
-		filename <- website.filename
-	)
-}
 
 -- @extends ContentUnit
 abstract rule DynamicUnit {
@@ -1203,22 +1187,47 @@ rule FeatureSupportAction {
 }
 
 
+helper context Website!Expression def: isInterfaceContainer() : Boolean
+	= if self.refImmediateComposite().oclIsUndefined() then
+			false
+		else if self.refImmediateComposite().oclIsKindOf(Website!ServiceEntityElement) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!UnitElement) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!Selection) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
+			self.refImmediateComposite().isInterfaceContainer()
+		else
+			false
+		endif endif endif endif endif;
+
+helper context Website!Order def: isInterfaceContainer() : Boolean
+	= if self.refImmediateComposite().oclIsUndefined() then
+			false
+		else if self.refImmediateComposite().oclIsKindOf(Website!Selection) then
+			true
+		else
+			false
+		endif endif;
+
+
 abstract rule Literal {
-	from website : Website!Literal
+	from website : Website!Literal (website.isInterfaceContainer())
 	to waf : WAF!Literal (
 	)
 }
 
 -- @extends Literal
 rule NullLiteral {
-	from website : Website!NullLiteral
+	from website : Website!NullLiteral (website.isInterfaceContainer())
 	to waf : WAF!NullLiteral (
 	)
 }
 
 -- @extends Literal
 rule IntegerLiteral {
-	from website : Website!IntegerLiteral
+	from website : Website!IntegerLiteral (website.isInterfaceContainer())
 	to waf : WAF!IntegerLiteral (
 		value <- website.value
 	)
@@ -1226,7 +1235,7 @@ rule IntegerLiteral {
 
 -- @extends Literal
 rule StringLiteral {
-	from website : Website!StringLiteral
+	from website : Website!StringLiteral (website.isInterfaceContainer())
 	to waf : WAF!StringLiteral (
 		value <- website.value
 	)
@@ -1234,7 +1243,7 @@ rule StringLiteral {
 
 -- @extends Literal
 rule CurrentTime {
-	from website : Website!CurrentTime
+	from website : Website!CurrentTime (website.isInterfaceContainer())
 	to waf : WAF!CurrentTime (
 	)
 }
@@ -1256,7 +1265,7 @@ rule ModelReference {
 rule FeatureReference {
 	from website : Website!FeatureReference
 	to waf : WAF!FeatureReference (
-		field <- website.field
+		feature <- website.field
 	)
 }
 
@@ -1275,7 +1284,7 @@ abstract rule Predicate {
 
 -- @extends Predicate
 rule PredicateBooleanOperator {
-	from website : Website!PredicateBooleanOperator
+	from website : Website!PredicateBooleanOperator (website.isInterfaceContainer())
 	to waf : WAF!PredicateBooleanOperator (
 		expressions <- website.expressions,
 		operator <- website.operator
@@ -1284,7 +1293,7 @@ rule PredicateBooleanOperator {
 
 -- @extends Predicate
 rule PredicateEqualityOperator {
-	from website : Website!PredicateEqualityOperator
+	from website : Website!PredicateEqualityOperator (website.isInterfaceContainer())
 	to waf : WAF!PredicateEqualityOperator (
 		left <- website.left,
 		right <- website.right
@@ -1293,7 +1302,7 @@ rule PredicateEqualityOperator {
 
 -- @extends Predicate
 rule PredicateComparisonOperator {
-	from website : Website!PredicateComparisonOperator
+	from website : Website!PredicateComparisonOperator (website.isInterfaceContainer())
 	to waf : WAF!PredicateComparisonOperator (
 		left <- website.left,
 		operator <- website.operator,
@@ -1303,7 +1312,7 @@ rule PredicateComparisonOperator {
 
 -- @extends Predicate
 rule PredicateIsOperator {
-	from website : Website!PredicateIsOperator
+	from website : Website!PredicateIsOperator (website.isInterfaceContainer())
 	to waf : WAF!PredicateIsOperator (
 		left <- website.left,
 		right <- website.right
@@ -1312,7 +1321,7 @@ rule PredicateIsOperator {
 
 -- @extends Predicate
 rule PredicateLikeOperator {
-	from website : Website!PredicateLikeOperator
+	from website : Website!PredicateLikeOperator (website.isInterfaceContainer())
 	to waf : WAF!PredicateLikeOperator (
 		left <- website.left,
 		right <- website.right
@@ -1321,7 +1330,7 @@ rule PredicateLikeOperator {
 
 -- @extends Predicate
 rule PredicateIsEmptyOperator {
-	from website : Website!PredicateIsEmpty
+	from website : Website!PredicateIsEmpty (website.isInterfaceContainer())
 	to waf : WAF!PredicateIsEmpty (
 		feature <- website.feature
 	)
@@ -1336,14 +1345,14 @@ abstract rule Order {
 
 -- @extends Order
 rule Asc {
-	from website : Website!Asc
+	from website : Website!Asc (website.isInterfaceContainer())
 	to waf : WAF!Asc (
 	)
 }
 
 -- @extends Order
 rule Desc {
-	from website : Website!Desc
+	from website : Website!Desc (website.isInterfaceContainer())
 	to waf : WAF!Desc (
 	)
 }

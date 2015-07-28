@@ -5,14 +5,20 @@ package uk.ac.man.cs.mdsd.waf.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import java.util.List;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,7 +26,15 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
+import uk.ac.man.cs.mdsd.criteria.CriteriaPackage;
+import uk.ac.man.cs.mdsd.criteria.Order;
+import uk.ac.man.cs.mdsd.criteria.PredicateComparisonOperator;
+import uk.ac.man.cs.mdsd.criteria.PredicateEqualityOperator;
+import uk.ac.man.cs.mdsd.criteria.PredicateIsEmpty;
+import uk.ac.man.cs.mdsd.criteria.PredicateIsOperator;
+import uk.ac.man.cs.mdsd.criteria.PredicateLikeOperator;
+import uk.ac.man.cs.mdsd.criteria.util.CriteriaSwitch;
+import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.util.WafAdapterFactory;
 
 /**
@@ -35,1351 +49,1584 @@ import uk.ac.man.cs.mdsd.waf.util.WafAdapterFactory;
 public class WafItemProviderAdapterFactory extends WafAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable
 {
   /**
-   * This keeps track of the root adapter factory that delegates to this adapter factory.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the root adapter factory that delegates to this adapter factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ComposedAdapterFactory parentAdapterFactory;
 
   /**
-   * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-   * <!-- begin-user-doc -->
+	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
   /**
-   * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-   * <!-- begin-user-doc -->
+	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
   /**
-   * This constructs an instance.
-   * <!-- begin-user-doc -->
+	 * This constructs an instance.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public WafItemProviderAdapterFactory()
   {
-    supportedTypes.add(IEditingDomainItemProvider.class);
-    supportedTypes.add(IStructuredItemContentProvider.class);
-    supportedTypes.add(ITreeItemContentProvider.class);
-    supportedTypes.add(IItemLabelProvider.class);
-    supportedTypes.add(IItemPropertySource.class);
-  }
+		supportedTypes.add(IEditingDomainItemProvider.class);
+		supportedTypes.add(IStructuredItemContentProvider.class);
+		supportedTypes.add(ITreeItemContentProvider.class);
+		supportedTypes.add(IItemLabelProvider.class);
+		supportedTypes.add(IItemPropertySource.class);
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.WafModel} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.WafModel} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected WafModelItemProvider wafModelItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.WafModel}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.WafModel}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createWafModelAdapter()
   {
-    if (wafModelItemProvider == null)
-    {
-      wafModelItemProvider = new WafModelItemProvider(this);
-    }
+		if (wafModelItemProvider == null) {
+			wafModelItemProvider = new WafModelItemProvider(this);
+		}
 
-    return wafModelItemProvider;
-  }
+		return wafModelItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected LocalAuthenticationSystemItemProvider localAuthenticationSystemItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createLocalAuthenticationSystemAdapter()
   {
-    if (localAuthenticationSystemItemProvider == null)
-    {
-      localAuthenticationSystemItemProvider = new LocalAuthenticationSystemItemProvider(this);
-    }
+		if (localAuthenticationSystemItemProvider == null) {
+			localAuthenticationSystemItemProvider = new LocalAuthenticationSystemItemProvider(this);
+		}
 
-    return localAuthenticationSystemItemProvider;
-  }
+		return localAuthenticationSystemItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CasAuthentication} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CasAuthentication} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CasAuthenticationItemProvider casAuthenticationItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CasAuthentication}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CasAuthentication}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createCasAuthenticationAdapter()
   {
-    if (casAuthenticationItemProvider == null)
-    {
-      casAuthenticationItemProvider = new CasAuthenticationItemProvider(this);
-    }
+		if (casAuthenticationItemProvider == null) {
+			casAuthenticationItemProvider = new CasAuthenticationItemProvider(this);
+		}
 
-    return casAuthenticationItemProvider;
-  }
+		return casAuthenticationItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Service} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Service} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ServiceItemProvider serviceItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Service}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Service}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createServiceAdapter()
   {
-    if (serviceItemProvider == null)
-    {
-      serviceItemProvider = new ServiceItemProvider(this);
-    }
+		if (serviceItemProvider == null) {
+			serviceItemProvider = new ServiceItemProvider(this);
+		}
 
-    return serviceItemProvider;
-  }
+		return serviceItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabel} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabel} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ModelLabelItemProvider modelLabelItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabel}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabel}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createModelLabelAdapter()
   {
-    if (modelLabelItemProvider == null)
-    {
-      modelLabelItemProvider = new ModelLabelItemProvider(this);
-    }
+		if (modelLabelItemProvider == null) {
+			modelLabelItemProvider = new ModelLabelItemProvider(this);
+		}
 
-    return modelLabelItemProvider;
-  }
+		return modelLabelItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Selection} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Selection} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SelectionItemProvider selectionItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Selection}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Selection}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSelectionAdapter()
   {
-    if (selectionItemProvider == null)
-    {
-      selectionItemProvider = new SelectionItemProvider(this);
-    }
+		if (selectionItemProvider == null) {
+			selectionItemProvider = new SelectionItemProvider(this);
+		}
 
-    return selectionItemProvider;
-  }
+		return selectionItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ServiceEntityElementItemProvider serviceEntityElementItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createServiceEntityElementAdapter()
   {
-    if (serviceEntityElementItemProvider == null)
-    {
-      serviceEntityElementItemProvider = new ServiceEntityElementItemProvider(this);
-    }
+		if (serviceEntityElementItemProvider == null) {
+			serviceEntityElementItemProvider = new ServiceEntityElementItemProvider(this);
+		}
 
-    return serviceEntityElementItemProvider;
-  }
+		return serviceEntityElementItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceEntityAssociation} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceEntityAssociation} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ServiceEntityAssociationItemProvider serviceEntityAssociationItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceEntityAssociation}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceEntityAssociation}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createServiceEntityAssociationAdapter()
   {
-    if (serviceEntityAssociationItemProvider == null)
-    {
-      serviceEntityAssociationItemProvider = new ServiceEntityAssociationItemProvider(this);
-    }
+		if (serviceEntityAssociationItemProvider == null) {
+			serviceEntityAssociationItemProvider = new ServiceEntityAssociationItemProvider(this);
+		}
 
-    return serviceEntityAssociationItemProvider;
-  }
+		return serviceEntityAssociationItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceViewAssociation} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceViewAssociation} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ServiceViewAssociationItemProvider serviceViewAssociationItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceViewAssociation}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceViewAssociation}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createServiceViewAssociationAdapter()
   {
-    if (serviceViewAssociationItemProvider == null)
-    {
-      serviceViewAssociationItemProvider = new ServiceViewAssociationItemProvider(this);
-    }
+		if (serviceViewAssociationItemProvider == null) {
+			serviceViewAssociationItemProvider = new ServiceViewAssociationItemProvider(this);
+		}
 
-    return serviceViewAssociationItemProvider;
-  }
+		return serviceViewAssociationItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.StaticMenu} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.StaticMenu} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected StaticMenuItemProvider staticMenuItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.StaticMenu}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.StaticMenu}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createStaticMenuAdapter()
   {
-    if (staticMenuItemProvider == null)
-    {
-      staticMenuItemProvider = new StaticMenuItemProvider(this);
-    }
+		if (staticMenuItemProvider == null) {
+			staticMenuItemProvider = new StaticMenuItemProvider(this);
+		}
 
-    return staticMenuItemProvider;
-  }
+		return staticMenuItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DynamicMenu} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DynamicMenu} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DynamicMenuItemProvider dynamicMenuItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.DynamicMenu}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.DynamicMenu}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDynamicMenuAdapter()
   {
-    if (dynamicMenuItemProvider == null)
-    {
-      dynamicMenuItemProvider = new DynamicMenuItemProvider(this);
-    }
+		if (dynamicMenuItemProvider == null) {
+			dynamicMenuItemProvider = new DynamicMenuItemProvider(this);
+		}
 
-    return dynamicMenuItemProvider;
-  }
+		return dynamicMenuItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FixedPageMenuEntry} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FixedPageMenuEntry} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected FixedPageMenuEntryItemProvider fixedPageMenuEntryItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FixedPageMenuEntry}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FixedPageMenuEntry}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createFixedPageMenuEntryAdapter()
   {
-    if (fixedPageMenuEntryItemProvider == null)
-    {
-      fixedPageMenuEntryItemProvider = new FixedPageMenuEntryItemProvider(this);
-    }
+		if (fixedPageMenuEntryItemProvider == null) {
+			fixedPageMenuEntryItemProvider = new FixedPageMenuEntryItemProvider(this);
+		}
 
-    return fixedPageMenuEntryItemProvider;
-  }
+		return fixedPageMenuEntryItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected FixedActionMenuEntryItemProvider fixedActionMenuEntryItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createFixedActionMenuEntryAdapter()
   {
-    if (fixedActionMenuEntryItemProvider == null)
-    {
-      fixedActionMenuEntryItemProvider = new FixedActionMenuEntryItemProvider(this);
-    }
+		if (fixedActionMenuEntryItemProvider == null) {
+			fixedActionMenuEntryItemProvider = new FixedActionMenuEntryItemProvider(this);
+		}
 
-    return fixedActionMenuEntryItemProvider;
-  }
+		return fixedActionMenuEntryItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.MenuIncludedElement} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.MenuIncludedElement} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected MenuIncludedElementItemProvider menuIncludedElementItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.MenuIncludedElement}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.MenuIncludedElement}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createMenuIncludedElementAdapter()
   {
-    if (menuIncludedElementItemProvider == null)
-    {
-      menuIncludedElementItemProvider = new MenuIncludedElementItemProvider(this);
-    }
+		if (menuIncludedElementItemProvider == null) {
+			menuIncludedElementItemProvider = new MenuIncludedElementItemProvider(this);
+		}
 
-    return menuIncludedElementItemProvider;
-  }
+		return menuIncludedElementItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FixedCommandMenuEntry} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FixedCommandMenuEntry} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected FixedCommandMenuEntryItemProvider fixedCommandMenuEntryItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FixedCommandMenuEntry}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FixedCommandMenuEntry}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createFixedCommandMenuEntryAdapter()
   {
-    if (fixedCommandMenuEntryItemProvider == null)
-    {
-      fixedCommandMenuEntryItemProvider = new FixedCommandMenuEntryItemProvider(this);
-    }
+		if (fixedCommandMenuEntryItemProvider == null) {
+			fixedCommandMenuEntryItemProvider = new FixedCommandMenuEntryItemProvider(this);
+		}
 
-    return fixedCommandMenuEntryItemProvider;
-  }
+		return fixedCommandMenuEntryItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.EditStaticTextMenuEntry} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.EditStaticTextMenuEntry} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected EditStaticTextMenuEntryItemProvider editStaticTextMenuEntryItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.EditStaticTextMenuEntry}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.EditStaticTextMenuEntry}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createEditStaticTextMenuEntryAdapter()
   {
-    if (editStaticTextMenuEntryItemProvider == null)
-    {
-      editStaticTextMenuEntryItemProvider = new EditStaticTextMenuEntryItemProvider(this);
-    }
+		if (editStaticTextMenuEntryItemProvider == null) {
+			editStaticTextMenuEntryItemProvider = new EditStaticTextMenuEntryItemProvider(this);
+		}
 
-    return editStaticTextMenuEntryItemProvider;
-  }
+		return editStaticTextMenuEntryItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Page} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Page} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected PageItemProvider pageItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Page}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Page}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createPageAdapter()
   {
-    if (pageItemProvider == null)
-    {
-      pageItemProvider = new PageItemProvider(this);
-    }
+		if (pageItemProvider == null) {
+			pageItemProvider = new PageItemProvider(this);
+		}
 
-    return pageItemProvider;
-  }
+		return pageItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.StaticUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.StaticUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected StaticUnitItemProvider staticUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.StaticUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.StaticUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createStaticUnitAdapter()
   {
-    if (staticUnitItemProvider == null)
-    {
-      staticUnitItemProvider = new StaticUnitItemProvider(this);
-    }
+		if (staticUnitItemProvider == null) {
+			staticUnitItemProvider = new StaticUnitItemProvider(this);
+		}
 
-    return staticUnitItemProvider;
-  }
+		return staticUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CommandUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CommandUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CommandUnitItemProvider commandUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CommandUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CommandUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createCommandUnitAdapter()
   {
-    if (commandUnitItemProvider == null)
-    {
-      commandUnitItemProvider = new CommandUnitItemProvider(this);
-    }
+		if (commandUnitItemProvider == null) {
+			commandUnitItemProvider = new CommandUnitItemProvider(this);
+		}
 
-    return commandUnitItemProvider;
-  }
+		return commandUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitSupportAction} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitSupportAction} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected UnitSupportActionItemProvider unitSupportActionItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitSupportAction}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitSupportAction}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createUnitSupportActionAdapter()
   {
-    if (unitSupportActionItemProvider == null)
-    {
-      unitSupportActionItemProvider = new UnitSupportActionItemProvider(this);
-    }
+		if (unitSupportActionItemProvider == null) {
+			unitSupportActionItemProvider = new UnitSupportActionItemProvider(this);
+		}
 
-    return unitSupportActionItemProvider;
-  }
+		return unitSupportActionItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitElement} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitElement} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected UnitElementItemProvider unitElementItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitElement}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitElement}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createUnitElementAdapter()
   {
-    if (unitElementItemProvider == null)
-    {
-      unitElementItemProvider = new UnitElementItemProvider(this);
-    }
+		if (unitElementItemProvider == null) {
+			unitElementItemProvider = new UnitElementItemProvider(this);
+		}
 
-    return unitElementItemProvider;
-  }
+		return unitElementItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitAssociation} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitAssociation} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected UnitAssociationItemProvider unitAssociationItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitAssociation}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitAssociation}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createUnitAssociationAdapter()
   {
-    if (unitAssociationItemProvider == null)
-    {
-      unitAssociationItemProvider = new UnitAssociationItemProvider(this);
-    }
+		if (unitAssociationItemProvider == null) {
+			unitAssociationItemProvider = new UnitAssociationItemProvider(this);
+		}
 
-    return unitAssociationItemProvider;
-  }
+		return unitAssociationItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitChildElement} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitChildElement} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected UnitChildElementItemProvider unitChildElementItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitChildElement}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitChildElement}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createUnitChildElementAdapter()
   {
-    if (unitChildElementItemProvider == null)
-    {
-      unitChildElementItemProvider = new UnitChildElementItemProvider(this);
-    }
+		if (unitChildElementItemProvider == null) {
+			unitChildElementItemProvider = new UnitChildElementItemProvider(this);
+		}
 
-    return unitChildElementItemProvider;
-  }
+		return unitChildElementItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitChildAssociation} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitChildAssociation} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected UnitChildAssociationItemProvider unitChildAssociationItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitChildAssociation}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitChildAssociation}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createUnitChildAssociationAdapter()
   {
-    if (unitChildAssociationItemProvider == null)
-    {
-      unitChildAssociationItemProvider = new UnitChildAssociationItemProvider(this);
-    }
+		if (unitChildAssociationItemProvider == null) {
+			unitChildAssociationItemProvider = new UnitChildAssociationItemProvider(this);
+		}
 
-    return unitChildAssociationItemProvider;
-  }
+		return unitChildAssociationItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DataTypeField} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DataTypeField} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DataTypeFieldItemProvider dataTypeFieldItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.DataTypeField}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.DataTypeField}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDataTypeFieldAdapter()
   {
-    if (dataTypeFieldItemProvider == null)
-    {
-      dataTypeFieldItemProvider = new DataTypeFieldItemProvider(this);
-    }
+		if (dataTypeFieldItemProvider == null) {
+			dataTypeFieldItemProvider = new DataTypeFieldItemProvider(this);
+		}
 
-    return dataTypeFieldItemProvider;
-  }
+		return dataTypeFieldItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DateField} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DateField} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DateFieldItemProvider dateFieldItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.DateField}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.DateField}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDateFieldAdapter()
   {
-    if (dateFieldItemProvider == null)
-    {
-      dateFieldItemProvider = new DateFieldItemProvider(this);
-    }
+		if (dateFieldItemProvider == null) {
+			dateFieldItemProvider = new DateFieldItemProvider(this);
+		}
 
-    return dateFieldItemProvider;
-  }
+		return dateFieldItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CaptchaField} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CaptchaField} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CaptchaFieldItemProvider captchaFieldItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CaptchaField}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CaptchaField}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createCaptchaFieldAdapter()
   {
-    if (captchaFieldItemProvider == null)
-    {
-      captchaFieldItemProvider = new CaptchaFieldItemProvider(this);
-    }
+		if (captchaFieldItemProvider == null) {
+			captchaFieldItemProvider = new CaptchaFieldItemProvider(this);
+		}
 
-    return captchaFieldItemProvider;
-  }
+		return captchaFieldItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CreateUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CreateUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CreateUnitItemProvider createUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CreateUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CreateUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createCreateUnitAdapter()
   {
-    if (createUnitItemProvider == null)
-    {
-      createUnitItemProvider = new CreateUnitItemProvider(this);
-    }
+		if (createUnitItemProvider == null) {
+			createUnitItemProvider = new CreateUnitItemProvider(this);
+		}
 
-    return createUnitItemProvider;
-  }
+		return createUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CreateUpdateUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CreateUpdateUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CreateUpdateUnitItemProvider createUpdateUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CreateUpdateUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CreateUpdateUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createCreateUpdateUnitAdapter()
   {
-    if (createUpdateUnitItemProvider == null)
-    {
-      createUpdateUnitItemProvider = new CreateUpdateUnitItemProvider(this);
-    }
+		if (createUpdateUnitItemProvider == null) {
+			createUpdateUnitItemProvider = new CreateUpdateUnitItemProvider(this);
+		}
 
-    return createUpdateUnitItemProvider;
-  }
+		return createUpdateUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.MapUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.MapUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected MapUnitItemProvider mapUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.MapUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.MapUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createMapUnitAdapter()
   {
-    if (mapUnitItemProvider == null)
-    {
-      mapUnitItemProvider = new MapUnitItemProvider(this);
-    }
+		if (mapUnitItemProvider == null) {
+			mapUnitItemProvider = new MapUnitItemProvider(this);
+		}
 
-    return mapUnitItemProvider;
-  }
+		return mapUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UpdateUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UpdateUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected UpdateUnitItemProvider updateUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UpdateUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UpdateUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createUpdateUnitAdapter()
   {
-    if (updateUnitItemProvider == null)
-    {
-      updateUnitItemProvider = new UpdateUnitItemProvider(this);
-    }
+		if (updateUnitItemProvider == null) {
+			updateUnitItemProvider = new UpdateUnitItemProvider(this);
+		}
 
-    return updateUnitItemProvider;
-  }
+		return updateUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DetailsUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DetailsUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DetailsUnitItemProvider detailsUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.DetailsUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.DetailsUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDetailsUnitAdapter()
   {
-    if (detailsUnitItemProvider == null)
-    {
-      detailsUnitItemProvider = new DetailsUnitItemProvider(this);
-    }
+		if (detailsUnitItemProvider == null) {
+			detailsUnitItemProvider = new DetailsUnitItemProvider(this);
+		}
 
-    return detailsUnitItemProvider;
-  }
+		return detailsUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.IndexGridUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.IndexGridUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IndexGridUnitItemProvider indexGridUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.IndexGridUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.IndexGridUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createIndexGridUnitAdapter()
   {
-    if (indexGridUnitItemProvider == null)
-    {
-      indexGridUnitItemProvider = new IndexGridUnitItemProvider(this);
-    }
+		if (indexGridUnitItemProvider == null) {
+			indexGridUnitItemProvider = new IndexGridUnitItemProvider(this);
+		}
 
-    return indexGridUnitItemProvider;
-  }
+		return indexGridUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.IndexPageDirectionUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.IndexPageDirectionUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IndexPageDirectionUnitItemProvider indexPageDirectionUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.IndexPageDirectionUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.IndexPageDirectionUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createIndexPageDirectionUnitAdapter()
   {
-    if (indexPageDirectionUnitItemProvider == null)
-    {
-      indexPageDirectionUnitItemProvider = new IndexPageDirectionUnitItemProvider(this);
-    }
+		if (indexPageDirectionUnitItemProvider == null) {
+			indexPageDirectionUnitItemProvider = new IndexPageDirectionUnitItemProvider(this);
+		}
 
-    return indexPageDirectionUnitItemProvider;
-  }
+		return indexPageDirectionUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.IndexLineDirectionUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.IndexLineDirectionUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected IndexLineDirectionUnitItemProvider indexLineDirectionUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.IndexLineDirectionUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.IndexLineDirectionUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createIndexLineDirectionUnitAdapter()
   {
-    if (indexLineDirectionUnitItemProvider == null)
-    {
-      indexLineDirectionUnitItemProvider = new IndexLineDirectionUnitItemProvider(this);
-    }
+		if (indexLineDirectionUnitItemProvider == null) {
+			indexLineDirectionUnitItemProvider = new IndexLineDirectionUnitItemProvider(this);
+		}
 
-    return indexLineDirectionUnitItemProvider;
-  }
+		return indexLineDirectionUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SearchUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SearchUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SearchUnitItemProvider searchUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.SearchUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.SearchUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSearchUnitAdapter()
   {
-    if (searchUnitItemProvider == null)
-    {
-      searchUnitItemProvider = new SearchUnitItemProvider(this);
-    }
+		if (searchUnitItemProvider == null) {
+			searchUnitItemProvider = new SearchUnitItemProvider(this);
+		}
 
-    return searchUnitItemProvider;
-  }
+		return searchUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ActionUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ActionUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ActionUnitItemProvider actionUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ActionUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ActionUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createActionUnitAdapter()
   {
-    if (actionUnitItemProvider == null)
-    {
-      actionUnitItemProvider = new ActionUnitItemProvider(this);
-    }
+		if (actionUnitItemProvider == null) {
+			actionUnitItemProvider = new ActionUnitItemProvider(this);
+		}
 
-    return actionUnitItemProvider;
-  }
+		return actionUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.RegistrationUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.RegistrationUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected RegistrationUnitItemProvider registrationUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.RegistrationUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.RegistrationUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createRegistrationUnitAdapter()
   {
-    if (registrationUnitItemProvider == null)
-    {
-      registrationUnitItemProvider = new RegistrationUnitItemProvider(this);
-    }
+		if (registrationUnitItemProvider == null) {
+			registrationUnitItemProvider = new RegistrationUnitItemProvider(this);
+		}
 
-    return registrationUnitItemProvider;
-  }
+		return registrationUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.LoginUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.LoginUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected LoginUnitItemProvider loginUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.LoginUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.LoginUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createLoginUnitAdapter()
   {
-    if (loginUnitItemProvider == null)
-    {
-      loginUnitItemProvider = new LoginUnitItemProvider(this);
-    }
+		if (loginUnitItemProvider == null) {
+			loginUnitItemProvider = new LoginUnitItemProvider(this);
+		}
 
-    return loginUnitItemProvider;
-  }
+		return loginUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ForgottenPasswordUnitItemProvider forgottenPasswordUnitItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createForgottenPasswordUnitAdapter()
   {
-    if (forgottenPasswordUnitItemProvider == null)
-    {
-      forgottenPasswordUnitItemProvider = new ForgottenPasswordUnitItemProvider(this);
-    }
+		if (forgottenPasswordUnitItemProvider == null) {
+			forgottenPasswordUnitItemProvider = new ForgottenPasswordUnitItemProvider(this);
+		}
 
-    return forgottenPasswordUnitItemProvider;
-  }
+		return forgottenPasswordUnitItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SelectAction} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SelectAction} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected SelectActionItemProvider selectActionItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.SelectAction}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.SelectAction}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createSelectActionAdapter()
   {
-    if (selectActionItemProvider == null)
-    {
-      selectActionItemProvider = new SelectActionItemProvider(this);
-    }
+		if (selectActionItemProvider == null) {
+			selectActionItemProvider = new SelectActionItemProvider(this);
+		}
 
-    return selectActionItemProvider;
-  }
+		return selectActionItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DeleteAction} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DeleteAction} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected DeleteActionItemProvider deleteActionItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.DeleteAction}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.DeleteAction}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createDeleteActionAdapter()
   {
-    if (deleteActionItemProvider == null)
-    {
-      deleteActionItemProvider = new DeleteActionItemProvider(this);
-    }
+		if (deleteActionItemProvider == null) {
+			deleteActionItemProvider = new DeleteActionItemProvider(this);
+		}
 
-    return deleteActionItemProvider;
-  }
+		return deleteActionItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected FeatureSupportActionItemProvider featureSupportActionItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createFeatureSupportActionAdapter()
   {
-    if (featureSupportActionItemProvider == null)
-    {
-      featureSupportActionItemProvider = new FeatureSupportActionItemProvider(this);
-    }
+		if (featureSupportActionItemProvider == null) {
+			featureSupportActionItemProvider = new FeatureSupportActionItemProvider(this);
+		}
 
-    return featureSupportActionItemProvider;
-  }
+		return featureSupportActionItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelReference} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelReference} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ModelReferenceItemProvider modelReferenceItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelReference}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelReference}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createModelReferenceAdapter()
   {
-    if (modelReferenceItemProvider == null)
-    {
-      modelReferenceItemProvider = new ModelReferenceItemProvider(this);
-    }
+		if (modelReferenceItemProvider == null) {
+			modelReferenceItemProvider = new ModelReferenceItemProvider(this);
+		}
 
-    return modelReferenceItemProvider;
-  }
+		return modelReferenceItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FeatureReference} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FeatureReference} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected FeatureReferenceItemProvider featureReferenceItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FeatureReference}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FeatureReference}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createFeatureReferenceAdapter()
   {
-    if (featureReferenceItemProvider == null)
-    {
-      featureReferenceItemProvider = new FeatureReferenceItemProvider(this);
-    }
+		if (featureReferenceItemProvider == null) {
+			featureReferenceItemProvider = new FeatureReferenceItemProvider(this);
+		}
 
-    return featureReferenceItemProvider;
-  }
+		return featureReferenceItemProvider;
+	}
 
   /**
-   * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CurrentUserReference} instances.
-   * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CurrentUserReference} instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CurrentUserReferenceItemProvider currentUserReferenceItemProvider;
 
   /**
-   * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CurrentUserReference}.
-   * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.CurrentUserReference}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter createCurrentUserReferenceAdapter()
   {
-    if (currentUserReferenceItemProvider == null)
-    {
-      currentUserReferenceItemProvider = new CurrentUserReferenceItemProvider(this);
-    }
+		if (currentUserReferenceItemProvider == null) {
+			currentUserReferenceItemProvider = new CurrentUserReferenceItemProvider(this);
+		}
 
-    return currentUserReferenceItemProvider;
-  }
+		return currentUserReferenceItemProvider;
+	}
 
   /**
-   * This returns the root adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
+	 * This returns the root adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public ComposeableAdapterFactory getRootAdapterFactory()
   {
-    return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-  }
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+	}
 
   /**
-   * This sets the composed adapter factory that contains this factory.
-   * <!-- begin-user-doc -->
+	 * This sets the composed adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
   {
-    this.parentAdapterFactory = parentAdapterFactory;
-  }
+		this.parentAdapterFactory = parentAdapterFactory;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean isFactoryForType(Object type)
   {
-    return supportedTypes.contains(type) || super.isFactoryForType(type);
-  }
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
   /**
-   * This implementation substitutes the factory itself as the key for the adapter.
-   * <!-- begin-user-doc -->
+	 * This implementation substitutes the factory itself as the key for the adapter.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Adapter adapt(Notifier notifier, Object type)
   {
-    return super.adapt(notifier, this);
-  }
+		return super.adapt(notifier, this);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object adapt(Object object, Object type)
   {
-    if (isFactoryForType(type))
-    {
-      Object adapter = super.adapt(object, type);
-      if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-      {
-        return adapter;
-      }
-    }
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
 
-    return null;
-  }
+		return null;
+	}
 
   /**
-   * This adds a listener.
-   * <!-- begin-user-doc -->
+	 * This adds a listener.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void addListener(INotifyChangedListener notifyChangedListener)
   {
-    changeNotifier.addListener(notifyChangedListener);
-  }
+		changeNotifier.addListener(notifyChangedListener);
+	}
 
   /**
-   * This removes a listener.
-   * <!-- begin-user-doc -->
+	 * This removes a listener.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void removeListener(INotifyChangedListener notifyChangedListener)
   {
-    changeNotifier.removeListener(notifyChangedListener);
-  }
+		changeNotifier.removeListener(notifyChangedListener);
+	}
 
   /**
-   * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-   * <!-- begin-user-doc -->
+	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void fireNotifyChanged(Notification notification)
   {
-    changeNotifier.fireNotifyChanged(notification);
+		changeNotifier.fireNotifyChanged(notification);
 
-    if (parentAdapterFactory != null)
-    {
-      parentAdapterFactory.fireNotifyChanged(notification);
-    }
-  }
+		if (parentAdapterFactory != null) {
+			parentAdapterFactory.fireNotifyChanged(notification);
+		}
+	}
 
   /**
-   * This disposes all of the item providers created by this factory. 
-   * <!-- begin-user-doc -->
+	 * This disposes all of the item providers created by this factory. 
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void dispose()
   {
-    if (wafModelItemProvider != null) wafModelItemProvider.dispose();
-    if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
-    if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
-    if (serviceItemProvider != null) serviceItemProvider.dispose();
-    if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
-    if (selectionItemProvider != null) selectionItemProvider.dispose();
-    if (serviceEntityElementItemProvider != null) serviceEntityElementItemProvider.dispose();
-    if (serviceEntityAssociationItemProvider != null) serviceEntityAssociationItemProvider.dispose();
-    if (serviceViewAssociationItemProvider != null) serviceViewAssociationItemProvider.dispose();
-    if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
-    if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
-    if (fixedPageMenuEntryItemProvider != null) fixedPageMenuEntryItemProvider.dispose();
-    if (fixedActionMenuEntryItemProvider != null) fixedActionMenuEntryItemProvider.dispose();
-    if (menuIncludedElementItemProvider != null) menuIncludedElementItemProvider.dispose();
-    if (fixedCommandMenuEntryItemProvider != null) fixedCommandMenuEntryItemProvider.dispose();
-    if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
-    if (pageItemProvider != null) pageItemProvider.dispose();
-    if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
-    if (commandUnitItemProvider != null) commandUnitItemProvider.dispose();
-    if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();
-    if (unitElementItemProvider != null) unitElementItemProvider.dispose();
-    if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
-    if (unitChildElementItemProvider != null) unitChildElementItemProvider.dispose();
-    if (unitChildAssociationItemProvider != null) unitChildAssociationItemProvider.dispose();
-    if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
-    if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
-    if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();
-    if (createUnitItemProvider != null) createUnitItemProvider.dispose();
-    if (createUpdateUnitItemProvider != null) createUpdateUnitItemProvider.dispose();
-    if (mapUnitItemProvider != null) mapUnitItemProvider.dispose();
-    if (updateUnitItemProvider != null) updateUnitItemProvider.dispose();
-    if (detailsUnitItemProvider != null) detailsUnitItemProvider.dispose();
-    if (indexGridUnitItemProvider != null) indexGridUnitItemProvider.dispose();
-    if (indexPageDirectionUnitItemProvider != null) indexPageDirectionUnitItemProvider.dispose();
-    if (indexLineDirectionUnitItemProvider != null) indexLineDirectionUnitItemProvider.dispose();
-    if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
-    if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
-    if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();
-    if (loginUnitItemProvider != null) loginUnitItemProvider.dispose();
-    if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();
-    if (selectActionItemProvider != null) selectActionItemProvider.dispose();
-    if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
-    if (featureSupportActionItemProvider != null) featureSupportActionItemProvider.dispose();
-    if (modelReferenceItemProvider != null) modelReferenceItemProvider.dispose();
-    if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
-    if (currentUserReferenceItemProvider != null) currentUserReferenceItemProvider.dispose();
-  }
+		if (wafModelItemProvider != null) wafModelItemProvider.dispose();
+		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
+		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
+		if (serviceItemProvider != null) serviceItemProvider.dispose();
+		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
+		if (selectionItemProvider != null) selectionItemProvider.dispose();
+		if (serviceEntityElementItemProvider != null) serviceEntityElementItemProvider.dispose();
+		if (serviceEntityAssociationItemProvider != null) serviceEntityAssociationItemProvider.dispose();
+		if (serviceViewAssociationItemProvider != null) serviceViewAssociationItemProvider.dispose();
+		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
+		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
+		if (fixedPageMenuEntryItemProvider != null) fixedPageMenuEntryItemProvider.dispose();
+		if (fixedActionMenuEntryItemProvider != null) fixedActionMenuEntryItemProvider.dispose();
+		if (menuIncludedElementItemProvider != null) menuIncludedElementItemProvider.dispose();
+		if (fixedCommandMenuEntryItemProvider != null) fixedCommandMenuEntryItemProvider.dispose();
+		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
+		if (pageItemProvider != null) pageItemProvider.dispose();
+		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
+		if (commandUnitItemProvider != null) commandUnitItemProvider.dispose();
+		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();
+		if (unitElementItemProvider != null) unitElementItemProvider.dispose();
+		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
+		if (unitChildElementItemProvider != null) unitChildElementItemProvider.dispose();
+		if (unitChildAssociationItemProvider != null) unitChildAssociationItemProvider.dispose();
+		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
+		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
+		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();
+		if (createUnitItemProvider != null) createUnitItemProvider.dispose();
+		if (createUpdateUnitItemProvider != null) createUpdateUnitItemProvider.dispose();
+		if (mapUnitItemProvider != null) mapUnitItemProvider.dispose();
+		if (updateUnitItemProvider != null) updateUnitItemProvider.dispose();
+		if (detailsUnitItemProvider != null) detailsUnitItemProvider.dispose();
+		if (indexGridUnitItemProvider != null) indexGridUnitItemProvider.dispose();
+		if (indexPageDirectionUnitItemProvider != null) indexPageDirectionUnitItemProvider.dispose();
+		if (indexLineDirectionUnitItemProvider != null) indexLineDirectionUnitItemProvider.dispose();
+		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
+		if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
+		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();
+		if (loginUnitItemProvider != null) loginUnitItemProvider.dispose();
+		if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();
+		if (selectActionItemProvider != null) selectActionItemProvider.dispose();
+		if (deleteActionItemProvider != null) deleteActionItemProvider.dispose();
+		if (featureSupportActionItemProvider != null) featureSupportActionItemProvider.dispose();
+		if (modelReferenceItemProvider != null) modelReferenceItemProvider.dispose();
+		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
+		if (currentUserReferenceItemProvider != null) currentUserReferenceItemProvider.dispose();
+	}
+
+		/**
+	 * A child creation extender for the {@link CriteriaPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class CriteriaChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends CriteriaSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateEqualityOperator(PredicateEqualityOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateComparisonOperator(PredicateComparisonOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateIsOperator(PredicateIsOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateLikeOperator(PredicateLikeOperator object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateIsEmpty(PredicateIsEmpty object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseOrder(Order object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return WafEditPlugin.INSTANCE;
+		}
+	}
 
 }

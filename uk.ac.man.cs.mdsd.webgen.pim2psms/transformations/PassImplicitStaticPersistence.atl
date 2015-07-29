@@ -4,13 +4,13 @@
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
 
 module PassImplicitStaticPersistence;
-create orm : ORM refining partialOrm : ORM, website : Website;
+create dummyOrm : ORM refining orm : ORM, website : Website;
 
 uses WebsiteHelpers;
 
 
 helper context Website!WebGenModel def: getDataType(name : String) : ORM!DataType
-	= let dataType : ORM!DataType = thisModule.findPartialOrmDataType(name)
+	= let dataType : ORM!DataType = thisModule.findOrmDataType(name)
 		in if not dataType.oclIsUndefined() then
 			dataType
 		else
@@ -27,21 +27,12 @@ helper context Website!WebGenModel def: getDataType(name : String) : ORM!DataTyp
 rule OrmModel {
 	from partialOrm : ORM!OrmModel
 	to orm : ORM!OrmModel (
-		collectionTypes <- partialOrm.collectionTypes,
-		dataTypes <- partialOrm.dataTypes,
 		entities <- partialOrm.entities
 			->union(if thisModule.findWebsiteProperties().staticUnitsEditable then
 						Sequence{thisModule.implicitStaticEntity(thisModule.findWebGenModel())}
 					else
 						Sequence{}
-					endif),
-		databaseTechnology <- partialOrm.databaseTechnology,
-		databasePrefix <- partialOrm.databasePrefix,
-		databaseHost <- partialOrm.databaseHost,
-		databaseName <- partialOrm.databaseName,
-		databaseUsername <- partialOrm.databaseUsername,
-		databasePassword <- partialOrm.databasePassword,
-		ormTechnology <- partialOrm.ormTechnology
+					endif)
 	)
 }
 

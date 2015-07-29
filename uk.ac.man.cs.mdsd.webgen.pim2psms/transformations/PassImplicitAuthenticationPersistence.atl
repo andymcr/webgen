@@ -4,13 +4,13 @@
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
 
 module PassImplicitAuthenticationPersistence;
-create orm : ORM refining partialOrm : ORM, website : Website;
+create dummyOrm : ORM refining orm : ORM, website : Website;
 
 uses WebsiteHelpers;
 
 
 helper context Website!Authentication def: getDataType(name : String) : ORM!DataType
-	= let dataType : ORM!DataType = thisModule.findPartialOrmDataType(name)
+	= let dataType : ORM!DataType = thisModule.findOrmDataType(name)
 		in if not dataType.oclIsUndefined() then
 			dataType
 		else
@@ -46,24 +46,23 @@ helper context Website!Authentication def: getPersistentType(name : String) : St
 rule OrmModel {
 	from partialOrm : ORM!OrmModel
 	to orm : ORM!OrmModel (
-		collectionTypes <- partialOrm.collectionTypes,
 		dataTypes <-
 			let website : Website!WebGenModel = thisModule.findWebGenModel()
 			in partialOrm.dataTypes
 				->union(
-					if thisModule.findPartialOrmDataType('Boolean').oclIsUndefined() then
+					if thisModule.findOrmDataType('Boolean').oclIsUndefined() then
 						Sequence{thisModule.implicitBooleanDataType(website)}
 					else
 						Sequence{}
 					endif)
 				->union(
-					if thisModule.findPartialOrmDataType('String').oclIsUndefined() then
+					if thisModule.findOrmDataType('String').oclIsUndefined() then
 						Sequence{thisModule.implicitStringDataType(website)}
 					else
 						Sequence{}
 					endif)
 				->union(
-					if thisModule.findPartialOrmDataType('Email').oclIsUndefined() then
+					if thisModule.findOrmDataType('Email').oclIsUndefined() then
 						Sequence{thisModule.implicitEmailDataType(website)}
 					else
 						Sequence{}
@@ -100,14 +99,7 @@ rule OrmModel {
 							Sequence{thisModule.implicitAutoLoginEntity(authentication)}
 						else
 							Sequence{}
-						endif endif),
-		databaseTechnology <- partialOrm.databaseTechnology,
-		databasePrefix <- partialOrm.databasePrefix,
-		databaseHost <- partialOrm.databaseHost,
-		databaseName <- partialOrm.databaseName,
-		databaseUsername <- partialOrm.databaseUsername,
-		databasePassword <- partialOrm.databasePassword,
-		ormTechnology <- partialOrm.ormTechnology
+						endif endif)
 	)
 }
 

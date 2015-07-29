@@ -4,7 +4,7 @@
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
 
 module PassCollectionTypes;
-create orm : ORM refining partialOrm : ORM, website : Website;
+create dummyOrm : ORM refining orm : ORM, website : Website;
 
 uses WebsiteHelpers;
 
@@ -16,11 +16,10 @@ helper context Website!Entity def: getWebsiteFeature(featureName : String) : Web
 	= self.features->any(f | f.name = featureName);
 
 helper def: findOrmCollection(name : String) : ORM!DataType
-	= ORM!CollectionType.allInstancesFrom('partialOrm')
+	= ORM!CollectionType.allInstancesFrom('orm')
 		->any(c | c.elementType.name = name );
 
 
--- -- @extends CollectionAttribute
 rule CollectionElement {
 	from partialOrm : ORM!CollectionElement
 	to orm : ORM!CollectionElement (
@@ -35,7 +34,6 @@ rule CollectionElement {
 	)
 }
 
--- -- @extends Association
 rule CollectionAssociation {
 	from partialOrm : ORM!CollectionAssociation
 	to orm : ORM!CollectionAssociation (

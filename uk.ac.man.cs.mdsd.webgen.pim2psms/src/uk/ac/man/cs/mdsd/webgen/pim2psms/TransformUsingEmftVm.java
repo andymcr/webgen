@@ -145,7 +145,7 @@ public class TransformUsingEmftVm {
 	public void execute() throws IOException {
 		final Map<String, Model> ormInputModels = new HashMap<String, Model>();
 		ormInputModels.put("website", getWebsiteModel());
-		final String ormModelName = "partialOrm";
+		final String ormModelName = "orm";
 		final Model ormModel = executePassCreatingOutputModel("PassExplicitPersistence",
 			ormModelName, "website_orm", ormInputModels, null);
 		executeRefiningPass("PassCollectionTypes", ormModelName, ormModel,

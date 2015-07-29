@@ -1,0 +1,30 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+
+module PassImplicitAuthenticationPersistence2;
+create orm : ORM refining partialOrm : ORM;
+
+uses WebsiteHelpers;
+
+
+rule CollectionAssociation {
+	from partialOrm: ORM!CollectionAssociation
+	to orm : ORM!CollectionAssociation (
+		associationRelationship <- partialOrm.associationRelationship,
+		collectionType <- partialOrm.collectionType,
+		opposite <-
+			if partialOrm.name = 'autoLogin'
+					and partialOrm.parentEntity.name = 'Authentication'then
+				let autoLogin : ORM!Entity = thisModule.findPartialOrmEntity('AutoLogin')
+					in if not autoLogin.oclIsUndefined() then
+							autoLogin.getOrmFeature('authentication')
+						else
+							OclUndefined
+						endif
+			else
+				partialOrm.opposite
+			endif
+	)
+}

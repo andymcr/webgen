@@ -1,0 +1,158 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+
+module PassPersistenceTypes;
+create orm : ORM from website : Website;
+
+uses WebsiteHelpers;
+
+
+helper context Website!Attribute def: featureTypeNoted(noted : Set(Website!Feature)) : Boolean
+	= noted->select(e | e.oclIsKindOf(Website!Attribute))
+		->exists(e | e.dataType = self.dataType 
+			and e."unique" = self."unique" 
+			and e.ordered = self.ordered);
+
+helper context Website!Association def: featureTypeNoted(noted : Set(Website!Feature)) : Boolean
+	= noted->select(e | e.oclIsKindOf(Website!Association))
+		->exists(e | e.targetEntity = self.targetEntity 
+			and e."unique" = self."unique" 
+			and e.ordered = self.ordered);
+
+helper context Website!Association def: inverseFeatureTypeNoted(noted : Set(Website!Feature)) : Boolean
+	= noted->exists(e | e.parentEntity = self.parentEntity 
+			and e.targetUnique = self.targetUnique);
+
+
+rule Website {
+	from website : Website!WebGenModel
+	to orm : ORM!OrmModel (
+		dataTypes <- website.classifiers->select(c | c.oclIsKindOf(Website!DataType)),
+		entities <- website.classifiers->select(c | c.oclIsKindOf(Website!Entity)),
+		collectionTypes <- website.classifiers
+			->select(c | c.oclIsTypeOf(Website!Entity))
+			->collect(e | e.features)->flatten()
+			->select(f | not f.oclIsKindOf(Website!DateAttribute))
+			->select(f | f.cardinality = #Many)
+			->iterate(f; result : Set(Website!Feature) = Set {} |
+				if f.featureTypeNoted(result) then
+					result
+				else
+					result->including(f)
+				endif)
+			->collect(f | thisModule.CollectionType(f))
+			->union(website.classifiers
+				->select(c | c.oclIsKindOf(Website!Entity))
+				->collect(e | e.features)->flatten()
+				->select(f | f.oclIsKindOf(Website!AssociationWithoutContainment))
+				->select(f | f.targetCardinality = #Many)
+				->iterate(f; result : Set(Website!Feature) = Set {} |
+					if f.inverseFeatureTypeNoted(result) then
+						result
+					else
+						result->including(f)
+					endif)
+				->collect(e | thisModule.InverseCollectionType(e))),
+		databaseTechnology <-
+			if website.websiteProperties.databaseTechnology = #MySql then
+				#MySql
+			else if website.websiteProperties.databaseTechnology = #Oracle then
+				#Oracle
+			else
+				#MySql
+			endif endif,
+		databasePrefix <- website.websiteProperties.databasePrefix,
+		databaseHost <- website.websiteProperties.databaseHost,
+		databaseName <- website.websiteProperties.databaseName,
+		databaseUsername <- website.websiteProperties.databaseUsername,
+		databasePassword <- website.websiteProperties.databasePassword,
+		ormTechnology <- website.websiteProperties.ormTechnology
+	)
+}
+
+abstract rule NamedElement {
+	from website : Website!NamedElement
+	to orm : ORM!NamedElement (
+		name <- website.name
+	)
+}
+
+-- @extends NamedElement
+abstract rule NamedDisplayElement {
+	from website : Website!NamedDisplayElement
+	to orm : ORM!NamedDisplayElement (
+		displayLabel <-
+			if not website.displayLabel.oclIsUndefined() and website.displayLabel <> '' then
+				website.displayLabel
+			else
+				website.name.createLabel()
+			endif
+	)
+}
+
+
+-- @extends NamedDisplayElement
+rule DataType {
+	from website : Website!DataType (website.oclIsTypeOf(Website!DataType))
+	to orm : ORM!DataType (
+	)
+}
+
+-- @extends NamedDisplayElement
+rule EnumerationType {
+	from website : Website!EnumerationType
+	to orm : ORM!EnumerationType (
+		enumerations <- website.enumerations
+	)
+}
+
+-- @extends NamedDisplayElement
+rule EnumerationLiteral {
+	from website : Website!EnumerationLiteral
+	to orm : ORM!EnumerationLiteral (
+	)
+}
+
+-- @extends NamedDisplayElement
+rule Entity {
+	from website : Website!Entity
+	to orm : ORM!Entity (
+		tableName <- 
+			if not website.tableName.oclIsUndefined() and website.tableName <> '' then
+				website.tableName
+			else
+				website.name.createTableName()
+			endif,
+		keys <- website.keys,
+		autoKeyName <- 'id',
+		displayFormat <- website.displayFormat
+	)
+}
+
+lazy rule CollectionType {
+	from website: Website!Feature
+	to orm : ORM!CollectionType (
+		elementType <- if website.oclIsKindOf(Website!Attribute) then
+				website.dataType
+			else
+				website.targetEntity
+			endif,
+		collectionType <- website.collectionType()
+	)
+	do {
+		orm;
+	}
+}
+
+lazy rule InverseCollectionType {
+	from website: Website!Feature
+	to orm : ORM!CollectionType (
+		elementType <- website.parentEntity,
+		collectionType <- website.inverseCollectionType()
+	)
+	do {
+		orm;
+	}
+}

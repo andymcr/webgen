@@ -146,15 +146,15 @@ public class TransformUsingEmftVm {
 		final Map<String, Model> ormInputModels = new HashMap<String, Model>();
 		ormInputModels.put("website", getWebsiteModel());
 		final String ormModelName = "orm";
-		final Model ormModel = executePassCreatingOutputModel("PassExplicitPersistence",
+		final Model ormModel = executePassCreatingOutputModel("PassPersistenceTypes",
 			ormModelName, "website_orm", ormInputModels, null);
-		executeRefiningPass("PassCollectionTypes", ormModelName, ormModel,
+		executeRefiningPass("PassPersistenceFeatures", ormModelName, ormModel,
 			ormInputModels, null);
-		executeRefiningPass("PassImplicitStaticPersistence", ormModelName,
+		executeRefiningPass("PassPersistenceImplicitStatic", ormModelName,
 			ormModel, ormInputModels, null);
-		executeRefiningPass("PassImplicitAuthenticationPersistence",
+		executeRefiningPass("PassPersistenceImplicitAuthentication",
 			ormModelName, ormModel, ormInputModels, null);
-		executeRefiningPass("PassImplicitAuthenticationPersistence2",
+		executeRefiningPass("PassPersistenceImplicitAuthentication2",
 			ormModelName, ormModel, ormInputModels, null);
 		ormModel.getResource().save(Collections.emptyMap());
 

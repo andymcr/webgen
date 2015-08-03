@@ -75,6 +75,21 @@ helper context Website!Association def: targetDisplayLabel() : String
 			self.targetFeatureName().createLabel()
 		endif;
 
+helper context Website!Association def: createPivotTableName() : String
+	= let name : String
+			= if not self.pivotTableName.oclIsUndefined() and self.pivotTableName <> '' then
+					self.pivotTableName
+				else
+					self.parentEntity.name.concat('_').concat(self.targetEntity.name)
+				endif
+		in let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
+			in if properties.databaseTechnology = #Oracle then
+					name.toUpper()
+				else
+					name.toLower()
+				endif;
+
+	
 
 helper context Website!Feature def: collectionType() : ORM!CollectionType
     = if self."unique" then
@@ -99,6 +114,9 @@ helper context Website!Feature def: inverseCollectionType() : ORM!CollectionType
 	endif;
 
 
+helper def: findWebsiteEntity(name : String) : Website!Entity
+	= Website!Entity.allInstancesFrom('website')->any(e | e.name = name);
+
 helper def: findOrmDataType(name : String) : ORM!DataType
 	= ORM!DataType.allInstancesFrom('orm')->any(d | d.name = name);
 
@@ -107,6 +125,10 @@ helper def: findOrmEntity(name : String) : ORM!Entity
 
 helper context ORM!Entity def: getOrmFeature(featureName : String) : Website!Feature
 	= self.features->any(f | f.name = featureName);
+
+helper def: findOrmCollection(name : String) : ORM!DataType
+	= ORM!CollectionType.allInstancesFrom('orm')
+		->any(c | c.elementType.name = name );
 
 
 helper def: findWafService(name : String) : WAF!Service

@@ -3,7 +3,7 @@
 -- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
 -- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
 
-module PassImplicitAuthenticationPersistence2;
+module PassPersistenceImplicitAuthentication2;
 create dummyOrm : ORM refining orm : ORM;
 
 uses WebsiteHelpers;

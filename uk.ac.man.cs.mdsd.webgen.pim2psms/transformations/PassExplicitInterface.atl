@@ -378,6 +378,7 @@ rule WafModel {
 		captchaSiteKey <- website.websiteProperties.captchaSiteKey,
 		captchaSecretKey <- website.websiteProperties.captchaSecretKey,
 		textEditorURL <- website.websiteProperties.textEditorURL,
+		topNavigationId <- website.websiteProperties.topNavigationId,
 		sideMenu <- website.websiteProperties.sideMenu,
 		staticUnitsEditable <- website.websiteProperties.staticUnitsEditable
 	)

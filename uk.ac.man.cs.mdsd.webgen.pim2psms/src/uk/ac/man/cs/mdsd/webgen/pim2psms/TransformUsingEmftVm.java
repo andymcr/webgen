@@ -147,7 +147,7 @@ public class TransformUsingEmftVm {
 		ormInputModels.put("website", getWebsiteModel());
 		final String ormModelName = "orm";
 		final Model ormModel = executePassCreatingOutputModel("PassPersistenceTypes",
-			ormModelName, "website_orm", ormInputModels, null);
+			ormModelName, "orm", ormInputModels, null);
 		executeRefiningPass("PassPersistenceFeatures", ormModelName, ormModel,
 			ormInputModels, null);
 		executeRefiningPass("PassPersistenceImplicitStatic", ormModelName,

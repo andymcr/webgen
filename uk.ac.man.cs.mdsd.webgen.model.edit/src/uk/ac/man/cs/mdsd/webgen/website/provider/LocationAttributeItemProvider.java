@@ -24,13 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.website.LocationAttribute;
  * @generated
  */
 public class LocationAttributeItemProvider
-	extends AttributeItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends AttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

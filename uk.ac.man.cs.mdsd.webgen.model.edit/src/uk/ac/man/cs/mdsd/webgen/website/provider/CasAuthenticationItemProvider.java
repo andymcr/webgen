@@ -25,13 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.CasAuthentication;
  * @generated
  */
 public class CasAuthenticationItemProvider
-	extends AuthenticationItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends AuthenticationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

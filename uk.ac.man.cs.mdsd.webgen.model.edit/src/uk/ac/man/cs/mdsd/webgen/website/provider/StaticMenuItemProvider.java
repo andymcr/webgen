@@ -24,13 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.website.StaticMenu;
  * @generated
  */
 public class StaticMenuItemProvider
-	extends MenuItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends MenuItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

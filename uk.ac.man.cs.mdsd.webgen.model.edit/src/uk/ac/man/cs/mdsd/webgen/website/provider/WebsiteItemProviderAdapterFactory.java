@@ -1710,6 +1710,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1749,6 +1750,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1788,6 +1790,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1827,6 +1830,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1851,6 +1855,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1875,6 +1880,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

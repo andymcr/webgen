@@ -29,13 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Classifier;
  * @generated
  */
 public class ClassifierItemProvider
-	extends NamedDisplayElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends NamedDisplayElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

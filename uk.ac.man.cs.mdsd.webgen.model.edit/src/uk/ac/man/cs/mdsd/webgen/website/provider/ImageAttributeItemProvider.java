@@ -25,13 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ImageAttribute;
  * @generated
  */
 public class ImageAttributeItemProvider
-	extends ResourceAttributeItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends ResourceAttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

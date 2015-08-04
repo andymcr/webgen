@@ -14,11 +14,11 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.SearchUnit#getResultsDestination <em>Results Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.SearchUnit#getStyleClass <em>Style Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSearchUnit()
  * @model

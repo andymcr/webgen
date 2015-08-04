@@ -10,13 +10,13 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement#getServiceFeature <em>Service Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitElement()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='serviceFeatureMustBeConsistent'"

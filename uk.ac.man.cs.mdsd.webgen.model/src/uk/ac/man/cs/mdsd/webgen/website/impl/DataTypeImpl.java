@@ -19,13 +19,13 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getPersistentType <em>Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getOrmType <em>Orm Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

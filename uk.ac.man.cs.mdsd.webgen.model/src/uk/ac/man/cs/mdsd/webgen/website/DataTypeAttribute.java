@@ -10,6 +10,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute#getPersistentType <em>Persistent Type</em>}</li>
@@ -18,7 +19,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute#isCaseInsensitive <em>Case Insensitive</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute#isEncrypt <em>Encrypt</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDataTypeAttribute()
  * @model

@@ -22,6 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuImpl#getEntries <em>Entries</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuImpl#isOmitCaption <em>Omit Caption</em>}</li>
@@ -29,7 +30,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuImpl#getLayoutClass <em>Layout Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

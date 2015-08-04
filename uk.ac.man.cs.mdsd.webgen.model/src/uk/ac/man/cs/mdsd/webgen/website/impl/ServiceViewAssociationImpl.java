@@ -27,6 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getDateFormat <em>Date Format</em>}</li>
@@ -42,7 +43,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getFooterClass <em>Footer Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceViewAssociationImpl#getOppositeFeature <em>Opposite Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

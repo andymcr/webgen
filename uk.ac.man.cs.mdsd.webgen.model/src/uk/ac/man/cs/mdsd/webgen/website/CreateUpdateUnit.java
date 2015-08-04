@@ -10,11 +10,11 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit#getClearLabel <em>Clear Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit#getStyleClass <em>Style Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getCreateUpdateUnit()
  * @model

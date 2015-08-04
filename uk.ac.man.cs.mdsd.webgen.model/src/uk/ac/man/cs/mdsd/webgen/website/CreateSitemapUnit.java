@@ -10,13 +10,13 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CreateSitemapUnit#getDeployedURL <em>Deployed URL</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CreateSitemapUnit#getFilename <em>Filename</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CreateSitemapUnit#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CreateSitemapUnit#getLayoutClass <em>Layout Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getCreateSitemapUnit()
  * @model

@@ -10,11 +10,11 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityFeature#getAlias <em>Alias</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityFeature#getViewColumnName <em>View Column Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceEntityFeature()
  * @model abstract="true"

@@ -14,6 +14,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getBidirectional <em>Bidirectional</em>}</li>
@@ -26,7 +27,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getTargetDisplayClass <em>Target Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getTargetFooterClass <em>Target Footer Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation()
  * @model abstract="true"

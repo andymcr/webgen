@@ -17,11 +17,11 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl#getClearLabel <em>Clear Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

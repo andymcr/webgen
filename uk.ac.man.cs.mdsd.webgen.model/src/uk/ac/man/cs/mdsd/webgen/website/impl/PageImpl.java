@@ -36,6 +36,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getUnits <em>Units</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getParentPage <em>Parent Page</em>}</li>
@@ -47,7 +48,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

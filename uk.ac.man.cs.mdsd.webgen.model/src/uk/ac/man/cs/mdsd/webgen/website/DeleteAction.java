@@ -14,11 +14,11 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DeleteAction#getDestination <em>Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DeleteAction#getConfirmMessage <em>Confirm Message</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDeleteAction()
  * @model

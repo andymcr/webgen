@@ -15,6 +15,7 @@ import java.util.List;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getChildPages <em>Child Pages</em>}</li>
@@ -25,7 +26,6 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getStyleClass <em>Style Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getPage()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='contentUnitNameUniqueWithinPage contentUnitNameDifferentToPageName'"

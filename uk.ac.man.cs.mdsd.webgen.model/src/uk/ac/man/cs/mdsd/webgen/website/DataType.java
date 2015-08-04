@@ -14,13 +14,13 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getPersistentType <em>Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getOrmType <em>Orm Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDataType()
  * @model

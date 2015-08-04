@@ -24,13 +24,13 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AttributeImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AttributeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AttributeImpl#getInputClass <em>Input Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

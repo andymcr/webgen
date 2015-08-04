@@ -37,6 +37,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getWebsiteProperties <em>Website Properties</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getClassifiers <em>Classifiers</em>}</li>
@@ -44,7 +45,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getMenus <em>Menus</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

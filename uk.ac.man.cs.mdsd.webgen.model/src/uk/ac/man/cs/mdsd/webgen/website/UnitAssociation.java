@@ -12,6 +12,7 @@ import java.util.List;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getServiceFeature <em>Service Feature</em>}</li>
@@ -20,7 +21,6 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getDynamicLabel <em>Dynamic Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getFilters <em>Filters</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='cannotReduceCardinality canOnlyForceSingletonValues serviceFeatureMustBeConsistent selectionFromCorrectService entityAssociationsRequireFeature'"

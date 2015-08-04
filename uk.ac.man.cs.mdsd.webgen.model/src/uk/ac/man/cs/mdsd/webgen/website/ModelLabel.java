@@ -11,12 +11,12 @@ import java.util.List;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel#getLabelFor <em>Label For</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel#getFormat <em>Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel#getFeatures <em>Features</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabel()
  * @model

@@ -17,13 +17,13 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ControlUnitImpl#getSubmitLabel <em>Submit Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ControlUnitImpl#getCancelDestination <em>Cancel Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ControlUnitImpl#getCancelLabel <em>Cancel Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ControlUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

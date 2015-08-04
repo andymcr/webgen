@@ -15,6 +15,7 @@ import java.util.List;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getTableName <em>Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getKeys <em>Keys</em>}</li>
@@ -24,7 +25,6 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getDisplayFeatures <em>Display Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getDisplayFormat <em>Display Format</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='featureNameUniqueWithinEntity displayOnlyLocalFeatures keysFromLocalFeatures'"

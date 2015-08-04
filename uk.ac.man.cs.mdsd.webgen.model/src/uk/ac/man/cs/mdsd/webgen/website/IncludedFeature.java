@@ -16,6 +16,7 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#isRequired <em>Required</em>}</li>
@@ -26,7 +27,6 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getFooterClass <em>Footer Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIncludedFeature()
  * @model interface="true" abstract="true"

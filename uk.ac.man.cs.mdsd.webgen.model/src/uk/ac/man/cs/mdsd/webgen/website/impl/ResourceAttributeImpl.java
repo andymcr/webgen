@@ -23,6 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl#getMaximumUploadSize <em>Maximum Upload Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl#getValidUploadMimeTypes <em>Valid Upload Mime Types</em>}</li>
@@ -30,7 +31,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl#isUploadsWithinWebsite <em>Uploads Within Website</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl#getRelativeUploadDirectory <em>Relative Upload Directory</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

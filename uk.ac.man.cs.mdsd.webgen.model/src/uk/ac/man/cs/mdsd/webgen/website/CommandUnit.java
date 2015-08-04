@@ -11,12 +11,12 @@ import java.util.List;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CommandUnit#getCommands <em>Commands</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CommandUnit#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CommandUnit#getLayoutClass <em>Layout Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getCommandUnit()
  * @model

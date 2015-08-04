@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl#getPersistentType <em>Persistent Type</em>}</li>
@@ -25,7 +26,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl#isCaseInsensitive <em>Case Insensitive</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl#isEncrypt <em>Encrypt</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -26,6 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getOppositeService <em>Opposite Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getSelection <em>Selection</em>}</li>
@@ -35,7 +36,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#isUseFeatureSource <em>Use Feature Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityAssociationImpl#getOppositeFeature <em>Opposite Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -116,6 +116,8 @@ public enum AjaxTechnologies implements Enumerator {
 	 * Returns the '<em><b>Ajax Technologies</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static AjaxTechnologies get(String literal) {
@@ -132,6 +134,8 @@ public enum AjaxTechnologies implements Enumerator {
 	 * Returns the '<em><b>Ajax Technologies</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static AjaxTechnologies getByName(String name) {
@@ -148,6 +152,8 @@ public enum AjaxTechnologies implements Enumerator {
 	 * Returns the '<em><b>Ajax Technologies</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static AjaxTechnologies get(int value) {

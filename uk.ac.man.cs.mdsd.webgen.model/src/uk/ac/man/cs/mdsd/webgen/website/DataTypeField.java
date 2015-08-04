@@ -10,12 +10,12 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataTypeField#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataTypeField#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataTypeField#isEncrypt <em>Encrypt</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDataTypeField()
  * @model

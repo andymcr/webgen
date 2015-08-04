@@ -10,10 +10,10 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation#getOppositeFeature <em>Opposite Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceViewAssociation()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='oppositeMustBeInView'"

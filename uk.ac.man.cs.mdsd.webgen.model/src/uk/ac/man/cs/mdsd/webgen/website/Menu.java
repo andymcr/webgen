@@ -11,6 +11,7 @@ import java.util.List;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Menu#getEntries <em>Entries</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Menu#isOmitCaption <em>Omit Caption</em>}</li>
@@ -18,7 +19,6 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Menu#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Menu#getLayoutClass <em>Layout Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getMenu()
  * @model abstract="true"

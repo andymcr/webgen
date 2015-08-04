@@ -19,6 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#isReadOnly <em>Read Only</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getDefaultZoomLevel <em>Default Zoom Level</em>}</li>
@@ -26,7 +27,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getPlaceName <em>Place Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

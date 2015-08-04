@@ -29,12 +29,12 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelImpl#getLabelFor <em>Label For</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelImpl#getFormat <em>Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelImpl#getFeatures <em>Features</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -10,12 +10,12 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.StaticUnit#getContent <em>Content</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.StaticUnit#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.StaticUnit#getLayoutClass <em>Layout Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getStaticUnit()
  * @model

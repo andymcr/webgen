@@ -14,6 +14,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getConfirmDestination <em>Confirm Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getConfirmLabel <em>Confirm Label</em>}</li>
@@ -21,7 +22,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getCancelLabel <em>Cancel Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getLayoutClass <em>Layout Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEditUnit()
  * @model abstract="true"

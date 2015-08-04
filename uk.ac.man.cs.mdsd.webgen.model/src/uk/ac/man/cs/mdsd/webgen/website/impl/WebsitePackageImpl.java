@@ -5513,7 +5513,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -5521,121 +5521,121 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });		
+		   });	
 		addAnnotation
 		  (webGenModelEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "classifierNameUnique pageNameUnique menuNameUnique "
-		   });			
+		   });	
 		addAnnotation
 		  (localAuthenticationSystemEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "entitySourceOnlyIfNotEncapsulated authenticationKeyFromUserSource authenticationKeyRequiredAttribute captchaRequiresKeys"
-		   });			
+		   });	
 		addAnnotation
 		  (namedElementEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "nameNeedsAtLeastOneCharacter"
-		   });			
+		   });	
 		addAnnotation
 		  (entityEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "featureNameUniqueWithinEntity displayOnlyLocalFeatures keysFromLocalFeatures"
-		   });			
+		   });	
 		addAnnotation
 		  (associationWithoutContainmentEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "oneToManyAssociationsMustBeBidirectional"
-		   });			
+		   });	
 		addAnnotation
 		  (includedElementEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "cannotReduceCardinality canOnlyGiveDefaultValueForSingletons canOnlyForceSingletonValues"
-		   });			
+		   });	
 		addAnnotation
 		  (serviceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "onlyIncludeFeaturesOnce includedFeaturesMustBeFromEncapsulated multipleEntitiesRequiresModelName"
-		   });				
+		   });	
 		addAnnotation
 		  (serviceEntityAssociationEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "cannotReduceCardinality canOnlyForceSingletonValues selectionFromCorrectService implicitOppositeServiceMustBeUnambiguous featureRequired"
-		   });				
+		   });	
 		addAnnotation
 		  (serviceViewAssociationEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "oppositeMustBeInView"
-		   });			
+		   });	
 		addAnnotation
 		  (pageEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "contentUnitNameUniqueWithinPage contentUnitNameDifferentToPageName"
-		   });			
+		   });	
 		addAnnotation
 		  (staticMenuEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "onlyStaticEntries"
-		   });			
+		   });	
 		addAnnotation
 		  (dynamicMenuEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "entriesMustBeFromSource onlyIncludeFeaturesOnce mustSelectSingleton dynamicTitleFromService canOnlyTitleWithSingletonElement"
-		   });					
+		   });	
 		addAnnotation
 		  (dynamicUnitEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "serviceFeaturesMustBeFromSource onlyReferenceFeaturesOnce entitySourceOnlyIfNotEncapsulated serviceSourceImpliesServiceFeaturesSet"
-		   });			
+		   });	
 		addAnnotation
 		  (unitFeatureEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "atMostOneSelectAction noDeleteActions"
-		   });			
+		   });	
 		addAnnotation
 		  (unitElementEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "serviceFeatureMustBeConsistent"
-		   });				
+		   });	
 		addAnnotation
 		  (unitAssociationEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "cannotReduceCardinality canOnlyForceSingletonValues serviceFeatureMustBeConsistent selectionFromCorrectService entityAssociationsRequireFeature"
-		   });				
+		   });	
 		addAnnotation
 		  (dataUnitEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "canOnlyTitleWithSingletonElement selectionFromSource"
-		   });			
+		   });	
 		addAnnotation
 		  (inlineActionContainerEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "atMostOneDeleteAction"
-		   });			
+		   });	
 		addAnnotation
 		  (inlineActionEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "canOnlyLinkToSingletonFeatures"
-		   });	
+		   });
 	}
 
 	/**
@@ -5645,7 +5645,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";				
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (webGenModelEClass, 
 		   source, 
@@ -5653,7 +5653,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "classifierNameUnique", "classifiers->isUnique(name)",
 			 "pageNameUnique", "pages->isUnique(name)",
 			 "menuNameUnique", "menus->isUnique(name)"
-		   });			
+		   });	
 		addAnnotation
 		  (localAuthenticationSystemEClass, 
 		   source, 
@@ -5662,13 +5662,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "authenticationKeyRequiredAttribute", "if userAuthenticationKey.oclIsUndefined() then false else userAuthenticationKey.cardinality = Cardinality::Required endif",
 			 "captchaRequiresKeys", "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()",
 			 "entitySourceOnlyIfNotEncapsulated", "userSource.oclIsTypeOf(Entity) implies userSource.oclAsType(Entity).servedBy->isEmpty()"
-		   });			
+		   });	
 		addAnnotation
 		  (namedElementEClass, 
 		   source, 
 		   new String[] {
 			 "nameNeedsAtLeastOneCharacter", "not name.oclIsUndefined() implies name.size() > 0"
-		   });			
+		   });	
 		addAnnotation
 		  (entityEClass, 
 		   source, 
@@ -5676,13 +5676,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "featureNameUniqueWithinEntity", "features->isUnique(name)",
 			 "displayOnlyLocalFeatures", "features->union(associationEnds)->includesAll(displayFeatures)",
 			 "keysFromLocalFeatures", "features->union(associationEnds)->includesAll(keys)"
-		   });			
+		   });	
 		addAnnotation
 		  (associationWithoutContainmentEClass, 
 		   source, 
 		   new String[] {
 			 "oneToManyAssociationsMustBeBidirectional", "cardinality = Cardinality::Optional and targetCardinality = Cardinality::Required implies bidirectional"
-		   });			
+		   });	
 		addAnnotation
 		  (includedElementEClass, 
 		   source, 
@@ -5690,7 +5690,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "cannotReduceCardinality", "not feature.oclIsUndefined()\r\n\timplies feature.cardinality = Cardinality::Required implies required",
 			 "canOnlyGiveDefaultValueForSingletons", "not feature.oclIsUndefined() and not defaultValue.oclIsUndefined()\r\n\timplies feature.cardinality <> Cardinality::Many",
 			 "canOnlyForceSingletonValues", "not feature.oclIsUndefined() and not forcedValue.oclIsUndefined()\r\n\timplies feature.cardinality <> Cardinality::Many"
-		   });			
+		   });	
 		addAnnotation
 		  (serviceEClass, 
 		   source, 
@@ -5698,13 +5698,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "onlyIncludeFeaturesOnce", "features->isUnique(f |\r\n\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n\t\tf.oclAsType(ServiceEntityElement).feature\r\n\telse\r\n\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n\tendif)",
 			 "includedFeaturesMustBeFromEncapsulated", "let features : Sequence(Feature)\r\n\t= encapsulates->collect(e | e.features)->union(encapsulates->collect(e | e.associationEnds))\r\n\tin features\r\n\t\t->select(f | f.oclIsKindOf(IncludedFeature))\r\n\t\t->forAll(f | features->includes(\r\n\t\t\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n\t\t\t\tf.oclAsType(ServiceEntityElement).feature\r\n\t\t\telse\r\n\t\t\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n\t\t\tendif))",
 			 "multipleEntitiesRequiresModelName", "encapsulates->size() > 1 implies not modelName.oclIsUndefined()"
-		   });		
+		   });	
 		addAnnotation
 		  (getServiceEntityElement_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if feature.oclIsUndefined() then\r\n\t\'\'\r\nelse if self.alias.oclIsUndefined() then\r\n\tfeature.name\r\nelse if self.alias <> \'\' then\r\n\tself.alias\r\nelse\r\n\tfeature.name\r\nendif endif endif"
-		   });			
+		   });	
 		addAnnotation
 		  (serviceEntityAssociationEClass, 
 		   source, 
@@ -5714,32 +5714,32 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "selectionFromCorrectService", "if selection.oclIsUndefined() then\r\n\ttrue\r\nelse if feature.oclIsUndefined() then\r\n\ttrue\r\nelse\r\n\tlet target : Entity\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.targetEntity\r\n\t\t\telse\r\n\t\t\t\tfeature.parentEntity\r\n\t\t\tendif\r\n\tin target.servedBy->collect(s | s.selections)->includes(selection)\r\nendif endif",
 			 "implicitOppositeServiceMustBeUnambiguous", "oppositeService.oclIsUndefined() and not feature.oclIsUndefined() implies\r\n\tlet entity: Entity\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.targetEntity\r\n\t\t\telse\r\n\t\t\t\tfeature.parentEntity\r\n\t\t\tendif\r\n\tin entity.servedBy->size() < 2",
 			 "featureRequired", "not feature.oclIsUndefined()"
-		   });		
+		   });	
 		addAnnotation
 		  (getServiceEntityAssociation_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if feature.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet featureName : String\r\n\t\t= if self.useFeatureSource then\r\n\t\t\t\tfeature.name\r\n\t\t\telse\r\n\t\t\t\tfeature.targetFeatureName \r\n\t\t\tendif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tfeatureName\r\n\t\telse if self.alias <> \'\' then\r\n\t\t\tself.alias\r\n\t\telse\r\n\t\t\tfeatureName\r\n\t\tendif endif\r\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (serviceViewAssociationEClass, 
 		   source, 
 		   new String[] {
 			 "oppositeMustBeInView", "not oppositeFeature.oclIsUndefined() implies oppositeFeature.partOf.view"
-		   });			
+		   });	
 		addAnnotation
 		  (pageEClass, 
 		   source, 
 		   new String[] {
 			 "contentUnitNameUniqueWithinPage", "units->isUnique(name)",
 			 "contentUnitNameDifferentToPageName", "units->collect(name)->select(n | n = name)->isEmpty()"
-		   });			
+		   });	
 		addAnnotation
 		  (staticMenuEClass, 
 		   source, 
 		   new String[] {
 			 "onlyStaticEntries", "entries->select(e | e.oclIsKindOf(MenuIncludedFeature))->isEmpty()"
-		   });			
+		   });	
 		addAnnotation
 		  (dynamicMenuEClass, 
 		   source, 
@@ -5749,19 +5749,19 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "mustSelectSingleton", "not selection.oclIsUndefined() implies selection.limit = 1",
 			 "dynamicTitleFromService", "not dynamicTitle.oclIsUndefined() implies\r\n\tif service.oclIsUndefined() then\r\n \t\tfalse\r\n\telse\r\n\t\tservice.features->includes(dynamicTitle)\r\n\tendif",
 			 "canOnlyTitleWithSingletonElement", "not dynamicTitle.oclIsUndefined() implies dynamicTitle.feature.cardinality <> Cardinality::Many"
-		   });		
+		   });	
 		addAnnotation
 		  (getMenuIncludedElement_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if serviceElement.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tserviceElement.name\r\nendif\r\n"
-		   });		
+		   });	
 		addAnnotation
 		  (getMenuIncludedAssociation_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if serviceAssociation.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tserviceAssociation.name\r\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (dynamicUnitEClass, 
 		   source, 
@@ -5770,26 +5770,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "onlyReferenceFeaturesOnce", "displayFields\r\n\t->select(f | f.oclIsKindOf(UnitFeature))\r\n\t.oclAsType(UnitFeature)\r\n\t->select(f | if not f.oclIsTypeOf(UnitAssociation) then\r\n\t\t\ttrue\r\n\t\telse\r\n\t\t\tf.oclAsType(UnitAssociation).childFeature.oclIsUndefined()\r\n\t\tendif)\r\n\t->isUnique(f |\r\n\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\tf.oclAsType(UnitElement).feature\r\n\t\telse\r\n\t\t\tf.oclAsType(UnitAssociation).feature\r\n\t\tendif)",
 			 "entitySourceOnlyIfNotEncapsulated", "source.oclIsTypeOf(Entity) implies source.oclAsType(Entity).servedBy->isEmpty()",
 			 "serviceSourceImpliesServiceFeaturesSet", "source.oclIsTypeOf(Service) implies \r\ndisplayFields\r\n\t->select(f|f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t->forAll(f |\r\n\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\tnot f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()\r\n\t\telse\r\n\t\t\tnot f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()\r\n\t\tendif)"
-		   });			
+		   });	
 		addAnnotation
 		  (unitFeatureEClass, 
 		   source, 
 		   new String[] {
 			 "atMostOneSelectAction", "actions->select(a | a.oclIsKindOf(SelectAction))->size() < 2",
 			 "noDeleteActions", "actions->select(a | a.oclIsKindOf(DeleteAction))->isEmpty()"
-		   });			
+		   });	
 		addAnnotation
 		  (unitElementEClass, 
 		   source, 
 		   new String[] {
 			 "serviceFeatureMustBeConsistent", "not feature.oclIsUndefined() and not serviceFeature.oclIsUndefined()\r\nimplies feature = serviceFeature.feature"
-		   });		
+		   });	
 		addAnnotation
 		  (getUnitElement_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if serviceFeature.oclIsUndefined() then\r\n\tif feature.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tfeature.name\r\n\tendif\r\nelse\r\n\tserviceFeature.name\r\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (unitAssociationEClass, 
 		   source, 
@@ -5799,26 +5799,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "serviceFeatureMustBeConsistent", "not feature.oclIsUndefined() and not serviceFeature.oclIsUndefined()\r\nimplies if serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then\r\n\t\tfeature = serviceFeature.oclAsType(ServiceEntityAssociation).feature\r\n\telse\r\n\t\ttrue\r\n\tendif",
 			 "selectionFromCorrectService", "if selection.oclIsUndefined() then\r\n\ttrue\r\nelse if serviceFeature.oclIsUndefined() then\r\n\ttrue\r\nelse if not serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then\r\n\ttrue\r\nelse if serviceFeature.oclAsType(ServiceEntityAssociation).feature.oclIsUndefined() then\r\n\ttrue\r\nelse\r\n\tlet target : Entity\r\n\t= if serviceFeature.partOf.encapsulates->includes(serviceFeature.oclAsType(ServiceEntityAssociation).feature.parentEntity) then\r\n\t\t\tserviceFeature.oclAsType(ServiceEntityAssociation).feature.targetEntity\r\n\t\telse\r\n\t\t\tserviceFeature.oclAsType(ServiceEntityAssociation).feature.parentEntity\r\n\t\tendif\r\n\tin target.servedBy->collect(s | s.selections)->includes(selection)\r\nendif endif endif endif",
 			 "entityAssociationsRequireFeature", "not serviceFeature.oclIsUndefined() implies\r\n\tserviceFeature.oclIsTypeOf(ServiceEntityAssociation) implies\r\n\t\tnot feature.oclIsUndefined()"
-		   });		
+		   });	
 		addAnnotation
 		  (getUnitAssociation_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if serviceFeature.oclIsUndefined() then\r\n\tif feature.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse if feature.parentEntity = displayedOn.source then\r\n\t\tfeature.name\r\n\telse\r\n\t\tif feature.targetFeatureName.oclIsUndefined() then\r\n\t\t\tlet prefix : String\r\n\t\t\t\t= \'inv\'.concat(feature.name.substring(1, 1).toUpper())\r\n\t\t\t\tin if feature.name.size() > 1 then\r\n\t\t\t\t\t\tprefix.concat(feature.name.substring(2, feature.name.size()))\r\n\t\t\t\t\telse\r\n\t\t\t\t\t\tprefix\r\n\t\t\t\t\tendif\r\n\t\telse\r\n\t\t\tfeature.targetFeatureName\r\n\t\tendif\r\n\tendif endif\r\nelse\r\n\tif serviceFeature.oclIsKindOf(ServiceEntityAssociation) then\r\n\t\tserviceFeature.oclAsType(ServiceEntityAssociation).name\r\n\telse\r\n\t\tserviceFeature.oclAsType(ServiceViewAssociation).name\r\n\tendif\r\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (dataUnitEClass, 
 		   source, 
 		   new String[] {
 			 "canOnlyTitleWithSingletonElement", "not dynamicTitle.oclIsUndefined() implies \r\nif dynamicTitle.oclIsKindOf(Feature) then\r\n\tdynamicTitle.oclAsType(Feature).cardinality <> Cardinality::Many\r\nelse\r\n\ttrue\r\nendif",
 			 "selectionFromSource", "not selection.oclIsUndefined() implies\r\n\tif source.oclIsUndefined() then\r\n\t\ttrue\r\n\telse if source.oclIsTypeOf(Service) then\r\n\t\tsource.oclAsType(Service).selections->includes(selection)\r\n\telse\r\n\t\tfalse\r\n\tendif endif"
-		   });			
+		   });	
 		addAnnotation
 		  (inlineActionContainerEClass, 
 		   source, 
 		   new String[] {
 			 "atMostOneDeleteAction", "actions->select(a | a.oclIsKindOf(DeleteAction))->size() < 2"
-		   });			
+		   });	
 		addAnnotation
 		  (inlineActionEClass, 
 		   source, 

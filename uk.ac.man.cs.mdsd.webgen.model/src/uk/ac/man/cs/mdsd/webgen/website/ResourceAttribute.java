@@ -11,6 +11,7 @@ import java.util.List;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getMaximumUploadSize <em>Maximum Upload Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getValidUploadMimeTypes <em>Valid Upload Mime Types</em>}</li>
@@ -18,7 +19,6 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#isUploadsWithinWebsite <em>Uploads Within Website</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getRelativeUploadDirectory <em>Relative Upload Directory</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getResourceAttribute()
  * @model abstract="true"

@@ -11,8 +11,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Location Attribute</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

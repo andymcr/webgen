@@ -20,11 +20,11 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationWithoutContainmentImpl#getTargetCardinality <em>Target Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationWithoutContainmentImpl#getTargetUnique <em>Target Unique</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

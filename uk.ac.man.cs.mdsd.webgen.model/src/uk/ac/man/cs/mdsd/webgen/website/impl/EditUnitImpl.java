@@ -23,6 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getConfirmDestination <em>Confirm Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getConfirmLabel <em>Confirm Label</em>}</li>
@@ -30,7 +31,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getCancelLabel <em>Cancel Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

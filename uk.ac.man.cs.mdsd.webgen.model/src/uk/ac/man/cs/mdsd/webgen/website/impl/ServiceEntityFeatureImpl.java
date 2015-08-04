@@ -26,6 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityFeatureImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityFeatureImpl#isRequired <em>Required</em>}</li>
@@ -40,7 +41,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityFeatureImpl#getAlias <em>Alias</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityFeatureImpl#getViewColumnName <em>View Column Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

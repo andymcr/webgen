@@ -25,12 +25,12 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl#getAuthenticates <em>Authenticates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl#getLoginLabel <em>Login Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl#getLogoutLabel <em>Logout Label</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

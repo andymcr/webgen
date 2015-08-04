@@ -10,11 +10,11 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DateField#getDetails <em>Details</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DateField#getFormat <em>Format</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDateField()
  * @model

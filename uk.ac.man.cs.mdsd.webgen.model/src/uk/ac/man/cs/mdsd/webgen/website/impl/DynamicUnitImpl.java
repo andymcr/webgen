@@ -31,6 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getSource <em>Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
@@ -42,7 +43,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getFooterClass <em>Footer Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getErrorClass <em>Error Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

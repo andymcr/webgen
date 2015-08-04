@@ -20,10 +20,10 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureReferenceImpl#getField <em>Field</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

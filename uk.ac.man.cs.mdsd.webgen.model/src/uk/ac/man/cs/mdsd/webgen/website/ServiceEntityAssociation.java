@@ -10,13 +10,13 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation#getDynamicLabel <em>Dynamic Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation#isUseFeatureSource <em>Use Feature Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation#getOppositeFeature <em>Opposite Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceEntityAssociation()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='cannotReduceCardinality canOnlyForceSingletonValues selectionFromCorrectService implicitOppositeServiceMustBeUnambiguous featureRequired'"

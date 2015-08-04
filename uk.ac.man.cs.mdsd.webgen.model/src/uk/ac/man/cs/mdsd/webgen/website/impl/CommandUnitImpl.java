@@ -27,12 +27,12 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CommandUnitImpl#getCommands <em>Commands</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CommandUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CommandUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

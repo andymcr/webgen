@@ -27,10 +27,10 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitContainerImpl#getUnits <em>Units</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

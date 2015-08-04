@@ -11,10 +11,10 @@ import uk.ac.man.cs.mdsd.criteria.Path;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelReference#getUnit <em>Unit</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelReference()
  * @model

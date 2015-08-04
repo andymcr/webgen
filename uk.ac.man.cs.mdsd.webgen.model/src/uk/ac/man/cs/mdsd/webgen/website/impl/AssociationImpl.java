@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationImpl#getBidirectional <em>Bidirectional</em>}</li>
@@ -36,7 +37,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationImpl#getTargetDisplayClass <em>Target Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationImpl#getTargetFooterClass <em>Target Footer Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

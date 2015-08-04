@@ -10,13 +10,13 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ControlUnit#getSubmitLabel <em>Submit Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ControlUnit#getCancelDestination <em>Cancel Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ControlUnit#getCancelLabel <em>Cancel Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ControlUnit#getLayoutClass <em>Layout Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getControlUnit()
  * @model abstract="true"

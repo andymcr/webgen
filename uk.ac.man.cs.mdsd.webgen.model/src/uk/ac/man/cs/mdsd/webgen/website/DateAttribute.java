@@ -14,11 +14,11 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DateAttribute#getDetails <em>Details</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DateAttribute#getFormat <em>Format</em>}</li>
  * </ul>
- * </p>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDateAttribute()
  * @model

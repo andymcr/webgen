@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getParentEntity <em>Parent Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getColumnName <em>Column Name</em>}</li>
@@ -35,7 +36,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getFooterClass <em>Footer Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

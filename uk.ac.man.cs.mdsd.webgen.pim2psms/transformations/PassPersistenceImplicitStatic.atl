@@ -64,7 +64,9 @@ unique lazy rule implicitStaticEntity {
 	to orm : ORM!Entity (
 		name <- 'StaticText',
 		displayLabel <- 'Static Text',
-		features <- Sequence{name, content}
+		features <- Sequence{name, content},
+		tableName <- 'StaticText'.createTableName(),
+		autoKeyName <- 'id'
 	),
 	name : ORM!SingletonElement (
 		name <- 'name',
@@ -73,7 +75,8 @@ unique lazy rule implicitStaticEntity {
 		required <- true,
 		"unique" <- true,
 		inputField <- true,
-		inputClass <- 'input_attribute'
+		inputClass <- 'input_attribute',
+		columnName <- 'name'.createElementColumnName()
 	),
 	content : ORM!SingletonElement (
 		name <- 'content',
@@ -82,7 +85,8 @@ unique lazy rule implicitStaticEntity {
 		required <- true,
 		"unique" <- false,
 		inputField <- true,
-		inputClass <- 'input_attribute'
+		inputClass <- 'input_attribute',
+		columnName <- 'content'.createElementColumnName()
 	)
 	do {
 		orm;

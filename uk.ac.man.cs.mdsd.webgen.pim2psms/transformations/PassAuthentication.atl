@@ -212,6 +212,11 @@ unique lazy rule implicitLoginUnit {
 						Sequence{thisModule.implicitRememberMeField(website)}
 					else
 						Sequence{}
+					endif)
+				->union(if website.useCaptcha then
+						Sequence{thisModule.implicitCaptchaField2(website)}
+					else
+						Sequence{}
 					endif),
 -- assigned in next pass		loginIdField <- OclUndefined,
 -- assigned in next pass		passwordField <- OclUndefined,
@@ -223,20 +228,6 @@ unique lazy rule implicitLoginUnit {
 		footerClass <- 'unit_footer',
 		errorClass <- 'error',
 		layoutClass <- 'control_form'
-	)
-	do {
-		waf;
-	}
-}
-
-unique lazy rule implicitRememberMeField {
-	from website : Website!LocalAuthenticationSystem
-	to waf : WAF!DataTypeField (
-		name <- 'rememberMe',
-		dataType <- thisModule.findOrmDataType('Boolean'),
-		cardinality <- #Optional,
-		displayLabel <- 'Remember Me',
-		inputClass <- 'input_checkbox'
 	)
 	do {
 		waf;
@@ -320,7 +311,31 @@ lazy rule implicitUnitElement {
 	}
 }
 
+unique lazy rule implicitRememberMeField {
+	from website : Website!LocalAuthenticationSystem
+	to waf : WAF!DataTypeField (
+		name <- 'rememberMe',
+		dataType <- thisModule.findOrmDataType('Boolean'),
+		cardinality <- #Optional,
+		displayLabel <- 'Remember Me',
+		inputClass <- 'input_checkbox'
+	)
+	do {
+		waf;
+	}
+}
+
 lazy rule implicitCaptchaField {
+	from website : Website!LocalAuthenticationSystem
+	to waf : WAF!CaptchaField (
+		name <- 'captcha'
+	)
+	do {
+		waf;
+	}
+}
+
+lazy rule implicitCaptchaField2 {
 	from website : Website!LocalAuthenticationSystem
 	to waf : WAF!CaptchaField (
 		name <- 'captcha'

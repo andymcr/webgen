@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uk.ac.man.cs.mdsd.webgen.model/src" modelPluginID="uk.ac.man.cs.mdsd.webgen.model"
     modelName="Website" modelPluginClass="" suppressEMFTypes="true" booleanFlagsField=""
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    providerRootExtendsClass="WebGenItemProvider" usedGenPackages="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.genmodel#//Criteria"
+    providerRootExtendsClass="WebGenItemProvider" usedGenPackages="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.genmodel#//criteria"
     interfaceNamePattern="">
   <foreignModel>website.ecore</foreignModel>
   <genPackages prefix="Website" basePackage="uk.ac.man.cs.mdsd.webgen" disposableProviderFactory="true"
@@ -114,7 +114,7 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/userAuthenticationKey"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/authenticationSource"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/useCaptcha"/>
+      <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/useCaptcha"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/allowSelfRegistration"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/trackLoginAttempts"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/allowAutoLogin"/>

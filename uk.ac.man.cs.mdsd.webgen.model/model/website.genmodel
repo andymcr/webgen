@@ -154,11 +154,6 @@
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//Entity/associationEnds"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Entity/servedBy"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
-          propertyDescription="" propertyMultiLine="true" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//Entity/displayFeatures"/>
-      <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//Entity/displayFormat"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//Feature">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Feature/parentEntity"/>

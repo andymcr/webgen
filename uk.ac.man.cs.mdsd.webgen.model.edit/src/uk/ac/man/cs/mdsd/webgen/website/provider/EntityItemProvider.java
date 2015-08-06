@@ -16,12 +16,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -60,8 +55,6 @@ public class EntityItemProvider
 			addTableNamePropertyDescriptor(object);
 			addKeysPropertyDescriptor(object);
 			addServedByPropertyDescriptor(object);
-			addDisplayFeaturesPropertyDescriptor(object);
-			addDisplayFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -138,55 +131,6 @@ public class EntityItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Display Features feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addDisplayFeaturesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_Entity_displayFeatures_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Entity_displayFeatures_feature", "_UI_Entity_type"),
-			WebsitePackage.Literals.ENTITY__DISPLAY_FEATURES,
-			true, true, true, null,
-			getString("_UI_InterfacePropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof Entity) {
-						return ((Entity) object).getFeatures();
-					} else {
-						return super.getChoiceOfValues(object);
-					}
-				}
-			});
-	}
-
-	/**
-	 * This adds a property descriptor for the Display Format feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDisplayFormatPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entity_displayFormat_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_displayFormat_feature", "_UI_Entity_type"),
-				 WebsitePackage.Literals.ENTITY__DISPLAY_FORMAT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -254,7 +198,6 @@ public class EntityItemProvider
 
 		switch (notification.getFeatureID(Entity.class)) {
 			case WebsitePackage.ENTITY__TABLE_NAME:
-			case WebsitePackage.ENTITY__DISPLAY_FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.ENTITY__FEATURES:

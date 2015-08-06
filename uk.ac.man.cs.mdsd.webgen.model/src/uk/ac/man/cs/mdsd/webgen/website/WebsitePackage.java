@@ -1230,31 +1230,13 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY__SERVED_BY = CLASSIFIER_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Display Features</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__DISPLAY_FEATURES = CLASSIFIER_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Display Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__DISPLAY_FORMAT = CLASSIFIER_FEATURE_COUNT + 6;
-
-	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 7;
+	int ENTITY_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11016,28 +10998,6 @@ public interface WebsitePackage extends EPackage {
 	EReference getEntity_ServedBy();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getDisplayFeatures <em>Display Features</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Display Features</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Entity#getDisplayFeatures()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EReference getEntity_DisplayFeatures();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getDisplayFormat <em>Display Format</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Display Format</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Entity#getDisplayFormat()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EAttribute getEntity_DisplayFormat();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Feature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14964,22 +14924,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY__SERVED_BY = eINSTANCE.getEntity_ServedBy();
-
-		/**
-		 * The meta object literal for the '<em><b>Display Features</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTITY__DISPLAY_FEATURES = eINSTANCE.getEntity_DisplayFeatures();
-
-		/**
-		 * The meta object literal for the '<em><b>Display Format</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTITY__DISPLAY_FORMAT = eINSTANCE.getEntity_DisplayFormat();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl <em>Feature</em>}' class.

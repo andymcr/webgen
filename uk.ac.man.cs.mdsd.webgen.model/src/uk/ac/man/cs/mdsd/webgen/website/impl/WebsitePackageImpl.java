@@ -1425,24 +1425,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_DisplayFeatures() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEntity_DisplayFormat() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getFeature() {
 		return featureEClass;
 	}
@@ -4448,8 +4430,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(entityEClass, ENTITY__FEATURES);
 		createEReference(entityEClass, ENTITY__ASSOCIATION_ENDS);
 		createEReference(entityEClass, ENTITY__SERVED_BY);
-		createEReference(entityEClass, ENTITY__DISPLAY_FEATURES);
-		createEAttribute(entityEClass, ENTITY__DISPLAY_FORMAT);
 
 		featureEClass = createEClass(FEATURE);
 		createEReference(featureEClass, FEATURE__PARENT_ENTITY);
@@ -5066,8 +5046,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getEntity_Features(), this.getFeature(), this.getFeature_ParentEntity(), "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_AssociationEnds(), this.getAssociation(), this.getAssociation_TargetEntity(), "associationEnds", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_ServedBy(), this.getService(), this.getService_Encapsulates(), "servedBy", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_DisplayFeatures(), this.getFeature(), null, "displayFeatures", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntity_DisplayFormat(), ecorePackage.getEString(), "displayFormat", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureEClass, Feature.class, "Feature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFeature_ParentEntity(), this.getEntity(), this.getEntity_Features(), "parentEntity", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

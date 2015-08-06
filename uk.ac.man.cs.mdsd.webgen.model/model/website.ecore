@@ -199,9 +199,6 @@
         eType="#//Association" eOpposite="#//Association/targetEntity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="servedBy" upperBound="-1"
         eType="#//Service" eOpposite="#//Service/encapsulates"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="displayFeatures" upperBound="-1"
-        eType="#//Feature"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayFormat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Cardinality">
     <eLiterals name="Optional" literal="Optional"/>

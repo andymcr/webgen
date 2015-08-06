@@ -43,8 +43,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getAssociationEnds <em>Association Ends</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getServedBy <em>Served By</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getDisplayFeatures <em>Display Features</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getDisplayFormat <em>Display Format</em>}</li>
  * </ul>
  *
  * @generated
@@ -109,34 +107,6 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 	 * @ordered
 	 */
 	protected EList<Service> servedBy;
-
-	/**
-	 * The cached value of the '{@link #getDisplayFeatures() <em>Display Features</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayFeatures()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Feature> displayFeatures;
-	/**
-	 * The default value of the '{@link #getDisplayFormat() <em>Display Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DISPLAY_FORMAT_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDisplayFormat() <em>Display Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected String displayFormat = DISPLAY_FORMAT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,39 +214,6 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Feature> getDisplayFeatures() {
-		if (displayFeatures == null) {
-			displayFeatures = new EObjectResolvingEList<Feature>(Feature.class, this, WebsitePackage.ENTITY__DISPLAY_FEATURES);
-		}
-		return displayFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDisplayFormat() {
-		return displayFormat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDisplayFormat(String newDisplayFormat) {
-		String oldDisplayFormat = displayFormat;
-		displayFormat = newDisplayFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY__DISPLAY_FORMAT, oldDisplayFormat, displayFormat));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -327,10 +264,6 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 				return getAssociationEnds();
 			case WebsitePackage.ENTITY__SERVED_BY:
 				return getServedBy();
-			case WebsitePackage.ENTITY__DISPLAY_FEATURES:
-				return getDisplayFeatures();
-			case WebsitePackage.ENTITY__DISPLAY_FORMAT:
-				return getDisplayFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -363,13 +296,6 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 				getServedBy().clear();
 				getServedBy().addAll((Collection<? extends Service>)newValue);
 				return;
-			case WebsitePackage.ENTITY__DISPLAY_FEATURES:
-				getDisplayFeatures().clear();
-				getDisplayFeatures().addAll((Collection<? extends Feature>)newValue);
-				return;
-			case WebsitePackage.ENTITY__DISPLAY_FORMAT:
-				setDisplayFormat((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -397,12 +323,6 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 			case WebsitePackage.ENTITY__SERVED_BY:
 				getServedBy().clear();
 				return;
-			case WebsitePackage.ENTITY__DISPLAY_FEATURES:
-				getDisplayFeatures().clear();
-				return;
-			case WebsitePackage.ENTITY__DISPLAY_FORMAT:
-				setDisplayFormat(DISPLAY_FORMAT_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -425,10 +345,6 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 				return associationEnds != null && !associationEnds.isEmpty();
 			case WebsitePackage.ENTITY__SERVED_BY:
 				return servedBy != null && !servedBy.isEmpty();
-			case WebsitePackage.ENTITY__DISPLAY_FEATURES:
-				return displayFeatures != null && !displayFeatures.isEmpty();
-			case WebsitePackage.ENTITY__DISPLAY_FORMAT:
-				return DISPLAY_FORMAT_EDEFAULT == null ? displayFormat != null : !DISPLAY_FORMAT_EDEFAULT.equals(displayFormat);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -445,8 +361,6 @@ public class EntityImpl extends ClassifierImpl implements Entity {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (tableName: ");
 		result.append(tableName);
-		result.append(", displayFormat: ");
-		result.append(displayFormat);
 		result.append(')');
 		return result.toString();
 	}

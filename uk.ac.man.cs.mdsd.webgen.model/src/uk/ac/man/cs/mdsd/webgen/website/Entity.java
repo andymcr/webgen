@@ -22,8 +22,6 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getAssociationEnds <em>Association Ends</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getServedBy <em>Served By</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getDisplayFeatures <em>Display Features</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getDisplayFormat <em>Display Format</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity()
@@ -127,47 +125,5 @@ public interface Entity extends Classifier, UnitSource {
 	 * @generated
 	 */
 	List<Service> getServedBy();
-
-	/**
-	 * Returns the value of the '<em><b>Display Features</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Feature}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Display Features</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Display Features</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_DisplayFeatures()
-	 * @model
-	 * @generated
-	 */
-	List<Feature> getDisplayFeatures();
-
-	/**
-	 * Returns the value of the '<em><b>Display Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Display Format</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Display Format</em>' attribute.
-	 * @see #setDisplayFormat(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_DisplayFormat()
-	 * @model
-	 * @generated
-	 */
-	String getDisplayFormat();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getDisplayFormat <em>Display Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Display Format</em>' attribute.
-	 * @see #getDisplayFormat()
-	 * @generated
-	 */
-	void setDisplayFormat(String value);
 
 } // Entity

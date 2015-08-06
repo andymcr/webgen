@@ -34,17 +34,6 @@ rule Entity {
 	from partialOrm : ORM!Entity
 	to orm : ORM!Entity (
 		-- features via parentEntity in features
-		displayFeatures <-
-			let website : Website!Entity = thisModule.findWebsiteEntity(partialOrm.name)
-			in if website.displayFeatures.notEmpty() then
-					website.displayFeatures
-				else if website.features->exists(f | f.name = 'name') then
-					Sequence{website.features->any(f | f.name = 'name')}
-				else if website.features->exists(f | f.name = 'title') then
-					Sequence{website.features->any(f | f.name = 'title')}
-				else
-					Sequence{}
-				endif endif endif
 	)
 }
 

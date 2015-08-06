@@ -126,8 +126,7 @@ rule Entity {
 				website.name.createTableName()
 			endif,
 		keys <- website.keys,
-		autoKeyName <- 'id',
-		displayFormat <- website.displayFormat
+		autoKeyName <- 'id'
 	)
 }
 

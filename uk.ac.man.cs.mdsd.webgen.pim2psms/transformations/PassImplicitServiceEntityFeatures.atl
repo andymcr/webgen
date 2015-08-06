@@ -18,7 +18,23 @@ helper def: findEntityService(entity : ORM!Entity) : WAF!Service
 rule ServiceWithFeatures {
 	from partialWaf : WAF!Service (partialWaf.features->notEmpty())
 	to waf : WAF!Service (
-		features <- partialWaf.features
+		displayLabels <-
+			if partialWaf.displayLabels->exists(l | l.name = 'default') then
+				partialWaf.displayLabels
+			else
+				partialWaf.displayLabels->union(
+					if partialWaf.features->exists(f | f.name = 'name') then
+						Sequence{thisModule.implicitModelLabelFromPartial(
+							partialWaf.features->any(f | f.name = 'name'))
+						}
+					else if partialWaf.features->exists(f | f.name = 'title') then
+						Sequence{thisModule.implicitModelLabelFromPartial(
+							partialWaf.features->any(f | f.name = 'title'))
+						}
+					else
+						Sequence{}
+					endif endif)
+			endif
 	)
 } 
 
@@ -38,9 +54,53 @@ rule ServiceWithoutFeatures {
 				->union(features
 					->select(f | f.oclIsKindOf(ORM!CollectionAssociation))
 					->select(f | f.owningEnd or f.bidirectional)
-					->collect(f | thisModule.implicitServiceEntityAssociation(f)))
+					->collect(f | thisModule.implicitServiceEntityAssociation(f))),
+		displayLabels <-
+			if partialWaf.displayLabels->exists(l | l.name = 'default') then
+				partialWaf.displayLabels
+			else
+				let features : Sequence(ORM!Feature)
+					= partialWaf.entities->collect(e | e.features)->flatten()
+					in partialWaf.displayLabels-> union(
+						if features->exists(f | f.name = 'name') then
+							Sequence{thisModule.implicitModelLabelFromWebsite(
+								features->any(f | f.name = 'name'))
+							}
+						else if features->exists(f | f.name = 'title') then
+							Sequence{thisModule.implicitModelLabelFromWebsite(
+								features->any(f | f.name = 'title'))
+							}
+						else
+							Sequence{}
+						endif endif)
+			endif
 	)
 } 
+
+lazy rule implicitModelLabelFromPartial {
+	from partialWaf : WAF!ServiceFeature
+	to waf : WAF!ModelLabel (
+		name <- 'defaultLabel',
+		format <- '%s',
+		features <- Sequence{partialWaf}
+	)
+	do {
+		waf;
+	}
+}
+
+lazy rule implicitModelLabelFromWebsite {
+	from website : Website!Feature
+	to waf : WAF!ModelLabel (
+		name <- 'defaultLabel',
+		format <- '%s',
+		features <- Sequence{website}
+	)
+	do {
+		waf;
+	}
+}
+
 
 lazy abstract rule implicitIncludedFeature {
 	from orm : ORM!Feature

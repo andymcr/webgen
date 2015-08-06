@@ -57,8 +57,6 @@ public class EntityItemProvider
 			addAutoKeyNamePropertyDescriptor(object);
 			addContainsPropertyDescriptor(object);
 			addContainerPropertyDescriptor(object);
-			addDisplayFeaturesPropertyDescriptor(object);
-			addDisplayFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -197,50 +195,6 @@ public class EntityItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Display Features feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDisplayFeaturesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entity_displayFeatures_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_displayFeatures_feature", "_UI_Entity_type"),
-				 OrmPackage.Literals.ENTITY__DISPLAY_FEATURES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Display Format feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDisplayFormatPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entity_displayFormat_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_displayFormat_feature", "_UI_Entity_type"),
-				 OrmPackage.Literals.ENTITY__DISPLAY_FORMAT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -311,7 +265,6 @@ public class EntityItemProvider
 		switch (notification.getFeatureID(Entity.class)) {
 			case OrmPackage.ENTITY__TABLE_NAME:
 			case OrmPackage.ENTITY__AUTO_KEY_NAME:
-			case OrmPackage.ENTITY__DISPLAY_FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ENTITY__FEATURES:

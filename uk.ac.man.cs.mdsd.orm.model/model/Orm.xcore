@@ -95,8 +95,6 @@ class Entity extends Classifier {
 	refers Entity[] ^contains opposite ^container
 	refers Entity ^container opposite ^contains
 	contains Feature[] features opposite parentEntity
-	refers Feature[] displayFeatures
-	String displayFormat
 }
 
 abstract class Feature extends NamedDisplayElement {

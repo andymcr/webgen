@@ -26,7 +26,6 @@ import uk.ac.man.cs.mdsd.waf.ServiceAssociation;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
 import uk.ac.man.cs.mdsd.waf.UnitChildFeature;
 import uk.ac.man.cs.mdsd.waf.UnitContainer;
-import uk.ac.man.cs.mdsd.waf.UnitTitle;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -106,7 +105,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<UnitTitle> filters;
+	protected EList<ModelLabel> filters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -301,9 +300,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<UnitTitle> getFilters() {
+	public EList<ModelLabel> getFilters() {
 		if (filters == null) {
-			filters = new EObjectResolvingEList<UnitTitle>(UnitTitle.class, this, WafPackage.UNIT_ASSOCIATION__FILTERS);
+			filters = new EObjectResolvingEList<ModelLabel>(ModelLabel.class, this, WafPackage.UNIT_ASSOCIATION__FILTERS);
 		}
 		return filters;
 	}
@@ -393,7 +392,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return;
 			case WafPackage.UNIT_ASSOCIATION__FILTERS:
 				getFilters().clear();
-				getFilters().addAll((Collection<? extends UnitTitle>)newValue);
+				getFilters().addAll((Collection<? extends ModelLabel>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -131,7 +131,7 @@ public interface UnitAssociation extends UnitFeature, IncludedAssociation, UnitC
 
 	/**
 	 * Returns the value of the '<em><b>Filters</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.UnitTitle}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ModelLabel}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Filters</em>' reference list isn't clear,
@@ -143,6 +143,6 @@ public interface UnitAssociation extends UnitFeature, IncludedAssociation, UnitC
 	 * @model
 	 * @generated
 	 */
-	EList<UnitTitle> getFilters();
+	EList<ModelLabel> getFilters();
 
 } // UnitAssociation

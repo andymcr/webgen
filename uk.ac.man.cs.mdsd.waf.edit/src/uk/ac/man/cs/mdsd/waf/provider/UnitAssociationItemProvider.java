@@ -127,11 +127,10 @@ public class UnitAssociationItemProvider
   /**
 	 * This adds a property descriptor for the Filters feature.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected void addFiltersPropertyDescriptor(Object object)
-  {
+	protected void addFiltersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
@@ -147,7 +146,7 @@ public class UnitAssociationItemProvider
 				 null));
 	}
 
-  /**
+		/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.

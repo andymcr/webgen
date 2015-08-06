@@ -229,7 +229,6 @@ interface UnitContainer {
 }
 
 interface UnitTitle {
-	
 }
 
 interface SelectTarget {
@@ -308,7 +307,7 @@ class UnitAssociation extends UnitFeature, IncludedAssociation, UnitContainer {
 	refers Selection selection
 	refers ModelLabel dynamicLabel
 	// ???
-	refers UnitTitle[] filters
+	refers ModelLabel[] filters
 }
 
 abstract class UnitChildFeature {

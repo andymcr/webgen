@@ -208,6 +208,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabelElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelElementItemProvider modelLabelElementItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelElementAdapter() {
+		if (modelLabelElementItemProvider == null) {
+			modelLabelElementItemProvider = new ModelLabelElementItemProvider(this);
+		}
+
+		return modelLabelElementItemProvider;
+	}
+
+		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelAssociationItemProvider modelLabelAssociationItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAssociationAdapter() {
+		if (modelLabelAssociationItemProvider == null) {
+			modelLabelAssociationItemProvider = new ModelLabelAssociationItemProvider(this);
+		}
+
+		return modelLabelAssociationItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Selection} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1304,6 +1350,8 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
+		if (modelLabelElementItemProvider != null) modelLabelElementItemProvider.dispose();
+		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (serviceEntityElementItemProvider != null) serviceEntityElementItemProvider.dispose();
 		if (serviceEntityAssociationItemProvider != null) serviceEntityAssociationItemProvider.dispose();

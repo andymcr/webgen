@@ -287,6 +287,24 @@ public interface WebsiteFactory extends EFactory {
 	ModelLabel createModelLabel();
 
 	/**
+	 * Returns a new object of class '<em>Model Label Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Label Element</em>'.
+	 * @generated
+	 */
+	ModelLabelElement createModelLabelElement();
+
+	/**
+	 * Returns a new object of class '<em>Model Label Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Label Association</em>'.
+	 * @generated
+	 */
+	ModelLabelAssociation createModelLabelAssociation();
+
+	/**
 	 * Returns a new object of class '<em>Service View Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

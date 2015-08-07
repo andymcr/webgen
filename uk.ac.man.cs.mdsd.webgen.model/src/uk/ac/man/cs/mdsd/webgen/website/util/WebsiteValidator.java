@@ -146,6 +146,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateService((Service)value, diagnostics, context);
 			case WebsitePackage.MODEL_LABEL:
 				return validateModelLabel((ModelLabel)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_FEATURE:
+				return validateModelLabelFeature((ModelLabelFeature)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_ELEMENT:
+				return validateModelLabelElement((ModelLabelElement)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION:
+				return validateModelLabelAssociation((ModelLabelAssociation)value, diagnostics, context);
 			case WebsitePackage.SELECTION:
 				return validateSelection((Selection)value, diagnostics, context);
 			case WebsitePackage.SERVICE_FEATURE:
@@ -1957,6 +1963,33 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(modelLabel, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(modelLabel, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelLabelFeature(ModelLabelFeature modelLabelFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(modelLabelFeature, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelLabelElement(ModelLabelElement modelLabelElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(modelLabelElement, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelLabelAssociation(ModelLabelAssociation modelLabelAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(modelLabelAssociation, diagnostics, context);
 	}
 
 	/**

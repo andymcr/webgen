@@ -62,6 +62,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			case WafPackage.SERVICE: return createService();
 			case WafPackage.MODEL_LABEL: return createModelLabel();
+			case WafPackage.MODEL_LABEL_ELEMENT: return createModelLabelElement();
+			case WafPackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
 			case WafPackage.SELECTION: return createSelection();
 			case WafPackage.SERVICE_ENTITY_ELEMENT: return createServiceEntityElement();
 			case WafPackage.SERVICE_ENTITY_ASSOCIATION: return createServiceEntityAssociation();
@@ -198,6 +200,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public ModelLabel createModelLabel() {
 		ModelLabelImpl modelLabel = new ModelLabelImpl();
 		return modelLabel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelLabelElement createModelLabelElement() {
+		ModelLabelElementImpl modelLabelElement = new ModelLabelElementImpl();
+		return modelLabelElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelLabelAssociation createModelLabelAssociation() {
+		ModelLabelAssociationImpl modelLabelAssociation = new ModelLabelAssociationImpl();
+		return modelLabelAssociation;
 	}
 
 	/**

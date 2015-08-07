@@ -477,6 +477,29 @@ rule ModelLabel {
 	)
 }
 
+abstract rule ModelLabelFeature {
+	from website : Website!ModelLabelFeature
+	to waf : WAF!ModelLabelFeature (
+	)
+}
+
+-- @extends ModelLabelFeature
+rule ModelLabelElement {
+	from website : Website!ModelLabelElement
+	to waf : WAF!ModelLabelElement (
+		serviceFeature <- website.serviceFeature
+	)
+}
+
+-- @extends ModelLabelFeature
+rule ModelLabelAssociation {
+	from website : Website!ModelLabelAssociation
+	to waf : WAF!ModelLabelAssociation (
+		serviceFeature <- website.serviceFeature,
+		dynamicLabel <- website.dynamicLabel
+	)
+}
+
 -- @extends NamedElement
 rule Selection {
 	from website : Website!Selection

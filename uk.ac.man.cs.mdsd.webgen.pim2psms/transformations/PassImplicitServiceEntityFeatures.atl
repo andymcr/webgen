@@ -82,7 +82,9 @@ lazy rule implicitModelLabelFromPartial {
 	to waf : WAF!ModelLabel (
 		name <- 'defaultLabel',
 		format <- '%s',
-		features <- Sequence{partialWaf}
+		features <- Sequence{feature}
+	), feature : WAF!ModelLabelElement (
+		serviceFeature <- partialWaf
 	)
 	do {
 		waf;
@@ -94,7 +96,9 @@ lazy rule implicitModelLabelFromWebsite {
 	to waf : WAF!ModelLabel (
 		name <- 'defaultLabel',
 		format <- '%s',
-		features <- Sequence{website}
+		features <- Sequence{feature}
+	), feature : WAF!ModelLabelElement (
+		serviceFeature <- website
 	)
 	do {
 		waf;

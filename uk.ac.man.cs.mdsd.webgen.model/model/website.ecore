@@ -371,7 +371,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
-        upperBound="-1" eType="#//ServiceFeature"/>
+        upperBound="-1" eType="#//ModelLabelFeature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelLabelFeature" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelLabelElement" eSuperTypes="#//ModelLabelFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceFeature" lowerBound="1"
+        eType="#//ServiceEntityElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelLabelAssociation" eSuperTypes="#//ModelLabelFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceFeature" lowerBound="1"
+        eType="#//ServiceAssociation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicLabel" eType="#//ModelLabel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Selection" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="joins" upperBound="-1"

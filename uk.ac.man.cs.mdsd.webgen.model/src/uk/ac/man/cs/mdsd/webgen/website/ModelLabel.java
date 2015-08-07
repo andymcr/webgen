@@ -78,19 +78,19 @@ public interface ModelLabel extends NamedElement, UnitTitle {
 	void setFormat(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Features</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.ServiceFeature}.
+	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeature}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Features</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Features</em>' reference list.
+	 * @return the value of the '<em>Features</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabel_Features()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	List<ServiceFeature> getFeatures();
+	List<ModelLabelFeature> getFeatures();
 
 } // ModelLabel

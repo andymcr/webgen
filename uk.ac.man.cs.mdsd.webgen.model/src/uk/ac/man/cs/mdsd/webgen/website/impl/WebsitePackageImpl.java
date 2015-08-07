@@ -82,6 +82,9 @@ import uk.ac.man.cs.mdsd.webgen.website.MenuIncludedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.MenuIncludedElement;
 import uk.ac.man.cs.mdsd.webgen.website.MenuIncludedFeature;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
+import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.ModelLabelElement;
+import uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeature;
 import uk.ac.man.cs.mdsd.webgen.website.ModelReference;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
@@ -473,6 +476,27 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass modelLabelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelLabelFeatureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelLabelElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelLabelAssociationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2577,6 +2601,60 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getModelLabelFeature() {
+		return modelLabelFeatureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getModelLabelElement() {
+		return modelLabelElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModelLabelElement_ServiceFeature() {
+		return (EReference)modelLabelElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getModelLabelAssociation() {
+		return modelLabelAssociationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModelLabelAssociation_ServiceFeature() {
+		return (EReference)modelLabelAssociationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModelLabelAssociation_DynamicLabel() {
+		return (EReference)modelLabelAssociationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getService_Selections() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(5);
 	}
@@ -4522,6 +4600,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(modelLabelEClass, MODEL_LABEL__FORMAT);
 		createEReference(modelLabelEClass, MODEL_LABEL__FEATURES);
 
+		modelLabelFeatureEClass = createEClass(MODEL_LABEL_FEATURE);
+
+		modelLabelElementEClass = createEClass(MODEL_LABEL_ELEMENT);
+		createEReference(modelLabelElementEClass, MODEL_LABEL_ELEMENT__SERVICE_FEATURE);
+
+		modelLabelAssociationEClass = createEClass(MODEL_LABEL_ASSOCIATION);
+		createEReference(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE);
+		createEReference(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL);
+
 		selectionEClass = createEClass(SELECTION);
 		createEReference(selectionEClass, SELECTION__JOINS);
 		createEReference(selectionEClass, SELECTION__FILTER);
@@ -4878,6 +4965,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		serviceEClass.getESuperTypes().add(this.getUnitSource());
 		modelLabelEClass.getESuperTypes().add(this.getNamedElement());
 		modelLabelEClass.getESuperTypes().add(this.getUnitTitle());
+		modelLabelElementEClass.getESuperTypes().add(this.getModelLabelFeature());
+		modelLabelAssociationEClass.getESuperTypes().add(this.getModelLabelFeature());
 		selectionEClass.getESuperTypes().add(this.getNamedElement());
 		serviceEntityFeatureEClass.getESuperTypes().add(this.getIncludedFeature());
 		serviceEntityFeatureEClass.getESuperTypes().add(this.getServiceFeature());
@@ -5136,7 +5225,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(modelLabelEClass, ModelLabel.class, "ModelLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModelLabel_LabelFor(), this.getService(), this.getService_DisplayLabels(), "labelFor", null, 1, 1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getModelLabel_Format(), ecorePackage.getEString(), "format", null, 1, 1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getModelLabel_Features(), this.getServiceFeature(), null, "features", null, 1, -1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelLabel_Features(), this.getModelLabelFeature(), null, "features", null, 1, -1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(modelLabelFeatureEClass, ModelLabelFeature.class, "ModelLabelFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(modelLabelElementEClass, ModelLabelElement.class, "ModelLabelElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModelLabelElement_ServiceFeature(), this.getServiceEntityElement(), null, "serviceFeature", null, 1, 1, ModelLabelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(modelLabelAssociationEClass, ModelLabelAssociation.class, "ModelLabelAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModelLabelAssociation_ServiceFeature(), this.getServiceAssociation(), null, "serviceFeature", null, 1, 1, ModelLabelAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelLabelAssociation_DynamicLabel(), this.getModelLabel(), null, "dynamicLabel", null, 0, 1, ModelLabelAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionEClass, Selection.class, "Selection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelection_Joins(), this.getServiceAssociation(), null, "joins", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -15,10 +15,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
+import uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -60,14 +63,14 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	protected String format = FORMAT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFeatures() <em>Features</em>}' reference list.
+	 * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFeatures()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceFeature> features;
+	protected EList<ModelLabelFeature> features;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,9 +158,9 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<ServiceFeature> getFeatures() {
+	public List<ModelLabelFeature> getFeatures() {
 		if (features == null) {
-			features = new EObjectResolvingEList<ServiceFeature>(ServiceFeature.class, this, WebsitePackage.MODEL_LABEL__FEATURES);
+			features = new EObjectContainmentEList<ModelLabelFeature>(ModelLabelFeature.class, this, WebsitePackage.MODEL_LABEL__FEATURES);
 		}
 		return features;
 	}
@@ -188,6 +191,8 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 		switch (featureID) {
 			case WebsitePackage.MODEL_LABEL__LABEL_FOR:
 				return basicSetLabelFor(null, msgs);
+			case WebsitePackage.MODEL_LABEL__FEATURES:
+				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -241,7 +246,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 				return;
 			case WebsitePackage.MODEL_LABEL__FEATURES:
 				getFeatures().clear();
-				getFeatures().addAll((Collection<? extends ServiceFeature>)newValue);
+				getFeatures().addAll((Collection<? extends ModelLabelFeature>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

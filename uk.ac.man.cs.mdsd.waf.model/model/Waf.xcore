@@ -122,7 +122,19 @@ class Service extends NamedElement {
 class ModelLabel extends NamedElement, UnitTitle {
 	container Service[1] labelFor opposite displayLabels
 	String[1] format
-	refers ServiceFeature[] features
+	contains ModelLabelFeature[] features
+}
+
+abstract class ModelLabelFeature {
+}
+
+class ModelLabelElement extends ModelLabelFeature {
+	refers ServiceEntityElement[1] serviceFeature
+}
+
+class ModelLabelAssociation extends ModelLabelFeature {
+	refers ServiceAssociation[1] serviceFeature
+	refers ModelLabel dynamicLabel
 }
 
 class Selection extends NamedElement {

@@ -110,6 +110,18 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createModelLabelAdapter();
 			}
 			@Override
+			public Adapter caseModelLabelFeature(ModelLabelFeature object) {
+				return createModelLabelFeatureAdapter();
+			}
+			@Override
+			public Adapter caseModelLabelElement(ModelLabelElement object) {
+				return createModelLabelElementAdapter();
+			}
+			@Override
+			public Adapter caseModelLabelAssociation(ModelLabelAssociation object) {
+				return createModelLabelAssociationAdapter();
+			}
+			@Override
 			public Adapter caseSelection(Selection object) {
 				return createSelectionAdapter();
 			}
@@ -524,6 +536,48 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModelLabelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelFeature <em>Model Label Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelFeature
+	 * @generated
+	 */
+	public Adapter createModelLabelFeatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelElement <em>Model Label Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelElement
+	 * @generated
+	 */
+	public Adapter createModelLabelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation <em>Model Label Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelAssociation
+	 * @generated
+	 */
+	public Adapter createModelLabelAssociationAdapter() {
 		return null;
 	}
 

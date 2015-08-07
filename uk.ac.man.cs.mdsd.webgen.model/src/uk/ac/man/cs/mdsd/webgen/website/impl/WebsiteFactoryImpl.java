@@ -78,6 +78,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT: return createAssociationWithContainment();
 			case WebsitePackage.SERVICE: return createService();
 			case WebsitePackage.MODEL_LABEL: return createModelLabel();
+			case WebsitePackage.MODEL_LABEL_ELEMENT: return createModelLabelElement();
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
 			case WebsitePackage.SELECTION: return createSelection();
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT: return createServiceEntityElement();
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION: return createServiceEntityAssociation();
@@ -476,6 +478,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public ModelLabel createModelLabel() {
 		ModelLabelImpl modelLabel = new ModelLabelImpl();
 		return modelLabel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelLabelElement createModelLabelElement() {
+		ModelLabelElementImpl modelLabelElement = new ModelLabelElementImpl();
+		return modelLabelElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelLabelAssociation createModelLabelAssociation() {
+		ModelLabelAssociationImpl modelLabelAssociation = new ModelLabelAssociationImpl();
+		return modelLabelAssociation;
 	}
 
 	/**

@@ -16,14 +16,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**

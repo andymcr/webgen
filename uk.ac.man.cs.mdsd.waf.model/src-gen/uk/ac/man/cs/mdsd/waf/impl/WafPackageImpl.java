@@ -1814,7 +1814,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_TopMenuOption() {
+	public EAttribute getPage_Path() {
 		return (EAttribute)pageEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1823,7 +1823,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_TopMenuRank() {
+	public EAttribute getPage_TopMenuOption() {
 		return (EAttribute)pageEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1832,7 +1832,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_NavigationLabel() {
+	public EAttribute getPage_TopMenuRank() {
 		return (EAttribute)pageEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1841,8 +1841,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPage_NavigationLabel() {
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getPage_SideMenu() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(7);
+		return (EReference)pageEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1851,7 +1860,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getPage_StyleClass() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1904,6 +1913,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSelectTarget_SelectionFeature() {
+		return (EReference)selectTargetEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getContentUnit() {
 		return contentUnitEClass;
 	}
@@ -1922,7 +1940,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_PurposeSummary() {
+	public EAttribute getContentUnit_Path() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1931,7 +1949,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_OmitCaption() {
+	public EAttribute getContentUnit_PurposeSummary() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1940,7 +1958,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_CaptionClass() {
+	public EAttribute getContentUnit_OmitCaption() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1949,7 +1967,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_StyleClass() {
+	public EAttribute getContentUnit_CaptionClass() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1958,8 +1976,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_LayoutClass() {
+	public EAttribute getContentUnit_StyleClass() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContentUnit_LayoutClass() {
+		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3327,6 +3354,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(pageEClass, PAGE__PARENT_PAGE);
 		createEReference(pageEClass, PAGE__CHILD_PAGES);
 		createEAttribute(pageEClass, PAGE__AUTHENTICATED);
+		createEAttribute(pageEClass, PAGE__PATH);
 		createEAttribute(pageEClass, PAGE__TOP_MENU_OPTION);
 		createEAttribute(pageEClass, PAGE__TOP_MENU_RANK);
 		createEAttribute(pageEClass, PAGE__NAVIGATION_LABEL);
@@ -3340,9 +3368,11 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		selectTargetEClass = createEClass(SELECT_TARGET);
 		createEReference(selectTargetEClass, SELECT_TARGET__TARGETTING_ACTIONS);
+		createEReference(selectTargetEClass, SELECT_TARGET__SELECTION_FEATURE);
 
 		contentUnitEClass = createEClass(CONTENT_UNIT);
 		createEReference(contentUnitEClass, CONTENT_UNIT__DISPLAYED_ON);
+		createEAttribute(contentUnitEClass, CONTENT_UNIT__PATH);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__PURPOSE_SUMMARY);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__OMIT_CAPTION);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__CAPTION_CLASS);
@@ -3804,6 +3834,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getPage_ParentPage(), this.getPage(), this.getPage_ChildPages(), "parentPage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_ChildPages(), this.getPage(), this.getPage_ParentPage(), "childPages", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_Authenticated(), theEcorePackage.getEBoolean(), "authenticated", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPage_Path(), theEcorePackage.getEString(), "path", null, 1, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_TopMenuOption(), this.getPageTopMenuOptions(), "topMenuOption", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_TopMenuRank(), theEcorePackage.getEInt(), "topMenuRank", "65535", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_NavigationLabel(), theEcorePackage.getEString(), "navigationLabel", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3817,9 +3848,11 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(selectTargetEClass, SelectTarget.class, "SelectTarget", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelectTarget_TargettingActions(), this.getSelectAction(), this.getSelectAction_Target(), "targettingActions", null, 0, -1, SelectTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSelectTarget_SelectionFeature(), this.getServiceEntityElement(), null, "selectionFeature", null, 1, 1, SelectTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(contentUnitEClass, ContentUnit.class, "ContentUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContentUnit_DisplayedOn(), this.getUnitContainer(), this.getUnitContainer_Units(), "displayedOn", null, 1, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContentUnit_Path(), theEcorePackage.getEString(), "path", null, 1, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_PurposeSummary(), theEcorePackage.getEString(), "purposeSummary", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_OmitCaption(), theEcorePackage.getEBoolean(), "omitCaption", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_CaptionClass(), theEcorePackage.getEString(), "captionClass", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

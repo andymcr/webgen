@@ -42,6 +42,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getChildPages <em>Child Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#isAuthenticated <em>Authenticated</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getPath <em>Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getTopMenuOption <em>Top Menu Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getTopMenuRank <em>Top Menu Rank</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.PageImpl#getNavigationLabel <em>Navigation Label</em>}</li>
@@ -101,6 +102,26 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @ordered
 	 */
 	protected boolean authenticated = AUTHENTICATED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String path = PATH_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTopMenuOption() <em>Top Menu Option</em>}' attribute.
@@ -372,6 +393,27 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.PAGE__PATH, oldPath, path));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PageTopMenuOptions getTopMenuOption() {
 		return topMenuOption;
 	}
@@ -568,6 +610,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return getChildPages();
 			case WafPackage.PAGE__AUTHENTICATED:
 				return isAuthenticated();
+			case WafPackage.PAGE__PATH:
+				return getPath();
 			case WafPackage.PAGE__TOP_MENU_OPTION:
 				return getTopMenuOption();
 			case WafPackage.PAGE__TOP_MENU_RANK:
@@ -608,6 +652,9 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return;
 			case WafPackage.PAGE__AUTHENTICATED:
 				setAuthenticated((Boolean)newValue);
+				return;
+			case WafPackage.PAGE__PATH:
+				setPath((String)newValue);
 				return;
 			case WafPackage.PAGE__TOP_MENU_OPTION:
 				setTopMenuOption((PageTopMenuOptions)newValue);
@@ -651,6 +698,9 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WafPackage.PAGE__AUTHENTICATED:
 				setAuthenticated(AUTHENTICATED_EDEFAULT);
 				return;
+			case WafPackage.PAGE__PATH:
+				setPath(PATH_EDEFAULT);
+				return;
 			case WafPackage.PAGE__TOP_MENU_OPTION:
 				setTopMenuOption(TOP_MENU_OPTION_EDEFAULT);
 				return;
@@ -688,6 +738,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return childPages != null && !childPages.isEmpty();
 			case WafPackage.PAGE__AUTHENTICATED:
 				return authenticated != AUTHENTICATED_EDEFAULT;
+			case WafPackage.PAGE__PATH:
+				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case WafPackage.PAGE__TOP_MENU_OPTION:
 				return topMenuOption != TOP_MENU_OPTION_EDEFAULT;
 			case WafPackage.PAGE__TOP_MENU_RANK:
@@ -746,6 +798,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (authenticated: ");
 		result.append(authenticated);
+		result.append(", path: ");
+		result.append(path);
 		result.append(", topMenuOption: ");
 		result.append(topMenuOption);
 		result.append(", topMenuRank: ");

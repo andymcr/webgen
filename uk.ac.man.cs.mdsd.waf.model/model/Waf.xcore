@@ -229,6 +229,7 @@ class Page extends NamedDisplayElement, UnitContainer {
 	refers Page parentPage opposite childPages
 	refers Page[] childPages opposite parentPage
 	boolean authenticated
+	String[1] path
 	PageTopMenuOptions topMenuOption
 	int topMenuRank = "65535"
 	String navigationLabel
@@ -245,10 +246,12 @@ interface UnitTitle {
 
 interface SelectTarget {
 	refers SelectAction[] targettingActions opposite target
+	refers ServiceEntityElement[1] selectionFeature
 }
 
 abstract class ContentUnit extends NamedDisplayElement {
 	container UnitContainer[1] displayedOn opposite units
+	String[1] path
 	String purposeSummary
 	boolean omitCaption
 	String captionClass

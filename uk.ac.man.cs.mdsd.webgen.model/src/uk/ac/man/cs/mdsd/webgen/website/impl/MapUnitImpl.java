@@ -9,7 +9,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
+import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -21,6 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getSelectionFeature <em>Selection Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#isReadOnly <em>Read Only</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getDefaultZoomLevel <em>Default Zoom Level</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getStyleClass <em>Style Class</em>}</li>
@@ -31,6 +34,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class MapUnitImpl extends EditUnitImpl implements MapUnit {
+	/**
+	 * The cached value of the '{@link #getSelectionFeature() <em>Selection Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelectionFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute selectionFeature;
+
 	/**
 	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -128,6 +141,44 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.MAP_UNIT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute getSelectionFeature() {
+		if (selectionFeature != null && selectionFeature.eIsProxy()) {
+			InternalEObject oldSelectionFeature = (InternalEObject)selectionFeature;
+			selectionFeature = (Attribute)eResolveProxy(oldSelectionFeature);
+			if (selectionFeature != oldSelectionFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.MAP_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
+			}
+		}
+		return selectionFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute basicGetSelectionFeature() {
+		return selectionFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectionFeature(Attribute newSelectionFeature) {
+		Attribute oldSelectionFeature = selectionFeature;
+		selectionFeature = newSelectionFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.MAP_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
 	}
 
 	/**
@@ -277,6 +328,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.MAP_UNIT__SELECTION_FEATURE:
+				if (resolve) return getSelectionFeature();
+				return basicGetSelectionFeature();
 			case WebsitePackage.MAP_UNIT__READ_ONLY:
 				return isReadOnly();
 			case WebsitePackage.MAP_UNIT__DEFAULT_ZOOM_LEVEL:
@@ -301,6 +355,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.MAP_UNIT__SELECTION_FEATURE:
+				setSelectionFeature((Attribute)newValue);
+				return;
 			case WebsitePackage.MAP_UNIT__READ_ONLY:
 				setReadOnly((Boolean)newValue);
 				return;
@@ -328,6 +385,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.MAP_UNIT__SELECTION_FEATURE:
+				setSelectionFeature((Attribute)null);
+				return;
 			case WebsitePackage.MAP_UNIT__READ_ONLY:
 				setReadOnly(READ_ONLY_EDEFAULT);
 				return;
@@ -355,6 +415,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.MAP_UNIT__SELECTION_FEATURE:
+				return selectionFeature != null;
 			case WebsitePackage.MAP_UNIT__READ_ONLY:
 				return readOnly != READ_ONLY_EDEFAULT;
 			case WebsitePackage.MAP_UNIT__DEFAULT_ZOOM_LEVEL:
@@ -367,6 +429,38 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				return placeName != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == SelectTarget.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.MAP_UNIT__SELECTION_FEATURE: return WebsitePackage.SELECT_TARGET__SELECTION_FEATURE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == SelectTarget.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.SELECT_TARGET__SELECTION_FEATURE: return WebsitePackage.MAP_UNIT__SELECTION_FEATURE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getPath <em>Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
@@ -33,6 +34,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements ContentUnit {
+	/**
+	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String path = PATH_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -158,6 +179,27 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CONTENT_UNIT__PATH, oldPath, path));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPurposeSummary() {
 		return purposeSummary;
 	}
@@ -270,6 +312,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				return getDisplayedOn();
+			case WebsitePackage.CONTENT_UNIT__PATH:
+				return getPath();
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
 			case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION:
@@ -290,6 +334,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)newValue);
+				return;
+			case WebsitePackage.CONTENT_UNIT__PATH:
+				setPath((String)newValue);
 				return;
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
@@ -315,6 +362,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)null);
 				return;
+			case WebsitePackage.CONTENT_UNIT__PATH:
+				setPath(PATH_EDEFAULT);
+				return;
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
 				return;
@@ -338,6 +388,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				return getDisplayedOn() != null;
+			case WebsitePackage.CONTENT_UNIT__PATH:
+				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION:
@@ -358,7 +410,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (purposeSummary: ");
+		result.append(" (path: ");
+		result.append(path);
+		result.append(", purposeSummary: ");
 		result.append(purposeSummary);
 		result.append(", omitCaption: ");
 		result.append(omitCaption);

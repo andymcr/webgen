@@ -114,7 +114,7 @@ public class DataUnitItemProvider
 						if (object instanceof DataUnit) {
 							final DataUnit unit = (DataUnit) object;
 							final List<UnitTitle> labels = new LinkedList<UnitTitle>();
-							for (Feature feature : getSourceFeatures(unit)) {
+							for (Feature feature : getSourceElements(unit)) {
 								if (feature instanceof Attribute) {
 									labels.add((UnitTitle) feature);
 								}

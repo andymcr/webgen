@@ -584,7 +584,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntity_featureNameUniqueWithinEntity(entity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntity_displayOnlyLocalFeatures(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntity_keysFromLocalFeatures(entity, diagnostics, context);
 		return result;
 	}
@@ -613,35 +612,6 @@ public class WebsiteValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "featureNameUniqueWithinEntity",
 				 ENTITY__FEATURE_NAME_UNIQUE_WITHIN_ENTITY__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the displayOnlyLocalFeatures constraint of '<em>Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ENTITY__DISPLAY_ONLY_LOCAL_FEATURES__EEXPRESSION = "features->union(associationEnds)->includesAll(displayFeatures)";
-
-	/**
-	 * Validates the displayOnlyLocalFeatures constraint of '<em>Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEntity_displayOnlyLocalFeatures(Entity entity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.ENTITY,
-				 entity,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "displayOnlyLocalFeatures",
-				 ENTITY__DISPLAY_ONLY_LOCAL_FEATURES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -1890,6 +1890,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSelectTarget_SelectionFeature() {
+		return (EReference)selectTargetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPage() {
 		return pageEClass;
 	}
@@ -1918,7 +1927,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getPage_NavigationLabel() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1927,7 +1936,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getPage_SideMenu() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(6);
+		return (EReference)pageEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1936,7 +1945,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getPage_StyleClass() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2205,7 +2214,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_TopMenuOption() {
+	public EAttribute getPage_Path() {
 		return (EAttribute)pageEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -2214,8 +2223,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_TopMenuRank() {
+	public EAttribute getPage_TopMenuOption() {
 		return (EAttribute)pageEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPage_TopMenuRank() {
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2943,7 +2961,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_PurposeSummary() {
+	public EAttribute getContentUnit_Path() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2952,7 +2970,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_OmitCaption() {
+	public EAttribute getContentUnit_PurposeSummary() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -2961,8 +2979,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_CaptionClass() {
+	public EAttribute getContentUnit_OmitCaption() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContentUnit_CaptionClass() {
+		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -4648,6 +4675,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(pageEClass, PAGE__PARENT_PAGE);
 		createEReference(pageEClass, PAGE__CHILD_PAGES);
 		createEAttribute(pageEClass, PAGE__AUTHENTICATED);
+		createEAttribute(pageEClass, PAGE__PATH);
 		createEAttribute(pageEClass, PAGE__TOP_MENU_OPTION);
 		createEAttribute(pageEClass, PAGE__TOP_MENU_RANK);
 		createEAttribute(pageEClass, PAGE__NAVIGATION_LABEL);
@@ -4705,6 +4733,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		contentUnitEClass = createEClass(CONTENT_UNIT);
 		createEReference(contentUnitEClass, CONTENT_UNIT__DISPLAYED_ON);
+		createEAttribute(contentUnitEClass, CONTENT_UNIT__PATH);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__PURPOSE_SUMMARY);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__OMIT_CAPTION);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__CAPTION_CLASS);
@@ -4876,6 +4905,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(inlineActionEClass, INLINE_ACTION__FOOTER_CLASS);
 
 		selectTargetEClass = createEClass(SELECT_TARGET);
+		createEReference(selectTargetEClass, SELECT_TARGET__SELECTION_FEATURE);
 
 		selectActionEClass = createEClass(SELECT_ACTION);
 		createEReference(selectActionEClass, SELECT_ACTION__TARGET);
@@ -5275,6 +5305,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getPage_ParentPage(), this.getPageLink(), null, "parentPage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPage_ChildPages(), this.getPageLink(), this.getPageLink_TargetPage(), "childPages", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_Authenticated(), ecorePackage.getEBoolean(), "authenticated", "true", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getPage_Path(), ecorePackage.getEString(), "path", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_TopMenuOption(), this.getPageTopMenuOptions(), "topMenuOption", "NeverInclude", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPage_TopMenuRank(), ecorePackage.getEInt(), "topMenuRank", "0", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPage_NavigationLabel(), ecorePackage.getEString(), "navigationLabel", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5332,6 +5363,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(contentUnitEClass, ContentUnit.class, "ContentUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContentUnit_DisplayedOn(), this.getUnitContainer(), this.getUnitContainer_Units(), "displayedOn", null, 1, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getContentUnit_Path(), ecorePackage.getEString(), "path", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_PurposeSummary(), ecorePackage.getEString(), "purposeSummary", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_OmitCaption(), ecorePackage.getEBooleanObject(), "omitCaption", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_CaptionClass(), ecorePackage.getEString(), "captionClass", "unit_caption", 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5503,6 +5535,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getInlineAction_FooterClass(), ecorePackage.getEString(), "footerClass", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectTargetEClass, SelectTarget.class, "SelectTarget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSelectTarget_SelectionFeature(), this.getAttribute(), null, "selectionFeature", null, 1, 1, SelectTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectActionEClass, SelectAction.class, "SelectAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelectAction_Target(), this.getSelectTarget(), null, "target", null, 1, 1, SelectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5620,7 +5653,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (entityEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "featureNameUniqueWithinEntity displayOnlyLocalFeatures keysFromLocalFeatures"
+			 "constraints", "featureNameUniqueWithinEntity keysFromLocalFeatures"
 		   });	
 		addAnnotation
 		  (associationWithoutContainmentEClass, 
@@ -5750,7 +5783,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "featureNameUniqueWithinEntity", "features->isUnique(name)",
-			 "displayOnlyLocalFeatures", "features->union(associationEnds)->includesAll(displayFeatures)",
 			 "keysFromLocalFeatures", "features->union(associationEnds)->includesAll(keys)"
 		   });	
 		addAnnotation

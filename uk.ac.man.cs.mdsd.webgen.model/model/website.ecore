@@ -184,11 +184,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral" eSuperTypes="#//NamedDisplayElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//Classifier #//UnitSource">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="featureNameUniqueWithinEntity displayOnlyLocalFeatures keysFromLocalFeatures"/>
+      <details key="constraints" value="featureNameUniqueWithinEntity keysFromLocalFeatures"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="featureNameUniqueWithinEntity" value="features->isUnique(name)"/>
-      <details key="displayOnlyLocalFeatures" value="features->union(associationEnds)->includesAll(displayFeatures)"/>
       <details key="keysFromLocalFeatures" value="features->union(associationEnds)->includesAll(keys)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -482,6 +481,7 @@
         eType="#//PageLink" eOpposite="#//PageLink/targetPage"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="authenticated" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="topMenuOption" ordered="false"
         eType="#//PageTopMenuOptions" defaultValueLiteral="NeverInclude"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="topMenuRank" ordered="false"
@@ -584,6 +584,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ContentUnit" abstract="true" eSuperTypes="#//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayedOn" ordered="false"
         lowerBound="1" eType="#//UnitContainer" eOpposite="#//UnitContainer/units"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="purposeSummary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitCaption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="captionClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -912,7 +913,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="footerClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectTarget" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectTarget" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectionFeature" lowerBound="1"
+        eType="#//Attribute"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelectAction" eSuperTypes="#//InlineAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//SelectTarget"/>

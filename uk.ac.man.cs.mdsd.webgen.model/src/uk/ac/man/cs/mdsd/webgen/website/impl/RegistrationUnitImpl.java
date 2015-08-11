@@ -45,6 +45,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getPath <em>Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
@@ -106,6 +107,26 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * @ordered
 	 */
 	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String path = PATH_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
@@ -507,6 +528,27 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.REGISTRATION_UNIT__PATH, oldPath, path));
 	}
 
 	/**
@@ -947,6 +989,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return getDisplayLabel();
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON:
 				return getDisplayedOn();
+			case WebsitePackage.REGISTRATION_UNIT__PATH:
+				return getPath();
 			case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
 			case WebsitePackage.REGISTRATION_UNIT__OMIT_CAPTION:
@@ -1004,6 +1048,9 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)newValue);
+				return;
+			case WebsitePackage.REGISTRATION_UNIT__PATH:
+				setPath((String)newValue);
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
@@ -1079,6 +1126,9 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)null);
 				return;
+			case WebsitePackage.REGISTRATION_UNIT__PATH:
+				setPath(PATH_EDEFAULT);
+				return;
 			case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
 				return;
@@ -1148,6 +1198,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON:
 				return getDisplayedOn() != null;
+			case WebsitePackage.REGISTRATION_UNIT__PATH:
+				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.REGISTRATION_UNIT__OMIT_CAPTION:
@@ -1208,6 +1260,7 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		if (baseClass == ContentUnit.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__DISPLAYED_ON;
+				case WebsitePackage.REGISTRATION_UNIT__PATH: return WebsitePackage.CONTENT_UNIT__PATH;
 				case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY: return WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.REGISTRATION_UNIT__OMIT_CAPTION: return WebsitePackage.CONTENT_UNIT__OMIT_CAPTION;
 				case WebsitePackage.REGISTRATION_UNIT__CAPTION_CLASS: return WebsitePackage.CONTENT_UNIT__CAPTION_CLASS;
@@ -1262,6 +1315,7 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		if (baseClass == ContentUnit.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON: return WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON;
+				case WebsitePackage.CONTENT_UNIT__PATH: return WebsitePackage.REGISTRATION_UNIT__PATH;
 				case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION: return WebsitePackage.REGISTRATION_UNIT__OMIT_CAPTION;
 				case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS: return WebsitePackage.REGISTRATION_UNIT__CAPTION_CLASS;
@@ -1308,6 +1362,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		result.append(name);
 		result.append(", displayLabel: ");
 		result.append(displayLabel);
+		result.append(", path: ");
+		result.append(path);
 		result.append(", purposeSummary: ");
 		result.append(purposeSummary);
 		result.append(", omitCaption: ");

@@ -31,6 +31,7 @@ unique lazy rule implicitStaticTextPage {
 		displayLabel <- 'Manage Static Text',
 		units <- Sequence{text, editText},
 		authenticated <- true,
+		path <- 'static',
 		topMenuOption <- #IncludeWhenAuthenticated,
 		topMenuRank <- 100,
 		navigationLabel <- 'Static Text',

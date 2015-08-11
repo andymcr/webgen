@@ -615,6 +615,12 @@ rule Page {
 	from website : Website!Page
 	to waf : WAF!Page (
 		authenticated <- website.authenticated,
+		path <-
+			if not website.path.oclIsUndefined() then
+				website.path
+			else
+				website.name
+			endif,
 		parentPage <-
 			if website.parentPage.oclIsUndefined() then
 				OclUndefined
@@ -740,10 +746,36 @@ abstract rule UnitContainer {
 	)
 }
 
+
+abstract rule SelectTarget {
+	from website : Website!SelectTarget
+	to waf : WAF!SelectTarget (
+		selectionFeature <-
+			if website.selectionFeature.oclIsUndefined() then
+				website.selectionFeature
+			else if website.selectionFeature.oclIsKindOf(Website!Attribute) then
+				if website.source.oclIsTypeOf(Website!Service) then
+					website.source.features->any(f | f.name = website.selectionFeature.name)
+				else
+					OclUndefined
+				endif
+			else
+				website.dynamicTitle
+			endif endif
+	)
+}
+
+
 -- @extends NamedDisplayElement
 abstract rule ContentUnit {
 	from website : Website!ContentUnit
 	to waf : WAF!ContentUnit (
+		path <-
+			if not website.path.oclIsUndefined() then
+				website.path
+			else
+				website.name
+			endif,
 		purposeSummary <- website.purposeSummary,
 		omitCaption <-
 			if not website.omitCaption.oclIsUndefined() then
@@ -998,7 +1030,7 @@ rule CreateUnit {
 	)
 }
 
--- @extends EditUnit
+-- @extends EditUnit, SelectTarget
 rule CreateUpdateUnit {
 	from website : Website!CreateUpdateUnit
 	to waf : WAF!CreateUpdateUnit (
@@ -1006,7 +1038,7 @@ rule CreateUpdateUnit {
 	)
 }
 
--- @extends EditUnit
+-- @extends EditUnit, SelectTarget
 rule MapUnit {
 	from website : Website!MapUnit
 	to waf : WAF!MapUnit (
@@ -1017,7 +1049,7 @@ rule MapUnit {
 	)
 }
 
--- @extends EditUnit
+-- @extends EditUnit, SelectTarget
 rule UpdateUnit {
 	from website : Website!UpdateUnit
 	to waf : WAF!UpdateUnit (
@@ -1034,7 +1066,7 @@ abstract rule DataUnit {
 				website.dynamicTitle
 			else if website.dynamicTitle.oclIsKindOf(Website!Attribute) then
 				if website.source.oclIsTypeOf(Website!Service) then
-					website.source.features->select(f | f.name = website.dynamicTitle.name)->first()
+					website.source.features->any(f | f.name = website.dynamicTitle.name)
 				else
 					OclUndefined
 				endif
@@ -1044,7 +1076,7 @@ abstract rule DataUnit {
 	)
 }
 
--- @extends DataUnit
+-- @extends DataUnit, SelectTarget
 rule DetailsUnit {
 	from website : Website!DetailsUnit
 	to waf : WAF!DetailsUnit (
@@ -1052,7 +1084,7 @@ rule DetailsUnit {
 	)
 }
 
--- @extends DataUnit, InlineActionContainer
+-- @extends DataUnit, InlineActionContainer, SelectTarget
 abstract rule IndexUnit {
 	from website : Website!IndexUnit
 	to waf : WAF!IndexUnit (

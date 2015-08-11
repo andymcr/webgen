@@ -25,8 +25,8 @@ import java.util.List;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='featureNameUniqueWithinEntity displayOnlyLocalFeatures keysFromLocalFeatures'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featureNameUniqueWithinEntity='features->isUnique(name)' displayOnlyLocalFeatures='features->union(associationEnds)->includesAll(displayFeatures)' keysFromLocalFeatures='features->union(associationEnds)->includesAll(keys)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='featureNameUniqueWithinEntity keysFromLocalFeatures'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featureNameUniqueWithinEntity='features->isUnique(name)' keysFromLocalFeatures='features->union(associationEnds)->includesAll(keys)'"
  * @generated
  */
 public interface Entity extends Classifier, UnitSource {

@@ -20,6 +20,7 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getChildPages <em>Child Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#isAuthenticated <em>Authenticated</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getPath <em>Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getTopMenuOption <em>Top Menu Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getTopMenuRank <em>Top Menu Rank</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Page#getNavigationLabel <em>Navigation Label</em>}</li>
@@ -181,6 +182,32 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @generated
 	 */
 	void setAuthenticated(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Path</em>' attribute.
+	 * @see #setPath(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getPage_Path()
+	 * @model
+	 * @generated
+	 */
+	String getPath();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Page#getPath <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Path</em>' attribute.
+	 * @see #getPath()
+	 * @generated
+	 */
+	void setPath(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Top Menu Option</b></em>' attribute.

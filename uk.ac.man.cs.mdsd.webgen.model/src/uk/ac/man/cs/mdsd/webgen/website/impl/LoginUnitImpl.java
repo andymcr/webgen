@@ -45,6 +45,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getPath <em>Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
@@ -106,6 +107,26 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * @ordered
 	 */
 	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String path = PATH_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
@@ -507,6 +528,27 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPath() {
+		return path;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPath(String newPath) {
+		String oldPath = path;
+		path = newPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__PATH, oldPath, path));
 	}
 
 	/**
@@ -947,6 +989,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return getDisplayLabel();
 			case WebsitePackage.LOGIN_UNIT__DISPLAYED_ON:
 				return getDisplayedOn();
+			case WebsitePackage.LOGIN_UNIT__PATH:
+				return getPath();
 			case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
 			case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION:
@@ -1004,6 +1048,9 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return;
 			case WebsitePackage.LOGIN_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)newValue);
+				return;
+			case WebsitePackage.LOGIN_UNIT__PATH:
+				setPath((String)newValue);
 				return;
 			case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
@@ -1079,6 +1126,9 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)null);
 				return;
+			case WebsitePackage.LOGIN_UNIT__PATH:
+				setPath(PATH_EDEFAULT);
+				return;
 			case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
 				return;
@@ -1148,6 +1198,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WebsitePackage.LOGIN_UNIT__DISPLAYED_ON:
 				return getDisplayedOn() != null;
+			case WebsitePackage.LOGIN_UNIT__PATH:
+				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 			case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION:
@@ -1208,6 +1260,7 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		if (baseClass == ContentUnit.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.LOGIN_UNIT__DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__DISPLAYED_ON;
+				case WebsitePackage.LOGIN_UNIT__PATH: return WebsitePackage.CONTENT_UNIT__PATH;
 				case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY: return WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION: return WebsitePackage.CONTENT_UNIT__OMIT_CAPTION;
 				case WebsitePackage.LOGIN_UNIT__CAPTION_CLASS: return WebsitePackage.CONTENT_UNIT__CAPTION_CLASS;
@@ -1262,6 +1315,7 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		if (baseClass == ContentUnit.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON: return WebsitePackage.LOGIN_UNIT__DISPLAYED_ON;
+				case WebsitePackage.CONTENT_UNIT__PATH: return WebsitePackage.LOGIN_UNIT__PATH;
 				case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION: return WebsitePackage.LOGIN_UNIT__OMIT_CAPTION;
 				case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS: return WebsitePackage.LOGIN_UNIT__CAPTION_CLASS;
@@ -1308,6 +1362,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		result.append(name);
 		result.append(", displayLabel: ");
 		result.append(displayLabel);
+		result.append(", path: ");
+		result.append(path);
 		result.append(", purposeSummary: ");
 		result.append(purposeSummary);
 		result.append(", omitCaption: ");

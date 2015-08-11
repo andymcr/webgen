@@ -55,6 +55,7 @@ public class PageItemProvider
 			addParentPagePropertyDescriptor(object);
 			addChildPagesPropertyDescriptor(object);
 			addAuthenticatedPropertyDescriptor(object);
+			addPathPropertyDescriptor(object);
 			addTopMenuOptionPropertyDescriptor(object);
 			addTopMenuRankPropertyDescriptor(object);
 			addNavigationLabelPropertyDescriptor(object);
@@ -220,6 +221,28 @@ public class PageItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_path_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_path_feature", "_UI_Page_type"),
+				 WafPackage.Literals.PAGE__PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Top Menu Option feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -331,6 +354,7 @@ public class PageItemProvider
 
 		switch (notification.getFeatureID(Page.class)) {
 			case WafPackage.PAGE__AUTHENTICATED:
+			case WafPackage.PAGE__PATH:
 			case WafPackage.PAGE__TOP_MENU_OPTION:
 			case WafPackage.PAGE__TOP_MENU_RANK:
 			case WafPackage.PAGE__NAVIGATION_LABEL:

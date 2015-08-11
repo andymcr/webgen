@@ -2658,13 +2658,22 @@ public interface WafPackage extends EPackage {
 	int PAGE__AUTHENTICATED = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__PATH = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Top Menu Option</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__TOP_MENU_OPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int PAGE__TOP_MENU_OPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Top Menu Rank</b></em>' attribute.
@@ -2673,7 +2682,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__TOP_MENU_RANK = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int PAGE__TOP_MENU_RANK = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Navigation Label</b></em>' attribute.
@@ -2682,7 +2691,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__NAVIGATION_LABEL = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int PAGE__NAVIGATION_LABEL = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -2691,7 +2700,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__SIDE_MENU = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int PAGE__SIDE_MENU = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -2700,7 +2709,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int PAGE__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -2709,7 +2718,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int PAGE_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -2805,13 +2814,22 @@ public interface WafPackage extends EPackage {
 	int SELECT_TARGET__TARGETTING_ACTIONS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Selection Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECT_TARGET__SELECTION_FEATURE = 1;
+
+	/**
 	 * The number of structural features of the '<em>Select Target</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECT_TARGET_FEATURE_COUNT = 1;
+	int SELECT_TARGET_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Select Target</em>' class.
@@ -2860,13 +2878,22 @@ public interface WafPackage extends EPackage {
 	int CONTENT_UNIT__DISPLAYED_ON = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT_UNIT__PATH = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__PURPOSE_SUMMARY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int CONTENT_UNIT__PURPOSE_SUMMARY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -2875,7 +2902,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__OMIT_CAPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int CONTENT_UNIT__OMIT_CAPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -2884,7 +2911,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__CAPTION_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int CONTENT_UNIT__CAPTION_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -2893,7 +2920,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int CONTENT_UNIT__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
@@ -2902,7 +2929,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__LAYOUT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int CONTENT_UNIT__LAYOUT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Content Unit</em>' class.
@@ -2911,7 +2938,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int CONTENT_UNIT_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Content Unit</em>' class.
@@ -2958,6 +2985,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_UNIT__DISPLAYED_ON = CONTENT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_UNIT__PATH = CONTENT_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -3076,6 +3112,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMAND_UNIT__DISPLAYED_ON = CONTENT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMAND_UNIT__PATH = CONTENT_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -3231,6 +3276,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DYNAMIC_UNIT__DISPLAYED_ON = CONTENT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__PATH = CONTENT_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -4677,6 +4731,15 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__PATH = DYNAMIC_UNIT__PATH;
+
+	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4892,6 +4955,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__PATH = EDIT_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -5111,6 +5183,15 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__PATH = EDIT_UNIT__PATH;
+
+	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5282,13 +5363,22 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__TARGETTING_ACTIONS = EDIT_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Selection Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__SELECTION_FEATURE = EDIT_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Clear Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__CLEAR_LABEL = EDIT_UNIT_FEATURE_COUNT + 1;
+	int CREATE_UPDATE_UNIT__CLEAR_LABEL = EDIT_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Create Update Unit</em>' class.
@@ -5297,7 +5387,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 2;
+	int CREATE_UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Create Update Unit</em>' class.
@@ -5344,6 +5434,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__PATH = EDIT_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -5517,13 +5616,22 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__TARGETTING_ACTIONS = EDIT_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Selection Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__SELECTION_FEATURE = EDIT_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Read Only</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__READ_ONLY = EDIT_UNIT_FEATURE_COUNT + 1;
+	int MAP_UNIT__READ_ONLY = EDIT_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Default Zoom Level</b></em>' attribute.
@@ -5532,7 +5640,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__DEFAULT_ZOOM_LEVEL = EDIT_UNIT_FEATURE_COUNT + 2;
+	int MAP_UNIT__DEFAULT_ZOOM_LEVEL = EDIT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' reference.
@@ -5541,7 +5649,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__LOCATION = EDIT_UNIT_FEATURE_COUNT + 3;
+	int MAP_UNIT__LOCATION = EDIT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Place Name</b></em>' reference.
@@ -5550,7 +5658,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__PLACE_NAME = EDIT_UNIT_FEATURE_COUNT + 4;
+	int MAP_UNIT__PLACE_NAME = EDIT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Map Unit</em>' class.
@@ -5559,7 +5667,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 5;
+	int MAP_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Map Unit</em>' class.
@@ -5606,6 +5714,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UPDATE_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__PATH = EDIT_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -5779,13 +5896,22 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__TARGETTING_ACTIONS = EDIT_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Selection Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__SELECTION_FEATURE = EDIT_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Update Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 1;
+	int UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Update Unit</em>' class.
@@ -5832,6 +5958,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__PATH = DYNAMIC_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -6033,6 +6168,15 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__DISPLAYED_ON = DATA_UNIT__DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__PATH = DATA_UNIT__PATH;
+
+	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6186,13 +6330,22 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__TARGETTING_ACTIONS = DATA_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Selection Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__SELECTION_FEATURE = DATA_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Omit Field Labels</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__OMIT_FIELD_LABELS = DATA_UNIT_FEATURE_COUNT + 1;
+	int DETAILS_UNIT__OMIT_FIELD_LABELS = DATA_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Details Unit</em>' class.
@@ -6201,7 +6354,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 2;
+	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Details Unit</em>' class.
@@ -6248,6 +6401,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__DISPLAYED_ON = DATA_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__PATH = DATA_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -6412,13 +6574,22 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__TARGETTING_ACTIONS = DATA_UNIT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Selection Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__SELECTION_FEATURE = DATA_UNIT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Omit Column Labels</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__OMIT_COLUMN_LABELS = DATA_UNIT_FEATURE_COUNT + 2;
+	int INDEX_UNIT__OMIT_COLUMN_LABELS = DATA_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
@@ -6427,7 +6598,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__DEFAULT_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 3;
+	int INDEX_UNIT__DEFAULT_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Next Page Label</b></em>' attribute.
@@ -6436,7 +6607,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__NEXT_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 4;
+	int INDEX_UNIT__NEXT_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Previous Page Label</b></em>' attribute.
@@ -6445,7 +6616,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__PREVIOUS_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 5;
+	int INDEX_UNIT__PREVIOUS_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Use First Last Page Links</b></em>' attribute.
@@ -6454,7 +6625,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 6;
+	int INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>First Page Label</b></em>' attribute.
@@ -6463,7 +6634,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__FIRST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 7;
+	int INDEX_UNIT__FIRST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Last Page Label</b></em>' attribute.
@@ -6472,7 +6643,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__LAST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 8;
+	int INDEX_UNIT__LAST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Targetting Searches</b></em>' reference.
@@ -6481,7 +6652,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__TARGETTING_SEARCHES = DATA_UNIT_FEATURE_COUNT + 9;
+	int INDEX_UNIT__TARGETTING_SEARCHES = DATA_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Row Classes</b></em>' attribute.
@@ -6490,7 +6661,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__ROW_CLASSES = DATA_UNIT_FEATURE_COUNT + 10;
+	int INDEX_UNIT__ROW_CLASSES = DATA_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Index Unit</em>' class.
@@ -6499,7 +6670,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 11;
+	int INDEX_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of operations of the '<em>Index Unit</em>' class.
@@ -6546,6 +6717,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_GRID_UNIT__DISPLAYED_ON = INDEX_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__PATH = INDEX_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -6710,6 +6890,15 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__TARGETTING_ACTIONS = INDEX_UNIT__TARGETTING_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Selection Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__SELECTION_FEATURE = INDEX_UNIT__SELECTION_FEATURE;
+
+	/**
 	 * The feature id for the '<em><b>Omit Column Labels</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6844,6 +7033,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__DISPLAYED_ON = INDEX_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__PATH = INDEX_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -7008,6 +7206,15 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__TARGETTING_ACTIONS = INDEX_UNIT__TARGETTING_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Selection Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__SELECTION_FEATURE = INDEX_UNIT__SELECTION_FEATURE;
+
+	/**
 	 * The feature id for the '<em><b>Omit Column Labels</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7142,6 +7349,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_LINE_DIRECTION_UNIT__DISPLAYED_ON = INDEX_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__PATH = INDEX_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -7306,6 +7522,15 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__TARGETTING_ACTIONS = INDEX_UNIT__TARGETTING_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Selection Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__SELECTION_FEATURE = INDEX_UNIT__SELECTION_FEATURE;
+
+	/**
 	 * The feature id for the '<em><b>Omit Column Labels</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7440,6 +7665,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__PATH = DYNAMIC_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -7648,6 +7882,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__DISPLAYED_ON = CONTROL_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__PATH = CONTROL_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -7865,6 +8108,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTION_UNIT__DISPLAYED_ON = CONTROL_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__PATH = CONTROL_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -8112,6 +8364,15 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__PATH = EDIT_UNIT__PATH;
+
+	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8336,6 +8597,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN_UNIT__DISPLAYED_ON = CONTROL_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__PATH = CONTROL_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -8580,6 +8850,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON = CONTROL_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__PATH = CONTROL_UNIT__PATH;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -10641,6 +10920,17 @@ public interface WafPackage extends EPackage {
 	EAttribute getPage_Authenticated();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.Page#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.Page#getPath()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EAttribute getPage_Path();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuOption <em>Top Menu Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10748,6 +11038,17 @@ public interface WafPackage extends EPackage {
 	EReference getSelectTarget_TargettingActions();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.SelectTarget#getSelectionFeature <em>Selection Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Selection Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.SelectTarget#getSelectionFeature()
+	 * @see #getSelectTarget()
+	 * @generated
+	 */
+	EReference getSelectTarget_SelectionFeature();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ContentUnit <em>Content Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10767,6 +11068,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getContentUnit_DisplayedOn();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPath <em>Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Path</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ContentUnit#getPath()
+	 * @see #getContentUnit()
+	 * @generated
+	 */
+	EAttribute getContentUnit_Path();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}'.
@@ -13273,6 +13585,14 @@ public interface WafPackage extends EPackage {
 		EAttribute PAGE__AUTHENTICATED = eINSTANCE.getPage_Authenticated();
 
 		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAGE__PATH = eINSTANCE.getPage_Path();
+
+		/**
 		 * The meta object literal for the '<em><b>Top Menu Option</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13359,6 +13679,14 @@ public interface WafPackage extends EPackage {
 		EReference SELECT_TARGET__TARGETTING_ACTIONS = eINSTANCE.getSelectTarget_TargettingActions();
 
 		/**
+		 * The meta object literal for the '<em><b>Selection Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SELECT_TARGET__SELECTION_FEATURE = eINSTANCE.getSelectTarget_SelectionFeature();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl <em>Content Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13375,6 +13703,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTENT_UNIT__DISPLAYED_ON = eINSTANCE.getContentUnit_DisplayedOn();
+
+		/**
+		 * The meta object literal for the '<em><b>Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTENT_UNIT__PATH = eINSTANCE.getContentUnit_Path();
 
 		/**
 		 * The meta object literal for the '<em><b>Purpose Summary</b></em>' attribute feature.

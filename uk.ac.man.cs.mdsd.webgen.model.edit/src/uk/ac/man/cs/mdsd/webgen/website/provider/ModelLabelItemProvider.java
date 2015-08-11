@@ -89,7 +89,7 @@ public class ModelLabelItemProvider
 				 getString("_UI_ModelLabel_features_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabel_features_feature", "_UI_ModelLabel_type"),
 				 WebsitePackage.Literals.MODEL_LABEL__FEATURES,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,

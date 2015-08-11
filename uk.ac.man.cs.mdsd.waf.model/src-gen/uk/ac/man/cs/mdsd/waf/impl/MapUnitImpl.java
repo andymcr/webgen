@@ -32,6 +32,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getTargettingActions <em>Targetting Actions</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getSelectionFeature <em>Selection Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#isReadOnly <em>Read Only</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getDefaultZoomLevel <em>Default Zoom Level</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getLocation <em>Location</em>}</li>
@@ -50,6 +51,16 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * @ordered
 	 */
 	protected EList<SelectAction> targettingActions;
+
+	/**
+	 * The cached value of the '{@link #getSelectionFeature() <em>Selection Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelectionFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServiceEntityElement selectionFeature;
 
 	/**
 	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
@@ -140,6 +151,44 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 			targettingActions = new EObjectWithInverseResolvingEList<SelectAction>(SelectAction.class, this, WafPackage.MAP_UNIT__TARGETTING_ACTIONS, WafPackage.SELECT_ACTION__TARGET);
 		}
 		return targettingActions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceEntityElement getSelectionFeature() {
+		if (selectionFeature != null && selectionFeature.eIsProxy()) {
+			InternalEObject oldSelectionFeature = (InternalEObject)selectionFeature;
+			selectionFeature = (ServiceEntityElement)eResolveProxy(oldSelectionFeature);
+			if (selectionFeature != oldSelectionFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.MAP_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
+			}
+		}
+		return selectionFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceEntityElement basicGetSelectionFeature() {
+		return selectionFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectionFeature(ServiceEntityElement newSelectionFeature) {
+		ServiceEntityElement oldSelectionFeature = selectionFeature;
+		selectionFeature = newSelectionFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.MAP_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
 	}
 
 	/**
@@ -299,6 +348,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 		switch (featureID) {
 			case WafPackage.MAP_UNIT__TARGETTING_ACTIONS:
 				return getTargettingActions();
+			case WafPackage.MAP_UNIT__SELECTION_FEATURE:
+				if (resolve) return getSelectionFeature();
+				return basicGetSelectionFeature();
 			case WafPackage.MAP_UNIT__READ_ONLY:
 				return isReadOnly();
 			case WafPackage.MAP_UNIT__DEFAULT_ZOOM_LEVEL:
@@ -325,6 +377,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 			case WafPackage.MAP_UNIT__TARGETTING_ACTIONS:
 				getTargettingActions().clear();
 				getTargettingActions().addAll((Collection<? extends SelectAction>)newValue);
+				return;
+			case WafPackage.MAP_UNIT__SELECTION_FEATURE:
+				setSelectionFeature((ServiceEntityElement)newValue);
 				return;
 			case WafPackage.MAP_UNIT__READ_ONLY:
 				setReadOnly((Boolean)newValue);
@@ -353,6 +408,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 			case WafPackage.MAP_UNIT__TARGETTING_ACTIONS:
 				getTargettingActions().clear();
 				return;
+			case WafPackage.MAP_UNIT__SELECTION_FEATURE:
+				setSelectionFeature((ServiceEntityElement)null);
+				return;
 			case WafPackage.MAP_UNIT__READ_ONLY:
 				setReadOnly(READ_ONLY_EDEFAULT);
 				return;
@@ -379,6 +437,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 		switch (featureID) {
 			case WafPackage.MAP_UNIT__TARGETTING_ACTIONS:
 				return targettingActions != null && !targettingActions.isEmpty();
+			case WafPackage.MAP_UNIT__SELECTION_FEATURE:
+				return selectionFeature != null;
 			case WafPackage.MAP_UNIT__READ_ONLY:
 				return readOnly != READ_ONLY_EDEFAULT;
 			case WafPackage.MAP_UNIT__DEFAULT_ZOOM_LEVEL:
@@ -401,6 +461,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 		if (baseClass == SelectTarget.class) {
 			switch (derivedFeatureID) {
 				case WafPackage.MAP_UNIT__TARGETTING_ACTIONS: return WafPackage.SELECT_TARGET__TARGETTING_ACTIONS;
+				case WafPackage.MAP_UNIT__SELECTION_FEATURE: return WafPackage.SELECT_TARGET__SELECTION_FEATURE;
 				default: return -1;
 			}
 		}
@@ -417,6 +478,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 		if (baseClass == SelectTarget.class) {
 			switch (baseFeatureID) {
 				case WafPackage.SELECT_TARGET__TARGETTING_ACTIONS: return WafPackage.MAP_UNIT__TARGETTING_ACTIONS;
+				case WafPackage.SELECT_TARGET__SELECTION_FEATURE: return WafPackage.MAP_UNIT__SELECTION_FEATURE;
 				default: return -1;
 			}
 		}

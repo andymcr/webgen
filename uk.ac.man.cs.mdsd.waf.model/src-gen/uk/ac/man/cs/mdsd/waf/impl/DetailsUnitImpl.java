@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.waf.DetailsUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.SelectTarget;
+import uk.ac.man.cs.mdsd.waf.ServiceEntityElement;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -31,6 +32,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getTargettingActions <em>Targetting Actions</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getSelectionFeature <em>Selection Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  * </ul>
  *
@@ -46,6 +48,16 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * @ordered
 	 */
 	protected EList<SelectAction> targettingActions;
+
+	/**
+	 * The cached value of the '{@link #getSelectionFeature() <em>Selection Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelectionFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServiceEntityElement selectionFeature;
 
 	/**
 	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
@@ -96,6 +108,44 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			targettingActions = new EObjectWithInverseResolvingEList<SelectAction>(SelectAction.class, this, WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS, WafPackage.SELECT_ACTION__TARGET);
 		}
 		return targettingActions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceEntityElement getSelectionFeature() {
+		if (selectionFeature != null && selectionFeature.eIsProxy()) {
+			InternalEObject oldSelectionFeature = (InternalEObject)selectionFeature;
+			selectionFeature = (ServiceEntityElement)eResolveProxy(oldSelectionFeature);
+			if (selectionFeature != oldSelectionFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.DETAILS_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
+			}
+		}
+		return selectionFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceEntityElement basicGetSelectionFeature() {
+		return selectionFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectionFeature(ServiceEntityElement newSelectionFeature) {
+		ServiceEntityElement oldSelectionFeature = selectionFeature;
+		selectionFeature = newSelectionFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DETAILS_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
 	}
 
 	/**
@@ -158,6 +208,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS:
 				return getTargettingActions();
+			case WafPackage.DETAILS_UNIT__SELECTION_FEATURE:
+				if (resolve) return getSelectionFeature();
+				return basicGetSelectionFeature();
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return isOmitFieldLabels();
 		}
@@ -177,6 +230,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				getTargettingActions().clear();
 				getTargettingActions().addAll((Collection<? extends SelectAction>)newValue);
 				return;
+			case WafPackage.DETAILS_UNIT__SELECTION_FEATURE:
+				setSelectionFeature((ServiceEntityElement)newValue);
+				return;
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
 				return;
@@ -195,6 +251,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS:
 				getTargettingActions().clear();
 				return;
+			case WafPackage.DETAILS_UNIT__SELECTION_FEATURE:
+				setSelectionFeature((ServiceEntityElement)null);
+				return;
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
 				return;
@@ -212,6 +271,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS:
 				return targettingActions != null && !targettingActions.isEmpty();
+			case WafPackage.DETAILS_UNIT__SELECTION_FEATURE:
+				return selectionFeature != null;
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 		}
@@ -228,6 +289,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		if (baseClass == SelectTarget.class) {
 			switch (derivedFeatureID) {
 				case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS: return WafPackage.SELECT_TARGET__TARGETTING_ACTIONS;
+				case WafPackage.DETAILS_UNIT__SELECTION_FEATURE: return WafPackage.SELECT_TARGET__SELECTION_FEATURE;
 				default: return -1;
 			}
 		}
@@ -244,6 +306,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		if (baseClass == SelectTarget.class) {
 			switch (baseFeatureID) {
 				case WafPackage.SELECT_TARGET__TARGETTING_ACTIONS: return WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS;
+				case WafPackage.SELECT_TARGET__SELECTION_FEATURE: return WafPackage.DETAILS_UNIT__SELECTION_FEATURE;
 				default: return -1;
 			}
 		}

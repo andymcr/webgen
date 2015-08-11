@@ -111,14 +111,24 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return associations;
 	}
 
-	protected List<Feature> getSourceFeatures(final DynamicUnit unit) {
-		final List<Feature> features = new LinkedList<Feature>();
+	protected List<Attribute> getSourceElements(final DynamicUnit unit) {
+		final List<Attribute> features = new LinkedList<Attribute>();
 		if (unit.getSource() != null) {
 			if (unit.getSource() instanceof Service) {
 				final Service service = (Service) unit.getSource();
-				for (ServiceFeature feature : service.getFeatures()) {
-					if (feature instanceof ServiceEntityElement) {
-						features.add(((ServiceEntityElement) feature).getFeature());
+				if (service.getFeatures().size() > 0) {
+					for (ServiceFeature feature : service.getFeatures()) {
+						if (feature instanceof ServiceEntityElement) {
+							features.add(((ServiceEntityElement) feature).getFeature());
+						}
+					}
+				} else {
+					for (Entity entity : service.getEncapsulates()) {
+						for (Feature feature : entity.getFeatures()) {
+							if (feature instanceof Attribute) {
+								features.add((Attribute) feature);
+							}
+						}
 					}
 				}
 			} else {

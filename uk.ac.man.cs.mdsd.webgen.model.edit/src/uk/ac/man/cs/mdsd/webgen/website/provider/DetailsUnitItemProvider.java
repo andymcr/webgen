@@ -8,6 +8,8 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -18,6 +20,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.website.Attribute;
+import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DetailsUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -50,11 +54,41 @@ public class DetailsUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSelectionFeaturePropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addLayoutClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Selection Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addSelectionFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_SelectTarget_selectionFeature_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_selectionFeature_feature", "_UI_SelectTarget_type"),
+			 WebsitePackage.Literals.SELECT_TARGET__SELECTION_FEATURE,
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof DetailsUnit) {
+						final DataUnit unit = (DataUnit) object;
+						final List<Attribute> features = new LinkedList<Attribute>();
+						features.addAll(getSourceElements(unit));
+						return features;
+					}
+					return Collections.emptyList();
+				}
+		});
 	}
 
 	/**

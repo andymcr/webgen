@@ -50,6 +50,7 @@ public class ContentUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDisplayedOnPropertyDescriptor(object);
+			addPathPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
@@ -83,6 +84,28 @@ public class ContentUnitItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_path_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_path_feature", "_UI_ContentUnit_type"),
+				 WafPackage.Literals.CONTENT_UNIT__PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Purpose Summary feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,6 +241,7 @@ public class ContentUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ContentUnit.class)) {
+			case WafPackage.CONTENT_UNIT__PATH:
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
 			case WafPackage.CONTENT_UNIT__CAPTION_CLASS:

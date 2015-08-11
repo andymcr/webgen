@@ -10,9 +10,12 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DetailsUnit;
+import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -23,6 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getSelectionFeature <em>Selection Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
@@ -31,6 +35,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
+	/**
+	 * The cached value of the '{@link #getSelectionFeature() <em>Selection Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelectionFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute selectionFeature;
+
 	/**
 	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -115,6 +129,44 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Attribute getSelectionFeature() {
+		if (selectionFeature != null && selectionFeature.eIsProxy()) {
+			InternalEObject oldSelectionFeature = (InternalEObject)selectionFeature;
+			selectionFeature = (Attribute)eResolveProxy(oldSelectionFeature);
+			if (selectionFeature != oldSelectionFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
+			}
+		}
+		return selectionFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute basicGetSelectionFeature() {
+		return selectionFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectionFeature(Attribute newSelectionFeature) {
+		Attribute oldSelectionFeature = selectionFeature;
+		selectionFeature = newSelectionFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isOmitFieldLabels() {
 		return omitFieldLabels;
 	}
@@ -181,6 +233,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE:
+				if (resolve) return getSelectionFeature();
+				return basicGetSelectionFeature();
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return isOmitFieldLabels();
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
@@ -199,6 +254,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE:
+				setSelectionFeature((Attribute)newValue);
+				return;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
 				return;
@@ -220,6 +278,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE:
+				setSelectionFeature((Attribute)null);
+				return;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
 				return;
@@ -241,6 +302,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE:
+				return selectionFeature != null;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
@@ -249,6 +312,38 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				return LAYOUT_CLASS_EDEFAULT == null ? layoutClass != null : !LAYOUT_CLASS_EDEFAULT.equals(layoutClass);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == SelectTarget.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE: return WebsitePackage.SELECT_TARGET__SELECTION_FEATURE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == SelectTarget.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.SELECT_TARGET__SELECTION_FEATURE: return WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

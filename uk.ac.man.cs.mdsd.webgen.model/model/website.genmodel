@@ -318,6 +318,7 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Page/childPages"/>
       <genFeatures createChild="false" propertyCategory="Security" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//Page/authenticated"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Page/path"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//Page/topMenuOption"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//Page/topMenuRank"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Page/navigationLabel"/>
@@ -379,6 +380,7 @@
     <genClasses image="false" ecoreClass="website.ecore#//UnitTitle"/>
     <genClasses image="false" ecoreClass="website.ecore#//ContentUnit">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ContentUnit/displayedOn"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/path"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/purposeSummary"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/omitCaption"/>
@@ -578,7 +580,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/headerClass"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/footerClass"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="website.ecore#//SelectTarget"/>
+    <genClasses image="false" ecoreClass="website.ecore#//SelectTarget">
+      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+          propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//SelectTarget/selectionFeature"/>
+    </genClasses>
     <genClasses ecoreClass="website.ecore#//SelectAction">
       <genFeatures createChild="true" propertyCategory="Navigation" ecoreFeature="ecore:EReference website.ecore#//SelectAction/target"/>
     </genClasses>

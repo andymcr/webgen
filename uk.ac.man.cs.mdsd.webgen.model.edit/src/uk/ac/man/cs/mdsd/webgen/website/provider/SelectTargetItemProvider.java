@@ -15,12 +15,14 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.SelectTarget} object.
@@ -57,8 +59,31 @@ public class SelectTargetItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSelectionFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Selection Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectionFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SelectTarget_selectionFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_selectionFeature_feature", "_UI_SelectTarget_type"),
+				 WebsitePackage.Literals.SELECT_TARGET__SELECTION_FEATURE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**

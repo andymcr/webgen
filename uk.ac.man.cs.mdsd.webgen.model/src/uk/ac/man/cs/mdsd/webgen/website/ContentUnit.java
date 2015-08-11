@@ -16,6 +16,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getPath <em>Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getCaptionClass <em>Caption Class</em>}</li>
@@ -53,6 +54,32 @@ public interface ContentUnit extends NamedDisplayElement {
 	 * @generated
 	 */
 	void setDisplayedOn(UnitContainer value);
+
+	/**
+	 * Returns the value of the '<em><b>Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Path</em>' attribute.
+	 * @see #setPath(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getContentUnit_Path()
+	 * @model
+	 * @generated
+	 */
+	String getPath();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getPath <em>Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Path</em>' attribute.
+	 * @see #getPath()
+	 * @generated
+	 */
+	void setPath(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Purpose Summary</b></em>' attribute.

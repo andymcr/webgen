@@ -64,6 +64,7 @@ public class LoginUnitItemProvider
 
 			addNamePropertyDescriptor(object);
 			addDisplayLabelPropertyDescriptor(object);
+			addPathPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
@@ -119,6 +120,28 @@ public class LoginUnitItemProvider
 				 getString("_UI_NamedDisplayElement_displayLabel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NamedDisplayElement_displayLabel_feature", "_UI_NamedDisplayElement_type"),
 				 WebsitePackage.Literals.NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_path_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_path_feature", "_UI_ContentUnit_type"),
+				 WebsitePackage.Literals.CONTENT_UNIT__PATH,
 				 true,
 				 false,
 				 false,
@@ -527,6 +550,7 @@ public class LoginUnitItemProvider
 		switch (notification.getFeatureID(LoginUnit.class)) {
 			case WebsitePackage.LOGIN_UNIT__NAME:
 			case WebsitePackage.LOGIN_UNIT__DISPLAY_LABEL:
+			case WebsitePackage.LOGIN_UNIT__PATH:
 			case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY:
 			case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION:
 			case WebsitePackage.LOGIN_UNIT__CAPTION_CLASS:

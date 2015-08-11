@@ -352,6 +352,7 @@ unique lazy rule implicitRegistrationPage {
 		displayLabel <- 'Register Authentication',
 		units <- Sequence{thisModule.implicitRegistrationUnit(website)},
 		authenticated <- not website.allowSelfRegistration,
+		path <- 'register',
 		navigationLabel <- 'Register',
 		sideMenu <-
 			let sideMenu : Website!Menu
@@ -380,6 +381,7 @@ unique lazy rule implicitLoginPage {
 					Sequence{}
 				endif),
 		authenticated <- false,
+		path <- '/login',
 		navigationLabel <- 'Login',
 		sideMenu <-
 			let sideMenu : Website!Menu
@@ -402,6 +404,7 @@ unique lazy rule implicitManageAuthenticationsPage {
 		displayLabel <- 'Manage Authentications',
 		units <- Sequence{users, editUser},
 		authenticated <- true,
+		path <- 'auth',
 		topMenuOption <- #IncludeWhenAuthenticated,
 		topMenuRank <- 100,
 		navigationLabel <- 'Authentications',

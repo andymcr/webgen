@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.waf.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,11 +12,14 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.SelectTarget;
+import uk.ac.man.cs.mdsd.waf.ServiceEntityElement;
 import uk.ac.man.cs.mdsd.waf.UpdateUnit;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -28,6 +32,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UpdateUnitImpl#getTargettingActions <em>Targetting Actions</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UpdateUnitImpl#getSelectionFeature <em>Selection Feature</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,6 +47,16 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 	 * @ordered
 	 */
 	protected EList<SelectAction> targettingActions;
+
+	/**
+	 * The cached value of the '{@link #getSelectionFeature() <em>Selection Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelectionFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected ServiceEntityElement selectionFeature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,6 +87,44 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 			targettingActions = new EObjectWithInverseResolvingEList<SelectAction>(SelectAction.class, this, WafPackage.UPDATE_UNIT__TARGETTING_ACTIONS, WafPackage.SELECT_ACTION__TARGET);
 		}
 		return targettingActions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceEntityElement getSelectionFeature() {
+		if (selectionFeature != null && selectionFeature.eIsProxy()) {
+			InternalEObject oldSelectionFeature = (InternalEObject)selectionFeature;
+			selectionFeature = (ServiceEntityElement)eResolveProxy(oldSelectionFeature);
+			if (selectionFeature != oldSelectionFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.UPDATE_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
+			}
+		}
+		return selectionFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceEntityElement basicGetSelectionFeature() {
+		return selectionFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectionFeature(ServiceEntityElement newSelectionFeature) {
+		ServiceEntityElement oldSelectionFeature = selectionFeature;
+		selectionFeature = newSelectionFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UPDATE_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
 	}
 
 	/**
@@ -113,6 +166,9 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 		switch (featureID) {
 			case WafPackage.UPDATE_UNIT__TARGETTING_ACTIONS:
 				return getTargettingActions();
+			case WafPackage.UPDATE_UNIT__SELECTION_FEATURE:
+				if (resolve) return getSelectionFeature();
+				return basicGetSelectionFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -130,6 +186,9 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 				getTargettingActions().clear();
 				getTargettingActions().addAll((Collection<? extends SelectAction>)newValue);
 				return;
+			case WafPackage.UPDATE_UNIT__SELECTION_FEATURE:
+				setSelectionFeature((ServiceEntityElement)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -145,6 +204,9 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 			case WafPackage.UPDATE_UNIT__TARGETTING_ACTIONS:
 				getTargettingActions().clear();
 				return;
+			case WafPackage.UPDATE_UNIT__SELECTION_FEATURE:
+				setSelectionFeature((ServiceEntityElement)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -159,6 +221,8 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 		switch (featureID) {
 			case WafPackage.UPDATE_UNIT__TARGETTING_ACTIONS:
 				return targettingActions != null && !targettingActions.isEmpty();
+			case WafPackage.UPDATE_UNIT__SELECTION_FEATURE:
+				return selectionFeature != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -173,6 +237,7 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 		if (baseClass == SelectTarget.class) {
 			switch (derivedFeatureID) {
 				case WafPackage.UPDATE_UNIT__TARGETTING_ACTIONS: return WafPackage.SELECT_TARGET__TARGETTING_ACTIONS;
+				case WafPackage.UPDATE_UNIT__SELECTION_FEATURE: return WafPackage.SELECT_TARGET__SELECTION_FEATURE;
 				default: return -1;
 			}
 		}
@@ -189,6 +254,7 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 		if (baseClass == SelectTarget.class) {
 			switch (baseFeatureID) {
 				case WafPackage.SELECT_TARGET__TARGETTING_ACTIONS: return WafPackage.UPDATE_UNIT__TARGETTING_ACTIONS;
+				case WafPackage.SELECT_TARGET__SELECTION_FEATURE: return WafPackage.UPDATE_UNIT__SELECTION_FEATURE;
 				default: return -1;
 			}
 		}

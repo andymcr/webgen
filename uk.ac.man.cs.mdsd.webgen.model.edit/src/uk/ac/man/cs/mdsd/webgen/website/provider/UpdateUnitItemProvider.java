@@ -21,7 +21,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
-import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.website.UpdateUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -79,7 +78,7 @@ public class UpdateUnitItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UpdateUnit) {
-						final DataUnit unit = (DataUnit) object;
+						final UpdateUnit unit = (UpdateUnit) object;
 						final List<Attribute> features = new LinkedList<Attribute>();
 						features.addAll(getSourceElements(unit));
 						return features;

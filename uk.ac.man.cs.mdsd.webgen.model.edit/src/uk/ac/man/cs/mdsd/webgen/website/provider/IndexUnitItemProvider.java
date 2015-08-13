@@ -22,7 +22,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
-import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -91,7 +90,7 @@ public class IndexUnitItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof IndexUnit) {
-						final DataUnit unit = (DataUnit) object;
+						final IndexUnit unit = (IndexUnit) object;
 						final List<Attribute> features = new LinkedList<Attribute>();
 						features.addAll(getSourceElements(unit));
 						return features;

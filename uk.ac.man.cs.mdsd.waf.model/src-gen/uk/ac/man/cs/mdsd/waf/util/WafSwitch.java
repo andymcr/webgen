@@ -324,12 +324,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.SELECT_TARGET: {
-				SelectTarget selectTarget = (SelectTarget)theEObject;
-				T result = caseSelectTarget(selectTarget);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.CONTENT_UNIT: {
 				ContentUnit contentUnit = (ContentUnit)theEObject;
 				T result = caseContentUnit(contentUnit);
@@ -698,6 +692,12 @@ public class WafSwitch<T> extends Switch<T> {
 				T result = caseInlineAction(inlineAction);
 				if (result == null) result = caseNamedDisplayElement(inlineAction);
 				if (result == null) result = caseNamedElement(inlineAction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.SELECT_TARGET: {
+				SelectTarget selectTarget = (SelectTarget)theEObject;
+				T result = caseSelectTarget(selectTarget);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1233,21 +1233,6 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUnitTitle(UnitTitle object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Select Target</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Select Target</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSelectTarget(SelectTarget object) {
 		return null;
 	}
 
@@ -1803,6 +1788,21 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInlineAction(InlineAction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Select Target</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Select Target</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSelectTarget(SelectTarget object) {
 		return null;
 	}
 

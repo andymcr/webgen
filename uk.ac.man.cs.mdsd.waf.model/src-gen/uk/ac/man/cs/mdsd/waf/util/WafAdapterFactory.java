@@ -202,10 +202,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createUnitTitleAdapter();
 			}
 			@Override
-			public Adapter caseSelectTarget(SelectTarget object) {
-				return createSelectTargetAdapter();
-			}
-			@Override
 			public Adapter caseContentUnit(ContentUnit object) {
 				return createContentUnitAdapter();
 			}
@@ -352,6 +348,10 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseInlineAction(InlineAction object) {
 				return createInlineActionAdapter();
+			}
+			@Override
+			public Adapter caseSelectTarget(SelectTarget object) {
+				return createSelectTargetAdapter();
 			}
 			@Override
 			public Adapter caseSelectAction(SelectAction object) {
@@ -858,20 +858,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUnitTitleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.SelectTarget <em>Select Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.SelectTarget
-	 * @generated
-	 */
-	public Adapter createSelectTargetAdapter() {
 		return null;
 	}
 
@@ -1390,6 +1376,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInlineActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.SelectTarget <em>Select Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.SelectTarget
+	 * @generated
+	 */
+	public Adapter createSelectTargetAdapter() {
 		return null;
 	}
 

@@ -244,11 +244,6 @@ interface UnitContainer {
 interface UnitTitle {
 }
 
-interface SelectTarget {
-	refers SelectAction[] targettingActions opposite target
-	refers ServiceEntityElement[1] selectionFeature
-}
-
 abstract class ContentUnit extends NamedDisplayElement {
 	container UnitContainer[1] displayedOn opposite units
 	String[1] path
@@ -457,6 +452,11 @@ abstract class InlineAction extends NamedDisplayElement {
 	String footer
 	String headerClass
 	String footerClass
+}
+
+interface SelectTarget {
+	refers SelectAction[] targettingActions opposite target
+	refers ServiceEntityElement[1] selectionFeature
 }
 
 class SelectAction extends InlineAction {

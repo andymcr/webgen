@@ -16,7 +16,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
-import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.website.LocationAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
@@ -82,7 +81,7 @@ public class MapUnitItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof MapUnit) {
-						final DataUnit unit = (DataUnit) object;
+						final MapUnit unit = (MapUnit) object;
 						final List<Attribute> features = new LinkedList<Attribute>();
 						features.addAll(getSourceElements(unit));
 						return features;

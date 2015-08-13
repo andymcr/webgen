@@ -155,6 +155,8 @@ helper context Website!ServiceEntityElement def: placeholder() : String
 helper context Website!ServiceAssociation def: targetService() : Website!Service
 	= if not self.oppositeFeature.oclIsUndefined() then
 			self.oppositeFeature.partOf
+		else if not self.oppositeService.oclIsUndefined() then
+			self.oppositeService
 		else
 			let services : Sequence(Website!Service)
 				= if self.useFeatureSource then
@@ -163,7 +165,7 @@ helper context Website!ServiceAssociation def: targetService() : Website!Service
 						self.feature.parentEntity.servedBy
 					endif
 				in services->first()
-		endif;
+		endif endif;
 
 helper context Website!ServiceEntityElement def: validationPattern() : String
 	= if not self.validationPattern.oclIsUndefined() and self.validationPattern <> '' then
@@ -571,7 +573,12 @@ abstract rule ServiceAssociation {
 			if not website.oppositeFeature.oclIsUndefined() then
 				website.oppositeFeature
 			else
-				let service : Website!Service = website.targetService()
+				let service : Website!Service
+					= if not website.oppositeService.oclIsUndefined() then
+							website.oppositeService
+						else
+							website.targetService()
+						endif
 				in service.features
 					->select(f | f.oclIsKindOf(Website!ServiceEntityAssociation))
 					->any(a | a.targetService() = website.partOf)

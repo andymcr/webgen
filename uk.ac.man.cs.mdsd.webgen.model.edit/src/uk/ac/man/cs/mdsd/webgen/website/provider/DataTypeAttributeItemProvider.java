@@ -48,6 +48,7 @@ public class DataTypeAttributeItemProvider
 			addDataTypePropertyDescriptor(object);
 			addPersistentTypePropertyDescriptor(object);
 			addOrmTypePropertyDescriptor(object);
+			addInterfaceTypePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
 			addCaseInsensitivePropertyDescriptor(object);
 			addEncryptPropertyDescriptor(object);
@@ -118,6 +119,28 @@ public class DataTypeAttributeItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Interface Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInterfaceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataTypeAttribute_interfaceType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeAttribute_interfaceType_feature", "_UI_DataTypeAttribute_type"),
+				 WebsitePackage.Literals.DATA_TYPE_ATTRIBUTE__INTERFACE_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -226,6 +249,7 @@ public class DataTypeAttributeItemProvider
 		switch (notification.getFeatureID(DataTypeAttribute.class)) {
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__PERSISTENT_TYPE:
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__ORM_TYPE:
+			case WebsitePackage.DATA_TYPE_ATTRIBUTE__INTERFACE_TYPE:
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__ENCRYPT:

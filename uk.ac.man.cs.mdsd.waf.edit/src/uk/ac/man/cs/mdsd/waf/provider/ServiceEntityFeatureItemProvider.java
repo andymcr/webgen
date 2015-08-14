@@ -61,7 +61,6 @@ public class ServiceEntityFeatureItemProvider
 
 			addIncludedByPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
-			addDateFormatPropertyDescriptor(object);
 			addDisplayLabelPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -132,28 +131,6 @@ public class ServiceEntityFeatureItemProvider
 				 getString("_UI_IncludedFeature_footer_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_footer_feature", "_UI_IncludedFeature_type"),
 				 WafPackage.Literals.INCLUDED_FEATURE__FOOTER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Date Format feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDateFormatPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceFeature_dateFormat_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceFeature_dateFormat_feature", "_UI_ServiceFeature_type"),
-				 WafPackage.Literals.SERVICE_FEATURE__DATE_FORMAT,
 				 true,
 				 false,
 				 false,
@@ -351,7 +328,6 @@ public class ServiceEntityFeatureItemProvider
 
 		switch (notification.getFeatureID(ServiceEntityFeature.class)) {
 			case WafPackage.SERVICE_ENTITY_FEATURE__CARDINALITY:
-			case WafPackage.SERVICE_ENTITY_FEATURE__DATE_FORMAT:
 			case WafPackage.SERVICE_ENTITY_FEATURE__NAME:
 			case WafPackage.SERVICE_ENTITY_FEATURE__DISPLAY_LABEL:
 			case WafPackage.SERVICE_ENTITY_FEATURE__FOOTER:

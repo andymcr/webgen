@@ -34,7 +34,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityFeatureImpl#getIncludedBy <em>Included By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityFeatureImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityFeatureImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityFeatureImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityFeatureImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityFeatureImpl#getForcedValue <em>Forced Value</em>}</li>
@@ -68,26 +67,6 @@ public abstract class ServiceEntityFeatureImpl extends MinimalEObjectImpl.Contai
 	 * @ordered
 	 */
 	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDateFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATE_FORMAT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDateFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dateFormat = DATE_FORMAT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -348,27 +327,6 @@ public abstract class ServiceEntityFeatureImpl extends MinimalEObjectImpl.Contai
 		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_FEATURE__CARDINALITY, oldCardinality, cardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDateFormat() {
-		return dateFormat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDateFormat(String newDateFormat) {
-		String oldDateFormat = dateFormat;
-		dateFormat = newDateFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_FEATURE__DATE_FORMAT, oldDateFormat, dateFormat));
 	}
 
 	/**
@@ -641,8 +599,6 @@ public abstract class ServiceEntityFeatureImpl extends MinimalEObjectImpl.Contai
 				return basicGetIncludedBy();
 			case WafPackage.SERVICE_ENTITY_FEATURE__CARDINALITY:
 				return getCardinality();
-			case WafPackage.SERVICE_ENTITY_FEATURE__DATE_FORMAT:
-				return getDateFormat();
 			case WafPackage.SERVICE_ENTITY_FEATURE__NAME:
 				return getName();
 			case WafPackage.SERVICE_ENTITY_FEATURE__DISPLAY_LABEL:
@@ -678,9 +634,6 @@ public abstract class ServiceEntityFeatureImpl extends MinimalEObjectImpl.Contai
 				return;
 			case WafPackage.SERVICE_ENTITY_FEATURE__CARDINALITY:
 				setCardinality((Cardinality)newValue);
-				return;
-			case WafPackage.SERVICE_ENTITY_FEATURE__DATE_FORMAT:
-				setDateFormat((String)newValue);
 				return;
 			case WafPackage.SERVICE_ENTITY_FEATURE__NAME:
 				setName((String)newValue);
@@ -727,9 +680,6 @@ public abstract class ServiceEntityFeatureImpl extends MinimalEObjectImpl.Contai
 			case WafPackage.SERVICE_ENTITY_FEATURE__CARDINALITY:
 				setCardinality(CARDINALITY_EDEFAULT);
 				return;
-			case WafPackage.SERVICE_ENTITY_FEATURE__DATE_FORMAT:
-				setDateFormat(DATE_FORMAT_EDEFAULT);
-				return;
 			case WafPackage.SERVICE_ENTITY_FEATURE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -773,8 +723,6 @@ public abstract class ServiceEntityFeatureImpl extends MinimalEObjectImpl.Contai
 				return basicGetIncludedBy() != null;
 			case WafPackage.SERVICE_ENTITY_FEATURE__CARDINALITY:
 				return cardinality != CARDINALITY_EDEFAULT;
-			case WafPackage.SERVICE_ENTITY_FEATURE__DATE_FORMAT:
-				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 			case WafPackage.SERVICE_ENTITY_FEATURE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case WafPackage.SERVICE_ENTITY_FEATURE__DISPLAY_LABEL:
@@ -865,8 +813,6 @@ public abstract class ServiceEntityFeatureImpl extends MinimalEObjectImpl.Contai
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cardinality: ");
 		result.append(cardinality);
-		result.append(", dateFormat: ");
-		result.append(dateFormat);
 		result.append(", name: ");
 		result.append(name);
 		result.append(", displayLabel: ");

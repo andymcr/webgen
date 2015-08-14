@@ -59,6 +59,7 @@ public class ServiceEntityElementItemProvider
 			addDefaultValuePropertyDescriptor(object);
 			addCaseInsensitivePropertyDescriptor(object);
 			addEncryptPropertyDescriptor(object);
+			addInterfaceTypePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 		}
@@ -190,6 +191,28 @@ public class ServiceEntityElementItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Interface Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInterfaceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServiceEntityElement_interfaceType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceEntityElement_interfaceType_feature", "_UI_ServiceEntityElement_type"),
+				 WebsitePackage.Literals.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Placeholder feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -305,6 +328,7 @@ public class ServiceEntityElementItemProvider
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__USE_FEATURE_SOURCE:
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE:
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
+			case WebsitePackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

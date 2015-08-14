@@ -22,6 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl#getPersistentType <em>Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl#getOrmType <em>Orm Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl#isCaseInsensitive <em>Case Insensitive</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl#isEncrypt <em>Encrypt</em>}</li>
@@ -79,6 +80,26 @@ public class DataTypeAttributeImpl extends AttributeImpl implements DataTypeAttr
 	 * @ordered
 	 */
 	protected String ormType = ORM_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTERFACE_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String interfaceType = INTERFACE_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isObfuscateFormFields() <em>Obfuscate Form Fields</em>}' attribute.
@@ -243,6 +264,27 @@ public class DataTypeAttributeImpl extends AttributeImpl implements DataTypeAttr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInterfaceType() {
+		return interfaceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInterfaceType(String newInterfaceType) {
+		String oldInterfaceType = interfaceType;
+		interfaceType = newInterfaceType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DATA_TYPE_ATTRIBUTE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isObfuscateFormFields() {
 		return obfuscateFormFields;
 	}
@@ -316,6 +358,8 @@ public class DataTypeAttributeImpl extends AttributeImpl implements DataTypeAttr
 				return getPersistentType();
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__ORM_TYPE:
 				return getOrmType();
+			case WebsitePackage.DATA_TYPE_ATTRIBUTE__INTERFACE_TYPE:
+				return getInterfaceType();
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				return isObfuscateFormFields();
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
@@ -342,6 +386,9 @@ public class DataTypeAttributeImpl extends AttributeImpl implements DataTypeAttr
 				return;
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__ORM_TYPE:
 				setOrmType((String)newValue);
+				return;
+			case WebsitePackage.DATA_TYPE_ATTRIBUTE__INTERFACE_TYPE:
+				setInterfaceType((String)newValue);
 				return;
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields((Boolean)newValue);
@@ -373,6 +420,9 @@ public class DataTypeAttributeImpl extends AttributeImpl implements DataTypeAttr
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__ORM_TYPE:
 				setOrmType(ORM_TYPE_EDEFAULT);
 				return;
+			case WebsitePackage.DATA_TYPE_ATTRIBUTE__INTERFACE_TYPE:
+				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
+				return;
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields(OBFUSCATE_FORM_FIELDS_EDEFAULT);
 				return;
@@ -400,6 +450,8 @@ public class DataTypeAttributeImpl extends AttributeImpl implements DataTypeAttr
 				return PERSISTENT_TYPE_EDEFAULT == null ? persistentType != null : !PERSISTENT_TYPE_EDEFAULT.equals(persistentType);
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__ORM_TYPE:
 				return ORM_TYPE_EDEFAULT == null ? ormType != null : !ORM_TYPE_EDEFAULT.equals(ormType);
+			case WebsitePackage.DATA_TYPE_ATTRIBUTE__INTERFACE_TYPE:
+				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				return obfuscateFormFields != OBFUSCATE_FORM_FIELDS_EDEFAULT;
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE:
@@ -424,6 +476,8 @@ public class DataTypeAttributeImpl extends AttributeImpl implements DataTypeAttr
 		result.append(persistentType);
 		result.append(", ormType: ");
 		result.append(ormType);
+		result.append(", interfaceType: ");
+		result.append(interfaceType);
 		result.append(", obfuscateFormFields: ");
 		result.append(obfuscateFormFields);
 		result.append(", caseInsensitive: ");

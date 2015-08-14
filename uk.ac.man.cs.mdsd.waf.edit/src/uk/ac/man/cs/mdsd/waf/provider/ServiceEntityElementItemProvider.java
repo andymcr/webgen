@@ -50,8 +50,10 @@ public class ServiceEntityElementItemProvider
 			addFeaturePropertyDescriptor(object);
 			addCaseInsensitivePropertyDescriptor(object);
 			addEncryptPropertyDescriptor(object);
+			addInterfaceTypePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
+			addDateFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -145,6 +147,28 @@ public class ServiceEntityElementItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Interface Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInterfaceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServiceEntityElement_interfaceType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceEntityElement_interfaceType_feature", "_UI_ServiceEntityElement_type"),
+				 WafPackage.Literals.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Placeholder feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,6 +204,28 @@ public class ServiceEntityElementItemProvider
 				 getString("_UI_ServiceEntityElement_validationPattern_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceEntityElement_validationPattern_feature", "_UI_ServiceEntityElement_type"),
 				 WafPackage.Literals.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Date Format feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDateFormatPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServiceEntityElement_dateFormat_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceEntityElement_dateFormat_feature", "_UI_ServiceEntityElement_type"),
+				 WafPackage.Literals.SERVICE_ENTITY_ELEMENT__DATE_FORMAT,
 				 true,
 				 false,
 				 false,
@@ -259,8 +305,10 @@ public class ServiceEntityElementItemProvider
 			case WafPackage.SERVICE_ENTITY_ELEMENT__OBFUSCATE_FORM_FIELDS:
 			case WafPackage.SERVICE_ENTITY_ELEMENT__CASE_INSENSITIVE:
 			case WafPackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
+			case WafPackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
 			case WafPackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
 			case WafPackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
+			case WafPackage.SERVICE_ENTITY_ELEMENT__DATE_FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.SERVICE_ENTITY_ELEMENT__DEFAULT_VALUE:

@@ -23,6 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getPersistentType <em>Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getOrmType <em>Orm Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
@@ -66,6 +67,24 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	 * @ordered
 	 */
 	protected String ormType = ORM_TYPE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTERFACE_TYPE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String interfaceType = INTERFACE_TYPE_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -169,6 +188,27 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInterfaceType() {
+		return interfaceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInterfaceType(String newInterfaceType) {
+		String oldInterfaceType = interfaceType;
+		interfaceType = newInterfaceType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DATA_TYPE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPlaceholder() {
 		return placeholder;
 	}
@@ -218,6 +258,8 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 				return getPersistentType();
 			case WebsitePackage.DATA_TYPE__ORM_TYPE:
 				return getOrmType();
+			case WebsitePackage.DATA_TYPE__INTERFACE_TYPE:
+				return getInterfaceType();
 			case WebsitePackage.DATA_TYPE__PLACEHOLDER:
 				return getPlaceholder();
 			case WebsitePackage.DATA_TYPE__VALIDATION_PATTERN:
@@ -239,6 +281,9 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 				return;
 			case WebsitePackage.DATA_TYPE__ORM_TYPE:
 				setOrmType((String)newValue);
+				return;
+			case WebsitePackage.DATA_TYPE__INTERFACE_TYPE:
+				setInterfaceType((String)newValue);
 				return;
 			case WebsitePackage.DATA_TYPE__PLACEHOLDER:
 				setPlaceholder((String)newValue);
@@ -264,6 +309,9 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 			case WebsitePackage.DATA_TYPE__ORM_TYPE:
 				setOrmType(ORM_TYPE_EDEFAULT);
 				return;
+			case WebsitePackage.DATA_TYPE__INTERFACE_TYPE:
+				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
+				return;
 			case WebsitePackage.DATA_TYPE__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
@@ -286,6 +334,8 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 				return PERSISTENT_TYPE_EDEFAULT == null ? persistentType != null : !PERSISTENT_TYPE_EDEFAULT.equals(persistentType);
 			case WebsitePackage.DATA_TYPE__ORM_TYPE:
 				return ORM_TYPE_EDEFAULT == null ? ormType != null : !ORM_TYPE_EDEFAULT.equals(ormType);
+			case WebsitePackage.DATA_TYPE__INTERFACE_TYPE:
+				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 			case WebsitePackage.DATA_TYPE__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case WebsitePackage.DATA_TYPE__VALIDATION_PATTERN:
@@ -308,6 +358,8 @@ public class DataTypeImpl extends ClassifierImpl implements DataType {
 		result.append(persistentType);
 		result.append(", ormType: ");
 		result.append(ormType);
+		result.append(", interfaceType: ");
+		result.append(interfaceType);
 		result.append(", placeholder: ");
 		result.append(placeholder);
 		result.append(", validationPattern: ");

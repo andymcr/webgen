@@ -51,6 +51,7 @@ public class DataTypeItemProvider
 
 			addPersistentTypePropertyDescriptor(object);
 			addOrmTypePropertyDescriptor(object);
+			addInterfaceTypePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 		}
@@ -98,6 +99,28 @@ public class DataTypeItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Interface Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInterfaceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataType_interfaceType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataType_interfaceType_feature", "_UI_DataType_type"),
+				 WebsitePackage.Literals.DATA_TYPE__INTERFACE_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -184,6 +207,7 @@ public class DataTypeItemProvider
 		switch (notification.getFeatureID(DataType.class)) {
 			case WebsitePackage.DATA_TYPE__PERSISTENT_TYPE:
 			case WebsitePackage.DATA_TYPE__ORM_TYPE:
+			case WebsitePackage.DATA_TYPE__INTERFACE_TYPE:
 			case WebsitePackage.DATA_TYPE__PLACEHOLDER:
 			case WebsitePackage.DATA_TYPE__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -32,7 +32,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceViewAssociationImpl#getIncludedBy <em>Included By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceViewAssociationImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceViewAssociationImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceViewAssociationImpl#getOppositeService <em>Opposite Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceViewAssociationImpl#getOppositeFeature <em>Opposite Feature</em>}</li>
  * </ul>
@@ -59,26 +58,6 @@ public class ServiceViewAssociationImpl extends NamedDisplayElementImpl implemen
 	 * @ordered
 	 */
 	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDateFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATE_FORMAT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDateFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dateFormat = DATE_FORMAT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getOppositeService() <em>Opposite Service</em>}' reference.
@@ -189,27 +168,6 @@ public class ServiceViewAssociationImpl extends NamedDisplayElementImpl implemen
 		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_VIEW_ASSOCIATION__CARDINALITY, oldCardinality, cardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDateFormat() {
-		return dateFormat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDateFormat(String newDateFormat) {
-		String oldDateFormat = dateFormat;
-		dateFormat = newDateFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT, oldDateFormat, dateFormat));
 	}
 
 	/**
@@ -345,8 +303,6 @@ public class ServiceViewAssociationImpl extends NamedDisplayElementImpl implemen
 				return basicGetIncludedBy();
 			case WafPackage.SERVICE_VIEW_ASSOCIATION__CARDINALITY:
 				return getCardinality();
-			case WafPackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT:
-				return getDateFormat();
 			case WafPackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE:
 				if (resolve) return getOppositeService();
 				return basicGetOppositeService();
@@ -370,9 +326,6 @@ public class ServiceViewAssociationImpl extends NamedDisplayElementImpl implemen
 				return;
 			case WafPackage.SERVICE_VIEW_ASSOCIATION__CARDINALITY:
 				setCardinality((Cardinality)newValue);
-				return;
-			case WafPackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT:
-				setDateFormat((String)newValue);
 				return;
 			case WafPackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE:
 				setOppositeService((Service)newValue);
@@ -398,9 +351,6 @@ public class ServiceViewAssociationImpl extends NamedDisplayElementImpl implemen
 			case WafPackage.SERVICE_VIEW_ASSOCIATION__CARDINALITY:
 				setCardinality(CARDINALITY_EDEFAULT);
 				return;
-			case WafPackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT:
-				setDateFormat(DATE_FORMAT_EDEFAULT);
-				return;
 			case WafPackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE:
 				setOppositeService((Service)null);
 				return;
@@ -423,8 +373,6 @@ public class ServiceViewAssociationImpl extends NamedDisplayElementImpl implemen
 				return basicGetIncludedBy() != null;
 			case WafPackage.SERVICE_VIEW_ASSOCIATION__CARDINALITY:
 				return cardinality != CARDINALITY_EDEFAULT;
-			case WafPackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT:
-				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 			case WafPackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE:
 				return oppositeService != null;
 			case WafPackage.SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE:
@@ -444,7 +392,6 @@ public class ServiceViewAssociationImpl extends NamedDisplayElementImpl implemen
 			switch (derivedFeatureID) {
 				case WafPackage.SERVICE_VIEW_ASSOCIATION__INCLUDED_BY: return WafPackage.SERVICE_FEATURE__INCLUDED_BY;
 				case WafPackage.SERVICE_VIEW_ASSOCIATION__CARDINALITY: return WafPackage.SERVICE_FEATURE__CARDINALITY;
-				case WafPackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT: return WafPackage.SERVICE_FEATURE__DATE_FORMAT;
 				default: return -1;
 			}
 		}
@@ -469,7 +416,6 @@ public class ServiceViewAssociationImpl extends NamedDisplayElementImpl implemen
 			switch (baseFeatureID) {
 				case WafPackage.SERVICE_FEATURE__INCLUDED_BY: return WafPackage.SERVICE_VIEW_ASSOCIATION__INCLUDED_BY;
 				case WafPackage.SERVICE_FEATURE__CARDINALITY: return WafPackage.SERVICE_VIEW_ASSOCIATION__CARDINALITY;
-				case WafPackage.SERVICE_FEATURE__DATE_FORMAT: return WafPackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT;
 				default: return -1;
 			}
 		}
@@ -495,8 +441,6 @@ public class ServiceViewAssociationImpl extends NamedDisplayElementImpl implemen
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cardinality: ");
 		result.append(cardinality);
-		result.append(", dateFormat: ");
-		result.append(dateFormat);
 		result.append(')');
 		return result.toString();
 	}

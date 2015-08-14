@@ -47,7 +47,6 @@ public class ServiceViewAssociationItemProvider
 
 			addIncludedByPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
-			addDateFormatPropertyDescriptor(object);
 			addOppositeServicePropertyDescriptor(object);
 			addOppositeFeaturePropertyDescriptor(object);
 		}
@@ -91,28 +90,6 @@ public class ServiceViewAssociationItemProvider
 				 getString("_UI_ServiceFeature_cardinality_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceFeature_cardinality_feature", "_UI_ServiceFeature_type"),
 				 WafPackage.Literals.SERVICE_FEATURE__CARDINALITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Date Format feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDateFormatPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceFeature_dateFormat_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceFeature_dateFormat_feature", "_UI_ServiceFeature_type"),
-				 WafPackage.Literals.SERVICE_FEATURE__DATE_FORMAT,
 				 true,
 				 false,
 				 false,
@@ -203,7 +180,6 @@ public class ServiceViewAssociationItemProvider
 
 		switch (notification.getFeatureID(ServiceViewAssociation.class)) {
 			case WafPackage.SERVICE_VIEW_ASSOCIATION__CARDINALITY:
-			case WafPackage.SERVICE_VIEW_ASSOCIATION__DATE_FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

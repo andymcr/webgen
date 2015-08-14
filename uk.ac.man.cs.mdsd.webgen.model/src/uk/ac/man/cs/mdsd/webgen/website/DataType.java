@@ -18,6 +18,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getPersistentType <em>Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getOrmType <em>Orm Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
@@ -79,6 +80,32 @@ public interface DataType extends Classifier {
 	 * @generated
 	 */
 	void setOrmType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Interface Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Interface Type</em>' attribute.
+	 * @see #setInterfaceType(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDataType_InterfaceType()
+	 * @model
+	 * @generated
+	 */
+	String getInterfaceType();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DataType#getInterfaceType <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Interface Type</em>' attribute.
+	 * @see #getInterfaceType()
+	 * @generated
+	 */
+	void setInterfaceType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.

@@ -32,8 +32,10 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#getFeature <em>Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#isCaseInsensitive <em>Case Insensitive</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#isEncrypt <em>Encrypt</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#getValidationPattern <em>Validation Pattern</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityElementImpl#getDateFormat <em>Date Format</em>}</li>
  * </ul>
  *
  * @generated
@@ -120,6 +122,26 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	protected boolean encrypt = ENCRYPT_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTERFACE_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String interfaceType = INTERFACE_TYPE_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,6 +180,26 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * @ordered
 	 */
 	protected String validationPattern = VALIDATION_PATTERN_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDateFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DATE_FORMAT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDateFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected String dateFormat = DATE_FORMAT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -327,6 +369,27 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInterfaceType() {
+		return interfaceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInterfaceType(String newInterfaceType) {
+		String oldInterfaceType = interfaceType;
+		interfaceType = newInterfaceType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPlaceholder() {
 		return placeholder;
 	}
@@ -369,6 +432,27 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getDateFormat() {
+		return dateFormat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDateFormat(String newDateFormat) {
+		String oldDateFormat = dateFormat;
+		dateFormat = newDateFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ENTITY_ELEMENT__DATE_FORMAT, oldDateFormat, dateFormat));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -397,10 +481,14 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 				return isCaseInsensitive();
 			case WafPackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
 				return isEncrypt();
+			case WafPackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+				return getInterfaceType();
 			case WafPackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
 				return getPlaceholder();
 			case WafPackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
 				return getValidationPattern();
+			case WafPackage.SERVICE_ENTITY_ELEMENT__DATE_FORMAT:
+				return getDateFormat();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -428,11 +516,17 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 			case WafPackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
 				setEncrypt((Boolean)newValue);
 				return;
+			case WafPackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+				setInterfaceType((String)newValue);
+				return;
 			case WafPackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
 				setPlaceholder((String)newValue);
 				return;
 			case WafPackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
 				setValidationPattern((String)newValue);
+				return;
+			case WafPackage.SERVICE_ENTITY_ELEMENT__DATE_FORMAT:
+				setDateFormat((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -461,11 +555,17 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 			case WafPackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
 				setEncrypt(ENCRYPT_EDEFAULT);
 				return;
+			case WafPackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
+				return;
 			case WafPackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
 			case WafPackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
 				setValidationPattern(VALIDATION_PATTERN_EDEFAULT);
+				return;
+			case WafPackage.SERVICE_ENTITY_ELEMENT__DATE_FORMAT:
+				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -489,10 +589,14 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 				return caseInsensitive != CASE_INSENSITIVE_EDEFAULT;
 			case WafPackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
 				return encrypt != ENCRYPT_EDEFAULT;
+			case WafPackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 			case WafPackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case WafPackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
+			case WafPackage.SERVICE_ENTITY_ELEMENT__DATE_FORMAT:
+				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -557,10 +661,14 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		result.append(caseInsensitive);
 		result.append(", encrypt: ");
 		result.append(encrypt);
+		result.append(", interfaceType: ");
+		result.append(interfaceType);
 		result.append(", placeholder: ");
 		result.append(placeholder);
 		result.append(", validationPattern: ");
 		result.append(validationPattern);
+		result.append(", dateFormat: ");
+		result.append(dateFormat);
 		result.append(')');
 		return result.toString();
 	}

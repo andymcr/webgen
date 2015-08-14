@@ -1202,22 +1202,13 @@ public interface WafPackage extends EPackage {
 	int SERVICE_FEATURE__CARDINALITY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE__DATE_FORMAT = 2;
-
-	/**
 	 * The number of structural features of the '<em>Service Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_FEATURE_COUNT = 3;
+	int SERVICE_FEATURE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Service Feature</em>' class.
@@ -1255,15 +1246,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_ASSOCIATION__CARDINALITY = SERVICE_FEATURE__CARDINALITY;
-
-	/**
-	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__DATE_FORMAT = SERVICE_FEATURE__DATE_FORMAT;
 
 	/**
 	 * The feature id for the '<em><b>Opposite Service</b></em>' reference.
@@ -1328,15 +1310,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_ENTITY_FEATURE__CARDINALITY = SERVICE_FEATURE__CARDINALITY;
-
-	/**
-	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ENTITY_FEATURE__DATE_FORMAT = SERVICE_FEATURE__DATE_FORMAT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1466,15 +1439,6 @@ public interface WafPackage extends EPackage {
 	int SERVICE_ENTITY_ELEMENT__CARDINALITY = SERVICE_ENTITY_FEATURE__CARDINALITY;
 
 	/**
-	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ENTITY_ELEMENT__DATE_FORMAT = SERVICE_ENTITY_FEATURE__DATE_FORMAT;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1601,13 +1565,22 @@ public interface WafPackage extends EPackage {
 	int SERVICE_ENTITY_ELEMENT__ENCRYPT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ELEMENT__PLACEHOLDER = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 5;
+	int SERVICE_ENTITY_ELEMENT__PLACEHOLDER = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -1616,7 +1589,16 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 6;
+	int SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ENTITY_ELEMENT__DATE_FORMAT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Service Entity Element</em>' class.
@@ -1625,7 +1607,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_ENTITY_ELEMENT_FEATURE_COUNT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 7;
+	int SERVICE_ENTITY_ELEMENT_FEATURE_COUNT = SERVICE_ENTITY_FEATURE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Service Entity Element</em>' class.
@@ -1663,15 +1645,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_ENTITY_ASSOCIATION__CARDINALITY = SERVICE_ENTITY_FEATURE__CARDINALITY;
-
-	/**
-	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ENTITY_ASSOCIATION__DATE_FORMAT = SERVICE_ENTITY_FEATURE__DATE_FORMAT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1846,22 +1819,13 @@ public interface WafPackage extends EPackage {
 	int SERVICE_VIEW_ASSOCIATION__CARDINALITY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_VIEW_ASSOCIATION__DATE_FORMAT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Opposite Service</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int SERVICE_VIEW_ASSOCIATION__OPPOSITE_SERVICE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Opposite Feature</b></em>' reference.
@@ -1870,7 +1834,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int SERVICE_VIEW_ASSOCIATION__OPPOSITE_FEATURE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Service View Association</em>' class.
@@ -1879,7 +1843,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_VIEW_ASSOCIATION_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int SERVICE_VIEW_ASSOCIATION_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Service View Association</em>' class.
@@ -10474,17 +10438,6 @@ public interface WafPackage extends EPackage {
 	EAttribute getServiceFeature_Cardinality();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getDateFormat <em>Date Format</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Date Format</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceFeature#getDateFormat()
-	 * @see #getServiceFeature()
-	 * @generated
-	 */
-	EAttribute getServiceFeature_DateFormat();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ServiceAssociation <em>Service Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10581,6 +10534,17 @@ public interface WafPackage extends EPackage {
 	EAttribute getServiceEntityElement_Encrypt();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getInterfaceType <em>Interface Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Interface Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getInterfaceType()
+	 * @see #getServiceEntityElement()
+	 * @generated
+	 */
+	EAttribute getServiceEntityElement_InterfaceType();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getPlaceholder <em>Placeholder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10601,6 +10565,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getServiceEntityElement_ValidationPattern();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getDateFormat <em>Date Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Date Format</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getDateFormat()
+	 * @see #getServiceEntityElement()
+	 * @generated
+	 */
+	EAttribute getServiceEntityElement_DateFormat();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityAssociation <em>Service Entity Association</em>}'.
@@ -13217,14 +13192,6 @@ public interface WafPackage extends EPackage {
 		EAttribute SERVICE_FEATURE__CARDINALITY = eINSTANCE.getServiceFeature_Cardinality();
 
 		/**
-		 * The meta object literal for the '<em><b>Date Format</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_FEATURE__DATE_FORMAT = eINSTANCE.getServiceFeature_DateFormat();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.ServiceAssociation <em>Service Association</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13303,6 +13270,14 @@ public interface WafPackage extends EPackage {
 		EAttribute SERVICE_ENTITY_ELEMENT__ENCRYPT = eINSTANCE.getServiceEntityElement_Encrypt();
 
 		/**
+		 * The meta object literal for the '<em><b>Interface Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE = eINSTANCE.getServiceEntityElement_InterfaceType();
+
+		/**
 		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13317,6 +13292,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN = eINSTANCE.getServiceEntityElement_ValidationPattern();
+
+		/**
+		 * The meta object literal for the '<em><b>Date Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_ENTITY_ELEMENT__DATE_FORMAT = eINSTANCE.getServiceEntityElement_DateFormat();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceEntityAssociationImpl <em>Service Entity Association</em>}' class.

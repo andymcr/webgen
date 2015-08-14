@@ -17,7 +17,6 @@ import uk.ac.man.cs.mdsd.orm.Cardinality;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getIncludedBy <em>Included By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getDateFormat <em>Date Format</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceFeature()
@@ -81,31 +80,5 @@ public interface ServiceFeature extends EObject {
 	 * @generated
 	 */
 	void setCardinality(Cardinality value);
-
-	/**
-	 * Returns the value of the '<em><b>Date Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Date Format</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Date Format</em>' attribute.
-	 * @see #setDateFormat(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceFeature_DateFormat()
-	 * @model unique="false"
-	 * @generated
-	 */
-	String getDateFormat();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getDateFormat <em>Date Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Date Format</em>' attribute.
-	 * @see #getDateFormat()
-	 * @generated
-	 */
-	void setDateFormat(String value);
 
 } // ServiceFeature

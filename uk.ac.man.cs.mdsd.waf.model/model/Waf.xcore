@@ -147,7 +147,6 @@ class Selection extends NamedElement {
 interface ServiceFeature {
 	container Service[1] includedBy opposite features
 	Cardinality cardinality
-	String dateFormat
 }
 
 interface ServiceAssociation extends ServiceFeature {
@@ -163,8 +162,10 @@ class ServiceEntityElement extends ServiceEntityFeature, IncludedElement, UnitTi
 	refers Attribute[1] feature
 	boolean caseInsensitive
 	boolean encrypt
+	String interfaceType
 	String placeholder
 	String validationPattern
+	String dateFormat
 }
 
 class ServiceEntityAssociation extends ServiceEntityFeature, IncludedAssociation, ServiceAssociation {

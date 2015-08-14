@@ -139,6 +139,7 @@
     <genClasses ecoreClass="website.ecore#//DataType">
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//DataType/persistentType"/>
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//DataType/ormType"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DataType/interfaceType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//DataType/placeholder"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//DataType/validationPattern"/>
     </genClasses>
@@ -180,6 +181,7 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//DataTypeAttribute/dataType"/>
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeAttribute/persistentType"/>
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeAttribute/ormType"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeAttribute/interfaceType"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeAttribute/obfuscateFormFields"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeAttribute/caseInsensitive"/>
       <genFeatures createChild="false" propertyCategory="Model" propertyDescription=""
@@ -290,6 +292,8 @@
       <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//ServiceEntityElement/useFeatureSource"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ServiceEntityElement/caseInsensitive"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//ServiceEntityElement/encrypt"/>
+      <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
+          ecoreFeature="ecore:EAttribute website.ecore#//ServiceEntityElement/interfaceType"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ServiceEntityElement/placeholder"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ServiceEntityElement/validationPattern"/>
     </genClasses>

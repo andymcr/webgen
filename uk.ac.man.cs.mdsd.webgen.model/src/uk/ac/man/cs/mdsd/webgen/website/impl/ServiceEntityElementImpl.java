@@ -32,6 +32,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#isUseFeatureSource <em>Use Feature Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#isCaseInsensitive <em>Case Insensitive</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#isEncrypt <em>Encrypt</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceEntityElementImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
@@ -148,6 +149,26 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * @ordered
 	 */
 	protected boolean encrypt = ENCRYPT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTERFACE_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String interfaceType = INTERFACE_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
@@ -389,6 +410,27 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInterfaceType() {
+		return interfaceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInterfaceType(String newInterfaceType) {
+		String oldInterfaceType = interfaceType;
+		interfaceType = newInterfaceType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPlaceholder() {
 		return placeholder;
 	}
@@ -463,6 +505,8 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 				return isCaseInsensitive();
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
 				return isEncrypt();
+			case WebsitePackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+				return getInterfaceType();
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
 				return getPlaceholder();
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
@@ -493,6 +537,9 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 				return;
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
 				setEncrypt((Boolean)newValue);
+				return;
+			case WebsitePackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+				setInterfaceType((String)newValue);
 				return;
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
 				setPlaceholder((String)newValue);
@@ -527,6 +574,9 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
 				setEncrypt(ENCRYPT_EDEFAULT);
 				return;
+			case WebsitePackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
+				return;
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
@@ -559,6 +609,8 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 				return caseInsensitive != CASE_INSENSITIVE_EDEFAULT;
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__ENCRYPT:
 				return encrypt != ENCRYPT_EDEFAULT;
+			case WebsitePackage.SERVICE_ENTITY_ELEMENT__INTERFACE_TYPE:
+				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__VALIDATION_PATTERN:
@@ -621,6 +673,8 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 		result.append(caseInsensitive);
 		result.append(", encrypt: ");
 		result.append(encrypt);
+		result.append(", interfaceType: ");
+		result.append(interfaceType);
 		result.append(", placeholder: ");
 		result.append(placeholder);
 		result.append(", validationPattern: ");

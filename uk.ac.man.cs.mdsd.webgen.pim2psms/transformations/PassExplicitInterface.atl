@@ -145,6 +145,13 @@ helper context Website!ServiceEntityFeature def: serviceEntityFeatureLabel() : S
 			endif
 		endif;
 
+helper context Website!ServiceEntityElement def: interfaceType() : String
+	= if not self.interfaceType.oclIsUndefined() and self.interfaceType <> '' then
+			self.interfaceType
+		else
+			self.feature.interfaceType()
+		endif;
+
 helper context Website!ServiceEntityElement def: placeholder() : String
 	= if not self.placeholder.oclIsUndefined() and self.placeholder <> '' then
 			self.placeholder
@@ -331,6 +338,29 @@ helper context Website!IncludedFeature def: wafFooterClass() : String
 				self.feature.footerClass
 			endif
 		endif;
+
+helper context Website!Attribute def: interfaceType() : String
+	= if self.oclIsTypeOf(Website!DataTypeAttribute) then
+			if not self.interfaceType.oclIsUndefined() and self.interfaceType <> '' then
+				self.interfaceType
+			else
+				if self.oclIsTypeOf(Website!DataTypeAttribute) then
+					self.dataType.interfaceType
+				else
+					self.name.lowercaseFirst()
+				endif
+			endif
+		else if self.oclIsTypeOf(Website!DateAttribute) then
+			if self.details = #DateAndTime then
+				'datetime'
+			else if self.details = #Date then
+				'date'
+			else
+				'time'
+			endif endif
+		else
+			OclUndefined
+		endif endif;
 
 helper context Website!Attribute def: placeholder() : String
 	= if not self.placeholder.oclIsUndefined() and self.placeholder <> '' then
@@ -521,12 +551,6 @@ abstract rule ServiceFeature {
 				website.serviceCardinality(website.required)
 			else
 				website.serviceViewCardinality(website.required)
-			endif,
-		dateFormat <-
-			if website.oclIsKindOf(Website!ServiceEntityFeature) then
-				website.serviceDateFormat()
-			else
-				OclUndefined
 			endif
 	)
 }
@@ -560,8 +584,15 @@ rule ServiceEntityElement {
 		feature <- website.entityFeature(),
 		caseInsensitive <- website.caseInsensitive,
 		encrypt <- website.encrypt,
+		interfaceType <- website.interfaceType(),
 		placeholder <- website.placeholder(),
-		validationPattern <- website.validationPattern()
+		validationPattern <- website.validationPattern(),
+		dateFormat <-
+			if website.oclIsKindOf(Website!ServiceEntityFeature) then
+				website.serviceDateFormat()
+			else
+				OclUndefined
+			endif
 	)
 }
 

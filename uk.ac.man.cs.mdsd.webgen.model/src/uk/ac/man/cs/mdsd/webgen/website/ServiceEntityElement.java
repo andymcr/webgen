@@ -16,6 +16,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#isUseFeatureSource <em>Use Feature Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#isCaseInsensitive <em>Case Insensitive</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#isEncrypt <em>Encrypt</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
@@ -110,6 +111,32 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	 * @generated
 	 */
 	void setEncrypt(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Interface Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Interface Type</em>' attribute.
+	 * @see #setInterfaceType(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceEntityElement_InterfaceType()
+	 * @model
+	 * @generated
+	 */
+	String getInterfaceType();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement#getInterfaceType <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Interface Type</em>' attribute.
+	 * @see #getInterfaceType()
+	 * @generated
+	 */
+	void setInterfaceType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.

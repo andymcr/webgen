@@ -16,8 +16,10 @@ import uk.ac.man.cs.mdsd.orm.Attribute;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getFeature <em>Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#isCaseInsensitive <em>Case Insensitive</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#isEncrypt <em>Encrypt</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getValidationPattern <em>Validation Pattern</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getDateFormat <em>Date Format</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement()
@@ -104,6 +106,32 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	void setEncrypt(boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Interface Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Interface Type</em>' attribute.
+	 * @see #setInterfaceType(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_InterfaceType()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getInterfaceType();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getInterfaceType <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Interface Type</em>' attribute.
+	 * @see #getInterfaceType()
+	 * @generated
+	 */
+	void setInterfaceType(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -154,5 +182,31 @@ public interface ServiceEntityElement extends ServiceEntityFeature, IncludedElem
 	 * @generated
 	 */
 	void setValidationPattern(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Date Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Date Format</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Date Format</em>' attribute.
+	 * @see #setDateFormat(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceEntityElement_DateFormat()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getDateFormat();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement#getDateFormat <em>Date Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Date Format</em>' attribute.
+	 * @see #getDateFormat()
+	 * @generated
+	 */
+	void setDateFormat(String value);
 
 } // ServiceEntityElement

@@ -80,7 +80,7 @@ rule ServiceWithoutFeatures {
 lazy rule implicitModelLabelFromPartial {
 	from partialWaf : WAF!ServiceFeature
 	to waf : WAF!ModelLabel (
-		name <- 'defaultLabel',
+		name <- 'default',
 		format <- '%s',
 		features <- Sequence{feature}
 	), feature : WAF!ModelLabelElement (

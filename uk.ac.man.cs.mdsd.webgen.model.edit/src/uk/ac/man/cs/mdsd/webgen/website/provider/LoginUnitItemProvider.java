@@ -492,6 +492,7 @@ public class LoginUnitItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__QUERIES);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		}
@@ -566,6 +567,7 @@ public class LoginUnitItemProvider
 			case WebsitePackage.LOGIN_UNIT__STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebsitePackage.LOGIN_UNIT__QUERIES:
 			case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS:
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -584,6 +586,11 @@ public class LoginUnitItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.DYNAMIC_UNIT__QUERIES,
+				 WebsiteFactory.eINSTANCE.createQuery()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -21,7 +21,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
-import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -55,10 +54,32 @@ public class DataUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSelectionPropertyDescriptor(object);
+			addDefaultSelectionPropertyDescriptor(object);
 			addDynamicTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Selection feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultSelectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataUnit_defaultSelection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataUnit_defaultSelection_feature", "_UI_DataUnit_type"),
+				 WebsitePackage.Literals.DATA_UNIT__DEFAULT_SELECTION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -69,28 +90,22 @@ public class DataUnitItemProvider
 	 */
 	protected void addSelectionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_DataUnit_selection_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_DataUnit_selection_feature", "_UI_DataUnit_type"),
-				WebsitePackage.Literals.DATA_UNIT__SELECTION,
-				true, false, true, null,
-				getString("_UI_ModelPropertyCategory"),
-				null) {
-					@Override
-					public Collection<?> getChoiceOfValues(Object object) {
-						if (object instanceof DataUnit) {
-							final DataUnit unit = (DataUnit) object;
-							final List<Selection> selections = new LinkedList<Selection>();
-							if (unit.getSource() instanceof Service) {
-								final Service service = (Service) unit.getSource();
-								selections.addAll(service.getSelections());
-							}
-							return selections;
-						}
-						return Collections.emptyList();
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_DataUnit_selection_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DataUnit_selection_feature", "_UI_DataUnit_type"),
+			WebsitePackage.Literals.DATA_UNIT__DEFAULT_SELECTION,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof DataUnit) {
+						return getSourceSelections((DataUnit) object);
 					}
-			});
+					return Collections.emptyList();
+				}
+		});
 	}
 
 	/**

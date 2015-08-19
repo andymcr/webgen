@@ -377,6 +377,13 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//MenuIncludedAssociation/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//MenuIncludedAssociation/serviceAssociation"/>
     </genClasses>
+    <genClasses ecoreClass="website.ecore#//Query">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"
+          propertyDescription="" ecoreFeature="ecore:EReference website.ecore#//Query/parameters"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Query/selection"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//QueryParameter"/>
     <genClasses image="false" ecoreClass="website.ecore#//UnitContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//UnitContainer/units"/>
     </genClasses>
@@ -415,6 +422,7 @@
     <genClasses image="false" ecoreClass="website.ecore#//DynamicUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/queries"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/displayFields"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/supportActions"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
@@ -516,7 +524,7 @@
     </genClasses>
     <genClasses ecoreClass="website.ecore#//DataUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//DataUnit/selection"/>
+          ecoreFeature="ecore:EReference website.ecore#//DataUnit/defaultSelection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//DataUnit/dynamicTitle"/>
     </genClasses>
@@ -530,6 +538,8 @@
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/displayOption"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/omitColumnLabels"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//IndexUnit/paginationQuery"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/defaultPaginationSize"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""

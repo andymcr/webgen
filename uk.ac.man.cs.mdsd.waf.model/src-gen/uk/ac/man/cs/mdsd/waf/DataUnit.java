@@ -12,7 +12,7 @@ package uk.ac.man.cs.mdsd.waf;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.DataUnit#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.DataUnit#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DataUnit#getDynamicTitle <em>Dynamic Title</em>}</li>
  * </ul>
  *
@@ -22,30 +22,30 @@ package uk.ac.man.cs.mdsd.waf;
  */
 public interface DataUnit extends DynamicUnit {
 	/**
-	 * Returns the value of the '<em><b>Selection</b></em>' reference.
+	 * Returns the value of the '<em><b>Default Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Selection</em>' reference isn't clear,
+	 * If the meaning of the '<em>Default Selection</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selection</em>' reference.
-	 * @see #setSelection(Selection)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDataUnit_Selection()
+	 * @return the value of the '<em>Default Selection</em>' reference.
+	 * @see #setDefaultSelection(Selection)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDataUnit_DefaultSelection()
 	 * @model
 	 * @generated
 	 */
-	Selection getSelection();
+	Selection getDefaultSelection();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DataUnit#getSelection <em>Selection</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DataUnit#getDefaultSelection <em>Default Selection</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selection</em>' reference.
-	 * @see #getSelection()
+	 * @param value the new value of the '<em>Default Selection</em>' reference.
+	 * @see #getDefaultSelection()
 	 * @generated
 	 */
-	void setSelection(Selection value);
+	void setDefaultSelection(Selection value);
 
 	/**
 	 * Returns the value of the '<em><b>Dynamic Title</b></em>' reference.

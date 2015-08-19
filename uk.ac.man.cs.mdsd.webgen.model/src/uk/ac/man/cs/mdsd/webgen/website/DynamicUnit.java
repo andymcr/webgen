@@ -14,6 +14,7 @@ import java.util.List;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getSource <em>Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getQueries <em>Queries</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getHeader <em>Header</em>}</li>
@@ -56,6 +57,22 @@ public interface DynamicUnit extends ContentUnit {
 	 * @generated
 	 */
 	void setSource(UnitSource value);
+
+	/**
+	 * Returns the value of the '<em><b>Queries</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Query}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Queries</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Queries</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDynamicUnit_Queries()
+	 * @model containment="true"
+	 * @generated
+	 */
+	List<Query> getQueries();
 
 	/**
 	 * Returns the value of the '<em><b>Display Fields</b></em>' containment reference list.

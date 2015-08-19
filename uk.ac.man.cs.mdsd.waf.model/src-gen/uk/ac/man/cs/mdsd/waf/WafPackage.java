@@ -2694,6 +2694,98 @@ public interface WafPackage extends EPackage {
 	int PAGE_OPERATION_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.QueryImpl <em>Query</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.QueryImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getQuery()
+	 * @generated
+	 */
+	int QUERY = 30;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUERY__NAME = OrmPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUERY__PARAMETERS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUERY__SELECTION = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Query</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUERY_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Query</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUERY_OPERATION_COUNT = OrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl <em>Query Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getQueryParameter()
+	 * @generated
+	 */
+	int QUERY_PARAMETER = 31;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUERY_PARAMETER__NAME = OrmPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Query Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUERY_PARAMETER_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Query Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUERY_PARAMETER_OPERATION_COUNT = OrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.UnitContainer <em>Unit Container</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2701,7 +2793,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitContainer()
 	 * @generated
 	 */
-	int UNIT_CONTAINER = 30;
+	int UNIT_CONTAINER = 32;
 
 	/**
 	 * The feature id for the '<em><b>Units</b></em>' containment reference list.
@@ -2738,7 +2830,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitTitle()
 	 * @generated
 	 */
-	int UNIT_TITLE = 31;
+	int UNIT_TITLE = 33;
 
 	/**
 	 * The number of structural features of the '<em>Unit Title</em>' class.
@@ -2766,7 +2858,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getContentUnit()
 	 * @generated
 	 */
-	int CONTENT_UNIT = 32;
+	int CONTENT_UNIT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2875,7 +2967,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getStaticUnit()
 	 * @generated
 	 */
-	int STATIC_UNIT = 33;
+	int STATIC_UNIT = 35;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3002,7 +3094,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCommandUnit()
 	 * @generated
 	 */
-	int COMMAND_UNIT = 34;
+	int COMMAND_UNIT = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3120,7 +3212,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCommand()
 	 * @generated
 	 */
-	int COMMAND = 35;
+	int COMMAND = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3166,7 +3258,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDynamicUnit()
 	 * @generated
 	 */
-	int DYNAMIC_UNIT = 36;
+	int DYNAMIC_UNIT = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3259,13 +3351,22 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__SERVICE = CONTENT_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__QUERIES = CONTENT_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 1;
+	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -3274,7 +3375,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 2;
+	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -3283,7 +3384,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 3;
+	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -3292,7 +3393,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 4;
+	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -3301,7 +3402,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
+	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -3310,7 +3411,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
+	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -3319,7 +3420,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
+	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -3328,7 +3429,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
+	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Unit</em>' class.
@@ -3337,7 +3438,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 9;
+	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Unit</em>' class.
@@ -3356,7 +3457,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitSupportAction()
 	 * @generated
 	 */
-	int UNIT_SUPPORT_ACTION = 37;
+	int UNIT_SUPPORT_ACTION = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3411,7 +3512,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitField()
 	 * @generated
 	 */
-	int UNIT_FIELD = 38;
+	int UNIT_FIELD = 40;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -3466,7 +3567,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitFeature()
 	 * @generated
 	 */
-	int UNIT_FEATURE = 39;
+	int UNIT_FEATURE = 41;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3638,7 +3739,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitElement()
 	 * @generated
 	 */
-	int UNIT_ELEMENT = 40;
+	int UNIT_ELEMENT = 42;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3855,7 +3956,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitAssociation()
 	 * @generated
 	 */
-	int UNIT_ASSOCIATION = 41;
+	int UNIT_ASSOCIATION = 43;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4081,7 +4182,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitChildFeature()
 	 * @generated
 	 */
-	int UNIT_CHILD_FEATURE = 42;
+	int UNIT_CHILD_FEATURE = 44;
 
 	/**
 	 * The number of structural features of the '<em>Unit Child Feature</em>' class.
@@ -4109,7 +4210,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitChildElement()
 	 * @generated
 	 */
-	int UNIT_CHILD_ELEMENT = 43;
+	int UNIT_CHILD_ELEMENT = 45;
 
 	/**
 	 * The feature id for the '<em><b>Service Feature</b></em>' reference.
@@ -4146,7 +4247,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitChildAssociation()
 	 * @generated
 	 */
-	int UNIT_CHILD_ASSOCIATION = 44;
+	int UNIT_CHILD_ASSOCIATION = 46;
 
 	/**
 	 * The feature id for the '<em><b>Service Feature</b></em>' reference.
@@ -4192,7 +4293,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 45;
+	int INTERFACE_FIELD = 47;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4292,7 +4393,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataTypeField()
 	 * @generated
 	 */
-	int DATA_TYPE_FIELD = 46;
+	int DATA_TYPE_FIELD = 48;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4428,7 +4529,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDateField()
 	 * @generated
 	 */
-	int DATE_FIELD = 47;
+	int DATE_FIELD = 49;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4546,7 +4647,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCaptchaField()
 	 * @generated
 	 */
-	int CAPTCHA_FIELD = 48;
+	int CAPTCHA_FIELD = 50;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4619,7 +4720,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getEditUnit()
 	 * @generated
 	 */
-	int EDIT_UNIT = 49;
+	int EDIT_UNIT = 51;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4710,6 +4811,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDIT_UNIT__SERVICE = DYNAMIC_UNIT__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__QUERIES = DYNAMIC_UNIT__QUERIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -4845,7 +4955,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUnit()
 	 * @generated
 	 */
-	int CREATE_UNIT = 50;
+	int CREATE_UNIT = 52;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4936,6 +5046,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT__SERVICE = EDIT_UNIT__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__QUERIES = EDIT_UNIT__QUERIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -5071,7 +5190,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUpdateUnit()
 	 * @generated
 	 */
-	int CREATE_UPDATE_UNIT = 51;
+	int CREATE_UPDATE_UNIT = 53;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5162,6 +5281,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__SERVICE = EDIT_UNIT__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__QUERIES = EDIT_UNIT__QUERIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -5324,7 +5452,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getMapUnit()
 	 * @generated
 	 */
-	int MAP_UNIT = 52;
+	int MAP_UNIT = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5415,6 +5543,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__SERVICE = EDIT_UNIT__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__QUERIES = EDIT_UNIT__QUERIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -5604,7 +5741,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUpdateUnit()
 	 * @generated
 	 */
-	int UPDATE_UNIT = 53;
+	int UPDATE_UNIT = 55;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5695,6 +5832,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UPDATE_UNIT__SERVICE = EDIT_UNIT__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__QUERIES = EDIT_UNIT__QUERIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -5848,7 +5994,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataUnit()
 	 * @generated
 	 */
-	int DATA_UNIT = 54;
+	int DATA_UNIT = 56;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5941,6 +6087,15 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__SERVICE = DYNAMIC_UNIT__SERVICE;
 
 	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__QUERIES = DYNAMIC_UNIT__QUERIES;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6013,13 +6168,13 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__ERROR_CLASS = DYNAMIC_UNIT__ERROR_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_UNIT__SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 0;
+	int DATA_UNIT__DEFAULT_SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Title</b></em>' reference.
@@ -6056,7 +6211,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDetailsUnit()
 	 * @generated
 	 */
-	int DETAILS_UNIT = 55;
+	int DETAILS_UNIT = 57;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6149,6 +6304,15 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__SERVICE = DATA_UNIT__SERVICE;
 
 	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__QUERIES = DATA_UNIT__QUERIES;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6221,13 +6385,13 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__ERROR_CLASS = DATA_UNIT__ERROR_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__SELECTION = DATA_UNIT__SELECTION;
+	int DETAILS_UNIT__DEFAULT_SELECTION = DATA_UNIT__DEFAULT_SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Title</b></em>' reference.
@@ -6291,7 +6455,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexUnit()
 	 * @generated
 	 */
-	int INDEX_UNIT = 56;
+	int INDEX_UNIT = 58;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6384,6 +6548,15 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__SERVICE = DATA_UNIT__SERVICE;
 
 	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__QUERIES = DATA_UNIT__QUERIES;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6456,13 +6629,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__ERROR_CLASS = DATA_UNIT__ERROR_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__SELECTION = DATA_UNIT__SELECTION;
+	int INDEX_UNIT__DEFAULT_SELECTION = DATA_UNIT__DEFAULT_SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Title</b></em>' reference.
@@ -6510,13 +6683,22 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__OMIT_COLUMN_LABELS = DATA_UNIT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Pagination Query</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__PAGINATION_QUERY = DATA_UNIT_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__DEFAULT_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 4;
+	int INDEX_UNIT__DEFAULT_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Next Page Label</b></em>' attribute.
@@ -6525,7 +6707,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__NEXT_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 5;
+	int INDEX_UNIT__NEXT_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Previous Page Label</b></em>' attribute.
@@ -6534,7 +6716,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__PREVIOUS_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 6;
+	int INDEX_UNIT__PREVIOUS_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Use First Last Page Links</b></em>' attribute.
@@ -6543,7 +6725,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 7;
+	int INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>First Page Label</b></em>' attribute.
@@ -6552,7 +6734,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__FIRST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 8;
+	int INDEX_UNIT__FIRST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Last Page Label</b></em>' attribute.
@@ -6561,7 +6743,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__LAST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 9;
+	int INDEX_UNIT__LAST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Targetting Searches</b></em>' reference.
@@ -6570,7 +6752,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__TARGETTING_SEARCHES = DATA_UNIT_FEATURE_COUNT + 10;
+	int INDEX_UNIT__TARGETTING_SEARCHES = DATA_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Row Classes</b></em>' attribute.
@@ -6579,7 +6761,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__ROW_CLASSES = DATA_UNIT_FEATURE_COUNT + 11;
+	int INDEX_UNIT__ROW_CLASSES = DATA_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Index Unit</em>' class.
@@ -6588,7 +6770,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 12;
+	int INDEX_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of operations of the '<em>Index Unit</em>' class.
@@ -6607,7 +6789,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexGridUnit()
 	 * @generated
 	 */
-	int INDEX_GRID_UNIT = 57;
+	int INDEX_GRID_UNIT = 59;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6700,6 +6882,15 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__SERVICE = INDEX_UNIT__SERVICE;
 
 	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__QUERIES = INDEX_UNIT__QUERIES;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6772,13 +6963,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__ERROR_CLASS = INDEX_UNIT__ERROR_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_GRID_UNIT__SELECTION = INDEX_UNIT__SELECTION;
+	int INDEX_GRID_UNIT__DEFAULT_SELECTION = INDEX_UNIT__DEFAULT_SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Title</b></em>' reference.
@@ -6824,6 +7015,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_GRID_UNIT__OMIT_COLUMN_LABELS = INDEX_UNIT__OMIT_COLUMN_LABELS;
+
+	/**
+	 * The feature id for the '<em><b>Pagination Query</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__PAGINATION_QUERY = INDEX_UNIT__PAGINATION_QUERY;
 
 	/**
 	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
@@ -6923,7 +7123,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexPageDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT = 58;
+	int INDEX_PAGE_DIRECTION_UNIT = 60;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7016,6 +7216,15 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__SERVICE = INDEX_UNIT__SERVICE;
 
 	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__QUERIES = INDEX_UNIT__QUERIES;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7088,13 +7297,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__ERROR_CLASS = INDEX_UNIT__ERROR_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT__SELECTION = INDEX_UNIT__SELECTION;
+	int INDEX_PAGE_DIRECTION_UNIT__DEFAULT_SELECTION = INDEX_UNIT__DEFAULT_SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Title</b></em>' reference.
@@ -7140,6 +7349,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__OMIT_COLUMN_LABELS = INDEX_UNIT__OMIT_COLUMN_LABELS;
+
+	/**
+	 * The feature id for the '<em><b>Pagination Query</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__PAGINATION_QUERY = INDEX_UNIT__PAGINATION_QUERY;
 
 	/**
 	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
@@ -7239,7 +7457,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexLineDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_LINE_DIRECTION_UNIT = 59;
+	int INDEX_LINE_DIRECTION_UNIT = 61;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7332,6 +7550,15 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__SERVICE = INDEX_UNIT__SERVICE;
 
 	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__QUERIES = INDEX_UNIT__QUERIES;
+
+	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7404,13 +7631,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__ERROR_CLASS = INDEX_UNIT__ERROR_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_LINE_DIRECTION_UNIT__SELECTION = INDEX_UNIT__SELECTION;
+	int INDEX_LINE_DIRECTION_UNIT__DEFAULT_SELECTION = INDEX_UNIT__DEFAULT_SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Title</b></em>' reference.
@@ -7456,6 +7683,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_LINE_DIRECTION_UNIT__OMIT_COLUMN_LABELS = INDEX_UNIT__OMIT_COLUMN_LABELS;
+
+	/**
+	 * The feature id for the '<em><b>Pagination Query</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__PAGINATION_QUERY = INDEX_UNIT__PAGINATION_QUERY;
 
 	/**
 	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
@@ -7555,7 +7791,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 60;
+	int CONTROL_UNIT = 62;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7646,6 +7882,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_UNIT__SERVICE = DYNAMIC_UNIT__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__QUERIES = DYNAMIC_UNIT__QUERIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -7772,7 +8017,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 61;
+	int SEARCH_UNIT = 63;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7863,6 +8108,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__SERVICE = CONTROL_UNIT__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__QUERIES = CONTROL_UNIT__QUERIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -7998,7 +8252,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getActionUnit()
 	 * @generated
 	 */
-	int ACTION_UNIT = 62;
+	int ACTION_UNIT = 64;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8089,6 +8343,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTION_UNIT__SERVICE = CONTROL_UNIT__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__QUERIES = CONTROL_UNIT__QUERIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -8224,7 +8487,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 63;
+	int AUTHENTICATION_UNIT = 65;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -8252,7 +8515,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 64;
+	int REGISTRATION_UNIT = 66;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8343,6 +8606,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int REGISTRATION_UNIT__SERVICE = EDIT_UNIT__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__QUERIES = EDIT_UNIT__QUERIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -8487,7 +8759,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 65;
+	int LOGIN_UNIT = 67;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8578,6 +8850,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN_UNIT__SERVICE = CONTROL_UNIT__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__QUERIES = CONTROL_UNIT__QUERIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -8740,7 +9021,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 66;
+	int FORGOTTEN_PASSWORD_UNIT = 68;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8831,6 +9112,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORGOTTEN_PASSWORD_UNIT__SERVICE = CONTROL_UNIT__SERVICE;
+
+	/**
+	 * The feature id for the '<em><b>Queries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__QUERIES = CONTROL_UNIT__QUERIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -8975,7 +9265,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 67;
+	int INLINE_ACTION_CONTAINER = 69;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -9012,7 +9302,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 68;
+	int INLINE_ACTION = 70;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9103,7 +9393,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectTarget()
 	 * @generated
 	 */
-	int SELECT_TARGET = 69;
+	int SELECT_TARGET = 71;
 
 	/**
 	 * The feature id for the '<em><b>Targetting Actions</b></em>' reference list.
@@ -9149,7 +9439,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 70;
+	int SELECT_ACTION = 72;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9249,7 +9539,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 71;
+	int DELETE_ACTION = 73;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9358,7 +9648,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 72;
+	int FEATURE_SUPPORT_ACTION = 74;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9458,7 +9748,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelReference()
 	 * @generated
 	 */
-	int MODEL_REFERENCE = 73;
+	int MODEL_REFERENCE = 75;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' reference.
@@ -9495,7 +9785,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 74;
+	int FEATURE_REFERENCE = 76;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -9532,7 +9822,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCurrentUserReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 75;
+	int CURRENT_USER_REFERENCE = 77;
 
 	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
@@ -9560,7 +9850,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 76;
+	int FRAMEWORK_TECHNOLOGIES = 78;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -9570,7 +9860,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 77;
+	int AJAX_TECHNOLOGIES = 79;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -9580,7 +9870,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 78;
+	int PAGE_TOP_MENU_OPTIONS = 80;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -9590,7 +9880,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 79;
+	int COLLECTION_DISPLAY_OPTIONS = 81;
 
 
 	/**
@@ -10961,6 +11251,48 @@ public interface WafPackage extends EPackage {
 	EAttribute getPage_StyleClass();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.Query <em>Query</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Query</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.Query
+	 * @generated
+	 */
+	EClass getQuery();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.Query#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.Query#getParameters()
+	 * @see #getQuery()
+	 * @generated
+	 */
+	EReference getQuery_Parameters();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.Query#getSelection <em>Selection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Selection</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.Query#getSelection()
+	 * @see #getQuery()
+	 * @generated
+	 */
+	EReference getQuery_Selection();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.QueryParameter <em>Query Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Query Parameter</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.QueryParameter
+	 * @generated
+	 */
+	EClass getQueryParameter();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.UnitContainer <em>Unit Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11172,6 +11504,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDynamicUnit_Service();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getQueries <em>Queries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Queries</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getQueries()
+	 * @see #getDynamicUnit()
+	 * @generated
+	 */
+	EReference getDynamicUnit_Queries();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}'.
@@ -11849,15 +12192,15 @@ public interface WafPackage extends EPackage {
 	EClass getDataUnit();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.DataUnit#getSelection <em>Selection</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.DataUnit#getDefaultSelection <em>Default Selection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Selection</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DataUnit#getSelection()
+	 * @return the meta object for the reference '<em>Default Selection</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DataUnit#getDefaultSelection()
 	 * @see #getDataUnit()
 	 * @generated
 	 */
-	EReference getDataUnit_Selection();
+	EReference getDataUnit_DefaultSelection();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.DataUnit#getDynamicTitle <em>Dynamic Title</em>}'.
@@ -11911,6 +12254,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getIndexUnit_OmitColumnLabels();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getPaginationQuery <em>Pagination Query</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Pagination Query</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.IndexUnit#getPaginationQuery()
+	 * @see #getIndexUnit()
+	 * @generated
+	 */
+	EReference getIndexUnit_PaginationQuery();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getDefaultPaginationSize <em>Default Pagination Size</em>}'.
@@ -13616,6 +13970,42 @@ public interface WafPackage extends EPackage {
 		EAttribute PAGE__STYLE_CLASS = eINSTANCE.getPage_StyleClass();
 
 		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.QueryImpl <em>Query</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.QueryImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getQuery()
+		 * @generated
+		 */
+		EClass QUERY = eINSTANCE.getQuery();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUERY__PARAMETERS = eINSTANCE.getQuery_Parameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUERY__SELECTION = eINSTANCE.getQuery_Selection();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl <em>Query Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getQueryParameter()
+		 * @generated
+		 */
+		EClass QUERY_PARAMETER = eINSTANCE.getQueryParameter();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.UnitContainer <em>Unit Container</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13788,6 +14178,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DYNAMIC_UNIT__SERVICE = eINSTANCE.getDynamicUnit_Service();
+
+		/**
+		 * The meta object literal for the '<em><b>Queries</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DYNAMIC_UNIT__QUERIES = eINSTANCE.getDynamicUnit_Queries();
 
 		/**
 		 * The meta object literal for the '<em><b>Display Fields</b></em>' containment reference list feature.
@@ -14330,12 +14728,12 @@ public interface WafPackage extends EPackage {
 		EClass DATA_UNIT = eINSTANCE.getDataUnit();
 
 		/**
-		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Default Selection</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DATA_UNIT__SELECTION = eINSTANCE.getDataUnit_Selection();
+		EReference DATA_UNIT__DEFAULT_SELECTION = eINSTANCE.getDataUnit_DefaultSelection();
 
 		/**
 		 * The meta object literal for the '<em><b>Dynamic Title</b></em>' reference feature.
@@ -14380,6 +14778,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INDEX_UNIT__OMIT_COLUMN_LABELS = eINSTANCE.getIndexUnit_OmitColumnLabels();
+
+		/**
+		 * The meta object literal for the '<em><b>Pagination Query</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INDEX_UNIT__PAGINATION_QUERY = eINSTANCE.getIndexUnit_PaginationQuery();
 
 		/**
 		 * The meta object literal for the '<em><b>Default Pagination Size</b></em>' attribute feature.

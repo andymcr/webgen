@@ -238,6 +238,14 @@ class Page extends NamedDisplayElement, UnitContainer {
 	String styleClass
 }
 
+class Query extends NamedElement {
+	contains QueryParameter[] parameters
+	refers Selection selection
+}
+
+class QueryParameter extends NamedElement {
+}
+
 interface UnitContainer {
 	contains ContentUnit[] units opposite displayedOn
 }
@@ -272,6 +280,7 @@ abstract class Command extends NamedElement {
 
 abstract class DynamicUnit extends ContentUnit {
 	refers Service[1] service opposite accessedBy
+	contains Query[] queries
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
 	String header
@@ -380,7 +389,7 @@ class UpdateUnit extends EditUnit, SelectTarget {
 }
 
 abstract class DataUnit extends DynamicUnit {
-	refers Selection selection
+	refers Selection defaultSelection
 	refers UnitTitle dynamicTitle
 }
 
@@ -390,6 +399,7 @@ class DetailsUnit extends DataUnit, SelectTarget {
 
 abstract class IndexUnit extends DataUnit, InlineActionContainer, SelectTarget {
 	boolean omitColumnLabels
+	refers Query paginationQuery
 	int defaultPaginationSize
 	String nextPageLabel = ">"
 	String previousPageLabel = "<"

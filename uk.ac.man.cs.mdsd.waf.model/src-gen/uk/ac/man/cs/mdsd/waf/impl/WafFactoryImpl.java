@@ -76,6 +76,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.FIXED_COMMAND_MENU_ENTRY: return createFixedCommandMenuEntry();
 			case WafPackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WafPackage.PAGE: return createPage();
+			case WafPackage.QUERY: return createQuery();
+			case WafPackage.QUERY_PARAMETER: return createQueryParameter();
 			case WafPackage.STATIC_UNIT: return createStaticUnit();
 			case WafPackage.COMMAND_UNIT: return createCommandUnit();
 			case WafPackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
@@ -340,6 +342,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public Page createPage() {
 		PageImpl page = new PageImpl();
 		return page;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Query createQuery() {
+		QueryImpl query = new QueryImpl();
+		return query;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QueryParameter createQueryParameter() {
+		QueryParameterImpl queryParameter = new QueryParameterImpl();
+		return queryParameter;
 	}
 
 	/**

@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
+import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -39,6 +40,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getSelectionFeature <em>Selection Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getDisplayOption <em>Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getPaginationQuery <em>Pagination Query</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getPreviousPageLabel <em>Previous Page Label</em>}</li>
@@ -112,6 +114,16 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected boolean omitColumnLabels = OMIT_COLUMN_LABELS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPaginationQuery() <em>Pagination Query</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaginationQuery()
+	 * @generated
+	 * @ordered
+	 */
+	protected Query paginationQuery;
 
 	/**
 	 * The default value of the '{@link #getDefaultPaginationSize() <em>Default Pagination Size</em>}' attribute.
@@ -535,6 +547,44 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Query getPaginationQuery() {
+		if (paginationQuery != null && paginationQuery.eIsProxy()) {
+			InternalEObject oldPaginationQuery = (InternalEObject)paginationQuery;
+			paginationQuery = (Query)eResolveProxy(oldPaginationQuery);
+			if (paginationQuery != oldPaginationQuery) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.INDEX_UNIT__PAGINATION_QUERY, oldPaginationQuery, paginationQuery));
+			}
+		}
+		return paginationQuery;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Query basicGetPaginationQuery() {
+		return paginationQuery;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPaginationQuery(Query newPaginationQuery) {
+		Query oldPaginationQuery = paginationQuery;
+		paginationQuery = newPaginationQuery;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INDEX_UNIT__PAGINATION_QUERY, oldPaginationQuery, paginationQuery));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getStyleClass() {
 		return styleClass;
 	}
@@ -639,6 +689,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return getDisplayOption();
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				return isOmitColumnLabels();
+			case WebsitePackage.INDEX_UNIT__PAGINATION_QUERY:
+				if (resolve) return getPaginationQuery();
+				return basicGetPaginationQuery();
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return getDefaultPaginationSize();
 			case WebsitePackage.INDEX_UNIT__NEXT_PAGE_LABEL:
@@ -682,6 +735,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				setOmitColumnLabels((Boolean)newValue);
+				return;
+			case WebsitePackage.INDEX_UNIT__PAGINATION_QUERY:
+				setPaginationQuery((Query)newValue);
 				return;
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
@@ -734,6 +790,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				setOmitColumnLabels(OMIT_COLUMN_LABELS_EDEFAULT);
 				return;
+			case WebsitePackage.INDEX_UNIT__PAGINATION_QUERY:
+				setPaginationQuery((Query)null);
+				return;
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);
 				return;
@@ -781,6 +840,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return displayOption != DISPLAY_OPTION_EDEFAULT;
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				return omitColumnLabels != OMIT_COLUMN_LABELS_EDEFAULT;
+			case WebsitePackage.INDEX_UNIT__PAGINATION_QUERY:
+				return paginationQuery != null;
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return defaultPaginationSize != DEFAULT_PAGINATION_SIZE_EDEFAULT;
 			case WebsitePackage.INDEX_UNIT__NEXT_PAGE_LABEL:

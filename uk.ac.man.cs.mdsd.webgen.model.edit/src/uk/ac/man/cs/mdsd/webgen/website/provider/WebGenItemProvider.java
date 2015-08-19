@@ -14,6 +14,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
@@ -109,6 +110,17 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 
 		return associations;
+	}
+
+	protected List<Selection> getSourceSelections(final DynamicUnit unit) {
+		if (unit.getSource() instanceof Service) {
+			final Service service = (Service) unit.getSource();
+			final List<Selection> selections
+				= new LinkedList<Selection>(service.getSelections());
+			return selections;
+		}
+
+		return Collections.emptyList();
 	}
 
 	protected List<Attribute> getSourceElements(final DynamicUnit unit) {

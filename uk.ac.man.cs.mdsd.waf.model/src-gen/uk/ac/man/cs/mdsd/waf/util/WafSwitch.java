@@ -312,6 +312,20 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.QUERY: {
+				Query query = (Query)theEObject;
+				T result = caseQuery(query);
+				if (result == null) result = caseNamedElement(query);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.QUERY_PARAMETER: {
+				QueryParameter queryParameter = (QueryParameter)theEObject;
+				T result = caseQueryParameter(queryParameter);
+				if (result == null) result = caseNamedElement(queryParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.UNIT_CONTAINER: {
 				UnitContainer unitContainer = (UnitContainer)theEObject;
 				T result = caseUnitContainer(unitContainer);
@@ -1203,6 +1217,36 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePage(Page object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Query</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Query</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQuery(Query object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Query Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Query Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQueryParameter(QueryParameter object) {
 		return null;
 	}
 

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
+import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.UnitField;
 import uk.ac.man.cs.mdsd.waf.UnitSupportAction;
@@ -33,6 +34,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getService <em>Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getQueries <em>Queries</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
@@ -55,6 +57,16 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected Service service;
+
+	/**
+	 * The cached value of the '{@link #getQueries() <em>Queries</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQueries()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Query> queries;
 
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
@@ -280,6 +292,18 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Query> getQueries() {
+		if (queries == null) {
+			queries = new EObjectContainmentEList<Query>(Query.class, this, WafPackage.DYNAMIC_UNIT__QUERIES);
+		}
+		return queries;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<UnitField> getDisplayFields() {
 		if (displayFields == null) {
 			displayFields = new EObjectContainmentWithInverseEList<UnitField>(UnitField.class, this, WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS, WafPackage.UNIT_FIELD__DISPLAYED_ON);
@@ -454,6 +478,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WafPackage.DYNAMIC_UNIT__SERVICE:
 				return basicSetService(null, msgs);
+			case WafPackage.DYNAMIC_UNIT__QUERIES:
+				return ((InternalEList<?>)getQueries()).basicRemove(otherEnd, msgs);
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -473,6 +499,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__SERVICE:
 				if (resolve) return getService();
 				return basicGetService();
+			case WafPackage.DYNAMIC_UNIT__QUERIES:
+				return getQueries();
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -504,6 +532,10 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WafPackage.DYNAMIC_UNIT__SERVICE:
 				setService((Service)newValue);
+				return;
+			case WafPackage.DYNAMIC_UNIT__QUERIES:
+				getQueries().clear();
+				getQueries().addAll((Collection<? extends Query>)newValue);
 				return;
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -546,6 +578,9 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__SERVICE:
 				setService((Service)null);
 				return;
+			case WafPackage.DYNAMIC_UNIT__QUERIES:
+				getQueries().clear();
+				return;
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
@@ -584,6 +619,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WafPackage.DYNAMIC_UNIT__SERVICE:
 				return service != null;
+			case WafPackage.DYNAMIC_UNIT__QUERIES:
+				return queries != null && !queries.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:

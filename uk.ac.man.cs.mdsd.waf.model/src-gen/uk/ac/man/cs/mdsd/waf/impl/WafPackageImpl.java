@@ -69,6 +69,8 @@ import uk.ac.man.cs.mdsd.waf.ModelLabelFeature;
 import uk.ac.man.cs.mdsd.waf.ModelReference;
 import uk.ac.man.cs.mdsd.waf.Page;
 import uk.ac.man.cs.mdsd.waf.PageTopMenuOptions;
+import uk.ac.man.cs.mdsd.waf.Query;
+import uk.ac.man.cs.mdsd.waf.QueryParameter;
 import uk.ac.man.cs.mdsd.waf.RegistrationUnit;
 import uk.ac.man.cs.mdsd.waf.SearchUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
@@ -314,6 +316,20 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass pageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass queryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass queryParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1877,6 +1893,42 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getQuery() {
+		return queryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQuery_Parameters() {
+		return (EReference)queryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQuery_Selection() {
+		return (EReference)queryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getQueryParameter() {
+		return queryParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUnitContainer() {
 		return unitContainerEClass;
 	}
@@ -2057,7 +2109,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDynamicUnit_DisplayFields() {
+	public EReference getDynamicUnit_Queries() {
 		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2066,7 +2118,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDynamicUnit_SupportActions() {
+	public EReference getDynamicUnit_DisplayFields() {
 		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -2075,8 +2127,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_Header() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(3);
+	public EReference getDynamicUnit_SupportActions() {
+		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2084,7 +2136,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_Footer() {
+	public EAttribute getDynamicUnit_Header() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -2093,7 +2145,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_HeaderClass() {
+	public EAttribute getDynamicUnit_Footer() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2102,7 +2154,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_ControlClass() {
+	public EAttribute getDynamicUnit_HeaderClass() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -2111,7 +2163,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_FooterClass() {
+	public EAttribute getDynamicUnit_ControlClass() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -2120,8 +2172,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_ErrorClass() {
+	public EAttribute getDynamicUnit_FooterClass() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDynamicUnit_ErrorClass() {
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2624,7 +2685,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataUnit_Selection() {
+	public EReference getDataUnit_DefaultSelection() {
 		return (EReference)dataUnitEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -2678,8 +2739,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_DefaultPaginationSize() {
-		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(1);
+	public EReference getIndexUnit_PaginationQuery() {
+		return (EReference)indexUnitEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2687,7 +2748,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_NextPageLabel() {
+	public EAttribute getIndexUnit_DefaultPaginationSize() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -2696,7 +2757,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_PreviousPageLabel() {
+	public EAttribute getIndexUnit_NextPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -2705,7 +2766,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_UseFirstLastPageLinks() {
+	public EAttribute getIndexUnit_PreviousPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -2714,7 +2775,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_FirstPageLabel() {
+	public EAttribute getIndexUnit_UseFirstLastPageLinks() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2723,7 +2784,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_LastPageLabel() {
+	public EAttribute getIndexUnit_FirstPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -2732,8 +2793,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getIndexUnit_LastPageLabel() {
+		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getIndexUnit_TargettingSearches() {
-		return (EReference)indexUnitEClass.getEStructuralFeatures().get(7);
+		return (EReference)indexUnitEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -2742,7 +2812,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getIndexUnit_RowClasses() {
-		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -3371,6 +3441,12 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(pageEClass, PAGE__SIDE_MENU);
 		createEAttribute(pageEClass, PAGE__STYLE_CLASS);
 
+		queryEClass = createEClass(QUERY);
+		createEReference(queryEClass, QUERY__PARAMETERS);
+		createEReference(queryEClass, QUERY__SELECTION);
+
+		queryParameterEClass = createEClass(QUERY_PARAMETER);
+
 		unitContainerEClass = createEClass(UNIT_CONTAINER);
 		createEReference(unitContainerEClass, UNIT_CONTAINER__UNITS);
 
@@ -3397,6 +3473,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		dynamicUnitEClass = createEClass(DYNAMIC_UNIT);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__SERVICE);
+		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__QUERIES);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__DISPLAY_FIELDS);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		createEAttribute(dynamicUnitEClass, DYNAMIC_UNIT__HEADER);
@@ -3478,7 +3555,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		updateUnitEClass = createEClass(UPDATE_UNIT);
 
 		dataUnitEClass = createEClass(DATA_UNIT);
-		createEReference(dataUnitEClass, DATA_UNIT__SELECTION);
+		createEReference(dataUnitEClass, DATA_UNIT__DEFAULT_SELECTION);
 		createEReference(dataUnitEClass, DATA_UNIT__DYNAMIC_TITLE);
 
 		detailsUnitEClass = createEClass(DETAILS_UNIT);
@@ -3486,6 +3563,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		indexUnitEClass = createEClass(INDEX_UNIT);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__OMIT_COLUMN_LABELS);
+		createEReference(indexUnitEClass, INDEX_UNIT__PAGINATION_QUERY);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__DEFAULT_PAGINATION_SIZE);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__NEXT_PAGE_LABEL);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__PREVIOUS_PAGE_LABEL);
@@ -3637,6 +3715,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		editStaticTextMenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		pageEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		pageEClass.getESuperTypes().add(this.getUnitContainer());
+		queryEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
+		queryParameterEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		contentUnitEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		staticUnitEClass.getESuperTypes().add(this.getContentUnit());
 		commandUnitEClass.getESuperTypes().add(this.getContentUnit());
@@ -3852,6 +3932,12 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getPage_SideMenu(), this.getMenu(), null, "sideMenu", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_StyleClass(), theEcorePackage.getEString(), "styleClass", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQuery_Parameters(), this.getQueryParameter(), null, "parameters", null, 0, -1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuery_Selection(), this.getSelection(), null, "selection", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(queryParameterEClass, QueryParameter.class, "QueryParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(unitContainerEClass, UnitContainer.class, "UnitContainer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitContainer_Units(), this.getContentUnit(), this.getContentUnit_DisplayedOn(), "units", null, 0, -1, UnitContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3878,6 +3964,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(dynamicUnitEClass, DynamicUnit.class, "DynamicUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDynamicUnit_Service(), this.getService(), this.getService_AccessedBy(), "service", null, 1, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDynamicUnit_Queries(), this.getQuery(), null, "queries", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_DisplayFields(), this.getUnitField(), this.getUnitField_DisplayedOn(), "displayFields", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_SupportActions(), this.getUnitSupportAction(), null, "supportActions", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicUnit_Header(), theEcorePackage.getEString(), "header", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3959,7 +4046,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(updateUnitEClass, UpdateUnit.class, "UpdateUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(dataUnitEClass, DataUnit.class, "DataUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataUnit_Selection(), this.getSelection(), null, "selection", null, 0, 1, DataUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataUnit_DefaultSelection(), this.getSelection(), null, "defaultSelection", null, 0, 1, DataUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataUnit_DynamicTitle(), this.getUnitTitle(), null, "dynamicTitle", null, 0, 1, DataUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(detailsUnitEClass, DetailsUnit.class, "DetailsUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3967,6 +4054,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(indexUnitEClass, IndexUnit.class, "IndexUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIndexUnit_OmitColumnLabels(), theEcorePackage.getEBoolean(), "omitColumnLabels", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIndexUnit_PaginationQuery(), this.getQuery(), null, "paginationQuery", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_DefaultPaginationSize(), theEcorePackage.getEInt(), "defaultPaginationSize", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_NextPageLabel(), theEcorePackage.getEString(), "nextPageLabel", ">", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_PreviousPageLabel(), theEcorePackage.getEString(), "previousPageLabel", "<", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

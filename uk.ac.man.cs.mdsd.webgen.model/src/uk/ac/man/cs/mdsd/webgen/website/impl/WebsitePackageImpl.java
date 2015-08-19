@@ -92,6 +92,8 @@ import uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.PageLink;
 import uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions;
+import uk.ac.man.cs.mdsd.webgen.website.Query;
+import uk.ac.man.cs.mdsd.webgen.website.QueryParameter;
 import uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.SearchUnit;
@@ -343,6 +345,20 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass menuIncludedAssociationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass queryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass queryParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2115,6 +2131,42 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getQuery() {
+		return queryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQuery_Parameters() {
+		return (EReference)queryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQuery_Selection() {
+		return (EReference)queryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getQueryParameter() {
+		return queryParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStaticMenu() {
 		return staticMenuEClass;
 	}
@@ -3402,7 +3454,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataUnit_Selection() {
+	public EReference getDataUnit_DefaultSelection() {
 		return (EReference)dataUnitEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -3582,7 +3634,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDynamicUnit_DisplayFields() {
+	public EReference getDynamicUnit_Queries() {
 		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3591,7 +3643,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDynamicUnit_SupportActions() {
+	public EReference getDynamicUnit_DisplayFields() {
 		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3600,8 +3652,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_Header() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(3);
+	public EReference getDynamicUnit_SupportActions() {
+		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3609,7 +3661,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_Footer() {
+	public EAttribute getDynamicUnit_Header() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -3618,7 +3670,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_HeaderClass() {
+	public EAttribute getDynamicUnit_Footer() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -3627,7 +3679,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_ControlClass() {
+	public EAttribute getDynamicUnit_HeaderClass() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -3636,7 +3688,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_FooterClass() {
+	public EAttribute getDynamicUnit_ControlClass() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -3645,8 +3697,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_ErrorClass() {
+	public EAttribute getDynamicUnit_FooterClass() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDynamicUnit_ErrorClass() {
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -3717,8 +3778,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_DefaultPaginationSize() {
-		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(2);
+	public EReference getIndexUnit_PaginationQuery() {
+		return (EReference)indexUnitEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3726,7 +3787,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_NextPageLabel() {
+	public EAttribute getIndexUnit_DefaultPaginationSize() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -3735,7 +3796,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_PreviousPageLabel() {
+	public EAttribute getIndexUnit_NextPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -3744,7 +3805,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_UseFirstLastPageLinks() {
+	public EAttribute getIndexUnit_PreviousPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -3753,7 +3814,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_FirstPageLabel() {
+	public EAttribute getIndexUnit_UseFirstLastPageLinks() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -3762,7 +3823,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_LastPageLabel() {
+	public EAttribute getIndexUnit_FirstPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -3771,7 +3832,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_StyleClass() {
+	public EAttribute getIndexUnit_LastPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -3780,7 +3841,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_LayoutClass() {
+	public EAttribute getIndexUnit_StyleClass() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -3789,8 +3850,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_RowClasses() {
+	public EAttribute getIndexUnit_LayoutClass() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndexUnit_RowClasses() {
+		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -4754,6 +4824,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(menuIncludedAssociationEClass, MENU_INCLUDED_ASSOCIATION__NAME);
 		createEReference(menuIncludedAssociationEClass, MENU_INCLUDED_ASSOCIATION__SERVICE_ASSOCIATION);
 
+		queryEClass = createEClass(QUERY);
+		createEReference(queryEClass, QUERY__PARAMETERS);
+		createEReference(queryEClass, QUERY__SELECTION);
+
+		queryParameterEClass = createEClass(QUERY_PARAMETER);
+
 		unitContainerEClass = createEClass(UNIT_CONTAINER);
 		createEReference(unitContainerEClass, UNIT_CONTAINER__UNITS);
 
@@ -4791,6 +4867,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		dynamicUnitEClass = createEClass(DYNAMIC_UNIT);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__SOURCE);
+		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__QUERIES);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__DISPLAY_FIELDS);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		createEAttribute(dynamicUnitEClass, DYNAMIC_UNIT__HEADER);
@@ -4878,7 +4955,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(mapUnitEClass, MAP_UNIT__PLACE_NAME);
 
 		dataUnitEClass = createEClass(DATA_UNIT);
-		createEReference(dataUnitEClass, DATA_UNIT__SELECTION);
+		createEReference(dataUnitEClass, DATA_UNIT__DEFAULT_SELECTION);
 		createEReference(dataUnitEClass, DATA_UNIT__DYNAMIC_TITLE);
 
 		detailsUnitEClass = createEClass(DETAILS_UNIT);
@@ -4889,6 +4966,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		indexUnitEClass = createEClass(INDEX_UNIT);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__DISPLAY_OPTION);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__OMIT_COLUMN_LABELS);
+		createEReference(indexUnitEClass, INDEX_UNIT__PAGINATION_QUERY);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__DEFAULT_PAGINATION_SIZE);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__NEXT_PAGE_LABEL);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__PREVIOUS_PAGE_LABEL);
@@ -5055,6 +5133,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		menuIncludedFeatureEClass.getESuperTypes().add(this.getMenuEntry());
 		menuIncludedElementEClass.getESuperTypes().add(this.getMenuIncludedFeature());
 		menuIncludedAssociationEClass.getESuperTypes().add(this.getMenuIncludedFeature());
+		queryEClass.getESuperTypes().add(this.getNamedElement());
+		queryParameterEClass.getESuperTypes().add(this.getNamedElement());
 		contentUnitEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		staticUnitEClass.getESuperTypes().add(this.getContentUnit());
 		commandUnitEClass.getESuperTypes().add(this.getContentUnit());
@@ -5387,6 +5467,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getMenuIncludedAssociation_Name(), ecorePackage.getEString(), "name", null, 0, 1, MenuIncludedAssociation.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getMenuIncludedAssociation_ServiceAssociation(), this.getServiceEntityAssociation(), null, "serviceAssociation", null, 1, 1, MenuIncludedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQuery_Parameters(), this.getQueryParameter(), null, "parameters", null, 0, -1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuery_Selection(), this.getSelection(), null, "selection", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(queryParameterEClass, QueryParameter.class, "QueryParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(unitContainerEClass, UnitContainer.class, "UnitContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitContainer_Units(), this.getContentUnit(), this.getContentUnit_DisplayedOn(), "units", null, 0, -1, UnitContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -5424,6 +5510,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(dynamicUnitEClass, DynamicUnit.class, "DynamicUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDynamicUnit_Source(), this.getUnitSource(), null, "source", null, 1, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDynamicUnit_Queries(), this.getQuery(), null, "queries", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_DisplayFields(), this.getUnitField(), this.getUnitField_DisplayedOn(), "displayFields", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_SupportActions(), this.getUnitSupportAction(), null, "supportActions", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicUnit_Header(), ecorePackage.getEString(), "header", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5511,7 +5598,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getMapUnit_PlaceName(), this.getServiceEntityElement(), null, "placeName", null, 0, 1, MapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataUnitEClass, DataUnit.class, "DataUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataUnit_Selection(), this.getSelection(), null, "selection", null, 0, 1, DataUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataUnit_DefaultSelection(), this.getSelection(), null, "defaultSelection", null, 0, 1, DataUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataUnit_DynamicTitle(), this.getUnitTitle(), null, "dynamicTitle", null, 0, 1, DataUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(detailsUnitEClass, DetailsUnit.class, "DetailsUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -5522,6 +5609,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(indexUnitEClass, IndexUnit.class, "IndexUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIndexUnit_DisplayOption(), this.getIndexDisplayOption(), "displayOption", "Grid", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getIndexUnit_OmitColumnLabels(), ecorePackage.getEBoolean(), "omitColumnLabels", "false", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getIndexUnit_PaginationQuery(), this.getQuery(), null, "paginationQuery", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_DefaultPaginationSize(), ecorePackage.getEInt(), "defaultPaginationSize", "10", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getIndexUnit_NextPageLabel(), ecorePackage.getEString(), "nextPageLabel", ">", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getIndexUnit_PreviousPageLabel(), ecorePackage.getEString(), "previousPageLabel", "<", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

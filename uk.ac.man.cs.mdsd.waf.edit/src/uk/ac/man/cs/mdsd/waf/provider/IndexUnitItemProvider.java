@@ -52,6 +52,7 @@ public class IndexUnitItemProvider
 			addTargettingActionsPropertyDescriptor(object);
 			addSelectionFeaturePropertyDescriptor(object);
 			addOmitColumnLabelsPropertyDescriptor(object);
+			addPaginationQueryPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
 			addPreviousPageLabelPropertyDescriptor(object);
@@ -126,6 +127,28 @@ public class IndexUnitItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pagination Query feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPaginationQueryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_paginationQuery_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_paginationQuery_feature", "_UI_IndexUnit_type"),
+				 WafPackage.Literals.INDEX_UNIT__PAGINATION_QUERY,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

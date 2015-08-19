@@ -18,6 +18,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getDisplayOption <em>Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPaginationQuery <em>Pagination Query</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPreviousPageLabel <em>Previous Page Label</em>}</li>
@@ -90,6 +91,32 @@ public interface IndexUnit extends DataUnit, InlineActionContainer, SelectTarget
 	 * @generated
 	 */
 	void setOmitColumnLabels(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Pagination Query</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pagination Query</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pagination Query</em>' reference.
+	 * @see #setPaginationQuery(Query)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_PaginationQuery()
+	 * @model
+	 * @generated
+	 */
+	Query getPaginationQuery();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPaginationQuery <em>Pagination Query</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pagination Query</em>' reference.
+	 * @see #getPaginationQuery()
+	 * @generated
+	 */
+	void setPaginationQuery(Query value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Pagination Size</b></em>' attribute.

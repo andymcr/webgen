@@ -24,7 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataUnitImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataUnitImpl#getDynamicTitle <em>Dynamic Title</em>}</li>
  * </ul>
  *
@@ -32,14 +32,14 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  */
 public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	/**
-	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
+	 * The cached value of the '{@link #getDefaultSelection() <em>Default Selection</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSelection()
+	 * @see #getDefaultSelection()
 	 * @generated
 	 * @ordered
 	 */
-	protected Selection selection;
+	protected Selection defaultSelection;
 	/**
 	 * The cached value of the '{@link #getDynamicTitle() <em>Dynamic Title</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -74,16 +74,16 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Selection getSelection() {
-		if (selection != null && selection.eIsProxy()) {
-			InternalEObject oldSelection = (InternalEObject)selection;
-			selection = (Selection)eResolveProxy(oldSelection);
-			if (selection != oldSelection) {
+	public Selection getDefaultSelection() {
+		if (defaultSelection != null && defaultSelection.eIsProxy()) {
+			InternalEObject oldDefaultSelection = (InternalEObject)defaultSelection;
+			defaultSelection = (Selection)eResolveProxy(oldDefaultSelection);
+			if (defaultSelection != oldDefaultSelection) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.DATA_UNIT__SELECTION, oldSelection, selection));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.DATA_UNIT__DEFAULT_SELECTION, oldDefaultSelection, defaultSelection));
 			}
 		}
-		return selection;
+		return defaultSelection;
 	}
 
 	/**
@@ -91,8 +91,8 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Selection basicGetSelection() {
-		return selection;
+	public Selection basicGetDefaultSelection() {
+		return defaultSelection;
 	}
 
 	/**
@@ -100,11 +100,11 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSelection(Selection newSelection) {
-		Selection oldSelection = selection;
-		selection = newSelection;
+	public void setDefaultSelection(Selection newDefaultSelection) {
+		Selection oldDefaultSelection = defaultSelection;
+		defaultSelection = newDefaultSelection;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DATA_UNIT__SELECTION, oldSelection, selection));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DATA_UNIT__DEFAULT_SELECTION, oldDefaultSelection, defaultSelection));
 	}
 
 	/**
@@ -153,9 +153,9 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.DATA_UNIT__SELECTION:
-				if (resolve) return getSelection();
-				return basicGetSelection();
+			case WebsitePackage.DATA_UNIT__DEFAULT_SELECTION:
+				if (resolve) return getDefaultSelection();
+				return basicGetDefaultSelection();
 			case WebsitePackage.DATA_UNIT__DYNAMIC_TITLE:
 				if (resolve) return getDynamicTitle();
 				return basicGetDynamicTitle();
@@ -171,8 +171,8 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.DATA_UNIT__SELECTION:
-				setSelection((Selection)newValue);
+			case WebsitePackage.DATA_UNIT__DEFAULT_SELECTION:
+				setDefaultSelection((Selection)newValue);
 				return;
 			case WebsitePackage.DATA_UNIT__DYNAMIC_TITLE:
 				setDynamicTitle((UnitTitle)newValue);
@@ -189,8 +189,8 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.DATA_UNIT__SELECTION:
-				setSelection((Selection)null);
+			case WebsitePackage.DATA_UNIT__DEFAULT_SELECTION:
+				setDefaultSelection((Selection)null);
 				return;
 			case WebsitePackage.DATA_UNIT__DYNAMIC_TITLE:
 				setDynamicTitle((UnitTitle)null);
@@ -207,8 +207,8 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.DATA_UNIT__SELECTION:
-				return selection != null;
+			case WebsitePackage.DATA_UNIT__DEFAULT_SELECTION:
+				return defaultSelection != null;
 			case WebsitePackage.DATA_UNIT__DYNAMIC_TITLE:
 				return dynamicTitle != null;
 		}

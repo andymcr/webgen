@@ -278,6 +278,14 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createMenuIncludedAssociationAdapter();
 			}
 			@Override
+			public Adapter caseQuery(Query object) {
+				return createQueryAdapter();
+			}
+			@Override
+			public Adapter caseQueryParameter(QueryParameter object) {
+				return createQueryParameterAdapter();
+			}
+			@Override
 			public Adapter caseUnitContainer(UnitContainer object) {
 				return createUnitContainerAdapter();
 			}
@@ -906,6 +914,34 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMenuIncludedAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Query <em>Query</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Query
+	 * @generated
+	 */
+	public Adapter createQueryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.QueryParameter <em>Query Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.QueryParameter
+	 * @generated
+	 */
+	public Adapter createQueryParameterAdapter() {
 		return null;
 	}
 

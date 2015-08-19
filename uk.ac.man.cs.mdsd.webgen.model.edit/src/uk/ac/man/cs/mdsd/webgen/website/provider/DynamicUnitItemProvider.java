@@ -250,6 +250,7 @@ public class DynamicUnitItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__QUERIES);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		}
@@ -303,6 +304,7 @@ public class DynamicUnitItemProvider
 			case WebsitePackage.DYNAMIC_UNIT__ERROR_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebsitePackage.DYNAMIC_UNIT__QUERIES:
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -321,6 +323,11 @@ public class DynamicUnitItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.DYNAMIC_UNIT__QUERIES,
+				 WebsiteFactory.eINSTANCE.createQuery()));
 
 		newChildDescriptors.add
 			(createChildParameter

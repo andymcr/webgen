@@ -193,6 +193,24 @@ public interface WafFactory extends EFactory {
 	Page createPage();
 
 	/**
+	 * Returns a new object of class '<em>Query</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Query</em>'.
+	 * @generated
+	 */
+	Query createQuery();
+
+	/**
+	 * Returns a new object of class '<em>Query Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Query Parameter</em>'.
+	 * @generated
+	 */
+	QueryParameter createQueryParameter();
+
+	/**
 	 * Returns a new object of class '<em>Static Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -83,8 +83,8 @@ public class ServiceEntityAssociationItemProvider
 				if (object instanceof ServiceEntityAssociation) {
 					final ServiceEntityAssociation association = (ServiceEntityAssociation) object;
 					final Entity targetEntity = association.isUseFeatureSource()
-							? association.getFeature().getParentEntity()
-							: association.getFeature().getTargetEntity();
+							? association.getFeature().getTargetEntity()
+							: association.getFeature().getParentEntity();
 					final List<Service> oppositeServices = new LinkedList<Service>();
 					for (Service service : getAllServices(association)) {
 						if (service.getEncapsulates().contains(targetEntity)) {
@@ -123,7 +123,7 @@ public class ServiceEntityAssociationItemProvider
 						= new LinkedList<ServiceAssociation>();
 					if (association.getOppositeService() != null) {
 						oppositeFeatures.addAll(getAssociationsMatchingService(
-							association.getOppositeService(), parentService));
+							parentService, association.getOppositeService()));
 					} else {
 						if (parentService.eContainer() instanceof WebGenModel) {
 							WebGenModel model = (WebGenModel) parentService.eContainer();

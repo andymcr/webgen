@@ -58,6 +58,7 @@ public class IndexUnitItemProvider
 			addSelectionFeaturePropertyDescriptor(object);
 			addDisplayOptionPropertyDescriptor(object);
 			addOmitColumnLabelsPropertyDescriptor(object);
+			addPaginationQueryPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
 			addPreviousPageLabelPropertyDescriptor(object);
@@ -142,6 +143,32 @@ public class IndexUnitItemProvider
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
 				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pagination Query feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addPaginationQueryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_IndexUnit_paginationQuery_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_paginationQuery_feature", "_UI_IndexUnit_type"),
+			WebsitePackage.Literals.INDEX_UNIT__PAGINATION_QUERY,
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof IndexUnit) {
+						return ((IndexUnit) object).getQueries();
+					}
+					return Collections.emptyList();
+				}
+		});
 	}
 
 	/**

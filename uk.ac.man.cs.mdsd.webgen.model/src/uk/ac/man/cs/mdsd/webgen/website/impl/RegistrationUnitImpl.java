@@ -27,6 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
+import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
@@ -50,6 +51,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getQueries <em>Queries</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getHeader <em>Header</em>}</li>
@@ -197,6 +199,16 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * @ordered
 	 */
 	protected UnitSource source;
+
+	/**
+	 * The cached value of the '{@link #getQueries() <em>Queries</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQueries()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Query> queries;
 
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
@@ -657,6 +669,18 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<Query> getQueries() {
+		if (queries == null) {
+			queries = new EObjectContainmentEList<Query>(Query.class, this, WebsitePackage.REGISTRATION_UNIT__QUERIES);
+		}
+		return queries;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<UnitField> getDisplayFields() {
 		if (displayFields == null) {
 			displayFields = new EObjectContainmentWithInverseEList<UnitField>(UnitField.class, this, WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS, WebsitePackage.UNIT_FIELD__DISPLAYED_ON);
@@ -953,6 +977,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		switch (featureID) {
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
+			case WebsitePackage.REGISTRATION_UNIT__QUERIES:
+				return ((InternalEList<?>)getQueries()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.REGISTRATION_UNIT__SUPPORT_ACTIONS:
@@ -1000,6 +1026,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			case WebsitePackage.REGISTRATION_UNIT__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
+			case WebsitePackage.REGISTRATION_UNIT__QUERIES:
+				return getQueries();
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WebsitePackage.REGISTRATION_UNIT__SUPPORT_ACTIONS:
@@ -1063,6 +1091,10 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__SOURCE:
 				setSource((UnitSource)newValue);
+				return;
+			case WebsitePackage.REGISTRATION_UNIT__QUERIES:
+				getQueries().clear();
+				getQueries().addAll((Collection<? extends Query>)newValue);
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -1141,6 +1173,9 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			case WebsitePackage.REGISTRATION_UNIT__SOURCE:
 				setSource((UnitSource)null);
 				return;
+			case WebsitePackage.REGISTRATION_UNIT__QUERIES:
+				getQueries().clear();
+				return;
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
@@ -1208,6 +1243,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
 			case WebsitePackage.REGISTRATION_UNIT__SOURCE:
 				return source != null;
+			case WebsitePackage.REGISTRATION_UNIT__QUERIES:
+				return queries != null && !queries.isEmpty();
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WebsitePackage.REGISTRATION_UNIT__SUPPORT_ACTIONS:
@@ -1270,6 +1307,7 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		if (baseClass == DynamicUnit.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.REGISTRATION_UNIT__SOURCE: return WebsitePackage.DYNAMIC_UNIT__SOURCE;
+				case WebsitePackage.REGISTRATION_UNIT__QUERIES: return WebsitePackage.DYNAMIC_UNIT__QUERIES;
 				case WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS: return WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.REGISTRATION_UNIT__SUPPORT_ACTIONS: return WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.REGISTRATION_UNIT__HEADER: return WebsitePackage.DYNAMIC_UNIT__HEADER;
@@ -1325,6 +1363,7 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		if (baseClass == DynamicUnit.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.DYNAMIC_UNIT__SOURCE: return WebsitePackage.REGISTRATION_UNIT__SOURCE;
+				case WebsitePackage.DYNAMIC_UNIT__QUERIES: return WebsitePackage.REGISTRATION_UNIT__QUERIES;
 				case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebsitePackage.REGISTRATION_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER: return WebsitePackage.REGISTRATION_UNIT__HEADER;

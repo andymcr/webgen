@@ -578,6 +578,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceAssociation" ordered="false"
         lowerBound="1" eType="#//ServiceEntityAssociation"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Query" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//QueryParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QueryParameter" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnitContainer" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="units" upperBound="-1"
         eType="#//ContentUnit" containment="true" eOpposite="#//ContentUnit/displayedOn"/>
@@ -637,6 +643,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
         eType="#//UnitSource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="queries" upperBound="-1"
+        eType="#//Query" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayFields" upperBound="-1"
         eType="#//UnitField" containment="true" eOpposite="#//UnitField/displayedOn"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="supportActions" upperBound="-1"
@@ -812,7 +820,7 @@
       <details key="canOnlyTitleWithSingletonElement" value="not dynamicTitle.oclIsUndefined() implies &#xD;&#xA;if dynamicTitle.oclIsKindOf(Feature) then&#xD;&#xA;&#x9;dynamicTitle.oclAsType(Feature).cardinality &lt;> Cardinality::Many&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
       <details key="selectionFromSource" value="not selection.oclIsUndefined() implies&#xD;&#xA;&#x9;if source.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;else if source.oclIsTypeOf(Service) then&#xD;&#xA;&#x9;&#x9;source.oclAsType(Service).selections->includes(selection)&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;&#x9;endif endif"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicTitle" ordered="false"
         eType="#//UnitTitle"/>
   </eClassifiers>
@@ -834,6 +842,7 @@
         eType="#//IndexDisplayOption" defaultValueLiteral="Grid"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitColumnLabels" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paginationQuery" eType="#//Query"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultPaginationSize"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="10"/>

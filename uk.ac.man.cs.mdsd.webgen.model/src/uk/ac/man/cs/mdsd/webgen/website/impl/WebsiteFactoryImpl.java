@@ -94,6 +94,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.DYNAMIC_MENU: return createDynamicMenu();
 			case WebsitePackage.MENU_INCLUDED_ELEMENT: return createMenuIncludedElement();
 			case WebsitePackage.MENU_INCLUDED_ASSOCIATION: return createMenuIncludedAssociation();
+			case WebsitePackage.QUERY: return createQuery();
+			case WebsitePackage.QUERY_PARAMETER: return createQueryParameter();
 			case WebsitePackage.STATIC_UNIT: return createStaticUnit();
 			case WebsitePackage.COMMAND_UNIT: return createCommandUnit();
 			case WebsitePackage.USER_COMMAND: return createUserCommand();
@@ -368,6 +370,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public MenuIncludedAssociation createMenuIncludedAssociation() {
 		MenuIncludedAssociationImpl menuIncludedAssociation = new MenuIncludedAssociationImpl();
 		return menuIncludedAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Query createQuery() {
+		QueryImpl query = new QueryImpl();
+		return query;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QueryParameter createQueryParameter() {
+		QueryParameterImpl queryParameter = new QueryParameterImpl();
+		return queryParameter;
 	}
 
 	/**

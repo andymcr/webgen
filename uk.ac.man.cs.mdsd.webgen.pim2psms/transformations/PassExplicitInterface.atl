@@ -777,6 +777,36 @@ rule MenuIncludedElement {
 	)
 }
 
+
+-- @extends NamedElement
+rule Query {
+	from website : Website!Query
+	to waf : WAF!Query (
+		parameters <-
+			if website.parameters->notEmpty() then
+				website.parameters
+			else
+				Sequence{thisModule.implicitQueryParameter(website)}
+			endif,
+		selection <- website.selection
+	)
+}
+
+-- @extends NamedElement
+rule QueryParameter {
+	from website : Website!QueryParameter
+	to waf : WAF!QueryParameter (
+	)
+}
+
+lazy rule implicitQueryParameter {
+	from website : Website!Query
+	to waf : WAF!QueryParameter (
+		name <- website.name
+	)
+}
+
+
 abstract rule UnitContainer {
 	from website : Website!UnitContainer
 	to waf : WAF!UnitContainer (
@@ -861,6 +891,7 @@ abstract rule DynamicUnit {
 			else
 				OclUndefined
 			endif,
+		queries <- website.queries,
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
 		header <- website.header,
@@ -1098,7 +1129,7 @@ rule UpdateUnit {
 abstract rule DataUnit {
 	from website : Website!DataUnit
 	to waf : WAF!DataUnit (
-		selection <- website.selection,
+		defaultSelection <- website.defaultSelection,
 		dynamicTitle <-
 			if website.dynamicTitle.oclIsUndefined() then
 				website.dynamicTitle
@@ -1127,6 +1158,7 @@ abstract rule IndexUnit {
 	from website : Website!IndexUnit
 	to waf : WAF!IndexUnit (
 		omitColumnLabels <- website.omitColumnLabels,
+		paginationQuery <- website.paginationQuery,
 		defaultPaginationSize <- website.defaultPaginationSize,
 		nextPageLabel <- website.nextPageLabel,
 		previousPageLabel <- website.previousPageLabel,

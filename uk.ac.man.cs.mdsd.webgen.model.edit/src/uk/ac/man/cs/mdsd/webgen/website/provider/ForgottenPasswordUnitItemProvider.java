@@ -492,6 +492,7 @@ public class ForgottenPasswordUnitItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__QUERIES);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		}
@@ -566,6 +567,7 @@ public class ForgottenPasswordUnitItemProvider
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__QUERIES:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -584,6 +586,11 @@ public class ForgottenPasswordUnitItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.DYNAMIC_UNIT__QUERIES,
+				 WebsiteFactory.eINSTANCE.createQuery()));
 
 		newChildDescriptors.add
 			(createChildParameter

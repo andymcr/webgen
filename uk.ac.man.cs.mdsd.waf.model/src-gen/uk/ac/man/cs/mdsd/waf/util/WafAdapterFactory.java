@@ -194,6 +194,14 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createPageAdapter();
 			}
 			@Override
+			public Adapter caseQuery(Query object) {
+				return createQueryAdapter();
+			}
+			@Override
+			public Adapter caseQueryParameter(QueryParameter object) {
+				return createQueryParameterAdapter();
+			}
+			@Override
 			public Adapter caseUnitContainer(UnitContainer object) {
 				return createUnitContainerAdapter();
 			}
@@ -830,6 +838,34 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.Query <em>Query</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.Query
+	 * @generated
+	 */
+	public Adapter createQueryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.QueryParameter <em>Query Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.QueryParameter
+	 * @generated
+	 */
+	public Adapter createQueryParameterAdapter() {
 		return null;
 	}
 

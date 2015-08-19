@@ -188,6 +188,24 @@ public interface WebsiteFactory extends EFactory {
 	MenuIncludedAssociation createMenuIncludedAssociation();
 
 	/**
+	 * Returns a new object of class '<em>Query</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Query</em>'.
+	 * @generated
+	 */
+	Query createQuery();
+
+	/**
+	 * Returns a new object of class '<em>Query Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Query Parameter</em>'.
+	 * @generated
+	 */
+	QueryParameter createQueryParameter();
+
+	/**
 	 * Returns a new object of class '<em>Static Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

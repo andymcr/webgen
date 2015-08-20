@@ -588,6 +588,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.QueryInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QueryInstanceItemProvider queryInstanceItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.QueryInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQueryInstanceAdapter() {
+		if (queryInstanceItemProvider == null) {
+			queryInstanceItemProvider = new QueryInstanceItemProvider(this);
+		}
+
+		return queryInstanceItemProvider;
+	}
+
+		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.QueryActual} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QueryActualItemProvider queryActualItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.QueryActual}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQueryActualAdapter() {
+		if (queryActualItemProvider == null) {
+			queryActualItemProvider = new QueryActualItemProvider(this);
+		}
+
+		return queryActualItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.StaticUnit} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1412,6 +1458,8 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (pageItemProvider != null) pageItemProvider.dispose();
 		if (queryItemProvider != null) queryItemProvider.dispose();
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
+		if (queryInstanceItemProvider != null) queryInstanceItemProvider.dispose();
+		if (queryActualItemProvider != null) queryActualItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (commandUnitItemProvider != null) commandUnitItemProvider.dispose();
 		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();

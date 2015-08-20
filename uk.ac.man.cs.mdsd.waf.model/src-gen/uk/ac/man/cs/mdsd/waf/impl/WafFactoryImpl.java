@@ -78,6 +78,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.PAGE: return createPage();
 			case WafPackage.QUERY: return createQuery();
 			case WafPackage.QUERY_PARAMETER: return createQueryParameter();
+			case WafPackage.QUERY_INSTANCE: return createQueryInstance();
+			case WafPackage.QUERY_ACTUAL: return createQueryActual();
 			case WafPackage.STATIC_UNIT: return createStaticUnit();
 			case WafPackage.COMMAND_UNIT: return createCommandUnit();
 			case WafPackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
@@ -362,6 +364,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public QueryParameter createQueryParameter() {
 		QueryParameterImpl queryParameter = new QueryParameterImpl();
 		return queryParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QueryInstance createQueryInstance() {
+		QueryInstanceImpl queryInstance = new QueryInstanceImpl();
+		return queryInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QueryActual createQueryActual() {
+		QueryActualImpl queryActual = new QueryActualImpl();
+		return queryActual;
 	}
 
 	/**

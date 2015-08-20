@@ -203,6 +203,7 @@ class FixedPageMenuEntry extends MenuEntry, NamedDisplayElement {
 
 class FixedActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	refers DynamicUnit[1] action
+	contains QueryInstance query
 }
 
 abstract class MenuIncludedFeature extends MenuEntry, NamedDisplayElement {
@@ -244,6 +245,18 @@ class Query extends NamedElement {
 }
 
 class QueryParameter extends NamedElement {
+	refers DataType dataType
+	String defaultValue = ''
+}
+
+class QueryInstance extends NamedElement {
+	refers Query[1] query
+	contains QueryActual[] actuals
+}
+
+class QueryActual extends NamedElement {
+	refers QueryParameter[1] parameter
+	String value
 }
 
 interface UnitContainer {
@@ -397,7 +410,7 @@ class DetailsUnit extends DataUnit, SelectTarget {
 	boolean omitFieldLabels
 }
 
-abstract class IndexUnit extends DataUnit, InlineActionContainer, SelectTarget {
+abstract class IndexUnit extends DataUnit, InlineActionContainer {
 	boolean omitColumnLabels
 	refers Query paginationQuery
 	int defaultPaginationSize

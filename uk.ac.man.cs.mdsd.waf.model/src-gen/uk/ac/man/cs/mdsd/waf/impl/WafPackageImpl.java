@@ -70,6 +70,8 @@ import uk.ac.man.cs.mdsd.waf.ModelReference;
 import uk.ac.man.cs.mdsd.waf.Page;
 import uk.ac.man.cs.mdsd.waf.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.waf.Query;
+import uk.ac.man.cs.mdsd.waf.QueryActual;
+import uk.ac.man.cs.mdsd.waf.QueryInstance;
 import uk.ac.man.cs.mdsd.waf.QueryParameter;
 import uk.ac.man.cs.mdsd.waf.RegistrationUnit;
 import uk.ac.man.cs.mdsd.waf.SearchUnit;
@@ -330,6 +332,20 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass queryParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass queryInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass queryActualEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1749,6 +1765,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFixedActionMenuEntry_Query() {
+		return (EReference)fixedActionMenuEntryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMenuIncludedFeature() {
 		return menuIncludedFeatureEClass;
 	}
@@ -1922,6 +1947,78 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EClass getQueryParameter() {
 		return queryParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQueryParameter_DataType() {
+		return (EReference)queryParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQueryParameter_DefaultValue() {
+		return (EAttribute)queryParameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getQueryInstance() {
+		return queryInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQueryInstance_Query() {
+		return (EReference)queryInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQueryInstance_Actuals() {
+		return (EReference)queryInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getQueryActual() {
+		return queryActualEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQueryActual_Parameter() {
+		return (EReference)queryActualEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQueryActual_Value() {
+		return (EAttribute)queryActualEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3419,6 +3516,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		fixedActionMenuEntryEClass = createEClass(FIXED_ACTION_MENU_ENTRY);
 		createEReference(fixedActionMenuEntryEClass, FIXED_ACTION_MENU_ENTRY__ACTION);
+		createEReference(fixedActionMenuEntryEClass, FIXED_ACTION_MENU_ENTRY__QUERY);
 
 		menuIncludedFeatureEClass = createEClass(MENU_INCLUDED_FEATURE);
 
@@ -3446,6 +3544,16 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(queryEClass, QUERY__SELECTION);
 
 		queryParameterEClass = createEClass(QUERY_PARAMETER);
+		createEReference(queryParameterEClass, QUERY_PARAMETER__DATA_TYPE);
+		createEAttribute(queryParameterEClass, QUERY_PARAMETER__DEFAULT_VALUE);
+
+		queryInstanceEClass = createEClass(QUERY_INSTANCE);
+		createEReference(queryInstanceEClass, QUERY_INSTANCE__QUERY);
+		createEReference(queryInstanceEClass, QUERY_INSTANCE__ACTUALS);
+
+		queryActualEClass = createEClass(QUERY_ACTUAL);
+		createEReference(queryActualEClass, QUERY_ACTUAL__PARAMETER);
+		createEAttribute(queryActualEClass, QUERY_ACTUAL__VALUE);
 
 		unitContainerEClass = createEClass(UNIT_CONTAINER);
 		createEReference(unitContainerEClass, UNIT_CONTAINER__UNITS);
@@ -3717,6 +3825,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		pageEClass.getESuperTypes().add(this.getUnitContainer());
 		queryEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		queryParameterEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
+		queryInstanceEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
+		queryActualEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		contentUnitEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		staticUnitEClass.getESuperTypes().add(this.getContentUnit());
 		commandUnitEClass.getESuperTypes().add(this.getContentUnit());
@@ -3753,7 +3863,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		detailsUnitEClass.getESuperTypes().add(this.getSelectTarget());
 		indexUnitEClass.getESuperTypes().add(this.getDataUnit());
 		indexUnitEClass.getESuperTypes().add(this.getInlineActionContainer());
-		indexUnitEClass.getESuperTypes().add(this.getSelectTarget());
 		indexGridUnitEClass.getESuperTypes().add(this.getIndexUnit());
 		indexPageDirectionUnitEClass.getESuperTypes().add(this.getIndexUnit());
 		indexLineDirectionUnitEClass.getESuperTypes().add(this.getIndexUnit());
@@ -3910,6 +4019,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(fixedActionMenuEntryEClass, FixedActionMenuEntry.class, "FixedActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFixedActionMenuEntry_Action(), this.getDynamicUnit(), null, "action", null, 1, 1, FixedActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFixedActionMenuEntry_Query(), this.getQueryInstance(), null, "query", null, 0, 1, FixedActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(menuIncludedFeatureEClass, MenuIncludedFeature.class, "MenuIncludedFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3937,6 +4047,16 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getQuery_Selection(), this.getSelection(), null, "selection", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(queryParameterEClass, QueryParameter.class, "QueryParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQueryParameter_DataType(), theOrmPackage.getDataType(), null, "dataType", null, 0, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQueryParameter_DefaultValue(), theEcorePackage.getEString(), "defaultValue", "", 0, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(queryInstanceEClass, QueryInstance.class, "QueryInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQueryInstance_Query(), this.getQuery(), null, "query", null, 1, 1, QueryInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQueryInstance_Actuals(), this.getQueryActual(), null, "actuals", null, 0, -1, QueryInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(queryActualEClass, QueryActual.class, "QueryActual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQueryActual_Parameter(), this.getQueryParameter(), null, "parameter", null, 1, 1, QueryActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQueryActual_Value(), theEcorePackage.getEString(), "value", null, 0, 1, QueryActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitContainerEClass, UnitContainer.class, "UnitContainer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitContainer_Units(), this.getContentUnit(), this.getContentUnit_DisplayedOn(), "units", null, 0, -1, UnitContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

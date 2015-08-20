@@ -19,13 +19,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
-import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -37,7 +35,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getSelectionFeature <em>Selection Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getDisplayOption <em>Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getPaginationQuery <em>Pagination Query</em>}</li>
@@ -64,16 +61,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected EList<InlineAction> actions;
-
-	/**
-	 * The cached value of the '{@link #getSelectionFeature() <em>Selection Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelectionFeature()
-	 * @generated
-	 * @ordered
-	 */
-	protected Attribute selectionFeature;
 
 	/**
 	 * The default value of the '{@link #getDisplayOption() <em>Display Option</em>}' attribute.
@@ -467,44 +454,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute getSelectionFeature() {
-		if (selectionFeature != null && selectionFeature.eIsProxy()) {
-			InternalEObject oldSelectionFeature = (InternalEObject)selectionFeature;
-			selectionFeature = (Attribute)eResolveProxy(oldSelectionFeature);
-			if (selectionFeature != oldSelectionFeature) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.INDEX_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
-			}
-		}
-		return selectionFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute basicGetSelectionFeature() {
-		return selectionFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionFeature(Attribute newSelectionFeature) {
-		Attribute oldSelectionFeature = selectionFeature;
-		selectionFeature = newSelectionFeature;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INDEX_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public IndexDisplayOption getDisplayOption() {
 		return displayOption;
 	}
@@ -682,9 +631,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		switch (featureID) {
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				return getActions();
-			case WebsitePackage.INDEX_UNIT__SELECTION_FEATURE:
-				if (resolve) return getSelectionFeature();
-				return basicGetSelectionFeature();
 			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
 				return getDisplayOption();
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
@@ -726,9 +672,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
 				getActions().addAll((Collection<? extends InlineAction>)newValue);
-				return;
-			case WebsitePackage.INDEX_UNIT__SELECTION_FEATURE:
-				setSelectionFeature((Attribute)newValue);
 				return;
 			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
 				setDisplayOption((IndexDisplayOption)newValue);
@@ -781,9 +724,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
 				return;
-			case WebsitePackage.INDEX_UNIT__SELECTION_FEATURE:
-				setSelectionFeature((Attribute)null);
-				return;
 			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
 				setDisplayOption(DISPLAY_OPTION_EDEFAULT);
 				return;
@@ -834,8 +774,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		switch (featureID) {
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
-			case WebsitePackage.INDEX_UNIT__SELECTION_FEATURE:
-				return selectionFeature != null;
 			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
 				return displayOption != DISPLAY_OPTION_EDEFAULT;
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
@@ -877,12 +815,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				default: return -1;
 			}
 		}
-		if (baseClass == SelectTarget.class) {
-			switch (derivedFeatureID) {
-				case WebsitePackage.INDEX_UNIT__SELECTION_FEATURE: return WebsitePackage.SELECT_TARGET__SELECTION_FEATURE;
-				default: return -1;
-			}
-		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -896,12 +828,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		if (baseClass == InlineActionContainer.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.INLINE_ACTION_CONTAINER__ACTIONS: return WebsitePackage.INDEX_UNIT__ACTIONS;
-				default: return -1;
-			}
-		}
-		if (baseClass == SelectTarget.class) {
-			switch (baseFeatureID) {
-				case WebsitePackage.SELECT_TARGET__SELECTION_FEATURE: return WebsitePackage.INDEX_UNIT__SELECTION_FEATURE;
 				default: return -1;
 			}
 		}

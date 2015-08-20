@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.waf.IndexUnit;
@@ -23,9 +22,6 @@ import uk.ac.man.cs.mdsd.waf.InlineAction;
 import uk.ac.man.cs.mdsd.waf.InlineActionContainer;
 import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.SearchUnit;
-import uk.ac.man.cs.mdsd.waf.SelectAction;
-import uk.ac.man.cs.mdsd.waf.SelectTarget;
-import uk.ac.man.cs.mdsd.waf.ServiceEntityElement;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -37,8 +33,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getTargettingActions <em>Targetting Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelectionFeature <em>Selection Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPaginationQuery <em>Pagination Query</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
@@ -63,26 +57,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected EList<InlineAction> actions;
-
-	/**
-	 * The cached value of the '{@link #getTargettingActions() <em>Targetting Actions</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargettingActions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SelectAction> targettingActions;
-
-	/**
-	 * The cached value of the '{@link #getSelectionFeature() <em>Selection Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelectionFeature()
-	 * @generated
-	 * @ordered
-	 */
-	protected ServiceEntityElement selectionFeature;
 
 	/**
 	 * The default value of the '{@link #isOmitColumnLabels() <em>Omit Column Labels</em>}' attribute.
@@ -293,56 +267,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			actions = new EObjectContainmentWithInverseEList<InlineAction>(InlineAction.class, this, WafPackage.INDEX_UNIT__ACTIONS, WafPackage.INLINE_ACTION__USED_BY);
 		}
 		return actions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<SelectAction> getTargettingActions() {
-		if (targettingActions == null) {
-			targettingActions = new EObjectWithInverseResolvingEList<SelectAction>(SelectAction.class, this, WafPackage.INDEX_UNIT__TARGETTING_ACTIONS, WafPackage.SELECT_ACTION__TARGET);
-		}
-		return targettingActions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceEntityElement getSelectionFeature() {
-		if (selectionFeature != null && selectionFeature.eIsProxy()) {
-			InternalEObject oldSelectionFeature = (InternalEObject)selectionFeature;
-			selectionFeature = (ServiceEntityElement)eResolveProxy(oldSelectionFeature);
-			if (selectionFeature != oldSelectionFeature) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.INDEX_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
-			}
-		}
-		return selectionFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceEntityElement basicGetSelectionFeature() {
-		return selectionFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionFeature(ServiceEntityElement newSelectionFeature) {
-		ServiceEntityElement oldSelectionFeature = selectionFeature;
-		selectionFeature = newSelectionFeature;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
 	}
 
 	/**
@@ -622,8 +546,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		switch (featureID) {
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getActions()).basicAdd(otherEnd, msgs);
-			case WafPackage.INDEX_UNIT__TARGETTING_ACTIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTargettingActions()).basicAdd(otherEnd, msgs);
 			case WafPackage.INDEX_UNIT__TARGETTING_SEARCHES:
 				if (targettingSearches != null)
 					msgs = ((InternalEObject)targettingSearches).eInverseRemove(this, WafPackage.SEARCH_UNIT__RESULTS_DESTINATION, SearchUnit.class, msgs);
@@ -642,8 +564,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		switch (featureID) {
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
-			case WafPackage.INDEX_UNIT__TARGETTING_ACTIONS:
-				return ((InternalEList<?>)getTargettingActions()).basicRemove(otherEnd, msgs);
 			case WafPackage.INDEX_UNIT__TARGETTING_SEARCHES:
 				return basicSetTargettingSearches(null, msgs);
 		}
@@ -660,11 +580,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		switch (featureID) {
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				return getActions();
-			case WafPackage.INDEX_UNIT__TARGETTING_ACTIONS:
-				return getTargettingActions();
-			case WafPackage.INDEX_UNIT__SELECTION_FEATURE:
-				if (resolve) return getSelectionFeature();
-				return basicGetSelectionFeature();
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				return isOmitColumnLabels();
 			case WafPackage.INDEX_UNIT__PAGINATION_QUERY:
@@ -703,13 +618,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
 				getActions().addAll((Collection<? extends InlineAction>)newValue);
-				return;
-			case WafPackage.INDEX_UNIT__TARGETTING_ACTIONS:
-				getTargettingActions().clear();
-				getTargettingActions().addAll((Collection<? extends SelectAction>)newValue);
-				return;
-			case WafPackage.INDEX_UNIT__SELECTION_FEATURE:
-				setSelectionFeature((ServiceEntityElement)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				setOmitColumnLabels((Boolean)newValue);
@@ -756,12 +664,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
 				return;
-			case WafPackage.INDEX_UNIT__TARGETTING_ACTIONS:
-				getTargettingActions().clear();
-				return;
-			case WafPackage.INDEX_UNIT__SELECTION_FEATURE:
-				setSelectionFeature((ServiceEntityElement)null);
-				return;
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				setOmitColumnLabels(OMIT_COLUMN_LABELS_EDEFAULT);
 				return;
@@ -806,10 +708,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		switch (featureID) {
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
-			case WafPackage.INDEX_UNIT__TARGETTING_ACTIONS:
-				return targettingActions != null && !targettingActions.isEmpty();
-			case WafPackage.INDEX_UNIT__SELECTION_FEATURE:
-				return selectionFeature != null;
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				return omitColumnLabels != OMIT_COLUMN_LABELS_EDEFAULT;
 			case WafPackage.INDEX_UNIT__PAGINATION_QUERY:
@@ -847,13 +745,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				default: return -1;
 			}
 		}
-		if (baseClass == SelectTarget.class) {
-			switch (derivedFeatureID) {
-				case WafPackage.INDEX_UNIT__TARGETTING_ACTIONS: return WafPackage.SELECT_TARGET__TARGETTING_ACTIONS;
-				case WafPackage.INDEX_UNIT__SELECTION_FEATURE: return WafPackage.SELECT_TARGET__SELECTION_FEATURE;
-				default: return -1;
-			}
-		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -867,13 +758,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		if (baseClass == InlineActionContainer.class) {
 			switch (baseFeatureID) {
 				case WafPackage.INLINE_ACTION_CONTAINER__ACTIONS: return WafPackage.INDEX_UNIT__ACTIONS;
-				default: return -1;
-			}
-		}
-		if (baseClass == SelectTarget.class) {
-			switch (baseFeatureID) {
-				case WafPackage.SELECT_TARGET__TARGETTING_ACTIONS: return WafPackage.INDEX_UNIT__TARGETTING_ACTIONS;
-				case WafPackage.SELECT_TARGET__SELECTION_FEATURE: return WafPackage.INDEX_UNIT__SELECTION_FEATURE;
 				default: return -1;
 			}
 		}

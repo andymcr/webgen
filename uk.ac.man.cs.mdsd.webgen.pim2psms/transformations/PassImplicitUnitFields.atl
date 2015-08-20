@@ -10,6 +10,22 @@ create dummyWaf : WAF refining waf : WAF, orm : ORM;
 uses WebsiteHelpers;
 
 
+rule QueryInstanceWithoutActuals {
+	from partialWaf : WAF!QueryInstance (partialWaf.actuals->isEmpty())
+	to waf : WAF!QueryInstance (
+		actuals <- Sequence{thisModule.implicitQueryActual(partialWaf)}
+	)
+}
+
+lazy rule implicitQueryActual {
+	from partialWaf : WAF!QueryInstance
+	to waf : WAF!QueryActual (
+		parameter <- partialWaf."query".parameters->first(),
+		value <- partialWaf."query".parameters->first().defaultValue
+	)
+}
+
+
 abstract rule DynamicUnit {
 	from partialWaf : WAF!DynamicUnit
 	to waf : WAF!DynamicUnit (

@@ -93,6 +93,8 @@ import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.PageLink;
 import uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
+import uk.ac.man.cs.mdsd.webgen.website.QueryActual;
+import uk.ac.man.cs.mdsd.webgen.website.QueryInstance;
 import uk.ac.man.cs.mdsd.webgen.website.QueryParameter;
 import uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute;
@@ -359,6 +361,20 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass queryParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass queryInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass queryActualEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2167,6 +2183,78 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getQueryParameter_DataType() {
+		return (EReference)queryParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQueryParameter_DefaultValue() {
+		return (EAttribute)queryParameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getQueryInstance() {
+		return queryInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQueryInstance_Query() {
+		return (EReference)queryInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQueryInstance_Actuals() {
+		return (EReference)queryInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getQueryActual() {
+		return queryActualEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getQueryActual_Parameter() {
+		return (EReference)queryActualEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getQueryActual_Value() {
+		return (EAttribute)queryActualEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStaticMenu() {
 		return staticMenuEClass;
 	}
@@ -2205,6 +2293,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EReference getFixedActionMenuEntry_Destination() {
 		return (EReference)fixedActionMenuEntryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFixedActionMenuEntry_Query() {
+		return (EReference)fixedActionMenuEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -4802,6 +4899,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		fixedActionMenuEntryEClass = createEClass(FIXED_ACTION_MENU_ENTRY);
 		createEReference(fixedActionMenuEntryEClass, FIXED_ACTION_MENU_ENTRY__DESTINATION);
+		createEReference(fixedActionMenuEntryEClass, FIXED_ACTION_MENU_ENTRY__QUERY);
 
 		fixedCommandMenuEntryEClass = createEClass(FIXED_COMMAND_MENU_ENTRY);
 		createEReference(fixedCommandMenuEntryEClass, FIXED_COMMAND_MENU_ENTRY__DESTINATION);
@@ -4829,6 +4927,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(queryEClass, QUERY__SELECTION);
 
 		queryParameterEClass = createEClass(QUERY_PARAMETER);
+		createEReference(queryParameterEClass, QUERY_PARAMETER__DATA_TYPE);
+		createEAttribute(queryParameterEClass, QUERY_PARAMETER__DEFAULT_VALUE);
+
+		queryInstanceEClass = createEClass(QUERY_INSTANCE);
+		createEReference(queryInstanceEClass, QUERY_INSTANCE__QUERY);
+		createEReference(queryInstanceEClass, QUERY_INSTANCE__ACTUALS);
+
+		queryActualEClass = createEClass(QUERY_ACTUAL);
+		createEReference(queryActualEClass, QUERY_ACTUAL__PARAMETER);
+		createEAttribute(queryActualEClass, QUERY_ACTUAL__VALUE);
 
 		unitContainerEClass = createEClass(UNIT_CONTAINER);
 		createEReference(unitContainerEClass, UNIT_CONTAINER__UNITS);
@@ -5172,7 +5280,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		detailsUnitEClass.getESuperTypes().add(this.getSelectTarget());
 		indexUnitEClass.getESuperTypes().add(this.getDataUnit());
 		indexUnitEClass.getESuperTypes().add(this.getInlineActionContainer());
-		indexUnitEClass.getESuperTypes().add(this.getSelectTarget());
 		controlUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		searchUnitEClass.getESuperTypes().add(this.getControlUnit());
 		actionUnitEClass.getESuperTypes().add(this.getControlUnit());
@@ -5445,6 +5552,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(fixedActionMenuEntryEClass, FixedActionMenuEntry.class, "FixedActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFixedActionMenuEntry_Destination(), this.getDynamicUnit(), null, "destination", null, 1, 1, FixedActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFixedActionMenuEntry_Query(), this.getQueryInstance(), null, "query", null, 0, 1, FixedActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fixedCommandMenuEntryEClass, FixedCommandMenuEntry.class, "FixedCommandMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFixedCommandMenuEntry_Destination(), this.getCommand(), null, "destination", null, 0, 1, FixedCommandMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5472,6 +5580,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getQuery_Selection(), this.getSelection(), null, "selection", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(queryParameterEClass, QueryParameter.class, "QueryParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQueryParameter_DataType(), this.getDataType(), null, "dataType", null, 0, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQueryParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", "", 0, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(queryInstanceEClass, QueryInstance.class, "QueryInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQueryInstance_Query(), this.getQuery(), null, "query", null, 1, 1, QueryInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQueryInstance_Actuals(), this.getQueryActual(), null, "actuals", null, 0, -1, QueryInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(queryActualEClass, QueryActual.class, "QueryActual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQueryActual_Parameter(), this.getQueryParameter(), null, "parameter", null, 1, 1, QueryActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQueryActual_Value(), ecorePackage.getEString(), "value", null, 0, 1, QueryActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitContainerEClass, UnitContainer.class, "UnitContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitContainer_Units(), this.getContentUnit(), this.getContentUnit_DisplayedOn(), "units", null, 0, -1, UnitContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6040,7 +6158,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "canOnlyTitleWithSingletonElement", "not dynamicTitle.oclIsUndefined() implies \r\nif dynamicTitle.oclIsKindOf(Feature) then\r\n\tdynamicTitle.oclAsType(Feature).cardinality <> Cardinality::Many\r\nelse\r\n\ttrue\r\nendif",
-			 "selectionFromSource", "not selection.oclIsUndefined() implies\r\n\tif source.oclIsUndefined() then\r\n\t\ttrue\r\n\telse if source.oclIsTypeOf(Service) then\r\n\t\tsource.oclAsType(Service).selections->includes(selection)\r\n\telse\r\n\t\tfalse\r\n\tendif endif"
+			 "selectionFromSource", "not defaultSelection.oclIsUndefined() implies\r\n\tif source.oclIsUndefined() then\r\n\t\ttrue\r\n\telse if source.oclIsTypeOf(Service) then\r\n\t\tsource.oclAsType(Service).selections->includes(defaultSelection)\r\n\telse\r\n\t\tfalse\r\n\tendif endif"
 		   });	
 		addAnnotation
 		  (inlineActionContainerEClass, 

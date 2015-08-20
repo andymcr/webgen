@@ -202,6 +202,14 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createQueryParameterAdapter();
 			}
 			@Override
+			public Adapter caseQueryInstance(QueryInstance object) {
+				return createQueryInstanceAdapter();
+			}
+			@Override
+			public Adapter caseQueryActual(QueryActual object) {
+				return createQueryActualAdapter();
+			}
+			@Override
 			public Adapter caseUnitContainer(UnitContainer object) {
 				return createUnitContainerAdapter();
 			}
@@ -866,6 +874,34 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createQueryParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.QueryInstance <em>Query Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.QueryInstance
+	 * @generated
+	 */
+	public Adapter createQueryInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.QueryActual <em>Query Actual</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.QueryActual
+	 * @generated
+	 */
+	public Adapter createQueryActualAdapter() {
 		return null;
 	}
 

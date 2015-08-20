@@ -551,6 +551,52 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.QueryInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QueryInstanceItemProvider queryInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.QueryInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQueryInstanceAdapter() {
+		if (queryInstanceItemProvider == null) {
+			queryInstanceItemProvider = new QueryInstanceItemProvider(this);
+		}
+
+		return queryInstanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.QueryActual} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QueryActualItemProvider queryActualItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.QueryActual}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQueryActualAdapter() {
+		if (queryActualItemProvider == null) {
+			queryActualItemProvider = new QueryActualItemProvider(this);
+		}
+
+		return queryActualItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.StaticMenu} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1696,6 +1742,8 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (menuIncludedAssociationItemProvider != null) menuIncludedAssociationItemProvider.dispose();
 		if (queryItemProvider != null) queryItemProvider.dispose();
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
+		if (queryInstanceItemProvider != null) queryInstanceItemProvider.dispose();
+		if (queryActualItemProvider != null) queryActualItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (commandUnitItemProvider != null) commandUnitItemProvider.dispose();
 		if (userCommandItemProvider != null) userCommandItemProvider.dispose();

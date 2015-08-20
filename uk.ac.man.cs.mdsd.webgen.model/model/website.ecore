@@ -530,6 +530,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="FixedActionMenuEntry" eSuperTypes="#//MenuEntry #//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" ordered="false"
         lowerBound="1" eType="#//DynamicUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="query" eType="#//QueryInstance"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FixedCommandMenuEntry" eSuperTypes="#//MenuEntry #//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//Command"/>
@@ -583,7 +585,21 @@
         eType="#//QueryParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QueryParameter" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QueryParameter" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QueryInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="query" lowerBound="1" eType="#//Query"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuals" upperBound="-1"
+        eType="#//QueryActual" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QueryActual">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+        eType="#//QueryParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnitContainer" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="units" upperBound="-1"
         eType="#//ContentUnit" containment="true" eOpposite="#//ContentUnit/displayedOn"/>
@@ -818,7 +834,7 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="canOnlyTitleWithSingletonElement" value="not dynamicTitle.oclIsUndefined() implies &#xD;&#xA;if dynamicTitle.oclIsKindOf(Feature) then&#xD;&#xA;&#x9;dynamicTitle.oclAsType(Feature).cardinality &lt;> Cardinality::Many&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
-      <details key="selectionFromSource" value="not selection.oclIsUndefined() implies&#xD;&#xA;&#x9;if source.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;else if source.oclIsTypeOf(Service) then&#xD;&#xA;&#x9;&#x9;source.oclAsType(Service).selections->includes(selection)&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;&#x9;endif endif"/>
+      <details key="selectionFromSource" value="not defaultSelection.oclIsUndefined() implies&#xD;&#xA;&#x9;if source.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;else if source.oclIsTypeOf(Service) then&#xD;&#xA;&#x9;&#x9;source.oclAsType(Service).selections->includes(defaultSelection)&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;&#x9;endif endif"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicTitle" ordered="false"
@@ -837,7 +853,7 @@
     <eLiterals name="PageDirection" value="1"/>
     <eLiterals name="LineDirection" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IndexUnit" eSuperTypes="#//DataUnit #//InlineActionContainer #//SelectTarget">
+  <eClassifiers xsi:type="ecore:EClass" name="IndexUnit" eSuperTypes="#//DataUnit #//InlineActionContainer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayOption" ordered="false"
         eType="#//IndexDisplayOption" defaultValueLiteral="Grid"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitColumnLabels" ordered="false"

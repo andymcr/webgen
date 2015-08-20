@@ -14,6 +14,7 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry#getAction <em>Action</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry#getQuery <em>Query</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFixedActionMenuEntry()
@@ -46,5 +47,31 @@ public interface FixedActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	 * @generated
 	 */
 	void setAction(DynamicUnit value);
+
+	/**
+	 * Returns the value of the '<em><b>Query</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Query</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Query</em>' containment reference.
+	 * @see #setQuery(QueryInstance)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFixedActionMenuEntry_Query()
+	 * @model containment="true"
+	 * @generated
+	 */
+	QueryInstance getQuery();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry#getQuery <em>Query</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Query</em>' containment reference.
+	 * @see #getQuery()
+	 * @generated
+	 */
+	void setQuery(QueryInstance value);
 
 } // FixedActionMenuEntry

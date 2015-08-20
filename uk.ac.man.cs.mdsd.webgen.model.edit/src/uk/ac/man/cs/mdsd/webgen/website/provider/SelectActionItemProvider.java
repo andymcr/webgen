@@ -150,11 +150,6 @@ public class SelectActionItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.SELECT_ACTION__TARGET,
 				 WebsiteFactory.eINSTANCE.createDetailsUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.SELECT_ACTION__TARGET,
-				 WebsiteFactory.eINSTANCE.createIndexUnit()));
 	}
 
 }

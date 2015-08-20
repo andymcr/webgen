@@ -511,6 +511,18 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.QUERY_INSTANCE: {
+				QueryInstance queryInstance = (QueryInstance)theEObject;
+				T result = caseQueryInstance(queryInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.QUERY_ACTUAL: {
+				QueryActual queryActual = (QueryActual)theEObject;
+				T result = caseQueryActual(queryActual);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.UNIT_CONTAINER: {
 				UnitContainer unitContainer = (UnitContainer)theEObject;
 				T result = caseUnitContainer(unitContainer);
@@ -776,7 +788,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				T result = caseIndexUnit(indexUnit);
 				if (result == null) result = caseDataUnit(indexUnit);
 				if (result == null) result = caseInlineActionContainer(indexUnit);
-				if (result == null) result = caseSelectTarget(indexUnit);
 				if (result == null) result = caseDynamicUnit(indexUnit);
 				if (result == null) result = caseContentUnit(indexUnit);
 				if (result == null) result = caseNamedDisplayElement(indexUnit);
@@ -1410,6 +1421,36 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseQueryParameter(QueryParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Query Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Query Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQueryInstance(QueryInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Query Actual</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Query Actual</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQueryActual(QueryActual object) {
 		return null;
 	}
 

@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.waf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -15,6 +16,7 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry;
+import uk.ac.man.cs.mdsd.waf.QueryInstance;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -28,6 +30,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FixedActionMenuEntryImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FixedActionMenuEntryImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FixedActionMenuEntryImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FixedActionMenuEntryImpl#getQuery <em>Query</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,6 +85,16 @@ public class FixedActionMenuEntryImpl extends MenuEntryImpl implements FixedActi
 	 * @ordered
 	 */
 	protected DynamicUnit action;
+
+	/**
+	 * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuery()
+	 * @generated
+	 * @ordered
+	 */
+	protected QueryInstance query;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,6 +200,63 @@ public class FixedActionMenuEntryImpl extends MenuEntryImpl implements FixedActi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public QueryInstance getQuery() {
+		return query;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetQuery(QueryInstance newQuery, NotificationChain msgs) {
+		QueryInstance oldQuery = query;
+		query = newQuery;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.FIXED_ACTION_MENU_ENTRY__QUERY, oldQuery, newQuery);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setQuery(QueryInstance newQuery) {
+		if (newQuery != query) {
+			NotificationChain msgs = null;
+			if (query != null)
+				msgs = ((InternalEObject)query).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.FIXED_ACTION_MENU_ENTRY__QUERY, null, msgs);
+			if (newQuery != null)
+				msgs = ((InternalEObject)newQuery).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.FIXED_ACTION_MENU_ENTRY__QUERY, null, msgs);
+			msgs = basicSetQuery(newQuery, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.FIXED_ACTION_MENU_ENTRY__QUERY, newQuery, newQuery));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WafPackage.FIXED_ACTION_MENU_ENTRY__QUERY:
+				return basicSetQuery(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -197,6 +267,8 @@ public class FixedActionMenuEntryImpl extends MenuEntryImpl implements FixedActi
 			case WafPackage.FIXED_ACTION_MENU_ENTRY__ACTION:
 				if (resolve) return getAction();
 				return basicGetAction();
+			case WafPackage.FIXED_ACTION_MENU_ENTRY__QUERY:
+				return getQuery();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,6 +289,9 @@ public class FixedActionMenuEntryImpl extends MenuEntryImpl implements FixedActi
 				return;
 			case WafPackage.FIXED_ACTION_MENU_ENTRY__ACTION:
 				setAction((DynamicUnit)newValue);
+				return;
+			case WafPackage.FIXED_ACTION_MENU_ENTRY__QUERY:
+				setQuery((QueryInstance)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,6 +314,9 @@ public class FixedActionMenuEntryImpl extends MenuEntryImpl implements FixedActi
 			case WafPackage.FIXED_ACTION_MENU_ENTRY__ACTION:
 				setAction((DynamicUnit)null);
 				return;
+			case WafPackage.FIXED_ACTION_MENU_ENTRY__QUERY:
+				setQuery((QueryInstance)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -257,6 +335,8 @@ public class FixedActionMenuEntryImpl extends MenuEntryImpl implements FixedActi
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WafPackage.FIXED_ACTION_MENU_ENTRY__ACTION:
 				return action != null;
+			case WafPackage.FIXED_ACTION_MENU_ENTRY__QUERY:
+				return query != null;
 		}
 		return super.eIsSet(featureID);
 	}

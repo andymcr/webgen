@@ -352,6 +352,8 @@
     <genClasses ecoreClass="website.ecore#//FixedActionMenuEntry">
       <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//FixedActionMenuEntry/destination"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"
+          ecoreFeature="ecore:EReference website.ecore#//FixedActionMenuEntry/query"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//FixedCommandMenuEntry">
       <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
@@ -383,7 +385,21 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Query/selection"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//QueryParameter"/>
+    <genClasses ecoreClass="website.ecore#//QueryParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//QueryParameter/dataType"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//QueryParameter/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//QueryInstance">
+      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//QueryInstance/query"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"
+          ecoreFeature="ecore:EReference website.ecore#//QueryInstance/actuals"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//QueryActual">
+      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//QueryActual/parameter"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//QueryActual/value"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//UnitContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//UnitContainer/units"/>
     </genClasses>

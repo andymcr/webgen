@@ -96,6 +96,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.MENU_INCLUDED_ASSOCIATION: return createMenuIncludedAssociation();
 			case WebsitePackage.QUERY: return createQuery();
 			case WebsitePackage.QUERY_PARAMETER: return createQueryParameter();
+			case WebsitePackage.QUERY_INSTANCE: return createQueryInstance();
+			case WebsitePackage.QUERY_ACTUAL: return createQueryActual();
 			case WebsitePackage.STATIC_UNIT: return createStaticUnit();
 			case WebsitePackage.COMMAND_UNIT: return createCommandUnit();
 			case WebsitePackage.USER_COMMAND: return createUserCommand();
@@ -390,6 +392,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public QueryParameter createQueryParameter() {
 		QueryParameterImpl queryParameter = new QueryParameterImpl();
 		return queryParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QueryInstance createQueryInstance() {
+		QueryInstanceImpl queryInstance = new QueryInstanceImpl();
+		return queryInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QueryActual createQueryActual() {
+		QueryActualImpl queryActual = new QueryActualImpl();
+		return queryActual;
 	}
 
 	/**

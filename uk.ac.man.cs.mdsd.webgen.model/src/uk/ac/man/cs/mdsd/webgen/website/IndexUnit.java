@@ -34,7 +34,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface IndexUnit extends DataUnit, InlineActionContainer, SelectTarget {
+public interface IndexUnit extends DataUnit, InlineActionContainer {
 	/**
 	 * Returns the value of the '<em><b>Display Option</b></em>' attribute.
 	 * The default value is <code>"Grid"</code>.

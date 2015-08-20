@@ -196,6 +196,10 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateQuery((Query)value, diagnostics, context);
 			case WebsitePackage.QUERY_PARAMETER:
 				return validateQueryParameter((QueryParameter)value, diagnostics, context);
+			case WebsitePackage.QUERY_INSTANCE:
+				return validateQueryInstance((QueryInstance)value, diagnostics, context);
+			case WebsitePackage.QUERY_ACTUAL:
+				return validateQueryActual((QueryActual)value, diagnostics, context);
 			case WebsitePackage.UNIT_CONTAINER:
 				return validateUnitContainer((UnitContainer)value, diagnostics, context);
 			case WebsitePackage.UNIT_SOURCE:
@@ -1068,6 +1072,24 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(queryParameter, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(queryParameter, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateQueryInstance(QueryInstance queryInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(queryInstance, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateQueryActual(QueryActual queryActual, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(queryActual, diagnostics, context);
 	}
 
 	/**
@@ -2702,11 +2724,11 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DATA_UNIT__SELECTION_FROM_SOURCE__EEXPRESSION = "not selection.oclIsUndefined() implies\r\n" +
+	protected static final String DATA_UNIT__SELECTION_FROM_SOURCE__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
 		"\tif source.oclIsUndefined() then\r\n" +
 		"\t\ttrue\r\n" +
 		"\telse if source.oclIsTypeOf(Service) then\r\n" +
-		"\t\tsource.oclAsType(Service).selections->includes(selection)\r\n" +
+		"\t\tsource.oclAsType(Service).selections->includes(defaultSelection)\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +
 		"\tendif endif";

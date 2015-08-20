@@ -28,7 +28,7 @@ package uk.ac.man.cs.mdsd.waf;
  * @model abstract="true"
  * @generated
  */
-public interface IndexUnit extends DataUnit, InlineActionContainer, SelectTarget {
+public interface IndexUnit extends DataUnit, InlineActionContainer {
 	/**
 	 * Returns the value of the '<em><b>Omit Column Labels</b></em>' attribute.
 	 * <!-- begin-user-doc -->

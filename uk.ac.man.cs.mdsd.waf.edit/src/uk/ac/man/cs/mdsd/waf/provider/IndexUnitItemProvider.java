@@ -49,8 +49,6 @@ public class IndexUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTargettingActionsPropertyDescriptor(object);
-			addSelectionFeaturePropertyDescriptor(object);
 			addOmitColumnLabelsPropertyDescriptor(object);
 			addPaginationQueryPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
@@ -63,50 +61,6 @@ public class IndexUnitItemProvider
 			addRowClassesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Targetting Actions feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargettingActionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SelectTarget_targettingActions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_targettingActions_feature", "_UI_SelectTarget_type"),
-				 WafPackage.Literals.SELECT_TARGET__TARGETTING_ACTIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Selection Feature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSelectionFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SelectTarget_selectionFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_selectionFeature_feature", "_UI_SelectTarget_type"),
-				 WafPackage.Literals.SELECT_TARGET__SELECTION_FEATURE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

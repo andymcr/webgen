@@ -14,6 +14,9 @@ import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.FixedActionMenuEntry;
+import uk.ac.man.cs.mdsd.webgen.website.Query;
+import uk.ac.man.cs.mdsd.webgen.website.QueryInstance;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
@@ -110,6 +113,20 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 
 		return associations;
+	}
+
+	protected List<Query> getQueries(final QueryInstance query) {
+		if (query.eContainer() instanceof FixedActionMenuEntry) {
+			final FixedActionMenuEntry entry
+				= (FixedActionMenuEntry) query.eContainer();
+			final List<Query> queries = new LinkedList<Query>();
+			if (entry.getDestination() != null) {
+				queries.addAll(entry.getDestination().getQueries());
+			}
+			return queries;
+		}
+
+		return Collections.emptyList();
 	}
 
 	protected List<Selection> getSourceSelections(final DynamicUnit unit) {

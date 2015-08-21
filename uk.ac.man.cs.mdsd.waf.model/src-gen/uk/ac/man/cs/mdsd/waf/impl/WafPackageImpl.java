@@ -15,6 +15,7 @@ import uk.ac.man.cs.mdsd.criteria.CriteriaPackage;
 
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
+import uk.ac.man.cs.mdsd.waf.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.waf.ActionUnit;
 import uk.ac.man.cs.mdsd.waf.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.waf.Authentication;
@@ -40,9 +41,7 @@ import uk.ac.man.cs.mdsd.waf.EditStaticTextMenuEntry;
 import uk.ac.man.cs.mdsd.waf.EditUnit;
 import uk.ac.man.cs.mdsd.waf.FeatureReference;
 import uk.ac.man.cs.mdsd.waf.FeatureSupportAction;
-import uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry;
 import uk.ac.man.cs.mdsd.waf.FixedCommandMenuEntry;
-import uk.ac.man.cs.mdsd.waf.FixedPageMenuEntry;
 import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.waf.IncludedAssociation;
@@ -60,8 +59,6 @@ import uk.ac.man.cs.mdsd.waf.LoginUnit;
 import uk.ac.man.cs.mdsd.waf.MapUnit;
 import uk.ac.man.cs.mdsd.waf.Menu;
 import uk.ac.man.cs.mdsd.waf.MenuEntry;
-import uk.ac.man.cs.mdsd.waf.MenuIncludedElement;
-import uk.ac.man.cs.mdsd.waf.MenuIncludedFeature;
 import uk.ac.man.cs.mdsd.waf.ModelLabel;
 import uk.ac.man.cs.mdsd.waf.ModelLabelAssociation;
 import uk.ac.man.cs.mdsd.waf.ModelLabelElement;
@@ -284,28 +281,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass fixedPageMenuEntryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass fixedActionMenuEntryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass menuIncludedFeatureEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass menuIncludedElementEClass = null;
+	private EClass actionMenuEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1772,8 +1748,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFixedPageMenuEntry() {
-		return fixedPageMenuEntryEClass;
+	public EClass getActionMenuEntry() {
+		return actionMenuEntryEClass;
 	}
 
 	/**
@@ -1781,8 +1757,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFixedPageMenuEntry_Page() {
-		return (EReference)fixedPageMenuEntryEClass.getEStructuralFeatures().get(0);
+	public EReference getActionMenuEntry_Action() {
+		return (EReference)actionMenuEntryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1790,53 +1766,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFixedActionMenuEntry() {
-		return fixedActionMenuEntryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFixedActionMenuEntry_Action() {
-		return (EReference)fixedActionMenuEntryEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFixedActionMenuEntry_Query() {
-		return (EReference)fixedActionMenuEntryEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMenuIncludedFeature() {
-		return menuIncludedFeatureEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMenuIncludedElement() {
-		return menuIncludedElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMenuIncludedElement_Feature() {
-		return (EReference)menuIncludedElementEClass.getEStructuralFeatures().get(0);
+	public EReference getActionMenuEntry_Query() {
+		return (EReference)actionMenuEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3585,17 +3516,9 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		menuEntryEClass = createEClass(MENU_ENTRY);
 		createEReference(menuEntryEClass, MENU_ENTRY__PART_OF);
 
-		fixedPageMenuEntryEClass = createEClass(FIXED_PAGE_MENU_ENTRY);
-		createEReference(fixedPageMenuEntryEClass, FIXED_PAGE_MENU_ENTRY__PAGE);
-
-		fixedActionMenuEntryEClass = createEClass(FIXED_ACTION_MENU_ENTRY);
-		createEReference(fixedActionMenuEntryEClass, FIXED_ACTION_MENU_ENTRY__ACTION);
-		createEReference(fixedActionMenuEntryEClass, FIXED_ACTION_MENU_ENTRY__QUERY);
-
-		menuIncludedFeatureEClass = createEClass(MENU_INCLUDED_FEATURE);
-
-		menuIncludedElementEClass = createEClass(MENU_INCLUDED_ELEMENT);
-		createEReference(menuIncludedElementEClass, MENU_INCLUDED_ELEMENT__FEATURE);
+		actionMenuEntryEClass = createEClass(ACTION_MENU_ENTRY);
+		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__ACTION);
+		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__QUERY);
 
 		fixedCommandMenuEntryEClass = createEClass(FIXED_COMMAND_MENU_ENTRY);
 
@@ -3889,13 +3812,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		menuEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		staticMenuEClass.getESuperTypes().add(this.getMenu());
 		dynamicMenuEClass.getESuperTypes().add(this.getMenu());
-		fixedPageMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
-		fixedPageMenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
-		fixedActionMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
-		fixedActionMenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
-		menuIncludedFeatureEClass.getESuperTypes().add(this.getMenuEntry());
-		menuIncludedFeatureEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
-		menuIncludedElementEClass.getESuperTypes().add(this.getMenuIncludedFeature());
+		actionMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
+		actionMenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		fixedCommandMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		fixedCommandMenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
@@ -4098,17 +4016,9 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(menuEntryEClass, MenuEntry.class, "MenuEntry", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMenuEntry_PartOf(), this.getMenu(), this.getMenu_Entries(), "partOf", null, 1, 1, MenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(fixedPageMenuEntryEClass, FixedPageMenuEntry.class, "FixedPageMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFixedPageMenuEntry_Page(), this.getPage(), null, "page", null, 1, 1, FixedPageMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(fixedActionMenuEntryEClass, FixedActionMenuEntry.class, "FixedActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFixedActionMenuEntry_Action(), this.getDynamicUnit(), null, "action", null, 1, 1, FixedActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFixedActionMenuEntry_Query(), this.getQueryInstance(), null, "query", null, 0, 1, FixedActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(menuIncludedFeatureEClass, MenuIncludedFeature.class, "MenuIncludedFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(menuIncludedElementEClass, MenuIncludedElement.class, "MenuIncludedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMenuIncludedElement_Feature(), this.getServiceEntityElement(), null, "feature", null, 1, 1, MenuIncludedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(actionMenuEntryEClass, ActionMenuEntry.class, "ActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActionMenuEntry_Action(), this.getDynamicUnit(), null, "action", null, 1, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActionMenuEntry_Query(), this.getQueryInstance(), null, "query", null, 0, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fixedCommandMenuEntryEClass, FixedCommandMenuEntry.class, "FixedCommandMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

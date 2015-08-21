@@ -459,52 +459,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.MenuIncludedElement} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MenuIncludedElementItemProvider menuIncludedElementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.MenuIncludedElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMenuIncludedElementAdapter() {
-		if (menuIncludedElementItemProvider == null) {
-			menuIncludedElementItemProvider = new MenuIncludedElementItemProvider(this);
-		}
-
-		return menuIncludedElementItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.MenuIncludedAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MenuIncludedAssociationItemProvider menuIncludedAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.MenuIncludedAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMenuIncludedAssociationAdapter() {
-		if (menuIncludedAssociationItemProvider == null) {
-			menuIncludedAssociationItemProvider = new MenuIncludedAssociationItemProvider(this);
-		}
-
-		return menuIncludedAssociationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Query} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -620,49 +574,26 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FixedPageMenuEntry} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FixedPageMenuEntryItemProvider fixedPageMenuEntryItemProvider;
+	protected ActionMenuEntryItemProvider actionMenuEntryItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FixedPageMenuEntry}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFixedPageMenuEntryAdapter() {
-		if (fixedPageMenuEntryItemProvider == null) {
-			fixedPageMenuEntryItemProvider = new FixedPageMenuEntryItemProvider(this);
+	public Adapter createActionMenuEntryAdapter() {
+		if (actionMenuEntryItemProvider == null) {
+			actionMenuEntryItemProvider = new ActionMenuEntryItemProvider(this);
 		}
 
-		return fixedPageMenuEntryItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FixedActionMenuEntry} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FixedActionMenuEntryItemProvider fixedActionMenuEntryItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FixedActionMenuEntry}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFixedActionMenuEntryAdapter() {
-		if (fixedActionMenuEntryItemProvider == null) {
-			fixedActionMenuEntryItemProvider = new FixedActionMenuEntryItemProvider(this);
-		}
-
-		return fixedActionMenuEntryItemProvider;
+		return actionMenuEntryItemProvider;
 	}
 
 	/**
@@ -1780,13 +1711,10 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (pageItemProvider != null) pageItemProvider.dispose();
 		if (pageLinkItemProvider != null) pageLinkItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
-		if (fixedPageMenuEntryItemProvider != null) fixedPageMenuEntryItemProvider.dispose();
-		if (fixedActionMenuEntryItemProvider != null) fixedActionMenuEntryItemProvider.dispose();
+		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (fixedCommandMenuEntryItemProvider != null) fixedCommandMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
-		if (menuIncludedElementItemProvider != null) menuIncludedElementItemProvider.dispose();
-		if (menuIncludedAssociationItemProvider != null) menuIncludedAssociationItemProvider.dispose();
 		if (queryItemProvider != null) queryItemProvider.dispose();
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
 		if (queryInstanceItemProvider != null) queryInstanceItemProvider.dispose();

@@ -148,31 +148,13 @@ public interface WafFactory extends EFactory {
 	DynamicMenu createDynamicMenu();
 
 	/**
-	 * Returns a new object of class '<em>Fixed Page Menu Entry</em>'.
+	 * Returns a new object of class '<em>Action Menu Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fixed Page Menu Entry</em>'.
+	 * @return a new object of class '<em>Action Menu Entry</em>'.
 	 * @generated
 	 */
-	FixedPageMenuEntry createFixedPageMenuEntry();
-
-	/**
-	 * Returns a new object of class '<em>Fixed Action Menu Entry</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fixed Action Menu Entry</em>'.
-	 * @generated
-	 */
-	FixedActionMenuEntry createFixedActionMenuEntry();
-
-	/**
-	 * Returns a new object of class '<em>Menu Included Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Menu Included Element</em>'.
-	 * @generated
-	 */
-	MenuIncludedElement createMenuIncludedElement();
+	ActionMenuEntry createActionMenuEntry();
 
 	/**
 	 * Returns a new object of class '<em>Fixed Command Menu Entry</em>'.

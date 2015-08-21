@@ -88,13 +88,10 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.PAGE: return createPage();
 			case WebsitePackage.PAGE_LINK: return createPageLink();
 			case WebsitePackage.STATIC_MENU: return createStaticMenu();
-			case WebsitePackage.FIXED_PAGE_MENU_ENTRY: return createFixedPageMenuEntry();
-			case WebsitePackage.FIXED_ACTION_MENU_ENTRY: return createFixedActionMenuEntry();
+			case WebsitePackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
 			case WebsitePackage.FIXED_COMMAND_MENU_ENTRY: return createFixedCommandMenuEntry();
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WebsitePackage.DYNAMIC_MENU: return createDynamicMenu();
-			case WebsitePackage.MENU_INCLUDED_ELEMENT: return createMenuIncludedElement();
-			case WebsitePackage.MENU_INCLUDED_ASSOCIATION: return createMenuIncludedAssociation();
 			case WebsitePackage.QUERY: return createQuery();
 			case WebsitePackage.QUERY_PARAMETER: return createQueryParameter();
 			case WebsitePackage.QUERY_INSTANCE: return createQueryInstance();
@@ -361,26 +358,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MenuIncludedElement createMenuIncludedElement() {
-		MenuIncludedElementImpl menuIncludedElement = new MenuIncludedElementImpl();
-		return menuIncludedElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MenuIncludedAssociation createMenuIncludedAssociation() {
-		MenuIncludedAssociationImpl menuIncludedAssociation = new MenuIncludedAssociationImpl();
-		return menuIncludedAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Query createQuery() {
 		QueryImpl query = new QueryImpl();
 		return query;
@@ -431,19 +408,9 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FixedPageMenuEntry createFixedPageMenuEntry() {
-		FixedPageMenuEntryImpl fixedPageMenuEntry = new FixedPageMenuEntryImpl();
-		return fixedPageMenuEntry;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FixedActionMenuEntry createFixedActionMenuEntry() {
-		FixedActionMenuEntryImpl fixedActionMenuEntry = new FixedActionMenuEntryImpl();
-		return fixedActionMenuEntry;
+	public ActionMenuEntry createActionMenuEntry() {
+		ActionMenuEntryImpl actionMenuEntry = new ActionMenuEntryImpl();
+		return actionMenuEntry;
 	}
 
 	/**

@@ -250,12 +250,8 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createStaticMenuAdapter();
 			}
 			@Override
-			public Adapter caseFixedPageMenuEntry(FixedPageMenuEntry object) {
-				return createFixedPageMenuEntryAdapter();
-			}
-			@Override
-			public Adapter caseFixedActionMenuEntry(FixedActionMenuEntry object) {
-				return createFixedActionMenuEntryAdapter();
+			public Adapter caseActionMenuEntry(ActionMenuEntry object) {
+				return createActionMenuEntryAdapter();
 			}
 			@Override
 			public Adapter caseFixedCommandMenuEntry(FixedCommandMenuEntry object) {
@@ -268,18 +264,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDynamicMenu(DynamicMenu object) {
 				return createDynamicMenuAdapter();
-			}
-			@Override
-			public Adapter caseMenuIncludedFeature(MenuIncludedFeature object) {
-				return createMenuIncludedFeatureAdapter();
-			}
-			@Override
-			public Adapter caseMenuIncludedElement(MenuIncludedElement object) {
-				return createMenuIncludedElementAdapter();
-			}
-			@Override
-			public Adapter caseMenuIncludedAssociation(MenuIncludedAssociation object) {
-				return createMenuIncludedAssociationAdapter();
 			}
 			@Override
 			public Adapter caseQuery(Query object) {
@@ -892,48 +876,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.MenuIncludedFeature <em>Menu Included Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.MenuIncludedFeature
-	 * @generated
-	 */
-	public Adapter createMenuIncludedFeatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.MenuIncludedElement <em>Menu Included Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.MenuIncludedElement
-	 * @generated
-	 */
-	public Adapter createMenuIncludedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.MenuIncludedAssociation <em>Menu Included Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.MenuIncludedAssociation
-	 * @generated
-	 */
-	public Adapter createMenuIncludedAssociationAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Query <em>Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1004,30 +946,16 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.FixedPageMenuEntry <em>Fixed Page Menu Entry</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry <em>Action Menu Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.FixedPageMenuEntry
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry
 	 * @generated
 	 */
-	public Adapter createFixedPageMenuEntryAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.FixedActionMenuEntry <em>Fixed Action Menu Entry</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.FixedActionMenuEntry
-	 * @generated
-	 */
-	public Adapter createFixedActionMenuEntryAdapter() {
+	public Adapter createActionMenuEntryAdapter() {
 		return null;
 	}
 

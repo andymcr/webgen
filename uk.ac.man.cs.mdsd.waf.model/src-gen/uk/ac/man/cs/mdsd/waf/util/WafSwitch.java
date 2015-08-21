@@ -255,40 +255,12 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.FIXED_PAGE_MENU_ENTRY: {
-				FixedPageMenuEntry fixedPageMenuEntry = (FixedPageMenuEntry)theEObject;
-				T result = caseFixedPageMenuEntry(fixedPageMenuEntry);
-				if (result == null) result = caseMenuEntry(fixedPageMenuEntry);
-				if (result == null) result = caseNamedDisplayElement(fixedPageMenuEntry);
-				if (result == null) result = caseNamedElement(fixedPageMenuEntry);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.FIXED_ACTION_MENU_ENTRY: {
-				FixedActionMenuEntry fixedActionMenuEntry = (FixedActionMenuEntry)theEObject;
-				T result = caseFixedActionMenuEntry(fixedActionMenuEntry);
-				if (result == null) result = caseMenuEntry(fixedActionMenuEntry);
-				if (result == null) result = caseNamedDisplayElement(fixedActionMenuEntry);
-				if (result == null) result = caseNamedElement(fixedActionMenuEntry);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.MENU_INCLUDED_FEATURE: {
-				MenuIncludedFeature menuIncludedFeature = (MenuIncludedFeature)theEObject;
-				T result = caseMenuIncludedFeature(menuIncludedFeature);
-				if (result == null) result = caseMenuEntry(menuIncludedFeature);
-				if (result == null) result = caseNamedDisplayElement(menuIncludedFeature);
-				if (result == null) result = caseNamedElement(menuIncludedFeature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.MENU_INCLUDED_ELEMENT: {
-				MenuIncludedElement menuIncludedElement = (MenuIncludedElement)theEObject;
-				T result = caseMenuIncludedElement(menuIncludedElement);
-				if (result == null) result = caseMenuIncludedFeature(menuIncludedElement);
-				if (result == null) result = caseMenuEntry(menuIncludedElement);
-				if (result == null) result = caseNamedDisplayElement(menuIncludedElement);
-				if (result == null) result = caseNamedElement(menuIncludedElement);
+			case WafPackage.ACTION_MENU_ENTRY: {
+				ActionMenuEntry actionMenuEntry = (ActionMenuEntry)theEObject;
+				T result = caseActionMenuEntry(actionMenuEntry);
+				if (result == null) result = caseMenuEntry(actionMenuEntry);
+				if (result == null) result = caseNamedDisplayElement(actionMenuEntry);
+				if (result == null) result = caseNamedElement(actionMenuEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1156,62 +1128,17 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fixed Page Menu Entry</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Action Menu Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fixed Page Menu Entry</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Action Menu Entry</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFixedPageMenuEntry(FixedPageMenuEntry object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fixed Action Menu Entry</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fixed Action Menu Entry</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFixedActionMenuEntry(FixedActionMenuEntry object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Menu Included Feature</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Menu Included Feature</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMenuIncludedFeature(MenuIncludedFeature object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Menu Included Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Menu Included Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMenuIncludedElement(MenuIncludedElement object) {
+	public T caseActionMenuEntry(ActionMenuEntry object) {
 		return null;
 	}
 

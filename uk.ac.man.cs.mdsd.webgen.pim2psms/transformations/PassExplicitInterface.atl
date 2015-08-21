@@ -726,17 +726,9 @@ rule StaticMenu {
 }
 
 -- @extends MenuEntry, NamedDisplayElement
-rule FixedPageMenuEntry {
-	from website : Website!FixedPageMenuEntry
-	to waf : WAF!FixedPageMenuEntry (
-		page <- website.destination
-	)
-}
-
--- @extends MenuEntry, NamedDisplayElement
-rule FixedActionMenuEntry {
-	from website : Website!FixedActionMenuEntry
-	to waf : WAF!FixedActionMenuEntry (
+rule ActionMenuEntry {
+	from website : Website!ActionMenuEntry
+	to waf : WAF!ActionMenuEntry (
 		action <- website.destination,
 		"query" <- website."query"
 	)
@@ -766,27 +758,6 @@ rule DynamicMenu {
 		dynamicTitle <- website.dynamicTitle
 	)
 }
-
--- @extends MenuEntry
-abstract rule MenuIncludedFeature {
-	from website : Website!MenuIncludedFeature
-	to waf : WAF!MenuIncludedFeature (
-		displayLabel <-
-			if not website.displayLabel.oclIsUndefined() and website.displayLabel <> '' then
-				website.displayLabel
-			else
-				website.name.createLabel()
-			endif
-	)
-}
-
--- @extends MenuIncludedFeature
-rule MenuIncludedElement {
-	from website : Website!MenuIncludedElement
-	to waf : WAF!MenuIncludedElement (
-	)
-}
-
 
 -- @extends NamedElement
 rule Query {

@@ -170,20 +170,8 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createMenuEntryAdapter();
 			}
 			@Override
-			public Adapter caseFixedPageMenuEntry(FixedPageMenuEntry object) {
-				return createFixedPageMenuEntryAdapter();
-			}
-			@Override
-			public Adapter caseFixedActionMenuEntry(FixedActionMenuEntry object) {
-				return createFixedActionMenuEntryAdapter();
-			}
-			@Override
-			public Adapter caseMenuIncludedFeature(MenuIncludedFeature object) {
-				return createMenuIncludedFeatureAdapter();
-			}
-			@Override
-			public Adapter caseMenuIncludedElement(MenuIncludedElement object) {
-				return createMenuIncludedElementAdapter();
+			public Adapter caseActionMenuEntry(ActionMenuEntry object) {
+				return createActionMenuEntryAdapter();
 			}
 			@Override
 			public Adapter caseFixedCommandMenuEntry(FixedCommandMenuEntry object) {
@@ -774,58 +762,16 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FixedPageMenuEntry <em>Fixed Page Menu Entry</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ActionMenuEntry <em>Action Menu Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.FixedPageMenuEntry
+	 * @see uk.ac.man.cs.mdsd.waf.ActionMenuEntry
 	 * @generated
 	 */
-	public Adapter createFixedPageMenuEntryAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry <em>Fixed Action Menu Entry</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry
-	 * @generated
-	 */
-	public Adapter createFixedActionMenuEntryAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.MenuIncludedFeature <em>Menu Included Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.MenuIncludedFeature
-	 * @generated
-	 */
-	public Adapter createMenuIncludedFeatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.MenuIncludedElement <em>Menu Included Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.MenuIncludedElement
-	 * @generated
-	 */
-	public Adapter createMenuIncludedElementAdapter() {
+	public Adapter createActionMenuEntryAdapter() {
 		return null;
 	}
 

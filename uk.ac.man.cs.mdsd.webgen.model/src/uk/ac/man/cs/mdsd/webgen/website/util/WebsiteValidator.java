@@ -178,22 +178,14 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateMenuEntry((MenuEntry)value, diagnostics, context);
 			case WebsitePackage.STATIC_MENU:
 				return validateStaticMenu((StaticMenu)value, diagnostics, context);
-			case WebsitePackage.FIXED_PAGE_MENU_ENTRY:
-				return validateFixedPageMenuEntry((FixedPageMenuEntry)value, diagnostics, context);
-			case WebsitePackage.FIXED_ACTION_MENU_ENTRY:
-				return validateFixedActionMenuEntry((FixedActionMenuEntry)value, diagnostics, context);
+			case WebsitePackage.ACTION_MENU_ENTRY:
+				return validateActionMenuEntry((ActionMenuEntry)value, diagnostics, context);
 			case WebsitePackage.FIXED_COMMAND_MENU_ENTRY:
 				return validateFixedCommandMenuEntry((FixedCommandMenuEntry)value, diagnostics, context);
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY:
 				return validateEditStaticTextMenuEntry((EditStaticTextMenuEntry)value, diagnostics, context);
 			case WebsitePackage.DYNAMIC_MENU:
 				return validateDynamicMenu((DynamicMenu)value, diagnostics, context);
-			case WebsitePackage.MENU_INCLUDED_FEATURE:
-				return validateMenuIncludedFeature((MenuIncludedFeature)value, diagnostics, context);
-			case WebsitePackage.MENU_INCLUDED_ELEMENT:
-				return validateMenuIncludedElement((MenuIncludedElement)value, diagnostics, context);
-			case WebsitePackage.MENU_INCLUDED_ASSOCIATION:
-				return validateMenuIncludedAssociation((MenuIncludedAssociation)value, diagnostics, context);
 			case WebsitePackage.QUERY:
 				return validateQuery((Query)value, diagnostics, context);
 			case WebsitePackage.QUERY_PARAMETER:
@@ -1018,33 +1010,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateMenuIncludedFeature(MenuIncludedFeature menuIncludedFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(menuIncludedFeature, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMenuIncludedElement(MenuIncludedElement menuIncludedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(menuIncludedElement, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMenuIncludedAssociation(MenuIncludedAssociation menuIncludedAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(menuIncludedAssociation, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateQuery(Query query, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(query, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(query, diagnostics, context);
@@ -1150,36 +1115,17 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFixedPageMenuEntry(FixedPageMenuEntry fixedPageMenuEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(fixedPageMenuEntry, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(fixedPageMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(fixedPageMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(fixedPageMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(fixedPageMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(fixedPageMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(fixedPageMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fixedPageMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fixedPageMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(fixedPageMenuEntry, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateFixedActionMenuEntry(FixedActionMenuEntry fixedActionMenuEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(fixedActionMenuEntry, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(fixedActionMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(fixedActionMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(fixedActionMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(fixedActionMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(fixedActionMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(fixedActionMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fixedActionMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fixedActionMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(fixedActionMenuEntry, diagnostics, context);
+	public boolean validateActionMenuEntry(ActionMenuEntry actionMenuEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(actionMenuEntry, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(actionMenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(actionMenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(actionMenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(actionMenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(actionMenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(actionMenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(actionMenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(actionMenuEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(actionMenuEntry, diagnostics, context);
 		return result;
 	}
 

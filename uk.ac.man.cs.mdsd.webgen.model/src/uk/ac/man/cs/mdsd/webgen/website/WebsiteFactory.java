@@ -170,24 +170,6 @@ public interface WebsiteFactory extends EFactory {
 	Page createPage();
 
 	/**
-	 * Returns a new object of class '<em>Menu Included Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Menu Included Element</em>'.
-	 * @generated
-	 */
-	MenuIncludedElement createMenuIncludedElement();
-
-	/**
-	 * Returns a new object of class '<em>Menu Included Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Menu Included Association</em>'.
-	 * @generated
-	 */
-	MenuIncludedAssociation createMenuIncludedAssociation();
-
-	/**
 	 * Returns a new object of class '<em>Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -233,22 +215,13 @@ public interface WebsiteFactory extends EFactory {
 	StaticMenu createStaticMenu();
 
 	/**
-	 * Returns a new object of class '<em>Fixed Page Menu Entry</em>'.
+	 * Returns a new object of class '<em>Action Menu Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fixed Page Menu Entry</em>'.
+	 * @return a new object of class '<em>Action Menu Entry</em>'.
 	 * @generated
 	 */
-	FixedPageMenuEntry createFixedPageMenuEntry();
-
-	/**
-	 * Returns a new object of class '<em>Fixed Action Menu Entry</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fixed Action Menu Entry</em>'.
-	 * @generated
-	 */
-	FixedActionMenuEntry createFixedActionMenuEntry();
+	ActionMenuEntry createActionMenuEntry();
 
 	/**
 	 * Returns a new object of class '<em>Fixed Command Menu Entry</em>'.

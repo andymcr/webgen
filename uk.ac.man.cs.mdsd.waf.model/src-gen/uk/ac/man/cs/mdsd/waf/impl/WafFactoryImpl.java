@@ -71,9 +71,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.SERVICE_VIEW_ASSOCIATION: return createServiceViewAssociation();
 			case WafPackage.STATIC_MENU: return createStaticMenu();
 			case WafPackage.DYNAMIC_MENU: return createDynamicMenu();
-			case WafPackage.FIXED_PAGE_MENU_ENTRY: return createFixedPageMenuEntry();
-			case WafPackage.FIXED_ACTION_MENU_ENTRY: return createFixedActionMenuEntry();
-			case WafPackage.MENU_INCLUDED_ELEMENT: return createMenuIncludedElement();
+			case WafPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
 			case WafPackage.FIXED_COMMAND_MENU_ENTRY: return createFixedCommandMenuEntry();
 			case WafPackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WafPackage.PAGE: return createPage();
@@ -303,29 +301,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FixedPageMenuEntry createFixedPageMenuEntry() {
-		FixedPageMenuEntryImpl fixedPageMenuEntry = new FixedPageMenuEntryImpl();
-		return fixedPageMenuEntry;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FixedActionMenuEntry createFixedActionMenuEntry() {
-		FixedActionMenuEntryImpl fixedActionMenuEntry = new FixedActionMenuEntryImpl();
-		return fixedActionMenuEntry;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MenuIncludedElement createMenuIncludedElement() {
-		MenuIncludedElementImpl menuIncludedElement = new MenuIncludedElementImpl();
-		return menuIncludedElement;
+	public ActionMenuEntry createActionMenuEntry() {
+		ActionMenuEntryImpl actionMenuEntry = new ActionMenuEntryImpl();
+		return actionMenuEntry;
 	}
 
 	/**

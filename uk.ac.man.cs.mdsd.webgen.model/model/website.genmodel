@@ -350,15 +350,9 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//MenuEntry/partOf"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//StaticMenu"/>
-    <genClasses ecoreClass="website.ecore#//FixedPageMenuEntry">
-      <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//FixedPageMenuEntry/destination"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//FixedActionMenuEntry">
-      <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//FixedActionMenuEntry/destination"/>
-      <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"
-          ecoreFeature="ecore:EReference website.ecore#//FixedActionMenuEntry/query"/>
+    <genClasses ecoreClass="website.ecore#//ActionMenuEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ActionMenuEntry/destination"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//ActionMenuEntry/query"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//FixedCommandMenuEntry">
       <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
@@ -372,17 +366,6 @@
           ecoreFeature="ecore:EReference website.ecore#//DynamicMenu/selection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//DynamicMenu/dynamicTitle"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="website.ecore#//MenuIncludedFeature">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//MenuIncludedFeature/displayLabel"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//MenuIncludedElement">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//MenuIncludedElement/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//MenuIncludedElement/serviceElement"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//MenuIncludedAssociation">
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//MenuIncludedAssociation/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//MenuIncludedAssociation/serviceAssociation"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Query">
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"

@@ -96,30 +96,7 @@
           href="website.gmftool#//@palette/@tools.1/@tools.1"/>
       <diagramNode
           href="website.gmfgraph#Menu"/>
-      <children
-          compartment="//@nodes.2/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="website.ecore#//Menu/entries"/>
-        <ownedChild>
-          <domainMetaElement
-              href="website.ecore#//MenuIncludedElement"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping"
-              readOnly="true">
-            <diagramLabel
-                href="website.gmfgraph#IncludedFeatureNameLabel"/>
-            <features
-                href="website.ecore#//MenuIncludedElement/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-          <diagramNode
-              href="website.gmfgraph#ServiceFeature"/>
-        </ownedChild>
-      </children>
-      <compartments
-          children="//@nodes.2/@ownedChild/@children.0">
+      <compartments>
         <compartment
             href="website.gmfgraph#ServiceFeaturesCompartment"/>
       </compartments>
@@ -2452,7 +2429,7 @@
             href="website.ecore#//Menu/entries"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//FixedPageMenuEntry"/>
+              href="website.ecore#//ActionMenuEntry"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -2463,27 +2440,6 @@
           <tool
               xsi:type="gmftool:CreationTool"
               href="website.gmftool#//@palette/@tools.1/@tools.2"/>
-          <diagramNode
-              href="website.gmfgraph#MenuEntry"/>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.6/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="website.ecore#//Menu/entries"/>
-        <ownedChild>
-          <domainMetaElement
-              href="website.ecore#//FixedActionMenuEntry"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="website.gmfgraph#MenuEntryNameLabel"/>
-            <features
-                href="website.ecore#//NamedElement/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.1/@tools.3"/>
           <diagramNode
               href="website.gmfgraph#MenuEntry"/>
         </ownedChild>
@@ -2531,7 +2487,7 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.6/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.3 //@nodes.6/@ownedChild/@children.2">
+          children="//@nodes.6/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.1">
         <compartment
             href="website.gmfgraph#MenuEntriesCompartment"/>
       </compartments>

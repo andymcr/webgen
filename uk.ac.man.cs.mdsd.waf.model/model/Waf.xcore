@@ -202,20 +202,9 @@ abstract class MenuEntry {
 	container Menu[1] partOf opposite entries
 }
 
-class FixedPageMenuEntry extends MenuEntry, NamedDisplayElement {
-	refers Page[1] page
-}
-
-class FixedActionMenuEntry extends MenuEntry, NamedDisplayElement {
+class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	refers DynamicUnit[1] action
 	contains QueryInstance query
-}
-
-abstract class MenuIncludedFeature extends MenuEntry, NamedDisplayElement {
-}
-
-class MenuIncludedElement extends MenuIncludedFeature {
-	refers ServiceEntityElement[1] feature
 }
 
 // Remove  need for this

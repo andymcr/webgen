@@ -421,78 +421,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FixedPageMenuEntry} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ActionMenuEntry} instances.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected FixedPageMenuEntryItemProvider fixedPageMenuEntryItemProvider;
+	protected ActionMenuEntryItemProvider actionMenuEntryItemProvider;
 
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FixedPageMenuEntry}.
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ActionMenuEntry}.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Adapter createFixedPageMenuEntryAdapter()
-  {
-		if (fixedPageMenuEntryItemProvider == null) {
-			fixedPageMenuEntryItemProvider = new FixedPageMenuEntryItemProvider(this);
+	@Override
+	public Adapter createActionMenuEntryAdapter() {
+		if (actionMenuEntryItemProvider == null) {
+			actionMenuEntryItemProvider = new ActionMenuEntryItemProvider(this);
 		}
 
-		return fixedPageMenuEntryItemProvider;
+		return actionMenuEntryItemProvider;
 	}
 
-  /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry} instances.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected FixedActionMenuEntryItemProvider fixedActionMenuEntryItemProvider;
-
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FixedActionMenuEntry}.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Adapter createFixedActionMenuEntryAdapter()
-  {
-		if (fixedActionMenuEntryItemProvider == null) {
-			fixedActionMenuEntryItemProvider = new FixedActionMenuEntryItemProvider(this);
-		}
-
-		return fixedActionMenuEntryItemProvider;
-	}
-
-  /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.MenuIncludedElement} instances.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected MenuIncludedElementItemProvider menuIncludedElementItemProvider;
-
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.MenuIncludedElement}.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Adapter createMenuIncludedElementAdapter()
-  {
-		if (menuIncludedElementItemProvider == null) {
-			menuIncludedElementItemProvider = new MenuIncludedElementItemProvider(this);
-		}
-
-		return menuIncludedElementItemProvider;
-	}
-
-  /**
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FixedCommandMenuEntry} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1497,9 +1448,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (serviceViewAssociationItemProvider != null) serviceViewAssociationItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
-		if (fixedPageMenuEntryItemProvider != null) fixedPageMenuEntryItemProvider.dispose();
-		if (fixedActionMenuEntryItemProvider != null) fixedActionMenuEntryItemProvider.dispose();
-		if (menuIncludedElementItemProvider != null) menuIncludedElementItemProvider.dispose();
+		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (fixedCommandMenuEntryItemProvider != null) fixedCommandMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
 		if (pageItemProvider != null) pageItemProvider.dispose();

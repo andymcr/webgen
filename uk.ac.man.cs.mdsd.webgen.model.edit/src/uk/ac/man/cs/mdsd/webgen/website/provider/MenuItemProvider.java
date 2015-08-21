@@ -228,12 +228,7 @@ public class MenuItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.MENU__ENTRIES,
-				 WebsiteFactory.eINSTANCE.createFixedPageMenuEntry()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.MENU__ENTRIES,
-				 WebsiteFactory.eINSTANCE.createFixedActionMenuEntry()));
+				 WebsiteFactory.eINSTANCE.createActionMenuEntry()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -244,16 +239,6 @@ public class MenuItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.MENU__ENTRIES,
 				 WebsiteFactory.eINSTANCE.createEditStaticTextMenuEntry()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.MENU__ENTRIES,
-				 WebsiteFactory.eINSTANCE.createMenuIncludedElement()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.MENU__ENTRIES,
-				 WebsiteFactory.eINSTANCE.createMenuIncludedAssociation()));
 	}
 
 }

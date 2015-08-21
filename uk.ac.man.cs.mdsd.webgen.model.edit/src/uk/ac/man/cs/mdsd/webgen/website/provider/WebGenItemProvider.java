@@ -9,12 +9,12 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
+import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
-import uk.ac.man.cs.mdsd.webgen.website.FixedActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.QueryInstance;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
@@ -116,9 +116,9 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	}
 
 	protected List<Query> getQueries(final QueryInstance query) {
-		if (query.eContainer() instanceof FixedActionMenuEntry) {
-			final FixedActionMenuEntry entry
-				= (FixedActionMenuEntry) query.eContainer();
+		if (query.eContainer() instanceof ActionMenuEntry) {
+			final ActionMenuEntry entry
+				= (ActionMenuEntry) query.eContainer();
 			final List<Query> queries = new LinkedList<Query>();
 			if (entry.getDestination() != null) {
 				queries.addAll(entry.getDestination().getQueries());

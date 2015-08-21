@@ -528,11 +528,7 @@
       <details key="onlyStaticEntries" value="entries->select(e | e.oclIsKindOf(MenuIncludedFeature))->isEmpty()"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FixedPageMenuEntry" eSuperTypes="#//MenuEntry #//NamedDisplayElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="destination" ordered="false"
-        lowerBound="1" eType="#//Page"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FixedActionMenuEntry" eSuperTypes="#//MenuEntry #//NamedDisplayElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ActionMenuEntry" eSuperTypes="#//MenuEntry #//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" ordered="false"
         lowerBound="1" eType="#//DynamicUnit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="query" eType="#//QueryInstance"
@@ -559,31 +555,6 @@
         eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicTitle" ordered="false"
         eType="#//ServiceEntityElement"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MenuIncludedFeature" abstract="true"
-      eSuperTypes="#//MenuEntry">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayLabel" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MenuIncludedElement" eSuperTypes="#//MenuIncludedFeature">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" volatile="true" derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if serviceElement.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;serviceElement.name&#xD;&#xA;endif&#xD;&#xA;"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceElement" ordered="false"
-        lowerBound="1" eType="#//ServiceEntityElement"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MenuIncludedAssociation" eSuperTypes="#//MenuIncludedFeature">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        changeable="false" volatile="true" derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if serviceAssociation.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;serviceAssociation.name&#xD;&#xA;endif"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceAssociation" ordered="false"
-        lowerBound="1" eType="#//ServiceEntityAssociation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Query" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"

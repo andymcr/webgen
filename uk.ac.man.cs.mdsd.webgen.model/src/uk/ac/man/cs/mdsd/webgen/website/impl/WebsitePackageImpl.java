@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaPackage;
+import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.ActionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
@@ -58,9 +59,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction;
 import uk.ac.man.cs.mdsd.webgen.website.FileAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.FixedActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.FixedCommandMenuEntry;
-import uk.ac.man.cs.mdsd.webgen.website.FixedPageMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.ImageAttribute;
@@ -78,9 +77,6 @@ import uk.ac.man.cs.mdsd.webgen.website.LoginUnit;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Menu;
 import uk.ac.man.cs.mdsd.webgen.website.MenuEntry;
-import uk.ac.man.cs.mdsd.webgen.website.MenuIncludedAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.MenuIncludedElement;
-import uk.ac.man.cs.mdsd.webgen.website.MenuIncludedFeature;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelElement;
@@ -334,27 +330,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass menuIncludedFeatureEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass menuIncludedElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass menuIncludedAssociationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass queryEClass = null;
 
 	/**
@@ -390,14 +365,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass fixedPageMenuEntryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass fixedActionMenuEntryEClass = null;
+	private EClass actionMenuEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2091,78 +2059,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMenuIncludedFeature() {
-		return menuIncludedFeatureEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMenuIncludedFeature_DisplayLabel() {
-		return (EAttribute)menuIncludedFeatureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMenuIncludedElement() {
-		return menuIncludedElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMenuIncludedElement_Name() {
-		return (EAttribute)menuIncludedElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMenuIncludedElement_ServiceElement() {
-		return (EReference)menuIncludedElementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMenuIncludedAssociation() {
-		return menuIncludedAssociationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getMenuIncludedAssociation_Name() {
-		return (EAttribute)menuIncludedAssociationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getMenuIncludedAssociation_ServiceAssociation() {
-		return (EReference)menuIncludedAssociationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getQuery() {
 		return queryEClass;
 	}
@@ -2289,8 +2185,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFixedPageMenuEntry() {
-		return fixedPageMenuEntryEClass;
+	public EClass getActionMenuEntry() {
+		return actionMenuEntryEClass;
 	}
 
 	/**
@@ -2298,8 +2194,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFixedPageMenuEntry_Destination() {
-		return (EReference)fixedPageMenuEntryEClass.getEStructuralFeatures().get(0);
+	public EReference getActionMenuEntry_Destination() {
+		return (EReference)actionMenuEntryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2307,26 +2203,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFixedActionMenuEntry() {
-		return fixedActionMenuEntryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFixedActionMenuEntry_Destination() {
-		return (EReference)fixedActionMenuEntryEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFixedActionMenuEntry_Query() {
-		return (EReference)fixedActionMenuEntryEClass.getEStructuralFeatures().get(1);
+	public EReference getActionMenuEntry_Query() {
+		return (EReference)actionMenuEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -4968,12 +4846,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		staticMenuEClass = createEClass(STATIC_MENU);
 
-		fixedPageMenuEntryEClass = createEClass(FIXED_PAGE_MENU_ENTRY);
-		createEReference(fixedPageMenuEntryEClass, FIXED_PAGE_MENU_ENTRY__DESTINATION);
-
-		fixedActionMenuEntryEClass = createEClass(FIXED_ACTION_MENU_ENTRY);
-		createEReference(fixedActionMenuEntryEClass, FIXED_ACTION_MENU_ENTRY__DESTINATION);
-		createEReference(fixedActionMenuEntryEClass, FIXED_ACTION_MENU_ENTRY__QUERY);
+		actionMenuEntryEClass = createEClass(ACTION_MENU_ENTRY);
+		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__DESTINATION);
+		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__QUERY);
 
 		fixedCommandMenuEntryEClass = createEClass(FIXED_COMMAND_MENU_ENTRY);
 		createEReference(fixedCommandMenuEntryEClass, FIXED_COMMAND_MENU_ENTRY__DESTINATION);
@@ -4984,17 +4859,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(dynamicMenuEClass, DYNAMIC_MENU__SERVICE);
 		createEReference(dynamicMenuEClass, DYNAMIC_MENU__SELECTION);
 		createEReference(dynamicMenuEClass, DYNAMIC_MENU__DYNAMIC_TITLE);
-
-		menuIncludedFeatureEClass = createEClass(MENU_INCLUDED_FEATURE);
-		createEAttribute(menuIncludedFeatureEClass, MENU_INCLUDED_FEATURE__DISPLAY_LABEL);
-
-		menuIncludedElementEClass = createEClass(MENU_INCLUDED_ELEMENT);
-		createEAttribute(menuIncludedElementEClass, MENU_INCLUDED_ELEMENT__NAME);
-		createEReference(menuIncludedElementEClass, MENU_INCLUDED_ELEMENT__SERVICE_ELEMENT);
-
-		menuIncludedAssociationEClass = createEClass(MENU_INCLUDED_ASSOCIATION);
-		createEAttribute(menuIncludedAssociationEClass, MENU_INCLUDED_ASSOCIATION__NAME);
-		createEReference(menuIncludedAssociationEClass, MENU_INCLUDED_ASSOCIATION__SERVICE_ASSOCIATION);
 
 		queryEClass = createEClass(QUERY);
 		createEReference(queryEClass, QUERY__PARAMETERS);
@@ -5308,18 +5172,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		pageEClass.getESuperTypes().add(this.getUnitContainer());
 		menuEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		staticMenuEClass.getESuperTypes().add(this.getMenu());
-		fixedPageMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
-		fixedPageMenuEntryEClass.getESuperTypes().add(this.getNamedDisplayElement());
-		fixedActionMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
-		fixedActionMenuEntryEClass.getESuperTypes().add(this.getNamedDisplayElement());
+		actionMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
+		actionMenuEntryEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		fixedCommandMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		fixedCommandMenuEntryEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		dynamicMenuEClass.getESuperTypes().add(this.getMenu());
-		menuIncludedFeatureEClass.getESuperTypes().add(this.getMenuEntry());
-		menuIncludedElementEClass.getESuperTypes().add(this.getMenuIncludedFeature());
-		menuIncludedAssociationEClass.getESuperTypes().add(this.getMenuIncludedFeature());
 		queryEClass.getESuperTypes().add(this.getNamedElement());
 		queryParameterEClass.getESuperTypes().add(this.getNamedElement());
 		contentUnitEClass.getESuperTypes().add(this.getNamedDisplayElement());
@@ -5631,12 +5490,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(staticMenuEClass, StaticMenu.class, "StaticMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(fixedPageMenuEntryEClass, FixedPageMenuEntry.class, "FixedPageMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFixedPageMenuEntry_Destination(), this.getPage(), null, "destination", null, 1, 1, FixedPageMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(fixedActionMenuEntryEClass, FixedActionMenuEntry.class, "FixedActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFixedActionMenuEntry_Destination(), this.getDynamicUnit(), null, "destination", null, 1, 1, FixedActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFixedActionMenuEntry_Query(), this.getQueryInstance(), null, "query", null, 0, 1, FixedActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(actionMenuEntryEClass, ActionMenuEntry.class, "ActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActionMenuEntry_Destination(), this.getDynamicUnit(), null, "destination", null, 1, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActionMenuEntry_Query(), this.getQueryInstance(), null, "query", null, 0, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fixedCommandMenuEntryEClass, FixedCommandMenuEntry.class, "FixedCommandMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFixedCommandMenuEntry_Destination(), this.getCommand(), null, "destination", null, 0, 1, FixedCommandMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5647,17 +5503,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getDynamicMenu_Service(), this.getService(), null, "service", null, 1, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicMenu_Selection(), this.getSelection(), null, "selection", null, 1, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicMenu_DynamicTitle(), this.getServiceEntityElement(), null, "dynamicTitle", null, 0, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(menuIncludedFeatureEClass, MenuIncludedFeature.class, "MenuIncludedFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMenuIncludedFeature_DisplayLabel(), ecorePackage.getEString(), "displayLabel", null, 0, 1, MenuIncludedFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(menuIncludedElementEClass, MenuIncludedElement.class, "MenuIncludedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMenuIncludedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, MenuIncludedElement.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getMenuIncludedElement_ServiceElement(), this.getServiceEntityElement(), null, "serviceElement", null, 1, 1, MenuIncludedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(menuIncludedAssociationEClass, MenuIncludedAssociation.class, "MenuIncludedAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMenuIncludedAssociation_Name(), ecorePackage.getEString(), "name", null, 0, 1, MenuIncludedAssociation.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getMenuIncludedAssociation_ServiceAssociation(), this.getServiceEntityAssociation(), null, "serviceAssociation", null, 1, 1, MenuIncludedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(queryEClass, Query.class, "Query", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuery_Parameters(), this.getQueryParameter(), null, "parameters", null, 0, -1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6184,18 +6029,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "mustSelectSingleton", "not selection.oclIsUndefined() implies selection.limit = 1",
 			 "dynamicTitleFromService", "not dynamicTitle.oclIsUndefined() implies\r\n\tif service.oclIsUndefined() then\r\n \t\tfalse\r\n\telse\r\n\t\tservice.features->includes(dynamicTitle)\r\n\tendif",
 			 "canOnlyTitleWithSingletonElement", "not dynamicTitle.oclIsUndefined() implies dynamicTitle.feature.cardinality <> Cardinality::Many"
-		   });	
-		addAnnotation
-		  (getMenuIncludedElement_Name(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if serviceElement.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tserviceElement.name\r\nendif\r\n"
-		   });	
-		addAnnotation
-		  (getMenuIncludedAssociation_Name(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if serviceAssociation.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tserviceAssociation.name\r\nendif"
 		   });	
 		addAnnotation
 		  (dynamicUnitEClass, 

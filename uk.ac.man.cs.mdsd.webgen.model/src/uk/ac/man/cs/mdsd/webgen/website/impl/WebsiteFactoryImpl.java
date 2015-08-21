@@ -81,6 +81,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.MODEL_LABEL_ELEMENT: return createModelLabelElement();
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
 			case WebsitePackage.SELECTION: return createSelection();
+			case WebsitePackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT: return createServiceEntityElement();
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION: return createServiceEntityAssociation();
 			case WebsitePackage.SERVICE_VIEW_ASSOCIATION: return createServiceViewAssociation();
@@ -126,6 +127,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.FEATURE_SUPPORT_ACTION: return createFeatureSupportAction();
 			case WebsitePackage.MODEL_REFERENCE: return createModelReference();
 			case WebsitePackage.FEATURE_REFERENCE: return createFeatureReference();
+			case WebsitePackage.PARAMETER_REFERENCE: return createParameterReference();
 			case WebsitePackage.CURRENT_USER_REFERENCE: return createCurrentUserReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -569,6 +571,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SelectionParameter createSelectionParameter() {
+		SelectionParameterImpl selectionParameter = new SelectionParameterImpl();
+		return selectionParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ServiceEntityElement createServiceEntityElement() {
 		ServiceEntityElementImpl serviceEntityElement = new ServiceEntityElementImpl();
 		return serviceEntityElement;
@@ -842,6 +854,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public FeatureReference createFeatureReference() {
 		FeatureReferenceImpl featureReference = new FeatureReferenceImpl();
 		return featureReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ParameterReference createParameterReference() {
+		ParameterReferenceImpl parameterReference = new ParameterReferenceImpl();
+		return parameterReference;
 	}
 
 	/**

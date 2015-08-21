@@ -6,13 +6,14 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+import java.util.List;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -25,22 +26,21 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectTargetImpl#getSelectionFeature <em>Selection Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectTargetImpl#getSelectionFeatures <em>Selection Features</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class SelectTargetImpl extends EObjectImpl implements SelectTarget {
 	/**
-	 * The cached value of the '{@link #getSelectionFeature() <em>Selection Feature</em>}' reference.
+	 * The cached value of the '{@link #getSelectionFeatures() <em>Selection Features</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSelectionFeature()
+	 * @see #getSelectionFeatures()
 	 * @generated
 	 * @ordered
 	 */
-	protected Attribute selectionFeature;
-
+	protected EList<Attribute> selectionFeatures;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,37 +65,11 @@ public abstract class SelectTargetImpl extends EObjectImpl implements SelectTarg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute getSelectionFeature() {
-		if (selectionFeature != null && selectionFeature.eIsProxy()) {
-			InternalEObject oldSelectionFeature = (InternalEObject)selectionFeature;
-			selectionFeature = (Attribute)eResolveProxy(oldSelectionFeature);
-			if (selectionFeature != oldSelectionFeature) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SELECT_TARGET__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
-			}
+	public List<Attribute> getSelectionFeatures() {
+		if (selectionFeatures == null) {
+			selectionFeatures = new EObjectResolvingEList<Attribute>(Attribute.class, this, WebsitePackage.SELECT_TARGET__SELECTION_FEATURES);
 		}
-		return selectionFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute basicGetSelectionFeature() {
-		return selectionFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionFeature(Attribute newSelectionFeature) {
-		Attribute oldSelectionFeature = selectionFeature;
-		selectionFeature = newSelectionFeature;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SELECT_TARGET__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
+		return selectionFeatures;
 	}
 
 	/**
@@ -106,9 +80,8 @@ public abstract class SelectTargetImpl extends EObjectImpl implements SelectTarg
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.SELECT_TARGET__SELECTION_FEATURE:
-				if (resolve) return getSelectionFeature();
-				return basicGetSelectionFeature();
+			case WebsitePackage.SELECT_TARGET__SELECTION_FEATURES:
+				return getSelectionFeatures();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,11 +91,13 @@ public abstract class SelectTargetImpl extends EObjectImpl implements SelectTarg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.SELECT_TARGET__SELECTION_FEATURE:
-				setSelectionFeature((Attribute)newValue);
+			case WebsitePackage.SELECT_TARGET__SELECTION_FEATURES:
+				getSelectionFeatures().clear();
+				getSelectionFeatures().addAll((Collection<? extends Attribute>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,8 +111,8 @@ public abstract class SelectTargetImpl extends EObjectImpl implements SelectTarg
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.SELECT_TARGET__SELECTION_FEATURE:
-				setSelectionFeature((Attribute)null);
+			case WebsitePackage.SELECT_TARGET__SELECTION_FEATURES:
+				getSelectionFeatures().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -151,8 +126,8 @@ public abstract class SelectTargetImpl extends EObjectImpl implements SelectTarg
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.SELECT_TARGET__SELECTION_FEATURE:
-				return selectionFeature != null;
+			case WebsitePackage.SELECT_TARGET__SELECTION_FEATURES:
+				return selectionFeatures != null && !selectionFeatures.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

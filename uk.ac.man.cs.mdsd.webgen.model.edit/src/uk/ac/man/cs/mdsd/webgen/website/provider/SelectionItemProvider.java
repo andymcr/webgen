@@ -18,6 +18,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 
@@ -118,6 +119,7 @@ public class SelectionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebsitePackage.Literals.SELECTION__PARAMETERS);
 			childrenFeatures.add(WebsitePackage.Literals.SELECTION__FILTER);
 			childrenFeatures.add(WebsitePackage.Literals.SELECTION__ORDERING);
 		}
@@ -177,6 +179,7 @@ public class SelectionItemProvider
 			case WebsitePackage.SELECTION__LIMIT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebsitePackage.SELECTION__PARAMETERS:
 			case WebsitePackage.SELECTION__FILTER:
 			case WebsitePackage.SELECTION__ORDERING:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -195,6 +198,11 @@ public class SelectionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.SELECTION__PARAMETERS,
+				 WebsiteFactory.eINSTANCE.createSelectionParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter

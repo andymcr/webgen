@@ -278,6 +278,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SelectionParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SelectionParameterItemProvider selectionParameterItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.SelectionParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSelectionParameterAdapter() {
+		if (selectionParameterItemProvider == null) {
+			selectionParameterItemProvider = new SelectionParameterItemProvider(this);
+		}
+
+		return selectionParameterItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1306,6 +1329,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ParameterReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ParameterReferenceItemProvider parameterReferenceItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ParameterReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createParameterReferenceAdapter() {
+		if (parameterReferenceItemProvider == null) {
+			parameterReferenceItemProvider = new ParameterReferenceItemProvider(this);
+		}
+
+		return parameterReferenceItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.CurrentUserReference} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1445,6 +1491,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (modelLabelElementItemProvider != null) modelLabelElementItemProvider.dispose();
 		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
+		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
 		if (serviceEntityElementItemProvider != null) serviceEntityElementItemProvider.dispose();
 		if (serviceEntityAssociationItemProvider != null) serviceEntityAssociationItemProvider.dispose();
 		if (serviceViewAssociationItemProvider != null) serviceViewAssociationItemProvider.dispose();
@@ -1488,6 +1535,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (featureSupportActionItemProvider != null) featureSupportActionItemProvider.dispose();
 		if (modelReferenceItemProvider != null) modelReferenceItemProvider.dispose();
 		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
+		if (parameterReferenceItemProvider != null) parameterReferenceItemProvider.dispose();
 		if (currentUserReferenceItemProvider != null) currentUserReferenceItemProvider.dispose();
 	}
 
@@ -1551,6 +1599,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__LEFT,
 						 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
@@ -1562,6 +1615,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_EQUALITY_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -1591,6 +1649,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__LEFT,
 						 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
@@ -1602,6 +1665,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_COMPARISON_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -1631,6 +1699,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__LEFT,
 						 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
@@ -1642,6 +1715,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -1671,6 +1749,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
+						 WafFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__LEFT,
 						 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 				newChildDescriptors.add
@@ -1682,6 +1765,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
 						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_LIKE_OPERATOR__RIGHT,
+						 WafFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
@@ -1711,6 +1799,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
+						 WafFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_EMPTY__FEATURE,
 						 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 				return null;
@@ -1732,6 +1825,11 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 					(createChildParameter
 						(CriteriaPackage.Literals.ORDER__PATH,
 						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter

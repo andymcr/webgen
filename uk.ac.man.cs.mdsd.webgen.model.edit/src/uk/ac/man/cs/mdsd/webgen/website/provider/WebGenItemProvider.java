@@ -174,26 +174,36 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	}
 
 	protected Object getCriteriaContext(final Object object) {
-		Object current = object;
-		while ((current != null)
-				&& !((current instanceof Service) || (current instanceof DynamicUnit)) ) {
-			if (!(current instanceof EObject)) {
-				break;
-			}
-			current = ((EObject) current).eContainer();
+		if (object instanceof EObject) {
+			return ((EObject) object).eContainer();
+		} else {
+			return null;
 		}
-
-		return current;
 	}
 
 	protected Service getCriteriaServiceContext(final Object object) {
-		final Object container = getCriteriaContext(object);
-		if (container instanceof Service) {
-			return (Service) container;
-		} else if (container instanceof DynamicUnit) {
-			final DynamicUnit containingUnit = (DynamicUnit) container;
-			if (containingUnit.getSource() instanceof Service) {
-				return (Service) containingUnit.getSource();
+		Object container = getCriteriaContext(object);
+		while (container != null) {
+			container = getCriteriaContext(container);
+			if (container instanceof Service) {
+				return (Service) container;
+			} else if (container instanceof DynamicUnit) {
+				final DynamicUnit containingUnit = (DynamicUnit) container;
+				if (containingUnit.getSource() instanceof Service) {
+					return (Service) containingUnit.getSource();
+				}
+			}
+		}
+
+		return null;
+	}
+
+	protected Selection getCriteriaSelectionContext(final Object object) {
+		Object container = getCriteriaContext(object);
+		while (container != null) {
+			container = getCriteriaContext(container);
+			if (container instanceof Selection) {
+				return (Selection) container;
 			}
 		}
 

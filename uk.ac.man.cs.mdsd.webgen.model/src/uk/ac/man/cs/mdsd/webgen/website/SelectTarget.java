@@ -6,6 +6,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.SelectTarget#getSelectionFeature <em>Selection Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.SelectTarget#getSelectionFeatures <em>Selection Features</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelectTarget()
@@ -27,28 +28,18 @@ import org.eclipse.emf.ecore.EObject;
 public interface SelectTarget extends EObject {
 
 	/**
-	 * Returns the value of the '<em><b>Selection Feature</b></em>' reference.
+	 * Returns the value of the '<em><b>Selection Features</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Attribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Selection Feature</em>' reference isn't clear,
+	 * If the meaning of the '<em>Selection Features</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selection Feature</em>' reference.
-	 * @see #setSelectionFeature(Attribute)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelectTarget_SelectionFeature()
+	 * @return the value of the '<em>Selection Features</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelectTarget_SelectionFeatures()
 	 * @model required="true"
 	 * @generated
 	 */
-	Attribute getSelectionFeature();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.SelectTarget#getSelectionFeature <em>Selection Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selection Feature</em>' reference.
-	 * @see #getSelectionFeature()
-	 * @generated
-	 */
-	void setSelectionFeature(Attribute value);
+	List<Attribute> getSelectionFeatures();
 } // SelectTarget

@@ -14,6 +14,7 @@ import uk.ac.man.cs.mdsd.orm.DataType;
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
 import uk.ac.man.cs.mdsd.waf.QueryParameter;
+import uk.ac.man.cs.mdsd.waf.SelectionParameter;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -24,6 +25,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
@@ -31,6 +33,16 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class QueryParameterImpl extends NamedElementImpl implements QueryParameter {
+	/**
+	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected SelectionParameter parameter;
+
 	/**
 	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -78,6 +90,44 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.QUERY_PARAMETER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SelectionParameter getParameter() {
+		if (parameter != null && parameter.eIsProxy()) {
+			InternalEObject oldParameter = (InternalEObject)parameter;
+			parameter = (SelectionParameter)eResolveProxy(oldParameter);
+			if (parameter != oldParameter) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.QUERY_PARAMETER__PARAMETER, oldParameter, parameter));
+			}
+		}
+		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SelectionParameter basicGetParameter() {
+		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParameter(SelectionParameter newParameter) {
+		SelectionParameter oldParameter = parameter;
+		parameter = newParameter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.QUERY_PARAMETER__PARAMETER, oldParameter, parameter));
 	}
 
 	/**
@@ -147,6 +197,9 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.QUERY_PARAMETER__PARAMETER:
+				if (resolve) return getParameter();
+				return basicGetParameter();
 			case WafPackage.QUERY_PARAMETER__DATA_TYPE:
 				if (resolve) return getDataType();
 				return basicGetDataType();
@@ -164,6 +217,9 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.QUERY_PARAMETER__PARAMETER:
+				setParameter((SelectionParameter)newValue);
+				return;
 			case WafPackage.QUERY_PARAMETER__DATA_TYPE:
 				setDataType((DataType)newValue);
 				return;
@@ -182,6 +238,9 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.QUERY_PARAMETER__PARAMETER:
+				setParameter((SelectionParameter)null);
+				return;
 			case WafPackage.QUERY_PARAMETER__DATA_TYPE:
 				setDataType((DataType)null);
 				return;
@@ -200,6 +259,8 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.QUERY_PARAMETER__PARAMETER:
+				return parameter != null;
 			case WafPackage.QUERY_PARAMETER__DATA_TYPE:
 				return dataType != null;
 			case WafPackage.QUERY_PARAMETER__DEFAULT_VALUE:

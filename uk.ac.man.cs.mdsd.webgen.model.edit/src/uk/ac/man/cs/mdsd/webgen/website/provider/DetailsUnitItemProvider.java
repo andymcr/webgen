@@ -53,7 +53,7 @@ public class DetailsUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSelectionFeaturePropertyDescriptor(object);
+			addSelectionFeaturesPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addLayoutClassPropertyDescriptor(object);
@@ -67,13 +67,13 @@ public class DetailsUnitItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addSelectionFeaturePropertyDescriptor(Object object) {
+	protected void addSelectionFeaturesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_SelectTarget_selectionFeature_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_selectionFeature_feature", "_UI_SelectTarget_type"),
-			 WebsitePackage.Literals.SELECT_TARGET__SELECTION_FEATURE,
+			getString("_UI_SelectTarget_selectionFeatures_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_selectionFeatures_feature", "_UI_SelectTarget_type"),
+			 WebsitePackage.Literals.SELECT_TARGET__SELECTION_FEATURES,
 			true, false, true, null,
 			getString("_UI_InterfacePropertyCategory"),
 			null) {

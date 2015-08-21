@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
 import uk.ac.man.cs.mdsd.waf.Selection;
+import uk.ac.man.cs.mdsd.waf.SelectionParameter;
 import uk.ac.man.cs.mdsd.waf.ServiceAssociation;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -35,6 +36,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
@@ -44,6 +46,16 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class SelectionImpl extends NamedElementImpl implements Selection {
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SelectionParameter> parameters;
+
 	/**
 	 * The cached value of the '{@link #getJoins() <em>Joins</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -111,6 +123,18 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.SELECTION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<SelectionParameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<SelectionParameter>(SelectionParameter.class, this, WafPackage.SELECTION__PARAMETERS);
+		}
+		return parameters;
 	}
 
 	/**
@@ -209,6 +233,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WafPackage.SELECTION__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 			case WafPackage.SELECTION__FILTER:
 				return basicSetFilter(null, msgs);
 			case WafPackage.SELECTION__ORDERING:
@@ -225,6 +251,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.SELECTION__PARAMETERS:
+				return getParameters();
 			case WafPackage.SELECTION__JOINS:
 				return getJoins();
 			case WafPackage.SELECTION__FILTER:
@@ -246,6 +274,10 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.SELECTION__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends SelectionParameter>)newValue);
+				return;
 			case WafPackage.SELECTION__JOINS:
 				getJoins().clear();
 				getJoins().addAll((Collection<? extends ServiceAssociation>)newValue);
@@ -272,6 +304,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.SELECTION__PARAMETERS:
+				getParameters().clear();
+				return;
 			case WafPackage.SELECTION__JOINS:
 				getJoins().clear();
 				return;
@@ -296,6 +331,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.SELECTION__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 			case WafPackage.SELECTION__JOINS:
 				return joins != null && !joins.isEmpty();
 			case WafPackage.SELECTION__FILTER:

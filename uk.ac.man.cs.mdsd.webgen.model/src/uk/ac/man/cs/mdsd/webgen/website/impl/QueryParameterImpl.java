@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uk.ac.man.cs.mdsd.webgen.website.DataType;
 import uk.ac.man.cs.mdsd.webgen.website.QueryParameter;
+import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -19,6 +20,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.QueryParameterImpl#getParameter <em>Parameter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.QueryParameterImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.QueryParameterImpl#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
@@ -26,6 +28,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class QueryParameterImpl extends NamedElementImpl implements QueryParameter {
+	/**
+	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected SelectionParameter parameter;
+
 	/**
 	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -72,6 +84,44 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.QUERY_PARAMETER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SelectionParameter getParameter() {
+		if (parameter != null && parameter.eIsProxy()) {
+			InternalEObject oldParameter = (InternalEObject)parameter;
+			parameter = (SelectionParameter)eResolveProxy(oldParameter);
+			if (parameter != oldParameter) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.QUERY_PARAMETER__PARAMETER, oldParameter, parameter));
+			}
+		}
+		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SelectionParameter basicGetParameter() {
+		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParameter(SelectionParameter newParameter) {
+		SelectionParameter oldParameter = parameter;
+		parameter = newParameter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.QUERY_PARAMETER__PARAMETER, oldParameter, parameter));
 	}
 
 	/**
@@ -141,6 +191,9 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.QUERY_PARAMETER__PARAMETER:
+				if (resolve) return getParameter();
+				return basicGetParameter();
 			case WebsitePackage.QUERY_PARAMETER__DATA_TYPE:
 				if (resolve) return getDataType();
 				return basicGetDataType();
@@ -158,6 +211,9 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.QUERY_PARAMETER__PARAMETER:
+				setParameter((SelectionParameter)newValue);
+				return;
 			case WebsitePackage.QUERY_PARAMETER__DATA_TYPE:
 				setDataType((DataType)newValue);
 				return;
@@ -176,6 +232,9 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.QUERY_PARAMETER__PARAMETER:
+				setParameter((SelectionParameter)null);
+				return;
 			case WebsitePackage.QUERY_PARAMETER__DATA_TYPE:
 				setDataType((DataType)null);
 				return;
@@ -194,6 +253,8 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.QUERY_PARAMETER__PARAMETER:
+				return parameter != null;
 			case WebsitePackage.QUERY_PARAMETER__DATA_TYPE:
 				return dataType != null;
 			case WebsitePackage.QUERY_PARAMETER__DEFAULT_VALUE:

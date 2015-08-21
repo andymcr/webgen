@@ -10,6 +10,18 @@ create dummyWaf : WAF refining waf : WAF, orm : ORM;
 uses WebsiteHelpers;
 
 
+rule QueryParameterWithout {
+	from partialWaf : WAF!QueryParameter (partialWaf.parameter.oclIsUndefined())
+	to waf : WAF!QueryParameter (
+		parameter <-
+			if not partialWaf.refImmediateComposite().selection.oclIsUndefined() then
+				partialWaf.refImmediateComposite().selection.parameters->any(p | p.name = partialWaf.name)
+			else
+				OclUndefined
+			endif
+	)
+}
+
 rule QueryInstanceWithoutActuals {
 	from partialWaf : WAF!QueryInstance (partialWaf.actuals->isEmpty())
 	to waf : WAF!QueryInstance (

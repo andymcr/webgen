@@ -202,6 +202,10 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createSelectionAdapter();
 			}
 			@Override
+			public Adapter caseSelectionParameter(SelectionParameter object) {
+				return createSelectionParameterAdapter();
+			}
+			@Override
 			public Adapter caseServiceFeature(ServiceFeature object) {
 				return createServiceFeatureAdapter();
 			}
@@ -472,6 +476,10 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseFeatureReference(FeatureReference object) {
 				return createFeatureReferenceAdapter();
+			}
+			@Override
+			public Adapter caseParameterReference(ParameterReference object) {
+				return createParameterReferenceAdapter();
 			}
 			@Override
 			public Adapter caseCurrentUserReference(CurrentUserReference object) {
@@ -1388,6 +1396,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter <em>Selection Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.SelectionParameter
+	 * @generated
+	 */
+	public Adapter createSelectionParameterAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit <em>Content Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1902,6 +1924,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFeatureReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ParameterReference <em>Parameter Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ParameterReference
+	 * @generated
+	 */
+	public Adapter createParameterReferenceAdapter() {
 		return null;
 	}
 

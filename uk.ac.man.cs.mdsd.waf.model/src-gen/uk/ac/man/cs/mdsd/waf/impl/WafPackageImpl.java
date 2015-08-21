@@ -69,6 +69,7 @@ import uk.ac.man.cs.mdsd.waf.ModelLabelFeature;
 import uk.ac.man.cs.mdsd.waf.ModelReference;
 import uk.ac.man.cs.mdsd.waf.Page;
 import uk.ac.man.cs.mdsd.waf.PageTopMenuOptions;
+import uk.ac.man.cs.mdsd.waf.ParameterReference;
 import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.QueryActual;
 import uk.ac.man.cs.mdsd.waf.QueryInstance;
@@ -78,6 +79,7 @@ import uk.ac.man.cs.mdsd.waf.SearchUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.SelectTarget;
 import uk.ac.man.cs.mdsd.waf.Selection;
+import uk.ac.man.cs.mdsd.waf.SelectionParameter;
 import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.ServiceAssociation;
 import uk.ac.man.cs.mdsd.waf.ServiceEntityAssociation;
@@ -199,6 +201,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass selectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass selectionParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -661,6 +670,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass featureReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1405,7 +1421,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Joins() {
+	public EReference getSelection_Parameters() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1414,7 +1430,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Filter() {
+	public EReference getSelection_Joins() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1423,7 +1439,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Ordering() {
+	public EReference getSelection_Filter() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1432,8 +1448,35 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSelection_Ordering() {
+		return (EReference)selectionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getSelection_Limit() {
-		return (EAttribute)selectionEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)selectionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSelectionParameter() {
+		return selectionParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSelectionParameter_DefaultValue() {
+		return (EAttribute)selectionParameterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1954,7 +1997,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getQueryParameter_DataType() {
+	public EReference getQueryParameter_Parameter() {
 		return (EReference)queryParameterEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1963,8 +2006,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getQueryParameter_DataType() {
+		return (EReference)queryParameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getQueryParameter_DefaultValue() {
-		return (EAttribute)queryParameterEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)queryParameterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3205,7 +3257,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelectTarget_SelectionFeature() {
+	public EReference getSelectTarget_SelectionFeatures() {
 		return (EReference)selectTargetEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3306,6 +3358,24 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EReference getFeatureReference_Feature() {
 		return (EReference)featureReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParameterReference() {
+		return parameterReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParameterReference_Parameter() {
+		return (EReference)parameterReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -3464,10 +3534,14 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL);
 
 		selectionEClass = createEClass(SELECTION);
+		createEReference(selectionEClass, SELECTION__PARAMETERS);
 		createEReference(selectionEClass, SELECTION__JOINS);
 		createEReference(selectionEClass, SELECTION__FILTER);
 		createEReference(selectionEClass, SELECTION__ORDERING);
 		createEAttribute(selectionEClass, SELECTION__LIMIT);
+
+		selectionParameterEClass = createEClass(SELECTION_PARAMETER);
+		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__DEFAULT_VALUE);
 
 		serviceFeatureEClass = createEClass(SERVICE_FEATURE);
 		createEReference(serviceFeatureEClass, SERVICE_FEATURE__INCLUDED_BY);
@@ -3544,6 +3618,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(queryEClass, QUERY__SELECTION);
 
 		queryParameterEClass = createEClass(QUERY_PARAMETER);
+		createEReference(queryParameterEClass, QUERY_PARAMETER__PARAMETER);
 		createEReference(queryParameterEClass, QUERY_PARAMETER__DATA_TYPE);
 		createEAttribute(queryParameterEClass, QUERY_PARAMETER__DEFAULT_VALUE);
 
@@ -3725,7 +3800,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		selectTargetEClass = createEClass(SELECT_TARGET);
 		createEReference(selectTargetEClass, SELECT_TARGET__TARGETTING_ACTIONS);
-		createEReference(selectTargetEClass, SELECT_TARGET__SELECTION_FEATURE);
+		createEReference(selectTargetEClass, SELECT_TARGET__SELECTION_FEATURES);
 
 		selectActionEClass = createEClass(SELECT_ACTION);
 		createEReference(selectActionEClass, SELECT_ACTION__TARGET);
@@ -3742,6 +3817,9 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		featureReferenceEClass = createEClass(FEATURE_REFERENCE);
 		createEReference(featureReferenceEClass, FEATURE_REFERENCE__FEATURE);
+
+		parameterReferenceEClass = createEClass(PARAMETER_REFERENCE);
+		createEReference(parameterReferenceEClass, PARAMETER_REFERENCE__PARAMETER);
 
 		currentUserReferenceEClass = createEClass(CURRENT_USER_REFERENCE);
 
@@ -3795,6 +3873,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		modelLabelElementEClass.getESuperTypes().add(this.getModelLabelFeature());
 		modelLabelAssociationEClass.getESuperTypes().add(this.getModelLabelFeature());
 		selectionEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
+		selectionParameterEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		serviceAssociationEClass.getESuperTypes().add(this.getServiceFeature());
 		serviceEntityFeatureEClass.getESuperTypes().add(this.getServiceFeature());
 		serviceEntityFeatureEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
@@ -3881,6 +3960,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		featureSupportActionEClass.getESuperTypes().add(this.getInlineAction());
 		modelReferenceEClass.getESuperTypes().add(theCriteriaPackage.getPath());
 		featureReferenceEClass.getESuperTypes().add(theCriteriaPackage.getPath());
+		parameterReferenceEClass.getESuperTypes().add(theCriteriaPackage.getPath());
 		currentUserReferenceEClass.getESuperTypes().add(theCriteriaPackage.getPath());
 
 		// Initialize classes, features, and operations; add parameters
@@ -3967,10 +4047,14 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getModelLabelAssociation_DynamicLabel(), this.getModelLabel(), null, "dynamicLabel", null, 0, 1, ModelLabelAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionEClass, Selection.class, "Selection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSelection_Parameters(), this.getSelectionParameter(), null, "parameters", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Joins(), this.getServiceAssociation(), null, "joins", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Filter(), theCriteriaPackage.getPredicate(), null, "filter", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Ordering(), theCriteriaPackage.getOrder(), null, "ordering", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelection_Limit(), theEcorePackage.getEInt(), "limit", "0", 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(selectionParameterEClass, SelectionParameter.class, "SelectionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSelectionParameter_DefaultValue(), theEcorePackage.getEString(), "defaultValue", null, 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceFeatureEClass, ServiceFeature.class, "ServiceFeature", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceFeature_IncludedBy(), this.getService(), this.getService_Features(), "includedBy", null, 1, 1, ServiceFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4047,6 +4131,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getQuery_Selection(), this.getSelection(), null, "selection", null, 0, 1, Query.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(queryParameterEClass, QueryParameter.class, "QueryParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQueryParameter_Parameter(), this.getSelectionParameter(), null, "parameter", null, 0, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getQueryParameter_DataType(), theOrmPackage.getDataType(), null, "dataType", null, 0, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQueryParameter_DefaultValue(), theEcorePackage.getEString(), "defaultValue", "", 0, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4228,7 +4313,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(selectTargetEClass, SelectTarget.class, "SelectTarget", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelectTarget_TargettingActions(), this.getSelectAction(), this.getSelectAction_Target(), "targettingActions", null, 0, -1, SelectTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSelectTarget_SelectionFeature(), this.getServiceEntityElement(), null, "selectionFeature", null, 1, 1, SelectTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSelectTarget_SelectionFeatures(), this.getServiceEntityElement(), null, "selectionFeatures", null, 1, -1, SelectTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectActionEClass, SelectAction.class, "SelectAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelectAction_Target(), this.getSelectTarget(), this.getSelectTarget_TargettingActions(), "target", null, 1, 1, SelectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4244,7 +4329,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getModelReference_Unit(), this.getDynamicUnit(), null, "unit", null, 1, 1, ModelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureReferenceEClass, FeatureReference.class, "FeatureReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFeatureReference_Feature(), this.getServiceEntityFeature(), null, "feature", null, 0, 1, FeatureReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeatureReference_Feature(), this.getServiceEntityFeature(), null, "feature", null, 1, 1, FeatureReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterReferenceEClass, ParameterReference.class, "ParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameterReference_Parameter(), this.getSelectionParameter(), null, "parameter", null, 1, 1, ParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(currentUserReferenceEClass, CurrentUserReference.class, "CurrentUserReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

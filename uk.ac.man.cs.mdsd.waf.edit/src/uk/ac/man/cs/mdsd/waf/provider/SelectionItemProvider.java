@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 import uk.ac.man.cs.mdsd.waf.Selection;
+import uk.ac.man.cs.mdsd.waf.WafFactory;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.Selection} object.
@@ -109,6 +110,7 @@ public class SelectionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.Literals.SELECTION__PARAMETERS);
 			childrenFeatures.add(WafPackage.Literals.SELECTION__FILTER);
 			childrenFeatures.add(WafPackage.Literals.SELECTION__ORDERING);
 		}
@@ -168,6 +170,7 @@ public class SelectionItemProvider
 			case WafPackage.SELECTION__LIMIT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WafPackage.SELECTION__PARAMETERS:
 			case WafPackage.SELECTION__FILTER:
 			case WafPackage.SELECTION__ORDERING:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -186,6 +189,11 @@ public class SelectionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.SELECTION__PARAMETERS,
+				 WafFactory.eINSTANCE.createSelectionParameter()));
 
 		newChildDescriptors.add
 			(createChildParameter

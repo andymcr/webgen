@@ -420,6 +420,11 @@ public class ServiceEntityFeatureItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
 				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add

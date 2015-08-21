@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -14,6 +15,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.QueryParameter;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -45,10 +48,42 @@ public class QueryParameterItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addParameterPropertyDescriptor(object);
 			addDataTypePropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Parameter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addParameterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_QueryParameter_parameter_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_parameter_feature", "_UI_QueryParameter_type"),
+			WebsitePackage.Literals.QUERY_PARAMETER__PARAMETER,
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof QueryParameter) {
+						final Query query
+							= (Query) ((QueryParameter) object).eContainer();
+						if (query.getSelection() != null) {
+							return query.getSelection().getParameters();
+						}
+					}
+
+					return Collections.emptyList();
+				}
+		});
 	}
 
 	/**
@@ -69,7 +104,7 @@ public class QueryParameterItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -91,7 +126,7 @@ public class QueryParameterItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

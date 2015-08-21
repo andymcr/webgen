@@ -12,6 +12,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.QueryParameter#getParameter <em>Parameter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.QueryParameter#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.QueryParameter#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
@@ -21,6 +22,32 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @generated
  */
 public interface QueryParameter extends NamedElement {
+
+	/**
+	 * Returns the value of the '<em><b>Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameter</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameter</em>' reference.
+	 * @see #setParameter(SelectionParameter)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getQueryParameter_Parameter()
+	 * @model
+	 * @generated
+	 */
+	SelectionParameter getParameter();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.QueryParameter#getParameter <em>Parameter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parameter</em>' reference.
+	 * @see #getParameter()
+	 * @generated
+	 */
+	void setParameter(SelectionParameter value);
 
 	/**
 	 * Returns the value of the '<em><b>Data Type</b></em>' reference.

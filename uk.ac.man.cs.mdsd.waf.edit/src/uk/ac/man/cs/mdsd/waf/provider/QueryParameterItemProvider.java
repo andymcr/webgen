@@ -47,10 +47,33 @@ public class QueryParameterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addParameterPropertyDescriptor(object);
 			addDataTypePropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Parameter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParameterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_QueryParameter_parameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_parameter_feature", "_UI_QueryParameter_type"),
+				 WafPackage.Literals.QUERY_PARAMETER__PARAMETER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

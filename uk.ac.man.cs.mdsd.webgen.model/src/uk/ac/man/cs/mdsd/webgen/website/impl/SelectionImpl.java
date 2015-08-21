@@ -23,6 +23,7 @@ import uk.ac.man.cs.mdsd.criteria.Order;
 import uk.ac.man.cs.mdsd.criteria.Predicate;
 
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
+import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -34,6 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
@@ -43,6 +45,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class SelectionImpl extends NamedElementImpl implements Selection {
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SelectionParameter> parameters;
+
 	/**
 	 * The cached value of the '{@link #getJoins() <em>Joins</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -110,6 +122,18 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.SELECTION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<SelectionParameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<SelectionParameter>(SelectionParameter.class, this, WebsitePackage.SELECTION__PARAMETERS);
+		}
+		return parameters;
 	}
 
 	/**
@@ -208,6 +232,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.SELECTION__FILTER:
 				return basicSetFilter(null, msgs);
 			case WebsitePackage.SELECTION__ORDERING:
@@ -224,6 +250,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__PARAMETERS:
+				return getParameters();
 			case WebsitePackage.SELECTION__JOINS:
 				return getJoins();
 			case WebsitePackage.SELECTION__FILTER:
@@ -245,6 +273,10 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends SelectionParameter>)newValue);
+				return;
 			case WebsitePackage.SELECTION__JOINS:
 				getJoins().clear();
 				getJoins().addAll((Collection<? extends ServiceAssociation>)newValue);
@@ -271,6 +303,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__PARAMETERS:
+				getParameters().clear();
+				return;
 			case WebsitePackage.SELECTION__JOINS:
 				getJoins().clear();
 				return;
@@ -295,6 +330,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 			case WebsitePackage.SELECTION__JOINS:
 				return joins != null && !joins.isEmpty();
 			case WebsitePackage.SELECTION__FILTER:

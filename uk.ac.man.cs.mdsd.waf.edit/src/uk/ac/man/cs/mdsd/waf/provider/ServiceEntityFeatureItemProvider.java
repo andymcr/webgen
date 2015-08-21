@@ -369,6 +369,11 @@ public class ServiceEntityFeatureItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				 WafFactory.eINSTANCE.createParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
 				 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add

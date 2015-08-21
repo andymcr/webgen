@@ -339,6 +339,13 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.SELECTION_PARAMETER: {
+				SelectionParameter selectionParameter = (SelectionParameter)theEObject;
+				T result = caseSelectionParameter(selectionParameter);
+				if (result == null) result = caseNamedElement(selectionParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.SERVICE_FEATURE: {
 				ServiceFeature serviceFeature = (ServiceFeature)theEObject;
 				T result = caseServiceFeature(serviceFeature);
@@ -929,6 +936,14 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				T result = caseFeatureReference(featureReference);
 				if (result == null) result = casePath(featureReference);
 				if (result == null) result = caseExpression(featureReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.PARAMETER_REFERENCE: {
+				ParameterReference parameterReference = (ParameterReference)theEObject;
+				T result = caseParameterReference(parameterReference);
+				if (result == null) result = casePath(parameterReference);
+				if (result == null) result = caseExpression(parameterReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1890,6 +1905,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSelectionParameter(SelectionParameter object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Content Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -2441,6 +2471,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFeatureReference(FeatureReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parameter Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parameter Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParameterReference(ParameterReference object) {
 		return null;
 	}
 

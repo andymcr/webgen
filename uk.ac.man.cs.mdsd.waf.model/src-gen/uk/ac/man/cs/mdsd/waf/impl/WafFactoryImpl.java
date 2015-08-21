@@ -65,6 +65,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.MODEL_LABEL_ELEMENT: return createModelLabelElement();
 			case WafPackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
 			case WafPackage.SELECTION: return createSelection();
+			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WafPackage.SERVICE_ENTITY_ELEMENT: return createServiceEntityElement();
 			case WafPackage.SERVICE_ENTITY_ASSOCIATION: return createServiceEntityAssociation();
 			case WafPackage.SERVICE_VIEW_ASSOCIATION: return createServiceViewAssociation();
@@ -108,6 +109,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.FEATURE_SUPPORT_ACTION: return createFeatureSupportAction();
 			case WafPackage.MODEL_REFERENCE: return createModelReference();
 			case WafPackage.FEATURE_REFERENCE: return createFeatureReference();
+			case WafPackage.PARAMETER_REFERENCE: return createParameterReference();
 			case WafPackage.CURRENT_USER_REFERENCE: return createCurrentUserReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -234,6 +236,16 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public Selection createSelection() {
 		SelectionImpl selection = new SelectionImpl();
 		return selection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SelectionParameter createSelectionParameter() {
+		SelectionParameterImpl selectionParameter = new SelectionParameterImpl();
+		return selectionParameter;
 	}
 
 	/**
@@ -664,6 +676,16 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public FeatureReference createFeatureReference() {
 		FeatureReferenceImpl featureReference = new FeatureReferenceImpl();
 		return featureReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ParameterReference createParameterReference() {
+		ParameterReferenceImpl parameterReference = new ParameterReferenceImpl();
+		return parameterReference;
 	}
 
 	/**

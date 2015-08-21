@@ -126,6 +126,10 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createSelectionAdapter();
 			}
 			@Override
+			public Adapter caseSelectionParameter(SelectionParameter object) {
+				return createSelectionParameterAdapter();
+			}
+			@Override
 			public Adapter caseServiceFeature(ServiceFeature object) {
 				return createServiceFeatureAdapter();
 			}
@@ -390,6 +394,10 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createFeatureReferenceAdapter();
 			}
 			@Override
+			public Adapter caseParameterReference(ParameterReference object) {
+				return createParameterReferenceAdapter();
+			}
+			@Override
 			public Adapter caseCurrentUserReference(CurrentUserReference object) {
 				return createCurrentUserReferenceAdapter();
 			}
@@ -608,6 +616,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSelectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.SelectionParameter <em>Selection Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.SelectionParameter
+	 * @generated
+	 */
+	public Adapter createSelectionParameterAdapter() {
 		return null;
 	}
 
@@ -1532,6 +1554,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFeatureReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ParameterReference <em>Parameter Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ParameterReference
+	 * @generated
+	 */
+	public Adapter createParameterReferenceAdapter() {
 		return null;
 	}
 

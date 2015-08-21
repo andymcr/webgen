@@ -6,13 +6,16 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
+import java.util.Collection;
+import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DetailsUnit;
 import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
@@ -26,7 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getSelectionFeature <em>Selection Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getSelectionFeatures <em>Selection Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
@@ -36,14 +39,14 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  */
 public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	/**
-	 * The cached value of the '{@link #getSelectionFeature() <em>Selection Feature</em>}' reference.
+	 * The cached value of the '{@link #getSelectionFeatures() <em>Selection Features</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSelectionFeature()
+	 * @see #getSelectionFeatures()
 	 * @generated
 	 * @ordered
 	 */
-	protected Attribute selectionFeature;
+	protected EList<Attribute> selectionFeatures;
 
 	/**
 	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
@@ -129,37 +132,11 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute getSelectionFeature() {
-		if (selectionFeature != null && selectionFeature.eIsProxy()) {
-			InternalEObject oldSelectionFeature = (InternalEObject)selectionFeature;
-			selectionFeature = (Attribute)eResolveProxy(oldSelectionFeature);
-			if (selectionFeature != oldSelectionFeature) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
-			}
+	public List<Attribute> getSelectionFeatures() {
+		if (selectionFeatures == null) {
+			selectionFeatures = new EObjectResolvingEList<Attribute>(Attribute.class, this, WebsitePackage.DETAILS_UNIT__SELECTION_FEATURES);
 		}
-		return selectionFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute basicGetSelectionFeature() {
-		return selectionFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionFeature(Attribute newSelectionFeature) {
-		Attribute oldSelectionFeature = selectionFeature;
-		selectionFeature = newSelectionFeature;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
+		return selectionFeatures;
 	}
 
 	/**
@@ -233,9 +210,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE:
-				if (resolve) return getSelectionFeature();
-				return basicGetSelectionFeature();
+			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURES:
+				return getSelectionFeatures();
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return isOmitFieldLabels();
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
@@ -251,11 +227,13 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE:
-				setSelectionFeature((Attribute)newValue);
+			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURES:
+				getSelectionFeatures().clear();
+				getSelectionFeatures().addAll((Collection<? extends Attribute>)newValue);
 				return;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
@@ -278,8 +256,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE:
-				setSelectionFeature((Attribute)null);
+			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURES:
+				getSelectionFeatures().clear();
 				return;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
@@ -302,8 +280,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE:
-				return selectionFeature != null;
+			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURES:
+				return selectionFeatures != null && !selectionFeatures.isEmpty();
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
@@ -323,7 +301,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == SelectTarget.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE: return WebsitePackage.SELECT_TARGET__SELECTION_FEATURE;
+				case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURES: return WebsitePackage.SELECT_TARGET__SELECTION_FEATURES;
 				default: return -1;
 			}
 		}
@@ -339,7 +317,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == SelectTarget.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.SELECT_TARGET__SELECTION_FEATURE: return WebsitePackage.DETAILS_UNIT__SELECTION_FEATURE;
+				case WebsitePackage.SELECT_TARGET__SELECTION_FEATURES: return WebsitePackage.DETAILS_UNIT__SELECTION_FEATURES;
 				default: return -1;
 			}
 		}

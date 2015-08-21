@@ -14,6 +14,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.QueryParameter#getParameter <em>Parameter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.QueryParameter#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.QueryParameter#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
@@ -23,6 +24,32 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * @generated
  */
 public interface QueryParameter extends NamedElement {
+	/**
+	 * Returns the value of the '<em><b>Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameter</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameter</em>' reference.
+	 * @see #setParameter(SelectionParameter)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQueryParameter_Parameter()
+	 * @model
+	 * @generated
+	 */
+	SelectionParameter getParameter();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.QueryParameter#getParameter <em>Parameter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parameter</em>' reference.
+	 * @see #getParameter()
+	 * @generated
+	 */
+	void setParameter(SelectionParameter value);
+
 	/**
 	 * Returns the value of the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -18,6 +18,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getOrdering <em>Ordering</em>}</li>
@@ -29,6 +30,22 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * @generated
  */
 public interface Selection extends NamedElement {
+	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.SelectionParameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelection_Parameters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SelectionParameter> getParameters();
+
 	/**
 	 * Returns the value of the '<em><b>Joins</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ServiceAssociation}.

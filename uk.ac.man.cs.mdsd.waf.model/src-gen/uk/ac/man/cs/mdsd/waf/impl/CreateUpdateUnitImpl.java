@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,7 +33,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CreateUpdateUnitImpl#getTargettingActions <em>Targetting Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CreateUpdateUnitImpl#getSelectionFeature <em>Selection Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CreateUpdateUnitImpl#getSelectionFeatures <em>Selection Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CreateUpdateUnitImpl#getClearLabel <em>Clear Label</em>}</li>
  * </ul>
  *
@@ -50,14 +51,14 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	protected EList<SelectAction> targettingActions;
 
 	/**
-	 * The cached value of the '{@link #getSelectionFeature() <em>Selection Feature</em>}' reference.
+	 * The cached value of the '{@link #getSelectionFeatures() <em>Selection Features</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSelectionFeature()
+	 * @see #getSelectionFeatures()
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceEntityElement selectionFeature;
+	protected EList<ServiceEntityElement> selectionFeatures;
 
 	/**
 	 * The default value of the '{@link #getClearLabel() <em>Clear Label</em>}' attribute.
@@ -115,37 +116,11 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement getSelectionFeature() {
-		if (selectionFeature != null && selectionFeature.eIsProxy()) {
-			InternalEObject oldSelectionFeature = (InternalEObject)selectionFeature;
-			selectionFeature = (ServiceEntityElement)eResolveProxy(oldSelectionFeature);
-			if (selectionFeature != oldSelectionFeature) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
-			}
+	public EList<ServiceEntityElement> getSelectionFeatures() {
+		if (selectionFeatures == null) {
+			selectionFeatures = new EObjectResolvingEList<ServiceEntityElement>(ServiceEntityElement.class, this, WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES);
 		}
-		return selectionFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceEntityElement basicGetSelectionFeature() {
-		return selectionFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSelectionFeature(ServiceEntityElement newSelectionFeature) {
-		ServiceEntityElement oldSelectionFeature = selectionFeature;
-		selectionFeature = newSelectionFeature;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURE, oldSelectionFeature, selectionFeature));
+		return selectionFeatures;
 	}
 
 	/**
@@ -208,9 +183,8 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 		switch (featureID) {
 			case WafPackage.CREATE_UPDATE_UNIT__TARGETTING_ACTIONS:
 				return getTargettingActions();
-			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURE:
-				if (resolve) return getSelectionFeature();
-				return basicGetSelectionFeature();
+			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES:
+				return getSelectionFeatures();
 			case WafPackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				return getClearLabel();
 		}
@@ -230,8 +204,9 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 				getTargettingActions().clear();
 				getTargettingActions().addAll((Collection<? extends SelectAction>)newValue);
 				return;
-			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURE:
-				setSelectionFeature((ServiceEntityElement)newValue);
+			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES:
+				getSelectionFeatures().clear();
+				getSelectionFeatures().addAll((Collection<? extends ServiceEntityElement>)newValue);
 				return;
 			case WafPackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				setClearLabel((String)newValue);
@@ -251,8 +226,8 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 			case WafPackage.CREATE_UPDATE_UNIT__TARGETTING_ACTIONS:
 				getTargettingActions().clear();
 				return;
-			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURE:
-				setSelectionFeature((ServiceEntityElement)null);
+			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES:
+				getSelectionFeatures().clear();
 				return;
 			case WafPackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				setClearLabel(CLEAR_LABEL_EDEFAULT);
@@ -271,8 +246,8 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 		switch (featureID) {
 			case WafPackage.CREATE_UPDATE_UNIT__TARGETTING_ACTIONS:
 				return targettingActions != null && !targettingActions.isEmpty();
-			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURE:
-				return selectionFeature != null;
+			case WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES:
+				return selectionFeatures != null && !selectionFeatures.isEmpty();
 			case WafPackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				return CLEAR_LABEL_EDEFAULT == null ? clearLabel != null : !CLEAR_LABEL_EDEFAULT.equals(clearLabel);
 		}
@@ -289,7 +264,7 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 		if (baseClass == SelectTarget.class) {
 			switch (derivedFeatureID) {
 				case WafPackage.CREATE_UPDATE_UNIT__TARGETTING_ACTIONS: return WafPackage.SELECT_TARGET__TARGETTING_ACTIONS;
-				case WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURE: return WafPackage.SELECT_TARGET__SELECTION_FEATURE;
+				case WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES: return WafPackage.SELECT_TARGET__SELECTION_FEATURES;
 				default: return -1;
 			}
 		}
@@ -306,7 +281,7 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 		if (baseClass == SelectTarget.class) {
 			switch (baseFeatureID) {
 				case WafPackage.SELECT_TARGET__TARGETTING_ACTIONS: return WafPackage.CREATE_UPDATE_UNIT__TARGETTING_ACTIONS;
-				case WafPackage.SELECT_TARGET__SELECTION_FEATURE: return WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURE;
+				case WafPackage.SELECT_TARGET__SELECTION_FEATURES: return WafPackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES;
 				default: return -1;
 			}
 		}

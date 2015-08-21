@@ -44,7 +44,7 @@ public class CreateUpdateUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTargettingActionsPropertyDescriptor(object);
-			addSelectionFeaturePropertyDescriptor(object);
+			addSelectionFeaturesPropertyDescriptor(object);
 			addClearLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -73,19 +73,19 @@ public class CreateUpdateUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Selection Feature feature.
+	 * This adds a property descriptor for the Selection Features feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSelectionFeaturePropertyDescriptor(Object object) {
+	protected void addSelectionFeaturesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SelectTarget_selectionFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_selectionFeature_feature", "_UI_SelectTarget_type"),
-				 WafPackage.Literals.SELECT_TARGET__SELECTION_FEATURE,
+				 getString("_UI_SelectTarget_selectionFeatures_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_selectionFeatures_feature", "_UI_SelectTarget_type"),
+				 WafPackage.Literals.SELECT_TARGET__SELECTION_FEATURES,
 				 true,
 				 false,
 				 true,

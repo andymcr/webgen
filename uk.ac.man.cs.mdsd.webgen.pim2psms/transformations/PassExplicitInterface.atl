@@ -536,10 +536,19 @@ rule ModelLabelAssociation {
 rule Selection {
 	from website : Website!Selection
 	to waf : WAF!Selection (
+		parameters <- website.parameters,
 		joins <- website.joins,
 		filter <- website.filter,
 		ordering <- website.ordering,
 		limit <- website.limit
+	)
+}
+
+-- @extends NamedElement
+rule SelectionParameter {
+	from website : Website!SelectionParameter
+	to waf : WAF!SelectionParameter (
+		defaultValue <- website.defaultValue
 	)
 }
 
@@ -797,6 +806,7 @@ rule Query {
 rule QueryParameter {
 	from website : Website!QueryParameter
 	to waf : WAF!QueryParameter (
+		parameter <- website.parameter,
 		dataType <- website.dataType,
 		defaultValue <- website.defaultValue
 	)
@@ -834,25 +844,6 @@ abstract rule UnitContainer {
 }
 
 
-abstract rule SelectTarget {
-	from website : Website!SelectTarget
-	to waf : WAF!SelectTarget (
-		selectionFeature <-
-			if website.selectionFeature.oclIsUndefined() then
-				website.selectionFeature
-			else if website.selectionFeature.oclIsKindOf(Website!Attribute) then
-				if website.source.oclIsTypeOf(Website!Service) then
-					website.source.features->any(f | f.name = website.selectionFeature.name)
-				else
-					OclUndefined
-				endif
-			else
-				website.dynamicTitle
-			endif endif
-	)
-}
-
-
 -- @extends NamedDisplayElement
 abstract rule ContentUnit {
 	from website : Website!ContentUnit
@@ -860,9 +851,11 @@ abstract rule ContentUnit {
 		path <-
 			if not website.path.oclIsUndefined() then
 				website.path
+			else if website.oclIsTypeOf(Website!IndexUnit) then
+				OclUndefined
 			else
 				website.name
-			endif,
+			endif endif,
 		purposeSummary <- website.purposeSummary,
 		omitCaption <-
 			if not website.omitCaption.oclIsUndefined() then
@@ -1294,6 +1287,20 @@ abstract rule InlineAction {
 	)
 }
 
+abstract rule SelectTarget {
+	from website : Website!SelectTarget
+	to waf : WAF!SelectTarget (
+		selectionFeatures <-
+			if not website.source.oclIsTypeOf(Website!Service) then
+				website.selectionFeatures
+			else
+				website.selectionFeatures->collect(t | 
+					website.source.features->any(f | f.name = t.name))
+			endif
+	)
+}
+
+
 -- @extends InlineAction
 rule SelectAction {
 	from website : Website!SelectAction
@@ -1411,6 +1418,13 @@ rule FeatureReference {
 	from website : Website!FeatureReference
 	to waf : WAF!FeatureReference (
 		feature <- website.field
+	)
+}
+
+rule ParameterReference {
+	from website : Website!ParameterReference
+	to waf : WAF!ParameterReference (
+		parameter <- website.parameter
 	)
 }
 

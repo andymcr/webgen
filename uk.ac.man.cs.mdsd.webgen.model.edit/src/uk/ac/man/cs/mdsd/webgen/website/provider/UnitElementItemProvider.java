@@ -343,6 +343,11 @@ public class UnitElementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
 				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add

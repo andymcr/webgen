@@ -32,7 +32,7 @@ public interface FeatureReference extends Path {
 	 * @return the value of the '<em>Feature</em>' reference.
 	 * @see #setFeature(ServiceEntityFeature)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFeatureReference_Feature()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	ServiceEntityFeature getFeature();

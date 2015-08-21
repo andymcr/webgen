@@ -94,6 +94,15 @@ public interface WafFactory extends EFactory {
 	Selection createSelection();
 
 	/**
+	 * Returns a new object of class '<em>Selection Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Selection Parameter</em>'.
+	 * @generated
+	 */
+	SelectionParameter createSelectionParameter();
+
+	/**
 	 * Returns a new object of class '<em>Service Entity Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -479,6 +488,15 @@ public interface WafFactory extends EFactory {
 	 * @generated
 	 */
 	FeatureReference createFeatureReference();
+
+	/**
+	 * Returns a new object of class '<em>Parameter Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter Reference</em>'.
+	 * @generated
+	 */
+	ParameterReference createParameterReference();
 
 	/**
 	 * Returns a new object of class '<em>Current User Reference</em>'.

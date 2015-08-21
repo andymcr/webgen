@@ -138,10 +138,15 @@ class ModelLabelAssociation extends ModelLabelFeature {
 }
 
 class Selection extends NamedElement {
+	contains SelectionParameter[] parameters
 	refers ServiceAssociation[] joins
 	contains Predicate filter
 	contains Order[] ordering
 	int limit = "0"
+}
+
+class SelectionParameter extends NamedElement {
+	String defaultValue
 }
 
 interface ServiceFeature {
@@ -245,6 +250,7 @@ class Query extends NamedElement {
 }
 
 class QueryParameter extends NamedElement {
+	refers SelectionParameter parameter
 	refers DataType dataType
 	String defaultValue = ''
 }
@@ -480,7 +486,7 @@ abstract class InlineAction extends NamedDisplayElement {
 
 interface SelectTarget {
 	refers SelectAction[] targettingActions opposite target
-	refers ServiceEntityElement[1] selectionFeature
+	refers ServiceEntityElement[1..*] selectionFeatures
 }
 
 class SelectAction extends InlineAction {
@@ -502,7 +508,11 @@ class ModelReference extends Path {
 }
 
 class FeatureReference extends Path {
-	refers ServiceEntityFeature feature
+	refers ServiceEntityFeature[1] feature
+}
+
+class ParameterReference extends Path {
+	refers SelectionParameter[1] parameter
 }
 
 class CurrentUserReference extends Path {

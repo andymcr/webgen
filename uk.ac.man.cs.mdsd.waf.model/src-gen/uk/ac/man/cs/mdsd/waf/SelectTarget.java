@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.SelectTarget#getTargettingActions <em>Targetting Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.SelectTarget#getSelectionFeature <em>Selection Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.SelectTarget#getSelectionFeatures <em>Selection Features</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelectTarget()
@@ -43,29 +43,19 @@ public interface SelectTarget extends EObject {
 	EList<SelectAction> getTargettingActions();
 
 	/**
-	 * Returns the value of the '<em><b>Selection Feature</b></em>' reference.
+	 * Returns the value of the '<em><b>Selection Features</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Selection Feature</em>' reference isn't clear,
+	 * If the meaning of the '<em>Selection Features</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selection Feature</em>' reference.
-	 * @see #setSelectionFeature(ServiceEntityElement)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelectTarget_SelectionFeature()
+	 * @return the value of the '<em>Selection Features</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelectTarget_SelectionFeatures()
 	 * @model required="true"
 	 * @generated
 	 */
-	ServiceEntityElement getSelectionFeature();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.SelectTarget#getSelectionFeature <em>Selection Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selection Feature</em>' reference.
-	 * @see #getSelectionFeature()
-	 * @generated
-	 */
-	void setSelectionFeature(ServiceEntityElement value);
+	EList<ServiceEntityElement> getSelectionFeatures();
 
 } // SelectTarget

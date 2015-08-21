@@ -342,6 +342,11 @@ public class ServiceEntityElementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				 WafFactory.eINSTANCE.createParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add

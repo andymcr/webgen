@@ -19,7 +19,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
@@ -92,12 +93,12 @@ public class UnitAssociationItemProvider
 						final List<Association> associations = new LinkedList<Association>();
 						if (unit.getSource() instanceof Entity) {
 							final Entity entity = (Entity) unit.getSource();
-							for (Feature feature : entity.getFeatures()) {
+							for (EntityFeature feature : entity.getFeatures()) {
 								if (feature instanceof Association) {
 									associations.add((Association) feature);
 								}
 							}
-							for (Association association : entity.getAssociationEnds()) {
+							for (EntityAssociation association : entity.getAssociationEnds()) {
 								if (association.getBidirectional()) {
 									associations.add(association);
 								}
@@ -176,7 +177,7 @@ public class UnitAssociationItemProvider
 							final ServiceAssociation serviceAssociation
 								= includedAssociation.getServiceFeature();
 							if (serviceAssociation instanceof ServiceEntityAssociation) {
-								final Association association
+								final EntityAssociation association
 									= ((ServiceEntityAssociation) serviceAssociation).getFeature();
 								if (association != null) {
 									if (serviceAssociation.getPartOf().getEncapsulates().contains(association.getParentEntity())) {
@@ -240,7 +241,7 @@ public class UnitAssociationItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
-						final Service service = getService((UnitAssociation) object);
+						final Service service = getSourceService((UnitAssociation) object);
 						if (service != null) {
 							final List<UnitTitle> filters = new LinkedList<UnitTitle>();
 							for (ServiceFeature feature : service.getFeatures()) {

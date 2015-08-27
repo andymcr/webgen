@@ -58,31 +58,31 @@ public interface WafFactory extends EFactory {
 	Service createService();
 
 	/**
-	 * Returns a new object of class '<em>Model Label</em>'.
+	 * Returns a new object of class '<em>Model Label X</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Label</em>'.
+	 * @return a new object of class '<em>Model Label X</em>'.
 	 * @generated
 	 */
-	ModelLabel createModelLabel();
+	ModelLabelX createModelLabelX();
 
 	/**
-	 * Returns a new object of class '<em>Model Label Element</em>'.
+	 * Returns a new object of class '<em>Model Label Element X</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Label Element</em>'.
+	 * @return a new object of class '<em>Model Label Element X</em>'.
 	 * @generated
 	 */
-	ModelLabelElement createModelLabelElement();
+	ModelLabelElementX createModelLabelElementX();
 
 	/**
-	 * Returns a new object of class '<em>Model Label Association</em>'.
+	 * Returns a new object of class '<em>Model Label Association X</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Label Association</em>'.
+	 * @return a new object of class '<em>Model Label Association X</em>'.
 	 * @generated
 	 */
-	ModelLabelAssociation createModelLabelAssociation();
+	ModelLabelAssociationX createModelLabelAssociationX();
 
 	/**
 	 * Returns a new object of class '<em>Selection</em>'.

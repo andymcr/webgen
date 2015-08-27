@@ -30,7 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class EntityItemProvider
-	extends ClassifierItemProvider {
+	extends EntityOrViewItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -54,7 +54,6 @@ public class EntityItemProvider
 
 			addTableNamePropertyDescriptor(object);
 			addKeysPropertyDescriptor(object);
-			addServedByPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -106,28 +105,6 @@ public class EntityItemProvider
 					}
 				}
 			});
-	}
-
-	/**
-	 * This adds a property descriptor for the Served By feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addServedByPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entity_servedBy_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_servedBy_feature", "_UI_Entity_type"),
-				 WebsitePackage.Literals.ENTITY__SERVED_BY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

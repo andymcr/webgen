@@ -28,12 +28,12 @@ public interface IncludedAssociation extends IncludedFeature {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Feature</em>' reference.
-	 * @see #setFeature(Association)
+	 * @see #setFeature(EntityAssociation)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIncludedAssociation_Feature()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	Association getFeature();
+	EntityAssociation getFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation#getFeature <em>Feature</em>}' reference.
@@ -43,6 +43,6 @@ public interface IncludedAssociation extends IncludedFeature {
 	 * @see #getFeature()
 	 * @generated
 	 */
-	void setFeature(Association value);
+	void setFeature(EntityAssociation value);
 
 } // IncludedAssociation

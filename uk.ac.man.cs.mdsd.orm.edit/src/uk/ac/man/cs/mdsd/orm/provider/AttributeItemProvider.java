@@ -12,13 +12,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.orm.Attribute;
-import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.orm.Attribute} object.
@@ -49,54 +44,8 @@ public class AttributeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPersistentTypePropertyDescriptor(object);
-			addOrmTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Persistent Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPersistentTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_persistentType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_persistentType_feature", "_UI_Attribute_type"),
-				 OrmPackage.Literals.ATTRIBUTE__PERSISTENT_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Orm Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOrmTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Attribute_ormType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_ormType_feature", "_UI_Attribute_type"),
-				 OrmPackage.Literals.ATTRIBUTE__ORM_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -123,13 +72,6 @@ public class AttributeItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Attribute.class)) {
-			case OrmPackage.ATTRIBUTE__PERSISTENT_TYPE:
-			case OrmPackage.ATTRIBUTE__ORM_TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

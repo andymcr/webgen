@@ -15,6 +15,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 import uk.ac.man.cs.mdsd.orm.SingletonAttribute;
 
@@ -25,7 +26,7 @@ import uk.ac.man.cs.mdsd.orm.SingletonAttribute;
  * @generated
  */
 public class SingletonAttributeItemProvider
-	extends AttributeItemProvider {
+	extends EntityAttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -176,6 +177,61 @@ public class SingletonAttributeItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createNullLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createStringLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createCurrentTime()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 	}
 
 }

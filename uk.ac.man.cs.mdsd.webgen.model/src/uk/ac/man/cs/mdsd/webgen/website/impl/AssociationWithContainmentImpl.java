@@ -18,7 +18,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *
  * @generated
  */
-public class AssociationWithContainmentImpl extends AssociationImpl implements AssociationWithContainment {
+public class AssociationWithContainmentImpl extends EntityAssociationImpl implements AssociationWithContainment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

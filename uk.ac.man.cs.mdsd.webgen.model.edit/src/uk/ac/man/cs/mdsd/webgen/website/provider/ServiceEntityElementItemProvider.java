@@ -18,8 +18,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
-import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
@@ -88,8 +88,8 @@ public class ServiceEntityElementItemProvider
 						final Service service
 							= (Service) ((ServiceEntityElement) object).eContainer();
 						final List<Attribute> elements = new LinkedList<Attribute>();
-						for (Entity entity : service.getEncapsulates()) {
-							for (Feature feature : entity.getFeatures()) {
+						for (EntityOrView entityOrView : service.getEncapsulates()) {
+							for (EntityFeature feature : getFeatures(entityOrView)) {
 								if (feature instanceof Attribute) {
 									elements.add((Attribute) feature);
 								}

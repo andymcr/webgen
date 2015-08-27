@@ -25,7 +25,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL oneToManyAssociationsMustBeBidirectional='cardinality = Cardinality::Optional and targetCardinality = Cardinality::Required implies bidirectional'"
  * @generated
  */
-public interface AssociationWithoutContainment extends Association {
+public interface AssociationWithoutContainment extends EntityAssociation {
 
 	/**
 	 * Returns the value of the '<em><b>Target Cardinality</b></em>' attribute.

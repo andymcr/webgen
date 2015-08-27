@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -41,7 +41,7 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> selectionFeatures;
+	protected EList<EntityAttribute> selectionFeatures;
 
 	/**
 	 * The default value of the '{@link #getClearLabel() <em>Clear Label</em>}' attribute.
@@ -107,9 +107,9 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Attribute> getSelectionFeatures() {
+	public List<EntityAttribute> getSelectionFeatures() {
 		if (selectionFeatures == null) {
-			selectionFeatures = new EObjectResolvingEList<Attribute>(Attribute.class, this, WebsitePackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES);
+			selectionFeatures = new EObjectResolvingEList<EntityAttribute>(EntityAttribute.class, this, WebsitePackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES);
 		}
 		return selectionFeatures;
 	}
@@ -185,7 +185,7 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 		switch (featureID) {
 			case WebsitePackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES:
 				getSelectionFeatures().clear();
-				getSelectionFeatures().addAll((Collection<? extends Attribute>)newValue);
+				getSelectionFeatures().addAll((Collection<? extends EntityAttribute>)newValue);
 				return;
 			case WebsitePackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				setClearLabel((String)newValue);

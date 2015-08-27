@@ -872,22 +872,13 @@ public interface WafPackage extends EPackage {
 	int SERVICE__VIEW_NAME = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Display Labels</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE__DISPLAY_LABELS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Selections</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__SELECTIONS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int SERVICE__SELECTIONS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -896,7 +887,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__FEATURES = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int SERVICE__FEATURES = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Accessed By</b></em>' reference list.
@@ -905,7 +896,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__ACCESSED_BY = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int SERVICE__ACCESSED_BY = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Service</em>' class.
@@ -914,7 +905,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int SERVICE_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Service</em>' class.
@@ -926,14 +917,14 @@ public interface WafPackage extends EPackage {
 	int SERVICE_OPERATION_COUNT = OrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelImpl <em>Model Label</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelXImpl <em>Model Label X</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabel()
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelXImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelX()
 	 * @generated
 	 */
-	int MODEL_LABEL = 8;
+	int MODEL_LABEL_X = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -942,16 +933,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL__NAME = OrmPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Label For</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_LABEL__LABEL_FOR = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int MODEL_LABEL_X__NAME = OrmPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -960,7 +942,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL__FORMAT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int MODEL_LABEL_X__FORMAT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -969,63 +951,63 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL__FEATURES = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MODEL_LABEL_X__FEATURES = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Model Label</em>' class.
+	 * The number of structural features of the '<em>Model Label X</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int MODEL_LABEL_X_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Model Label</em>' class.
+	 * The number of operations of the '<em>Model Label X</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_OPERATION_COUNT = OrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int MODEL_LABEL_X_OPERATION_COUNT = OrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelFeatureImpl <em>Model Label Feature</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelFeatureXImpl <em>Model Label Feature X</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelFeatureImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelFeature()
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelFeatureXImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelFeatureX()
 	 * @generated
 	 */
-	int MODEL_LABEL_FEATURE = 9;
+	int MODEL_LABEL_FEATURE_X = 9;
 
 	/**
-	 * The number of structural features of the '<em>Model Label Feature</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_LABEL_FEATURE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Model Label Feature</em>' class.
+	 * The number of structural features of the '<em>Model Label Feature X</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_FEATURE_OPERATION_COUNT = 0;
+	int MODEL_LABEL_FEATURE_X_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelElementImpl <em>Model Label Element</em>}' class.
+	 * The number of operations of the '<em>Model Label Feature X</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelElementImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelElement()
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_LABEL_FEATURE_X_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelElementXImpl <em>Model Label Element X</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelElementXImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelElementX()
 	 * @generated
 	 */
-	int MODEL_LABEL_ELEMENT = 10;
+	int MODEL_LABEL_ELEMENT_X = 10;
 
 	/**
 	 * The feature id for the '<em><b>Service Feature</b></em>' reference.
@@ -1034,35 +1016,35 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ELEMENT__SERVICE_FEATURE = MODEL_LABEL_FEATURE_FEATURE_COUNT + 0;
+	int MODEL_LABEL_ELEMENT_X__SERVICE_FEATURE = MODEL_LABEL_FEATURE_X_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Model Label Element</em>' class.
+	 * The number of structural features of the '<em>Model Label Element X</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ELEMENT_FEATURE_COUNT = MODEL_LABEL_FEATURE_FEATURE_COUNT + 1;
+	int MODEL_LABEL_ELEMENT_X_FEATURE_COUNT = MODEL_LABEL_FEATURE_X_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Model Label Element</em>' class.
+	 * The number of operations of the '<em>Model Label Element X</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ELEMENT_OPERATION_COUNT = MODEL_LABEL_FEATURE_OPERATION_COUNT + 0;
+	int MODEL_LABEL_ELEMENT_X_OPERATION_COUNT = MODEL_LABEL_FEATURE_X_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationImpl <em>Model Label Association</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationXImpl <em>Model Label Association X</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelAssociation()
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationXImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelAssociationX()
 	 * @generated
 	 */
-	int MODEL_LABEL_ASSOCIATION = 11;
+	int MODEL_LABEL_ASSOCIATION_X = 11;
 
 	/**
 	 * The feature id for the '<em><b>Service Feature</b></em>' reference.
@@ -1071,7 +1053,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE = MODEL_LABEL_FEATURE_FEATURE_COUNT + 0;
+	int MODEL_LABEL_ASSOCIATION_X__SERVICE_FEATURE = MODEL_LABEL_FEATURE_X_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Label</b></em>' reference.
@@ -1080,25 +1062,25 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL = MODEL_LABEL_FEATURE_FEATURE_COUNT + 1;
+	int MODEL_LABEL_ASSOCIATION_X__DYNAMIC_LABEL = MODEL_LABEL_FEATURE_X_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Model Label Association</em>' class.
+	 * The number of structural features of the '<em>Model Label Association X</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ASSOCIATION_FEATURE_COUNT = MODEL_LABEL_FEATURE_FEATURE_COUNT + 2;
+	int MODEL_LABEL_ASSOCIATION_X_FEATURE_COUNT = MODEL_LABEL_FEATURE_X_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Model Label Association</em>' class.
+	 * The number of operations of the '<em>Model Label Association X</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ASSOCIATION_OPERATION_COUNT = MODEL_LABEL_FEATURE_OPERATION_COUNT + 0;
+	int MODEL_LABEL_ASSOCIATION_X_OPERATION_COUNT = MODEL_LABEL_FEATURE_X_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl <em>Selection</em>}' class.
@@ -10475,17 +10457,6 @@ public interface WafPackage extends EPackage {
 	EAttribute getService_ViewName();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.Service#getDisplayLabels <em>Display Labels</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Display Labels</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.Service#getDisplayLabels()
-	 * @see #getService()
-	 * @generated
-	 */
-	EReference getService_DisplayLabels();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.Service#getSelections <em>Selections</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10519,110 +10490,99 @@ public interface WafPackage extends EPackage {
 	EReference getService_AccessedBy();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ModelLabel <em>Model Label</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelX <em>Model Label X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Label</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabel
+	 * @return the meta object for class '<em>Model Label X</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelX
 	 * @generated
 	 */
-	EClass getModelLabel();
+	EClass getModelLabelX();
 
 	/**
-	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.waf.ModelLabel#getLabelFor <em>Label For</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Label For</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabel#getLabelFor()
-	 * @see #getModelLabel()
-	 * @generated
-	 */
-	EReference getModelLabel_LabelFor();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ModelLabel#getFormat <em>Format</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ModelLabelX#getFormat <em>Format</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Format</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabel#getFormat()
-	 * @see #getModelLabel()
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelX#getFormat()
+	 * @see #getModelLabelX()
 	 * @generated
 	 */
-	EAttribute getModelLabel_Format();
+	EAttribute getModelLabelX_Format();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.ModelLabel#getFeatures <em>Features</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.ModelLabelX#getFeatures <em>Features</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Features</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabel#getFeatures()
-	 * @see #getModelLabel()
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelX#getFeatures()
+	 * @see #getModelLabelX()
 	 * @generated
 	 */
-	EReference getModelLabel_Features();
+	EReference getModelLabelX_Features();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelFeature <em>Model Label Feature</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelFeatureX <em>Model Label Feature X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Label Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelFeature
+	 * @return the meta object for class '<em>Model Label Feature X</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelFeatureX
 	 * @generated
 	 */
-	EClass getModelLabelFeature();
+	EClass getModelLabelFeatureX();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelElement <em>Model Label Element</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelElementX <em>Model Label Element X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Label Element</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelElement
+	 * @return the meta object for class '<em>Model Label Element X</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelElementX
 	 * @generated
 	 */
-	EClass getModelLabelElement();
+	EClass getModelLabelElementX();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ModelLabelElement#getServiceFeature <em>Service Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Service Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelElement#getServiceFeature()
-	 * @see #getModelLabelElement()
-	 * @generated
-	 */
-	EReference getModelLabelElement_ServiceFeature();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation <em>Model Label Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Label Association</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelAssociation
-	 * @generated
-	 */
-	EClass getModelLabelAssociation();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation#getServiceFeature <em>Service Feature</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ModelLabelElementX#getServiceFeature <em>Service Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Service Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelAssociation#getServiceFeature()
-	 * @see #getModelLabelAssociation()
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelElementX#getServiceFeature()
+	 * @see #getModelLabelElementX()
 	 * @generated
 	 */
-	EReference getModelLabelAssociation_ServiceFeature();
+	EReference getModelLabelElementX_ServiceFeature();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation#getDynamicLabel <em>Dynamic Label</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX <em>Model Label Association X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Model Label Association X</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX
+	 * @generated
+	 */
+	EClass getModelLabelAssociationX();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX#getServiceFeature <em>Service Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Service Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX#getServiceFeature()
+	 * @see #getModelLabelAssociationX()
+	 * @generated
+	 */
+	EReference getModelLabelAssociationX_ServiceFeature();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX#getDynamicLabel <em>Dynamic Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Dynamic Label</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelAssociation#getDynamicLabel()
-	 * @see #getModelLabelAssociation()
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX#getDynamicLabel()
+	 * @see #getModelLabelAssociationX()
 	 * @generated
 	 */
-	EReference getModelLabelAssociation_DynamicLabel();
+	EReference getModelLabelAssociationX_DynamicLabel();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.Selection <em>Selection</em>}'.
@@ -13450,14 +13410,6 @@ public interface WafPackage extends EPackage {
 		EAttribute SERVICE__VIEW_NAME = eINSTANCE.getService_ViewName();
 
 		/**
-		 * The meta object literal for the '<em><b>Display Labels</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE__DISPLAY_LABELS = eINSTANCE.getService_DisplayLabels();
-
-		/**
 		 * The meta object literal for the '<em><b>Selections</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13482,22 +13434,14 @@ public interface WafPackage extends EPackage {
 		EReference SERVICE__ACCESSED_BY = eINSTANCE.getService_AccessedBy();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelImpl <em>Model Label</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelXImpl <em>Model Label X</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabel()
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelXImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelX()
 		 * @generated
 		 */
-		EClass MODEL_LABEL = eINSTANCE.getModelLabel();
-
-		/**
-		 * The meta object literal for the '<em><b>Label For</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL_LABEL__LABEL_FOR = eINSTANCE.getModelLabel_LabelFor();
+		EClass MODEL_LABEL_X = eINSTANCE.getModelLabelX();
 
 		/**
 		 * The meta object literal for the '<em><b>Format</b></em>' attribute feature.
@@ -13505,7 +13449,7 @@ public interface WafPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MODEL_LABEL__FORMAT = eINSTANCE.getModelLabel_Format();
+		EAttribute MODEL_LABEL_X__FORMAT = eINSTANCE.getModelLabelX_Format();
 
 		/**
 		 * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
@@ -13513,45 +13457,27 @@ public interface WafPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODEL_LABEL__FEATURES = eINSTANCE.getModelLabel_Features();
+		EReference MODEL_LABEL_X__FEATURES = eINSTANCE.getModelLabelX_Features();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelFeatureImpl <em>Model Label Feature</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelFeatureXImpl <em>Model Label Feature X</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelFeatureImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelFeature()
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelFeatureXImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelFeatureX()
 		 * @generated
 		 */
-		EClass MODEL_LABEL_FEATURE = eINSTANCE.getModelLabelFeature();
+		EClass MODEL_LABEL_FEATURE_X = eINSTANCE.getModelLabelFeatureX();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelElementImpl <em>Model Label Element</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelElementXImpl <em>Model Label Element X</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelElementImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelElement()
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelElementXImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelElementX()
 		 * @generated
 		 */
-		EClass MODEL_LABEL_ELEMENT = eINSTANCE.getModelLabelElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Service Feature</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL_LABEL_ELEMENT__SERVICE_FEATURE = eINSTANCE.getModelLabelElement_ServiceFeature();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationImpl <em>Model Label Association</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelAssociation()
-		 * @generated
-		 */
-		EClass MODEL_LABEL_ASSOCIATION = eINSTANCE.getModelLabelAssociation();
+		EClass MODEL_LABEL_ELEMENT_X = eINSTANCE.getModelLabelElementX();
 
 		/**
 		 * The meta object literal for the '<em><b>Service Feature</b></em>' reference feature.
@@ -13559,7 +13485,25 @@ public interface WafPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE = eINSTANCE.getModelLabelAssociation_ServiceFeature();
+		EReference MODEL_LABEL_ELEMENT_X__SERVICE_FEATURE = eINSTANCE.getModelLabelElementX_ServiceFeature();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationXImpl <em>Model Label Association X</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ModelLabelAssociationXImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelLabelAssociationX()
+		 * @generated
+		 */
+		EClass MODEL_LABEL_ASSOCIATION_X = eINSTANCE.getModelLabelAssociationX();
+
+		/**
+		 * The meta object literal for the '<em><b>Service Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL_LABEL_ASSOCIATION_X__SERVICE_FEATURE = eINSTANCE.getModelLabelAssociationX_ServiceFeature();
 
 		/**
 		 * The meta object literal for the '<em><b>Dynamic Label</b></em>' reference feature.
@@ -13567,7 +13511,7 @@ public interface WafPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL = eINSTANCE.getModelLabelAssociation_DynamicLabel();
+		EReference MODEL_LABEL_ASSOCIATION_X__DYNAMIC_LABEL = eINSTANCE.getModelLabelAssociationX_DynamicLabel();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl <em>Selection</em>}' class.

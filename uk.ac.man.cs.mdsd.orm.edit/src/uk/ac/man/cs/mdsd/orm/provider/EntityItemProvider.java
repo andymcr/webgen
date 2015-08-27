@@ -19,7 +19,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.orm.Entity;
-import uk.ac.man.cs.mdsd.orm.OrmFactory;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
 /**
@@ -29,7 +28,7 @@ import uk.ac.man.cs.mdsd.orm.OrmPackage;
  * @generated
  */
 public class EntityItemProvider
-	extends ClassifierItemProvider {
+	extends EntityOrViewItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -52,11 +51,11 @@ public class EntityItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
+			addContainsPropertyDescriptor(object);
+			addContainerPropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
 			addKeysPropertyDescriptor(object);
 			addAutoKeyNamePropertyDescriptor(object);
-			addContainsPropertyDescriptor(object);
-			addContainerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -284,51 +283,6 @@ public class EntityItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonElement()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
-				 OrmFactory.eINSTANCE.createCollectionElement()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonDate()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
-				 OrmFactory.eINSTANCE.createCollectionDate()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonFile()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonImage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonLocation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
-				 OrmFactory.eINSTANCE.createSingletonAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(OrmPackage.Literals.ENTITY__FEATURES,
-				 OrmFactory.eINSTANCE.createCollectionAssociation()));
 	}
 
 }

@@ -20,12 +20,11 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.orm.Entity;
+import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
-import uk.ac.man.cs.mdsd.waf.ModelLabel;
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.ServiceFeature;
@@ -44,7 +43,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getModelName <em>Model Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#isView <em>View</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getViewName <em>View Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getDisplayLabels <em>Display Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getAccessedBy <em>Accessed By</em>}</li>
@@ -61,7 +59,7 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Entity> entities;
+	protected EList<EntityOrView> entities;
 
 	/**
 	 * The cached value of the '{@link #getDaosUsed() <em>Daos Used</em>}' reference list.
@@ -71,7 +69,7 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Entity> daosUsed;
+	protected EList<EntityOrView> daosUsed;
 
 	/**
 	 * The default value of the '{@link #getModelName() <em>Model Name</em>}' attribute.
@@ -134,16 +132,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	protected String viewName = VIEW_NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDisplayLabels() <em>Display Labels</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayLabels()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ModelLabel> displayLabels;
-
-	/**
 	 * The cached value of the '{@link #getSelections() <em>Selections</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,9 +185,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Entity> getEntities() {
+	public EList<EntityOrView> getEntities() {
 		if (entities == null) {
-			entities = new EObjectResolvingEList<Entity>(Entity.class, this, WafPackage.SERVICE__ENTITIES);
+			entities = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.SERVICE__ENTITIES);
 		}
 		return entities;
 	}
@@ -209,9 +197,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Entity> getDaosUsed() {
+	public EList<EntityOrView> getDaosUsed() {
 		if (daosUsed == null) {
-			daosUsed = new EObjectResolvingEList<Entity>(Entity.class, this, WafPackage.SERVICE__DAOS_USED);
+			daosUsed = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.SERVICE__DAOS_USED);
 		}
 		return daosUsed;
 	}
@@ -284,18 +272,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ModelLabel> getDisplayLabels() {
-		if (displayLabels == null) {
-			displayLabels = new EObjectContainmentWithInverseEList<ModelLabel>(ModelLabel.class, this, WafPackage.SERVICE__DISPLAY_LABELS, WafPackage.MODEL_LABEL__LABEL_FOR);
-		}
-		return displayLabels;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Selection> getSelections() {
 		if (selections == null) {
 			selections = new EObjectContainmentEList<Selection>(Selection.class, this, WafPackage.SERVICE__SELECTIONS);
@@ -336,8 +312,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.SERVICE__DISPLAY_LABELS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDisplayLabels()).basicAdd(otherEnd, msgs);
 			case WafPackage.SERVICE__FEATURES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFeatures()).basicAdd(otherEnd, msgs);
 			case WafPackage.SERVICE__ACCESSED_BY:
@@ -354,8 +328,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.SERVICE__DISPLAY_LABELS:
-				return ((InternalEList<?>)getDisplayLabels()).basicRemove(otherEnd, msgs);
 			case WafPackage.SERVICE__SELECTIONS:
 				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
 			case WafPackage.SERVICE__FEATURES:
@@ -384,8 +356,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return isView();
 			case WafPackage.SERVICE__VIEW_NAME:
 				return getViewName();
-			case WafPackage.SERVICE__DISPLAY_LABELS:
-				return getDisplayLabels();
 			case WafPackage.SERVICE__SELECTIONS:
 				return getSelections();
 			case WafPackage.SERVICE__FEATURES:
@@ -407,11 +377,11 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WafPackage.SERVICE__ENTITIES:
 				getEntities().clear();
-				getEntities().addAll((Collection<? extends Entity>)newValue);
+				getEntities().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
 			case WafPackage.SERVICE__DAOS_USED:
 				getDaosUsed().clear();
-				getDaosUsed().addAll((Collection<? extends Entity>)newValue);
+				getDaosUsed().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
 			case WafPackage.SERVICE__MODEL_NAME:
 				setModelName((String)newValue);
@@ -421,10 +391,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return;
 			case WafPackage.SERVICE__VIEW_NAME:
 				setViewName((String)newValue);
-				return;
-			case WafPackage.SERVICE__DISPLAY_LABELS:
-				getDisplayLabels().clear();
-				getDisplayLabels().addAll((Collection<? extends ModelLabel>)newValue);
 				return;
 			case WafPackage.SERVICE__SELECTIONS:
 				getSelections().clear();
@@ -465,9 +431,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case WafPackage.SERVICE__VIEW_NAME:
 				setViewName(VIEW_NAME_EDEFAULT);
 				return;
-			case WafPackage.SERVICE__DISPLAY_LABELS:
-				getDisplayLabels().clear();
-				return;
 			case WafPackage.SERVICE__SELECTIONS:
 				getSelections().clear();
 				return;
@@ -499,8 +462,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return view != VIEW_EDEFAULT;
 			case WafPackage.SERVICE__VIEW_NAME:
 				return VIEW_NAME_EDEFAULT == null ? viewName != null : !VIEW_NAME_EDEFAULT.equals(viewName);
-			case WafPackage.SERVICE__DISPLAY_LABELS:
-				return displayLabels != null && !displayLabels.isEmpty();
 			case WafPackage.SERVICE__SELECTIONS:
 				return selections != null && !selections.isEmpty();
 			case WafPackage.SERVICE__FEATURES:

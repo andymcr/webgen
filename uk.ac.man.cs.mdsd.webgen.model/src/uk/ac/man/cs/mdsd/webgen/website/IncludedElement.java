@@ -36,12 +36,12 @@ public interface IncludedElement extends IncludedFeature {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Feature</em>' reference.
-	 * @see #setFeature(Attribute)
+	 * @see #setFeature(EntityAttribute)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIncludedElement_Feature()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	Attribute getFeature();
+	EntityAttribute getFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedElement#getFeature <em>Feature</em>}' reference.
@@ -51,7 +51,7 @@ public interface IncludedElement extends IncludedFeature {
 	 * @see #getFeature()
 	 * @generated
 	 */
-	void setFeature(Attribute value);
+	void setFeature(EntityAttribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Obfuscate Form Fields</b></em>' attribute.

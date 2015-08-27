@@ -28,7 +28,7 @@ import uk.ac.man.cs.mdsd.orm.SingletonAssociation;
  * @generated
  */
 public class SingletonAssociationItemProvider
-	extends AssociationItemProvider {
+	extends EntityAssociationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

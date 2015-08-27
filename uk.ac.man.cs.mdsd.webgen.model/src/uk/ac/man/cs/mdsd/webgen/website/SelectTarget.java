@@ -29,7 +29,7 @@ public interface SelectTarget extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Selection Features</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Attribute}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Selection Features</em>' reference list isn't clear,
@@ -41,5 +41,5 @@ public interface SelectTarget extends EObject {
 	 * @model required="true"
 	 * @generated
 	 */
-	List<Attribute> getSelectionFeatures();
+	List<EntityAttribute> getSelectionFeatures();
 } // SelectTarget

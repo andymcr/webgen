@@ -20,7 +20,7 @@ import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
@@ -91,7 +91,7 @@ public class UnitElementItemProvider
 							= (DynamicUnit) ((IncludedFeature) object).eContainer();
 						final List<Attribute> elements = new LinkedList<Attribute>();
 						if (unit.getSource() instanceof Entity) {
-							for (Feature feature : ((Entity) unit.getSource()).getFeatures()) {
+							for (EntityFeature feature : ((Entity) unit.getSource()).getFeatures()) {
 								if (feature instanceof Attribute) {
 									elements.add((Attribute) feature);
 								}

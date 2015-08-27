@@ -151,13 +151,12 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.ENTITY: {
-				Entity entity = (Entity)theEObject;
-				T result = caseEntity(entity);
-				if (result == null) result = caseClassifier(entity);
-				if (result == null) result = caseUnitSource(entity);
-				if (result == null) result = caseNamedDisplayElement(entity);
-				if (result == null) result = caseNamedElement(entity);
+			case WebsitePackage.ENTITY_OR_VIEW: {
+				EntityOrView entityOrView = (EntityOrView)theEObject;
+				T result = caseEntityOrView(entityOrView);
+				if (result == null) result = caseClassifier(entityOrView);
+				if (result == null) result = caseNamedDisplayElement(entityOrView);
+				if (result == null) result = caseNamedElement(entityOrView);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -173,77 +172,8 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				Attribute attribute = (Attribute)theEObject;
 				T result = caseAttribute(attribute);
 				if (result == null) result = caseFeature(attribute);
-				if (result == null) result = caseUnitTitle(attribute);
 				if (result == null) result = caseNamedDisplayElement(attribute);
 				if (result == null) result = caseNamedElement(attribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.DATA_TYPE_ATTRIBUTE: {
-				DataTypeAttribute dataTypeAttribute = (DataTypeAttribute)theEObject;
-				T result = caseDataTypeAttribute(dataTypeAttribute);
-				if (result == null) result = caseAttribute(dataTypeAttribute);
-				if (result == null) result = caseFeature(dataTypeAttribute);
-				if (result == null) result = caseUnitTitle(dataTypeAttribute);
-				if (result == null) result = caseNamedDisplayElement(dataTypeAttribute);
-				if (result == null) result = caseNamedElement(dataTypeAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.DATE_ATTRIBUTE: {
-				DateAttribute dateAttribute = (DateAttribute)theEObject;
-				T result = caseDateAttribute(dateAttribute);
-				if (result == null) result = caseAttribute(dateAttribute);
-				if (result == null) result = caseFeature(dateAttribute);
-				if (result == null) result = caseUnitTitle(dateAttribute);
-				if (result == null) result = caseNamedDisplayElement(dateAttribute);
-				if (result == null) result = caseNamedElement(dateAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.RESOURCE_ATTRIBUTE: {
-				ResourceAttribute resourceAttribute = (ResourceAttribute)theEObject;
-				T result = caseResourceAttribute(resourceAttribute);
-				if (result == null) result = caseAttribute(resourceAttribute);
-				if (result == null) result = caseFeature(resourceAttribute);
-				if (result == null) result = caseUnitTitle(resourceAttribute);
-				if (result == null) result = caseNamedDisplayElement(resourceAttribute);
-				if (result == null) result = caseNamedElement(resourceAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.FILE_ATTRIBUTE: {
-				FileAttribute fileAttribute = (FileAttribute)theEObject;
-				T result = caseFileAttribute(fileAttribute);
-				if (result == null) result = caseResourceAttribute(fileAttribute);
-				if (result == null) result = caseAttribute(fileAttribute);
-				if (result == null) result = caseFeature(fileAttribute);
-				if (result == null) result = caseUnitTitle(fileAttribute);
-				if (result == null) result = caseNamedDisplayElement(fileAttribute);
-				if (result == null) result = caseNamedElement(fileAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.IMAGE_ATTRIBUTE: {
-				ImageAttribute imageAttribute = (ImageAttribute)theEObject;
-				T result = caseImageAttribute(imageAttribute);
-				if (result == null) result = caseResourceAttribute(imageAttribute);
-				if (result == null) result = caseAttribute(imageAttribute);
-				if (result == null) result = caseFeature(imageAttribute);
-				if (result == null) result = caseUnitTitle(imageAttribute);
-				if (result == null) result = caseNamedDisplayElement(imageAttribute);
-				if (result == null) result = caseNamedElement(imageAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.LOCATION_ATTRIBUTE: {
-				LocationAttribute locationAttribute = (LocationAttribute)theEObject;
-				T result = caseLocationAttribute(locationAttribute);
-				if (result == null) result = caseAttribute(locationAttribute);
-				if (result == null) result = caseFeature(locationAttribute);
-				if (result == null) result = caseUnitTitle(locationAttribute);
-				if (result == null) result = caseNamedDisplayElement(locationAttribute);
-				if (result == null) result = caseNamedElement(locationAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -256,10 +186,132 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.ENTITY: {
+				Entity entity = (Entity)theEObject;
+				T result = caseEntity(entity);
+				if (result == null) result = caseEntityOrView(entity);
+				if (result == null) result = caseUnitSource(entity);
+				if (result == null) result = caseClassifier(entity);
+				if (result == null) result = caseNamedDisplayElement(entity);
+				if (result == null) result = caseNamedElement(entity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.ENTITY_FEATURE: {
+				EntityFeature entityFeature = (EntityFeature)theEObject;
+				T result = caseEntityFeature(entityFeature);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.ENTITY_ATTRIBUTE: {
+				EntityAttribute entityAttribute = (EntityAttribute)theEObject;
+				T result = caseEntityAttribute(entityAttribute);
+				if (result == null) result = caseAttribute(entityAttribute);
+				if (result == null) result = caseEntityFeature(entityAttribute);
+				if (result == null) result = caseUnitTitle(entityAttribute);
+				if (result == null) result = caseFeature(entityAttribute);
+				if (result == null) result = caseNamedDisplayElement(entityAttribute);
+				if (result == null) result = caseNamedElement(entityAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.DATA_TYPE_ATTRIBUTE: {
+				DataTypeAttribute dataTypeAttribute = (DataTypeAttribute)theEObject;
+				T result = caseDataTypeAttribute(dataTypeAttribute);
+				if (result == null) result = caseEntityAttribute(dataTypeAttribute);
+				if (result == null) result = caseAttribute(dataTypeAttribute);
+				if (result == null) result = caseEntityFeature(dataTypeAttribute);
+				if (result == null) result = caseUnitTitle(dataTypeAttribute);
+				if (result == null) result = caseFeature(dataTypeAttribute);
+				if (result == null) result = caseNamedDisplayElement(dataTypeAttribute);
+				if (result == null) result = caseNamedElement(dataTypeAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.DATE_ATTRIBUTE: {
+				DateAttribute dateAttribute = (DateAttribute)theEObject;
+				T result = caseDateAttribute(dateAttribute);
+				if (result == null) result = caseEntityAttribute(dateAttribute);
+				if (result == null) result = caseAttribute(dateAttribute);
+				if (result == null) result = caseEntityFeature(dateAttribute);
+				if (result == null) result = caseUnitTitle(dateAttribute);
+				if (result == null) result = caseFeature(dateAttribute);
+				if (result == null) result = caseNamedDisplayElement(dateAttribute);
+				if (result == null) result = caseNamedElement(dateAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.RESOURCE_ATTRIBUTE: {
+				ResourceAttribute resourceAttribute = (ResourceAttribute)theEObject;
+				T result = caseResourceAttribute(resourceAttribute);
+				if (result == null) result = caseEntityAttribute(resourceAttribute);
+				if (result == null) result = caseAttribute(resourceAttribute);
+				if (result == null) result = caseEntityFeature(resourceAttribute);
+				if (result == null) result = caseUnitTitle(resourceAttribute);
+				if (result == null) result = caseFeature(resourceAttribute);
+				if (result == null) result = caseNamedDisplayElement(resourceAttribute);
+				if (result == null) result = caseNamedElement(resourceAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.FILE_ATTRIBUTE: {
+				FileAttribute fileAttribute = (FileAttribute)theEObject;
+				T result = caseFileAttribute(fileAttribute);
+				if (result == null) result = caseResourceAttribute(fileAttribute);
+				if (result == null) result = caseEntityAttribute(fileAttribute);
+				if (result == null) result = caseAttribute(fileAttribute);
+				if (result == null) result = caseEntityFeature(fileAttribute);
+				if (result == null) result = caseUnitTitle(fileAttribute);
+				if (result == null) result = caseFeature(fileAttribute);
+				if (result == null) result = caseNamedDisplayElement(fileAttribute);
+				if (result == null) result = caseNamedElement(fileAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.IMAGE_ATTRIBUTE: {
+				ImageAttribute imageAttribute = (ImageAttribute)theEObject;
+				T result = caseImageAttribute(imageAttribute);
+				if (result == null) result = caseResourceAttribute(imageAttribute);
+				if (result == null) result = caseEntityAttribute(imageAttribute);
+				if (result == null) result = caseAttribute(imageAttribute);
+				if (result == null) result = caseEntityFeature(imageAttribute);
+				if (result == null) result = caseUnitTitle(imageAttribute);
+				if (result == null) result = caseFeature(imageAttribute);
+				if (result == null) result = caseNamedDisplayElement(imageAttribute);
+				if (result == null) result = caseNamedElement(imageAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.LOCATION_ATTRIBUTE: {
+				LocationAttribute locationAttribute = (LocationAttribute)theEObject;
+				T result = caseLocationAttribute(locationAttribute);
+				if (result == null) result = caseEntityAttribute(locationAttribute);
+				if (result == null) result = caseAttribute(locationAttribute);
+				if (result == null) result = caseEntityFeature(locationAttribute);
+				if (result == null) result = caseUnitTitle(locationAttribute);
+				if (result == null) result = caseFeature(locationAttribute);
+				if (result == null) result = caseNamedDisplayElement(locationAttribute);
+				if (result == null) result = caseNamedElement(locationAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.ENTITY_ASSOCIATION: {
+				EntityAssociation entityAssociation = (EntityAssociation)theEObject;
+				T result = caseEntityAssociation(entityAssociation);
+				if (result == null) result = caseAssociation(entityAssociation);
+				if (result == null) result = caseEntityFeature(entityAssociation);
+				if (result == null) result = caseFeature(entityAssociation);
+				if (result == null) result = caseNamedDisplayElement(entityAssociation);
+				if (result == null) result = caseNamedElement(entityAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT: {
 				AssociationWithoutContainment associationWithoutContainment = (AssociationWithoutContainment)theEObject;
 				T result = caseAssociationWithoutContainment(associationWithoutContainment);
+				if (result == null) result = caseEntityAssociation(associationWithoutContainment);
 				if (result == null) result = caseAssociation(associationWithoutContainment);
+				if (result == null) result = caseEntityFeature(associationWithoutContainment);
 				if (result == null) result = caseFeature(associationWithoutContainment);
 				if (result == null) result = caseNamedDisplayElement(associationWithoutContainment);
 				if (result == null) result = caseNamedElement(associationWithoutContainment);
@@ -269,10 +321,78 @@ public class WebsiteSwitch<T> extends Switch<T> {
 			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT: {
 				AssociationWithContainment associationWithContainment = (AssociationWithContainment)theEObject;
 				T result = caseAssociationWithContainment(associationWithContainment);
+				if (result == null) result = caseEntityAssociation(associationWithContainment);
 				if (result == null) result = caseAssociation(associationWithContainment);
+				if (result == null) result = caseEntityFeature(associationWithContainment);
 				if (result == null) result = caseFeature(associationWithContainment);
 				if (result == null) result = caseNamedDisplayElement(associationWithContainment);
 				if (result == null) result = caseNamedElement(associationWithContainment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.VIEW: {
+				View view = (View)theEObject;
+				T result = caseView(view);
+				if (result == null) result = caseEntityOrView(view);
+				if (result == null) result = caseClassifier(view);
+				if (result == null) result = caseNamedDisplayElement(view);
+				if (result == null) result = caseNamedElement(view);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.VIEW_FEATURE: {
+				ViewFeature viewFeature = (ViewFeature)theEObject;
+				T result = caseViewFeature(viewFeature);
+				if (result == null) result = caseFeature(viewFeature);
+				if (result == null) result = caseNamedDisplayElement(viewFeature);
+				if (result == null) result = caseNamedElement(viewFeature);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.VIEW_ATTRIBUTE: {
+				ViewAttribute viewAttribute = (ViewAttribute)theEObject;
+				T result = caseViewAttribute(viewAttribute);
+				if (result == null) result = caseViewFeature(viewAttribute);
+				if (result == null) result = caseFeature(viewAttribute);
+				if (result == null) result = caseNamedDisplayElement(viewAttribute);
+				if (result == null) result = caseNamedElement(viewAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.VIEW_ASSOCIATION: {
+				ViewAssociation viewAssociation = (ViewAssociation)theEObject;
+				T result = caseViewAssociation(viewAssociation);
+				if (result == null) result = caseViewFeature(viewAssociation);
+				if (result == null) result = caseFeature(viewAssociation);
+				if (result == null) result = caseNamedDisplayElement(viewAssociation);
+				if (result == null) result = caseNamedElement(viewAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.MODEL_LABEL_Y: {
+				ModelLabelY modelLabelY = (ModelLabelY)theEObject;
+				T result = caseModelLabelY(modelLabelY);
+				if (result == null) result = caseNamedElement(modelLabelY);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.MODEL_LABEL_FEATURE_Y: {
+				ModelLabelFeatureY modelLabelFeatureY = (ModelLabelFeatureY)theEObject;
+				T result = caseModelLabelFeatureY(modelLabelFeatureY);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y: {
+				ModelLabelAttributeY modelLabelAttributeY = (ModelLabelAttributeY)theEObject;
+				T result = caseModelLabelAttributeY(modelLabelAttributeY);
+				if (result == null) result = caseModelLabelFeatureY(modelLabelAttributeY);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y: {
+				ModelLabelAssociationY modelLabelAssociationY = (ModelLabelAssociationY)theEObject;
+				T result = caseModelLabelAssociationY(modelLabelAssociationY);
+				if (result == null) result = caseModelLabelFeatureY(modelLabelAssociationY);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1093,6 +1213,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Or View</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Or View</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityOrView(EntityOrView object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1104,6 +1239,96 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEntity(Entity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Feature</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityFeature(EntityFeature object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityAttribute(EntityAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>View</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>View</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseView(View object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>View Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>View Feature</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseViewFeature(ViewFeature object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>View Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>View Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseViewAttribute(ViewAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>View Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>View Association</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseViewAssociation(ViewAssociation object) {
 		return null;
 	}
 
@@ -1228,6 +1453,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Association</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEntityAssociation(EntityAssociation object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1269,6 +1509,66 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAssociationWithContainment(AssociationWithContainment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label Y</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label Y</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelLabelY(ModelLabelY object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label Feature Y</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label Feature Y</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelLabelFeatureY(ModelLabelFeatureY object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label Attribute Y</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label Attribute Y</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelLabelAttributeY(ModelLabelAttributeY object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label Association Y</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label Association Y</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelLabelAssociationY(ModelLabelAssociationY object) {
 		return null;
 	}
 

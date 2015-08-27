@@ -180,6 +180,11 @@ public class WebGenModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(WebsitePackage.Literals.WEB_GEN_MODEL__CLASSIFIERS,
+				 WebsiteFactory.eINSTANCE.createView()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES,
 				 WebsiteFactory.eINSTANCE.createService()));
 

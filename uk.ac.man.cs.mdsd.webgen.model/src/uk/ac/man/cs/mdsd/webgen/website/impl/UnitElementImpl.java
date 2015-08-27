@@ -10,10 +10,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.criteria.Expression;
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedElement;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
@@ -51,7 +51,7 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected Attribute feature;
+	protected EntityAttribute feature;
 
 	/**
 	 * The default value of the '{@link #isObfuscateFormFields() <em>Obfuscate Form Fields</em>}' attribute.
@@ -167,10 +167,10 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute getFeature() {
+	public EntityAttribute getFeature() {
 		if (feature != null && feature.eIsProxy()) {
 			InternalEObject oldFeature = (InternalEObject)feature;
-			feature = (Attribute)eResolveProxy(oldFeature);
+			feature = (EntityAttribute)eResolveProxy(oldFeature);
 			if (feature != oldFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.UNIT_ELEMENT__FEATURE, oldFeature, feature));
@@ -184,7 +184,7 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute basicGetFeature() {
+	public EntityAttribute basicGetFeature() {
 		return feature;
 	}
 
@@ -193,8 +193,8 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void basicSetFeature(Attribute newFeature) {
-		Attribute oldFeature = feature;
+	public void basicSetFeature(EntityAttribute newFeature) {
+		EntityAttribute oldFeature = feature;
 		feature = newFeature;
 		setRequired(isRequired()
 			|| (newFeature != null) && newFeature.getCardinality() == Cardinality.REQUIRED);
@@ -211,7 +211,7 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void setFeature(Attribute newFeature) {
+	public void setFeature(EntityAttribute newFeature) {
 		basicSetFeature(newFeature);
 		// eContainer may be undefined when loading resource
 		if ((newFeature != null) && (eContainer() != null)) {
@@ -449,7 +449,7 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.UNIT_ELEMENT__FEATURE:
-				setFeature((Attribute)newValue);
+				setFeature((EntityAttribute)newValue);
 				return;
 			case WebsitePackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields((Boolean)newValue);
@@ -479,7 +479,7 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.UNIT_ELEMENT__FEATURE:
-				setFeature((Attribute)null);
+				setFeature((EntityAttribute)null);
 				return;
 			case WebsitePackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields(OBFUSCATE_FORM_FIELDS_EDEFAULT);

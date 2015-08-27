@@ -4,7 +4,7 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.common.util.EList;
 
-import uk.ac.man.cs.mdsd.orm.Entity;
+import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
 /**
@@ -21,7 +21,6 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getModelName <em>Model Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#isView <em>View</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getViewName <em>View Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getDisplayLabels <em>Display Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getAccessedBy <em>Accessed By</em>}</li>
@@ -34,7 +33,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
 public interface Service extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Entities</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.Entity}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.EntityOrView}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Entities</em>' reference list isn't clear,
@@ -46,11 +45,11 @@ public interface Service extends NamedElement {
 	 * @model
 	 * @generated
 	 */
-	EList<Entity> getEntities();
+	EList<EntityOrView> getEntities();
 
 	/**
 	 * Returns the value of the '<em><b>Daos Used</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.Entity}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.EntityOrView}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Daos Used</em>' reference list isn't clear,
@@ -62,7 +61,7 @@ public interface Service extends NamedElement {
 	 * @model
 	 * @generated
 	 */
-	EList<Entity> getDaosUsed();
+	EList<EntityOrView> getDaosUsed();
 
 	/**
 	 * Returns the value of the '<em><b>Model Name</b></em>' attribute.
@@ -141,24 +140,6 @@ public interface Service extends NamedElement {
 	 * @generated
 	 */
 	void setViewName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Display Labels</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ModelLabel}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.ModelLabel#getLabelFor <em>Label For</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Display Labels</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Display Labels</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_DisplayLabels()
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabel#getLabelFor
-	 * @model opposite="labelFor" containment="true"
-	 * @generated
-	 */
-	EList<ModelLabel> getDisplayLabels();
 
 	/**
 	 * Returns the value of the '<em><b>Selections</b></em>' containment reference list.

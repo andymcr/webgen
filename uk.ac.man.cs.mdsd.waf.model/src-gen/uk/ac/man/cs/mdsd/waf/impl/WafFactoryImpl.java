@@ -61,9 +61,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case WafPackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			case WafPackage.SERVICE: return createService();
-			case WafPackage.MODEL_LABEL: return createModelLabel();
-			case WafPackage.MODEL_LABEL_ELEMENT: return createModelLabelElement();
-			case WafPackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
+			case WafPackage.MODEL_LABEL_X: return createModelLabelX();
+			case WafPackage.MODEL_LABEL_ELEMENT_X: return createModelLabelElementX();
+			case WafPackage.MODEL_LABEL_ASSOCIATION_X: return createModelLabelAssociationX();
 			case WafPackage.SELECTION: return createSelection();
 			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WafPackage.SERVICE_ENTITY_ELEMENT: return createServiceEntityElement();
@@ -201,9 +201,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabel createModelLabel() {
-		ModelLabelImpl modelLabel = new ModelLabelImpl();
-		return modelLabel;
+	public ModelLabelX createModelLabelX() {
+		ModelLabelXImpl modelLabelX = new ModelLabelXImpl();
+		return modelLabelX;
 	}
 
 	/**
@@ -211,9 +211,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabelElement createModelLabelElement() {
-		ModelLabelElementImpl modelLabelElement = new ModelLabelElementImpl();
-		return modelLabelElement;
+	public ModelLabelElementX createModelLabelElementX() {
+		ModelLabelElementXImpl modelLabelElementX = new ModelLabelElementXImpl();
+		return modelLabelElementX;
 	}
 
 	/**
@@ -221,9 +221,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabelAssociation createModelLabelAssociation() {
-		ModelLabelAssociationImpl modelLabelAssociation = new ModelLabelAssociationImpl();
-		return modelLabelAssociation;
+	public ModelLabelAssociationX createModelLabelAssociationX() {
+		ModelLabelAssociationXImpl modelLabelAssociationX = new ModelLabelAssociationXImpl();
+		return modelLabelAssociationX;
 	}
 
 	/**

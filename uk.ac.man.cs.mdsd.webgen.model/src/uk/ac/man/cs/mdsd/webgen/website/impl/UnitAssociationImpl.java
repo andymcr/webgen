@@ -17,13 +17,14 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
@@ -67,7 +68,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @generated
 	 * @ordered
 	 */
-	protected Association feature;
+	protected EntityAssociation feature;
 
 	/**
 	 * The cached value of the '{@link #getUnits() <em>Units</em>}' containment reference list.
@@ -163,10 +164,10 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association getFeature() {
+	public EntityAssociation getFeature() {
 		if (feature != null && feature.eIsProxy()) {
 			InternalEObject oldFeature = (InternalEObject)feature;
-			feature = (Association)eResolveProxy(oldFeature);
+			feature = (EntityAssociation)eResolveProxy(oldFeature);
 			if (feature != oldFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.UNIT_ASSOCIATION__FEATURE, oldFeature, feature));
@@ -180,7 +181,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association basicGetFeature() {
+	public EntityAssociation basicGetFeature() {
 		return feature;
 	}
 
@@ -189,12 +190,12 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void basicSetFeature(Association newFeature) {
-		Association oldFeature = feature;
+	public void basicSetFeature(EntityAssociation newFeature) {
+		EntityAssociation oldFeature = feature;
 		feature = newFeature;
 		// eContainer may be undefined when loading resource
 		if ((newFeature != null) && (eContainer() != null)) {
-			final List<Entity> entities = new LinkedList<Entity>();
+			final List<EntityOrView> entities = new LinkedList<EntityOrView>();
 			final UnitSource source = ((DynamicUnit) eContainer()).getSource();
 			if (source instanceof Service) {
 				entities.addAll(((Service) source).getEncapsulates());
@@ -222,7 +223,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void setFeature(Association newFeature) {
+	public void setFeature(EntityAssociation newFeature) {
 		basicSetFeature(newFeature);
 		// eContainer may be undefined when loading resource
 		if ((newFeature != null) && (eContainer() != null)) {
@@ -519,7 +520,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.UNIT_ASSOCIATION__FEATURE:
-				setFeature((Association)newValue);
+				setFeature((EntityAssociation)newValue);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
 				getUnits().clear();
@@ -554,7 +555,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.UNIT_ASSOCIATION__FEATURE:
-				setFeature((Association)null);
+				setFeature((EntityAssociation)null);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
 				getUnits().clear();

@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.webgen.website.Entity;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
@@ -118,7 +118,7 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Entity> encapsulates;
+	protected EList<EntityOrView> encapsulates;
 
 	/**
 	 * The cached value of the '{@link #getDisplayLabels() <em>Display Labels</em>}' containment reference list.
@@ -237,9 +237,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Entity> getEncapsulates() {
+	public List<EntityOrView> getEncapsulates() {
 		if (encapsulates == null) {
-			encapsulates = new EObjectWithInverseResolvingEList.ManyInverse<Entity>(Entity.class, this, WebsitePackage.SERVICE__ENCAPSULATES, WebsitePackage.ENTITY__SERVED_BY);
+			encapsulates = new EObjectWithInverseResolvingEList.ManyInverse<EntityOrView>(EntityOrView.class, this, WebsitePackage.SERVICE__ENCAPSULATES, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY);
 		}
 		return encapsulates;
 	}
@@ -365,7 +365,7 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return;
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
-				getEncapsulates().addAll((Collection<? extends Entity>)newValue);
+				getEncapsulates().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
 			case WebsitePackage.SERVICE__DISPLAY_LABELS:
 				getDisplayLabels().clear();

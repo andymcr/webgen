@@ -10,11 +10,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
-import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.QueryInstance;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
@@ -31,11 +32,19 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		super(adapterFactory);
 	}
 
+	protected List<EntityFeature> getFeatures(final EntityOrView entityOrView) {
+		if (entityOrView instanceof Entity) {
+			return ((Entity) entityOrView).getFeatures();
+		}
+
+		return Collections.emptyList();
+	}
+
 	protected Entity getType(final ServiceAssociation association) {
 		if (association instanceof ServiceEntityAssociation) {
 			final ServiceEntityAssociation entityAssociation = (ServiceEntityAssociation) association;
 			final Service localService = entityAssociation.getPartOf();
-			final Association feature = entityAssociation.getFeature();
+			final EntityAssociation feature = entityAssociation.getFeature();
 			if (localService.getEncapsulates().contains(feature.getParentEntity())) {
 				return feature.getTargetEntity();
 			} else {
@@ -56,28 +65,41 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 	}
 
-	protected Service getService(final ServiceAssociation association) {
+	protected Service getSourceService(final ServiceAssociation association) {
 		if (association instanceof ServiceEntityAssociation) {
 			final ServiceEntityAssociation entityAssociation = (ServiceEntityAssociation) association;
-			final Entity targetEntity = entityAssociation.isUseFeatureSource()
-					? entityAssociation.getFeature().getParentEntity()
-					: entityAssociation.getFeature().getTargetEntity();
-			final Service localService = entityAssociation.getPartOf();
-			if (localService.getEncapsulates().contains(targetEntity)) {
-				return localService;
-			}
-			final List<Service> remoteServices = targetEntity.getServedBy();
-			if (remoteServices.size() > 0) {
-				return remoteServices.get(0);
+			if (entityAssociation.getFeature() != null) {
+				final Entity targetEntity = entityAssociation.isUseFeatureSource()
+						? entityAssociation.getFeature().getParentEntity()
+						: entityAssociation.getFeature().getTargetEntity();
+				final Service localService = entityAssociation.getPartOf();
+				if (localService.getEncapsulates().contains(targetEntity)) {
+					return localService;
+				}
+				final List<Service> remoteServices = targetEntity.getServedBy();
+				if (remoteServices.size() > 0) {
+					return remoteServices.get(0);
+				}
 			}
 		}
 
 		return null;
 	}
 
-	protected Service getService(final UnitAssociation association) {
+	protected List<Service> getTargetServices(final ServiceEntityAssociation association) {
+		if (association.getFeature() != null) {
+			final Entity targetEntity = association.isUseFeatureSource()
+				? association.getFeature().getTargetEntity()
+				: association.getFeature().getParentEntity();
+			return targetEntity.getServedBy();
+		}
+
+		return null;
+	}
+
+	protected Service getSourceService(final UnitAssociation association) {
 		if (association.getServiceFeature() != null) {
-			return getService(association.getServiceFeature());
+			return getSourceService(association.getServiceFeature());
 		}
 
 		return null;
@@ -152,8 +174,8 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 						}
 					}
 				} else {
-					for (Entity entity : service.getEncapsulates()) {
-						for (Feature feature : entity.getFeatures()) {
+					for (EntityOrView entityOrView : service.getEncapsulates()) {
+						for (EntityFeature feature : getFeatures(entityOrView)) {
 							if (feature instanceof Attribute) {
 								features.add((Attribute) feature);
 							}
@@ -162,7 +184,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 				}
 			} else {
 				final Entity entity = (Entity) unit.getSource();
-				for (Feature feature : entity.getFeatures()) {
+				for (EntityFeature feature : entity.getFeatures()) {
 					if (feature instanceof Attribute) {
 						features.add((Attribute) feature);
 					}

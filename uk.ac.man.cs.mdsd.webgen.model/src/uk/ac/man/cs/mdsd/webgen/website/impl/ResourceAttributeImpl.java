@@ -34,7 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *
  * @generated
  */
-public abstract class ResourceAttributeImpl extends AttributeImpl implements ResourceAttribute {
+public abstract class ResourceAttributeImpl extends EntityAttributeImpl implements ResourceAttribute {
 	/**
 	 * The default value of the '{@link #getMaximumUploadSize() <em>Maximum Upload Size</em>}' attribute.
 	 * <!-- begin-user-doc -->

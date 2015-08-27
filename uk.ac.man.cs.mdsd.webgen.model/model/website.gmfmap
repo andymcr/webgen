@@ -182,7 +182,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.6/@tools.4"/>
+              href="website.gmftool#//@palette/@tools.6/@tools.5"/>
           <diagramNode
               href="website.gmfgraph#Attribute"/>
         </ownedChild>
@@ -203,7 +203,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.6/@tools.5"/>
+              href="website.gmftool#//@palette/@tools.6/@tools.6"/>
           <diagramNode
               href="website.gmfgraph#DateAttributeFigure"/>
         </ownedChild>
@@ -224,7 +224,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.6/@tools.6"/>
+              href="website.gmftool#//@palette/@tools.6/@tools.7"/>
           <diagramNode
               href="website.gmfgraph#FileAttribute"/>
         </ownedChild>
@@ -245,7 +245,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.6/@tools.7"/>
+              href="website.gmftool#//@palette/@tools.6/@tools.8"/>
           <diagramNode
               href="website.gmfgraph#ImageAttribute"/>
         </ownedChild>
@@ -266,15 +266,91 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.6/@tools.8"/>
+              href="website.gmftool#//@palette/@tools.6/@tools.9"/>
           <diagramNode
               href="website.gmfgraph#LocationAttribute"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.4/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="website.ecore#//EntityOrView/displayLabels"/>
+        <ownedChild>
+          <domainMetaElement
+              href="website.ecore#//ModelLabelY"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="website.gmfgraph#ModelLabelLabel"/>
+            <features
+                href="website.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="website.gmftool#//@palette/@tools.4/@tools.1"/>
+          <diagramNode
+              href="website.gmfgraph#ModelLabel"/>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.4/@ownedChild/@children.0 //@nodes.4/@ownedChild/@children.1 //@nodes.4/@ownedChild/@children.2 //@nodes.4/@ownedChild/@children.4 //@nodes.4/@ownedChild/@children.3">
         <compartment
             href="website.gmfgraph#AttributeCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.4/@ownedChild/@children.5">
+        <compartment
+            href="website.gmfgraph#ModelLabelsCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="website.ecore#//WebGenModel/classifiers"/>
+    <ownedChild>
+      <domainMetaElement
+          href="website.ecore#//View"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="website.gmfgraph#ViewNameLabel"/>
+        <features
+            href="website.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="website.gmftool#//@palette/@tools.6/@tools.4"/>
+      <diagramNode
+          href="website.gmfgraph#View"/>
+      <children
+          compartment="//@nodes.5/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="website.ecore#//EntityOrView/displayLabels"/>
+        <ownedChild>
+          <domainMetaElement
+              href="website.ecore#//ModelLabelY"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="website.gmfgraph#ModelLabelLabel"/>
+            <features
+                href="website.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="website.gmftool#//@palette/@tools.4/@tools.1"/>
+          <diagramNode
+              href="website.gmfgraph#ModelLabel"/>
+        </ownedChild>
+      </children>
+      <compartments>
+        <compartment
+            href="website.gmfgraph#AttributeCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.5/@ownedChild/@children.0">
+        <compartment
+            href="website.gmfgraph#ModelLabelsCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -297,7 +373,7 @@
       <diagramNode
           href="website.gmfgraph#Page"/>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
@@ -316,7 +392,7 @@
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -338,7 +414,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -360,7 +436,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -381,7 +457,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -402,7 +478,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.0/@ownedChild/@compartments.1">
+              compartment="//@nodes.6/@ownedChild/@children.0/@ownedChild/@compartments.1">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/supportActions"/>
             <ownedChild>
@@ -423,19 +499,19 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.0/@ownedChild/@children.2 //@nodes.5/@ownedChild/@children.0/@ownedChild/@children.3">
+              children="//@nodes.6/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.0/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.0/@ownedChild/@children.3">
             <compartment
                 href="website.gmfgraph#UnitFieldCompartment"/>
           </compartments>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.0/@ownedChild/@children.4">
+              children="//@nodes.6/@ownedChild/@children.0/@ownedChild/@children.4">
             <compartment
                 href="website.gmfgraph#ActionCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
@@ -454,7 +530,7 @@
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.1/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//CommandUnit/commands"/>
             <ownedChild>
@@ -475,14 +551,14 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.1/@ownedChild/@children.0">
+              children="//@nodes.6/@ownedChild/@children.1/@ownedChild/@children.0">
             <compartment
                 href="website.gmfgraph#CommandsCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
@@ -501,7 +577,7 @@
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.2/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.2/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -523,7 +599,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.2/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.2/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -545,7 +621,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.2/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.2/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -566,7 +642,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.2/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.2/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -587,14 +663,14 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.2/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.2/@ownedChild/@children.2 //@nodes.5/@ownedChild/@children.2/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.2/@ownedChild/@children.3">
+              children="//@nodes.6/@ownedChild/@children.2/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.2/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.2/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.2/@ownedChild/@children.3">
             <compartment
                 href="website.gmfgraph#UnitFieldCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
@@ -613,7 +689,7 @@
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.3/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.3/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -635,7 +711,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.3/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.3/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -657,7 +733,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.3/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.3/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -678,7 +754,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.3/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.3/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -699,14 +775,14 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.3/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.3/@ownedChild/@children.2 //@nodes.5/@ownedChild/@children.3/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.3/@ownedChild/@children.3">
+              children="//@nodes.6/@ownedChild/@children.3/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.3/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.3/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.3/@ownedChild/@children.3">
             <compartment
                 href="website.gmfgraph#UnitFieldCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
@@ -720,7 +796,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
@@ -739,7 +815,7 @@
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -759,7 +835,7 @@
               <diagramNode
                   href="website.gmfgraph#InterfaceElement"/>
               <children
-                  compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@compartments.0">
                 <containmentFeature
                     href="website.ecore#//InlineActionContainer/actions"/>
                 <ownedChild>
@@ -780,14 +856,14 @@
                 </ownedChild>
               </children>
               <compartments
-                  children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@children.0">
+                  children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@children.0">
                 <compartment
                     href="website.gmfgraph#ActionCompartment"/>
               </compartments>
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -807,7 +883,7 @@
               <diagramNode
                   href="website.gmfgraph#InterfaceAssociation"/>
               <children
-                  compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@compartments.0">
                 <containmentFeature
                     href="website.ecore#//UnitContainer/units"/>
                 <ownedChild>
@@ -826,7 +902,7 @@
                   <diagramNode
                       href="website.gmfgraph#InterfaceUnit"/>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -848,7 +924,7 @@
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -868,7 +944,7 @@
                       <diagramNode
                           href="website.gmfgraph#InterfaceAssociation"/>
                       <children
-                          compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                          compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
                         <containmentFeature
                             href="website.ecore#//UnitContainer/units"/>
                         <ownedChild>
@@ -887,7 +963,7 @@
                           <diagramNode
                               href="website.gmfgraph#InterfaceUnit"/>
                           <children
-                              compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                             <containmentFeature
                                 href="website.ecore#//DynamicUnit/displayFields"/>
                             <ownedChild>
@@ -909,14 +985,14 @@
                             </ownedChild>
                           </children>
                           <compartments
-                              children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0">
+                              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0">
                             <compartment
                                 href="website.gmfgraph#UnitFieldCompartment"/>
                           </compartments>
                         </ownedChild>
                       </children>
                       <children
-                          compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                          compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
                         <containmentFeature
                             href="website.ecore#//UnitContainer/units"/>
                         <ownedChild>
@@ -935,7 +1011,7 @@
                           <diagramNode
                               href="website.gmfgraph#InterfaceUnit"/>
                           <children
-                              compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                             <containmentFeature
                                 href="website.ecore#//DynamicUnit/displayFields"/>
                             <ownedChild>
@@ -957,28 +1033,28 @@
                             </ownedChild>
                           </children>
                           <compartments
-                              children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
+                              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
                             <compartment
                                 href="website.gmfgraph#UnitFieldCompartment"/>
                           </compartments>
                         </ownedChild>
                       </children>
                       <compartments
-                          children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
+                          children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
                         <compartment
                             href="website.gmfgraph#InterfaceUnitsCompartment"/>
                       </compartments>
                     </ownedChild>
                   </children>
                   <compartments
-                      children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
+                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
                     <compartment
                         href="website.gmfgraph#UnitFieldCompartment"/>
                   </compartments>
                 </ownedChild>
               </children>
               <children
-                  compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@compartments.0">
                 <containmentFeature
                     href="website.ecore#//UnitContainer/units"/>
                 <ownedChild>
@@ -997,7 +1073,7 @@
                   <diagramNode
                       href="website.gmfgraph#InterfaceUnit"/>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -1019,7 +1095,7 @@
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -1039,7 +1115,7 @@
                       <diagramNode
                           href="website.gmfgraph#InterfaceAssociation"/>
                       <children
-                          compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                          compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                         <containmentFeature
                             href="website.ecore#//UnitContainer/units"/>
                         <ownedChild>
@@ -1058,7 +1134,7 @@
                           <diagramNode
                               href="website.gmfgraph#InterfaceUnit"/>
                           <children
-                              compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                             <containmentFeature
                                 href="website.ecore#//DynamicUnit/displayFields"/>
                             <ownedChild>
@@ -1080,7 +1156,7 @@
                             </ownedChild>
                           </children>
                           <children
-                              compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                             <containmentFeature
                                 href="website.ecore#//DynamicUnit/displayFields"/>
                             <ownedChild>
@@ -1100,7 +1176,7 @@
                               <diagramNode
                                   href="website.gmfgraph#InterfaceAssociation"/>
                               <children
-                                  compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
                                 <containmentFeature
                                     href="website.ecore#//UnitContainer/units"/>
                                 <ownedChild>
@@ -1119,7 +1195,7 @@
                                   <diagramNode
                                       href="website.gmfgraph#InterfaceUnit"/>
                                   <children
-                                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                                     <containmentFeature
                                         href="website.ecore#//DynamicUnit/displayFields"/>
                                     <ownedChild>
@@ -1141,7 +1217,7 @@
                                     </ownedChild>
                                   </children>
                                   <children
-                                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                                     <containmentFeature
                                         href="website.ecore#//DynamicUnit/displayFields"/>
                                     <ownedChild>
@@ -1163,14 +1239,14 @@
                                     </ownedChild>
                                   </children>
                                   <compartments
-                                      children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
+                                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
                                     <compartment
                                         href="website.gmfgraph#UnitFieldCompartment"/>
                                   </compartments>
                                 </ownedChild>
                               </children>
                               <children
-                                  compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
                                 <containmentFeature
                                     href="website.ecore#//UnitContainer/units"/>
                                 <ownedChild>
@@ -1189,7 +1265,7 @@
                                   <diagramNode
                                       href="website.gmfgraph#InterfaceUnit"/>
                                   <children
-                                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                                     <containmentFeature
                                         href="website.ecore#//DynamicUnit/displayFields"/>
                                     <ownedChild>
@@ -1211,7 +1287,7 @@
                                     </ownedChild>
                                   </children>
                                   <children
-                                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                                     <containmentFeature
                                         href="website.ecore#//DynamicUnit/displayFields"/>
                                     <ownedChild>
@@ -1233,28 +1309,28 @@
                                     </ownedChild>
                                   </children>
                                   <compartments
-                                      children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
                                     <compartment
                                         href="website.gmfgraph#UnitFieldCompartment"/>
                                   </compartments>
                                 </ownedChild>
                               </children>
                               <compartments
-                                  children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
+                                  children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
                                 <compartment
                                     href="website.gmfgraph#InterfaceUnitsCompartment"/>
                               </compartments>
                             </ownedChild>
                           </children>
                           <compartments
-                              children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
+                              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
                             <compartment
                                 href="website.gmfgraph#UnitFieldCompartment"/>
                           </compartments>
                         </ownedChild>
                       </children>
                       <children
-                          compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                          compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                         <containmentFeature
                             href="website.ecore#//UnitContainer/units"/>
                         <ownedChild>
@@ -1273,7 +1349,7 @@
                           <diagramNode
                               href="website.gmfgraph#InterfaceUnit"/>
                           <children
-                              compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                             <containmentFeature
                                 href="website.ecore#//DynamicUnit/displayFields"/>
                             <ownedChild>
@@ -1295,7 +1371,7 @@
                             </ownedChild>
                           </children>
                           <children
-                              compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                             <containmentFeature
                                 href="website.ecore#//DynamicUnit/displayFields"/>
                             <ownedChild>
@@ -1315,7 +1391,7 @@
                               <diagramNode
                                   href="website.gmfgraph#InterfaceAssociation"/>
                               <children
-                                  compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                                 <containmentFeature
                                     href="website.ecore#//UnitContainer/units"/>
                                 <ownedChild>
@@ -1334,7 +1410,7 @@
                                   <diagramNode
                                       href="website.gmfgraph#InterfaceUnit"/>
                                   <children
-                                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                                     <containmentFeature
                                         href="website.ecore#//DynamicUnit/displayFields"/>
                                     <ownedChild>
@@ -1356,7 +1432,7 @@
                                     </ownedChild>
                                   </children>
                                   <children
-                                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                                     <containmentFeature
                                         href="website.ecore#//DynamicUnit/displayFields"/>
                                     <ownedChild>
@@ -1378,14 +1454,14 @@
                                     </ownedChild>
                                   </children>
                                   <compartments
-                                      children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
+                                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
                                     <compartment
                                         href="website.gmfgraph#UnitFieldCompartment"/>
                                   </compartments>
                                 </ownedChild>
                               </children>
                               <children
-                                  compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                                 <containmentFeature
                                     href="website.ecore#//UnitContainer/units"/>
                                 <ownedChild>
@@ -1404,7 +1480,7 @@
                                   <diagramNode
                                       href="website.gmfgraph#InterfaceUnit"/>
                                   <children
-                                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                                     <containmentFeature
                                         href="website.ecore#//DynamicUnit/displayFields"/>
                                     <ownedChild>
@@ -1426,7 +1502,7 @@
                                     </ownedChild>
                                   </children>
                                   <children
-                                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                                     <containmentFeature
                                         href="website.ecore#//DynamicUnit/displayFields"/>
                                     <ownedChild>
@@ -1448,35 +1524,35 @@
                                     </ownedChild>
                                   </children>
                                   <compartments
-                                      children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
                                     <compartment
                                         href="website.gmfgraph#UnitFieldCompartment"/>
                                   </compartments>
                                 </ownedChild>
                               </children>
                               <compartments
-                                  children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                                  children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
                                 <compartment
                                     href="website.gmfgraph#InterfaceUnitsCompartment"/>
                               </compartments>
                             </ownedChild>
                           </children>
                           <compartments
-                              children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
                             <compartment
                                 href="website.gmfgraph#UnitFieldCompartment"/>
                           </compartments>
                         </ownedChild>
                       </children>
                       <compartments
-                          children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                          children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
                         <compartment
                             href="website.gmfgraph#InterfaceUnitsCompartment"/>
                       </compartments>
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.1">
+                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.1">
                     <containmentFeature
                         href="website.ecore#//InlineActionContainer/actions"/>
                     <ownedChild>
@@ -1497,7 +1573,7 @@
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.1">
+                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.1">
                     <containmentFeature
                         href="website.ecore#//InlineActionContainer/actions"/>
                     <ownedChild>
@@ -1518,19 +1594,19 @@
                     </ownedChild>
                   </children>
                   <compartments
-                      children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
+                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
                     <compartment
                         href="website.gmfgraph#UnitFieldCompartment"/>
                   </compartments>
                   <compartments
-                      children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.2 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.3">
+                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.3">
                     <compartment
                         href="website.gmfgraph#ActionCompartment"/>
                   </compartments>
                 </ownedChild>
               </children>
               <children
-                  compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@compartments.1">
+                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@compartments.1">
                 <containmentFeature
                     href="website.ecore#//InlineActionContainer/actions"/>
                 <ownedChild>
@@ -1551,19 +1627,19 @@
                 </ownedChild>
               </children>
               <compartments
-                  children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1">
+                  children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1">
                 <compartment
                     href="website.gmfgraph#InterfaceUnitsCompartment"/>
               </compartments>
               <compartments
-                  children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.2">
+                  children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.2">
                 <compartment
                     href="website.gmfgraph#ActionCompartment"/>
               </compartments>
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -1584,7 +1660,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -1605,7 +1681,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.5/@ownedChild/@compartments.1">
+              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@compartments.1">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/supportActions"/>
             <ownedChild>
@@ -1626,19 +1702,19 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.2 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.5/@ownedChild/@children.3">
+              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.3">
             <compartment
                 href="website.gmfgraph#UnitFieldCompartment"/>
           </compartments>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.5/@ownedChild/@children.4">
+              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.4">
             <compartment
                 href="website.gmfgraph#ActionCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
@@ -1657,7 +1733,7 @@
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -1677,7 +1753,7 @@
               <diagramNode
                   href="website.gmfgraph#InterfaceElement"/>
               <children
-                  compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                  compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.0/@ownedChild/@compartments.0">
                 <containmentFeature
                     href="website.ecore#//InlineActionContainer/actions"/>
                 <ownedChild>
@@ -1698,14 +1774,14 @@
                 </ownedChild>
               </children>
               <compartments
-                  children="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.0/@ownedChild/@children.0">
+                  children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.0/@ownedChild/@children.0">
                 <compartment
                     href="website.gmfgraph#ActionCompartment"/>
               </compartments>
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -1725,7 +1801,7 @@
               <diagramNode
                   href="website.gmfgraph#InterfaceAssociation"/>
               <children
-                  compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                  compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
                 <containmentFeature
                     href="website.ecore#//UnitContainer/units"/>
                 <ownedChild>
@@ -1744,7 +1820,7 @@
                   <diagramNode
                       href="website.gmfgraph#InterfaceUnit"/>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -1765,7 +1841,7 @@
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -1786,14 +1862,14 @@
                     </ownedChild>
                   </children>
                   <compartments
-                      children="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
+                      children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
                     <compartment
                         href="website.gmfgraph#UnitFieldCompartment"/>
                   </compartments>
                 </ownedChild>
               </children>
               <children
-                  compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                  compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
                 <containmentFeature
                     href="website.ecore#//UnitContainer/units"/>
                 <ownedChild>
@@ -1812,7 +1888,7 @@
                   <diagramNode
                       href="website.gmfgraph#InterfaceUnit"/>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -1833,7 +1909,7 @@
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -1854,14 +1930,14 @@
                     </ownedChild>
                   </children>
                   <compartments
-                      children="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                      children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
                     <compartment
                         href="website.gmfgraph#UnitFieldCompartment"/>
                   </compartments>
                 </ownedChild>
               </children>
               <children
-                  compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@compartments.1">
+                  compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@compartments.1">
                 <containmentFeature
                     href="website.ecore#//InlineActionContainer/actions"/>
                 <ownedChild>
@@ -1882,19 +1958,19 @@
                 </ownedChild>
               </children>
               <compartments
-                  children="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1">
+                  children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1">
                 <compartment
                     href="website.gmfgraph#InterfaceUnitsCompartment"/>
               </compartments>
               <compartments
-                  children="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.2">
+                  children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.2">
                 <compartment
                     href="website.gmfgraph#ActionCompartment"/>
               </compartments>
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -1915,7 +1991,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -1936,7 +2012,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@compartments.1">
+              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.1">
             <containmentFeature
                 href="website.ecore#//InlineActionContainer/actions"/>
             <ownedChild>
@@ -1957,7 +2033,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@compartments.1">
+              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.1">
             <containmentFeature
                 href="website.ecore#//InlineActionContainer/actions"/>
             <ownedChild>
@@ -1978,7 +2054,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.6/@ownedChild/@compartments.1">
+              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.1">
             <containmentFeature
                 href="website.ecore#//InlineActionContainer/actions"/>
             <ownedChild>
@@ -1999,19 +2075,19 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.6/@ownedChild/@children.2 //@nodes.5/@ownedChild/@children.6/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.6/@ownedChild/@children.3">
+              children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.3">
             <compartment
                 href="website.gmfgraph#UnitFieldCompartment"/>
           </compartments>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.6/@ownedChild/@children.4 //@nodes.5/@ownedChild/@children.6/@ownedChild/@children.5 //@nodes.5/@ownedChild/@children.6/@ownedChild/@children.6">
+              children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.4 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.5 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.6">
             <compartment
                 href="website.gmfgraph#ActionCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
@@ -2032,7 +2108,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
@@ -2051,7 +2127,7 @@
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.8/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.8/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2073,7 +2149,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.8/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.8/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2095,7 +2171,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.8/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.8/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2116,7 +2192,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.8/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.8/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2137,14 +2213,14 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.8/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.8/@ownedChild/@children.2 //@nodes.5/@ownedChild/@children.8/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.8/@ownedChild/@children.3">
+              children="//@nodes.6/@ownedChild/@children.8/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.8/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.8/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.8/@ownedChild/@children.3">
             <compartment
                 href="website.gmfgraph#UnitFieldCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
@@ -2165,7 +2241,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.5/@ownedChild/@compartments.0">
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
@@ -2184,7 +2260,7 @@
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.10/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2206,7 +2282,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.10/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2226,7 +2302,7 @@
               <diagramNode
                   href="website.gmfgraph#InterfaceAssociation"/>
               <children
-                  compartment="//@nodes.5/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                  compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@compartments.0">
                 <containmentFeature
                     href="website.ecore#//UnitContainer/units"/>
                 <ownedChild>
@@ -2245,7 +2321,7 @@
                   <diagramNode
                       href="website.gmfgraph#InterfaceUnit"/>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -2267,7 +2343,7 @@
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -2289,7 +2365,7 @@
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.1">
+                      compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.1">
                     <containmentFeature
                         href="website.ecore#//InlineActionContainer/actions"/>
                     <ownedChild>
@@ -2310,7 +2386,7 @@
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.5/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.1">
+                      compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.1">
                     <containmentFeature
                         href="website.ecore#//InlineActionContainer/actions"/>
                     <ownedChild>
@@ -2331,26 +2407,26 @@
                     </ownedChild>
                   </children>
                   <compartments
-                      children="//@nodes.5/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0">
+                      children="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0">
                     <compartment
                         href="website.gmfgraph#UnitFieldCompartment"/>
                   </compartments>
                   <compartments
-                      children="//@nodes.5/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.2 //@nodes.5/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.3">
+                      children="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.3">
                     <compartment
                         href="website.gmfgraph#ActionCompartment"/>
                   </compartments>
                 </ownedChild>
               </children>
               <compartments
-                  children="//@nodes.5/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0">
+                  children="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0">
                 <compartment
                     href="website.gmfgraph#InterfaceUnitsCompartment"/>
               </compartments>
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.10/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2371,7 +2447,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.5/@ownedChild/@children.10/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2392,14 +2468,14 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.5/@ownedChild/@children.10/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.10/@ownedChild/@children.2 //@nodes.5/@ownedChild/@children.10/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.10/@ownedChild/@children.3">
+              children="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.3">
             <compartment
                 href="website.gmfgraph#UnitFieldCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.5/@ownedChild/@children.6 //@nodes.5/@ownedChild/@children.2 //@nodes.5/@ownedChild/@children.5 //@nodes.5/@ownedChild/@children.10 //@nodes.5/@ownedChild/@children.8 //@nodes.5/@ownedChild/@children.3 //@nodes.5/@ownedChild/@children.9 //@nodes.5/@ownedChild/@children.4 //@nodes.5/@ownedChild/@children.0 //@nodes.5/@ownedChild/@children.1 //@nodes.5/@ownedChild/@children.7">
+          children="//@nodes.6/@ownedChild/@children.6 //@nodes.6/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.5 //@nodes.6/@ownedChild/@children.10 //@nodes.6/@ownedChild/@children.8 //@nodes.6/@ownedChild/@children.3 //@nodes.6/@ownedChild/@children.9 //@nodes.6/@ownedChild/@children.4 //@nodes.6/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.7">
         <compartment
             href="website.gmfgraph#InterfaceUnitsCompartment"/>
       </compartments>
@@ -2424,7 +2500,7 @@
       <diagramNode
           href="website.gmfgraph#Menu"/>
       <children
-          compartment="//@nodes.6/@ownedChild/@compartments.0">
+          compartment="//@nodes.7/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//Menu/entries"/>
         <ownedChild>
@@ -2445,7 +2521,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.6/@ownedChild/@compartments.0">
+          compartment="//@nodes.7/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//Menu/entries"/>
         <ownedChild>
@@ -2466,7 +2542,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.6/@ownedChild/@compartments.0">
+          compartment="//@nodes.7/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//Menu/entries"/>
         <ownedChild>
@@ -2487,7 +2563,7 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.6/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.1">
+          children="//@nodes.7/@ownedChild/@children.0 //@nodes.7/@ownedChild/@children.2 //@nodes.7/@ownedChild/@children.1">
         <compartment
             href="website.gmfgraph#MenuEntriesCompartment"/>
       </compartments>
@@ -2512,7 +2588,7 @@
       <diagramNode
           href="website.gmfgraph#Service"/>
       <children
-          compartment="//@nodes.7/@ownedChild/@compartments.0">
+          compartment="//@nodes.8/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//Service/features"/>
         <ownedChild>
@@ -2534,7 +2610,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.7/@ownedChild/@compartments.0">
+          compartment="//@nodes.8/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//Service/features"/>
         <ownedChild>
@@ -2556,7 +2632,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.7/@ownedChild/@compartments.0">
+          compartment="//@nodes.8/@ownedChild/@compartments.0">
         <containmentFeature
             href="website.ecore#//Service/features"/>
         <ownedChild>
@@ -2577,28 +2653,7 @@
         </ownedChild>
       </children>
       <children
-          compartment="//@nodes.7/@ownedChild/@compartments.1">
-        <containmentFeature
-            href="website.ecore#//Service/displayLabels"/>
-        <ownedChild>
-          <domainMetaElement
-              href="website.ecore#//ModelLabel"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="website.gmfgraph#ModelLabelLabel"/>
-            <features
-                href="website.ecore#//NamedElement/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.4/@tools.1"/>
-          <diagramNode
-              href="website.gmfgraph#ModelLabel"/>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.7/@ownedChild/@compartments.2">
+          compartment="//@nodes.8/@ownedChild/@compartments.1">
         <containmentFeature
             href="website.ecore#//Service/selections"/>
         <ownedChild>
@@ -2619,17 +2674,12 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.7/@ownedChild/@children.0 //@nodes.7/@ownedChild/@children.1 //@nodes.7/@ownedChild/@children.2">
+          children="//@nodes.8/@ownedChild/@children.0 //@nodes.8/@ownedChild/@children.1 //@nodes.8/@ownedChild/@children.2">
         <compartment
             href="website.gmfgraph#ServiceFeaturesCompartment"/>
       </compartments>
       <compartments
-          children="//@nodes.7/@ownedChild/@children.3">
-        <compartment
-            href="website.gmfgraph#ModelLabelsCompartment"/>
-      </compartments>
-      <compartments
-          children="//@nodes.7/@ownedChild/@children.4">
+          children="//@nodes.8/@ownedChild/@children.3">
         <compartment
             href="website.gmfgraph#SelectionsCompartment"/>
       </compartments>
@@ -2654,7 +2704,7 @@
       <diagramLabel
           href="website.gmfgraph#AssociationWithoutContainmentMultiplicityLabel"/>
       <features
-          href="website.ecore#//Feature/cardinality"/>
+          href="website.ecore#//EntityFeature/cardinality"/>
       <features
           href="website.ecore#//AssociationWithoutContainment/targetCardinality"/>
     </labelMappings>
@@ -2662,12 +2712,12 @@
         href="website.ecore#//Entity/features"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="website.gmftool#//@palette/@tools.6/@tools.9"/>
+        href="website.gmftool#//@palette/@tools.6/@tools.10"/>
     <diagramLink
         href="website.gmfgraph#UncontainedAssociation"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="website.ecore#//Association/targetEntity"/>
+        href="website.ecore#//EntityAssociation/targetEntity"/>
   </links>
   <links>
     <domainMetaElement
@@ -2687,18 +2737,18 @@
       <diagramLabel
           href="website.gmfgraph#AssociationWithContainmentMultiplicityLabel"/>
       <features
-          href="website.ecore#//Feature/cardinality"/>
+          href="website.ecore#//EntityFeature/cardinality"/>
     </labelMappings>
     <containmentFeature
         href="website.ecore#//Entity/features"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="website.gmftool#//@palette/@tools.6/@tools.10"/>
+        href="website.gmftool#//@palette/@tools.6/@tools.11"/>
     <diagramLink
         href="website.gmfgraph#ContainedAssociation"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="website.ecore#//Association/targetEntity"/>
+        href="website.ecore#//EntityAssociation/targetEntity"/>
   </links>
   <links>
     <domainMetaElement

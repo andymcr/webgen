@@ -18,7 +18,7 @@ import uk.ac.man.cs.mdsd.orm.Attribute
 import uk.ac.man.cs.mdsd.orm.Cardinality
 import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.DateDetails
-import uk.ac.man.cs.mdsd.orm.Entity
+import uk.ac.man.cs.mdsd.orm.EntityOrView
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
@@ -108,33 +108,31 @@ interface IncludedAssociation extends IncludedFeature {
 
 
 class Service extends NamedElement {
-	refers Entity[] entities
-	refers Entity[] daosUsed
+	refers EntityOrView[] entities
+	refers EntityOrView[] daosUsed
 	String[1] modelName
 	boolean view
 	String viewName
-	contains ModelLabel[] displayLabels opposite labelFor
 	contains Selection[] selections
 	contains ServiceFeature[] features opposite includedBy
 	refers DynamicUnit[] accessedBy opposite service
 }
 
-class ModelLabel extends NamedElement, UnitTitle {
-	container Service[1] labelFor opposite displayLabels
+class ModelLabelX extends NamedElement, UnitTitle {
 	String[1] format
-	contains ModelLabelFeature[] features
+	contains ModelLabelFeatureX[] features
 }
 
-abstract class ModelLabelFeature {
+abstract class ModelLabelFeatureX {
 }
 
-class ModelLabelElement extends ModelLabelFeature {
+class ModelLabelElementX extends ModelLabelFeatureX {
 	refers ServiceEntityElement[1] serviceFeature
 }
 
-class ModelLabelAssociation extends ModelLabelFeature {
+class ModelLabelAssociationX extends ModelLabelFeatureX {
 	refers ServiceAssociation[1] serviceFeature
-	refers ModelLabel dynamicLabel
+	refers ModelLabelX dynamicLabel
 }
 
 class Selection extends NamedElement {
@@ -333,9 +331,9 @@ class UnitAssociation extends UnitFeature, IncludedAssociation, UnitContainer {
 	refers ServiceAssociation[1] serviceFeature
 	contains UnitChildFeature childFeature
 	refers Selection selection
-	refers ModelLabel dynamicLabel
+	refers ModelLabelX dynamicLabel
 	// ???
-	refers ModelLabel[] filters
+	refers ModelLabelX[] filters
 }
 
 abstract class UnitChildFeature {

@@ -20,11 +20,10 @@ public class WebsiteModelingAssistantProviderOfServiceEditPart extends WebsiteMo
 	@Override
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
-		List<IElementType> types = new ArrayList<IElementType>(5);
+		List<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(WebsiteElementTypes.ServiceEntityElement_3167);
 		types.add(WebsiteElementTypes.ServiceEntityAssociation_3168);
 		types.add(WebsiteElementTypes.ServiceViewAssociation_3166);
-		types.add(WebsiteElementTypes.ModelLabel_3163);
 		types.add(WebsiteElementTypes.Selection_3150);
 		return types;
 	}

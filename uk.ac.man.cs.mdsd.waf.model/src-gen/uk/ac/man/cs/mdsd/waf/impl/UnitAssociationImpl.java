@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
 import uk.ac.man.cs.mdsd.waf.IncludedAssociation;
-import uk.ac.man.cs.mdsd.waf.ModelLabel;
+import uk.ac.man.cs.mdsd.waf.ModelLabelX;
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.ServiceAssociation;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
@@ -95,7 +95,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @generated
 	 * @ordered
 	 */
-	protected ModelLabel dynamicLabel;
+	protected ModelLabelX dynamicLabel;
 
 	/**
 	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' reference list.
@@ -105,7 +105,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ModelLabel> filters;
+	protected EList<ModelLabelX> filters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,10 +262,10 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabel getDynamicLabel() {
+	public ModelLabelX getDynamicLabel() {
 		if (dynamicLabel != null && dynamicLabel.eIsProxy()) {
 			InternalEObject oldDynamicLabel = (InternalEObject)dynamicLabel;
-			dynamicLabel = (ModelLabel)eResolveProxy(oldDynamicLabel);
+			dynamicLabel = (ModelLabelX)eResolveProxy(oldDynamicLabel);
 			if (dynamicLabel != oldDynamicLabel) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.UNIT_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
@@ -279,7 +279,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabel basicGetDynamicLabel() {
+	public ModelLabelX basicGetDynamicLabel() {
 		return dynamicLabel;
 	}
 
@@ -288,8 +288,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDynamicLabel(ModelLabel newDynamicLabel) {
-		ModelLabel oldDynamicLabel = dynamicLabel;
+	public void setDynamicLabel(ModelLabelX newDynamicLabel) {
+		ModelLabelX oldDynamicLabel = dynamicLabel;
 		dynamicLabel = newDynamicLabel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
@@ -300,9 +300,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ModelLabel> getFilters() {
+	public EList<ModelLabelX> getFilters() {
 		if (filters == null) {
-			filters = new EObjectResolvingEList<ModelLabel>(ModelLabel.class, this, WafPackage.UNIT_ASSOCIATION__FILTERS);
+			filters = new EObjectResolvingEList<ModelLabelX>(ModelLabelX.class, this, WafPackage.UNIT_ASSOCIATION__FILTERS);
 		}
 		return filters;
 	}
@@ -388,11 +388,11 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				setSelection((Selection)newValue);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__DYNAMIC_LABEL:
-				setDynamicLabel((ModelLabel)newValue);
+				setDynamicLabel((ModelLabelX)newValue);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__FILTERS:
 				getFilters().clear();
-				getFilters().addAll((Collection<? extends ModelLabel>)newValue);
+				getFilters().addAll((Collection<? extends ModelLabelX>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -419,7 +419,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				setSelection((Selection)null);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__DYNAMIC_LABEL:
-				setDynamicLabel((ModelLabel)null);
+				setDynamicLabel((ModelLabelX)null);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__FILTERS:
 				getFilters().clear();

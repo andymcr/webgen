@@ -24,7 +24,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface DateAttribute extends Attribute {
+public interface DateAttribute extends EntityAttribute {
 	/**
 	 * Returns the value of the '<em><b>Details</b></em>' attribute.
 	 * The default value is <code>"DateOnly"</code>.

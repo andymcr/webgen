@@ -112,12 +112,20 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateEnumerationType((EnumerationType)value, diagnostics, context);
 			case WebsitePackage.ENUMERATION_LITERAL:
 				return validateEnumerationLiteral((EnumerationLiteral)value, diagnostics, context);
-			case WebsitePackage.ENTITY:
-				return validateEntity((Entity)value, diagnostics, context);
+			case WebsitePackage.ENTITY_OR_VIEW:
+				return validateEntityOrView((EntityOrView)value, diagnostics, context);
 			case WebsitePackage.FEATURE:
 				return validateFeature((Feature)value, diagnostics, context);
 			case WebsitePackage.ATTRIBUTE:
 				return validateAttribute((Attribute)value, diagnostics, context);
+			case WebsitePackage.ASSOCIATION:
+				return validateAssociation((Association)value, diagnostics, context);
+			case WebsitePackage.ENTITY:
+				return validateEntity((Entity)value, diagnostics, context);
+			case WebsitePackage.ENTITY_FEATURE:
+				return validateEntityFeature((EntityFeature)value, diagnostics, context);
+			case WebsitePackage.ENTITY_ATTRIBUTE:
+				return validateEntityAttribute((EntityAttribute)value, diagnostics, context);
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE:
 				return validateDataTypeAttribute((DataTypeAttribute)value, diagnostics, context);
 			case WebsitePackage.DATE_ATTRIBUTE:
@@ -130,12 +138,28 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateImageAttribute((ImageAttribute)value, diagnostics, context);
 			case WebsitePackage.LOCATION_ATTRIBUTE:
 				return validateLocationAttribute((LocationAttribute)value, diagnostics, context);
-			case WebsitePackage.ASSOCIATION:
-				return validateAssociation((Association)value, diagnostics, context);
+			case WebsitePackage.ENTITY_ASSOCIATION:
+				return validateEntityAssociation((EntityAssociation)value, diagnostics, context);
 			case WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT:
 				return validateAssociationWithoutContainment((AssociationWithoutContainment)value, diagnostics, context);
 			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT:
 				return validateAssociationWithContainment((AssociationWithContainment)value, diagnostics, context);
+			case WebsitePackage.VIEW:
+				return validateView((View)value, diagnostics, context);
+			case WebsitePackage.VIEW_FEATURE:
+				return validateViewFeature((ViewFeature)value, diagnostics, context);
+			case WebsitePackage.VIEW_ATTRIBUTE:
+				return validateViewAttribute((ViewAttribute)value, diagnostics, context);
+			case WebsitePackage.VIEW_ASSOCIATION:
+				return validateViewAssociation((ViewAssociation)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_Y:
+				return validateModelLabelY((ModelLabelY)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_FEATURE_Y:
+				return validateModelLabelFeatureY((ModelLabelFeatureY)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y:
+				return validateModelLabelAttributeY((ModelLabelAttributeY)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y:
+				return validateModelLabelAssociationY((ModelLabelAssociationY)value, diagnostics, context);
 			case WebsitePackage.INCLUDED_FEATURE:
 				return validateIncludedFeature((IncludedFeature)value, diagnostics, context);
 			case WebsitePackage.INCLUDED_ELEMENT:
@@ -576,6 +600,25 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateEntityOrView(EntityOrView entityOrView, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(entityOrView, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(entityOrView, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(entityOrView, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(entityOrView, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(entityOrView, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(entityOrView, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(entityOrView, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityOrView, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityOrView, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entityOrView, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateEntity(Entity entity, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(entity, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(entity, diagnostics, context);
@@ -648,6 +691,110 @@ public class WebsiteValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEntityFeature(EntityFeature entityFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(entityFeature, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEntityAttribute(EntityAttribute entityAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(entityAttribute, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(entityAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(entityAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(entityAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(entityAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(entityAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(entityAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entityAttribute, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateView(View view, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(view, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(view, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(view, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(view, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(view, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(view, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(view, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(view, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(view, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(view, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateViewFeature(ViewFeature viewFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(viewFeature, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(viewFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(viewFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(viewFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(viewFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(viewFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(viewFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(viewFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(viewFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(viewFeature, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateViewAttribute(ViewAttribute viewAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(viewAttribute, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(viewAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(viewAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(viewAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(viewAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(viewAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(viewAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(viewAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(viewAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(viewAttribute, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateViewAssociation(ViewAssociation viewAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(viewAssociation, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(viewAssociation, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -807,6 +954,25 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateEntityAssociation(EntityAssociation entityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(entityAssociation, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(entityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(entityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(entityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(entityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(entityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(entityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entityAssociation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateAssociation(Association association, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(association, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(association, diagnostics, context);
@@ -887,6 +1053,52 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(associationWithContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(associationWithContainment, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelLabelY(ModelLabelY modelLabelY, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(modelLabelY, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(modelLabelY, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(modelLabelY, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(modelLabelY, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(modelLabelY, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(modelLabelY, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(modelLabelY, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(modelLabelY, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(modelLabelY, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(modelLabelY, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelLabelFeatureY(ModelLabelFeatureY modelLabelFeatureY, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(modelLabelFeatureY, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelLabelAttributeY(ModelLabelAttributeY modelLabelAttributeY, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(modelLabelAttributeY, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelLabelAssociationY(ModelLabelAssociationY modelLabelAssociationY, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(modelLabelAssociationY, diagnostics, context);
 	}
 
 	/**
@@ -1197,21 +1409,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_MENU__ENTRIES_MUST_BE_FROM_SOURCE__EEXPRESSION = "let includedFeatures : Collection(ServiceEntityFeature)\r\n" +
-		"\t= entries\r\n" +
-		"\t\t->select(f | f.oclIsKindOf(MenuIncludedFeature)).oclAsType(MenuIncludedFeature)\r\n" +
-		"\t\t->collect(f |\r\n" +
-		"\t\t\tif f.oclIsTypeOf(MenuIncludedElement) then\r\n" +
-		"\t\t\t\tf.oclAsType(MenuIncludedElement).serviceElement\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tf.oclAsType(MenuIncludedAssociation).serviceAssociation\r\n" +
-		"\t\t\tendif)\r\n" +
-		"\tin if service.oclIsUndefined() then\r\n" +
-		"\t\t\tincludedFeatures->isEmpty()\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tservice.features->includesAll(includedFeatures)\r\n" +
-		"\t\tendif\r\n" +
-		" ";
+	protected static final String DYNAMIC_MENU__ENTRIES_MUST_BE_FROM_SOURCE__EEXPRESSION = "true";
 
 	/**
 	 * Validates the entriesMustBeFromSource constraint of '<em>Dynamic Menu</em>'.
@@ -1240,15 +1438,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_MENU__ONLY_INCLUDE_FEATURES_ONCE__EEXPRESSION = "entries\r\n" +
-		"\t->select(f | f.oclIsKindOf(MenuIncludedFeature))\r\n" +
-		"\t.oclAsType(MenuIncludedFeature)\r\n" +
-		"\t->isUnique(f |\r\n" +
-		"\t\tif f.oclIsTypeOf(MenuIncludedElement) then\r\n" +
-		"\t\t\tf.oclAsType(MenuIncludedElement).serviceElement\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tf.oclAsType(MenuIncludedAssociation).serviceAssociation\r\n" +
-		"\t\tendif)";
+	protected static final String DYNAMIC_MENU__ONLY_INCLUDE_FEATURES_ONCE__EEXPRESSION = "true";
 
 	/**
 	 * Validates the onlyIncludeFeaturesOnce constraint of '<em>Dynamic Menu</em>'.
@@ -2044,6 +2234,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateServiceEntityAssociation_selectionFromCorrectService(serviceEntityAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateServiceEntityAssociation_implicitOppositeServiceMustBeUnambiguous(serviceEntityAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateServiceEntityAssociation_featureRequired(serviceEntityAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateServiceEntityAssociation_implicitOppositeFeatureMustExist(serviceEntityAssociation, diagnostics, context);
 		return result;
 	}
 
@@ -2054,7 +2245,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String SERVICE_ENTITY_ASSOCIATION__CANNOT_REDUCE_CARDINALITY__EEXPRESSION = "not feature.oclIsUndefined() implies\r\n" +
-		"\tif partOf.encapsulates->includes(feature.parentEntity) then\r\n" +
+		"\tif useFeatureSource then\r\n" +
 		"\t\tfeature.cardinality = Cardinality::Required implies required\r\n" +
 		"\telse\r\n" +
 		"\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n" +
@@ -2172,7 +2363,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 */
 	protected static final String SERVICE_ENTITY_ASSOCIATION__IMPLICIT_OPPOSITE_SERVICE_MUST_BE_UNAMBIGUOUS__EEXPRESSION = "oppositeService.oclIsUndefined() and not feature.oclIsUndefined() implies\r\n" +
 		"\tlet entity: Entity\r\n" +
-		"\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n" +
+		"\t\t= if useFeatureSource then\r\n" +
 		"\t\t\t\tfeature.targetEntity\r\n" +
 		"\t\t\telse\r\n" +
 		"\t\t\t\tfeature.parentEntity\r\n" +
@@ -2224,6 +2415,83 @@ public class WebsiteValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "featureRequired",
 				 SERVICE_ENTITY_ASSOCIATION__FEATURE_REQUIRED__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the implicitOppositeFeatureMustExist constraint of '<em>Service Entity Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SERVICE_ENTITY_ASSOCIATION__IMPLICIT_OPPOSITE_FEATURE_MUST_EXIST__EEXPRESSION = "oppositeFeature.oclIsUndefined() and not feature.oclIsUndefined() implies\r\n" +
+		"if useFeatureSource then\r\n" +
+		"\tfeature.cardinality = Cardinality::Many\r\n" +
+		"else if feature.oclIsTypeOf(AssociationWithContainment) then\r\n" +
+		"\ttrue\r\n" +
+		"else\r\n" +
+		"\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Many\r\n" +
+		"endif endif implies\r\n" +
+		"\tlet service : Service\r\n" +
+		"\t\t= if not oppositeService.oclIsUndefined() then\r\n" +
+		"\t\t\t\toppositeService\r\n" +
+		"\t\t\telse \r\n" +
+		"\t\t\t\tlet services : Sequence(Service)\r\n" +
+		"\t\t\t\t\t= let entity : Entity\r\n" +
+		"\t\t\t\t\t\t= if useFeatureSource then\r\n" +
+		"\t\t\t\t\t\t\t\tfeature.targetEntity\r\n" +
+		"\t\t\t\t\t\t\telse\r\n" +
+		"\t\t\t\t\t\t\t\tfeature.parentEntity\r\n" +
+		"\t\t\t\t\t\t\tendif\r\n" +
+		"\t\t\t\t\t\tin if not entity.oclIsUndefined() then\r\n" +
+		"\t\t\t\t\t\t\t\tentity.servedBy->asSequence()\r\n" +
+		"\t\t\t\t\t\t\telse\r\n" +
+		"\t\t\t\t\t\t\t\tSequence{}\r\n" +
+		"\t\t\t\t\t\t\tendif\r\n" +
+		"\t\t\t\t\tin if services->size() = 1 then\r\n" +
+		"\t\t\t\t\t\t\tservices->first()\r\n" +
+		"\t\t\t\t\t\telse\r\n" +
+		"\t\t\t\t\t\t\tnull\r\n" +
+		"\t\t\t\t\t\tendif\r\n" +
+		"\t\t\tendif\r\n" +
+		"\t\tin if service.oclIsUndefined() then\r\n" +
+		"\t\t\t\tfalse\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tservice.features\r\n" +
+		"\t\t\t\t\t->select(f | f.oclIsKindOf(ServiceAssociation)).oclAsType(ServiceAssociation)\r\n" +
+		"\t\t\t\t\t->select(a | if not a.oppositeService.oclIsUndefined() then\r\n" +
+		"\t\t\t\t\t\t\ta.oppositeService = partOf\r\n" +
+		"\t\t\t\t\t\telse if not a.oclIsTypeOf(ServiceEntityAssociation) then\r\n" +
+		"\t\t\t\t\t\t\tfalse\r\n" +
+		"\t\t\t\t\t\telse let sea : ServiceEntityAssociation = a.oclAsType(ServiceEntityAssociation)\r\n" +
+		"\t\t\t\t\t\t\tin if sea.feature.oclIsUndefined() then\r\n" +
+		"\t\t\t\t\t\t\t\tfalse\r\n" +
+		"\t\t\t\t\t\t\telse if sea.partOf.encapsulates->includes(sea.feature.parentEntity) then\r\n" +
+		"\t\t\t\t\t\t\t\tpartOf.encapsulates->includes(sea.feature.targetEntity)\r\n" +
+		"\t\t\t\t\t\t\telse\r\n" +
+		"\t\t\t\t\t\t\t\tpartOf.encapsulates->includes(sea.feature.parentEntity)\r\n" +
+		"\t\t\t\t\t\t\tendif endif\r\n" +
+		"\t\t\t\t\t\tendif endif)->notEmpty()\r\n" +
+		"\t\t\tendif";
+
+	/**
+	 * Validates the implicitOppositeFeatureMustExist constraint of '<em>Service Entity Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateServiceEntityAssociation_implicitOppositeFeatureMustExist(ServiceEntityAssociation serviceEntityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION,
+				 serviceEntityAssociation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "implicitOppositeFeatureMustExist",
+				 SERVICE_ENTITY_ASSOCIATION__IMPLICIT_OPPOSITE_FEATURE_MUST_EXIST__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

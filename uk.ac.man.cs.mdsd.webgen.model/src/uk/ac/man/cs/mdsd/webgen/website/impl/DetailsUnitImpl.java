@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DetailsUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -46,7 +46,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> selectionFeatures;
+	protected EList<EntityAttribute> selectionFeatures;
 
 	/**
 	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
@@ -132,9 +132,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Attribute> getSelectionFeatures() {
+	public List<EntityAttribute> getSelectionFeatures() {
 		if (selectionFeatures == null) {
-			selectionFeatures = new EObjectResolvingEList<Attribute>(Attribute.class, this, WebsitePackage.DETAILS_UNIT__SELECTION_FEATURES);
+			selectionFeatures = new EObjectResolvingEList<EntityAttribute>(EntityAttribute.class, this, WebsitePackage.DETAILS_UNIT__SELECTION_FEATURES);
 		}
 		return selectionFeatures;
 	}
@@ -233,7 +233,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WebsitePackage.DETAILS_UNIT__SELECTION_FEATURES:
 				getSelectionFeatures().clear();
-				getSelectionFeatures().addAll((Collection<? extends Attribute>)newValue);
+				getSelectionFeatures().addAll((Collection<? extends EntityAttribute>)newValue);
 				return;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);

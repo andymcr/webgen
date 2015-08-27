@@ -112,12 +112,12 @@ public interface UnitAssociation extends UnitFeature, IncludedAssociation, UnitC
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dynamic Label</em>' reference.
-	 * @see #setDynamicLabel(ModelLabel)
+	 * @see #setDynamicLabel(ModelLabelX)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_DynamicLabel()
 	 * @model
 	 * @generated
 	 */
-	ModelLabel getDynamicLabel();
+	ModelLabelX getDynamicLabel();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getDynamicLabel <em>Dynamic Label</em>}' reference.
@@ -127,11 +127,11 @@ public interface UnitAssociation extends UnitFeature, IncludedAssociation, UnitC
 	 * @see #getDynamicLabel()
 	 * @generated
 	 */
-	void setDynamicLabel(ModelLabel value);
+	void setDynamicLabel(ModelLabelX value);
 
 	/**
 	 * Returns the value of the '<em><b>Filters</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ModelLabel}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ModelLabelX}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Filters</em>' reference list isn't clear,
@@ -143,6 +143,6 @@ public interface UnitAssociation extends UnitFeature, IncludedAssociation, UnitC
 	 * @model
 	 * @generated
 	 */
-	EList<ModelLabel> getFilters();
+	EList<ModelLabelX> getFilters();
 
 } // UnitAssociation

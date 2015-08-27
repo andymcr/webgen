@@ -205,7 +205,6 @@ public class ServiceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.SERVICE__DISPLAY_LABELS);
 			childrenFeatures.add(WafPackage.Literals.SERVICE__SELECTIONS);
 			childrenFeatures.add(WafPackage.Literals.SERVICE__FEATURES);
 		}
@@ -267,7 +266,6 @@ public class ServiceItemProvider
 			case WafPackage.SERVICE__VIEW_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.SERVICE__DISPLAY_LABELS:
 			case WafPackage.SERVICE__SELECTIONS:
 			case WafPackage.SERVICE__FEATURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -286,11 +284,6 @@ public class ServiceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.SERVICE__DISPLAY_LABELS,
-				 WafFactory.eINSTANCE.createModelLabel()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -17,11 +17,12 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -81,18 +82,9 @@ public class ServiceEntityAssociationItemProvider
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof ServiceEntityAssociation) {
-					final ServiceEntityAssociation association = (ServiceEntityAssociation) object;
-					final Entity targetEntity = association.isUseFeatureSource()
-							? association.getFeature().getTargetEntity()
-							: association.getFeature().getParentEntity();
-					final List<Service> oppositeServices = new LinkedList<Service>();
-					for (Service service : getAllServices(association)) {
-						if (service.getEncapsulates().contains(targetEntity)) {
-							oppositeServices.add(service);
-						}
-					}
-					return oppositeServices;
+					return getTargetServices((ServiceEntityAssociation) object);
 				}
+
 				return Collections.emptyList();
 			}
 		});
@@ -125,11 +117,8 @@ public class ServiceEntityAssociationItemProvider
 						oppositeFeatures.addAll(getAssociationsMatchingService(
 							parentService, association.getOppositeService()));
 					} else {
-						if (parentService.eContainer() instanceof WebGenModel) {
-							WebGenModel model = (WebGenModel) parentService.eContainer();
-							for (Service service : model.getServices()) {
-								oppositeFeatures.addAll(getAssociationsMatchingService(service, parentService));
-							}
+						for (Service service : getTargetServices(association)) {
+							oppositeFeatures.addAll(getAssociationsMatchingService(service, parentService));
 						}
 					}
 					return oppositeFeatures;
@@ -183,15 +172,17 @@ public class ServiceEntityAssociationItemProvider
 						final Service service
 							= (Service) ((ServiceEntityAssociation) object).eContainer();
 						final List<Association> associations = new LinkedList<Association>();
-						for (Entity entity : service.getEncapsulates()) {
-							for (Feature feature : entity.getFeatures()) {
+						for (EntityOrView entityOrView : service.getEncapsulates()) {
+							for (EntityFeature feature : getFeatures(entityOrView)) {
 								if (feature instanceof Association) {
 									associations.add((Association) feature);
 								}
 							}
-							for (Association association : entity.getAssociationEnds()) {
-								if (association.getBidirectional()) {
-									associations.add(association);
+							if (entityOrView instanceof Entity) {
+								for (EntityAssociation association : ((Entity) entityOrView).getAssociationEnds()) {
+									if (association.getBidirectional()) {
+										associations.add(association);
+									}
 								}
 							}
 						}

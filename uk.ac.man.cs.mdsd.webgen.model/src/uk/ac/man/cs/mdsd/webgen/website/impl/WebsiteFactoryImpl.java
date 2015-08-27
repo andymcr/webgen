@@ -76,6 +76,12 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.LOCATION_ATTRIBUTE: return createLocationAttribute();
 			case WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT: return createAssociationWithoutContainment();
 			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT: return createAssociationWithContainment();
+			case WebsitePackage.VIEW: return createView();
+			case WebsitePackage.VIEW_ATTRIBUTE: return createViewAttribute();
+			case WebsitePackage.VIEW_ASSOCIATION: return createViewAssociation();
+			case WebsitePackage.MODEL_LABEL_Y: return createModelLabelY();
+			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y: return createModelLabelAttributeY();
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y: return createModelLabelAssociationY();
 			case WebsitePackage.SERVICE: return createService();
 			case WebsitePackage.MODEL_LABEL: return createModelLabel();
 			case WebsitePackage.MODEL_LABEL_ELEMENT: return createModelLabelElement();
@@ -278,6 +284,36 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public View createView() {
+		ViewImpl view = new ViewImpl();
+		return view;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ViewAttribute createViewAttribute() {
+		ViewAttributeImpl viewAttribute = new ViewAttributeImpl();
+		return viewAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ViewAssociation createViewAssociation() {
+		ViewAssociationImpl viewAssociation = new ViewAssociationImpl();
+		return viewAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DataTypeAttribute createDataTypeAttribute() {
 		DataTypeAttributeImpl dataTypeAttribute = new DataTypeAttributeImpl();
 		return dataTypeAttribute;
@@ -341,6 +377,36 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public AssociationWithContainment createAssociationWithContainment() {
 		AssociationWithContainmentImpl associationWithContainment = new AssociationWithContainmentImpl();
 		return associationWithContainment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelLabelY createModelLabelY() {
+		ModelLabelYImpl modelLabelY = new ModelLabelYImpl();
+		return modelLabelY;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelLabelAttributeY createModelLabelAttributeY() {
+		ModelLabelAttributeYImpl modelLabelAttributeY = new ModelLabelAttributeYImpl();
+		return modelLabelAttributeY;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelLabelAssociationY createModelLabelAssociationY() {
+		ModelLabelAssociationYImpl modelLabelAssociationY = new ModelLabelAssociationYImpl();
+		return modelLabelAssociationY;
 	}
 
 	/**

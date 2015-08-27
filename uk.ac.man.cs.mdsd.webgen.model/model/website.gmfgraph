@@ -179,14 +179,14 @@
             minorSpacing="2"/>
         <foregroundColor
             xsi:type="gmfgraph:RGBColor"
-            red="123"
-            green="167"
-            blue="225"/>
+            red="102"
+            green="153"
+            blue="204"/>
         <backgroundColor
             xsi:type="gmfgraph:RGBColor"
-            red="206"
-            green="222"
-            blue="244"/>
+            red="153"
+            green="204"
+            blue="255"/>
         <children
             xsi:type="gmfgraph:Label"
             name="EntityNameLabel"/>
@@ -563,6 +563,38 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"/>
     </descriptors>
+    <descriptors
+        name="ViewFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="ViewFigure"
+          lineWidth="4"
+          cornerWidth="10"
+          cornerHeight="10">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"
+            matchMinorSize="true"
+            majorAlignment="CENTER"
+            minorAlignment="CENTER"
+            majorSpacing="2"
+            minorSpacing="2"/>
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"
+            red="102"
+            green="153"
+            blue="204"/>
+        <backgroundColor
+            xsi:type="gmfgraph:RGBColor"
+            red="153"
+            green="204"
+            blue="255"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ViewNameLabel"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.27/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="Action"
@@ -787,6 +819,16 @@
           dy="20"/>
     </facets>
   </nodes>
+  <nodes
+      name="View"
+      figure="ViewFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="90"
+          dy="80"/>
+    </facets>
+  </nodes>
   <connections
       name="UncontainedAssociation"
       figure="AssociationWithoutContainmentFigure"/>
@@ -913,6 +955,10 @@
       name="ServiceNameLabel"
       figure="ServiceFigure"
       accessor="//@figures.0/@descriptors.25/@accessors.0"/>
+  <labels
+      name="ViewNameLabel"
+      figure="ViewFigure"
+      accessor="//@figures.0/@descriptors.27/@accessors.0"/>
   <labels
       name="WebsiteNameLabel"
       figure="PropertiesFigure"

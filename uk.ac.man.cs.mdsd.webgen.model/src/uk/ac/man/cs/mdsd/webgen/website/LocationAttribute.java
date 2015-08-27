@@ -13,5 +13,5 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface LocationAttribute extends Attribute {
+public interface LocationAttribute extends EntityAttribute {
 } // LocationAttribute

@@ -24,7 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class ResourceAttributeItemProvider
-	extends AttributeItemProvider {
+	extends EntityAttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

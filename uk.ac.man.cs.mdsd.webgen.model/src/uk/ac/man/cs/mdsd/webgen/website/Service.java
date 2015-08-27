@@ -112,8 +112,8 @@ public interface Service extends NamedElement, UnitSource {
 
 	/**
 	 * Returns the value of the '<em><b>Encapsulates</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Entity}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getServedBy <em>Served By</em>}'.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy <em>Served By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Encapsulates</em>' reference list isn't clear,
@@ -122,11 +122,11 @@ public interface Service extends NamedElement, UnitSource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Encapsulates</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getService_Encapsulates()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Entity#getServedBy
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy
 	 * @model opposite="servedBy" required="true"
 	 * @generated
 	 */
-	List<Entity> getEncapsulates();
+	List<EntityOrView> getEncapsulates();
 
 	/**
 	 * Returns the value of the '<em><b>Display Labels</b></em>' containment reference list.

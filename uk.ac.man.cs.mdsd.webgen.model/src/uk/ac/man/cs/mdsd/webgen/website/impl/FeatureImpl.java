@@ -8,14 +8,9 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
-import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -27,11 +22,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getParentEntity <em>Parent Entity</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getColumnName <em>Column Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#isUnique <em>Unique</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#isOrdered <em>Ordered</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureImpl#getFooterClass <em>Footer Class</em>}</li>
@@ -40,86 +30,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class FeatureImpl extends NamedDisplayElementImpl implements Feature {
-	/**
-	 * The default value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColumnName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COLUMN_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColumnName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String columnName = COLUMN_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Cardinality CARDINALITY_EDEFAULT = Cardinality.OPTIONAL;
-
-	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isUnique() <em>Unique</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUnique()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean UNIQUE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isUnique() <em>Unique</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUnique()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean unique = UNIQUE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isOrdered() <em>Ordered</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOrdered()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ORDERED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOrdered() <em>Ordered</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOrdered()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean ordered = ORDERED_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getHeaderClass() <em>Header Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -204,131 +114,6 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Entity getParentEntity() {
-		if (eContainerFeatureID() != WebsitePackage.FEATURE__PARENT_ENTITY) return null;
-		return (Entity)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetParentEntity(Entity newParentEntity, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newParentEntity, WebsitePackage.FEATURE__PARENT_ENTITY, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentEntity(Entity newParentEntity) {
-		if (newParentEntity != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.FEATURE__PARENT_ENTITY && newParentEntity != null)) {
-			if (EcoreUtil.isAncestor(this, newParentEntity))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newParentEntity != null)
-				msgs = ((InternalEObject)newParentEntity).eInverseAdd(this, WebsitePackage.ENTITY__FEATURES, Entity.class, msgs);
-			msgs = basicSetParentEntity(newParentEntity, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FEATURE__PARENT_ENTITY, newParentEntity, newParentEntity));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getColumnName() {
-		return columnName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setColumnName(String newColumnName) {
-		String oldColumnName = columnName;
-		columnName = newColumnName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FEATURE__COLUMN_NAME, oldColumnName, columnName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Cardinality getCardinality() {
-		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCardinality(Cardinality newCardinality) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FEATURE__CARDINALITY, oldCardinality, cardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isUnique() {
-		return unique;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUnique(boolean newUnique) {
-		boolean oldUnique = unique;
-		unique = newUnique;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FEATURE__UNIQUE, oldUnique, unique));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isOrdered() {
-		return ordered;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOrdered(boolean newOrdered) {
-		boolean oldOrdered = ordered;
-		ordered = newOrdered;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FEATURE__ORDERED, oldOrdered, ordered));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getHeaderClass() {
 		return headerClass;
 	}
@@ -393,62 +178,8 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case WebsitePackage.FEATURE__PARENT_ENTITY:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetParentEntity((Entity)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case WebsitePackage.FEATURE__PARENT_ENTITY:
-				return basicSetParentEntity(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case WebsitePackage.FEATURE__PARENT_ENTITY:
-				return eInternalContainer().eInverseRemove(this, WebsitePackage.ENTITY__FEATURES, Entity.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.FEATURE__PARENT_ENTITY:
-				return getParentEntity();
-			case WebsitePackage.FEATURE__COLUMN_NAME:
-				return getColumnName();
-			case WebsitePackage.FEATURE__CARDINALITY:
-				return getCardinality();
-			case WebsitePackage.FEATURE__UNIQUE:
-				return isUnique();
-			case WebsitePackage.FEATURE__ORDERED:
-				return isOrdered();
 			case WebsitePackage.FEATURE__HEADER_CLASS:
 				return getHeaderClass();
 			case WebsitePackage.FEATURE__DISPLAY_CLASS:
@@ -467,21 +198,6 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.FEATURE__PARENT_ENTITY:
-				setParentEntity((Entity)newValue);
-				return;
-			case WebsitePackage.FEATURE__COLUMN_NAME:
-				setColumnName((String)newValue);
-				return;
-			case WebsitePackage.FEATURE__CARDINALITY:
-				setCardinality((Cardinality)newValue);
-				return;
-			case WebsitePackage.FEATURE__UNIQUE:
-				setUnique((Boolean)newValue);
-				return;
-			case WebsitePackage.FEATURE__ORDERED:
-				setOrdered((Boolean)newValue);
-				return;
 			case WebsitePackage.FEATURE__HEADER_CLASS:
 				setHeaderClass((String)newValue);
 				return;
@@ -503,21 +219,6 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.FEATURE__PARENT_ENTITY:
-				setParentEntity((Entity)null);
-				return;
-			case WebsitePackage.FEATURE__COLUMN_NAME:
-				setColumnName(COLUMN_NAME_EDEFAULT);
-				return;
-			case WebsitePackage.FEATURE__CARDINALITY:
-				setCardinality(CARDINALITY_EDEFAULT);
-				return;
-			case WebsitePackage.FEATURE__UNIQUE:
-				setUnique(UNIQUE_EDEFAULT);
-				return;
-			case WebsitePackage.FEATURE__ORDERED:
-				setOrdered(ORDERED_EDEFAULT);
-				return;
 			case WebsitePackage.FEATURE__HEADER_CLASS:
 				setHeaderClass(HEADER_CLASS_EDEFAULT);
 				return;
@@ -539,16 +240,6 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.FEATURE__PARENT_ENTITY:
-				return getParentEntity() != null;
-			case WebsitePackage.FEATURE__COLUMN_NAME:
-				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
-			case WebsitePackage.FEATURE__CARDINALITY:
-				return cardinality != CARDINALITY_EDEFAULT;
-			case WebsitePackage.FEATURE__UNIQUE:
-				return unique != UNIQUE_EDEFAULT;
-			case WebsitePackage.FEATURE__ORDERED:
-				return ordered != ORDERED_EDEFAULT;
 			case WebsitePackage.FEATURE__HEADER_CLASS:
 				return HEADER_CLASS_EDEFAULT == null ? headerClass != null : !HEADER_CLASS_EDEFAULT.equals(headerClass);
 			case WebsitePackage.FEATURE__DISPLAY_CLASS:
@@ -569,15 +260,7 @@ public abstract class FeatureImpl extends NamedDisplayElementImpl implements Fea
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (columnName: ");
-		result.append(columnName);
-		result.append(", cardinality: ");
-		result.append(cardinality);
-		result.append(", unique: ");
-		result.append(unique);
-		result.append(", ordered: ");
-		result.append(ordered);
-		result.append(", headerClass: ");
+		result.append(" (headerClass: ");
 		result.append(headerClass);
 		result.append(", displayClass: ");
 		result.append(displayClass);

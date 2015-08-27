@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -40,7 +40,7 @@ public abstract class SelectTargetImpl extends EObjectImpl implements SelectTarg
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> selectionFeatures;
+	protected EList<EntityAttribute> selectionFeatures;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,9 +65,9 @@ public abstract class SelectTargetImpl extends EObjectImpl implements SelectTarg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Attribute> getSelectionFeatures() {
+	public List<EntityAttribute> getSelectionFeatures() {
 		if (selectionFeatures == null) {
-			selectionFeatures = new EObjectResolvingEList<Attribute>(Attribute.class, this, WebsitePackage.SELECT_TARGET__SELECTION_FEATURES);
+			selectionFeatures = new EObjectResolvingEList<EntityAttribute>(EntityAttribute.class, this, WebsitePackage.SELECT_TARGET__SELECTION_FEATURES);
 		}
 		return selectionFeatures;
 	}
@@ -97,7 +97,7 @@ public abstract class SelectTargetImpl extends EObjectImpl implements SelectTarg
 		switch (featureID) {
 			case WebsitePackage.SELECT_TARGET__SELECTION_FEATURES:
 				getSelectionFeatures().clear();
-				getSelectionFeatures().addAll((Collection<? extends Attribute>)newValue);
+				getSelectionFeatures().addAll((Collection<? extends EntityAttribute>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

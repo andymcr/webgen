@@ -53,6 +53,10 @@ import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EditStaticTextMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.EditUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.EnumerationLiteral;
 import uk.ac.man.cs.mdsd.webgen.website.EnumerationType;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
@@ -79,8 +83,12 @@ import uk.ac.man.cs.mdsd.webgen.website.Menu;
 import uk.ac.man.cs.mdsd.webgen.website.MenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociationY;
+import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttributeY;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelElement;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeature;
+import uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeatureY;
+import uk.ac.man.cs.mdsd.webgen.website.ModelLabelY;
 import uk.ac.man.cs.mdsd.webgen.website.ModelReference;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
@@ -122,6 +130,10 @@ import uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction;
 import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
 import uk.ac.man.cs.mdsd.webgen.website.UpdateUnit;
 import uk.ac.man.cs.mdsd.webgen.website.UserCommand;
+import uk.ac.man.cs.mdsd.webgen.website.View;
+import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.ViewAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.ViewFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -218,7 +230,56 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass entityOrViewEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass entityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityFeatureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass entityAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewFeatureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass viewAssociationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,6 +342,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass entityAssociationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass associationEClass = null;
 
 	/**
@@ -296,6 +364,34 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass associationWithContainmentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelLabelYEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelLabelFeatureYEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelLabelAttributeYEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelLabelAssociationYEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1420,6 +1516,33 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEntityOrView() {
+		return entityOrViewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntityOrView_ServedBy() {
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntityOrView_DisplayLabels() {
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEntity() {
 		return entityEClass;
 	}
@@ -1430,7 +1553,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getEntity_TableName() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)entityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1439,24 +1562,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getEntity_Keys() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEntity_Features() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEntity_AssociationEnds() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1465,8 +1570,206 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_ServedBy() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(4);
+	public EClass getEntityFeature() {
+		return entityFeatureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntityFeature_ParentEntity() {
+		return (EReference)entityFeatureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityFeature_ColumnName() {
+		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityFeature_Cardinality() {
+		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityFeature_Unique() {
+		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityFeature_Ordered() {
+		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEntityAttribute() {
+		return entityAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntityAttribute_DefaultValue() {
+		return (EReference)entityAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAttribute_Placeholder() {
+		return (EAttribute)entityAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAttribute_ValidationPattern() {
+		return (EAttribute)entityAttributeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAttribute_InputClass() {
+		return (EAttribute)entityAttributeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getView() {
+		return viewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getView_Encapsulates() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getView_Features() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getViewFeature() {
+		return viewFeatureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getViewFeature_Feature() {
+		return (EReference)viewFeatureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getViewFeature_Alias() {
+		return (EAttribute)viewFeatureEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getViewAttribute() {
+		return viewAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getViewAttribute_Attribute() {
+		return (EReference)viewAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getViewAssociation() {
+		return viewAssociationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getViewAssociation_Association() {
+		return (EReference)viewAssociationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntity_Features() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntity_AssociationEnds() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1483,53 +1786,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeature_ParentEntity() {
-		return (EReference)featureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeature_ColumnName() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeature_Cardinality() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeature_Unique() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFeature_Ordered() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getFeature_HeaderClass() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1538,7 +1796,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getFeature_DisplayClass() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1547,7 +1805,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getFeature_FooterClass() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1557,42 +1815,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EClass getAttribute() {
 		return attributeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAttribute_DefaultValue() {
-		return (EReference)attributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAttribute_Placeholder() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAttribute_ValidationPattern() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAttribute_InputClass() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1780,98 +2002,107 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEntityAssociation() {
+		return entityAssociationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntityAssociation_TargetEntity() {
+		return (EReference)entityAssociationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAssociation_Bidirectional() {
+		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAssociation_PivotTableName() {
+		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAssociation_InputClass() {
+		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAssociation_TargetFeatureName() {
+		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAssociation_TargetDisplayLabel() {
+		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAssociation_TargetHeaderClass() {
+		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAssociation_TargetInputClass() {
+		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAssociation_TargetDisplayClass() {
+		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAssociation_TargetFooterClass() {
+		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAssociation() {
 		return associationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAssociation_TargetEntity() {
-		return (EReference)associationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssociation_Bidirectional() {
-		return (EAttribute)associationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssociation_PivotTableName() {
-		return (EAttribute)associationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssociation_InputClass() {
-		return (EAttribute)associationEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssociation_TargetFeatureName() {
-		return (EAttribute)associationEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssociation_TargetDisplayLabel() {
-		return (EAttribute)associationEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssociation_TargetHeaderClass() {
-		return (EAttribute)associationEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssociation_TargetInputClass() {
-		return (EAttribute)associationEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssociation_TargetDisplayClass() {
-		return (EAttribute)associationEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAssociation_TargetFooterClass() {
-		return (EAttribute)associationEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1908,6 +2139,96 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EClass getAssociationWithContainment() {
 		return associationWithContainmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getModelLabelY() {
+		return modelLabelYEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModelLabelY_LabelFor() {
+		return (EReference)modelLabelYEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getModelLabelY_Format() {
+		return (EAttribute)modelLabelYEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModelLabelY_Features() {
+		return (EReference)modelLabelYEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getModelLabelFeatureY() {
+		return modelLabelFeatureYEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getModelLabelAttributeY() {
+		return modelLabelAttributeYEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModelLabelAttributeY_Attribute() {
+		return (EReference)modelLabelAttributeYEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getModelLabelAssociationY() {
+		return modelLabelAssociationYEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModelLabelAssociationY_Association() {
+		return (EReference)modelLabelAssociationYEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModelLabelAssociationY_DynamicLabel() {
+		return (EReference)modelLabelAssociationYEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -4672,28 +4993,37 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		enumerationLiteralEClass = createEClass(ENUMERATION_LITERAL);
 
-		entityEClass = createEClass(ENTITY);
-		createEAttribute(entityEClass, ENTITY__TABLE_NAME);
-		createEReference(entityEClass, ENTITY__KEYS);
-		createEReference(entityEClass, ENTITY__FEATURES);
-		createEReference(entityEClass, ENTITY__ASSOCIATION_ENDS);
-		createEReference(entityEClass, ENTITY__SERVED_BY);
+		entityOrViewEClass = createEClass(ENTITY_OR_VIEW);
+		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__SERVED_BY);
+		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__DISPLAY_LABELS);
 
 		featureEClass = createEClass(FEATURE);
-		createEReference(featureEClass, FEATURE__PARENT_ENTITY);
-		createEAttribute(featureEClass, FEATURE__COLUMN_NAME);
-		createEAttribute(featureEClass, FEATURE__CARDINALITY);
-		createEAttribute(featureEClass, FEATURE__UNIQUE);
-		createEAttribute(featureEClass, FEATURE__ORDERED);
 		createEAttribute(featureEClass, FEATURE__HEADER_CLASS);
 		createEAttribute(featureEClass, FEATURE__DISPLAY_CLASS);
 		createEAttribute(featureEClass, FEATURE__FOOTER_CLASS);
 
 		attributeEClass = createEClass(ATTRIBUTE);
-		createEReference(attributeEClass, ATTRIBUTE__DEFAULT_VALUE);
-		createEAttribute(attributeEClass, ATTRIBUTE__PLACEHOLDER);
-		createEAttribute(attributeEClass, ATTRIBUTE__VALIDATION_PATTERN);
-		createEAttribute(attributeEClass, ATTRIBUTE__INPUT_CLASS);
+
+		associationEClass = createEClass(ASSOCIATION);
+
+		entityEClass = createEClass(ENTITY);
+		createEReference(entityEClass, ENTITY__FEATURES);
+		createEReference(entityEClass, ENTITY__ASSOCIATION_ENDS);
+		createEAttribute(entityEClass, ENTITY__TABLE_NAME);
+		createEReference(entityEClass, ENTITY__KEYS);
+
+		entityFeatureEClass = createEClass(ENTITY_FEATURE);
+		createEReference(entityFeatureEClass, ENTITY_FEATURE__PARENT_ENTITY);
+		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__COLUMN_NAME);
+		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__CARDINALITY);
+		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__UNIQUE);
+		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__ORDERED);
+
+		entityAttributeEClass = createEClass(ENTITY_ATTRIBUTE);
+		createEReference(entityAttributeEClass, ENTITY_ATTRIBUTE__DEFAULT_VALUE);
+		createEAttribute(entityAttributeEClass, ENTITY_ATTRIBUTE__PLACEHOLDER);
+		createEAttribute(entityAttributeEClass, ENTITY_ATTRIBUTE__VALIDATION_PATTERN);
+		createEAttribute(entityAttributeEClass, ENTITY_ATTRIBUTE__INPUT_CLASS);
 
 		dataTypeAttributeEClass = createEClass(DATA_TYPE_ATTRIBUTE);
 		createEReference(dataTypeAttributeEClass, DATA_TYPE_ATTRIBUTE__DATA_TYPE);
@@ -4721,23 +5051,51 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		locationAttributeEClass = createEClass(LOCATION_ATTRIBUTE);
 
-		associationEClass = createEClass(ASSOCIATION);
-		createEReference(associationEClass, ASSOCIATION__TARGET_ENTITY);
-		createEAttribute(associationEClass, ASSOCIATION__BIDIRECTIONAL);
-		createEAttribute(associationEClass, ASSOCIATION__PIVOT_TABLE_NAME);
-		createEAttribute(associationEClass, ASSOCIATION__INPUT_CLASS);
-		createEAttribute(associationEClass, ASSOCIATION__TARGET_FEATURE_NAME);
-		createEAttribute(associationEClass, ASSOCIATION__TARGET_DISPLAY_LABEL);
-		createEAttribute(associationEClass, ASSOCIATION__TARGET_HEADER_CLASS);
-		createEAttribute(associationEClass, ASSOCIATION__TARGET_INPUT_CLASS);
-		createEAttribute(associationEClass, ASSOCIATION__TARGET_DISPLAY_CLASS);
-		createEAttribute(associationEClass, ASSOCIATION__TARGET_FOOTER_CLASS);
+		entityAssociationEClass = createEClass(ENTITY_ASSOCIATION);
+		createEReference(entityAssociationEClass, ENTITY_ASSOCIATION__TARGET_ENTITY);
+		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__BIDIRECTIONAL);
+		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__PIVOT_TABLE_NAME);
+		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__INPUT_CLASS);
+		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__TARGET_FEATURE_NAME);
+		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL);
+		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__TARGET_HEADER_CLASS);
+		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__TARGET_INPUT_CLASS);
+		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS);
+		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS);
 
 		associationWithoutContainmentEClass = createEClass(ASSOCIATION_WITHOUT_CONTAINMENT);
 		createEAttribute(associationWithoutContainmentEClass, ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY);
 		createEAttribute(associationWithoutContainmentEClass, ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE);
 
 		associationWithContainmentEClass = createEClass(ASSOCIATION_WITH_CONTAINMENT);
+
+		viewEClass = createEClass(VIEW);
+		createEReference(viewEClass, VIEW__ENCAPSULATES);
+		createEReference(viewEClass, VIEW__FEATURES);
+
+		viewFeatureEClass = createEClass(VIEW_FEATURE);
+		createEReference(viewFeatureEClass, VIEW_FEATURE__FEATURE);
+		createEAttribute(viewFeatureEClass, VIEW_FEATURE__ALIAS);
+
+		viewAttributeEClass = createEClass(VIEW_ATTRIBUTE);
+		createEReference(viewAttributeEClass, VIEW_ATTRIBUTE__ATTRIBUTE);
+
+		viewAssociationEClass = createEClass(VIEW_ASSOCIATION);
+		createEReference(viewAssociationEClass, VIEW_ASSOCIATION__ASSOCIATION);
+
+		modelLabelYEClass = createEClass(MODEL_LABEL_Y);
+		createEReference(modelLabelYEClass, MODEL_LABEL_Y__LABEL_FOR);
+		createEAttribute(modelLabelYEClass, MODEL_LABEL_Y__FORMAT);
+		createEReference(modelLabelYEClass, MODEL_LABEL_Y__FEATURES);
+
+		modelLabelFeatureYEClass = createEClass(MODEL_LABEL_FEATURE_Y);
+
+		modelLabelAttributeYEClass = createEClass(MODEL_LABEL_ATTRIBUTE_Y);
+		createEReference(modelLabelAttributeYEClass, MODEL_LABEL_ATTRIBUTE_Y__ATTRIBUTE);
+
+		modelLabelAssociationYEClass = createEClass(MODEL_LABEL_ASSOCIATION_Y);
+		createEReference(modelLabelAssociationYEClass, MODEL_LABEL_ASSOCIATION_Y__ASSOCIATION);
+		createEReference(modelLabelAssociationYEClass, MODEL_LABEL_ASSOCIATION_Y__DYNAMIC_LABEL);
 
 		includedFeatureEClass = createEClass(INCLUDED_FEATURE);
 		createEAttribute(includedFeatureEClass, INCLUDED_FEATURE__DISPLAY_LABEL);
@@ -5133,20 +5491,32 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		dataTypeEClass.getESuperTypes().add(this.getClassifier());
 		enumerationTypeEClass.getESuperTypes().add(this.getDataType());
 		enumerationLiteralEClass.getESuperTypes().add(this.getNamedDisplayElement());
-		entityEClass.getESuperTypes().add(this.getClassifier());
-		entityEClass.getESuperTypes().add(this.getUnitSource());
+		entityOrViewEClass.getESuperTypes().add(this.getClassifier());
 		featureEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		attributeEClass.getESuperTypes().add(this.getFeature());
-		attributeEClass.getESuperTypes().add(this.getUnitTitle());
-		dataTypeAttributeEClass.getESuperTypes().add(this.getAttribute());
-		dateAttributeEClass.getESuperTypes().add(this.getAttribute());
-		resourceAttributeEClass.getESuperTypes().add(this.getAttribute());
+		associationEClass.getESuperTypes().add(this.getFeature());
+		entityEClass.getESuperTypes().add(this.getEntityOrView());
+		entityEClass.getESuperTypes().add(this.getUnitSource());
+		entityAttributeEClass.getESuperTypes().add(this.getAttribute());
+		entityAttributeEClass.getESuperTypes().add(this.getEntityFeature());
+		entityAttributeEClass.getESuperTypes().add(this.getUnitTitle());
+		dataTypeAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
+		dateAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
+		resourceAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
 		fileAttributeEClass.getESuperTypes().add(this.getResourceAttribute());
 		imageAttributeEClass.getESuperTypes().add(this.getResourceAttribute());
-		locationAttributeEClass.getESuperTypes().add(this.getAttribute());
-		associationEClass.getESuperTypes().add(this.getFeature());
-		associationWithoutContainmentEClass.getESuperTypes().add(this.getAssociation());
-		associationWithContainmentEClass.getESuperTypes().add(this.getAssociation());
+		locationAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
+		entityAssociationEClass.getESuperTypes().add(this.getAssociation());
+		entityAssociationEClass.getESuperTypes().add(this.getEntityFeature());
+		associationWithoutContainmentEClass.getESuperTypes().add(this.getEntityAssociation());
+		associationWithContainmentEClass.getESuperTypes().add(this.getEntityAssociation());
+		viewEClass.getESuperTypes().add(this.getEntityOrView());
+		viewFeatureEClass.getESuperTypes().add(this.getFeature());
+		viewAttributeEClass.getESuperTypes().add(this.getViewFeature());
+		viewAssociationEClass.getESuperTypes().add(this.getViewFeature());
+		modelLabelYEClass.getESuperTypes().add(this.getNamedElement());
+		modelLabelAttributeYEClass.getESuperTypes().add(this.getModelLabelFeatureY());
+		modelLabelAssociationYEClass.getESuperTypes().add(this.getModelLabelFeatureY());
 		includedElementEClass.getESuperTypes().add(this.getIncludedFeature());
 		includedAssociationEClass.getESuperTypes().add(this.getIncludedFeature());
 		serviceEClass.getESuperTypes().add(this.getNamedElement());
@@ -5316,28 +5686,37 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(enumerationLiteralEClass, EnumerationLiteral.class, "EnumerationLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEntity_TableName(), ecorePackage.getEString(), "tableName", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_Keys(), this.getFeature(), null, "keys", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_Features(), this.getFeature(), this.getFeature_ParentEntity(), "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_AssociationEnds(), this.getAssociation(), this.getAssociation_TargetEntity(), "associationEnds", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_ServedBy(), this.getService(), this.getService_Encapsulates(), "servedBy", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(entityOrViewEClass, EntityOrView.class, "EntityOrView", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntityOrView_ServedBy(), this.getService(), this.getService_Encapsulates(), "servedBy", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityOrView_DisplayLabels(), this.getModelLabelY(), this.getModelLabelY_LabelFor(), "displayLabels", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureEClass, Feature.class, "Feature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFeature_ParentEntity(), this.getEntity(), this.getEntity_Features(), "parentEntity", null, 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeature_ColumnName(), ecorePackage.getEString(), "columnName", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getFeature_Cardinality(), this.getCardinality(), "cardinality", "Optional", 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeature_Unique(), ecorePackage.getEBoolean(), "unique", "true", 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeature_Ordered(), ecorePackage.getEBoolean(), "ordered", "false", 1, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_HeaderClass(), ecorePackage.getEString(), "headerClass", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_DisplayClass(), ecorePackage.getEString(), "displayClass", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_FooterClass(), ecorePackage.getEString(), "footerClass", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttribute_DefaultValue(), theCriteriaPackage.getExpression(), null, "defaultValue", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getAttribute_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getAttribute_ValidationPattern(), ecorePackage.getEString(), "validationPattern", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getAttribute_InputClass(), ecorePackage.getEString(), "inputClass", "input_attribute", 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(associationEClass, Association.class, "Association", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntity_Features(), this.getEntityFeature(), this.getEntityFeature_ParentEntity(), "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_AssociationEnds(), this.getEntityAssociation(), this.getEntityAssociation_TargetEntity(), "associationEnds", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntity_TableName(), ecorePackage.getEString(), "tableName", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_Keys(), this.getFeature(), null, "keys", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(entityFeatureEClass, EntityFeature.class, "EntityFeature", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntityFeature_ParentEntity(), this.getEntity(), this.getEntity_Features(), "parentEntity", null, 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityFeature_ColumnName(), ecorePackage.getEString(), "columnName", null, 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEntityFeature_Cardinality(), this.getCardinality(), "cardinality", "Optional", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityFeature_Unique(), ecorePackage.getEBoolean(), "unique", "true", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityFeature_Ordered(), ecorePackage.getEBoolean(), "ordered", "false", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(entityAttributeEClass, EntityAttribute.class, "EntityAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntityAttribute_DefaultValue(), theCriteriaPackage.getExpression(), null, "defaultValue", null, 0, 1, EntityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEntityAttribute_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, EntityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEntityAttribute_ValidationPattern(), ecorePackage.getEString(), "validationPattern", null, 0, 1, EntityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEntityAttribute_InputClass(), ecorePackage.getEString(), "inputClass", "input_attribute", 0, 1, EntityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(dataTypeAttributeEClass, DataTypeAttribute.class, "DataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataTypeAttribute_DataType(), this.getDataType(), null, "dataType", null, 1, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5365,23 +5744,51 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(locationAttributeEClass, LocationAttribute.class, "LocationAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(associationEClass, Association.class, "Association", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAssociation_TargetEntity(), this.getEntity(), this.getEntity_AssociationEnds(), "targetEntity", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociation_Bidirectional(), ecorePackage.getEBooleanObject(), "bidirectional", "false", 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociation_PivotTableName(), ecorePackage.getEString(), "pivotTableName", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociation_InputClass(), ecorePackage.getEString(), "inputClass", "input_association", 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociation_TargetFeatureName(), ecorePackage.getEString(), "targetFeatureName", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociation_TargetDisplayLabel(), ecorePackage.getEString(), "targetDisplayLabel", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociation_TargetHeaderClass(), ecorePackage.getEString(), "targetHeaderClass", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociation_TargetInputClass(), ecorePackage.getEString(), "targetInputClass", "input_association", 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociation_TargetDisplayClass(), ecorePackage.getEString(), "targetDisplayClass", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociation_TargetFooterClass(), ecorePackage.getEString(), "targetFooterClass", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(entityAssociationEClass, EntityAssociation.class, "EntityAssociation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntityAssociation_TargetEntity(), this.getEntity(), this.getEntity_AssociationEnds(), "targetEntity", null, 1, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityAssociation_Bidirectional(), ecorePackage.getEBooleanObject(), "bidirectional", "false", 1, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityAssociation_PivotTableName(), ecorePackage.getEString(), "pivotTableName", null, 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityAssociation_InputClass(), ecorePackage.getEString(), "inputClass", "input_association", 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityAssociation_TargetFeatureName(), ecorePackage.getEString(), "targetFeatureName", null, 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityAssociation_TargetDisplayLabel(), ecorePackage.getEString(), "targetDisplayLabel", null, 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityAssociation_TargetHeaderClass(), ecorePackage.getEString(), "targetHeaderClass", null, 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityAssociation_TargetInputClass(), ecorePackage.getEString(), "targetInputClass", "input_association", 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityAssociation_TargetDisplayClass(), ecorePackage.getEString(), "targetDisplayClass", null, 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityAssociation_TargetFooterClass(), ecorePackage.getEString(), "targetFooterClass", null, 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(associationWithoutContainmentEClass, AssociationWithoutContainment.class, "AssociationWithoutContainment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAssociationWithoutContainment_TargetCardinality(), this.getCardinality(), "targetCardinality", "Required", 1, 1, AssociationWithoutContainment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssociationWithoutContainment_TargetUnique(), ecorePackage.getEBooleanObject(), "targetUnique", "true", 1, 1, AssociationWithoutContainment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(associationWithContainmentEClass, AssociationWithContainment.class, "AssociationWithContainment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getView_Encapsulates(), this.getEntityOrView(), null, "encapsulates", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_Features(), this.getViewFeature(), null, "features", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewFeatureEClass, ViewFeature.class, "ViewFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getViewFeature_Feature(), this.getFeature(), null, "feature", null, 1, 1, ViewFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewFeature_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, ViewFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewAttributeEClass, ViewAttribute.class, "ViewAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getViewAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, ViewAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(viewAssociationEClass, ViewAssociation.class, "ViewAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getViewAssociation_Association(), this.getAssociation(), null, "association", null, 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(modelLabelYEClass, ModelLabelY.class, "ModelLabelY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModelLabelY_LabelFor(), this.getEntityOrView(), this.getEntityOrView_DisplayLabels(), "labelFor", null, 1, 1, ModelLabelY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelLabelY_Format(), ecorePackage.getEString(), "format", null, 1, 1, ModelLabelY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelLabelY_Features(), this.getModelLabelFeatureY(), null, "features", null, 0, -1, ModelLabelY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(modelLabelFeatureYEClass, ModelLabelFeatureY.class, "ModelLabelFeatureY", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(modelLabelAttributeYEClass, ModelLabelAttributeY.class, "ModelLabelAttributeY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModelLabelAttributeY_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, ModelLabelAttributeY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(modelLabelAssociationYEClass, ModelLabelAssociationY.class, "ModelLabelAssociationY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModelLabelAssociationY_Association(), this.getEntityAssociation(), null, "association", null, 1, 1, ModelLabelAssociationY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelLabelAssociationY_DynamicLabel(), this.getModelLabelY(), null, "dynamicLabel", null, 0, 1, ModelLabelAssociationY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(includedFeatureEClass, IncludedFeature.class, "IncludedFeature", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIncludedFeature_DisplayLabel(), ecorePackage.getEString(), "displayLabel", null, 0, 1, IncludedFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5394,18 +5801,18 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getIncludedFeature_FooterClass(), ecorePackage.getEString(), "footerClass", null, 0, 1, IncludedFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(includedElementEClass, IncludedElement.class, "IncludedElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIncludedElement_Feature(), this.getAttribute(), null, "feature", null, 1, 1, IncludedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getIncludedElement_Feature(), this.getEntityAttribute(), null, "feature", null, 1, 1, IncludedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getIncludedElement_ObfuscateFormFields(), ecorePackage.getEBoolean(), "obfuscateFormFields", "false", 0, 1, IncludedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIncludedElement_DefaultValue(), theCriteriaPackage.getExpression(), null, "defaultValue", null, 0, 1, IncludedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(includedAssociationEClass, IncludedAssociation.class, "IncludedAssociation", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIncludedAssociation_Feature(), this.getAssociation(), null, "feature", null, 0, 1, IncludedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getIncludedAssociation_Feature(), this.getEntityAssociation(), null, "feature", null, 0, 1, IncludedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getService_ModelName(), ecorePackage.getEString(), "modelName", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_View(), ecorePackage.getEBoolean(), "view", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_ViewName(), ecorePackage.getEString(), "viewName", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getService_Encapsulates(), this.getEntity(), this.getEntity_ServedBy(), "encapsulates", null, 1, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Encapsulates(), this.getEntityOrView(), this.getEntityOrView_ServedBy(), "encapsulates", null, 1, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_DisplayLabels(), this.getModelLabel(), this.getModelLabel_LabelFor(), "displayLabels", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Selections(), this.getSelection(), null, "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Features(), this.getServiceFeature(), this.getServiceFeature_PartOf(), "features", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5704,7 +6111,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getInlineAction_FooterClass(), ecorePackage.getEString(), "footerClass", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectTargetEClass, SelectTarget.class, "SelectTarget", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSelectTarget_SelectionFeatures(), this.getAttribute(), null, "selectionFeatures", null, 1, -1, SelectTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSelectTarget_SelectionFeatures(), this.getEntityAttribute(), null, "selectionFeatures", null, 1, -1, SelectTarget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectActionEClass, SelectAction.class, "SelectAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelectAction_Target(), this.getSelectTarget(), null, "target", null, 1, 1, SelectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5849,7 +6256,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (serviceEntityAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "cannotReduceCardinality canOnlyForceSingletonValues selectionFromCorrectService implicitOppositeServiceMustBeUnambiguous featureRequired"
+			 "constraints", "cannotReduceCardinality canOnlyForceSingletonValues selectionFromCorrectService implicitOppositeServiceMustBeUnambiguous featureRequired implicitOppositeFeatureMustExist"
 		   });	
 		addAnnotation
 		  (serviceViewAssociationEClass, 
@@ -5989,11 +6396,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (serviceEntityAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "cannotReduceCardinality", "not feature.oclIsUndefined() implies\r\n\tif partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\tfeature.cardinality = Cardinality::Required implies required\r\n\telse\r\n\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\trequired\r\n\t\telse\r\n\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required implies required\r\n\t\tendif\r\n\tendif",
+			 "cannotReduceCardinality", "not feature.oclIsUndefined() implies\r\n\tif useFeatureSource then\r\n\t\tfeature.cardinality = Cardinality::Required implies required\r\n\telse\r\n\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\trequired\r\n\t\telse\r\n\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required implies required\r\n\t\tendif\r\n\tendif",
 			 "canOnlyForceSingletonValues", "not feature.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n\tif partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\tfeature.cardinality <> Cardinality::Many\r\n\telse\r\n\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\ttrue\r\n\t\telse\r\n\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n\t\tendif\r\n\tendif",
 			 "selectionFromCorrectService", "if selection.oclIsUndefined() then\r\n\ttrue\r\nelse if feature.oclIsUndefined() then\r\n\ttrue\r\nelse\r\n\tlet target : Entity\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.targetEntity\r\n\t\t\telse\r\n\t\t\t\tfeature.parentEntity\r\n\t\t\tendif\r\n\tin target.servedBy->collect(s | s.selections)->includes(selection)\r\nendif endif",
-			 "implicitOppositeServiceMustBeUnambiguous", "oppositeService.oclIsUndefined() and not feature.oclIsUndefined() implies\r\n\tlet entity: Entity\r\n\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n\t\t\t\tfeature.targetEntity\r\n\t\t\telse\r\n\t\t\t\tfeature.parentEntity\r\n\t\t\tendif\r\n\tin entity.servedBy->size() < 2",
-			 "featureRequired", "not feature.oclIsUndefined()"
+			 "implicitOppositeServiceMustBeUnambiguous", "oppositeService.oclIsUndefined() and not feature.oclIsUndefined() implies\r\n\tlet entity: Entity\r\n\t\t= if useFeatureSource then\r\n\t\t\t\tfeature.targetEntity\r\n\t\t\telse\r\n\t\t\t\tfeature.parentEntity\r\n\t\t\tendif\r\n\tin entity.servedBy->size() < 2",
+			 "featureRequired", "not feature.oclIsUndefined()",
+			 "implicitOppositeFeatureMustExist", "oppositeFeature.oclIsUndefined() and not feature.oclIsUndefined() implies\r\nif useFeatureSource then\r\n\tfeature.cardinality = Cardinality::Many\r\nelse if feature.oclIsTypeOf(AssociationWithContainment) then\r\n\ttrue\r\nelse\r\n\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Many\r\nendif endif implies\r\n\tlet service : Service\r\n\t\t= if not oppositeService.oclIsUndefined() then\r\n\t\t\t\toppositeService\r\n\t\t\telse \r\n\t\t\t\tlet services : Sequence(Service)\r\n\t\t\t\t\t= let entity : Entity\r\n\t\t\t\t\t\t= if useFeatureSource then\r\n\t\t\t\t\t\t\t\tfeature.targetEntity\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\tfeature.parentEntity\r\n\t\t\t\t\t\t\tendif\r\n\t\t\t\t\t\tin if not entity.oclIsUndefined() then\r\n\t\t\t\t\t\t\t\tentity.servedBy->asSequence()\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\tSequence{}\r\n\t\t\t\t\t\t\tendif\r\n\t\t\t\t\tin if services->size() = 1 then\r\n\t\t\t\t\t\t\tservices->first()\r\n\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\tnull\r\n\t\t\t\t\t\tendif\r\n\t\t\tendif\r\n\t\tin if service.oclIsUndefined() then\r\n\t\t\t\tfalse\r\n\t\t\telse\r\n\t\t\t\tservice.features\r\n\t\t\t\t\t->select(f | f.oclIsKindOf(ServiceAssociation)).oclAsType(ServiceAssociation)\r\n\t\t\t\t\t->select(a | if not a.oppositeService.oclIsUndefined() then\r\n\t\t\t\t\t\t\ta.oppositeService = partOf\r\n\t\t\t\t\t\telse if not a.oclIsTypeOf(ServiceEntityAssociation) then\r\n\t\t\t\t\t\t\tfalse\r\n\t\t\t\t\t\telse let sea : ServiceEntityAssociation = a.oclAsType(ServiceEntityAssociation)\r\n\t\t\t\t\t\t\tin if sea.feature.oclIsUndefined() then\r\n\t\t\t\t\t\t\t\tfalse\r\n\t\t\t\t\t\t\telse if sea.partOf.encapsulates->includes(sea.feature.parentEntity) then\r\n\t\t\t\t\t\t\t\tpartOf.encapsulates->includes(sea.feature.targetEntity)\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\tpartOf.encapsulates->includes(sea.feature.parentEntity)\r\n\t\t\t\t\t\t\tendif endif\r\n\t\t\t\t\t\tendif endif)->notEmpty()\r\n\t\t\tendif"
 		   });	
 		addAnnotation
 		  (getServiceEntityAssociation_Name(), 
@@ -6024,8 +6432,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (dynamicMenuEClass, 
 		   source, 
 		   new String[] {
-			 "entriesMustBeFromSource", "let includedFeatures : Collection(ServiceEntityFeature)\r\n\t= entries\r\n\t\t->select(f | f.oclIsKindOf(MenuIncludedFeature)).oclAsType(MenuIncludedFeature)\r\n\t\t->collect(f |\r\n\t\t\tif f.oclIsTypeOf(MenuIncludedElement) then\r\n\t\t\t\tf.oclAsType(MenuIncludedElement).serviceElement\r\n\t\t\telse\r\n\t\t\t\tf.oclAsType(MenuIncludedAssociation).serviceAssociation\r\n\t\t\tendif)\r\n\tin if service.oclIsUndefined() then\r\n\t\t\tincludedFeatures->isEmpty()\r\n\t\telse\r\n\t\t\tservice.features->includesAll(includedFeatures)\r\n\t\tendif\r\n ",
-			 "onlyIncludeFeaturesOnce", "entries\r\n\t->select(f | f.oclIsKindOf(MenuIncludedFeature))\r\n\t.oclAsType(MenuIncludedFeature)\r\n\t->isUnique(f |\r\n\t\tif f.oclIsTypeOf(MenuIncludedElement) then\r\n\t\t\tf.oclAsType(MenuIncludedElement).serviceElement\r\n\t\telse\r\n\t\t\tf.oclAsType(MenuIncludedAssociation).serviceAssociation\r\n\t\tendif)",
+			 "entriesMustBeFromSource", "true",
+			 "onlyIncludeFeaturesOnce", "true",
 			 "mustSelectSingleton", "not selection.oclIsUndefined() implies selection.limit = 1",
 			 "dynamicTitleFromService", "not dynamicTitle.oclIsUndefined() implies\r\n\tif service.oclIsUndefined() then\r\n \t\tfalse\r\n\telse\r\n\t\tservice.features->includes(dynamicTitle)\r\n\tendif",
 			 "canOnlyTitleWithSingletonElement", "not dynamicTitle.oclIsUndefined() implies dynamicTitle.feature.cardinality <> Cardinality::Many"

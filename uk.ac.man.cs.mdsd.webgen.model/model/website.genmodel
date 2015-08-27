@@ -147,34 +147,40 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//EnumerationType/enumerations"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//EnumerationLiteral"/>
-    <genClasses ecoreClass="website.ecore#//Entity">
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//Entity/tableName"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Persistence"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Entity/keys"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Entity/features"/>
-      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//Entity/associationEnds"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Entity/servedBy"/>
+    <genClasses image="false" ecoreClass="website.ecore#//EntityOrView">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/servedBy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/displayLabels"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//Feature">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Feature/parentEntity"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//Feature/columnName"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//Feature/cardinality"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//Feature/unique"/>
-      <genFeatures createChild="false" propertyCategory="Model" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//Feature/ordered"/>
       <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//Feature/headerClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Feature/displayClass"/>
       <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//Feature/footerClass"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//Attribute">
-      <genFeatures createChild="false" propertyCategory="Business" propertyDescription=""
-          ecoreFeature="ecore:EReference website.ecore#//Attribute/defaultValue"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Attribute/placeholder"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Attribute/validationPattern"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Attribute/inputClass"/>
+    <genClasses ecoreClass="website.ecore#//Attribute"/>
+    <genClasses ecoreClass="website.ecore#//Association"/>
+    <genClasses ecoreClass="website.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Entity/features"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//Entity/associationEnds"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//Entity/tableName"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Persistence"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Entity/keys"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="website.ecore#//EntityFeature">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//EntityFeature/parentEntity"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/columnName"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/cardinality"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/unique"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/ordered"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="website.ecore#//EntityAttribute">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Business"
+          ecoreFeature="ecore:EReference website.ecore#//EntityAttribute/defaultValue"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//EntityAttribute/placeholder"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//EntityAttribute/validationPattern"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//EntityAttribute/inputClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//DataTypeAttribute">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertyDescription=""
@@ -201,25 +207,58 @@
     <genClasses ecoreClass="website.ecore#//FileAttribute"/>
     <genClasses ecoreClass="website.ecore#//ImageAttribute"/>
     <genClasses ecoreClass="website.ecore#//LocationAttribute"/>
-    <genClasses ecoreClass="website.ecore#//Association">
-      <genFeatures property="None" notify="false" createChild="false" propertyCategory="Model"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Association/targetEntity"/>
-      <genFeatures createChild="false" propertyCategory="Model" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//Association/bidirectional"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//Association/pivotTableName"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Association/inputClass"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//Association/targetFeatureName"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Association/targetDisplayLabel"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Association/targetHeaderClass"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Association/targetInputClass"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Association/targetDisplayClass"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Association/targetFooterClass"/>
+    <genClasses image="false" ecoreClass="website.ecore#//EntityAssociation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//EntityAssociation/targetEntity"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityAssociation/bidirectional"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityAssociation/pivotTableName"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//EntityAssociation/inputClass"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityAssociation/targetFeatureName"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//EntityAssociation/targetDisplayLabel"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//EntityAssociation/targetHeaderClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//EntityAssociation/targetInputClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//EntityAssociation/targetDisplayClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//EntityAssociation/targetFooterClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//AssociationWithoutContainment">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationWithoutContainment/targetCardinality"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationWithoutContainment/targetUnique"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//AssociationWithContainment"/>
+    <genClasses ecoreClass="website.ecore#//View">
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//View/encapsulates"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference website.ecore#//View/features"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="website.ecore#//ViewFeature">
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//ViewFeature/feature"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//ViewFeature/alias"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//ViewAttribute">
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//ViewAttribute/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//ViewAssociation">
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//ViewAssociation/association"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//ModelLabelY">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ModelLabelY/labelFor"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ModelLabelY/format"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference website.ecore#//ModelLabelY/features"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="website.ecore#//ModelLabelFeatureY"/>
+    <genClasses ecoreClass="website.ecore#//ModelLabelAttributeY">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ModelLabelAttributeY/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//ModelLabelAssociationY">
+      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ModelLabelAssociationY/association"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ModelLabelAssociationY/dynamicLabel"/>
+    </genClasses>
     <genClasses ecoreClass="website.ecore#//IncludedFeature">
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//IncludedFeature/displayLabel"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//IncludedFeature/required"/>
@@ -327,11 +366,11 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Page/childPages"/>
       <genFeatures createChild="false" propertyCategory="Security" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//Page/authenticated"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Page/path"/>
+      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//Page/path"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//Page/topMenuOption"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//Page/topMenuRank"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Page/navigationLabel"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+      <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Page/sideMenu"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Page/styleClass"/>
     </genClasses>
@@ -398,7 +437,7 @@
     <genClasses image="false" ecoreClass="website.ecore#//UnitTitle"/>
     <genClasses image="false" ecoreClass="website.ecore#//ContentUnit">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ContentUnit/displayedOn"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/path"/>
+      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/path"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/purposeSummary"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/omitCaption"/>
@@ -602,7 +641,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/footerClass"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//SelectTarget">
-      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+      <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//SelectTarget/selectionFeatures"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//SelectAction">

@@ -30,7 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *
  * @generated
  */
-public class DateAttributeImpl extends AttributeImpl implements DateAttribute {
+public class DateAttributeImpl extends EntityAttributeImpl implements DateAttribute {
 	/**
 	 * The default value of the '{@link #getDetails() <em>Details</em>}' attribute.
 	 * <!-- begin-user-doc -->

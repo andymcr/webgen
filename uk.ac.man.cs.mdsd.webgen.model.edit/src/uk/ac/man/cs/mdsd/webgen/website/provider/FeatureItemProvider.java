@@ -50,103 +50,11 @@ public class FeatureItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addColumnNamePropertyDescriptor(object);
-			addCardinalityPropertyDescriptor(object);
-			addUniquePropertyDescriptor(object);
-			addOrderedPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Column Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addColumnNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_columnName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_columnName_feature", "_UI_Feature_type"),
-				 WebsitePackage.Literals.FEATURE__COLUMN_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Cardinality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCardinalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_cardinality_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_cardinality_feature", "_UI_Feature_type"),
-				 WebsitePackage.Literals.FEATURE__CARDINALITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Unique feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUniquePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_unique_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_unique_feature", "_UI_Feature_type"),
-				 WebsitePackage.Literals.FEATURE__UNIQUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ordered feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOrderedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_ordered_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_ordered_feature", "_UI_Feature_type"),
-				 WebsitePackage.Literals.FEATURE__ORDERED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -241,10 +149,6 @@ public class FeatureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Feature.class)) {
-			case WebsitePackage.FEATURE__COLUMN_NAME:
-			case WebsitePackage.FEATURE__CARDINALITY:
-			case WebsitePackage.FEATURE__UNIQUE:
-			case WebsitePackage.FEATURE__ORDERED:
 			case WebsitePackage.FEATURE__HEADER_CLASS:
 			case WebsitePackage.FEATURE__DISPLAY_CLASS:
 			case WebsitePackage.FEATURE__FOOTER_CLASS:

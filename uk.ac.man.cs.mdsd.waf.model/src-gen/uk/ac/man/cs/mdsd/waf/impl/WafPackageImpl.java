@@ -59,10 +59,10 @@ import uk.ac.man.cs.mdsd.waf.LoginUnit;
 import uk.ac.man.cs.mdsd.waf.MapUnit;
 import uk.ac.man.cs.mdsd.waf.Menu;
 import uk.ac.man.cs.mdsd.waf.MenuEntry;
-import uk.ac.man.cs.mdsd.waf.ModelLabel;
-import uk.ac.man.cs.mdsd.waf.ModelLabelAssociation;
-import uk.ac.man.cs.mdsd.waf.ModelLabelElement;
-import uk.ac.man.cs.mdsd.waf.ModelLabelFeature;
+import uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX;
+import uk.ac.man.cs.mdsd.waf.ModelLabelElementX;
+import uk.ac.man.cs.mdsd.waf.ModelLabelFeatureX;
+import uk.ac.man.cs.mdsd.waf.ModelLabelX;
 import uk.ac.man.cs.mdsd.waf.ModelReference;
 import uk.ac.man.cs.mdsd.waf.Page;
 import uk.ac.man.cs.mdsd.waf.PageTopMenuOptions;
@@ -169,28 +169,28 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelLabelEClass = null;
+	private EClass modelLabelXEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelLabelFeatureEClass = null;
+	private EClass modelLabelFeatureXEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelLabelElementEClass = null;
+	private EClass modelLabelElementXEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelLabelAssociationEClass = null;
+	private EClass modelLabelAssociationXEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1262,7 +1262,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_DisplayLabels() {
+	public EReference getService_Selections() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1271,7 +1271,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_Selections() {
+	public EReference getService_Features() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1280,7 +1280,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_Features() {
+	public EReference getService_AccessedBy() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1289,8 +1289,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_AccessedBy() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(8);
+	public EClass getModelLabelX() {
+		return modelLabelXEClass;
 	}
 
 	/**
@@ -1298,8 +1298,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getModelLabel() {
-		return modelLabelEClass;
+	public EAttribute getModelLabelX_Format() {
+		return (EAttribute)modelLabelXEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1307,8 +1307,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModelLabel_LabelFor() {
-		return (EReference)modelLabelEClass.getEStructuralFeatures().get(0);
+	public EReference getModelLabelX_Features() {
+		return (EReference)modelLabelXEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1316,8 +1316,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getModelLabel_Format() {
-		return (EAttribute)modelLabelEClass.getEStructuralFeatures().get(1);
+	public EClass getModelLabelFeatureX() {
+		return modelLabelFeatureXEClass;
 	}
 
 	/**
@@ -1325,8 +1325,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModelLabel_Features() {
-		return (EReference)modelLabelEClass.getEStructuralFeatures().get(2);
+	public EClass getModelLabelElementX() {
+		return modelLabelElementXEClass;
 	}
 
 	/**
@@ -1334,8 +1334,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getModelLabelFeature() {
-		return modelLabelFeatureEClass;
+	public EReference getModelLabelElementX_ServiceFeature() {
+		return (EReference)modelLabelElementXEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1343,8 +1343,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getModelLabelElement() {
-		return modelLabelElementEClass;
+	public EClass getModelLabelAssociationX() {
+		return modelLabelAssociationXEClass;
 	}
 
 	/**
@@ -1352,8 +1352,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModelLabelElement_ServiceFeature() {
-		return (EReference)modelLabelElementEClass.getEStructuralFeatures().get(0);
+	public EReference getModelLabelAssociationX_ServiceFeature() {
+		return (EReference)modelLabelAssociationXEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1361,26 +1361,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getModelLabelAssociation() {
-		return modelLabelAssociationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getModelLabelAssociation_ServiceFeature() {
-		return (EReference)modelLabelAssociationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getModelLabelAssociation_DynamicLabel() {
-		return (EReference)modelLabelAssociationEClass.getEStructuralFeatures().get(1);
+	public EReference getModelLabelAssociationX_DynamicLabel() {
+		return (EReference)modelLabelAssociationXEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3445,24 +3427,22 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(serviceEClass, SERVICE__MODEL_NAME);
 		createEAttribute(serviceEClass, SERVICE__VIEW);
 		createEAttribute(serviceEClass, SERVICE__VIEW_NAME);
-		createEReference(serviceEClass, SERVICE__DISPLAY_LABELS);
 		createEReference(serviceEClass, SERVICE__SELECTIONS);
 		createEReference(serviceEClass, SERVICE__FEATURES);
 		createEReference(serviceEClass, SERVICE__ACCESSED_BY);
 
-		modelLabelEClass = createEClass(MODEL_LABEL);
-		createEReference(modelLabelEClass, MODEL_LABEL__LABEL_FOR);
-		createEAttribute(modelLabelEClass, MODEL_LABEL__FORMAT);
-		createEReference(modelLabelEClass, MODEL_LABEL__FEATURES);
+		modelLabelXEClass = createEClass(MODEL_LABEL_X);
+		createEAttribute(modelLabelXEClass, MODEL_LABEL_X__FORMAT);
+		createEReference(modelLabelXEClass, MODEL_LABEL_X__FEATURES);
 
-		modelLabelFeatureEClass = createEClass(MODEL_LABEL_FEATURE);
+		modelLabelFeatureXEClass = createEClass(MODEL_LABEL_FEATURE_X);
 
-		modelLabelElementEClass = createEClass(MODEL_LABEL_ELEMENT);
-		createEReference(modelLabelElementEClass, MODEL_LABEL_ELEMENT__SERVICE_FEATURE);
+		modelLabelElementXEClass = createEClass(MODEL_LABEL_ELEMENT_X);
+		createEReference(modelLabelElementXEClass, MODEL_LABEL_ELEMENT_X__SERVICE_FEATURE);
 
-		modelLabelAssociationEClass = createEClass(MODEL_LABEL_ASSOCIATION);
-		createEReference(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE);
-		createEReference(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL);
+		modelLabelAssociationXEClass = createEClass(MODEL_LABEL_ASSOCIATION_X);
+		createEReference(modelLabelAssociationXEClass, MODEL_LABEL_ASSOCIATION_X__SERVICE_FEATURE);
+		createEReference(modelLabelAssociationXEClass, MODEL_LABEL_ASSOCIATION_X__DYNAMIC_LABEL);
 
 		selectionEClass = createEClass(SELECTION);
 		createEReference(selectionEClass, SELECTION__PARAMETERS);
@@ -3791,10 +3771,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		includedElementEClass.getESuperTypes().add(this.getIncludedFeature());
 		includedAssociationEClass.getESuperTypes().add(this.getIncludedFeature());
 		serviceEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
-		modelLabelEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
-		modelLabelEClass.getESuperTypes().add(this.getUnitTitle());
-		modelLabelElementEClass.getESuperTypes().add(this.getModelLabelFeature());
-		modelLabelAssociationEClass.getESuperTypes().add(this.getModelLabelFeature());
+		modelLabelXEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
+		modelLabelXEClass.getESuperTypes().add(this.getUnitTitle());
+		modelLabelElementXEClass.getESuperTypes().add(this.getModelLabelFeatureX());
+		modelLabelAssociationXEClass.getESuperTypes().add(this.getModelLabelFeatureX());
 		selectionEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		selectionParameterEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		serviceAssociationEClass.getESuperTypes().add(this.getServiceFeature());
@@ -3940,29 +3920,27 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(includedAssociationEClass, IncludedAssociation.class, "IncludedAssociation", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getService_Entities(), theOrmPackage.getEntity(), null, "entities", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getService_DaosUsed(), theOrmPackage.getEntity(), null, "daosUsed", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Entities(), theOrmPackage.getEntityOrView(), null, "entities", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_DaosUsed(), theOrmPackage.getEntityOrView(), null, "daosUsed", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getService_ModelName(), theEcorePackage.getEString(), "modelName", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getService_View(), theEcorePackage.getEBoolean(), "view", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getService_ViewName(), theEcorePackage.getEString(), "viewName", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getService_DisplayLabels(), this.getModelLabel(), this.getModelLabel_LabelFor(), "displayLabels", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Selections(), this.getSelection(), null, "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Features(), this.getServiceFeature(), this.getServiceFeature_IncludedBy(), "features", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_AccessedBy(), this.getDynamicUnit(), this.getDynamicUnit_Service(), "accessedBy", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(modelLabelEClass, ModelLabel.class, "ModelLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelLabel_LabelFor(), this.getService(), this.getService_DisplayLabels(), "labelFor", null, 1, 1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelLabel_Format(), theEcorePackage.getEString(), "format", null, 1, 1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelLabel_Features(), this.getModelLabelFeature(), null, "features", null, 0, -1, ModelLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(modelLabelXEClass, ModelLabelX.class, "ModelLabelX", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModelLabelX_Format(), theEcorePackage.getEString(), "format", null, 1, 1, ModelLabelX.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelLabelX_Features(), this.getModelLabelFeatureX(), null, "features", null, 0, -1, ModelLabelX.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(modelLabelFeatureEClass, ModelLabelFeature.class, "ModelLabelFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(modelLabelFeatureXEClass, ModelLabelFeatureX.class, "ModelLabelFeatureX", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(modelLabelElementEClass, ModelLabelElement.class, "ModelLabelElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelLabelElement_ServiceFeature(), this.getServiceEntityElement(), null, "serviceFeature", null, 1, 1, ModelLabelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(modelLabelElementXEClass, ModelLabelElementX.class, "ModelLabelElementX", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModelLabelElementX_ServiceFeature(), this.getServiceEntityElement(), null, "serviceFeature", null, 1, 1, ModelLabelElementX.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(modelLabelAssociationEClass, ModelLabelAssociation.class, "ModelLabelAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelLabelAssociation_ServiceFeature(), this.getServiceAssociation(), null, "serviceFeature", null, 1, 1, ModelLabelAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelLabelAssociation_DynamicLabel(), this.getModelLabel(), null, "dynamicLabel", null, 0, 1, ModelLabelAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(modelLabelAssociationXEClass, ModelLabelAssociationX.class, "ModelLabelAssociationX", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModelLabelAssociationX_ServiceFeature(), this.getServiceAssociation(), null, "serviceFeature", null, 1, 1, ModelLabelAssociationX.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelLabelAssociationX_DynamicLabel(), this.getModelLabelX(), null, "dynamicLabel", null, 0, 1, ModelLabelAssociationX.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionEClass, Selection.class, "Selection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelection_Parameters(), this.getSelectionParameter(), null, "parameters", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4112,8 +4090,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getUnitAssociation_ServiceFeature(), this.getServiceAssociation(), null, "serviceFeature", null, 1, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_ChildFeature(), this.getUnitChildFeature(), null, "childFeature", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_Selection(), this.getSelection(), null, "selection", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUnitAssociation_DynamicLabel(), this.getModelLabel(), null, "dynamicLabel", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUnitAssociation_Filters(), this.getModelLabel(), null, "filters", null, 0, -1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUnitAssociation_DynamicLabel(), this.getModelLabelX(), null, "dynamicLabel", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUnitAssociation_Filters(), this.getModelLabelX(), null, "filters", null, 0, -1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitChildFeatureEClass, UnitChildFeature.class, "UnitChildFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -106,20 +106,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createServiceAdapter();
 			}
 			@Override
-			public Adapter caseModelLabel(ModelLabel object) {
-				return createModelLabelAdapter();
+			public Adapter caseModelLabelX(ModelLabelX object) {
+				return createModelLabelXAdapter();
 			}
 			@Override
-			public Adapter caseModelLabelFeature(ModelLabelFeature object) {
-				return createModelLabelFeatureAdapter();
+			public Adapter caseModelLabelFeatureX(ModelLabelFeatureX object) {
+				return createModelLabelFeatureXAdapter();
 			}
 			@Override
-			public Adapter caseModelLabelElement(ModelLabelElement object) {
-				return createModelLabelElementAdapter();
+			public Adapter caseModelLabelElementX(ModelLabelElementX object) {
+				return createModelLabelElementXAdapter();
 			}
 			@Override
-			public Adapter caseModelLabelAssociation(ModelLabelAssociation object) {
-				return createModelLabelAssociationAdapter();
+			public Adapter caseModelLabelAssociationX(ModelLabelAssociationX object) {
+				return createModelLabelAssociationXAdapter();
 			}
 			@Override
 			public Adapter caseSelection(Selection object) {
@@ -538,58 +538,58 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabel <em>Model Label</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelX <em>Model Label X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabel
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelX
 	 * @generated
 	 */
-	public Adapter createModelLabelAdapter() {
+	public Adapter createModelLabelXAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelFeature <em>Model Label Feature</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelFeatureX <em>Model Label Feature X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelFeature
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelFeatureX
 	 * @generated
 	 */
-	public Adapter createModelLabelFeatureAdapter() {
+	public Adapter createModelLabelFeatureXAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelElement <em>Model Label Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelElementX <em>Model Label Element X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelElement
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelElementX
 	 * @generated
 	 */
-	public Adapter createModelLabelElementAdapter() {
+	public Adapter createModelLabelElementXAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation <em>Model Label Association</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX <em>Model Label Association X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelAssociation
+	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX
 	 * @generated
 	 */
-	public Adapter createModelLabelAssociationAdapter() {
+	public Adapter createModelLabelAssociationXAdapter() {
 		return null;
 	}
 

@@ -8,10 +8,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
@@ -68,7 +68,7 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	 * @generated
 	 * @ordered
 	 */
-	protected Association feature;
+	protected EntityAssociation feature;
 
 	/**
 	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
@@ -271,10 +271,10 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association getFeature() {
+	public EntityAssociation getFeature() {
 		if (feature != null && feature.eIsProxy()) {
 			InternalEObject oldFeature = (InternalEObject)feature;
-			feature = (Association)eResolveProxy(oldFeature);
+			feature = (EntityAssociation)eResolveProxy(oldFeature);
 			if (feature != oldFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SERVICE_ENTITY_ASSOCIATION__FEATURE, oldFeature, feature));
@@ -288,7 +288,7 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association basicGetFeature() {
+	public EntityAssociation basicGetFeature() {
 		return feature;
 	}
 
@@ -297,8 +297,8 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void setFeature(Association newFeature) {
-		Association oldFeature = feature;
+	public void setFeature(EntityAssociation newFeature) {
+		EntityAssociation oldFeature = feature;
 		feature = newFeature;
 		// eContainer may be undefined when loading resource (used by getPartOf)
 		if ((newFeature != null) && (eContainer() != null)) {
@@ -443,7 +443,7 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 				setSelection((Selection)newValue);
 				return;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__FEATURE:
-				setFeature((Association)newValue);
+				setFeature((EntityAssociation)newValue);
 				return;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL:
 				setDynamicLabel((ModelLabel)newValue);
@@ -473,7 +473,7 @@ public class ServiceEntityAssociationImpl extends ServiceEntityFeatureImpl imple
 				setSelection((Selection)null);
 				return;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__FEATURE:
-				setFeature((Association)null);
+				setFeature((EntityAssociation)null);
 				return;
 			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION__DYNAMIC_LABEL:
 				setDynamicLabel((ModelLabel)null);

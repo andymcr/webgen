@@ -214,6 +214,75 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.View} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ViewItemProvider viewItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.View}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createViewAdapter() {
+		if (viewItemProvider == null) {
+			viewItemProvider = new ViewItemProvider(this);
+		}
+
+		return viewItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.ViewAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ViewAttributeItemProvider viewAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.ViewAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createViewAttributeAdapter() {
+		if (viewAttributeItemProvider == null) {
+			viewAttributeItemProvider = new ViewAttributeItemProvider(this);
+		}
+
+		return viewAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.ViewAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ViewAssociationItemProvider viewAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.ViewAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createViewAssociationAdapter() {
+		if (viewAssociationItemProvider == null) {
+			viewAssociationItemProvider = new ViewAssociationItemProvider(this);
+		}
+
+		return viewAssociationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.SingletonElement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -421,6 +490,75 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.ModelLabel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelItemProvider modelLabelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.ModelLabel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAdapter() {
+		if (modelLabelItemProvider == null) {
+			modelLabelItemProvider = new ModelLabelItemProvider(this);
+		}
+
+		return modelLabelItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.ModelLabelAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelAttributeItemProvider modelLabelAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.ModelLabelAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAttributeAdapter() {
+		if (modelLabelAttributeItemProvider == null) {
+			modelLabelAttributeItemProvider = new ModelLabelAttributeItemProvider(this);
+		}
+
+		return modelLabelAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.ModelLabelAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelAssociationItemProvider modelLabelAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.ModelLabelAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAssociationAdapter() {
+		if (modelLabelAssociationItemProvider == null) {
+			modelLabelAssociationItemProvider = new ModelLabelAssociationItemProvider(this);
+		}
+
+		return modelLabelAssociationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -524,6 +662,9 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
+		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
+		if (modelLabelAttributeItemProvider != null) modelLabelAttributeItemProvider.dispose();
+		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
 		if (entityItemProvider != null) entityItemProvider.dispose();
 		if (singletonElementItemProvider != null) singletonElementItemProvider.dispose();
 		if (collectionElementItemProvider != null) collectionElementItemProvider.dispose();
@@ -534,6 +675,9 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (singletonLocationItemProvider != null) singletonLocationItemProvider.dispose();
 		if (singletonAssociationItemProvider != null) singletonAssociationItemProvider.dispose();
 		if (collectionAssociationItemProvider != null) collectionAssociationItemProvider.dispose();
+		if (viewItemProvider != null) viewItemProvider.dispose();
+		if (viewAttributeItemProvider != null) viewAttributeItemProvider.dispose();
+		if (viewAssociationItemProvider != null) viewAssociationItemProvider.dispose();
 	}
 
 }

@@ -28,7 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *
  * @generated
  */
-public class AssociationWithoutContainmentImpl extends AssociationImpl implements AssociationWithoutContainment {
+public class AssociationWithoutContainmentImpl extends EntityAssociationImpl implements AssociationWithoutContainment {
 	/**
 	 * The default value of the '{@link #getTargetCardinality() <em>Target Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -18,7 +18,7 @@ import uk.ac.man.cs.mdsd.orm.CollectionAttribute;
  * @generated
  */
 public class CollectionAttributeItemProvider
-	extends AttributeItemProvider {
+	extends EntityAttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

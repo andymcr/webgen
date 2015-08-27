@@ -87,19 +87,13 @@ class EnumerationType extends DataType {
 class EnumerationLiteral extends NamedDisplayElement {
 }
 
-class Entity extends Classifier {
-	container unordered OrmModel[1] partOf opposite entities
-	String tableName
-	refers Feature[] ^keys
-	String autoKeyName
-	refers Entity[] ^contains opposite ^container
-	refers Entity ^container opposite ^contains
-	contains Feature[] features opposite parentEntity
+
+abstract class EntityOrView extends Classifier {
+	contains ModelLabel[] displayLabels opposite labelFor
 }
 
 abstract class Feature extends NamedDisplayElement {
 	String[1] columnName
-	container Entity[1] parentEntity opposite features
 	Boolean inputField
 	String headerClass
 	String inputClass
@@ -108,25 +102,63 @@ abstract class Feature extends NamedDisplayElement {
 }
 
 abstract class Attribute extends Feature {
+}
+
+abstract class Association extends Feature {
+}
+
+class ModelLabel extends NamedElement {
+	container EntityOrView[1] labelFor opposite displayLabels
+	String[1] format
+	contains ModelLabelFeature[] features
+}
+
+abstract class ModelLabelFeature {
+}
+
+class ModelLabelAttribute extends ModelLabelFeature {
+	refers Attribute[1] element
+}
+
+class ModelLabelAssociation extends ModelLabelFeature {
+	refers Association[1] association
+	refers ModelLabel dynamicLabel
+}
+
+
+class Entity extends EntityOrView {
+	container OrmModel[1] partOf opposite entities
+	refers Entity[] ^contains opposite ^container
+	refers Entity ^container opposite ^contains
+	contains EntityFeature[] features opposite parentEntity
+	String tableName
+	refers Feature[] ^keys
+	String autoKeyName
+}
+
+abstract class EntityFeature {
+	container Entity[1] parentEntity opposite features
+}
+
+abstract class EntityAttribute extends Attribute {
 	String[1] persistentType
 	String[1] ormType
 }
 
-abstract class SingletonAttribute extends Attribute {
-	unordered boolean required
-	unordered boolean ^unique
-	@GenModel(createChild="false")
-	contains unordered Expression defaultValue
+abstract class SingletonAttribute extends EntityAttribute {
+	boolean required
+	boolean ^unique
+	contains Expression defaultValue
 }
 
-abstract class CollectionAttribute extends Attribute {
+abstract class CollectionAttribute extends EntityAttribute {
 }
 
 class SingletonElement extends SingletonAttribute {
-	refers unordered DataType[1] dataType
-	unordered boolean obfuscateFormFields
-	unordered boolean caseInsensitive
-	unordered boolean encrypt
+	refers DataType[1] dataType
+	boolean obfuscateFormFields
+	boolean caseInsensitive
+	boolean encrypt
 }
 
 class CollectionElement extends CollectionAttribute {
@@ -168,8 +200,8 @@ class SingletonLocation extends SingletonAttribute {
 
 @Ecore(constraints="onlyOneOwningEnd")
 @OCL(onlyOneOwningEnd="owningEnd xor opposite.owningEnd")
-abstract class Association extends Feature {
-	refers Association[1] ^opposite
+abstract class EntityAssociation extends Association {
+	refers EntityAssociation[1] ^opposite
 	boolean[1] owningEnd
 	boolean[1] bidirectional
 	boolean[1] containment
@@ -181,7 +213,7 @@ enum SingletonAssociationRelationships {
 	ManyToOne = 1
 }
 
-class SingletonAssociation extends Association {
+class SingletonAssociation extends EntityAssociation {
 	boolean required
 	SingletonAssociationRelationships associationRelationship
 }
@@ -193,7 +225,26 @@ enum CollectionAssociationRelationships {
 
 @Ecore(constraints="x")
 @OCL(x="collectionType.elementType = opposite.parentEntity")
-class CollectionAssociation extends Association {
+class CollectionAssociation extends EntityAssociation {
 	refers CollectionType[1] collectionType
 	CollectionAssociationRelationships associationRelationship
+}
+
+
+class View extends EntityOrView {
+	refers EntityOrView[] encapsulates
+	contains ViewFeature[] features opposite includedBy
+}
+
+abstract class ViewFeature {
+	container View[1] includedBy opposite features
+	String alias
+}
+
+class ViewAttribute extends ViewFeature {
+	refers Attribute[1] attribute
+}
+
+class ViewAssociation extends ViewFeature {
+	refers Association[1] association
 }

@@ -14,7 +14,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *
  * @generated
  */
-public class LocationAttributeImpl extends AttributeImpl implements LocationAttribute {
+public class LocationAttributeImpl extends EntityAttributeImpl implements LocationAttribute {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -98,6 +98,33 @@ public interface WebsiteFactory extends EFactory {
 	Entity createEntity();
 
 	/**
+	 * Returns a new object of class '<em>View</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View</em>'.
+	 * @generated
+	 */
+	View createView();
+
+	/**
+	 * Returns a new object of class '<em>View Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Attribute</em>'.
+	 * @generated
+	 */
+	ViewAttribute createViewAttribute();
+
+	/**
+	 * Returns a new object of class '<em>View Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>View Association</em>'.
+	 * @generated
+	 */
+	ViewAssociation createViewAssociation();
+
+	/**
 	 * Returns a new object of class '<em>Data Type Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -159,6 +186,33 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	AssociationWithContainment createAssociationWithContainment();
+
+	/**
+	 * Returns a new object of class '<em>Model Label Y</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Label Y</em>'.
+	 * @generated
+	 */
+	ModelLabelY createModelLabelY();
+
+	/**
+	 * Returns a new object of class '<em>Model Label Attribute Y</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Label Attribute Y</em>'.
+	 * @generated
+	 */
+	ModelLabelAttributeY createModelLabelAttributeY();
+
+	/**
+	 * Returns a new object of class '<em>Model Label Association Y</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Label Association Y</em>'.
+	 * @generated
+	 */
+	ModelLabelAssociationY createModelLabelAssociationY();
 
 	/**
 	 * Returns a new object of class '<em>Page</em>'.

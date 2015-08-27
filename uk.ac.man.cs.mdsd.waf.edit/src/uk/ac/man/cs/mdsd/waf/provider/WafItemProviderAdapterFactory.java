@@ -34,6 +34,9 @@ import uk.ac.man.cs.mdsd.criteria.PredicateIsEmpty;
 import uk.ac.man.cs.mdsd.criteria.PredicateIsOperator;
 import uk.ac.man.cs.mdsd.criteria.PredicateLikeOperator;
 import uk.ac.man.cs.mdsd.criteria.util.CriteriaSwitch;
+import uk.ac.man.cs.mdsd.orm.OrmPackage;
+import uk.ac.man.cs.mdsd.orm.SingletonAttribute;
+import uk.ac.man.cs.mdsd.orm.util.OrmSwitch;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.util.WafAdapterFactory;
 
@@ -184,73 +187,72 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabel} instances.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected ModelLabelItemProvider modelLabelItemProvider;
-
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabel}.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Adapter createModelLabelAdapter()
-  {
-		if (modelLabelItemProvider == null) {
-			modelLabelItemProvider = new ModelLabelItemProvider(this);
-		}
-
-		return modelLabelItemProvider;
-	}
-
-  /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabelElement} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabelX} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelLabelElementItemProvider modelLabelElementItemProvider;
+	protected ModelLabelXItemProvider modelLabelXItemProvider;
 
 		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelElement}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelX}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createModelLabelElementAdapter() {
-		if (modelLabelElementItemProvider == null) {
-			modelLabelElementItemProvider = new ModelLabelElementItemProvider(this);
+	public Adapter createModelLabelXAdapter() {
+		if (modelLabelXItemProvider == null) {
+			modelLabelXItemProvider = new ModelLabelXItemProvider(this);
 		}
 
-		return modelLabelElementItemProvider;
+		return modelLabelXItemProvider;
 	}
 
 		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabelElementX} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelLabelAssociationItemProvider modelLabelAssociationItemProvider;
+	protected ModelLabelElementXItemProvider modelLabelElementXItemProvider;
 
 		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociation}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelElementX}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createModelLabelAssociationAdapter() {
-		if (modelLabelAssociationItemProvider == null) {
-			modelLabelAssociationItemProvider = new ModelLabelAssociationItemProvider(this);
+	public Adapter createModelLabelElementXAdapter() {
+		if (modelLabelElementXItemProvider == null) {
+			modelLabelElementXItemProvider = new ModelLabelElementXItemProvider(this);
 		}
 
-		return modelLabelAssociationItemProvider;
+		return modelLabelElementXItemProvider;
+	}
+
+		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelAssociationXItemProvider modelLabelAssociationXItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAssociationXAdapter() {
+		if (modelLabelAssociationXItemProvider == null) {
+			modelLabelAssociationXItemProvider = new ModelLabelAssociationXItemProvider(this);
+		}
+
+		return modelLabelAssociationXItemProvider;
 	}
 
 		/**
@@ -1438,9 +1440,9 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
-		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
-		if (modelLabelElementItemProvider != null) modelLabelElementItemProvider.dispose();
-		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
+		if (modelLabelXItemProvider != null) modelLabelXItemProvider.dispose();
+		if (modelLabelElementXItemProvider != null) modelLabelElementXItemProvider.dispose();
+		if (modelLabelAssociationXItemProvider != null) modelLabelAssociationXItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
 		if (serviceEntityElementItemProvider != null) serviceEntityElementItemProvider.dispose();
@@ -1486,6 +1488,108 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (featureReferenceItemProvider != null) featureReferenceItemProvider.dispose();
 		if (parameterReferenceItemProvider != null) parameterReferenceItemProvider.dispose();
 		if (currentUserReferenceItemProvider != null) currentUserReferenceItemProvider.dispose();
+	}
+
+		/**
+	 * A child creation extender for the {@link OrmPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class OrmChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends OrmSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseSingletonAttribute(SingletonAttribute object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+						 WafFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return WafEditPlugin.INSTANCE;
+		}
 	}
 
 		/**

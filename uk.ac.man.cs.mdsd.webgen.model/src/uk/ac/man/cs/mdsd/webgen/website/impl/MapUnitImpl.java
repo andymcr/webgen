@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
 import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
@@ -46,7 +46,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> selectionFeatures;
+	protected EList<EntityAttribute> selectionFeatures;
 
 	/**
 	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
@@ -152,9 +152,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Attribute> getSelectionFeatures() {
+	public List<EntityAttribute> getSelectionFeatures() {
 		if (selectionFeatures == null) {
-			selectionFeatures = new EObjectResolvingEList<Attribute>(Attribute.class, this, WebsitePackage.MAP_UNIT__SELECTION_FEATURES);
+			selectionFeatures = new EObjectResolvingEList<EntityAttribute>(EntityAttribute.class, this, WebsitePackage.MAP_UNIT__SELECTION_FEATURES);
 		}
 		return selectionFeatures;
 	}
@@ -335,7 +335,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 		switch (featureID) {
 			case WebsitePackage.MAP_UNIT__SELECTION_FEATURES:
 				getSelectionFeatures().clear();
-				getSelectionFeatures().addAll((Collection<? extends Attribute>)newValue);
+				getSelectionFeatures().addAll((Collection<? extends EntityAttribute>)newValue);
 				return;
 			case WebsitePackage.MAP_UNIT__READ_ONLY:
 				setReadOnly((Boolean)newValue);

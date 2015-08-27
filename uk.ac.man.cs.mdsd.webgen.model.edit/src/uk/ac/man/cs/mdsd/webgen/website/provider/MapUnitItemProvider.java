@@ -76,7 +76,7 @@ public class MapUnitItemProvider
 			getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_selectionFeatures_feature", "_UI_SelectTarget_type"),
 			 WebsitePackage.Literals.SELECT_TARGET__SELECTION_FEATURES,
 			true, false, true, null,
-			getString("_UI_InterfacePropertyCategory"),
+			getString("_UI_NavigationPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {

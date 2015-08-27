@@ -125,31 +125,31 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.MODEL_LABEL: {
-				ModelLabel modelLabel = (ModelLabel)theEObject;
-				T result = caseModelLabel(modelLabel);
-				if (result == null) result = caseNamedElement(modelLabel);
-				if (result == null) result = caseUnitTitle(modelLabel);
+			case WafPackage.MODEL_LABEL_X: {
+				ModelLabelX modelLabelX = (ModelLabelX)theEObject;
+				T result = caseModelLabelX(modelLabelX);
+				if (result == null) result = caseNamedElement(modelLabelX);
+				if (result == null) result = caseUnitTitle(modelLabelX);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.MODEL_LABEL_FEATURE: {
-				ModelLabelFeature modelLabelFeature = (ModelLabelFeature)theEObject;
-				T result = caseModelLabelFeature(modelLabelFeature);
+			case WafPackage.MODEL_LABEL_FEATURE_X: {
+				ModelLabelFeatureX modelLabelFeatureX = (ModelLabelFeatureX)theEObject;
+				T result = caseModelLabelFeatureX(modelLabelFeatureX);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.MODEL_LABEL_ELEMENT: {
-				ModelLabelElement modelLabelElement = (ModelLabelElement)theEObject;
-				T result = caseModelLabelElement(modelLabelElement);
-				if (result == null) result = caseModelLabelFeature(modelLabelElement);
+			case WafPackage.MODEL_LABEL_ELEMENT_X: {
+				ModelLabelElementX modelLabelElementX = (ModelLabelElementX)theEObject;
+				T result = caseModelLabelElementX(modelLabelElementX);
+				if (result == null) result = caseModelLabelFeatureX(modelLabelElementX);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.MODEL_LABEL_ASSOCIATION: {
-				ModelLabelAssociation modelLabelAssociation = (ModelLabelAssociation)theEObject;
-				T result = caseModelLabelAssociation(modelLabelAssociation);
-				if (result == null) result = caseModelLabelFeature(modelLabelAssociation);
+			case WafPackage.MODEL_LABEL_ASSOCIATION_X: {
+				ModelLabelAssociationX modelLabelAssociationX = (ModelLabelAssociationX)theEObject;
+				T result = caseModelLabelAssociationX(modelLabelAssociationX);
+				if (result == null) result = caseModelLabelFeatureX(modelLabelAssociationX);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -888,62 +888,62 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label X</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label X</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelLabel(ModelLabel object) {
+	public T caseModelLabelX(ModelLabelX object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Feature</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label Feature X</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Feature</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label Feature X</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelLabelFeature(ModelLabelFeature object) {
+	public T caseModelLabelFeatureX(ModelLabelFeatureX object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label Element X</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label Element X</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelLabelElement(ModelLabelElement object) {
+	public T caseModelLabelElementX(ModelLabelElementX object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Association</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label Association X</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Association</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label Association X</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelLabelAssociation(ModelLabelAssociation object) {
+	public T caseModelLabelAssociationX(ModelLabelAssociationX object) {
 		return null;
 	}
 

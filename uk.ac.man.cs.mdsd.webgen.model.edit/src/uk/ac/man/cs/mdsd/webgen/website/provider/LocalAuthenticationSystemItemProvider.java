@@ -20,7 +20,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Classifier;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
@@ -136,8 +137,8 @@ public class LocalAuthenticationSystemItemProvider
 						if (authSystem.getUserSource() != null) {
 							final UnitSource source = authSystem.getUserSource();
 							if (source instanceof Entity) {
-								final List<Feature> features = new LinkedList<Feature>();
-								for (Feature feature : ((Entity) source).getFeatures()) {
+								final List<EntityFeature> features = new LinkedList<EntityFeature>();
+								for (EntityFeature feature : ((Entity) source).getFeatures()) {
 									if (!(feature instanceof Association)) {
 										features.add(feature);
 									}
@@ -145,9 +146,9 @@ public class LocalAuthenticationSystemItemProvider
 								return features;
 							}
 							if (source instanceof Service) {
-								final List<Feature> features = new LinkedList<Feature>();
-								for (Entity entity : ((Service) source).getEncapsulates()) {
-									for (Feature feature : entity.getFeatures()) {
+								final List<EntityFeature> features = new LinkedList<EntityFeature>();
+								for (EntityOrView entityOrView : ((Service) source).getEncapsulates()) {
+									for (EntityFeature feature : getFeatures(entityOrView)) {
 										if (!(feature instanceof Association)) {
 											features.add(feature);
 										}

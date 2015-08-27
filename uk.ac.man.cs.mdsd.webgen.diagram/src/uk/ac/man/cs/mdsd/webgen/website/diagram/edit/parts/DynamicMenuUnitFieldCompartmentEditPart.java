@@ -67,7 +67,7 @@ public class DynamicMenuUnitFieldCompartmentEditPart extends ListCompartmentEdit
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(WebsiteVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-//		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new DynamicMenuUnitFieldCompartmentCanonicalEditPolicy());
+		//		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new DynamicMenuUnitFieldCompartmentCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE,
 				new CompartmentRepositionLayoutEditPolicy(WebsitePackage.Literals.MENU__ENTRIES));
 	}

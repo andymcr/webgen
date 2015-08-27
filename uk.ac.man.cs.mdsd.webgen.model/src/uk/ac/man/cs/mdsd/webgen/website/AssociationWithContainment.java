@@ -17,5 +17,5 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface AssociationWithContainment extends Association {
+public interface AssociationWithContainment extends EntityAssociation {
 } // AssociationWithContainment

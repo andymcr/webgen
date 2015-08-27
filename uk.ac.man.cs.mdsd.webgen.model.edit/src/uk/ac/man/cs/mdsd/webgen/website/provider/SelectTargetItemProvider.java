@@ -82,7 +82,7 @@ public class SelectTargetItemProvider
 				 false,
 				 true,
 				 null,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 

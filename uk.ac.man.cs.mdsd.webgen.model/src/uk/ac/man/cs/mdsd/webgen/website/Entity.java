@@ -17,11 +17,10 @@ import java.util.List;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getTableName <em>Table Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getAssociationEnds <em>Association Ends</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getServedBy <em>Served By</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getTableName <em>Table Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getKeys <em>Keys</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity()
@@ -29,7 +28,7 @@ import java.util.List;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featureNameUniqueWithinEntity='features->isUnique(name)' keysFromLocalFeatures='features->union(associationEnds)->includesAll(keys)'"
  * @generated
  */
-public interface Entity extends Classifier, UnitSource {
+public interface Entity extends EntityOrView, UnitSource {
 	/**
 	 * Returns the value of the '<em><b>Table Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,8 +73,8 @@ public interface Entity extends Classifier, UnitSource {
 
 	/**
 	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Feature}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getParentEntity <em>Parent Entity</em>}'.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getParentEntity <em>Parent Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Features</em>' containment reference list isn't clear,
@@ -84,16 +83,16 @@ public interface Entity extends Classifier, UnitSource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Features</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_Features()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Feature#getParentEntity
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getParentEntity
 	 * @model opposite="parentEntity" containment="true"
 	 * @generated
 	 */
-	List<Feature> getFeatures();
+	List<EntityFeature> getFeatures();
 
 	/**
 	 * Returns the value of the '<em><b>Association Ends</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Association}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Association#getTargetEntity <em>Target Entity</em>}'.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getTargetEntity <em>Target Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Association Ends</em>' reference list isn't clear,
@@ -102,28 +101,10 @@ public interface Entity extends Classifier, UnitSource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Association Ends</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_AssociationEnds()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Association#getTargetEntity
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getTargetEntity
 	 * @model opposite="targetEntity"
 	 * @generated
 	 */
-	List<Association> getAssociationEnds();
-
-	/**
-	 * Returns the value of the '<em><b>Served By</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Service}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getEncapsulates <em>Encapsulates</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Served By</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Served By</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_ServedBy()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Service#getEncapsulates
-	 * @model opposite="encapsulates"
-	 * @generated
-	 */
-	List<Service> getServedBy();
+	List<EntityAssociation> getAssociationEnds();
 
 } // Entity

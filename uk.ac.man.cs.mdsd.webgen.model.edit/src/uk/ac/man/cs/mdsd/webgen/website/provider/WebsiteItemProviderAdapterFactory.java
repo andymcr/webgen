@@ -275,6 +275,75 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.View} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ViewItemProvider viewItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.View}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createViewAdapter() {
+		if (viewItemProvider == null) {
+			viewItemProvider = new ViewItemProvider(this);
+		}
+
+		return viewItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ViewAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ViewAttributeItemProvider viewAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ViewAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createViewAttributeAdapter() {
+		if (viewAttributeItemProvider == null) {
+			viewAttributeItemProvider = new ViewAttributeItemProvider(this);
+		}
+
+		return viewAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ViewAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ViewAssociationItemProvider viewAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ViewAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createViewAssociationAdapter() {
+		if (viewAssociationItemProvider == null) {
+			viewAssociationItemProvider = new ViewAssociationItemProvider(this);
+		}
+
+		return viewAssociationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -433,6 +502,75 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		}
 
 		return associationWithContainmentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelY} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelYItemProvider modelLabelYItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelY}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelYAdapter() {
+		if (modelLabelYItemProvider == null) {
+			modelLabelYItemProvider = new ModelLabelYItemProvider(this);
+		}
+
+		return modelLabelYItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttributeY} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelAttributeYItemProvider modelLabelAttributeYItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttributeY}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAttributeYAdapter() {
+		if (modelLabelAttributeYItemProvider == null) {
+			modelLabelAttributeYItemProvider = new ModelLabelAttributeYItemProvider(this);
+		}
+
+		return modelLabelAttributeYItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociationY} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelAssociationYItemProvider modelLabelAssociationYItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociationY}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAssociationYAdapter() {
+		if (modelLabelAssociationYItemProvider == null) {
+			modelLabelAssociationYItemProvider = new ModelLabelAssociationYItemProvider(this);
+		}
+
+		return modelLabelAssociationYItemProvider;
 	}
 
 	/**
@@ -1699,6 +1837,12 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (locationAttributeItemProvider != null) locationAttributeItemProvider.dispose();
 		if (associationWithoutContainmentItemProvider != null) associationWithoutContainmentItemProvider.dispose();
 		if (associationWithContainmentItemProvider != null) associationWithContainmentItemProvider.dispose();
+		if (viewItemProvider != null) viewItemProvider.dispose();
+		if (viewAttributeItemProvider != null) viewAttributeItemProvider.dispose();
+		if (viewAssociationItemProvider != null) viewAssociationItemProvider.dispose();
+		if (modelLabelYItemProvider != null) modelLabelYItemProvider.dispose();
+		if (modelLabelAttributeYItemProvider != null) modelLabelAttributeYItemProvider.dispose();
+		if (modelLabelAssociationYItemProvider != null) modelLabelAssociationYItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
 		if (modelLabelElementItemProvider != null) modelLabelElementItemProvider.dispose();

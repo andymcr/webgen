@@ -19,7 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.website.LocationAttribute;
  * @generated
  */
 public class LocationAttributeItemProvider
-	extends AttributeItemProvider {
+	extends EntityAttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

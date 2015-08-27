@@ -50,7 +50,6 @@ public class FeatureItemProvider
 			super.getPropertyDescriptors(object);
 
 			addColumnNamePropertyDescriptor(object);
-			addParentEntityPropertyDescriptor(object);
 			addInputFieldPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
@@ -83,29 +82,6 @@ public class FeatureItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Parent Entity feature.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected void addParentEntityPropertyDescriptor(Object object)
-  {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_parentEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_parentEntity_feature", "_UI_Feature_type"),
-				 OrmPackage.Literals.FEATURE__PARENT_ENTITY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-  /**
 	 * This adds a property descriptor for the Input Field feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

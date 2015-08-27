@@ -30,7 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *
  * @generated
  */
-public class DataTypeAttributeImpl extends AttributeImpl implements DataTypeAttribute {
+public class DataTypeAttributeImpl extends EntityAttributeImpl implements DataTypeAttribute {
 	/**
 	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->

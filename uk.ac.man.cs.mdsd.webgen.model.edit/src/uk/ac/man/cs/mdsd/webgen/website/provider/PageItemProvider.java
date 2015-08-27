@@ -104,7 +104,7 @@ public class PageItemProvider
 				 false,
 				 true,
 				 null,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 
@@ -170,7 +170,7 @@ public class PageItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 

@@ -25,7 +25,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface DataTypeAttribute extends Attribute {
+public interface DataTypeAttribute extends EntityAttribute {
 
 	/**
 	 * Returns the value of the '<em><b>Data Type</b></em>' reference.

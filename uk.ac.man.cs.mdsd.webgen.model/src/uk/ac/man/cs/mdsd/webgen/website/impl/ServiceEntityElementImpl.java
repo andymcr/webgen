@@ -10,9 +10,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.criteria.Expression;
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedElement;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -48,7 +48,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected Attribute feature;
+	protected EntityAttribute feature;
 
 	/**
 	 * The default value of the '{@link #isObfuscateFormFields() <em>Obfuscate Form Fields</em>}' attribute.
@@ -234,10 +234,10 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute getFeature() {
+	public EntityAttribute getFeature() {
 		if (feature != null && feature.eIsProxy()) {
 			InternalEObject oldFeature = (InternalEObject)feature;
-			feature = (Attribute)eResolveProxy(oldFeature);
+			feature = (EntityAttribute)eResolveProxy(oldFeature);
 			if (feature != oldFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SERVICE_ENTITY_ELEMENT__FEATURE, oldFeature, feature));
@@ -251,7 +251,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute basicGetFeature() {
+	public EntityAttribute basicGetFeature() {
 		return feature;
 	}
 
@@ -260,8 +260,8 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void setFeature(Attribute newFeature) {
-		Attribute oldFeature = feature;
+	public void setFeature(EntityAttribute newFeature) {
+		EntityAttribute oldFeature = feature;
 		feature = newFeature;
 		setRequired(isRequired()
 			|| (newFeature != null) && (newFeature.getCardinality() == Cardinality.REQUIRED));
@@ -524,7 +524,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__FEATURE:
-				setFeature((Attribute)newValue);
+				setFeature((EntityAttribute)newValue);
 				return;
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields((Boolean)newValue);
@@ -560,7 +560,7 @@ public class ServiceEntityElementImpl extends ServiceEntityFeatureImpl implement
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__FEATURE:
-				setFeature((Attribute)null);
+				setFeature((EntityAttribute)null);
 				return;
 			case WebsitePackage.SERVICE_ENTITY_ELEMENT__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields(OBFUSCATE_FORM_FIELDS_EDEFAULT);

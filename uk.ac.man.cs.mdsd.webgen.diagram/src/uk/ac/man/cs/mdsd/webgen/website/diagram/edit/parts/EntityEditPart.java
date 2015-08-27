@@ -276,6 +276,10 @@ public class EntityEditPart extends ShapeNodeEditPart {
 				return getChildBySemanticHint(
 						WebsiteVisualIDRegistry.getType(EntityAttributeCompartmentEditPart.VISUAL_ID));
 			}
+			if (type == WebsiteElementTypes.ModelLabelY_3237) {
+				return getChildBySemanticHint(
+						WebsiteVisualIDRegistry.getType(EntityModelLabelsCompartmentEditPart.VISUAL_ID));
+			}
 		}
 		return super.getTargetEditPart(request);
 	}
@@ -338,11 +342,11 @@ public class EntityEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Color THIS_FORE = new Color(null, 123, 167, 225);
+	static final Color THIS_FORE = new Color(null, 102, 153, 204);
 
 	/**
 	 * @generated
 	 */
-	static final Color THIS_BACK = new Color(null, 206, 222, 244);
+	static final Color THIS_BACK = new Color(null, 153, 204, 255);
 
 }

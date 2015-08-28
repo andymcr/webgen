@@ -4,6 +4,8 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -11,7 +13,12 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -52,22 +59,32 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 	 * This adds a property descriptor for the Association feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ViewAssociation_association_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ViewAssociation_association_feature", "_UI_ViewAssociation_type"),
-				 WebsitePackage.Literals.VIEW_ASSOCIATION__ASSOCIATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_ViewAssociation_association_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ViewAssociation_association_feature", "_UI_ViewAssociation_type"),
+			WebsitePackage.Literals.VIEW_ASSOCIATION__ASSOCIATION,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof ViewAssociation) {
+						final View view = ((ViewAssociation) object).getPartOf();
+						final List<Association> associations = new LinkedList<Association>();
+						for (EntityOrView entityOrView : view.getEncapsulates()) {
+							associations.addAll(getAssociations(entityOrView));
+						}
+						return associations;
+					}
+
+					return Collections.emptyList();
+				}
+		});
 	}
 
 	/**
@@ -106,6 +123,13 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ViewAssociation.class)) {
+			case WebsitePackage.VIEW_ASSOCIATION__NAME:
+			case WebsitePackage.VIEW_ASSOCIATION__USE_ASSOCIATION_SOURCE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

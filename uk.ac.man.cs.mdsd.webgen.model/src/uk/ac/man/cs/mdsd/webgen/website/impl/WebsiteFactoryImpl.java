@@ -68,6 +68,9 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.DATA_TYPE: return createDataType();
 			case WebsitePackage.ENUMERATION_TYPE: return createEnumerationType();
 			case WebsitePackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
+			case WebsitePackage.MODEL_LABEL_Y: return createModelLabelY();
+			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y: return createModelLabelAttributeY();
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y: return createModelLabelAssociationY();
 			case WebsitePackage.ENTITY: return createEntity();
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE: return createDataTypeAttribute();
 			case WebsitePackage.DATE_ATTRIBUTE: return createDateAttribute();
@@ -79,9 +82,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.VIEW: return createView();
 			case WebsitePackage.VIEW_ATTRIBUTE: return createViewAttribute();
 			case WebsitePackage.VIEW_ASSOCIATION: return createViewAssociation();
-			case WebsitePackage.MODEL_LABEL_Y: return createModelLabelY();
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y: return createModelLabelAttributeY();
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y: return createModelLabelAssociationY();
 			case WebsitePackage.SERVICE: return createService();
 			case WebsitePackage.MODEL_LABEL: return createModelLabel();
 			case WebsitePackage.MODEL_LABEL_ELEMENT: return createModelLabelElement();

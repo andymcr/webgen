@@ -15,29 +15,6 @@ helper def: findEntityService(entity : ORM!Entity) : WAF!Service
 		->any(s | s.entities->select(e | e.name = entity.name)->notEmpty());
 
 
-rule ServiceWithFeatures {
-	from partialWaf : WAF!Service (partialWaf.features->notEmpty())
-	to waf : WAF!Service (
-		displayLabels <-
-			if partialWaf.displayLabels->exists(l | l.name = 'default') then
-				partialWaf.displayLabels
-			else
-				partialWaf.displayLabels->union(
-					if partialWaf.features->exists(f | f.name = 'name') then
-						Sequence{thisModule.implicitModelLabelFromPartial(
-							partialWaf.features->any(f | f.name = 'name'))
-						}
-					else if partialWaf.features->exists(f | f.name = 'title') then
-						Sequence{thisModule.implicitModelLabelFromPartial(
-							partialWaf.features->any(f | f.name = 'title'))
-						}
-					else
-						Sequence{}
-					endif endif)
-			endif
-	)
-} 
-
 rule ServiceWithoutFeatures {
 	from partialWaf : WAF!Service (partialWaf.features->isEmpty())
 	to waf : WAF!Service (
@@ -54,57 +31,9 @@ rule ServiceWithoutFeatures {
 				->union(features
 					->select(f | f.oclIsKindOf(ORM!CollectionAssociation))
 					->select(f | f.owningEnd or f.bidirectional)
-					->collect(f | thisModule.implicitServiceEntityAssociation(f))),
-		displayLabels <-
-			if partialWaf.displayLabels->exists(l | l.name = 'default') then
-				partialWaf.displayLabels
-			else
-				let features : Sequence(ORM!Feature)
-					= partialWaf.entities->collect(e | e.features)->flatten()
-					in partialWaf.displayLabels-> union(
-						if features->exists(f | f.name = 'name') then
-							Sequence{thisModule.implicitModelLabelFromWebsite(
-								features->any(f | f.name = 'name'))
-							}
-						else if features->exists(f | f.name = 'title') then
-							Sequence{thisModule.implicitModelLabelFromWebsite(
-								features->any(f | f.name = 'title'))
-							}
-						else
-							Sequence{}
-						endif endif)
-			endif
+					->collect(f | thisModule.implicitServiceEntityAssociation(f)))
 	)
 } 
-
-lazy rule implicitModelLabelFromPartial {
-	from partialWaf : WAF!ServiceFeature
-	to waf : WAF!ModelLabel (
-		name <- 'default',
-		format <- '%s',
-		features <- Sequence{feature}
-	), feature : WAF!ModelLabelElement (
-		serviceFeature <- partialWaf
-	)
-	do {
-		waf;
-	}
-}
-
-lazy rule implicitModelLabelFromWebsite {
-	from website : Website!Feature
-	to waf : WAF!ModelLabel (
-		name <- 'default',
-		format <- '%s',
-		features <- Sequence{feature}
-	), feature : WAF!ModelLabelElement (
-		serviceFeature <- website
-	)
-	do {
-		waf;
-	}
-}
-
 
 lazy abstract rule implicitIncludedFeature {
 	from orm : ORM!Feature
@@ -207,7 +136,12 @@ lazy rule implicitServiceEntityAssociation {
 			else
 				#Many
 			endif,
-		oppositeService <- thisModule.findEntityService(orm.opposite.parentEntity)
+		oppositeService <-
+			if orm.opposite.parentEntity.oclIsUndefined() then
+				OclUndefined
+			else
+				thisModule.findEntityService(orm.opposite.parentEntity)
+			endif
 	)
 	do {
 		waf;

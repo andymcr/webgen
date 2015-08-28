@@ -168,7 +168,7 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 		final List<EntityFeature> features = new LinkedList<EntityFeature>(getFeatures());
 		for (EntityAssociation end : getAssociationEnds()) {
 			if (end.getBidirectional()) {
-				
+				features.add(end);
 			}
 		}
 		return features;

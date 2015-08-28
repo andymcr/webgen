@@ -18,7 +18,7 @@ annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 
 class OrmModel {
 	contains DataType[] dataTypes
-	contains Entity[] entities opposite partOf
+	contains EntityOrView[] entitiesAndViews opposite partOf
 	contains CollectionType[] collectionTypes
 	unordered DatabaseTechnologies databaseTechnology = "MySql"
 	String databasePrefix
@@ -89,12 +89,14 @@ class EnumerationLiteral extends NamedDisplayElement {
 
 
 abstract class EntityOrView extends Classifier {
+	container OrmModel[1] partOf opposite entitiesAndViews
 	contains ModelLabel[] displayLabels opposite labelFor
 }
 
 abstract class Feature extends NamedDisplayElement {
 	String[1] columnName
 	Boolean inputField
+	// style classes are used when creating implicit service features
 	String headerClass
 	String inputClass
 	String displayClass
@@ -117,7 +119,7 @@ abstract class ModelLabelFeature {
 }
 
 class ModelLabelAttribute extends ModelLabelFeature {
-	refers Attribute[1] element
+	refers Attribute[1] attribute
 }
 
 class ModelLabelAssociation extends ModelLabelFeature {
@@ -127,7 +129,6 @@ class ModelLabelAssociation extends ModelLabelFeature {
 
 
 class Entity extends EntityOrView {
-	container OrmModel[1] partOf opposite entities
 	refers Entity[] ^contains opposite ^container
 	refers Entity ^container opposite ^contains
 	contains EntityFeature[] features opposite parentEntity
@@ -140,7 +141,7 @@ abstract class EntityFeature {
 	container Entity[1] parentEntity opposite features
 }
 
-abstract class EntityAttribute extends Attribute {
+abstract class EntityAttribute extends Attribute, EntityFeature {
 	String[1] persistentType
 	String[1] ormType
 }
@@ -200,7 +201,7 @@ class SingletonLocation extends SingletonAttribute {
 
 @Ecore(constraints="onlyOneOwningEnd")
 @OCL(onlyOneOwningEnd="owningEnd xor opposite.owningEnd")
-abstract class EntityAssociation extends Association {
+abstract class EntityAssociation extends Association, EntityFeature {
 	refers EntityAssociation[1] ^opposite
 	boolean[1] owningEnd
 	boolean[1] bidirectional

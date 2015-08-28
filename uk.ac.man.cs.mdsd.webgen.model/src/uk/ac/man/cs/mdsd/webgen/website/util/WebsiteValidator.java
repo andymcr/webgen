@@ -120,6 +120,14 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateAttribute((Attribute)value, diagnostics, context);
 			case WebsitePackage.ASSOCIATION:
 				return validateAssociation((Association)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_Y:
+				return validateModelLabelY((ModelLabelY)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_FEATURE_Y:
+				return validateModelLabelFeatureY((ModelLabelFeatureY)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y:
+				return validateModelLabelAttributeY((ModelLabelAttributeY)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y:
+				return validateModelLabelAssociationY((ModelLabelAssociationY)value, diagnostics, context);
 			case WebsitePackage.ENTITY:
 				return validateEntity((Entity)value, diagnostics, context);
 			case WebsitePackage.ENTITY_FEATURE:
@@ -152,14 +160,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateViewAttribute((ViewAttribute)value, diagnostics, context);
 			case WebsitePackage.VIEW_ASSOCIATION:
 				return validateViewAssociation((ViewAssociation)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL_Y:
-				return validateModelLabelY((ModelLabelY)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL_FEATURE_Y:
-				return validateModelLabelFeatureY((ModelLabelFeatureY)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y:
-				return validateModelLabelAttributeY((ModelLabelAttributeY)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y:
-				return validateModelLabelAssociationY((ModelLabelAssociationY)value, diagnostics, context);
 			case WebsitePackage.INCLUDED_FEATURE:
 				return validateIncludedFeature((IncludedFeature)value, diagnostics, context);
 			case WebsitePackage.INCLUDED_ELEMENT:
@@ -746,17 +746,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateViewFeature(ViewFeature viewFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(viewFeature, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(viewFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(viewFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(viewFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(viewFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(viewFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(viewFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(viewFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(viewFeature, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(viewFeature, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(viewFeature, diagnostics, context);
 	}
 
 	/**
@@ -765,17 +755,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateViewAttribute(ViewAttribute viewAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(viewAttribute, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(viewAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(viewAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(viewAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(viewAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(viewAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(viewAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(viewAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(viewAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(viewAttribute, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(viewAttribute, diagnostics, context);
 	}
 
 	/**
@@ -784,17 +764,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateViewAssociation(ViewAssociation viewAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(viewAssociation, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(viewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(viewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(viewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(viewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(viewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(viewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(viewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(viewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(viewAssociation, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(viewAssociation, diagnostics, context);
 	}
 
 	/**

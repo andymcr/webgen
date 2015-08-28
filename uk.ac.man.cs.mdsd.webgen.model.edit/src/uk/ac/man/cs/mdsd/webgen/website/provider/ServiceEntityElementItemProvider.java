@@ -18,7 +18,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
-import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
@@ -87,16 +86,13 @@ public class ServiceEntityElementItemProvider
 					if (object instanceof ServiceEntityElement) {
 						final Service service
 							= (Service) ((ServiceEntityElement) object).eContainer();
-						final List<Attribute> elements = new LinkedList<Attribute>();
+						final List<Attribute> attributes = new LinkedList<Attribute>();
 						for (EntityOrView entityOrView : service.getEncapsulates()) {
-							for (EntityFeature feature : getFeatures(entityOrView)) {
-								if (feature instanceof Attribute) {
-									elements.add((Attribute) feature);
-								}
-							}
+							attributes.addAll(getAttributes(entityOrView));
 						}
-						return elements;
+						return attributes;
 					}
+
 					return Collections.emptyList();
 				}
 		});

@@ -45,6 +45,7 @@ public class EntityAssociationItemProvider extends AssociationItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addParentEntityPropertyDescriptor(object);
 			addOppositePropertyDescriptor(object);
 			addOwningEndPropertyDescriptor(object);
 			addBidirectionalPropertyDescriptor(object);
@@ -52,6 +53,28 @@ public class EntityAssociationItemProvider extends AssociationItemProvider {
 			addPivotTableNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent Entity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentEntityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_parentEntity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_parentEntity_feature", "_UI_EntityFeature_type"),
+				 OrmPackage.Literals.ENTITY_FEATURE__PARENT_ENTITY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

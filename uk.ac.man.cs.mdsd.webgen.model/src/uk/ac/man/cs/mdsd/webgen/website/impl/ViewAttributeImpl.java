@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -21,12 +22,22 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAttributeImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAttributeImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute {
+	/**
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.VIEW_ATTRIBUTE__NAME).getSettingDelegate();
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -54,6 +65,24 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.VIEW_ATTRIBUTE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		NAME__ESETTING_DELEGATE.dynamicSet(this, null, 0, newName);
 	}
 
 	/**
@@ -102,6 +131,8 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ATTRIBUTE__NAME:
+				return getName();
 			case WebsitePackage.VIEW_ATTRIBUTE__ATTRIBUTE:
 				if (resolve) return getAttribute();
 				return basicGetAttribute();
@@ -117,6 +148,9 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ATTRIBUTE__NAME:
+				setName((String)newValue);
+				return;
 			case WebsitePackage.VIEW_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)newValue);
 				return;
@@ -132,6 +166,9 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ATTRIBUTE__NAME:
+				NAME__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				return;
 			case WebsitePackage.VIEW_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)null);
 				return;
@@ -147,6 +184,8 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ATTRIBUTE__NAME:
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.VIEW_ATTRIBUTE__ATTRIBUTE:
 				return attribute != null;
 		}

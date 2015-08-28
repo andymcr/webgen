@@ -1705,8 +1705,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getViewFeature_Feature() {
-		return (EReference)viewFeatureEClass.getEStructuralFeatures().get(0);
+	public EAttribute getViewFeature_Alias() {
+		return (EAttribute)viewFeatureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1714,8 +1714,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getViewFeature_Alias() {
-		return (EAttribute)viewFeatureEClass.getEStructuralFeatures().get(1);
+	public EReference getViewFeature_PartOf() {
+		return (EReference)viewFeatureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1732,8 +1732,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getViewAttribute_Name() {
+		return (EAttribute)viewAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getViewAttribute_Attribute() {
-		return (EReference)viewAttributeEClass.getEStructuralFeatures().get(0);
+		return (EReference)viewAttributeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1750,8 +1759,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getViewAssociation_Name() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getViewAssociation_Association() {
-		return (EReference)viewAssociationEClass.getEStructuralFeatures().get(0);
+		return (EReference)viewAssociationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getViewAssociation_UseAssociationSource() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2200,8 +2227,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getModelLabelAttributeY_Name() {
+		return (EAttribute)modelLabelAttributeYEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getModelLabelAttributeY_Attribute() {
-		return (EReference)modelLabelAttributeYEClass.getEStructuralFeatures().get(0);
+		return (EReference)modelLabelAttributeYEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2218,8 +2254,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getModelLabelAssociationY_Name() {
+		return (EAttribute)modelLabelAssociationYEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getModelLabelAssociationY_Association() {
-		return (EReference)modelLabelAssociationYEClass.getEStructuralFeatures().get(0);
+		return (EReference)modelLabelAssociationYEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2228,7 +2273,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getModelLabelAssociationY_DynamicLabel() {
-		return (EReference)modelLabelAssociationYEClass.getEStructuralFeatures().get(1);
+		return (EReference)modelLabelAssociationYEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getModelLabelAssociationY_UseAssociationSource() {
+		return (EAttribute)modelLabelAssociationYEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5006,6 +5060,23 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		associationEClass = createEClass(ASSOCIATION);
 
+		modelLabelYEClass = createEClass(MODEL_LABEL_Y);
+		createEReference(modelLabelYEClass, MODEL_LABEL_Y__LABEL_FOR);
+		createEAttribute(modelLabelYEClass, MODEL_LABEL_Y__FORMAT);
+		createEReference(modelLabelYEClass, MODEL_LABEL_Y__FEATURES);
+
+		modelLabelFeatureYEClass = createEClass(MODEL_LABEL_FEATURE_Y);
+
+		modelLabelAttributeYEClass = createEClass(MODEL_LABEL_ATTRIBUTE_Y);
+		createEAttribute(modelLabelAttributeYEClass, MODEL_LABEL_ATTRIBUTE_Y__NAME);
+		createEReference(modelLabelAttributeYEClass, MODEL_LABEL_ATTRIBUTE_Y__ATTRIBUTE);
+
+		modelLabelAssociationYEClass = createEClass(MODEL_LABEL_ASSOCIATION_Y);
+		createEAttribute(modelLabelAssociationYEClass, MODEL_LABEL_ASSOCIATION_Y__NAME);
+		createEReference(modelLabelAssociationYEClass, MODEL_LABEL_ASSOCIATION_Y__ASSOCIATION);
+		createEReference(modelLabelAssociationYEClass, MODEL_LABEL_ASSOCIATION_Y__DYNAMIC_LABEL);
+		createEAttribute(modelLabelAssociationYEClass, MODEL_LABEL_ASSOCIATION_Y__USE_ASSOCIATION_SOURCE);
+
 		entityEClass = createEClass(ENTITY);
 		createEReference(entityEClass, ENTITY__FEATURES);
 		createEReference(entityEClass, ENTITY__ASSOCIATION_ENDS);
@@ -5074,28 +5145,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(viewEClass, VIEW__FEATURES);
 
 		viewFeatureEClass = createEClass(VIEW_FEATURE);
-		createEReference(viewFeatureEClass, VIEW_FEATURE__FEATURE);
 		createEAttribute(viewFeatureEClass, VIEW_FEATURE__ALIAS);
+		createEReference(viewFeatureEClass, VIEW_FEATURE__PART_OF);
 
 		viewAttributeEClass = createEClass(VIEW_ATTRIBUTE);
+		createEAttribute(viewAttributeEClass, VIEW_ATTRIBUTE__NAME);
 		createEReference(viewAttributeEClass, VIEW_ATTRIBUTE__ATTRIBUTE);
 
 		viewAssociationEClass = createEClass(VIEW_ASSOCIATION);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__NAME);
 		createEReference(viewAssociationEClass, VIEW_ASSOCIATION__ASSOCIATION);
-
-		modelLabelYEClass = createEClass(MODEL_LABEL_Y);
-		createEReference(modelLabelYEClass, MODEL_LABEL_Y__LABEL_FOR);
-		createEAttribute(modelLabelYEClass, MODEL_LABEL_Y__FORMAT);
-		createEReference(modelLabelYEClass, MODEL_LABEL_Y__FEATURES);
-
-		modelLabelFeatureYEClass = createEClass(MODEL_LABEL_FEATURE_Y);
-
-		modelLabelAttributeYEClass = createEClass(MODEL_LABEL_ATTRIBUTE_Y);
-		createEReference(modelLabelAttributeYEClass, MODEL_LABEL_ATTRIBUTE_Y__ATTRIBUTE);
-
-		modelLabelAssociationYEClass = createEClass(MODEL_LABEL_ASSOCIATION_Y);
-		createEReference(modelLabelAssociationYEClass, MODEL_LABEL_ASSOCIATION_Y__ASSOCIATION);
-		createEReference(modelLabelAssociationYEClass, MODEL_LABEL_ASSOCIATION_Y__DYNAMIC_LABEL);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__USE_ASSOCIATION_SOURCE);
 
 		includedFeatureEClass = createEClass(INCLUDED_FEATURE);
 		createEAttribute(includedFeatureEClass, INCLUDED_FEATURE__DISPLAY_LABEL);
@@ -5495,6 +5555,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		featureEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		attributeEClass.getESuperTypes().add(this.getFeature());
 		associationEClass.getESuperTypes().add(this.getFeature());
+		modelLabelYEClass.getESuperTypes().add(this.getNamedElement());
+		modelLabelAttributeYEClass.getESuperTypes().add(this.getModelLabelFeatureY());
+		modelLabelAssociationYEClass.getESuperTypes().add(this.getModelLabelFeatureY());
 		entityEClass.getESuperTypes().add(this.getEntityOrView());
 		entityEClass.getESuperTypes().add(this.getUnitSource());
 		entityAttributeEClass.getESuperTypes().add(this.getAttribute());
@@ -5511,12 +5574,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		associationWithoutContainmentEClass.getESuperTypes().add(this.getEntityAssociation());
 		associationWithContainmentEClass.getESuperTypes().add(this.getEntityAssociation());
 		viewEClass.getESuperTypes().add(this.getEntityOrView());
-		viewFeatureEClass.getESuperTypes().add(this.getFeature());
 		viewAttributeEClass.getESuperTypes().add(this.getViewFeature());
 		viewAssociationEClass.getESuperTypes().add(this.getViewFeature());
-		modelLabelYEClass.getESuperTypes().add(this.getNamedElement());
-		modelLabelAttributeYEClass.getESuperTypes().add(this.getModelLabelFeatureY());
-		modelLabelAssociationYEClass.getESuperTypes().add(this.getModelLabelFeatureY());
 		includedElementEClass.getESuperTypes().add(this.getIncludedFeature());
 		includedAssociationEClass.getESuperTypes().add(this.getIncludedFeature());
 		serviceEClass.getESuperTypes().add(this.getNamedElement());
@@ -5699,6 +5758,23 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(associationEClass, Association.class, "Association", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(modelLabelYEClass, ModelLabelY.class, "ModelLabelY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModelLabelY_LabelFor(), this.getEntityOrView(), this.getEntityOrView_DisplayLabels(), "labelFor", null, 1, 1, ModelLabelY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelLabelY_Format(), ecorePackage.getEString(), "format", null, 1, 1, ModelLabelY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelLabelY_Features(), this.getModelLabelFeatureY(), null, "features", null, 0, -1, ModelLabelY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(modelLabelFeatureYEClass, ModelLabelFeatureY.class, "ModelLabelFeatureY", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(modelLabelAttributeYEClass, ModelLabelAttributeY.class, "ModelLabelAttributeY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModelLabelAttributeY_Name(), ecorePackage.getEString(), "name", null, 1, 1, ModelLabelAttributeY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelLabelAttributeY_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, ModelLabelAttributeY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(modelLabelAssociationYEClass, ModelLabelAssociationY.class, "ModelLabelAssociationY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModelLabelAssociationY_Name(), ecorePackage.getEString(), "name", null, 1, 1, ModelLabelAssociationY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelLabelAssociationY_Association(), this.getEntityAssociation(), null, "association", null, 1, 1, ModelLabelAssociationY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelLabelAssociationY_DynamicLabel(), this.getModelLabelY(), null, "dynamicLabel", null, 0, 1, ModelLabelAssociationY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelLabelAssociationY_UseAssociationSource(), ecorePackage.getEBoolean(), "useAssociationSource", null, 0, 1, ModelLabelAssociationY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntity_Features(), this.getEntityFeature(), this.getEntityFeature_ParentEntity(), "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_AssociationEnds(), this.getEntityAssociation(), this.getEntityAssociation_TargetEntity(), "associationEnds", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5764,31 +5840,20 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getView_Encapsulates(), this.getEntityOrView(), null, "encapsulates", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getView_Features(), this.getViewFeature(), null, "features", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_Features(), this.getViewFeature(), this.getViewFeature_PartOf(), "features", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewFeatureEClass, ViewFeature.class, "ViewFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getViewFeature_Feature(), this.getFeature(), null, "feature", null, 1, 1, ViewFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getViewFeature_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, ViewFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getViewFeature_PartOf(), this.getView(), this.getView_Features(), "partOf", null, 1, 1, ViewFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewAttributeEClass, ViewAttribute.class, "ViewAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, ViewAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getViewAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, ViewAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewAssociationEClass, ViewAssociation.class, "ViewAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewAssociation_Name(), ecorePackage.getEString(), "name", null, 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getViewAssociation_Association(), this.getAssociation(), null, "association", null, 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(modelLabelYEClass, ModelLabelY.class, "ModelLabelY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelLabelY_LabelFor(), this.getEntityOrView(), this.getEntityOrView_DisplayLabels(), "labelFor", null, 1, 1, ModelLabelY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelLabelY_Format(), ecorePackage.getEString(), "format", null, 1, 1, ModelLabelY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelLabelY_Features(), this.getModelLabelFeatureY(), null, "features", null, 0, -1, ModelLabelY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(modelLabelFeatureYEClass, ModelLabelFeatureY.class, "ModelLabelFeatureY", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(modelLabelAttributeYEClass, ModelLabelAttributeY.class, "ModelLabelAttributeY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelLabelAttributeY_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, ModelLabelAttributeY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(modelLabelAssociationYEClass, ModelLabelAssociationY.class, "ModelLabelAssociationY", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelLabelAssociationY_Association(), this.getEntityAssociation(), null, "association", null, 1, 1, ModelLabelAssociationY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelLabelAssociationY_DynamicLabel(), this.getModelLabelY(), null, "dynamicLabel", null, 0, 1, ModelLabelAssociationY.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_UseAssociationSource(), ecorePackage.getEBoolean(), "useAssociationSource", null, 0, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(includedFeatureEClass, IncludedFeature.class, "IncludedFeature", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIncludedFeature_DisplayLabel(), ecorePackage.getEString(), "displayLabel", null, 0, 1, IncludedFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -6358,6 +6423,18 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "nameNeedsAtLeastOneCharacter", "not name.oclIsUndefined() implies name.size() > 0"
 		   });	
 		addAnnotation
+		  (getModelLabelAttributeY_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if attribute.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet attributeName : String = attribute.name\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tattributeName\r\n\t\telse if self.alias <> \'\' then\r\n\t\t\tself.alias\r\n\t\telse\r\n\t\t\tattributeName\r\n\t\tendif endif\r\nendif"
+		   });	
+		addAnnotation
+		  (getModelLabelAssociationY_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if association.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet associationName : String\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\n\t\t\tendif endif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tassociationName\r\n\t\telse if alias <> \'\' then\r\n\t\t\talias\r\n\t\telse\r\n\t\t\tassociationName\r\n\t\tendif endif\r\nendif"
+		   });	
+		addAnnotation
 		  (entityEClass, 
 		   source, 
 		   new String[] {
@@ -6369,6 +6446,18 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "oneToManyAssociationsMustBeBidirectional", "cardinality = Cardinality::Optional and targetCardinality = Cardinality::Required implies bidirectional"
+		   });	
+		addAnnotation
+		  (getViewAttribute_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if attribute.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet attributeName : String = attribute.name\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tattributeName\r\n\t\telse if self.alias <> \'\' then\r\n\t\t\tself.alias\r\n\t\telse\r\n\t\t\tattributeName\r\n\t\tendif endif\r\nendif"
+		   });	
+		addAnnotation
+		  (getViewAssociation_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if association.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet associationName : String\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\n\t\t\tendif endif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tassociationName\r\n\t\telse if alias <> \'\' then\r\n\t\t\talias\r\n\t\telse\r\n\t\t\tassociationName\r\n\t\tendif endif\r\nendif"
 		   });	
 		addAnnotation
 		  (includedElementEClass, 

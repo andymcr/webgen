@@ -134,6 +134,22 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createAssociationAdapter();
 			}
 			@Override
+			public Adapter caseModelLabelY(ModelLabelY object) {
+				return createModelLabelYAdapter();
+			}
+			@Override
+			public Adapter caseModelLabelFeatureY(ModelLabelFeatureY object) {
+				return createModelLabelFeatureYAdapter();
+			}
+			@Override
+			public Adapter caseModelLabelAttributeY(ModelLabelAttributeY object) {
+				return createModelLabelAttributeYAdapter();
+			}
+			@Override
+			public Adapter caseModelLabelAssociationY(ModelLabelAssociationY object) {
+				return createModelLabelAssociationYAdapter();
+			}
+			@Override
 			public Adapter caseEntity(Entity object) {
 				return createEntityAdapter();
 			}
@@ -196,22 +212,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseViewAssociation(ViewAssociation object) {
 				return createViewAssociationAdapter();
-			}
-			@Override
-			public Adapter caseModelLabelY(ModelLabelY object) {
-				return createModelLabelYAdapter();
-			}
-			@Override
-			public Adapter caseModelLabelFeatureY(ModelLabelFeatureY object) {
-				return createModelLabelFeatureYAdapter();
-			}
-			@Override
-			public Adapter caseModelLabelAttributeY(ModelLabelAttributeY object) {
-				return createModelLabelAttributeYAdapter();
-			}
-			@Override
-			public Adapter caseModelLabelAssociationY(ModelLabelAssociationY object) {
-				return createModelLabelAssociationYAdapter();
 			}
 			@Override
 			public Adapter caseIncludedFeature(IncludedFeature object) {

@@ -16,9 +16,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.Association;
-import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
@@ -173,21 +170,11 @@ public class ServiceEntityAssociationItemProvider
 							= (Service) ((ServiceEntityAssociation) object).eContainer();
 						final List<Association> associations = new LinkedList<Association>();
 						for (EntityOrView entityOrView : service.getEncapsulates()) {
-							for (EntityFeature feature : getFeatures(entityOrView)) {
-								if (feature instanceof Association) {
-									associations.add((Association) feature);
-								}
-							}
-							if (entityOrView instanceof Entity) {
-								for (EntityAssociation association : ((Entity) entityOrView).getAssociationEnds()) {
-									if (association.getBidirectional()) {
-										associations.add(association);
-									}
-								}
-							}
+							associations.addAll(getAssociations(entityOrView));
 						}
-						return associations;
+					return associations;
 					}
+
 					return Collections.emptyList();
 				}
 		});

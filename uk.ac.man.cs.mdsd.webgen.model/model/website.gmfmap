@@ -343,7 +343,50 @@
               href="website.gmfgraph#ModelLabel"/>
         </ownedChild>
       </children>
-      <compartments>
+      <children
+          compartment="//@nodes.5/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="website.ecore#//View/features"/>
+        <ownedChild>
+          <domainMetaElement
+              href="website.ecore#//ViewAttribute"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="website.gmfgraph#AttributeNameLabel"/>
+            <features
+                href="website.ecore#//ViewAttribute/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="website.gmftool#//@palette/@tools.6/@tools.12"/>
+          <diagramNode
+              href="website.gmfgraph#Attribute"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.5/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="website.ecore#//View/features"/>
+        <ownedChild>
+          <domainMetaElement
+              href="website.ecore#//ViewAssociation"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="website.gmfgraph#AttributeNameLabel"/>
+            <features
+                href="website.ecore#//ViewAssociation/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="website.gmftool#//@palette/@tools.6/@tools.13"/>
+          <diagramNode
+              href="website.gmfgraph#Attribute"/>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.5/@ownedChild/@children.2 //@nodes.5/@ownedChild/@children.1">
         <compartment
             href="website.gmfgraph#AttributeCompartment"/>
       </compartments>

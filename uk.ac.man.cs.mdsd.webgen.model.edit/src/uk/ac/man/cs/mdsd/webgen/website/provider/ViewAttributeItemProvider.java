@@ -4,6 +4,8 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -11,7 +13,12 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import uk.ac.man.cs.mdsd.webgen.website.Attribute;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -52,22 +59,32 @@ public class ViewAttributeItemProvider extends ViewFeatureItemProvider {
 	 * This adds a property descriptor for the Attribute feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addAttributePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ViewAttribute_attribute_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ViewAttribute_attribute_feature", "_UI_ViewAttribute_type"),
-				 WebsitePackage.Literals.VIEW_ATTRIBUTE__ATTRIBUTE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_ViewAttribute_attribute_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ViewAttribute_attribute_feature", "_UI_ViewAttribute_type"),
+			WebsitePackage.Literals.VIEW_ATTRIBUTE__ATTRIBUTE,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof ViewAttribute) {
+						final View view = ((ViewAttribute) object).getPartOf();
+						final List<Attribute> attributes = new LinkedList<Attribute>();
+						for (EntityOrView entityOrView : view.getEncapsulates()) {
+							attributes.addAll(getAttributes(entityOrView));
+						}
+						return attributes;
+					}
+
+					return Collections.emptyList();
+				}
+		});
 	}
 
 	/**
@@ -106,6 +123,12 @@ public class ViewAttributeItemProvider extends ViewFeatureItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ViewAttribute.class)) {
+			case WebsitePackage.VIEW_ATTRIBUTE__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

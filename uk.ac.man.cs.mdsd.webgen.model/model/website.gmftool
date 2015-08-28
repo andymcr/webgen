@@ -72,7 +72,7 @@
           description="Add a date field to an interface unit that is not associated with a persistent property"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="View association"
+          title="View association X"
           description="Add an view association to a service or an interface unit">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
@@ -426,6 +426,24 @@
           xsi:type="gmftool:CreationTool"
           title="Contained Association"
           description="Create an association with containment between two entities">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="View Attribute"
+          description="Create an attribute on a view">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="View Association"
+          description="Create an association on a view">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

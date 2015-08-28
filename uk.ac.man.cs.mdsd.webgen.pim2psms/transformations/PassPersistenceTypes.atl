@@ -30,7 +30,7 @@ rule Website {
 	from website : Website!WebGenModel
 	to orm : ORM!OrmModel (
 		dataTypes <- website.classifiers->select(c | c.oclIsKindOf(Website!DataType)),
-		entities <- website.classifiers->select(c | c.oclIsKindOf(Website!Entity)),
+		entitiesAndViews <- website.classifiers->select(c | c.oclIsKindOf(Website!EntityOrView)),
 		collectionTypes <- website.classifiers
 			->select(c | c.oclIsTypeOf(Website!Entity))
 			->collect(e | e.features)->flatten()
@@ -115,21 +115,6 @@ rule EnumerationLiteral {
 	)
 }
 
--- @extends NamedDisplayElement
-rule Entity {
-	from website : Website!Entity
-	to orm : ORM!Entity (
-		tableName <- 
-			if not website.tableName.oclIsUndefined() and website.tableName <> '' then
-				website.tableName
-			else
-				website.name.createTableName()
-			endif,
-		keys <- website.keys,
-		autoKeyName <- 'id'
-	)
-}
-
 lazy rule CollectionType {
 	from website: Website!Feature
 	to orm : ORM!CollectionType (
@@ -155,3 +140,34 @@ lazy rule InverseCollectionType {
 		orm;
 	}
 }
+
+-- @extends NamedDisplayElement
+abstract rule EntityOrView {
+	from website : Website!EntityOrView
+	to orm : ORM!EntityOrView (
+	)
+}
+
+-- @extends EntityOrView
+rule Entity {
+	from website : Website!Entity
+	to orm : ORM!Entity (
+		tableName <- 
+			if not website.tableName.oclIsUndefined() and website.tableName <> '' then
+				website.tableName
+			else
+				website.name.createTableName()
+			endif,
+		keys <- website.keys,
+		autoKeyName <- 'id'
+	)
+}
+
+-- @extends EntityOrView
+rule View {
+	from website : Website!View
+	to orm : ORM!View (
+		encapsulates <- website.encapsulates
+	)
+}
+

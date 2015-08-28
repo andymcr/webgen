@@ -5,7 +5,6 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -15,9 +14,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
-import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttributeY;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelY;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -50,16 +47,39 @@ public class ModelLabelAttributeYItemProvider extends ModelLabelFeatureYItemProv
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addAttributePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Attribute feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelLabelAttributeY_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAttributeY_name_feature", "_UI_ModelLabelAttributeY_type"),
+				 WebsitePackage.Literals.MODEL_LABEL_ATTRIBUTE_Y__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Attribute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	protected void addAttributePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
@@ -74,16 +94,10 @@ public class ModelLabelAttributeYItemProvider extends ModelLabelFeatureYItemProv
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof ModelLabelAttributeY) {
-					final List<Attribute> features = new LinkedList<Attribute>();
 					final ModelLabelY label = (ModelLabelY) ((EObject) object).eContainer();
-					for (EntityFeature feature : getFeatures(label.getLabelFor())) {
-						if (feature instanceof EntityAttribute) {
-							features.add((Attribute) feature);
-						}
-					}
-					
-					return features;
+					return getAttributes(label.getLabelFor());
 				}
+
 				return Collections.emptyList();
 			}
 		});
@@ -108,7 +122,10 @@ public class ModelLabelAttributeYItemProvider extends ModelLabelFeatureYItemProv
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ModelLabelAttributeY_type");
+		String label = ((ModelLabelAttributeY)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ModelLabelAttributeY_type") :
+			getString("_UI_ModelLabelAttributeY_type") + " " + label;
 	}
 	
 
@@ -122,6 +139,12 @@ public class ModelLabelAttributeYItemProvider extends ModelLabelFeatureYItemProv
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ModelLabelAttributeY.class)) {
+			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

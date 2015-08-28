@@ -11,7 +11,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -93,9 +93,24 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	 */
 	public List<ViewFeature> getFeatures() {
 		if (features == null) {
-			features = new EObjectContainmentEList<ViewFeature>(ViewFeature.class, this, WebsitePackage.VIEW__FEATURES);
+			features = new EObjectContainmentWithInverseEList<ViewFeature>(ViewFeature.class, this, WebsitePackage.VIEW__FEATURES, WebsitePackage.VIEW_FEATURE__PART_OF);
 		}
 		return features;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.VIEW__FEATURES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFeatures()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

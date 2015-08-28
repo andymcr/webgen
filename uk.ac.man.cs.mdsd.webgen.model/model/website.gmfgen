@@ -526,6 +526,110 @@
       </labels>
     </childNodes>
     <childNodes
+        visualID="3239"
+        editPartClassName="ViewAttributeEditPart"
+        itemSemanticEditPolicyClassName="ViewAttributeItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ViewAttributeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ViewAttributeGraphicalNodeEditPolicy"
+        createCommandClassName="ViewAttributeCreateCommand"
+        containers="//@diagram/@compartments.5">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ViewAttributeEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="AttributeFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AttributeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAttributeNameLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AttributeFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureAttributeNameLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureAttributeNameLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureAttributeNameLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAttributeNameLabelFigure() {&#xA;&#x9;&#x9;return fFigureAttributeNameLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 230, 230, 250);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="80"
+            height="20"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="website.genmodel#//website/ViewAttribute"/>
+        <containmentMetaFeature
+            href="website.genmodel#//website/View/features"/>
+        <childMetaFeature
+            href="website.genmodel#//website/View/features"/>
+      </modelFacet>
+      <labels
+          visualID="5247"
+          editPartClassName="ViewAttributeNameEditPart"
+          itemSemanticEditPolicyClassName="ViewAttributeNameItemSemanticEditPolicy"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureAttributeNameLabelFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="website.genmodel#//website/ViewAttribute/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
+        visualID="3240"
+        editPartClassName="ViewAssociationEditPart"
+        itemSemanticEditPolicyClassName="ViewAssociationItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ViewAssociationCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ViewAssociationGraphicalNodeEditPolicy"
+        createCommandClassName="ViewAssociationCreateCommand"
+        containers="//@diagram/@compartments.5">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ViewAssociationEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="AttributeFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AttributeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAttributeNameLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AttributeFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureAttributeNameLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureAttributeNameLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureAttributeNameLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAttributeNameLabelFigure() {&#xA;&#x9;&#x9;return fFigureAttributeNameLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 230, 230, 250);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="80"
+            height="20"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="website.genmodel#//website/ViewAssociation"/>
+        <containmentMetaFeature
+            href="website.genmodel#//website/View/features"/>
+        <childMetaFeature
+            href="website.genmodel#//website/View/features"/>
+      </modelFacet>
+      <labels
+          visualID="5248"
+          editPartClassName="ViewAssociationNameEditPart"
+          itemSemanticEditPolicyClassName="ViewAssociationNameItemSemanticEditPolicy"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureAttributeNameLabelFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="website.genmodel#//website/ViewAssociation/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
         visualID="3213"
         editPartClassName="ActionUnitEditPart"
         itemSemanticEditPolicyClassName="ActionUnitItemSemanticEditPolicy"
@@ -1035,7 +1139,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1091,7 +1195,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1146,7 +1250,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.13/@elementType"/>
+          metamodelType="//@diagram/@childNodes.15/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1201,7 +1305,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.14/@elementType"/>
+          metamodelType="//@diagram/@childNodes.16/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1312,7 +1416,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1368,7 +1472,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1423,7 +1527,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.13/@elementType"/>
+          metamodelType="//@diagram/@childNodes.15/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1478,7 +1582,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.14/@elementType"/>
+          metamodelType="//@diagram/@childNodes.16/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1626,7 +1730,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1737,7 +1841,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1793,7 +1897,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.29/@elementType"/>
+          metamodelType="//@diagram/@childNodes.31/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1848,7 +1952,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1905,7 +2009,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -1961,7 +2065,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.29/@elementType"/>
+          metamodelType="//@diagram/@childNodes.31/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2016,7 +2120,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2128,7 +2232,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2185,7 +2289,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.38/@elementType"/>
+          metamodelType="//@diagram/@childNodes.40/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2240,7 +2344,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2297,7 +2401,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2353,7 +2457,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.29/@elementType"/>
+          metamodelType="//@diagram/@childNodes.31/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2408,7 +2512,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2465,7 +2569,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2521,7 +2625,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.29/@elementType"/>
+          metamodelType="//@diagram/@childNodes.31/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2576,7 +2680,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2632,7 +2736,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2688,7 +2792,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.38/@elementType"/>
+          metamodelType="//@diagram/@childNodes.40/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2743,7 +2847,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2799,7 +2903,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2855,7 +2959,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.38/@elementType"/>
+          metamodelType="//@diagram/@childNodes.40/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2910,7 +3014,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -2967,7 +3071,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3023,7 +3127,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.29/@elementType"/>
+          metamodelType="//@diagram/@childNodes.31/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3078,7 +3182,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3134,7 +3238,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3190,7 +3294,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.38/@elementType"/>
+          metamodelType="//@diagram/@childNodes.40/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3245,7 +3349,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3301,7 +3405,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3356,7 +3460,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.31/@elementType"/>
+          metamodelType="//@diagram/@childNodes.33/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionFigure"
@@ -3464,7 +3568,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.31/@elementType"/>
+          metamodelType="//@diagram/@childNodes.33/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionFigure"
@@ -3518,7 +3622,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.13/@elementType"/>
+          metamodelType="//@diagram/@childNodes.15/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3573,7 +3677,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.14/@elementType"/>
+          metamodelType="//@diagram/@childNodes.16/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3628,7 +3732,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.15/@elementType"/>
+          metamodelType="//@diagram/@childNodes.17/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionFigure"
@@ -3683,7 +3787,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.38/@elementType"/>
+          metamodelType="//@diagram/@childNodes.40/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3739,7 +3843,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3795,7 +3899,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.31/@elementType"/>
+          metamodelType="//@diagram/@childNodes.33/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionFigure"
@@ -3850,7 +3954,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3906,7 +4010,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.29/@elementType"/>
+          metamodelType="//@diagram/@childNodes.31/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -3961,7 +4065,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -4016,7 +4120,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -4071,7 +4175,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.38/@elementType"/>
+          metamodelType="//@diagram/@childNodes.40/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -4126,7 +4230,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -4181,7 +4285,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -4235,7 +4339,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.31/@elementType"/>
+          metamodelType="//@diagram/@childNodes.33/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionFigure"
@@ -4289,7 +4393,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.13/@elementType"/>
+          metamodelType="//@diagram/@childNodes.15/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -4344,7 +4448,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.14/@elementType"/>
+          metamodelType="//@diagram/@childNodes.16/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -4399,7 +4503,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.31/@elementType"/>
+          metamodelType="//@diagram/@childNodes.33/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionFigure"
@@ -4453,7 +4557,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.62/@elementType"/>
+          metamodelType="//@diagram/@childNodes.64/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionFigure"
@@ -4672,7 +4776,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -4728,7 +4832,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -4783,7 +4887,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.13/@elementType"/>
+          metamodelType="//@diagram/@childNodes.15/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -4838,7 +4942,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.14/@elementType"/>
+          metamodelType="//@diagram/@childNodes.16/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -5004,7 +5108,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -5061,7 +5165,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -5117,7 +5221,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.38/@elementType"/>
+          metamodelType="//@diagram/@childNodes.40/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -5172,7 +5276,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.11/@elementType"/>
+          metamodelType="//@diagram/@childNodes.13/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -5228,7 +5332,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.12/@elementType"/>
+          metamodelType="//@diagram/@childNodes.14/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -5283,7 +5387,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.31/@elementType"/>
+          metamodelType="//@diagram/@childNodes.33/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionFigure"
@@ -5337,7 +5441,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.62/@elementType"/>
+          metamodelType="//@diagram/@childNodes.64/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionFigure"
@@ -5391,7 +5495,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.13/@elementType"/>
+          metamodelType="//@diagram/@childNodes.15/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -5446,7 +5550,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@childNodes.14/@elementType"/>
+          metamodelType="//@diagram/@childNodes.16/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -6668,6 +6772,7 @@
         editPartClassName="ViewAttributeCompartmentEditPart"
         itemSemanticEditPolicyClassName="ViewAttributeCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ViewAttributeCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.10 //@diagram/@childNodes.11"
         title="AttributeCompartment"
         canCollapse="false"
         needsTitle="false"
@@ -6706,7 +6811,7 @@
         itemSemanticEditPolicyClassName="PageInterfaceUnitCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="PageInterfaceUnitCompartmentViewFactory"
         canonicalEditPolicyClassName="PageInterfaceUnitCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.10 //@diagram/@childNodes.16 //@diagram/@childNodes.18 //@diagram/@childNodes.23 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.67 //@diagram/@childNodes.83 //@diagram/@childNodes.84 //@diagram/@childNodes.89 //@diagram/@childNodes.90"
+        childNodes="//@diagram/@childNodes.12 //@diagram/@childNodes.18 //@diagram/@childNodes.20 //@diagram/@childNodes.25 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.69 //@diagram/@childNodes.85 //@diagram/@childNodes.86 //@diagram/@childNodes.91 //@diagram/@childNodes.92"
         title="InterfaceUnitsCompartment"
         canCollapse="false"
         hideIfEmpty="false"
@@ -6725,12 +6830,12 @@
         itemSemanticEditPolicyClassName="ActionUnitUnitFieldCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ActionUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="ActionUnitUnitFieldCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13 //@diagram/@childNodes.14"
+        childNodes="//@diagram/@childNodes.13 //@diagram/@childNodes.14 //@diagram/@childNodes.15 //@diagram/@childNodes.16"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.10">
+        node="//@diagram/@childNodes.12">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6743,12 +6848,12 @@
         itemSemanticEditPolicyClassName="ActionUnitActionCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ActionUnitActionCompartmentViewFactory"
         canonicalEditPolicyClassName="ActionUnitActionCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.15"
+        childNodes="//@diagram/@childNodes.17"
         title="ActionCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.10">
+        node="//@diagram/@childNodes.12">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6766,11 +6871,11 @@
         itemSemanticEditPolicyClassName="CommandUnitCommandsCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="CommandUnitCommandsCompartmentViewFactory"
         canonicalEditPolicyClassName="CommandUnitCommandsCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.17"
+        childNodes="//@diagram/@childNodes.19"
         title="CommandsCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.16">
+        node="//@diagram/@childNodes.18">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6783,12 +6888,12 @@
         itemSemanticEditPolicyClassName="CreateUnitUnitFieldCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="CreateUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="CreateUnitUnitFieldCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.19 //@diagram/@childNodes.20 //@diagram/@childNodes.21 //@diagram/@childNodes.22"
+        childNodes="//@diagram/@childNodes.21 //@diagram/@childNodes.22 //@diagram/@childNodes.23 //@diagram/@childNodes.24"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.18">
+        node="//@diagram/@childNodes.20">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6801,12 +6906,12 @@
         itemSemanticEditPolicyClassName="CreateUpdateUnitUnitFieldCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="CreateUpdateUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="CreateUpdateUnitUnitFieldCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.24 //@diagram/@childNodes.25 //@diagram/@childNodes.26 //@diagram/@childNodes.27"
+        childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.23">
+        node="//@diagram/@childNodes.25">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6819,12 +6924,12 @@
         itemSemanticEditPolicyClassName="DetailsUnitUnitFieldCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="DetailsUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="DetailsUnitUnitFieldCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.30 //@diagram/@childNodes.32 //@diagram/@childNodes.64 //@diagram/@childNodes.65"
+        childNodes="//@diagram/@childNodes.32 //@diagram/@childNodes.34 //@diagram/@childNodes.66 //@diagram/@childNodes.67"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.29">
+        node="//@diagram/@childNodes.31">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6837,12 +6942,12 @@
         itemSemanticEditPolicyClassName="DetailsUnitActionCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="DetailsUnitActionCompartmentViewFactory"
         canonicalEditPolicyClassName="DetailsUnitActionCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.66"
+        childNodes="//@diagram/@childNodes.68"
         title="ActionCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.29">
+        node="//@diagram/@childNodes.31">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6860,12 +6965,12 @@
         itemSemanticEditPolicyClassName="UnitElementActionCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="UnitElementActionCompartmentViewFactory"
         canonicalEditPolicyClassName="UnitElementActionCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.31"
+        childNodes="//@diagram/@childNodes.33"
         title="ActionCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.30">
+        node="//@diagram/@childNodes.32">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6883,12 +6988,12 @@
         itemSemanticEditPolicyClassName="UnitAssociationInterfaceUnitCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="UnitAssociationInterfaceUnitCompartmentViewFactory"
         canonicalEditPolicyClassName="UnitAssociationInterfaceUnitCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.33 //@diagram/@childNodes.40"
+        childNodes="//@diagram/@childNodes.35 //@diagram/@childNodes.42"
         title="InterfaceUnitsCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.32">
+        node="//@diagram/@childNodes.34">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6902,12 +7007,12 @@
         itemSemanticEditPolicyClassName="UnitAssociationActionCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="UnitAssociationActionCompartmentViewFactory"
         canonicalEditPolicyClassName="UnitAssociationActionCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.63"
+        childNodes="//@diagram/@childNodes.65"
         title="ActionCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.32">
+        node="//@diagram/@childNodes.34">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6925,12 +7030,12 @@
         itemSemanticEditPolicyClassName="DetailsUnitUnitFieldCompartment2ItemSemanticEditPolicy"
         notationViewFactoryClassName="DetailsUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="DetailsUnitUnitFieldCompartment2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.34 //@diagram/@childNodes.35"
+        childNodes="//@diagram/@childNodes.36 //@diagram/@childNodes.37"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.33">
+        node="//@diagram/@childNodes.35">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6943,12 +7048,12 @@
         itemSemanticEditPolicyClassName="UnitAssociationInterfaceUnitCompartment2ItemSemanticEditPolicy"
         notationViewFactoryClassName="UnitAssociationInterfaceUnitCompartmentViewFactory"
         canonicalEditPolicyClassName="UnitAssociationInterfaceUnitCompartment2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.36 //@diagram/@childNodes.38"
+        childNodes="//@diagram/@childNodes.38 //@diagram/@childNodes.40"
         title="InterfaceUnitsCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.35">
+        node="//@diagram/@childNodes.37">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -6962,24 +7067,6 @@
         itemSemanticEditPolicyClassName="DetailsUnitUnitFieldCompartment3ItemSemanticEditPolicy"
         notationViewFactoryClassName="DetailsUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="DetailsUnitUnitFieldCompartment3CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.37"
-        title="UnitFieldCompartment"
-        canCollapse="false"
-        hideIfEmpty="false"
-        needsTitle="false"
-        node="//@diagram/@childNodes.36">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
-    </compartments>
-    <compartments
-        visualID="7045"
-        editPartClassName="IndexUnitUnitFieldCompartmentEditPart"
-        itemSemanticEditPolicyClassName="IndexUnitUnitFieldCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="IndexUnitUnitFieldCompartmentViewFactory"
-        canonicalEditPolicyClassName="IndexUnitUnitFieldCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.39"
         title="UnitFieldCompartment"
         canCollapse="false"
@@ -6993,12 +7080,12 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7054"
-        editPartClassName="IndexUnitUnitFieldCompartment2EditPart"
-        itemSemanticEditPolicyClassName="IndexUnitUnitFieldCompartment2ItemSemanticEditPolicy"
+        visualID="7045"
+        editPartClassName="IndexUnitUnitFieldCompartmentEditPart"
+        itemSemanticEditPolicyClassName="IndexUnitUnitFieldCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="IndexUnitUnitFieldCompartmentViewFactory"
-        canonicalEditPolicyClassName="IndexUnitUnitFieldCompartment2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.41 //@diagram/@childNodes.42"
+        canonicalEditPolicyClassName="IndexUnitUnitFieldCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.41"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
@@ -7011,17 +7098,35 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
+        visualID="7054"
+        editPartClassName="IndexUnitUnitFieldCompartment2EditPart"
+        itemSemanticEditPolicyClassName="IndexUnitUnitFieldCompartment2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="IndexUnitUnitFieldCompartmentViewFactory"
+        canonicalEditPolicyClassName="IndexUnitUnitFieldCompartment2CanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.43 //@diagram/@childNodes.44"
+        title="UnitFieldCompartment"
+        canCollapse="false"
+        hideIfEmpty="false"
+        needsTitle="false"
+        node="//@diagram/@childNodes.42">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments
         visualID="7086"
         editPartClassName="IndexUnitActionCompartment3EditPart"
         itemSemanticEditPolicyClassName="IndexUnitActionCompartment3ItemSemanticEditPolicy"
         notationViewFactoryClassName="IndexUnitActionCompartmentViewFactory"
         canonicalEditPolicyClassName="IndexUnitActionCompartment3CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.61 //@diagram/@childNodes.62"
+        childNodes="//@diagram/@childNodes.63 //@diagram/@childNodes.64"
         title="ActionCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.40">
+        node="//@diagram/@childNodes.42">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7039,12 +7144,12 @@
         itemSemanticEditPolicyClassName="UnitAssociationInterfaceUnitCompartment3ItemSemanticEditPolicy"
         notationViewFactoryClassName="UnitAssociationInterfaceUnitCompartmentViewFactory"
         canonicalEditPolicyClassName="UnitAssociationInterfaceUnitCompartment3CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.43 //@diagram/@childNodes.52"
+        childNodes="//@diagram/@childNodes.45 //@diagram/@childNodes.54"
         title="InterfaceUnitsCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.42">
+        node="//@diagram/@childNodes.44">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7058,12 +7163,12 @@
         itemSemanticEditPolicyClassName="DetailsUnitUnitFieldCompartment4ItemSemanticEditPolicy"
         notationViewFactoryClassName="DetailsUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="DetailsUnitUnitFieldCompartment4CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.44 //@diagram/@childNodes.45"
+        childNodes="//@diagram/@childNodes.46 //@diagram/@childNodes.47"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.43">
+        node="//@diagram/@childNodes.45">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7076,12 +7181,12 @@
         itemSemanticEditPolicyClassName="UnitAssociationInterfaceUnitCompartment4ItemSemanticEditPolicy"
         notationViewFactoryClassName="UnitAssociationInterfaceUnitCompartmentViewFactory"
         canonicalEditPolicyClassName="UnitAssociationInterfaceUnitCompartment4CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.46 //@diagram/@childNodes.49"
+        childNodes="//@diagram/@childNodes.48 //@diagram/@childNodes.51"
         title="InterfaceUnitsCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.45">
+        node="//@diagram/@childNodes.47">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7095,12 +7200,12 @@
         itemSemanticEditPolicyClassName="DetailsUnitUnitFieldCompartment5ItemSemanticEditPolicy"
         notationViewFactoryClassName="DetailsUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="DetailsUnitUnitFieldCompartment5CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.47 //@diagram/@childNodes.48"
+        childNodes="//@diagram/@childNodes.49 //@diagram/@childNodes.50"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.46">
+        node="//@diagram/@childNodes.48">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7113,12 +7218,12 @@
         itemSemanticEditPolicyClassName="IndexUnitUnitFieldCompartment3ItemSemanticEditPolicy"
         notationViewFactoryClassName="IndexUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="IndexUnitUnitFieldCompartment3CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.50 //@diagram/@childNodes.51"
+        childNodes="//@diagram/@childNodes.52 //@diagram/@childNodes.53"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.49">
+        node="//@diagram/@childNodes.51">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7131,12 +7236,12 @@
         itemSemanticEditPolicyClassName="IndexUnitUnitFieldCompartment4ItemSemanticEditPolicy"
         notationViewFactoryClassName="IndexUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="IndexUnitUnitFieldCompartment4CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.53 //@diagram/@childNodes.54"
+        childNodes="//@diagram/@childNodes.55 //@diagram/@childNodes.56"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.52">
+        node="//@diagram/@childNodes.54">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7149,12 +7254,12 @@
         itemSemanticEditPolicyClassName="UnitAssociationInterfaceUnitCompartment5ItemSemanticEditPolicy"
         notationViewFactoryClassName="UnitAssociationInterfaceUnitCompartmentViewFactory"
         canonicalEditPolicyClassName="UnitAssociationInterfaceUnitCompartment5CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.55 //@diagram/@childNodes.58"
+        childNodes="//@diagram/@childNodes.57 //@diagram/@childNodes.60"
         title="InterfaceUnitsCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.54">
+        node="//@diagram/@childNodes.56">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7168,12 +7273,12 @@
         itemSemanticEditPolicyClassName="DetailsUnitUnitFieldCompartment6ItemSemanticEditPolicy"
         notationViewFactoryClassName="DetailsUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="DetailsUnitUnitFieldCompartment6CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.56 //@diagram/@childNodes.57"
+        childNodes="//@diagram/@childNodes.58 //@diagram/@childNodes.59"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.55">
+        node="//@diagram/@childNodes.57">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7186,12 +7291,12 @@
         itemSemanticEditPolicyClassName="IndexUnitUnitFieldCompartment5ItemSemanticEditPolicy"
         notationViewFactoryClassName="IndexUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="IndexUnitUnitFieldCompartment5CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.59 //@diagram/@childNodes.60"
+        childNodes="//@diagram/@childNodes.61 //@diagram/@childNodes.62"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.58">
+        node="//@diagram/@childNodes.60">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7204,12 +7309,12 @@
         itemSemanticEditPolicyClassName="IndexUnitUnitFieldCompartment6ItemSemanticEditPolicy"
         notationViewFactoryClassName="IndexUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="IndexUnitUnitFieldCompartment6CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.68 //@diagram/@childNodes.70 //@diagram/@childNodes.78 //@diagram/@childNodes.79"
+        childNodes="//@diagram/@childNodes.70 //@diagram/@childNodes.72 //@diagram/@childNodes.80 //@diagram/@childNodes.81"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.67">
+        node="//@diagram/@childNodes.69">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7222,12 +7327,12 @@
         itemSemanticEditPolicyClassName="IndexUnitActionCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="IndexUnitActionCompartmentViewFactory"
         canonicalEditPolicyClassName="IndexUnitActionCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.80 //@diagram/@childNodes.81 //@diagram/@childNodes.82"
+        childNodes="//@diagram/@childNodes.82 //@diagram/@childNodes.83 //@diagram/@childNodes.84"
         title="ActionCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.67">
+        node="//@diagram/@childNodes.69">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7245,12 +7350,12 @@
         itemSemanticEditPolicyClassName="UnitElementActionCompartment2ItemSemanticEditPolicy"
         notationViewFactoryClassName="UnitElementActionCompartmentViewFactory"
         canonicalEditPolicyClassName="UnitElementActionCompartment2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.69"
+        childNodes="//@diagram/@childNodes.71"
         title="ActionCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.68">
+        node="//@diagram/@childNodes.70">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7268,12 +7373,12 @@
         itemSemanticEditPolicyClassName="UnitAssociationActionCompartment2ItemSemanticEditPolicy"
         notationViewFactoryClassName="UnitAssociationActionCompartmentViewFactory"
         canonicalEditPolicyClassName="UnitAssociationActionCompartment2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.71 //@diagram/@childNodes.74"
+        childNodes="//@diagram/@childNodes.73 //@diagram/@childNodes.76"
         title="InterfaceUnitsCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.70">
+        node="//@diagram/@childNodes.72">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7291,11 +7396,11 @@
         itemSemanticEditPolicyClassName="UnitAssociationActionCompartment3ItemSemanticEditPolicy"
         notationViewFactoryClassName="UnitAssociationActionCompartmentViewFactory"
         canonicalEditPolicyClassName="UnitAssociationActionCompartment3CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.77"
+        childNodes="//@diagram/@childNodes.79"
         title="ActionCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.70">
+        node="//@diagram/@childNodes.72">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7313,11 +7418,11 @@
         itemSemanticEditPolicyClassName="DetailsUnitUnitFieldCompartment7ItemSemanticEditPolicy"
         notationViewFactoryClassName="DetailsUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="DetailsUnitUnitFieldCompartment7CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.72 //@diagram/@childNodes.73"
+        childNodes="//@diagram/@childNodes.74 //@diagram/@childNodes.75"
         title="UnitFieldCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.71">
+        node="//@diagram/@childNodes.73">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7330,12 +7435,12 @@
         itemSemanticEditPolicyClassName="IndexUnitUnitFieldCompartment7ItemSemanticEditPolicy"
         notationViewFactoryClassName="IndexUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="IndexUnitUnitFieldCompartment7CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.75 //@diagram/@childNodes.76"
+        childNodes="//@diagram/@childNodes.77 //@diagram/@childNodes.78"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.74">
+        node="//@diagram/@childNodes.76">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7348,12 +7453,12 @@
         itemSemanticEditPolicyClassName="SearchUnitUnitFieldCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="SearchUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="SearchUnitUnitFieldCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.85 //@diagram/@childNodes.86 //@diagram/@childNodes.87 //@diagram/@childNodes.88"
+        childNodes="//@diagram/@childNodes.87 //@diagram/@childNodes.88 //@diagram/@childNodes.89 //@diagram/@childNodes.90"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.84">
+        node="//@diagram/@childNodes.86">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7366,12 +7471,12 @@
         itemSemanticEditPolicyClassName="UpdateUnitUnitFieldCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="UpdateUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="UpdateUnitUnitFieldCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.91 //@diagram/@childNodes.92 //@diagram/@childNodes.98 //@diagram/@childNodes.99"
+        childNodes="//@diagram/@childNodes.93 //@diagram/@childNodes.94 //@diagram/@childNodes.100 //@diagram/@childNodes.101"
         title="UnitFieldCompartment"
         canCollapse="false"
         hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.90">
+        node="//@diagram/@childNodes.92">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7384,11 +7489,11 @@
         itemSemanticEditPolicyClassName="UnitAssociationInterfaceUnitsCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="UnitAssociationInterfaceUnitsCompartmentViewFactory"
         canonicalEditPolicyClassName="UnitAssociationInterfaceUnitsCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.93"
+        childNodes="//@diagram/@childNodes.95"
         title="InterfaceUnitsCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.92"
+        node="//@diagram/@childNodes.94"
         listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -7403,11 +7508,11 @@
         itemSemanticEditPolicyClassName="IndexUnitUnitFieldCompartment8ItemSemanticEditPolicy"
         notationViewFactoryClassName="IndexUnitUnitFieldCompartmentViewFactory"
         canonicalEditPolicyClassName="IndexUnitUnitFieldCompartment8CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.94 //@diagram/@childNodes.95"
+        childNodes="//@diagram/@childNodes.96 //@diagram/@childNodes.97"
         title="UnitFieldCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.93">
+        node="//@diagram/@childNodes.95">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7420,11 +7525,11 @@
         itemSemanticEditPolicyClassName="IndexUnitActionCompartment2ItemSemanticEditPolicy"
         notationViewFactoryClassName="IndexUnitActionCompartmentViewFactory"
         canonicalEditPolicyClassName="IndexUnitActionCompartment2CanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.96 //@diagram/@childNodes.97"
+        childNodes="//@diagram/@childNodes.98 //@diagram/@childNodes.99"
         title="ActionCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.93">
+        node="//@diagram/@childNodes.95">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -7442,7 +7547,7 @@
         itemSemanticEditPolicyClassName="StaticMenuIncludedFeaturesCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="StaticMenuIncludedFeaturesCompartmentViewFactory"
         canonicalEditPolicyClassName="StaticMenuIncludedFeaturesCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.100 //@diagram/@childNodes.101 //@diagram/@childNodes.102"
+        childNodes="//@diagram/@childNodes.102 //@diagram/@childNodes.103 //@diagram/@childNodes.104"
         title="MenuEntriesCompartment"
         canCollapse="false"
         hideIfEmpty="false"
@@ -7466,7 +7571,7 @@
         itemSemanticEditPolicyClassName="ServiceFeaturesCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ServiceIncludedFeaturesCompartmentViewFactory"
         canonicalEditPolicyClassName="ServiceFeaturesCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.103 //@diagram/@childNodes.104 //@diagram/@childNodes.105"
+        childNodes="//@diagram/@childNodes.105 //@diagram/@childNodes.106 //@diagram/@childNodes.107"
         title="ServiceFeaturesCompartment"
         canCollapse="false"
         hideIfEmpty="false"
@@ -7484,7 +7589,7 @@
         itemSemanticEditPolicyClassName="ServiceSelectionCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ServiceSelectionCompartmentViewFactory"
         canonicalEditPolicyClassName="ServiceSelectionCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.106"
+        childNodes="//@diagram/@childNodes.108"
         title="SelectionsCompartment"
         canCollapse="false"
         hideIfEmpty="false"
@@ -7520,32 +7625,32 @@
             xsi:type="gmfgen:ToolEntry"
             title="Element"
             description="Add an element to a service or an interface unit"
-            genNodes="//@diagram/@childNodes.11 //@diagram/@childNodes.19 //@diagram/@childNodes.24 //@diagram/@childNodes.30 //@diagram/@childNodes.34 //@diagram/@childNodes.37 //@diagram/@childNodes.39 //@diagram/@childNodes.41 //@diagram/@childNodes.44 //@diagram/@childNodes.47 //@diagram/@childNodes.50 //@diagram/@childNodes.53 //@diagram/@childNodes.56 //@diagram/@childNodes.59 //@diagram/@childNodes.68 //@diagram/@childNodes.72 //@diagram/@childNodes.75 //@diagram/@childNodes.85 //@diagram/@childNodes.91 //@diagram/@childNodes.94 //@diagram/@childNodes.103"/>
+            genNodes="//@diagram/@childNodes.13 //@diagram/@childNodes.21 //@diagram/@childNodes.26 //@diagram/@childNodes.32 //@diagram/@childNodes.36 //@diagram/@childNodes.39 //@diagram/@childNodes.41 //@diagram/@childNodes.43 //@diagram/@childNodes.46 //@diagram/@childNodes.49 //@diagram/@childNodes.52 //@diagram/@childNodes.55 //@diagram/@childNodes.58 //@diagram/@childNodes.61 //@diagram/@childNodes.70 //@diagram/@childNodes.74 //@diagram/@childNodes.77 //@diagram/@childNodes.87 //@diagram/@childNodes.93 //@diagram/@childNodes.96 //@diagram/@childNodes.105"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Association"
             description="Add an association to a service or an interface unit"
-            genNodes="//@diagram/@childNodes.12 //@diagram/@childNodes.20 //@diagram/@childNodes.25 //@diagram/@childNodes.32 //@diagram/@childNodes.35 //@diagram/@childNodes.42 //@diagram/@childNodes.45 //@diagram/@childNodes.48 //@diagram/@childNodes.51 //@diagram/@childNodes.54 //@diagram/@childNodes.57 //@diagram/@childNodes.60 //@diagram/@childNodes.70 //@diagram/@childNodes.73 //@diagram/@childNodes.76 //@diagram/@childNodes.86 //@diagram/@childNodes.92 //@diagram/@childNodes.95 //@diagram/@childNodes.104"/>
+            genNodes="//@diagram/@childNodes.14 //@diagram/@childNodes.22 //@diagram/@childNodes.27 //@diagram/@childNodes.34 //@diagram/@childNodes.37 //@diagram/@childNodes.44 //@diagram/@childNodes.47 //@diagram/@childNodes.50 //@diagram/@childNodes.53 //@diagram/@childNodes.56 //@diagram/@childNodes.59 //@diagram/@childNodes.62 //@diagram/@childNodes.72 //@diagram/@childNodes.75 //@diagram/@childNodes.78 //@diagram/@childNodes.88 //@diagram/@childNodes.94 //@diagram/@childNodes.97 //@diagram/@childNodes.106"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="User Command"
             description="Add a new user command to a unit"
-            genNodes="//@diagram/@childNodes.17"/>
+            genNodes="//@diagram/@childNodes.19"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Data type field"
             description="Add a data type field to an interface unit that is not associated with a persistent property"
-            genNodes="//@diagram/@childNodes.13 //@diagram/@childNodes.21 //@diagram/@childNodes.26 //@diagram/@childNodes.64 //@diagram/@childNodes.78 //@diagram/@childNodes.87"/>
+            genNodes="//@diagram/@childNodes.15 //@diagram/@childNodes.23 //@diagram/@childNodes.28 //@diagram/@childNodes.66 //@diagram/@childNodes.80 //@diagram/@childNodes.89"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Date field"
             description="Add a date field to an interface unit that is not associated with a persistent property"
-            genNodes="//@diagram/@childNodes.14 //@diagram/@childNodes.22 //@diagram/@childNodes.27 //@diagram/@childNodes.65 //@diagram/@childNodes.79 //@diagram/@childNodes.88 //@diagram/@childNodes.99"/>
+            genNodes="//@diagram/@childNodes.16 //@diagram/@childNodes.24 //@diagram/@childNodes.29 //@diagram/@childNodes.67 //@diagram/@childNodes.81 //@diagram/@childNodes.90 //@diagram/@childNodes.101"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="View association"
+            title="View association X"
             description="Add an view association to a service or an interface unit"
-            genNodes="//@diagram/@childNodes.105"/>
+            genNodes="//@diagram/@childNodes.107"/>
       </groups>
       <groups
           title="Menu"
@@ -7565,7 +7670,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Fixed Page Entry"
             description="Add a new fixed page entry to a menu"
-            genNodes="//@diagram/@childNodes.100"/>
+            genNodes="//@diagram/@childNodes.102"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Fixed Action Entry"
@@ -7574,12 +7679,12 @@
             xsi:type="gmfgen:ToolEntry"
             title="Fixed Command Entry"
             description="Add a fixed command entry to a menu"
-            genNodes="//@diagram/@childNodes.101"/>
+            genNodes="//@diagram/@childNodes.103"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Edit Static Text"
             description="Add an entry for editing static text to a menu"
-            genNodes="//@diagram/@childNodes.102"/>
+            genNodes="//@diagram/@childNodes.104"/>
       </groups>
       <groups
           title="Unit"
@@ -7589,57 +7694,57 @@
             xsi:type="gmfgen:ToolEntry"
             title="Static Unit"
             description="Add a new static unit to a page"
-            genNodes="//@diagram/@childNodes.89"/>
+            genNodes="//@diagram/@childNodes.91"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Index Unit"
             description="Add new index unit to a page"
-            genNodes="//@diagram/@childNodes.38 //@diagram/@childNodes.40 //@diagram/@childNodes.49 //@diagram/@childNodes.52 //@diagram/@childNodes.58 //@diagram/@childNodes.67 //@diagram/@childNodes.74 //@diagram/@childNodes.93"/>
+            genNodes="//@diagram/@childNodes.40 //@diagram/@childNodes.42 //@diagram/@childNodes.51 //@diagram/@childNodes.54 //@diagram/@childNodes.60 //@diagram/@childNodes.69 //@diagram/@childNodes.76 //@diagram/@childNodes.95"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Details Unit"
             description="Add new details unit to a page"
-            genNodes="//@diagram/@childNodes.29 //@diagram/@childNodes.33 //@diagram/@childNodes.36 //@diagram/@childNodes.43 //@diagram/@childNodes.46 //@diagram/@childNodes.55 //@diagram/@childNodes.71"/>
+            genNodes="//@diagram/@childNodes.31 //@diagram/@childNodes.35 //@diagram/@childNodes.38 //@diagram/@childNodes.45 //@diagram/@childNodes.48 //@diagram/@childNodes.57 //@diagram/@childNodes.73"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Create Unit"
             description="Add new create unit to a page"
-            genNodes="//@diagram/@childNodes.18"/>
+            genNodes="//@diagram/@childNodes.20"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Create/Update Unit"
             description="Add new combined create/update unit to a page"
-            genNodes="//@diagram/@childNodes.23"/>
+            genNodes="//@diagram/@childNodes.25"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Map Unit"
             description="Add a map unit to a page"
-            genNodes="//@diagram/@childNodes.83"/>
+            genNodes="//@diagram/@childNodes.85"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Update Unit"
             description="Add new update unit to a page"
-            genNodes="//@diagram/@childNodes.90"/>
+            genNodes="//@diagram/@childNodes.92"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Search Unit"
             description="Add new search unit to a page"
-            genNodes="//@diagram/@childNodes.84"/>
+            genNodes="//@diagram/@childNodes.86"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Create Sitemap Unit"
             description="Add create sitemap unit to a page"
-            genNodes="//@diagram/@childNodes.28"/>
+            genNodes="//@diagram/@childNodes.30"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Action Unit"
             description="Add new action unit to a page"
-            genNodes="//@diagram/@childNodes.10"/>
+            genNodes="//@diagram/@childNodes.12"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Command Unit"
             description="Add a new command unit to a page"
-            genNodes="//@diagram/@childNodes.16"/>
+            genNodes="//@diagram/@childNodes.18"/>
       </groups>
       <groups
           title="Action"
@@ -7649,17 +7754,17 @@
             xsi:type="gmfgen:ToolEntry"
             title="Select Action"
             description="Add a new select action to an interface unit"
-            genNodes="//@diagram/@childNodes.31 //@diagram/@childNodes.61 //@diagram/@childNodes.63 //@diagram/@childNodes.69 //@diagram/@childNodes.77 //@diagram/@childNodes.80 //@diagram/@childNodes.96"/>
+            genNodes="//@diagram/@childNodes.33 //@diagram/@childNodes.63 //@diagram/@childNodes.65 //@diagram/@childNodes.71 //@diagram/@childNodes.79 //@diagram/@childNodes.82 //@diagram/@childNodes.98"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Delete Action"
             description="Add a new delete action to an interface unit"
-            genNodes="//@diagram/@childNodes.62 //@diagram/@childNodes.81 //@diagram/@childNodes.97"/>
+            genNodes="//@diagram/@childNodes.64 //@diagram/@childNodes.83 //@diagram/@childNodes.99"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Support Action"
             description="Add a new support action to an included feature"
-            genNodes="//@diagram/@childNodes.15 //@diagram/@childNodes.66 //@diagram/@childNodes.82"/>
+            genNodes="//@diagram/@childNodes.17 //@diagram/@childNodes.68 //@diagram/@childNodes.84"/>
       </groups>
       <groups
           title="Business Logic"
@@ -7679,7 +7784,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Selection"
             description="Add selection to a service"
-            genNodes="//@diagram/@childNodes.106"/>
+            genNodes="//@diagram/@childNodes.108"/>
       </groups>
       <groups
           title="Authentication"
@@ -7703,7 +7808,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Data type"
             description="Create a data type"
-            genNodes="//@diagram/@topLevelNodes.1 //@diagram/@childNodes.98"/>
+            genNodes="//@diagram/@topLevelNodes.1 //@diagram/@childNodes.100"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Enumeration type"
@@ -7758,6 +7863,16 @@
             title="Contained Association"
             description="Create an association with containment between two entities"
             genLinks="//@diagram/@links.1"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="View Attribute"
+            description="Create an attribute on a view"
+            genNodes="//@diagram/@childNodes.10"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="View Association"
+            description="Create an association on a view"
+            genNodes="//@diagram/@childNodes.11"/>
       </groups>
     </palette>
     <preferencePages
@@ -7842,77 +7957,77 @@
         parent="//@diagram/@topLevelNodes.5"
         child="//@diagram/@childNodes.9"/>
     <childReferences
+        parent="//@diagram/@topLevelNodes.5"
+        child="//@diagram/@childNodes.10"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.5"
+        child="//@diagram/@childNodes.11"/>
+    <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.5"/>
     <childReferences
-        parent="//@diagram/@childNodes.10"
-        child="//@diagram/@childNodes.11"/>
-    <childReferences
-        parent="//@diagram/@childNodes.10"
-        child="//@diagram/@childNodes.12"/>
-    <childReferences
-        parent="//@diagram/@childNodes.10"
+        parent="//@diagram/@childNodes.12"
         child="//@diagram/@childNodes.13"/>
     <childReferences
-        parent="//@diagram/@childNodes.10"
+        parent="//@diagram/@childNodes.12"
         child="//@diagram/@childNodes.14"/>
     <childReferences
-        parent="//@diagram/@childNodes.10"
+        parent="//@diagram/@childNodes.12"
         child="//@diagram/@childNodes.15"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.6"
-        child="//@diagram/@childNodes.10"/>
+        parent="//@diagram/@childNodes.12"
+        child="//@diagram/@childNodes.16"/>
     <childReferences
-        parent="//@diagram/@childNodes.16"
+        parent="//@diagram/@childNodes.12"
         child="//@diagram/@childNodes.17"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.6"
-        child="//@diagram/@childNodes.16"/>
+        child="//@diagram/@childNodes.12"/>
     <childReferences
         parent="//@diagram/@childNodes.18"
         child="//@diagram/@childNodes.19"/>
     <childReferences
-        parent="//@diagram/@childNodes.18"
-        child="//@diagram/@childNodes.20"/>
-    <childReferences
-        parent="//@diagram/@childNodes.18"
-        child="//@diagram/@childNodes.21"/>
-    <childReferences
-        parent="//@diagram/@childNodes.18"
-        child="//@diagram/@childNodes.22"/>
-    <childReferences
         parent="//@diagram/@topLevelNodes.6"
         child="//@diagram/@childNodes.18"/>
     <childReferences
-        parent="//@diagram/@childNodes.23"
-        child="//@diagram/@childNodes.24"/>
+        parent="//@diagram/@childNodes.20"
+        child="//@diagram/@childNodes.21"/>
     <childReferences
-        parent="//@diagram/@childNodes.23"
-        child="//@diagram/@childNodes.25"/>
+        parent="//@diagram/@childNodes.20"
+        child="//@diagram/@childNodes.22"/>
     <childReferences
-        parent="//@diagram/@childNodes.23"
-        child="//@diagram/@childNodes.26"/>
-    <childReferences
-        parent="//@diagram/@childNodes.23"
-        child="//@diagram/@childNodes.27"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.6"
+        parent="//@diagram/@childNodes.20"
         child="//@diagram/@childNodes.23"/>
     <childReferences
+        parent="//@diagram/@childNodes.20"
+        child="//@diagram/@childNodes.24"/>
+    <childReferences
         parent="//@diagram/@topLevelNodes.6"
+        child="//@diagram/@childNodes.20"/>
+    <childReferences
+        parent="//@diagram/@childNodes.25"
+        child="//@diagram/@childNodes.26"/>
+    <childReferences
+        parent="//@diagram/@childNodes.25"
+        child="//@diagram/@childNodes.27"/>
+    <childReferences
+        parent="//@diagram/@childNodes.25"
         child="//@diagram/@childNodes.28"/>
     <childReferences
-        parent="//@diagram/@childNodes.30"
-        child="//@diagram/@childNodes.31"/>
+        parent="//@diagram/@childNodes.25"
+        child="//@diagram/@childNodes.29"/>
     <childReferences
-        parent="//@diagram/@childNodes.29"
+        parent="//@diagram/@topLevelNodes.6"
+        child="//@diagram/@childNodes.25"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.6"
         child="//@diagram/@childNodes.30"/>
     <childReferences
-        parent="//@diagram/@childNodes.33"
-        child="//@diagram/@childNodes.34"/>
+        parent="//@diagram/@childNodes.32"
+        child="//@diagram/@childNodes.33"/>
     <childReferences
-        parent="//@diagram/@childNodes.36"
-        child="//@diagram/@childNodes.37"/>
+        parent="//@diagram/@childNodes.31"
+        child="//@diagram/@childNodes.32"/>
     <childReferences
         parent="//@diagram/@childNodes.35"
         child="//@diagram/@childNodes.36"/>
@@ -7920,227 +8035,233 @@
         parent="//@diagram/@childNodes.38"
         child="//@diagram/@childNodes.39"/>
     <childReferences
-        parent="//@diagram/@childNodes.35"
+        parent="//@diagram/@childNodes.37"
         child="//@diagram/@childNodes.38"/>
-    <childReferences
-        parent="//@diagram/@childNodes.33"
-        child="//@diagram/@childNodes.35"/>
-    <childReferences
-        parent="//@diagram/@childNodes.32"
-        child="//@diagram/@childNodes.33"/>
     <childReferences
         parent="//@diagram/@childNodes.40"
         child="//@diagram/@childNodes.41"/>
     <childReferences
-        parent="//@diagram/@childNodes.43"
-        child="//@diagram/@childNodes.44"/>
+        parent="//@diagram/@childNodes.37"
+        child="//@diagram/@childNodes.40"/>
     <childReferences
-        parent="//@diagram/@childNodes.46"
-        child="//@diagram/@childNodes.47"/>
+        parent="//@diagram/@childNodes.35"
+        child="//@diagram/@childNodes.37"/>
     <childReferences
-        parent="//@diagram/@childNodes.46"
-        child="//@diagram/@childNodes.48"/>
-    <childReferences
-        parent="//@diagram/@childNodes.45"
-        child="//@diagram/@childNodes.46"/>
-    <childReferences
-        parent="//@diagram/@childNodes.49"
-        child="//@diagram/@childNodes.50"/>
-    <childReferences
-        parent="//@diagram/@childNodes.49"
-        child="//@diagram/@childNodes.51"/>
-    <childReferences
-        parent="//@diagram/@childNodes.45"
-        child="//@diagram/@childNodes.49"/>
-    <childReferences
-        parent="//@diagram/@childNodes.43"
-        child="//@diagram/@childNodes.45"/>
+        parent="//@diagram/@childNodes.34"
+        child="//@diagram/@childNodes.35"/>
     <childReferences
         parent="//@diagram/@childNodes.42"
         child="//@diagram/@childNodes.43"/>
     <childReferences
-        parent="//@diagram/@childNodes.52"
+        parent="//@diagram/@childNodes.45"
+        child="//@diagram/@childNodes.46"/>
+    <childReferences
+        parent="//@diagram/@childNodes.48"
+        child="//@diagram/@childNodes.49"/>
+    <childReferences
+        parent="//@diagram/@childNodes.48"
+        child="//@diagram/@childNodes.50"/>
+    <childReferences
+        parent="//@diagram/@childNodes.47"
+        child="//@diagram/@childNodes.48"/>
+    <childReferences
+        parent="//@diagram/@childNodes.51"
+        child="//@diagram/@childNodes.52"/>
+    <childReferences
+        parent="//@diagram/@childNodes.51"
         child="//@diagram/@childNodes.53"/>
     <childReferences
-        parent="//@diagram/@childNodes.55"
-        child="//@diagram/@childNodes.56"/>
+        parent="//@diagram/@childNodes.47"
+        child="//@diagram/@childNodes.51"/>
     <childReferences
-        parent="//@diagram/@childNodes.55"
-        child="//@diagram/@childNodes.57"/>
+        parent="//@diagram/@childNodes.45"
+        child="//@diagram/@childNodes.47"/>
+    <childReferences
+        parent="//@diagram/@childNodes.44"
+        child="//@diagram/@childNodes.45"/>
     <childReferences
         parent="//@diagram/@childNodes.54"
         child="//@diagram/@childNodes.55"/>
     <childReferences
-        parent="//@diagram/@childNodes.58"
+        parent="//@diagram/@childNodes.57"
+        child="//@diagram/@childNodes.58"/>
+    <childReferences
+        parent="//@diagram/@childNodes.57"
         child="//@diagram/@childNodes.59"/>
     <childReferences
-        parent="//@diagram/@childNodes.58"
+        parent="//@diagram/@childNodes.56"
+        child="//@diagram/@childNodes.57"/>
+    <childReferences
+        parent="//@diagram/@childNodes.60"
+        child="//@diagram/@childNodes.61"/>
+    <childReferences
+        parent="//@diagram/@childNodes.60"
+        child="//@diagram/@childNodes.62"/>
+    <childReferences
+        parent="//@diagram/@childNodes.56"
         child="//@diagram/@childNodes.60"/>
     <childReferences
         parent="//@diagram/@childNodes.54"
-        child="//@diagram/@childNodes.58"/>
+        child="//@diagram/@childNodes.56"/>
     <childReferences
-        parent="//@diagram/@childNodes.52"
+        parent="//@diagram/@childNodes.44"
         child="//@diagram/@childNodes.54"/>
     <childReferences
         parent="//@diagram/@childNodes.42"
-        child="//@diagram/@childNodes.52"/>
+        child="//@diagram/@childNodes.44"/>
     <childReferences
-        parent="//@diagram/@childNodes.40"
-        child="//@diagram/@childNodes.42"/>
-    <childReferences
-        parent="//@diagram/@childNodes.40"
-        child="//@diagram/@childNodes.61"/>
-    <childReferences
-        parent="//@diagram/@childNodes.40"
-        child="//@diagram/@childNodes.62"/>
-    <childReferences
-        parent="//@diagram/@childNodes.32"
-        child="//@diagram/@childNodes.40"/>
-    <childReferences
-        parent="//@diagram/@childNodes.32"
+        parent="//@diagram/@childNodes.42"
         child="//@diagram/@childNodes.63"/>
     <childReferences
-        parent="//@diagram/@childNodes.29"
-        child="//@diagram/@childNodes.32"/>
-    <childReferences
-        parent="//@diagram/@childNodes.29"
+        parent="//@diagram/@childNodes.42"
         child="//@diagram/@childNodes.64"/>
     <childReferences
-        parent="//@diagram/@childNodes.29"
+        parent="//@diagram/@childNodes.34"
+        child="//@diagram/@childNodes.42"/>
+    <childReferences
+        parent="//@diagram/@childNodes.34"
         child="//@diagram/@childNodes.65"/>
     <childReferences
-        parent="//@diagram/@childNodes.29"
+        parent="//@diagram/@childNodes.31"
+        child="//@diagram/@childNodes.34"/>
+    <childReferences
+        parent="//@diagram/@childNodes.31"
         child="//@diagram/@childNodes.66"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.6"
-        child="//@diagram/@childNodes.29"/>
+        parent="//@diagram/@childNodes.31"
+        child="//@diagram/@childNodes.67"/>
     <childReferences
-        parent="//@diagram/@childNodes.68"
-        child="//@diagram/@childNodes.69"/>
-    <childReferences
-        parent="//@diagram/@childNodes.67"
+        parent="//@diagram/@childNodes.31"
         child="//@diagram/@childNodes.68"/>
     <childReferences
-        parent="//@diagram/@childNodes.71"
-        child="//@diagram/@childNodes.72"/>
-    <childReferences
-        parent="//@diagram/@childNodes.71"
-        child="//@diagram/@childNodes.73"/>
+        parent="//@diagram/@topLevelNodes.6"
+        child="//@diagram/@childNodes.31"/>
     <childReferences
         parent="//@diagram/@childNodes.70"
         child="//@diagram/@childNodes.71"/>
     <childReferences
-        parent="//@diagram/@childNodes.74"
-        child="//@diagram/@childNodes.75"/>
-    <childReferences
-        parent="//@diagram/@childNodes.74"
-        child="//@diagram/@childNodes.76"/>
-    <childReferences
-        parent="//@diagram/@childNodes.70"
-        child="//@diagram/@childNodes.74"/>
-    <childReferences
-        parent="//@diagram/@childNodes.70"
-        child="//@diagram/@childNodes.77"/>
-    <childReferences
-        parent="//@diagram/@childNodes.67"
+        parent="//@diagram/@childNodes.69"
         child="//@diagram/@childNodes.70"/>
     <childReferences
-        parent="//@diagram/@childNodes.67"
+        parent="//@diagram/@childNodes.73"
+        child="//@diagram/@childNodes.74"/>
+    <childReferences
+        parent="//@diagram/@childNodes.73"
+        child="//@diagram/@childNodes.75"/>
+    <childReferences
+        parent="//@diagram/@childNodes.72"
+        child="//@diagram/@childNodes.73"/>
+    <childReferences
+        parent="//@diagram/@childNodes.76"
+        child="//@diagram/@childNodes.77"/>
+    <childReferences
+        parent="//@diagram/@childNodes.76"
         child="//@diagram/@childNodes.78"/>
     <childReferences
-        parent="//@diagram/@childNodes.67"
+        parent="//@diagram/@childNodes.72"
+        child="//@diagram/@childNodes.76"/>
+    <childReferences
+        parent="//@diagram/@childNodes.72"
         child="//@diagram/@childNodes.79"/>
     <childReferences
-        parent="//@diagram/@childNodes.67"
+        parent="//@diagram/@childNodes.69"
+        child="//@diagram/@childNodes.72"/>
+    <childReferences
+        parent="//@diagram/@childNodes.69"
         child="//@diagram/@childNodes.80"/>
     <childReferences
-        parent="//@diagram/@childNodes.67"
+        parent="//@diagram/@childNodes.69"
         child="//@diagram/@childNodes.81"/>
     <childReferences
-        parent="//@diagram/@childNodes.67"
+        parent="//@diagram/@childNodes.69"
         child="//@diagram/@childNodes.82"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.6"
-        child="//@diagram/@childNodes.67"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.6"
+        parent="//@diagram/@childNodes.69"
         child="//@diagram/@childNodes.83"/>
     <childReferences
-        parent="//@diagram/@childNodes.84"
-        child="//@diagram/@childNodes.85"/>
-    <childReferences
-        parent="//@diagram/@childNodes.84"
-        child="//@diagram/@childNodes.86"/>
-    <childReferences
-        parent="//@diagram/@childNodes.84"
-        child="//@diagram/@childNodes.87"/>
-    <childReferences
-        parent="//@diagram/@childNodes.84"
-        child="//@diagram/@childNodes.88"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.6"
+        parent="//@diagram/@childNodes.69"
         child="//@diagram/@childNodes.84"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.6"
+        child="//@diagram/@childNodes.69"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.6"
+        child="//@diagram/@childNodes.85"/>
+    <childReferences
+        parent="//@diagram/@childNodes.86"
+        child="//@diagram/@childNodes.87"/>
+    <childReferences
+        parent="//@diagram/@childNodes.86"
+        child="//@diagram/@childNodes.88"/>
+    <childReferences
+        parent="//@diagram/@childNodes.86"
         child="//@diagram/@childNodes.89"/>
     <childReferences
-        parent="//@diagram/@childNodes.90"
+        parent="//@diagram/@childNodes.86"
+        child="//@diagram/@childNodes.90"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.6"
+        child="//@diagram/@childNodes.86"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.6"
         child="//@diagram/@childNodes.91"/>
-    <childReferences
-        parent="//@diagram/@childNodes.93"
-        child="//@diagram/@childNodes.94"/>
-    <childReferences
-        parent="//@diagram/@childNodes.93"
-        child="//@diagram/@childNodes.95"/>
-    <childReferences
-        parent="//@diagram/@childNodes.93"
-        child="//@diagram/@childNodes.96"/>
-    <childReferences
-        parent="//@diagram/@childNodes.93"
-        child="//@diagram/@childNodes.97"/>
     <childReferences
         parent="//@diagram/@childNodes.92"
         child="//@diagram/@childNodes.93"/>
     <childReferences
-        parent="//@diagram/@childNodes.90"
-        child="//@diagram/@childNodes.92"/>
+        parent="//@diagram/@childNodes.95"
+        child="//@diagram/@childNodes.96"/>
     <childReferences
-        parent="//@diagram/@childNodes.90"
+        parent="//@diagram/@childNodes.95"
+        child="//@diagram/@childNodes.97"/>
+    <childReferences
+        parent="//@diagram/@childNodes.95"
         child="//@diagram/@childNodes.98"/>
     <childReferences
-        parent="//@diagram/@childNodes.90"
+        parent="//@diagram/@childNodes.95"
         child="//@diagram/@childNodes.99"/>
     <childReferences
+        parent="//@diagram/@childNodes.94"
+        child="//@diagram/@childNodes.95"/>
+    <childReferences
+        parent="//@diagram/@childNodes.92"
+        child="//@diagram/@childNodes.94"/>
+    <childReferences
+        parent="//@diagram/@childNodes.92"
+        child="//@diagram/@childNodes.100"/>
+    <childReferences
+        parent="//@diagram/@childNodes.92"
+        child="//@diagram/@childNodes.101"/>
+    <childReferences
         parent="//@diagram/@topLevelNodes.6"
-        child="//@diagram/@childNodes.90"/>
+        child="//@diagram/@childNodes.92"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.6"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.7"
-        child="//@diagram/@childNodes.100"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.7"
-        child="//@diagram/@childNodes.101"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.7"
         child="//@diagram/@childNodes.102"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.7"
+        child="//@diagram/@childNodes.103"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.7"
+        child="//@diagram/@childNodes.104"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.7"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.8"
-        child="//@diagram/@childNodes.103"/>
-    <childReferences
-        parent="//@diagram/@topLevelNodes.8"
-        child="//@diagram/@childNodes.104"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.8"
         child="//@diagram/@childNodes.105"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.8"
         child="//@diagram/@childNodes.106"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.8"
+        child="//@diagram/@childNodes.107"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.8"
+        child="//@diagram/@childNodes.108"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.8"/>
@@ -8266,7 +8387,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.10/@labels.0/@modelFacet //@diagram/@childNodes.17/@labels.0/@modelFacet //@diagram/@childNodes.16/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@childNodes.22/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.25/@labels.0/@modelFacet //@diagram/@childNodes.26/@labels.0/@modelFacet //@diagram/@childNodes.27/@labels.0/@modelFacet //@diagram/@childNodes.23/@labels.0/@modelFacet //@diagram/@childNodes.31/@labels.0/@modelFacet //@diagram/@childNodes.30/@labels.0/@modelFacet //@diagram/@childNodes.34/@labels.0/@modelFacet //@diagram/@childNodes.37/@labels.0/@modelFacet //@diagram/@childNodes.36/@labels.0/@modelFacet //@diagram/@childNodes.39/@labels.0/@modelFacet //@diagram/@childNodes.38/@labels.0/@modelFacet //@diagram/@childNodes.35/@labels.0/@modelFacet //@diagram/@childNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.41/@labels.0/@modelFacet //@diagram/@childNodes.44/@labels.0/@modelFacet //@diagram/@childNodes.47/@labels.0/@modelFacet //@diagram/@childNodes.48/@labels.0/@modelFacet //@diagram/@childNodes.46/@labels.0/@modelFacet //@diagram/@childNodes.50/@labels.0/@modelFacet //@diagram/@childNodes.51/@labels.0/@modelFacet //@diagram/@childNodes.49/@labels.0/@modelFacet //@diagram/@childNodes.45/@labels.0/@modelFacet //@diagram/@childNodes.43/@labels.0/@modelFacet //@diagram/@childNodes.53/@labels.0/@modelFacet //@diagram/@childNodes.56/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet //@diagram/@childNodes.55/@labels.0/@modelFacet //@diagram/@childNodes.59/@labels.0/@modelFacet //@diagram/@childNodes.60/@labels.0/@modelFacet //@diagram/@childNodes.58/@labels.0/@modelFacet //@diagram/@childNodes.54/@labels.0/@modelFacet //@diagram/@childNodes.52/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet //@diagram/@childNodes.61/@labels.0/@modelFacet //@diagram/@childNodes.62/@labels.0/@modelFacet //@diagram/@childNodes.40/@labels.0/@modelFacet //@diagram/@childNodes.63/@labels.0/@modelFacet //@diagram/@childNodes.32/@labels.0/@modelFacet //@diagram/@childNodes.64/@labels.0/@modelFacet //@diagram/@childNodes.65/@labels.0/@modelFacet //@diagram/@childNodes.66/@labels.0/@modelFacet //@diagram/@childNodes.29/@labels.0/@modelFacet //@diagram/@childNodes.69/@labels.0/@modelFacet //@diagram/@childNodes.68/@labels.0/@modelFacet //@diagram/@childNodes.72/@labels.0/@modelFacet //@diagram/@childNodes.73/@labels.0/@modelFacet //@diagram/@childNodes.71/@labels.0/@modelFacet //@diagram/@childNodes.75/@labels.0/@modelFacet //@diagram/@childNodes.76/@labels.0/@modelFacet //@diagram/@childNodes.74/@labels.0/@modelFacet //@diagram/@childNodes.77/@labels.0/@modelFacet //@diagram/@childNodes.70/@labels.0/@modelFacet //@diagram/@childNodes.78/@labels.0/@modelFacet //@diagram/@childNodes.79/@labels.0/@modelFacet //@diagram/@childNodes.80/@labels.0/@modelFacet //@diagram/@childNodes.81/@labels.0/@modelFacet //@diagram/@childNodes.82/@labels.0/@modelFacet //@diagram/@childNodes.67/@labels.0/@modelFacet //@diagram/@childNodes.83/@labels.0/@modelFacet //@diagram/@childNodes.85/@labels.0/@modelFacet //@diagram/@childNodes.86/@labels.0/@modelFacet //@diagram/@childNodes.87/@labels.0/@modelFacet //@diagram/@childNodes.88/@labels.0/@modelFacet //@diagram/@childNodes.84/@labels.0/@modelFacet //@diagram/@childNodes.89/@labels.0/@modelFacet //@diagram/@childNodes.91/@labels.0/@modelFacet //@diagram/@childNodes.94/@labels.0/@modelFacet //@diagram/@childNodes.95/@labels.0/@modelFacet //@diagram/@childNodes.96/@labels.0/@modelFacet //@diagram/@childNodes.97/@labels.0/@modelFacet //@diagram/@childNodes.93/@labels.0/@modelFacet //@diagram/@childNodes.92/@labels.0/@modelFacet //@diagram/@childNodes.98/@labels.0/@modelFacet //@diagram/@childNodes.99/@labels.0/@modelFacet //@diagram/@childNodes.90/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.100/@labels.0/@modelFacet //@diagram/@childNodes.101/@labels.0/@modelFacet //@diagram/@childNodes.102/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.103/@labels.0/@modelFacet //@diagram/@childNodes.104/@labels.0/@modelFacet //@diagram/@childNodes.105/@labels.0/@modelFacet //@diagram/@childNodes.106/@labels.0/@modelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.10/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.16/@labels.0/@modelFacet //@diagram/@childNodes.17/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@childNodes.22/@labels.0/@modelFacet //@diagram/@childNodes.23/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.26/@labels.0/@modelFacet //@diagram/@childNodes.27/@labels.0/@modelFacet //@diagram/@childNodes.28/@labels.0/@modelFacet //@diagram/@childNodes.29/@labels.0/@modelFacet //@diagram/@childNodes.25/@labels.0/@modelFacet //@diagram/@childNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.32/@labels.0/@modelFacet //@diagram/@childNodes.36/@labels.0/@modelFacet //@diagram/@childNodes.39/@labels.0/@modelFacet //@diagram/@childNodes.38/@labels.0/@modelFacet //@diagram/@childNodes.41/@labels.0/@modelFacet //@diagram/@childNodes.40/@labels.0/@modelFacet //@diagram/@childNodes.37/@labels.0/@modelFacet //@diagram/@childNodes.35/@labels.0/@modelFacet //@diagram/@childNodes.43/@labels.0/@modelFacet //@diagram/@childNodes.46/@labels.0/@modelFacet //@diagram/@childNodes.49/@labels.0/@modelFacet //@diagram/@childNodes.50/@labels.0/@modelFacet //@diagram/@childNodes.48/@labels.0/@modelFacet //@diagram/@childNodes.52/@labels.0/@modelFacet //@diagram/@childNodes.53/@labels.0/@modelFacet //@diagram/@childNodes.51/@labels.0/@modelFacet //@diagram/@childNodes.47/@labels.0/@modelFacet //@diagram/@childNodes.45/@labels.0/@modelFacet //@diagram/@childNodes.55/@labels.0/@modelFacet //@diagram/@childNodes.58/@labels.0/@modelFacet //@diagram/@childNodes.59/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet //@diagram/@childNodes.61/@labels.0/@modelFacet //@diagram/@childNodes.62/@labels.0/@modelFacet //@diagram/@childNodes.60/@labels.0/@modelFacet //@diagram/@childNodes.56/@labels.0/@modelFacet //@diagram/@childNodes.54/@labels.0/@modelFacet //@diagram/@childNodes.44/@labels.0/@modelFacet //@diagram/@childNodes.63/@labels.0/@modelFacet //@diagram/@childNodes.64/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet //@diagram/@childNodes.65/@labels.0/@modelFacet //@diagram/@childNodes.34/@labels.0/@modelFacet //@diagram/@childNodes.66/@labels.0/@modelFacet //@diagram/@childNodes.67/@labels.0/@modelFacet //@diagram/@childNodes.68/@labels.0/@modelFacet //@diagram/@childNodes.31/@labels.0/@modelFacet //@diagram/@childNodes.71/@labels.0/@modelFacet //@diagram/@childNodes.70/@labels.0/@modelFacet //@diagram/@childNodes.74/@labels.0/@modelFacet //@diagram/@childNodes.75/@labels.0/@modelFacet //@diagram/@childNodes.73/@labels.0/@modelFacet //@diagram/@childNodes.77/@labels.0/@modelFacet //@diagram/@childNodes.78/@labels.0/@modelFacet //@diagram/@childNodes.76/@labels.0/@modelFacet //@diagram/@childNodes.79/@labels.0/@modelFacet //@diagram/@childNodes.72/@labels.0/@modelFacet //@diagram/@childNodes.80/@labels.0/@modelFacet //@diagram/@childNodes.81/@labels.0/@modelFacet //@diagram/@childNodes.82/@labels.0/@modelFacet //@diagram/@childNodes.83/@labels.0/@modelFacet //@diagram/@childNodes.84/@labels.0/@modelFacet //@diagram/@childNodes.69/@labels.0/@modelFacet //@diagram/@childNodes.85/@labels.0/@modelFacet //@diagram/@childNodes.87/@labels.0/@modelFacet //@diagram/@childNodes.88/@labels.0/@modelFacet //@diagram/@childNodes.89/@labels.0/@modelFacet //@diagram/@childNodes.90/@labels.0/@modelFacet //@diagram/@childNodes.86/@labels.0/@modelFacet //@diagram/@childNodes.91/@labels.0/@modelFacet //@diagram/@childNodes.93/@labels.0/@modelFacet //@diagram/@childNodes.96/@labels.0/@modelFacet //@diagram/@childNodes.97/@labels.0/@modelFacet //@diagram/@childNodes.98/@labels.0/@modelFacet //@diagram/@childNodes.99/@labels.0/@modelFacet //@diagram/@childNodes.95/@labels.0/@modelFacet //@diagram/@childNodes.94/@labels.0/@modelFacet //@diagram/@childNodes.100/@labels.0/@modelFacet //@diagram/@childNodes.101/@labels.0/@modelFacet //@diagram/@childNodes.92/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.102/@labels.0/@modelFacet //@diagram/@childNodes.103/@labels.0/@modelFacet //@diagram/@childNodes.104/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.105/@labels.0/@modelFacet //@diagram/@childNodes.106/@labels.0/@modelFacet //@diagram/@childNodes.107/@labels.0/@modelFacet //@diagram/@childNodes.108/@labels.0/@modelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:PredefinedEnumParser"
         uses="//@diagram/@links.1/@labels.1/@modelFacet"/>

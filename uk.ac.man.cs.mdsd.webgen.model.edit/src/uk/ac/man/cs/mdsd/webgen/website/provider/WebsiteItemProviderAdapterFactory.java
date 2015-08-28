@@ -1829,6 +1829,9 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
+		if (modelLabelYItemProvider != null) modelLabelYItemProvider.dispose();
+		if (modelLabelAttributeYItemProvider != null) modelLabelAttributeYItemProvider.dispose();
+		if (modelLabelAssociationYItemProvider != null) modelLabelAssociationYItemProvider.dispose();
 		if (entityItemProvider != null) entityItemProvider.dispose();
 		if (dataTypeAttributeItemProvider != null) dataTypeAttributeItemProvider.dispose();
 		if (dateAttributeItemProvider != null) dateAttributeItemProvider.dispose();
@@ -1840,9 +1843,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (viewItemProvider != null) viewItemProvider.dispose();
 		if (viewAttributeItemProvider != null) viewAttributeItemProvider.dispose();
 		if (viewAssociationItemProvider != null) viewAssociationItemProvider.dispose();
-		if (modelLabelYItemProvider != null) modelLabelYItemProvider.dispose();
-		if (modelLabelAttributeYItemProvider != null) modelLabelAttributeYItemProvider.dispose();
-		if (modelLabelAssociationYItemProvider != null) modelLabelAssociationYItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
 		if (modelLabelElementItemProvider != null) modelLabelElementItemProvider.dispose();

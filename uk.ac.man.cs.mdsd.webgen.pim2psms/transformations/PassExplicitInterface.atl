@@ -484,53 +484,21 @@ rule Service {
 		entities <-
 			website.encapsulates
 				->collect(e | thisModule.findOrmEntity(e.name)),
+-- TODO what about view associations?
 		daosUsed <-
-			let entities : Sequence(ORM!Entity)
+			let entitiesAndViews : Sequence(ORM!EntityOrView)
 				= website.encapsulates
-					->collect(e | thisModule.findOrmEntity(e.name))
-			in entities
-				->union(entities
+					->collect(e | thisModule.findOrmEntityOrView(e.name))
+			in entitiesAndViews
+				->union(entitiesAndViews
 					->collect(e | e.features)->flatten()
-					->select(f | f.oclIsKindOf(ORM!Association))
+					->select(f | f.oclIsKindOf(ORM!EntityAssociation))
 					->select(f | f.owningEnd or f.bidirectional)
 					->collect(f | f.opposite.parentEntity)),
-		displayLabels <- website.displayLabels,
 		selections <- website.selections,
 		features <- website.features
 	)
 } 
-
--- @extends NamedElement
-rule ModelLabel {
-	from website : Website!ModelLabel
-	to waf : WAF!ModelLabel (
-		format <- website.format,
-		features <- website.features
-	)
-}
-
-abstract rule ModelLabelFeature {
-	from website : Website!ModelLabelFeature
-	to waf : WAF!ModelLabelFeature (
-	)
-}
-
--- @extends ModelLabelFeature
-rule ModelLabelElement {
-	from website : Website!ModelLabelElement
-	to waf : WAF!ModelLabelElement (
-		serviceFeature <- website.serviceFeature
-	)
-}
-
--- @extends ModelLabelFeature
-rule ModelLabelAssociation {
-	from website : Website!ModelLabelAssociation
-	to waf : WAF!ModelLabelAssociation (
-		serviceFeature <- website.serviceFeature,
-		dynamicLabel <- website.dynamicLabel
-	)
-}
 
 -- @extends NamedElement
 rule Selection {
@@ -825,7 +793,7 @@ abstract rule ContentUnit {
 			else if website.oclIsTypeOf(Website!IndexUnit) then
 				OclUndefined
 			else
-				website.name
+				website.name.lowercaseFirst()
 			endif endif,
 		purposeSummary <- website.purposeSummary,
 		omitCaption <-
@@ -950,19 +918,20 @@ rule UnitAssociation {
 			else
 				OclUndefined
 			endif endif,
-		dynamicLabel <- 
-			if not website.dynamicLabel.oclIsUndefined() then
-				website.dynamicLabel
-			else
-				if website.serviceFeature.oclIsUndefined() then
-					OclUndefined
-				else if website.serviceFeature.oclIsTypeOf(Website!ServiceEntityAssociation) then
-					website.serviceFeature.dynamicLabel
-				else
-					OclUndefined
-				endif endif
-			endif,
-		filters <- website.filters,
+-- temp fix while move modellabels from service to entities
+--		dynamicLabel <- 
+--			if not website.dynamicLabel.oclIsUndefined() then
+--				website.dynamicLabel
+--			else
+--				if website.serviceFeature.oclIsUndefined() then
+--					OclUndefined
+--				else if website.serviceFeature.oclIsTypeOf(Website!ServiceEntityAssociation) then
+--					website.serviceFeature.dynamicLabel
+--				else
+--					OclUndefined
+--				endif endif
+--			endif,
+--		filters <- website.filters,
 		maximumDisplaySize <- website.maximumDisplaySize,
 		displayOption <-
 			if website.collectionDisplayOption = #LineDirection then
@@ -1112,19 +1081,20 @@ rule UpdateUnit {
 abstract rule DataUnit {
 	from website : Website!DataUnit
 	to waf : WAF!DataUnit (
-		defaultSelection <- website.defaultSelection,
-		dynamicTitle <-
-			if website.dynamicTitle.oclIsUndefined() then
-				website.dynamicTitle
-			else if website.dynamicTitle.oclIsKindOf(Website!Attribute) then
-				if website.source.oclIsTypeOf(Website!Service) then
-					website.source.features->any(f | f.name = website.dynamicTitle.name)
-				else
-					OclUndefined
-				endif
-			else
-				website.dynamicTitle
-			endif endif
+		defaultSelection <- website.defaultSelection --,
+-- temp fix while move modellabels from service to entities
+--		dynamicTitle <-
+--			if website.dynamicTitle.oclIsUndefined() then
+--				website.dynamicTitle
+--			else if website.dynamicTitle.oclIsKindOf(Website!Attribute) then
+--				if website.source.oclIsTypeOf(Website!Service) then
+--					website.source.features->any(f | f.name = website.dynamicTitle.name)
+--				else
+--					OclUndefined
+--				endif
+--			else
+--				website.dynamicTitle
+--			endif endif
 	)
 }
 

@@ -19,6 +19,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.orm.Entity;
+import uk.ac.man.cs.mdsd.orm.OrmFactory;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
 /**
@@ -50,7 +51,6 @@ public class EntityItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPartOfPropertyDescriptor(object);
 			addContainsPropertyDescriptor(object);
 			addContainerPropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
@@ -61,29 +61,6 @@ public class EntityItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Part Of feature.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected void addPartOfPropertyDescriptor(Object object)
-  {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Entity_partOf_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Entity_partOf_feature", "_UI_Entity_type"),
-				 OrmPackage.Literals.ENTITY__PART_OF,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-  /**
 	 * This adds a property descriptor for the Table Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -283,6 +260,51 @@ public class EntityItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createCollectionElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonDate()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createCollectionDate()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonFile()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonImage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonLocation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY__FEATURES,
+				 OrmFactory.eINSTANCE.createCollectionAssociation()));
 	}
 
 }

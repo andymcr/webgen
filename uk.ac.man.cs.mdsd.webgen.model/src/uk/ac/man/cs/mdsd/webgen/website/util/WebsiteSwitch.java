@@ -186,6 +186,33 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.MODEL_LABEL_Y: {
+				ModelLabelY modelLabelY = (ModelLabelY)theEObject;
+				T result = caseModelLabelY(modelLabelY);
+				if (result == null) result = caseNamedElement(modelLabelY);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.MODEL_LABEL_FEATURE_Y: {
+				ModelLabelFeatureY modelLabelFeatureY = (ModelLabelFeatureY)theEObject;
+				T result = caseModelLabelFeatureY(modelLabelFeatureY);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y: {
+				ModelLabelAttributeY modelLabelAttributeY = (ModelLabelAttributeY)theEObject;
+				T result = caseModelLabelAttributeY(modelLabelAttributeY);
+				if (result == null) result = caseModelLabelFeatureY(modelLabelAttributeY);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y: {
+				ModelLabelAssociationY modelLabelAssociationY = (ModelLabelAssociationY)theEObject;
+				T result = caseModelLabelAssociationY(modelLabelAssociationY);
+				if (result == null) result = caseModelLabelFeatureY(modelLabelAssociationY);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.ENTITY: {
 				Entity entity = (Entity)theEObject;
 				T result = caseEntity(entity);
@@ -343,9 +370,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 			case WebsitePackage.VIEW_FEATURE: {
 				ViewFeature viewFeature = (ViewFeature)theEObject;
 				T result = caseViewFeature(viewFeature);
-				if (result == null) result = caseFeature(viewFeature);
-				if (result == null) result = caseNamedDisplayElement(viewFeature);
-				if (result == null) result = caseNamedElement(viewFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -353,9 +377,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				ViewAttribute viewAttribute = (ViewAttribute)theEObject;
 				T result = caseViewAttribute(viewAttribute);
 				if (result == null) result = caseViewFeature(viewAttribute);
-				if (result == null) result = caseFeature(viewAttribute);
-				if (result == null) result = caseNamedDisplayElement(viewAttribute);
-				if (result == null) result = caseNamedElement(viewAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -363,36 +384,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				ViewAssociation viewAssociation = (ViewAssociation)theEObject;
 				T result = caseViewAssociation(viewAssociation);
 				if (result == null) result = caseViewFeature(viewAssociation);
-				if (result == null) result = caseFeature(viewAssociation);
-				if (result == null) result = caseNamedDisplayElement(viewAssociation);
-				if (result == null) result = caseNamedElement(viewAssociation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.MODEL_LABEL_Y: {
-				ModelLabelY modelLabelY = (ModelLabelY)theEObject;
-				T result = caseModelLabelY(modelLabelY);
-				if (result == null) result = caseNamedElement(modelLabelY);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.MODEL_LABEL_FEATURE_Y: {
-				ModelLabelFeatureY modelLabelFeatureY = (ModelLabelFeatureY)theEObject;
-				T result = caseModelLabelFeatureY(modelLabelFeatureY);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y: {
-				ModelLabelAttributeY modelLabelAttributeY = (ModelLabelAttributeY)theEObject;
-				T result = caseModelLabelAttributeY(modelLabelAttributeY);
-				if (result == null) result = caseModelLabelFeatureY(modelLabelAttributeY);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y: {
-				ModelLabelAssociationY modelLabelAssociationY = (ModelLabelAssociationY)theEObject;
-				T result = caseModelLabelAssociationY(modelLabelAssociationY);
-				if (result == null) result = caseModelLabelFeatureY(modelLabelAssociationY);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

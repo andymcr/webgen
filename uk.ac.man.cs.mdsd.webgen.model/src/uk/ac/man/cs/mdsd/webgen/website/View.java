@@ -41,6 +41,7 @@ public interface View extends EntityOrView {
 	/**
 	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.ViewFeature}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.ViewFeature#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Features</em>' containment reference list isn't clear,
@@ -49,7 +50,8 @@ public interface View extends EntityOrView {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Features</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getView_Features()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ViewFeature#getPartOf
+	 * @model opposite="partOf" containment="true"
 	 * @generated
 	 */
 	List<ViewFeature> getFeatures();

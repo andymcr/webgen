@@ -42,25 +42,25 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addElementPropertyDescriptor(object);
+			addAttributePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Element feature.
+	 * This adds a property descriptor for the Attribute feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addElementPropertyDescriptor(Object object) {
+	protected void addAttributePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ModelLabelAttribute_element_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAttribute_element_feature", "_UI_ModelLabelAttribute_type"),
-				 OrmPackage.Literals.MODEL_LABEL_ATTRIBUTE__ELEMENT,
+				 getString("_UI_ModelLabelAttribute_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAttribute_attribute_feature", "_UI_ModelLabelAttribute_type"),
+				 OrmPackage.Literals.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE,
 				 true,
 				 false,
 				 true,

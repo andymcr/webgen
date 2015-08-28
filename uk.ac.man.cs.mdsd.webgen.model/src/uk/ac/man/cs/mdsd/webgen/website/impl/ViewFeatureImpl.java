@@ -4,12 +4,15 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -21,23 +24,13 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getFeature <em>Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getAlias <em>Alias</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getPartOf <em>Part Of</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ViewFeatureImpl extends FeatureImpl implements ViewFeature {
-	/**
-	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFeature()
-	 * @generated
-	 * @ordered
-	 */
-	protected Feature feature;
-
+public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature {
 	/**
 	 * The default value of the '{@link #getAlias() <em>Alias</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -82,44 +75,6 @@ public abstract class ViewFeatureImpl extends FeatureImpl implements ViewFeature
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature getFeature() {
-		if (feature != null && feature.eIsProxy()) {
-			InternalEObject oldFeature = (InternalEObject)feature;
-			feature = (Feature)eResolveProxy(oldFeature);
-			if (feature != oldFeature) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.VIEW_FEATURE__FEATURE, oldFeature, feature));
-			}
-		}
-		return feature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Feature basicGetFeature() {
-		return feature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFeature(Feature newFeature) {
-		Feature oldFeature = feature;
-		feature = newFeature;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__FEATURE, oldFeature, feature));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getAlias() {
 		return alias;
 	}
@@ -141,14 +96,98 @@ public abstract class ViewFeatureImpl extends FeatureImpl implements ViewFeature
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public View getPartOf() {
+		if (eContainerFeatureID() != WebsitePackage.VIEW_FEATURE__PART_OF) return null;
+		return (View)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPartOf(View newPartOf, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WebsitePackage.VIEW_FEATURE__PART_OF, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPartOf(View newPartOf) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.VIEW_FEATURE__PART_OF && newPartOf != null)) {
+			if (EcoreUtil.isAncestor(this, newPartOf))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newPartOf != null)
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.VIEW__FEATURES, View.class, msgs);
+			msgs = basicSetPartOf(newPartOf, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__PART_OF, newPartOf, newPartOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.VIEW_FEATURE__PART_OF:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetPartOf((View)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.VIEW_FEATURE__PART_OF:
+				return basicSetPartOf(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case WebsitePackage.VIEW_FEATURE__PART_OF:
+				return eInternalContainer().eInverseRemove(this, WebsitePackage.VIEW__FEATURES, View.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.VIEW_FEATURE__FEATURE:
-				if (resolve) return getFeature();
-				return basicGetFeature();
 			case WebsitePackage.VIEW_FEATURE__ALIAS:
 				return getAlias();
+			case WebsitePackage.VIEW_FEATURE__PART_OF:
+				return getPartOf();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,11 +200,11 @@ public abstract class ViewFeatureImpl extends FeatureImpl implements ViewFeature
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.VIEW_FEATURE__FEATURE:
-				setFeature((Feature)newValue);
-				return;
 			case WebsitePackage.VIEW_FEATURE__ALIAS:
 				setAlias((String)newValue);
+				return;
+			case WebsitePackage.VIEW_FEATURE__PART_OF:
+				setPartOf((View)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -179,11 +218,11 @@ public abstract class ViewFeatureImpl extends FeatureImpl implements ViewFeature
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.VIEW_FEATURE__FEATURE:
-				setFeature((Feature)null);
-				return;
 			case WebsitePackage.VIEW_FEATURE__ALIAS:
 				setAlias(ALIAS_EDEFAULT);
+				return;
+			case WebsitePackage.VIEW_FEATURE__PART_OF:
+				setPartOf((View)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -197,10 +236,10 @@ public abstract class ViewFeatureImpl extends FeatureImpl implements ViewFeature
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.VIEW_FEATURE__FEATURE:
-				return feature != null;
 			case WebsitePackage.VIEW_FEATURE__ALIAS:
 				return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
+			case WebsitePackage.VIEW_FEATURE__PART_OF:
+				return getPartOf() != null;
 		}
 		return super.eIsSet(featureID);
 	}

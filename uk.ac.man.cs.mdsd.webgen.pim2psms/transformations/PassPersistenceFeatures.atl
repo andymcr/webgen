@@ -30,10 +30,10 @@ abstract rule NamedDisplayElement {
 }
 
 
-rule Entity {
-	from partialOrm : ORM!Entity
-	to orm : ORM!Entity (
-		-- features via parentEntity in features
+-- @extends NamedDisplayElement
+abstract rule EntityOrView {
+	from website : Website!EntityOrView
+	to orm : ORM!EntityOrView (
 	)
 }
 
@@ -41,7 +41,6 @@ rule Entity {
 abstract rule Feature {
 	from website : Website!Feature
 	to orm : ORM!Feature (
-		parentEntity <- thisModule.findOrmEntity(website.parentEntity.name),
 		inputField <- false,
 		headerClass <- website.headerClass,
 		inputClass <- website.inputClass,
@@ -54,16 +53,111 @@ abstract rule Feature {
 abstract rule Attribute {
 	from website : Website!Attribute
 	to orm : ORM!Attribute (
+	)
+}
+
+-- @extends Feature
+abstract rule Association {
+	from website : Website!Association
+	to orm : ORM!Association (
+	)
+}
+
+-- @extends NamedElement
+rule ModelLabel {
+	from website : Website!ModelLabelY
+	to orm : ORM!ModelLabel (
+		format <- website.format,
+		features <- website.features
+	)
+}
+
+abstract rule ModelLabelFeature {
+	from website : Website!ModelLabelFeatureY
+	to orm : ORM!ModelLabelFeature (
+	)
+}
+
+-- @extends ModelLabelFeature
+rule ModelLabelAttribute {
+	from website : Website!ModelLabelAttributeY
+	to orm : ORM!ModelLabelAttribute (
+		attribute <- website.attribute
+	)
+}
+
+-- @extends ModelLabelFeature
+rule ModelLabelAssociation {
+	from website : Website!ModelLabelAssociationY
+	to orm : ORM!ModelLabelAssociation (
+		association <- website.association,
+		dynamicLabel <- website.dynamicLabel
+	)
+}
+
+
+rule Entity {
+	from partialOrm : ORM!Entity
+	to orm : ORM!Entity (
+		-- features via parentEntity in features
+		displayLabels <-
+			let website : Website!Entity
+				= thisModule.findWebsiteEntity(partialOrm.name)
+				in if website.displayLabels->exists(l | l.name = 'default') then
+						website.displayLabels
+					else
+						website.displayLabels-> union(
+							if website.features->exists(f | f.name = 'name') then
+								Sequence{thisModule.implicitModelLabel(
+									website.features->any(f | f.name = 'name'))
+								}
+							else if website.features->exists(f | f.name = 'title') then
+								Sequence{thisModule.implicitModelLabel(
+									website.features->any(f | f.name = 'title'))
+								}
+							else
+								Sequence{}
+							endif endif)
+					endif
+	)
+}
+
+lazy rule implicitModelLabel {
+	from website : Website!Feature
+	to waf : ORM!ModelLabel (
+		name <- 'default',
+		format <- '%s',
+		features <- Sequence{feature}
+	), feature : ORM!ModelLabelAttribute (
+		attribute <- website
+	)
+	do {
+		waf;
+	}
+}
+
+abstract rule EntityFeature {
+	from website : Website!EntityFeature
+	to orm : ORM!EntityFeature (
+		parentEntity <- thisModule.findOrmEntity(website.parentEntity.name)
+	)
+}
+
+-- @extends Attribute, EntityFeature
+abstract rule EntityAttribute {
+	from website : Website!EntityAttribute
+	to orm : ORM!EntityAttribute (
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
 				website.columnName
 			else
 				website.name.createElementColumnName()
-			endif
+			endif,
+		inputClass <- website.inputClass
 	)
 }
 
--- @extends Attribute
+-- @extends EntityAttribute
 abstract rule SingletonAttribute {
 	from website : Website!Attribute (website.cardinality <> #Many)
 	to orm : ORM!SingletonAttribute (
@@ -74,7 +168,7 @@ abstract rule SingletonAttribute {
 	)
 }
 
--- @extends Attribute
+-- @extends EntityAttribute
 abstract rule CollectionAttribute {
 	from website : Website!Attribute (website.cardinality = #Many)
 	to orm : ORM!CollectionAttribute (
@@ -213,10 +307,10 @@ rule SingletonLocation {
 	)
 }
 
--- @extends Feature
-abstract rule Association {
-	from website : Website!Association
-	to orm : ORM!Association (
+-- @extends Association, EntityFeature
+abstract rule EntityAssociation {
+	from website : Website!EntityAssociation
+	to orm : ORM!EntityAssociation (
 		bidirectional <- website.bidirectional,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
@@ -224,11 +318,12 @@ abstract rule Association {
 			else
 				website.name.createAssociationColumnName()
 			endif,
-		pivotTableName <- website.createPivotTableName()
+		pivotTableName <- website.createPivotTableName(),
+		inputClass <- website.inputClass
 	)
 }
 
--- @extends Association
+-- @extends EntityAssociation
 rule OneToOneAssociationWithoutContainment {
 	from website : Website!AssociationWithoutContainment (website.cardinality <> #Many and website.targetCardinality <> #Many)
 	to orm : ORM!SingletonAssociation (
@@ -262,7 +357,7 @@ rule OneToOneAssociationWithoutContainment {
 	)
 }
 
--- @extends Association
+-- @extends EntityAssociation
 rule ManyToOneAssociationWithoutContainment {
 	from website : Website!AssociationWithoutContainment (website.cardinality <> #Many and website.targetCardinality = #Many)
 	to orm : ORM!SingletonAssociation (
@@ -289,7 +384,7 @@ rule ManyToOneAssociationWithoutContainment {
 	)
 }
 
--- @extends Association
+-- @extends EntityAssociation
 rule OneToManyAssociationWithoutContainment {
 	from website : Website!AssociationWithoutContainment (website.cardinality = #Many and website.targetCardinality <> #Many)
 	to orm : ORM!CollectionAssociation (
@@ -323,7 +418,7 @@ rule OneToManyAssociationWithoutContainment {
 	)
 }
 
--- @extends Association
+-- @extends EntityAssociation
 rule ManyToManyAssociationWithoutContainment {
 	from website : Website!AssociationWithoutContainment (website.cardinality = #Many and website.targetCardinality = #Many)
 	to orm : ORM!CollectionAssociation (
@@ -351,7 +446,7 @@ rule ManyToManyAssociationWithoutContainment {
 	)
 }
 
--- @extends Association
+-- @extends EntityAssociation
 rule OneToOneAssociationWithContainment {
 	from website : Website!AssociationWithContainment (website.cardinality <> #Many)
 	to orm : ORM!SingletonAssociation (
@@ -385,7 +480,7 @@ rule OneToOneAssociationWithContainment {
 	)
 }
 
--- @extends Association
+-- @extends EntityAssociation
 rule OneToManyAssociationWithContainment {
 	from website : Website!AssociationWithContainment (website.cardinality = #Many)
 	to orm : ORM!CollectionAssociation (

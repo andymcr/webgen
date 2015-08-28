@@ -27,7 +27,7 @@ helper context Website!WebGenModel def: getDataType(name : String) : ORM!DataTyp
 rule OrmModel {
 	from partialOrm : ORM!OrmModel
 	to orm : ORM!OrmModel (
-		entities <- partialOrm.entities
+		entitiesAndViews <- partialOrm.entitiesAndViews
 			->union(if thisModule.findWebsiteProperties().staticUnitsEditable then
 						Sequence{thisModule.implicitStaticEntity(thisModule.findWebGenModel())}
 					else

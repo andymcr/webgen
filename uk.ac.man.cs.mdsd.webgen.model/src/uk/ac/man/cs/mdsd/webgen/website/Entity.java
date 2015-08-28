@@ -90,6 +90,11 @@ public interface Entity extends EntityOrView, UnitSource {
 	List<EntityFeature> getFeatures();
 
 	/**
+	 * @generated NOT
+	 */
+	List<EntityFeature> getAllFeatures();
+
+	/**
 	 * Returns the value of the '<em><b>Association Ends</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation}.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getTargetEntity <em>Target Entity</em>}'.

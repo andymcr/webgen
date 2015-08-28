@@ -15,18 +15,46 @@ rule WafModel {
 	to waf : WAF!WafModel (
 		services <- partialWaf.services
 			->union(let entities : Set(ORM!Entity)
-				= partialWaf.persistence.entities
+				= partialWaf.persistence.entitiesAndViews
+					->select(e | e.oclIsTypeOf(ORM!Entity))
 				in entities.asSet()->symmetricDifference(
-					partialWaf.services->collect(s | s.entities)->flatten().asSet()
+					partialWaf.services
+						->collect(s | s.entities)->flatten()
+						->select(e | e.oclIsTypeOf(ORM!Entity)).asSet()
 					).asSequence()
-				->collect(e | thisModule.implicitService(e))
+				->collect(e | thisModule.implicitServiceForEntity(e))
+			)
+			->union(let views : Set(ORM!View)
+				= partialWaf.persistence.entitiesAndViews
+					->select(v | v.oclIsTypeOf(ORM!View))
+				in views.asSet()->symmetricDifference(
+					partialWaf.services
+						->collect(s | s.entities)->flatten()
+						->select(v | v.oclIsTypeOf(ORM!View)).asSet()
+					).asSequence()
+				->collect(v | thisModule.implicitServiceForView(v))
 			)
 	)
 }
 
 
-lazy rule implicitService {
+lazy rule implicitServiceForEntity {
 	from orm : ORM!Entity
+	to waf : WAF!Service (
+-- TODO pularise
+		name <- orm.name, 
+		modelName <- orm.name,
+		view <- false,
+		entities <- Sequence{orm},
+		daosUsed <- Sequence{orm}
+	)
+	do {
+		waf;
+	}
+} 
+
+lazy rule implicitServiceForView {
+	from orm : ORM!View
 	to waf : WAF!Service (
 -- TODO pularise
 		name <- orm.name, 

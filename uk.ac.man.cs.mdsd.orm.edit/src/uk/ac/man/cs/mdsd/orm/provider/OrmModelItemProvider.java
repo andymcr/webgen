@@ -240,7 +240,7 @@ public class OrmModelItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__DATA_TYPES);
-			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__ENTITIES);
+			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__ENTITIES_AND_VIEWS);
 			childrenFeatures.add(OrmPackage.Literals.ORM_MODEL__COLLECTION_TYPES);
 		}
 		return childrenFeatures;
@@ -306,7 +306,7 @@ public class OrmModelItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ORM_MODEL__DATA_TYPES:
-			case OrmPackage.ORM_MODEL__ENTITIES:
+			case OrmPackage.ORM_MODEL__ENTITIES_AND_VIEWS:
 			case OrmPackage.ORM_MODEL__COLLECTION_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -337,8 +337,13 @@ public class OrmModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ORM_MODEL__ENTITIES,
+				(OrmPackage.Literals.ORM_MODEL__ENTITIES_AND_VIEWS,
 				 OrmFactory.eINSTANCE.createEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ORM_MODEL__ENTITIES_AND_VIEWS,
+				 OrmFactory.eINSTANCE.createView()));
 
 		newChildDescriptors.add
 			(createChildParameter

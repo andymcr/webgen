@@ -123,6 +123,9 @@ helper def: findOrmDataType(name : String) : ORM!DataType
 helper def: findOrmEntity(name : String) : ORM!Entity
 	= ORM!Entity.allInstancesFrom('orm')->any(e | e.name = name);
 
+helper def: findOrmEntityOrView(name : String) : ORM!EntityOrView
+	= ORM!EntityOrView.allInstancesFrom('orm')->any(e | e.name = name);
+
 helper context ORM!Entity def: getOrmFeature(featureName : String) : Website!Feature
 	= self.features->any(f | f.name = featureName);
 

@@ -201,6 +201,35 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true" eSuperTypes="#//Feature"/>
   <eClassifiers xsi:type="ecore:EClass" name="Association" abstract="true" eSuperTypes="#//Feature"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelLabelY" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labelFor" lowerBound="1"
+        eType="#//EntityOrView" eOpposite="#//EntityOrView/displayLabels"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//ModelLabelFeatureY" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelLabelFeatureY" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelLabelAttributeY" eSuperTypes="#//ModelLabelFeatureY">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if attribute.oclIsUndefined() or partOf.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else &#xD;&#xA;&#x9;let attributeName : String = attribute.name&#xD;&#xA;&#x9;in if self.alias.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;attributeName&#xD;&#xA;&#x9;&#x9;else if self.alias &lt;> '' then&#xD;&#xA;&#x9;&#x9;&#x9;self.alias&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;attributeName&#xD;&#xA;&#x9;&#x9;endif endif&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="#//Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelLabelAssociationY" eSuperTypes="#//ModelLabelFeatureY">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if association.oclIsUndefined() or partOf.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else &#xD;&#xA;&#x9;let associationName : String&#xD;&#xA;&#x9;&#x9;= if association.oclIsTypeOf(ViewAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;else if useAssociationSource then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).targetFeatureName &#xD;&#xA;&#x9;&#x9;&#x9;endif endif&#xD;&#xA;&#x9;in if self.alias.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;associationName&#xD;&#xA;&#x9;&#x9;else if alias &lt;> '' then&#xD;&#xA;&#x9;&#x9;&#x9;alias&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;associationName&#xD;&#xA;&#x9;&#x9;endif endif&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association" lowerBound="1"
+        eType="#//EntityAssociation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicLabel" eType="#//ModelLabelY"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useAssociationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//EntityOrView #//UnitSource">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="featureNameUniqueWithinEntity keysFromLocalFeatures"/>
@@ -313,38 +342,31 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" upperBound="-1"
         eType="#//EntityOrView"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
-        eType="#//ViewFeature" containment="true"/>
+        eType="#//ViewFeature" containment="true" eOpposite="#//ViewFeature/partOf"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ViewFeature" abstract="true" eSuperTypes="#//Feature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
-        eType="#//Feature"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewFeature" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" lowerBound="1"
+        eType="#//View" eOpposite="#//View/features"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewAttribute" eSuperTypes="#//ViewFeature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if attribute.oclIsUndefined() or partOf.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else &#xD;&#xA;&#x9;let attributeName : String = attribute.name&#xD;&#xA;&#x9;in if self.alias.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;attributeName&#xD;&#xA;&#x9;&#x9;else if self.alias &lt;> '' then&#xD;&#xA;&#x9;&#x9;&#x9;self.alias&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;attributeName&#xD;&#xA;&#x9;&#x9;endif endif&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
         eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewAssociation" eSuperTypes="#//ViewFeature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if association.oclIsUndefined() or partOf.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else &#xD;&#xA;&#x9;let associationName : String&#xD;&#xA;&#x9;&#x9;= if association.oclIsTypeOf(ViewAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;else if useAssociationSource then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).targetFeatureName &#xD;&#xA;&#x9;&#x9;&#x9;endif endif&#xD;&#xA;&#x9;in if self.alias.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;associationName&#xD;&#xA;&#x9;&#x9;else if alias &lt;> '' then&#xD;&#xA;&#x9;&#x9;&#x9;alias&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;associationName&#xD;&#xA;&#x9;&#x9;endif endif&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="association" lowerBound="1"
         eType="#//Association"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelLabelY" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="labelFor" lowerBound="1"
-        eType="#//EntityOrView" eOpposite="#//EntityOrView/displayLabels"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
-        eType="#//ModelLabelFeatureY" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelLabelFeatureY" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelLabelAttributeY" eSuperTypes="#//ModelLabelFeatureY">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
-        eType="#//Attribute"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelLabelAssociationY" eSuperTypes="#//ModelLabelFeatureY">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="association" lowerBound="1"
-        eType="#//EntityAssociation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicLabel" eType="#//ModelLabelY"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useAssociationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IncludedFeature" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayLabel" ordered="false"

@@ -28,7 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityAttributeItemProvider extends AttributeItemProvider {
+public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -50,103 +50,11 @@ public class EntityAttributeItemProvider extends AttributeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addColumnNamePropertyDescriptor(object);
-			addCardinalityPropertyDescriptor(object);
-			addUniquePropertyDescriptor(object);
-			addOrderedPropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Column Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addColumnNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityFeature_columnName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_columnName_feature", "_UI_EntityFeature_type"),
-				 WebsitePackage.Literals.ENTITY_FEATURE__COLUMN_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Cardinality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCardinalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityFeature_cardinality_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_cardinality_feature", "_UI_EntityFeature_type"),
-				 WebsitePackage.Literals.ENTITY_FEATURE__CARDINALITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Unique feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUniquePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityFeature_unique_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_unique_feature", "_UI_EntityFeature_type"),
-				 WebsitePackage.Literals.ENTITY_FEATURE__UNIQUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ordered feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOrderedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityFeature_ordered_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_ordered_feature", "_UI_EntityFeature_type"),
-				 WebsitePackage.Literals.ENTITY_FEATURE__ORDERED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -160,9 +68,9 @@ public class EntityAttributeItemProvider extends AttributeItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntityAttribute_placeholder_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_placeholder_feature", "_UI_EntityAttribute_type"),
-				 WebsitePackage.Literals.ENTITY_ATTRIBUTE__PLACEHOLDER,
+				 getString("_UI_Attribute_placeholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_placeholder_feature", "_UI_Attribute_type"),
+				 WebsitePackage.Literals.ATTRIBUTE__PLACEHOLDER,
 				 true,
 				 false,
 				 false,
@@ -182,9 +90,9 @@ public class EntityAttributeItemProvider extends AttributeItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntityAttribute_validationPattern_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_validationPattern_feature", "_UI_EntityAttribute_type"),
-				 WebsitePackage.Literals.ENTITY_ATTRIBUTE__VALIDATION_PATTERN,
+				 getString("_UI_Attribute_validationPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_validationPattern_feature", "_UI_Attribute_type"),
+				 WebsitePackage.Literals.ATTRIBUTE__VALIDATION_PATTERN,
 				 true,
 				 false,
 				 false,
@@ -204,9 +112,9 @@ public class EntityAttributeItemProvider extends AttributeItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntityAttribute_inputClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_inputClass_feature", "_UI_EntityAttribute_type"),
-				 WebsitePackage.Literals.ENTITY_ATTRIBUTE__INPUT_CLASS,
+				 getString("_UI_Attribute_inputClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_inputClass_feature", "_UI_Attribute_type"),
+				 WebsitePackage.Literals.ATTRIBUTE__INPUT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -272,10 +180,6 @@ public class EntityAttributeItemProvider extends AttributeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityAttribute.class)) {
-			case WebsitePackage.ENTITY_ATTRIBUTE__COLUMN_NAME:
-			case WebsitePackage.ENTITY_ATTRIBUTE__CARDINALITY:
-			case WebsitePackage.ENTITY_ATTRIBUTE__UNIQUE:
-			case WebsitePackage.ENTITY_ATTRIBUTE__ORDERED:
 			case WebsitePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 			case WebsitePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:

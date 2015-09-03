@@ -29,12 +29,12 @@ public interface UnitChildElement extends UnitChildFeature {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Service Feature</em>' reference.
-	 * @see #setServiceFeature(ServiceEntityElement)
+	 * @see #setServiceFeature(ServiceAttribute)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitChildElement_ServiceFeature()
 	 * @model required="true"
 	 * @generated
 	 */
-	ServiceEntityElement getServiceFeature();
+	ServiceAttribute getServiceFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitChildElement#getServiceFeature <em>Service Feature</em>}' reference.
@@ -44,6 +44,6 @@ public interface UnitChildElement extends UnitChildFeature {
 	 * @see #getServiceFeature()
 	 * @generated
 	 */
-	void setServiceFeature(ServiceEntityElement value);
+	void setServiceFeature(ServiceAttribute value);
 
 } // UnitChildElement

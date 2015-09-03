@@ -965,29 +965,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServiceViewAssociationItemProvider serviceViewAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createServiceViewAssociationAdapter() {
-		if (serviceViewAssociationItemProvider == null) {
-			serviceViewAssociationItemProvider = new ServiceViewAssociationItemProvider(this);
-		}
-
-		return serviceViewAssociationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Selection} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1034,49 +1011,49 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceEntityElementItemProvider serviceEntityElementItemProvider;
+	protected ServiceAttributeItemProvider serviceAttributeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createServiceEntityElementAdapter() {
-		if (serviceEntityElementItemProvider == null) {
-			serviceEntityElementItemProvider = new ServiceEntityElementItemProvider(this);
+	public Adapter createServiceAttributeAdapter() {
+		if (serviceAttributeItemProvider == null) {
+			serviceAttributeItemProvider = new ServiceAttributeItemProvider(this);
 		}
 
-		return serviceEntityElementItemProvider;
+		return serviceAttributeItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ServiceEntityAssociationItemProvider serviceEntityAssociationItemProvider;
+	protected ServiceAssociationItemProvider serviceAssociationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createServiceEntityAssociationAdapter() {
-		if (serviceEntityAssociationItemProvider == null) {
-			serviceEntityAssociationItemProvider = new ServiceEntityAssociationItemProvider(this);
+	public Adapter createServiceAssociationAdapter() {
+		if (serviceAssociationItemProvider == null) {
+			serviceAssociationItemProvider = new ServiceAssociationItemProvider(this);
 		}
 
-		return serviceEntityAssociationItemProvider;
+		return serviceAssociationItemProvider;
 	}
 
 	/**
@@ -1849,9 +1826,8 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
-		if (serviceEntityElementItemProvider != null) serviceEntityElementItemProvider.dispose();
-		if (serviceEntityAssociationItemProvider != null) serviceEntityAssociationItemProvider.dispose();
-		if (serviceViewAssociationItemProvider != null) serviceViewAssociationItemProvider.dispose();
+		if (serviceAttributeItemProvider != null) serviceAttributeItemProvider.dispose();
+		if (serviceAssociationItemProvider != null) serviceAssociationItemProvider.dispose();
 		if (pageItemProvider != null) pageItemProvider.dispose();
 		if (pageLinkItemProvider != null) pageLinkItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();

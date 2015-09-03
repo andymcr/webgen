@@ -29,7 +29,7 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIncludedFeature()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
 public interface IncludedFeature extends EObject {

@@ -1,6 +1,5 @@
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -22,11 +21,11 @@ import uk.ac.man.cs.mdsd.webgen.website.QueryInstance;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.View;
+import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ViewFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 
@@ -58,13 +57,13 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		final List<Association> associations = new LinkedList<Association>();
 		if (entityOrView instanceof Entity) {
 			for (EntityFeature feature : ((Entity) entityOrView).getAllFeatures()) {
-				if (feature instanceof Association) {
+				if (feature instanceof EntityAssociation) {
 					associations.add((Association) feature);
 				}
 			}
 		} else {
 			for (ViewFeature feature : ((View) entityOrView).getFeatures()) {
-				if (feature instanceof Association) {
+				if (feature instanceof ViewAssociation) {
 					associations.add((Association) feature);
 				}
 			}
@@ -73,19 +72,70 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return associations;
 	}
 
-	protected Entity getType(final ServiceAssociation association) {
-		if (association instanceof ServiceEntityAssociation) {
-			final ServiceEntityAssociation entityAssociation = (ServiceEntityAssociation) association;
-			final Service localService = entityAssociation.getPartOf();
-			final EntityAssociation feature = entityAssociation.getFeature();
-			if (localService.getEncapsulates().contains(feature.getParentEntity())) {
-				return feature.getTargetEntity();
-			} else {
-				return feature.getParentEntity();
+	protected List<Attribute> getFeatureAttributes(final Service service) {
+		final List<Attribute> attributes = new LinkedList<Attribute>();
+		for (EntityOrView entityOrView : service.getEncapsulates()) {
+			attributes.addAll(getAttributes(entityOrView));
+		}
+
+		return attributes;
+	}
+
+	protected List<Association> getFeatureAssociations(final Service service) {
+		final List<Association> associations = new LinkedList<Association>();
+		for (EntityOrView entityOrView : service.getEncapsulates()) {
+			associations.addAll(getAssociations(entityOrView));
+		}
+
+		return associations;
+	}
+
+	protected List<ServiceAttribute> getAttributes(final Service service) {
+		final List<ServiceAttribute> attributes = new LinkedList<ServiceAttribute>();
+		for (ServiceFeature feature : service.getFeatures()) {
+			if (feature instanceof ServiceAttribute) {
+				attributes.add((ServiceAttribute) feature);
 			}
 		}
 
-		return null;
+		return attributes;
+	}
+
+	protected List<ServiceAssociation> getAssociations(final Service service) {
+		final List<ServiceAssociation> associations = new LinkedList<ServiceAssociation>();
+		for (ServiceFeature feature : service.getFeatures()) {
+			if (feature instanceof ServiceAssociation) {
+				associations.add((ServiceAssociation) feature);
+			}
+		}
+
+		return associations;
+	}
+
+	protected List<Attribute> getSourceAttributes(final DynamicUnit unit) {
+		final List<Attribute> attributes = new LinkedList<Attribute>();
+		if (unit.getSource() != null) {
+			if (unit.getSource() instanceof EntityOrView) {
+				attributes.addAll(getAttributes((EntityOrView) unit.getSource()));
+			} else {
+				attributes.addAll(getFeatureAttributes((Service) unit.getSource()));
+			}
+		}
+
+		return attributes;
+	}
+
+	protected List<Association> getSourceAssociations(final DynamicUnit unit) {
+		final List<Association> associations = new LinkedList<Association>();
+		if (unit.getSource() != null) {
+			if (unit.getSource() instanceof EntityOrView) {
+				associations.addAll(getAssociations((EntityOrView) unit.getSource()));
+			} else {
+				associations.addAll(getFeatureAssociations((Service) unit.getSource()));
+			}
+		}
+
+		return associations;
 	}
 
 	protected List<Service> getAllServices(final ServiceAssociation association) {
@@ -98,76 +148,50 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 	}
 
-	protected Service getSourceService(final ServiceAssociation association) {
-		if (association instanceof ServiceEntityAssociation) {
-			final ServiceEntityAssociation entityAssociation = (ServiceEntityAssociation) association;
-			if (entityAssociation.getFeature() != null) {
-				final Entity targetEntity = entityAssociation.isUseFeatureSource()
-						? entityAssociation.getFeature().getParentEntity()
-						: entityAssociation.getFeature().getTargetEntity();
-				final Service localService = entityAssociation.getPartOf();
-				if (localService.getEncapsulates().contains(targetEntity)) {
-					return localService;
-				}
-				final List<Service> remoteServices = targetEntity.getServedBy();
-				if (remoteServices.size() > 0) {
-					return remoteServices.get(0);
-				}
-			}
-		}
-
-		return null;
-	}
-
-	protected List<Service> getTargetServices(final ServiceEntityAssociation association) {
-		if (association.getFeature() != null) {
-			final Entity targetEntity = association.isUseFeatureSource()
-				? association.getFeature().getTargetEntity()
-				: association.getFeature().getParentEntity();
-			return targetEntity.getServedBy();
-		}
-
-		return null;
-	}
-
-	protected Service getSourceService(final UnitAssociation association) {
-		if (association.getServiceFeature() != null) {
-			return getSourceService(association.getServiceFeature());
-		}
-
-		return null;
-	}
-
-	protected List<ServiceAssociation> getAssociationsMatchingService(final Service service,
-			final Service targetService) {
-		final List<ServiceAssociation> associations = new LinkedList<ServiceAssociation>();
-		for (ServiceAssociation association : getAssociations(service)) {
-			if ( association.getOppositeService() != null) {
-				if (targetService.equals(association.getOppositeService())) {
-					associations.add(association);
-				}
+	protected EntityOrView getSourceType(final ServiceAssociation association) {
+		if (association instanceof ServiceAssociation) {
+			final ServiceAssociation serviceAssociation = (ServiceAssociation) association;
+			if (serviceAssociation.getAssociation() instanceof ViewAssociation) {
+				return ((ViewAssociation) serviceAssociation.getAssociation()).getPartOf();
+			} else if (serviceAssociation.isUseAssociationSource()) {
+				return ((EntityAssociation) serviceAssociation.getAssociation()).getTargetEntity();
 			} else {
-				if (association instanceof ServiceEntityAssociation) {
-					if (targetService.getEncapsulates().contains(
-							getType(association))) {
-						associations.add(association);
-					}
-				}
+				return ((EntityAssociation) serviceAssociation.getAssociation()).getParentEntity();
 			}
 		}
 
-		return associations;
+		return null;
 	}
 
-	protected Collection<ServiceAssociation> getAssociations(final Service service) {
-		final List<ServiceAssociation> associations = new LinkedList<ServiceAssociation>();
-		for (ServiceFeature feature : service.getFeatures()) {
-			if (feature instanceof ServiceAssociation) {
-				associations.add((ServiceAssociation) feature);
+	protected EntityOrView getTargetType(final ServiceAssociation association) {
+		if (association instanceof ServiceAssociation) {
+			final ServiceAssociation serviceAssociation = (ServiceAssociation) association;
+			if (serviceAssociation.getAssociation() instanceof ViewAssociation) {
+				
+			} else if (serviceAssociation.isUseAssociationSource()) {
+				return ((EntityAssociation) serviceAssociation.getAssociation()).getTargetEntity();
+			} else {
+				return ((EntityAssociation) serviceAssociation.getAssociation()).getParentEntity();
 			}
 		}
 
-		return associations;
+		return null;
+	}
+
+	protected List<Service> getSourceServices(final ServiceAssociation association) {
+		return getSourceType(association).getServedBy();
+	}
+
+	protected List<Service> getTargetServices(final ServiceAssociation association) {
+		return getTargetType(association).getServedBy();
+	}
+
+	protected List<Service> getSourceServices(final UnitAssociation association) {
+		if (association.getServiceFeature() != null) {
+			return getSourceServices(association.getServiceFeature());
+		}
+
+		return null;
 	}
 
 	protected List<Query> getQueries(final QueryInstance query) {
@@ -193,30 +217,6 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 
 		return Collections.emptyList();
-	}
-
-	protected List<Attribute> getSourceElements(final DynamicUnit unit) {
-		final List<Attribute> features = new LinkedList<Attribute>();
-		if (unit.getSource() != null) {
-			if (unit.getSource() instanceof Service) {
-				final Service service = (Service) unit.getSource();
-				if (service.getFeatures().size() > 0) {
-					for (ServiceFeature feature : service.getFeatures()) {
-						if (feature instanceof ServiceEntityElement) {
-							features.add(((ServiceEntityElement) feature).getFeature());
-						}
-					}
-				} else {
-					for (EntityOrView entityOrView : service.getEncapsulates()) {
-						features.addAll(getAttributes(entityOrView));
-					}
-				}
-			} else {
-				features.addAll(getAttributes((Entity) unit.getSource()));
-			}
-		}
-
-		return features;
 	}
 
 	protected Object getCriteriaContext(final Object object) {

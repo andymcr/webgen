@@ -2,8 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Entity Feature</b></em>'.
@@ -21,10 +19,10 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityFeature()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
-public interface EntityFeature extends EObject {
+public interface EntityFeature extends NamedDisplayElement, Feature {
 	/**
 	 * Returns the value of the '<em><b>Parent Entity</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures <em>Features</em>}'.

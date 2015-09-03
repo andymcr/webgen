@@ -19,7 +19,7 @@ rule WafModel {
 					->select(e | e.oclIsTypeOf(ORM!Entity))
 				in entities.asSet()->symmetricDifference(
 					partialWaf.services
-						->collect(s | s.entities)->flatten()
+						->collect(s | s.encapsulates)->flatten()
 						->select(e | e.oclIsTypeOf(ORM!Entity)).asSet()
 					).asSequence()
 				->collect(e | thisModule.implicitServiceForEntity(e))
@@ -29,7 +29,7 @@ rule WafModel {
 					->select(v | v.oclIsTypeOf(ORM!View))
 				in views.asSet()->symmetricDifference(
 					partialWaf.services
-						->collect(s | s.entities)->flatten()
+						->collect(s | s.encapsulates)->flatten()
 						->select(v | v.oclIsTypeOf(ORM!View)).asSet()
 					).asSequence()
 				->collect(v | thisModule.implicitServiceForView(v))
@@ -43,10 +43,7 @@ lazy rule implicitServiceForEntity {
 	to waf : WAF!Service (
 -- TODO pularise
 		name <- orm.name, 
-		modelName <- orm.name,
-		view <- false,
-		entities <- Sequence{orm},
-		daosUsed <- Sequence{orm}
+		encapsulates <- Sequence{orm}
 	)
 	do {
 		waf;
@@ -58,10 +55,7 @@ lazy rule implicitServiceForView {
 	to waf : WAF!Service (
 -- TODO pularise
 		name <- orm.name, 
-		modelName <- orm.name,
-		view <- false,
-		entities <- Sequence{orm},
-		daosUsed <- Sequence{orm}
+		encapsulates <- Sequence{orm}
 	)
 	do {
 		waf;

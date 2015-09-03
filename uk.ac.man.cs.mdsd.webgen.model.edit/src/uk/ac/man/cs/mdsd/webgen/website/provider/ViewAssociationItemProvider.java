@@ -50,9 +50,32 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addInputClassPropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Input Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_inputClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_inputClass_feature", "_UI_Association_type"),
+				 WebsitePackage.Literals.ASSOCIATION__INPUT_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -125,6 +148,7 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ViewAssociation.class)) {
+			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 			case WebsitePackage.VIEW_ASSOCIATION__NAME:
 			case WebsitePackage.VIEW_ASSOCIATION__USE_ASSOCIATION_SOURCE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

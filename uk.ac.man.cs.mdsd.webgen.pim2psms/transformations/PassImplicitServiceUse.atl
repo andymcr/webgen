@@ -10,16 +10,16 @@ create dummyWaf : WAF refining waf : WAF, website : Website;
 uses WebsiteHelpers;
 
 
-helper context WAF!Service def: getServiceEntityFeature(name : String) : WAF!ServiceEntityFeature
+helper context WAF!Service def: getServiceFeature(name : String) : WAF!ServiceFeature
 	= self.features->any(f | f.name = name);
 
-helper context WAF!UnitFeature def: findServiceEntityFeature() : WAF!ServiceEntityFeature
+helper context WAF!UnitFeature def: findServiceFeature() : WAF!ServiceFeature
 	= if not self.serviceFeature.oclIsUndefined() then
 			self.serviceFeature
 		else
 			let service : WAF!Service = thisModule.findWafService(
 				self.displayedOn.getWebsiteUnit().source.name)
-			in service.getServiceEntityFeature(self.name)
+			in service.getServiceFeature(self.name)
 		endif;
 
 helper def: findWebsitePage(name : String) : Website!Page

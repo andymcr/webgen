@@ -205,9 +205,9 @@ unique lazy rule implicitLoginUnit {
 				= thisModule.findWafService('Authentication').features
 					->select(f | f.name = 'email' or f.name = 'password')
 				in includedFeatures->select(f | f.name = 'email')
-					->collect(f | thisModule.implicitUnitElement(f))
+					->collect(f | thisModule.implicitUnitAttribute(f))
 				->union(includedFeatures->select(f | f.name = 'password')
-					->collect(f | thisModule.implicitUnitElement(f)))
+					->collect(f | thisModule.implicitUnitAttribute(f)))
 				->union(if website.allowAutoLogin then
 						Sequence{thisModule.implicitRememberMeField(website)}
 					else
@@ -247,7 +247,7 @@ unique lazy rule implicitForgottenPasswordUnit {
 				= thisModule.findWafService('Authentication').features
 					->select(f | f.name = 'email')
 				in includedFeatures
-					->collect(f | thisModule.implicitUnitElement(f)),
+					->collect(f | thisModule.implicitUnitAttribute(f)),
 -- assigned in next pass		loginIdField <- OclUndefined,
 		styleClass <- 'unit forgotten_password_unit framed',
 		headerClass <- 'unit_header',
@@ -275,9 +275,9 @@ lazy abstract rule implicitIncludedFeature {
 }
 
 -- @extends implicitIncludedFeature
-lazy abstract rule implicitIncludedElement {
-	from partialWaf : WAF!IncludedElement
-	to waf : WAF!IncludedElement (
+lazy abstract rule implicitIncludedAttribute {
+	from partialWaf : WAF!IncludedAttribute
+	to waf : WAF!IncludedAttribute (
 		obfuscateFormFields <- partialWaf.obfuscateFormFields,
 		dateFormat <- partialWaf.dateFormat
 	)
@@ -292,7 +292,7 @@ lazy abstract rule implicitIncludedAssociation {
 
 --@extends implicitIncludedFeature
 lazy abstract rule implicitUnitFeature {
-	from partialWaf : WAF!ServiceEntityFeature
+	from partialWaf : WAF!ServiceFeature
 	to waf : WAF!UnitFeature (
 		name <- partialWaf.name,
 		cardinality <- partialWaf.cardinality,
@@ -300,9 +300,9 @@ lazy abstract rule implicitUnitFeature {
 	)
 }
 
--- @extends implicitUnitFeature, implicitIncludedElement
-lazy rule implicitUnitElement {
-	from partialWaf : WAF!ServiceEntityElement
+-- @extends implicitUnitFeature, implicitIncludedAttribute
+lazy rule implicitUnitAttribute {
+	from partialWaf : WAF!ServiceAttribute
 	to waf : WAF!UnitElement (
 		serviceFeature <- partialWaf
 	)
@@ -430,7 +430,7 @@ unique lazy rule implicitManageAuthenticationsPage {
 				= thisModule.findWafService('Authentication').features
 					->select(f | f.name = 'username' or f.name = 'email' or f.name = 'lastLogin')
 				in includedFeatures
-					->collect(f | thisModule.implicitUnitElement(f)),
+					->collect(f | thisModule.implicitUnitAttribute(f)),
 		actions <- Sequence{editUserAction},
 		styleClass <- 'unit index_unit framed',
 		headerClass <- 'unit_header',
@@ -457,8 +457,8 @@ unique lazy rule implicitManageAuthenticationsPage {
 				= thisModule.findWafService('Authentication').features
 					->select(f | f.name <> 'password')
 				in includedFeatures
-					->select(f | f.oclIsKindOf(WAF!IncludedElement))
-					->collect(f | thisModule.implicitUnitElement(f)),
+					->select(f | f.oclIsKindOf(WAF!IncludedAttribute))
+					->collect(f | thisModule.implicitUnitAttribute(f)),
 		styleClass <- 'unit update_unit framed',
 		headerClass <- 'unit_header',
 		captionClass <- 'unit_caption',

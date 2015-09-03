@@ -88,9 +88,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
 			case WebsitePackage.SELECTION: return createSelection();
 			case WebsitePackage.SELECTION_PARAMETER: return createSelectionParameter();
-			case WebsitePackage.SERVICE_ENTITY_ELEMENT: return createServiceEntityElement();
-			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION: return createServiceEntityAssociation();
-			case WebsitePackage.SERVICE_VIEW_ASSOCIATION: return createServiceViewAssociation();
+			case WebsitePackage.SERVICE_ATTRIBUTE: return createServiceAttribute();
+			case WebsitePackage.SERVICE_ASSOCIATION: return createServiceAssociation();
 			case WebsitePackage.PAGE: return createPage();
 			case WebsitePackage.PAGE_LINK: return createPageLink();
 			case WebsitePackage.STATIC_MENU: return createStaticMenu();
@@ -584,16 +583,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceViewAssociation createServiceViewAssociation() {
-		ServiceViewAssociationImpl serviceViewAssociation = new ServiceViewAssociationImpl();
-		return serviceViewAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Selection createSelection() {
 		SelectionImpl selection = new SelectionImpl();
 		return selection;
@@ -614,9 +603,9 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement createServiceEntityElement() {
-		ServiceEntityElementImpl serviceEntityElement = new ServiceEntityElementImpl();
-		return serviceEntityElement;
+	public ServiceAttribute createServiceAttribute() {
+		ServiceAttributeImpl serviceAttribute = new ServiceAttributeImpl();
+		return serviceAttribute;
 	}
 
 	/**
@@ -624,9 +613,9 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityAssociation createServiceEntityAssociation() {
-		ServiceEntityAssociationImpl serviceEntityAssociation = new ServiceEntityAssociationImpl();
-		return serviceEntityAssociation;
+	public ServiceAssociation createServiceAssociation() {
+		ServiceAssociationImpl serviceAssociation = new ServiceAssociationImpl();
+		return serviceAssociation;
 	}
 
 	/**

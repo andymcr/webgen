@@ -29,12 +29,12 @@ public interface ModelLabelElement extends ModelLabelFeature {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Service Feature</em>' reference.
-	 * @see #setServiceFeature(ServiceEntityElement)
+	 * @see #setServiceFeature(ServiceAttribute)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabelElement_ServiceFeature()
 	 * @model required="true"
 	 * @generated
 	 */
-	ServiceEntityElement getServiceFeature();
+	ServiceAttribute getServiceFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelElement#getServiceFeature <em>Service Feature</em>}' reference.
@@ -44,6 +44,6 @@ public interface ModelLabelElement extends ModelLabelFeature {
 	 * @see #getServiceFeature()
 	 * @generated
 	 */
-	void setServiceFeature(ServiceEntityElement value);
+	void setServiceFeature(ServiceAttribute value);
 
 } // ModelLabelElement

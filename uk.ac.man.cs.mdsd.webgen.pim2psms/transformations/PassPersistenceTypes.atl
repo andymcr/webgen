@@ -141,6 +141,7 @@ lazy rule InverseCollectionType {
 	}
 }
 
+
 -- @extends NamedDisplayElement
 abstract rule EntityOrView {
 	from website : Website!EntityOrView

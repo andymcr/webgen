@@ -84,12 +84,12 @@ public interface MapUnit extends EditUnit, SelectTarget {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Location</em>' reference.
-	 * @see #setLocation(ServiceEntityElement)
+	 * @see #setLocation(ServiceAttribute)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getMapUnit_Location()
 	 * @model
 	 * @generated
 	 */
-	ServiceEntityElement getLocation();
+	ServiceAttribute getLocation();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.MapUnit#getLocation <em>Location</em>}' reference.
@@ -99,7 +99,7 @@ public interface MapUnit extends EditUnit, SelectTarget {
 	 * @see #getLocation()
 	 * @generated
 	 */
-	void setLocation(ServiceEntityElement value);
+	void setLocation(ServiceAttribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Place Name</b></em>' reference.
@@ -110,12 +110,12 @@ public interface MapUnit extends EditUnit, SelectTarget {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Place Name</em>' reference.
-	 * @see #setPlaceName(ServiceEntityElement)
+	 * @see #setPlaceName(ServiceAttribute)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getMapUnit_PlaceName()
 	 * @model
 	 * @generated
 	 */
-	ServiceEntityElement getPlaceName();
+	ServiceAttribute getPlaceName();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.MapUnit#getPlaceName <em>Place Name</em>}' reference.
@@ -125,6 +125,6 @@ public interface MapUnit extends EditUnit, SelectTarget {
 	 * @see #getPlaceName()
 	 * @generated
 	 */
-	void setPlaceName(ServiceEntityElement value);
+	void setPlaceName(ServiceAttribute value);
 
 } // MapUnit

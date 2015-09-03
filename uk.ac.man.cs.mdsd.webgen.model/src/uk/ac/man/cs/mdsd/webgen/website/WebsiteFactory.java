@@ -368,15 +368,6 @@ public interface WebsiteFactory extends EFactory {
 	ModelLabelAssociation createModelLabelAssociation();
 
 	/**
-	 * Returns a new object of class '<em>Service View Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service View Association</em>'.
-	 * @generated
-	 */
-	ServiceViewAssociation createServiceViewAssociation();
-
-	/**
 	 * Returns a new object of class '<em>Selection</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,22 +386,22 @@ public interface WebsiteFactory extends EFactory {
 	SelectionParameter createSelectionParameter();
 
 	/**
-	 * Returns a new object of class '<em>Service Entity Element</em>'.
+	 * Returns a new object of class '<em>Service Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Entity Element</em>'.
+	 * @return a new object of class '<em>Service Attribute</em>'.
 	 * @generated
 	 */
-	ServiceEntityElement createServiceEntityElement();
+	ServiceAttribute createServiceAttribute();
 
 	/**
-	 * Returns a new object of class '<em>Service Entity Association</em>'.
+	 * Returns a new object of class '<em>Service Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Entity Association</em>'.
+	 * @return a new object of class '<em>Service Association</em>'.
 	 * @generated
 	 */
-	ServiceEntityAssociation createServiceEntityAssociation();
+	ServiceAssociation createServiceAssociation();
 
 	/**
 	 * Returns a new object of class '<em>Create Unit</em>'.

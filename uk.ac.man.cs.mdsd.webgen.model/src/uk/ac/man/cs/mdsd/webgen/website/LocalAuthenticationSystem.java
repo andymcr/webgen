@@ -29,7 +29,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='entitySourceOnlyIfNotEncapsulated authenticationKeyFromUserSource authenticationKeyRequiredAttribute captchaRequiresKeys'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL authenticationKeyFromUserSource='not userSource.oclIsUndefined() implies\r\nlet features : Collection(Feature)\r\n\t= if userSource.oclIsTypeOf(Entity) then\r\n\t\t\tuserSource.oclAsType(Entity).features \r\n\t\telse\r\n\t\t\tlet service : Service = userSource.oclAsType(Service)\r\n\t\t\tin if service.features->isEmpty() then\r\n\t\t\t\t\tservice.encapsulates->collect(e | e.features)\r\n\t\t\t\telse\r\n\t\t\t\t\tservice.features\r\n\t\t\t\t\t\t->select(f | f.oclIsKindOf(ServiceEntityFeature))\r\n\t\t\t\t\t\t->collect(f |\r\n\t\t\t\t\t\t\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n\t\t\t\t\t\t\t\tf.oclAsType(ServiceEntityElement).feature\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n\t\t\t\t\t\t\tendif) \r\n\t\t\t\tendif\r\n\t\tendif\r\n\tin features->includes(userAuthenticationKey)' authenticationKeyRequiredAttribute='if userAuthenticationKey.oclIsUndefined() then false else userAuthenticationKey.cardinality = Cardinality::Required endif' captchaRequiresKeys='useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()' entitySourceOnlyIfNotEncapsulated='userSource.oclIsTypeOf(Entity) implies userSource.oclAsType(Entity).servedBy->isEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL authenticationKeyFromUserSource='not userSource.oclIsUndefined() implies\r\n\tlet features : Collection(Feature)\r\n\t\t= if userSource.oclIsTypeOf(Entity) then\r\n\t\t\t\tuserSource.oclAsType(Entity).features\r\n\t\t\telse if userSource.oclIsTypeOf(View) then\r\n\t\t\t\tuserSource.oclAsType(View).features\r\n\t\t\telse let entities : Sequence(Entity)\r\n\t\t\t\t\t= userSource.oclAsType(Service).encapsulates->select(e | e.oclIsTypeOf(Entity)).oclAsType(Entity)\r\n\t\t\t\tin entities->collect(e | e.features)->union(entities->collect(e | e.associationEnds))\r\n\t\t\t\t\t->union(userSource.oclAsType(Service).encapsulates->select(v | v.oclIsTypeOf(View)).oclAsType(View)->collect(v | v.features))\r\n\t\t\tendif endif\r\n\tin features->includes(userAuthenticationKey)' authenticationKeyRequiredAttribute='if userAuthenticationKey.oclIsUndefined() then false else userAuthenticationKey.cardinality = Cardinality::Required endif' captchaRequiresKeys='useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()' entitySourceOnlyIfNotEncapsulated='userSource.oclIsTypeOf(Entity) implies userSource.oclAsType(Entity).servedBy->isEmpty()'"
  * @generated
  */
 public interface LocalAuthenticationSystem extends Authentication {
@@ -68,12 +68,12 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User Authentication Key</em>' reference.
-	 * @see #setUserAuthenticationKey(Feature)
+	 * @see #setUserAuthenticationKey(Attribute)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_UserAuthenticationKey()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	Feature getUserAuthenticationKey();
+	Attribute getUserAuthenticationKey();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserAuthenticationKey <em>User Authentication Key</em>}' reference.
@@ -83,7 +83,7 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @see #getUserAuthenticationKey()
 	 * @generated
 	 */
-	void setUserAuthenticationKey(Feature value);
+	void setUserAuthenticationKey(Attribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Authentication Source</b></em>' reference.

@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem;
 import uk.ac.man.cs.mdsd.webgen.website.LoginUnit;
@@ -60,7 +60,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected Feature userAuthenticationKey;
+	protected Attribute userAuthenticationKey;
 
 	/**
 	 * The cached value of the '{@link #getAuthenticationSource() <em>Authentication Source</em>}' reference.
@@ -284,10 +284,10 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature getUserAuthenticationKey() {
+	public Attribute getUserAuthenticationKey() {
 		if (userAuthenticationKey != null && userAuthenticationKey.eIsProxy()) {
 			InternalEObject oldUserAuthenticationKey = (InternalEObject)userAuthenticationKey;
-			userAuthenticationKey = (Feature)eResolveProxy(oldUserAuthenticationKey);
+			userAuthenticationKey = (Attribute)eResolveProxy(oldUserAuthenticationKey);
 			if (userAuthenticationKey != oldUserAuthenticationKey) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY, oldUserAuthenticationKey, userAuthenticationKey));
@@ -301,7 +301,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature basicGetUserAuthenticationKey() {
+	public Attribute basicGetUserAuthenticationKey() {
 		return userAuthenticationKey;
 	}
 
@@ -310,8 +310,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUserAuthenticationKey(Feature newUserAuthenticationKey) {
-		Feature oldUserAuthenticationKey = userAuthenticationKey;
+	public void setUserAuthenticationKey(Attribute newUserAuthenticationKey) {
+		Attribute oldUserAuthenticationKey = userAuthenticationKey;
 		userAuthenticationKey = newUserAuthenticationKey;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY, oldUserAuthenticationKey, userAuthenticationKey));
@@ -649,7 +649,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				setUserSource((UnitSource)newValue);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
-				setUserAuthenticationKey((Feature)newValue);
+				setUserAuthenticationKey((Attribute)newValue);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE:
 				setAuthenticationSource((UnitSource)newValue);
@@ -697,7 +697,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				setUserSource((UnitSource)null);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
-				setUserAuthenticationKey((Feature)null);
+				setUserAuthenticationKey((Attribute)null);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE:
 				setAuthenticationSource((UnitSource)null);

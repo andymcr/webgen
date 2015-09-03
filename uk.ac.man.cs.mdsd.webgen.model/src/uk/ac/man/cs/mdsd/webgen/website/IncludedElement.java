@@ -14,44 +14,44 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IncludedElement#getFeature <em>Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IncludedElement#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IncludedElement#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IncludedElement#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIncludedElement()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='cannotReduceCardinality canOnlyGiveDefaultValueForSingletons canOnlyForceSingletonValues'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL cannotReduceCardinality='not feature.oclIsUndefined()\r\n\timplies feature.cardinality = Cardinality::Required implies required' canOnlyGiveDefaultValueForSingletons='not feature.oclIsUndefined() and not defaultValue.oclIsUndefined()\r\n\timplies feature.cardinality <> Cardinality::Many' canOnlyForceSingletonValues='not feature.oclIsUndefined() and not forcedValue.oclIsUndefined()\r\n\timplies feature.cardinality <> Cardinality::Many'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL cannotReduceCardinality='not attribute.oclIsUndefined() implies\r\n\tif attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).cardinality = Cardinality::Required implies required\r\n\telse\r\n\t\tattribute.oclAsType(ViewAttribute).cardinality = Cardinality::Required implies required\r\n\tendif' canOnlyGiveDefaultValueForSingletons='not attribute.oclIsUndefined() and not defaultValue.oclIsUndefined() implies\r\n\tif attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\telse\r\n\t\tattribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n\tendif' canOnlyForceSingletonValues='not attribute.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n\tif attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\telse\r\n\t\tattribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n\tendif'"
  * @generated
  */
 public interface IncludedElement extends IncludedFeature {
 
 	/**
-	 * Returns the value of the '<em><b>Feature</b></em>' reference.
+	 * Returns the value of the '<em><b>Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Feature</em>' reference isn't clear,
+	 * If the meaning of the '<em>Attribute</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Feature</em>' reference.
-	 * @see #setFeature(EntityAttribute)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIncludedElement_Feature()
+	 * @return the value of the '<em>Attribute</em>' reference.
+	 * @see #setAttribute(Attribute)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIncludedElement_Attribute()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EntityAttribute getFeature();
+	Attribute getAttribute();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedElement#getFeature <em>Feature</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedElement#getAttribute <em>Attribute</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Feature</em>' reference.
-	 * @see #getFeature()
+	 * @param value the new value of the '<em>Attribute</em>' reference.
+	 * @see #getAttribute()
 	 * @generated
 	 */
-	void setFeature(EntityAttribute value);
+	void setAttribute(Attribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Obfuscate Form Fields</b></em>' attribute.

@@ -47,6 +47,7 @@ public class UnitAssociationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAssociationPropertyDescriptor(object);
 			addServiceFeaturePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addDynamicLabelPropertyDescriptor(object);
@@ -56,6 +57,28 @@ public class UnitAssociationItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Association feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssociationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IncludedAssociation_association_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedAssociation_association_feature", "_UI_IncludedAssociation_type"),
+				 WafPackage.Literals.INCLUDED_ASSOCIATION__ASSOCIATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Service Feature feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

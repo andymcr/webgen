@@ -2,7 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import uk.ac.man.cs.mdsd.orm.NamedElement;
+import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +23,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface UnitFeature extends NamedElement, IncludedFeature, UnitField, InlineActionContainer {
+public interface UnitFeature extends NamedDisplayElement, IncludedFeature, UnitField, InlineActionContainer {
 	/**
 	 * Returns the value of the '<em><b>Only Display When Not Empty</b></em>' attribute.
 	 * <!-- begin-user-doc -->

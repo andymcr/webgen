@@ -2636,14 +2636,13 @@
             href="website.ecore#//Service/features"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//ServiceEntityElement"/>
+              href="website.ecore#//ServiceAttribute"/>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping"
-              readOnly="true">
+              xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
                 href="website.gmfgraph#IncludedFeatureNameLabel"/>
             <features
-                href="website.ecore#//ServiceEntityElement/name"/>
+                href="website.ecore#//ServiceAttribute/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2658,39 +2657,17 @@
             href="website.ecore#//Service/features"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//ServiceEntityAssociation"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping"
-              readOnly="true">
-            <diagramLabel
-                href="website.gmfgraph#IncludedFeatureNameLabel"/>
-            <features
-                href="website.ecore#//ServiceEntityAssociation/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.0/@tools.3"/>
-          <diagramNode
-              href="website.gmfgraph#ServiceFeature"/>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.8/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="website.ecore#//Service/features"/>
-        <ownedChild>
-          <domainMetaElement
-              href="website.ecore#//ServiceViewAssociation"/>
+              href="website.ecore#//ServiceAssociation"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
                 href="website.gmfgraph#IncludedFeatureNameLabel"/>
             <features
-                href="website.ecore#//NamedElement/name"/>
+                href="website.ecore#//ServiceAssociation/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.0/@tools.7"/>
+              href="website.gmftool#//@palette/@tools.0/@tools.3"/>
           <diagramNode
               href="website.gmfgraph#ServiceFeature"/>
         </ownedChild>
@@ -2717,12 +2694,12 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.8/@ownedChild/@children.0 //@nodes.8/@ownedChild/@children.1 //@nodes.8/@ownedChild/@children.2">
+          children="//@nodes.8/@ownedChild/@children.0 //@nodes.8/@ownedChild/@children.1">
         <compartment
             href="website.gmfgraph#ServiceFeaturesCompartment"/>
       </compartments>
       <compartments
-          children="//@nodes.8/@ownedChild/@children.3">
+          children="//@nodes.8/@ownedChild/@children.2">
         <compartment
             href="website.gmfgraph#SelectionsCompartment"/>
       </compartments>

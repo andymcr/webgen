@@ -16,14 +16,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
-import uk.ac.man.cs.mdsd.webgen.website.IncludedFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitElement;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
@@ -36,7 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class UnitElementItemProvider
-	extends UnitFeatureItemProvider {
+	extends IncludedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -58,9 +53,11 @@ public class UnitElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFeaturePropertyDescriptor(object);
-			addObfuscateFormFieldsPropertyDescriptor(object);
-			addDefaultValuePropertyDescriptor(object);
+			addDateFormatPropertyDescriptor(object);
+			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
+			addCollectionDisplayOptionPropertyDescriptor(object);
+			addMaximumDisplaySizePropertyDescriptor(object);
+			addAutofocusPropertyDescriptor(object);
 			addServiceFeaturePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
@@ -74,61 +71,64 @@ public class UnitElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addFeaturePropertyDescriptor(Object object) {
+	protected void addAttributePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_IncludedElement_feature_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_IncludedElement_feature_feature", "_UI_IncludedElement_type"),
-			WebsitePackage.Literals.INCLUDED_ELEMENT__FEATURE,
+			getString("_UI_IncludedElement_attribute_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_IncludedElement_attribute_feature", "_UI_IncludedElement_type"),
+			WebsitePackage.Literals.INCLUDED_ELEMENT__ATTRIBUTE,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitElement) {
-						final DynamicUnit unit
-							= (DynamicUnit) ((IncludedFeature) object).eContainer();
-						final List<Attribute> elements = new LinkedList<Attribute>();
-						if (unit.getSource() instanceof Entity) {
-							for (EntityFeature feature : ((Entity) unit.getSource()).getFeatures()) {
-								if (feature instanceof Attribute) {
-									elements.add((Attribute) feature);
-								}
-							}
-					
-						} else {
-							for (ServiceFeature includedFeature : ((Service) unit.getSource()).getFeatures()) {
-								if (includedFeature instanceof ServiceEntityElement) {
-									final ServiceEntityElement includedElement
-										= (ServiceEntityElement) includedFeature;
-									if (includedElement.getForcedValue() == null) {
-										elements.add(includedElement.getFeature());
-									}
-								}
-							}
-						}
-						return elements;
+						return getSourceAttributes(
+							(DynamicUnit) ((UnitElement) object).eContainer());
 					}
+
 					return Collections.emptyList();
 				}
 			});
 	}
 
 	/**
-	 * This adds a property descriptor for the Obfuscate Form Fields feature.
+	 * This adds a property descriptor for the Date Format feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addObfuscateFormFieldsPropertyDescriptor(Object object) {
+	protected void addDateFormatPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedElement_obfuscateFormFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedElement_obfuscateFormFields_feature", "_UI_IncludedElement_type"),
-				 WebsitePackage.Literals.INCLUDED_ELEMENT__OBFUSCATE_FORM_FIELDS,
+				 getString("_UI_UnitField_dateFormat_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_dateFormat_feature", "_UI_UnitField_type"),
+				 WebsitePackage.Literals.UNIT_FIELD__DATE_FORMAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Only Display When Not Empty feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOnlyDisplayWhenNotEmptyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_onlyDisplayWhenNotEmpty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_onlyDisplayWhenNotEmpty_feature", "_UI_UnitFeature_type"),
+				 WebsitePackage.Literals.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY,
 				 true,
 				 false,
 				 false,
@@ -138,24 +138,68 @@ public class UnitElementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Value feature.
+	 * This adds a property descriptor for the Collection Display Option feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDefaultValuePropertyDescriptor(Object object) {
+	protected void addCollectionDisplayOptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedElement_defaultValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedElement_defaultValue_feature", "_UI_IncludedElement_type"),
-				 WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				 getString("_UI_UnitFeature_collectionDisplayOption_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_collectionDisplayOption_feature", "_UI_UnitFeature_type"),
+				 WebsitePackage.Literals.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION,
 				 true,
 				 false,
 				 false,
-				 null,
-				 getString("_UI_BusinessPropertyCategory"),
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Maximum Display Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaximumDisplaySizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_maximumDisplaySize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_maximumDisplaySize_feature", "_UI_UnitFeature_type"),
+				 WebsitePackage.Literals.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Autofocus feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutofocusPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_autofocus_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_autofocus_feature", "_UI_UnitFeature_type"),
+				 WebsitePackage.Literals.UNIT_FEATURE__AUTOFOCUS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -178,12 +222,12 @@ public class UnitElementItemProvider
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 			if (object instanceof UnitElement) {
-				final List<ServiceEntityElement> includedElements = new LinkedList<ServiceEntityElement>();
+				final List<ServiceAttribute> includedElements = new LinkedList<ServiceAttribute>();
 				final DynamicUnit unit = (DynamicUnit) ((UnitElement) object).eContainer();
 				if (unit.getSource() instanceof Service) {
-					for (ServiceFeature includedFeature : ((Service) unit.getSource()).getFeatures()) {
-						if (includedFeature instanceof ServiceEntityElement) {
-							includedElements.add((ServiceEntityElement) includedFeature);
+					for (ServiceFeature feature : ((Service) unit.getSource()).getFeatures()) {
+						if (feature instanceof ServiceAttribute) {
+							includedElements.add((ServiceAttribute) feature);
 						}
 					}
 				}
@@ -251,7 +295,7 @@ public class UnitElementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE);
+			childrenFeatures.add(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -306,13 +350,17 @@ public class UnitElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitElement.class)) {
-			case WebsitePackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS:
+			case WebsitePackage.UNIT_ELEMENT__DATE_FORMAT:
+			case WebsitePackage.UNIT_ELEMENT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+			case WebsitePackage.UNIT_ELEMENT__COLLECTION_DISPLAY_OPTION:
+			case WebsitePackage.UNIT_ELEMENT__MAXIMUM_DISPLAY_SIZE:
+			case WebsitePackage.UNIT_ELEMENT__AUTOFOCUS:
 			case WebsitePackage.UNIT_ELEMENT__NAME:
 			case WebsitePackage.UNIT_ELEMENT__PLACEHOLDER:
 			case WebsitePackage.UNIT_ELEMENT__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebsitePackage.UNIT_ELEMENT__DEFAULT_VALUE:
+			case WebsitePackage.UNIT_ELEMENT__ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -332,78 +380,18 @@ public class UnitElementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 WebsiteFactory.eINSTANCE.createModelReference()));
+				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
+				 WebsiteFactory.eINSTANCE.createSelectAction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 WebsiteFactory.eINSTANCE.createFeatureReference()));
+				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
+				 WebsiteFactory.eINSTANCE.createDeleteAction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 WebsiteFactory.eINSTANCE.createParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 CriteriaFactory.eINSTANCE.createNullLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 CriteriaFactory.eINSTANCE.createStringLiteral()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 CriteriaFactory.eINSTANCE.createCurrentTime()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 CriteriaFactory.eINSTANCE.createFunction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
-				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
+				 WebsiteFactory.eINSTANCE.createFeatureSupportAction()));
 	}
 
 	/**

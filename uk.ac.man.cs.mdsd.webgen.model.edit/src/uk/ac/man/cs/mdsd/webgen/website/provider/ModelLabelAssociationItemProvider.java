@@ -18,7 +18,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -94,37 +93,22 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	 * This adds a property descriptor for the Dynamic Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addDynamicLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_ModelLabelAssociation_dynamicLabel_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_dynamicLabel_feature", "_UI_ModelLabelAssociation_type"),
-			WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL,
-			true, false, true, null,
-			getString("_UI_InterfacePropertyCategory"),
-			null) {
-			@Override
-			public Collection<?> getChoiceOfValues(Object object) {
-				if (object instanceof ModelLabelAssociation) {
-					final List<ModelLabel> labels = new LinkedList<ModelLabel>();
-					final ServiceAssociation association
-						= ((ModelLabelAssociation) object).getServiceFeature();
-					if (association instanceof ServiceEntityAssociation) {
-						final ServiceEntityAssociation entityAssociation
-							= (ServiceEntityAssociation) association;
-						if (entityAssociation.getOppositeService() != null) {
-							labels.addAll(entityAssociation.getOppositeService().getDisplayLabels());
-						}
-					}
-					
-					return labels;
-				}
-				return Collections.emptyList();
-			}
-		});
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelLabelAssociation_dynamicLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_dynamicLabel_feature", "_UI_ModelLabelAssociation_type"),
+				 WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**

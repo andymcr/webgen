@@ -19,7 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.LocationAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -83,7 +83,7 @@ public class MapUnitItemProvider
 					if (object instanceof MapUnit) {
 						final MapUnit unit = (MapUnit) object;
 						final List<Attribute> features = new LinkedList<Attribute>();
-						features.addAll(getSourceElements(unit));
+						features.addAll(getSourceAttributes(unit));
 						return features;
 					}
 					return Collections.emptyList();
@@ -177,16 +177,16 @@ public class MapUnitItemProvider
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof MapUnit) {
 						final MapUnit unit = (MapUnit)object;
-						final List<ServiceEntityElement> elements = new LinkedList<ServiceEntityElement>();
+						final List<ServiceAttribute> attributes = new LinkedList<ServiceAttribute>();
 						if (unit.getSource() instanceof Service) {
 							for (ServiceFeature feature : ((Service) unit.getSource()).getFeatures()) {
-								if (feature instanceof ServiceEntityElement) {
-									elements.add((ServiceEntityElement) feature);
+								if (feature instanceof ServiceAttribute) {
+									attributes.add((ServiceAttribute) feature);
 								}
 							}
 						}
 					
-						return elements;
+						return attributes;
 					}
 					return Collections.emptyList();
 				}
@@ -213,19 +213,19 @@ public class MapUnitItemProvider
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof MapUnit) {
 						final MapUnit unit = (MapUnit)object;
-						final List<ServiceEntityElement> elements = new LinkedList<ServiceEntityElement>();
+						final List<ServiceAttribute> attributes = new LinkedList<ServiceAttribute>();
 						if (unit.getSource() instanceof Service) {
 							for (ServiceFeature feature : ((Service) unit.getSource()).getFeatures()) {
-								if (feature instanceof ServiceEntityElement) {
-									final ServiceEntityElement element = (ServiceEntityElement) feature;
-									if (element.getFeature() instanceof LocationAttribute) {
-										elements.add(element);
+								if (feature instanceof ServiceAttribute) {
+									final ServiceAttribute attribute = (ServiceAttribute) feature;
+									if (attribute.getAttribute() instanceof LocationAttribute) {
+										attributes.add(attribute);
 									}
 								}
 							}
 						}
 					
-						return elements;
+						return attributes;
 					}
 					return Collections.emptyList();
 				}

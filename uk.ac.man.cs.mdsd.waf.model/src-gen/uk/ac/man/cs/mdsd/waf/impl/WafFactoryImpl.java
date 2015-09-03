@@ -66,9 +66,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.MODEL_LABEL_ASSOCIATION_X: return createModelLabelAssociationX();
 			case WafPackage.SELECTION: return createSelection();
 			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
-			case WafPackage.SERVICE_ENTITY_ELEMENT: return createServiceEntityElement();
-			case WafPackage.SERVICE_ENTITY_ASSOCIATION: return createServiceEntityAssociation();
-			case WafPackage.SERVICE_VIEW_ASSOCIATION: return createServiceViewAssociation();
+			case WafPackage.SERVICE_FEATURE: return createServiceFeature();
+			case WafPackage.SERVICE_ATTRIBUTE: return createServiceAttribute();
+			case WafPackage.SERVICE_ASSOCIATION: return createServiceAssociation();
 			case WafPackage.STATIC_MENU: return createStaticMenu();
 			case WafPackage.DYNAMIC_MENU: return createDynamicMenu();
 			case WafPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
@@ -251,9 +251,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement createServiceEntityElement() {
-		ServiceEntityElementImpl serviceEntityElement = new ServiceEntityElementImpl();
-		return serviceEntityElement;
+	public ServiceFeature createServiceFeature() {
+		ServiceFeatureImpl serviceFeature = new ServiceFeatureImpl();
+		return serviceFeature;
 	}
 
 	/**
@@ -261,9 +261,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityAssociation createServiceEntityAssociation() {
-		ServiceEntityAssociationImpl serviceEntityAssociation = new ServiceEntityAssociationImpl();
-		return serviceEntityAssociation;
+	public ServiceAttribute createServiceAttribute() {
+		ServiceAttributeImpl serviceAttribute = new ServiceAttributeImpl();
+		return serviceAttribute;
 	}
 
 	/**
@@ -271,9 +271,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceViewAssociation createServiceViewAssociation() {
-		ServiceViewAssociationImpl serviceViewAssociation = new ServiceViewAssociationImpl();
-		return serviceViewAssociation;
+	public ServiceAssociation createServiceAssociation() {
+		ServiceAssociationImpl serviceAssociation = new ServiceAssociationImpl();
+		return serviceAssociation;
 	}
 
 	/**

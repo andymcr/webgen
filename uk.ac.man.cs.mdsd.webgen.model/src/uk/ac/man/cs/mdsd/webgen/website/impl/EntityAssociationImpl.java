@@ -10,11 +10,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
+import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -25,15 +23,10 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getParentEntity <em>Parent Entity</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getColumnName <em>Column Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#isUnique <em>Unique</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#isOrdered <em>Ordered</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetFeatureName <em>Target Feature Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetDisplayLabel <em>Target Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetHeaderClass <em>Target Header Class</em>}</li>
@@ -44,86 +37,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *
  * @generated
  */
-public abstract class EntityAssociationImpl extends AssociationImpl implements EntityAssociation {
+public abstract class EntityAssociationImpl extends EntityFeatureImpl implements EntityAssociation {
 	/**
-	 * The default value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
+	 * The default value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getColumnName()
+	 * @see #getInputClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COLUMN_NAME_EDEFAULT = null;
+	protected static final String INPUT_CLASS_EDEFAULT = "input_association";
 
 	/**
-	 * The cached value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
+	 * The cached value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getColumnName()
+	 * @see #getInputClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected String columnName = COLUMN_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Cardinality CARDINALITY_EDEFAULT = Cardinality.OPTIONAL;
-
-	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isUnique() <em>Unique</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUnique()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean UNIQUE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isUnique() <em>Unique</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUnique()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean unique = UNIQUE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isOrdered() <em>Ordered</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOrdered()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ORDERED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOrdered() <em>Ordered</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOrdered()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean ordered = ORDERED_EDEFAULT;
+	protected String inputClass = INPUT_CLASS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
@@ -174,26 +107,6 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 	 * @ordered
 	 */
 	protected String pivotTableName = PIVOT_TABLE_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInputClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INPUT_CLASS_EDEFAULT = "input_association";
-
-	/**
-	 * The cached value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInputClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inputClass = INPUT_CLASS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTargetFeatureName() <em>Target Feature Name</em>}' attribute.
@@ -332,131 +245,6 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.ENTITY_ASSOCIATION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Entity getParentEntity() {
-		if (eContainerFeatureID() != WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY) return null;
-		return (Entity)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetParentEntity(Entity newParentEntity, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newParentEntity, WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentEntity(Entity newParentEntity) {
-		if (newParentEntity != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY && newParentEntity != null)) {
-			if (EcoreUtil.isAncestor(this, newParentEntity))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newParentEntity != null)
-				msgs = ((InternalEObject)newParentEntity).eInverseAdd(this, WebsitePackage.ENTITY__FEATURES, Entity.class, msgs);
-			msgs = basicSetParentEntity(newParentEntity, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY, newParentEntity, newParentEntity));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getColumnName() {
-		return columnName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setColumnName(String newColumnName) {
-		String oldColumnName = columnName;
-		columnName = newColumnName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__COLUMN_NAME, oldColumnName, columnName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Cardinality getCardinality() {
-		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCardinality(Cardinality newCardinality) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__CARDINALITY, oldCardinality, cardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isUnique() {
-		return unique;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUnique(boolean newUnique) {
-		boolean oldUnique = unique;
-		unique = newUnique;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__UNIQUE, oldUnique, unique));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isOrdered() {
-		return ordered;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOrdered(boolean newOrdered) {
-		boolean oldOrdered = ordered;
-		ordered = newOrdered;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__ORDERED, oldOrdered, ordered));
 	}
 
 	/**
@@ -716,10 +504,6 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetParentEntity((Entity)otherEnd, msgs);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				if (targetEntity != null)
 					msgs = ((InternalEObject)targetEntity).eInverseRemove(this, WebsitePackage.ENTITY__ASSOCIATION_ENDS, Entity.class, msgs);
@@ -736,8 +520,6 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY:
-				return basicSetParentEntity(null, msgs);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				return basicSetTargetEntity(null, msgs);
 		}
@@ -750,32 +532,10 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY:
-				return eInternalContainer().eInverseRemove(this, WebsitePackage.ENTITY__FEATURES, Entity.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY:
-				return getParentEntity();
-			case WebsitePackage.ENTITY_ASSOCIATION__COLUMN_NAME:
-				return getColumnName();
-			case WebsitePackage.ENTITY_ASSOCIATION__CARDINALITY:
-				return getCardinality();
-			case WebsitePackage.ENTITY_ASSOCIATION__UNIQUE:
-				return isUnique();
-			case WebsitePackage.ENTITY_ASSOCIATION__ORDERED:
-				return isOrdered();
+			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
+				return getInputClass();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				if (resolve) return getTargetEntity();
 				return basicGetTargetEntity();
@@ -783,8 +543,6 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 				return getBidirectional();
 			case WebsitePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				return getPivotTableName();
-			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
-				return getInputClass();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				return getTargetFeatureName();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
@@ -809,20 +567,8 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY:
-				setParentEntity((Entity)newValue);
-				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__COLUMN_NAME:
-				setColumnName((String)newValue);
-				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__CARDINALITY:
-				setCardinality((Cardinality)newValue);
-				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__UNIQUE:
-				setUnique((Boolean)newValue);
-				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__ORDERED:
-				setOrdered((Boolean)newValue);
+			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
+				setInputClass((String)newValue);
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				setTargetEntity((Entity)newValue);
@@ -832,9 +578,6 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				setPivotTableName((String)newValue);
-				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
-				setInputClass((String)newValue);
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				setTargetFeatureName((String)newValue);
@@ -866,20 +609,8 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY:
-				setParentEntity((Entity)null);
-				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__COLUMN_NAME:
-				setColumnName(COLUMN_NAME_EDEFAULT);
-				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__CARDINALITY:
-				setCardinality(CARDINALITY_EDEFAULT);
-				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__UNIQUE:
-				setUnique(UNIQUE_EDEFAULT);
-				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__ORDERED:
-				setOrdered(ORDERED_EDEFAULT);
+			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
+				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				setTargetEntity((Entity)null);
@@ -889,9 +620,6 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				setPivotTableName(PIVOT_TABLE_NAME_EDEFAULT);
-				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
-				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				setTargetFeatureName(TARGET_FEATURE_NAME_EDEFAULT);
@@ -923,24 +651,14 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY:
-				return getParentEntity() != null;
-			case WebsitePackage.ENTITY_ASSOCIATION__COLUMN_NAME:
-				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
-			case WebsitePackage.ENTITY_ASSOCIATION__CARDINALITY:
-				return cardinality != CARDINALITY_EDEFAULT;
-			case WebsitePackage.ENTITY_ASSOCIATION__UNIQUE:
-				return unique != UNIQUE_EDEFAULT;
-			case WebsitePackage.ENTITY_ASSOCIATION__ORDERED:
-				return ordered != ORDERED_EDEFAULT;
+			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
+				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				return targetEntity != null;
 			case WebsitePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 				return BIDIRECTIONAL_EDEFAULT == null ? bidirectional != null : !BIDIRECTIONAL_EDEFAULT.equals(bidirectional);
 			case WebsitePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				return PIVOT_TABLE_NAME_EDEFAULT == null ? pivotTableName != null : !PIVOT_TABLE_NAME_EDEFAULT.equals(pivotTableName);
-			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
-				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				return TARGET_FEATURE_NAME_EDEFAULT == null ? targetFeatureName != null : !TARGET_FEATURE_NAME_EDEFAULT.equals(targetFeatureName);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
@@ -964,13 +682,9 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EntityFeature.class) {
+		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY: return WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY;
-				case WebsitePackage.ENTITY_ASSOCIATION__COLUMN_NAME: return WebsitePackage.ENTITY_FEATURE__COLUMN_NAME;
-				case WebsitePackage.ENTITY_ASSOCIATION__CARDINALITY: return WebsitePackage.ENTITY_FEATURE__CARDINALITY;
-				case WebsitePackage.ENTITY_ASSOCIATION__UNIQUE: return WebsitePackage.ENTITY_FEATURE__UNIQUE;
-				case WebsitePackage.ENTITY_ASSOCIATION__ORDERED: return WebsitePackage.ENTITY_FEATURE__ORDERED;
+				case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
 				default: return -1;
 			}
 		}
@@ -984,13 +698,9 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EntityFeature.class) {
+		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY: return WebsitePackage.ENTITY_ASSOCIATION__PARENT_ENTITY;
-				case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME: return WebsitePackage.ENTITY_ASSOCIATION__COLUMN_NAME;
-				case WebsitePackage.ENTITY_FEATURE__CARDINALITY: return WebsitePackage.ENTITY_ASSOCIATION__CARDINALITY;
-				case WebsitePackage.ENTITY_FEATURE__UNIQUE: return WebsitePackage.ENTITY_ASSOCIATION__UNIQUE;
-				case WebsitePackage.ENTITY_FEATURE__ORDERED: return WebsitePackage.ENTITY_ASSOCIATION__ORDERED;
+				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS;
 				default: return -1;
 			}
 		}
@@ -1007,20 +717,12 @@ public abstract class EntityAssociationImpl extends AssociationImpl implements E
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (columnName: ");
-		result.append(columnName);
-		result.append(", cardinality: ");
-		result.append(cardinality);
-		result.append(", unique: ");
-		result.append(unique);
-		result.append(", ordered: ");
-		result.append(ordered);
+		result.append(" (inputClass: ");
+		result.append(inputClass);
 		result.append(", bidirectional: ");
 		result.append(bidirectional);
 		result.append(", pivotTableName: ");
 		result.append(pivotTableName);
-		result.append(", inputClass: ");
-		result.append(inputClass);
 		result.append(", targetFeatureName: ");
 		result.append(targetFeatureName);
 		result.append(", targetDisplayLabel: ");

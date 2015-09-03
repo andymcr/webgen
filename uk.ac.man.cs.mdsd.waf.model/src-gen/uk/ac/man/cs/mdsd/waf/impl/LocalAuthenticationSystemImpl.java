@@ -15,7 +15,7 @@ import uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem;
 import uk.ac.man.cs.mdsd.waf.LoginUnit;
 import uk.ac.man.cs.mdsd.waf.RegistrationUnit;
 import uk.ac.man.cs.mdsd.waf.Service;
-import uk.ac.man.cs.mdsd.waf.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -60,7 +60,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceEntityElement userAuthenticationKey;
+	protected ServiceAttribute userAuthenticationKey;
 
 	/**
 	 * The cached value of the '{@link #getAuthenticationService() <em>Authentication Service</em>}' reference.
@@ -244,10 +244,10 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement getUserAuthenticationKey() {
+	public ServiceAttribute getUserAuthenticationKey() {
 		if (userAuthenticationKey != null && userAuthenticationKey.eIsProxy()) {
 			InternalEObject oldUserAuthenticationKey = (InternalEObject)userAuthenticationKey;
-			userAuthenticationKey = (ServiceEntityElement)eResolveProxy(oldUserAuthenticationKey);
+			userAuthenticationKey = (ServiceAttribute)eResolveProxy(oldUserAuthenticationKey);
 			if (userAuthenticationKey != oldUserAuthenticationKey) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY, oldUserAuthenticationKey, userAuthenticationKey));
@@ -261,7 +261,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement basicGetUserAuthenticationKey() {
+	public ServiceAttribute basicGetUserAuthenticationKey() {
 		return userAuthenticationKey;
 	}
 
@@ -270,8 +270,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUserAuthenticationKey(ServiceEntityElement newUserAuthenticationKey) {
-		ServiceEntityElement oldUserAuthenticationKey = userAuthenticationKey;
+	public void setUserAuthenticationKey(ServiceAttribute newUserAuthenticationKey) {
+		ServiceAttribute oldUserAuthenticationKey = userAuthenticationKey;
 		userAuthenticationKey = newUserAuthenticationKey;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY, oldUserAuthenticationKey, userAuthenticationKey));
@@ -730,7 +730,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				setUserService((Service)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
-				setUserAuthenticationKey((ServiceEntityElement)newValue);
+				setUserAuthenticationKey((ServiceAttribute)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SERVICE:
 				setAuthenticationService((Service)newValue);
@@ -775,7 +775,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				setUserService((Service)null);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
-				setUserAuthenticationKey((ServiceEntityElement)null);
+				setUserAuthenticationKey((ServiceAttribute)null);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SERVICE:
 				setAuthenticationService((Service)null);

@@ -46,9 +46,9 @@ abstract rule DynamicUnit {
 				partialWaf.displayFields
 			else
 				partialWaf.service.features
-					->select(f | f.oclIsTypeOf(WAF!ServiceEntityElement))
+					->select(f | f.oclIsTypeOf(WAF!ServiceAttribute))
 					->select(f | f.forcedValue.oclIsUndefined())
-					->collect(f | thisModule.implicitUnitElement(f))
+					->collect(f | thisModule.implicitUnitAttribute(f))
 				->union(partialWaf.service.features
 					->select(f | f.oclIsKindOf(WAF!ServiceAssociation))
 					->select(f | f.forcedValue.oclIsUndefined())
@@ -59,7 +59,7 @@ abstract rule DynamicUnit {
 }
 
 lazy abstract rule implicitUnitFeature {
-	from partialWaf : WAF!ServiceEntityFeature
+	from partialWaf : WAF!ServiceFeature
 	to waf : WAF!UnitFeature (
 		name <- partialWaf.name,
 		cardinality <- partialWaf.cardinality,
@@ -74,8 +74,8 @@ lazy abstract rule implicitUnitFeature {
 }
 
 --@extends implicitUnitFeature
-lazy rule implicitUnitElement {
-	from partialWaf : WAF!ServiceEntityElement
+lazy rule implicitUnitAttribute {
+	from partialWaf : WAF!ServiceAttribute
 	to waf : WAF!UnitElement (
 		serviceFeature <- partialWaf,
 		dateFormat <- partialWaf.dateFormat

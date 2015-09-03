@@ -90,10 +90,12 @@ class EnumerationLiteral extends NamedDisplayElement {
 
 abstract class EntityOrView extends Classifier {
 	container OrmModel[1] partOf opposite entitiesAndViews
+	contains Feature[] features opposite partOf
 	contains ModelLabel[] displayLabels opposite labelFor
 }
 
 abstract class Feature extends NamedDisplayElement {
+	container EntityOrView[1] partOf opposite features
 	String[1] columnName
 	Boolean inputField
 	// style classes are used when creating implicit service features
@@ -131,17 +133,15 @@ class ModelLabelAssociation extends ModelLabelFeature {
 class Entity extends EntityOrView {
 	refers Entity[] ^contains opposite ^container
 	refers Entity ^container opposite ^contains
-	contains EntityFeature[] features opposite parentEntity
 	String tableName
 	refers Feature[] ^keys
 	String autoKeyName
 }
 
-abstract class EntityFeature {
-	container Entity[1] parentEntity opposite features
+abstract class EntityFeature extends Feature {
 }
 
-abstract class EntityAttribute extends Attribute, EntityFeature {
+abstract class EntityAttribute extends EntityFeature, Attribute {
 	String[1] persistentType
 	String[1] ormType
 }
@@ -201,7 +201,7 @@ class SingletonLocation extends SingletonAttribute {
 
 @Ecore(constraints="onlyOneOwningEnd")
 @OCL(onlyOneOwningEnd="owningEnd xor opposite.owningEnd")
-abstract class EntityAssociation extends Association, EntityFeature {
+abstract class EntityAssociation extends EntityFeature, Association {
 	refers EntityAssociation[1] ^opposite
 	boolean[1] owningEnd
 	boolean[1] bidirectional
@@ -234,18 +234,16 @@ class CollectionAssociation extends EntityAssociation {
 
 class View extends EntityOrView {
 	refers EntityOrView[] encapsulates
-	contains ViewFeature[] features opposite includedBy
 }
 
-abstract class ViewFeature {
-	container View[1] includedBy opposite features
+abstract class ViewFeature extends Feature {
 	String alias
 }
 
-class ViewAttribute extends ViewFeature {
+class ViewAttribute extends ViewFeature, Attribute {
 	refers Attribute[1] attribute
 }
 
-class ViewAssociation extends ViewFeature {
+class ViewAssociation extends ViewFeature, Association {
 	refers Association[1] association
 }

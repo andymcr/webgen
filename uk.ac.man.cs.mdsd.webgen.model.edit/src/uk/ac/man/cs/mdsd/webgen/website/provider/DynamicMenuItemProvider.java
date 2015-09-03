@@ -16,7 +16,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -129,11 +129,11 @@ public class DynamicMenuItemProvider
 					public Collection<?> getChoiceOfValues(Object object) {
 						if (object instanceof DynamicMenu) {
 							final DynamicMenu menu = (DynamicMenu) object;
-							final List<ServiceEntityElement> elements = new LinkedList<ServiceEntityElement>();
+							final List<ServiceAttribute> elements = new LinkedList<ServiceAttribute>();
 							if (menu.getService() != null) {
 								for (ServiceFeature includedFeature : menu.getService().getFeatures()) {
-									if (includedFeature instanceof ServiceEntityElement) {
-										elements.add((ServiceEntityElement) includedFeature);
+									if (includedFeature instanceof ServiceAttribute) {
+										elements.add((ServiceAttribute) includedFeature);
 									}
 								}
 							}

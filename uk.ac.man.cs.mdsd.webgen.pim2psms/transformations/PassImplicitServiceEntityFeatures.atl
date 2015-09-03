@@ -20,18 +20,18 @@ rule ServiceWithoutFeatures {
 	to waf : WAF!Service (
 		features <-
 			let features : Sequence(ORM!Feature)
-				= partialWaf.entities->collect(e | e.features)->flatten()
+				= partialWaf.encapsulates->collect(e | e.features)->flatten()
 				in features
-					->select(f | f.oclIsKindOf(ORM!Attribute))
-					->collect(f | thisModule.implicitServiceEntityElement(f))
+					->select(f | f.oclIsKindOf(ORM!SingletonAttribute))
+					->collect(f | thisModule.implicitServiceAttribute(f))
 				->union(features
 					->select(f | f.oclIsKindOf(ORM!SingletonAssociation))
 					->select(f | f.owningEnd or f.bidirectional or f.opposite.containment)
-					->collect(f | thisModule.implicitServiceEntityAssociation(f)))
+					->collect(f | thisModule.implicitServiceAssociation(f)))
 				->union(features
 					->select(f | f.oclIsKindOf(ORM!CollectionAssociation))
 					->select(f | f.owningEnd or f.bidirectional)
-					->collect(f | thisModule.implicitServiceEntityAssociation(f)))
+					->collect(f | thisModule.implicitServiceAssociation(f)))
 	)
 } 
 
@@ -47,9 +47,9 @@ lazy abstract rule implicitIncludedFeature {
 }
 
 -- @extends implicitIncludedFeature
-lazy abstract rule implicitIncludedElement {
+lazy abstract rule implicitIncludedAttribute {
 	from orm : ORM!Attribute
-	to waf : WAF!IncludedElement (
+	to waf : WAF!IncludedAttribute (
 		obfuscateFormFields <-
 			if orm.oclIsTypeOf(ORM!SingletonElement) then
 				orm.obfuscateFormFields
@@ -73,18 +73,18 @@ lazy abstract rule implicitIncludedAssociation {
 }
 
 -- @extends implicitIncludedFeature
-lazy abstract rule implicitServiceEntityFeature {
+lazy abstract rule implicitServiceFeature {
 	from orm : ORM!Feature
-	to waf : WAF!ServiceEntityFeature (
+	to waf : WAF!ServiceFeature (
 		name <- orm.name
 	)
 }
 
--- @extends implicitServiceEntityFeature, implicitIncludedElement
-lazy rule implicitServiceEntityElement {
+-- @extends implicitServiceFeature, implicitIncludedAttribute
+lazy rule implicitServiceAttribute {
 	from orm : ORM!SingletonAttribute
-	to waf : WAF!ServiceEntityElement (
-		feature <- orm,
+	to waf : WAF!ServiceAttribute (
+		attribute <- orm,
 		cardinality <-
 			if orm.required and orm.defaultValue.oclIsUndefined() then
 				#Required
@@ -121,11 +121,11 @@ lazy rule implicitServiceEntityElement {
 	}
 }
 
--- @extends implicitServiceEntityFeature, implicitIncludedAssociation
-lazy rule implicitServiceEntityAssociation {
+-- @extends implicitServiceFeature, implicitIncludedAssociation
+lazy rule implicitServiceAssociation {
 	from orm : ORM!Association
-	to waf : WAF!ServiceEntityAssociation (
-		feature <- orm,
+	to waf : WAF!ServiceAssociation (
+		association <- orm,
 		cardinality <-
 			if orm.oclIsTypeOf(ORM!SingletonAssociation) then
 				if orm.required then
@@ -135,12 +135,6 @@ lazy rule implicitServiceEntityAssociation {
 				endif
 			else
 				#Many
-			endif,
-		oppositeService <-
-			if orm.opposite.parentEntity.oclIsUndefined() then
-				OclUndefined
-			else
-				thisModule.findEntityService(orm.opposite.parentEntity)
 			endif
 	)
 	do {

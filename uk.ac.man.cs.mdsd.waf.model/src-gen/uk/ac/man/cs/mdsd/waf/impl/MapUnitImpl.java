@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.waf.MapUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.SelectTarget;
-import uk.ac.man.cs.mdsd.waf.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -61,7 +61,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceEntityElement> selectionFeatures;
+	protected EList<ServiceAttribute> selectionFeatures;
 
 	/**
 	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
@@ -111,7 +111,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceEntityElement location;
+	protected ServiceAttribute location;
 
 	/**
 	 * The cached value of the '{@link #getPlaceName() <em>Place Name</em>}' reference.
@@ -121,7 +121,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceEntityElement placeName;
+	protected ServiceAttribute placeName;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,9 +159,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ServiceEntityElement> getSelectionFeatures() {
+	public EList<ServiceAttribute> getSelectionFeatures() {
 		if (selectionFeatures == null) {
-			selectionFeatures = new EObjectResolvingEList<ServiceEntityElement>(ServiceEntityElement.class, this, WafPackage.MAP_UNIT__SELECTION_FEATURES);
+			selectionFeatures = new EObjectResolvingEList<ServiceAttribute>(ServiceAttribute.class, this, WafPackage.MAP_UNIT__SELECTION_FEATURES);
 		}
 		return selectionFeatures;
 	}
@@ -213,10 +213,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement getLocation() {
+	public ServiceAttribute getLocation() {
 		if (location != null && location.eIsProxy()) {
 			InternalEObject oldLocation = (InternalEObject)location;
-			location = (ServiceEntityElement)eResolveProxy(oldLocation);
+			location = (ServiceAttribute)eResolveProxy(oldLocation);
 			if (location != oldLocation) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.MAP_UNIT__LOCATION, oldLocation, location));
@@ -230,7 +230,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement basicGetLocation() {
+	public ServiceAttribute basicGetLocation() {
 		return location;
 	}
 
@@ -239,8 +239,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLocation(ServiceEntityElement newLocation) {
-		ServiceEntityElement oldLocation = location;
+	public void setLocation(ServiceAttribute newLocation) {
+		ServiceAttribute oldLocation = location;
 		location = newLocation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.MAP_UNIT__LOCATION, oldLocation, location));
@@ -251,10 +251,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement getPlaceName() {
+	public ServiceAttribute getPlaceName() {
 		if (placeName != null && placeName.eIsProxy()) {
 			InternalEObject oldPlaceName = (InternalEObject)placeName;
-			placeName = (ServiceEntityElement)eResolveProxy(oldPlaceName);
+			placeName = (ServiceAttribute)eResolveProxy(oldPlaceName);
 			if (placeName != oldPlaceName) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.MAP_UNIT__PLACE_NAME, oldPlaceName, placeName));
@@ -268,7 +268,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement basicGetPlaceName() {
+	public ServiceAttribute basicGetPlaceName() {
 		return placeName;
 	}
 
@@ -277,8 +277,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPlaceName(ServiceEntityElement newPlaceName) {
-		ServiceEntityElement oldPlaceName = placeName;
+	public void setPlaceName(ServiceAttribute newPlaceName) {
+		ServiceAttribute oldPlaceName = placeName;
 		placeName = newPlaceName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.MAP_UNIT__PLACE_NAME, oldPlaceName, placeName));
@@ -354,7 +354,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				return;
 			case WafPackage.MAP_UNIT__SELECTION_FEATURES:
 				getSelectionFeatures().clear();
-				getSelectionFeatures().addAll((Collection<? extends ServiceEntityElement>)newValue);
+				getSelectionFeatures().addAll((Collection<? extends ServiceAttribute>)newValue);
 				return;
 			case WafPackage.MAP_UNIT__READ_ONLY:
 				setReadOnly((Boolean)newValue);
@@ -363,10 +363,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				setDefaultZoomLevel((Integer)newValue);
 				return;
 			case WafPackage.MAP_UNIT__LOCATION:
-				setLocation((ServiceEntityElement)newValue);
+				setLocation((ServiceAttribute)newValue);
 				return;
 			case WafPackage.MAP_UNIT__PLACE_NAME:
-				setPlaceName((ServiceEntityElement)newValue);
+				setPlaceName((ServiceAttribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -393,10 +393,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				setDefaultZoomLevel(DEFAULT_ZOOM_LEVEL_EDEFAULT);
 				return;
 			case WafPackage.MAP_UNIT__LOCATION:
-				setLocation((ServiceEntityElement)null);
+				setLocation((ServiceAttribute)null);
 				return;
 			case WafPackage.MAP_UNIT__PLACE_NAME:
-				setPlaceName((ServiceEntityElement)null);
+				setPlaceName((ServiceAttribute)null);
 				return;
 		}
 		super.eUnset(featureID);

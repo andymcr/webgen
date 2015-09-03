@@ -82,7 +82,7 @@ public class DetailsUnitItemProvider
 					if (object instanceof DetailsUnit) {
 						final DetailsUnit unit = (DetailsUnit) object;
 						final List<Attribute> features = new LinkedList<Attribute>();
-						features.addAll(getSourceElements(unit));
+						features.addAll(getSourceAttributes(unit));
 						return features;
 					}
 					return Collections.emptyList();

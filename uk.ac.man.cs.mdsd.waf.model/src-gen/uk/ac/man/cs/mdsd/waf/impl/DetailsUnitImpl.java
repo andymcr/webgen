@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.waf.DetailsUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.SelectTarget;
-import uk.ac.man.cs.mdsd.waf.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -58,7 +58,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceEntityElement> selectionFeatures;
+	protected EList<ServiceAttribute> selectionFeatures;
 
 	/**
 	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
@@ -116,9 +116,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ServiceEntityElement> getSelectionFeatures() {
+	public EList<ServiceAttribute> getSelectionFeatures() {
 		if (selectionFeatures == null) {
-			selectionFeatures = new EObjectResolvingEList<ServiceEntityElement>(ServiceEntityElement.class, this, WafPackage.DETAILS_UNIT__SELECTION_FEATURES);
+			selectionFeatures = new EObjectResolvingEList<ServiceAttribute>(ServiceAttribute.class, this, WafPackage.DETAILS_UNIT__SELECTION_FEATURES);
 		}
 		return selectionFeatures;
 	}
@@ -206,7 +206,7 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				return;
 			case WafPackage.DETAILS_UNIT__SELECTION_FEATURES:
 				getSelectionFeatures().clear();
-				getSelectionFeatures().addAll((Collection<? extends ServiceEntityElement>)newValue);
+				getSelectionFeatures().addAll((Collection<? extends ServiceAttribute>)newValue);
 				return;
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);

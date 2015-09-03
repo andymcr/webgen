@@ -14,7 +14,7 @@ rule CollectionAssociation {
 	to orm : ORM!CollectionAssociation (
 		opposite <-
 			if partialOrm.name = 'autoLogin'
-					and partialOrm.parentEntity.name = 'Authentication'then
+					and partialOrm.partOf.name = 'Authentication' then
 				let autoLogin : ORM!Entity = thisModule.findOrmEntity('AutoLogin')
 					in if not autoLogin.oclIsUndefined() then
 							autoLogin.getOrmFeature('authentication')

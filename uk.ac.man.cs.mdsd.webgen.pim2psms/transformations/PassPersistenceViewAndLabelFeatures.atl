@@ -1,0 +1,197 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+
+module PassPersistenceViewAndLabelFeatures;
+create dummyOrm : ORM refining orm : ORM, website : Website;
+
+uses WebsiteHelpers;
+
+
+abstract rule NamedElement {
+	from website : Website!NamedElement
+	to orm : ORM!NamedElement (
+		name <- website.name
+	)
+}
+
+
+abstract rule EntityOrView {
+	from partialOrm : ORM!EntityOrView
+	to orm : ORM!EntityOrView (
+	)
+}
+
+-- @extends NamedElement
+rule ModelLabel {
+	from website : Website!ModelLabelY
+	to orm : ORM!ModelLabel (
+		format <- website.format,
+		features <- website.features
+	)
+}
+
+abstract rule ModelLabelFeature {
+	from website : Website!ModelLabelFeatureY
+	to orm : ORM!ModelLabelFeature (
+	)
+}
+
+-- @extends ModelLabelFeature
+rule ModelLabelAttribute {
+	from website : Website!ModelLabelAttributeY
+	to orm : ORM!ModelLabelAttribute (
+		attribute <-
+			if website.attribute.oclIsKindOf(Website!EntityAttribute) then
+				website.attribute.findOrmEntity().getOrmFeature(website.attribute.name)
+			else
+				website.attribute
+			endif
+	)
+}
+
+-- @extends ModelLabelFeature
+rule ModelLabelAssociation {
+	from website : Website!ModelLabelAssociationY
+	to orm : ORM!ModelLabelAssociation (
+		association <-
+			if website.association.oclIsKindOf(Website!EntityAssociation) then
+				if website.useAssociationSource then
+					website.association.findOrmEntity().getOrmFeature(website.association.name)
+				else
+					website.association.findOrmTargetEntity().getOrmFeature(website.association.targetFeatureName)
+				endif
+			else
+				website.association
+			endif,
+		dynamicLabel <- website.dynamicLabel
+	)
+}
+
+
+-- @extends EntityOrView
+rule Entity {
+	from partialOrm : ORM!Entity
+	to orm : ORM!Entity (
+		displayLabels <-
+			let website : Website!EntityOrView
+				= thisModule.findWebsiteEntityOrView(partialOrm.name)
+				in if website.displayLabels->exists(l | l.name = 'default') then
+						website.displayLabels
+					else
+						website.displayLabels-> union(
+							if partialOrm.features->exists(f | f.name = 'name') then
+								Sequence{thisModule.implicitEntityLabel(
+									partialOrm.features->any(f | f.name = 'name'))
+								}
+							else if partialOrm.features->exists(f | f.name = 'title') then
+								Sequence{thisModule.implicitEntityLabel(
+									partialOrm.features->any(f | f.name = 'title'))
+								}
+							else
+								Sequence{}
+							endif endif)
+					endif
+	)
+}
+
+lazy rule implicitEntityLabel {
+	from website : ORM!EntityFeature
+	to orm : ORM!ModelLabel (
+		name <- 'default',
+		format <- '%s',
+		features <- Sequence{feature}
+	), feature : ORM!ModelLabelAttribute (
+		attribute <- website
+	)
+	do {
+		orm;
+	}
+}
+
+
+-- @extends EntityOrView
+rule View {
+	from partialOrm : ORM!View
+	to orm : ORM!View (
+		-- features via partOf in features
+		displayLabels <-
+			let website : Website!EntityOrView
+				= thisModule.findWebsiteEntityOrView(partialOrm.name)
+				in if website.displayLabels->exists(l | l.name = 'default') then
+						website.displayLabels
+					else
+						website.displayLabels-> union(
+							if website.features->exists(f | f.name = 'name') then
+								Sequence{thisModule.implicitViewLabel(
+									website.features->any(f | f.name = 'name'))
+								}
+							else if website.features->exists(f | f.name = 'title') then
+								Sequence{thisModule.implicitViewLabel(
+									website.features->any(f | f.name = 'title'))
+								}
+							else
+								Sequence{}
+							endif endif)
+					endif
+	)
+}
+
+lazy rule implicitViewLabel {
+	from website : Website!ViewFeature
+	to orm : ORM!ModelLabel (
+		name <- 'default',
+		format <- '%s',
+		features <- Sequence{feature}
+	), feature : ORM!ModelLabelAttribute (
+--		attribute <- website
+	)
+	do {
+		orm;
+	}
+}
+
+abstract rule ViewFeature {
+	from website : Website!ViewFeature
+	to orm : ORM!ViewFeature (
+		partOf <- thisModule.findOrmEntityOrView(website.partOf.name),
+		inputField <- false
+	)
+}
+
+-- @extends ViewFeature
+rule ViewAttribute {
+	from website : Website!ViewAttribute
+	to orm : ORM!ViewAttribute (
+		attribute <-
+			if website.attribute.oclIsKindOf(Website!EntityAttribute) then
+				website.attribute.findOrmEntity().getOrmFeature(website.attribute.name)
+			else
+				website.attribute
+			endif --,
+--		columnName <-
+--			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
+--				website.columnName
+--			else
+--				website.name.createAttributeColumnName()
+--			endif
+	)
+}
+
+-- @extends ViewFeature
+rule ViewAssociation {
+	from website : Website!ViewAssociation
+	to orm : ORM!ViewAssociation (
+		association <-
+			if website.association.oclIsKindOf(Website!EntityAssociation) then
+				if website.useAssociationSource then
+					website.association.findOrmEntity().getOrmFeature(website.association.name)
+				else
+					website.association.findOrmTargetEntity().getOrmFeature(website.association.targetFeatureName)
+				endif
+			else
+				website.association
+			endif
+	)
+}

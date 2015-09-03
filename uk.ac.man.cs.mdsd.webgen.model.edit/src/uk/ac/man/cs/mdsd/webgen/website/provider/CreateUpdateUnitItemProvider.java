@@ -77,7 +77,7 @@ public class CreateUpdateUnitItemProvider
 					if (object instanceof CreateUpdateUnit) {
 						final CreateUpdateUnit unit = (CreateUpdateUnit) object;
 						final List<Attribute> features = new LinkedList<Attribute>();
-						features.addAll(getSourceElements(unit));
+						features.addAll(getSourceAttributes(unit));
 						return features;
 					}
 					return Collections.emptyList();

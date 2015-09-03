@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 import uk.ac.man.cs.mdsd.orm.ViewAssociation;
 
@@ -89,7 +88,7 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ViewAssociation)object).getAlias();
+		String label = ((ViewAssociation)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ViewAssociation_type") :
 			getString("_UI_ViewAssociation_type") + " " + label;

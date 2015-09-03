@@ -5759,19 +5759,18 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3167"
-        editPartClassName="ServiceEntityElementEditPart"
-        itemSemanticEditPolicyClassName="ServiceEntityElementItemSemanticEditPolicy"
-        notationViewFactoryClassName="ServiceEntityElementViewFactory"
-        canonicalEditPolicyClassName="ServiceEntityElementCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ServiceEntityElementGraphicalNodeEditPolicy"
-        createCommandClassName="ServiceEntityElementCreateCommand"
+        visualID="3241"
+        editPartClassName="ServiceAttributeEditPart"
+        itemSemanticEditPolicyClassName="ServiceAttributeItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ServiceAttributeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ServiceAttributeGraphicalNodeEditPolicy"
+        createCommandClassName="ServiceAttributeCreateCommand"
         containers="//@diagram/@compartments.46">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ServiceEntityElementEditHelper"/>
+          editHelperClassName="ServiceAttributeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -5787,18 +5786,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/ServiceEntityElement"/>
+            href="website.genmodel#//website/ServiceAttribute"/>
         <containmentMetaFeature
             href="website.genmodel#//website/Service/features"/>
         <childMetaFeature
             href="website.genmodel#//website/Service/features"/>
       </modelFacet>
       <labels
-          visualID="5174"
-          editPartClassName="ServiceEntityElementNameEditPart"
-          itemSemanticEditPolicyClassName="ServiceEntityElementNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ServiceEntityElementNameViewFactory"
-          readOnly="true"
+          visualID="5249"
+          editPartClassName="ServiceAttributeNameEditPart"
+          itemSemanticEditPolicyClassName="ServiceAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -5810,24 +5807,23 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/ServiceEntityElement/name"/>
+              href="website.genmodel#//website/ServiceAttribute/name"/>
         </modelFacet>
       </labels>
     </childNodes>
     <childNodes
-        visualID="3168"
-        editPartClassName="ServiceEntityAssociationEditPart"
-        itemSemanticEditPolicyClassName="ServiceEntityAssociationItemSemanticEditPolicy"
-        notationViewFactoryClassName="ServiceEntityAssociationViewFactory"
-        canonicalEditPolicyClassName="ServiceEntityAssociationCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ServiceEntityAssociationGraphicalNodeEditPolicy"
-        createCommandClassName="ServiceEntityAssociationCreateCommand"
+        visualID="3242"
+        editPartClassName="ServiceAssociationEditPart"
+        itemSemanticEditPolicyClassName="ServiceAssociationItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ServiceAssociationCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ServiceAssociationGraphicalNodeEditPolicy"
+        createCommandClassName="ServiceAssociationCreateCommand"
         containers="//@diagram/@compartments.46">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ServiceEntityAssociationEditHelper"/>
+          editHelperClassName="ServiceAssociationEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -5843,18 +5839,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/ServiceEntityAssociation"/>
+            href="website.genmodel#//website/ServiceAssociation"/>
         <containmentMetaFeature
             href="website.genmodel#//website/Service/features"/>
         <childMetaFeature
             href="website.genmodel#//website/Service/features"/>
       </modelFacet>
       <labels
-          visualID="5175"
-          editPartClassName="ServiceEntityAssociationNameEditPart"
-          itemSemanticEditPolicyClassName="ServiceEntityAssociationNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ServiceEntityAssociationNameViewFactory"
-          readOnly="true"
+          visualID="5250"
+          editPartClassName="ServiceAssociationNameEditPart"
+          itemSemanticEditPolicyClassName="ServiceAssociationNameItemSemanticEditPolicy"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -5866,62 +5860,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/ServiceEntityAssociation/name"/>
-        </modelFacet>
-      </labels>
-    </childNodes>
-    <childNodes
-        visualID="3166"
-        editPartClassName="ServiceViewAssociationEditPart"
-        itemSemanticEditPolicyClassName="ServiceViewAssociationItemSemanticEditPolicy"
-        notationViewFactoryClassName="ServiceViewAssociationViewFactory"
-        canonicalEditPolicyClassName="ServiceViewAssociationCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ServiceViewAssociationGraphicalNodeEditPolicy"
-        createCommandClassName="ServiceViewAssociationCreateCommand"
-        containers="//@diagram/@compartments.46">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ServiceViewAssociationEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          layoutType="FLOW_LAYOUT"
-          className="ServiceFeatureFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ServiceFeatureFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureIncludedFeatureNameLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ServiceFeatureFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(true);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_CENTER&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_CENTER&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(2);&#xA;&#x9;layoutThis.setMinorSpacing(2);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureIncludedFeatureNameLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureIncludedFeatureNameLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureIncludedFeatureNameLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureIncludedFeatureNameLabelFigure() {&#xA;&#x9;&#x9;return fFigureIncludedFeatureNameLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 180, 230, 180);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            width="80"
-            height="20"/>
-      </viewmap>
-      <modelFacet>
-        <metaClass
-            href="website.genmodel#//website/ServiceViewAssociation"/>
-        <containmentMetaFeature
-            href="website.genmodel#//website/Service/features"/>
-        <childMetaFeature
-            href="website.genmodel#//website/Service/features"/>
-      </modelFacet>
-      <labels
-          visualID="5173"
-          editPartClassName="ServiceViewAssociationNameEditPart"
-          itemSemanticEditPolicyClassName="ServiceViewAssociationNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ServiceViewAssociationNameViewFactory"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureIncludedFeatureNameLabelFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="website.genmodel#//website/NamedElement/name"/>
+              href="website.genmodel#//website/ServiceAssociation/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -7571,7 +7510,7 @@
         itemSemanticEditPolicyClassName="ServiceFeaturesCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ServiceIncludedFeaturesCompartmentViewFactory"
         canonicalEditPolicyClassName="ServiceFeaturesCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.105 //@diagram/@childNodes.106 //@diagram/@childNodes.107"
+        childNodes="//@diagram/@childNodes.105 //@diagram/@childNodes.106"
         title="ServiceFeaturesCompartment"
         canCollapse="false"
         hideIfEmpty="false"
@@ -7589,7 +7528,7 @@
         itemSemanticEditPolicyClassName="ServiceSelectionCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ServiceSelectionCompartmentViewFactory"
         canonicalEditPolicyClassName="ServiceSelectionCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.108"
+        childNodes="//@diagram/@childNodes.107"
         title="SelectionsCompartment"
         canCollapse="false"
         hideIfEmpty="false"
@@ -7649,8 +7588,7 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="View association X"
-            description="Add an view association to a service or an interface unit"
-            genNodes="//@diagram/@childNodes.107"/>
+            description="Add an view association to a service or an interface unit"/>
       </groups>
       <groups
           title="Menu"
@@ -7784,7 +7722,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Selection"
             description="Add selection to a service"
-            genNodes="//@diagram/@childNodes.108"/>
+            genNodes="//@diagram/@childNodes.107"/>
       </groups>
       <groups
           title="Authentication"
@@ -8260,9 +8198,6 @@
         parent="//@diagram/@topLevelNodes.8"
         child="//@diagram/@childNodes.107"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.8"
-        child="//@diagram/@childNodes.108"/>
-    <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.8"/>
     <childReferences
@@ -8387,7 +8322,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.10/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.16/@labels.0/@modelFacet //@diagram/@childNodes.17/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@childNodes.22/@labels.0/@modelFacet //@diagram/@childNodes.23/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.26/@labels.0/@modelFacet //@diagram/@childNodes.27/@labels.0/@modelFacet //@diagram/@childNodes.28/@labels.0/@modelFacet //@diagram/@childNodes.29/@labels.0/@modelFacet //@diagram/@childNodes.25/@labels.0/@modelFacet //@diagram/@childNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.32/@labels.0/@modelFacet //@diagram/@childNodes.36/@labels.0/@modelFacet //@diagram/@childNodes.39/@labels.0/@modelFacet //@diagram/@childNodes.38/@labels.0/@modelFacet //@diagram/@childNodes.41/@labels.0/@modelFacet //@diagram/@childNodes.40/@labels.0/@modelFacet //@diagram/@childNodes.37/@labels.0/@modelFacet //@diagram/@childNodes.35/@labels.0/@modelFacet //@diagram/@childNodes.43/@labels.0/@modelFacet //@diagram/@childNodes.46/@labels.0/@modelFacet //@diagram/@childNodes.49/@labels.0/@modelFacet //@diagram/@childNodes.50/@labels.0/@modelFacet //@diagram/@childNodes.48/@labels.0/@modelFacet //@diagram/@childNodes.52/@labels.0/@modelFacet //@diagram/@childNodes.53/@labels.0/@modelFacet //@diagram/@childNodes.51/@labels.0/@modelFacet //@diagram/@childNodes.47/@labels.0/@modelFacet //@diagram/@childNodes.45/@labels.0/@modelFacet //@diagram/@childNodes.55/@labels.0/@modelFacet //@diagram/@childNodes.58/@labels.0/@modelFacet //@diagram/@childNodes.59/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet //@diagram/@childNodes.61/@labels.0/@modelFacet //@diagram/@childNodes.62/@labels.0/@modelFacet //@diagram/@childNodes.60/@labels.0/@modelFacet //@diagram/@childNodes.56/@labels.0/@modelFacet //@diagram/@childNodes.54/@labels.0/@modelFacet //@diagram/@childNodes.44/@labels.0/@modelFacet //@diagram/@childNodes.63/@labels.0/@modelFacet //@diagram/@childNodes.64/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet //@diagram/@childNodes.65/@labels.0/@modelFacet //@diagram/@childNodes.34/@labels.0/@modelFacet //@diagram/@childNodes.66/@labels.0/@modelFacet //@diagram/@childNodes.67/@labels.0/@modelFacet //@diagram/@childNodes.68/@labels.0/@modelFacet //@diagram/@childNodes.31/@labels.0/@modelFacet //@diagram/@childNodes.71/@labels.0/@modelFacet //@diagram/@childNodes.70/@labels.0/@modelFacet //@diagram/@childNodes.74/@labels.0/@modelFacet //@diagram/@childNodes.75/@labels.0/@modelFacet //@diagram/@childNodes.73/@labels.0/@modelFacet //@diagram/@childNodes.77/@labels.0/@modelFacet //@diagram/@childNodes.78/@labels.0/@modelFacet //@diagram/@childNodes.76/@labels.0/@modelFacet //@diagram/@childNodes.79/@labels.0/@modelFacet //@diagram/@childNodes.72/@labels.0/@modelFacet //@diagram/@childNodes.80/@labels.0/@modelFacet //@diagram/@childNodes.81/@labels.0/@modelFacet //@diagram/@childNodes.82/@labels.0/@modelFacet //@diagram/@childNodes.83/@labels.0/@modelFacet //@diagram/@childNodes.84/@labels.0/@modelFacet //@diagram/@childNodes.69/@labels.0/@modelFacet //@diagram/@childNodes.85/@labels.0/@modelFacet //@diagram/@childNodes.87/@labels.0/@modelFacet //@diagram/@childNodes.88/@labels.0/@modelFacet //@diagram/@childNodes.89/@labels.0/@modelFacet //@diagram/@childNodes.90/@labels.0/@modelFacet //@diagram/@childNodes.86/@labels.0/@modelFacet //@diagram/@childNodes.91/@labels.0/@modelFacet //@diagram/@childNodes.93/@labels.0/@modelFacet //@diagram/@childNodes.96/@labels.0/@modelFacet //@diagram/@childNodes.97/@labels.0/@modelFacet //@diagram/@childNodes.98/@labels.0/@modelFacet //@diagram/@childNodes.99/@labels.0/@modelFacet //@diagram/@childNodes.95/@labels.0/@modelFacet //@diagram/@childNodes.94/@labels.0/@modelFacet //@diagram/@childNodes.100/@labels.0/@modelFacet //@diagram/@childNodes.101/@labels.0/@modelFacet //@diagram/@childNodes.92/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.102/@labels.0/@modelFacet //@diagram/@childNodes.103/@labels.0/@modelFacet //@diagram/@childNodes.104/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.105/@labels.0/@modelFacet //@diagram/@childNodes.106/@labels.0/@modelFacet //@diagram/@childNodes.107/@labels.0/@modelFacet //@diagram/@childNodes.108/@labels.0/@modelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.10/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.16/@labels.0/@modelFacet //@diagram/@childNodes.17/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@childNodes.22/@labels.0/@modelFacet //@diagram/@childNodes.23/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.26/@labels.0/@modelFacet //@diagram/@childNodes.27/@labels.0/@modelFacet //@diagram/@childNodes.28/@labels.0/@modelFacet //@diagram/@childNodes.29/@labels.0/@modelFacet //@diagram/@childNodes.25/@labels.0/@modelFacet //@diagram/@childNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.32/@labels.0/@modelFacet //@diagram/@childNodes.36/@labels.0/@modelFacet //@diagram/@childNodes.39/@labels.0/@modelFacet //@diagram/@childNodes.38/@labels.0/@modelFacet //@diagram/@childNodes.41/@labels.0/@modelFacet //@diagram/@childNodes.40/@labels.0/@modelFacet //@diagram/@childNodes.37/@labels.0/@modelFacet //@diagram/@childNodes.35/@labels.0/@modelFacet //@diagram/@childNodes.43/@labels.0/@modelFacet //@diagram/@childNodes.46/@labels.0/@modelFacet //@diagram/@childNodes.49/@labels.0/@modelFacet //@diagram/@childNodes.50/@labels.0/@modelFacet //@diagram/@childNodes.48/@labels.0/@modelFacet //@diagram/@childNodes.52/@labels.0/@modelFacet //@diagram/@childNodes.53/@labels.0/@modelFacet //@diagram/@childNodes.51/@labels.0/@modelFacet //@diagram/@childNodes.47/@labels.0/@modelFacet //@diagram/@childNodes.45/@labels.0/@modelFacet //@diagram/@childNodes.55/@labels.0/@modelFacet //@diagram/@childNodes.58/@labels.0/@modelFacet //@diagram/@childNodes.59/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet //@diagram/@childNodes.61/@labels.0/@modelFacet //@diagram/@childNodes.62/@labels.0/@modelFacet //@diagram/@childNodes.60/@labels.0/@modelFacet //@diagram/@childNodes.56/@labels.0/@modelFacet //@diagram/@childNodes.54/@labels.0/@modelFacet //@diagram/@childNodes.44/@labels.0/@modelFacet //@diagram/@childNodes.63/@labels.0/@modelFacet //@diagram/@childNodes.64/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet //@diagram/@childNodes.65/@labels.0/@modelFacet //@diagram/@childNodes.34/@labels.0/@modelFacet //@diagram/@childNodes.66/@labels.0/@modelFacet //@diagram/@childNodes.67/@labels.0/@modelFacet //@diagram/@childNodes.68/@labels.0/@modelFacet //@diagram/@childNodes.31/@labels.0/@modelFacet //@diagram/@childNodes.71/@labels.0/@modelFacet //@diagram/@childNodes.70/@labels.0/@modelFacet //@diagram/@childNodes.74/@labels.0/@modelFacet //@diagram/@childNodes.75/@labels.0/@modelFacet //@diagram/@childNodes.73/@labels.0/@modelFacet //@diagram/@childNodes.77/@labels.0/@modelFacet //@diagram/@childNodes.78/@labels.0/@modelFacet //@diagram/@childNodes.76/@labels.0/@modelFacet //@diagram/@childNodes.79/@labels.0/@modelFacet //@diagram/@childNodes.72/@labels.0/@modelFacet //@diagram/@childNodes.80/@labels.0/@modelFacet //@diagram/@childNodes.81/@labels.0/@modelFacet //@diagram/@childNodes.82/@labels.0/@modelFacet //@diagram/@childNodes.83/@labels.0/@modelFacet //@diagram/@childNodes.84/@labels.0/@modelFacet //@diagram/@childNodes.69/@labels.0/@modelFacet //@diagram/@childNodes.85/@labels.0/@modelFacet //@diagram/@childNodes.87/@labels.0/@modelFacet //@diagram/@childNodes.88/@labels.0/@modelFacet //@diagram/@childNodes.89/@labels.0/@modelFacet //@diagram/@childNodes.90/@labels.0/@modelFacet //@diagram/@childNodes.86/@labels.0/@modelFacet //@diagram/@childNodes.91/@labels.0/@modelFacet //@diagram/@childNodes.93/@labels.0/@modelFacet //@diagram/@childNodes.96/@labels.0/@modelFacet //@diagram/@childNodes.97/@labels.0/@modelFacet //@diagram/@childNodes.98/@labels.0/@modelFacet //@diagram/@childNodes.99/@labels.0/@modelFacet //@diagram/@childNodes.95/@labels.0/@modelFacet //@diagram/@childNodes.94/@labels.0/@modelFacet //@diagram/@childNodes.100/@labels.0/@modelFacet //@diagram/@childNodes.101/@labels.0/@modelFacet //@diagram/@childNodes.92/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.102/@labels.0/@modelFacet //@diagram/@childNodes.103/@labels.0/@modelFacet //@diagram/@childNodes.104/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.105/@labels.0/@modelFacet //@diagram/@childNodes.106/@labels.0/@modelFacet //@diagram/@childNodes.107/@labels.0/@modelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:PredefinedEnumParser"
         uses="//@diagram/@links.1/@labels.1/@modelFacet"/>

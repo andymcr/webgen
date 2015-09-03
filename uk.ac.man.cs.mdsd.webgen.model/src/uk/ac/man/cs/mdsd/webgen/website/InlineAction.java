@@ -22,7 +22,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getInlineAction()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='canOnlyLinkToSingletonFeatures'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL canOnlyLinkToSingletonFeatures='usedBy.oclIsKindOf(UnitFeature) implies\r\n\tif usedBy.oclIsKindOf(UnitElement) then\r\n\t\tlet element : UnitElement = usedBy.oclAsType(UnitElement)\r\n\t\tin not element.feature.oclIsUndefined() implies element.feature.cardinality <> Cardinality::Many\r\n\telse\r\n\t\ttrue\r\n\tendif'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL canOnlyLinkToSingletonFeatures='usedBy.oclIsKindOf(UnitFeature) implies\r\n\tif usedBy.oclIsKindOf(UnitElement) then\r\n\t\tlet attribute : UnitElement = usedBy.oclAsType(UnitElement)\r\n\t\tin not attribute.attribute.oclIsUndefined() implies\r\n\t\t\tif attribute.attribute.oclIsTypeOf(ViewAttribute) then\r\n\t\t\t\tattribute.attribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tattribute.attribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\t\t\tendif\r\n\telse\r\n\t\tlet association : UnitAssociation = usedBy.oclAsType(UnitAssociation)\r\n\t\tin not association.association.oclIsUndefined() implies\r\n\t\t\tif association.association.oclIsTypeOf(ViewAttribute) then\r\n\t\t\t\tassociation.association.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tassociation.association.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\t\t\tendif\r\n\tendif'"
  * @generated
  */
 public interface InlineAction extends NamedDisplayElement {

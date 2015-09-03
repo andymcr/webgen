@@ -1,11 +1,8 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: Feature.java,v 1.13 2013/04/23 10:31:56 andy Exp $
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,10 +19,11 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature()
- * @model abstract="true"
+ * @model interface="true" abstract="true"
  * @generated
  */
-public interface Feature extends NamedDisplayElement {
+public interface Feature extends EObject {
+
 	/**
 	 * Returns the value of the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -103,5 +101,4 @@ public interface Feature extends NamedDisplayElement {
 	 * @generated
 	 */
 	void setFooterClass(String value);
-
 } // Feature

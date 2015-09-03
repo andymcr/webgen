@@ -33,7 +33,7 @@ public interface ModelLabelAttributeY extends ModelLabelFeatureY {
 	 * @see #setName(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabelAttributeY_Name()
 	 * @model required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if attribute.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet attributeName : String = attribute.name\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tattributeName\r\n\t\telse if self.alias <> \'\' then\r\n\t\t\tself.alias\r\n\t\telse\r\n\t\t\tattributeName\r\n\t\tendif endif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(EntityAttribute) then\r\n\tattribute.oclAsType(EntityAttribute).name\r\nelse\r\n\tattribute.oclAsType(ViewAttribute).name\r\nendif endif'"
 	 * @generated
 	 */
 	String getName();

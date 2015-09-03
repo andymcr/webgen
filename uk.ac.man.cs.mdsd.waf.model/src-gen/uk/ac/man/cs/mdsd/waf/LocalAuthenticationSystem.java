@@ -65,12 +65,12 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User Authentication Key</em>' reference.
-	 * @see #setUserAuthenticationKey(ServiceEntityElement)
+	 * @see #setUserAuthenticationKey(ServiceAttribute)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_UserAuthenticationKey()
 	 * @model required="true"
 	 * @generated
 	 */
-	ServiceEntityElement getUserAuthenticationKey();
+	ServiceAttribute getUserAuthenticationKey();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUserAuthenticationKey <em>User Authentication Key</em>}' reference.
@@ -80,7 +80,7 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @see #getUserAuthenticationKey()
 	 * @generated
 	 */
-	void setUserAuthenticationKey(ServiceEntityElement value);
+	void setUserAuthenticationKey(ServiceAttribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Authentication Service</b></em>' reference.

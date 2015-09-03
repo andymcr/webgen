@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.orm.Association;
+
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
 import uk.ac.man.cs.mdsd.waf.IncludedAssociation;
 import uk.ac.man.cs.mdsd.waf.ModelLabelX;
@@ -36,6 +38,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getUnits <em>Units</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getServiceFeature <em>Service Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
@@ -47,6 +50,16 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociation {
+	/**
+	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssociation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Association association;
+
 	/**
 	 * The cached value of the '{@link #getUnits() <em>Units</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -124,6 +137,44 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.UNIT_ASSOCIATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Association getAssociation() {
+		if (association != null && association.eIsProxy()) {
+			InternalEObject oldAssociation = (InternalEObject)association;
+			association = (Association)eResolveProxy(oldAssociation);
+			if (association != oldAssociation) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.UNIT_ASSOCIATION__ASSOCIATION, oldAssociation, association));
+			}
+		}
+		return association;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Association basicGetAssociation() {
+		return association;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAssociation(Association newAssociation) {
+		Association oldAssociation = association;
+		association = newAssociation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__ASSOCIATION, oldAssociation, association));
 	}
 
 	/**
@@ -346,6 +397,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
+				if (resolve) return getAssociation();
+				return basicGetAssociation();
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
 				return getUnits();
 			case WafPackage.UNIT_ASSOCIATION__SERVICE_FEATURE:
@@ -374,6 +428,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
+				setAssociation((Association)newValue);
+				return;
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
 				getUnits().clear();
 				getUnits().addAll((Collection<? extends ContentUnit>)newValue);
@@ -406,6 +463,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
+				setAssociation((Association)null);
+				return;
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
 				getUnits().clear();
 				return;
@@ -436,6 +496,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
+				return association != null;
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
 				return units != null && !units.isEmpty();
 			case WafPackage.UNIT_ASSOCIATION__SERVICE_FEATURE:
@@ -461,6 +523,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == IncludedAssociation.class) {
 			switch (derivedFeatureID) {
+				case WafPackage.UNIT_ASSOCIATION__ASSOCIATION: return WafPackage.INCLUDED_ASSOCIATION__ASSOCIATION;
 				default: return -1;
 			}
 		}
@@ -482,6 +545,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == IncludedAssociation.class) {
 			switch (baseFeatureID) {
+				case WafPackage.INCLUDED_ASSOCIATION__ASSOCIATION: return WafPackage.UNIT_ASSOCIATION__ASSOCIATION;
 				default: return -1;
 			}
 		}

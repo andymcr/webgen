@@ -57,7 +57,7 @@ public interface Entity extends EntityOrView, UnitSource {
 
 	/**
 	 * Returns the value of the '<em><b>Keys</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Feature}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Keys</em>' reference list isn't clear,
@@ -69,7 +69,7 @@ public interface Entity extends EntityOrView, UnitSource {
 	 * @model
 	 * @generated
 	 */
-	List<Feature> getKeys();
+	List<EntityAttribute> getKeys();
 
 	/**
 	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.

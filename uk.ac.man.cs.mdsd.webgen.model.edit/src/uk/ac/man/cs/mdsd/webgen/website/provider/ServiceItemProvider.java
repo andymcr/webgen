@@ -16,7 +16,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
@@ -51,78 +50,9 @@ public class ServiceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addModelNamePropertyDescriptor(object);
-			addViewPropertyDescriptor(object);
-			addViewNamePropertyDescriptor(object);
 			addEncapsulatesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Model Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addModelNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_modelName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_modelName_feature", "_UI_Service_type"),
-				 WebsitePackage.Literals.SERVICE__MODEL_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the View feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addViewPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_view_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_view_feature", "_UI_Service_type"),
-				 WebsitePackage.Literals.SERVICE__VIEW,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the View Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addViewNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_viewName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_viewName_feature", "_UI_Service_type"),
-				 WebsitePackage.Literals.SERVICE__VIEW_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -216,11 +146,6 @@ public class ServiceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Service.class)) {
-			case WebsitePackage.SERVICE__MODEL_NAME:
-			case WebsitePackage.SERVICE__VIEW:
-			case WebsitePackage.SERVICE__VIEW_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case WebsitePackage.SERVICE__DISPLAY_LABELS:
 			case WebsitePackage.SERVICE__SELECTIONS:
 			case WebsitePackage.SERVICE__FEATURES:
@@ -254,17 +179,12 @@ public class ServiceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SERVICE__FEATURES,
-				 WebsiteFactory.eINSTANCE.createServiceEntityElement()));
+				 WebsiteFactory.eINSTANCE.createServiceAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SERVICE__FEATURES,
-				 WebsiteFactory.eINSTANCE.createServiceEntityAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.SERVICE__FEATURES,
-				 WebsiteFactory.eINSTANCE.createServiceViewAssociation()));
+				 WebsiteFactory.eINSTANCE.createServiceAssociation()));
 	}
 
 }

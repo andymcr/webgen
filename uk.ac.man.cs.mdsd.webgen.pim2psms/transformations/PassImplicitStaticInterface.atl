@@ -103,9 +103,9 @@ lazy abstract rule implicitIncludedFeature {
 }
 
 -- @extends implicitIncludedFeature
-lazy abstract rule implicitIncludedElement {
-	from partialWaf : WAF!IncludedElement
-	to waf : WAF!IncludedElement (
+lazy abstract rule implicitIncludedAttribute {
+	from partialWaf : WAF!IncludedAttribute
+	to waf : WAF!IncludedAttribute (
 		obfuscateFormFields <- partialWaf.obfuscateFormFields,
 		dateFormat <- partialWaf.dateFormat
 	)
@@ -113,7 +113,7 @@ lazy abstract rule implicitIncludedElement {
 
 --@extends implicitIncludedFeature
 lazy abstract rule implicitUnitFeature {
-	from partialWaf : WAF!ServiceEntityFeature
+	from partialWaf : WAF!ServiceFeature
 	to waf : WAF!UnitFeature (
 		name <- partialWaf.name,
 		cardinality <- partialWaf.cardinality,
@@ -121,9 +121,9 @@ lazy abstract rule implicitUnitFeature {
 	)
 }
 
--- @extends implicitUnitFeature, implicitIncludedElement
-lazy rule implicitUnitElement {
-	from partialWaf : WAF!ServiceEntityElement
+-- @extends implicitUnitFeature, implicitIncludedAttribute
+lazy rule implicitUnitAttribute {
+	from partialWaf : WAF!ServiceAttribute
 	to waf : WAF!UnitElement (
 		serviceFeature <- partialWaf
 	)

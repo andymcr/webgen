@@ -94,8 +94,8 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createIncludedFeatureAdapter();
 			}
 			@Override
-			public Adapter caseIncludedElement(IncludedElement object) {
-				return createIncludedElementAdapter();
+			public Adapter caseIncludedAttribute(IncludedAttribute object) {
+				return createIncludedAttributeAdapter();
 			}
 			@Override
 			public Adapter caseIncludedAssociation(IncludedAssociation object) {
@@ -134,24 +134,12 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createServiceFeatureAdapter();
 			}
 			@Override
+			public Adapter caseServiceAttribute(ServiceAttribute object) {
+				return createServiceAttributeAdapter();
+			}
+			@Override
 			public Adapter caseServiceAssociation(ServiceAssociation object) {
 				return createServiceAssociationAdapter();
-			}
-			@Override
-			public Adapter caseServiceEntityFeature(ServiceEntityFeature object) {
-				return createServiceEntityFeatureAdapter();
-			}
-			@Override
-			public Adapter caseServiceEntityElement(ServiceEntityElement object) {
-				return createServiceEntityElementAdapter();
-			}
-			@Override
-			public Adapter caseServiceEntityAssociation(ServiceEntityAssociation object) {
-				return createServiceEntityAssociationAdapter();
-			}
-			@Override
-			public Adapter caseServiceViewAssociation(ServiceViewAssociation object) {
-				return createServiceViewAssociationAdapter();
 			}
 			@Override
 			public Adapter caseMenu(Menu object) {
@@ -496,16 +484,16 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.IncludedElement <em>Included Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.IncludedAttribute <em>Included Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.IncludedElement
+	 * @see uk.ac.man.cs.mdsd.waf.IncludedAttribute
 	 * @generated
 	 */
-	public Adapter createIncludedElementAdapter() {
+	public Adapter createIncludedAttributeAdapter() {
 		return null;
 	}
 
@@ -636,6 +624,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute <em>Service Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttribute
+	 * @generated
+	 */
+	public Adapter createServiceAttributeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ServiceAssociation <em>Service Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -646,62 +648,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceAssociationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityFeature <em>Service Entity Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceEntityFeature
-	 * @generated
-	 */
-	public Adapter createServiceEntityFeatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement <em>Service Entity Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceEntityElement
-	 * @generated
-	 */
-	public Adapter createServiceEntityElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ServiceEntityAssociation <em>Service Entity Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceEntityAssociation
-	 * @generated
-	 */
-	public Adapter createServiceEntityAssociationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ServiceViewAssociation <em>Service View Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceViewAssociation
-	 * @generated
-	 */
-	public Adapter createServiceViewAssociationAdapter() {
 		return null;
 	}
 

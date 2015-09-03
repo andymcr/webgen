@@ -85,12 +85,12 @@ public interface DynamicMenu extends Menu {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dynamic Title</em>' reference.
-	 * @see #setDynamicTitle(ServiceEntityElement)
+	 * @see #setDynamicTitle(ServiceAttribute)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDynamicMenu_DynamicTitle()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	ServiceEntityElement getDynamicTitle();
+	ServiceAttribute getDynamicTitle();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicMenu#getDynamicTitle <em>Dynamic Title</em>}' reference.
@@ -100,5 +100,5 @@ public interface DynamicMenu extends Menu {
 	 * @see #getDynamicTitle()
 	 * @generated
 	 */
-	void setDynamicTitle(ServiceEntityElement value);
+	void setDynamicTitle(ServiceAttribute value);
 } // DynamicMenu

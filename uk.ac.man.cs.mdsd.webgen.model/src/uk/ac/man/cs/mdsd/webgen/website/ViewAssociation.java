@@ -21,7 +21,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface ViewAssociation extends ViewFeature {
+public interface ViewAssociation extends ViewFeature, Association {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ public interface ViewAssociation extends ViewFeature {
 	 * @see #setName(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getViewAssociation_Name()
 	 * @model required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet associationName : String\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\n\t\t\tendif endif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tassociationName\r\n\t\telse if alias <> \'\' then\r\n\t\t\talias\r\n\t\telse\r\n\t\t\tassociationName\r\n\t\tendif endif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet associationName : String\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\n\t\t\tendif endif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tassociationName\r\n\t\telse if alias <> \'\' then\r\n\t\t\talias\r\n\t\telse\r\n\t\t\tassociationName\r\n\t\tendif endif\r\nendif'"
 	 * @generated
 	 */
 	String getName();

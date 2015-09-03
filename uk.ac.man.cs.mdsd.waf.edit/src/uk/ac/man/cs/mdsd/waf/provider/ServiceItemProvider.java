@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
@@ -51,122 +50,30 @@ public class ServiceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEntitiesPropertyDescriptor(object);
-			addDaosUsedPropertyDescriptor(object);
-			addModelNamePropertyDescriptor(object);
-			addViewPropertyDescriptor(object);
-			addViewNamePropertyDescriptor(object);
+			addEncapsulatesPropertyDescriptor(object);
 			addAccessedByPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Entities feature.
+	 * This adds a property descriptor for the Encapsulates feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEntitiesPropertyDescriptor(Object object) {
+	protected void addEncapsulatesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Service_entities_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_entities_feature", "_UI_Service_type"),
-				 WafPackage.Literals.SERVICE__ENTITIES,
+				 getString("_UI_Service_encapsulates_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Service_encapsulates_feature", "_UI_Service_type"),
+				 WafPackage.Literals.SERVICE__ENCAPSULATES,
 				 true,
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Daos Used feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDaosUsedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_daosUsed_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_daosUsed_feature", "_UI_Service_type"),
-				 WafPackage.Literals.SERVICE__DAOS_USED,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Model Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addModelNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_modelName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_modelName_feature", "_UI_Service_type"),
-				 WafPackage.Literals.SERVICE__MODEL_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the View feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addViewPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_view_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_view_feature", "_UI_Service_type"),
-				 WafPackage.Literals.SERVICE__VIEW,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the View Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addViewNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_viewName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_viewName_feature", "_UI_Service_type"),
-				 WafPackage.Literals.SERVICE__VIEW_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -261,11 +168,6 @@ public class ServiceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Service.class)) {
-			case WafPackage.SERVICE__MODEL_NAME:
-			case WafPackage.SERVICE__VIEW:
-			case WafPackage.SERVICE__VIEW_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case WafPackage.SERVICE__SELECTIONS:
 			case WafPackage.SERVICE__FEATURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -293,17 +195,17 @@ public class ServiceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SERVICE__FEATURES,
-				 WafFactory.eINSTANCE.createServiceEntityElement()));
+				 WafFactory.eINSTANCE.createServiceFeature()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SERVICE__FEATURES,
-				 WafFactory.eINSTANCE.createServiceEntityAssociation()));
+				 WafFactory.eINSTANCE.createServiceAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SERVICE__FEATURES,
-				 WafFactory.eINSTANCE.createServiceViewAssociation()));
+				 WafFactory.eINSTANCE.createServiceAssociation()));
 	}
 
 	/**

@@ -80,6 +80,7 @@ public interface ModelLabelY extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeatureY}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeatureY#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Features</em>' containment reference list isn't clear,
@@ -88,7 +89,8 @@ public interface ModelLabelY extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Features</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabelY_Features()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeatureY#getPartOf
+	 * @model opposite="partOf" containment="true"
 	 * @generated
 	 */
 	List<ModelLabelFeatureY> getFeatures();

@@ -20,7 +20,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -129,9 +128,9 @@ public class DataUnitItemProvider
 						if (object instanceof DataUnit) {
 							final DataUnit unit = (DataUnit) object;
 							final List<UnitTitle> labels = new LinkedList<UnitTitle>();
-							for (Feature feature : getSourceElements(unit)) {
-								if (feature instanceof Attribute) {
-									labels.add((UnitTitle) feature);
+							for (Attribute attribute : getSourceAttributes(unit)) {
+								if (attribute instanceof Attribute) {
+									labels.add((UnitTitle) attribute);
 								}
 							}
 							if (unit.getSource() instanceof Service) {

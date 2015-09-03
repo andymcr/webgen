@@ -148,11 +148,22 @@ public class ModelLabelAssociationYImpl extends ModelLabelFeatureYImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setAssociation(EntityAssociation newAssociation) {
 		EntityAssociation oldAssociation = association;
 		association = newAssociation;
+		// eContainer may be undefined when loading resource (used by getPartOf)
+		if ((newAssociation != null) && (eContainer() != null)) {
+			if (newAssociation instanceof EntityAssociation) {
+				final EntityAssociation entityAssociation = (EntityAssociation) newAssociation;
+				if (getPartOf().getLabelFor().equals(entityAssociation.getParentEntity())) {
+					setUseAssociationSource(true);
+				} else if (getPartOf().getLabelFor().equals(entityAssociation.getTargetEntity())) {
+					setUseAssociationSource(false);
+				}
+			}
+		}
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.MODEL_LABEL_ASSOCIATION_Y__ASSOCIATION, oldAssociation, association));
 	}

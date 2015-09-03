@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -54,7 +54,7 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceEntityElement dynamicTitle;
+	protected ServiceAttribute dynamicTitle;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,10 +155,10 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement getDynamicTitle() {
+	public ServiceAttribute getDynamicTitle() {
 		if (dynamicTitle != null && dynamicTitle.eIsProxy()) {
 			InternalEObject oldDynamicTitle = (InternalEObject)dynamicTitle;
-			dynamicTitle = (ServiceEntityElement)eResolveProxy(oldDynamicTitle);
+			dynamicTitle = (ServiceAttribute)eResolveProxy(oldDynamicTitle);
 			if (dynamicTitle != oldDynamicTitle) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.DYNAMIC_MENU__DYNAMIC_TITLE, oldDynamicTitle, dynamicTitle));
@@ -172,7 +172,7 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement basicGetDynamicTitle() {
+	public ServiceAttribute basicGetDynamicTitle() {
 		return dynamicTitle;
 	}
 
@@ -181,8 +181,8 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDynamicTitle(ServiceEntityElement newDynamicTitle) {
-		ServiceEntityElement oldDynamicTitle = dynamicTitle;
+	public void setDynamicTitle(ServiceAttribute newDynamicTitle) {
+		ServiceAttribute oldDynamicTitle = dynamicTitle;
 		dynamicTitle = newDynamicTitle;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DYNAMIC_MENU__DYNAMIC_TITLE, oldDynamicTitle, dynamicTitle));
@@ -224,7 +224,7 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 				setSelection((Selection)newValue);
 				return;
 			case WebsitePackage.DYNAMIC_MENU__DYNAMIC_TITLE:
-				setDynamicTitle((ServiceEntityElement)newValue);
+				setDynamicTitle((ServiceAttribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -245,7 +245,7 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 				setSelection((Selection)null);
 				return;
 			case WebsitePackage.DYNAMIC_MENU__DYNAMIC_TITLE:
-				setDynamicTitle((ServiceEntityElement)null);
+				setDynamicTitle((ServiceAttribute)null);
 				return;
 		}
 		super.eUnset(featureID);

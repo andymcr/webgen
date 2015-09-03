@@ -15,9 +15,10 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
-import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.UnitChildAssociation;
@@ -77,7 +78,7 @@ public class UnitChildElementItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitChildElement) {
-						final List<ServiceEntityElement> elements = new LinkedList<ServiceEntityElement>();
+						final List<ServiceAttribute> attributes = new LinkedList<ServiceAttribute>();
 						ServiceFeature serviceFeature;
 						final EObject eContainer = ((EObject) object).eContainer();
 						if (eContainer instanceof UnitAssociation) {
@@ -85,29 +86,16 @@ public class UnitChildElementItemProvider
 						} else {
 							serviceFeature = ((UnitChildAssociation) eContainer).getServiceFeature();
 						}
-						if (serviceFeature instanceof ServiceEntityAssociation) {
-							final ServiceEntityAssociation entityAssociation = (ServiceEntityAssociation) serviceFeature;
-							if (entityAssociation.getFeature() != null) {
-								final Entity associationType;
-								if (entityAssociation.getPartOf().getEncapsulates().contains(entityAssociation.getFeature().getParentEntity())) {
-									associationType = entityAssociation.getFeature().getTargetEntity();
-								} else {
-									associationType = entityAssociation.getFeature().getParentEntity();
-								}
-								if (associationType.getServedBy().size() > 0) {
-									for (ServiceFeature feature : associationType.getServedBy().get(0).getFeatures()) {
-										if (feature instanceof ServiceEntityElement) {
-											elements.add((ServiceEntityElement) feature);
-										}
-									}
-								}
+						final EntityOrView associationType
+							= getTargetType((ServiceAssociation) serviceFeature);
+						if (associationType != null) {
+							for (Service service : associationType.getServedBy()) {
+								attributes.addAll(getAttributes(service));
 							}
-					
-						} else {
 						}
-
-						return elements;
+						return attributes;
 					}
+
 					return Collections.emptyList();
 				}
 			});

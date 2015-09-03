@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -95,7 +95,7 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Feature> keys;
+	protected EList<EntityAttribute> keys;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,9 +142,9 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Feature> getKeys() {
+	public List<EntityAttribute> getKeys() {
 		if (keys == null) {
-			keys = new EObjectResolvingEList<Feature>(Feature.class, this, WebsitePackage.ENTITY__KEYS);
+			keys = new EObjectResolvingEList<EntityAttribute>(EntityAttribute.class, this, WebsitePackage.ENTITY__KEYS);
 		}
 		return keys;
 	}
@@ -261,7 +261,7 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 				return;
 			case WebsitePackage.ENTITY__KEYS:
 				getKeys().clear();
-				getKeys().addAll((Collection<? extends Feature>)newValue);
+				getKeys().addAll((Collection<? extends EntityAttribute>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

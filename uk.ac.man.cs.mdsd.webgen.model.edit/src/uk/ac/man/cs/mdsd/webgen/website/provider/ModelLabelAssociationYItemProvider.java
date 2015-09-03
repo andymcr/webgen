@@ -47,34 +47,10 @@ public class ModelLabelAssociationYItemProvider extends ModelLabelFeatureYItemPr
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
 			addDynamicLabelPropertyDescriptor(object);
-			addUseAssociationSourcePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelLabelAssociationY_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociationY_name_feature", "_UI_ModelLabelAssociationY_type"),
-				 WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION_Y__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -124,28 +100,6 @@ public class ModelLabelAssociationYItemProvider extends ModelLabelFeatureYItemPr
 				 true,
 				 null,
 				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Use Association Source feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUseAssociationSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelLabelAssociationY_useAssociationSource_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociationY_useAssociationSource_feature", "_UI_ModelLabelAssociationY_type"),
-				 WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION_Y__USE_ASSOCIATION_SOURCE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
 				 null));
 	}
 

@@ -38,7 +38,7 @@ helper context String def: createTableName() : String
 				self.toLower()
 			endif;
 
-helper context String def: createElementColumnName() : String
+helper context String def: createAttributeColumnName() : String
 	= let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
 		in if properties.databaseTechnology = #Oracle then
 				self.createName().toUpper()
@@ -114,8 +114,8 @@ helper context Website!Feature def: inverseCollectionType() : ORM!CollectionType
 	endif;
 
 
-helper def: findWebsiteEntity(name : String) : Website!Entity
-	= Website!Entity.allInstancesFrom('website')->any(e | e.name = name);
+helper def: findWebsiteEntityOrView(name : String) : Website!EntityOrView
+	= Website!EntityOrView.allInstancesFrom('website')->any(e | e.name = name);
 
 helper def: findOrmDataType(name : String) : ORM!DataType
 	= ORM!DataType.allInstancesFrom('orm')->any(d | d.name = name);
@@ -123,10 +123,23 @@ helper def: findOrmDataType(name : String) : ORM!DataType
 helper def: findOrmEntity(name : String) : ORM!Entity
 	= ORM!Entity.allInstancesFrom('orm')->any(e | e.name = name);
 
+helper context Website!Feature def: findOrmEntity() : ORM!Entity
+	= thisModule.findOrmEntity(self.parentEntity.name);
+
+helper context Website!Feature def: findOrmTargetEntity() : ORM!Entity
+	= thisModule.findOrmEntity(self.targetEntity.name);
+
 helper def: findOrmEntityOrView(name : String) : ORM!EntityOrView
 	= ORM!EntityOrView.allInstancesFrom('orm')->any(e | e.name = name);
 
-helper context ORM!Entity def: getOrmFeature(featureName : String) : Website!Feature
+helper context Website!Feature def: findOrmEntityOrView() : ORM!EntityOrView
+	= if self.oclIsKindOf(Website!EntityFeature) then
+			thisModule.findOrmEntityOrView(self.parentEntity.name)
+		else
+			thisModule.findOrmEntityOrView(self.partOf.name)
+		endif;
+
+helper context ORM!EntityOrView def: getOrmFeature(featureName : String) : Website!Feature
 	= self.features->any(f | f.name = featureName);
 
 helper def: findOrmCollection(name : String) : ORM!DataType

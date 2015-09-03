@@ -23,6 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isUseAssociationSource <em>Use Association Source</em>}</li>
@@ -31,6 +32,24 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class ViewAssociationImpl extends ViewFeatureImpl implements ViewAssociation {
+	/**
+	 * The default value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INPUT_CLASS_EDEFAULT = "input_association";
+	/**
+	 * The cached value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String inputClass = INPUT_CLASS_EDEFAULT;
 	/**
 	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -93,6 +112,27 @@ public class ViewAssociationImpl extends ViewFeatureImpl implements ViewAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInputClass() {
+		return inputClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInputClass(String newInputClass) {
+		String oldInputClass = inputClass;
+		inputClass = newInputClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS, oldInputClass, inputClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getName() {
 		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -144,7 +184,6 @@ public class ViewAssociationImpl extends ViewFeatureImpl implements ViewAssociat
 		if ((newAssociation != null) && (eContainer() != null)) {
 			if (newAssociation instanceof EntityAssociation) {
 				final EntityAssociation entityAssociation = (EntityAssociation) newAssociation;
-System.err.println("New association "+entityAssociation.getName());
 				if (getPartOf().getEncapsulates().contains(entityAssociation.getParentEntity())) {
 					if (!getPartOf().getEncapsulates().contains(entityAssociation.getTargetEntity())) {
 						setUseAssociationSource(true);
@@ -172,15 +211,13 @@ System.err.println("New association "+entityAssociation.getName());
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setUseAssociationSource(boolean newUseAssociationSource) {
-System.err.println("  use association source "+newUseAssociationSource);
 		boolean oldUseAssociationSource = useAssociationSource;
 		useAssociationSource = newUseAssociationSource;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__USE_ASSOCIATION_SOURCE, oldUseAssociationSource, useAssociationSource));
-System.err.println("    name "+getName());
 	}
 
 	/**
@@ -191,6 +228,8 @@ System.err.println("    name "+getName());
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
+				return getInputClass();
 			case WebsitePackage.VIEW_ASSOCIATION__NAME:
 				return getName();
 			case WebsitePackage.VIEW_ASSOCIATION__ASSOCIATION:
@@ -210,6 +249,9 @@ System.err.println("    name "+getName());
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
+				setInputClass((String)newValue);
+				return;
 			case WebsitePackage.VIEW_ASSOCIATION__NAME:
 				setName((String)newValue);
 				return;
@@ -231,6 +273,9 @@ System.err.println("    name "+getName());
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
+				setInputClass(INPUT_CLASS_EDEFAULT);
+				return;
 			case WebsitePackage.VIEW_ASSOCIATION__NAME:
 				NAME__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
@@ -252,6 +297,8 @@ System.err.println("    name "+getName());
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
+				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 			case WebsitePackage.VIEW_ASSOCIATION__NAME:
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.VIEW_ASSOCIATION__ASSOCIATION:
@@ -268,11 +315,45 @@ System.err.println("    name "+getName());
 	 * @generated
 	 */
 	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Association.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Association.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (useAssociationSource: ");
+		result.append(" (inputClass: ");
+		result.append(inputClass);
+		result.append(", useAssociationSource: ");
 		result.append(useAssociationSource);
 		result.append(')');
 		return result.toString();

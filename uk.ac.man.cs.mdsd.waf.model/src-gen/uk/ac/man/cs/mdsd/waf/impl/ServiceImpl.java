@@ -4,15 +4,12 @@ package uk.ac.man.cs.mdsd.waf.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -38,11 +35,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getEntities <em>Entities</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getDaosUsed <em>Daos Used</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getModelName <em>Model Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#isView <em>View</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getViewName <em>View Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getEncapsulates <em>Encapsulates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getAccessedBy <em>Accessed By</em>}</li>
@@ -52,84 +45,14 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  */
 public class ServiceImpl extends NamedElementImpl implements Service {
 	/**
-	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
+	 * The cached value of the '{@link #getEncapsulates() <em>Encapsulates</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEntities()
+	 * @see #getEncapsulates()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntityOrView> entities;
-
-	/**
-	 * The cached value of the '{@link #getDaosUsed() <em>Daos Used</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDaosUsed()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EntityOrView> daosUsed;
-
-	/**
-	 * The default value of the '{@link #getModelName() <em>Model Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getModelName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MODEL_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getModelName() <em>Model Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getModelName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String modelName = MODEL_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isView() <em>View</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isView()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean VIEW_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isView() <em>View</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isView()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean view = VIEW_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getViewName() <em>View Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getViewName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VIEW_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getViewName() <em>View Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getViewName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String viewName = VIEW_NAME_EDEFAULT;
+	protected EList<EntityOrView> encapsulates;
 
 	/**
 	 * The cached value of the '{@link #getSelections() <em>Selections</em>}' containment reference list.
@@ -185,86 +108,11 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntityOrView> getEntities() {
-		if (entities == null) {
-			entities = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.SERVICE__ENTITIES);
+	public EList<EntityOrView> getEncapsulates() {
+		if (encapsulates == null) {
+			encapsulates = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.SERVICE__ENCAPSULATES);
 		}
-		return entities;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EntityOrView> getDaosUsed() {
-		if (daosUsed == null) {
-			daosUsed = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.SERVICE__DAOS_USED);
-		}
-		return daosUsed;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getModelName() {
-		return modelName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setModelName(String newModelName) {
-		String oldModelName = modelName;
-		modelName = newModelName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE__MODEL_NAME, oldModelName, modelName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isView() {
-		return view;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setView(boolean newView) {
-		boolean oldView = view;
-		view = newView;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE__VIEW, oldView, view));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getViewName() {
-		return viewName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setViewName(String newViewName) {
-		String oldViewName = viewName;
-		viewName = newViewName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE__VIEW_NAME, oldViewName, viewName));
+		return encapsulates;
 	}
 
 	/**
@@ -286,7 +134,7 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 */
 	public EList<ServiceFeature> getFeatures() {
 		if (features == null) {
-			features = new EObjectContainmentWithInverseEList<ServiceFeature>(ServiceFeature.class, this, WafPackage.SERVICE__FEATURES, WafPackage.SERVICE_FEATURE__INCLUDED_BY);
+			features = new EObjectContainmentWithInverseEList<ServiceFeature>(ServiceFeature.class, this, WafPackage.SERVICE__FEATURES, WafPackage.SERVICE_FEATURE__PART_OF);
 		}
 		return features;
 	}
@@ -346,16 +194,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.SERVICE__ENTITIES:
-				return getEntities();
-			case WafPackage.SERVICE__DAOS_USED:
-				return getDaosUsed();
-			case WafPackage.SERVICE__MODEL_NAME:
-				return getModelName();
-			case WafPackage.SERVICE__VIEW:
-				return isView();
-			case WafPackage.SERVICE__VIEW_NAME:
-				return getViewName();
+			case WafPackage.SERVICE__ENCAPSULATES:
+				return getEncapsulates();
 			case WafPackage.SERVICE__SELECTIONS:
 				return getSelections();
 			case WafPackage.SERVICE__FEATURES:
@@ -375,22 +215,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.SERVICE__ENTITIES:
-				getEntities().clear();
-				getEntities().addAll((Collection<? extends EntityOrView>)newValue);
-				return;
-			case WafPackage.SERVICE__DAOS_USED:
-				getDaosUsed().clear();
-				getDaosUsed().addAll((Collection<? extends EntityOrView>)newValue);
-				return;
-			case WafPackage.SERVICE__MODEL_NAME:
-				setModelName((String)newValue);
-				return;
-			case WafPackage.SERVICE__VIEW:
-				setView((Boolean)newValue);
-				return;
-			case WafPackage.SERVICE__VIEW_NAME:
-				setViewName((String)newValue);
+			case WafPackage.SERVICE__ENCAPSULATES:
+				getEncapsulates().clear();
+				getEncapsulates().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
 			case WafPackage.SERVICE__SELECTIONS:
 				getSelections().clear();
@@ -416,20 +243,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.SERVICE__ENTITIES:
-				getEntities().clear();
-				return;
-			case WafPackage.SERVICE__DAOS_USED:
-				getDaosUsed().clear();
-				return;
-			case WafPackage.SERVICE__MODEL_NAME:
-				setModelName(MODEL_NAME_EDEFAULT);
-				return;
-			case WafPackage.SERVICE__VIEW:
-				setView(VIEW_EDEFAULT);
-				return;
-			case WafPackage.SERVICE__VIEW_NAME:
-				setViewName(VIEW_NAME_EDEFAULT);
+			case WafPackage.SERVICE__ENCAPSULATES:
+				getEncapsulates().clear();
 				return;
 			case WafPackage.SERVICE__SELECTIONS:
 				getSelections().clear();
@@ -452,16 +267,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.SERVICE__ENTITIES:
-				return entities != null && !entities.isEmpty();
-			case WafPackage.SERVICE__DAOS_USED:
-				return daosUsed != null && !daosUsed.isEmpty();
-			case WafPackage.SERVICE__MODEL_NAME:
-				return MODEL_NAME_EDEFAULT == null ? modelName != null : !MODEL_NAME_EDEFAULT.equals(modelName);
-			case WafPackage.SERVICE__VIEW:
-				return view != VIEW_EDEFAULT;
-			case WafPackage.SERVICE__VIEW_NAME:
-				return VIEW_NAME_EDEFAULT == null ? viewName != null : !VIEW_NAME_EDEFAULT.equals(viewName);
+			case WafPackage.SERVICE__ENCAPSULATES:
+				return encapsulates != null && !encapsulates.isEmpty();
 			case WafPackage.SERVICE__SELECTIONS:
 				return selections != null && !selections.isEmpty();
 			case WafPackage.SERVICE__FEATURES:
@@ -470,26 +277,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return accessedBy != null && !accessedBy.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (modelName: ");
-		result.append(modelName);
-		result.append(", view: ");
-		result.append(view);
-		result.append(", viewName: ");
-		result.append(viewName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ServiceImpl

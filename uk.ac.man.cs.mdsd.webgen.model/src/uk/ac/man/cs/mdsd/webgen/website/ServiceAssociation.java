@@ -12,40 +12,58 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getOppositeService <em>Opposite Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getDynamicLabel <em>Dynamic Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getSelection <em>Selection</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceAssociation()
- * @model interface="true" abstract="true"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='selectionFromCorrectService'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionFromCorrectService='not selection.oclIsUndefined() and not association.oclIsUndefined() implies\r\n\tlet entityOrView : EntityOrView\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).parentEntity\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\t\tendif endif\r\n\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)'"
  * @generated
  */
-public interface ServiceAssociation extends ServiceFeature {
+public interface ServiceAssociation extends IncludedAssociation, ServiceFeature {
 	/**
-	 * Returns the value of the '<em><b>Opposite Service</b></em>' reference.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Opposite Service</em>' reference isn't clear,
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Opposite Service</em>' reference.
-	 * @see #setOppositeService(Service)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceAssociation_OppositeService()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceAssociation_Name()
+	 * @model changeable="false" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\t\'\'\r\nelse if association.oclIsTypeOf(ViewAssociation) then\r\n\tassociation.oclAsType(ViewAssociation).name\r\nelse if useAssociationSource then\r\n\tassociation.oclAsType(EntityAssociation).name\r\nelse\r\n\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\nendif endif endif\r\n'"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Returns the value of the '<em><b>Dynamic Label</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Dynamic Label</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dynamic Label</em>' reference.
+	 * @see #setDynamicLabel(ModelLabel)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceAssociation_DynamicLabel()
 	 * @model
 	 * @generated
 	 */
-	Service getOppositeService();
+	ModelLabel getDynamicLabel();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getOppositeService <em>Opposite Service</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getDynamicLabel <em>Dynamic Label</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Opposite Service</em>' reference.
-	 * @see #getOppositeService()
+	 * @param value the new value of the '<em>Dynamic Label</em>' reference.
+	 * @see #getDynamicLabel()
 	 * @generated
 	 */
-	void setOppositeService(Service value);
+	void setDynamicLabel(ModelLabel value);
 
 	/**
 	 * Returns the value of the '<em><b>Required</b></em>' attribute.

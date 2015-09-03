@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelElement;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -35,7 +35,7 @@ public class ModelLabelElementImpl extends ModelLabelFeatureImpl implements Mode
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceEntityElement serviceFeature;
+	protected ServiceAttribute serviceFeature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,10 +61,10 @@ public class ModelLabelElementImpl extends ModelLabelFeatureImpl implements Mode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement getServiceFeature() {
+	public ServiceAttribute getServiceFeature() {
 		if (serviceFeature != null && serviceFeature.eIsProxy()) {
 			InternalEObject oldServiceFeature = (InternalEObject)serviceFeature;
-			serviceFeature = (ServiceEntityElement)eResolveProxy(oldServiceFeature);
+			serviceFeature = (ServiceAttribute)eResolveProxy(oldServiceFeature);
 			if (serviceFeature != oldServiceFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.MODEL_LABEL_ELEMENT__SERVICE_FEATURE, oldServiceFeature, serviceFeature));
@@ -78,7 +78,7 @@ public class ModelLabelElementImpl extends ModelLabelFeatureImpl implements Mode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement basicGetServiceFeature() {
+	public ServiceAttribute basicGetServiceFeature() {
 		return serviceFeature;
 	}
 
@@ -87,8 +87,8 @@ public class ModelLabelElementImpl extends ModelLabelFeatureImpl implements Mode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setServiceFeature(ServiceEntityElement newServiceFeature) {
-		ServiceEntityElement oldServiceFeature = serviceFeature;
+	public void setServiceFeature(ServiceAttribute newServiceFeature) {
+		ServiceAttribute oldServiceFeature = serviceFeature;
 		serviceFeature = newServiceFeature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.MODEL_LABEL_ELEMENT__SERVICE_FEATURE, oldServiceFeature, serviceFeature));
@@ -118,7 +118,7 @@ public class ModelLabelElementImpl extends ModelLabelFeatureImpl implements Mode
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.MODEL_LABEL_ELEMENT__SERVICE_FEATURE:
-				setServiceFeature((ServiceEntityElement)newValue);
+				setServiceFeature((ServiceAttribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +133,7 @@ public class ModelLabelElementImpl extends ModelLabelFeatureImpl implements Mode
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.MODEL_LABEL_ELEMENT__SERVICE_FEATURE:
-				setServiceFeature((ServiceEntityElement)null);
+				setServiceFeature((ServiceAttribute)null);
 				return;
 		}
 		super.eUnset(featureID);

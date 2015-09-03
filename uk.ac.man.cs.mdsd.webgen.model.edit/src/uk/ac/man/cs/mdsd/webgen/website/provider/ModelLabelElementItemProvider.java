@@ -17,7 +17,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelElement;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -73,11 +73,11 @@ public class ModelLabelElementItemProvider extends ModelLabelFeatureItemProvider
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof ModelLabelElement) {
-					final List<ServiceEntityElement> features = new LinkedList<ServiceEntityElement>();
+					final List<ServiceAttribute> features = new LinkedList<ServiceAttribute>();
 					final ModelLabel label = (ModelLabel) ((EObject) object).eContainer();
 					for (ServiceFeature feature : label.getLabelFor().getFeatures()) {
-						if (feature instanceof ServiceEntityElement) {
-							features.add((ServiceEntityElement) feature);
+						if (feature instanceof ServiceAttribute) {
+							features.add((ServiceAttribute) feature);
 						}
 					}
 					

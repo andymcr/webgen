@@ -72,7 +72,7 @@ abstract class Authentication {
 
 class LocalAuthenticationSystem extends Authentication {
 	refers Service[1] userService
-	refers ServiceEntityElement[1] userAuthenticationKey
+	refers ServiceAttribute[1] userAuthenticationKey
 	refers Service authenticationService
 	refers Service loginAttemptService
 	refers Service autoLoginService
@@ -89,7 +89,6 @@ class CasAuthentication extends Authentication {
 
 
 interface IncludedFeature {
-	String displayLabel
 	contains Expression forcedValue
 	String footer
 	// style classes in service features are used when creating implicit unit fields
@@ -99,23 +98,21 @@ interface IncludedFeature {
 	String footerClass
 }
 
-interface IncludedElement extends IncludedFeature {
+interface IncludedAttribute extends IncludedFeature {
+	refers Attribute[1] attribute
 	boolean obfuscateFormFields
 	contains Expression defaultValue
 }
 
 interface IncludedAssociation extends IncludedFeature {
+	refers Association[1] association
 }
 
 
 class Service extends NamedElement {
-	refers EntityOrView[] entities
-	refers EntityOrView[] daosUsed
-	String[1] modelName
-	boolean view
-	String viewName
+	refers EntityOrView[] encapsulates
 	contains Selection[] selections
-	contains ServiceFeature[] features opposite includedBy
+	contains ServiceFeature[] features opposite partOf
 	refers DynamicUnit[] accessedBy opposite service
 }
 
@@ -128,7 +125,7 @@ abstract class ModelLabelFeatureX {
 }
 
 class ModelLabelElementX extends ModelLabelFeatureX {
-	refers ServiceEntityElement[1] serviceFeature
+	refers ServiceAttribute[1] serviceFeature
 }
 
 class ModelLabelAssociationX extends ModelLabelFeatureX {
@@ -148,22 +145,12 @@ class SelectionParameter extends NamedElement {
 	String defaultValue
 }
 
-interface ServiceFeature {
-	container Service[1] includedBy opposite features
+class ServiceFeature extends NamedDisplayElement, IncludedFeature {
+	container Service[1] partOf opposite features
 	Cardinality cardinality
 }
 
-interface ServiceAssociation extends ServiceFeature {
-	refers Service[1] oppositeService
-	refers ServiceAssociation oppositeFeature
-}
-
-abstract class ServiceEntityFeature extends ServiceFeature, NamedElement, IncludedFeature {
-	String viewColumnName
-}
-
-class ServiceEntityElement extends ServiceEntityFeature, IncludedElement, UnitTitle {
-	refers Attribute[1] feature
+class ServiceAttribute extends ServiceFeature, IncludedAttribute, UnitTitle {
 	boolean caseInsensitive
 	boolean encrypt
 	String interfaceType
@@ -172,11 +159,7 @@ class ServiceEntityElement extends ServiceEntityFeature, IncludedElement, UnitTi
 	String dateFormat
 }
 
-class ServiceEntityAssociation extends ServiceEntityFeature, IncludedAssociation, ServiceAssociation {
-	refers Association[1] feature
-}
-
-class ServiceViewAssociation extends NamedDisplayElement, ServiceAssociation {
+class ServiceAssociation extends ServiceFeature, IncludedAssociation {
 }
 
 
@@ -194,7 +177,7 @@ class StaticMenu extends Menu {
 class DynamicMenu extends Menu {
 	refers Service[1] service
 	refers Selection[1] selection
-	refers ServiceEntityElement dynamicTitle
+	refers ServiceAttribute dynamicTitle
 }
 
 abstract class MenuEntry {
@@ -313,7 +296,7 @@ enum CollectionDisplayOptions {
 	PageDirection = 1
 }
 
-abstract class UnitFeature extends NamedElement, IncludedFeature, UnitField, InlineActionContainer {
+abstract class UnitFeature extends NamedDisplayElement, IncludedFeature, UnitField, InlineActionContainer {
 	boolean onlyDisplayWhenNotEmpty
 	CollectionDisplayOptions displayOption
 	// what is this for?
@@ -322,8 +305,8 @@ abstract class UnitFeature extends NamedElement, IncludedFeature, UnitField, Inl
 	boolean autofocus
 }
 
-class UnitElement extends UnitFeature, IncludedElement {
-	refers ServiceEntityElement[1] serviceFeature
+class UnitElement extends UnitFeature, IncludedAttribute {
+	refers ServiceAttribute[1] serviceFeature
 	String placeholder
 	String validationPattern
 }
@@ -341,7 +324,7 @@ abstract class UnitChildFeature {
 }
 
 class UnitChildElement extends UnitChildFeature {
-	refers ServiceEntityElement[1] serviceFeature
+	refers ServiceAttribute[1] serviceFeature
 }
 
 class UnitChildAssociation extends UnitChildFeature {
@@ -388,8 +371,8 @@ class CreateUpdateUnit extends EditUnit, SelectTarget {
 class MapUnit extends EditUnit, SelectTarget {
 	boolean readOnly
 	int defaultZoomLevel
-	refers ServiceEntityElement location
-	refers ServiceEntityElement placeName
+	refers ServiceAttribute location
+	refers ServiceAttribute placeName
 }
 
 class UpdateUnit extends EditUnit, SelectTarget {
@@ -474,7 +457,7 @@ abstract class InlineAction extends NamedDisplayElement {
 
 interface SelectTarget {
 	refers SelectAction[] targettingActions opposite target
-	refers ServiceEntityElement[1..*] selectionFeatures
+	refers ServiceAttribute[1..*] selectionFeatures
 }
 
 class SelectAction extends InlineAction {
@@ -496,7 +479,7 @@ class ModelReference extends Path {
 }
 
 class FeatureReference extends Path {
-	refers ServiceEntityFeature[1] feature
+	refers ServiceFeature[1] feature
 }
 
 class ParameterReference extends Path {

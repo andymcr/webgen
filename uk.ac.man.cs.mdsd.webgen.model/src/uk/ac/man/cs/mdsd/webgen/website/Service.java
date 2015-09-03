@@ -17,9 +17,6 @@ import java.util.List;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getModelName <em>Model Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#isView <em>View</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getViewName <em>View Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getEncapsulates <em>Encapsulates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getDisplayLabels <em>Display Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getSelections <em>Selections</em>}</li>
@@ -27,89 +24,11 @@ import java.util.List;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getService()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='onlyIncludeFeaturesOnce includedFeaturesMustBeFromEncapsulated multipleEntitiesRequiresModelName'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL onlyIncludeFeaturesOnce='features->isUnique(f |\r\n\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n\t\tf.oclAsType(ServiceEntityElement).feature\r\n\telse\r\n\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n\tendif)' includedFeaturesMustBeFromEncapsulated='let features : Sequence(Feature)\r\n\t= encapsulates->collect(e | e.features)->union(encapsulates->collect(e | e.associationEnds))\r\n\tin features\r\n\t\t->select(f | f.oclIsKindOf(IncludedFeature))\r\n\t\t->forAll(f | features->includes(\r\n\t\t\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n\t\t\t\tf.oclAsType(ServiceEntityElement).feature\r\n\t\t\telse\r\n\t\t\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n\t\t\tendif))' multipleEntitiesRequiresModelName='encapsulates->size() > 1 implies not modelName.oclIsUndefined()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='onlyIncludeFeaturesOnce featuresMustBeFromEncapsulated'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL onlyIncludeFeaturesOnce='features->isUnique(f |\r\n\tif f.oclIsTypeOf(ServiceAttribute) then\r\n\t\tf.oclAsType(ServiceAttribute).attribute\r\n\telse\r\n\t\tf.oclAsType(ServiceAssociation).association\r\n\tendif)' featuresMustBeFromEncapsulated='let features : Collection(Feature)\r\n\t= let entities : Sequence(Entity)\r\n\t\t= encapsulates->select(e | e.oclIsTypeOf(Entity)).oclAsType(Entity)\r\n\t\tin entities->collect(e | e.features)->union(entities->collect(e | e.associationEnds))\r\n\t\t\t->union(encapsulates->select(v | v.oclIsTypeOf(View)).oclAsType(View)->collect(v | v.features))\r\nin features\r\n\t->forAll(f | features->includes(\r\n\t\tif f.oclIsTypeOf(ServiceAttribute) then\r\n\t\t\tf.oclAsType(ServiceAttribute).attribute\r\n\t\telse\r\n\t\t\tf.oclAsType(ServiceAssociation).association\r\n\t\tendif))'"
  * @generated
  */
 public interface Service extends NamedElement, UnitSource {
-	/**
-	 * Returns the value of the '<em><b>Model Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Model Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Model Name</em>' attribute.
-	 * @see #setModelName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getService_ModelName()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getModelName();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getModelName <em>Model Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Model Name</em>' attribute.
-	 * @see #getModelName()
-	 * @generated
-	 */
-	void setModelName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>View</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>View</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>View</em>' attribute.
-	 * @see #setView(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getService_View()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	boolean isView();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Service#isView <em>View</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>View</em>' attribute.
-	 * @see #isView()
-	 * @generated
-	 */
-	void setView(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>View Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>View Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>View Name</em>' attribute.
-	 * @see #setViewName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getService_ViewName()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getViewName();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getViewName <em>View Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>View Name</em>' attribute.
-	 * @see #getViewName()
-	 * @generated
-	 */
-	void setViewName(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Encapsulates</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView}.

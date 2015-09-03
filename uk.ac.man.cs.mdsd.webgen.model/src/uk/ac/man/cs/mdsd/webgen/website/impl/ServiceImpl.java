@@ -9,7 +9,6 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 import java.util.Collection;
 
 import java.util.List;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -38,9 +36,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getModelName <em>Model Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#isView <em>View</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getViewName <em>View Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getEncapsulates <em>Encapsulates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getDisplayLabels <em>Display Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
@@ -50,66 +45,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class ServiceImpl extends NamedElementImpl implements Service {
-	/**
-	 * The default value of the '{@link #getModelName() <em>Model Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getModelName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MODEL_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getModelName() <em>Model Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getModelName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String modelName = MODEL_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isView() <em>View</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isView()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean VIEW_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isView() <em>View</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isView()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean view = VIEW_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getViewName() <em>View Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getViewName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VIEW_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getViewName() <em>View Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getViewName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String viewName = VIEW_NAME_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getEncapsulates() <em>Encapsulates</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -167,69 +102,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.SERVICE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getModelName() {
-		return modelName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setModelName(String newModelName) {
-		String oldModelName = modelName;
-		modelName = newModelName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE__MODEL_NAME, oldModelName, modelName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isView() {
-		return view;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setView(boolean newView) {
-		boolean oldView = view;
-		view = newView;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE__VIEW, oldView, view));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getViewName() {
-		return viewName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setViewName(String newViewName) {
-		String oldViewName = viewName;
-		viewName = newViewName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE__VIEW_NAME, oldViewName, viewName));
 	}
 
 	/**
@@ -327,12 +199,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.SERVICE__MODEL_NAME:
-				return getModelName();
-			case WebsitePackage.SERVICE__VIEW:
-				return isView();
-			case WebsitePackage.SERVICE__VIEW_NAME:
-				return getViewName();
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return getEncapsulates();
 			case WebsitePackage.SERVICE__DISPLAY_LABELS:
@@ -354,15 +220,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.SERVICE__MODEL_NAME:
-				setModelName((String)newValue);
-				return;
-			case WebsitePackage.SERVICE__VIEW:
-				setView((Boolean)newValue);
-				return;
-			case WebsitePackage.SERVICE__VIEW_NAME:
-				setViewName((String)newValue);
-				return;
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
 				getEncapsulates().addAll((Collection<? extends EntityOrView>)newValue);
@@ -391,15 +248,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.SERVICE__MODEL_NAME:
-				setModelName(MODEL_NAME_EDEFAULT);
-				return;
-			case WebsitePackage.SERVICE__VIEW:
-				setView(VIEW_EDEFAULT);
-				return;
-			case WebsitePackage.SERVICE__VIEW_NAME:
-				setViewName(VIEW_NAME_EDEFAULT);
-				return;
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
 				return;
@@ -424,12 +272,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.SERVICE__MODEL_NAME:
-				return MODEL_NAME_EDEFAULT == null ? modelName != null : !MODEL_NAME_EDEFAULT.equals(modelName);
-			case WebsitePackage.SERVICE__VIEW:
-				return view != VIEW_EDEFAULT;
-			case WebsitePackage.SERVICE__VIEW_NAME:
-				return VIEW_NAME_EDEFAULT == null ? viewName != null : !VIEW_NAME_EDEFAULT.equals(viewName);
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return encapsulates != null && !encapsulates.isEmpty();
 			case WebsitePackage.SERVICE__DISPLAY_LABELS:
@@ -440,26 +282,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return features != null && !features.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (modelName: ");
-		result.append(modelName);
-		result.append(", view: ");
-		result.append(view);
-		result.append(", viewName: ");
-		result.append(viewName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ServiceImpl

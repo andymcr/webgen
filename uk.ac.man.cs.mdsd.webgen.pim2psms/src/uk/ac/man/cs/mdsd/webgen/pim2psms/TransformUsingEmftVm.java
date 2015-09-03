@@ -148,7 +148,9 @@ public class TransformUsingEmftVm {
 		final String ormModelName = "orm";
 		final Model ormModel = executePassCreatingOutputModel("PassPersistenceTypes",
 			ormModelName, "orm", ormInputModels, null);
-		executeRefiningPass("PassPersistenceFeatures", ormModelName, ormModel,
+		executeRefiningPass("PassPersistenceEntityFeatures", ormModelName, ormModel,
+			ormInputModels, null);
+		executeRefiningPass("PassPersistenceViewAndLabelFeatures", ormModelName, ormModel,
 			ormInputModels, null);
 		executeRefiningPass("PassPersistenceImplicitStatic", ormModelName,
 			ormModel, ormInputModels, null);

@@ -103,31 +103,31 @@ public interface WafFactory extends EFactory {
 	SelectionParameter createSelectionParameter();
 
 	/**
-	 * Returns a new object of class '<em>Service Entity Element</em>'.
+	 * Returns a new object of class '<em>Service Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Entity Element</em>'.
+	 * @return a new object of class '<em>Service Feature</em>'.
 	 * @generated
 	 */
-	ServiceEntityElement createServiceEntityElement();
+	ServiceFeature createServiceFeature();
 
 	/**
-	 * Returns a new object of class '<em>Service Entity Association</em>'.
+	 * Returns a new object of class '<em>Service Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Entity Association</em>'.
+	 * @return a new object of class '<em>Service Attribute</em>'.
 	 * @generated
 	 */
-	ServiceEntityAssociation createServiceEntityAssociation();
+	ServiceAttribute createServiceAttribute();
 
 	/**
-	 * Returns a new object of class '<em>Service View Association</em>'.
+	 * Returns a new object of class '<em>Service Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service View Association</em>'.
+	 * @return a new object of class '<em>Service Association</em>'.
 	 * @generated
 	 */
-	ServiceViewAssociation createServiceViewAssociation();
+	ServiceAssociation createServiceAssociation();
 
 	/**
 	 * Returns a new object of class '<em>Static Menu</em>'.

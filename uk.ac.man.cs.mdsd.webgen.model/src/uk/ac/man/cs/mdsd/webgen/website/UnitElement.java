@@ -20,10 +20,10 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitElement()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='serviceFeatureMustBeConsistent'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL serviceFeatureMustBeConsistent='not feature.oclIsUndefined() and not serviceFeature.oclIsUndefined()\r\nimplies feature = serviceFeature.feature'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL serviceFeatureMustBeConsistent='not attribute.oclIsUndefined() and not serviceFeature.oclIsUndefined()\r\nimplies attribute = serviceFeature.attribute'"
  * @generated
  */
-public interface UnitElement extends UnitFeature, IncludedElement {
+public interface UnitElement extends IncludedElement, UnitFeature {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public interface UnitElement extends UnitFeature, IncludedElement {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitElement_Name()
 	 * @model changeable="false" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if serviceFeature.oclIsUndefined() then\r\n\tif feature.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse\r\n\t\tfeature.name\r\n\tendif\r\nelse\r\n\tserviceFeature.name\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not serviceFeature.oclIsUndefined() then\r\n\tserviceFeature.name\r\nelse\r\n\tif attribute.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse if attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).name\r\n\telse\r\n\t\tattribute.oclAsType(ViewAttribute).name\r\n\tendif endif\r\nendif'"
 	 * @generated
 	 */
 	String getName();
@@ -49,12 +49,12 @@ public interface UnitElement extends UnitFeature, IncludedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Service Feature</em>' reference.
-	 * @see #setServiceFeature(ServiceEntityElement)
+	 * @see #setServiceFeature(ServiceAttribute)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitElement_ServiceFeature()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	ServiceEntityElement getServiceFeature();
+	ServiceAttribute getServiceFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement#getServiceFeature <em>Service Feature</em>}' reference.
@@ -64,7 +64,7 @@ public interface UnitElement extends UnitFeature, IncludedElement {
 	 * @see #getServiceFeature()
 	 * @generated
 	 */
-	void setServiceFeature(ServiceEntityElement value);
+	void setServiceFeature(ServiceAttribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.

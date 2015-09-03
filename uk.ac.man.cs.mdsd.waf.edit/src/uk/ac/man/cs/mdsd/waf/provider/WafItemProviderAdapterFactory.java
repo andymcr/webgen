@@ -303,78 +303,75 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceFeature} instances.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected ServiceEntityElementItemProvider serviceEntityElementItemProvider;
+	protected ServiceFeatureItemProvider serviceFeatureItemProvider;
 
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceEntityElement}.
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceFeature}.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Adapter createServiceEntityElementAdapter()
-  {
-		if (serviceEntityElementItemProvider == null) {
-			serviceEntityElementItemProvider = new ServiceEntityElementItemProvider(this);
+	@Override
+	public Adapter createServiceFeatureAdapter() {
+		if (serviceFeatureItemProvider == null) {
+			serviceFeatureItemProvider = new ServiceFeatureItemProvider(this);
 		}
 
-		return serviceEntityElementItemProvider;
+		return serviceFeatureItemProvider;
 	}
 
-  /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceEntityAssociation} instances.
+		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceAttribute} instances.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected ServiceEntityAssociationItemProvider serviceEntityAssociationItemProvider;
+	protected ServiceAttributeItemProvider serviceAttributeItemProvider;
 
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceEntityAssociation}.
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceAttribute}.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Adapter createServiceEntityAssociationAdapter()
-  {
-		if (serviceEntityAssociationItemProvider == null) {
-			serviceEntityAssociationItemProvider = new ServiceEntityAssociationItemProvider(this);
+	@Override
+	public Adapter createServiceAttributeAdapter() {
+		if (serviceAttributeItemProvider == null) {
+			serviceAttributeItemProvider = new ServiceAttributeItemProvider(this);
 		}
 
-		return serviceEntityAssociationItemProvider;
+		return serviceAttributeItemProvider;
 	}
 
-  /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceViewAssociation} instances.
+		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceAssociation} instances.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected ServiceViewAssociationItemProvider serviceViewAssociationItemProvider;
+	protected ServiceAssociationItemProvider serviceAssociationItemProvider;
 
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceViewAssociation}.
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceAssociation}.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Adapter createServiceViewAssociationAdapter()
-  {
-		if (serviceViewAssociationItemProvider == null) {
-			serviceViewAssociationItemProvider = new ServiceViewAssociationItemProvider(this);
+	@Override
+	public Adapter createServiceAssociationAdapter() {
+		if (serviceAssociationItemProvider == null) {
+			serviceAssociationItemProvider = new ServiceAssociationItemProvider(this);
 		}
 
-		return serviceViewAssociationItemProvider;
+		return serviceAssociationItemProvider;
 	}
 
-  /**
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.StaticMenu} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1445,9 +1442,9 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (modelLabelAssociationXItemProvider != null) modelLabelAssociationXItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
-		if (serviceEntityElementItemProvider != null) serviceEntityElementItemProvider.dispose();
-		if (serviceEntityAssociationItemProvider != null) serviceEntityAssociationItemProvider.dispose();
-		if (serviceViewAssociationItemProvider != null) serviceViewAssociationItemProvider.dispose();
+		if (serviceFeatureItemProvider != null) serviceFeatureItemProvider.dispose();
+		if (serviceAttributeItemProvider != null) serviceAttributeItemProvider.dispose();
+		if (serviceAssociationItemProvider != null) serviceAssociationItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();

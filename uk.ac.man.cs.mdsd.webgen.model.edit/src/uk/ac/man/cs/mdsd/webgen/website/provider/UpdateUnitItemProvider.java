@@ -80,7 +80,7 @@ public class UpdateUnitItemProvider
 					if (object instanceof UpdateUnit) {
 						final UpdateUnit unit = (UpdateUnit) object;
 						final List<Attribute> features = new LinkedList<Attribute>();
-						features.addAll(getSourceElements(unit));
+						features.addAll(getSourceAttributes(unit));
 						return features;
 					}
 					return Collections.emptyList();

@@ -114,12 +114,12 @@ public interface MapUnit extends EditUnit, SelectTarget {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Place Name</em>' reference.
-	 * @see #setPlaceName(ServiceEntityElement)
+	 * @see #setPlaceName(ServiceAttribute)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getMapUnit_PlaceName()
 	 * @model
 	 * @generated
 	 */
-	ServiceEntityElement getPlaceName();
+	ServiceAttribute getPlaceName();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName <em>Place Name</em>}' reference.
@@ -129,7 +129,7 @@ public interface MapUnit extends EditUnit, SelectTarget {
 	 * @see #getPlaceName()
 	 * @generated
 	 */
-	void setPlaceName(ServiceEntityElement value);
+	void setPlaceName(ServiceAttribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Location</b></em>' reference.
@@ -140,12 +140,12 @@ public interface MapUnit extends EditUnit, SelectTarget {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Location</em>' reference.
-	 * @see #setLocation(ServiceEntityElement)
+	 * @see #setLocation(ServiceAttribute)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getMapUnit_Location()
 	 * @model required="true"
 	 * @generated
 	 */
-	ServiceEntityElement getLocation();
+	ServiceAttribute getLocation();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation <em>Location</em>}' reference.
@@ -155,6 +155,6 @@ public interface MapUnit extends EditUnit, SelectTarget {
 	 * @see #getLocation()
 	 * @generated
 	 */
-	void setLocation(ServiceEntityElement value);
+	void setLocation(ServiceAttribute value);
 
 } // MapUnit

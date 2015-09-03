@@ -258,24 +258,12 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createServiceFeatureAdapter();
 			}
 			@Override
-			public Adapter caseServiceEntityFeature(ServiceEntityFeature object) {
-				return createServiceEntityFeatureAdapter();
-			}
-			@Override
-			public Adapter caseServiceEntityElement(ServiceEntityElement object) {
-				return createServiceEntityElementAdapter();
+			public Adapter caseServiceAttribute(ServiceAttribute object) {
+				return createServiceAttributeAdapter();
 			}
 			@Override
 			public Adapter caseServiceAssociation(ServiceAssociation object) {
 				return createServiceAssociationAdapter();
-			}
-			@Override
-			public Adapter caseServiceEntityAssociation(ServiceEntityAssociation object) {
-				return createServiceEntityAssociationAdapter();
-			}
-			@Override
-			public Adapter caseServiceViewAssociation(ServiceViewAssociation object) {
-				return createServiceViewAssociationAdapter();
 			}
 			@Override
 			public Adapter casePage(Page object) {
@@ -714,6 +702,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Feature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Feature
+	 * @generated
+	 */
+	public Adapter createFeatureAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Entity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -808,20 +810,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createViewAssociationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Feature <em>Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Feature
-	 * @generated
-	 */
-	public Adapter createFeatureAdapter() {
 		return null;
 	}
 
@@ -1456,30 +1444,16 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityFeature <em>Service Entity Feature</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute <em>Service Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceEntityFeature
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute
 	 * @generated
 	 */
-	public Adapter createServiceEntityFeatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement <em>Service Entity Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement
-	 * @generated
-	 */
-	public Adapter createServiceEntityElementAdapter() {
+	public Adapter createServiceAttributeAdapter() {
 		return null;
 	}
 
@@ -1494,34 +1468,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceAssociationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation <em>Service Entity Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation
-	 * @generated
-	 */
-	public Adapter createServiceEntityAssociationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation <em>Service View Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceViewAssociation
-	 * @generated
-	 */
-	public Adapter createServiceViewAssociationAdapter() {
 		return null;
 	}
 

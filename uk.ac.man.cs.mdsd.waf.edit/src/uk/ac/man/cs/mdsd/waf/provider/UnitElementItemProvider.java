@@ -49,6 +49,7 @@ public class UnitElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAttributePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
 			addServiceFeaturePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
@@ -58,6 +59,28 @@ public class UnitElementItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Attribute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttributePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IncludedAttribute_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedAttribute_attribute_feature", "_UI_IncludedAttribute_type"),
+				 WafPackage.Literals.INCLUDED_ATTRIBUTE__ATTRIBUTE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Obfuscate Form Fields feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -69,9 +92,9 @@ public class UnitElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedElement_obfuscateFormFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedElement_obfuscateFormFields_feature", "_UI_IncludedElement_type"),
-				 WafPackage.Literals.INCLUDED_ELEMENT__OBFUSCATE_FORM_FIELDS,
+				 getString("_UI_IncludedAttribute_obfuscateFormFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedAttribute_obfuscateFormFields_feature", "_UI_IncludedAttribute_type"),
+				 WafPackage.Literals.INCLUDED_ATTRIBUTE__OBFUSCATE_FORM_FIELDS,
 				 true,
 				 false,
 				 false,
@@ -162,7 +185,7 @@ public class UnitElementItemProvider
   {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE);
+			childrenFeatures.add(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -247,77 +270,77 @@ public class UnitElementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createModelReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE,
+				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 	}
 
@@ -335,7 +358,7 @@ public class UnitElementItemProvider
 
 		boolean qualify =
 			childFeature == WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE ||
-			childFeature == WafPackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE;
+			childFeature == WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE;
 
 		if (qualify) {
 			return getString

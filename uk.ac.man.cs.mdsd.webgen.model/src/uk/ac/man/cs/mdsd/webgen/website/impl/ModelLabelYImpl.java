@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -158,7 +158,7 @@ public class ModelLabelYImpl extends NamedElementImpl implements ModelLabelY {
 	 */
 	public List<ModelLabelFeatureY> getFeatures() {
 		if (features == null) {
-			features = new EObjectContainmentEList<ModelLabelFeatureY>(ModelLabelFeatureY.class, this, WebsitePackage.MODEL_LABEL_Y__FEATURES);
+			features = new EObjectContainmentWithInverseEList<ModelLabelFeatureY>(ModelLabelFeatureY.class, this, WebsitePackage.MODEL_LABEL_Y__FEATURES, WebsitePackage.MODEL_LABEL_FEATURE_Y__PART_OF);
 		}
 		return features;
 	}
@@ -168,6 +168,7 @@ public class ModelLabelYImpl extends NamedElementImpl implements ModelLabelY {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -175,6 +176,8 @@ public class ModelLabelYImpl extends NamedElementImpl implements ModelLabelY {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetLabelFor((EntityOrView)otherEnd, msgs);
+			case WebsitePackage.MODEL_LABEL_Y__FEATURES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFeatures()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

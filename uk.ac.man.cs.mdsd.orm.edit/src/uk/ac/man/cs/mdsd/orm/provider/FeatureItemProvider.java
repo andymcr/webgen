@@ -12,7 +12,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -49,6 +48,7 @@ public class FeatureItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPartOfPropertyDescriptor(object);
 			addColumnNamePropertyDescriptor(object);
 			addInputFieldPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -57,6 +57,28 @@ public class FeatureItemProvider
 			addFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Part Of feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPartOfPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_partOf_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_partOf_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__PART_OF,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

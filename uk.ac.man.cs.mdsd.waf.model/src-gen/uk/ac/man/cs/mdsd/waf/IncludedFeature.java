@@ -15,7 +15,6 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.IncludedFeature#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IncludedFeature#getForcedValue <em>Forced Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IncludedFeature#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IncludedFeature#getHeaderClass <em>Header Class</em>}</li>
@@ -29,32 +28,6 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
  * @generated
  */
 public interface IncludedFeature extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Display Label</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Display Label</em>' attribute.
-	 * @see #setDisplayLabel(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getIncludedFeature_DisplayLabel()
-	 * @model unique="false"
-	 * @generated
-	 */
-	String getDisplayLabel();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.IncludedFeature#getDisplayLabel <em>Display Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Display Label</em>' attribute.
-	 * @see #getDisplayLabel()
-	 * @generated
-	 */
-	void setDisplayLabel(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Forced Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

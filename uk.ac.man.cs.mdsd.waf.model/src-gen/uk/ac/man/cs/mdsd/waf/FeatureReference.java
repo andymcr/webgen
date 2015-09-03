@@ -30,12 +30,12 @@ public interface FeatureReference extends Path {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Feature</em>' reference.
-	 * @see #setFeature(ServiceEntityFeature)
+	 * @see #setFeature(ServiceFeature)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFeatureReference_Feature()
 	 * @model required="true"
 	 * @generated
 	 */
-	ServiceEntityFeature getFeature();
+	ServiceFeature getFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.FeatureReference#getFeature <em>Feature</em>}' reference.
@@ -45,6 +45,6 @@ public interface FeatureReference extends Path {
 	 * @see #getFeature()
 	 * @generated
 	 */
-	void setFeature(ServiceEntityFeature value);
+	void setFeature(ServiceFeature value);
 
 } // FeatureReference

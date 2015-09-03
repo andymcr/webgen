@@ -23,7 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityAssociationItemProvider extends AssociationItemProvider {
+public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,14 +45,10 @@ public class EntityAssociationItemProvider extends AssociationItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addColumnNamePropertyDescriptor(object);
-			addCardinalityPropertyDescriptor(object);
-			addUniquePropertyDescriptor(object);
-			addOrderedPropertyDescriptor(object);
+			addInputClassPropertyDescriptor(object);
 			addTargetEntityPropertyDescriptor(object);
 			addBidirectionalPropertyDescriptor(object);
 			addPivotTableNamePropertyDescriptor(object);
-			addInputClassPropertyDescriptor(object);
 			addTargetFeatureNamePropertyDescriptor(object);
 			addTargetDisplayLabelPropertyDescriptor(object);
 			addTargetHeaderClassPropertyDescriptor(object);
@@ -61,94 +57,6 @@ public class EntityAssociationItemProvider extends AssociationItemProvider {
 			addTargetFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Column Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addColumnNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityFeature_columnName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_columnName_feature", "_UI_EntityFeature_type"),
-				 WebsitePackage.Literals.ENTITY_FEATURE__COLUMN_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Cardinality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCardinalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityFeature_cardinality_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_cardinality_feature", "_UI_EntityFeature_type"),
-				 WebsitePackage.Literals.ENTITY_FEATURE__CARDINALITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Unique feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUniquePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityFeature_unique_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_unique_feature", "_UI_EntityFeature_type"),
-				 WebsitePackage.Literals.ENTITY_FEATURE__UNIQUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ordered feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOrderedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityFeature_ordered_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_ordered_feature", "_UI_EntityFeature_type"),
-				 WebsitePackage.Literals.ENTITY_FEATURE__ORDERED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -228,9 +136,9 @@ public class EntityAssociationItemProvider extends AssociationItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntityAssociation_inputClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_inputClass_feature", "_UI_EntityAssociation_type"),
-				 WebsitePackage.Literals.ENTITY_ASSOCIATION__INPUT_CLASS,
+				 getString("_UI_Association_inputClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_inputClass_feature", "_UI_Association_type"),
+				 WebsitePackage.Literals.ASSOCIATION__INPUT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -398,13 +306,9 @@ public class EntityAssociationItemProvider extends AssociationItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityAssociation.class)) {
-			case WebsitePackage.ENTITY_ASSOCIATION__COLUMN_NAME:
-			case WebsitePackage.ENTITY_ASSOCIATION__CARDINALITY:
-			case WebsitePackage.ENTITY_ASSOCIATION__UNIQUE:
-			case WebsitePackage.ENTITY_ASSOCIATION__ORDERED:
+			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 			case WebsitePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 			case WebsitePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
-			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:

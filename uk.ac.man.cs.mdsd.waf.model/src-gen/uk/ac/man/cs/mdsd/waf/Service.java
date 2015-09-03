@@ -16,11 +16,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getEntities <em>Entities</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getDaosUsed <em>Daos Used</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getModelName <em>Model Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#isView <em>View</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getViewName <em>View Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getEncapsulates <em>Encapsulates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getAccessedBy <em>Accessed By</em>}</li>
@@ -32,114 +28,20 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  */
 public interface Service extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Entities</b></em>' reference list.
+	 * Returns the value of the '<em><b>Encapsulates</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.EntityOrView}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Entities</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Encapsulates</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entities</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_Entities()
+	 * @return the value of the '<em>Encapsulates</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_Encapsulates()
 	 * @model
 	 * @generated
 	 */
-	EList<EntityOrView> getEntities();
-
-	/**
-	 * Returns the value of the '<em><b>Daos Used</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.EntityOrView}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Daos Used</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Daos Used</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_DaosUsed()
-	 * @model
-	 * @generated
-	 */
-	EList<EntityOrView> getDaosUsed();
-
-	/**
-	 * Returns the value of the '<em><b>Model Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Model Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Model Name</em>' attribute.
-	 * @see #setModelName(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_ModelName()
-	 * @model unique="false" required="true"
-	 * @generated
-	 */
-	String getModelName();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Service#getModelName <em>Model Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Model Name</em>' attribute.
-	 * @see #getModelName()
-	 * @generated
-	 */
-	void setModelName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>View</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>View</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>View</em>' attribute.
-	 * @see #setView(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_View()
-	 * @model unique="false"
-	 * @generated
-	 */
-	boolean isView();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Service#isView <em>View</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>View</em>' attribute.
-	 * @see #isView()
-	 * @generated
-	 */
-	void setView(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>View Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>View Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>View Name</em>' attribute.
-	 * @see #setViewName(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_ViewName()
-	 * @model unique="false"
-	 * @generated
-	 */
-	String getViewName();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Service#getViewName <em>View Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>View Name</em>' attribute.
-	 * @see #getViewName()
-	 * @generated
-	 */
-	void setViewName(String value);
+	EList<EntityOrView> getEncapsulates();
 
 	/**
 	 * Returns the value of the '<em><b>Selections</b></em>' containment reference list.
@@ -160,7 +62,7 @@ public interface Service extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ServiceFeature}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getIncludedBy <em>Included By</em>}'.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Features</em>' containment reference list isn't clear,
@@ -169,8 +71,8 @@ public interface Service extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Features</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_Features()
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceFeature#getIncludedBy
-	 * @model opposite="includedBy" containment="true"
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceFeature#getPartOf
+	 * @model opposite="partOf" containment="true"
 	 * @generated
 	 */
 	EList<ServiceFeature> getFeatures();

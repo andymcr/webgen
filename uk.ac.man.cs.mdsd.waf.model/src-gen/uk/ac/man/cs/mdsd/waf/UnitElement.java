@@ -21,7 +21,7 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface UnitElement extends UnitFeature, IncludedElement {
+public interface UnitElement extends UnitFeature, IncludedAttribute {
 	/**
 	 * Returns the value of the '<em><b>Service Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -31,12 +31,12 @@ public interface UnitElement extends UnitFeature, IncludedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Service Feature</em>' reference.
-	 * @see #setServiceFeature(ServiceEntityElement)
+	 * @see #setServiceFeature(ServiceAttribute)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitElement_ServiceFeature()
 	 * @model required="true"
 	 * @generated
 	 */
-	ServiceEntityElement getServiceFeature();
+	ServiceAttribute getServiceFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitElement#getServiceFeature <em>Service Feature</em>}' reference.
@@ -46,7 +46,7 @@ public interface UnitElement extends UnitFeature, IncludedElement {
 	 * @see #getServiceFeature()
 	 * @generated
 	 */
-	void setServiceFeature(ServiceEntityElement value);
+	void setServiceFeature(ServiceAttribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.

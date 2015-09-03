@@ -19,7 +19,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitFeature()
- * @model abstract="true"
+ * @model interface="true" abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='atMostOneSelectAction noDeleteActions'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL atMostOneSelectAction='actions->select(a | a.oclIsKindOf(SelectAction))->size() < 2' noDeleteActions='actions->select(a | a.oclIsKindOf(DeleteAction))->isEmpty()'"
  * @generated

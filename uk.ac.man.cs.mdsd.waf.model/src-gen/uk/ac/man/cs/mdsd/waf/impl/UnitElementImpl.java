@@ -12,8 +12,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.criteria.Expression;
 
-import uk.ac.man.cs.mdsd.waf.IncludedElement;
-import uk.ac.man.cs.mdsd.waf.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.orm.Attribute;
+
+import uk.ac.man.cs.mdsd.waf.IncludedAttribute;
+import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.UnitElement;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -25,6 +27,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitElementImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitElementImpl#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitElementImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitElementImpl#getServiceFeature <em>Service Feature</em>}</li>
@@ -35,6 +38,16 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
+	/**
+	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttribute()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute attribute;
+
 	/**
 	 * The default value of the '{@link #isObfuscateFormFields() <em>Obfuscate Form Fields</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,7 +86,7 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceEntityElement serviceFeature;
+	protected ServiceAttribute serviceFeature;
 
 	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
@@ -132,6 +145,44 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.UNIT_ELEMENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute getAttribute() {
+		if (attribute != null && attribute.eIsProxy()) {
+			InternalEObject oldAttribute = (InternalEObject)attribute;
+			attribute = (Attribute)eResolveProxy(oldAttribute);
+			if (attribute != oldAttribute) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.UNIT_ELEMENT__ATTRIBUTE, oldAttribute, attribute));
+			}
+		}
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute basicGetAttribute() {
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAttribute(Attribute newAttribute) {
+		Attribute oldAttribute = attribute;
+		attribute = newAttribute;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ELEMENT__ATTRIBUTE, oldAttribute, attribute));
 	}
 
 	/**
@@ -203,10 +254,10 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement getServiceFeature() {
+	public ServiceAttribute getServiceFeature() {
 		if (serviceFeature != null && serviceFeature.eIsProxy()) {
 			InternalEObject oldServiceFeature = (InternalEObject)serviceFeature;
-			serviceFeature = (ServiceEntityElement)eResolveProxy(oldServiceFeature);
+			serviceFeature = (ServiceAttribute)eResolveProxy(oldServiceFeature);
 			if (serviceFeature != oldServiceFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.UNIT_ELEMENT__SERVICE_FEATURE, oldServiceFeature, serviceFeature));
@@ -220,7 +271,7 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement basicGetServiceFeature() {
+	public ServiceAttribute basicGetServiceFeature() {
 		return serviceFeature;
 	}
 
@@ -229,8 +280,8 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setServiceFeature(ServiceEntityElement newServiceFeature) {
-		ServiceEntityElement oldServiceFeature = serviceFeature;
+	public void setServiceFeature(ServiceAttribute newServiceFeature) {
+		ServiceAttribute oldServiceFeature = serviceFeature;
 		serviceFeature = newServiceFeature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ELEMENT__SERVICE_FEATURE, oldServiceFeature, serviceFeature));
@@ -300,6 +351,9 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.UNIT_ELEMENT__ATTRIBUTE:
+				if (resolve) return getAttribute();
+				return basicGetAttribute();
 			case WafPackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS:
 				return isObfuscateFormFields();
 			case WafPackage.UNIT_ELEMENT__DEFAULT_VALUE:
@@ -323,6 +377,9 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.UNIT_ELEMENT__ATTRIBUTE:
+				setAttribute((Attribute)newValue);
+				return;
 			case WafPackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields((Boolean)newValue);
 				return;
@@ -330,7 +387,7 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 				setDefaultValue((Expression)newValue);
 				return;
 			case WafPackage.UNIT_ELEMENT__SERVICE_FEATURE:
-				setServiceFeature((ServiceEntityElement)newValue);
+				setServiceFeature((ServiceAttribute)newValue);
 				return;
 			case WafPackage.UNIT_ELEMENT__PLACEHOLDER:
 				setPlaceholder((String)newValue);
@@ -350,6 +407,9 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.UNIT_ELEMENT__ATTRIBUTE:
+				setAttribute((Attribute)null);
+				return;
 			case WafPackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS:
 				setObfuscateFormFields(OBFUSCATE_FORM_FIELDS_EDEFAULT);
 				return;
@@ -357,7 +417,7 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 				setDefaultValue((Expression)null);
 				return;
 			case WafPackage.UNIT_ELEMENT__SERVICE_FEATURE:
-				setServiceFeature((ServiceEntityElement)null);
+				setServiceFeature((ServiceAttribute)null);
 				return;
 			case WafPackage.UNIT_ELEMENT__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
@@ -377,6 +437,8 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.UNIT_ELEMENT__ATTRIBUTE:
+				return attribute != null;
 			case WafPackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS:
 				return obfuscateFormFields != OBFUSCATE_FORM_FIELDS_EDEFAULT;
 			case WafPackage.UNIT_ELEMENT__DEFAULT_VALUE:
@@ -398,10 +460,11 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedElement.class) {
+		if (baseClass == IncludedAttribute.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS: return WafPackage.INCLUDED_ELEMENT__OBFUSCATE_FORM_FIELDS;
-				case WafPackage.UNIT_ELEMENT__DEFAULT_VALUE: return WafPackage.INCLUDED_ELEMENT__DEFAULT_VALUE;
+				case WafPackage.UNIT_ELEMENT__ATTRIBUTE: return WafPackage.INCLUDED_ATTRIBUTE__ATTRIBUTE;
+				case WafPackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS: return WafPackage.INCLUDED_ATTRIBUTE__OBFUSCATE_FORM_FIELDS;
+				case WafPackage.UNIT_ELEMENT__DEFAULT_VALUE: return WafPackage.INCLUDED_ATTRIBUTE__DEFAULT_VALUE;
 				default: return -1;
 			}
 		}
@@ -415,10 +478,11 @@ public class UnitElementImpl extends UnitFeatureImpl implements UnitElement {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedElement.class) {
+		if (baseClass == IncludedAttribute.class) {
 			switch (baseFeatureID) {
-				case WafPackage.INCLUDED_ELEMENT__OBFUSCATE_FORM_FIELDS: return WafPackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS;
-				case WafPackage.INCLUDED_ELEMENT__DEFAULT_VALUE: return WafPackage.UNIT_ELEMENT__DEFAULT_VALUE;
+				case WafPackage.INCLUDED_ATTRIBUTE__ATTRIBUTE: return WafPackage.UNIT_ELEMENT__ATTRIBUTE;
+				case WafPackage.INCLUDED_ATTRIBUTE__OBFUSCATE_FORM_FIELDS: return WafPackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS;
+				case WafPackage.INCLUDED_ATTRIBUTE__DEFAULT_VALUE: return WafPackage.UNIT_ELEMENT__DEFAULT_VALUE;
 				default: return -1;
 			}
 		}

@@ -16,16 +16,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
@@ -39,7 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class UnitAssociationItemProvider
-	extends UnitFeatureItemProvider {
+	extends IncludedAssociationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -61,7 +55,11 @@ public class UnitAssociationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFeaturePropertyDescriptor(object);
+			addDateFormatPropertyDescriptor(object);
+			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
+			addCollectionDisplayOptionPropertyDescriptor(object);
+			addMaximumDisplaySizePropertyDescriptor(object);
+			addAutofocusPropertyDescriptor(object);
 			addServiceFeaturePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addDynamicLabelPropertyDescriptor(object);
@@ -76,45 +74,136 @@ public class UnitAssociationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addFeaturePropertyDescriptor(Object object) {
+	protected void addAssociationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_IncludedAssociation_feature_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_IncludedAssociation_feature_feature", "_UI_IncludedAssociation_type"),
-			WebsitePackage.Literals.INCLUDED_ASSOCIATION__FEATURE,
+			getString("_UI_IncludedAssociation_association_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_IncludedAssociation_association_feature", "_UI_IncludedAssociation_type"),
+			WebsitePackage.Literals.INCLUDED_ASSOCIATION__ASSOCIATION,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
-						final DynamicUnit unit = ((UnitAssociation) object).getDisplayedOn();
-						final List<Association> associations = new LinkedList<Association>();
-						if (unit.getSource() instanceof Entity) {
-							final Entity entity = (Entity) unit.getSource();
-							for (EntityFeature feature : entity.getFeatures()) {
-								if (feature instanceof Association) {
-									associations.add((Association) feature);
-								}
-							}
-							for (EntityAssociation association : entity.getAssociationEnds()) {
-								if (association.getBidirectional()) {
-									associations.add(association);
-								}
-							}
-						} else {
-							for (ServiceFeature includedFeature : ((Service) unit.getSource()).getFeatures()) {
-								if (includedFeature instanceof ServiceEntityAssociation) {
-									associations.add(((ServiceEntityAssociation) includedFeature).getFeature());
-								}
-							}
-						}
-						return associations;
+						return getSourceAssociations(
+							(DynamicUnit) ((UnitAssociation) object).eContainer());
 					}
+
 					return Collections.emptyList();
 				}
 		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Date Format feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDateFormatPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_dateFormat_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_dateFormat_feature", "_UI_UnitField_type"),
+				 WebsitePackage.Literals.UNIT_FIELD__DATE_FORMAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Only Display When Not Empty feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOnlyDisplayWhenNotEmptyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_onlyDisplayWhenNotEmpty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_onlyDisplayWhenNotEmpty_feature", "_UI_UnitFeature_type"),
+				 WebsitePackage.Literals.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Display Option feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionDisplayOptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_collectionDisplayOption_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_collectionDisplayOption_feature", "_UI_UnitFeature_type"),
+				 WebsitePackage.Literals.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Maximum Display Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaximumDisplaySizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_maximumDisplaySize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_maximumDisplaySize_feature", "_UI_UnitFeature_type"),
+				 WebsitePackage.Literals.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Autofocus feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutofocusPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_autofocus_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_autofocus_feature", "_UI_UnitFeature_type"),
+				 WebsitePackage.Literals.UNIT_FEATURE__AUTOFOCUS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -136,16 +225,16 @@ public class UnitAssociationItemProvider
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof UnitAssociation) {
-					final List<ServiceAssociation> includedAssocations = new LinkedList<ServiceAssociation>();
+					final List<ServiceAssociation> assocations = new LinkedList<ServiceAssociation>();
 					final DynamicUnit unit = ((UnitAssociation) object).getDisplayedOn();
 					if (unit.getSource() instanceof Service) {
-						for (ServiceFeature includedFeature : ((Service) unit.getSource()).getFeatures()) {
-							if (includedFeature instanceof ServiceAssociation) {
-								includedAssocations.add((ServiceAssociation) includedFeature);
+						for (ServiceFeature feature : ((Service) unit.getSource()).getFeatures()) {
+							if (feature instanceof ServiceAssociation) {
+								assocations.add((ServiceAssociation) feature);
 							}
 						}
 					}
-					return includedAssocations;
+					return assocations;
 				}
 				return Collections.emptyList();
 			}
@@ -176,20 +265,8 @@ public class UnitAssociationItemProvider
 						if (includedAssociation.getServiceFeature() != null) {
 							final ServiceAssociation serviceAssociation
 								= includedAssociation.getServiceFeature();
-							if (serviceAssociation instanceof ServiceEntityAssociation) {
-								final EntityAssociation association
-									= ((ServiceEntityAssociation) serviceAssociation).getFeature();
-								if (association != null) {
-									if (serviceAssociation.getPartOf().getEncapsulates().contains(association.getParentEntity())) {
-										for (Service service : association.getTargetEntity().getServedBy()) {
-											selections.addAll(service.getSelections());
-										}
-									} else{
-										for (Service service : association.getParentEntity().getServedBy()) {
-											selections.addAll(service.getSelections());
-										}
-									}
-								}
+							for (Service service : getTargetType(serviceAssociation).getServedBy()) {
+								selections.addAll(service.getSelections());
 							}
 							
 						}
@@ -241,18 +318,11 @@ public class UnitAssociationItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
-						final Service service = getSourceService((UnitAssociation) object);
-						if (service != null) {
-							final List<UnitTitle> filters = new LinkedList<UnitTitle>();
-							for (ServiceFeature feature : service.getFeatures()) {
-								if (feature instanceof ServiceEntityElement) {
-									filters.add(((ServiceEntityElement)feature).getFeature());
-								}
-							}
-							filters.addAll(service.getDisplayLabels());
-
-							return filters;
+						final List<UnitTitle> filters = new LinkedList<UnitTitle>();
+						for (Service service : getSourceServices((UnitAssociation) object)) {
+							filters.addAll(getFeatureAttributes(service));
 						}
+						return filters;
 					}
 
 					return Collections.emptyList();
@@ -272,6 +342,7 @@ public class UnitAssociationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
 			childrenFeatures.add(WebsitePackage.Literals.UNIT_CONTAINER__UNITS);
 			childrenFeatures.add(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE);
 		}
@@ -328,9 +399,15 @@ public class UnitAssociationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitAssociation.class)) {
+			case WebsitePackage.UNIT_ASSOCIATION__DATE_FORMAT:
+			case WebsitePackage.UNIT_ASSOCIATION__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+			case WebsitePackage.UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION:
+			case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE:
+			case WebsitePackage.UNIT_ASSOCIATION__AUTOFOCUS:
 			case WebsitePackage.UNIT_ASSOCIATION__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebsitePackage.UNIT_ASSOCIATION__ACTIONS:
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -349,6 +426,21 @@ public class UnitAssociationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
+				 WebsiteFactory.eINSTANCE.createSelectAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
+				 WebsiteFactory.eINSTANCE.createDeleteAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
+				 WebsiteFactory.eINSTANCE.createFeatureSupportAction()));
 
 		newChildDescriptors.add
 			(createChildParameter

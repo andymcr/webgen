@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
 import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceEntityElement;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -116,7 +116,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceEntityElement location;
+	protected ServiceAttribute location;
 
 	/**
 	 * The cached value of the '{@link #getPlaceName() <em>Place Name</em>}' reference.
@@ -126,7 +126,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceEntityElement placeName;
+	protected ServiceAttribute placeName;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,10 +227,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement getPlaceName() {
+	public ServiceAttribute getPlaceName() {
 		if (placeName != null && placeName.eIsProxy()) {
 			InternalEObject oldPlaceName = (InternalEObject)placeName;
-			placeName = (ServiceEntityElement)eResolveProxy(oldPlaceName);
+			placeName = (ServiceAttribute)eResolveProxy(oldPlaceName);
 			if (placeName != oldPlaceName) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.MAP_UNIT__PLACE_NAME, oldPlaceName, placeName));
@@ -244,7 +244,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement basicGetPlaceName() {
+	public ServiceAttribute basicGetPlaceName() {
 		return placeName;
 	}
 
@@ -253,8 +253,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPlaceName(ServiceEntityElement newPlaceName) {
-		ServiceEntityElement oldPlaceName = placeName;
+	public void setPlaceName(ServiceAttribute newPlaceName) {
+		ServiceAttribute oldPlaceName = placeName;
 		placeName = newPlaceName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.MAP_UNIT__PLACE_NAME, oldPlaceName, placeName));
@@ -265,10 +265,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement getLocation() {
+	public ServiceAttribute getLocation() {
 		if (location != null && location.eIsProxy()) {
 			InternalEObject oldLocation = (InternalEObject)location;
-			location = (ServiceEntityElement)eResolveProxy(oldLocation);
+			location = (ServiceAttribute)eResolveProxy(oldLocation);
 			if (location != oldLocation) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.MAP_UNIT__LOCATION, oldLocation, location));
@@ -282,7 +282,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceEntityElement basicGetLocation() {
+	public ServiceAttribute basicGetLocation() {
 		return location;
 	}
 
@@ -291,8 +291,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLocation(ServiceEntityElement newLocation) {
-		ServiceEntityElement oldLocation = location;
+	public void setLocation(ServiceAttribute newLocation) {
+		ServiceAttribute oldLocation = location;
 		location = newLocation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.MAP_UNIT__LOCATION, oldLocation, location));
@@ -347,10 +347,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				setStyleClass((String)newValue);
 				return;
 			case WebsitePackage.MAP_UNIT__LOCATION:
-				setLocation((ServiceEntityElement)newValue);
+				setLocation((ServiceAttribute)newValue);
 				return;
 			case WebsitePackage.MAP_UNIT__PLACE_NAME:
-				setPlaceName((ServiceEntityElement)newValue);
+				setPlaceName((ServiceAttribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -377,10 +377,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
 			case WebsitePackage.MAP_UNIT__LOCATION:
-				setLocation((ServiceEntityElement)null);
+				setLocation((ServiceAttribute)null);
 				return;
 			case WebsitePackage.MAP_UNIT__PLACE_NAME:
-				setPlaceName((ServiceEntityElement)null);
+				setPlaceName((ServiceAttribute)null);
 				return;
 		}
 		super.eUnset(featureID);

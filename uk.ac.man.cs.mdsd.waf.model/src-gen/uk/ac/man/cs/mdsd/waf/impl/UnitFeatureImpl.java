@@ -22,7 +22,7 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
 
 import uk.ac.man.cs.mdsd.orm.Cardinality;
 
-import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
+import uk.ac.man.cs.mdsd.orm.impl.NamedDisplayElementImpl;
 
 import uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
@@ -41,7 +41,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getForcedValue <em>Forced Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -60,27 +59,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *
  * @generated
  */
-public abstract class UnitFeatureImpl extends NamedElementImpl implements UnitFeature {
-	/**
-	 * The default value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DISPLAY_LABEL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
-
+public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements UnitFeature {
 	/**
 	 * The cached value of the '{@link #getForcedValue() <em>Forced Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -338,27 +317,6 @@ public abstract class UnitFeatureImpl extends NamedElementImpl implements UnitFe
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.UNIT_FEATURE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDisplayLabel() {
-		return displayLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDisplayLabel(String newDisplayLabel) {
-		String oldDisplayLabel = displayLabel;
-		displayLabel = newDisplayLabel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__DISPLAY_LABEL, oldDisplayLabel, displayLabel));
 	}
 
 	/**
@@ -757,8 +715,6 @@ public abstract class UnitFeatureImpl extends NamedElementImpl implements UnitFe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.UNIT_FEATURE__DISPLAY_LABEL:
-				return getDisplayLabel();
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				return getForcedValue();
 			case WafPackage.UNIT_FEATURE__FOOTER:
@@ -801,9 +757,6 @@ public abstract class UnitFeatureImpl extends NamedElementImpl implements UnitFe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.UNIT_FEATURE__DISPLAY_LABEL:
-				setDisplayLabel((String)newValue);
-				return;
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)newValue);
 				return;
@@ -859,9 +812,6 @@ public abstract class UnitFeatureImpl extends NamedElementImpl implements UnitFe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.UNIT_FEATURE__DISPLAY_LABEL:
-				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
-				return;
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)null);
 				return;
@@ -916,8 +866,6 @@ public abstract class UnitFeatureImpl extends NamedElementImpl implements UnitFe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.UNIT_FEATURE__DISPLAY_LABEL:
-				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				return forcedValue != null;
 			case WafPackage.UNIT_FEATURE__FOOTER:
@@ -959,7 +907,6 @@ public abstract class UnitFeatureImpl extends NamedElementImpl implements UnitFe
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == IncludedFeature.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.UNIT_FEATURE__DISPLAY_LABEL: return WafPackage.INCLUDED_FEATURE__DISPLAY_LABEL;
 				case WafPackage.UNIT_FEATURE__FORCED_VALUE: return WafPackage.INCLUDED_FEATURE__FORCED_VALUE;
 				case WafPackage.UNIT_FEATURE__FOOTER: return WafPackage.INCLUDED_FEATURE__FOOTER;
 				case WafPackage.UNIT_FEATURE__HEADER_CLASS: return WafPackage.INCLUDED_FEATURE__HEADER_CLASS;
@@ -995,7 +942,6 @@ public abstract class UnitFeatureImpl extends NamedElementImpl implements UnitFe
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == IncludedFeature.class) {
 			switch (baseFeatureID) {
-				case WafPackage.INCLUDED_FEATURE__DISPLAY_LABEL: return WafPackage.UNIT_FEATURE__DISPLAY_LABEL;
 				case WafPackage.INCLUDED_FEATURE__FORCED_VALUE: return WafPackage.UNIT_FEATURE__FORCED_VALUE;
 				case WafPackage.INCLUDED_FEATURE__FOOTER: return WafPackage.UNIT_FEATURE__FOOTER;
 				case WafPackage.INCLUDED_FEATURE__HEADER_CLASS: return WafPackage.UNIT_FEATURE__HEADER_CLASS;
@@ -1032,9 +978,7 @@ public abstract class UnitFeatureImpl extends NamedElementImpl implements UnitFe
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (displayLabel: ");
-		result.append(displayLabel);
-		result.append(", footer: ");
+		result.append(" (footer: ");
 		result.append(footer);
 		result.append(", headerClass: ");
 		result.append(headerClass);

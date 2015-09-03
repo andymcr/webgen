@@ -86,6 +86,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES);
 			childrenFeatures.add(OrmPackage.Literals.ENTITY_OR_VIEW__DISPLAY_LABELS);
 		}
 		return childrenFeatures;
@@ -131,6 +132,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityOrView.class)) {
+			case OrmPackage.ENTITY_OR_VIEW__FEATURES:
 			case OrmPackage.ENTITY_OR_VIEW__DISPLAY_LABELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -148,6 +150,61 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createCollectionElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonDate()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createCollectionDate()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonFile()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonImage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonLocation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createCollectionAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createViewAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createViewAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter

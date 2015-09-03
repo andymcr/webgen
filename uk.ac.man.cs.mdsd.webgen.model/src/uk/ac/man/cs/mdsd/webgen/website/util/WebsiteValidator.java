@@ -182,16 +182,10 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateSelectionParameter((SelectionParameter)value, diagnostics, context);
 			case WebsitePackage.SERVICE_FEATURE:
 				return validateServiceFeature((ServiceFeature)value, diagnostics, context);
-			case WebsitePackage.SERVICE_ENTITY_FEATURE:
-				return validateServiceEntityFeature((ServiceEntityFeature)value, diagnostics, context);
-			case WebsitePackage.SERVICE_ENTITY_ELEMENT:
-				return validateServiceEntityElement((ServiceEntityElement)value, diagnostics, context);
+			case WebsitePackage.SERVICE_ATTRIBUTE:
+				return validateServiceAttribute((ServiceAttribute)value, diagnostics, context);
 			case WebsitePackage.SERVICE_ASSOCIATION:
 				return validateServiceAssociation((ServiceAssociation)value, diagnostics, context);
-			case WebsitePackage.SERVICE_ENTITY_ASSOCIATION:
-				return validateServiceEntityAssociation((ServiceEntityAssociation)value, diagnostics, context);
-			case WebsitePackage.SERVICE_VIEW_ASSOCIATION:
-				return validateServiceViewAssociation((ServiceViewAssociation)value, diagnostics, context);
 			case WebsitePackage.PAGE:
 				return validatePage((Page)value, diagnostics, context);
 			case WebsitePackage.PAGE_LINK:
@@ -619,6 +613,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateFeature(Feature feature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(feature, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateEntity(Entity entity, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(entity, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(entity, diagnostics, context);
@@ -699,7 +702,17 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateEntityFeature(EntityFeature entityFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(entityFeature, diagnostics, context);
+		if (!validate_NoCircularContainment(entityFeature, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(entityFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(entityFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(entityFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(entityFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(entityFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(entityFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityFeature, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entityFeature, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -772,37 +785,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFeature(Feature feature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(feature, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(feature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(feature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(feature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(feature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(feature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(feature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(feature, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(feature, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(feature, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateAttribute(Attribute attribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(attribute, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(attribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(attribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(attribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(attribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(attribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(attribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(attribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(attribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(attribute, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(attribute, diagnostics, context);
 	}
 
 	/**
@@ -944,17 +928,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssociation(Association association, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(association, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(association, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(association, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(association, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(association, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(association, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(association, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(association, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(association, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(association, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(association, diagnostics, context);
 	}
 
 	/**
@@ -1662,12 +1636,12 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(unitElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(unitElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateUnitFeature_atMostOneSelectAction(unitElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateUnitFeature_noDeleteActions(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateIncludedElement_cannotReduceCardinality(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyGiveDefaultValueForSingletons(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyForceSingletonValues(unitElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(unitElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validateUnitFeature_atMostOneSelectAction(unitElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validateUnitFeature_noDeleteActions(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitElement_serviceFeatureMustBeConsistent(unitElement, diagnostics, context);
 		return result;
 	}
@@ -1678,8 +1652,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String UNIT_ELEMENT__SERVICE_FEATURE_MUST_BE_CONSISTENT__EEXPRESSION = "not feature.oclIsUndefined() and not serviceFeature.oclIsUndefined()\r\n" +
-		"implies feature = serviceFeature.feature";
+	protected static final String UNIT_ELEMENT__SERVICE_FEATURE_MUST_BE_CONSISTENT__EEXPRESSION = "not attribute.oclIsUndefined() and not serviceFeature.oclIsUndefined()\r\n" +
+		"implies attribute = serviceFeature.attribute";
 
 	/**
 	 * Validates the serviceFeatureMustBeConsistent constraint of '<em>Unit Element</em>'.
@@ -1717,117 +1691,14 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(unitAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIncludedAssociation_cannotReduceCardinality(unitAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIncludedAssociation_canOnlyForceSingletonValues(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitFeature_atMostOneSelectAction(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitFeature_noDeleteActions(unitAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateUnitAssociation_cannotReduceCardinality(unitAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateUnitAssociation_canOnlyForceSingletonValues(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitAssociation_serviceFeatureMustBeConsistent(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitAssociation_selectionFromCorrectService(unitAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateUnitAssociation_entityAssociationsRequireFeature(unitAssociation, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the cannotReduceCardinality constraint of '<em>Unit Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String UNIT_ASSOCIATION__CANNOT_REDUCE_CARDINALITY__EEXPRESSION = "let featureRequired : Boolean\r\n" +
-		"= if feature.oclIsUndefined() then\r\n" +
-		"\t\tfalse\r\n" +
-		"\telse\r\n" +
-		"\t\tlet entities : OrderedSet(Entity)\r\n" +
-		"\t\t= if displayedOn.source.oclIsUndefined() then\r\n" +
-		"\t\t\t\tOrderedSet{}\r\n" +
-		"\t\t\telse if displayedOn.source.oclIsTypeOf(Entity) then\r\n" +
-		"\t\t\t\tOrderedSet{displayedOn.source.oclAsType(Entity)}\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tdisplayedOn.source.oclAsType(Service).encapsulates\r\n" +
-		"\t\t\tendif endif\r\n" +
-		"\t\tin if entities->includes(feature.parentEntity) then\r\n" +
-		"\t\t\t\tfeature.cardinality = Cardinality::Required\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n" +
-		"\t\t\t\t\ttrue\r\n" +
-		"\t\t\t\telse\r\n" +
-		"\t\t\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required\r\n" +
-		"\t\t\t\tendif\r\n" +
-		"\t\t\tendif\r\n" +
-		"\t\tendif\r\n" +
-		"in if serviceFeature.oclIsUndefined() then\r\n" +
-		"\t\ttrue\r\n" +
-		"\telse if serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then\r\n" +
-		"\t\tfeatureRequired implies serviceFeature.oclAsType(ServiceEntityAssociation).required\r\n" +
-		"\telse\r\n" +
-		"\t\tfeatureRequired implies true -- serviceFeature.oclAsType(ServiceViewAssociation).cardinality = Cardinality::Required\r\n" +
-		"\tendif endif\r\n" +
-		"";
-
-	/**
-	 * Validates the cannotReduceCardinality constraint of '<em>Unit Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUnitAssociation_cannotReduceCardinality(UnitAssociation unitAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.UNIT_ASSOCIATION,
-				 unitAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "cannotReduceCardinality",
-				 UNIT_ASSOCIATION__CANNOT_REDUCE_CARDINALITY__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the canOnlyForceSingletonValues constraint of '<em>Unit Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String UNIT_ASSOCIATION__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION = "not feature.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n" +
-		"\tlet entities : OrderedSet(Entity)\r\n" +
-		"\t\t= if displayedOn.source.oclIsTypeOf(Entity) then\r\n" +
-		"\t\t\t\tOrderedSet{displayedOn.source.oclAsType(Entity)}\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tdisplayedOn.source.oclAsType(Service).encapsulates\r\n" +
-		"\t\t\tendif\r\n" +
-		"\t\tin if entities->includes(feature.parentEntity) then\r\n" +
-		"\t\t\t\tfeature.cardinality <> Cardinality::Many\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n" +
-		"\t\t\t\t\ttrue\r\n" +
-		"\t\t\t\telse\r\n" +
-		"\t\t\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n" +
-		"\t\t\t\tendif\r\n" +
-		"\t\t\tendif";
-
-	/**
-	 * Validates the canOnlyForceSingletonValues constraint of '<em>Unit Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUnitAssociation_canOnlyForceSingletonValues(UnitAssociation unitAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.UNIT_ASSOCIATION,
-				 unitAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "canOnlyForceSingletonValues",
-				 UNIT_ASSOCIATION__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
@@ -1836,12 +1707,9 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String UNIT_ASSOCIATION__SERVICE_FEATURE_MUST_BE_CONSISTENT__EEXPRESSION = "not feature.oclIsUndefined() and not serviceFeature.oclIsUndefined()\r\n" +
-		"implies if serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then\r\n" +
-		"\t\tfeature = serviceFeature.oclAsType(ServiceEntityAssociation).feature\r\n" +
-		"\telse\r\n" +
-		"\t\ttrue\r\n" +
-		"\tendif";
+	protected static final String UNIT_ASSOCIATION__SERVICE_FEATURE_MUST_BE_CONSISTENT__EEXPRESSION = "not association.oclIsUndefined() and not serviceFeature.oclIsUndefined() implies\r\n" +
+		"\tassociation = serviceFeature.association\r\n" +
+		"";
 
 	/**
 	 * Validates the serviceFeatureMustBeConsistent constraint of '<em>Unit Association</em>'.
@@ -1870,23 +1738,16 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String UNIT_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION = "if selection.oclIsUndefined() then\r\n" +
-		"\ttrue\r\n" +
-		"else if serviceFeature.oclIsUndefined() then\r\n" +
-		"\ttrue\r\n" +
-		"else if not serviceFeature.oclIsTypeOf(ServiceEntityAssociation) then\r\n" +
-		"\ttrue\r\n" +
-		"else if serviceFeature.oclAsType(ServiceEntityAssociation).feature.oclIsUndefined() then\r\n" +
-		"\ttrue\r\n" +
-		"else\r\n" +
-		"\tlet target : Entity\r\n" +
-		"\t= if serviceFeature.partOf.encapsulates->includes(serviceFeature.oclAsType(ServiceEntityAssociation).feature.parentEntity) then\r\n" +
-		"\t\t\tserviceFeature.oclAsType(ServiceEntityAssociation).feature.targetEntity\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tserviceFeature.oclAsType(ServiceEntityAssociation).feature.parentEntity\r\n" +
-		"\t\tendif\r\n" +
-		"\tin target.servedBy->collect(s | s.selections)->includes(selection)\r\n" +
-		"endif endif endif endif";
+	protected static final String UNIT_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION = "not selection.oclIsUndefined() and not association.oclIsUndefined() implies\r\n" +
+		"\tlet entityOrView : EntityOrView\r\n" +
+		"\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n" +
+		"\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n" +
+		"\t\t\telse if useAssociationSource then\r\n" +
+		"\t\t\t\tassociation.oclAsType(EntityAssociation).parentEntity\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n" +
+		"\t\t\tendif endif\r\n" +
+		"\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)";
 
 	/**
 	 * Validates the selectionFromCorrectService constraint of '<em>Unit Association</em>'.
@@ -1904,37 +1765,6 @@ public class WebsiteValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "selectionFromCorrectService",
 				 UNIT_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the entityAssociationsRequireFeature constraint of '<em>Unit Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String UNIT_ASSOCIATION__ENTITY_ASSOCIATIONS_REQUIRE_FEATURE__EEXPRESSION = "not serviceFeature.oclIsUndefined() implies\r\n" +
-		"\tserviceFeature.oclIsTypeOf(ServiceEntityAssociation) implies\r\n" +
-		"\t\tnot feature.oclIsUndefined()";
-
-	/**
-	 * Validates the entityAssociationsRequireFeature constraint of '<em>Unit Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUnitAssociation_entityAssociationsRequireFeature(UnitAssociation unitAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.UNIT_ASSOCIATION,
-				 unitAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "entityAssociationsRequireFeature",
-				 UNIT_ASSOCIATION__ENTITY_ASSOCIATIONS_REQUIRE_FEATURE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1984,8 +1814,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateService_onlyIncludeFeaturesOnce(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validateService_includedFeaturesMustBeFromEncapsulated(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validateService_multipleEntitiesRequiresModelName(service, diagnostics, context);
+		if (result || diagnostics != null) result &= validateService_featuresMustBeFromEncapsulated(service, diagnostics, context);
 		return result;
 	}
 
@@ -1996,10 +1825,10 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String SERVICE__ONLY_INCLUDE_FEATURES_ONCE__EEXPRESSION = "features->isUnique(f |\r\n" +
-		"\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n" +
-		"\t\tf.oclAsType(ServiceEntityElement).feature\r\n" +
+		"\tif f.oclIsTypeOf(ServiceAttribute) then\r\n" +
+		"\t\tf.oclAsType(ServiceAttribute).attribute\r\n" +
 		"\telse\r\n" +
-		"\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n" +
+		"\t\tf.oclAsType(ServiceAssociation).association\r\n" +
 		"\tendif)";
 
 	/**
@@ -2024,29 +1853,31 @@ public class WebsiteValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the includedFeaturesMustBeFromEncapsulated constraint of '<em>Service</em>'.
+	 * The cached validation expression for the featuresMustBeFromEncapsulated constraint of '<em>Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SERVICE__INCLUDED_FEATURES_MUST_BE_FROM_ENCAPSULATED__EEXPRESSION = "let features : Sequence(Feature)\r\n" +
-		"\t= encapsulates->collect(e | e.features)->union(encapsulates->collect(e | e.associationEnds))\r\n" +
-		"\tin features\r\n" +
-		"\t\t->select(f | f.oclIsKindOf(IncludedFeature))\r\n" +
-		"\t\t->forAll(f | features->includes(\r\n" +
-		"\t\t\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n" +
-		"\t\t\t\tf.oclAsType(ServiceEntityElement).feature\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n" +
-		"\t\t\tendif))";
+	protected static final String SERVICE__FEATURES_MUST_BE_FROM_ENCAPSULATED__EEXPRESSION = "let features : Collection(Feature)\r\n" +
+		"\t= let entities : Sequence(Entity)\r\n" +
+		"\t\t= encapsulates->select(e | e.oclIsTypeOf(Entity)).oclAsType(Entity)\r\n" +
+		"\t\tin entities->collect(e | e.features)->union(entities->collect(e | e.associationEnds))\r\n" +
+		"\t\t\t->union(encapsulates->select(v | v.oclIsTypeOf(View)).oclAsType(View)->collect(v | v.features))\r\n" +
+		"in features\r\n" +
+		"\t->forAll(f | features->includes(\r\n" +
+		"\t\tif f.oclIsTypeOf(ServiceAttribute) then\r\n" +
+		"\t\t\tf.oclAsType(ServiceAttribute).attribute\r\n" +
+		"\t\telse\r\n" +
+		"\t\t\tf.oclAsType(ServiceAssociation).association\r\n" +
+		"\t\tendif))";
 
 	/**
-	 * Validates the includedFeaturesMustBeFromEncapsulated constraint of '<em>Service</em>'.
+	 * Validates the featuresMustBeFromEncapsulated constraint of '<em>Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateService_includedFeaturesMustBeFromEncapsulated(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateService_featuresMustBeFromEncapsulated(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(WebsitePackage.Literals.SERVICE,
@@ -2054,37 +1885,8 @@ public class WebsiteValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "includedFeaturesMustBeFromEncapsulated",
-				 SERVICE__INCLUDED_FEATURES_MUST_BE_FROM_ENCAPSULATED__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the multipleEntitiesRequiresModelName constraint of '<em>Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SERVICE__MULTIPLE_ENTITIES_REQUIRES_MODEL_NAME__EEXPRESSION = "encapsulates->size() > 1 implies not modelName.oclIsUndefined()";
-
-	/**
-	 * Validates the multipleEntitiesRequiresModelName constraint of '<em>Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateService_multipleEntitiesRequiresModelName(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.SERVICE,
-				 service,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "multipleEntitiesRequiresModelName",
-				 SERVICE__MULTIPLE_ENTITIES_REQUIRES_MODEL_NAME__EEXPRESSION,
+				 "featuresMustBeFromEncapsulated",
+				 SERVICE__FEATURES_MUST_BE_FROM_ENCAPSULATED__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -2150,28 +1952,19 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateServiceEntityFeature(ServiceEntityFeature serviceEntityFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(serviceEntityFeature, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceEntityElement(ServiceEntityElement serviceEntityElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(serviceEntityElement, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(serviceEntityElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(serviceEntityElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(serviceEntityElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(serviceEntityElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(serviceEntityElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(serviceEntityElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(serviceEntityElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(serviceEntityElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_cannotReduceCardinality(serviceEntityElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyGiveDefaultValueForSingletons(serviceEntityElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyForceSingletonValues(serviceEntityElement, diagnostics, context);
+	public boolean validateServiceAttribute(ServiceAttribute serviceAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(serviceAttribute, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(serviceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(serviceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(serviceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(serviceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(serviceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(serviceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(serviceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(serviceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIncludedElement_cannotReduceCardinality(serviceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyGiveDefaultValueForSingletons(serviceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyForceSingletonValues(serviceAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -2181,336 +1974,54 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateServiceAssociation(ServiceAssociation serviceAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(serviceAssociation, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceEntityAssociation(ServiceEntityAssociation serviceEntityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(serviceEntityAssociation, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateServiceEntityAssociation_cannotReduceCardinality(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateServiceEntityAssociation_canOnlyForceSingletonValues(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateServiceEntityAssociation_selectionFromCorrectService(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateServiceEntityAssociation_implicitOppositeServiceMustBeUnambiguous(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateServiceEntityAssociation_featureRequired(serviceEntityAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateServiceEntityAssociation_implicitOppositeFeatureMustExist(serviceEntityAssociation, diagnostics, context);
+		if (!validate_NoCircularContainment(serviceAssociation, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(serviceAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(serviceAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(serviceAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(serviceAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(serviceAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(serviceAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(serviceAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(serviceAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIncludedAssociation_cannotReduceCardinality(serviceAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIncludedAssociation_canOnlyForceSingletonValues(serviceAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateServiceAssociation_selectionFromCorrectService(serviceAssociation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the cannotReduceCardinality constraint of '<em>Service Entity Association</em>'.
+	 * The cached validation expression for the selectionFromCorrectService constraint of '<em>Service Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SERVICE_ENTITY_ASSOCIATION__CANNOT_REDUCE_CARDINALITY__EEXPRESSION = "not feature.oclIsUndefined() implies\r\n" +
-		"\tif useFeatureSource then\r\n" +
-		"\t\tfeature.cardinality = Cardinality::Required implies required\r\n" +
-		"\telse\r\n" +
-		"\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n" +
-		"\t\t\trequired\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required implies required\r\n" +
-		"\t\tendif\r\n" +
-		"\tendif";
-
-	/**
-	 * Validates the cannotReduceCardinality constraint of '<em>Service Entity Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceEntityAssociation_cannotReduceCardinality(ServiceEntityAssociation serviceEntityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION,
-				 serviceEntityAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "cannotReduceCardinality",
-				 SERVICE_ENTITY_ASSOCIATION__CANNOT_REDUCE_CARDINALITY__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the canOnlyForceSingletonValues constraint of '<em>Service Entity Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SERVICE_ENTITY_ASSOCIATION__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION = "not feature.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n" +
-		"\tif partOf.encapsulates->includes(feature.parentEntity) then\r\n" +
-		"\t\tfeature.cardinality <> Cardinality::Many\r\n" +
-		"\telse\r\n" +
-		"\t\tif feature.oclIsTypeOf(AssociationWithContainment) then\r\n" +
-		"\t\t\ttrue\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n" +
-		"\t\tendif\r\n" +
-		"\tendif";
-
-	/**
-	 * Validates the canOnlyForceSingletonValues constraint of '<em>Service Entity Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceEntityAssociation_canOnlyForceSingletonValues(ServiceEntityAssociation serviceEntityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION,
-				 serviceEntityAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "canOnlyForceSingletonValues",
-				 SERVICE_ENTITY_ASSOCIATION__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the selectionFromCorrectService constraint of '<em>Service Entity Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SERVICE_ENTITY_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION = "if selection.oclIsUndefined() then\r\n" +
-		"\ttrue\r\n" +
-		"else if feature.oclIsUndefined() then\r\n" +
-		"\ttrue\r\n" +
-		"else\r\n" +
-		"\tlet target : Entity\r\n" +
-		"\t\t= if partOf.encapsulates->includes(feature.parentEntity) then\r\n" +
-		"\t\t\t\tfeature.targetEntity\r\n" +
+	protected static final String SERVICE_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION = "not selection.oclIsUndefined() and not association.oclIsUndefined() implies\r\n" +
+		"\tlet entityOrView : EntityOrView\r\n" +
+		"\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n" +
+		"\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n" +
+		"\t\t\telse if useAssociationSource then\r\n" +
+		"\t\t\t\tassociation.oclAsType(EntityAssociation).parentEntity\r\n" +
 		"\t\t\telse\r\n" +
-		"\t\t\t\tfeature.parentEntity\r\n" +
-		"\t\t\tendif\r\n" +
-		"\tin target.servedBy->collect(s | s.selections)->includes(selection)\r\n" +
-		"endif endif";
+		"\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n" +
+		"\t\t\tendif endif\r\n" +
+		"\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)";
 
 	/**
-	 * Validates the selectionFromCorrectService constraint of '<em>Service Entity Association</em>'.
+	 * Validates the selectionFromCorrectService constraint of '<em>Service Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateServiceEntityAssociation_selectionFromCorrectService(ServiceEntityAssociation serviceEntityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateServiceAssociation_selectionFromCorrectService(ServiceAssociation serviceAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION,
-				 serviceEntityAssociation,
+				(WebsitePackage.Literals.SERVICE_ASSOCIATION,
+				 serviceAssociation,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "selectionFromCorrectService",
-				 SERVICE_ENTITY_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the implicitOppositeServiceMustBeUnambiguous constraint of '<em>Service Entity Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SERVICE_ENTITY_ASSOCIATION__IMPLICIT_OPPOSITE_SERVICE_MUST_BE_UNAMBIGUOUS__EEXPRESSION = "oppositeService.oclIsUndefined() and not feature.oclIsUndefined() implies\r\n" +
-		"\tlet entity: Entity\r\n" +
-		"\t\t= if useFeatureSource then\r\n" +
-		"\t\t\t\tfeature.targetEntity\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tfeature.parentEntity\r\n" +
-		"\t\t\tendif\r\n" +
-		"\tin entity.servedBy->size() < 2";
-
-	/**
-	 * Validates the implicitOppositeServiceMustBeUnambiguous constraint of '<em>Service Entity Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceEntityAssociation_implicitOppositeServiceMustBeUnambiguous(ServiceEntityAssociation serviceEntityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION,
-				 serviceEntityAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "implicitOppositeServiceMustBeUnambiguous",
-				 SERVICE_ENTITY_ASSOCIATION__IMPLICIT_OPPOSITE_SERVICE_MUST_BE_UNAMBIGUOUS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the featureRequired constraint of '<em>Service Entity Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SERVICE_ENTITY_ASSOCIATION__FEATURE_REQUIRED__EEXPRESSION = "not feature.oclIsUndefined()";
-
-	/**
-	 * Validates the featureRequired constraint of '<em>Service Entity Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceEntityAssociation_featureRequired(ServiceEntityAssociation serviceEntityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION,
-				 serviceEntityAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "featureRequired",
-				 SERVICE_ENTITY_ASSOCIATION__FEATURE_REQUIRED__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the implicitOppositeFeatureMustExist constraint of '<em>Service Entity Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SERVICE_ENTITY_ASSOCIATION__IMPLICIT_OPPOSITE_FEATURE_MUST_EXIST__EEXPRESSION = "oppositeFeature.oclIsUndefined() and not feature.oclIsUndefined() implies\r\n" +
-		"if useFeatureSource then\r\n" +
-		"\tfeature.cardinality = Cardinality::Many\r\n" +
-		"else if feature.oclIsTypeOf(AssociationWithContainment) then\r\n" +
-		"\ttrue\r\n" +
-		"else\r\n" +
-		"\tfeature.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Many\r\n" +
-		"endif endif implies\r\n" +
-		"\tlet service : Service\r\n" +
-		"\t\t= if not oppositeService.oclIsUndefined() then\r\n" +
-		"\t\t\t\toppositeService\r\n" +
-		"\t\t\telse \r\n" +
-		"\t\t\t\tlet services : Sequence(Service)\r\n" +
-		"\t\t\t\t\t= let entity : Entity\r\n" +
-		"\t\t\t\t\t\t= if useFeatureSource then\r\n" +
-		"\t\t\t\t\t\t\t\tfeature.targetEntity\r\n" +
-		"\t\t\t\t\t\t\telse\r\n" +
-		"\t\t\t\t\t\t\t\tfeature.parentEntity\r\n" +
-		"\t\t\t\t\t\t\tendif\r\n" +
-		"\t\t\t\t\t\tin if not entity.oclIsUndefined() then\r\n" +
-		"\t\t\t\t\t\t\t\tentity.servedBy->asSequence()\r\n" +
-		"\t\t\t\t\t\t\telse\r\n" +
-		"\t\t\t\t\t\t\t\tSequence{}\r\n" +
-		"\t\t\t\t\t\t\tendif\r\n" +
-		"\t\t\t\t\tin if services->size() = 1 then\r\n" +
-		"\t\t\t\t\t\t\tservices->first()\r\n" +
-		"\t\t\t\t\t\telse\r\n" +
-		"\t\t\t\t\t\t\tnull\r\n" +
-		"\t\t\t\t\t\tendif\r\n" +
-		"\t\t\tendif\r\n" +
-		"\t\tin if service.oclIsUndefined() then\r\n" +
-		"\t\t\t\tfalse\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tservice.features\r\n" +
-		"\t\t\t\t\t->select(f | f.oclIsKindOf(ServiceAssociation)).oclAsType(ServiceAssociation)\r\n" +
-		"\t\t\t\t\t->select(a | if not a.oppositeService.oclIsUndefined() then\r\n" +
-		"\t\t\t\t\t\t\ta.oppositeService = partOf\r\n" +
-		"\t\t\t\t\t\telse if not a.oclIsTypeOf(ServiceEntityAssociation) then\r\n" +
-		"\t\t\t\t\t\t\tfalse\r\n" +
-		"\t\t\t\t\t\telse let sea : ServiceEntityAssociation = a.oclAsType(ServiceEntityAssociation)\r\n" +
-		"\t\t\t\t\t\t\tin if sea.feature.oclIsUndefined() then\r\n" +
-		"\t\t\t\t\t\t\t\tfalse\r\n" +
-		"\t\t\t\t\t\t\telse if sea.partOf.encapsulates->includes(sea.feature.parentEntity) then\r\n" +
-		"\t\t\t\t\t\t\t\tpartOf.encapsulates->includes(sea.feature.targetEntity)\r\n" +
-		"\t\t\t\t\t\t\telse\r\n" +
-		"\t\t\t\t\t\t\t\tpartOf.encapsulates->includes(sea.feature.parentEntity)\r\n" +
-		"\t\t\t\t\t\t\tendif endif\r\n" +
-		"\t\t\t\t\t\tendif endif)->notEmpty()\r\n" +
-		"\t\t\tendif";
-
-	/**
-	 * Validates the implicitOppositeFeatureMustExist constraint of '<em>Service Entity Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceEntityAssociation_implicitOppositeFeatureMustExist(ServiceEntityAssociation serviceEntityAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.SERVICE_ENTITY_ASSOCIATION,
-				 serviceEntityAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "implicitOppositeFeatureMustExist",
-				 SERVICE_ENTITY_ASSOCIATION__IMPLICIT_OPPOSITE_FEATURE_MUST_EXIST__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceViewAssociation(ServiceViewAssociation serviceViewAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(serviceViewAssociation, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(serviceViewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(serviceViewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(serviceViewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(serviceViewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(serviceViewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(serviceViewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(serviceViewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(serviceViewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(serviceViewAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateServiceViewAssociation_oppositeMustBeInView(serviceViewAssociation, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the oppositeMustBeInView constraint of '<em>Service View Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SERVICE_VIEW_ASSOCIATION__OPPOSITE_MUST_BE_IN_VIEW__EEXPRESSION = "not oppositeFeature.oclIsUndefined() implies oppositeFeature.partOf.view";
-
-	/**
-	 * Validates the oppositeMustBeInView constraint of '<em>Service View Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceViewAssociation_oppositeMustBeInView(ServiceViewAssociation serviceViewAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.SERVICE_VIEW_ASSOCIATION,
-				 serviceViewAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "oppositeMustBeInView",
-				 SERVICE_VIEW_ASSOCIATION__OPPOSITE_MUST_BE_IN_VIEW__EEXPRESSION,
+				 SERVICE_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -2704,8 +2215,12 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String INCLUDED_ELEMENT__CANNOT_REDUCE_CARDINALITY__EEXPRESSION = "not feature.oclIsUndefined()\r\n" +
-		"\timplies feature.cardinality = Cardinality::Required implies required";
+	protected static final String INCLUDED_ELEMENT__CANNOT_REDUCE_CARDINALITY__EEXPRESSION = "not attribute.oclIsUndefined() implies\r\n" +
+		"\tif attribute.oclIsKindOf(EntityAttribute) then\r\n" +
+		"\t\tattribute.oclAsType(EntityAttribute).cardinality = Cardinality::Required implies required\r\n" +
+		"\telse\r\n" +
+		"\t\tattribute.oclAsType(ViewAttribute).cardinality = Cardinality::Required implies required\r\n" +
+		"\tendif";
 
 	/**
 	 * Validates the cannotReduceCardinality constraint of '<em>Included Element</em>'.
@@ -2734,8 +2249,12 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String INCLUDED_ELEMENT__CAN_ONLY_GIVE_DEFAULT_VALUE_FOR_SINGLETONS__EEXPRESSION = "not feature.oclIsUndefined() and not defaultValue.oclIsUndefined()\r\n" +
-		"\timplies feature.cardinality <> Cardinality::Many";
+	protected static final String INCLUDED_ELEMENT__CAN_ONLY_GIVE_DEFAULT_VALUE_FOR_SINGLETONS__EEXPRESSION = "not attribute.oclIsUndefined() and not defaultValue.oclIsUndefined() implies\r\n" +
+		"\tif attribute.oclIsKindOf(EntityAttribute) then\r\n" +
+		"\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\telse\r\n" +
+		"\t\tattribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\tendif";
 
 	/**
 	 * Validates the canOnlyGiveDefaultValueForSingletons constraint of '<em>Included Element</em>'.
@@ -2764,8 +2283,12 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String INCLUDED_ELEMENT__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION = "not feature.oclIsUndefined() and not forcedValue.oclIsUndefined()\r\n" +
-		"\timplies feature.cardinality <> Cardinality::Many";
+	protected static final String INCLUDED_ELEMENT__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION = "not attribute.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n" +
+		"\tif attribute.oclIsKindOf(EntityAttribute) then\r\n" +
+		"\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\telse\r\n" +
+		"\t\tattribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\tendif";
 
 	/**
 	 * Validates the canOnlyForceSingletonValues constraint of '<em>Included Element</em>'.
@@ -2794,7 +2317,94 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateIncludedAssociation(IncludedAssociation includedAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(includedAssociation, diagnostics, context);
+		if (!validate_NoCircularContainment(includedAssociation, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(includedAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(includedAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(includedAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(includedAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(includedAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(includedAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(includedAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(includedAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIncludedAssociation_cannotReduceCardinality(includedAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIncludedAssociation_canOnlyForceSingletonValues(includedAssociation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the cannotReduceCardinality constraint of '<em>Included Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String INCLUDED_ASSOCIATION__CANNOT_REDUCE_CARDINALITY__EEXPRESSION = "not association.oclIsUndefined() implies\r\n" +
+		"\tif association.oclIsTypeOf(ViewAssociation) then\r\n" +
+		"\t\tassociation.oclAsType(ViewAssociation).cardinality = Cardinality::Required implies required\r\n" +
+		"\telse if useAssociationSource then\r\n" +
+		"\t\tassociation.oclAsType(EntityAssociation).cardinality = Cardinality::Required implies required\r\n" +
+		"\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n" +
+		"\t\trequired\r\n" +
+		"\telse\r\n" +
+		"\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required implies required\r\n" +
+		"\tendif endif endif";
+
+	/**
+	 * Validates the cannotReduceCardinality constraint of '<em>Included Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIncludedAssociation_cannotReduceCardinality(IncludedAssociation includedAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.INCLUDED_ASSOCIATION,
+				 includedAssociation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "cannotReduceCardinality",
+				 INCLUDED_ASSOCIATION__CANNOT_REDUCE_CARDINALITY__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the canOnlyForceSingletonValues constraint of '<em>Included Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String INCLUDED_ASSOCIATION__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION = "not association.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n" +
+		"\tif association.oclIsTypeOf(ViewAssociation) then\r\n" +
+		"\t\tassociation.oclAsType(ViewAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\telse if useAssociationSource then\r\n" +
+		"\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n" +
+		"\t\ttrue\r\n" +
+		"\telse\r\n" +
+		"\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n" +
+		"\tendif endif endif";
+
+	/**
+	 * Validates the canOnlyForceSingletonValues constraint of '<em>Included Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIncludedAssociation_canOnlyForceSingletonValues(IncludedAssociation includedAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.INCLUDED_ASSOCIATION,
+				 includedAssociation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "canOnlyForceSingletonValues",
+				 INCLUDED_ASSOCIATION__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -2898,8 +2508,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DATA_UNIT__CAN_ONLY_TITLE_WITH_SINGLETON_ELEMENT__EEXPRESSION = "not dynamicTitle.oclIsUndefined() implies \r\n" +
-		"if dynamicTitle.oclIsKindOf(Feature) then\r\n" +
-		"\tdynamicTitle.oclAsType(Feature).cardinality <> Cardinality::Many\r\n" +
+		"if dynamicTitle.oclIsKindOf(EntityAttribute) then\r\n" +
+		"\tdynamicTitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
 		"else\r\n" +
 		"\ttrue\r\n" +
 		"endif";
@@ -3089,30 +2699,30 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t= if source.oclIsTypeOf(Entity) then \r\n" +
 		"\t\t\tsource.oclAsType(Entity).features\r\n" +
 		"\t\t\t\t->union(source.oclAsType(Entity).associationEnds)\r\n" +
+		"\t\telse if source.oclIsTypeOf(View) then\r\n" +
+		"\t\t\tsource.oclAsType(View).features\r\n" +
 		"\t\telse\r\n" +
 		"\t\t\tsource.oclAsType(Service).features\r\n" +
-		"\t\t\t\t->select(f | f.oclIsKindOf(ServiceEntityFeature))\r\n" +
 		"\t\t\t\t->collect(f |\r\n" +
-		"\t\t\t\t\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n" +
-		"\t\t\t\t\t\tf.oclAsType(ServiceEntityElement).feature\r\n" +
+		"\t\t\t\t\tif f.oclIsTypeOf(ServiceAttribute) then\r\n" +
+		"\t\t\t\t\t\tf.oclAsType(ServiceAttribute).attribute\r\n" +
 		"\t\t\t\t\telse\r\n" +
-		"\t\t\t\t\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n" +
+		"\t\t\t\t\t\tf.oclAsType(ServiceAssociation).association\r\n" +
 		"\t\t\t\t\tendif)\r\n" +
-		"\t\tendif \r\n" +
+		"\t\tendif endif\r\n" +
 		"\tin displayFields\r\n" +
-		"\t\t->select(f | f.oclIsKindOf(UnitFeature))\r\n" +
-		"\t\t.oclAsType(UnitFeature)\r\n" +
+		"\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
 		"\t\t->select(f | \r\n" +
 		"\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
 		"\t\t\t\ttrue\r\n" +
 		"\t\t\telse\r\n" +
-		"\t\t\t\tf.oclAsType(UnitAssociation).feature.oclIsTypeOf(ServiceEntityAssociation)\r\n" +
+		"\t\t\t\tf.oclAsType(UnitAssociation).association.oclIsTypeOf(ServiceAssociation)\r\n" +
 		"\t\t\tendif)\r\n" +
 		"\t\t->forAll(f | \r\n" +
 		"\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
-		"\t\t\t\tfeatures->includes(f.oclAsType(UnitElement).feature)\r\n" +
+		"\t\t\t\tfeatures->includes(f.oclAsType(UnitElement).attribute)\r\n" +
 		"\t\t\telse\r\n" +
-		"\t\t\t\tfeatures->includes(f.oclAsType(UnitAssociation).feature)\r\n" +
+		"\t\t\t\tfeatures->includes(f.oclAsType(UnitAssociation).association)\r\n" +
 		"\t\t\tendif)";
 
 	/**
@@ -3143,8 +2753,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DYNAMIC_UNIT__ONLY_REFERENCE_FEATURES_ONCE__EEXPRESSION = "displayFields\r\n" +
-		"\t->select(f | f.oclIsKindOf(UnitFeature))\r\n" +
-		"\t.oclAsType(UnitFeature)\r\n" +
+		"\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
 		"\t->select(f | if not f.oclIsTypeOf(UnitAssociation) then\r\n" +
 		"\t\t\ttrue\r\n" +
 		"\t\telse\r\n" +
@@ -3152,9 +2761,9 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t\tendif)\r\n" +
 		"\t->isUnique(f |\r\n" +
 		"\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
-		"\t\t\tf.oclAsType(UnitElement).feature\r\n" +
+		"\t\t\tf.oclAsType(UnitElement).attribute\r\n" +
 		"\t\telse\r\n" +
-		"\t\t\tf.oclAsType(UnitAssociation).feature\r\n" +
+		"\t\t\tf.oclAsType(UnitAssociation).association\r\n" +
 		"\t\tendif)";
 
 	/**
@@ -3518,10 +3127,21 @@ public class WebsiteValidator extends EObjectValidator {
 	 */
 	protected static final String INLINE_ACTION__CAN_ONLY_LINK_TO_SINGLETON_FEATURES__EEXPRESSION = "usedBy.oclIsKindOf(UnitFeature) implies\r\n" +
 		"\tif usedBy.oclIsKindOf(UnitElement) then\r\n" +
-		"\t\tlet element : UnitElement = usedBy.oclAsType(UnitElement)\r\n" +
-		"\t\tin not element.feature.oclIsUndefined() implies element.feature.cardinality <> Cardinality::Many\r\n" +
+		"\t\tlet attribute : UnitElement = usedBy.oclAsType(UnitElement)\r\n" +
+		"\t\tin not attribute.attribute.oclIsUndefined() implies\r\n" +
+		"\t\t\tif attribute.attribute.oclIsTypeOf(ViewAttribute) then\r\n" +
+		"\t\t\t\tattribute.attribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tattribute.attribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\tendif\r\n" +
 		"\telse\r\n" +
-		"\t\ttrue\r\n" +
+		"\t\tlet association : UnitAssociation = usedBy.oclAsType(UnitAssociation)\r\n" +
+		"\t\tin not association.association.oclIsUndefined() implies\r\n" +
+		"\t\t\tif association.association.oclIsTypeOf(ViewAttribute) then\r\n" +
+		"\t\t\t\tassociation.association.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tassociation.association.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\tendif\r\n" +
 		"\tendif";
 
 	/**
@@ -3790,24 +3410,16 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_FROM_USER_SOURCE__EEXPRESSION = "not userSource.oclIsUndefined() implies\r\n" +
-		"let features : Collection(Feature)\r\n" +
-		"\t= if userSource.oclIsTypeOf(Entity) then\r\n" +
-		"\t\t\tuserSource.oclAsType(Entity).features \r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tlet service : Service = userSource.oclAsType(Service)\r\n" +
-		"\t\t\tin if service.features->isEmpty() then\r\n" +
-		"\t\t\t\t\tservice.encapsulates->collect(e | e.features)\r\n" +
-		"\t\t\t\telse\r\n" +
-		"\t\t\t\t\tservice.features\r\n" +
-		"\t\t\t\t\t\t->select(f | f.oclIsKindOf(ServiceEntityFeature))\r\n" +
-		"\t\t\t\t\t\t->collect(f |\r\n" +
-		"\t\t\t\t\t\t\tif f.oclIsTypeOf(ServiceEntityElement) then\r\n" +
-		"\t\t\t\t\t\t\t\tf.oclAsType(ServiceEntityElement).feature\r\n" +
-		"\t\t\t\t\t\t\telse\r\n" +
-		"\t\t\t\t\t\t\t\tf.oclAsType(ServiceEntityAssociation).feature\r\n" +
-		"\t\t\t\t\t\t\tendif) \r\n" +
-		"\t\t\t\tendif\r\n" +
-		"\t\tendif\r\n" +
+		"\tlet features : Collection(Feature)\r\n" +
+		"\t\t= if userSource.oclIsTypeOf(Entity) then\r\n" +
+		"\t\t\t\tuserSource.oclAsType(Entity).features\r\n" +
+		"\t\t\telse if userSource.oclIsTypeOf(View) then\r\n" +
+		"\t\t\t\tuserSource.oclAsType(View).features\r\n" +
+		"\t\t\telse let entities : Sequence(Entity)\r\n" +
+		"\t\t\t\t\t= userSource.oclAsType(Service).encapsulates->select(e | e.oclIsTypeOf(Entity)).oclAsType(Entity)\r\n" +
+		"\t\t\t\tin entities->collect(e | e.features)->union(entities->collect(e | e.associationEnds))\r\n" +
+		"\t\t\t\t\t->union(userSource.oclAsType(Service).encapsulates->select(v | v.oclIsTypeOf(View)).oclAsType(View)->collect(v | v.features))\r\n" +
+		"\t\t\tendif endif\r\n" +
 		"\tin features->includes(userAuthenticationKey)";
 
 	/**

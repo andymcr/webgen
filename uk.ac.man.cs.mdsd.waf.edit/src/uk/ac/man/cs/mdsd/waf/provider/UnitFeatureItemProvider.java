@@ -14,7 +14,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
-import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
+import uk.ac.man.cs.mdsd.orm.provider.NamedDisplayElementItemProvider;
 import uk.ac.man.cs.mdsd.waf.UnitFeature;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -26,7 +26,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class UnitFeatureItemProvider
-  extends NamedElementItemProvider
+  extends NamedDisplayElementItemProvider
 {
   /**
 	 * This constructs an instance from a factory and a notifier.
@@ -51,7 +51,6 @@ public class UnitFeatureItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDisplayLabelPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
@@ -66,29 +65,6 @@ public class UnitFeatureItemProvider
 			addAutofocusPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-  /**
-	 * This adds a property descriptor for the Display Label feature.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected void addDisplayLabelPropertyDescriptor(Object object)
-  {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_displayLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_displayLabel_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__DISPLAY_LABEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
   /**
@@ -428,7 +404,6 @@ public class UnitFeatureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitFeature.class)) {
-			case WafPackage.UNIT_FEATURE__DISPLAY_LABEL:
 			case WafPackage.UNIT_FEATURE__FOOTER:
 			case WafPackage.UNIT_FEATURE__HEADER_CLASS:
 			case WafPackage.UNIT_FEATURE__INPUT_CLASS:

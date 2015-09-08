@@ -146,6 +146,12 @@ lazy rule InverseCollectionType {
 abstract rule EntityOrView {
 	from website : Website!EntityOrView
 	to orm : ORM!EntityOrView (
+		tableName <- 
+			if not website.tableName.oclIsUndefined() and website.tableName <> '' then
+				website.tableName
+			else
+				website.name.createTableName()
+			endif
 	)
 }
 
@@ -153,12 +159,6 @@ abstract rule EntityOrView {
 rule Entity {
 	from website : Website!Entity
 	to orm : ORM!Entity (
-		tableName <- 
-			if not website.tableName.oclIsUndefined() and website.tableName <> '' then
-				website.tableName
-			else
-				website.name.createTableName()
-			endif,
 		keys <- website.keys,
 		autoKeyName <- 'id'
 	)

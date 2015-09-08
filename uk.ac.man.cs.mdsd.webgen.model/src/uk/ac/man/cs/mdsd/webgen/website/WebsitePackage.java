@@ -1203,13 +1203,22 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_OR_VIEW__DISPLAY_LABEL = CLASSIFIER__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__TABLE_NAME = CLASSIFIER_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Served By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__SERVED_BY = CLASSIFIER_FEATURE_COUNT + 0;
+	int ENTITY_OR_VIEW__SERVED_BY = CLASSIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Display Labels</b></em>' containment reference list.
@@ -1218,7 +1227,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__DISPLAY_LABELS = CLASSIFIER_FEATURE_COUNT + 1;
+	int ENTITY_OR_VIEW__DISPLAY_LABELS = CLASSIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Entity Or View</em>' class.
@@ -1227,7 +1236,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 2;
+	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature <em>Feature</em>}' class.
@@ -1995,6 +2004,15 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY__DISPLAY_LABEL = ENTITY_OR_VIEW__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__TABLE_NAME = ENTITY_OR_VIEW__TABLE_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Served By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2031,22 +2049,13 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY__ASSOCIATION_ENDS = ENTITY_OR_VIEW_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__TABLE_NAME = ENTITY_OR_VIEW_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Keys</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__KEYS = ENTITY_OR_VIEW_FEATURE_COUNT + 3;
+	int ENTITY__KEYS = ENTITY_OR_VIEW_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -2055,7 +2064,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = ENTITY_OR_VIEW_FEATURE_COUNT + 4;
+	int ENTITY_FEATURE_COUNT = ENTITY_OR_VIEW_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3919,6 +3928,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int VIEW__DISPLAY_LABEL = ENTITY_OR_VIEW__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__TABLE_NAME = ENTITY_OR_VIEW__TABLE_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Served By</b></em>' reference list.
@@ -11931,6 +11949,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getEntityOrView();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getTableName <em>Table Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Table Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getTableName()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EAttribute getEntityOrView_TableName();
+
+	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy <em>Served By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12004,17 +12033,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntity();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getTableName <em>Table Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Table Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Entity#getTableName()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EAttribute getEntity_TableName();
 
 	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getKeys <em>Keys</em>}'.
@@ -16352,6 +16370,14 @@ public interface WebsitePackage extends EPackage {
 		EClass ENTITY_OR_VIEW = eINSTANCE.getEntityOrView();
 
 		/**
+		 * The meta object literal for the '<em><b>Table Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_OR_VIEW__TABLE_NAME = eINSTANCE.getEntityOrView_TableName();
+
+		/**
 		 * The meta object literal for the '<em><b>Served By</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16410,14 +16436,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY = eINSTANCE.getEntity();
-
-		/**
-		 * The meta object literal for the '<em><b>Table Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTITY__TABLE_NAME = eINSTANCE.getEntity_TableName();
 
 		/**
 		 * The meta object literal for the '<em><b>Keys</b></em>' reference list feature.

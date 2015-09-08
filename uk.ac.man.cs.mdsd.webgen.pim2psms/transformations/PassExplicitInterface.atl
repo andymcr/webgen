@@ -808,13 +808,13 @@ rule UnitAssociation {
 					.getOrmFeature(website.association.name)
 			else
 if not website.association.oclIsUndefined() then
---if website.association.oclIsKindOf(Website!EntityAssociation) then
+	if website.association.oclIsKindOf(Website!EntityAssociation) then
 				thisModule.findOrmEntity(website.association.targetEntity.name)
 					.getOrmFeature(website.association.targetFeatureName())
---else
---	website.association.findOrmEntityOrView()
---		.getOrmFeature(website.association.name)
---endif
+	else
+		website.association.findOrmEntityOrView()
+			.getOrmFeature(website.association.name)
+	endif
 else
 	OclUndefined
 endif

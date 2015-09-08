@@ -13,6 +13,7 @@ import java.util.List;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getTableName <em>Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy <em>Served By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getDisplayLabels <em>Display Labels</em>}</li>
  * </ul>
@@ -22,6 +23,32 @@ import java.util.List;
  * @generated
  */
 public interface EntityOrView extends Classifier {
+	/**
+	 * Returns the value of the '<em><b>Table Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Table Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Table Name</em>' attribute.
+	 * @see #setTableName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_TableName()
+	 * @model
+	 * @generated
+	 */
+	String getTableName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getTableName <em>Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Table Name</em>' attribute.
+	 * @see #getTableName()
+	 * @generated
+	 */
+	void setTableName(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Served By</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Service}.

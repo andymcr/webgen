@@ -19,7 +19,6 @@ import java.util.List;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getAssociationEnds <em>Association Ends</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getTableName <em>Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getKeys <em>Keys</em>}</li>
  * </ul>
  *
@@ -29,32 +28,6 @@ import java.util.List;
  * @generated
  */
 public interface Entity extends EntityOrView, UnitSource {
-	/**
-	 * Returns the value of the '<em><b>Table Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Table Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Table Name</em>' attribute.
-	 * @see #setTableName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_TableName()
-	 * @model
-	 * @generated
-	 */
-	String getTableName();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getTableName <em>Table Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Table Name</em>' attribute.
-	 * @see #getTableName()
-	 * @generated
-	 */
-	void setTableName(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Keys</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute}.

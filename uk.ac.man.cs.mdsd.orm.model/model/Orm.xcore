@@ -90,6 +90,7 @@ class EnumerationLiteral extends NamedDisplayElement {
 
 abstract class EntityOrView extends Classifier {
 	container OrmModel[1] partOf opposite entitiesAndViews
+	String tableName
 	contains Feature[] features opposite partOf
 	contains ModelLabel[] displayLabels opposite labelFor
 }
@@ -133,7 +134,6 @@ class ModelLabelAssociation extends ModelLabelFeature {
 class Entity extends EntityOrView {
 	refers Entity[] ^contains opposite ^container
 	refers Entity ^container opposite ^contains
-	String tableName
 	refers Feature[] ^keys
 	String autoKeyName
 }

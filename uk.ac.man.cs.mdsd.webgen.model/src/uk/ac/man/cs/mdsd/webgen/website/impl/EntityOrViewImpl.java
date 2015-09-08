@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -29,6 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getTableName <em>Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getServedBy <em>Served By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getDisplayLabels <em>Display Labels</em>}</li>
  * </ul>
@@ -36,6 +39,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityOrView {
+	/**
+	 * The default value of the '{@link #getTableName() <em>Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTableName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TABLE_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTableName() <em>Table Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTableName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String tableName = TABLE_NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getServedBy() <em>Served By</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -73,6 +96,27 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.ENTITY_OR_VIEW;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTableName() {
+		return tableName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTableName(String newTableName) {
+		String oldTableName = tableName;
+		tableName = newTableName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME, oldTableName, tableName));
 	}
 
 	/**
@@ -140,6 +184,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
+				return getTableName();
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				return getServedBy();
 			case WebsitePackage.ENTITY_OR_VIEW__DISPLAY_LABELS:
@@ -157,6 +203,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
+				setTableName((String)newValue);
+				return;
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				getServedBy().clear();
 				getServedBy().addAll((Collection<? extends Service>)newValue);
@@ -177,6 +226,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
+				setTableName(TABLE_NAME_EDEFAULT);
+				return;
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				getServedBy().clear();
 				return;
@@ -195,12 +247,30 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
+				return TABLE_NAME_EDEFAULT == null ? tableName != null : !TABLE_NAME_EDEFAULT.equals(tableName);
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				return servedBy != null && !servedBy.isEmpty();
 			case WebsitePackage.ENTITY_OR_VIEW__DISPLAY_LABELS:
 				return displayLabels != null && !displayLabels.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (tableName: ");
+		result.append(tableName);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EntityOrViewImpl

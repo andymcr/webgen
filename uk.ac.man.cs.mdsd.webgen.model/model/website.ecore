@@ -184,6 +184,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral" eSuperTypes="#//NamedDisplayElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="EntityOrView" abstract="true" eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="servedBy" upperBound="-1"
         eType="#//Service" eOpposite="#//Service/encapsulates"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayLabels" upperBound="-1"
@@ -255,7 +256,6 @@
         eType="#//EntityFeature" containment="true" eOpposite="#//EntityFeature/parentEntity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="associationEnds" upperBound="-1"
         eType="#//EntityAssociation" eOpposite="#//EntityAssociation/targetEntity"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="keys" upperBound="-1" eType="#//EntityAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Cardinality">

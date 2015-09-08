@@ -1501,8 +1501,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEntityOrView_TableName() {
+		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getEntityOrView_ServedBy() {
-		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(0);
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1511,7 +1520,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getEntityOrView_DisplayLabels() {
-		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(1);
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1564,17 +1573,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntity_TableName() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getEntity_Keys() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(3);
+		return (EReference)entityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -4943,6 +4943,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		enumerationLiteralEClass = createEClass(ENUMERATION_LITERAL);
 
 		entityOrViewEClass = createEClass(ENTITY_OR_VIEW);
+		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__TABLE_NAME);
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__SERVED_BY);
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__DISPLAY_LABELS);
 
@@ -4980,7 +4981,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		entityEClass = createEClass(ENTITY);
 		createEReference(entityEClass, ENTITY__FEATURES);
 		createEReference(entityEClass, ENTITY__ASSOCIATION_ENDS);
-		createEAttribute(entityEClass, ENTITY__TABLE_NAME);
 		createEReference(entityEClass, ENTITY__KEYS);
 
 		entityFeatureEClass = createEClass(ENTITY_FEATURE);
@@ -5626,6 +5626,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(enumerationLiteralEClass, EnumerationLiteral.class, "EnumerationLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entityOrViewEClass, EntityOrView.class, "EntityOrView", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEntityOrView_TableName(), ecorePackage.getEString(), "tableName", null, 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityOrView_ServedBy(), this.getService(), this.getService_Encapsulates(), "servedBy", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityOrView_DisplayLabels(), this.getModelLabelY(), this.getModelLabelY_LabelFor(), "displayLabels", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -5663,7 +5664,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntity_Features(), this.getEntityFeature(), this.getEntityFeature_ParentEntity(), "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_AssociationEnds(), this.getEntityAssociation(), this.getEntityAssociation_TargetEntity(), "associationEnds", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntity_TableName(), ecorePackage.getEString(), "tableName", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Keys(), this.getEntityAttribute(), null, "keys", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityFeatureEClass, EntityFeature.class, "EntityFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

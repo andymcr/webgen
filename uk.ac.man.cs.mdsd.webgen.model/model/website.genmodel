@@ -148,6 +148,7 @@
     </genClasses>
     <genClasses ecoreClass="website.ecore#//EnumerationLiteral"/>
     <genClasses image="false" ecoreClass="website.ecore#//EntityOrView">
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/tableName"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//EntityOrView/servedBy"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/displayLabels"/>
@@ -190,7 +191,6 @@
       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Entity/features"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//Entity/associationEnds"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//Entity/tableName"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Persistence"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Entity/keys"/>
     </genClasses>

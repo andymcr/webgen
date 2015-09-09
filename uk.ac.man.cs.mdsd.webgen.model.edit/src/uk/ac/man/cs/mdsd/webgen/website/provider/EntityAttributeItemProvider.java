@@ -135,7 +135,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE);
+			childrenFeatures.add(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -205,77 +205,77 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebsiteFactory.eINSTANCE.createModelReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebsiteFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_ATTRIBUTE__DEFAULT_VALUE,
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 	}
 

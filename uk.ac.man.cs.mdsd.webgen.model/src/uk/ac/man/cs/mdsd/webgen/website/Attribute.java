@@ -6,6 +6,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import uk.ac.man.cs.mdsd.criteria.Expression;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -16,6 +18,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Attribute#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Attribute#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Attribute#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Attribute#getInputClass <em>Input Class</em>}</li>
@@ -26,6 +29,32 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @generated
  */
 public interface Attribute extends Feature, UnitTitle {
+
+	/**
+	 * Returns the value of the '<em><b>Default Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Default Value</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Default Value</em>' containment reference.
+	 * @see #setDefaultValue(Expression)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAttribute_DefaultValue()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	Expression getDefaultValue();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Attribute#getDefaultValue <em>Default Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Default Value</em>' containment reference.
+	 * @see #getDefaultValue()
+	 * @generated
+	 */
+	void setDefaultValue(Expression value);
 
 	/**
 	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.

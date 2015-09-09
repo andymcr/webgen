@@ -152,10 +152,17 @@ lazy rule implicitViewLabel {
 	}
 }
 
+
 abstract rule ViewFeature {
 	from website : Website!ViewFeature
 	to orm : ORM!ViewFeature (
 		partOf <- thisModule.findOrmEntityOrView(website.partOf.name),
+		displayLabel <-
+			if not website.displayLabel.oclIsUndefined() and website.displayLabel <> '' then
+				website.displayLabel
+			else
+				website.name.createLabel()
+			endif,
 		inputField <- false
 	)
 }
@@ -164,18 +171,20 @@ abstract rule ViewFeature {
 rule ViewAttribute {
 	from website : Website!ViewAttribute
 	to orm : ORM!ViewAttribute (
+		name <- website.name,
 		attribute <-
 			if website.attribute.oclIsKindOf(Website!EntityAttribute) then
 				website.attribute.findOrmEntity().getOrmFeature(website.attribute.name)
 			else
 				website.attribute
-			endif --,
+			endif,
 --		columnName <-
 --			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
 --				website.columnName
 --			else
 --				website.name.createAttributeColumnName()
 --			endif
+		defaultValue <- website.defaultValue
 	)
 }
 
@@ -183,6 +192,7 @@ rule ViewAttribute {
 rule ViewAssociation {
 	from website : Website!ViewAssociation
 	to orm : ORM!ViewAssociation (
+		name <- website.name,
 		association <-
 			if website.association.oclIsKindOf(Website!EntityAssociation) then
 				if website.useAssociationSource then

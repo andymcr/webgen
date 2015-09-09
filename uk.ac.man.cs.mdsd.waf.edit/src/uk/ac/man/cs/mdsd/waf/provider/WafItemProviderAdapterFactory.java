@@ -34,8 +34,8 @@ import uk.ac.man.cs.mdsd.criteria.PredicateIsEmpty;
 import uk.ac.man.cs.mdsd.criteria.PredicateIsOperator;
 import uk.ac.man.cs.mdsd.criteria.PredicateLikeOperator;
 import uk.ac.man.cs.mdsd.criteria.util.CriteriaSwitch;
+import uk.ac.man.cs.mdsd.orm.Attribute;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
-import uk.ac.man.cs.mdsd.orm.SingletonAttribute;
 import uk.ac.man.cs.mdsd.orm.util.OrmSwitch;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.util.WafAdapterFactory;
@@ -1533,30 +1533,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 			 * @generated
 			 */
 			@Override
-			public Object caseSingletonAttribute(SingletonAttribute object) {
+			public Object caseAttribute(Attribute object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 						 WafFactory.eINSTANCE.createModelReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 						 WafFactory.eINSTANCE.createFeatureReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 						 WafFactory.eINSTANCE.createParameterReference()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(OrmPackage.Literals.SINGLETON_ATTRIBUTE__DEFAULT_VALUE,
+						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 						 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 				return null;
 			}
- 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

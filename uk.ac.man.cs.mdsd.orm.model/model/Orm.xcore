@@ -107,6 +107,7 @@ abstract class Feature extends NamedDisplayElement {
 }
 
 abstract class Attribute extends Feature {
+	contains Expression defaultValue
 }
 
 abstract class Association extends Feature {
@@ -149,7 +150,6 @@ abstract class EntityAttribute extends EntityFeature, Attribute {
 abstract class SingletonAttribute extends EntityAttribute {
 	boolean required
 	boolean ^unique
-	contains Expression defaultValue
 }
 
 abstract class CollectionAttribute extends EntityAttribute {

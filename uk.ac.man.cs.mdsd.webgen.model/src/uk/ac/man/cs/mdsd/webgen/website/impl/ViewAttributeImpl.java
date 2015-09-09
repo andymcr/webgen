@@ -4,12 +4,14 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.criteria.Expression;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
 import uk.ac.man.cs.mdsd.webgen.website.ViewAttribute;
@@ -23,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAttributeImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAttributeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAttributeImpl#getInputClass <em>Input Class</em>}</li>
@@ -33,6 +36,15 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute {
+	/**
+	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expression defaultValue;
 	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -123,6 +135,49 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.VIEW_ATTRIBUTE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Expression getDefaultValue() {
+		return defaultValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDefaultValue(Expression newDefaultValue, NotificationChain msgs) {
+		Expression oldDefaultValue = defaultValue;
+		defaultValue = newDefaultValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ATTRIBUTE__DEFAULT_VALUE, oldDefaultValue, newDefaultValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefaultValue(Expression newDefaultValue) {
+		if (newDefaultValue != defaultValue) {
+			NotificationChain msgs = null;
+			if (defaultValue != null)
+				msgs = ((InternalEObject)defaultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.VIEW_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
+			if (newDefaultValue != null)
+				msgs = ((InternalEObject)newDefaultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.VIEW_ATTRIBUTE__DEFAULT_VALUE, null, msgs);
+			msgs = basicSetDefaultValue(newDefaultValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ATTRIBUTE__DEFAULT_VALUE, newDefaultValue, newDefaultValue));
 	}
 
 	/**
@@ -250,8 +305,24 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.VIEW_ATTRIBUTE__DEFAULT_VALUE:
+				return basicSetDefaultValue(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ATTRIBUTE__DEFAULT_VALUE:
+				return getDefaultValue();
 			case WebsitePackage.VIEW_ATTRIBUTE__PLACEHOLDER:
 				return getPlaceholder();
 			case WebsitePackage.VIEW_ATTRIBUTE__VALIDATION_PATTERN:
@@ -275,6 +346,9 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ATTRIBUTE__DEFAULT_VALUE:
+				setDefaultValue((Expression)newValue);
+				return;
 			case WebsitePackage.VIEW_ATTRIBUTE__PLACEHOLDER:
 				setPlaceholder((String)newValue);
 				return;
@@ -302,6 +376,9 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ATTRIBUTE__DEFAULT_VALUE:
+				setDefaultValue((Expression)null);
+				return;
 			case WebsitePackage.VIEW_ATTRIBUTE__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
@@ -329,6 +406,8 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ATTRIBUTE__DEFAULT_VALUE:
+				return defaultValue != null;
 			case WebsitePackage.VIEW_ATTRIBUTE__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case WebsitePackage.VIEW_ATTRIBUTE__VALIDATION_PATTERN:
@@ -357,6 +436,7 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 		}
 		if (baseClass == Attribute.class) {
 			switch (derivedFeatureID) {
+				case WebsitePackage.VIEW_ATTRIBUTE__DEFAULT_VALUE: return WebsitePackage.ATTRIBUTE__DEFAULT_VALUE;
 				case WebsitePackage.VIEW_ATTRIBUTE__PLACEHOLDER: return WebsitePackage.ATTRIBUTE__PLACEHOLDER;
 				case WebsitePackage.VIEW_ATTRIBUTE__VALIDATION_PATTERN: return WebsitePackage.ATTRIBUTE__VALIDATION_PATTERN;
 				case WebsitePackage.VIEW_ATTRIBUTE__INPUT_CLASS: return WebsitePackage.ATTRIBUTE__INPUT_CLASS;
@@ -380,6 +460,7 @@ public class ViewAttributeImpl extends ViewFeatureImpl implements ViewAttribute 
 		}
 		if (baseClass == Attribute.class) {
 			switch (baseFeatureID) {
+				case WebsitePackage.ATTRIBUTE__DEFAULT_VALUE: return WebsitePackage.VIEW_ATTRIBUTE__DEFAULT_VALUE;
 				case WebsitePackage.ATTRIBUTE__PLACEHOLDER: return WebsitePackage.VIEW_ATTRIBUTE__PLACEHOLDER;
 				case WebsitePackage.ATTRIBUTE__VALIDATION_PATTERN: return WebsitePackage.VIEW_ATTRIBUTE__VALIDATION_PATTERN;
 				case WebsitePackage.ATTRIBUTE__INPUT_CLASS: return WebsitePackage.VIEW_ATTRIBUTE__INPUT_CLASS;

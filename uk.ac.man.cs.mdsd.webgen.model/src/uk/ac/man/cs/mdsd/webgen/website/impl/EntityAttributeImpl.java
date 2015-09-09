@@ -25,15 +25,25 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getInputClass <em>Input Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class EntityAttributeImpl extends EntityFeatureImpl implements EntityAttribute {
+	/**
+	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expression defaultValue;
+
 	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -93,16 +103,6 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * @ordered
 	 */
 	protected String inputClass = INPUT_CLASS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression defaultValue;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -251,14 +251,14 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
+				return getDefaultValue();
 			case WebsitePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 				return getPlaceholder();
 			case WebsitePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 				return getValidationPattern();
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				return getInputClass();
-			case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
-				return getDefaultValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -271,6 +271,9 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
+				setDefaultValue((Expression)newValue);
+				return;
 			case WebsitePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 				setPlaceholder((String)newValue);
 				return;
@@ -279,9 +282,6 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return;
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				setInputClass((String)newValue);
-				return;
-			case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
-				setDefaultValue((Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -295,6 +295,9 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
+				setDefaultValue((Expression)null);
+				return;
 			case WebsitePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
@@ -303,9 +306,6 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return;
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
-				return;
-			case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
-				setDefaultValue((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -319,14 +319,14 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
+				return defaultValue != null;
 			case WebsitePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case WebsitePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
-			case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:
-				return defaultValue != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -345,6 +345,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		}
 		if (baseClass == Attribute.class) {
 			switch (derivedFeatureID) {
+				case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE: return WebsitePackage.ATTRIBUTE__DEFAULT_VALUE;
 				case WebsitePackage.ENTITY_ATTRIBUTE__PLACEHOLDER: return WebsitePackage.ATTRIBUTE__PLACEHOLDER;
 				case WebsitePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN: return WebsitePackage.ATTRIBUTE__VALIDATION_PATTERN;
 				case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS: return WebsitePackage.ATTRIBUTE__INPUT_CLASS;
@@ -368,6 +369,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		}
 		if (baseClass == Attribute.class) {
 			switch (baseFeatureID) {
+				case WebsitePackage.ATTRIBUTE__DEFAULT_VALUE: return WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE;
 				case WebsitePackage.ATTRIBUTE__PLACEHOLDER: return WebsitePackage.ENTITY_ATTRIBUTE__PLACEHOLDER;
 				case WebsitePackage.ATTRIBUTE__VALIDATION_PATTERN: return WebsitePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN;
 				case WebsitePackage.ATTRIBUTE__INPUT_CLASS: return WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS;

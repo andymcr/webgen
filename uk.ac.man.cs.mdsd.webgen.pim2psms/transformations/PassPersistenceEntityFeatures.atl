@@ -40,6 +40,7 @@ abstract rule EntityOrView {
 abstract rule Attribute {
 	from website : Website!Attribute
 	to orm : ORM!Attribute (
+		defaultValue <- website.defaultValue
 	)
 }
 
@@ -89,7 +90,6 @@ abstract rule SingletonAttribute {
 	to orm : ORM!SingletonAttribute (
 		required <- website.cardinality = #Required,
 		"unique" <- website."unique",
-		defaultValue <- website.defaultValue,
 		inputField <- true
 	)
 }

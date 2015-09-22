@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getColumnName <em>Column Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getFooterClass <em>Footer Class</em>}</li>
@@ -23,6 +24,32 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Feature extends EObject {
+
+	/**
+	 * Returns the value of the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Column Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Column Name</em>' attribute.
+	 * @see #setColumnName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature_ColumnName()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getColumnName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getColumnName <em>Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Column Name</em>' attribute.
+	 * @see #getColumnName()
+	 * @generated
+	 */
+	void setColumnName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Header Class</b></em>' attribute.

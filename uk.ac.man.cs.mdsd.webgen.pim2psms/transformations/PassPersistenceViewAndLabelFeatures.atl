@@ -7,6 +7,7 @@ module PassPersistenceViewAndLabelFeatures;
 create dummyOrm : ORM refining orm : ORM, website : Website;
 
 uses WebsiteHelpers;
+uses PersistenceExpression;
 
 
 abstract rule NamedElement {
@@ -178,12 +179,12 @@ rule ViewAttribute {
 			else
 				website.attribute
 			endif,
---		columnName <-
---			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
---				website.columnName
---			else
---				website.name.createAttributeColumnName()
---			endif
+		columnName <-
+			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
+				website.columnName
+			else
+				website.name.createAttributeColumnName()
+			endif,
 		defaultValue <- website.defaultValue
 	)
 }
@@ -202,6 +203,12 @@ rule ViewAssociation {
 				endif
 			else
 				website.association
+			endif,
+		columnName <-
+			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
+				website.columnName
+			else
+				website.name.createAssociationColumnName()
 			endif
 	)
 }

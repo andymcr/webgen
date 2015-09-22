@@ -99,9 +99,9 @@ helper context Website!InterfaceField def: unitCardinality() : ORM!Cardinality
 
 helper context Website!Attribute def: attributeLabel() : String
 	= if not self.displayLabel.oclIsUndefined() and self.displayLabel <> '' then
-			self.displayLabel
+			'attribute self ' -- self.displayLabel
 		else
-			self.name.createLabel()
+			'create name '.concat(self.name) -- self.name.createLabel()
 		endif;
 
 helper context Website!Association def: associationLabel() : String
@@ -774,8 +774,8 @@ abstract rule UnitFeature {
 rule UnitElement {
 	from website : Website!UnitElement
 	to waf : WAF!UnitElement (
-		attribute <-
-			website.attribute.findOrmEntityOrView()
+		name <- website.name,
+		attribute <- website.attribute.findOrmEntityOrView()
 				.getOrmFeature(website.attribute.name),
 		serviceFeature <- website.serviceFeature,
 		displayLabel <- website.attributeLabel(),
@@ -802,6 +802,7 @@ rule UnitElement {
 rule UnitAssociation {
 	from website : Website!UnitAssociation
 	to waf : WAF!UnitAssociation (
+		name <- website.name,
 		association <-
 			if website.useAssociationSource then
 				website.association.findOrmEntityOrView()

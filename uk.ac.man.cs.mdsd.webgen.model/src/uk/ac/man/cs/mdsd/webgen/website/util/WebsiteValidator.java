@@ -156,8 +156,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateView((View)value, diagnostics, context);
 			case WebsitePackage.VIEW_FEATURE:
 				return validateViewFeature((ViewFeature)value, diagnostics, context);
-			case WebsitePackage.VIEW_ATTRIBUTE:
-				return validateViewAttribute((ViewAttribute)value, diagnostics, context);
+			case WebsitePackage.ENCAPSULATED_FEATURE:
+				return validateEncapsulatedFeature((EncapsulatedFeature)value, diagnostics, context);
+			case WebsitePackage.ENCAPSULATED_ATTRIBUTE:
+				return validateEncapsulatedAttribute((EncapsulatedAttribute)value, diagnostics, context);
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION:
+				return validateEncapsulatedAssociation((EncapsulatedAssociation)value, diagnostics, context);
 			case WebsitePackage.VIEW_ASSOCIATION:
 				return validateViewAssociation((ViewAssociation)value, diagnostics, context);
 			case WebsitePackage.INCLUDED_FEATURE:
@@ -767,8 +771,26 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateViewAttribute(ViewAttribute viewAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(viewAttribute, diagnostics, context);
+	public boolean validateEncapsulatedFeature(EncapsulatedFeature encapsulatedFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(encapsulatedFeature, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncapsulatedAttribute(EncapsulatedAttribute encapsulatedAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(encapsulatedAttribute, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEncapsulatedAssociation(EncapsulatedAssociation encapsulatedAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(encapsulatedAssociation, diagnostics, context);
 	}
 
 	/**
@@ -777,7 +799,17 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateViewAssociation(ViewAssociation viewAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(viewAssociation, diagnostics, context);
+		if (!validate_NoCircularContainment(viewAssociation, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(viewAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(viewAssociation, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -2216,10 +2248,10 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String INCLUDED_ELEMENT__CANNOT_REDUCE_CARDINALITY__EEXPRESSION = "not attribute.oclIsUndefined() implies\r\n" +
-		"\tif attribute.oclIsKindOf(EntityAttribute) then\r\n" +
-		"\t\tattribute.oclAsType(EntityAttribute).cardinality = Cardinality::Required implies required\r\n" +
+		"\tif attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
+		"\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required implies required\r\n" +
 		"\telse\r\n" +
-		"\t\tattribute.oclAsType(ViewAttribute).cardinality = Cardinality::Required implies required\r\n" +
+		"\t\tattribute.oclAsType(EntityAttribute).cardinality = Cardinality::Required implies required\r\n" +
 		"\tendif";
 
 	/**
@@ -2250,10 +2282,10 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String INCLUDED_ELEMENT__CAN_ONLY_GIVE_DEFAULT_VALUE_FOR_SINGLETONS__EEXPRESSION = "not attribute.oclIsUndefined() and not defaultValue.oclIsUndefined() implies\r\n" +
-		"\tif attribute.oclIsKindOf(EntityAttribute) then\r\n" +
-		"\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\tif attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
+		"\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
 		"\telse\r\n" +
-		"\t\tattribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
 		"\tendif";
 
 	/**
@@ -2284,10 +2316,10 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String INCLUDED_ELEMENT__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION = "not attribute.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n" +
-		"\tif attribute.oclIsKindOf(EntityAttribute) then\r\n" +
-		"\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\tif attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
+		"\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
 		"\telse\r\n" +
-		"\t\tattribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
 		"\tendif";
 
 	/**
@@ -2338,15 +2370,21 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String INCLUDED_ASSOCIATION__CANNOT_REDUCE_CARDINALITY__EEXPRESSION = "not association.oclIsUndefined() implies\r\n" +
-		"\tif association.oclIsTypeOf(ViewAssociation) then\r\n" +
-		"\t\tassociation.oclAsType(ViewAssociation).cardinality = Cardinality::Required implies required\r\n" +
+		"\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n" +
+		"\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality = Cardinality::Required implies required\r\n" +
+		"\telse if association.oclIsTypeOf(ViewAssociation) then\r\n" +
+		"\t\tif useAssociationSource then\r\n" +
+		"\t\t\tassociation.oclAsType(ViewAssociation).cardinality = Cardinality::Required implies required\r\n" +
+		"\t\telse\r\n" +
+		"\t\t\tassociation.oclAsType(ViewAssociation).targetCardinality = Cardinality::Required implies required\r\n" +
+		"\t\tendif\r\n" +
 		"\telse if useAssociationSource then\r\n" +
 		"\t\tassociation.oclAsType(EntityAssociation).cardinality = Cardinality::Required implies required\r\n" +
 		"\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n" +
 		"\t\trequired\r\n" +
 		"\telse\r\n" +
 		"\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required implies required\r\n" +
-		"\tendif endif endif";
+		"\tendif endif endif endif";
 
 	/**
 	 * Validates the cannotReduceCardinality constraint of '<em>Included Association</em>'.
@@ -2376,15 +2414,21 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String INCLUDED_ASSOCIATION__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION = "not association.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n" +
-		"\tif association.oclIsTypeOf(ViewAssociation) then\r\n" +
-		"\t\tassociation.oclAsType(ViewAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n" +
+		"\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\telse if association.oclIsTypeOf(ViewAssociation) then\r\n" +
+		"\t\tif useAssociationSource then\r\n" +
+		"\t\t\tassociation.oclAsType(ViewAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\t\telse\r\n" +
+		"\t\t\tassociation.oclAsType(ViewAssociation).targetCardinality <> Cardinality::Many\r\n" +
+		"\t\tendif\r\n" +
 		"\telse if useAssociationSource then\r\n" +
 		"\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n" +
 		"\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n" +
 		"\t\ttrue\r\n" +
 		"\telse\r\n" +
 		"\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n" +
-		"\tendif endif endif";
+		"\tendif endif endif endif";
 
 	/**
 	 * Validates the canOnlyForceSingletonValues constraint of '<em>Included Association</em>'.
@@ -3129,19 +3173,33 @@ public class WebsiteValidator extends EObjectValidator {
 		"\tif usedBy.oclIsKindOf(UnitElement) then\r\n" +
 		"\t\tlet attribute : UnitElement = usedBy.oclAsType(UnitElement)\r\n" +
 		"\t\tin not attribute.attribute.oclIsUndefined() implies\r\n" +
-		"\t\t\tif attribute.attribute.oclIsTypeOf(ViewAttribute) then\r\n" +
-		"\t\t\t\tattribute.attribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\tif attribute.attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
+		"\t\t\t\tattribute.attribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
 		"\t\t\telse\r\n" +
 		"\t\t\t\tattribute.attribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
 		"\t\t\tendif\r\n" +
 		"\telse\r\n" +
 		"\t\tlet association : UnitAssociation = usedBy.oclAsType(UnitAssociation)\r\n" +
 		"\t\tin not association.association.oclIsUndefined() implies\r\n" +
-		"\t\t\tif association.association.oclIsTypeOf(ViewAttribute) then\r\n" +
-		"\t\t\t\tassociation.association.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\tif association.association.oclIsTypeOf(EncapsulatedAssociation) then\r\n" +
+		"\t\t\t\tassociation.association.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\telse if association.association.oclIsTypeOf(ViewAssociation) then\r\n" +
+		"\t\t\t\tlet viewAssociation : ViewAssociation = association.association.oclAsType(ViewAssociation)\r\n" +
+		"\t\t\t\tin if association.useAssociationSource then\r\n" +
+		"\t\t\t\t\t\tviewAssociation.cardinality <> Cardinality::Many\r\n" +
+		"\t\t\t\t\telse\r\n" +
+		"\t\t\t\t\t\tviewAssociation.targetCardinality <> Cardinality::Many\r\n" +
+		"\t\t\t\t\tendif\r\n" +
 		"\t\t\telse\r\n" +
-		"\t\t\t\tassociation.association.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
-		"\t\t\tendif\r\n" +
+		"\t\t\t\tlet entityAssociation : EntityAssociation = association.association.oclAsType(EntityAssociation)\r\n" +
+		"\t\t\t\tin if association.useAssociationSource then\r\n" +
+		"\t\t\t\t\t\tentityAssociation.cardinality <> Cardinality::Many\r\n" +
+		"\t\t\t\t\telse if entityAssociation.oclIsTypeOf(AssociationWithContainment) then\r\n" +
+		"\t\t\t\t\t\ttrue\r\n" +
+		"\t\t\t\t\telse\r\n" +
+		"\t\t\t\t\t\tentityAssociation.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n" +
+		"\t\t\t\t\tendif endif\r\n" +
+		"\t\t\tendif endif\r\n" +
 		"\tendif";
 
 	/**
@@ -3449,7 +3507,12 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION = "if userAuthenticationKey.oclIsUndefined() then false else userAuthenticationKey.cardinality = Cardinality::Required endif";
+	protected static final String LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION = "not userAuthenticationKey.oclIsUndefined() implies\r\n" +
+		"\tif userAuthenticationKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
+		"\t\tuserAuthenticationKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n" +
+		"\telse\r\n" +
+		"\t\tuserAuthenticationKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n" +
+		"\tendif";
 
 	/**
 	 * Validates the authenticationKeyRequiredAttribute constraint of '<em>Local Authentication System</em>'.

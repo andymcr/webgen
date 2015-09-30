@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -29,10 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getFooterClass <em>Footer Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getAlias <em>Alias</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getPartOf <em>Part Of</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getDisplayLabel <em>Display Label</em>}</li>
  * </ul>
  *
  * @generated
@@ -117,66 +113,6 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	 * @ordered
 	 */
 	protected String footerClass = FOOTER_CLASS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAlias() <em>Alias</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAlias()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ALIAS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getAlias() <em>Alias</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAlias()
-	 * @generated
-	 * @ordered
-	 */
-	protected String alias = ALIAS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Cardinality CARDINALITY_EDEFAULT = Cardinality.OPTIONAL;
-
-	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DISPLAY_LABEL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,27 +222,6 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getAlias() {
-		return alias;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAlias(String newAlias) {
-		String oldAlias = alias;
-		alias = newAlias;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__ALIAS, oldAlias, alias));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public View getPartOf() {
 		if (eContainerFeatureID() != WebsitePackage.VIEW_FEATURE__PART_OF) return null;
 		return (View)eInternalContainer();
@@ -341,48 +256,6 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__PART_OF, newPartOf, newPartOf));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Cardinality getCardinality() {
-		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCardinality(Cardinality newCardinality) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__CARDINALITY, oldCardinality, cardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDisplayLabel() {
-		return displayLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDisplayLabel(String newDisplayLabel) {
-		String oldDisplayLabel = displayLabel;
-		displayLabel = newDisplayLabel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__DISPLAY_LABEL, oldDisplayLabel, displayLabel));
 	}
 
 	/**
@@ -445,14 +318,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return getDisplayClass();
 			case WebsitePackage.VIEW_FEATURE__FOOTER_CLASS:
 				return getFooterClass();
-			case WebsitePackage.VIEW_FEATURE__ALIAS:
-				return getAlias();
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				return getPartOf();
-			case WebsitePackage.VIEW_FEATURE__CARDINALITY:
-				return getCardinality();
-			case WebsitePackage.VIEW_FEATURE__DISPLAY_LABEL:
-				return getDisplayLabel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -477,17 +344,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 			case WebsitePackage.VIEW_FEATURE__FOOTER_CLASS:
 				setFooterClass((String)newValue);
 				return;
-			case WebsitePackage.VIEW_FEATURE__ALIAS:
-				setAlias((String)newValue);
-				return;
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				setPartOf((View)newValue);
-				return;
-			case WebsitePackage.VIEW_FEATURE__CARDINALITY:
-				setCardinality((Cardinality)newValue);
-				return;
-			case WebsitePackage.VIEW_FEATURE__DISPLAY_LABEL:
-				setDisplayLabel((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -513,17 +371,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 			case WebsitePackage.VIEW_FEATURE__FOOTER_CLASS:
 				setFooterClass(FOOTER_CLASS_EDEFAULT);
 				return;
-			case WebsitePackage.VIEW_FEATURE__ALIAS:
-				setAlias(ALIAS_EDEFAULT);
-				return;
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				setPartOf((View)null);
-				return;
-			case WebsitePackage.VIEW_FEATURE__CARDINALITY:
-				setCardinality(CARDINALITY_EDEFAULT);
-				return;
-			case WebsitePackage.VIEW_FEATURE__DISPLAY_LABEL:
-				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -545,14 +394,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return DISPLAY_CLASS_EDEFAULT == null ? displayClass != null : !DISPLAY_CLASS_EDEFAULT.equals(displayClass);
 			case WebsitePackage.VIEW_FEATURE__FOOTER_CLASS:
 				return FOOTER_CLASS_EDEFAULT == null ? footerClass != null : !FOOTER_CLASS_EDEFAULT.equals(footerClass);
-			case WebsitePackage.VIEW_FEATURE__ALIAS:
-				return ALIAS_EDEFAULT == null ? alias != null : !ALIAS_EDEFAULT.equals(alias);
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				return getPartOf() != null;
-			case WebsitePackage.VIEW_FEATURE__CARDINALITY:
-				return cardinality != CARDINALITY_EDEFAULT;
-			case WebsitePackage.VIEW_FEATURE__DISPLAY_LABEL:
-				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -575,12 +418,6 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 		result.append(displayClass);
 		result.append(", footerClass: ");
 		result.append(footerClass);
-		result.append(", alias: ");
-		result.append(alias);
-		result.append(", cardinality: ");
-		result.append(cardinality);
-		result.append(", displayLabel: ");
-		result.append(displayLabel);
 		result.append(')');
 		return result.toString();
 	}

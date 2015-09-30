@@ -33,7 +33,7 @@ public interface ModelLabelAttributeY extends ModelLabelFeatureY {
 	 * @see #setName(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabelAttributeY_Name()
 	 * @model required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(EntityAttribute) then\r\n\tattribute.oclAsType(EntityAttribute).name\r\nelse\r\n\tattribute.oclAsType(ViewAttribute).name\r\nendif endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n\tattribute.oclAsType(EncapsulatedAttribute).name\r\nelse\r\n\tattribute.oclAsType(EntityAttribute).name\r\nendif endif'"
 	 * @generated
 	 */
 	String getName();

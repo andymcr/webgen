@@ -372,21 +372,42 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.VIEW_ATTRIBUTE: {
-				ViewAttribute viewAttribute = (ViewAttribute)theEObject;
-				T result = caseViewAttribute(viewAttribute);
-				if (result == null) result = caseViewFeature(viewAttribute);
-				if (result == null) result = caseAttribute(viewAttribute);
-				if (result == null) result = caseFeature(viewAttribute);
-				if (result == null) result = caseUnitTitle(viewAttribute);
+			case WebsitePackage.ENCAPSULATED_FEATURE: {
+				EncapsulatedFeature encapsulatedFeature = (EncapsulatedFeature)theEObject;
+				T result = caseEncapsulatedFeature(encapsulatedFeature);
+				if (result == null) result = caseViewFeature(encapsulatedFeature);
+				if (result == null) result = caseFeature(encapsulatedFeature);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.ENCAPSULATED_ATTRIBUTE: {
+				EncapsulatedAttribute encapsulatedAttribute = (EncapsulatedAttribute)theEObject;
+				T result = caseEncapsulatedAttribute(encapsulatedAttribute);
+				if (result == null) result = caseEncapsulatedFeature(encapsulatedAttribute);
+				if (result == null) result = caseAttribute(encapsulatedAttribute);
+				if (result == null) result = caseViewFeature(encapsulatedAttribute);
+				if (result == null) result = caseUnitTitle(encapsulatedAttribute);
+				if (result == null) result = caseFeature(encapsulatedAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION: {
+				EncapsulatedAssociation encapsulatedAssociation = (EncapsulatedAssociation)theEObject;
+				T result = caseEncapsulatedAssociation(encapsulatedAssociation);
+				if (result == null) result = caseEncapsulatedFeature(encapsulatedAssociation);
+				if (result == null) result = caseAssociation(encapsulatedAssociation);
+				if (result == null) result = caseViewFeature(encapsulatedAssociation);
+				if (result == null) result = caseFeature(encapsulatedAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case WebsitePackage.VIEW_ASSOCIATION: {
 				ViewAssociation viewAssociation = (ViewAssociation)theEObject;
 				T result = caseViewAssociation(viewAssociation);
+				if (result == null) result = caseNamedDisplayElement(viewAssociation);
 				if (result == null) result = caseViewFeature(viewAssociation);
 				if (result == null) result = caseAssociation(viewAssociation);
+				if (result == null) result = caseNamedElement(viewAssociation);
 				if (result == null) result = caseFeature(viewAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -1285,17 +1306,47 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>View Attribute</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Encapsulated Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>View Attribute</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Encapsulated Feature</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseViewAttribute(ViewAttribute object) {
+	public T caseEncapsulatedFeature(EncapsulatedFeature object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Encapsulated Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Encapsulated Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEncapsulatedAttribute(EncapsulatedAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Encapsulated Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Encapsulated Association</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEncapsulatedAssociation(EncapsulatedAssociation object) {
 		return null;
 	}
 

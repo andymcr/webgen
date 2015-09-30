@@ -34,7 +34,7 @@ public interface ServiceAssociation extends IncludedAssociation, ServiceFeature 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceAssociation_Name()
 	 * @model changeable="false" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\t\'\'\r\nelse if association.oclIsTypeOf(ViewAssociation) then\r\n\tassociation.oclAsType(ViewAssociation).name\r\nelse if useAssociationSource then\r\n\tassociation.oclAsType(EntityAssociation).name\r\nelse\r\n\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\nendif endif endif\r\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\t\'\'\r\nelse if association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\tassociation.oclAsType(EncapsulatedAssociation).name\r\nelse if association.oclIsTypeOf(ViewAssociation) then\r\n\tif useAssociationSource then\r\n\t\tassociation.oclAsType(ViewAssociation).name\r\n\telse\r\n\t\tassociation.oclAsType(ViewAssociation).targetFeatureName\r\n\tendif\r\nelse if useAssociationSource then\r\n\tassociation.oclAsType(EntityAssociation).name\r\nelse\r\n\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\nendif endif endif endif\r\n'"
 	 * @generated
 	 */
 	String getName();

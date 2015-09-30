@@ -35,7 +35,7 @@ public interface ModelLabelAssociationY extends ModelLabelFeatureY {
 	 * @see #setName(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabelAssociationY_Name()
 	 * @model required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tif association.oclIsTypeOf(ViewAssociation) then\r\n\t\tassociation.oclAsType(ViewAssociation).name\r\n\telse if useAssociationSource then\r\n\t\tassociation.oclAsType(EntityAssociation).name\r\n\telse\r\n\t\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\n\tendif endif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).name\r\n\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\telse\r\n\t\t\tassociation.oclAsType(ViewAssociation).targetFeatureName\r\n\t\tendif\r\n\telse\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(EntityAssociation).name\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetFeatureName\r\n\t\tendif\r\n\tendif endif\r\nendif'"
 	 * @generated
 	 */
 	String getName();

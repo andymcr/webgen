@@ -52,6 +52,9 @@ import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EditStaticTextMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.EditUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
@@ -129,7 +132,6 @@ import uk.ac.man.cs.mdsd.webgen.website.UpdateUnit;
 import uk.ac.man.cs.mdsd.webgen.website.UserCommand;
 import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ViewAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ViewFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
@@ -276,7 +278,21 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass viewAttributeEClass = null;
+	private EClass encapsulatedFeatureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass encapsulatedAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass encapsulatedAssociationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1681,17 +1697,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getViewFeature_Alias() {
-		return (EAttribute)viewFeatureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getViewFeature_PartOf() {
-		return (EReference)viewFeatureEClass.getEStructuralFeatures().get(1);
+		return (EReference)viewFeatureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1699,8 +1706,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getViewFeature_Cardinality() {
-		return (EAttribute)viewFeatureEClass.getEStructuralFeatures().get(2);
+	public EClass getEncapsulatedFeature() {
+		return encapsulatedFeatureEClass;
 	}
 
 	/**
@@ -1708,8 +1715,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getViewFeature_DisplayLabel() {
-		return (EAttribute)viewFeatureEClass.getEStructuralFeatures().get(3);
+	public EAttribute getEncapsulatedFeature_DisplayLabel() {
+		return (EAttribute)encapsulatedFeatureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1717,8 +1724,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getViewAttribute() {
-		return viewAttributeEClass;
+	public EAttribute getEncapsulatedFeature_Alias() {
+		return (EAttribute)encapsulatedFeatureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1726,8 +1733,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getViewAttribute_Name() {
-		return (EAttribute)viewAttributeEClass.getEStructuralFeatures().get(0);
+	public EClass getEncapsulatedAttribute() {
+		return encapsulatedAttributeEClass;
 	}
 
 	/**
@@ -1735,8 +1742,71 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getViewAttribute_Attribute() {
-		return (EReference)viewAttributeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getEncapsulatedAttribute_Name() {
+		return (EAttribute)encapsulatedAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEncapsulatedAttribute_Attribute() {
+		return (EReference)encapsulatedAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEncapsulatedAttribute_Cardinality() {
+		return (EAttribute)encapsulatedAttributeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEncapsulatedAssociation() {
+		return encapsulatedAssociationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEncapsulatedAssociation_Name() {
+		return (EAttribute)encapsulatedAssociationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEncapsulatedAssociation_Association() {
+		return (EReference)encapsulatedAssociationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEncapsulatedAssociation_UseAssociationSource() {
+		return (EAttribute)encapsulatedAssociationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEncapsulatedAssociation_Cardinality() {
+		return (EAttribute)encapsulatedAssociationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1753,8 +1823,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getViewAssociation_Name() {
-		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(0);
+	public EReference getViewAssociation_TargetView() {
+		return (EReference)viewAssociationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1762,8 +1832,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getViewAssociation_Association() {
-		return (EReference)viewAssociationEClass.getEStructuralFeatures().get(1);
+	public EAttribute getViewAssociation_Cardinality() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1771,8 +1841,89 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getViewAssociation_UseAssociationSource() {
+	public EAttribute getViewAssociation_Bidirectional() {
 		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getViewAssociation_PivotTableName() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getViewAssociation_TargetFeatureName() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getViewAssociation_TargetDisplayLabel() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getViewAssociation_TargetCardinality() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getViewAssociation_TargetUnique() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getViewAssociation_TargetHeaderClass() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getViewAssociation_TargetInputClass() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getViewAssociation_TargetDisplayClass() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getViewAssociation_TargetFooterClass() {
+		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -5041,19 +5192,36 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(viewEClass, VIEW__FEATURES);
 
 		viewFeatureEClass = createEClass(VIEW_FEATURE);
-		createEAttribute(viewFeatureEClass, VIEW_FEATURE__ALIAS);
 		createEReference(viewFeatureEClass, VIEW_FEATURE__PART_OF);
-		createEAttribute(viewFeatureEClass, VIEW_FEATURE__CARDINALITY);
-		createEAttribute(viewFeatureEClass, VIEW_FEATURE__DISPLAY_LABEL);
 
-		viewAttributeEClass = createEClass(VIEW_ATTRIBUTE);
-		createEAttribute(viewAttributeEClass, VIEW_ATTRIBUTE__NAME);
-		createEReference(viewAttributeEClass, VIEW_ATTRIBUTE__ATTRIBUTE);
+		encapsulatedFeatureEClass = createEClass(ENCAPSULATED_FEATURE);
+		createEAttribute(encapsulatedFeatureEClass, ENCAPSULATED_FEATURE__DISPLAY_LABEL);
+		createEAttribute(encapsulatedFeatureEClass, ENCAPSULATED_FEATURE__ALIAS);
+
+		encapsulatedAttributeEClass = createEClass(ENCAPSULATED_ATTRIBUTE);
+		createEAttribute(encapsulatedAttributeEClass, ENCAPSULATED_ATTRIBUTE__NAME);
+		createEReference(encapsulatedAttributeEClass, ENCAPSULATED_ATTRIBUTE__ATTRIBUTE);
+		createEAttribute(encapsulatedAttributeEClass, ENCAPSULATED_ATTRIBUTE__CARDINALITY);
+
+		encapsulatedAssociationEClass = createEClass(ENCAPSULATED_ASSOCIATION);
+		createEAttribute(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__NAME);
+		createEReference(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__ASSOCIATION);
+		createEAttribute(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__USE_ASSOCIATION_SOURCE);
+		createEAttribute(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__CARDINALITY);
 
 		viewAssociationEClass = createEClass(VIEW_ASSOCIATION);
-		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__NAME);
-		createEReference(viewAssociationEClass, VIEW_ASSOCIATION__ASSOCIATION);
-		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__USE_ASSOCIATION_SOURCE);
+		createEReference(viewAssociationEClass, VIEW_ASSOCIATION__TARGET_VIEW);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__CARDINALITY);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__BIDIRECTIONAL);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__PIVOT_TABLE_NAME);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__TARGET_FEATURE_NAME);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__TARGET_DISPLAY_LABEL);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__TARGET_CARDINALITY);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__TARGET_UNIQUE);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__TARGET_HEADER_CLASS);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__TARGET_INPUT_CLASS);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__TARGET_DISPLAY_CLASS);
+		createEAttribute(viewAssociationEClass, VIEW_ASSOCIATION__TARGET_FOOTER_CLASS);
 
 		includedFeatureEClass = createEClass(INCLUDED_FEATURE);
 		createEAttribute(includedFeatureEClass, INCLUDED_FEATURE__DISPLAY_LABEL);
@@ -5459,8 +5627,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		associationWithContainmentEClass.getESuperTypes().add(this.getEntityAssociation());
 		viewEClass.getESuperTypes().add(this.getEntityOrView());
 		viewFeatureEClass.getESuperTypes().add(this.getFeature());
-		viewAttributeEClass.getESuperTypes().add(this.getViewFeature());
-		viewAttributeEClass.getESuperTypes().add(this.getAttribute());
+		encapsulatedFeatureEClass.getESuperTypes().add(this.getViewFeature());
+		encapsulatedAttributeEClass.getESuperTypes().add(this.getEncapsulatedFeature());
+		encapsulatedAttributeEClass.getESuperTypes().add(this.getAttribute());
+		encapsulatedAssociationEClass.getESuperTypes().add(this.getEncapsulatedFeature());
+		encapsulatedAssociationEClass.getESuperTypes().add(this.getAssociation());
+		viewAssociationEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		viewAssociationEClass.getESuperTypes().add(this.getViewFeature());
 		viewAssociationEClass.getESuperTypes().add(this.getAssociation());
 		includedElementEClass.getESuperTypes().add(this.getIncludedFeature());
@@ -5724,19 +5896,36 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getView_Features(), this.getViewFeature(), this.getViewFeature_PartOf(), "features", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewFeatureEClass, ViewFeature.class, "ViewFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getViewFeature_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, ViewFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getViewFeature_PartOf(), this.getView(), this.getView_Features(), "partOf", null, 1, 1, ViewFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getViewFeature_Cardinality(), this.getCardinality(), "cardinality", "Optional", 1, 1, ViewFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getViewFeature_DisplayLabel(), ecorePackage.getEString(), "displayLabel", null, 0, 1, ViewFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(viewAttributeEClass, ViewAttribute.class, "ViewAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getViewAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, ViewAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getViewAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, ViewAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(encapsulatedFeatureEClass, EncapsulatedFeature.class, "EncapsulatedFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEncapsulatedFeature_DisplayLabel(), ecorePackage.getEString(), "displayLabel", null, 0, 1, EncapsulatedFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEncapsulatedFeature_Alias(), ecorePackage.getEString(), "alias", null, 0, 1, EncapsulatedFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(encapsulatedAttributeEClass, EncapsulatedAttribute.class, "EncapsulatedAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEncapsulatedAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, EncapsulatedAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEncapsulatedAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, EncapsulatedAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEncapsulatedAttribute_Cardinality(), this.getCardinality(), "cardinality", null, 1, 1, EncapsulatedAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(encapsulatedAssociationEClass, EncapsulatedAssociation.class, "EncapsulatedAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEncapsulatedAssociation_Name(), ecorePackage.getEString(), "name", null, 1, 1, EncapsulatedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEncapsulatedAssociation_Association(), this.getAssociation(), null, "association", null, 1, 1, EncapsulatedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEncapsulatedAssociation_UseAssociationSource(), ecorePackage.getEBoolean(), "useAssociationSource", null, 0, 1, EncapsulatedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEncapsulatedAssociation_Cardinality(), this.getCardinality(), "cardinality", null, 1, 1, EncapsulatedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewAssociationEClass, ViewAssociation.class, "ViewAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getViewAssociation_Name(), ecorePackage.getEString(), "name", null, 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getViewAssociation_Association(), this.getAssociation(), null, "association", null, 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getViewAssociation_UseAssociationSource(), ecorePackage.getEBoolean(), "useAssociationSource", null, 0, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getViewAssociation_TargetView(), this.getView(), null, "targetView", null, 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_Cardinality(), this.getCardinality(), "cardinality", "Optional", 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_Bidirectional(), ecorePackage.getEBooleanObject(), "bidirectional", "false", 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_PivotTableName(), ecorePackage.getEString(), "pivotTableName", null, 0, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_TargetFeatureName(), ecorePackage.getEString(), "targetFeatureName", null, 0, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_TargetDisplayLabel(), ecorePackage.getEString(), "targetDisplayLabel", null, 0, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_TargetCardinality(), this.getCardinality(), "targetCardinality", "Required", 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_TargetUnique(), ecorePackage.getEBooleanObject(), "targetUnique", "true", 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_TargetHeaderClass(), ecorePackage.getEString(), "targetHeaderClass", null, 0, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_TargetInputClass(), ecorePackage.getEString(), "targetInputClass", "input_association", 0, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_TargetDisplayClass(), ecorePackage.getEString(), "targetDisplayClass", null, 0, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewAssociation_TargetFooterClass(), ecorePackage.getEString(), "targetFooterClass", null, 0, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(includedFeatureEClass, IncludedFeature.class, "IncludedFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIncludedFeature_DisplayLabel(), ecorePackage.getEString(), "displayLabel", null, 0, 1, IncludedFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -6280,7 +6469,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "authenticationKeyFromUserSource", "not userSource.oclIsUndefined() implies\r\n\tlet features : Collection(Feature)\r\n\t\t= if userSource.oclIsTypeOf(Entity) then\r\n\t\t\t\tuserSource.oclAsType(Entity).features\r\n\t\t\telse if userSource.oclIsTypeOf(View) then\r\n\t\t\t\tuserSource.oclAsType(View).features\r\n\t\t\telse let entities : Sequence(Entity)\r\n\t\t\t\t\t= userSource.oclAsType(Service).encapsulates->select(e | e.oclIsTypeOf(Entity)).oclAsType(Entity)\r\n\t\t\t\tin entities->collect(e | e.features)->union(entities->collect(e | e.associationEnds))\r\n\t\t\t\t\t->union(userSource.oclAsType(Service).encapsulates->select(v | v.oclIsTypeOf(View)).oclAsType(View)->collect(v | v.features))\r\n\t\t\tendif endif\r\n\tin features->includes(userAuthenticationKey)",
-			 "authenticationKeyRequiredAttribute", "if userAuthenticationKey.oclIsUndefined() then false else userAuthenticationKey.cardinality = Cardinality::Required endif",
+			 "authenticationKeyRequiredAttribute", "not userAuthenticationKey.oclIsUndefined() implies\r\n\tif userAuthenticationKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\tuserAuthenticationKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n\telse\r\n\t\tuserAuthenticationKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n\tendif",
 			 "captchaRequiresKeys", "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()",
 			 "entitySourceOnlyIfNotEncapsulated", "userSource.oclIsTypeOf(Entity) implies userSource.oclAsType(Entity).servedBy->isEmpty()"
 		   });	
@@ -6294,20 +6483,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getModelLabelAttributeY_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(EntityAttribute) then\r\n\tattribute.oclAsType(EntityAttribute).name\r\nelse\r\n\tattribute.oclAsType(ViewAttribute).name\r\nendif endif"
+			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n\tattribute.oclAsType(EncapsulatedAttribute).name\r\nelse\r\n\tattribute.oclAsType(EntityAttribute).name\r\nendif endif"
 		   });	
 		addAnnotation
 		  (getModelLabelAssociationY_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tif association.oclIsTypeOf(ViewAssociation) then\r\n\t\tassociation.oclAsType(ViewAssociation).name\r\n\telse if useAssociationSource then\r\n\t\tassociation.oclAsType(EntityAssociation).name\r\n\telse\r\n\t\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\n\tendif endif\r\nendif"
-		   });
-		addAnnotation
-		  (getModelLabelAssociationY_Name(), 
-		   new boolean[] { true },
-		   "http://www.eclipse.org/emf/2002/Ecore/OCL",
-		   new String[] {
-			 "derivation", "if association.oclIsUndefined() or partOf.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet associationName : String\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\n\t\t\tendif endif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tassociationName\r\n\t\telse if alias <> \'\' then\r\n\t\t\talias\r\n\t\telse\r\n\t\t\tassociationName\r\n\t\tendif endif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).name\r\n\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\telse\r\n\t\t\tassociation.oclAsType(ViewAssociation).targetFeatureName\r\n\t\tendif\r\n\telse\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(EntityAssociation).name\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetFeatureName\r\n\t\tendif\r\n\tendif endif\r\nendif"
 		   });	
 		addAnnotation
 		  (entityEClass, 
@@ -6323,31 +6505,43 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "oneToManyAssociationsMustBeBidirectional", "cardinality = Cardinality::Optional and targetCardinality = Cardinality::Required implies bidirectional"
 		   });	
 		addAnnotation
-		  (getViewAttribute_Name(), 
+		  (getEncapsulatedAttribute_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet attributeName : String\r\n\t\t= if attribute.oclIsKindOf(EntityAttribute) then\r\n\t\t\t\tattribute.oclAsType(EntityAttribute).name\r\n\t\t\telse\r\n\t\t\t\tattribute.oclAsType(ViewAttribute).name\r\n\t\t\tendif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tattributeName\r\n\t\telse if self.alias <> \'\' then\r\n\t\t\tself.alias\r\n\t\telse\r\n\t\t\tattributeName\r\n\t\tendif endif\r\nendif"
+			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet attributeName : String\r\n\t\t= if attribute.oclIsKindOf(EntityAttribute) then\r\n\t\t\t\tattribute.oclAsType(EntityAttribute).name\r\n\t\t\telse\r\n\t\t\t\tattribute.oclAsType(EncapsulatedAttribute).name\r\n\t\t\tendif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tattributeName\r\n\t\telse if self.alias <> \'\' then\r\n\t\t\tself.alias\r\n\t\telse\r\n\t\t\tattributeName\r\n\t\tendif endif\r\nendif"
 		   });	
 		addAnnotation
-		  (getViewAssociation_Name(), 
+		  (getEncapsulatedAttribute_Cardinality(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet associationName : String\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\n\t\t\tendif endif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tassociationName\r\n\t\telse if alias <> \'\' then\r\n\t\t\talias\r\n\t\telse\r\n\t\t\tassociationName\r\n\t\tendif endif\r\nendif"
+			 "derivation", "if attribute.oclIsUndefined() then\r\n\tCardinality::Optional\r\nelse \r\n\tif attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).cardinality\r\n\telse\r\n\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality\r\n\tendif\r\nendif"
+		   });	
+		addAnnotation
+		  (getEncapsulatedAssociation_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tlet associationName : String\r\n\t\t= if association.oclIsTypeOf(EntityAssociation) then\r\n\t\t\t\tif useAssociationSource then\r\n\t\t\t\t\tassociation.oclAsType(EntityAssociation).name\r\n\t\t\t\telse\r\n\t\t\t\t\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\n\t\t\t\tendif\r\n\t\t\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tif useAssociationSource then\r\n\t\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\t\telse\r\n\t\t\t\t\tassociation.oclAsType(ViewAssociation).targetFeatureName \r\n\t\t\t\tendif\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EncapsulatedAssociation).name\r\n\t\t\tendif endif\r\n\tin if self.alias.oclIsUndefined() then\r\n\t\t\tassociationName\r\n\t\telse if alias <> \'\' then\r\n\t\t\talias\r\n\t\telse\r\n\t\t\tassociationName\r\n\t\tendif endif\r\nendif"
+		   });	
+		addAnnotation
+		  (getEncapsulatedAssociation_Cardinality(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if association.oclIsUndefined() then\r\n\tCardinality::Optional\r\nelse \r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality\r\n\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(ViewAssociation).cardinality\r\n\t\telse\r\n\t\t\tassociation.oclAsType(ViewAssociation).targetCardinality \r\n\t\tendif\r\n\telse\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(EntityAssociation).cardinality\r\n\t\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\tCardinality::Required\r\n\t\telse\r\n\t\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality \r\n\t\tendif endif\r\n\tendif endif\r\nendif"
 		   });	
 		addAnnotation
 		  (includedElementEClass, 
 		   source, 
 		   new String[] {
-			 "cannotReduceCardinality", "not attribute.oclIsUndefined() implies\r\n\tif attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).cardinality = Cardinality::Required implies required\r\n\telse\r\n\t\tattribute.oclAsType(ViewAttribute).cardinality = Cardinality::Required implies required\r\n\tendif",
-			 "canOnlyGiveDefaultValueForSingletons", "not attribute.oclIsUndefined() and not defaultValue.oclIsUndefined() implies\r\n\tif attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\telse\r\n\t\tattribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n\tendif",
-			 "canOnlyForceSingletonValues", "not attribute.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n\tif attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\telse\r\n\t\tattribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n\tendif"
+			 "cannotReduceCardinality", "not attribute.oclIsUndefined() implies\r\n\tif attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required implies required\r\n\telse\r\n\t\tattribute.oclAsType(EntityAttribute).cardinality = Cardinality::Required implies required\r\n\tendif",
+			 "canOnlyGiveDefaultValueForSingletons", "not attribute.oclIsUndefined() and not defaultValue.oclIsUndefined() implies\r\n\tif attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\telse\r\n\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\tendif",
+			 "canOnlyForceSingletonValues", "not attribute.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n\tif attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\telse\r\n\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\tendif"
 		   });	
 		addAnnotation
 		  (includedAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "cannotReduceCardinality", "not association.oclIsUndefined() implies\r\n\tif association.oclIsTypeOf(ViewAssociation) then\r\n\t\tassociation.oclAsType(ViewAssociation).cardinality = Cardinality::Required implies required\r\n\telse if useAssociationSource then\r\n\t\tassociation.oclAsType(EntityAssociation).cardinality = Cardinality::Required implies required\r\n\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n\t\trequired\r\n\telse\r\n\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required implies required\r\n\tendif endif endif",
-			 "canOnlyForceSingletonValues", "not association.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n\tif association.oclIsTypeOf(ViewAssociation) then\r\n\t\tassociation.oclAsType(ViewAssociation).cardinality <> Cardinality::Many\r\n\telse if useAssociationSource then\r\n\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n\t\ttrue\r\n\telse\r\n\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n\tendif endif endif"
+			 "cannotReduceCardinality", "not association.oclIsUndefined() implies\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality = Cardinality::Required implies required\r\n\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(ViewAssociation).cardinality = Cardinality::Required implies required\r\n\t\telse\r\n\t\t\tassociation.oclAsType(ViewAssociation).targetCardinality = Cardinality::Required implies required\r\n\t\tendif\r\n\telse if useAssociationSource then\r\n\t\tassociation.oclAsType(EntityAssociation).cardinality = Cardinality::Required implies required\r\n\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n\t\trequired\r\n\telse\r\n\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required implies required\r\n\tendif endif endif endif",
+			 "canOnlyForceSingletonValues", "not association.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(ViewAssociation).cardinality <> Cardinality::Many\r\n\t\telse\r\n\t\t\tassociation.oclAsType(ViewAssociation).targetCardinality <> Cardinality::Many\r\n\t\tendif\r\n\telse if useAssociationSource then\r\n\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n\t\ttrue\r\n\telse\r\n\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n\tendif endif endif endif"
 		   });	
 		addAnnotation
 		  (serviceEClass, 
@@ -6360,7 +6554,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getServiceAttribute_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsTypeOf(ViewAttribute) then\r\n\tattribute.oclAsType(ViewAttribute).name\r\nelse\r\n\tattribute.oclAsType(EntityAttribute).name\r\nendif endif\r\n"
+			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n\tattribute.oclAsType(EncapsulatedAttribute).name\r\nelse\r\n\tattribute.oclAsType(EntityAttribute).name\r\nendif endif\r\n"
 		   });	
 		addAnnotation
 		  (serviceAssociationEClass, 
@@ -6372,7 +6566,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getServiceAssociation_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse if association.oclIsTypeOf(ViewAssociation) then\r\n\tassociation.oclAsType(ViewAssociation).name\r\nelse if useAssociationSource then\r\n\tassociation.oclAsType(EntityAssociation).name\r\nelse\r\n\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\nendif endif endif\r\n"
+			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse if association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\tassociation.oclAsType(EncapsulatedAssociation).name\r\nelse if association.oclIsTypeOf(ViewAssociation) then\r\n\tif useAssociationSource then\r\n\t\tassociation.oclAsType(ViewAssociation).name\r\n\telse\r\n\t\tassociation.oclAsType(ViewAssociation).targetFeatureName\r\n\tendif\r\nelse if useAssociationSource then\r\n\tassociation.oclAsType(EntityAssociation).name\r\nelse\r\n\tassociation.oclAsType(EntityAssociation).targetFeatureName \r\nendif endif endif endif\r\n"
 		   });	
 		addAnnotation
 		  (pageEClass, 
@@ -6423,7 +6617,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getUnitElement_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if not serviceFeature.oclIsUndefined() then\r\n\tserviceFeature.name\r\nelse\r\n\tif attribute.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse if attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).name\r\n\telse\r\n\t\tattribute.oclAsType(ViewAttribute).name\r\n\tendif endif\r\nendif"
+			 "derivation", "if not serviceFeature.oclIsUndefined() then\r\n\tserviceFeature.name\r\nelse\r\n\tif attribute.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse if attribute.oclIsKindOf(EncapsulatedAttribute) then\r\n\t\tattribute.oclAsType(EncapsulatedAttribute).name\r\n\telse\r\n\t\tattribute.oclAsType(EntityAttribute).name\r\n\tendif endif\r\nendif"
 		   });	
 		addAnnotation
 		  (unitAssociationEClass, 
@@ -6436,7 +6630,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getUnitAssociation_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if not serviceFeature.oclIsUndefined() then\r\n\tserviceFeature.name\r\nelse\r\n\tif association.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\tassociation.oclAsType(ViewAssociation).name\r\n\telse if useAssociationSource then\r\n\t\tassociation.oclAsType(EntityAssociation).name\r\n\telse\r\n\t\tlet associationX : EntityAssociation \r\n\t\t\t= association.oclAsType(EntityAssociation)\r\n\t\tin if associationX.targetFeatureName.oclIsUndefined() then\r\n\t\t\tlet prefix : String\r\n\t\t\t\t= \'inv\'.concat(associationX.name.substring(1, 1).toUpper())\r\n\t\t\t\tin if associationX.name.size() > 1 then\r\n\t\t\t\t\t\tprefix.concat(associationX.name.substring(2, associationX.name.size()))\r\n\t\t\t\t\telse\r\n\t\t\t\t\t\tprefix\r\n\t\t\t\t\tendif\r\n\t\t\telse\r\n\t\t\t\tassociationX.targetFeatureName\r\n\t\t\tendif\r\n\tendif endif endif\r\nendif"
+			 "derivation", "if not serviceFeature.oclIsUndefined() then\r\n\tserviceFeature.name\r\nelse\r\n\tif association.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse if association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).name\r\n\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\tlet viewAssociation : ViewAssociation = association.oclAsType(ViewAssociation)\r\n\t\tin if useAssociationSource then\r\n\t\t\t\tviewAssociation.name\r\n\t\t\telse\r\n\t\t\t\tif viewAssociation.targetFeatureName.oclIsUndefined() then\r\n\t\t\t\t\tlet prefix : String\r\n\t\t\t\t\t\t= \'inv\'.concat(viewAssociation.name.substring(1, 1).toUpper())\r\n\t\t\t\t\t\tin if viewAssociation.name.size() > 1 then\r\n\t\t\t\t\t\t\t\tprefix.concat(viewAssociation.name.substring(2, viewAssociation.name.size()))\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\tprefix\r\n\t\t\t\t\t\t\tendif\r\n\t\t\t\telse\r\n\t\t\t\t\tviewAssociation.targetFeatureName\r\n\t\t\t\tendif\r\n\t\t\tendif\r\n\telse\r\n\t\tlet entityAssociation : EntityAssociation = association.oclAsType(EntityAssociation)\r\n\t\tin if useAssociationSource then\r\n\t\t\t\tentityAssociation.name\r\n\t\t\telse\r\n\t\t\t\tif entityAssociation.targetFeatureName.oclIsUndefined() then\r\n\t\t\t\t\tlet prefix : String\r\n\t\t\t\t\t\t= \'inv\'.concat(entityAssociation.name.substring(1, 1).toUpper())\r\n\t\t\t\t\t\tin if entityAssociation.name.size() > 1 then\r\n\t\t\t\t\t\t\t\tprefix.concat(entityAssociation.name.substring(2, entityAssociation.name.size()))\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\tprefix\r\n\t\t\t\t\t\t\tendif\r\n\t\t\t\telse\r\n\t\t\t\t\tentityAssociation.targetFeatureName\r\n\t\t\t\tendif\r\n\t\t\tendif\r\n\tendif endif endif\r\nendif"
 		   });	
 		addAnnotation
 		  (dataUnitEClass, 
@@ -6455,7 +6649,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (inlineActionEClass, 
 		   source, 
 		   new String[] {
-			 "canOnlyLinkToSingletonFeatures", "usedBy.oclIsKindOf(UnitFeature) implies\r\n\tif usedBy.oclIsKindOf(UnitElement) then\r\n\t\tlet attribute : UnitElement = usedBy.oclAsType(UnitElement)\r\n\t\tin not attribute.attribute.oclIsUndefined() implies\r\n\t\t\tif attribute.attribute.oclIsTypeOf(ViewAttribute) then\r\n\t\t\t\tattribute.attribute.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tattribute.attribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\t\t\tendif\r\n\telse\r\n\t\tlet association : UnitAssociation = usedBy.oclAsType(UnitAssociation)\r\n\t\tin not association.association.oclIsUndefined() implies\r\n\t\t\tif association.association.oclIsTypeOf(ViewAttribute) then\r\n\t\t\t\tassociation.association.oclAsType(ViewAttribute).cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tassociation.association.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\t\t\tendif\r\n\tendif"
+			 "canOnlyLinkToSingletonFeatures", "usedBy.oclIsKindOf(UnitFeature) implies\r\n\tif usedBy.oclIsKindOf(UnitElement) then\r\n\t\tlet attribute : UnitElement = usedBy.oclAsType(UnitElement)\r\n\t\tin not attribute.attribute.oclIsUndefined() implies\r\n\t\t\tif attribute.attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\t\t\tattribute.attribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tattribute.attribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\t\t\tendif\r\n\telse\r\n\t\tlet association : UnitAssociation = usedBy.oclAsType(UnitAssociation)\r\n\t\tin not association.association.oclIsUndefined() implies\r\n\t\t\tif association.association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\t\t\tassociation.association.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n\t\t\telse if association.association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tlet viewAssociation : ViewAssociation = association.association.oclAsType(ViewAssociation)\r\n\t\t\t\tin if association.useAssociationSource then\r\n\t\t\t\t\t\tviewAssociation.cardinality <> Cardinality::Many\r\n\t\t\t\t\telse\r\n\t\t\t\t\t\tviewAssociation.targetCardinality <> Cardinality::Many\r\n\t\t\t\t\tendif\r\n\t\t\telse\r\n\t\t\t\tlet entityAssociation : EntityAssociation = association.association.oclAsType(EntityAssociation)\r\n\t\t\t\tin if association.useAssociationSource then\r\n\t\t\t\t\t\tentityAssociation.cardinality <> Cardinality::Many\r\n\t\t\t\t\telse if entityAssociation.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\t\t\t\ttrue\r\n\t\t\t\t\telse\r\n\t\t\t\t\t\tentityAssociation.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n\t\t\t\t\tendif endif\r\n\t\t\tendif endif\r\n\tendif"
 		   });
 	}
 

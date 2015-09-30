@@ -13,6 +13,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
+import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
@@ -137,10 +138,7 @@ public abstract class IncludedAssociationImpl extends IncludedFeatureImpl implem
 		boolean oldUseAssociationSource = useAssociationSource;
 		useAssociationSource = newUseAssociationSource;
 		boolean featureRequired;
-		if (getAssociation() instanceof ViewAssociation) {
-			final ViewAssociation association = (ViewAssociation) getAssociation();
-			featureRequired = association.getCardinality() == Cardinality.REQUIRED;
-		} else {
+		if (getAssociation() instanceof EntityAssociation){
 			final EntityAssociation association = (EntityAssociation) getAssociation();
 			if (useAssociationSource) {
 				featureRequired = association.getCardinality() == Cardinality.REQUIRED;
@@ -150,6 +148,16 @@ public abstract class IncludedAssociationImpl extends IncludedFeatureImpl implem
 				} else {
 					featureRequired = ((AssociationWithoutContainment) getAssociation()).getTargetCardinality() == Cardinality.REQUIRED;
 				}
+			}
+		} else if (getAssociation() instanceof EncapsulatedAssociation) {
+			final EncapsulatedAssociation association = (EncapsulatedAssociation) getAssociation();
+			featureRequired = association.getCardinality() == Cardinality.REQUIRED;
+		} else {
+			final ViewAssociation association = (ViewAssociation) getAssociation();
+			if (useAssociationSource) {
+				featureRequired = association.getCardinality() == Cardinality.REQUIRED;
+			} else {
+				featureRequired = association.getTargetCardinality() == Cardinality.REQUIRED;
 			}
 		}
 		setRequired(isRequired() || featureRequired);

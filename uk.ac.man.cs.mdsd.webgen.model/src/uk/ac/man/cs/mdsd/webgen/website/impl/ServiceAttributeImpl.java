@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
-import uk.ac.man.cs.mdsd.webgen.website.ViewAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -200,8 +200,8 @@ public class ServiceAttributeImpl extends IncludedElementImpl implements Service
 	public void setFeature(Attribute newAttribute) {
 		Attribute oldAttribute = attribute;
 		attribute = newAttribute;
-		final Cardinality cardinality = newAttribute instanceof ViewAttribute
-			? ((ViewAttribute) newAttribute).getCardinality()
+		final Cardinality cardinality = newAttribute instanceof EncapsulatedAttribute
+			? ((EncapsulatedAttribute) newAttribute).getCardinality()
 			: ((EntityAttribute) newAttribute).getCardinality();
 		setRequired(isRequired()
 			|| (newAttribute != null) && (cardinality == Cardinality.REQUIRED));

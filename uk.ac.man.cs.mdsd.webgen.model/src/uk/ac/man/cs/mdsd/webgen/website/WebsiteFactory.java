@@ -107,13 +107,31 @@ public interface WebsiteFactory extends EFactory {
 	View createView();
 
 	/**
-	 * Returns a new object of class '<em>View Attribute</em>'.
+	 * Returns a new object of class '<em>Encapsulated Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>View Attribute</em>'.
+	 * @return a new object of class '<em>Encapsulated Feature</em>'.
 	 * @generated
 	 */
-	ViewAttribute createViewAttribute();
+	EncapsulatedFeature createEncapsulatedFeature();
+
+	/**
+	 * Returns a new object of class '<em>Encapsulated Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Encapsulated Attribute</em>'.
+	 * @generated
+	 */
+	EncapsulatedAttribute createEncapsulatedAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Encapsulated Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Encapsulated Association</em>'.
+	 * @generated
+	 */
+	EncapsulatedAssociation createEncapsulatedAssociation();
 
 	/**
 	 * Returns a new object of class '<em>View Association</em>'.

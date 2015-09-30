@@ -526,18 +526,18 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3239"
-        editPartClassName="ViewAttributeEditPart"
-        itemSemanticEditPolicyClassName="ViewAttributeItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ViewAttributeCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ViewAttributeGraphicalNodeEditPolicy"
-        createCommandClassName="ViewAttributeCreateCommand"
+        visualID="3243"
+        editPartClassName="EncapsulatedAttributeEditPart"
+        itemSemanticEditPolicyClassName="EncapsulatedAttributeItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="EncapsulatedAttributeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EncapsulatedAttributeGraphicalNodeEditPolicy"
+        createCommandClassName="EncapsulatedAttributeCreateCommand"
         containers="//@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ViewAttributeEditHelper"/>
+          editHelperClassName="EncapsulatedAttributeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="AttributeFigure"
@@ -552,16 +552,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/ViewAttribute"/>
+            href="website.genmodel#//website/EncapsulatedAttribute"/>
         <containmentMetaFeature
             href="website.genmodel#//website/View/features"/>
         <childMetaFeature
             href="website.genmodel#//website/View/features"/>
       </modelFacet>
       <labels
-          visualID="5247"
-          editPartClassName="ViewAttributeNameEditPart"
-          itemSemanticEditPolicyClassName="ViewAttributeNameItemSemanticEditPolicy"
+          visualID="5251"
+          editPartClassName="EncapsulatedAttributeNameEditPart"
+          itemSemanticEditPolicyClassName="EncapsulatedAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -573,23 +573,23 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/ViewAttribute/name"/>
+              href="website.genmodel#//website/EncapsulatedAttribute/name"/>
         </modelFacet>
       </labels>
     </childNodes>
     <childNodes
-        visualID="3240"
-        editPartClassName="ViewAssociationEditPart"
-        itemSemanticEditPolicyClassName="ViewAssociationItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ViewAssociationCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ViewAssociationGraphicalNodeEditPolicy"
-        createCommandClassName="ViewAssociationCreateCommand"
+        visualID="3244"
+        editPartClassName="EncapsulatedAssociationEditPart"
+        itemSemanticEditPolicyClassName="EncapsulatedAssociationItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="EncapsulatedAssociationCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EncapsulatedAssociationGraphicalNodeEditPolicy"
+        createCommandClassName="EncapsulatedAssociationCreateCommand"
         containers="//@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ViewAssociationEditHelper"/>
+          editHelperClassName="EncapsulatedAssociationEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="AttributeFigure"
@@ -604,16 +604,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/ViewAssociation"/>
+            href="website.genmodel#//website/EncapsulatedAssociation"/>
         <containmentMetaFeature
             href="website.genmodel#//website/View/features"/>
         <childMetaFeature
             href="website.genmodel#//website/View/features"/>
       </modelFacet>
       <labels
-          visualID="5248"
-          editPartClassName="ViewAssociationNameEditPart"
-          itemSemanticEditPolicyClassName="ViewAssociationNameItemSemanticEditPolicy"
+          visualID="5252"
+          editPartClassName="EncapsulatedAssociationNameEditPart"
+          itemSemanticEditPolicyClassName="EncapsulatedAssociationNameItemSemanticEditPolicy"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -625,7 +625,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/ViewAssociation/name"/>
+              href="website.genmodel#//website/EncapsulatedAssociation/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -6575,6 +6575,33 @@
       </labels>
     </links>
     <links
+        visualID="4004"
+        editPartClassName="ViewAssociationEditPart"
+        itemSemanticEditPolicyClassName="ViewAssociationItemSemanticEditPolicy"
+        createCommandClassName="ViewAssociationCreateCommand"
+        reorientCommandClassName="ViewAssociationReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ViewAssociationEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="AssociationWithoutContainmentFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AssociationWithoutContainmentFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAssociationWithoutContainmentNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAssociationWithoutContainmentMultiplicityFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AssociationWithoutContainmentFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureAssociationWithoutContainmentNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureAssociationWithoutContainmentNameFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureAssociationWithoutContainmentNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureAssociationWithoutContainmentMultiplicityFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureAssociationWithoutContainmentMultiplicityFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureAssociationWithoutContainmentMultiplicityFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(-1)&#xA;, getMapMode().DPtoLP(1)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-1)&#xA;, getMapMode().DPtoLP(-1)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAssociationWithoutContainmentNameFigure() {&#xA;&#x9;&#x9;return fFigureAssociationWithoutContainmentNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAssociationWithoutContainmentMultiplicityFigure() {&#xA;&#x9;&#x9;return fFigureAssociationWithoutContainmentMultiplicityFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass
+            href="website.genmodel#//website/ViewAssociation"/>
+        <containmentMetaFeature
+            href="website.genmodel#//website/View/features"/>
+        <childMetaFeature
+            href="website.genmodel#//website/View/features"/>
+        <targetMetaFeature
+            href="website.genmodel#//website/ViewAssociation/targetView"/>
+      </modelFacet>
+    </links>
+    <links
         visualID="4003"
         editPartClassName="PageLinkEditPart"
         itemSemanticEditPolicyClassName="PageLinkItemSemanticEditPolicy"
@@ -7559,7 +7586,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Parent page"
             description="Create a link from a page to its parent page"
-            genLinks="//@diagram/@links.2"/>
+            genLinks="//@diagram/@links.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Element"
@@ -7803,14 +7830,19 @@
             genLinks="//@diagram/@links.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="View Attribute"
+            title="Encapsulated Attribute"
             description="Create an attribute on a view"
             genNodes="//@diagram/@childNodes.10"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="View Association"
+            title="Encapsulated Association"
             description="Create an association on a view"
             genNodes="//@diagram/@childNodes.11"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="View Association"
+            description="Create an association between views"
+            genLinks="//@diagram/@links.2"/>
       </groups>
     </palette>
     <preferencePages
@@ -8265,25 +8297,54 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
-        child="//@diagram/@topLevelNodes.6"
+        child="//@diagram/@topLevelNodes.5"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.6"
+        parent="//@diagram/@topLevelNodes.5"
         child="//@diagram/@links.2"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
+        child="//@diagram/@topLevelNodes.5"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.5"
+        child="//@diagram/@links.2"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.3"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@topLevelNodes.6"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.6"
+        child="//@diagram/@links.3"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
         child="//@diagram/@topLevelNodes.6"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.6"
-        child="//@diagram/@links.2"
+        child="//@diagram/@links.3"
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>

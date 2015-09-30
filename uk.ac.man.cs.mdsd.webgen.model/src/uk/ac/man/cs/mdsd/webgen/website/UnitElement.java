@@ -35,7 +35,7 @@ public interface UnitElement extends IncludedElement, UnitFeature {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitElement_Name()
 	 * @model changeable="false" volatile="true" derived="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not serviceFeature.oclIsUndefined() then\r\n\tserviceFeature.name\r\nelse\r\n\tif attribute.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse if attribute.oclIsKindOf(EntityAttribute) then\r\n\t\tattribute.oclAsType(EntityAttribute).name\r\n\telse\r\n\t\tattribute.oclAsType(ViewAttribute).name\r\n\tendif endif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not serviceFeature.oclIsUndefined() then\r\n\tserviceFeature.name\r\nelse\r\n\tif attribute.oclIsUndefined() then\r\n\t\t\'\'\r\n\telse if attribute.oclIsKindOf(EncapsulatedAttribute) then\r\n\t\tattribute.oclAsType(EncapsulatedAttribute).name\r\n\telse\r\n\t\tattribute.oclAsType(EntityAttribute).name\r\n\tendif endif\r\nendif'"
 	 * @generated
 	 */
 	String getName();

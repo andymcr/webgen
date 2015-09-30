@@ -20,6 +20,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedFeature;
 import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
@@ -31,7 +32,6 @@ import uk.ac.man.cs.mdsd.webgen.website.UnitElement;
 import uk.ac.man.cs.mdsd.webgen.website.UnitFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
-import uk.ac.man.cs.mdsd.webgen.website.ViewAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -413,8 +413,8 @@ public class UnitElementImpl extends IncludedElementImpl implements UnitElement 
 	public void basicSetFeature(Attribute newAttribute) {
 		Attribute oldAttribute = attribute;
 		attribute = newAttribute;
-		final Cardinality cardinality = newAttribute instanceof ViewAttribute
-				? ((ViewAttribute) newAttribute).getCardinality()
+		final Cardinality cardinality = newAttribute instanceof EncapsulatedAttribute
+				? ((EncapsulatedAttribute) newAttribute).getCardinality()
 				: ((EntityAttribute) newAttribute).getCardinality();
 		setRequired(isRequired()
 			|| (newAttribute != null) && cardinality == Cardinality.REQUIRED);

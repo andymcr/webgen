@@ -80,7 +80,9 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT: return createAssociationWithoutContainment();
 			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT: return createAssociationWithContainment();
 			case WebsitePackage.VIEW: return createView();
-			case WebsitePackage.VIEW_ATTRIBUTE: return createViewAttribute();
+			case WebsitePackage.ENCAPSULATED_FEATURE: return createEncapsulatedFeature();
+			case WebsitePackage.ENCAPSULATED_ATTRIBUTE: return createEncapsulatedAttribute();
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION: return createEncapsulatedAssociation();
 			case WebsitePackage.VIEW_ASSOCIATION: return createViewAssociation();
 			case WebsitePackage.SERVICE: return createService();
 			case WebsitePackage.MODEL_LABEL: return createModelLabel();
@@ -293,9 +295,29 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ViewAttribute createViewAttribute() {
-		ViewAttributeImpl viewAttribute = new ViewAttributeImpl();
-		return viewAttribute;
+	public EncapsulatedFeature createEncapsulatedFeature() {
+		EncapsulatedFeatureImpl encapsulatedFeature = new EncapsulatedFeatureImpl();
+		return encapsulatedFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EncapsulatedAttribute createEncapsulatedAttribute() {
+		EncapsulatedAttributeImpl encapsulatedAttribute = new EncapsulatedAttributeImpl();
+		return encapsulatedAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EncapsulatedAssociation createEncapsulatedAssociation() {
+		EncapsulatedAssociationImpl encapsulatedAssociation = new EncapsulatedAssociationImpl();
+		return encapsulatedAssociation;
 	}
 
 	/**

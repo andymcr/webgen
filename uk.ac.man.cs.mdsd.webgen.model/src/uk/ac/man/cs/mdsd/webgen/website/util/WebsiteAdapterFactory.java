@@ -206,8 +206,16 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createViewFeatureAdapter();
 			}
 			@Override
-			public Adapter caseViewAttribute(ViewAttribute object) {
-				return createViewAttributeAdapter();
+			public Adapter caseEncapsulatedFeature(EncapsulatedFeature object) {
+				return createEncapsulatedFeatureAdapter();
+			}
+			@Override
+			public Adapter caseEncapsulatedAttribute(EncapsulatedAttribute object) {
+				return createEncapsulatedAttributeAdapter();
+			}
+			@Override
+			public Adapter caseEncapsulatedAssociation(EncapsulatedAssociation object) {
+				return createEncapsulatedAssociationAdapter();
 			}
 			@Override
 			public Adapter caseViewAssociation(ViewAssociation object) {
@@ -786,16 +794,44 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ViewAttribute <em>View Attribute</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature <em>Encapsulated Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ViewAttribute
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature
 	 * @generated
 	 */
-	public Adapter createViewAttributeAdapter() {
+	public Adapter createEncapsulatedFeatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute <em>Encapsulated Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute
+	 * @generated
+	 */
+	public Adapter createEncapsulatedAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation <em>Encapsulated Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation
+	 * @generated
+	 */
+	public Adapter createEncapsulatedAssociationAdapter() {
 		return null;
 	}
 

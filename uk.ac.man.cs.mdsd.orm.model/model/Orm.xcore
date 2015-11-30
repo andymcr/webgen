@@ -90,15 +90,15 @@ class EnumerationLiteral extends NamedDisplayElement {
 
 abstract class EntityOrView extends Classifier {
 	container OrmModel[1] partOf opposite entitiesAndViews
-	String tableName
 	contains Feature[] features opposite partOf
-	contains ModelLabel[] displayLabels opposite labelFor
+	refers Feature[] ^keys
+	String autoKeyName
+	String tableName
+	contains ModelLabel[] labels opposite labelFor
 }
 
 abstract class Feature extends NamedDisplayElement {
 	container EntityOrView[1] partOf opposite features
-	String[1] columnName
-	Boolean inputField
 	// style classes are used when creating implicit service features
 	String headerClass
 	String inputClass
@@ -106,15 +106,18 @@ abstract class Feature extends NamedDisplayElement {
 	String footerClass
 }
 
-abstract class Attribute extends Feature {
+abstract class Attribute extends Feature, Label {
 	contains Expression defaultValue
 }
 
 abstract class Association extends Feature {
 }
 
-class ModelLabel extends NamedElement {
-	container EntityOrView[1] labelFor opposite displayLabels
+interface Label {
+}
+
+class ModelLabel extends NamedElement, Label {
+	container EntityOrView[1] labelFor opposite labels
 	String[1] format
 	contains ModelLabelFeature[] features
 }
@@ -135,11 +138,10 @@ class ModelLabelAssociation extends ModelLabelFeature {
 class Entity extends EntityOrView {
 	refers Entity[] ^contains opposite ^container
 	refers Entity ^container opposite ^contains
-	refers Feature[] ^keys
-	String autoKeyName
 }
 
 abstract class EntityFeature extends Feature {
+	String[1] columnName
 }
 
 abstract class EntityAttribute extends EntityFeature, Attribute {
@@ -203,9 +205,9 @@ class SingletonLocation extends SingletonAttribute {
 @OCL(onlyOneOwningEnd="owningEnd xor opposite.owningEnd")
 abstract class EntityAssociation extends EntityFeature, Association {
 	refers EntityAssociation[1] ^opposite
+	boolean[1] ^container = "false"
 	boolean[1] owningEnd
-	boolean[1] bidirectional
-	boolean[1] containment
+	boolean[1] visible = "true"
 	String pivotTableName
 }
 
@@ -237,13 +239,22 @@ class View extends EntityOrView {
 }
 
 abstract class ViewFeature extends Feature {
-	String alias
 }
 
-class ViewAttribute extends ViewFeature, Attribute {
+abstract class EncapsulatedFeature extends ViewFeature {
+	String[1] columnName
+}
+
+class EncapsulatedAttribute extends EncapsulatedFeature, Attribute {
 	refers Attribute[1] attribute
 }
 
-class ViewAssociation extends ViewFeature, Association {
+class EncapsulatedAssociation extends EncapsulatedFeature, Association {
 	refers Association[1] association
+	refers EncapsulatedAssociation encapsulatedTarget
+}
+
+class ViewAssociation extends ViewFeature, Association {
+	refers EncapsulatedAssociation[1] ^opposite
+	Cardinality cardinality
 }

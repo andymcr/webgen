@@ -237,26 +237,49 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.ViewAttribute} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.EncapsulatedAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewAttributeItemProvider viewAttributeItemProvider;
+	protected EncapsulatedAttributeItemProvider encapsulatedAttributeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.ViewAttribute}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.EncapsulatedAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createViewAttributeAdapter() {
-		if (viewAttributeItemProvider == null) {
-			viewAttributeItemProvider = new ViewAttributeItemProvider(this);
+	public Adapter createEncapsulatedAttributeAdapter() {
+		if (encapsulatedAttributeItemProvider == null) {
+			encapsulatedAttributeItemProvider = new EncapsulatedAttributeItemProvider(this);
 		}
 
-		return viewAttributeItemProvider;
+		return encapsulatedAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.EncapsulatedAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EncapsulatedAssociationItemProvider encapsulatedAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.EncapsulatedAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEncapsulatedAssociationAdapter() {
+		if (encapsulatedAssociationItemProvider == null) {
+			encapsulatedAssociationItemProvider = new EncapsulatedAssociationItemProvider(this);
+		}
+
+		return encapsulatedAssociationItemProvider;
 	}
 
 	/**
@@ -676,7 +699,8 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (singletonAssociationItemProvider != null) singletonAssociationItemProvider.dispose();
 		if (collectionAssociationItemProvider != null) collectionAssociationItemProvider.dispose();
 		if (viewItemProvider != null) viewItemProvider.dispose();
-		if (viewAttributeItemProvider != null) viewAttributeItemProvider.dispose();
+		if (encapsulatedAttributeItemProvider != null) encapsulatedAttributeItemProvider.dispose();
+		if (encapsulatedAssociationItemProvider != null) encapsulatedAssociationItemProvider.dispose();
 		if (viewAssociationItemProvider != null) viewAssociationItemProvider.dispose();
 	}
 

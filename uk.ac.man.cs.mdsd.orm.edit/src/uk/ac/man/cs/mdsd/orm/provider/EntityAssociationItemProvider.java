@@ -46,9 +46,9 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOppositePropertyDescriptor(object);
+			addContainerPropertyDescriptor(object);
 			addOwningEndPropertyDescriptor(object);
-			addBidirectionalPropertyDescriptor(object);
-			addContainmentPropertyDescriptor(object);
+			addVisiblePropertyDescriptor(object);
 			addPivotTableNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -77,6 +77,28 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Container feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAssociation_container_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_container_feature", "_UI_EntityAssociation_type"),
+				 OrmPackage.Literals.ENTITY_ASSOCIATION__CONTAINER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Owning End feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,41 +121,19 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Bidirectional feature.
+	 * This adds a property descriptor for the Visible feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBidirectionalPropertyDescriptor(Object object) {
+	protected void addVisiblePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntityAssociation_bidirectional_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_bidirectional_feature", "_UI_EntityAssociation_type"),
-				 OrmPackage.Literals.ENTITY_ASSOCIATION__BIDIRECTIONAL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Containment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addContainmentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityAssociation_containment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_containment_feature", "_UI_EntityAssociation_type"),
-				 OrmPackage.Literals.ENTITY_ASSOCIATION__CONTAINMENT,
+				 getString("_UI_EntityAssociation_visible_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_visible_feature", "_UI_EntityAssociation_type"),
+				 OrmPackage.Literals.ENTITY_ASSOCIATION__VISIBLE,
 				 true,
 				 false,
 				 false,
@@ -191,9 +191,9 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityAssociation.class)) {
+			case OrmPackage.ENTITY_ASSOCIATION__CONTAINER:
 			case OrmPackage.ENTITY_ASSOCIATION__OWNING_END:
-			case OrmPackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
-			case OrmPackage.ENTITY_ASSOCIATION__CONTAINMENT:
+			case OrmPackage.ENTITY_ASSOCIATION__VISIBLE:
 			case OrmPackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

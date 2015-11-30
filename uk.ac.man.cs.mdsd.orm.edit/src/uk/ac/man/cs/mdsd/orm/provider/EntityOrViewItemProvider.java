@@ -49,6 +49,8 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
+			addKeysPropertyDescriptor(object);
+			addAutoKeyNamePropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -72,6 +74,50 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Keys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addKeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_keys_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_keys_feature", "_UI_EntityOrView_type"),
+				 OrmPackage.Literals.ENTITY_OR_VIEW__KEYS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Auto Key Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutoKeyNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_autoKeyName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_autoKeyName_feature", "_UI_EntityOrView_type"),
+				 OrmPackage.Literals.ENTITY_OR_VIEW__AUTO_KEY_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -111,7 +157,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES);
-			childrenFeatures.add(OrmPackage.Literals.ENTITY_OR_VIEW__DISPLAY_LABELS);
+			childrenFeatures.add(OrmPackage.Literals.ENTITY_OR_VIEW__LABELS);
 		}
 		return childrenFeatures;
 	}
@@ -156,11 +202,12 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityOrView.class)) {
+			case OrmPackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 			case OrmPackage.ENTITY_OR_VIEW__TABLE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ENTITY_OR_VIEW__FEATURES:
-			case OrmPackage.ENTITY_OR_VIEW__DISPLAY_LABELS:
+			case OrmPackage.ENTITY_OR_VIEW__LABELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -226,7 +273,12 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
-				 OrmFactory.eINSTANCE.createViewAttribute()));
+				 OrmFactory.eINSTANCE.createEncapsulatedAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createEncapsulatedAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -235,7 +287,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(OrmPackage.Literals.ENTITY_OR_VIEW__DISPLAY_LABELS,
+				(OrmPackage.Literals.ENTITY_OR_VIEW__LABELS,
 				 OrmFactory.eINSTANCE.createModelLabel()));
 	}
 

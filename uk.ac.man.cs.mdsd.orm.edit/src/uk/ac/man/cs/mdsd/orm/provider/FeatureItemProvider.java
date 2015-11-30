@@ -49,8 +49,6 @@ public class FeatureItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
-			addColumnNamePropertyDescriptor(object);
-			addInputFieldPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
@@ -77,50 +75,6 @@ public class FeatureItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Column Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addColumnNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_columnName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_columnName_feature", "_UI_Feature_type"),
-				 OrmPackage.Literals.FEATURE__COLUMN_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Input Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addInputFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_inputField_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_inputField_feature", "_UI_Feature_type"),
-				 OrmPackage.Literals.FEATURE__INPUT_FIELD,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -239,8 +193,6 @@ public class FeatureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Feature.class)) {
-			case OrmPackage.FEATURE__COLUMN_NAME:
-			case OrmPackage.FEATURE__INPUT_FIELD:
 			case OrmPackage.FEATURE__HEADER_CLASS:
 			case OrmPackage.FEATURE__INPUT_CLASS:
 			case OrmPackage.FEATURE__DISPLAY_CLASS:

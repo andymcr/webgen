@@ -8,9 +8,10 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 import uk.ac.man.cs.mdsd.orm.ViewAssociation;
 
@@ -42,29 +43,52 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAssociationPropertyDescriptor(object);
+			addOppositePropertyDescriptor(object);
+			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Association feature.
+	 * This adds a property descriptor for the Opposite feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAssociationPropertyDescriptor(Object object) {
+	protected void addOppositePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ViewAssociation_association_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ViewAssociation_association_feature", "_UI_ViewAssociation_type"),
-				 OrmPackage.Literals.VIEW_ASSOCIATION__ASSOCIATION,
+				 getString("_UI_ViewAssociation_opposite_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ViewAssociation_opposite_feature", "_UI_ViewAssociation_type"),
+				 OrmPackage.Literals.VIEW_ASSOCIATION__OPPOSITE,
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cardinality feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardinalityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ViewAssociation_cardinality_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ViewAssociation_cardinality_feature", "_UI_ViewAssociation_type"),
+				 OrmPackage.Literals.VIEW_ASSOCIATION__CARDINALITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -105,6 +129,12 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ViewAssociation.class)) {
+			case OrmPackage.VIEW_ASSOCIATION__CARDINALITY:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

@@ -28,7 +28,7 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface Attribute extends Feature, UnitTitle {
+public interface Attribute extends Feature, Label {
 
 	/**
 	 * Returns the value of the '<em><b>Default Value</b></em>' containment reference.

@@ -25,7 +25,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface DetailsUnit extends DataUnit, SelectTarget {
+public interface DetailsUnit extends DataUnit, Selectable {
 	/**
 	 * Returns the value of the '<em><b>Omit Field Labels</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

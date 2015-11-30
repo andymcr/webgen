@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
@@ -33,7 +32,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationImpl#getDynamicLabel <em>Dynamic Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationImpl#getSelection <em>Selection</em>}</li>
  * </ul>
  *
@@ -69,16 +67,6 @@ public class ServiceAssociationImpl extends IncludedAssociationImpl implements S
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.SERVICE_ASSOCIATION__NAME).getSettingDelegate();
-
-	/**
-	 * The cached value of the '{@link #getDynamicLabel() <em>Dynamic Label</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDynamicLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected ModelLabel dynamicLabel;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -124,7 +112,7 @@ public class ServiceAssociationImpl extends IncludedAssociationImpl implements S
 				setUseAssociationSource(true);
 			} else {
 				final EntityAssociation entityAssociation = (EntityAssociation) newAssociation;
-				if (getPartOf().getEncapsulates().contains(entityAssociation.getParentEntity())) {
+				if (getPartOf().getEncapsulates().contains(entityAssociation.getPartOf())) {
 					if (!getPartOf().getEncapsulates().contains(entityAssociation.getTargetEntity())) {
 						setUseAssociationSource(true);
 					}
@@ -209,44 +197,6 @@ public class ServiceAssociationImpl extends IncludedAssociationImpl implements S
 	 */
 	public String getName() {
 		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabel getDynamicLabel() {
-		if (dynamicLabel != null && dynamicLabel.eIsProxy()) {
-			InternalEObject oldDynamicLabel = (InternalEObject)dynamicLabel;
-			dynamicLabel = (ModelLabel)eResolveProxy(oldDynamicLabel);
-			if (dynamicLabel != oldDynamicLabel) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SERVICE_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
-			}
-		}
-		return dynamicLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabel basicGetDynamicLabel() {
-		return dynamicLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDynamicLabel(ModelLabel newDynamicLabel) {
-		ModelLabel oldDynamicLabel = dynamicLabel;
-		dynamicLabel = newDynamicLabel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
 	}
 
 	/**
@@ -345,9 +295,6 @@ public class ServiceAssociationImpl extends IncludedAssociationImpl implements S
 				return getDateFormat();
 			case WebsitePackage.SERVICE_ASSOCIATION__NAME:
 				return getName();
-			case WebsitePackage.SERVICE_ASSOCIATION__DYNAMIC_LABEL:
-				if (resolve) return getDynamicLabel();
-				return basicGetDynamicLabel();
 			case WebsitePackage.SERVICE_ASSOCIATION__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -368,9 +315,6 @@ public class ServiceAssociationImpl extends IncludedAssociationImpl implements S
 				return;
 			case WebsitePackage.SERVICE_ASSOCIATION__DATE_FORMAT:
 				setDateFormat((String)newValue);
-				return;
-			case WebsitePackage.SERVICE_ASSOCIATION__DYNAMIC_LABEL:
-				setDynamicLabel((ModelLabel)newValue);
 				return;
 			case WebsitePackage.SERVICE_ASSOCIATION__SELECTION:
 				setSelection((Selection)newValue);
@@ -393,9 +337,6 @@ public class ServiceAssociationImpl extends IncludedAssociationImpl implements S
 			case WebsitePackage.SERVICE_ASSOCIATION__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
-			case WebsitePackage.SERVICE_ASSOCIATION__DYNAMIC_LABEL:
-				setDynamicLabel((ModelLabel)null);
-				return;
 			case WebsitePackage.SERVICE_ASSOCIATION__SELECTION:
 				setSelection((Selection)null);
 				return;
@@ -417,8 +358,6 @@ public class ServiceAssociationImpl extends IncludedAssociationImpl implements S
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 			case WebsitePackage.SERVICE_ASSOCIATION__NAME:
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case WebsitePackage.SERVICE_ASSOCIATION__DYNAMIC_LABEL:
-				return dynamicLabel != null;
 			case WebsitePackage.SERVICE_ASSOCIATION__SELECTION:
 				return selection != null;
 		}

@@ -162,7 +162,17 @@ public class ViewItemProvider extends EntityOrViewItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.VIEW__FEATURES,
-				 WebsiteFactory.eINSTANCE.createViewAttribute()));
+				 WebsiteFactory.eINSTANCE.createEncapsulatedFeature()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.VIEW__FEATURES,
+				 WebsiteFactory.eINSTANCE.createEncapsulatedAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.VIEW__FEATURES,
+				 WebsiteFactory.eINSTANCE.createEncapsulatedAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter

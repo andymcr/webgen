@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.website.SelectAction;
-import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
+import uk.ac.man.cs.mdsd.webgen.website.Selectable;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -39,7 +39,7 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	 * @generated
 	 * @ordered
 	 */
-	protected SelectTarget target;
+	protected Selectable target;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,10 +65,10 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectTarget getTarget() {
+	public Selectable getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject)target;
-			target = (SelectTarget)eResolveProxy(oldTarget);
+			target = (Selectable)eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SELECT_ACTION__TARGET, oldTarget, target));
@@ -82,7 +82,7 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectTarget basicGetTarget() {
+	public Selectable basicGetTarget() {
 		return target;
 	}
 
@@ -91,8 +91,8 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(SelectTarget newTarget) {
-		SelectTarget oldTarget = target;
+	public void setTarget(Selectable newTarget) {
+		Selectable oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SELECT_ACTION__TARGET, oldTarget, target));
@@ -122,7 +122,7 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.SELECT_ACTION__TARGET:
-				setTarget((SelectTarget)newValue);
+				setTarget((Selectable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -137,7 +137,7 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.SELECT_ACTION__TARGET:
-				setTarget((SelectTarget)null);
+				setTarget((Selectable)null);
 				return;
 		}
 		super.eUnset(featureID);

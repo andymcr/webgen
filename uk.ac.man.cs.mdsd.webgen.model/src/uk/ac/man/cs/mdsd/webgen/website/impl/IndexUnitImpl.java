@@ -17,13 +17,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
-import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -37,7 +38,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getDisplayOption <em>Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getPaginationQuery <em>Pagination Query</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getFilters <em>Filters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getPreviousPageLabel <em>Previous Page Label</em>}</li>
@@ -103,14 +105,24 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected boolean omitColumnLabels = OMIT_COLUMN_LABELS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPaginationQuery() <em>Pagination Query</em>}' reference.
+	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPaginationQuery()
+	 * @see #getFilters()
 	 * @generated
 	 * @ordered
 	 */
-	protected Query paginationQuery;
+	protected EList<Filter> filters;
+
+	/**
+	 * The cached value of the '{@link #getPagination() <em>Pagination</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPagination()
+	 * @generated
+	 * @ordered
+	 */
+	protected Filter pagination;
 
 	/**
 	 * The default value of the '{@link #getDefaultPaginationSize() <em>Default Pagination Size</em>}' attribute.
@@ -496,16 +508,28 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Query getPaginationQuery() {
-		if (paginationQuery != null && paginationQuery.eIsProxy()) {
-			InternalEObject oldPaginationQuery = (InternalEObject)paginationQuery;
-			paginationQuery = (Query)eResolveProxy(oldPaginationQuery);
-			if (paginationQuery != oldPaginationQuery) {
+	public List<Filter> getFilters() {
+		if (filters == null) {
+			filters = new EObjectContainmentEList<Filter>(Filter.class, this, WebsitePackage.INDEX_UNIT__FILTERS);
+		}
+		return filters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Filter getPagination() {
+		if (pagination != null && pagination.eIsProxy()) {
+			InternalEObject oldPagination = (InternalEObject)pagination;
+			pagination = (Filter)eResolveProxy(oldPagination);
+			if (pagination != oldPagination) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.INDEX_UNIT__PAGINATION_QUERY, oldPaginationQuery, paginationQuery));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
 			}
 		}
-		return paginationQuery;
+		return pagination;
 	}
 
 	/**
@@ -513,8 +537,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Query basicGetPaginationQuery() {
-		return paginationQuery;
+	public Filter basicGetPagination() {
+		return pagination;
 	}
 
 	/**
@@ -522,11 +546,11 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPaginationQuery(Query newPaginationQuery) {
-		Query oldPaginationQuery = paginationQuery;
-		paginationQuery = newPaginationQuery;
+	public void setPagination(Filter newPagination) {
+		Filter oldPagination = pagination;
+		pagination = newPagination;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INDEX_UNIT__PAGINATION_QUERY, oldPaginationQuery, paginationQuery));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
 	}
 
 	/**
@@ -617,6 +641,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		switch (featureID) {
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.INDEX_UNIT__FILTERS:
+				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -635,9 +661,11 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return getDisplayOption();
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				return isOmitColumnLabels();
-			case WebsitePackage.INDEX_UNIT__PAGINATION_QUERY:
-				if (resolve) return getPaginationQuery();
-				return basicGetPaginationQuery();
+			case WebsitePackage.INDEX_UNIT__FILTERS:
+				return getFilters();
+			case WebsitePackage.INDEX_UNIT__PAGINATION:
+				if (resolve) return getPagination();
+				return basicGetPagination();
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return getDefaultPaginationSize();
 			case WebsitePackage.INDEX_UNIT__NEXT_PAGE_LABEL:
@@ -679,8 +707,12 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				setOmitColumnLabels((Boolean)newValue);
 				return;
-			case WebsitePackage.INDEX_UNIT__PAGINATION_QUERY:
-				setPaginationQuery((Query)newValue);
+			case WebsitePackage.INDEX_UNIT__FILTERS:
+				getFilters().clear();
+				getFilters().addAll((Collection<? extends Filter>)newValue);
+				return;
+			case WebsitePackage.INDEX_UNIT__PAGINATION:
+				setPagination((Filter)newValue);
 				return;
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
@@ -730,8 +762,11 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				setOmitColumnLabels(OMIT_COLUMN_LABELS_EDEFAULT);
 				return;
-			case WebsitePackage.INDEX_UNIT__PAGINATION_QUERY:
-				setPaginationQuery((Query)null);
+			case WebsitePackage.INDEX_UNIT__FILTERS:
+				getFilters().clear();
+				return;
+			case WebsitePackage.INDEX_UNIT__PAGINATION:
+				setPagination((Filter)null);
 				return;
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);
@@ -778,8 +813,10 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return displayOption != DISPLAY_OPTION_EDEFAULT;
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				return omitColumnLabels != OMIT_COLUMN_LABELS_EDEFAULT;
-			case WebsitePackage.INDEX_UNIT__PAGINATION_QUERY:
-				return paginationQuery != null;
+			case WebsitePackage.INDEX_UNIT__FILTERS:
+				return filters != null && !filters.isEmpty();
+			case WebsitePackage.INDEX_UNIT__PAGINATION:
+				return pagination != null;
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return defaultPaginationSize != DEFAULT_PAGINATION_SIZE_EDEFAULT;
 			case WebsitePackage.INDEX_UNIT__NEXT_PAGE_LABEL:

@@ -54,9 +54,6 @@ public class ViewFeatureItemProvider extends WebGenItemProvider implements IEdit
 			addHeaderClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
-			addAliasPropertyDescriptor(object);
-			addCardinalityPropertyDescriptor(object);
-			addDisplayLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -128,72 +125,6 @@ public class ViewFeatureItemProvider extends WebGenItemProvider implements IEdit
 	}
 
 	/**
-	 * This adds a property descriptor for the Alias feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAliasPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ViewFeature_alias_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ViewFeature_alias_feature", "_UI_ViewFeature_type"),
-				 WebsitePackage.Literals.VIEW_FEATURE__ALIAS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Cardinality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCardinalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ViewFeature_cardinality_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ViewFeature_cardinality_feature", "_UI_ViewFeature_type"),
-				 WebsitePackage.Literals.VIEW_FEATURE__CARDINALITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Display Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDisplayLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ViewFeature_displayLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ViewFeature_displayLabel_feature", "_UI_ViewFeature_type"),
-				 WebsitePackage.Literals.VIEW_FEATURE__DISPLAY_LABEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -223,9 +154,6 @@ public class ViewFeatureItemProvider extends WebGenItemProvider implements IEdit
 			case WebsitePackage.VIEW_FEATURE__HEADER_CLASS:
 			case WebsitePackage.VIEW_FEATURE__DISPLAY_CLASS:
 			case WebsitePackage.VIEW_FEATURE__FOOTER_CLASS:
-			case WebsitePackage.VIEW_FEATURE__ALIAS:
-			case WebsitePackage.VIEW_FEATURE__CARDINALITY:
-			case WebsitePackage.VIEW_FEATURE__DISPLAY_LABEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

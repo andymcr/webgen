@@ -16,7 +16,6 @@ import uk.ac.man.cs.mdsd.orm.Attribute;
 
 import uk.ac.man.cs.mdsd.waf.IncludedAttribute;
 import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
-import uk.ac.man.cs.mdsd.waf.UnitTitle;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -30,8 +29,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getDefaultValue <em>Default Value</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#isCaseInsensitive <em>Case Insensitive</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#isEncrypt <em>Encrypt</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
@@ -80,46 +77,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 	 * @ordered
 	 */
 	protected Expression defaultValue;
-
-	/**
-	 * The default value of the '{@link #isCaseInsensitive() <em>Case Insensitive</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCaseInsensitive()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean CASE_INSENSITIVE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isCaseInsensitive() <em>Case Insensitive</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCaseInsensitive()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean caseInsensitive = CASE_INSENSITIVE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isEncrypt() <em>Encrypt</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isEncrypt()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ENCRYPT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isEncrypt() <em>Encrypt</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isEncrypt()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean encrypt = ENCRYPT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
@@ -327,48 +284,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isCaseInsensitive() {
-		return caseInsensitive;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCaseInsensitive(boolean newCaseInsensitive) {
-		boolean oldCaseInsensitive = caseInsensitive;
-		caseInsensitive = newCaseInsensitive;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE, oldCaseInsensitive, caseInsensitive));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isEncrypt() {
-		return encrypt;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEncrypt(boolean newEncrypt) {
-		boolean oldEncrypt = encrypt;
-		encrypt = newEncrypt;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__ENCRYPT, oldEncrypt, encrypt));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getInterfaceType() {
 		return interfaceType;
 	}
@@ -477,10 +392,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 				return isObfuscateFormFields();
 			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
 				return getDefaultValue();
-			case WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
-				return isCaseInsensitive();
-			case WafPackage.SERVICE_ATTRIBUTE__ENCRYPT:
-				return isEncrypt();
 			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				return getInterfaceType();
 			case WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
@@ -509,12 +420,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 				return;
 			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((Expression)newValue);
-				return;
-			case WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
-				setCaseInsensitive((Boolean)newValue);
-				return;
-			case WafPackage.SERVICE_ATTRIBUTE__ENCRYPT:
-				setEncrypt((Boolean)newValue);
 				return;
 			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType((String)newValue);
@@ -549,12 +454,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
 				setDefaultValue((Expression)null);
 				return;
-			case WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
-				setCaseInsensitive(CASE_INSENSITIVE_EDEFAULT);
-				return;
-			case WafPackage.SERVICE_ATTRIBUTE__ENCRYPT:
-				setEncrypt(ENCRYPT_EDEFAULT);
-				return;
 			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
 				return;
@@ -585,10 +484,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 				return obfuscateFormFields != OBFUSCATE_FORM_FIELDS_EDEFAULT;
 			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
 				return defaultValue != null;
-			case WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
-				return caseInsensitive != CASE_INSENSITIVE_EDEFAULT;
-			case WafPackage.SERVICE_ATTRIBUTE__ENCRYPT:
-				return encrypt != ENCRYPT_EDEFAULT;
 			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 			case WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
@@ -616,11 +511,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 				default: return -1;
 			}
 		}
-		if (baseClass == UnitTitle.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -639,11 +529,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 				default: return -1;
 			}
 		}
-		if (baseClass == UnitTitle.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -659,10 +544,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (obfuscateFormFields: ");
 		result.append(obfuscateFormFields);
-		result.append(", caseInsensitive: ");
-		result.append(caseInsensitive);
-		result.append(", encrypt: ");
-		result.append(encrypt);
 		result.append(", interfaceType: ");
 		result.append(interfaceType);
 		result.append(", placeholder: ");

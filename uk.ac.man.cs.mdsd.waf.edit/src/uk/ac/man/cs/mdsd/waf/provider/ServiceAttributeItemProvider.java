@@ -50,8 +50,6 @@ public class ServiceAttributeItemProvider extends ServiceFeatureItemProvider {
 
 			addAttributePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
-			addCaseInsensitivePropertyDescriptor(object);
-			addEncryptPropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
@@ -100,50 +98,6 @@ public class ServiceAttributeItemProvider extends ServiceFeatureItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Case Insensitive feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaseInsensitivePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceAttribute_caseInsensitive_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_caseInsensitive_feature", "_UI_ServiceAttribute_type"),
-				 WafPackage.Literals.SERVICE_ATTRIBUTE__CASE_INSENSITIVE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Encrypt feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEncryptPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceAttribute_encrypt_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_encrypt_feature", "_UI_ServiceAttribute_type"),
-				 WafPackage.Literals.SERVICE_ATTRIBUTE__ENCRYPT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -305,8 +259,6 @@ public class ServiceAttributeItemProvider extends ServiceFeatureItemProvider {
 
 		switch (notification.getFeatureID(ServiceAttribute.class)) {
 			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
-			case WafPackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
-			case WafPackage.SERVICE_ATTRIBUTE__ENCRYPT:
 			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 			case WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
 			case WafPackage.SERVICE_ATTRIBUTE__VALIDATION_PATTERN:

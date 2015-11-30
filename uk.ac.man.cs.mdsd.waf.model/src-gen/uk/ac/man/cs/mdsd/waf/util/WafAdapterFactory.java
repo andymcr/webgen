@@ -106,22 +106,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createServiceAdapter();
 			}
 			@Override
-			public Adapter caseModelLabelX(ModelLabelX object) {
-				return createModelLabelXAdapter();
-			}
-			@Override
-			public Adapter caseModelLabelFeatureX(ModelLabelFeatureX object) {
-				return createModelLabelFeatureXAdapter();
-			}
-			@Override
-			public Adapter caseModelLabelElementX(ModelLabelElementX object) {
-				return createModelLabelElementXAdapter();
-			}
-			@Override
-			public Adapter caseModelLabelAssociationX(ModelLabelAssociationX object) {
-				return createModelLabelAssociationXAdapter();
-			}
-			@Override
 			public Adapter caseSelection(Selection object) {
 				return createSelectionAdapter();
 			}
@@ -174,6 +158,14 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createPageAdapter();
 			}
 			@Override
+			public Adapter caseFilter(Filter object) {
+				return createFilterAdapter();
+			}
+			@Override
+			public Adapter caseFilterParameter(FilterParameter object) {
+				return createFilterParameterAdapter();
+			}
+			@Override
 			public Adapter caseQuery(Query object) {
 				return createQueryAdapter();
 			}
@@ -182,20 +174,8 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createQueryParameterAdapter();
 			}
 			@Override
-			public Adapter caseQueryInstance(QueryInstance object) {
-				return createQueryInstanceAdapter();
-			}
-			@Override
-			public Adapter caseQueryActual(QueryActual object) {
-				return createQueryActualAdapter();
-			}
-			@Override
 			public Adapter caseUnitContainer(UnitContainer object) {
 				return createUnitContainerAdapter();
-			}
-			@Override
-			public Adapter caseUnitTitle(UnitTitle object) {
-				return createUnitTitleAdapter();
 			}
 			@Override
 			public Adapter caseContentUnit(ContentUnit object) {
@@ -526,62 +506,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelX <em>Model Label X</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelX
-	 * @generated
-	 */
-	public Adapter createModelLabelXAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelFeatureX <em>Model Label Feature X</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelFeatureX
-	 * @generated
-	 */
-	public Adapter createModelLabelFeatureXAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelElementX <em>Model Label Element X</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelElementX
-	 * @generated
-	 */
-	public Adapter createModelLabelElementXAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX <em>Model Label Association X</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX
-	 * @generated
-	 */
-	public Adapter createModelLabelAssociationXAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.Selection <em>Selection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -764,6 +688,34 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.Filter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.Filter
+	 * @generated
+	 */
+	public Adapter createFilterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FilterParameter <em>Filter Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.FilterParameter
+	 * @generated
+	 */
+	public Adapter createFilterParameterAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.Query <em>Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -792,34 +744,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.QueryInstance <em>Query Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.QueryInstance
-	 * @generated
-	 */
-	public Adapter createQueryInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.QueryActual <em>Query Actual</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.QueryActual
-	 * @generated
-	 */
-	public Adapter createQueryActualAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.UnitContainer <em>Unit Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -830,20 +754,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUnitContainerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.UnitTitle <em>Unit Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.UnitTitle
-	 * @generated
-	 */
-	public Adapter createUnitTitleAdapter() {
 		return null;
 	}
 

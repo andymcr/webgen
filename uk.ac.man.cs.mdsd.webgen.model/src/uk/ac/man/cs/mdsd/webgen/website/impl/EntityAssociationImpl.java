@@ -2,15 +2,21 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
+import java.util.Collection;
+import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -23,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getBidirectional <em>Bidirectional</em>}</li>
@@ -38,6 +45,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class EntityAssociationImpl extends EntityFeatureImpl implements EntityAssociation {
+	/**
+	 * The cached value of the '{@link #getEncapsulatedBy() <em>Encapsulated By</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEncapsulatedBy()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EncapsulatedAssociation> encapsulatedBy;
+
 	/**
 	 * The default value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -245,6 +262,18 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.ENTITY_ASSOCIATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<EncapsulatedAssociation> getEncapsulatedBy() {
+		if (encapsulatedBy == null) {
+			encapsulatedBy = new EObjectWithInverseResolvingEList<EncapsulatedAssociation>(EncapsulatedAssociation.class, this, WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY, WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION);
+		}
+		return encapsulatedBy;
 	}
 
 	/**
@@ -501,9 +530,12 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEncapsulatedBy()).basicAdd(otherEnd, msgs);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				if (targetEntity != null)
 					msgs = ((InternalEObject)targetEntity).eInverseRemove(this, WebsitePackage.ENTITY__ASSOCIATION_ENDS, Entity.class, msgs);
@@ -520,6 +552,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+				return ((InternalEList<?>)getEncapsulatedBy()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				return basicSetTargetEntity(null, msgs);
 		}
@@ -534,6 +568,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+				return getEncapsulatedBy();
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				return getInputClass();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
@@ -564,9 +600,14 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+				getEncapsulatedBy().clear();
+				getEncapsulatedBy().addAll((Collection<? extends EncapsulatedAssociation>)newValue);
+				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				setInputClass((String)newValue);
 				return;
@@ -609,6 +650,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+				getEncapsulatedBy().clear();
+				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
@@ -651,6 +695,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
+				return encapsulatedBy != null && !encapsulatedBy.isEmpty();
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
@@ -684,6 +730,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
+				case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
 				default: return -1;
 			}
@@ -700,6 +747,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
+				case WebsitePackage.ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS;
 				default: return -1;
 			}

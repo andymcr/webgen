@@ -420,18 +420,18 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3237"
-        editPartClassName="ModelLabelYEditPart"
-        itemSemanticEditPolicyClassName="ModelLabelYItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ModelLabelYCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ModelLabelYGraphicalNodeEditPolicy"
-        createCommandClassName="ModelLabelYCreateCommand"
+        visualID="3247"
+        editPartClassName="ModelLabelEditPart"
+        itemSemanticEditPolicyClassName="ModelLabelItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ModelLabelCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ModelLabelGraphicalNodeEditPolicy"
+        createCommandClassName="ModelLabelCreateCommand"
         containers="//@diagram/@compartments.4">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ModelLabelYEditHelper"/>
+          editHelperClassName="ModelLabelEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -447,16 +447,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/ModelLabelY"/>
+            href="website.genmodel#//website/ModelLabel"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/EntityOrView/displayLabels"/>
+            href="website.genmodel#//website/EntityOrView/labels"/>
         <childMetaFeature
-            href="website.genmodel#//website/EntityOrView/displayLabels"/>
+            href="website.genmodel#//website/EntityOrView/labels"/>
       </modelFacet>
       <labels
-          visualID="5244"
-          editPartClassName="ModelLabelYNameEditPart"
-          itemSemanticEditPolicyClassName="ModelLabelYNameItemSemanticEditPolicy"
+          visualID="5255"
+          editPartClassName="ModelLabelNameEditPart"
+          itemSemanticEditPolicyClassName="ModelLabelNameItemSemanticEditPolicy"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -473,12 +473,12 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3238"
-        editPartClassName="ModelLabelY2EditPart"
-        itemSemanticEditPolicyClassName="ModelLabelY2ItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ModelLabelY2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ModelLabelY2GraphicalNodeEditPolicy"
-        createCommandClassName="ModelLabelY2CreateCommand"
+        visualID="3248"
+        editPartClassName="ModelLabel2EditPart"
+        itemSemanticEditPolicyClassName="ModelLabel2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ModelLabel2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ModelLabel2GraphicalNodeEditPolicy"
+        createCommandClassName="ModelLabel2CreateCommand"
         containers="//@diagram/@compartments.6">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -500,16 +500,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/ModelLabelY"/>
+            href="website.genmodel#//website/ModelLabel"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/EntityOrView/displayLabels"/>
+            href="website.genmodel#//website/EntityOrView/labels"/>
         <childMetaFeature
-            href="website.genmodel#//website/EntityOrView/displayLabels"/>
+            href="website.genmodel#//website/EntityOrView/labels"/>
       </modelFacet>
       <labels
-          visualID="5245"
-          editPartClassName="ModelLabelYName2EditPart"
-          itemSemanticEditPolicyClassName="ModelLabelYName2ItemSemanticEditPolicy"
+          visualID="5256"
+          editPartClassName="ModelLabelName2EditPart"
+          itemSemanticEditPolicyClassName="ModelLabelName2ItemSemanticEditPolicy"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -6598,7 +6598,7 @@
         <childMetaFeature
             href="website.genmodel#//website/View/features"/>
         <targetMetaFeature
-            href="website.genmodel#//website/ViewAssociation/targetView"/>
+            href="website.genmodel#//website/ViewAssociation/opposite"/>
       </modelFacet>
     </links>
     <links
@@ -7612,10 +7612,6 @@
             title="Date field"
             description="Add a date field to an interface unit that is not associated with a persistent property"
             genNodes="//@diagram/@childNodes.16 //@diagram/@childNodes.24 //@diagram/@childNodes.29 //@diagram/@childNodes.67 //@diagram/@childNodes.81 //@diagram/@childNodes.90 //@diagram/@childNodes.101"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="View association X"
-            description="Add an view association to a service or an interface unit"/>
       </groups>
       <groups
           title="Menu"
@@ -8297,12 +8293,12 @@
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
-        child="//@diagram/@topLevelNodes.5"
+        child="//@diagram/@childNodes.11"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.5"
+        parent="//@diagram/@childNodes.11"
         child="//@diagram/@links.2"
         referenceType="in_source"
         groupName="incoming links"

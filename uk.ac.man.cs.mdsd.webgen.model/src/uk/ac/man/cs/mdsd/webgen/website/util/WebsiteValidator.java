@@ -120,14 +120,16 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateAttribute((Attribute)value, diagnostics, context);
 			case WebsitePackage.ASSOCIATION:
 				return validateAssociation((Association)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL_Y:
-				return validateModelLabelY((ModelLabelY)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL_FEATURE_Y:
-				return validateModelLabelFeatureY((ModelLabelFeatureY)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y:
-				return validateModelLabelAttributeY((ModelLabelAttributeY)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y:
-				return validateModelLabelAssociationY((ModelLabelAssociationY)value, diagnostics, context);
+			case WebsitePackage.LABEL:
+				return validateLabel((Label)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL:
+				return validateModelLabel((ModelLabel)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_FEATURE:
+				return validateModelLabelFeature((ModelLabelFeature)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_ATTRIBUTE:
+				return validateModelLabelAttribute((ModelLabelAttribute)value, diagnostics, context);
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION:
+				return validateModelLabelAssociation((ModelLabelAssociation)value, diagnostics, context);
 			case WebsitePackage.ENTITY:
 				return validateEntity((Entity)value, diagnostics, context);
 			case WebsitePackage.ENTITY_FEATURE:
@@ -172,14 +174,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateIncludedAssociation((IncludedAssociation)value, diagnostics, context);
 			case WebsitePackage.SERVICE:
 				return validateService((Service)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL:
-				return validateModelLabel((ModelLabel)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL_FEATURE:
-				return validateModelLabelFeature((ModelLabelFeature)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL_ELEMENT:
-				return validateModelLabelElement((ModelLabelElement)value, diagnostics, context);
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION:
-				return validateModelLabelAssociation((ModelLabelAssociation)value, diagnostics, context);
 			case WebsitePackage.SELECTION:
 				return validateSelection((Selection)value, diagnostics, context);
 			case WebsitePackage.SELECTION_PARAMETER:
@@ -208,20 +202,20 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateEditStaticTextMenuEntry((EditStaticTextMenuEntry)value, diagnostics, context);
 			case WebsitePackage.DYNAMIC_MENU:
 				return validateDynamicMenu((DynamicMenu)value, diagnostics, context);
+			case WebsitePackage.FILTER:
+				return validateFilter((Filter)value, diagnostics, context);
+			case WebsitePackage.FILTER_PARAMETER:
+				return validateFilterParameter((FilterParameter)value, diagnostics, context);
 			case WebsitePackage.QUERY:
 				return validateQuery((Query)value, diagnostics, context);
 			case WebsitePackage.QUERY_PARAMETER:
 				return validateQueryParameter((QueryParameter)value, diagnostics, context);
-			case WebsitePackage.QUERY_INSTANCE:
-				return validateQueryInstance((QueryInstance)value, diagnostics, context);
-			case WebsitePackage.QUERY_ACTUAL:
-				return validateQueryActual((QueryActual)value, diagnostics, context);
+			case WebsitePackage.SELECTABLE:
+				return validateSelectable((Selectable)value, diagnostics, context);
 			case WebsitePackage.UNIT_CONTAINER:
 				return validateUnitContainer((UnitContainer)value, diagnostics, context);
 			case WebsitePackage.UNIT_SOURCE:
 				return validateUnitSource((UnitSource)value, diagnostics, context);
-			case WebsitePackage.UNIT_TITLE:
-				return validateUnitTitle((UnitTitle)value, diagnostics, context);
 			case WebsitePackage.CONTENT_UNIT:
 				return validateContentUnit((ContentUnit)value, diagnostics, context);
 			case WebsitePackage.STATIC_UNIT:
@@ -294,8 +288,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateInlineActionContainer((InlineActionContainer)value, diagnostics, context);
 			case WebsitePackage.INLINE_ACTION:
 				return validateInlineAction((InlineAction)value, diagnostics, context);
-			case WebsitePackage.SELECT_TARGET:
-				return validateSelectTarget((SelectTarget)value, diagnostics, context);
 			case WebsitePackage.SELECT_ACTION:
 				return validateSelectAction((SelectAction)value, diagnostics, context);
 			case WebsitePackage.DELETE_ACTION:
@@ -968,6 +960,61 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateLabel(Label label, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(label, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelLabel(ModelLabel modelLabel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(modelLabel, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(modelLabel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(modelLabel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(modelLabel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(modelLabel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(modelLabel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(modelLabel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(modelLabel, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(modelLabel, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(modelLabel, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelLabelFeature(ModelLabelFeature modelLabelFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(modelLabelFeature, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelLabelAttribute(ModelLabelAttribute modelLabelAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(modelLabelAttribute, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelLabelAssociation(ModelLabelAssociation modelLabelAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(modelLabelAssociation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateAssociationWithoutContainment(AssociationWithoutContainment associationWithoutContainment, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(associationWithoutContainment, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(associationWithoutContainment, diagnostics, context);
@@ -1029,61 +1076,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(associationWithContainment, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(associationWithContainment, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateModelLabelY(ModelLabelY modelLabelY, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(modelLabelY, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(modelLabelY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(modelLabelY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(modelLabelY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(modelLabelY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(modelLabelY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(modelLabelY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(modelLabelY, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(modelLabelY, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(modelLabelY, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateModelLabelFeatureY(ModelLabelFeatureY modelLabelFeatureY, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(modelLabelFeatureY, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateModelLabelAttributeY(ModelLabelAttributeY modelLabelAttributeY, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(modelLabelAttributeY, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateModelLabelAssociationY(ModelLabelAssociationY modelLabelAssociationY, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(modelLabelAssociationY, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSelectTarget(SelectTarget selectTarget, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(selectTarget, diagnostics, context);
 	}
 
 	/**
@@ -1199,17 +1191,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateQuery(Query query, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(query, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(query, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(query, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(query, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(query, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(query, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(query, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(query, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(query, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(query, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(query, diagnostics, context);
 	}
 
 	/**
@@ -1218,17 +1200,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateQueryParameter(QueryParameter queryParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(queryParameter, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(queryParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(queryParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(queryParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(queryParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(queryParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(queryParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(queryParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(queryParameter, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(queryParameter, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(queryParameter, diagnostics, context);
 	}
 
 	/**
@@ -1236,17 +1208,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateQueryInstance(QueryInstance queryInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(queryInstance, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateQueryActual(QueryActual queryActual, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(queryActual, diagnostics, context);
+	public boolean validateSelectable(Selectable selectable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(selectable, diagnostics, context);
 	}
 
 	/**
@@ -1534,6 +1497,44 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateFilter(Filter filter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(filter, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(filter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(filter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(filter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(filter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(filter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(filter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(filter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(filter, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(filter, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFilterParameter(FilterParameter filterParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(filterParameter, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(filterParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(filterParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(filterParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(filterParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(filterParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(filterParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(filterParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(filterParameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(filterParameter, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validatePageLink(PageLink pageLink, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(pageLink, diagnostics, context);
 	}
@@ -1554,15 +1555,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 */
 	public boolean validateUnitSource(UnitSource unitSource, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(unitSource, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUnitTitle(UnitTitle unitTitle, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(unitTitle, diagnostics, context);
 	}
 
 	/**
@@ -1890,13 +1882,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SERVICE__FEATURES_MUST_BE_FROM_ENCAPSULATED__EEXPRESSION = "let features : Collection(Feature)\r\n" +
+	protected static final String SERVICE__FEATURES_MUST_BE_FROM_ENCAPSULATED__EEXPRESSION = "let encapsulatedFeatures : Collection(Feature)\r\n" +
 		"\t= let entities : Sequence(Entity)\r\n" +
 		"\t\t= encapsulates->select(e | e.oclIsTypeOf(Entity)).oclAsType(Entity)\r\n" +
-		"\t\tin entities->collect(e | e.features)->union(entities->collect(e | e.associationEnds))\r\n" +
-		"\t\t\t->union(encapsulates->select(v | v.oclIsTypeOf(View)).oclAsType(View)->collect(v | v.features))\r\n" +
+		"\t\tin entities->collect(e | e.features).oclAsType(Feature)\r\n" +
+		"\t\t\t->union(entities->collect(e | e.associationEnds).oclAsType(Feature))\r\n" +
+		"--\t\t\t->union(encapsulates->select(v | v.oclIsTypeOf(View)).oclAsType(View)\r\n" +
+		"--\t\t\t\t->collect(v | v.features).oclAsType(Feature))\r\n" +
 		"in features\r\n" +
-		"\t->forAll(f | features->includes(\r\n" +
+		"\t->forAll(f | encapsulatedFeatures->includes(\r\n" +
 		"\t\tif f.oclIsTypeOf(ServiceAttribute) then\r\n" +
 		"\t\t\tf.oclAsType(ServiceAttribute).attribute\r\n" +
 		"\t\telse\r\n" +
@@ -1922,52 +1916,6 @@ public class WebsiteValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateModelLabel(ModelLabel modelLabel, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(modelLabel, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(modelLabel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(modelLabel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(modelLabel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(modelLabel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(modelLabel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(modelLabel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(modelLabel, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(modelLabel, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(modelLabel, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateModelLabelFeature(ModelLabelFeature modelLabelFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(modelLabelFeature, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateModelLabelElement(ModelLabelElement modelLabelElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(modelLabelElement, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateModelLabelAssociation(ModelLabelAssociation modelLabelAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(modelLabelAssociation, diagnostics, context);
 	}
 
 	/**
@@ -2376,7 +2324,7 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t\tif useAssociationSource then\r\n" +
 		"\t\t\tassociation.oclAsType(ViewAssociation).cardinality = Cardinality::Required implies required\r\n" +
 		"\t\telse\r\n" +
-		"\t\t\tassociation.oclAsType(ViewAssociation).targetCardinality = Cardinality::Required implies required\r\n" +
+		"\t\t\tassociation.oclAsType(ViewAssociation).opposite.cardinality = Cardinality::Required implies required\r\n" +
 		"\t\tendif\r\n" +
 		"\telse if useAssociationSource then\r\n" +
 		"\t\tassociation.oclAsType(EntityAssociation).cardinality = Cardinality::Required implies required\r\n" +
@@ -2420,7 +2368,7 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t\tif useAssociationSource then\r\n" +
 		"\t\t\tassociation.oclAsType(ViewAssociation).cardinality <> Cardinality::Many\r\n" +
 		"\t\telse\r\n" +
-		"\t\t\tassociation.oclAsType(ViewAssociation).targetCardinality <> Cardinality::Many\r\n" +
+		"\t\t\tassociation.oclAsType(ViewAssociation).opposite.cardinality <> Cardinality::Many\r\n" +
 		"\t\tendif\r\n" +
 		"\telse if useAssociationSource then\r\n" +
 		"\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n" +
@@ -3188,7 +3136,7 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t\t\t\tin if association.useAssociationSource then\r\n" +
 		"\t\t\t\t\t\tviewAssociation.cardinality <> Cardinality::Many\r\n" +
 		"\t\t\t\t\telse\r\n" +
-		"\t\t\t\t\t\tviewAssociation.targetCardinality <> Cardinality::Many\r\n" +
+		"\t\t\t\t\t\tviewAssociation.opposite.cardinality <> Cardinality::Many\r\n" +
 		"\t\t\t\t\tendif\r\n" +
 		"\t\t\telse\r\n" +
 		"\t\t\t\tlet entityAssociation : EntityAssociation = association.association.oclAsType(EntityAssociation)\r\n" +

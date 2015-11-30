@@ -89,7 +89,6 @@ public class ServiceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.SERVICE__DISPLAY_LABELS);
 			childrenFeatures.add(WebsitePackage.Literals.SERVICE__SELECTIONS);
 			childrenFeatures.add(WebsitePackage.Literals.SERVICE__FEATURES);
 		}
@@ -146,7 +145,6 @@ public class ServiceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Service.class)) {
-			case WebsitePackage.SERVICE__DISPLAY_LABELS:
 			case WebsitePackage.SERVICE__SELECTIONS:
 			case WebsitePackage.SERVICE__FEATURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -165,11 +163,6 @@ public class ServiceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.SERVICE__DISPLAY_LABELS,
-				 WebsiteFactory.eINSTANCE.createModelLabel()));
 
 		newChildDescriptors.add
 			(createChildParameter

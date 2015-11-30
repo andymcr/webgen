@@ -33,12 +33,12 @@ public interface SelectAction extends InlineAction {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
-	 * @see #setTarget(SelectTarget)
+	 * @see #setTarget(Selectable)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelectAction_Target()
 	 * @model required="true"
 	 * @generated
 	 */
-	SelectTarget getTarget();
+	Selectable getTarget();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.SelectAction#getTarget <em>Target</em>}' reference.
@@ -48,6 +48,6 @@ public interface SelectAction extends InlineAction {
 	 * @see #getTarget()
 	 * @generated
 	 */
-	void setTarget(SelectTarget value);
+	void setTarget(Selectable value);
 
 } // SelectAction

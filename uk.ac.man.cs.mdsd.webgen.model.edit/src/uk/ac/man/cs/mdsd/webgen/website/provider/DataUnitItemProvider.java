@@ -9,8 +9,9 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -18,10 +19,10 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -54,7 +55,7 @@ public class DataUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDefaultSelectionPropertyDescriptor(object);
-			addDynamicTitlePropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,6 +83,42 @@ public class DataUnitItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_DataUnit_title_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DataUnit_title_feature", "_UI_DataUnit_type"),
+			WebsitePackage.Literals.DATA_UNIT__TITLE,
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof DataUnit) {
+						final DataUnit unit = (DataUnit) object;
+						final Set<Label> labels = new HashSet<Label>();
+						labels.addAll(getSourceAttributes(unit));
+						if (unit.getSource() instanceof EntityOrView) {
+							labels.addAll(((EntityOrView) unit.getSource()).getLabels());
+						} else {
+							for (EntityOrView entityOrView : ((Service) unit.getSource()).getEncapsulates()) {
+								labels.addAll(entityOrView.getLabels());
+							}
+						}
+						return labels;
+					}
+					return Collections.emptyList();
+				}
+		});
+	}
+
+	/**
 	 * This adds a property descriptor for the Selection feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,42 +142,6 @@ public class DataUnitItemProvider
 					return Collections.emptyList();
 				}
 		});
-	}
-
-	/**
-	 * This adds a property descriptor for the Dynamic Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addDynamicTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_DataUnit_dynamicTitle_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_DataUnit_dynamicTitle_feature", "_UI_DataUnit_type"),
-				 WebsitePackage.Literals.DATA_UNIT__DYNAMIC_TITLE,
-				true, false, true, null,
-				getString("_UI_InterfacePropertyCategory"),
-				null) {
-					@Override
-					public Collection<?> getChoiceOfValues(Object object) {
-						if (object instanceof DataUnit) {
-							final DataUnit unit = (DataUnit) object;
-							final List<UnitTitle> labels = new LinkedList<UnitTitle>();
-							for (Attribute attribute : getSourceAttributes(unit)) {
-								if (attribute instanceof Attribute) {
-									labels.add((UnitTitle) attribute);
-								}
-							}
-							if (unit.getSource() instanceof Service) {
-								labels.addAll(((Service) unit.getSource()).getDisplayLabels());
-							}
-							return labels;
-						}
-						return Collections.emptyList();
-					}
-			});
 	}
 
 	/**

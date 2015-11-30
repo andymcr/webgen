@@ -187,75 +187,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabelX} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelXItemProvider modelLabelXItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelX}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelXAdapter() {
-		if (modelLabelXItemProvider == null) {
-			modelLabelXItemProvider = new ModelLabelXItemProvider(this);
-		}
-
-		return modelLabelXItemProvider;
-	}
-
-		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabelElementX} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelElementXItemProvider modelLabelElementXItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelElementX}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelElementXAdapter() {
-		if (modelLabelElementXItemProvider == null) {
-			modelLabelElementXItemProvider = new ModelLabelElementXItemProvider(this);
-		}
-
-		return modelLabelElementXItemProvider;
-	}
-
-		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelAssociationXItemProvider modelLabelAssociationXItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ModelLabelAssociationX}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelAssociationXAdapter() {
-		if (modelLabelAssociationXItemProvider == null) {
-			modelLabelAssociationXItemProvider = new ModelLabelAssociationXItemProvider(this);
-		}
-
-		return modelLabelAssociationXItemProvider;
-	}
-
-		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Selection} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -515,6 +446,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Filter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FilterItemProvider filterItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Filter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFilterAdapter() {
+		if (filterItemProvider == null) {
+			filterItemProvider = new FilterItemProvider(this);
+		}
+
+		return filterItemProvider;
+	}
+
+		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.FilterParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FilterParameterItemProvider filterParameterItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.FilterParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFilterParameterAdapter() {
+		if (filterParameterItemProvider == null) {
+			filterParameterItemProvider = new FilterParameterItemProvider(this);
+		}
+
+		return filterParameterItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Query} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -558,52 +535,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return queryParameterItemProvider;
-	}
-
-		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.QueryInstance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected QueryInstanceItemProvider queryInstanceItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.QueryInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createQueryInstanceAdapter() {
-		if (queryInstanceItemProvider == null) {
-			queryInstanceItemProvider = new QueryInstanceItemProvider(this);
-		}
-
-		return queryInstanceItemProvider;
-	}
-
-		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.QueryActual} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected QueryActualItemProvider queryActualItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.QueryActual}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createQueryActualAdapter() {
-		if (queryActualItemProvider == null) {
-			queryActualItemProvider = new QueryActualItemProvider(this);
-		}
-
-		return queryActualItemProvider;
 	}
 
 		/**
@@ -1437,9 +1368,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
-		if (modelLabelXItemProvider != null) modelLabelXItemProvider.dispose();
-		if (modelLabelElementXItemProvider != null) modelLabelElementXItemProvider.dispose();
-		if (modelLabelAssociationXItemProvider != null) modelLabelAssociationXItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
 		if (serviceFeatureItemProvider != null) serviceFeatureItemProvider.dispose();
@@ -1451,10 +1379,10 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (fixedCommandMenuEntryItemProvider != null) fixedCommandMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
 		if (pageItemProvider != null) pageItemProvider.dispose();
+		if (filterItemProvider != null) filterItemProvider.dispose();
+		if (filterParameterItemProvider != null) filterParameterItemProvider.dispose();
 		if (queryItemProvider != null) queryItemProvider.dispose();
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
-		if (queryInstanceItemProvider != null) queryInstanceItemProvider.dispose();
-		if (queryActualItemProvider != null) queryActualItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (commandUnitItemProvider != null) commandUnitItemProvider.dispose();
 		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();

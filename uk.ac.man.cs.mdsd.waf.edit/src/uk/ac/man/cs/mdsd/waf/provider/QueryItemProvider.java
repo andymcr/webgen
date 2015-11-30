@@ -12,10 +12,13 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
+
 import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -26,8 +29,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class QueryItemProvider 
-	extends NamedElementItemProvider {
+public class QueryItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -49,25 +51,25 @@ public class QueryItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSelectionPropertyDescriptor(object);
+			addQueryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Selection feature.
+	 * This adds a property descriptor for the Query feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSelectionPropertyDescriptor(Object object) {
+	protected void addQueryPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Query_selection_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Query_selection_feature", "_UI_Query_type"),
-				 WafPackage.Literals.QUERY__SELECTION,
+				 getString("_UI_Query_query_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Query_query_feature", "_UI_Query_type"),
+				 WafPackage.Literals.QUERY__QUERY,
 				 true,
 				 false,
 				 true,
@@ -88,7 +90,7 @@ public class QueryItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.QUERY__PARAMETERS);
+			childrenFeatures.add(WafPackage.Literals.QUERY__ACTUALS);
 		}
 		return childrenFeatures;
 	}
@@ -144,7 +146,7 @@ public class QueryItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Query.class)) {
-			case WafPackage.QUERY__PARAMETERS:
+			case WafPackage.QUERY__ACTUALS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -164,7 +166,7 @@ public class QueryItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.QUERY__PARAMETERS,
+				(WafPackage.Literals.QUERY__ACTUALS,
 				 WafFactory.eINSTANCE.createQueryParameter()));
 	}
 

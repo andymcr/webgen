@@ -5,7 +5,6 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -14,11 +13,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -49,41 +47,58 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addServiceFeaturePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addAssociationPropertyDescriptor(object);
 			addDynamicLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Service Feature feature.
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelLabelAssociation_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_name_feature", "_UI_ModelLabelAssociation_type"),
+				 WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Association feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addServiceFeaturePropertyDescriptor(Object object) {
+	protected void addAssociationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_ModelLabelAssociation_serviceFeature_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_serviceFeature_feature", "_UI_ModelLabelAssociation_type"),
-			WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__SERVICE_FEATURE,
+			getString("_UI_ModelLabelAssociation_association_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_association_feature", "_UI_ModelLabelAssociation_type"),
+			WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__ASSOCIATION,
 			true, false, true, null,
 			getString("_UI_InterfacePropertyCategory"),
 			null) {
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof ModelLabelAssociation) {
-					final List<ServiceAssociation> features = new LinkedList<ServiceAssociation>();
 					final ModelLabel label = (ModelLabel) ((EObject) object).eContainer();
-					for (ServiceFeature feature : label.getLabelFor().getFeatures()) {
-						if (feature instanceof ServiceAssociation) {
-							features.add((ServiceAssociation) feature);
-						}
-					}
-					
-					return features;
+					return getAssociations(label.getLabelFor());
 				}
+
 				return Collections.emptyList();
 			}
 		});
@@ -93,22 +108,34 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	 * This adds a property descriptor for the Dynamic Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addDynamicLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelLabelAssociation_dynamicLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_dynamicLabel_feature", "_UI_ModelLabelAssociation_type"),
-				 WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_ModelLabelAssociation_dynamicLabel_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_dynamicLabel_feature", "_UI_ModelLabelAssociation_type"),
+			WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL,
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				if (object instanceof ModelLabelAssociation) {
+					final ModelLabelAssociation label = (ModelLabelAssociation) object;
+					if (label.getAssociation() != null) {
+						if (label.isUseAssociationSource()) {
+							return label.getAssociation().getTargetEntity().getLabels();
+						} else {
+							return label.getAssociation().getPartOf().getLabels();
+						}
+					}
+				}
+
+				return Collections.emptyList();
+			}
+		});
 	}
 
 	/**
@@ -130,7 +157,10 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ModelLabelAssociation_type");
+		String label = ((ModelLabelAssociation)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ModelLabelAssociation_type") :
+			getString("_UI_ModelLabelAssociation_type") + " " + label;
 	}
 	
 
@@ -144,6 +174,13 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ModelLabelAssociation.class)) {
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION__NAME:
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

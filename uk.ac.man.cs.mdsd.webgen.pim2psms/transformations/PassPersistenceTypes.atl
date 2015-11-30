@@ -22,7 +22,7 @@ helper context Website!Association def: featureTypeNoted(noted : Set(Website!Fea
 			and e.ordered = self.ordered);
 
 helper context Website!Association def: inverseFeatureTypeNoted(noted : Set(Website!Feature)) : Boolean
-	= noted->exists(e | e.parentEntity = self.parentEntity 
+	= noted->exists(e | e.partOf = self.partOf 
 			and e.targetUnique = self.targetUnique);
 
 
@@ -133,7 +133,7 @@ lazy rule CollectionType {
 lazy rule InverseCollectionType {
 	from website: Website!Feature
 	to orm : ORM!CollectionType (
-		elementType <- website.parentEntity,
+		elementType <- website.partOf,
 		collectionType <- website.inverseCollectionType()
 	)
 	do {
@@ -146,6 +146,7 @@ lazy rule InverseCollectionType {
 abstract rule EntityOrView {
 	from website : Website!EntityOrView
 	to orm : ORM!EntityOrView (
+		autoKeyName <- 'id',
 		tableName <- 
 			if not website.tableName.oclIsUndefined() and website.tableName <> '' then
 				website.tableName
@@ -159,8 +160,6 @@ abstract rule EntityOrView {
 rule Entity {
 	from website : Website!Entity
 	to orm : ORM!Entity (
-		keys <- website.keys,
-		autoKeyName <- 'id'
 	)
 }
 

@@ -19,6 +19,7 @@ import uk.ac.man.cs.mdsd.orm.Cardinality
 import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.DateDetails
 import uk.ac.man.cs.mdsd.orm.EntityOrView
+import uk.ac.man.cs.mdsd.orm.Label
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
@@ -110,27 +111,10 @@ interface IncludedAssociation extends IncludedFeature {
 
 
 class Service extends NamedElement {
-	refers EntityOrView[] encapsulates
+	refers EntityOrView[1..*] encapsulates
 	contains Selection[] selections
 	contains ServiceFeature[] features opposite partOf
 	refers DynamicUnit[] accessedBy opposite service
-}
-
-class ModelLabelX extends NamedElement, UnitTitle {
-	String[1] format
-	contains ModelLabelFeatureX[] features
-}
-
-abstract class ModelLabelFeatureX {
-}
-
-class ModelLabelElementX extends ModelLabelFeatureX {
-	refers ServiceAttribute[1] serviceFeature
-}
-
-class ModelLabelAssociationX extends ModelLabelFeatureX {
-	refers ServiceAssociation[1] serviceFeature
-	refers ModelLabelX dynamicLabel
 }
 
 class Selection extends NamedElement {
@@ -150,9 +134,7 @@ class ServiceFeature extends NamedDisplayElement, IncludedFeature {
 	Cardinality cardinality
 }
 
-class ServiceAttribute extends ServiceFeature, IncludedAttribute, UnitTitle {
-	boolean caseInsensitive
-	boolean encrypt
+class ServiceAttribute extends ServiceFeature, IncludedAttribute {
 	String interfaceType
 	String placeholder
 	String validationPattern
@@ -186,7 +168,7 @@ abstract class MenuEntry {
 
 class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	refers DynamicUnit[1] action
-	contains QueryInstance query
+	contains Query query
 }
 
 // Remove  need for this
@@ -215,32 +197,29 @@ class Page extends NamedDisplayElement, UnitContainer {
 	String styleClass
 }
 
-class Query extends NamedElement {
-	contains QueryParameter[] parameters
+class Filter extends NamedElement {
+	contains FilterParameter[] parameters
 	refers Selection selection
 }
 
-class QueryParameter extends NamedElement {
-	refers SelectionParameter parameter
+class FilterParameter extends NamedElement {
+	refers SelectionParameter formal
 	refers DataType dataType
 	String defaultValue = ''
 }
 
-class QueryInstance extends NamedElement {
-	refers Query[1] query
-	contains QueryActual[] actuals
+class Query extends NamedElement {
+	refers Filter[1] query
+	contains QueryParameter[] actuals
 }
 
-class QueryActual extends NamedElement {
-	refers QueryParameter[1] parameter
+class QueryParameter extends NamedElement {
+	refers FilterParameter[1] formal
 	String value
 }
 
 interface UnitContainer {
 	contains ContentUnit[] units opposite displayedOn
-}
-
-interface UnitTitle {
 }
 
 abstract class ContentUnit extends NamedDisplayElement {
@@ -270,7 +249,6 @@ abstract class Command extends NamedElement {
 
 abstract class DynamicUnit extends ContentUnit {
 	refers Service[1] service opposite accessedBy
-	contains Query[] queries
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
 	String header
@@ -315,9 +293,9 @@ class UnitAssociation extends UnitFeature, IncludedAssociation, UnitContainer {
 	refers ServiceAssociation[1] serviceFeature
 	contains UnitChildFeature childFeature
 	refers Selection selection
-	refers ModelLabelX dynamicLabel
-	// ???
-	refers ModelLabelX[] filters
+	refers Label label
+	// for selecting inputs
+	refers Label[] filters
 }
 
 abstract class UnitChildFeature {
@@ -380,7 +358,7 @@ class UpdateUnit extends EditUnit, SelectTarget {
 
 abstract class DataUnit extends DynamicUnit {
 	refers Selection defaultSelection
-	refers UnitTitle dynamicTitle
+	refers Label title
 }
 
 class DetailsUnit extends DataUnit, SelectTarget {
@@ -389,7 +367,8 @@ class DetailsUnit extends DataUnit, SelectTarget {
 
 abstract class IndexUnit extends DataUnit, InlineActionContainer {
 	boolean omitColumnLabels
-	refers Query paginationQuery
+	contains Filter[] filters
+	refers Filter pagination
 	int defaultPaginationSize
 	String nextPageLabel = ">"
 	String previousPageLabel = "<"

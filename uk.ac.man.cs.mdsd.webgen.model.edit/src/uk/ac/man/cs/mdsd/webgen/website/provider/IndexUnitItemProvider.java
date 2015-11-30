@@ -55,7 +55,7 @@ public class IndexUnitItemProvider
 
 			addDisplayOptionPropertyDescriptor(object);
 			addOmitColumnLabelsPropertyDescriptor(object);
-			addPaginationQueryPropertyDescriptor(object);
+			addPaginationPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
 			addPreviousPageLabelPropertyDescriptor(object);
@@ -114,25 +114,25 @@ public class IndexUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Pagination Query feature.
+	 * This adds a property descriptor for the Pagination feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addPaginationQueryPropertyDescriptor(Object object) {
+	protected void addPaginationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_IndexUnit_paginationQuery_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_paginationQuery_feature", "_UI_IndexUnit_type"),
-			WebsitePackage.Literals.INDEX_UNIT__PAGINATION_QUERY,
+			getString("_UI_IndexUnit_pagination_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_pagination_feature", "_UI_IndexUnit_type"),
+			WebsitePackage.Literals.INDEX_UNIT__PAGINATION,
 			true, false, true, null,
 			getString("_UI_InterfacePropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof IndexUnit) {
-						return ((IndexUnit) object).getQueries();
+						return ((IndexUnit) object).getFilters();
 					}
 					return Collections.emptyList();
 				}
@@ -350,6 +350,7 @@ public class IndexUnitItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
+			childrenFeatures.add(WebsitePackage.Literals.INDEX_UNIT__FILTERS);
 		}
 		return childrenFeatures;
 	}
@@ -418,6 +419,7 @@ public class IndexUnitItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
+			case WebsitePackage.INDEX_UNIT__FILTERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -449,6 +451,11 @@ public class IndexUnitItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
 				 WebsiteFactory.eINSTANCE.createFeatureSupportAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.INDEX_UNIT__FILTERS,
+				 WebsiteFactory.eINSTANCE.createFilter()));
 	}
 
 }

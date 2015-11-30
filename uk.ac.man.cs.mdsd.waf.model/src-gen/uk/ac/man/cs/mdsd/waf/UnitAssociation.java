@@ -4,6 +4,8 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.common.util.EList;
 
+import uk.ac.man.cs.mdsd.orm.Label;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Unit Association</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getServiceFeature <em>Service Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getDynamicLabel <em>Dynamic Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getLabel <em>Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getFilters <em>Filters</em>}</li>
  * </ul>
  *
@@ -104,34 +106,34 @@ public interface UnitAssociation extends UnitFeature, IncludedAssociation, UnitC
 	void setSelection(Selection value);
 
 	/**
-	 * Returns the value of the '<em><b>Dynamic Label</b></em>' reference.
+	 * Returns the value of the '<em><b>Label</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dynamic Label</em>' reference isn't clear,
+	 * If the meaning of the '<em>Label</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dynamic Label</em>' reference.
-	 * @see #setDynamicLabel(ModelLabelX)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_DynamicLabel()
+	 * @return the value of the '<em>Label</em>' reference.
+	 * @see #setLabel(Label)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_Label()
 	 * @model
 	 * @generated
 	 */
-	ModelLabelX getDynamicLabel();
+	Label getLabel();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getDynamicLabel <em>Dynamic Label</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getLabel <em>Label</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dynamic Label</em>' reference.
-	 * @see #getDynamicLabel()
+	 * @param value the new value of the '<em>Label</em>' reference.
+	 * @see #getLabel()
 	 * @generated
 	 */
-	void setDynamicLabel(ModelLabelX value);
+	void setLabel(Label value);
 
 	/**
 	 * Returns the value of the '<em><b>Filters</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ModelLabelX}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.Label}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Filters</em>' reference list isn't clear,
@@ -143,6 +145,6 @@ public interface UnitAssociation extends UnitFeature, IncludedAssociation, UnitC
 	 * @model
 	 * @generated
 	 */
-	EList<ModelLabelX> getFilters();
+	EList<Label> getFilters();
 
 } // UnitAssociation

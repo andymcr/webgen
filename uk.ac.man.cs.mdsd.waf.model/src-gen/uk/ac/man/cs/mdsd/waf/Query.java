@@ -15,8 +15,8 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Query#getParameters <em>Parameters</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Query#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Query#getQuery <em>Query</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Query#getActuals <em>Actuals</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQuery()
@@ -25,45 +25,45 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  */
 public interface Query extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Query</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Query</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Query</em>' reference.
+	 * @see #setQuery(Filter)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQuery_Query()
+	 * @model required="true"
+	 * @generated
+	 */
+	Filter getQuery();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Query#getQuery <em>Query</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Query</em>' reference.
+	 * @see #getQuery()
+	 * @generated
+	 */
+	void setQuery(Filter value);
+
+	/**
+	 * Returns the value of the '<em><b>Actuals</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.QueryParameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Actuals</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQuery_Parameters()
+	 * @return the value of the '<em>Actuals</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQuery_Actuals()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<QueryParameter> getParameters();
-
-	/**
-	 * Returns the value of the '<em><b>Selection</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Selection</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selection</em>' reference.
-	 * @see #setSelection(Selection)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQuery_Selection()
-	 * @model
-	 * @generated
-	 */
-	Selection getSelection();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Query#getSelection <em>Selection</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Selection</em>' reference.
-	 * @see #getSelection()
-	 * @generated
-	 */
-	void setSelection(Selection value);
+	EList<QueryParameter> getActuals();
 
 } // Query

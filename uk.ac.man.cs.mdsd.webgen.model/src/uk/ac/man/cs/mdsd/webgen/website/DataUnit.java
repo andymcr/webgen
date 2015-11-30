@@ -18,7 +18,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataUnit#getDefaultSelection <em>Default Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataUnit#getDynamicTitle <em>Dynamic Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DataUnit#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDataUnit()
@@ -56,29 +56,29 @@ public interface DataUnit extends DynamicUnit {
 	void setDefaultSelection(Selection value);
 
 	/**
-	 * Returns the value of the '<em><b>Dynamic Title</b></em>' reference.
+	 * Returns the value of the '<em><b>Title</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dynamic Title</em>' reference isn't clear,
+	 * If the meaning of the '<em>Title</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dynamic Title</em>' reference.
-	 * @see #setDynamicTitle(UnitTitle)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDataUnit_DynamicTitle()
+	 * @return the value of the '<em>Title</em>' reference.
+	 * @see #setTitle(Label)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDataUnit_Title()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	UnitTitle getDynamicTitle();
+	Label getTitle();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DataUnit#getDynamicTitle <em>Dynamic Title</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DataUnit#getTitle <em>Title</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dynamic Title</em>' reference.
-	 * @see #getDynamicTitle()
+	 * @param value the new value of the '<em>Title</em>' reference.
+	 * @see #getTitle()
 	 * @generated
 	 */
-	void setDynamicTitle(UnitTitle value);
+	void setTitle(Label value);
 
 } // DataUnit

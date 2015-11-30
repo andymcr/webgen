@@ -16,7 +16,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -48,9 +50,37 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addKeysPropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Keys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addKeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_EntityOrView_keys_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_keys_feature", "_UI_EntityOrView_type"),
+			WebsitePackage.Literals.ENTITY_OR_VIEW__KEYS,
+			true, false, true, null,
+			getString("_UI_PersistencePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof Entity) {
+						return ((Entity) object).getFeatures();
+					} else {
+						return ((View) object).getFeatures();
+					}
+				}
+			});
 	}
 
 	/**
@@ -87,7 +117,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.ENTITY_OR_VIEW__DISPLAY_LABELS);
+			childrenFeatures.add(WebsitePackage.Literals.ENTITY_OR_VIEW__LABELS);
 		}
 		return childrenFeatures;
 	}
@@ -135,7 +165,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebsitePackage.ENTITY_OR_VIEW__DISPLAY_LABELS:
+			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -155,8 +185,8 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.ENTITY_OR_VIEW__DISPLAY_LABELS,
-				 WebsiteFactory.eINSTANCE.createModelLabelY()));
+				(WebsitePackage.Literals.ENTITY_OR_VIEW__LABELS,
+				 WebsiteFactory.eINSTANCE.createModelLabel()));
 	}
 
 }

@@ -24,7 +24,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getColumnName <em>Column Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getFooterClass <em>Footer Class</em>}</li>
@@ -34,26 +33,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature {
-	/**
-	 * The default value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColumnName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COLUMN_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColumnName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String columnName = COLUMN_NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getHeaderClass() <em>Header Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -131,27 +110,6 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.VIEW_FEATURE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getColumnName() {
-		return columnName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setColumnName(String newColumnName) {
-		String oldColumnName = columnName;
-		columnName = newColumnName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__COLUMN_NAME, oldColumnName, columnName));
 	}
 
 	/**
@@ -310,8 +268,6 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.VIEW_FEATURE__COLUMN_NAME:
-				return getColumnName();
 			case WebsitePackage.VIEW_FEATURE__HEADER_CLASS:
 				return getHeaderClass();
 			case WebsitePackage.VIEW_FEATURE__DISPLAY_CLASS:
@@ -332,9 +288,6 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.VIEW_FEATURE__COLUMN_NAME:
-				setColumnName((String)newValue);
-				return;
 			case WebsitePackage.VIEW_FEATURE__HEADER_CLASS:
 				setHeaderClass((String)newValue);
 				return;
@@ -359,9 +312,6 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.VIEW_FEATURE__COLUMN_NAME:
-				setColumnName(COLUMN_NAME_EDEFAULT);
-				return;
 			case WebsitePackage.VIEW_FEATURE__HEADER_CLASS:
 				setHeaderClass(HEADER_CLASS_EDEFAULT);
 				return;
@@ -386,8 +336,6 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.VIEW_FEATURE__COLUMN_NAME:
-				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
 			case WebsitePackage.VIEW_FEATURE__HEADER_CLASS:
 				return HEADER_CLASS_EDEFAULT == null ? headerClass != null : !HEADER_CLASS_EDEFAULT.equals(headerClass);
 			case WebsitePackage.VIEW_FEATURE__DISPLAY_CLASS:
@@ -410,9 +358,7 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (columnName: ");
-		result.append(columnName);
-		result.append(", headerClass: ");
+		result.append(" (headerClass: ");
 		result.append(headerClass);
 		result.append(", displayClass: ");
 		result.append(displayClass);

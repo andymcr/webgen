@@ -53,7 +53,7 @@ public class DetailsUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSelectionFeaturesPropertyDescriptor(object);
+			addParametersPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addLayoutClassPropertyDescriptor(object);
@@ -62,18 +62,18 @@ public class DetailsUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Selection Feature feature.
+	 * This adds a property descriptor for the Parameters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addSelectionFeaturesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+	protected void addParametersPropertyDescriptor(Object object) {
+	itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_SelectTarget_selectionFeatures_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_selectionFeatures_feature", "_UI_SelectTarget_type"),
-			 WebsitePackage.Literals.SELECT_TARGET__SELECTION_FEATURES,
+			getString("_UI_Selectable_parameters_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Selectable_parameters_feature", "_UI_Selectable_type"),
+			 WebsitePackage.Literals.SELECTABLE__PARAMETERS,
 			true, false, true, null,
 			getString("_UI_NavigationPropertyCategory"),
 			null) {

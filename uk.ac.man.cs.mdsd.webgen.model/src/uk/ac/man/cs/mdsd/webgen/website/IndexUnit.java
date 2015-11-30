@@ -6,6 +6,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import java.util.List;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +20,8 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getDisplayOption <em>Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPaginationQuery <em>Pagination Query</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getFilters <em>Filters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPreviousPageLabel <em>Previous Page Label</em>}</li>
@@ -93,30 +96,46 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	void setOmitColumnLabels(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Pagination Query</b></em>' reference.
+	 * Returns the value of the '<em><b>Filters</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Filter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Pagination Query</em>' reference isn't clear,
+	 * If the meaning of the '<em>Filters</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pagination Query</em>' reference.
-	 * @see #setPaginationQuery(Query)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_PaginationQuery()
+	 * @return the value of the '<em>Filters</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_Filters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	List<Filter> getFilters();
+
+	/**
+	 * Returns the value of the '<em><b>Pagination</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pagination</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pagination</em>' reference.
+	 * @see #setPagination(Filter)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_Pagination()
 	 * @model
 	 * @generated
 	 */
-	Query getPaginationQuery();
+	Filter getPagination();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPaginationQuery <em>Pagination Query</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPagination <em>Pagination</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Pagination Query</em>' reference.
-	 * @see #getPaginationQuery()
+	 * @param value the new value of the '<em>Pagination</em>' reference.
+	 * @see #getPagination()
 	 * @generated
 	 */
-	void setPaginationQuery(Query value);
+	void setPagination(Filter value);
 
 	/**
 	 * Returns the value of the '<em><b>Default Pagination Size</b></em>' attribute.

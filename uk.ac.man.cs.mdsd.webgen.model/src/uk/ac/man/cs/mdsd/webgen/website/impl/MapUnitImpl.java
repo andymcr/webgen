@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
-import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
+import uk.ac.man.cs.mdsd.webgen.website.Selectable;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -27,7 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getSelectionFeatures <em>Selection Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#isReadOnly <em>Read Only</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getDefaultZoomLevel <em>Default Zoom Level</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getStyleClass <em>Style Class</em>}</li>
@@ -39,14 +39,14 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  */
 public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	/**
-	 * The cached value of the '{@link #getSelectionFeatures() <em>Selection Features</em>}' reference list.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSelectionFeatures()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntityAttribute> selectionFeatures;
+	protected EList<EntityAttribute> parameters;
 
 	/**
 	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
@@ -152,11 +152,11 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<EntityAttribute> getSelectionFeatures() {
-		if (selectionFeatures == null) {
-			selectionFeatures = new EObjectResolvingEList<EntityAttribute>(EntityAttribute.class, this, WebsitePackage.MAP_UNIT__SELECTION_FEATURES);
+	public List<EntityAttribute> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectResolvingEList<EntityAttribute>(EntityAttribute.class, this, WebsitePackage.MAP_UNIT__PARAMETERS);
 		}
-		return selectionFeatures;
+		return parameters;
 	}
 
 	/**
@@ -306,8 +306,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.MAP_UNIT__SELECTION_FEATURES:
-				return getSelectionFeatures();
+			case WebsitePackage.MAP_UNIT__PARAMETERS:
+				return getParameters();
 			case WebsitePackage.MAP_UNIT__READ_ONLY:
 				return isReadOnly();
 			case WebsitePackage.MAP_UNIT__DEFAULT_ZOOM_LEVEL:
@@ -333,9 +333,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.MAP_UNIT__SELECTION_FEATURES:
-				getSelectionFeatures().clear();
-				getSelectionFeatures().addAll((Collection<? extends EntityAttribute>)newValue);
+			case WebsitePackage.MAP_UNIT__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends EntityAttribute>)newValue);
 				return;
 			case WebsitePackage.MAP_UNIT__READ_ONLY:
 				setReadOnly((Boolean)newValue);
@@ -364,8 +364,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.MAP_UNIT__SELECTION_FEATURES:
-				getSelectionFeatures().clear();
+			case WebsitePackage.MAP_UNIT__PARAMETERS:
+				getParameters().clear();
 				return;
 			case WebsitePackage.MAP_UNIT__READ_ONLY:
 				setReadOnly(READ_ONLY_EDEFAULT);
@@ -394,8 +394,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.MAP_UNIT__SELECTION_FEATURES:
-				return selectionFeatures != null && !selectionFeatures.isEmpty();
+			case WebsitePackage.MAP_UNIT__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 			case WebsitePackage.MAP_UNIT__READ_ONLY:
 				return readOnly != READ_ONLY_EDEFAULT;
 			case WebsitePackage.MAP_UNIT__DEFAULT_ZOOM_LEVEL:
@@ -417,9 +417,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == SelectTarget.class) {
+		if (baseClass == Selectable.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.MAP_UNIT__SELECTION_FEATURES: return WebsitePackage.SELECT_TARGET__SELECTION_FEATURES;
+				case WebsitePackage.MAP_UNIT__PARAMETERS: return WebsitePackage.SELECTABLE__PARAMETERS;
 				default: return -1;
 			}
 		}
@@ -433,9 +433,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == SelectTarget.class) {
+		if (baseClass == Selectable.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.SELECT_TARGET__SELECTION_FEATURES: return WebsitePackage.MAP_UNIT__SELECTION_FEATURES;
+				case WebsitePackage.SELECTABLE__PARAMETERS: return WebsitePackage.MAP_UNIT__PARAMETERS;
 				default: return -1;
 			}
 		}

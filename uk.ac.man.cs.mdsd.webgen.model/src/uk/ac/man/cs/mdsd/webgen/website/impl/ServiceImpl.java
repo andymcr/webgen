@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
@@ -37,7 +36,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getEncapsulates <em>Encapsulates</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getDisplayLabels <em>Display Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getFeatures <em>Features</em>}</li>
  * </ul>
@@ -54,16 +52,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @ordered
 	 */
 	protected EList<EntityOrView> encapsulates;
-
-	/**
-	 * The cached value of the '{@link #getDisplayLabels() <em>Display Labels</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayLabels()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ModelLabel> displayLabels;
 
 	/**
 	 * The cached value of the '{@link #getSelections() <em>Selections</em>}' containment reference list.
@@ -121,18 +109,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<ModelLabel> getDisplayLabels() {
-		if (displayLabels == null) {
-			displayLabels = new EObjectContainmentWithInverseEList<ModelLabel>(ModelLabel.class, this, WebsitePackage.SERVICE__DISPLAY_LABELS, WebsitePackage.MODEL_LABEL__LABEL_FOR);
-		}
-		return displayLabels;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public List<Selection> getSelections() {
 		if (selections == null) {
 			selections = new EObjectContainmentEList<Selection>(Selection.class, this, WebsitePackage.SERVICE__SELECTIONS);
@@ -163,8 +139,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEncapsulates()).basicAdd(otherEnd, msgs);
-			case WebsitePackage.SERVICE__DISPLAY_LABELS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDisplayLabels()).basicAdd(otherEnd, msgs);
 			case WebsitePackage.SERVICE__FEATURES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFeatures()).basicAdd(otherEnd, msgs);
 		}
@@ -181,8 +155,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return ((InternalEList<?>)getEncapsulates()).basicRemove(otherEnd, msgs);
-			case WebsitePackage.SERVICE__DISPLAY_LABELS:
-				return ((InternalEList<?>)getDisplayLabels()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.SERVICE__SELECTIONS:
 				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.SERVICE__FEATURES:
@@ -201,8 +173,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return getEncapsulates();
-			case WebsitePackage.SERVICE__DISPLAY_LABELS:
-				return getDisplayLabels();
 			case WebsitePackage.SERVICE__SELECTIONS:
 				return getSelections();
 			case WebsitePackage.SERVICE__FEATURES:
@@ -223,10 +193,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
 				getEncapsulates().addAll((Collection<? extends EntityOrView>)newValue);
-				return;
-			case WebsitePackage.SERVICE__DISPLAY_LABELS:
-				getDisplayLabels().clear();
-				getDisplayLabels().addAll((Collection<? extends ModelLabel>)newValue);
 				return;
 			case WebsitePackage.SERVICE__SELECTIONS:
 				getSelections().clear();
@@ -251,9 +217,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
 				return;
-			case WebsitePackage.SERVICE__DISPLAY_LABELS:
-				getDisplayLabels().clear();
-				return;
 			case WebsitePackage.SERVICE__SELECTIONS:
 				getSelections().clear();
 				return;
@@ -274,8 +237,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return encapsulates != null && !encapsulates.isEmpty();
-			case WebsitePackage.SERVICE__DISPLAY_LABELS:
-				return displayLabels != null && !displayLabels.isEmpty();
 			case WebsitePackage.SERVICE__SELECTIONS:
 				return selections != null && !selections.isEmpty();
 			case WebsitePackage.SERVICE__FEATURES:

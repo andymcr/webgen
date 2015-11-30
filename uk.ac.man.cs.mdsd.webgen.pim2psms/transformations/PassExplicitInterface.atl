@@ -45,6 +45,8 @@ helper context Website!Feature def: featureCardinality(localRequired : Boolean) 
 helper context Website!Association def: featureTargetCardinality(localRequired : Boolean) : Boolean
 		= if self.oclIsTypeOf(Website!AssociationWithContainment) then
 				#Required
+			else if self.oclIsTypeOf(Website!EncapsulatedAssociation) then
+				self.association.featureTargetCardinality(localRequired)
 			else
 				if self.targetCardinality = #Optional then
 					if localRequired then
@@ -55,7 +57,7 @@ helper context Website!Association def: featureTargetCardinality(localRequired :
 				else
 					self.targetCardinality
 				endif
-			endif;
+			endif endif;
 
 helper context Website!ServiceAttribute def: serviceCardinality(localRequired : Boolean) : Boolean
 	= self.attribute.featureCardinality(self.required or localRequired);
@@ -99,9 +101,9 @@ helper context Website!InterfaceField def: unitCardinality() : ORM!Cardinality
 
 helper context Website!Attribute def: attributeLabel() : String
 	= if not self.displayLabel.oclIsUndefined() and self.displayLabel <> '' then
-			'attribute self ' -- self.displayLabel
+			self.displayLabel
 		else
-			'create name '.concat(self.name) -- self.name.createLabel()
+			self.name.createLabel()
 		endif;
 
 helper context Website!Association def: associationLabel() : String
@@ -112,10 +114,14 @@ helper context Website!Association def: associationLabel() : String
 		endif;
 
 helper context Website!Association def: associationTargetLabel() : String
-	= if not self.targetDisplayLabel.oclIsUndefined() and self.targetDisplayLabel <> '' then
-			self.targetDisplayLabel
+	= if self.oclIsTypeOf(Website!EncapsulatedAssociation) then
+			self.association.associationTargetLabel()
 		else
-			self.targetFeatureName().createLabel()
+			if not self.targetDisplayLabel.oclIsUndefined() and self.targetDisplayLabel <> '' then
+				self.targetDisplayLabel
+			else
+				self.targetFeatureName().createLabel()
+			endif
 		endif;
 
 helper context Website!ServiceAttribute def: attributeLabel() : String
@@ -142,7 +148,7 @@ helper context Website!UnitElement def: attributeLabel() : String
 		else if not self.serviceFeature.oclIsUndefined() then
 			self.serviceFeature.attributeLabel()
 		else
-			self.feature.attributeLabel()
+			self.attribute.attributeLabel()
 		endif endif;
 
 helper context Website!UnitAssociation def: associationLabel() : String
@@ -233,7 +239,9 @@ helper context Website!ServiceAttribute def: validationPattern() : String
 		endif;
 
 helper context Website!Attribute def: dateFormat() : String
-	= if not self.oclIsTypeOf(Website!DateAttribute) then
+	= if self.oclIsTypeOf(Website!EncapsulatedAttribute) then
+			self.attribute.dateFormat()
+		else if not self.oclIsTypeOf(Website!DateAttribute) then
 			OclUndefined
 		else if not self.format.oclIsUndefined() and self.format <> '' then
 			self.format
@@ -245,7 +253,7 @@ helper context Website!Attribute def: dateFormat() : String
 			else
 				thisModule.findWebsiteProperties().defaultDateTimeFormat
 			endif endif
-		endif endif;
+		endif endif endif;
 
 helper context Website!ServiceAttribute def: dateFormat() : String
 	= if not self.dateFormat.oclIsUndefined() and self.dateFormat <> '' then
@@ -263,19 +271,21 @@ helper context Website!UnitField def: dateFormat() : String
 			else
 				OclUndefined
 			endif
+		else if self.oclIsTypeOf(Website!UnitAssociation) and not self.childFeature.oclIsUndefined() then
+			self.childFeature.dateFormat()
 		else if not self.serviceFeature.oclIsUndefined() then
 			if self.serviceFeature.oclIsTypeOf(Website!ServiceAttribute) then
 				self.serviceFeature.dateFormat()
 			else
-				''
+				OclUndefined
 			endif
 		else
 			if self.oclIsTypeOf(Website!UnitElement) then
 				self.attribute.dateFormat()
 			else
-				''
+				OclUndefined
 			endif
-		endif endif endif;
+		endif endif endif endif;
 
 helper context Website!UnitChildFeature def: dateFormat() : String
 	= if self.oclIsTypeOf(Website!UnitChildElement) then
@@ -495,8 +505,6 @@ rule ServiceAttribute {
 		attribute <-
 			website.attribute.findOrmEntityOrView()
 				.getOrmFeature(website.attribute.name),
-		caseInsensitive <- website.caseInsensitive,
-		encrypt <- website.encrypt,
 		interfaceType <- website.interfaceType(),
 		placeholder <- website.placeholder(),
 		validationPattern <- website.validationPattern(),
@@ -514,7 +522,7 @@ rule ServiceAssociation {
 				website.association.findOrmEntityOrView()
 					.getOrmFeature(website.association.name)
 			else
-				thisModule.findOrmEntity(website.association.targetEntity.name)
+				thisModule.findOrmEntityOrView(website.association.targetEntityName())
 					.getOrmFeature(website.association.targetFeatureName())
 			endif
 
@@ -625,9 +633,9 @@ rule DynamicMenu {
 }
 
 -- @extends NamedElement
-rule Query {
-	from website : Website!Query
-	to waf : WAF!Query (
+rule Filter {
+	from website : Website!Filter
+	to waf : WAF!Filter (
 		parameters <-
 			if website.parameters->notEmpty() then
 				website.parameters
@@ -639,34 +647,34 @@ rule Query {
 }
 
 -- @extends NamedElement
-rule QueryParameter {
-	from website : Website!QueryParameter
-	to waf : WAF!QueryParameter (
-		parameter <- website.parameter,
+rule FilterParameter {
+	from website : Website!FilterParameter
+	to waf : WAF!FilterParameter (
+		formal <- website.formal,
 		dataType <- website.dataType,
 		defaultValue <- website.defaultValue
 	)
 }
 
-lazy rule implicitQueryParameter {
-	from website : Website!Query
-	to waf : WAF!QueryParameter (
+lazy rule implicitFilterParameter {
+	from website : Website!Filter
+	to waf : WAF!FilterParameter (
 		name <- website.name
 	)
 }
 
-rule QueryInstance {
-	from website : Website!QueryInstance
-	to waf : WAF!QueryInstance (
-		"query" <- website."query",
-		actuals <- website.actuals
+rule Query {
+	from website : Website!Query
+	to waf : WAF!Query (
+		filter <- website.filter,
+		parameters <- website.parameters
 	)
 }
 
-rule QueryActual {
-	from website : Website!QueryActual
-	to waf : WAF!QueryActual (
-		parameter <- website.parameter,
+rule QueryParameter {
+	from website : Website!QueryParameter
+	to waf : WAF!QueryParameter (
+		formal <- website.formal,
 		value <- website.value
 	)
 }
@@ -739,7 +747,6 @@ abstract rule DynamicUnit {
 			else
 				OclUndefined
 			endif,
-		queries <- website.queries,
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
 		header <- website.header,
@@ -785,7 +792,7 @@ rule UnitElement {
 			else if not website.serviceFeature.oclIsUndefined() then
 				website.serviceFeature.placeholder()
 			else
-				website.feature.placeholder()
+				website.attribute.placeholder()
 			endif endif,
 		validationPattern <-
 			if not website.validationPattern.oclIsUndefined() and website.validationPattern <> '' then
@@ -793,7 +800,7 @@ rule UnitElement {
 			else if not website.serviceFeature.oclIsUndefined() then
 				website.serviceFeature.validationPattern()
 			else
-				website.feature.validationPattern()
+				website.attribute.validationPattern()
 			endif endif
 	)
 }
@@ -810,7 +817,7 @@ rule UnitAssociation {
 			else
 if not website.association.oclIsUndefined() then
 	if website.association.oclIsKindOf(Website!EntityAssociation) then
-				thisModule.findOrmEntity(website.association.targetEntity.name)
+				thisModule.findOrmEntityOrView(website.association.targetEntity.name)
 					.getOrmFeature(website.association.targetFeatureName())
 	else
 		website.association.findOrmEntityOrView()
@@ -903,8 +910,9 @@ rule DataTypeField {
 	from website : Website!DataTypeField
 	to waf : WAF!DataTypeField (
 		dataType <- thisModule.findOrmDataType(website.dataType.name),
-		obfuscateFormFields <- website.obfuscateFormFields,
-		encrypt <- website.encrypt
+		encrypt <- website.encrypt,
+		caseInsensitive <- website.caseInsensitive,
+		obfuscateFormFields <- website.obfuscateFormFields
 	)
 }
 
@@ -994,20 +1002,19 @@ rule UpdateUnit {
 abstract rule DataUnit {
 	from website : Website!DataUnit
 	to waf : WAF!DataUnit (
-		defaultSelection <- website.defaultSelection --,
--- temp fix while move modellabels from service to entities
---		dynamicTitle <-
---			if website.dynamicTitle.oclIsUndefined() then
---				website.dynamicTitle
---			else if website.dynamicTitle.oclIsKindOf(Website!Attribute) then
---				if website.source.oclIsTypeOf(Website!Service) then
---					website.source.features->any(f | f.name = website.dynamicTitle.name)
---				else
---					OclUndefined
---				endif
---			else
---				website.dynamicTitle
---			endif endif
+		defaultSelection <- website.defaultSelection,
+		title <-
+			if website.title.oclIsUndefined() then
+				website.title
+			else if website.title.oclIsKindOf(Website!Attribute) then
+				thisModule.findOrmEntityOrView(website.title.partOf.name)
+					.getOrmFeature(website.title.name)
+			else if website.title.oclIsTypeOf(Website!ModelLabel) then
+				thisModule.findOrmEntityOrView(website.title.labelFor.name)
+					.getOrmLabel(website.title.name)
+			else
+				website.title
+			endif endif endif
 	)
 }
 
@@ -1024,7 +1031,8 @@ abstract rule IndexUnit {
 	from website : Website!IndexUnit
 	to waf : WAF!IndexUnit (
 		omitColumnLabels <- website.omitColumnLabels,
-		paginationQuery <- website.paginationQuery,
+		filters <- website.filters,
+		pagination <- website.pagination,
 		defaultPaginationSize <- website.defaultPaginationSize,
 		nextPageLabel <- website.nextPageLabel,
 		previousPageLabel <- website.previousPageLabel,

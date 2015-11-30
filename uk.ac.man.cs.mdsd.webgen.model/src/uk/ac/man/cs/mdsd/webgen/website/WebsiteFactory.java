@@ -89,6 +89,33 @@ public interface WebsiteFactory extends EFactory {
 	EnumerationLiteral createEnumerationLiteral();
 
 	/**
+	 * Returns a new object of class '<em>Model Label</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Label</em>'.
+	 * @generated
+	 */
+	ModelLabel createModelLabel();
+
+	/**
+	 * Returns a new object of class '<em>Model Label Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Label Attribute</em>'.
+	 * @generated
+	 */
+	ModelLabelAttribute createModelLabelAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Model Label Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Model Label Association</em>'.
+	 * @generated
+	 */
+	ModelLabelAssociation createModelLabelAssociation();
+
+	/**
 	 * Returns a new object of class '<em>Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -206,33 +233,6 @@ public interface WebsiteFactory extends EFactory {
 	AssociationWithContainment createAssociationWithContainment();
 
 	/**
-	 * Returns a new object of class '<em>Model Label Y</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Label Y</em>'.
-	 * @generated
-	 */
-	ModelLabelY createModelLabelY();
-
-	/**
-	 * Returns a new object of class '<em>Model Label Attribute Y</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Label Attribute Y</em>'.
-	 * @generated
-	 */
-	ModelLabelAttributeY createModelLabelAttributeY();
-
-	/**
-	 * Returns a new object of class '<em>Model Label Association Y</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Label Association Y</em>'.
-	 * @generated
-	 */
-	ModelLabelAssociationY createModelLabelAssociationY();
-
-	/**
 	 * Returns a new object of class '<em>Page</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -258,24 +258,6 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	QueryParameter createQueryParameter();
-
-	/**
-	 * Returns a new object of class '<em>Query Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Query Instance</em>'.
-	 * @generated
-	 */
-	QueryInstance createQueryInstance();
-
-	/**
-	 * Returns a new object of class '<em>Query Actual</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Query Actual</em>'.
-	 * @generated
-	 */
-	QueryActual createQueryActual();
 
 	/**
 	 * Returns a new object of class '<em>Static Menu</em>'.
@@ -323,6 +305,24 @@ public interface WebsiteFactory extends EFactory {
 	DynamicMenu createDynamicMenu();
 
 	/**
+	 * Returns a new object of class '<em>Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Filter</em>'.
+	 * @generated
+	 */
+	Filter createFilter();
+
+	/**
+	 * Returns a new object of class '<em>Filter Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Filter Parameter</em>'.
+	 * @generated
+	 */
+	FilterParameter createFilterParameter();
+
+	/**
 	 * Returns a new object of class '<em>Page Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -357,33 +357,6 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	Service createService();
-
-	/**
-	 * Returns a new object of class '<em>Model Label</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Label</em>'.
-	 * @generated
-	 */
-	ModelLabel createModelLabel();
-
-	/**
-	 * Returns a new object of class '<em>Model Label Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Label Element</em>'.
-	 * @generated
-	 */
-	ModelLabelElement createModelLabelElement();
-
-	/**
-	 * Returns a new object of class '<em>Model Label Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Label Association</em>'.
-	 * @generated
-	 */
-	ModelLabelAssociation createModelLabelAssociation();
 
 	/**
 	 * Returns a new object of class '<em>Selection</em>'.

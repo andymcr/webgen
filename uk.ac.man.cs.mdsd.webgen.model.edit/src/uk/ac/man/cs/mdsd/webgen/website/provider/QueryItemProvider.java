@@ -10,14 +10,19 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -28,7 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class QueryItemProvider extends NamedElementItemProvider {
+public class QueryItemProvider extends WebGenItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -50,32 +55,31 @@ public class QueryItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSelectionPropertyDescriptor(object);
+			addFilterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Selection feature.
+	 * This adds a property descriptor for the Filter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addSelectionPropertyDescriptor(Object object) {
+	protected void addFilterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_Query_selection_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Query_selection_feature", "_UI_Query_type"),
-			WebsitePackage.Literals.QUERY__SELECTION,
+			getString("_UI_Query_filter_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Query_filter_feature", "_UI_Query_type"),
+			WebsitePackage.Literals.QUERY__FILTER,
 			true, false, true, null,
 			getString("_UI_InterfacePropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof Query) {
-						return getSourceSelections(
-							(DynamicUnit) ((Query) object).eContainer());
+						return getFilters((Query) object);
 					}
 					return Collections.emptyList();
 				}
@@ -131,10 +135,7 @@ public class QueryItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Query)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Query_type") :
-			getString("_UI_Query_type") + " " + label;
+		return getString("_UI_Query_type");
 	}
 	
 
@@ -172,6 +173,17 @@ public class QueryItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.QUERY__PARAMETERS,
 				 WebsiteFactory.eINSTANCE.createQueryParameter()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return WebsiteEditPlugin.INSTANCE;
 	}
 
 }

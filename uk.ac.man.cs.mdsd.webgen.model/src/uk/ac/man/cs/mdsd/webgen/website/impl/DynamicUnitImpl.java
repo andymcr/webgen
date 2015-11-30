@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction;
@@ -35,7 +34,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getSource <em>Source</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getQueries <em>Queries</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
@@ -58,16 +56,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected UnitSource source;
-
-	/**
-	 * The cached value of the '{@link #getQueries() <em>Queries</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQueries()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Query> queries;
 
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
@@ -271,18 +259,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Query> getQueries() {
-		if (queries == null) {
-			queries = new EObjectContainmentEList<Query>(Query.class, this, WebsitePackage.DYNAMIC_UNIT__QUERIES);
-		}
-		return queries;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public List<UnitField> getDisplayFields() {
 		if (displayFields == null) {
 			displayFields = new EObjectContainmentWithInverseEList<UnitField>(UnitField.class, this, WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS, WebsitePackage.UNIT_FIELD__DISPLAYED_ON);
@@ -451,8 +427,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.DYNAMIC_UNIT__QUERIES:
-				return ((InternalEList<?>)getQueries()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -472,8 +446,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
-			case WebsitePackage.DYNAMIC_UNIT__QUERIES:
-				return getQueries();
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -505,10 +477,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
 				setSource((UnitSource)newValue);
-				return;
-			case WebsitePackage.DYNAMIC_UNIT__QUERIES:
-				getQueries().clear();
-				getQueries().addAll((Collection<? extends Query>)newValue);
 				return;
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -551,9 +519,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
 				setSource((UnitSource)null);
 				return;
-			case WebsitePackage.DYNAMIC_UNIT__QUERIES:
-				getQueries().clear();
-				return;
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
@@ -592,8 +557,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
 				return source != null;
-			case WebsitePackage.DYNAMIC_UNIT__QUERIES:
-				return queries != null && !queries.isEmpty();
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:

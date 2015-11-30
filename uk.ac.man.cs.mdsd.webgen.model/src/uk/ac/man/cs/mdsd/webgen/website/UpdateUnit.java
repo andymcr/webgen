@@ -23,7 +23,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface UpdateUnit extends EditUnit, SelectTarget {
+public interface UpdateUnit extends EditUnit, Selectable {
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.
 	 * The default value is <code>"unit,update_unit,framed"</code>.

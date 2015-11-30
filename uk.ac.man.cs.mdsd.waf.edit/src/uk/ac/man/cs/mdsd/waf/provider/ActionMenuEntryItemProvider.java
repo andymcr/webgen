@@ -167,7 +167,7 @@ public class ActionMenuEntryItemProvider extends MenuEntryItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.ACTION_MENU_ENTRY__QUERY,
-				 WafFactory.eINSTANCE.createQueryInstance()));
+				 WafFactory.eINSTANCE.createQuery()));
 	}
 
 }

@@ -18,13 +18,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -38,7 +36,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getAssociationEnds <em>Association Ends</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getKeys <em>Keys</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,16 +62,6 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	protected EList<EntityAssociation> associationEnds;
 
 	/**
-	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKeys()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EntityAttribute> keys;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -98,21 +85,9 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<EntityAttribute> getKeys() {
-		if (keys == null) {
-			keys = new EObjectResolvingEList<EntityAttribute>(EntityAttribute.class, this, WebsitePackage.ENTITY__KEYS);
-		}
-		return keys;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public List<EntityFeature> getFeatures() {
 		if (features == null) {
-			features = new EObjectContainmentWithInverseEList<EntityFeature>(EntityFeature.class, this, WebsitePackage.ENTITY__FEATURES, WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY);
+			features = new EObjectContainmentWithInverseEList<EntityFeature>(EntityFeature.class, this, WebsitePackage.ENTITY__FEATURES, WebsitePackage.ENTITY_FEATURE__PART_OF);
 		}
 		return features;
 	}
@@ -187,8 +162,6 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 				return getFeatures();
 			case WebsitePackage.ENTITY__ASSOCIATION_ENDS:
 				return getAssociationEnds();
-			case WebsitePackage.ENTITY__KEYS:
-				return getKeys();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,10 +183,6 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 				getAssociationEnds().clear();
 				getAssociationEnds().addAll((Collection<? extends EntityAssociation>)newValue);
 				return;
-			case WebsitePackage.ENTITY__KEYS:
-				getKeys().clear();
-				getKeys().addAll((Collection<? extends EntityAttribute>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -232,9 +201,6 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 			case WebsitePackage.ENTITY__ASSOCIATION_ENDS:
 				getAssociationEnds().clear();
 				return;
-			case WebsitePackage.ENTITY__KEYS:
-				getKeys().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,8 +217,6 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 				return features != null && !features.isEmpty();
 			case WebsitePackage.ENTITY__ASSOCIATION_ENDS:
 				return associationEnds != null && !associationEnds.isEmpty();
-			case WebsitePackage.ENTITY__KEYS:
-				return keys != null && !keys.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

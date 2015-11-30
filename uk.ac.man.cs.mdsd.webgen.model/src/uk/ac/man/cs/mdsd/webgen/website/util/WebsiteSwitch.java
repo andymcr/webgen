@@ -170,7 +170,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				Attribute attribute = (Attribute)theEObject;
 				T result = caseAttribute(attribute);
 				if (result == null) result = caseFeature(attribute);
-				if (result == null) result = caseUnitTitle(attribute);
+				if (result == null) result = caseLabel(attribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -181,30 +181,37 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.MODEL_LABEL_Y: {
-				ModelLabelY modelLabelY = (ModelLabelY)theEObject;
-				T result = caseModelLabelY(modelLabelY);
-				if (result == null) result = caseNamedElement(modelLabelY);
+			case WebsitePackage.LABEL: {
+				Label label = (Label)theEObject;
+				T result = caseLabel(label);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.MODEL_LABEL_FEATURE_Y: {
-				ModelLabelFeatureY modelLabelFeatureY = (ModelLabelFeatureY)theEObject;
-				T result = caseModelLabelFeatureY(modelLabelFeatureY);
+			case WebsitePackage.MODEL_LABEL: {
+				ModelLabel modelLabel = (ModelLabel)theEObject;
+				T result = caseModelLabel(modelLabel);
+				if (result == null) result = caseNamedElement(modelLabel);
+				if (result == null) result = caseLabel(modelLabel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y: {
-				ModelLabelAttributeY modelLabelAttributeY = (ModelLabelAttributeY)theEObject;
-				T result = caseModelLabelAttributeY(modelLabelAttributeY);
-				if (result == null) result = caseModelLabelFeatureY(modelLabelAttributeY);
+			case WebsitePackage.MODEL_LABEL_FEATURE: {
+				ModelLabelFeature modelLabelFeature = (ModelLabelFeature)theEObject;
+				T result = caseModelLabelFeature(modelLabelFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y: {
-				ModelLabelAssociationY modelLabelAssociationY = (ModelLabelAssociationY)theEObject;
-				T result = caseModelLabelAssociationY(modelLabelAssociationY);
-				if (result == null) result = caseModelLabelFeatureY(modelLabelAssociationY);
+			case WebsitePackage.MODEL_LABEL_ATTRIBUTE: {
+				ModelLabelAttribute modelLabelAttribute = (ModelLabelAttribute)theEObject;
+				T result = caseModelLabelAttribute(modelLabelAttribute);
+				if (result == null) result = caseModelLabelFeature(modelLabelAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION: {
+				ModelLabelAssociation modelLabelAssociation = (ModelLabelAssociation)theEObject;
+				T result = caseModelLabelAssociation(modelLabelAssociation);
+				if (result == null) result = caseModelLabelFeature(modelLabelAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -235,7 +242,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAttribute(entityAttribute);
 				if (result == null) result = caseNamedDisplayElement(entityAttribute);
 				if (result == null) result = caseFeature(entityAttribute);
-				if (result == null) result = caseUnitTitle(entityAttribute);
+				if (result == null) result = caseLabel(entityAttribute);
 				if (result == null) result = caseNamedElement(entityAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -248,7 +255,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAttribute(dataTypeAttribute);
 				if (result == null) result = caseNamedDisplayElement(dataTypeAttribute);
 				if (result == null) result = caseFeature(dataTypeAttribute);
-				if (result == null) result = caseUnitTitle(dataTypeAttribute);
+				if (result == null) result = caseLabel(dataTypeAttribute);
 				if (result == null) result = caseNamedElement(dataTypeAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -261,7 +268,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAttribute(dateAttribute);
 				if (result == null) result = caseNamedDisplayElement(dateAttribute);
 				if (result == null) result = caseFeature(dateAttribute);
-				if (result == null) result = caseUnitTitle(dateAttribute);
+				if (result == null) result = caseLabel(dateAttribute);
 				if (result == null) result = caseNamedElement(dateAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -274,7 +281,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAttribute(resourceAttribute);
 				if (result == null) result = caseNamedDisplayElement(resourceAttribute);
 				if (result == null) result = caseFeature(resourceAttribute);
-				if (result == null) result = caseUnitTitle(resourceAttribute);
+				if (result == null) result = caseLabel(resourceAttribute);
 				if (result == null) result = caseNamedElement(resourceAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -288,7 +295,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAttribute(fileAttribute);
 				if (result == null) result = caseNamedDisplayElement(fileAttribute);
 				if (result == null) result = caseFeature(fileAttribute);
-				if (result == null) result = caseUnitTitle(fileAttribute);
+				if (result == null) result = caseLabel(fileAttribute);
 				if (result == null) result = caseNamedElement(fileAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -302,7 +309,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAttribute(imageAttribute);
 				if (result == null) result = caseNamedDisplayElement(imageAttribute);
 				if (result == null) result = caseFeature(imageAttribute);
-				if (result == null) result = caseUnitTitle(imageAttribute);
+				if (result == null) result = caseLabel(imageAttribute);
 				if (result == null) result = caseNamedElement(imageAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -315,7 +322,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAttribute(locationAttribute);
 				if (result == null) result = caseNamedDisplayElement(locationAttribute);
 				if (result == null) result = caseFeature(locationAttribute);
-				if (result == null) result = caseUnitTitle(locationAttribute);
+				if (result == null) result = caseLabel(locationAttribute);
 				if (result == null) result = caseNamedElement(locationAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -386,7 +393,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseEncapsulatedFeature(encapsulatedAttribute);
 				if (result == null) result = caseAttribute(encapsulatedAttribute);
 				if (result == null) result = caseViewFeature(encapsulatedAttribute);
-				if (result == null) result = caseUnitTitle(encapsulatedAttribute);
+				if (result == null) result = caseLabel(encapsulatedAttribute);
 				if (result == null) result = caseFeature(encapsulatedAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -437,34 +444,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				T result = caseService(service);
 				if (result == null) result = caseNamedElement(service);
 				if (result == null) result = caseUnitSource(service);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.MODEL_LABEL: {
-				ModelLabel modelLabel = (ModelLabel)theEObject;
-				T result = caseModelLabel(modelLabel);
-				if (result == null) result = caseNamedElement(modelLabel);
-				if (result == null) result = caseUnitTitle(modelLabel);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.MODEL_LABEL_FEATURE: {
-				ModelLabelFeature modelLabelFeature = (ModelLabelFeature)theEObject;
-				T result = caseModelLabelFeature(modelLabelFeature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.MODEL_LABEL_ELEMENT: {
-				ModelLabelElement modelLabelElement = (ModelLabelElement)theEObject;
-				T result = caseModelLabelElement(modelLabelElement);
-				if (result == null) result = caseModelLabelFeature(modelLabelElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION: {
-				ModelLabelAssociation modelLabelAssociation = (ModelLabelAssociation)theEObject;
-				T result = caseModelLabelAssociation(modelLabelAssociation);
-				if (result == null) result = caseModelLabelFeature(modelLabelAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -580,29 +559,35 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.FILTER: {
+				Filter filter = (Filter)theEObject;
+				T result = caseFilter(filter);
+				if (result == null) result = caseNamedElement(filter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.FILTER_PARAMETER: {
+				FilterParameter filterParameter = (FilterParameter)theEObject;
+				T result = caseFilterParameter(filterParameter);
+				if (result == null) result = caseNamedElement(filterParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.QUERY: {
 				Query query = (Query)theEObject;
 				T result = caseQuery(query);
-				if (result == null) result = caseNamedElement(query);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case WebsitePackage.QUERY_PARAMETER: {
 				QueryParameter queryParameter = (QueryParameter)theEObject;
 				T result = caseQueryParameter(queryParameter);
-				if (result == null) result = caseNamedElement(queryParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.QUERY_INSTANCE: {
-				QueryInstance queryInstance = (QueryInstance)theEObject;
-				T result = caseQueryInstance(queryInstance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.QUERY_ACTUAL: {
-				QueryActual queryActual = (QueryActual)theEObject;
-				T result = caseQueryActual(queryActual);
+			case WebsitePackage.SELECTABLE: {
+				Selectable selectable = (Selectable)theEObject;
+				T result = caseSelectable(selectable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -615,12 +600,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 			case WebsitePackage.UNIT_SOURCE: {
 				UnitSource unitSource = (UnitSource)theEObject;
 				T result = caseUnitSource(unitSource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.UNIT_TITLE: {
-				UnitTitle unitTitle = (UnitTitle)theEObject;
-				T result = caseUnitTitle(unitTitle);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -812,7 +791,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				CreateUpdateUnit createUpdateUnit = (CreateUpdateUnit)theEObject;
 				T result = caseCreateUpdateUnit(createUpdateUnit);
 				if (result == null) result = caseEditUnit(createUpdateUnit);
-				if (result == null) result = caseSelectTarget(createUpdateUnit);
+				if (result == null) result = caseSelectable(createUpdateUnit);
 				if (result == null) result = caseDynamicUnit(createUpdateUnit);
 				if (result == null) result = caseContentUnit(createUpdateUnit);
 				if (result == null) result = caseNamedDisplayElement(createUpdateUnit);
@@ -824,7 +803,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				UpdateUnit updateUnit = (UpdateUnit)theEObject;
 				T result = caseUpdateUnit(updateUnit);
 				if (result == null) result = caseEditUnit(updateUnit);
-				if (result == null) result = caseSelectTarget(updateUnit);
+				if (result == null) result = caseSelectable(updateUnit);
 				if (result == null) result = caseDynamicUnit(updateUnit);
 				if (result == null) result = caseContentUnit(updateUnit);
 				if (result == null) result = caseNamedDisplayElement(updateUnit);
@@ -836,7 +815,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				MapUnit mapUnit = (MapUnit)theEObject;
 				T result = caseMapUnit(mapUnit);
 				if (result == null) result = caseEditUnit(mapUnit);
-				if (result == null) result = caseSelectTarget(mapUnit);
+				if (result == null) result = caseSelectable(mapUnit);
 				if (result == null) result = caseDynamicUnit(mapUnit);
 				if (result == null) result = caseContentUnit(mapUnit);
 				if (result == null) result = caseNamedDisplayElement(mapUnit);
@@ -858,7 +837,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				DetailsUnit detailsUnit = (DetailsUnit)theEObject;
 				T result = caseDetailsUnit(detailsUnit);
 				if (result == null) result = caseDataUnit(detailsUnit);
-				if (result == null) result = caseSelectTarget(detailsUnit);
+				if (result == null) result = caseSelectable(detailsUnit);
 				if (result == null) result = caseDynamicUnit(detailsUnit);
 				if (result == null) result = caseContentUnit(detailsUnit);
 				if (result == null) result = caseNamedDisplayElement(detailsUnit);
@@ -963,12 +942,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				T result = caseInlineAction(inlineAction);
 				if (result == null) result = caseNamedDisplayElement(inlineAction);
 				if (result == null) result = caseNamedElement(inlineAction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.SELECT_TARGET: {
-				SelectTarget selectTarget = (SelectTarget)theEObject;
-				T result = caseSelectTarget(selectTarget);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1501,6 +1474,81 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Label</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Label</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLabel(Label object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelLabel(ModelLabel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label Feature</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelLabelFeature(ModelLabelFeature object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelLabelAttribute(ModelLabelAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Label Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Label Association</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelLabelAssociation(ModelLabelAssociation object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Association Without Containment</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1527,81 +1575,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAssociationWithContainment(AssociationWithContainment object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Y</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Y</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabelY(ModelLabelY object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Feature Y</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Feature Y</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabelFeatureY(ModelLabelFeatureY object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Attribute Y</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Attribute Y</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabelAttributeY(ModelLabelAttributeY object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Association Y</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Association Y</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabelAssociationY(ModelLabelAssociationY object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Select Target</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Select Target</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSelectTarget(SelectTarget object) {
 		return null;
 	}
 
@@ -1681,32 +1654,17 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Query Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Selectable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Query Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Selectable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseQueryInstance(QueryInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Query Actual</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Query Actual</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseQueryActual(QueryActual object) {
+	public T caseSelectable(Selectable object) {
 		return null;
 	}
 
@@ -1786,6 +1744,36 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Filter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFilter(Filter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Filter Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Filter Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFilterParameter(FilterParameter object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Page Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1827,21 +1815,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUnitSource(UnitSource object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unit Title</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unit Title</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUnitTitle(UnitTitle object) {
 		return null;
 	}
 
@@ -1962,66 +1935,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseService(Service object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabel(ModelLabel object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Feature</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Feature</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabelFeature(ModelLabelFeature object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabelElement(ModelLabelElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Association</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabelAssociation(ModelLabelAssociation object) {
 		return null;
 	}
 

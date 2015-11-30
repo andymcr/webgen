@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
+import uk.ac.man.cs.mdsd.waf.Filter;
 import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.QueryParameter;
-import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -32,32 +32,32 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryImpl#getQuery <em>Query</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryImpl#getActuals <em>Actuals</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class QueryImpl extends NamedElementImpl implements Query {
 	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * The cached value of the '{@link #getQuery() <em>Query</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParameters()
+	 * @see #getQuery()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<QueryParameter> parameters;
+	protected Filter query;
 
 	/**
-	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
+	 * The cached value of the '{@link #getActuals() <em>Actuals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSelection()
+	 * @see #getActuals()
 	 * @generated
 	 * @ordered
 	 */
-	protected Selection selection;
+	protected EList<QueryParameter> actuals;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,28 +83,16 @@ public class QueryImpl extends NamedElementImpl implements Query {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<QueryParameter> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectContainmentEList<QueryParameter>(QueryParameter.class, this, WafPackage.QUERY__PARAMETERS);
-		}
-		return parameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Selection getSelection() {
-		if (selection != null && selection.eIsProxy()) {
-			InternalEObject oldSelection = (InternalEObject)selection;
-			selection = (Selection)eResolveProxy(oldSelection);
-			if (selection != oldSelection) {
+	public Filter getQuery() {
+		if (query != null && query.eIsProxy()) {
+			InternalEObject oldQuery = (InternalEObject)query;
+			query = (Filter)eResolveProxy(oldQuery);
+			if (query != oldQuery) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.QUERY__SELECTION, oldSelection, selection));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.QUERY__QUERY, oldQuery, query));
 			}
 		}
-		return selection;
+		return query;
 	}
 
 	/**
@@ -112,8 +100,8 @@ public class QueryImpl extends NamedElementImpl implements Query {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Selection basicGetSelection() {
-		return selection;
+	public Filter basicGetQuery() {
+		return query;
 	}
 
 	/**
@@ -121,11 +109,23 @@ public class QueryImpl extends NamedElementImpl implements Query {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSelection(Selection newSelection) {
-		Selection oldSelection = selection;
-		selection = newSelection;
+	public void setQuery(Filter newQuery) {
+		Filter oldQuery = query;
+		query = newQuery;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.QUERY__SELECTION, oldSelection, selection));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.QUERY__QUERY, oldQuery, query));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<QueryParameter> getActuals() {
+		if (actuals == null) {
+			actuals = new EObjectContainmentEList<QueryParameter>(QueryParameter.class, this, WafPackage.QUERY__ACTUALS);
+		}
+		return actuals;
 	}
 
 	/**
@@ -136,8 +136,8 @@ public class QueryImpl extends NamedElementImpl implements Query {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.QUERY__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case WafPackage.QUERY__ACTUALS:
+				return ((InternalEList<?>)getActuals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -150,11 +150,11 @@ public class QueryImpl extends NamedElementImpl implements Query {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.QUERY__PARAMETERS:
-				return getParameters();
-			case WafPackage.QUERY__SELECTION:
-				if (resolve) return getSelection();
-				return basicGetSelection();
+			case WafPackage.QUERY__QUERY:
+				if (resolve) return getQuery();
+				return basicGetQuery();
+			case WafPackage.QUERY__ACTUALS:
+				return getActuals();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,12 +168,12 @@ public class QueryImpl extends NamedElementImpl implements Query {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.QUERY__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends QueryParameter>)newValue);
+			case WafPackage.QUERY__QUERY:
+				setQuery((Filter)newValue);
 				return;
-			case WafPackage.QUERY__SELECTION:
-				setSelection((Selection)newValue);
+			case WafPackage.QUERY__ACTUALS:
+				getActuals().clear();
+				getActuals().addAll((Collection<? extends QueryParameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,11 +187,11 @@ public class QueryImpl extends NamedElementImpl implements Query {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.QUERY__PARAMETERS:
-				getParameters().clear();
+			case WafPackage.QUERY__QUERY:
+				setQuery((Filter)null);
 				return;
-			case WafPackage.QUERY__SELECTION:
-				setSelection((Selection)null);
+			case WafPackage.QUERY__ACTUALS:
+				getActuals().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -205,10 +205,10 @@ public class QueryImpl extends NamedElementImpl implements Query {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.QUERY__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
-			case WafPackage.QUERY__SELECTION:
-				return selection != null;
+			case WafPackage.QUERY__QUERY:
+				return query != null;
+			case WafPackage.QUERY__ACTUALS:
+				return actuals != null && !actuals.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

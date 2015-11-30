@@ -26,11 +26,11 @@ rule ServiceWithoutFeatures {
 					->collect(f | thisModule.implicitServiceAttribute(f))
 				->union(features
 					->select(f | f.oclIsKindOf(ORM!SingletonAssociation))
-					->select(f | f.owningEnd or f.bidirectional or f.opposite.containment)
+					->select(f | f.owningEnd or f.visible or f.opposite.containment)
 					->collect(f | thisModule.implicitServiceAssociation(f)))
 				->union(features
 					->select(f | f.oclIsKindOf(ORM!CollectionAssociation))
-					->select(f | f.owningEnd or f.bidirectional)
+					->select(f | f.owningEnd or f.visible)
 					->collect(f | thisModule.implicitServiceAssociation(f)))
 	)
 } 
@@ -102,18 +102,6 @@ lazy rule implicitServiceAttribute {
 				else
 					thisModule.findWebsiteProperties().defaultDateTimeFormat
 				endif endif
-			endif,
-		caseInsensitive <-
-			if orm.oclIsTypeOf(ORM!SingletonElement) then
-				orm.caseInsensitive
-			else
-				false
-			endif,
-		encrypt <-
-			if orm.oclIsTypeOf(ORM!SingletonElement) then
-				orm.encrypt
-			else
-				false
 			endif
 	)
 	do {

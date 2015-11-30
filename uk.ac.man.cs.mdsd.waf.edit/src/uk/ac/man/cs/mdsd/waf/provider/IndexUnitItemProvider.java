@@ -50,7 +50,7 @@ public class IndexUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addOmitColumnLabelsPropertyDescriptor(object);
-			addPaginationQueryPropertyDescriptor(object);
+			addPaginationPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
 			addPreviousPageLabelPropertyDescriptor(object);
@@ -86,19 +86,19 @@ public class IndexUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Pagination Query feature.
+	 * This adds a property descriptor for the Pagination feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPaginationQueryPropertyDescriptor(Object object) {
+	protected void addPaginationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_paginationQuery_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_paginationQuery_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__PAGINATION_QUERY,
+				 getString("_UI_IndexUnit_pagination_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_pagination_feature", "_UI_IndexUnit_type"),
+				 WafPackage.Literals.INDEX_UNIT__PAGINATION,
 				 true,
 				 false,
 				 true,
@@ -296,6 +296,7 @@ public class IndexUnitItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
+			childrenFeatures.add(WafPackage.Literals.INDEX_UNIT__FILTERS);
 		}
 		return childrenFeatures;
 	}
@@ -350,6 +351,7 @@ public class IndexUnitItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.INDEX_UNIT__ACTIONS:
+			case WafPackage.INDEX_UNIT__FILTERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -381,6 +383,11 @@ public class IndexUnitItemProvider
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
 				 WafFactory.eINSTANCE.createFeatureSupportAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INDEX_UNIT__FILTERS,
+				 WafFactory.eINSTANCE.createFilter()));
 	}
 
 }

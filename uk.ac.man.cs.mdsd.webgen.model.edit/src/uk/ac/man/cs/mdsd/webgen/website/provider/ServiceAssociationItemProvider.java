@@ -53,7 +53,6 @@ public class ServiceAssociationItemProvider
 
 			addDateFormatPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addDynamicLabelPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -132,29 +131,7 @@ public class ServiceAssociationItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Dynamic Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDynamicLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceAssociation_dynamicLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociation_dynamicLabel_feature", "_UI_ServiceAssociation_type"),
-				 WebsitePackage.Literals.SERVICE_ASSOCIATION__DYNAMIC_LABEL,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

@@ -1,8 +1,10 @@
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
@@ -12,12 +14,14 @@ import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Filter;
+import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
-import uk.ac.man.cs.mdsd.webgen.website.QueryInstance;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
@@ -53,17 +57,19 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return attributes;
 	}
 
-	protected List<Association> getAssociations(final EntityOrView entityOrView) {
-		final List<Association> associations = new LinkedList<Association>();
+	protected Set<Association> getAssociations(final EntityOrView entityOrView) {
+		final Set<Association> associations = new HashSet<Association>();
 		if (entityOrView instanceof Entity) {
-			for (EntityFeature feature : ((Entity) entityOrView).getAllFeatures()) {
-				if (feature instanceof EntityAssociation) {
+			final Entity entity = (Entity) entityOrView;
+			for (EntityFeature feature : entity.getAllFeatures()) {
+				if (feature instanceof Association) {
 					associations.add((Association) feature);
 				}
 			}
+			associations.addAll(entity.getAssociationEnds());
 		} else {
 			for (ViewFeature feature : ((View) entityOrView).getFeatures()) {
-				if (feature instanceof ViewAssociation) {
+				if (feature instanceof Association) {
 					associations.add((Association) feature);
 				}
 			}
@@ -104,7 +110,8 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	protected List<ServiceAssociation> getAssociations(final Service service) {
 		final List<ServiceAssociation> associations = new LinkedList<ServiceAssociation>();
 		for (ServiceFeature feature : service.getFeatures()) {
-			if (feature instanceof ServiceAssociation) {
+			if (feature instanceof ServiceAssociation
+					&&!associations.contains((ServiceAssociation) feature)) {
 				associations.add((ServiceAssociation) feature);
 			}
 		}
@@ -153,10 +160,22 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 			final ServiceAssociation serviceAssociation = (ServiceAssociation) association;
 			if (serviceAssociation.getAssociation() instanceof ViewAssociation) {
 				return ((ViewAssociation) serviceAssociation.getAssociation()).getPartOf();
-			} else if (serviceAssociation.isUseAssociationSource()) {
-				return ((EntityAssociation) serviceAssociation.getAssociation()).getTargetEntity();
+			} else if (serviceAssociation.getAssociation() instanceof EncapsulatedAssociation) {
+				final EncapsulatedAssociation encapsulatedAssociation
+					= (EncapsulatedAssociation) serviceAssociation.getAssociation();
+				if (encapsulatedAssociation.isUseAssociationSource()) {
+	//				return encapsulatedAssociation.getAssociation().getTargetEntity();
+				} else {
+	//				return encapsulatedAssociation.getAssociation().getPartOf();
+				}
 			} else {
-				return ((EntityAssociation) serviceAssociation.getAssociation()).getParentEntity();
+				final EntityAssociation entityAssociation
+					= (EntityAssociation) serviceAssociation.getAssociation();
+				if (serviceAssociation.isUseAssociationSource()) {
+					return entityAssociation.getTargetEntity();
+				} else {
+					return entityAssociation.getPartOf();
+				}
 			}
 		}
 
@@ -168,10 +187,22 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 			final ServiceAssociation serviceAssociation = (ServiceAssociation) association;
 			if (serviceAssociation.getAssociation() instanceof ViewAssociation) {
 				
-			} else if (serviceAssociation.isUseAssociationSource()) {
-				return ((EntityAssociation) serviceAssociation.getAssociation()).getTargetEntity();
+			} else if (serviceAssociation.getAssociation() instanceof EncapsulatedAssociation) {
+				final EncapsulatedAssociation encapsulatedAssociation
+					= (EncapsulatedAssociation) serviceAssociation.getAssociation();
+				if (encapsulatedAssociation.isUseAssociationSource()) {
+//					return encapsulatedAssociation.getAssociation().getTargetEntity();
+				} else {
+//					return encapsulatedAssociation.getAssociation().getPartOf();
+				}
 			} else {
-				return ((EntityAssociation) serviceAssociation.getAssociation()).getParentEntity();
+				final EntityAssociation entityAssociation
+					= (EntityAssociation) serviceAssociation.getAssociation();
+				if (serviceAssociation.isUseAssociationSource()) {
+					return entityAssociation.getTargetEntity();
+				} else {
+					return entityAssociation.getPartOf();
+				}
 			}
 		}
 
@@ -194,15 +225,13 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return null;
 	}
 
-	protected List<Query> getQueries(final QueryInstance query) {
+	protected List<Filter> getFilters(final Query query) {
 		if (query.eContainer() instanceof ActionMenuEntry) {
 			final ActionMenuEntry entry
 				= (ActionMenuEntry) query.eContainer();
-			final List<Query> queries = new LinkedList<Query>();
-			if (entry.getDestination() != null) {
-				queries.addAll(entry.getDestination().getQueries());
+			if (entry.getDestination() instanceof IndexUnit) {
+				return ((IndexUnit) entry.getDestination()).getFilters();
 			}
-			return queries;
 		}
 
 		return Collections.emptyList();

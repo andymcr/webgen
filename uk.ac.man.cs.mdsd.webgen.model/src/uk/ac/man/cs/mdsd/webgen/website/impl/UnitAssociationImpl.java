@@ -22,12 +22,13 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
-import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
+import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
@@ -38,7 +39,6 @@ import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.website.UnitFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
-import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
 import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -62,8 +62,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getServiceFeature <em>Service Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getDynamicLabel <em>Dynamic Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getFilters <em>Filters</em>}</li>
  * </ul>
  *
@@ -221,6 +221,16 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	protected UnitChildFeature childFeature;
 
 	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected Label title;
+
+	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,16 +241,6 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	protected Selection selection;
 
 	/**
-	 * The cached value of the '{@link #getDynamicLabel() <em>Dynamic Label</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDynamicLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected ModelLabel dynamicLabel;
-
-	/**
 	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -248,7 +248,7 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<UnitTitle> filters;
+	protected EList<Label> filters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -439,13 +439,15 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 		if ((newAssociation != null) && (eContainer() != null)) {
 			if (newAssociation instanceof ViewAssociation) {
 				setUseAssociationSource(true);
+			} else if (newAssociation instanceof EncapsulatedAssociation) {
+				
 			} else {
 				final EntityAssociation entityAssociation = (EntityAssociation) newAssociation;
 				final UnitSource source = getDisplayedOn().getSource();
 				if (source instanceof Service) {
 					final List<EntityOrView> serviceSource = new LinkedList<EntityOrView>();
 					serviceSource.addAll(((Service) source).getEncapsulates());
-					if (serviceSource.contains(entityAssociation.getParentEntity())) {
+					if (serviceSource.contains(entityAssociation.getPartOf())) {
 						if (!serviceSource.contains(entityAssociation.getTargetEntity())) {
 							setUseAssociationSource(true);
 						}
@@ -459,7 +461,7 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 					setUseAssociationSource(true);
 				} else {
 					setUseAssociationSource(
-						entityAssociation.getParentEntity().equals((Entity) source));
+						entityAssociation.getPartOf().equals((Entity) source));
 				}
 				
 			}
@@ -614,6 +616,44 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Label getTitle() {
+		if (title != null && title.eIsProxy()) {
+			InternalEObject oldTitle = (InternalEObject)title;
+			title = (Label)eResolveProxy(oldTitle);
+			if (title != oldTitle) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.UNIT_ASSOCIATION__TITLE, oldTitle, title));
+			}
+		}
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Label basicGetTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(Label newTitle) {
+		Label oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_ASSOCIATION__TITLE, oldTitle, title));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Selection getSelection() {
 		if (selection != null && selection.eIsProxy()) {
 			InternalEObject oldSelection = (InternalEObject)selection;
@@ -652,47 +692,9 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabel getDynamicLabel() {
-		if (dynamicLabel != null && dynamicLabel.eIsProxy()) {
-			InternalEObject oldDynamicLabel = (InternalEObject)dynamicLabel;
-			dynamicLabel = (ModelLabel)eResolveProxy(oldDynamicLabel);
-			if (dynamicLabel != oldDynamicLabel) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.UNIT_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
-			}
-		}
-		return dynamicLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabel basicGetDynamicLabel() {
-		return dynamicLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDynamicLabel(ModelLabel newDynamicLabel) {
-		ModelLabel oldDynamicLabel = dynamicLabel;
-		dynamicLabel = newDynamicLabel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_ASSOCIATION__DYNAMIC_LABEL, oldDynamicLabel, dynamicLabel));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public List<UnitTitle> getFilters() {
+	public List<Label> getFilters() {
 		if (filters == null) {
-			filters = new EObjectResolvingEList<UnitTitle>(UnitTitle.class, this, WebsitePackage.UNIT_ASSOCIATION__FILTERS);
+			filters = new EObjectResolvingEList<Label>(Label.class, this, WebsitePackage.UNIT_ASSOCIATION__FILTERS);
 		}
 		return filters;
 	}
@@ -783,12 +785,12 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 				return basicGetServiceFeature();
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				return getChildFeature();
+			case WebsitePackage.UNIT_ASSOCIATION__TITLE:
+				if (resolve) return getTitle();
+				return basicGetTitle();
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
-			case WebsitePackage.UNIT_ASSOCIATION__DYNAMIC_LABEL:
-				if (resolve) return getDynamicLabel();
-				return basicGetDynamicLabel();
 			case WebsitePackage.UNIT_ASSOCIATION__FILTERS:
 				return getFilters();
 		}
@@ -836,15 +838,15 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((UnitChildFeature)newValue);
 				return;
+			case WebsitePackage.UNIT_ASSOCIATION__TITLE:
+				setTitle((Label)newValue);
+				return;
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)newValue);
 				return;
-			case WebsitePackage.UNIT_ASSOCIATION__DYNAMIC_LABEL:
-				setDynamicLabel((ModelLabel)newValue);
-				return;
 			case WebsitePackage.UNIT_ASSOCIATION__FILTERS:
 				getFilters().clear();
-				getFilters().addAll((Collection<? extends UnitTitle>)newValue);
+				getFilters().addAll((Collection<? extends Label>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -888,11 +890,11 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((UnitChildFeature)null);
 				return;
+			case WebsitePackage.UNIT_ASSOCIATION__TITLE:
+				setTitle((Label)null);
+				return;
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)null);
-				return;
-			case WebsitePackage.UNIT_ASSOCIATION__DYNAMIC_LABEL:
-				setDynamicLabel((ModelLabel)null);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__FILTERS:
 				getFilters().clear();
@@ -931,10 +933,10 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 				return serviceFeature != null;
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				return childFeature != null;
+			case WebsitePackage.UNIT_ASSOCIATION__TITLE:
+				return title != null;
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				return selection != null;
-			case WebsitePackage.UNIT_ASSOCIATION__DYNAMIC_LABEL:
-				return dynamicLabel != null;
 			case WebsitePackage.UNIT_ASSOCIATION__FILTERS:
 				return filters != null && !filters.isEmpty();
 		}

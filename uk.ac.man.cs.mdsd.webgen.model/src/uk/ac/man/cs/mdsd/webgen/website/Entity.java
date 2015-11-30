@@ -19,7 +19,6 @@ import java.util.List;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getAssociationEnds <em>Association Ends</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getKeys <em>Keys</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity()
@@ -29,25 +28,9 @@ import java.util.List;
  */
 public interface Entity extends EntityOrView, UnitSource {
 	/**
-	 * Returns the value of the '<em><b>Keys</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Keys</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Keys</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_Keys()
-	 * @model
-	 * @generated
-	 */
-	List<EntityAttribute> getKeys();
-
-	/**
 	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getParentEntity <em>Parent Entity</em>}'.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Features</em>' containment reference list isn't clear,
@@ -56,8 +39,8 @@ public interface Entity extends EntityOrView, UnitSource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Features</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_Features()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getParentEntity
-	 * @model opposite="parentEntity" containment="true"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getPartOf
+	 * @model opposite="partOf" containment="true"
 	 * @generated
 	 */
 	List<EntityFeature> getFeatures();

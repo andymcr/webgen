@@ -38,7 +38,7 @@ public interface Service extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Encapsulates</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_Encapsulates()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<EntityOrView> getEncapsulates();

@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getService <em>Service</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getQueries <em>Queries</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeader <em>Header</em>}</li>
@@ -57,22 +56,6 @@ public interface DynamicUnit extends ContentUnit {
 	 * @generated
 	 */
 	void setService(Service value);
-
-	/**
-	 * Returns the value of the '<em><b>Queries</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.Query}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Queries</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Queries</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_Queries()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Query> getQueries();
 
 	/**
 	 * Returns the value of the '<em><b>Display Fields</b></em>' containment reference list.

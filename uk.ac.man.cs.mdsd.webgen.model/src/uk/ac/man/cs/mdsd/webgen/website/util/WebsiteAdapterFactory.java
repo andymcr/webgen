@@ -134,20 +134,24 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createAssociationAdapter();
 			}
 			@Override
-			public Adapter caseModelLabelY(ModelLabelY object) {
-				return createModelLabelYAdapter();
+			public Adapter caseLabel(Label object) {
+				return createLabelAdapter();
 			}
 			@Override
-			public Adapter caseModelLabelFeatureY(ModelLabelFeatureY object) {
-				return createModelLabelFeatureYAdapter();
+			public Adapter caseModelLabel(ModelLabel object) {
+				return createModelLabelAdapter();
 			}
 			@Override
-			public Adapter caseModelLabelAttributeY(ModelLabelAttributeY object) {
-				return createModelLabelAttributeYAdapter();
+			public Adapter caseModelLabelFeature(ModelLabelFeature object) {
+				return createModelLabelFeatureAdapter();
 			}
 			@Override
-			public Adapter caseModelLabelAssociationY(ModelLabelAssociationY object) {
-				return createModelLabelAssociationYAdapter();
+			public Adapter caseModelLabelAttribute(ModelLabelAttribute object) {
+				return createModelLabelAttributeAdapter();
+			}
+			@Override
+			public Adapter caseModelLabelAssociation(ModelLabelAssociation object) {
+				return createModelLabelAssociationAdapter();
 			}
 			@Override
 			public Adapter caseEntity(Entity object) {
@@ -238,22 +242,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createServiceAdapter();
 			}
 			@Override
-			public Adapter caseModelLabel(ModelLabel object) {
-				return createModelLabelAdapter();
-			}
-			@Override
-			public Adapter caseModelLabelFeature(ModelLabelFeature object) {
-				return createModelLabelFeatureAdapter();
-			}
-			@Override
-			public Adapter caseModelLabelElement(ModelLabelElement object) {
-				return createModelLabelElementAdapter();
-			}
-			@Override
-			public Adapter caseModelLabelAssociation(ModelLabelAssociation object) {
-				return createModelLabelAssociationAdapter();
-			}
-			@Override
 			public Adapter caseSelection(Selection object) {
 				return createSelectionAdapter();
 			}
@@ -310,6 +298,14 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createDynamicMenuAdapter();
 			}
 			@Override
+			public Adapter caseFilter(Filter object) {
+				return createFilterAdapter();
+			}
+			@Override
+			public Adapter caseFilterParameter(FilterParameter object) {
+				return createFilterParameterAdapter();
+			}
+			@Override
 			public Adapter caseQuery(Query object) {
 				return createQueryAdapter();
 			}
@@ -318,12 +314,8 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createQueryParameterAdapter();
 			}
 			@Override
-			public Adapter caseQueryInstance(QueryInstance object) {
-				return createQueryInstanceAdapter();
-			}
-			@Override
-			public Adapter caseQueryActual(QueryActual object) {
-				return createQueryActualAdapter();
+			public Adapter caseSelectable(Selectable object) {
+				return createSelectableAdapter();
 			}
 			@Override
 			public Adapter caseUnitContainer(UnitContainer object) {
@@ -332,10 +324,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseUnitSource(UnitSource object) {
 				return createUnitSourceAdapter();
-			}
-			@Override
-			public Adapter caseUnitTitle(UnitTitle object) {
-				return createUnitTitleAdapter();
 			}
 			@Override
 			public Adapter caseContentUnit(ContentUnit object) {
@@ -480,10 +468,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseInlineAction(InlineAction object) {
 				return createInlineActionAdapter();
-			}
-			@Override
-			public Adapter caseSelectTarget(SelectTarget object) {
-				return createSelectTargetAdapter();
 			}
 			@Override
 			public Adapter caseSelectAction(SelectAction object) {
@@ -976,6 +960,76 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Label <em>Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Label
+	 * @generated
+	 */
+	public Adapter createLabelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel <em>Model Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabel
+	 * @generated
+	 */
+	public Adapter createModelLabelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeature <em>Model Label Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeature
+	 * @generated
+	 */
+	public Adapter createModelLabelFeatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute <em>Model Label Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute
+	 * @generated
+	 */
+	public Adapter createModelLabelAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation <em>Model Label Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation
+	 * @generated
+	 */
+	public Adapter createModelLabelAssociationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment <em>Association Without Containment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1000,76 +1054,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAssociationWithContainmentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelY <em>Model Label Y</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelY
-	 * @generated
-	 */
-	public Adapter createModelLabelYAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeatureY <em>Model Label Feature Y</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeatureY
-	 * @generated
-	 */
-	public Adapter createModelLabelFeatureYAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttributeY <em>Model Label Attribute Y</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttributeY
-	 * @generated
-	 */
-	public Adapter createModelLabelAttributeYAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociationY <em>Model Label Association Y</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociationY
-	 * @generated
-	 */
-	public Adapter createModelLabelAssociationYAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.SelectTarget <em>Select Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.SelectTarget
-	 * @generated
-	 */
-	public Adapter createSelectTargetAdapter() {
 		return null;
 	}
 
@@ -1144,30 +1128,16 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.QueryInstance <em>Query Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Selectable <em>Selectable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.QueryInstance
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Selectable
 	 * @generated
 	 */
-	public Adapter createQueryInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.QueryActual <em>Query Actual</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.QueryActual
-	 * @generated
-	 */
-	public Adapter createQueryActualAdapter() {
+	public Adapter createSelectableAdapter() {
 		return null;
 	}
 
@@ -1242,6 +1212,34 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Filter <em>Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Filter
+	 * @generated
+	 */
+	public Adapter createFilterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter <em>Filter Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FilterParameter
+	 * @generated
+	 */
+	public Adapter createFilterParameterAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.PageLink <em>Page Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1280,20 +1278,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUnitSourceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.UnitTitle <em>Unit Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitTitle
-	 * @generated
-	 */
-	public Adapter createUnitTitleAdapter() {
 		return null;
 	}
 
@@ -1406,62 +1390,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel <em>Model Label</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabel
-	 * @generated
-	 */
-	public Adapter createModelLabelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeature <em>Model Label Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeature
-	 * @generated
-	 */
-	public Adapter createModelLabelFeatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelElement <em>Model Label Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelElement
-	 * @generated
-	 */
-	public Adapter createModelLabelElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation <em>Model Label Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation
-	 * @generated
-	 */
-	public Adapter createModelLabelAssociationAdapter() {
 		return null;
 	}
 

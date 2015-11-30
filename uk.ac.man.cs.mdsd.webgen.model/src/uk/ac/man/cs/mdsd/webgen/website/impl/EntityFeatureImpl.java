@@ -26,39 +26,19 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getColumnName <em>Column Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getFooterClass <em>Footer Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getParentEntity <em>Parent Entity</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isOrdered <em>Ordered</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getColumnName <em>Column Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implements EntityFeature {
-	/**
-	 * The default value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColumnName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COLUMN_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColumnName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String columnName = COLUMN_NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getHeaderClass() <em>Header Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -180,6 +160,26 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	protected boolean ordered = ORDERED_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumnName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COLUMN_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumnName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String columnName = COLUMN_NAME_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -196,47 +196,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.ENTITY_FEATURE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Entity getParentEntity() {
-		if (eContainerFeatureID() != WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY) return null;
-		return (Entity)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetParentEntity(Entity newParentEntity, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newParentEntity, WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentEntity(Entity newParentEntity) {
-		if (newParentEntity != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY && newParentEntity != null)) {
-			if (EcoreUtil.isAncestor(this, newParentEntity))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newParentEntity != null)
-				msgs = ((InternalEObject)newParentEntity).eInverseAdd(this, WebsitePackage.ENTITY__FEATURES, Entity.class, msgs);
-			msgs = basicSetParentEntity(newParentEntity, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY, newParentEntity, newParentEntity));
 	}
 
 	/**
@@ -391,13 +350,54 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Entity getPartOf() {
+		if (eContainerFeatureID() != WebsitePackage.ENTITY_FEATURE__PART_OF) return null;
+		return (Entity)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPartOf(Entity newPartOf, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WebsitePackage.ENTITY_FEATURE__PART_OF, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPartOf(Entity newPartOf) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.ENTITY_FEATURE__PART_OF && newPartOf != null)) {
+			if (EcoreUtil.isAncestor(this, newPartOf))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newPartOf != null)
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.ENTITY__FEATURES, Entity.class, msgs);
+			msgs = basicSetPartOf(newPartOf, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__PART_OF, newPartOf, newPartOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY:
+			case WebsitePackage.ENTITY_FEATURE__PART_OF:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetParentEntity((Entity)otherEnd, msgs);
+				return basicSetPartOf((Entity)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -410,8 +410,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY:
-				return basicSetParentEntity(null, msgs);
+			case WebsitePackage.ENTITY_FEATURE__PART_OF:
+				return basicSetPartOf(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -424,7 +424,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY:
+			case WebsitePackage.ENTITY_FEATURE__PART_OF:
 				return eInternalContainer().eInverseRemove(this, WebsitePackage.ENTITY__FEATURES, Entity.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -438,22 +438,22 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
-				return getColumnName();
 			case WebsitePackage.ENTITY_FEATURE__HEADER_CLASS:
 				return getHeaderClass();
 			case WebsitePackage.ENTITY_FEATURE__DISPLAY_CLASS:
 				return getDisplayClass();
 			case WebsitePackage.ENTITY_FEATURE__FOOTER_CLASS:
 				return getFooterClass();
-			case WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY:
-				return getParentEntity();
+			case WebsitePackage.ENTITY_FEATURE__PART_OF:
+				return getPartOf();
 			case WebsitePackage.ENTITY_FEATURE__CARDINALITY:
 				return getCardinality();
 			case WebsitePackage.ENTITY_FEATURE__UNIQUE:
 				return isUnique();
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:
 				return isOrdered();
+			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
+				return getColumnName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -466,9 +466,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
-				setColumnName((String)newValue);
-				return;
 			case WebsitePackage.ENTITY_FEATURE__HEADER_CLASS:
 				setHeaderClass((String)newValue);
 				return;
@@ -478,8 +475,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case WebsitePackage.ENTITY_FEATURE__FOOTER_CLASS:
 				setFooterClass((String)newValue);
 				return;
-			case WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY:
-				setParentEntity((Entity)newValue);
+			case WebsitePackage.ENTITY_FEATURE__PART_OF:
+				setPartOf((Entity)newValue);
 				return;
 			case WebsitePackage.ENTITY_FEATURE__CARDINALITY:
 				setCardinality((Cardinality)newValue);
@@ -489,6 +486,9 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return;
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:
 				setOrdered((Boolean)newValue);
+				return;
+			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
+				setColumnName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -502,9 +502,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
-				setColumnName(COLUMN_NAME_EDEFAULT);
-				return;
 			case WebsitePackage.ENTITY_FEATURE__HEADER_CLASS:
 				setHeaderClass(HEADER_CLASS_EDEFAULT);
 				return;
@@ -514,8 +511,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case WebsitePackage.ENTITY_FEATURE__FOOTER_CLASS:
 				setFooterClass(FOOTER_CLASS_EDEFAULT);
 				return;
-			case WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY:
-				setParentEntity((Entity)null);
+			case WebsitePackage.ENTITY_FEATURE__PART_OF:
+				setPartOf((Entity)null);
 				return;
 			case WebsitePackage.ENTITY_FEATURE__CARDINALITY:
 				setCardinality(CARDINALITY_EDEFAULT);
@@ -525,6 +522,9 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return;
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:
 				setOrdered(ORDERED_EDEFAULT);
+				return;
+			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
+				setColumnName(COLUMN_NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -538,22 +538,22 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
-				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
 			case WebsitePackage.ENTITY_FEATURE__HEADER_CLASS:
 				return HEADER_CLASS_EDEFAULT == null ? headerClass != null : !HEADER_CLASS_EDEFAULT.equals(headerClass);
 			case WebsitePackage.ENTITY_FEATURE__DISPLAY_CLASS:
 				return DISPLAY_CLASS_EDEFAULT == null ? displayClass != null : !DISPLAY_CLASS_EDEFAULT.equals(displayClass);
 			case WebsitePackage.ENTITY_FEATURE__FOOTER_CLASS:
 				return FOOTER_CLASS_EDEFAULT == null ? footerClass != null : !FOOTER_CLASS_EDEFAULT.equals(footerClass);
-			case WebsitePackage.ENTITY_FEATURE__PARENT_ENTITY:
-				return getParentEntity() != null;
+			case WebsitePackage.ENTITY_FEATURE__PART_OF:
+				return getPartOf() != null;
 			case WebsitePackage.ENTITY_FEATURE__CARDINALITY:
 				return cardinality != CARDINALITY_EDEFAULT;
 			case WebsitePackage.ENTITY_FEATURE__UNIQUE:
 				return unique != UNIQUE_EDEFAULT;
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:
 				return ordered != ORDERED_EDEFAULT;
+			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
+				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -567,7 +567,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Feature.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME: return WebsitePackage.FEATURE__COLUMN_NAME;
 				case WebsitePackage.ENTITY_FEATURE__HEADER_CLASS: return WebsitePackage.FEATURE__HEADER_CLASS;
 				case WebsitePackage.ENTITY_FEATURE__DISPLAY_CLASS: return WebsitePackage.FEATURE__DISPLAY_CLASS;
 				case WebsitePackage.ENTITY_FEATURE__FOOTER_CLASS: return WebsitePackage.FEATURE__FOOTER_CLASS;
@@ -586,7 +585,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Feature.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.FEATURE__COLUMN_NAME: return WebsitePackage.ENTITY_FEATURE__COLUMN_NAME;
 				case WebsitePackage.FEATURE__HEADER_CLASS: return WebsitePackage.ENTITY_FEATURE__HEADER_CLASS;
 				case WebsitePackage.FEATURE__DISPLAY_CLASS: return WebsitePackage.ENTITY_FEATURE__DISPLAY_CLASS;
 				case WebsitePackage.FEATURE__FOOTER_CLASS: return WebsitePackage.ENTITY_FEATURE__FOOTER_CLASS;
@@ -606,9 +604,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (columnName: ");
-		result.append(columnName);
-		result.append(", headerClass: ");
+		result.append(" (headerClass: ");
 		result.append(headerClass);
 		result.append(", displayClass: ");
 		result.append(displayClass);
@@ -620,6 +616,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		result.append(unique);
 		result.append(", ordered: ");
 		result.append(ordered);
+		result.append(", columnName: ");
+		result.append(columnName);
 		result.append(')');
 		return result.toString();
 	}

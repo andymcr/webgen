@@ -14,6 +14,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature#getAlias <em>Alias</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature#getColumnName <em>Column Name</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEncapsulatedFeature()
@@ -72,5 +73,31 @@ public interface EncapsulatedFeature extends ViewFeature {
 	 * @generated
 	 */
 	void setAlias(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Column Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Column Name</em>' attribute.
+	 * @see #setColumnName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEncapsulatedFeature_ColumnName()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getColumnName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature#getColumnName <em>Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Column Name</em>' attribute.
+	 * @see #getColumnName()
+	 * @generated
+	 */
+	void setColumnName(String value);
 
 } // EncapsulatedFeature

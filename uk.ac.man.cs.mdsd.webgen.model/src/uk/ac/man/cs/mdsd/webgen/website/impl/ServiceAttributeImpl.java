@@ -33,8 +33,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl#isCaseInsensitive <em>Case Insensitive</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl#isEncrypt <em>Encrypt</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
@@ -72,46 +70,6 @@ public class ServiceAttributeImpl extends IncludedElementImpl implements Service
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.SERVICE_ATTRIBUTE__NAME).getSettingDelegate();
-
-	/**
-	 * The default value of the '{@link #isCaseInsensitive() <em>Case Insensitive</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCaseInsensitive()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean CASE_INSENSITIVE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isCaseInsensitive() <em>Case Insensitive</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCaseInsensitive()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean caseInsensitive = CASE_INSENSITIVE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isEncrypt() <em>Encrypt</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isEncrypt()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ENCRYPT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isEncrypt() <em>Encrypt</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isEncrypt()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean encrypt = ENCRYPT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
@@ -209,14 +167,6 @@ public class ServiceAttributeImpl extends IncludedElementImpl implements Service
 			|| (newAttribute != null)
 				&& (newAttribute instanceof DataTypeAttribute)
 				&& ((DataTypeAttribute) newAttribute).isObfuscateFormFields());
-		setCaseInsensitive(isCaseInsensitive()
-			|| (newAttribute != null)
-				&& (newAttribute instanceof DataTypeAttribute)
-				&& ((DataTypeAttribute) newAttribute).isCaseInsensitive());
-		setEncrypt(isEncrypt()
-			|| (newAttribute != null)
-				&& (newAttribute instanceof DataTypeAttribute)
-				&& ((DataTypeAttribute) newAttribute).isEncrypt());
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INCLUDED_ELEMENT__ATTRIBUTE, oldAttribute, attribute));
 	}
@@ -290,48 +240,6 @@ public class ServiceAttributeImpl extends IncludedElementImpl implements Service
 	 */
 	public String getName() {
 		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isCaseInsensitive() {
-		return caseInsensitive;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCaseInsensitive(boolean newCaseInsensitive) {
-		boolean oldCaseInsensitive = caseInsensitive;
-		caseInsensitive = newCaseInsensitive;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE, oldCaseInsensitive, caseInsensitive));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isEncrypt() {
-		return encrypt;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEncrypt(boolean newEncrypt) {
-		boolean oldEncrypt = encrypt;
-		encrypt = newEncrypt;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE_ATTRIBUTE__ENCRYPT, oldEncrypt, encrypt));
 	}
 
 	/**
@@ -455,10 +363,6 @@ public class ServiceAttributeImpl extends IncludedElementImpl implements Service
 				return getDateFormat();
 			case WebsitePackage.SERVICE_ATTRIBUTE__NAME:
 				return getName();
-			case WebsitePackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
-				return isCaseInsensitive();
-			case WebsitePackage.SERVICE_ATTRIBUTE__ENCRYPT:
-				return isEncrypt();
 			case WebsitePackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				return getInterfaceType();
 			case WebsitePackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
@@ -482,12 +386,6 @@ public class ServiceAttributeImpl extends IncludedElementImpl implements Service
 				return;
 			case WebsitePackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 				setDateFormat((String)newValue);
-				return;
-			case WebsitePackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
-				setCaseInsensitive((Boolean)newValue);
-				return;
-			case WebsitePackage.SERVICE_ATTRIBUTE__ENCRYPT:
-				setEncrypt((Boolean)newValue);
 				return;
 			case WebsitePackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType((String)newValue);
@@ -516,12 +414,6 @@ public class ServiceAttributeImpl extends IncludedElementImpl implements Service
 			case WebsitePackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
-			case WebsitePackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
-				setCaseInsensitive(CASE_INSENSITIVE_EDEFAULT);
-				return;
-			case WebsitePackage.SERVICE_ATTRIBUTE__ENCRYPT:
-				setEncrypt(ENCRYPT_EDEFAULT);
-				return;
 			case WebsitePackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
 				return;
@@ -549,10 +441,6 @@ public class ServiceAttributeImpl extends IncludedElementImpl implements Service
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 			case WebsitePackage.SERVICE_ATTRIBUTE__NAME:
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case WebsitePackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
-				return caseInsensitive != CASE_INSENSITIVE_EDEFAULT;
-			case WebsitePackage.SERVICE_ATTRIBUTE__ENCRYPT:
-				return encrypt != ENCRYPT_EDEFAULT;
 			case WebsitePackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 			case WebsitePackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
@@ -609,10 +497,6 @@ public class ServiceAttributeImpl extends IncludedElementImpl implements Service
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (dateFormat: ");
 		result.append(dateFormat);
-		result.append(", caseInsensitive: ");
-		result.append(caseInsensitive);
-		result.append(", encrypt: ");
-		result.append(encrypt);
 		result.append(", interfaceType: ");
 		result.append(interfaceType);
 		result.append(", placeholder: ");

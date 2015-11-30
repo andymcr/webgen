@@ -61,11 +61,22 @@ helper context String def: createAssociationColumnName() : String
 					name.toLower()
 				endif;
 
-helper context Website!Association def: targetFeatureName() : String
-	= if not self.targetFeatureName.oclIsUndefined() and self.targetFeatureName <> '' then
-			self.targetFeatureName
+helper context Website!Association def: targetEntityName() : String
+	= if self.oclIsTypeOf(Website!EncapsulatedAssociation) then
+			self.association.targetEntityName()
 		else
-			'inv'.concat(self.name.uppercaseFirst())
+			self.targetEntity.name
+		endif;
+
+	helper context Website!Association def: targetFeatureName() : String
+	= if self.oclIsTypeOf(Website!EncapsulatedAssociation) then
+			self.association.targetFeatureName()
+		else
+			if not self.targetFeatureName.oclIsUndefined() and self.targetFeatureName <> '' then
+				self.targetFeatureName
+			else
+				'inv'.concat(self.name.uppercaseFirst())
+			endif
 		endif;
 
 helper context Website!Association def: targetDisplayLabel() : String
@@ -80,7 +91,7 @@ helper context Website!Association def: createPivotTableName() : String
 			= if not self.pivotTableName.oclIsUndefined() and self.pivotTableName <> '' then
 					self.pivotTableName
 				else
-					self.parentEntity.name.concat('_').concat(self.targetEntity.name)
+					self.partOf.name.concat('_').concat(self.targetEntity.name)
 				endif
 		in let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
 			in if properties.databaseTechnology = #Oracle then
@@ -120,27 +131,20 @@ helper def: findWebsiteEntityOrView(name : String) : Website!EntityOrView
 helper def: findOrmDataType(name : String) : ORM!DataType
 	= ORM!DataType.allInstancesFrom('orm')->any(d | d.name = name);
 
-helper def: findOrmEntity(name : String) : ORM!Entity
-	= ORM!Entity.allInstancesFrom('orm')->any(e | e.name = name);
-
-helper context Website!Feature def: findOrmEntity() : ORM!Entity
-	= thisModule.findOrmEntity(self.parentEntity.name);
-
 helper context Website!Feature def: findOrmTargetEntity() : ORM!Entity
-	= thisModule.findOrmEntity(self.targetEntity.name);
+	= thisModule.findOrmEntityOrView(self.targetEntity.name);
 
 helper def: findOrmEntityOrView(name : String) : ORM!EntityOrView
 	= ORM!EntityOrView.allInstancesFrom('orm')->any(e | e.name = name);
 
 helper context Website!Feature def: findOrmEntityOrView() : ORM!EntityOrView
-	= if self.oclIsKindOf(Website!EntityFeature) then
-			thisModule.findOrmEntityOrView(self.parentEntity.name)
-		else
-			thisModule.findOrmEntityOrView(self.partOf.name)
-		endif;
+	= thisModule.findOrmEntityOrView(self.partOf.name);
 
-helper context ORM!EntityOrView def: getOrmFeature(featureName : String) : Website!Feature
+helper context ORM!EntityOrView def: getOrmFeature(featureName : String) : ORM!Feature
 	= self.features->any(f | f.name = featureName);
+
+helper context ORM!EntityOrView def: getOrmLabel(labelName : String) : ORM!ModelLabel
+	= self.labels->any(l | l.name = labelName);
 
 helper def: findOrmCollection(name : String) : ORM!DataType
 	= ORM!CollectionType.allInstancesFrom('orm')

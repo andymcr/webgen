@@ -8,7 +8,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -24,8 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelLabelItemProvider
-	extends NamedElementItemProvider {
+public class ModelLabelItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -48,7 +49,6 @@ public class ModelLabelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addFormatPropertyDescriptor(object);
-			addFeaturesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -71,28 +71,6 @@ public class ModelLabelItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Features feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFeaturesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelLabel_features_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabel_features_feature", "_UI_ModelLabel_type"),
-				 WebsitePackage.Literals.MODEL_LABEL__FEATURES,
-				 false,
-				 false,
-				 true,
-				 null,
 				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
@@ -151,6 +129,7 @@ public class ModelLabelItemProvider
 			getString("_UI_ModelLabel_type") :
 			getString("_UI_ModelLabel_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -188,7 +167,7 @@ public class ModelLabelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.MODEL_LABEL__FEATURES,
-				 WebsiteFactory.eINSTANCE.createModelLabelElement()));
+				 WebsiteFactory.eINSTANCE.createModelLabelAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -125,34 +125,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.MODEL_LABEL_X: {
-				ModelLabelX modelLabelX = (ModelLabelX)theEObject;
-				T result = caseModelLabelX(modelLabelX);
-				if (result == null) result = caseNamedElement(modelLabelX);
-				if (result == null) result = caseUnitTitle(modelLabelX);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.MODEL_LABEL_FEATURE_X: {
-				ModelLabelFeatureX modelLabelFeatureX = (ModelLabelFeatureX)theEObject;
-				T result = caseModelLabelFeatureX(modelLabelFeatureX);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.MODEL_LABEL_ELEMENT_X: {
-				ModelLabelElementX modelLabelElementX = (ModelLabelElementX)theEObject;
-				T result = caseModelLabelElementX(modelLabelElementX);
-				if (result == null) result = caseModelLabelFeatureX(modelLabelElementX);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.MODEL_LABEL_ASSOCIATION_X: {
-				ModelLabelAssociationX modelLabelAssociationX = (ModelLabelAssociationX)theEObject;
-				T result = caseModelLabelAssociationX(modelLabelAssociationX);
-				if (result == null) result = caseModelLabelFeatureX(modelLabelAssociationX);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.SELECTION: {
 				Selection selection = (Selection)theEObject;
 				T result = caseSelection(selection);
@@ -181,7 +153,6 @@ public class WafSwitch<T> extends Switch<T> {
 				T result = caseServiceAttribute(serviceAttribute);
 				if (result == null) result = caseServiceFeature(serviceAttribute);
 				if (result == null) result = caseIncludedAttribute(serviceAttribute);
-				if (result == null) result = caseUnitTitle(serviceAttribute);
 				if (result == null) result = caseNamedDisplayElement(serviceAttribute);
 				if (result == null) result = caseIncludedFeature(serviceAttribute);
 				if (result == null) result = caseNamedElement(serviceAttribute);
@@ -267,6 +238,20 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.FILTER: {
+				Filter filter = (Filter)theEObject;
+				T result = caseFilter(filter);
+				if (result == null) result = caseNamedElement(filter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.FILTER_PARAMETER: {
+				FilterParameter filterParameter = (FilterParameter)theEObject;
+				T result = caseFilterParameter(filterParameter);
+				if (result == null) result = caseNamedElement(filterParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.QUERY: {
 				Query query = (Query)theEObject;
 				T result = caseQuery(query);
@@ -281,29 +266,9 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.QUERY_INSTANCE: {
-				QueryInstance queryInstance = (QueryInstance)theEObject;
-				T result = caseQueryInstance(queryInstance);
-				if (result == null) result = caseNamedElement(queryInstance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.QUERY_ACTUAL: {
-				QueryActual queryActual = (QueryActual)theEObject;
-				T result = caseQueryActual(queryActual);
-				if (result == null) result = caseNamedElement(queryActual);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.UNIT_CONTAINER: {
 				UnitContainer unitContainer = (UnitContainer)theEObject;
 				T result = caseUnitContainer(unitContainer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.UNIT_TITLE: {
-				UnitTitle unitTitle = (UnitTitle)theEObject;
-				T result = caseUnitTitle(unitTitle);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -867,66 +832,6 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label X</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label X</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabelX(ModelLabelX object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Feature X</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Feature X</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabelFeatureX(ModelLabelFeatureX object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Element X</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Element X</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabelElementX(ModelLabelElementX object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Label Association X</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Label Association X</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelLabelAssociationX(ModelLabelAssociationX object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Selection</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1122,6 +1027,36 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Filter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFilter(Filter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Filter Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Filter Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFilterParameter(FilterParameter object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Query</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1152,36 +1087,6 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Query Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Query Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseQueryInstance(QueryInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Query Actual</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Query Actual</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseQueryActual(QueryActual object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Unit Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1193,21 +1098,6 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUnitContainer(UnitContainer object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unit Title</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unit Title</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUnitTitle(UnitTitle object) {
 		return null;
 	}
 

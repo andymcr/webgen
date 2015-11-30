@@ -74,7 +74,6 @@ unique lazy rule implicitStaticEntity {
 		dataType <- website.getDataType('String'),
 		required <- true,
 		"unique" <- true,
-		inputField <- true,
 		inputClass <- 'input_attribute',
 		columnName <- 'name'.createAttributeColumnName()
 	),
@@ -84,7 +83,6 @@ unique lazy rule implicitStaticEntity {
 		dataType <- website.getDataType('TextBlock'),
 		required <- true,
 		"unique" <- false,
-		inputField <- true,
 		inputClass <- 'input_attribute',
 		columnName <- 'content'.createAttributeColumnName()
 	)

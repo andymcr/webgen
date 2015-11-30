@@ -836,6 +836,9 @@
       name="ContainedAssociation"
       figure="AssociationWithContainmentFigure"/>
   <connections
+      name="ViewAssociation"
+      figure="AssociationWithoutContainmentFigure"/>
+  <connections
       name="ParentPageLink"
       figure="ParentPageLinkFigure"/>
   <compartments

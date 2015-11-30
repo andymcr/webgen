@@ -15,7 +15,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.LocationAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
@@ -52,7 +51,7 @@ public class MapUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSelectionFeaturesPropertyDescriptor(object);
+			addParametersPropertyDescriptor(object);
 			addReadOnlyPropertyDescriptor(object);
 			addDefaultZoomLevelPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
@@ -63,28 +62,25 @@ public class MapUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Selection Feature feature.
+	 * This adds a property descriptor for the Parameters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addSelectionFeaturesPropertyDescriptor(Object object) {
+	protected void addParametersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
 			getString("_UI_SelectTarget_selectionFeatures_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_selectionFeatures_feature", "_UI_SelectTarget_type"),
-			 WebsitePackage.Literals.SELECT_TARGET__SELECTION_FEATURES,
+			getString("_UI_PropertyDescriptor_description", "java.lang.String", "_UI_Selectable_type"),
+			 WebsitePackage.Literals.SELECTABLE__PARAMETERS,
 			true, false, true, null,
 			getString("_UI_NavigationPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof MapUnit) {
-						final MapUnit unit = (MapUnit) object;
-						final List<Attribute> features = new LinkedList<Attribute>();
-						features.addAll(getSourceAttributes(unit));
-						return features;
+						return getSourceAttributes((MapUnit) object);
 					}
 					return Collections.emptyList();
 				}

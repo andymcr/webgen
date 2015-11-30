@@ -61,9 +61,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case WafPackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			case WafPackage.SERVICE: return createService();
-			case WafPackage.MODEL_LABEL_X: return createModelLabelX();
-			case WafPackage.MODEL_LABEL_ELEMENT_X: return createModelLabelElementX();
-			case WafPackage.MODEL_LABEL_ASSOCIATION_X: return createModelLabelAssociationX();
 			case WafPackage.SELECTION: return createSelection();
 			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WafPackage.SERVICE_FEATURE: return createServiceFeature();
@@ -75,10 +72,10 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.FIXED_COMMAND_MENU_ENTRY: return createFixedCommandMenuEntry();
 			case WafPackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WafPackage.PAGE: return createPage();
+			case WafPackage.FILTER: return createFilter();
+			case WafPackage.FILTER_PARAMETER: return createFilterParameter();
 			case WafPackage.QUERY: return createQuery();
 			case WafPackage.QUERY_PARAMETER: return createQueryParameter();
-			case WafPackage.QUERY_INSTANCE: return createQueryInstance();
-			case WafPackage.QUERY_ACTUAL: return createQueryActual();
 			case WafPackage.STATIC_UNIT: return createStaticUnit();
 			case WafPackage.COMMAND_UNIT: return createCommandUnit();
 			case WafPackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
@@ -201,36 +198,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabelX createModelLabelX() {
-		ModelLabelXImpl modelLabelX = new ModelLabelXImpl();
-		return modelLabelX;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabelElementX createModelLabelElementX() {
-		ModelLabelElementXImpl modelLabelElementX = new ModelLabelElementXImpl();
-		return modelLabelElementX;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabelAssociationX createModelLabelAssociationX() {
-		ModelLabelAssociationXImpl modelLabelAssociationX = new ModelLabelAssociationXImpl();
-		return modelLabelAssociationX;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Selection createSelection() {
 		SelectionImpl selection = new SelectionImpl();
 		return selection;
@@ -341,6 +308,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Filter createFilter() {
+		FilterImpl filter = new FilterImpl();
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FilterParameter createFilterParameter() {
+		FilterParameterImpl filterParameter = new FilterParameterImpl();
+		return filterParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Query createQuery() {
 		QueryImpl query = new QueryImpl();
 		return query;
@@ -354,26 +341,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public QueryParameter createQueryParameter() {
 		QueryParameterImpl queryParameter = new QueryParameterImpl();
 		return queryParameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public QueryInstance createQueryInstance() {
-		QueryInstanceImpl queryInstance = new QueryInstanceImpl();
-		return queryInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public QueryActual createQueryActual() {
-		QueryActualImpl queryActual = new QueryActualImpl();
-		return queryActual;
 	}
 
 	/**

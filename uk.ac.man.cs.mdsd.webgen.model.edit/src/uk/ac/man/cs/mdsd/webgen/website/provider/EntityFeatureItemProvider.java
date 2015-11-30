@@ -48,10 +48,10 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			addHeaderClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
-			addColumnNamePropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
 			addOrderedPropertyDescriptor(object);
+			addColumnNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -240,10 +240,10 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			case WebsitePackage.ENTITY_FEATURE__HEADER_CLASS:
 			case WebsitePackage.ENTITY_FEATURE__DISPLAY_CLASS:
 			case WebsitePackage.ENTITY_FEATURE__FOOTER_CLASS:
-			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 			case WebsitePackage.ENTITY_FEATURE__CARDINALITY:
 			case WebsitePackage.ENTITY_FEATURE__UNIQUE:
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:
+			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

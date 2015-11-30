@@ -68,9 +68,9 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.DATA_TYPE: return createDataType();
 			case WebsitePackage.ENUMERATION_TYPE: return createEnumerationType();
 			case WebsitePackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
-			case WebsitePackage.MODEL_LABEL_Y: return createModelLabelY();
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE_Y: return createModelLabelAttributeY();
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION_Y: return createModelLabelAssociationY();
+			case WebsitePackage.MODEL_LABEL: return createModelLabel();
+			case WebsitePackage.MODEL_LABEL_ATTRIBUTE: return createModelLabelAttribute();
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
 			case WebsitePackage.ENTITY: return createEntity();
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE: return createDataTypeAttribute();
 			case WebsitePackage.DATE_ATTRIBUTE: return createDateAttribute();
@@ -85,9 +85,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION: return createEncapsulatedAssociation();
 			case WebsitePackage.VIEW_ASSOCIATION: return createViewAssociation();
 			case WebsitePackage.SERVICE: return createService();
-			case WebsitePackage.MODEL_LABEL: return createModelLabel();
-			case WebsitePackage.MODEL_LABEL_ELEMENT: return createModelLabelElement();
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION: return createModelLabelAssociation();
 			case WebsitePackage.SELECTION: return createSelection();
 			case WebsitePackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WebsitePackage.SERVICE_ATTRIBUTE: return createServiceAttribute();
@@ -99,10 +96,10 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.FIXED_COMMAND_MENU_ENTRY: return createFixedCommandMenuEntry();
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WebsitePackage.DYNAMIC_MENU: return createDynamicMenu();
+			case WebsitePackage.FILTER: return createFilter();
+			case WebsitePackage.FILTER_PARAMETER: return createFilterParameter();
 			case WebsitePackage.QUERY: return createQuery();
 			case WebsitePackage.QUERY_PARAMETER: return createQueryParameter();
-			case WebsitePackage.QUERY_INSTANCE: return createQueryInstance();
-			case WebsitePackage.QUERY_ACTUAL: return createQueryActual();
 			case WebsitePackage.STATIC_UNIT: return createStaticUnit();
 			case WebsitePackage.COMMAND_UNIT: return createCommandUnit();
 			case WebsitePackage.USER_COMMAND: return createUserCommand();
@@ -275,6 +272,36 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ModelLabel createModelLabel() {
+		ModelLabelImpl modelLabel = new ModelLabelImpl();
+		return modelLabel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelLabelAttribute createModelLabelAttribute() {
+		ModelLabelAttributeImpl modelLabelAttribute = new ModelLabelAttributeImpl();
+		return modelLabelAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelLabelAssociation createModelLabelAssociation() {
+		ModelLabelAssociationImpl modelLabelAssociation = new ModelLabelAssociationImpl();
+		return modelLabelAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Entity createEntity() {
 		EntityImpl entity = new EntityImpl();
 		return entity;
@@ -405,36 +432,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelLabelY createModelLabelY() {
-		ModelLabelYImpl modelLabelY = new ModelLabelYImpl();
-		return modelLabelY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabelAttributeY createModelLabelAttributeY() {
-		ModelLabelAttributeYImpl modelLabelAttributeY = new ModelLabelAttributeYImpl();
-		return modelLabelAttributeY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabelAssociationY createModelLabelAssociationY() {
-		ModelLabelAssociationYImpl modelLabelAssociationY = new ModelLabelAssociationYImpl();
-		return modelLabelAssociationY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Page createPage() {
 		PageImpl page = new PageImpl();
 		return page;
@@ -458,26 +455,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public QueryParameter createQueryParameter() {
 		QueryParameterImpl queryParameter = new QueryParameterImpl();
 		return queryParameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public QueryInstance createQueryInstance() {
-		QueryInstanceImpl queryInstance = new QueryInstanceImpl();
-		return queryInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public QueryActual createQueryActual() {
-		QueryActualImpl queryActual = new QueryActualImpl();
-		return queryActual;
 	}
 
 	/**
@@ -535,6 +512,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Filter createFilter() {
+		FilterImpl filter = new FilterImpl();
+		return filter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FilterParameter createFilterParameter() {
+		FilterParameterImpl filterParameter = new FilterParameterImpl();
+		return filterParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PageLink createPageLink() {
 		PageLinkImpl pageLink = new PageLinkImpl();
 		return pageLink;
@@ -568,36 +565,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public Service createService() {
 		ServiceImpl service = new ServiceImpl();
 		return service;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabel createModelLabel() {
-		ModelLabelImpl modelLabel = new ModelLabelImpl();
-		return modelLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabelElement createModelLabelElement() {
-		ModelLabelElementImpl modelLabelElement = new ModelLabelElementImpl();
-		return modelLabelElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ModelLabelAssociation createModelLabelAssociation() {
-		ModelLabelAssociationImpl modelLabelAssociation = new ModelLabelAssociationImpl();
-		return modelLabelAssociation;
 	}
 
 	/**

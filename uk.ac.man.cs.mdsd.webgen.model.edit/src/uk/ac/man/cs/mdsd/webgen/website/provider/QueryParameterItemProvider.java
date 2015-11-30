@@ -10,9 +10,15 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -26,7 +32,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class QueryParameterItemProvider extends NamedElementItemProvider {
+public class QueryParameterItemProvider extends WebGenItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -48,11 +54,54 @@ public class QueryParameterItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addParameterPropertyDescriptor(object);
-			addDataTypePropertyDescriptor(object);
-			addDefaultValuePropertyDescriptor(object);
+			addFormalPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Formal feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_QueryParameter_formal_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_formal_feature", "_UI_QueryParameter_type"),
+				 WebsitePackage.Literals.QUERY_PARAMETER__FORMAL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_QueryParameter_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_value_feature", "_UI_QueryParameter_type"),
+				 WebsitePackage.Literals.QUERY_PARAMETER__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -67,7 +116,7 @@ public class QueryParameterItemProvider extends NamedElementItemProvider {
 			getResourceLocator(),
 			getString("_UI_QueryParameter_parameter_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_parameter_feature", "_UI_QueryParameter_type"),
-			WebsitePackage.Literals.QUERY_PARAMETER__PARAMETER,
+			WebsitePackage.Literals.QUERY_PARAMETER__FORMAL,
 			true, false, true, null,
 			getString("_UI_InterfacePropertyCategory"),
 			null) {
@@ -76,58 +125,14 @@ public class QueryParameterItemProvider extends NamedElementItemProvider {
 					if (object instanceof QueryParameter) {
 						final Query query
 							= (Query) ((QueryParameter) object).eContainer();
-						if (query.getSelection() != null) {
-							return query.getSelection().getParameters();
+						if (query.getFilter() != null) {
+							return query.getFilter().getParameters();
 						}
 					}
 
 					return Collections.emptyList();
 				}
 		});
-	}
-
-	/**
-	 * This adds a property descriptor for the Data Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDataTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_QueryParameter_dataType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_dataType_feature", "_UI_QueryParameter_type"),
-				 WebsitePackage.Literals.QUERY_PARAMETER__DATA_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Default Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_QueryParameter_defaultValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_defaultValue_feature", "_UI_QueryParameter_type"),
-				 WebsitePackage.Literals.QUERY_PARAMETER__DEFAULT_VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -149,7 +154,7 @@ public class QueryParameterItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((QueryParameter)object).getName();
+		String label = ((QueryParameter)object).getValue();
 		return label == null || label.length() == 0 ?
 			getString("_UI_QueryParameter_type") :
 			getString("_UI_QueryParameter_type") + " " + label;
@@ -168,7 +173,7 @@ public class QueryParameterItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(QueryParameter.class)) {
-			case WebsitePackage.QUERY_PARAMETER__DEFAULT_VALUE:
+			case WebsitePackage.QUERY_PARAMETER__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -185,6 +190,17 @@ public class QueryParameterItemProvider extends NamedElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return WebsiteEditPlugin.INSTANCE;
 	}
 
 }

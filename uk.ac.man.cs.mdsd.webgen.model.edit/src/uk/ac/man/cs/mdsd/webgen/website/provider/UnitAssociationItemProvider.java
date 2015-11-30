@@ -5,8 +5,10 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -17,12 +19,12 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -61,8 +63,8 @@ public class UnitAssociationItemProvider
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
 			addServiceFeaturePropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
-			addDynamicLabelPropertyDescriptor(object);
 			addFiltersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -242,6 +244,28 @@ public class UnitAssociationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitAssociation_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_title_feature", "_UI_UnitAssociation_type"),
+				 WebsitePackage.Literals.UNIT_ASSOCIATION__TITLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Selection feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -278,28 +302,6 @@ public class UnitAssociationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Dynamic Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDynamicLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_dynamicLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_dynamicLabel_feature", "_UI_UnitAssociation_type"),
-				 WebsitePackage.Literals.UNIT_ASSOCIATION__DYNAMIC_LABEL,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Filters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -318,7 +320,7 @@ public class UnitAssociationItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
-						final List<UnitTitle> filters = new LinkedList<UnitTitle>();
+						final Set<Label> filters = new HashSet<Label>();
 						for (Service service : getSourceServices((UnitAssociation) object)) {
 							filters.addAll(getFeatureAttributes(service));
 						}

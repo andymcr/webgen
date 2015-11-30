@@ -14,7 +14,7 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
 
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
+import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -338,7 +338,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == UnitTitle.class) {
+		if (baseClass == Label.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
 			}
@@ -362,7 +362,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == UnitTitle.class) {
+		if (baseClass == Label.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}

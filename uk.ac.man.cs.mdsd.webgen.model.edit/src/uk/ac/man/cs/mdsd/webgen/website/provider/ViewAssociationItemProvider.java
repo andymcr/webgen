@@ -4,8 +4,6 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -16,9 +14,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import uk.ac.man.cs.mdsd.webgen.website.Association;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -28,7 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
+public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -50,10 +45,101 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addHeaderClassPropertyDescriptor(object);
+			addDisplayClassPropertyDescriptor(object);
+			addFooterClassPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
-			addAssociationPropertyDescriptor(object);
+			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Header Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHeaderClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_headerClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_headerClass_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__HEADER_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Display Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisplayClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_displayClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_displayClass_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__DISPLAY_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Footer Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFooterClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_footerClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_footerClass_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__FOOTER_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cardinality feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardinalityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ViewAssociation_cardinality_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ViewAssociation_cardinality_feature", "_UI_ViewAssociation_type"),
+				 WebsitePackage.Literals.VIEW_ASSOCIATION__CARDINALITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -76,38 +162,6 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_StylePropertyCategory"),
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Association feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_ViewAssociation_association_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ViewAssociation_association_feature", "_UI_ViewAssociation_type"),
-			WebsitePackage.Literals.VIEW_ASSOCIATION__ASSOCIATION,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof ViewAssociation) {
-						final View view = ((ViewAssociation) object).getPartOf();
-						final List<Association> associations = new LinkedList<Association>();
-						for (EntityOrView entityOrView : view.getEncapsulates()) {
-							associations.addAll(getAssociations(entityOrView));
-						}
-						return associations;
-					}
-
-					return Collections.emptyList();
-				}
-		});
 	}
 
 	/**
@@ -148,9 +202,11 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ViewAssociation.class)) {
+			case WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS:
+			case WebsitePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
+			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
-			case WebsitePackage.VIEW_ASSOCIATION__NAME:
-			case WebsitePackage.VIEW_ASSOCIATION__USE_ASSOCIATION_SOURCE:
+			case WebsitePackage.VIEW_ASSOCIATION__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

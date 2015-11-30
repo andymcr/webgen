@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.SelectTarget;
+import uk.ac.man.cs.mdsd.webgen.website.Selectable;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -25,7 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl#getSelectionFeatures <em>Selection Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl#getClearLabel <em>Clear Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
@@ -34,14 +34,14 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  */
 public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUnit {
 	/**
-	 * The cached value of the '{@link #getSelectionFeatures() <em>Selection Features</em>}' reference list.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSelectionFeatures()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntityAttribute> selectionFeatures;
+	protected EList<EntityAttribute> parameters;
 
 	/**
 	 * The default value of the '{@link #getClearLabel() <em>Clear Label</em>}' attribute.
@@ -107,11 +107,11 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<EntityAttribute> getSelectionFeatures() {
-		if (selectionFeatures == null) {
-			selectionFeatures = new EObjectResolvingEList<EntityAttribute>(EntityAttribute.class, this, WebsitePackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES);
+	public List<EntityAttribute> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectResolvingEList<EntityAttribute>(EntityAttribute.class, this, WebsitePackage.CREATE_UPDATE_UNIT__PARAMETERS);
 		}
-		return selectionFeatures;
+		return parameters;
 	}
 
 	/**
@@ -164,8 +164,8 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES:
-				return getSelectionFeatures();
+			case WebsitePackage.CREATE_UPDATE_UNIT__PARAMETERS:
+				return getParameters();
 			case WebsitePackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				return getClearLabel();
 			case WebsitePackage.CREATE_UPDATE_UNIT__STYLE_CLASS:
@@ -183,9 +183,9 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES:
-				getSelectionFeatures().clear();
-				getSelectionFeatures().addAll((Collection<? extends EntityAttribute>)newValue);
+			case WebsitePackage.CREATE_UPDATE_UNIT__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends EntityAttribute>)newValue);
 				return;
 			case WebsitePackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				setClearLabel((String)newValue);
@@ -205,8 +205,8 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES:
-				getSelectionFeatures().clear();
+			case WebsitePackage.CREATE_UPDATE_UNIT__PARAMETERS:
+				getParameters().clear();
 				return;
 			case WebsitePackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				setClearLabel(CLEAR_LABEL_EDEFAULT);
@@ -226,8 +226,8 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES:
-				return selectionFeatures != null && !selectionFeatures.isEmpty();
+			case WebsitePackage.CREATE_UPDATE_UNIT__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 			case WebsitePackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				return CLEAR_LABEL_EDEFAULT == null ? clearLabel != null : !CLEAR_LABEL_EDEFAULT.equals(clearLabel);
 			case WebsitePackage.CREATE_UPDATE_UNIT__STYLE_CLASS:
@@ -243,9 +243,9 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == SelectTarget.class) {
+		if (baseClass == Selectable.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES: return WebsitePackage.SELECT_TARGET__SELECTION_FEATURES;
+				case WebsitePackage.CREATE_UPDATE_UNIT__PARAMETERS: return WebsitePackage.SELECTABLE__PARAMETERS;
 				default: return -1;
 			}
 		}
@@ -259,9 +259,9 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == SelectTarget.class) {
+		if (baseClass == Selectable.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.SELECT_TARGET__SELECTION_FEATURES: return WebsitePackage.CREATE_UPDATE_UNIT__SELECTION_FEATURES;
+				case WebsitePackage.SELECTABLE__PARAMETERS: return WebsitePackage.CREATE_UPDATE_UNIT__PARAMETERS;
 				default: return -1;
 			}
 		}

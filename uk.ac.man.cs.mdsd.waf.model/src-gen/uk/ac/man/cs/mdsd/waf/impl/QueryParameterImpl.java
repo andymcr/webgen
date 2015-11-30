@@ -9,12 +9,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.man.cs.mdsd.orm.DataType;
-
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
+import uk.ac.man.cs.mdsd.waf.FilterParameter;
 import uk.ac.man.cs.mdsd.waf.QueryParameter;
-import uk.ac.man.cs.mdsd.waf.SelectionParameter;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -25,53 +23,42 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl#getParameter <em>Parameter</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl#getDataType <em>Data Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl#getFormal <em>Formal</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.QueryParameterImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class QueryParameterImpl extends NamedElementImpl implements QueryParameter {
 	/**
-	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
+	 * The cached value of the '{@link #getFormal() <em>Formal</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParameter()
+	 * @see #getFormal()
 	 * @generated
 	 * @ordered
 	 */
-	protected SelectionParameter parameter;
+	protected FilterParameter formal;
 
 	/**
-	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDataType()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType dataType;
+	protected static final String VALUE_EDEFAULT = null;
 
 	/**
-	 * The default value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDefaultValue()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DEFAULT_VALUE_EDEFAULT = "";
-
-	/**
-	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String defaultValue = DEFAULT_VALUE_EDEFAULT;
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,16 +84,16 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter getParameter() {
-		if (parameter != null && parameter.eIsProxy()) {
-			InternalEObject oldParameter = (InternalEObject)parameter;
-			parameter = (SelectionParameter)eResolveProxy(oldParameter);
-			if (parameter != oldParameter) {
+	public FilterParameter getFormal() {
+		if (formal != null && formal.eIsProxy()) {
+			InternalEObject oldFormal = (InternalEObject)formal;
+			formal = (FilterParameter)eResolveProxy(oldFormal);
+			if (formal != oldFormal) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.QUERY_PARAMETER__PARAMETER, oldParameter, parameter));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.QUERY_PARAMETER__FORMAL, oldFormal, formal));
 			}
 		}
-		return parameter;
+		return formal;
 	}
 
 	/**
@@ -114,8 +101,8 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SelectionParameter basicGetParameter() {
-		return parameter;
+	public FilterParameter basicGetFormal() {
+		return formal;
 	}
 
 	/**
@@ -123,11 +110,11 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParameter(SelectionParameter newParameter) {
-		SelectionParameter oldParameter = parameter;
-		parameter = newParameter;
+	public void setFormal(FilterParameter newFormal) {
+		FilterParameter oldFormal = formal;
+		formal = newFormal;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.QUERY_PARAMETER__PARAMETER, oldParameter, parameter));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.QUERY_PARAMETER__FORMAL, oldFormal, formal));
 	}
 
 	/**
@@ -135,16 +122,8 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType getDataType() {
-		if (dataType != null && dataType.eIsProxy()) {
-			InternalEObject oldDataType = (InternalEObject)dataType;
-			dataType = (DataType)eResolveProxy(oldDataType);
-			if (dataType != oldDataType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.QUERY_PARAMETER__DATA_TYPE, oldDataType, dataType));
-			}
-		}
-		return dataType;
+	public String getValue() {
+		return value;
 	}
 
 	/**
@@ -152,41 +131,11 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetDataType() {
-		return dataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDataType(DataType newDataType) {
-		DataType oldDataType = dataType;
-		dataType = newDataType;
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.QUERY_PARAMETER__DATA_TYPE, oldDataType, dataType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDefaultValue() {
-		return defaultValue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDefaultValue(String newDefaultValue) {
-		String oldDefaultValue = defaultValue;
-		defaultValue = newDefaultValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.QUERY_PARAMETER__DEFAULT_VALUE, oldDefaultValue, defaultValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.QUERY_PARAMETER__VALUE, oldValue, value));
 	}
 
 	/**
@@ -197,14 +146,11 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.QUERY_PARAMETER__PARAMETER:
-				if (resolve) return getParameter();
-				return basicGetParameter();
-			case WafPackage.QUERY_PARAMETER__DATA_TYPE:
-				if (resolve) return getDataType();
-				return basicGetDataType();
-			case WafPackage.QUERY_PARAMETER__DEFAULT_VALUE:
-				return getDefaultValue();
+			case WafPackage.QUERY_PARAMETER__FORMAL:
+				if (resolve) return getFormal();
+				return basicGetFormal();
+			case WafPackage.QUERY_PARAMETER__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,14 +163,11 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.QUERY_PARAMETER__PARAMETER:
-				setParameter((SelectionParameter)newValue);
+			case WafPackage.QUERY_PARAMETER__FORMAL:
+				setFormal((FilterParameter)newValue);
 				return;
-			case WafPackage.QUERY_PARAMETER__DATA_TYPE:
-				setDataType((DataType)newValue);
-				return;
-			case WafPackage.QUERY_PARAMETER__DEFAULT_VALUE:
-				setDefaultValue((String)newValue);
+			case WafPackage.QUERY_PARAMETER__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -238,14 +181,11 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.QUERY_PARAMETER__PARAMETER:
-				setParameter((SelectionParameter)null);
+			case WafPackage.QUERY_PARAMETER__FORMAL:
+				setFormal((FilterParameter)null);
 				return;
-			case WafPackage.QUERY_PARAMETER__DATA_TYPE:
-				setDataType((DataType)null);
-				return;
-			case WafPackage.QUERY_PARAMETER__DEFAULT_VALUE:
-				setDefaultValue(DEFAULT_VALUE_EDEFAULT);
+			case WafPackage.QUERY_PARAMETER__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -259,12 +199,10 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.QUERY_PARAMETER__PARAMETER:
-				return parameter != null;
-			case WafPackage.QUERY_PARAMETER__DATA_TYPE:
-				return dataType != null;
-			case WafPackage.QUERY_PARAMETER__DEFAULT_VALUE:
-				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
+			case WafPackage.QUERY_PARAMETER__FORMAL:
+				return formal != null;
+			case WafPackage.QUERY_PARAMETER__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -279,8 +217,8 @@ public class QueryParameterImpl extends NamedElementImpl implements QueryParamet
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (defaultValue: ");
-		result.append(defaultValue);
+		result.append(" (value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

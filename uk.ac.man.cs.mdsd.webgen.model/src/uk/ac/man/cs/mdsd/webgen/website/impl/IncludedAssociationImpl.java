@@ -137,30 +137,32 @@ public abstract class IncludedAssociationImpl extends IncludedFeatureImpl implem
 	public void setUseAssociationSource(boolean newUseAssociationSource) {
 		boolean oldUseAssociationSource = useAssociationSource;
 		useAssociationSource = newUseAssociationSource;
-		boolean featureRequired;
-		if (getAssociation() instanceof EntityAssociation){
-			final EntityAssociation association = (EntityAssociation) getAssociation();
-			if (useAssociationSource) {
+		if (getAssociation() != null) {
+			boolean featureRequired;
+			if (getAssociation() instanceof EntityAssociation){
+				final EntityAssociation association = (EntityAssociation) getAssociation();
+				if (useAssociationSource) {
+					featureRequired = association.getCardinality() == Cardinality.REQUIRED;
+				} else {
+					if (association instanceof AssociationWithContainment) {
+						featureRequired = true;
+					} else {
+						featureRequired = ((AssociationWithoutContainment) getAssociation()).getTargetCardinality() == Cardinality.REQUIRED;
+					}
+				}
+			} else if (getAssociation() instanceof EncapsulatedAssociation) {
+				final EncapsulatedAssociation association = (EncapsulatedAssociation) getAssociation();
 				featureRequired = association.getCardinality() == Cardinality.REQUIRED;
 			} else {
-				if (association instanceof AssociationWithContainment) {
-					featureRequired = true;
+				final ViewAssociation association = (ViewAssociation) getAssociation();
+				if (useAssociationSource) {
+					featureRequired = association.getCardinality() == Cardinality.REQUIRED;
 				} else {
-					featureRequired = ((AssociationWithoutContainment) getAssociation()).getTargetCardinality() == Cardinality.REQUIRED;
+					featureRequired = association.getOpposite().getCardinality() == Cardinality.REQUIRED;
 				}
 			}
-		} else if (getAssociation() instanceof EncapsulatedAssociation) {
-			final EncapsulatedAssociation association = (EncapsulatedAssociation) getAssociation();
-			featureRequired = association.getCardinality() == Cardinality.REQUIRED;
-		} else {
-			final ViewAssociation association = (ViewAssociation) getAssociation();
-			if (useAssociationSource) {
-				featureRequired = association.getCardinality() == Cardinality.REQUIRED;
-			} else {
-				featureRequired = association.getTargetCardinality() == Cardinality.REQUIRED;
-			}
+			setRequired(isRequired() || featureRequired);
 		}
-		setRequired(isRequired() || featureRequired);
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INCLUDED_ASSOCIATION__USE_ASSOCIATION_SOURCE, oldUseAssociationSource, useAssociationSource));
 	}

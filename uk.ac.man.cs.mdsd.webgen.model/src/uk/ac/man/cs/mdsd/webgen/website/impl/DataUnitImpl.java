@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
+import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.UnitTitle;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -25,7 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataUnitImpl#getDynamicTitle <em>Dynamic Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataUnitImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,15 +41,14 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	 */
 	protected Selection defaultSelection;
 	/**
-	 * The cached value of the '{@link #getDynamicTitle() <em>Dynamic Title</em>}' reference.
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDynamicTitle()
+	 * @see #getTitle()
 	 * @generated
 	 * @ordered
 	 */
-	protected UnitTitle dynamicTitle;
-
+	protected Label title;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,16 +111,16 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitTitle getDynamicTitle() {
-		if (dynamicTitle != null && dynamicTitle.eIsProxy()) {
-			InternalEObject oldDynamicTitle = (InternalEObject)dynamicTitle;
-			dynamicTitle = (UnitTitle)eResolveProxy(oldDynamicTitle);
-			if (dynamicTitle != oldDynamicTitle) {
+	public Label getTitle() {
+		if (title != null && title.eIsProxy()) {
+			InternalEObject oldTitle = (InternalEObject)title;
+			title = (Label)eResolveProxy(oldTitle);
+			if (title != oldTitle) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.DATA_UNIT__DYNAMIC_TITLE, oldDynamicTitle, dynamicTitle));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.DATA_UNIT__TITLE, oldTitle, title));
 			}
 		}
-		return dynamicTitle;
+		return title;
 	}
 
 	/**
@@ -129,8 +128,8 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitTitle basicGetDynamicTitle() {
-		return dynamicTitle;
+	public Label basicGetTitle() {
+		return title;
 	}
 
 	/**
@@ -138,11 +137,11 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDynamicTitle(UnitTitle newDynamicTitle) {
-		UnitTitle oldDynamicTitle = dynamicTitle;
-		dynamicTitle = newDynamicTitle;
+	public void setTitle(Label newTitle) {
+		Label oldTitle = title;
+		title = newTitle;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DATA_UNIT__DYNAMIC_TITLE, oldDynamicTitle, dynamicTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DATA_UNIT__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -156,9 +155,9 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 			case WebsitePackage.DATA_UNIT__DEFAULT_SELECTION:
 				if (resolve) return getDefaultSelection();
 				return basicGetDefaultSelection();
-			case WebsitePackage.DATA_UNIT__DYNAMIC_TITLE:
-				if (resolve) return getDynamicTitle();
-				return basicGetDynamicTitle();
+			case WebsitePackage.DATA_UNIT__TITLE:
+				if (resolve) return getTitle();
+				return basicGetTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,8 +173,8 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 			case WebsitePackage.DATA_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)newValue);
 				return;
-			case WebsitePackage.DATA_UNIT__DYNAMIC_TITLE:
-				setDynamicTitle((UnitTitle)newValue);
+			case WebsitePackage.DATA_UNIT__TITLE:
+				setTitle((Label)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,8 +191,8 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 			case WebsitePackage.DATA_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)null);
 				return;
-			case WebsitePackage.DATA_UNIT__DYNAMIC_TITLE:
-				setDynamicTitle((UnitTitle)null);
+			case WebsitePackage.DATA_UNIT__TITLE:
+				setTitle((Label)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -209,8 +208,8 @@ public abstract class DataUnitImpl extends DynamicUnitImpl implements DataUnit {
 		switch (featureID) {
 			case WebsitePackage.DATA_UNIT__DEFAULT_SELECTION:
 				return defaultSelection != null;
-			case WebsitePackage.DATA_UNIT__DYNAMIC_TITLE:
-				return dynamicTitle != null;
+			case WebsitePackage.DATA_UNIT__TITLE:
+				return title != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -50,7 +50,7 @@ public class UnitAssociationItemProvider
 			addAssociationPropertyDescriptor(object);
 			addServiceFeaturePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
-			addDynamicLabelPropertyDescriptor(object);
+			addLabelPropertyDescriptor(object);
 			addFiltersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -125,20 +125,19 @@ public class UnitAssociationItemProvider
 	}
 
   /**
-	 * This adds a property descriptor for the Dynamic Label feature.
+	 * This adds a property descriptor for the Label feature.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected void addDynamicLabelPropertyDescriptor(Object object)
-  {
+	protected void addLabelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_dynamicLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_dynamicLabel_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.Literals.UNIT_ASSOCIATION__DYNAMIC_LABEL,
+				 getString("_UI_UnitAssociation_label_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_label_feature", "_UI_UnitAssociation_type"),
+				 WafPackage.Literals.UNIT_ASSOCIATION__LABEL,
 				 true,
 				 false,
 				 true,
@@ -147,7 +146,7 @@ public class UnitAssociationItemProvider
 				 null));
 	}
 
-  /**
+		/**
 	 * This adds a property descriptor for the Filters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

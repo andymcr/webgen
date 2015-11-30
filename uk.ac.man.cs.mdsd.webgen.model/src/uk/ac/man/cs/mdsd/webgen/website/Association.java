@@ -6,6 +6,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import java.util.List;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -16,6 +18,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getInputClass <em>Input Class</em>}</li>
  * </ul>
  *
@@ -24,6 +27,24 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @generated
  */
 public interface Association extends Feature {
+
+	/**
+	 * Returns the value of the '<em><b>Encapsulated By</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getAssociation <em>Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Encapsulated By</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Encapsulated By</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation_EncapsulatedBy()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getAssociation
+	 * @model opposite="association"
+	 * @generated
+	 */
+	List<EncapsulatedAssociation> getEncapsulatedBy();
 
 	/**
 	 * Returns the value of the '<em><b>Input Class</b></em>' attribute.

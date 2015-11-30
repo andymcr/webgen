@@ -252,6 +252,75 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelItemProvider modelLabelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAdapter() {
+		if (modelLabelItemProvider == null) {
+			modelLabelItemProvider = new ModelLabelItemProvider(this);
+		}
+
+		return modelLabelItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelAttributeItemProvider modelLabelAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAttributeAdapter() {
+		if (modelLabelAttributeItemProvider == null) {
+			modelLabelAttributeItemProvider = new ModelLabelAttributeItemProvider(this);
+		}
+
+		return modelLabelAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelLabelAssociationItemProvider modelLabelAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModelLabelAssociationAdapter() {
+		if (modelLabelAssociationItemProvider == null) {
+			modelLabelAssociationItemProvider = new ModelLabelAssociationItemProvider(this);
+		}
+
+		return modelLabelAssociationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Entity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -298,26 +367,72 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ViewAttribute} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ViewAttributeItemProvider viewAttributeItemProvider;
+	protected EncapsulatedFeatureItemProvider encapsulatedFeatureItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ViewAttribute}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createViewAttributeAdapter() {
-		if (viewAttributeItemProvider == null) {
-			viewAttributeItemProvider = new ViewAttributeItemProvider(this);
+	public Adapter createEncapsulatedFeatureAdapter() {
+		if (encapsulatedFeatureItemProvider == null) {
+			encapsulatedFeatureItemProvider = new EncapsulatedFeatureItemProvider(this);
 		}
 
-		return viewAttributeItemProvider;
+		return encapsulatedFeatureItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EncapsulatedAttributeItemProvider encapsulatedAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEncapsulatedAttributeAdapter() {
+		if (encapsulatedAttributeItemProvider == null) {
+			encapsulatedAttributeItemProvider = new EncapsulatedAttributeItemProvider(this);
+		}
+
+		return encapsulatedAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EncapsulatedAssociationItemProvider encapsulatedAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEncapsulatedAssociationAdapter() {
+		if (encapsulatedAssociationItemProvider == null) {
+			encapsulatedAssociationItemProvider = new EncapsulatedAssociationItemProvider(this);
+		}
+
+		return encapsulatedAssociationItemProvider;
 	}
 
 	/**
@@ -505,75 +620,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelY} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelYItemProvider modelLabelYItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelY}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelYAdapter() {
-		if (modelLabelYItemProvider == null) {
-			modelLabelYItemProvider = new ModelLabelYItemProvider(this);
-		}
-
-		return modelLabelYItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttributeY} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelAttributeYItemProvider modelLabelAttributeYItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttributeY}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelAttributeYAdapter() {
-		if (modelLabelAttributeYItemProvider == null) {
-			modelLabelAttributeYItemProvider = new ModelLabelAttributeYItemProvider(this);
-		}
-
-		return modelLabelAttributeYItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociationY} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelAssociationYItemProvider modelLabelAssociationYItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociationY}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelAssociationYAdapter() {
-		if (modelLabelAssociationYItemProvider == null) {
-			modelLabelAssociationYItemProvider = new ModelLabelAssociationYItemProvider(this);
-		}
-
-		return modelLabelAssociationYItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Page} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -640,52 +686,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		}
 
 		return queryParameterItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.QueryInstance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected QueryInstanceItemProvider queryInstanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.QueryInstance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createQueryInstanceAdapter() {
-		if (queryInstanceItemProvider == null) {
-			queryInstanceItemProvider = new QueryInstanceItemProvider(this);
-		}
-
-		return queryInstanceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.QueryActual} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected QueryActualItemProvider queryActualItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.QueryActual}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createQueryActualAdapter() {
-		if (queryActualItemProvider == null) {
-			queryActualItemProvider = new QueryActualItemProvider(this);
-		}
-
-		return queryActualItemProvider;
 	}
 
 	/**
@@ -804,6 +804,52 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Filter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FilterItemProvider filterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Filter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFilterAdapter() {
+		if (filterItemProvider == null) {
+			filterItemProvider = new FilterItemProvider(this);
+		}
+
+		return filterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FilterParameterItemProvider filterParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFilterParameterAdapter() {
+		if (filterParameterItemProvider == null) {
+			filterParameterItemProvider = new FilterParameterItemProvider(this);
+		}
+
+		return filterParameterItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.PageLink} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -893,75 +939,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		}
 
 		return serviceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelItemProvider modelLabelItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelAdapter() {
-		if (modelLabelItemProvider == null) {
-			modelLabelItemProvider = new ModelLabelItemProvider(this);
-		}
-
-		return modelLabelItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelElement} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelElementItemProvider modelLabelElementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelElementAdapter() {
-		if (modelLabelElementItemProvider == null) {
-			modelLabelElementItemProvider = new ModelLabelElementItemProvider(this);
-		}
-
-		return modelLabelElementItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModelLabelAssociationItemProvider modelLabelAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createModelLabelAssociationAdapter() {
-		if (modelLabelAssociationItemProvider == null) {
-			modelLabelAssociationItemProvider = new ModelLabelAssociationItemProvider(this);
-		}
-
-		return modelLabelAssociationItemProvider;
 	}
 
 	/**
@@ -1806,9 +1783,9 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (enumerationTypeItemProvider != null) enumerationTypeItemProvider.dispose();
 		if (enumerationLiteralItemProvider != null) enumerationLiteralItemProvider.dispose();
-		if (modelLabelYItemProvider != null) modelLabelYItemProvider.dispose();
-		if (modelLabelAttributeYItemProvider != null) modelLabelAttributeYItemProvider.dispose();
-		if (modelLabelAssociationYItemProvider != null) modelLabelAssociationYItemProvider.dispose();
+		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
+		if (modelLabelAttributeItemProvider != null) modelLabelAttributeItemProvider.dispose();
+		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
 		if (entityItemProvider != null) entityItemProvider.dispose();
 		if (dataTypeAttributeItemProvider != null) dataTypeAttributeItemProvider.dispose();
 		if (dateAttributeItemProvider != null) dateAttributeItemProvider.dispose();
@@ -1818,12 +1795,11 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (associationWithoutContainmentItemProvider != null) associationWithoutContainmentItemProvider.dispose();
 		if (associationWithContainmentItemProvider != null) associationWithContainmentItemProvider.dispose();
 		if (viewItemProvider != null) viewItemProvider.dispose();
-		if (viewAttributeItemProvider != null) viewAttributeItemProvider.dispose();
+		if (encapsulatedFeatureItemProvider != null) encapsulatedFeatureItemProvider.dispose();
+		if (encapsulatedAttributeItemProvider != null) encapsulatedAttributeItemProvider.dispose();
+		if (encapsulatedAssociationItemProvider != null) encapsulatedAssociationItemProvider.dispose();
 		if (viewAssociationItemProvider != null) viewAssociationItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
-		if (modelLabelItemProvider != null) modelLabelItemProvider.dispose();
-		if (modelLabelElementItemProvider != null) modelLabelElementItemProvider.dispose();
-		if (modelLabelAssociationItemProvider != null) modelLabelAssociationItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
 		if (serviceAttributeItemProvider != null) serviceAttributeItemProvider.dispose();
@@ -1835,10 +1811,10 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (fixedCommandMenuEntryItemProvider != null) fixedCommandMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
+		if (filterItemProvider != null) filterItemProvider.dispose();
+		if (filterParameterItemProvider != null) filterParameterItemProvider.dispose();
 		if (queryItemProvider != null) queryItemProvider.dispose();
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
-		if (queryInstanceItemProvider != null) queryInstanceItemProvider.dispose();
-		if (queryActualItemProvider != null) queryActualItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (commandUnitItemProvider != null) commandUnitItemProvider.dispose();
 		if (userCommandItemProvider != null) userCommandItemProvider.dispose();

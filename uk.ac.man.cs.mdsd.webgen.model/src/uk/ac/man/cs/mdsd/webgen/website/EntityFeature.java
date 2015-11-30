@@ -11,10 +11,11 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getParentEntity <em>Parent Entity</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isOrdered <em>Ordered</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getColumnName <em>Column Name</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityFeature()
@@ -23,32 +24,32 @@ package uk.ac.man.cs.mdsd.webgen.website;
  */
 public interface EntityFeature extends NamedDisplayElement, Feature {
 	/**
-	 * Returns the value of the '<em><b>Parent Entity</b></em>' container reference.
+	 * Returns the value of the '<em><b>Part Of</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures <em>Features</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parent Entity</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Part Of</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Entity</em>' container reference.
-	 * @see #setParentEntity(Entity)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityFeature_ParentEntity()
+	 * @return the value of the '<em>Part Of</em>' container reference.
+	 * @see #setPartOf(Entity)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityFeature_PartOf()
 	 * @see uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures
 	 * @model opposite="features" required="true" transient="false"
 	 * @generated
 	 */
-	Entity getParentEntity();
+	Entity getPartOf();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getParentEntity <em>Parent Entity</em>}' container reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getPartOf <em>Part Of</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Entity</em>' container reference.
-	 * @see #getParentEntity()
+	 * @param value the new value of the '<em>Part Of</em>' container reference.
+	 * @see #getPartOf()
 	 * @generated
 	 */
-	void setParentEntity(Entity value);
+	void setPartOf(Entity value);
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' attribute.
@@ -133,5 +134,31 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * @generated
 	 */
 	void setOrdered(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Column Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Column Name</em>' attribute.
+	 * @see #setColumnName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityFeature_ColumnName()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getColumnName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getColumnName <em>Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Column Name</em>' attribute.
+	 * @see #getColumnName()
+	 * @generated
+	 */
+	void setColumnName(String value);
 
 } // EntityFeature

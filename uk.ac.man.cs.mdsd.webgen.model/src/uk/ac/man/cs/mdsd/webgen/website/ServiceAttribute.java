@@ -13,8 +13,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#isCaseInsensitive <em>Case Insensitive</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#isEncrypt <em>Encrypt</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getValidationPattern <em>Validation Pattern</em>}</li>
@@ -40,60 +38,6 @@ public interface ServiceAttribute extends IncludedElement, ServiceFeature {
 	 * @generated
 	 */
 	String getName();
-
-	/**
-	 * Returns the value of the '<em><b>Case Insensitive</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Case Insensitive</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Case Insensitive</em>' attribute.
-	 * @see #setCaseInsensitive(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceAttribute_CaseInsensitive()
-	 * @model default="false" ordered="false"
-	 * @generated
-	 */
-	boolean isCaseInsensitive();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#isCaseInsensitive <em>Case Insensitive</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Case Insensitive</em>' attribute.
-	 * @see #isCaseInsensitive()
-	 * @generated
-	 */
-	void setCaseInsensitive(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Encrypt</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Encrypt</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Encrypt</em>' attribute.
-	 * @see #setEncrypt(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getServiceAttribute_Encrypt()
-	 * @model default="false" ordered="false"
-	 * @generated
-	 */
-	boolean isEncrypt();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#isEncrypt <em>Encrypt</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Encrypt</em>' attribute.
-	 * @see #isEncrypt()
-	 * @generated
-	 */
-	void setEncrypt(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Interface Type</b></em>' attribute.

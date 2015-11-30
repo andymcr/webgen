@@ -12,8 +12,6 @@ package uk.ac.man.cs.mdsd.waf;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#isCaseInsensitive <em>Case Insensitive</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#isEncrypt <em>Encrypt</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getValidationPattern <em>Validation Pattern</em>}</li>
@@ -24,59 +22,7 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface ServiceAttribute extends ServiceFeature, IncludedAttribute, UnitTitle {
-	/**
-	 * Returns the value of the '<em><b>Case Insensitive</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Case Insensitive</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Case Insensitive</em>' attribute.
-	 * @see #setCaseInsensitive(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceAttribute_CaseInsensitive()
-	 * @model unique="false"
-	 * @generated
-	 */
-	boolean isCaseInsensitive();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#isCaseInsensitive <em>Case Insensitive</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Case Insensitive</em>' attribute.
-	 * @see #isCaseInsensitive()
-	 * @generated
-	 */
-	void setCaseInsensitive(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Encrypt</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Encrypt</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Encrypt</em>' attribute.
-	 * @see #setEncrypt(boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getServiceAttribute_Encrypt()
-	 * @model unique="false"
-	 * @generated
-	 */
-	boolean isEncrypt();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#isEncrypt <em>Encrypt</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Encrypt</em>' attribute.
-	 * @see #isEncrypt()
-	 * @generated
-	 */
-	void setEncrypt(boolean value);
-
+public interface ServiceAttribute extends ServiceFeature, IncludedAttribute {
 	/**
 	 * Returns the value of the '<em><b>Interface Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->

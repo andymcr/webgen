@@ -46,7 +46,6 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addInputClassPropertyDescriptor(object);
-			addTargetEntityPropertyDescriptor(object);
 			addBidirectionalPropertyDescriptor(object);
 			addPivotTableNamePropertyDescriptor(object);
 			addTargetFeatureNamePropertyDescriptor(object);
@@ -57,28 +56,6 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			addTargetFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Target Entity feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetEntityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityAssociation_targetEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetEntity_feature", "_UI_EntityAssociation_type"),
-				 WebsitePackage.Literals.ENTITY_ASSOCIATION__TARGET_ENTITY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

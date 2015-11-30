@@ -14,13 +14,14 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.waf.Filter;
 import uk.ac.man.cs.mdsd.waf.IndexUnit;
 import uk.ac.man.cs.mdsd.waf.InlineAction;
 import uk.ac.man.cs.mdsd.waf.InlineActionContainer;
-import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.SearchUnit;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -34,7 +35,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPaginationQuery <em>Pagination Query</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFilters <em>Filters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPreviousPageLabel <em>Previous Page Label</em>}</li>
@@ -79,14 +81,24 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected boolean omitColumnLabels = OMIT_COLUMN_LABELS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPaginationQuery() <em>Pagination Query</em>}' reference.
+	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPaginationQuery()
+	 * @see #getFilters()
 	 * @generated
 	 * @ordered
 	 */
-	protected Query paginationQuery;
+	protected EList<Filter> filters;
+
+	/**
+	 * The cached value of the '{@link #getPagination() <em>Pagination</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPagination()
+	 * @generated
+	 * @ordered
+	 */
+	protected Filter pagination;
 
 	/**
 	 * The default value of the '{@link #getDefaultPaginationSize() <em>Default Pagination Size</em>}' attribute.
@@ -295,16 +307,28 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Query getPaginationQuery() {
-		if (paginationQuery != null && paginationQuery.eIsProxy()) {
-			InternalEObject oldPaginationQuery = (InternalEObject)paginationQuery;
-			paginationQuery = (Query)eResolveProxy(oldPaginationQuery);
-			if (paginationQuery != oldPaginationQuery) {
+	public EList<Filter> getFilters() {
+		if (filters == null) {
+			filters = new EObjectContainmentEList<Filter>(Filter.class, this, WafPackage.INDEX_UNIT__FILTERS);
+		}
+		return filters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Filter getPagination() {
+		if (pagination != null && pagination.eIsProxy()) {
+			InternalEObject oldPagination = (InternalEObject)pagination;
+			pagination = (Filter)eResolveProxy(oldPagination);
+			if (pagination != oldPagination) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.INDEX_UNIT__PAGINATION_QUERY, oldPaginationQuery, paginationQuery));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
 			}
 		}
-		return paginationQuery;
+		return pagination;
 	}
 
 	/**
@@ -312,8 +336,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Query basicGetPaginationQuery() {
-		return paginationQuery;
+	public Filter basicGetPagination() {
+		return pagination;
 	}
 
 	/**
@@ -321,11 +345,11 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPaginationQuery(Query newPaginationQuery) {
-		Query oldPaginationQuery = paginationQuery;
-		paginationQuery = newPaginationQuery;
+	public void setPagination(Filter newPagination) {
+		Filter oldPagination = pagination;
+		pagination = newPagination;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__PAGINATION_QUERY, oldPaginationQuery, paginationQuery));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__PAGINATION, oldPagination, pagination));
 	}
 
 	/**
@@ -564,6 +588,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		switch (featureID) {
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
+			case WafPackage.INDEX_UNIT__FILTERS:
+				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
 			case WafPackage.INDEX_UNIT__TARGETTING_SEARCHES:
 				return basicSetTargettingSearches(null, msgs);
 		}
@@ -582,9 +608,11 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return getActions();
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				return isOmitColumnLabels();
-			case WafPackage.INDEX_UNIT__PAGINATION_QUERY:
-				if (resolve) return getPaginationQuery();
-				return basicGetPaginationQuery();
+			case WafPackage.INDEX_UNIT__FILTERS:
+				return getFilters();
+			case WafPackage.INDEX_UNIT__PAGINATION:
+				if (resolve) return getPagination();
+				return basicGetPagination();
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return getDefaultPaginationSize();
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
@@ -622,8 +650,12 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				setOmitColumnLabels((Boolean)newValue);
 				return;
-			case WafPackage.INDEX_UNIT__PAGINATION_QUERY:
-				setPaginationQuery((Query)newValue);
+			case WafPackage.INDEX_UNIT__FILTERS:
+				getFilters().clear();
+				getFilters().addAll((Collection<? extends Filter>)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__PAGINATION:
+				setPagination((Filter)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
@@ -667,8 +699,11 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				setOmitColumnLabels(OMIT_COLUMN_LABELS_EDEFAULT);
 				return;
-			case WafPackage.INDEX_UNIT__PAGINATION_QUERY:
-				setPaginationQuery((Query)null);
+			case WafPackage.INDEX_UNIT__FILTERS:
+				getFilters().clear();
+				return;
+			case WafPackage.INDEX_UNIT__PAGINATION:
+				setPagination((Filter)null);
 				return;
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);
@@ -710,8 +745,10 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return actions != null && !actions.isEmpty();
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 				return omitColumnLabels != OMIT_COLUMN_LABELS_EDEFAULT;
-			case WafPackage.INDEX_UNIT__PAGINATION_QUERY:
-				return paginationQuery != null;
+			case WafPackage.INDEX_UNIT__FILTERS:
+				return filters != null && !filters.isEmpty();
+			case WafPackage.INDEX_UNIT__PAGINATION:
+				return pagination != null;
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return defaultPaginationSize != DEFAULT_PAGINATION_SIZE_EDEFAULT;
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:

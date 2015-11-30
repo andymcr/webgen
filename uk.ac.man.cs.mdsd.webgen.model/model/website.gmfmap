@@ -274,10 +274,10 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.1">
         <containmentFeature
-            href="website.ecore#//EntityOrView/displayLabels"/>
+            href="website.ecore#//EntityOrView/labels"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//ModelLabelY"/>
+              href="website.ecore#//ModelLabel"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -325,10 +325,10 @@
       <children
           compartment="//@nodes.5/@ownedChild/@compartments.1">
         <containmentFeature
-            href="website.ecore#//EntityOrView/displayLabels"/>
+            href="website.ecore#//EntityOrView/labels"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//ModelLabelY"/>
+              href="website.ecore#//ModelLabel"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
@@ -349,13 +349,13 @@
             href="website.ecore#//View/features"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//ViewAttribute"/>
+              href="website.ecore#//EncapsulatedAttribute"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
                 href="website.gmfgraph#AttributeNameLabel"/>
             <features
-                href="website.ecore#//ViewAttribute/name"/>
+                href="website.ecore#//EncapsulatedAttribute/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -370,13 +370,13 @@
             href="website.ecore#//View/features"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//ViewAssociation"/>
+              href="website.ecore#//EncapsulatedAssociation"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
                 href="website.gmfgraph#AttributeNameLabel"/>
             <features
-                href="website.ecore#//ViewAssociation/name"/>
+                href="website.ecore#//EncapsulatedAssociation/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -2769,6 +2769,20 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="website.ecore#//EntityAssociation/targetEntity"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="website.ecore#//ViewAssociation"/>
+    <containmentFeature
+        href="website.ecore#//View/features"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="website.gmftool#//@palette/@tools.6/@tools.14"/>
+    <diagramLink
+        href="website.gmfgraph#ViewAssociation"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="website.ecore#//ViewAssociation/opposite"/>
   </links>
   <links>
     <domainMetaElement

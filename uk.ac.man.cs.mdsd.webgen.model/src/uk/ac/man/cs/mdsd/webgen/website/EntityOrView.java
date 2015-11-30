@@ -13,9 +13,10 @@ import java.util.List;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getTableName <em>Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy <em>Served By</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getDisplayLabels <em>Display Labels</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getLabels <em>Labels</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView()
@@ -23,6 +24,22 @@ import java.util.List;
  * @generated
  */
 public interface EntityOrView extends Classifier {
+	/**
+	 * Returns the value of the '<em><b>Keys</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Attribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Keys</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Keys</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_Keys()
+	 * @model
+	 * @generated
+	 */
+	List<Attribute> getKeys();
+
 	/**
 	 * Returns the value of the '<em><b>Table Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -68,21 +85,21 @@ public interface EntityOrView extends Classifier {
 	List<Service> getServedBy();
 
 	/**
-	 * Returns the value of the '<em><b>Display Labels</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelY}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelY#getLabelFor <em>Label For</em>}'.
+	 * Returns the value of the '<em><b>Labels</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel#getLabelFor <em>Label For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Display Labels</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Labels</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Display Labels</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_DisplayLabels()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelY#getLabelFor
+	 * @return the value of the '<em>Labels</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_Labels()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabel#getLabelFor
 	 * @model opposite="labelFor" containment="true"
 	 * @generated
 	 */
-	List<ModelLabelY> getDisplayLabels();
+	List<ModelLabel> getLabels();
 
 } // EntityOrView

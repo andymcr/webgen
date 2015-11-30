@@ -14,7 +14,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
-import uk.ac.man.cs.mdsd.webgen.website.QueryInstance;
+import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -92,7 +92,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * @generated
 	 * @ordered
 	 */
-	protected QueryInstance query;
+	protected Query query;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,7 +198,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public QueryInstance getQuery() {
+	public Query getQuery() {
 		return query;
 	}
 
@@ -207,8 +207,8 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQuery(QueryInstance newQuery, NotificationChain msgs) {
-		QueryInstance oldQuery = query;
+	public NotificationChain basicSetQuery(Query newQuery, NotificationChain msgs) {
+		Query oldQuery = query;
 		query = newQuery;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.ACTION_MENU_ENTRY__QUERY, oldQuery, newQuery);
@@ -222,7 +222,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQuery(QueryInstance newQuery) {
+	public void setQuery(Query newQuery) {
 		if (newQuery != query) {
 			NotificationChain msgs = null;
 			if (query != null)
@@ -289,7 +289,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 				setDestination((DynamicUnit)newValue);
 				return;
 			case WebsitePackage.ACTION_MENU_ENTRY__QUERY:
-				setQuery((QueryInstance)newValue);
+				setQuery((Query)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -313,7 +313,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 				setDestination((DynamicUnit)null);
 				return;
 			case WebsitePackage.ACTION_MENU_ENTRY__QUERY:
-				setQuery((QueryInstance)null);
+				setQuery((Query)null);
 				return;
 		}
 		super.eUnset(featureID);

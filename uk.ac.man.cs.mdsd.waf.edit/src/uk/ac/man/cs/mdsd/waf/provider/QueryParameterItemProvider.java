@@ -10,11 +10,14 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
+
 import uk.ac.man.cs.mdsd.waf.QueryParameter;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -24,8 +27,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class QueryParameterItemProvider 
-	extends NamedElementItemProvider {
+public class QueryParameterItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -47,27 +49,26 @@ public class QueryParameterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addParameterPropertyDescriptor(object);
-			addDataTypePropertyDescriptor(object);
-			addDefaultValuePropertyDescriptor(object);
+			addFormalPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Parameter feature.
+	 * This adds a property descriptor for the Formal feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addParameterPropertyDescriptor(Object object) {
+	protected void addFormalPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_QueryParameter_parameter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_parameter_feature", "_UI_QueryParameter_type"),
-				 WafPackage.Literals.QUERY_PARAMETER__PARAMETER,
+				 getString("_UI_QueryParameter_formal_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_formal_feature", "_UI_QueryParameter_type"),
+				 WafPackage.Literals.QUERY_PARAMETER__FORMAL,
 				 true,
 				 false,
 				 true,
@@ -77,41 +78,19 @@ public class QueryParameterItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Data Type feature.
+	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDataTypePropertyDescriptor(Object object) {
+	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_QueryParameter_dataType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_dataType_feature", "_UI_QueryParameter_type"),
-				 WafPackage.Literals.QUERY_PARAMETER__DATA_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Default Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDefaultValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_QueryParameter_defaultValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_defaultValue_feature", "_UI_QueryParameter_type"),
-				 WafPackage.Literals.QUERY_PARAMETER__DEFAULT_VALUE,
+				 getString("_UI_QueryParameter_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_QueryParameter_value_feature", "_UI_QueryParameter_type"),
+				 WafPackage.Literals.QUERY_PARAMETER__VALUE,
 				 true,
 				 false,
 				 false,
@@ -158,7 +137,7 @@ public class QueryParameterItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(QueryParameter.class)) {
-			case WafPackage.QUERY_PARAMETER__DEFAULT_VALUE:
+			case WafPackage.QUERY_PARAMETER__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

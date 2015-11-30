@@ -53,8 +53,6 @@ public class ServiceAttributeItemProvider
 
 			addDateFormatPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addCaseInsensitivePropertyDescriptor(object);
-			addEncryptPropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
@@ -135,51 +133,7 @@ public class ServiceAttributeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Case Insensitive feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCaseInsensitivePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceAttribute_caseInsensitive_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_caseInsensitive_feature", "_UI_ServiceAttribute_type"),
-				 WebsitePackage.Literals.SERVICE_ATTRIBUTE__CASE_INSENSITIVE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Encrypt feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEncryptPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceAttribute_encrypt_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_encrypt_feature", "_UI_ServiceAttribute_type"),
-				 WebsitePackage.Literals.SERVICE_ATTRIBUTE__ENCRYPT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -201,7 +155,7 @@ public class ServiceAttributeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -223,7 +177,7 @@ public class ServiceAttributeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -245,7 +199,7 @@ public class ServiceAttributeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -289,8 +243,6 @@ public class ServiceAttributeItemProvider
 		switch (notification.getFeatureID(ServiceAttribute.class)) {
 			case WebsitePackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 			case WebsitePackage.SERVICE_ATTRIBUTE__NAME:
-			case WebsitePackage.SERVICE_ATTRIBUTE__CASE_INSENSITIVE:
-			case WebsitePackage.SERVICE_ATTRIBUTE__ENCRYPT:
 			case WebsitePackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 			case WebsitePackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
 			case WebsitePackage.SERVICE_ATTRIBUTE__VALIDATION_PATTERN:

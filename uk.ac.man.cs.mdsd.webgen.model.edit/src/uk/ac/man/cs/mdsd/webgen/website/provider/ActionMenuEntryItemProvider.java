@@ -214,7 +214,7 @@ public class ActionMenuEntryItemProvider extends MenuEntryItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ACTION_MENU_ENTRY__QUERY,
-				 WebsiteFactory.eINSTANCE.createQueryInstance()));
+				 WebsiteFactory.eINSTANCE.createQuery()));
 	}
 
 }

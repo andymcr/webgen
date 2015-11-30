@@ -6,21 +6,22 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeature;
-import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -93,9 +94,9 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Service getLabelFor() {
+	public EntityOrView getLabelFor() {
 		if (eContainerFeatureID() != WebsitePackage.MODEL_LABEL__LABEL_FOR) return null;
-		return (Service)eInternalContainer();
+		return (EntityOrView)eInternalContainer();
 	}
 
 	/**
@@ -103,7 +104,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLabelFor(Service newLabelFor, NotificationChain msgs) {
+	public NotificationChain basicSetLabelFor(EntityOrView newLabelFor, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newLabelFor, WebsitePackage.MODEL_LABEL__LABEL_FOR, msgs);
 		return msgs;
 	}
@@ -113,7 +114,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLabelFor(Service newLabelFor) {
+	public void setLabelFor(EntityOrView newLabelFor) {
 		if (newLabelFor != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.MODEL_LABEL__LABEL_FOR && newLabelFor != null)) {
 			if (EcoreUtil.isAncestor(this, newLabelFor))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -121,7 +122,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newLabelFor != null)
-				msgs = ((InternalEObject)newLabelFor).eInverseAdd(this, WebsitePackage.SERVICE__DISPLAY_LABELS, Service.class, msgs);
+				msgs = ((InternalEObject)newLabelFor).eInverseAdd(this, WebsitePackage.ENTITY_OR_VIEW__LABELS, EntityOrView.class, msgs);
 			msgs = basicSetLabelFor(newLabelFor, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -157,7 +158,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 */
 	public List<ModelLabelFeature> getFeatures() {
 		if (features == null) {
-			features = new EObjectContainmentEList<ModelLabelFeature>(ModelLabelFeature.class, this, WebsitePackage.MODEL_LABEL__FEATURES);
+			features = new EObjectContainmentWithInverseEList<ModelLabelFeature>(ModelLabelFeature.class, this, WebsitePackage.MODEL_LABEL__FEATURES, WebsitePackage.MODEL_LABEL_FEATURE__PART_OF);
 		}
 		return features;
 	}
@@ -167,13 +168,16 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case WebsitePackage.MODEL_LABEL__LABEL_FOR:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetLabelFor((Service)otherEnd, msgs);
+				return basicSetLabelFor((EntityOrView)otherEnd, msgs);
+			case WebsitePackage.MODEL_LABEL__FEATURES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFeatures()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -203,7 +207,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case WebsitePackage.MODEL_LABEL__LABEL_FOR:
-				return eInternalContainer().eInverseRemove(this, WebsitePackage.SERVICE__DISPLAY_LABELS, Service.class, msgs);
+				return eInternalContainer().eInverseRemove(this, WebsitePackage.ENTITY_OR_VIEW__LABELS, EntityOrView.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -236,7 +240,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.MODEL_LABEL__LABEL_FOR:
-				setLabelFor((Service)newValue);
+				setLabelFor((EntityOrView)newValue);
 				return;
 			case WebsitePackage.MODEL_LABEL__FORMAT:
 				setFormat((String)newValue);
@@ -258,7 +262,7 @@ public class ModelLabelImpl extends NamedElementImpl implements ModelLabel {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.MODEL_LABEL__LABEL_FOR:
-				setLabelFor((Service)null);
+				setLabelFor((EntityOrView)null);
 				return;
 			case WebsitePackage.MODEL_LABEL__FORMAT:
 				setFormat(FORMAT_EDEFAULT);

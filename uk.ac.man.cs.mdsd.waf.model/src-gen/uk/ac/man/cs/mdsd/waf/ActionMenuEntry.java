@@ -57,12 +57,12 @@ public interface ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Query</em>' containment reference.
-	 * @see #setQuery(QueryInstance)
+	 * @see #setQuery(Query)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getActionMenuEntry_Query()
 	 * @model containment="true"
 	 * @generated
 	 */
-	QueryInstance getQuery();
+	Query getQuery();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ActionMenuEntry#getQuery <em>Query</em>}' containment reference.
@@ -72,6 +72,6 @@ public interface ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	 * @see #getQuery()
 	 * @generated
 	 */
-	void setQuery(QueryInstance value);
+	void setQuery(Query value);
 
 } // ActionMenuEntry

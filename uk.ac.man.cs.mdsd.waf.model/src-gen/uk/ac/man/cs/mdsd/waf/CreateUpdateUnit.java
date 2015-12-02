@@ -19,7 +19,7 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface CreateUpdateUnit extends EditUnit, SelectTarget {
+public interface CreateUpdateUnit extends EditUnit, Selectable {
 	/**
 	 * Returns the value of the '<em><b>Clear Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->

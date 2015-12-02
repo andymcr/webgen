@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.waf.DetailsUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
-import uk.ac.man.cs.mdsd.waf.SelectTarget;
+import uk.ac.man.cs.mdsd.waf.Selectable;
 import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -33,7 +33,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getTargettingActions <em>Targetting Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getSelectionFeatures <em>Selection Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  * </ul>
  *
@@ -51,14 +52,34 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	protected EList<SelectAction> targettingActions;
 
 	/**
-	 * The cached value of the '{@link #getSelectionFeatures() <em>Selection Features</em>}' reference list.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSelectionFeatures()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceAttribute> selectionFeatures;
+	protected EList<ServiceAttribute> parameters;
+
+	/**
+	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnlyDisplayWhenNotEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnlyDisplayWhenNotEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean onlyDisplayWhenNotEmpty = ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
@@ -116,11 +137,32 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ServiceAttribute> getSelectionFeatures() {
-		if (selectionFeatures == null) {
-			selectionFeatures = new EObjectResolvingEList<ServiceAttribute>(ServiceAttribute.class, this, WafPackage.DETAILS_UNIT__SELECTION_FEATURES);
+	public EList<ServiceAttribute> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectResolvingEList<ServiceAttribute>(ServiceAttribute.class, this, WafPackage.DETAILS_UNIT__PARAMETERS);
 		}
-		return selectionFeatures;
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOnlyDisplayWhenNotEmpty() {
+		return onlyDisplayWhenNotEmpty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOnlyDisplayWhenNotEmpty(boolean newOnlyDisplayWhenNotEmpty) {
+		boolean oldOnlyDisplayWhenNotEmpty = onlyDisplayWhenNotEmpty;
+		onlyDisplayWhenNotEmpty = newOnlyDisplayWhenNotEmpty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY, oldOnlyDisplayWhenNotEmpty, onlyDisplayWhenNotEmpty));
 	}
 
 	/**
@@ -183,8 +225,10 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS:
 				return getTargettingActions();
-			case WafPackage.DETAILS_UNIT__SELECTION_FEATURES:
-				return getSelectionFeatures();
+			case WafPackage.DETAILS_UNIT__PARAMETERS:
+				return getParameters();
+			case WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				return isOnlyDisplayWhenNotEmpty();
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return isOmitFieldLabels();
 		}
@@ -204,9 +248,12 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				getTargettingActions().clear();
 				getTargettingActions().addAll((Collection<? extends SelectAction>)newValue);
 				return;
-			case WafPackage.DETAILS_UNIT__SELECTION_FEATURES:
-				getSelectionFeatures().clear();
-				getSelectionFeatures().addAll((Collection<? extends ServiceAttribute>)newValue);
+			case WafPackage.DETAILS_UNIT__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends ServiceAttribute>)newValue);
+				return;
+			case WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
 				return;
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
@@ -226,8 +273,11 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS:
 				getTargettingActions().clear();
 				return;
-			case WafPackage.DETAILS_UNIT__SELECTION_FEATURES:
-				getSelectionFeatures().clear();
+			case WafPackage.DETAILS_UNIT__PARAMETERS:
+				getParameters().clear();
+				return;
+			case WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
 				return;
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
@@ -246,8 +296,10 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS:
 				return targettingActions != null && !targettingActions.isEmpty();
-			case WafPackage.DETAILS_UNIT__SELECTION_FEATURES:
-				return selectionFeatures != null && !selectionFeatures.isEmpty();
+			case WafPackage.DETAILS_UNIT__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
+			case WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 		}
@@ -261,10 +313,10 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == SelectTarget.class) {
+		if (baseClass == Selectable.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS: return WafPackage.SELECT_TARGET__TARGETTING_ACTIONS;
-				case WafPackage.DETAILS_UNIT__SELECTION_FEATURES: return WafPackage.SELECT_TARGET__SELECTION_FEATURES;
+				case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS: return WafPackage.SELECTABLE__TARGETTING_ACTIONS;
+				case WafPackage.DETAILS_UNIT__PARAMETERS: return WafPackage.SELECTABLE__PARAMETERS;
 				default: return -1;
 			}
 		}
@@ -278,10 +330,10 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == SelectTarget.class) {
+		if (baseClass == Selectable.class) {
 			switch (baseFeatureID) {
-				case WafPackage.SELECT_TARGET__TARGETTING_ACTIONS: return WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS;
-				case WafPackage.SELECT_TARGET__SELECTION_FEATURES: return WafPackage.DETAILS_UNIT__SELECTION_FEATURES;
+				case WafPackage.SELECTABLE__TARGETTING_ACTIONS: return WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS;
+				case WafPackage.SELECTABLE__PARAMETERS: return WafPackage.DETAILS_UNIT__PARAMETERS;
 				default: return -1;
 			}
 		}
@@ -298,7 +350,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (omitFieldLabels: ");
+		result.append(" (onlyDisplayWhenNotEmpty: ");
+		result.append(onlyDisplayWhenNotEmpty);
+		result.append(", omitFieldLabels: ");
 		result.append(omitFieldLabels);
 		result.append(')');
 		return result.toString();

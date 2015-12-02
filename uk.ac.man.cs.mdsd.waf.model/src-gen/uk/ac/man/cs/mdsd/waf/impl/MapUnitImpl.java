@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.waf.MapUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
-import uk.ac.man.cs.mdsd.waf.SelectTarget;
+import uk.ac.man.cs.mdsd.waf.Selectable;
 import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -33,7 +33,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getTargettingActions <em>Targetting Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getSelectionFeatures <em>Selection Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#isReadOnly <em>Read Only</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getDefaultZoomLevel <em>Default Zoom Level</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.MapUnitImpl#getLocation <em>Location</em>}</li>
@@ -54,14 +54,14 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	protected EList<SelectAction> targettingActions;
 
 	/**
-	 * The cached value of the '{@link #getSelectionFeatures() <em>Selection Features</em>}' reference list.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSelectionFeatures()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceAttribute> selectionFeatures;
+	protected EList<ServiceAttribute> parameters;
 
 	/**
 	 * The default value of the '{@link #isReadOnly() <em>Read Only</em>}' attribute.
@@ -159,11 +159,11 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ServiceAttribute> getSelectionFeatures() {
-		if (selectionFeatures == null) {
-			selectionFeatures = new EObjectResolvingEList<ServiceAttribute>(ServiceAttribute.class, this, WafPackage.MAP_UNIT__SELECTION_FEATURES);
+	public EList<ServiceAttribute> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectResolvingEList<ServiceAttribute>(ServiceAttribute.class, this, WafPackage.MAP_UNIT__PARAMETERS);
 		}
-		return selectionFeatures;
+		return parameters;
 	}
 
 	/**
@@ -323,8 +323,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 		switch (featureID) {
 			case WafPackage.MAP_UNIT__TARGETTING_ACTIONS:
 				return getTargettingActions();
-			case WafPackage.MAP_UNIT__SELECTION_FEATURES:
-				return getSelectionFeatures();
+			case WafPackage.MAP_UNIT__PARAMETERS:
+				return getParameters();
 			case WafPackage.MAP_UNIT__READ_ONLY:
 				return isReadOnly();
 			case WafPackage.MAP_UNIT__DEFAULT_ZOOM_LEVEL:
@@ -352,9 +352,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				getTargettingActions().clear();
 				getTargettingActions().addAll((Collection<? extends SelectAction>)newValue);
 				return;
-			case WafPackage.MAP_UNIT__SELECTION_FEATURES:
-				getSelectionFeatures().clear();
-				getSelectionFeatures().addAll((Collection<? extends ServiceAttribute>)newValue);
+			case WafPackage.MAP_UNIT__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends ServiceAttribute>)newValue);
 				return;
 			case WafPackage.MAP_UNIT__READ_ONLY:
 				setReadOnly((Boolean)newValue);
@@ -383,8 +383,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 			case WafPackage.MAP_UNIT__TARGETTING_ACTIONS:
 				getTargettingActions().clear();
 				return;
-			case WafPackage.MAP_UNIT__SELECTION_FEATURES:
-				getSelectionFeatures().clear();
+			case WafPackage.MAP_UNIT__PARAMETERS:
+				getParameters().clear();
 				return;
 			case WafPackage.MAP_UNIT__READ_ONLY:
 				setReadOnly(READ_ONLY_EDEFAULT);
@@ -412,8 +412,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 		switch (featureID) {
 			case WafPackage.MAP_UNIT__TARGETTING_ACTIONS:
 				return targettingActions != null && !targettingActions.isEmpty();
-			case WafPackage.MAP_UNIT__SELECTION_FEATURES:
-				return selectionFeatures != null && !selectionFeatures.isEmpty();
+			case WafPackage.MAP_UNIT__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 			case WafPackage.MAP_UNIT__READ_ONLY:
 				return readOnly != READ_ONLY_EDEFAULT;
 			case WafPackage.MAP_UNIT__DEFAULT_ZOOM_LEVEL:
@@ -433,10 +433,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == SelectTarget.class) {
+		if (baseClass == Selectable.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.MAP_UNIT__TARGETTING_ACTIONS: return WafPackage.SELECT_TARGET__TARGETTING_ACTIONS;
-				case WafPackage.MAP_UNIT__SELECTION_FEATURES: return WafPackage.SELECT_TARGET__SELECTION_FEATURES;
+				case WafPackage.MAP_UNIT__TARGETTING_ACTIONS: return WafPackage.SELECTABLE__TARGETTING_ACTIONS;
+				case WafPackage.MAP_UNIT__PARAMETERS: return WafPackage.SELECTABLE__PARAMETERS;
 				default: return -1;
 			}
 		}
@@ -450,10 +450,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == SelectTarget.class) {
+		if (baseClass == Selectable.class) {
 			switch (baseFeatureID) {
-				case WafPackage.SELECT_TARGET__TARGETTING_ACTIONS: return WafPackage.MAP_UNIT__TARGETTING_ACTIONS;
-				case WafPackage.SELECT_TARGET__SELECTION_FEATURES: return WafPackage.MAP_UNIT__SELECTION_FEATURES;
+				case WafPackage.SELECTABLE__TARGETTING_ACTIONS: return WafPackage.MAP_UNIT__TARGETTING_ACTIONS;
+				case WafPackage.SELECTABLE__PARAMETERS: return WafPackage.MAP_UNIT__PARAMETERS;
 				default: return -1;
 			}
 		}

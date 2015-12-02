@@ -863,6 +863,9 @@
         eType="#//Label"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DetailsUnit" eSuperTypes="#//DataUnit #//Selectable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onlyDisplayWhenNotEmpty"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitFieldLabels" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"

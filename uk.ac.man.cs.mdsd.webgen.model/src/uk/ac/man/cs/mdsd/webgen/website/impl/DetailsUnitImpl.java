@@ -30,6 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
@@ -47,6 +48,26 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * @ordered
 	 */
 	protected EList<EntityAttribute> parameters;
+
+	/**
+	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnlyDisplayWhenNotEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnlyDisplayWhenNotEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean onlyDisplayWhenNotEmpty = ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOmitFieldLabels() <em>Omit Field Labels</em>}' attribute.
@@ -144,6 +165,27 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isOnlyDisplayWhenNotEmpty() {
+		return onlyDisplayWhenNotEmpty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOnlyDisplayWhenNotEmpty(boolean newOnlyDisplayWhenNotEmpty) {
+		boolean oldOnlyDisplayWhenNotEmpty = onlyDisplayWhenNotEmpty;
+		onlyDisplayWhenNotEmpty = newOnlyDisplayWhenNotEmpty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY, oldOnlyDisplayWhenNotEmpty, onlyDisplayWhenNotEmpty));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isOmitFieldLabels() {
 		return omitFieldLabels;
 	}
@@ -212,6 +254,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WebsitePackage.DETAILS_UNIT__PARAMETERS:
 				return getParameters();
+			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				return isOnlyDisplayWhenNotEmpty();
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return isOmitFieldLabels();
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
@@ -234,6 +278,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WebsitePackage.DETAILS_UNIT__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends EntityAttribute>)newValue);
+				return;
+			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
 				return;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
@@ -259,6 +306,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WebsitePackage.DETAILS_UNIT__PARAMETERS:
 				getParameters().clear();
 				return;
+			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
+				return;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
 				return;
@@ -282,6 +332,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WebsitePackage.DETAILS_UNIT__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
@@ -334,7 +386,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (omitFieldLabels: ");
+		result.append(" (onlyDisplayWhenNotEmpty: ");
+		result.append(onlyDisplayWhenNotEmpty);
+		result.append(", omitFieldLabels: ");
 		result.append(omitFieldLabels);
 		result.append(", styleClass: ");
 		result.append(styleClass);

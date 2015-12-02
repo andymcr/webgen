@@ -1,0 +1,114 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+
+module PersistenceExpression;
+create orm : ORM from website : Website;
+
+helper context Website!Expression def: isPersistentContainer() : Boolean
+	= if self.refImmediateComposite().oclIsUndefined() then
+			false
+		else if self.refImmediateComposite().oclIsKindOf(Website!Attribute) then
+			true
+		else
+			false
+		endif endif;
+
+
+abstract rule Literal {
+	from website : Website!Literal (website.isPersistentContainer())
+	to orm : ORM!Literal (
+	)
+}
+
+-- @extends Literal
+rule NullLiteral {
+	from website : Website!NullLiteral (website.isPersistentContainer())
+	to orm : ORM!NullLiteral (
+	)
+}
+
+-- @extends Literal
+rule IntegerLiteral {
+	from website : Website!IntegerLiteral (website.isPersistentContainer())
+	to orm : ORM!IntegerLiteral (
+		value <- website.value
+	)
+}
+
+-- @extends Literal
+rule StringLiteral {
+	from website : Website!StringLiteral (website.isPersistentContainer())
+	to orm : ORM!StringLiteral (
+		value <- website.value
+	)
+}
+
+-- @extends Literal
+rule CurrentTime {
+	from website : Website!CurrentTime (website.isPersistentContainer())
+	to orm : ORM!CurrentTime (
+	)
+}
+
+abstract rule Predicate {
+	from website : Website!Predicate
+	to orm : ORM!Predicate (
+		negated <- website.negated
+	)
+}
+
+-- @extends Predicate
+rule PredicateBooleanOperator {
+	from website : Website!PredicateBooleanOperator (website.isPersistentContainer())
+	to orm : ORM!PredicateBooleanOperator (
+		expressions <- website.expressions,
+		operator <- website.operator
+	)
+}
+
+-- @extends Predicate
+rule PredicateEqualityOperator {
+	from website : Website!PredicateEqualityOperator (website.isPersistentContainer())
+	to orm : ORM!PredicateEqualityOperator (
+		left <- website.left,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateComparisonOperator {
+	from website : Website!PredicateComparisonOperator (website.isPersistentContainer())
+	to orm : ORM!PredicateComparisonOperator (
+		left <- website.left,
+		operator <- website.operator,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsOperator {
+	from website : Website!PredicateIsOperator (website.isPersistentContainer())
+	to orm : ORM!PredicateIsOperator (
+		left <- website.left,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateLikeOperator {
+	from website : Website!PredicateLikeOperator (website.isPersistentContainer())
+	to orm : ORM!PredicateLikeOperator (
+		left <- website.left,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsEmptyOperator {
+	from website : Website!PredicateIsEmpty (website.isPersistentContainer())
+	to orm : ORM!PredicateIsEmpty (
+		feature <- website.feature
+	)
+}

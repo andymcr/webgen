@@ -22,18 +22,18 @@ rule QueryParameterWithout {
 	)
 }
 
-rule QueryInstanceWithoutActuals {
-	from partialWaf : WAF!QueryInstance (partialWaf.actuals->isEmpty())
-	to waf : WAF!QueryInstance (
-		actuals <- Sequence{thisModule.implicitQueryActual(partialWaf)}
+rule QueryWithoutActuals {
+	from partialWaf : WAF!Query (partialWaf.parameters->isEmpty())
+	to waf : WAF!Query (
+		parameters <- Sequence{thisModule.implicitQueryParameter(partialWaf)}
 	)
 }
 
-lazy rule implicitQueryActual {
-	from partialWaf : WAF!QueryInstance
-	to waf : WAF!QueryActual (
-		parameter <- partialWaf."query".parameters->first(),
-		value <- partialWaf."query".parameters->first().defaultValue
+lazy rule implicitQueryParameter {
+	from partialWaf : WAF!Query
+	to waf : WAF!QueryParameter (
+		formal <- partialWaf.filter.parameters->first(),
+		value <- partialWaf.filter.parameters->first().defaultValue
 	)
 }
 

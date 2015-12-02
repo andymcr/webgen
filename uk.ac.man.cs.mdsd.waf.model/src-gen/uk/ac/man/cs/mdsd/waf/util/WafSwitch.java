@@ -266,6 +266,12 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.SELECTABLE: {
+				Selectable selectable = (Selectable)theEObject;
+				T result = caseSelectable(selectable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.UNIT_CONTAINER: {
 				UnitContainer unitContainer = (UnitContainer)theEObject;
 				T result = caseUnitContainer(unitContainer);
@@ -449,7 +455,7 @@ public class WafSwitch<T> extends Switch<T> {
 				CreateUpdateUnit createUpdateUnit = (CreateUpdateUnit)theEObject;
 				T result = caseCreateUpdateUnit(createUpdateUnit);
 				if (result == null) result = caseEditUnit(createUpdateUnit);
-				if (result == null) result = caseSelectTarget(createUpdateUnit);
+				if (result == null) result = caseSelectable(createUpdateUnit);
 				if (result == null) result = caseDynamicUnit(createUpdateUnit);
 				if (result == null) result = caseContentUnit(createUpdateUnit);
 				if (result == null) result = caseNamedDisplayElement(createUpdateUnit);
@@ -461,7 +467,7 @@ public class WafSwitch<T> extends Switch<T> {
 				MapUnit mapUnit = (MapUnit)theEObject;
 				T result = caseMapUnit(mapUnit);
 				if (result == null) result = caseEditUnit(mapUnit);
-				if (result == null) result = caseSelectTarget(mapUnit);
+				if (result == null) result = caseSelectable(mapUnit);
 				if (result == null) result = caseDynamicUnit(mapUnit);
 				if (result == null) result = caseContentUnit(mapUnit);
 				if (result == null) result = caseNamedDisplayElement(mapUnit);
@@ -473,7 +479,7 @@ public class WafSwitch<T> extends Switch<T> {
 				UpdateUnit updateUnit = (UpdateUnit)theEObject;
 				T result = caseUpdateUnit(updateUnit);
 				if (result == null) result = caseEditUnit(updateUnit);
-				if (result == null) result = caseSelectTarget(updateUnit);
+				if (result == null) result = caseSelectable(updateUnit);
 				if (result == null) result = caseDynamicUnit(updateUnit);
 				if (result == null) result = caseContentUnit(updateUnit);
 				if (result == null) result = caseNamedDisplayElement(updateUnit);
@@ -495,7 +501,7 @@ public class WafSwitch<T> extends Switch<T> {
 				DetailsUnit detailsUnit = (DetailsUnit)theEObject;
 				T result = caseDetailsUnit(detailsUnit);
 				if (result == null) result = caseDataUnit(detailsUnit);
-				if (result == null) result = caseSelectTarget(detailsUnit);
+				if (result == null) result = caseSelectable(detailsUnit);
 				if (result == null) result = caseDynamicUnit(detailsUnit);
 				if (result == null) result = caseContentUnit(detailsUnit);
 				if (result == null) result = caseNamedDisplayElement(detailsUnit);
@@ -639,12 +645,6 @@ public class WafSwitch<T> extends Switch<T> {
 				T result = caseInlineAction(inlineAction);
 				if (result == null) result = caseNamedDisplayElement(inlineAction);
 				if (result == null) result = caseNamedElement(inlineAction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.SELECT_TARGET: {
-				SelectTarget selectTarget = (SelectTarget)theEObject;
-				T result = caseSelectTarget(selectTarget);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1083,6 +1083,21 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseQueryParameter(QueryParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Selectable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Selectable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSelectable(Selectable object) {
 		return null;
 	}
 
@@ -1653,21 +1668,6 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInlineAction(InlineAction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Select Target</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Select Target</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSelectTarget(SelectTarget object) {
 		return null;
 	}
 

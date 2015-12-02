@@ -48,7 +48,8 @@ public class DetailsUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTargettingActionsPropertyDescriptor(object);
-			addSelectionFeaturesPropertyDescriptor(object);
+			addParametersPropertyDescriptor(object);
+			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -65,9 +66,9 @@ public class DetailsUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SelectTarget_targettingActions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_targettingActions_feature", "_UI_SelectTarget_type"),
-				 WafPackage.Literals.SELECT_TARGET__TARGETTING_ACTIONS,
+				 getString("_UI_Selectable_targettingActions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Selectable_targettingActions_feature", "_UI_Selectable_type"),
+				 WafPackage.Literals.SELECTABLE__TARGETTING_ACTIONS,
 				 true,
 				 false,
 				 true,
@@ -77,23 +78,45 @@ public class DetailsUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Selection Features feature.
+	 * This adds a property descriptor for the Parameters feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSelectionFeaturesPropertyDescriptor(Object object) {
+	protected void addParametersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SelectTarget_selectionFeatures_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectTarget_selectionFeatures_feature", "_UI_SelectTarget_type"),
-				 WafPackage.Literals.SELECT_TARGET__SELECTION_FEATURES,
+				 getString("_UI_Selectable_parameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Selectable_parameters_feature", "_UI_Selectable_type"),
+				 WafPackage.Literals.SELECTABLE__PARAMETERS,
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Only Display When Not Empty feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOnlyDisplayWhenNotEmptyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_onlyDisplayWhenNotEmpty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_onlyDisplayWhenNotEmpty_feature", "_UI_DetailsUnit_type"),
+				 WafPackage.Literals.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -157,6 +180,7 @@ public class DetailsUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DetailsUnit.class)) {
+			case WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

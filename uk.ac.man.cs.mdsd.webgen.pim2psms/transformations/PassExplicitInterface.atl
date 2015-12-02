@@ -640,7 +640,7 @@ rule Filter {
 			if website.parameters->notEmpty() then
 				website.parameters
 			else
-				Sequence{thisModule.implicitQueryParameter(website)}
+				Sequence{thisModule.implicitFilterParameter(website)}
 			endif,
 		selection <- website.selection
 	)
@@ -676,6 +676,19 @@ rule QueryParameter {
 	to waf : WAF!QueryParameter (
 		formal <- website.formal,
 		value <- website.value
+	)
+}
+
+abstract rule Selectable {
+	from website : Website!Selectable
+	to waf : WAF!Selectable (
+		parameters <-
+			if not website.source.oclIsTypeOf(Website!Service) then
+				website.parameters
+			else
+				website.parameters->collect(t | 
+					website.source.features->any(f | f.name = t.name))
+			endif
 	)
 }
 
@@ -972,7 +985,7 @@ rule CreateUnit {
 	)
 }
 
--- @extends EditUnit, SelectTarget
+-- @extends EditUnit, Selectable
 rule CreateUpdateUnit {
 	from website : Website!CreateUpdateUnit
 	to waf : WAF!CreateUpdateUnit (
@@ -980,7 +993,7 @@ rule CreateUpdateUnit {
 	)
 }
 
--- @extends EditUnit, SelectTarget
+-- @extends EditUnit, Selectable
 rule MapUnit {
 	from website : Website!MapUnit
 	to waf : WAF!MapUnit (
@@ -991,7 +1004,7 @@ rule MapUnit {
 	)
 }
 
--- @extends EditUnit, SelectTarget
+-- @extends EditUnit, Selectable
 rule UpdateUnit {
 	from website : Website!UpdateUnit
 	to waf : WAF!UpdateUnit (
@@ -1018,10 +1031,11 @@ abstract rule DataUnit {
 	)
 }
 
--- @extends DataUnit, SelectTarget
+-- @extends DataUnit, Selectable
 rule DetailsUnit {
 	from website : Website!DetailsUnit
 	to waf : WAF!DetailsUnit (
+		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
 		omitFieldLabels <- website.omitFieldLabels
 	)
 }
@@ -1146,19 +1160,6 @@ abstract rule InlineAction {
 		footer <- website.footer,
 		headerClass <- website.headerClass,
 		footerClass <- website.footerClass
-	)
-}
-
-abstract rule SelectTarget {
-	from website : Website!SelectTarget
-	to waf : WAF!SelectTarget (
-		selectionFeatures <-
-			if not website.source.oclIsTypeOf(Website!Service) then
-				website.selectionFeatures
-			else
-				website.selectionFeatures->collect(t | 
-					website.source.features->any(f | f.name = t.name))
-			endif
 	)
 }
 

@@ -9191,13 +9191,22 @@ public interface WebsitePackage extends EPackage {
 	int DETAILS_UNIT__PARAMETERS = DATA_UNIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DATA_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Omit Field Labels</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__OMIT_FIELD_LABELS = DATA_UNIT_FEATURE_COUNT + 1;
+	int DETAILS_UNIT__OMIT_FIELD_LABELS = DATA_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -9206,7 +9215,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__STYLE_CLASS = DATA_UNIT_FEATURE_COUNT + 2;
+	int DETAILS_UNIT__STYLE_CLASS = DATA_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
@@ -9215,7 +9224,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__LAYOUT_CLASS = DATA_UNIT_FEATURE_COUNT + 3;
+	int DETAILS_UNIT__LAYOUT_CLASS = DATA_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Details Unit</em>' class.
@@ -9224,7 +9233,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 4;
+	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -14848,6 +14857,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getDetailsUnit();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Only Display When Not Empty</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#isOnlyDisplayWhenNotEmpty()
+	 * @see #getDetailsUnit()
+	 * @generated
+	 */
+	EAttribute getDetailsUnit_OnlyDisplayWhenNotEmpty();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#isOmitFieldLabels <em>Omit Field Labels</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -18609,6 +18629,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass DETAILS_UNIT = eINSTANCE.getDetailsUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Only Display When Not Empty</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = eINSTANCE.getDetailsUnit_OnlyDisplayWhenNotEmpty();
 
 		/**
 		 * The meta object literal for the '<em><b>Omit Field Labels</b></em>' attribute feature.

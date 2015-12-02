@@ -209,13 +209,18 @@ class FilterParameter extends NamedElement {
 }
 
 class Query extends NamedElement {
-	refers Filter[1] query
-	contains QueryParameter[] actuals
+	refers Filter[1] filter
+	contains QueryParameter[] parameters
 }
 
 class QueryParameter extends NamedElement {
 	refers FilterParameter[1] formal
 	String value
+}
+
+interface Selectable {
+	refers SelectAction[] targettingActions opposite target
+	refers ServiceAttribute[1..*] parameters
 }
 
 interface UnitContainer {
@@ -277,8 +282,6 @@ enum CollectionDisplayOptions {
 abstract class UnitFeature extends NamedDisplayElement, IncludedFeature, UnitField, InlineActionContainer {
 	boolean onlyDisplayWhenNotEmpty
 	CollectionDisplayOptions displayOption
-	// what is this for?
-//	contains SelectAction linkedAction
 	int maximumDisplaySize = "-1"
 	boolean autofocus
 }
@@ -342,18 +345,18 @@ abstract class EditUnit extends DynamicUnit {
 class CreateUnit extends EditUnit {
 }
 
-class CreateUpdateUnit extends EditUnit, SelectTarget {
+class CreateUpdateUnit extends EditUnit, Selectable {
 	String clearLabel
 }
 
-class MapUnit extends EditUnit, SelectTarget {
+class MapUnit extends EditUnit, Selectable {
 	boolean readOnly
 	int defaultZoomLevel
 	refers ServiceAttribute location
 	refers ServiceAttribute placeName
 }
 
-class UpdateUnit extends EditUnit, SelectTarget {
+class UpdateUnit extends EditUnit, Selectable {
 }
 
 abstract class DataUnit extends DynamicUnit {
@@ -361,7 +364,8 @@ abstract class DataUnit extends DynamicUnit {
 	refers Label title
 }
 
-class DetailsUnit extends DataUnit, SelectTarget {
+class DetailsUnit extends DataUnit, Selectable {
+	boolean onlyDisplayWhenNotEmpty
 	boolean omitFieldLabels
 }
 
@@ -434,13 +438,8 @@ abstract class InlineAction extends NamedDisplayElement {
 	String footerClass
 }
 
-interface SelectTarget {
-	refers SelectAction[] targettingActions opposite target
-	refers ServiceAttribute[1..*] selectionFeatures
-}
-
 class SelectAction extends InlineAction {
-	refers SelectTarget[1] target opposite targettingActions
+	refers Selectable[1] target opposite targettingActions
 }
 
 class DeleteAction extends InlineAction {

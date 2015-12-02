@@ -15,8 +15,8 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Query#getQuery <em>Query</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Query#getActuals <em>Actuals</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Query#getFilter <em>Filter</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Query#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQuery()
@@ -25,45 +25,45 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  */
 public interface Query extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Query</b></em>' reference.
+	 * Returns the value of the '<em><b>Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Query</em>' reference isn't clear,
+	 * If the meaning of the '<em>Filter</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Query</em>' reference.
-	 * @see #setQuery(Filter)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQuery_Query()
+	 * @return the value of the '<em>Filter</em>' reference.
+	 * @see #setFilter(Filter)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQuery_Filter()
 	 * @model required="true"
 	 * @generated
 	 */
-	Filter getQuery();
+	Filter getFilter();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Query#getQuery <em>Query</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Query#getFilter <em>Filter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Query</em>' reference.
-	 * @see #getQuery()
+	 * @param value the new value of the '<em>Filter</em>' reference.
+	 * @see #getFilter()
 	 * @generated
 	 */
-	void setQuery(Filter value);
+	void setFilter(Filter value);
 
 	/**
-	 * Returns the value of the '<em><b>Actuals</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.QueryParameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Actuals</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Actuals</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQuery_Actuals()
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getQuery_Parameters()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<QueryParameter> getActuals();
+	EList<QueryParameter> getParameters();
 
 } // Query

@@ -51,25 +51,25 @@ public class QueryItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addQueryPropertyDescriptor(object);
+			addFilterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Query feature.
+	 * This adds a property descriptor for the Filter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addQueryPropertyDescriptor(Object object) {
+	protected void addFilterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Query_query_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Query_query_feature", "_UI_Query_type"),
-				 WafPackage.Literals.QUERY__QUERY,
+				 getString("_UI_Query_filter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Query_filter_feature", "_UI_Query_type"),
+				 WafPackage.Literals.QUERY__FILTER,
 				 true,
 				 false,
 				 true,
@@ -90,7 +90,7 @@ public class QueryItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.QUERY__ACTUALS);
+			childrenFeatures.add(WafPackage.Literals.QUERY__PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -146,7 +146,7 @@ public class QueryItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Query.class)) {
-			case WafPackage.QUERY__ACTUALS:
+			case WafPackage.QUERY__PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -166,7 +166,7 @@ public class QueryItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.QUERY__ACTUALS,
+				(WafPackage.Literals.QUERY__PARAMETERS,
 				 WafFactory.eINSTANCE.createQueryParameter()));
 	}
 

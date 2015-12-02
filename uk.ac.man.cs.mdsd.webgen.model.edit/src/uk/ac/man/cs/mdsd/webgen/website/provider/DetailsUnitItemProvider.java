@@ -54,6 +54,7 @@ public class DetailsUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addParametersPropertyDescriptor(object);
+			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addLayoutClassPropertyDescriptor(object);
@@ -88,6 +89,28 @@ public class DetailsUnitItemProvider
 					return Collections.emptyList();
 				}
 		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Only Display When Not Empty feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOnlyDisplayWhenNotEmptyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DetailsUnit_onlyDisplayWhenNotEmpty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_onlyDisplayWhenNotEmpty_feature", "_UI_DetailsUnit_type"),
+				 WebsitePackage.Literals.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -193,6 +216,7 @@ public class DetailsUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DetailsUnit.class)) {
+			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
 			case WebsitePackage.DETAILS_UNIT__LAYOUT_CLASS:

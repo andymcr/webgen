@@ -22,7 +22,7 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface MapUnit extends EditUnit, SelectTarget {
+public interface MapUnit extends EditUnit, Selectable {
 	/**
 	 * Returns the value of the '<em><b>Read Only</b></em>' attribute.
 	 * <!-- begin-user-doc -->

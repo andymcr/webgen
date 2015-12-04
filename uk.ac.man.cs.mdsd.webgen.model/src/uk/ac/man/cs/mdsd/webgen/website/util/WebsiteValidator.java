@@ -1095,7 +1095,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(page, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(page, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePage_contentUnitNameUniqueWithinPage(page, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePage_contentUnitNameDifferentToPageName(page, diagnostics, context);
 		return result;
 	}
 
@@ -1123,35 +1122,6 @@ public class WebsiteValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "contentUnitNameUniqueWithinPage",
 				 PAGE__CONTENT_UNIT_NAME_UNIQUE_WITHIN_PAGE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the contentUnitNameDifferentToPageName constraint of '<em>Page</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String PAGE__CONTENT_UNIT_NAME_DIFFERENT_TO_PAGE_NAME__EEXPRESSION = "units->collect(name)->select(n | n = name)->isEmpty()";
-
-	/**
-	 * Validates the contentUnitNameDifferentToPageName constraint of '<em>Page</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePage_contentUnitNameDifferentToPageName(Page page, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.PAGE,
-				 page,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "contentUnitNameDifferentToPageName",
-				 PAGE__CONTENT_UNIT_NAME_DIFFERENT_TO_PAGE_NAME__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1469,7 +1439,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_MENU__CAN_ONLY_TITLE_WITH_SINGLETON_ELEMENT__EEXPRESSION = "not dynamicTitle.oclIsUndefined() implies dynamicTitle.feature.cardinality <> Cardinality::Many";
+	protected static final String DYNAMIC_MENU__CAN_ONLY_TITLE_WITH_SINGLETON_ELEMENT__EEXPRESSION = "not dynamicTitle.oclIsUndefined() implies dynamicTitle.attribute.cardinality <> Cardinality::Many";
 
 	/**
 	 * Validates the canOnlyTitleWithSingletonElement constraint of '<em>Dynamic Menu</em>'.
@@ -1767,7 +1737,7 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n" +
 		"\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n" +
 		"\t\t\telse if useAssociationSource then\r\n" +
-		"\t\t\t\tassociation.oclAsType(EntityAssociation).parentEntity\r\n" +
+		"\t\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n" +
 		"\t\t\telse\r\n" +
 		"\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n" +
 		"\t\t\tendif endif\r\n" +
@@ -1980,7 +1950,7 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n" +
 		"\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n" +
 		"\t\t\telse if useAssociationSource then\r\n" +
-		"\t\t\t\tassociation.oclAsType(EntityAssociation).parentEntity\r\n" +
+		"\t\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n" +
 		"\t\t\telse\r\n" +
 		"\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n" +
 		"\t\t\tendif endif\r\n" +
@@ -2499,9 +2469,9 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DATA_UNIT__CAN_ONLY_TITLE_WITH_SINGLETON_ELEMENT__EEXPRESSION = "not dynamicTitle.oclIsUndefined() implies \r\n" +
-		"if dynamicTitle.oclIsKindOf(EntityAttribute) then\r\n" +
-		"\tdynamicTitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+	protected static final String DATA_UNIT__CAN_ONLY_TITLE_WITH_SINGLETON_ELEMENT__EEXPRESSION = "not title.oclIsUndefined() implies \r\n" +
+		"if title.oclIsKindOf(EntityAttribute) then\r\n" +
+		"\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
 		"else\r\n" +
 		"\ttrue\r\n" +
 		"endif";

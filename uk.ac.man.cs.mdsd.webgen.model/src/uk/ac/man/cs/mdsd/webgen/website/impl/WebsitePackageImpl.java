@@ -6127,7 +6127,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (pageEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "contentUnitNameUniqueWithinPage contentUnitNameDifferentToPageName"
+			 "constraints", "contentUnitNameUniqueWithinPage"
 		   });	
 		addAnnotation
 		  (staticMenuEClass, 
@@ -6297,7 +6297,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (serviceAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "selectionFromCorrectService", "not selection.oclIsUndefined() and not association.oclIsUndefined() implies\r\n\tlet entityOrView : EntityOrView\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).parentEntity\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\t\tendif endif\r\n\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)"
+			 "selectionFromCorrectService", "not selection.oclIsUndefined() and not association.oclIsUndefined() implies\r\n\tlet entityOrView : EntityOrView\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\t\tendif endif\r\n\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)"
 		   });	
 		addAnnotation
 		  (getServiceAssociation_Name(), 
@@ -6309,8 +6309,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (pageEClass, 
 		   source, 
 		   new String[] {
-			 "contentUnitNameUniqueWithinPage", "units->isUnique(name)",
-			 "contentUnitNameDifferentToPageName", "units->collect(name)->select(n | n = name)->isEmpty()"
+			 "contentUnitNameUniqueWithinPage", "units->isUnique(name)"
 		   });	
 		addAnnotation
 		  (staticMenuEClass, 
@@ -6326,7 +6325,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "onlyIncludeFeaturesOnce", "true",
 			 "mustSelectSingleton", "not selection.oclIsUndefined() implies selection.limit = 1",
 			 "dynamicTitleFromService", "not dynamicTitle.oclIsUndefined() implies\r\n\tif service.oclIsUndefined() then\r\n \t\tfalse\r\n\telse\r\n\t\tservice.features->includes(dynamicTitle)\r\n\tendif",
-			 "canOnlyTitleWithSingletonElement", "not dynamicTitle.oclIsUndefined() implies dynamicTitle.feature.cardinality <> Cardinality::Many"
+			 "canOnlyTitleWithSingletonElement", "not dynamicTitle.oclIsUndefined() implies dynamicTitle.attribute.cardinality <> Cardinality::Many"
 		   });	
 		addAnnotation
 		  (dynamicUnitEClass, 
@@ -6361,7 +6360,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "serviceFeatureMustBeConsistent", "not association.oclIsUndefined() and not serviceFeature.oclIsUndefined() implies\r\n\tassociation = serviceFeature.association\r\n",
-			 "selectionFromCorrectService", "not selection.oclIsUndefined() and not association.oclIsUndefined() implies\r\n\tlet entityOrView : EntityOrView\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).parentEntity\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\t\tendif endif\r\n\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)"
+			 "selectionFromCorrectService", "not selection.oclIsUndefined() and not association.oclIsUndefined() implies\r\n\tlet entityOrView : EntityOrView\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\t\tendif endif\r\n\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)"
 		   });	
 		addAnnotation
 		  (getUnitAssociation_Name(), 
@@ -6373,7 +6372,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (dataUnitEClass, 
 		   source, 
 		   new String[] {
-			 "canOnlyTitleWithSingletonElement", "not dynamicTitle.oclIsUndefined() implies \r\nif dynamicTitle.oclIsKindOf(EntityAttribute) then\r\n\tdynamicTitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\nelse\r\n\ttrue\r\nendif",
+			 "canOnlyTitleWithSingletonElement", "not title.oclIsUndefined() implies \r\nif title.oclIsKindOf(EntityAttribute) then\r\n\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\nelse\r\n\ttrue\r\nendif",
 			 "selectionFromSource", "not defaultSelection.oclIsUndefined() implies\r\n\tif source.oclIsUndefined() then\r\n\t\ttrue\r\n\telse if source.oclIsTypeOf(Service) then\r\n\t\tsource.oclAsType(Service).selections->includes(defaultSelection)\r\n\telse\r\n\t\tfalse\r\n\tendif endif"
 		   });	
 		addAnnotation

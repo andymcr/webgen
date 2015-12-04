@@ -29,8 +29,8 @@ import java.util.List;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getPage()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='contentUnitNameUniqueWithinPage contentUnitNameDifferentToPageName'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL contentUnitNameUniqueWithinPage='units->isUnique(name)' contentUnitNameDifferentToPageName='units->collect(name)->select(n | n = name)->isEmpty()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='contentUnitNameUniqueWithinPage'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL contentUnitNameUniqueWithinPage='units->isUnique(name)'"
  * @generated
  */
 public interface Page extends NamedDisplayElement, UnitContainer {

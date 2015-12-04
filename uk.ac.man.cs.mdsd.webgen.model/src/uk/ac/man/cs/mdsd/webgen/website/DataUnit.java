@@ -24,7 +24,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDataUnit()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='canOnlyTitleWithSingletonElement selectionFromSource'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL canOnlyTitleWithSingletonElement='not dynamicTitle.oclIsUndefined() implies \r\nif dynamicTitle.oclIsKindOf(EntityAttribute) then\r\n\tdynamicTitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\nelse\r\n\ttrue\r\nendif' selectionFromSource='not defaultSelection.oclIsUndefined() implies\r\n\tif source.oclIsUndefined() then\r\n\t\ttrue\r\n\telse if source.oclIsTypeOf(Service) then\r\n\t\tsource.oclAsType(Service).selections->includes(defaultSelection)\r\n\telse\r\n\t\tfalse\r\n\tendif endif'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL canOnlyTitleWithSingletonElement='not title.oclIsUndefined() implies \r\nif title.oclIsKindOf(EntityAttribute) then\r\n\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\nelse\r\n\ttrue\r\nendif' selectionFromSource='not defaultSelection.oclIsUndefined() implies\r\n\tif source.oclIsUndefined() then\r\n\t\ttrue\r\n\telse if source.oclIsTypeOf(Service) then\r\n\t\tsource.oclAsType(Service).selections->includes(defaultSelection)\r\n\telse\r\n\t\tfalse\r\n\tendif endif'"
  * @generated
  */
 public interface DataUnit extends DynamicUnit {

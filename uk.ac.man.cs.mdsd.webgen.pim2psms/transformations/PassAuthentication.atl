@@ -381,7 +381,7 @@ unique lazy rule implicitLoginPage {
 					Sequence{}
 				endif),
 		authenticated <- false,
-		path <- '/login',
+		path <- 'login',
 		navigationLabel <- 'Login',
 		sideMenu <-
 			let sideMenu : Website!Menu

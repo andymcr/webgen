@@ -735,29 +735,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FixedCommandMenuEntry} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FixedCommandMenuEntryItemProvider fixedCommandMenuEntryItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FixedCommandMenuEntry}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFixedCommandMenuEntryAdapter() {
-		if (fixedCommandMenuEntryItemProvider == null) {
-			fixedCommandMenuEntryItemProvider = new FixedCommandMenuEntryItemProvider(this);
-		}
-
-		return fixedCommandMenuEntryItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.EditStaticTextMenuEntry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1034,6 +1011,52 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServiceAttributeReferenceItemProvider serviceAttributeReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createServiceAttributeReferenceAdapter() {
+		if (serviceAttributeReferenceItemProvider == null) {
+			serviceAttributeReferenceItemProvider = new ServiceAttributeReferenceItemProvider(this);
+		}
+
+		return serviceAttributeReferenceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServiceAssociationReferenceItemProvider serviceAssociationReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createServiceAssociationReferenceAdapter() {
+		if (serviceAssociationReferenceItemProvider == null) {
+			serviceAssociationReferenceItemProvider = new ServiceAssociationReferenceItemProvider(this);
+		}
+
+		return serviceAssociationReferenceItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1149,29 +1172,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CommandUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CommandUnitItemProvider commandUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CommandUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCommandUnitAdapter() {
-		if (commandUnitItemProvider == null) {
-			commandUnitItemProvider = new CommandUnitItemProvider(this);
-		}
-
-		return commandUnitItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UserCommand} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1261,52 +1261,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		}
 
 		return unitAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UnitChildElement} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UnitChildElementItemProvider unitChildElementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UnitChildElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUnitChildElementAdapter() {
-		if (unitChildElementItemProvider == null) {
-			unitChildElementItemProvider = new UnitChildElementItemProvider(this);
-		}
-
-		return unitChildElementItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UnitChildAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UnitChildAssociationItemProvider unitChildAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UnitChildAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUnitChildAssociationAdapter() {
-		if (unitChildAssociationItemProvider == null) {
-			unitChildAssociationItemProvider = new UnitChildAssociationItemProvider(this);
-		}
-
-		return unitChildAssociationItemProvider;
 	}
 
 	/**
@@ -1804,11 +1758,12 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
 		if (serviceAttributeItemProvider != null) serviceAttributeItemProvider.dispose();
 		if (serviceAssociationItemProvider != null) serviceAssociationItemProvider.dispose();
+		if (serviceAttributeReferenceItemProvider != null) serviceAttributeReferenceItemProvider.dispose();
+		if (serviceAssociationReferenceItemProvider != null) serviceAssociationReferenceItemProvider.dispose();
 		if (pageItemProvider != null) pageItemProvider.dispose();
 		if (pageLinkItemProvider != null) pageLinkItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
-		if (fixedCommandMenuEntryItemProvider != null) fixedCommandMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
 		if (filterItemProvider != null) filterItemProvider.dispose();
@@ -1816,13 +1771,10 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (queryItemProvider != null) queryItemProvider.dispose();
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
-		if (commandUnitItemProvider != null) commandUnitItemProvider.dispose();
 		if (userCommandItemProvider != null) userCommandItemProvider.dispose();
 		if (createSitemapUnitItemProvider != null) createSitemapUnitItemProvider.dispose();
 		if (unitElementItemProvider != null) unitElementItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
-		if (unitChildElementItemProvider != null) unitChildElementItemProvider.dispose();
-		if (unitChildAssociationItemProvider != null) unitChildAssociationItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
 		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();

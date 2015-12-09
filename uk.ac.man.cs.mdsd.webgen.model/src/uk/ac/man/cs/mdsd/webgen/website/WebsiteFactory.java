@@ -278,15 +278,6 @@ public interface WebsiteFactory extends EFactory {
 	ActionMenuEntry createActionMenuEntry();
 
 	/**
-	 * Returns a new object of class '<em>Fixed Command Menu Entry</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fixed Command Menu Entry</em>'.
-	 * @generated
-	 */
-	FixedCommandMenuEntry createFixedCommandMenuEntry();
-
-	/**
 	 * Returns a new object of class '<em>Edit Static Text Menu Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,6 +386,24 @@ public interface WebsiteFactory extends EFactory {
 	ServiceAssociation createServiceAssociation();
 
 	/**
+	 * Returns a new object of class '<em>Service Attribute Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service Attribute Reference</em>'.
+	 * @generated
+	 */
+	ServiceAttributeReference createServiceAttributeReference();
+
+	/**
+	 * Returns a new object of class '<em>Service Association Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service Association Reference</em>'.
+	 * @generated
+	 */
+	ServiceAssociationReference createServiceAssociationReference();
+
+	/**
 	 * Returns a new object of class '<em>Create Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -440,15 +449,6 @@ public interface WebsiteFactory extends EFactory {
 	StaticUnit createStaticUnit();
 
 	/**
-	 * Returns a new object of class '<em>Command Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Command Unit</em>'.
-	 * @generated
-	 */
-	CommandUnit createCommandUnit();
-
-	/**
 	 * Returns a new object of class '<em>User Command</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -483,24 +483,6 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	UnitAssociation createUnitAssociation();
-
-	/**
-	 * Returns a new object of class '<em>Unit Child Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unit Child Element</em>'.
-	 * @generated
-	 */
-	UnitChildElement createUnitChildElement();
-
-	/**
-	 * Returns a new object of class '<em>Unit Child Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unit Child Association</em>'.
-	 * @generated
-	 */
-	UnitChildAssociation createUnitChildAssociation();
 
 	/**
 	 * Returns a new object of class '<em>Data Type Field</em>'.

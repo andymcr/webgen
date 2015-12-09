@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.ServiceFeature;
+import uk.ac.man.cs.mdsd.waf.ServiceFeatureReference;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -36,8 +37,9 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getEncapsulates <em>Encapsulates</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getFeatures <em>Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getKeys <em>Keys</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getAccessedBy <em>Accessed By</em>}</li>
  * </ul>
  *
@@ -55,16 +57,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	protected EList<EntityOrView> encapsulates;
 
 	/**
-	 * The cached value of the '{@link #getSelections() <em>Selections</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelections()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Selection> selections;
-
-	/**
 	 * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,6 +65,26 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @ordered
 	 */
 	protected EList<ServiceFeature> features;
+
+	/**
+	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeys()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ServiceFeatureReference> keys;
+
+	/**
+	 * The cached value of the '{@link #getSelections() <em>Selections</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelections()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Selection> selections;
 
 	/**
 	 * The cached value of the '{@link #getAccessedBy() <em>Accessed By</em>}' reference list.
@@ -120,11 +132,11 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Selection> getSelections() {
-		if (selections == null) {
-			selections = new EObjectContainmentEList<Selection>(Selection.class, this, WafPackage.SERVICE__SELECTIONS);
+	public EList<ServiceFeature> getFeatures() {
+		if (features == null) {
+			features = new EObjectContainmentWithInverseEList<ServiceFeature>(ServiceFeature.class, this, WafPackage.SERVICE__FEATURES, WafPackage.SERVICE_FEATURE__PART_OF);
 		}
-		return selections;
+		return features;
 	}
 
 	/**
@@ -132,11 +144,23 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ServiceFeature> getFeatures() {
-		if (features == null) {
-			features = new EObjectContainmentWithInverseEList<ServiceFeature>(ServiceFeature.class, this, WafPackage.SERVICE__FEATURES, WafPackage.SERVICE_FEATURE__PART_OF);
+	public EList<ServiceFeatureReference> getKeys() {
+		if (keys == null) {
+			keys = new EObjectContainmentEList<ServiceFeatureReference>(ServiceFeatureReference.class, this, WafPackage.SERVICE__KEYS);
 		}
-		return features;
+		return keys;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Selection> getSelections() {
+		if (selections == null) {
+			selections = new EObjectContainmentEList<Selection>(Selection.class, this, WafPackage.SERVICE__SELECTIONS);
+		}
+		return selections;
 	}
 
 	/**
@@ -176,10 +200,12 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.SERVICE__SELECTIONS:
-				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
 			case WafPackage.SERVICE__FEATURES:
 				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
+			case WafPackage.SERVICE__KEYS:
+				return ((InternalEList<?>)getKeys()).basicRemove(otherEnd, msgs);
+			case WafPackage.SERVICE__SELECTIONS:
+				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
 			case WafPackage.SERVICE__ACCESSED_BY:
 				return ((InternalEList<?>)getAccessedBy()).basicRemove(otherEnd, msgs);
 		}
@@ -196,10 +222,12 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WafPackage.SERVICE__ENCAPSULATES:
 				return getEncapsulates();
-			case WafPackage.SERVICE__SELECTIONS:
-				return getSelections();
 			case WafPackage.SERVICE__FEATURES:
 				return getFeatures();
+			case WafPackage.SERVICE__KEYS:
+				return getKeys();
+			case WafPackage.SERVICE__SELECTIONS:
+				return getSelections();
 			case WafPackage.SERVICE__ACCESSED_BY:
 				return getAccessedBy();
 		}
@@ -219,13 +247,17 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				getEncapsulates().clear();
 				getEncapsulates().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
-			case WafPackage.SERVICE__SELECTIONS:
-				getSelections().clear();
-				getSelections().addAll((Collection<? extends Selection>)newValue);
-				return;
 			case WafPackage.SERVICE__FEATURES:
 				getFeatures().clear();
 				getFeatures().addAll((Collection<? extends ServiceFeature>)newValue);
+				return;
+			case WafPackage.SERVICE__KEYS:
+				getKeys().clear();
+				getKeys().addAll((Collection<? extends ServiceFeatureReference>)newValue);
+				return;
+			case WafPackage.SERVICE__SELECTIONS:
+				getSelections().clear();
+				getSelections().addAll((Collection<? extends Selection>)newValue);
 				return;
 			case WafPackage.SERVICE__ACCESSED_BY:
 				getAccessedBy().clear();
@@ -246,11 +278,14 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case WafPackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
 				return;
-			case WafPackage.SERVICE__SELECTIONS:
-				getSelections().clear();
-				return;
 			case WafPackage.SERVICE__FEATURES:
 				getFeatures().clear();
+				return;
+			case WafPackage.SERVICE__KEYS:
+				getKeys().clear();
+				return;
+			case WafPackage.SERVICE__SELECTIONS:
+				getSelections().clear();
 				return;
 			case WafPackage.SERVICE__ACCESSED_BY:
 				getAccessedBy().clear();
@@ -269,10 +304,12 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WafPackage.SERVICE__ENCAPSULATES:
 				return encapsulates != null && !encapsulates.isEmpty();
-			case WafPackage.SERVICE__SELECTIONS:
-				return selections != null && !selections.isEmpty();
 			case WafPackage.SERVICE__FEATURES:
 				return features != null && !features.isEmpty();
+			case WafPackage.SERVICE__KEYS:
+				return keys != null && !keys.isEmpty();
+			case WafPackage.SERVICE__SELECTIONS:
+				return selections != null && !selections.isEmpty();
 			case WafPackage.SERVICE__ACCESSED_BY:
 				return accessedBy != null && !accessedBy.isEmpty();
 		}

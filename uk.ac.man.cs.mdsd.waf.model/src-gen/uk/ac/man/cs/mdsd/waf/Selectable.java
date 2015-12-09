@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Selectable#getTargettingActions <em>Targetting Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Selectable#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelectable()
@@ -41,21 +40,5 @@ public interface Selectable extends EObject {
 	 * @generated
 	 */
 	EList<SelectAction> getTargettingActions();
-
-	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ServiceAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parameters</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelectable_Parameters()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<ServiceAttribute> getParameters();
 
 } // Selectable

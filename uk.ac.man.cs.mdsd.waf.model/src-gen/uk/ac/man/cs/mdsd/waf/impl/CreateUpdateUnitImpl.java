@@ -14,14 +14,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.waf.CreateUpdateUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.Selectable;
-import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -33,7 +31,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CreateUpdateUnitImpl#getTargettingActions <em>Targetting Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CreateUpdateUnitImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CreateUpdateUnitImpl#getClearLabel <em>Clear Label</em>}</li>
  * </ul>
  *
@@ -49,16 +46,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	 * @ordered
 	 */
 	protected EList<SelectAction> targettingActions;
-
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ServiceAttribute> parameters;
 
 	/**
 	 * The default value of the '{@link #getClearLabel() <em>Clear Label</em>}' attribute.
@@ -109,18 +96,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 			targettingActions = new EObjectWithInverseResolvingEList<SelectAction>(SelectAction.class, this, WafPackage.CREATE_UPDATE_UNIT__TARGETTING_ACTIONS, WafPackage.SELECT_ACTION__TARGET);
 		}
 		return targettingActions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ServiceAttribute> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectResolvingEList<ServiceAttribute>(ServiceAttribute.class, this, WafPackage.CREATE_UPDATE_UNIT__PARAMETERS);
-		}
-		return parameters;
 	}
 
 	/**
@@ -183,8 +158,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 		switch (featureID) {
 			case WafPackage.CREATE_UPDATE_UNIT__TARGETTING_ACTIONS:
 				return getTargettingActions();
-			case WafPackage.CREATE_UPDATE_UNIT__PARAMETERS:
-				return getParameters();
 			case WafPackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				return getClearLabel();
 		}
@@ -204,10 +177,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 				getTargettingActions().clear();
 				getTargettingActions().addAll((Collection<? extends SelectAction>)newValue);
 				return;
-			case WafPackage.CREATE_UPDATE_UNIT__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends ServiceAttribute>)newValue);
-				return;
 			case WafPackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				setClearLabel((String)newValue);
 				return;
@@ -226,9 +195,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 			case WafPackage.CREATE_UPDATE_UNIT__TARGETTING_ACTIONS:
 				getTargettingActions().clear();
 				return;
-			case WafPackage.CREATE_UPDATE_UNIT__PARAMETERS:
-				getParameters().clear();
-				return;
 			case WafPackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				setClearLabel(CLEAR_LABEL_EDEFAULT);
 				return;
@@ -246,8 +212,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 		switch (featureID) {
 			case WafPackage.CREATE_UPDATE_UNIT__TARGETTING_ACTIONS:
 				return targettingActions != null && !targettingActions.isEmpty();
-			case WafPackage.CREATE_UPDATE_UNIT__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
 			case WafPackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				return CLEAR_LABEL_EDEFAULT == null ? clearLabel != null : !CLEAR_LABEL_EDEFAULT.equals(clearLabel);
 		}
@@ -264,7 +228,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 		if (baseClass == Selectable.class) {
 			switch (derivedFeatureID) {
 				case WafPackage.CREATE_UPDATE_UNIT__TARGETTING_ACTIONS: return WafPackage.SELECTABLE__TARGETTING_ACTIONS;
-				case WafPackage.CREATE_UPDATE_UNIT__PARAMETERS: return WafPackage.SELECTABLE__PARAMETERS;
 				default: return -1;
 			}
 		}
@@ -281,7 +244,6 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 		if (baseClass == Selectable.class) {
 			switch (baseFeatureID) {
 				case WafPackage.SELECTABLE__TARGETTING_ACTIONS: return WafPackage.CREATE_UPDATE_UNIT__TARGETTING_ACTIONS;
-				case WafPackage.SELECTABLE__PARAMETERS: return WafPackage.CREATE_UPDATE_UNIT__PARAMETERS;
 				default: return -1;
 			}
 		}

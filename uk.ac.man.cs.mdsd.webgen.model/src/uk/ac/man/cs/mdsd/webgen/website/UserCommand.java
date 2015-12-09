@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +15,5 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface UserCommand extends Command {
+public interface UserCommand extends EObject {
 } // UserCommand

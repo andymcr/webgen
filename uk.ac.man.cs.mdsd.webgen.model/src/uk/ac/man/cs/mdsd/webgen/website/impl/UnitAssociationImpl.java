@@ -33,8 +33,8 @@ import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceFeatureReference;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.UnitChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.website.UnitFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
@@ -218,7 +218,7 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	 * @generated
 	 * @ordered
 	 */
-	protected UnitChildFeature childFeature;
+	protected ServiceFeatureReference childFeature;
 
 	/**
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
@@ -573,7 +573,7 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitChildFeature getChildFeature() {
+	public ServiceFeatureReference getChildFeature() {
 		return childFeature;
 	}
 
@@ -582,8 +582,8 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetChildFeature(UnitChildFeature newChildFeature, NotificationChain msgs) {
-		UnitChildFeature oldChildFeature = childFeature;
+	public NotificationChain basicSetChildFeature(ServiceFeatureReference newChildFeature, NotificationChain msgs) {
+		ServiceFeatureReference oldChildFeature = childFeature;
 		childFeature = newChildFeature;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
@@ -597,7 +597,7 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setChildFeature(UnitChildFeature newChildFeature) {
+	public void setChildFeature(ServiceFeatureReference newChildFeature) {
 		if (newChildFeature != childFeature) {
 			NotificationChain msgs = null;
 			if (childFeature != null)
@@ -836,7 +836,7 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 				setServiceFeature((ServiceAssociation)newValue);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((UnitChildFeature)newValue);
+				setChildFeature((ServiceFeatureReference)newValue);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__TITLE:
 				setTitle((Label)newValue);
@@ -888,7 +888,7 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 				setServiceFeature((ServiceAssociation)null);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((UnitChildFeature)null);
+				setChildFeature((ServiceFeatureReference)null);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__TITLE:
 				setTitle((Label)null);

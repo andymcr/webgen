@@ -55,7 +55,7 @@ public class PageItemProvider
 			addParentPagePropertyDescriptor(object);
 			addChildPagesPropertyDescriptor(object);
 			addAuthenticatedPropertyDescriptor(object);
-			addPathPropertyDescriptor(object);
+			addUriElementPropertyDescriptor(object);
 			addTopMenuOptionPropertyDescriptor(object);
 			addTopMenuRankPropertyDescriptor(object);
 			addNavigationLabelPropertyDescriptor(object);
@@ -221,19 +221,19 @@ public class PageItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Path feature.
+	 * This adds a property descriptor for the Uri Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPathPropertyDescriptor(Object object) {
+	protected void addUriElementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_path_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_path_feature", "_UI_Page_type"),
-				 WafPackage.Literals.PAGE__PATH,
+				 getString("_UI_Page_uriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_uriElement_feature", "_UI_Page_type"),
+				 WafPackage.Literals.PAGE__URI_ELEMENT,
 				 true,
 				 false,
 				 false,
@@ -354,7 +354,7 @@ public class PageItemProvider
 
 		switch (notification.getFeatureID(Page.class)) {
 			case WafPackage.PAGE__AUTHENTICATED:
-			case WafPackage.PAGE__PATH:
+			case WafPackage.PAGE__URI_ELEMENT:
 			case WafPackage.PAGE__TOP_MENU_OPTION:
 			case WafPackage.PAGE__TOP_MENU_RANK:
 			case WafPackage.PAGE__NAVIGATION_LABEL:
@@ -383,11 +383,6 @@ public class PageItemProvider
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
 				 WafFactory.eINSTANCE.createStaticUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createCommandUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter

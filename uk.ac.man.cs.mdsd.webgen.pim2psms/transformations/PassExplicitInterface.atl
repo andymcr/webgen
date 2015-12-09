@@ -287,9 +287,9 @@ helper context Website!UnitField def: dateFormat() : String
 			endif
 		endif endif endif endif;
 
-helper context Website!UnitChildFeature def: dateFormat() : String
-	= if self.oclIsTypeOf(Website!UnitChildElement) then
-			self.serviceFeature.dateFormat()
+helper context Website!ServiceFeatureReference def: dateFormat() : String
+	= if self.oclIsTypeOf(Website!ServiceAttributeReference) then
+			self.attribute.dateFormat()
 		else
 			if self.childFeature.oclIsUndefined() then
 				OclUndefined
@@ -463,8 +463,9 @@ rule Service {
 	to waf : WAF!Service (
 		encapsulates <-
 			website.encapsulates->collect(e | thisModule.findOrmEntityOrView(e.name)),
-		selections <- website.selections,
-		features <- website.features
+		features <- website.features,
+		keys <- website.keys,
+		selections <- website.selections
 	)
 } 
 
@@ -529,18 +530,36 @@ rule ServiceAssociation {
 	)
 }
 
+abstract rule ServiceFeatureReference {
+	from website : Website!ServiceFeatureReference
+	to waf : WAF!ServiceFeatureReference (
+	)
+}
+
+-- @extends ServiceFeatureReference
+rule ServiceAttributeReference {
+	from website : Website!ServiceAttributeReference
+	to waf : WAF!ServiceAttributeReference (
+		attribute <- website.attribute
+	)
+}
+
+-- @extends ServiceFeatureReference
+rule ServiceAssociationReference {
+	from website : Website!ServiceAssociationReference
+	to waf : WAF!ServiceAssociationReference (
+		association <- website.association,
+		childFeature <- website.childFeature
+	)
+}
+
 
 -- @extends NamedDisplayElement, UnitContainer
 rule Page {
 	from website : Website!Page
 	to waf : WAF!Page (
 		authenticated <- website.authenticated,
-		path <-
-			if not website.path.oclIsUndefined() then
-				website.path
-			else
-				website.name
-			endif,
+		uriElement <- website.uriElement,
 		parentPage <-
 			if website.parentPage.oclIsUndefined() then
 				OclUndefined
@@ -604,14 +623,6 @@ rule ActionMenuEntry {
 	to waf : WAF!ActionMenuEntry (
 		action <- website.destination,
 		"query" <- website."query"
-	)
-}
-
--- @extends MenuEntry, NamedDisplayElement
-rule FixedCommandMenuEntry {
-	from website : Website!FixedCommandMenuEntry
-	to waf : WAF!FixedCommandMenuEntry (
---		destination <- website.destination
 	)
 }
 
@@ -682,13 +693,6 @@ rule QueryParameter {
 abstract rule Selectable {
 	from website : Website!Selectable
 	to waf : WAF!Selectable (
-		parameters <-
-			if not website.source.oclIsTypeOf(Website!Service) then
-				website.parameters
-			else
-				website.parameters->collect(t | 
-					website.source.features->any(f | f.name = t.name))
-			endif
 	)
 }
 
@@ -705,14 +709,17 @@ abstract rule UnitContainer {
 abstract rule ContentUnit {
 	from website : Website!ContentUnit
 	to waf : WAF!ContentUnit (
-		path <-
-			if not website.path.oclIsUndefined() then
-				website.path
+		uriElement <-
+			if not website.uriElement.oclIsUndefined() then
+				website.uriElement
 			else if website.oclIsTypeOf(Website!IndexUnit) then
 				OclUndefined
+			else if website.oclIsKindOf(Website!EditUnit) then
+				'edit'
 			else
 				website.name.lowercaseFirst()
-			endif endif,
+			endif endif endif,
+		uriParent <- website.uriParent,
 		purposeSummary <- website.purposeSummary,
 		omitCaption <-
 			if not website.omitCaption.oclIsUndefined() then
@@ -731,21 +738,6 @@ rule StaticUnit {
 	from website : Website!StaticUnit
 	to waf : WAF!StaticUnit (
 		content <- website.content
-	)
-}
-
--- @extends ContentUnit
-rule CommandUnit {
-	from website : Website!CommandUnit
-	to waf : WAF!CommandUnit (
-		commands <- website.commands
-	)
-}
-
--- @extends NamedElement
-abstract rule Command {
-	from website : Website!Command
-	to waf : WAF!Command (
 	)
 }
 
@@ -872,29 +864,6 @@ endif
 			else
 				#PageDirection
 			endif
-	)
-}
-
-abstract rule UnitChildFeature {
-	from website : Website!UnitChildFeature
-	to waf : WAF!UnitChildFeature (
-	)
-}
-
--- @extends UnitChildFeature
-rule UnitChildElement {
-	from website : Website!UnitChildElement
-	to waf : WAF!UnitChildElement (
-		serviceFeature <- website.serviceFeature
-	)
-}
-
--- @extends UnitChildFeature
-rule UnitChildAssociation {
-	from website : Website!UnitChildAssociation
-	to waf : WAF!UnitChildAssociation (
-		serviceFeature <- website.serviceFeature,
-		childFeature <- website.childFeature
 	)
 }
 

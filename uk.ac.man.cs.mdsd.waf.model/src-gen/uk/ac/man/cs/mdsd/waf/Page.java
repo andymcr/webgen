@@ -19,7 +19,7 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getChildPages <em>Child Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#isAuthenticated <em>Authenticated</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getPath <em>Path</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuOption <em>Top Menu Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getTopMenuRank <em>Top Menu Rank</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Page#getNavigationLabel <em>Navigation Label</em>}</li>
@@ -133,30 +133,30 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	void setAuthenticated(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Path</b></em>' attribute.
+	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Path</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Uri Element</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Path</em>' attribute.
-	 * @see #setPath(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_Path()
+	 * @return the value of the '<em>Uri Element</em>' attribute.
+	 * @see #setUriElement(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_UriElement()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
-	String getPath();
+	String getUriElement();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Page#getPath <em>Path</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Page#getUriElement <em>Uri Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Path</em>' attribute.
-	 * @see #getPath()
+	 * @param value the new value of the '<em>Uri Element</em>' attribute.
+	 * @see #getUriElement()
 	 * @generated
 	 */
-	void setPath(String value);
+	void setUriElement(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Top Menu Option</b></em>' attribute.

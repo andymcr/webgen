@@ -25,7 +25,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getUriElement <em>Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getUriParent <em>Uri Parent</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
@@ -35,24 +36,34 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  */
 public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements ContentUnit {
 	/**
-	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPath()
+	 * @see #getUriElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PATH_EDEFAULT = null;
+	protected static final String URI_ELEMENT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPath()
+	 * @see #getUriElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected String path = PATH_EDEFAULT;
+	protected String uriElement = URI_ELEMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUriParent() <em>Uri Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriParent()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContentUnit uriParent;
 
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
@@ -179,8 +190,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPath() {
-		return path;
+	public String getUriElement() {
+		return uriElement;
 	}
 
 	/**
@@ -188,11 +199,49 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPath(String newPath) {
-		String oldPath = path;
-		path = newPath;
+	public void setUriElement(String newUriElement) {
+		String oldUriElement = uriElement;
+		uriElement = newUriElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CONTENT_UNIT__PATH, oldPath, path));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CONTENT_UNIT__URI_ELEMENT, oldUriElement, uriElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentUnit getUriParent() {
+		if (uriParent != null && uriParent.eIsProxy()) {
+			InternalEObject oldUriParent = (InternalEObject)uriParent;
+			uriParent = (ContentUnit)eResolveProxy(oldUriParent);
+			if (uriParent != oldUriParent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.CONTENT_UNIT__URI_PARENT, oldUriParent, uriParent));
+			}
+		}
+		return uriParent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentUnit basicGetUriParent() {
+		return uriParent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUriParent(ContentUnit newUriParent) {
+		ContentUnit oldUriParent = uriParent;
+		uriParent = newUriParent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CONTENT_UNIT__URI_PARENT, oldUriParent, uriParent));
 	}
 
 	/**
@@ -312,8 +361,11 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				return getDisplayedOn();
-			case WebsitePackage.CONTENT_UNIT__PATH:
-				return getPath();
+			case WebsitePackage.CONTENT_UNIT__URI_ELEMENT:
+				return getUriElement();
+			case WebsitePackage.CONTENT_UNIT__URI_PARENT:
+				if (resolve) return getUriParent();
+				return basicGetUriParent();
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
 			case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION:
@@ -335,8 +387,11 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)newValue);
 				return;
-			case WebsitePackage.CONTENT_UNIT__PATH:
-				setPath((String)newValue);
+			case WebsitePackage.CONTENT_UNIT__URI_ELEMENT:
+				setUriElement((String)newValue);
+				return;
+			case WebsitePackage.CONTENT_UNIT__URI_PARENT:
+				setUriParent((ContentUnit)newValue);
 				return;
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
@@ -362,8 +417,11 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)null);
 				return;
-			case WebsitePackage.CONTENT_UNIT__PATH:
-				setPath(PATH_EDEFAULT);
+			case WebsitePackage.CONTENT_UNIT__URI_ELEMENT:
+				setUriElement(URI_ELEMENT_EDEFAULT);
+				return;
+			case WebsitePackage.CONTENT_UNIT__URI_PARENT:
+				setUriParent((ContentUnit)null);
 				return;
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
@@ -388,8 +446,10 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				return getDisplayedOn() != null;
-			case WebsitePackage.CONTENT_UNIT__PATH:
-				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+			case WebsitePackage.CONTENT_UNIT__URI_ELEMENT:
+				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
+			case WebsitePackage.CONTENT_UNIT__URI_PARENT:
+				return uriParent != null;
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION:
@@ -410,8 +470,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (path: ");
-		result.append(path);
+		result.append(" (uriElement: ");
+		result.append(uriElement);
 		result.append(", purposeSummary: ");
 		result.append(purposeSummary);
 		result.append(", omitCaption: ");

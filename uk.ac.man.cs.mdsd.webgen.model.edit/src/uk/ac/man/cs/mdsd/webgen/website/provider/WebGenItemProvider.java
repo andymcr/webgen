@@ -156,26 +156,24 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	}
 
 	protected EntityOrView getSourceType(final ServiceAssociation association) {
-		if (association instanceof ServiceAssociation) {
-			final ServiceAssociation serviceAssociation = (ServiceAssociation) association;
-			if (serviceAssociation.getAssociation() instanceof ViewAssociation) {
-				return ((ViewAssociation) serviceAssociation.getAssociation()).getPartOf();
-			} else if (serviceAssociation.getAssociation() instanceof EncapsulatedAssociation) {
-				final EncapsulatedAssociation encapsulatedAssociation
-					= (EncapsulatedAssociation) serviceAssociation.getAssociation();
-				if (encapsulatedAssociation.isUseAssociationSource()) {
-	//				return encapsulatedAssociation.getAssociation().getTargetEntity();
-				} else {
-	//				return encapsulatedAssociation.getAssociation().getPartOf();
-				}
+		final ServiceAssociation serviceAssociation = (ServiceAssociation) association;
+		if (serviceAssociation.getAssociation() instanceof ViewAssociation) {
+			return ((ViewAssociation) serviceAssociation.getAssociation()).getPartOf();
+		} else if (serviceAssociation.getAssociation() instanceof EncapsulatedAssociation) {
+			final EncapsulatedAssociation encapsulatedAssociation
+				= (EncapsulatedAssociation) serviceAssociation.getAssociation();
+			if (encapsulatedAssociation.isUseAssociationSource()) {
+	//			return encapsulatedAssociation.getAssociation().getTargetEntity();
 			} else {
-				final EntityAssociation entityAssociation
-					= (EntityAssociation) serviceAssociation.getAssociation();
-				if (serviceAssociation.isUseAssociationSource()) {
-					return entityAssociation.getTargetEntity();
-				} else {
-					return entityAssociation.getPartOf();
-				}
+	//			return encapsulatedAssociation.getAssociation().getPartOf();
+			}
+		} else {
+			final EntityAssociation entityAssociation
+				= (EntityAssociation) serviceAssociation.getAssociation();
+			if (serviceAssociation.isUseAssociationSource()) {
+				return entityAssociation.getTargetEntity();
+			} else {
+				return entityAssociation.getPartOf();
 			}
 		}
 
@@ -183,26 +181,24 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	}
 
 	protected EntityOrView getTargetType(final ServiceAssociation association) {
-		if (association instanceof ServiceAssociation) {
-			final ServiceAssociation serviceAssociation = (ServiceAssociation) association;
-			if (serviceAssociation.getAssociation() instanceof ViewAssociation) {
+		final ServiceAssociation serviceAssociation = (ServiceAssociation) association;
+		if (serviceAssociation.getAssociation() instanceof ViewAssociation) {
 				
-			} else if (serviceAssociation.getAssociation() instanceof EncapsulatedAssociation) {
-				final EncapsulatedAssociation encapsulatedAssociation
-					= (EncapsulatedAssociation) serviceAssociation.getAssociation();
-				if (encapsulatedAssociation.isUseAssociationSource()) {
-//					return encapsulatedAssociation.getAssociation().getTargetEntity();
-				} else {
-//					return encapsulatedAssociation.getAssociation().getPartOf();
-				}
+		} else if (serviceAssociation.getAssociation() instanceof EncapsulatedAssociation) {
+			final EncapsulatedAssociation encapsulatedAssociation
+				= (EncapsulatedAssociation) serviceAssociation.getAssociation();
+			if (encapsulatedAssociation.isUseAssociationSource()) {
+//				return encapsulatedAssociation.getAssociation().getTargetEntity();
 			} else {
-				final EntityAssociation entityAssociation
-					= (EntityAssociation) serviceAssociation.getAssociation();
-				if (serviceAssociation.isUseAssociationSource()) {
-					return entityAssociation.getTargetEntity();
-				} else {
-					return entityAssociation.getPartOf();
-				}
+//				return encapsulatedAssociation.getAssociation().getPartOf();
+			}
+		} else {
+			final EntityAssociation entityAssociation
+				= (EntityAssociation) serviceAssociation.getAssociation();
+			if (serviceAssociation.isUseAssociationSource()) {
+				return entityAssociation.getTargetEntity();
+			} else {
+				return entityAssociation.getPartOf();
 			}
 		}
 

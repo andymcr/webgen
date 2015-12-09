@@ -46,7 +46,6 @@ public class UpdateUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTargettingActionsPropertyDescriptor(object);
-			addParametersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -65,28 +64,6 @@ public class UpdateUnitItemProvider
 				 getString("_UI_Selectable_targettingActions_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Selectable_targettingActions_feature", "_UI_Selectable_type"),
 				 WafPackage.Literals.SELECTABLE__TARGETTING_ACTIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parameters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParametersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Selectable_parameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selectable_parameters_feature", "_UI_Selectable_type"),
-				 WafPackage.Literals.SELECTABLE__PARAMETERS,
 				 true,
 				 false,
 				 true,

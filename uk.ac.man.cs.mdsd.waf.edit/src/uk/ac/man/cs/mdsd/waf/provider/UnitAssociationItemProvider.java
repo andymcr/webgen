@@ -269,11 +269,6 @@ public class UnitAssociationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createCommandUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
 				 WafFactory.eINSTANCE.createCreateUnit()));
 
 		newChildDescriptors.add
@@ -339,12 +334,12 @@ public class UnitAssociationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
-				 WafFactory.eINSTANCE.createUnitChildElement()));
+				 WafFactory.eINSTANCE.createServiceAttributeReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
-				 WafFactory.eINSTANCE.createUnitChildAssociation()));
+				 WafFactory.eINSTANCE.createServiceAssociationReference()));
 	}
 
 }

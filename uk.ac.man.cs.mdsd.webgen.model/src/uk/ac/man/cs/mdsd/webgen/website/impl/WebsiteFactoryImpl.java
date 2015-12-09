@@ -89,11 +89,12 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WebsitePackage.SERVICE_ATTRIBUTE: return createServiceAttribute();
 			case WebsitePackage.SERVICE_ASSOCIATION: return createServiceAssociation();
+			case WebsitePackage.SERVICE_ATTRIBUTE_REFERENCE: return createServiceAttributeReference();
+			case WebsitePackage.SERVICE_ASSOCIATION_REFERENCE: return createServiceAssociationReference();
 			case WebsitePackage.PAGE: return createPage();
 			case WebsitePackage.PAGE_LINK: return createPageLink();
 			case WebsitePackage.STATIC_MENU: return createStaticMenu();
 			case WebsitePackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
-			case WebsitePackage.FIXED_COMMAND_MENU_ENTRY: return createFixedCommandMenuEntry();
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WebsitePackage.DYNAMIC_MENU: return createDynamicMenu();
 			case WebsitePackage.FILTER: return createFilter();
@@ -101,13 +102,10 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.QUERY: return createQuery();
 			case WebsitePackage.QUERY_PARAMETER: return createQueryParameter();
 			case WebsitePackage.STATIC_UNIT: return createStaticUnit();
-			case WebsitePackage.COMMAND_UNIT: return createCommandUnit();
 			case WebsitePackage.USER_COMMAND: return createUserCommand();
 			case WebsitePackage.CREATE_SITEMAP_UNIT: return createCreateSitemapUnit();
 			case WebsitePackage.UNIT_ELEMENT: return createUnitElement();
 			case WebsitePackage.UNIT_ASSOCIATION: return createUnitAssociation();
-			case WebsitePackage.UNIT_CHILD_ELEMENT: return createUnitChildElement();
-			case WebsitePackage.UNIT_CHILD_ASSOCIATION: return createUnitChildAssociation();
 			case WebsitePackage.DATA_TYPE_FIELD: return createDataTypeField();
 			case WebsitePackage.DATE_FIELD: return createDateField();
 			case WebsitePackage.CAPTCHA_FIELD: return createCaptchaField();
@@ -482,16 +480,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FixedCommandMenuEntry createFixedCommandMenuEntry() {
-		FixedCommandMenuEntryImpl fixedCommandMenuEntry = new FixedCommandMenuEntryImpl();
-		return fixedCommandMenuEntry;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EditStaticTextMenuEntry createEditStaticTextMenuEntry() {
 		EditStaticTextMenuEntryImpl editStaticTextMenuEntry = new EditStaticTextMenuEntryImpl();
 		return editStaticTextMenuEntry;
@@ -612,6 +600,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ServiceAttributeReference createServiceAttributeReference() {
+		ServiceAttributeReferenceImpl serviceAttributeReference = new ServiceAttributeReferenceImpl();
+		return serviceAttributeReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceAssociationReference createServiceAssociationReference() {
+		ServiceAssociationReferenceImpl serviceAssociationReference = new ServiceAssociationReferenceImpl();
+		return serviceAssociationReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CreateUnit createCreateUnit() {
 		CreateUnitImpl createUnit = new CreateUnitImpl();
 		return createUnit;
@@ -662,16 +670,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommandUnit createCommandUnit() {
-		CommandUnitImpl commandUnit = new CommandUnitImpl();
-		return commandUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public UserCommand createUserCommand() {
 		UserCommandImpl userCommand = new UserCommandImpl();
 		return userCommand;
@@ -705,26 +703,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public UnitAssociation createUnitAssociation() {
 		UnitAssociationImpl unitAssociation = new UnitAssociationImpl();
 		return unitAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnitChildElement createUnitChildElement() {
-		UnitChildElementImpl unitChildElement = new UnitChildElementImpl();
-		return unitChildElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnitChildAssociation createUnitChildAssociation() {
-		UnitChildAssociationImpl unitChildAssociation = new UnitChildAssociationImpl();
-		return unitChildAssociation;
 	}
 
 	/**

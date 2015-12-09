@@ -4,7 +4,6 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -16,6 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit;
+import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -47,37 +47,10 @@ public class CreateUpdateUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addParametersPropertyDescriptor(object);
 			addClearLabelPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Parameters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addParametersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_Selectable_parameters_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Selectable_parameters_feature", "_UI_Selectable_type"),
-			 WebsitePackage.Literals.SELECTABLE__PARAMETERS,
-			true, false, true, null,
-			getString("_UI_NavigationPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof CreateUpdateUnit) {
-						return getSourceAttributes((CreateUpdateUnit) object);
-					}
-					return Collections.emptyList();
-				}
-		});
 	}
 
 	/**
@@ -139,14 +112,31 @@ public class CreateUpdateUnitItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CreateUpdateUnit)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_CreateUpdateUnit_type") :
-			getString("_UI_CreateUpdateUnit_type") + " " + label;
+		final CreateUpdateUnit unit = (CreateUpdateUnit) object;
+		final Object displayedOn = unit.getDisplayedOn();
+		String parentLabel = "";
+		if (unit.getDisplayedOn() instanceof Page) {
+			final PageItemProvider provider
+				= (PageItemProvider) adapterFactory.adapt(displayedOn, Page.class);
+			if (provider != null) {
+				parentLabel = provider.getText(displayedOn);
+			}
+		} else {
+			UnitAssociationItemProvider provider
+				= (UnitAssociationItemProvider) adapterFactory.adapt(displayedOn, UnitAssociationItemProvider.class);
+			if (provider != null) {
+				parentLabel = provider.getText(displayedOn);
+			}
+		}
+		final String label = unit.getName();
+		return parentLabel + ": "
+			+ (label == null || label.length() == 0
+				? getString("_UI_CreateUpdateUnit_type")
+				: getString("_UI_CreateUpdateUnit_type") + " " + label);
 	}
 
 	/**

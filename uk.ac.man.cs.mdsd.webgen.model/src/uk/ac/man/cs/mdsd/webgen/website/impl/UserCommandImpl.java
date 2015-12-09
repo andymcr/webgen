@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 import uk.ac.man.cs.mdsd.webgen.website.UserCommand;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -14,7 +15,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *
  * @generated
  */
-public class UserCommandImpl extends CommandImpl implements UserCommand {
+public class UserCommandImpl extends EObjectImpl implements UserCommand {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -62,12 +62,12 @@ public interface UnitAssociation extends UnitFeature, IncludedAssociation, UnitC
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Child Feature</em>' containment reference.
-	 * @see #setChildFeature(UnitChildFeature)
+	 * @see #setChildFeature(ServiceFeatureReference)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_ChildFeature()
 	 * @model containment="true"
 	 * @generated
 	 */
-	UnitChildFeature getChildFeature();
+	ServiceFeatureReference getChildFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getChildFeature <em>Child Feature</em>}' containment reference.
@@ -77,7 +77,7 @@ public interface UnitAssociation extends UnitFeature, IncludedAssociation, UnitC
 	 * @see #getChildFeature()
 	 * @generated
 	 */
-	void setChildFeature(UnitChildFeature value);
+	void setChildFeature(ServiceFeatureReference value);
 
 	/**
 	 * Returns the value of the '<em><b>Selection</b></em>' reference.

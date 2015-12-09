@@ -6,19 +6,13 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
-import java.util.Collection;
-import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import uk.ac.man.cs.mdsd.webgen.website.DetailsUnit;
-import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.Selectable;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -29,7 +23,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getStyleClass <em>Style Class</em>}</li>
@@ -39,16 +32,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EntityAttribute> parameters;
-
 	/**
 	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -153,18 +136,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<EntityAttribute> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectResolvingEList<EntityAttribute>(EntityAttribute.class, this, WebsitePackage.DETAILS_UNIT__PARAMETERS);
-		}
-		return parameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isOnlyDisplayWhenNotEmpty() {
 		return onlyDisplayWhenNotEmpty;
 	}
@@ -252,8 +223,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.DETAILS_UNIT__PARAMETERS:
-				return getParameters();
 			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return isOnlyDisplayWhenNotEmpty();
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
@@ -271,14 +240,9 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.DETAILS_UNIT__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends EntityAttribute>)newValue);
-				return;
 			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
 				return;
@@ -303,9 +267,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.DETAILS_UNIT__PARAMETERS:
-				getParameters().clear();
-				return;
 			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
 				return;
@@ -330,8 +291,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.DETAILS_UNIT__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
 			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
@@ -342,38 +301,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				return LAYOUT_CLASS_EDEFAULT == null ? layoutClass != null : !LAYOUT_CLASS_EDEFAULT.equals(layoutClass);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Selectable.class) {
-			switch (derivedFeatureID) {
-				case WebsitePackage.DETAILS_UNIT__PARAMETERS: return WebsitePackage.SELECTABLE__PARAMETERS;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Selectable.class) {
-			switch (baseFeatureID) {
-				case WebsitePackage.SELECTABLE__PARAMETERS: return WebsitePackage.DETAILS_UNIT__PARAMETERS;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

@@ -262,6 +262,18 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createServiceAssociationAdapter();
 			}
 			@Override
+			public Adapter caseServiceFeatureReference(ServiceFeatureReference object) {
+				return createServiceFeatureReferenceAdapter();
+			}
+			@Override
+			public Adapter caseServiceAttributeReference(ServiceAttributeReference object) {
+				return createServiceAttributeReferenceAdapter();
+			}
+			@Override
+			public Adapter caseServiceAssociationReference(ServiceAssociationReference object) {
+				return createServiceAssociationReferenceAdapter();
+			}
+			@Override
 			public Adapter casePage(Page object) {
 				return createPageAdapter();
 			}
@@ -284,10 +296,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseActionMenuEntry(ActionMenuEntry object) {
 				return createActionMenuEntryAdapter();
-			}
-			@Override
-			public Adapter caseFixedCommandMenuEntry(FixedCommandMenuEntry object) {
-				return createFixedCommandMenuEntryAdapter();
 			}
 			@Override
 			public Adapter caseEditStaticTextMenuEntry(EditStaticTextMenuEntry object) {
@@ -334,14 +342,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createStaticUnitAdapter();
 			}
 			@Override
-			public Adapter caseCommandUnit(CommandUnit object) {
-				return createCommandUnitAdapter();
-			}
-			@Override
-			public Adapter caseCommand(Command object) {
-				return createCommandAdapter();
-			}
-			@Override
 			public Adapter caseUserCommand(UserCommand object) {
 				return createUserCommandAdapter();
 			}
@@ -368,18 +368,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseUnitAssociation(UnitAssociation object) {
 				return createUnitAssociationAdapter();
-			}
-			@Override
-			public Adapter caseUnitChildFeature(UnitChildFeature object) {
-				return createUnitChildFeatureAdapter();
-			}
-			@Override
-			public Adapter caseUnitChildElement(UnitChildElement object) {
-				return createUnitChildElementAdapter();
-			}
-			@Override
-			public Adapter caseUnitChildAssociation(UnitChildAssociation object) {
-				return createUnitChildAssociationAdapter();
 			}
 			@Override
 			public Adapter caseInterfaceField(InterfaceField object) {
@@ -1170,20 +1158,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.FixedCommandMenuEntry <em>Fixed Command Menu Entry</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.FixedCommandMenuEntry
-	 * @generated
-	 */
-	public Adapter createFixedCommandMenuEntryAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.EditStaticTextMenuEntry <em>Edit Static Text Menu Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1338,48 +1312,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.UnitChildFeature <em>Unit Child Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitChildFeature
-	 * @generated
-	 */
-	public Adapter createUnitChildFeatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.UnitChildElement <em>Unit Child Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitChildElement
-	 * @generated
-	 */
-	public Adapter createUnitChildElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.UnitChildAssociation <em>Unit Child Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitChildAssociation
-	 * @generated
-	 */
-	public Adapter createUnitChildAssociationAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Service <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1432,6 +1364,48 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceFeatureReference <em>Service Feature Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceFeatureReference
+	 * @generated
+	 */
+	public Adapter createServiceFeatureReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference <em>Service Attribute Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference
+	 * @generated
+	 */
+	public Adapter createServiceAttributeReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference <em>Service Association Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference
+	 * @generated
+	 */
+	public Adapter createServiceAssociationReferenceAdapter() {
 		return null;
 	}
 
@@ -1656,34 +1630,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStaticUnitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.CommandUnit <em>Command Unit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.CommandUnit
-	 * @generated
-	 */
-	public Adapter createCommandUnitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Command <em>Command</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Command
-	 * @generated
-	 */
-	public Adapter createCommandAdapter() {
 		return null;
 	}
 

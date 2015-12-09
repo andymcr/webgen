@@ -460,10 +460,12 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" lowerBound="1"
         upperBound="-1" eType="#//EntityOrView" eOpposite="#//EntityOrView/servedBy"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="selections" upperBound="-1"
-        eType="#//Selection" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//ServiceFeature" containment="true" eOpposite="#//ServiceFeature/partOf"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keys" lowerBound="1" upperBound="-1"
+        eType="#//ServiceFeatureReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selections" upperBound="-1"
+        eType="#//Selection" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Selection" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
@@ -516,6 +518,29 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceFeatureReference" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceAttributeReference" eSuperTypes="#//ServiceFeatureReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if attribute.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;attribute.name&#xD;&#xA;endif&#xD;&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" ordered="false"
+        eType="#//ServiceAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceAssociationReference" eSuperTypes="#//ServiceFeatureReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if association.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;association.name &#xD;&#xA;endif endif endif endif&#xD;&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association" ordered="false"
+        eType="#//ServiceAssociation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//ServiceFeatureReference"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PageTopMenuOptions">
     <eLiterals name="NeverInclude"/>
     <eLiterals name="AlwaysInclude"/>
@@ -534,7 +559,7 @@
         eType="#//PageLink" eOpposite="#//PageLink/targetPage"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="authenticated" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="topMenuOption" ordered="false"
         eType="#//PageTopMenuOptions" defaultValueLiteral="NeverInclude"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="topMenuRank" ordered="false"
@@ -579,9 +604,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="query" eType="#//Query"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FixedCommandMenuEntry" eSuperTypes="#//MenuEntry #//NamedDisplayElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//Command"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EditStaticTextMenuEntry" eSuperTypes="#//MenuEntry #//NamedDisplayElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="DynamicMenu" eSuperTypes="#//Menu">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -623,10 +645,7 @@
         eType="#//FilterParameter"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Selectable" abstract="true" interface="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" lowerBound="1"
-        upperBound="-1" eType="#//EntityAttribute"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Selectable" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnitContainer" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="units" upperBound="-1"
         eType="#//ContentUnit" containment="true" eOpposite="#//ContentUnit/displayedOn"/>
@@ -635,7 +654,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ContentUnit" abstract="true" eSuperTypes="#//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayedOn" ordered="false"
         lowerBound="1" eType="#//UnitContainer" eOpposite="#//UnitContainer/units"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uriParent" eType="#//ContentUnit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="purposeSummary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitCaption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="captionClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -649,19 +669,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="static_content"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CommandUnit" eSuperTypes="#//ContentUnit">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
-        eType="#//Command" containment="true" eOpposite="#//Command/partOf"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,command_unit,framed"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="command_content"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Command" abstract="true" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" lowerBound="1"
-        eType="#//CommandUnit" eOpposite="#//CommandUnit/commands"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UserCommand" eSuperTypes="#//Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UserCommand"/>
   <eClassifiers xsi:type="ecore:EClass" name="CreateSitemapUnit" eSuperTypes="#//ContentUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deployedURL" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -765,23 +773,12 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceFeature" ordered="false"
         eType="#//ServiceAssociation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//UnitChildFeature"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//ServiceFeatureReference"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" eType="#//Label"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
         eType="#//Label"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnitChildFeature" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UnitChildElement" eSuperTypes="#//UnitChildFeature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceFeature" ordered="false"
-        eType="#//ServiceAttribute"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnitChildAssociation" eSuperTypes="#//UnitChildFeature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceFeature" ordered="false"
-        eType="#//ServiceAssociation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//UnitChildFeature"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceField" abstract="true" eSuperTypes="#//NamedDisplayElement #//UnitField">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" ordered="false"

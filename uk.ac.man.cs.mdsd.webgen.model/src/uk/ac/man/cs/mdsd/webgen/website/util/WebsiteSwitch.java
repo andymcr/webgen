@@ -485,6 +485,26 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.SERVICE_FEATURE_REFERENCE: {
+				ServiceFeatureReference serviceFeatureReference = (ServiceFeatureReference)theEObject;
+				T result = caseServiceFeatureReference(serviceFeatureReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.SERVICE_ATTRIBUTE_REFERENCE: {
+				ServiceAttributeReference serviceAttributeReference = (ServiceAttributeReference)theEObject;
+				T result = caseServiceAttributeReference(serviceAttributeReference);
+				if (result == null) result = caseServiceFeatureReference(serviceAttributeReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.SERVICE_ASSOCIATION_REFERENCE: {
+				ServiceAssociationReference serviceAssociationReference = (ServiceAssociationReference)theEObject;
+				T result = caseServiceAssociationReference(serviceAssociationReference);
+				if (result == null) result = caseServiceFeatureReference(serviceAssociationReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.PAGE: {
 				Page page = (Page)theEObject;
 				T result = casePage(page);
@@ -529,15 +549,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseMenuEntry(actionMenuEntry);
 				if (result == null) result = caseNamedDisplayElement(actionMenuEntry);
 				if (result == null) result = caseNamedElement(actionMenuEntry);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.FIXED_COMMAND_MENU_ENTRY: {
-				FixedCommandMenuEntry fixedCommandMenuEntry = (FixedCommandMenuEntry)theEObject;
-				T result = caseFixedCommandMenuEntry(fixedCommandMenuEntry);
-				if (result == null) result = caseMenuEntry(fixedCommandMenuEntry);
-				if (result == null) result = caseNamedDisplayElement(fixedCommandMenuEntry);
-				if (result == null) result = caseNamedElement(fixedCommandMenuEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -620,27 +631,9 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.COMMAND_UNIT: {
-				CommandUnit commandUnit = (CommandUnit)theEObject;
-				T result = caseCommandUnit(commandUnit);
-				if (result == null) result = caseContentUnit(commandUnit);
-				if (result == null) result = caseNamedDisplayElement(commandUnit);
-				if (result == null) result = caseNamedElement(commandUnit);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.COMMAND: {
-				Command command = (Command)theEObject;
-				T result = caseCommand(command);
-				if (result == null) result = caseNamedElement(command);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebsitePackage.USER_COMMAND: {
 				UserCommand userCommand = (UserCommand)theEObject;
 				T result = caseUserCommand(userCommand);
-				if (result == null) result = caseCommand(userCommand);
-				if (result == null) result = caseNamedElement(userCommand);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -697,26 +690,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseIncludedFeature(unitAssociation);
 				if (result == null) result = caseUnitField(unitAssociation);
 				if (result == null) result = caseInlineActionContainer(unitAssociation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.UNIT_CHILD_FEATURE: {
-				UnitChildFeature unitChildFeature = (UnitChildFeature)theEObject;
-				T result = caseUnitChildFeature(unitChildFeature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.UNIT_CHILD_ELEMENT: {
-				UnitChildElement unitChildElement = (UnitChildElement)theEObject;
-				T result = caseUnitChildElement(unitChildElement);
-				if (result == null) result = caseUnitChildFeature(unitChildElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.UNIT_CHILD_ASSOCIATION: {
-				UnitChildAssociation unitChildAssociation = (UnitChildAssociation)theEObject;
-				T result = caseUnitChildAssociation(unitChildAssociation);
-				if (result == null) result = caseUnitChildFeature(unitChildAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1699,21 +1672,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fixed Command Menu Entry</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fixed Command Menu Entry</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFixedCommandMenuEntry(FixedCommandMenuEntry object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Edit Static Text Menu Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1879,51 +1837,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unit Child Feature</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unit Child Feature</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUnitChildFeature(UnitChildFeature object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unit Child Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unit Child Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUnitChildElement(UnitChildElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unit Child Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unit Child Association</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUnitChildAssociation(UnitChildAssociation object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1980,6 +1893,51 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseServiceAssociation(ServiceAssociation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Feature Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Feature Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceFeatureReference(ServiceFeatureReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Attribute Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Attribute Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceAttributeReference(ServiceAttributeReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Service Association Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Service Association Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServiceAssociationReference(ServiceAssociationReference object) {
 		return null;
 	}
 
@@ -2220,36 +2178,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStaticUnit(StaticUnit object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Command Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Command Unit</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommandUnit(CommandUnit object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Command</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Command</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommand(Command object) {
 		return null;
 	}
 

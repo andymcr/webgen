@@ -23,8 +23,6 @@ import uk.ac.man.cs.mdsd.waf.AuthenticationUnit;
 import uk.ac.man.cs.mdsd.waf.CaptchaField;
 import uk.ac.man.cs.mdsd.waf.CasAuthentication;
 import uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions;
-import uk.ac.man.cs.mdsd.waf.Command;
-import uk.ac.man.cs.mdsd.waf.CommandUnit;
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
 import uk.ac.man.cs.mdsd.waf.ControlUnit;
 import uk.ac.man.cs.mdsd.waf.CreateUnit;
@@ -43,7 +41,6 @@ import uk.ac.man.cs.mdsd.waf.FeatureReference;
 import uk.ac.man.cs.mdsd.waf.FeatureSupportAction;
 import uk.ac.man.cs.mdsd.waf.Filter;
 import uk.ac.man.cs.mdsd.waf.FilterParameter;
-import uk.ac.man.cs.mdsd.waf.FixedCommandMenuEntry;
 import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.waf.IncludedAssociation;
@@ -75,14 +72,14 @@ import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.SelectionParameter;
 import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.ServiceAssociation;
+import uk.ac.man.cs.mdsd.waf.ServiceAssociationReference;
 import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
+import uk.ac.man.cs.mdsd.waf.ServiceAttributeReference;
 import uk.ac.man.cs.mdsd.waf.ServiceFeature;
+import uk.ac.man.cs.mdsd.waf.ServiceFeatureReference;
 import uk.ac.man.cs.mdsd.waf.StaticMenu;
 import uk.ac.man.cs.mdsd.waf.StaticUnit;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
-import uk.ac.man.cs.mdsd.waf.UnitChildAssociation;
-import uk.ac.man.cs.mdsd.waf.UnitChildElement;
-import uk.ac.man.cs.mdsd.waf.UnitChildFeature;
 import uk.ac.man.cs.mdsd.waf.UnitContainer;
 import uk.ac.man.cs.mdsd.waf.UnitElement;
 import uk.ac.man.cs.mdsd.waf.UnitFeature;
@@ -161,6 +158,27 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass serviceFeatureReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceAttributeReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass serviceAssociationReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass selectionEClass = null;
 
 	/**
@@ -225,13 +243,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass actionMenuEntryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass fixedCommandMenuEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -308,20 +319,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass commandUnitEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass commandEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass dynamicUnitEClass = null;
 
 	/**
@@ -358,27 +355,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass unitAssociationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass unitChildFeatureEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass unitChildElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass unitChildAssociationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1171,7 +1147,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_Selections() {
+	public EReference getService_Features() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1180,7 +1156,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_Features() {
+	public EReference getService_Keys() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1189,8 +1165,71 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getService_AccessedBy() {
+	public EReference getService_Selections() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getService_AccessedBy() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getServiceFeatureReference() {
+		return serviceFeatureReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getServiceAttributeReference() {
+		return serviceAttributeReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getServiceAttributeReference_Attribute() {
+		return (EReference)serviceAttributeReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getServiceAssociationReference() {
+		return serviceAssociationReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getServiceAssociationReference_Association() {
+		return (EReference)serviceAssociationReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getServiceAssociationReference_ChildFeature() {
+		return (EReference)serviceAssociationReferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1495,15 +1534,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFixedCommandMenuEntry() {
-		return fixedCommandMenuEntryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEditStaticTextMenuEntry() {
 		return editStaticTextMenuEntryEClass;
 	}
@@ -1558,7 +1588,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_Path() {
+	public EAttribute getPage_UriElement() {
 		return (EAttribute)pageEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1747,15 +1777,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelectable_Parameters() {
-		return (EReference)selectableEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getUnitContainer() {
 		return unitContainerEClass;
 	}
@@ -1792,7 +1813,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_Path() {
+	public EAttribute getContentUnit_UriElement() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1801,8 +1822,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_PurposeSummary() {
-		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(2);
+	public EReference getContentUnit_UriParent() {
+		return (EReference)contentUnitEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1810,7 +1831,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_OmitCaption() {
+	public EAttribute getContentUnit_PurposeSummary() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1819,7 +1840,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_CaptionClass() {
+	public EAttribute getContentUnit_OmitCaption() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1828,7 +1849,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_StyleClass() {
+	public EAttribute getContentUnit_CaptionClass() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1837,8 +1858,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_LayoutClass() {
+	public EAttribute getContentUnit_StyleClass() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContentUnit_LayoutClass() {
+		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1866,42 +1896,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EAttribute getStaticUnit_Content() {
 		return (EAttribute)staticUnitEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCommandUnit() {
-		return commandUnitEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCommandUnit_Commands() {
-		return (EReference)commandUnitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCommand() {
-		return commandEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCommand_PartOf() {
-		return (EReference)commandEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2181,60 +2175,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EReference getUnitAssociation_Filters() {
 		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getUnitChildFeature() {
-		return unitChildFeatureEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getUnitChildElement() {
-		return unitChildElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUnitChildElement_ServiceFeature() {
-		return (EReference)unitChildElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getUnitChildAssociation() {
-		return unitChildAssociationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUnitChildAssociation_ServiceFeature() {
-		return (EReference)unitChildAssociationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUnitChildAssociation_ChildFeature() {
-		return (EReference)unitChildAssociationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3162,9 +3102,19 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		serviceEClass = createEClass(SERVICE);
 		createEReference(serviceEClass, SERVICE__ENCAPSULATES);
-		createEReference(serviceEClass, SERVICE__SELECTIONS);
 		createEReference(serviceEClass, SERVICE__FEATURES);
+		createEReference(serviceEClass, SERVICE__KEYS);
+		createEReference(serviceEClass, SERVICE__SELECTIONS);
 		createEReference(serviceEClass, SERVICE__ACCESSED_BY);
+
+		serviceFeatureReferenceEClass = createEClass(SERVICE_FEATURE_REFERENCE);
+
+		serviceAttributeReferenceEClass = createEClass(SERVICE_ATTRIBUTE_REFERENCE);
+		createEReference(serviceAttributeReferenceEClass, SERVICE_ATTRIBUTE_REFERENCE__ATTRIBUTE);
+
+		serviceAssociationReferenceEClass = createEClass(SERVICE_ASSOCIATION_REFERENCE);
+		createEReference(serviceAssociationReferenceEClass, SERVICE_ASSOCIATION_REFERENCE__ASSOCIATION);
+		createEReference(serviceAssociationReferenceEClass, SERVICE_ASSOCIATION_REFERENCE__CHILD_FEATURE);
 
 		selectionEClass = createEClass(SELECTION);
 		createEReference(selectionEClass, SELECTION__PARAMETERS);
@@ -3209,8 +3159,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__ACTION);
 		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__QUERY);
 
-		fixedCommandMenuEntryEClass = createEClass(FIXED_COMMAND_MENU_ENTRY);
-
 		editStaticTextMenuEntryEClass = createEClass(EDIT_STATIC_TEXT_MENU_ENTRY);
 
 		pageEClass = createEClass(PAGE);
@@ -3218,7 +3166,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(pageEClass, PAGE__PARENT_PAGE);
 		createEReference(pageEClass, PAGE__CHILD_PAGES);
 		createEAttribute(pageEClass, PAGE__AUTHENTICATED);
-		createEAttribute(pageEClass, PAGE__PATH);
+		createEAttribute(pageEClass, PAGE__URI_ELEMENT);
 		createEAttribute(pageEClass, PAGE__TOP_MENU_OPTION);
 		createEAttribute(pageEClass, PAGE__TOP_MENU_RANK);
 		createEAttribute(pageEClass, PAGE__NAVIGATION_LABEL);
@@ -3244,14 +3192,14 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		selectableEClass = createEClass(SELECTABLE);
 		createEReference(selectableEClass, SELECTABLE__TARGETTING_ACTIONS);
-		createEReference(selectableEClass, SELECTABLE__PARAMETERS);
 
 		unitContainerEClass = createEClass(UNIT_CONTAINER);
 		createEReference(unitContainerEClass, UNIT_CONTAINER__UNITS);
 
 		contentUnitEClass = createEClass(CONTENT_UNIT);
 		createEReference(contentUnitEClass, CONTENT_UNIT__DISPLAYED_ON);
-		createEAttribute(contentUnitEClass, CONTENT_UNIT__PATH);
+		createEAttribute(contentUnitEClass, CONTENT_UNIT__URI_ELEMENT);
+		createEReference(contentUnitEClass, CONTENT_UNIT__URI_PARENT);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__PURPOSE_SUMMARY);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__OMIT_CAPTION);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__CAPTION_CLASS);
@@ -3261,12 +3209,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		staticUnitEClass = createEClass(STATIC_UNIT);
 		createEReference(staticUnitEClass, STATIC_UNIT__SERVICE);
 		createEAttribute(staticUnitEClass, STATIC_UNIT__CONTENT);
-
-		commandUnitEClass = createEClass(COMMAND_UNIT);
-		createEReference(commandUnitEClass, COMMAND_UNIT__COMMANDS);
-
-		commandEClass = createEClass(COMMAND);
-		createEReference(commandEClass, COMMAND__PART_OF);
 
 		dynamicUnitEClass = createEClass(DYNAMIC_UNIT);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__SERVICE);
@@ -3304,15 +3246,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__SELECTION);
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__LABEL);
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__FILTERS);
-
-		unitChildFeatureEClass = createEClass(UNIT_CHILD_FEATURE);
-
-		unitChildElementEClass = createEClass(UNIT_CHILD_ELEMENT);
-		createEReference(unitChildElementEClass, UNIT_CHILD_ELEMENT__SERVICE_FEATURE);
-
-		unitChildAssociationEClass = createEClass(UNIT_CHILD_ASSOCIATION);
-		createEReference(unitChildAssociationEClass, UNIT_CHILD_ASSOCIATION__SERVICE_FEATURE);
-		createEReference(unitChildAssociationEClass, UNIT_CHILD_ASSOCIATION__CHILD_FEATURE);
 
 		interfaceFieldEClass = createEClass(INTERFACE_FIELD);
 		createEReference(interfaceFieldEClass, INTERFACE_FIELD__DEFAULT_VALUE);
@@ -3479,6 +3412,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		includedAttributeEClass.getESuperTypes().add(this.getIncludedFeature());
 		includedAssociationEClass.getESuperTypes().add(this.getIncludedFeature());
 		serviceEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
+		serviceAttributeReferenceEClass.getESuperTypes().add(this.getServiceFeatureReference());
+		serviceAssociationReferenceEClass.getESuperTypes().add(this.getServiceFeatureReference());
 		selectionEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		selectionParameterEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		serviceFeatureEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
@@ -3492,8 +3427,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		dynamicMenuEClass.getESuperTypes().add(this.getMenu());
 		actionMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		actionMenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
-		fixedCommandMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
-		fixedCommandMenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		pageEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
@@ -3504,8 +3437,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		queryParameterEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		contentUnitEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		staticUnitEClass.getESuperTypes().add(this.getContentUnit());
-		commandUnitEClass.getESuperTypes().add(this.getContentUnit());
-		commandEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		dynamicUnitEClass.getESuperTypes().add(this.getContentUnit());
 		unitSupportActionEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		unitFeatureEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
@@ -3517,8 +3448,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		unitAssociationEClass.getESuperTypes().add(this.getUnitFeature());
 		unitAssociationEClass.getESuperTypes().add(this.getIncludedAssociation());
 		unitAssociationEClass.getESuperTypes().add(this.getUnitContainer());
-		unitChildElementEClass.getESuperTypes().add(this.getUnitChildFeature());
-		unitChildAssociationEClass.getESuperTypes().add(this.getUnitChildFeature());
 		interfaceFieldEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		interfaceFieldEClass.getESuperTypes().add(this.getUnitField());
 		dataTypeFieldEClass.getESuperTypes().add(this.getInterfaceField());
@@ -3620,9 +3549,19 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getService_Encapsulates(), theOrmPackage.getEntityOrView(), null, "encapsulates", null, 1, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getService_Selections(), this.getSelection(), null, "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Features(), this.getServiceFeature(), this.getServiceFeature_PartOf(), "features", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Keys(), this.getServiceFeatureReference(), null, "keys", null, 1, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Selections(), this.getSelection(), null, "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_AccessedBy(), this.getDynamicUnit(), this.getDynamicUnit_Service(), "accessedBy", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(serviceFeatureReferenceEClass, ServiceFeatureReference.class, "ServiceFeatureReference", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(serviceAttributeReferenceEClass, ServiceAttributeReference.class, "ServiceAttributeReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceAttributeReference_Attribute(), this.getServiceAttribute(), null, "attribute", null, 1, 1, ServiceAttributeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(serviceAssociationReferenceEClass, ServiceAssociationReference.class, "ServiceAssociationReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServiceAssociationReference_Association(), this.getServiceAssociation(), null, "association", null, 1, 1, ServiceAssociationReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getServiceAssociationReference_ChildFeature(), this.getServiceFeatureReference(), null, "childFeature", null, 0, 1, ServiceAssociationReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionEClass, Selection.class, "Selection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelection_Parameters(), this.getSelectionParameter(), null, "parameters", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3667,8 +3606,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getActionMenuEntry_Action(), this.getDynamicUnit(), null, "action", null, 1, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActionMenuEntry_Query(), this.getQuery(), null, "query", null, 0, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(fixedCommandMenuEntryEClass, FixedCommandMenuEntry.class, "FixedCommandMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(editStaticTextMenuEntryEClass, EditStaticTextMenuEntry.class, "EditStaticTextMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3676,7 +3613,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getPage_ParentPage(), this.getPage(), this.getPage_ChildPages(), "parentPage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_ChildPages(), this.getPage(), this.getPage_ParentPage(), "childPages", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_Authenticated(), theEcorePackage.getEBoolean(), "authenticated", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPage_Path(), theEcorePackage.getEString(), "path", null, 1, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPage_UriElement(), theEcorePackage.getEString(), "uriElement", null, 1, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_TopMenuOption(), this.getPageTopMenuOptions(), "topMenuOption", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_TopMenuRank(), theEcorePackage.getEInt(), "topMenuRank", "65535", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_NavigationLabel(), theEcorePackage.getEString(), "navigationLabel", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3702,14 +3639,14 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(selectableEClass, Selectable.class, "Selectable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelectable_TargettingActions(), this.getSelectAction(), this.getSelectAction_Target(), "targettingActions", null, 0, -1, Selectable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSelectable_Parameters(), this.getServiceAttribute(), null, "parameters", null, 1, -1, Selectable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitContainerEClass, UnitContainer.class, "UnitContainer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitContainer_Units(), this.getContentUnit(), this.getContentUnit_DisplayedOn(), "units", null, 0, -1, UnitContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(contentUnitEClass, ContentUnit.class, "ContentUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContentUnit_DisplayedOn(), this.getUnitContainer(), this.getUnitContainer_Units(), "displayedOn", null, 1, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContentUnit_Path(), theEcorePackage.getEString(), "path", null, 1, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContentUnit_UriElement(), theEcorePackage.getEString(), "uriElement", null, 1, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContentUnit_UriParent(), this.getContentUnit(), null, "uriParent", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_PurposeSummary(), theEcorePackage.getEString(), "purposeSummary", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_OmitCaption(), theEcorePackage.getEBoolean(), "omitCaption", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_CaptionClass(), theEcorePackage.getEString(), "captionClass", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3719,12 +3656,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(staticUnitEClass, StaticUnit.class, "StaticUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStaticUnit_Service(), this.getService(), null, "service", null, 0, 1, StaticUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStaticUnit_Content(), theEcorePackage.getEString(), "content", null, 1, 1, StaticUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(commandUnitEClass, CommandUnit.class, "CommandUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCommandUnit_Commands(), this.getCommand(), this.getCommand_PartOf(), "commands", null, 0, -1, CommandUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(commandEClass, Command.class, "Command", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCommand_PartOf(), this.getCommandUnit(), this.getCommandUnit_Commands(), "partOf", null, 1, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dynamicUnitEClass, DynamicUnit.class, "DynamicUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDynamicUnit_Service(), this.getService(), this.getService_AccessedBy(), "service", null, 1, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3758,19 +3689,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(unitAssociationEClass, UnitAssociation.class, "UnitAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitAssociation_ServiceFeature(), this.getServiceAssociation(), null, "serviceFeature", null, 1, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUnitAssociation_ChildFeature(), this.getUnitChildFeature(), null, "childFeature", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUnitAssociation_ChildFeature(), this.getServiceFeatureReference(), null, "childFeature", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_Selection(), this.getSelection(), null, "selection", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_Label(), theOrmPackage.getLabel(), null, "label", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_Filters(), theOrmPackage.getLabel(), null, "filters", null, 0, -1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(unitChildFeatureEClass, UnitChildFeature.class, "UnitChildFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(unitChildElementEClass, UnitChildElement.class, "UnitChildElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnitChildElement_ServiceFeature(), this.getServiceAttribute(), null, "serviceFeature", null, 1, 1, UnitChildElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(unitChildAssociationEClass, UnitChildAssociation.class, "UnitChildAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnitChildAssociation_ServiceFeature(), this.getServiceAssociation(), null, "serviceFeature", null, 1, 1, UnitChildAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUnitChildAssociation_ChildFeature(), this.getUnitChildFeature(), null, "childFeature", null, 0, 1, UnitChildAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceFieldEClass, InterfaceField.class, "InterfaceField", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterfaceField_DefaultValue(), theCriteriaPackage.getExpression(), null, "defaultValue", null, 0, 1, InterfaceField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

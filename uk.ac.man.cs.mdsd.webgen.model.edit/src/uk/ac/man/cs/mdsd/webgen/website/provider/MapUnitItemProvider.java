@@ -51,7 +51,6 @@ public class MapUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addParametersPropertyDescriptor(object);
 			addReadOnlyPropertyDescriptor(object);
 			addDefaultZoomLevelPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
@@ -59,32 +58,6 @@ public class MapUnitItemProvider
 			addPlaceNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Parameters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addParametersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_SelectTarget_selectionFeatures_feature"),
-			getString("_UI_PropertyDescriptor_description", "java.lang.String", "_UI_Selectable_type"),
-			 WebsitePackage.Literals.SELECTABLE__PARAMETERS,
-			true, false, true, null,
-			getString("_UI_NavigationPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof MapUnit) {
-						return getSourceAttributes((MapUnit) object);
-					}
-					return Collections.emptyList();
-				}
-		});
 	}
 
 	/**

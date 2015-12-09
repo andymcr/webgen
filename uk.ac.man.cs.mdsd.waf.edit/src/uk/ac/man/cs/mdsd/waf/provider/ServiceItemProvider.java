@@ -112,8 +112,9 @@ public class ServiceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.SERVICE__SELECTIONS);
 			childrenFeatures.add(WafPackage.Literals.SERVICE__FEATURES);
+			childrenFeatures.add(WafPackage.Literals.SERVICE__KEYS);
+			childrenFeatures.add(WafPackage.Literals.SERVICE__SELECTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -168,8 +169,9 @@ public class ServiceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Service.class)) {
-			case WafPackage.SERVICE__SELECTIONS:
 			case WafPackage.SERVICE__FEATURES:
+			case WafPackage.SERVICE__KEYS:
+			case WafPackage.SERVICE__SELECTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -189,11 +191,6 @@ public class ServiceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.SERVICE__SELECTIONS,
-				 WafFactory.eINSTANCE.createSelection()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(WafPackage.Literals.SERVICE__FEATURES,
 				 WafFactory.eINSTANCE.createServiceFeature()));
 
@@ -206,6 +203,21 @@ public class ServiceItemProvider
 			(createChildParameter
 				(WafPackage.Literals.SERVICE__FEATURES,
 				 WafFactory.eINSTANCE.createServiceAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.SERVICE__KEYS,
+				 WafFactory.eINSTANCE.createServiceAttributeReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.SERVICE__KEYS,
+				 WafFactory.eINSTANCE.createServiceAssociationReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.SERVICE__SELECTIONS,
+				 WafFactory.eINSTANCE.createSelection()));
 	}
 
 	/**

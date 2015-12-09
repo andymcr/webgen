@@ -231,11 +231,6 @@ public class MenuItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.MENU__ENTRIES,
-				 WafFactory.eINSTANCE.createFixedCommandMenuEntry()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.MENU__ENTRIES,
 				 WafFactory.eINSTANCE.createEditStaticTextMenuEntry()));
 	}
 

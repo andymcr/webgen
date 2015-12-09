@@ -452,11 +452,6 @@ public class UnitAssociationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_CONTAINER__UNITS,
-				 WebsiteFactory.eINSTANCE.createCommandUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.UNIT_CONTAINER__UNITS,
 				 WebsiteFactory.eINSTANCE.createCreateSitemapUnit()));
 
 		newChildDescriptors.add
@@ -517,12 +512,12 @@ public class UnitAssociationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
-				 WebsiteFactory.eINSTANCE.createUnitChildElement()));
+				 WebsiteFactory.eINSTANCE.createServiceAttributeReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
-				 WebsiteFactory.eINSTANCE.createUnitChildAssociation()));
+				 WebsiteFactory.eINSTANCE.createServiceAssociationReference()));
 	}
 
 }

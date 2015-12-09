@@ -14,14 +14,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.waf.DetailsUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.Selectable;
-import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -33,7 +31,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getTargettingActions <em>Targetting Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  * </ul>
@@ -50,16 +47,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * @ordered
 	 */
 	protected EList<SelectAction> targettingActions;
-
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ServiceAttribute> parameters;
 
 	/**
 	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
@@ -130,18 +117,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			targettingActions = new EObjectWithInverseResolvingEList<SelectAction>(SelectAction.class, this, WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS, WafPackage.SELECT_ACTION__TARGET);
 		}
 		return targettingActions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ServiceAttribute> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectResolvingEList<ServiceAttribute>(ServiceAttribute.class, this, WafPackage.DETAILS_UNIT__PARAMETERS);
-		}
-		return parameters;
 	}
 
 	/**
@@ -225,8 +200,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS:
 				return getTargettingActions();
-			case WafPackage.DETAILS_UNIT__PARAMETERS:
-				return getParameters();
 			case WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return isOnlyDisplayWhenNotEmpty();
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
@@ -247,10 +220,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS:
 				getTargettingActions().clear();
 				getTargettingActions().addAll((Collection<? extends SelectAction>)newValue);
-				return;
-			case WafPackage.DETAILS_UNIT__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends ServiceAttribute>)newValue);
 				return;
 			case WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
@@ -273,9 +242,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS:
 				getTargettingActions().clear();
 				return;
-			case WafPackage.DETAILS_UNIT__PARAMETERS:
-				getParameters().clear();
-				return;
 			case WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
 				return;
@@ -296,8 +262,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		switch (featureID) {
 			case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS:
 				return targettingActions != null && !targettingActions.isEmpty();
-			case WafPackage.DETAILS_UNIT__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
 			case WafPackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WafPackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
@@ -316,7 +280,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		if (baseClass == Selectable.class) {
 			switch (derivedFeatureID) {
 				case WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS: return WafPackage.SELECTABLE__TARGETTING_ACTIONS;
-				case WafPackage.DETAILS_UNIT__PARAMETERS: return WafPackage.SELECTABLE__PARAMETERS;
 				default: return -1;
 			}
 		}
@@ -333,7 +296,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		if (baseClass == Selectable.class) {
 			switch (baseFeatureID) {
 				case WafPackage.SELECTABLE__TARGETTING_ACTIONS: return WafPackage.DETAILS_UNIT__TARGETTING_ACTIONS;
-				case WafPackage.SELECTABLE__PARAMETERS: return WafPackage.DETAILS_UNIT__PARAMETERS;
 				default: return -1;
 			}
 		}

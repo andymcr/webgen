@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -89,8 +90,9 @@ public class ServiceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.SERVICE__SELECTIONS);
 			childrenFeatures.add(WebsitePackage.Literals.SERVICE__FEATURES);
+			childrenFeatures.add(WebsitePackage.Literals.SERVICE__KEYS);
+			childrenFeatures.add(WebsitePackage.Literals.SERVICE__SELECTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -145,8 +147,9 @@ public class ServiceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Service.class)) {
-			case WebsitePackage.SERVICE__SELECTIONS:
 			case WebsitePackage.SERVICE__FEATURES:
+			case WebsitePackage.SERVICE__KEYS:
+			case WebsitePackage.SERVICE__SELECTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -166,11 +169,6 @@ public class ServiceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.SERVICE__SELECTIONS,
-				 WebsiteFactory.eINSTANCE.createSelection()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(WebsitePackage.Literals.SERVICE__FEATURES,
 				 WebsiteFactory.eINSTANCE.createServiceAttribute()));
 
@@ -178,6 +176,21 @@ public class ServiceItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.SERVICE__FEATURES,
 				 WebsiteFactory.eINSTANCE.createServiceAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.SERVICE__KEYS,
+				 WebsiteFactory.eINSTANCE.createServiceAttributeReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.SERVICE__KEYS,
+				 WebsiteFactory.eINSTANCE.createServiceAssociationReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.SERVICE__SELECTIONS,
+				 WebsiteFactory.eINSTANCE.createSelection()));
 	}
 
 }

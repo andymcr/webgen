@@ -112,10 +112,25 @@ interface IncludedAssociation extends IncludedFeature {
 
 class Service extends NamedElement {
 	refers EntityOrView[1..*] encapsulates
-	contains Selection[] selections
 	contains ServiceFeature[] features opposite partOf
+	contains ServiceFeatureReference[1..*] ^keys
+	contains Selection[] selections
 	refers DynamicUnit[] accessedBy opposite service
 }
+
+abstract class ServiceFeatureReference {
+}
+
+class ServiceAttributeReference extends ServiceFeatureReference {
+	refers ServiceAttribute[1] attribute
+}
+
+class ServiceAssociationReference extends ServiceFeatureReference {
+	// ServiceEntityAssociation ???
+	refers ServiceAssociation[1] association
+	contains ServiceFeatureReference childFeature
+}
+
 
 class Selection extends NamedElement {
 	contains SelectionParameter[] parameters
@@ -171,10 +186,6 @@ class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	contains Query query
 }
 
-// Remove  need for this
-class FixedCommandMenuEntry extends MenuEntry, NamedDisplayElement {
-}
-
 class EditStaticTextMenuEntry extends MenuEntry, NamedDisplayElement {
 }
 
@@ -189,7 +200,7 @@ class Page extends NamedDisplayElement, UnitContainer {
 	refers Page parentPage opposite childPages
 	refers Page[] childPages opposite parentPage
 	boolean authenticated
-	String[1] path
+	String[1] uriElement
 	PageTopMenuOptions topMenuOption
 	int topMenuRank = "65535"
 	String navigationLabel
@@ -220,7 +231,6 @@ class QueryParameter extends NamedElement {
 
 interface Selectable {
 	refers SelectAction[] targettingActions opposite target
-	refers ServiceAttribute[1..*] parameters
 }
 
 interface UnitContainer {
@@ -229,7 +239,8 @@ interface UnitContainer {
 
 abstract class ContentUnit extends NamedDisplayElement {
 	container UnitContainer[1] displayedOn opposite units
-	String[1] path
+	String[1] uriElement
+	refers ContentUnit uriParent
 	String purposeSummary
 	boolean omitCaption
 	String captionClass
@@ -240,16 +251,6 @@ abstract class ContentUnit extends NamedDisplayElement {
 class StaticUnit extends ContentUnit {
 	refers Service service
 	String[1] content
-}
-
-// Remove need for this
-class CommandUnit extends ContentUnit {
-	contains Command[] commands opposite partOf
-}
-
-// nothing extends
-abstract class Command extends NamedElement {
-	container CommandUnit[1] partOf opposite commands
 }
 
 abstract class DynamicUnit extends ContentUnit {
@@ -294,24 +295,11 @@ class UnitElement extends UnitFeature, IncludedAttribute {
 
 class UnitAssociation extends UnitFeature, IncludedAssociation, UnitContainer {
 	refers ServiceAssociation[1] serviceFeature
-	contains UnitChildFeature childFeature
+	contains ServiceFeatureReference childFeature
 	refers Selection selection
 	refers Label label
 	// for selecting inputs
 	refers Label[] filters
-}
-
-abstract class UnitChildFeature {
-}
-
-class UnitChildElement extends UnitChildFeature {
-	refers ServiceAttribute[1] serviceFeature
-}
-
-class UnitChildAssociation extends UnitChildFeature {
-	// ServiceEntityAssociation ???
-	refers ServiceAssociation[1] serviceFeature
-	contains UnitChildFeature childFeature
 }
 
 abstract class InterfaceField extends NamedDisplayElement, UnitField {

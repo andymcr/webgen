@@ -61,6 +61,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case WafPackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			case WafPackage.SERVICE: return createService();
+			case WafPackage.SERVICE_ATTRIBUTE_REFERENCE: return createServiceAttributeReference();
+			case WafPackage.SERVICE_ASSOCIATION_REFERENCE: return createServiceAssociationReference();
 			case WafPackage.SELECTION: return createSelection();
 			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WafPackage.SERVICE_FEATURE: return createServiceFeature();
@@ -69,7 +71,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.STATIC_MENU: return createStaticMenu();
 			case WafPackage.DYNAMIC_MENU: return createDynamicMenu();
 			case WafPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
-			case WafPackage.FIXED_COMMAND_MENU_ENTRY: return createFixedCommandMenuEntry();
 			case WafPackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WafPackage.PAGE: return createPage();
 			case WafPackage.FILTER: return createFilter();
@@ -77,12 +78,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.QUERY: return createQuery();
 			case WafPackage.QUERY_PARAMETER: return createQueryParameter();
 			case WafPackage.STATIC_UNIT: return createStaticUnit();
-			case WafPackage.COMMAND_UNIT: return createCommandUnit();
 			case WafPackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
 			case WafPackage.UNIT_ELEMENT: return createUnitElement();
 			case WafPackage.UNIT_ASSOCIATION: return createUnitAssociation();
-			case WafPackage.UNIT_CHILD_ELEMENT: return createUnitChildElement();
-			case WafPackage.UNIT_CHILD_ASSOCIATION: return createUnitChildAssociation();
 			case WafPackage.DATA_TYPE_FIELD: return createDataTypeField();
 			case WafPackage.DATE_FIELD: return createDateField();
 			case WafPackage.CAPTCHA_FIELD: return createCaptchaField();
@@ -198,6 +196,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ServiceAttributeReference createServiceAttributeReference() {
+		ServiceAttributeReferenceImpl serviceAttributeReference = new ServiceAttributeReferenceImpl();
+		return serviceAttributeReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceAssociationReference createServiceAssociationReference() {
+		ServiceAssociationReferenceImpl serviceAssociationReference = new ServiceAssociationReferenceImpl();
+		return serviceAssociationReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Selection createSelection() {
 		SelectionImpl selection = new SelectionImpl();
 		return selection;
@@ -278,16 +296,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FixedCommandMenuEntry createFixedCommandMenuEntry() {
-		FixedCommandMenuEntryImpl fixedCommandMenuEntry = new FixedCommandMenuEntryImpl();
-		return fixedCommandMenuEntry;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EditStaticTextMenuEntry createEditStaticTextMenuEntry() {
 		EditStaticTextMenuEntryImpl editStaticTextMenuEntry = new EditStaticTextMenuEntryImpl();
 		return editStaticTextMenuEntry;
@@ -358,16 +366,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommandUnit createCommandUnit() {
-		CommandUnitImpl commandUnit = new CommandUnitImpl();
-		return commandUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public UnitSupportAction createUnitSupportAction() {
 		UnitSupportActionImpl unitSupportAction = new UnitSupportActionImpl();
 		return unitSupportAction;
@@ -391,26 +389,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public UnitAssociation createUnitAssociation() {
 		UnitAssociationImpl unitAssociation = new UnitAssociationImpl();
 		return unitAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnitChildElement createUnitChildElement() {
-		UnitChildElementImpl unitChildElement = new UnitChildElementImpl();
-		return unitChildElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnitChildAssociation createUnitChildAssociation() {
-		UnitChildAssociationImpl unitChildAssociation = new UnitChildAssociationImpl();
-		return unitChildAssociation;
 	}
 
 	/**

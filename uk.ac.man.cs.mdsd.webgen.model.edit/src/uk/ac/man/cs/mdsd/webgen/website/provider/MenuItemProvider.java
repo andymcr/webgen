@@ -233,11 +233,6 @@ public class MenuItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.MENU__ENTRIES,
-				 WebsiteFactory.eINSTANCE.createFixedCommandMenuEntry()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.MENU__ENTRIES,
 				 WebsiteFactory.eINSTANCE.createEditStaticTextMenuEntry()));
 	}
 

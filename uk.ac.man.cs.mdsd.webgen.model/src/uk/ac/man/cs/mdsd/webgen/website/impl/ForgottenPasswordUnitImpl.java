@@ -44,7 +44,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getUriElement <em>Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getUriParent <em>Uri Parent</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
@@ -108,24 +109,34 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPath()
+	 * @see #getUriElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PATH_EDEFAULT = null;
+	protected static final String URI_ELEMENT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPath()
+	 * @see #getUriElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected String path = PATH_EDEFAULT;
+	protected String uriElement = URI_ELEMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUriParent() <em>Uri Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriParent()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContentUnit uriParent;
 
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
@@ -534,8 +545,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPath() {
-		return path;
+	public String getUriElement() {
+		return uriElement;
 	}
 
 	/**
@@ -543,11 +554,49 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPath(String newPath) {
-		String oldPath = path;
-		path = newPath;
+	public void setUriElement(String newUriElement) {
+		String oldUriElement = uriElement;
+		uriElement = newUriElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PATH, oldPath, path));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT, oldUriElement, uriElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentUnit getUriParent() {
+		if (uriParent != null && uriParent.eIsProxy()) {
+			InternalEObject oldUriParent = (InternalEObject)uriParent;
+			uriParent = (ContentUnit)eResolveProxy(oldUriParent);
+			if (uriParent != oldUriParent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT, oldUriParent, uriParent));
+			}
+		}
+		return uriParent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContentUnit basicGetUriParent() {
+		return uriParent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUriParent(ContentUnit newUriParent) {
+		ContentUnit oldUriParent = uriParent;
+		uriParent = newUriParent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT, oldUriParent, uriParent));
 	}
 
 	/**
@@ -988,8 +1037,11 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return getDisplayLabel();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON:
 				return getDisplayedOn();
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PATH:
-				return getPath();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
+				return getUriElement();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
+				if (resolve) return getUriParent();
+				return basicGetUriParent();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION:
@@ -1048,8 +1100,11 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)newValue);
 				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PATH:
-				setPath((String)newValue);
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
+				setUriElement((String)newValue);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
+				setUriParent((ContentUnit)newValue);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
@@ -1125,8 +1180,11 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)null);
 				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PATH:
-				setPath(PATH_EDEFAULT);
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
+				setUriElement(URI_ELEMENT_EDEFAULT);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
+				setUriParent((ContentUnit)null);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
@@ -1197,8 +1255,10 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON:
 				return getDisplayedOn() != null;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PATH:
-				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
+				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
+				return uriParent != null;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION:
@@ -1259,7 +1319,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		if (baseClass == ContentUnit.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__DISPLAYED_ON;
-				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PATH: return WebsitePackage.CONTENT_UNIT__PATH;
+				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__URI_ELEMENT;
+				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT: return WebsitePackage.CONTENT_UNIT__URI_PARENT;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY: return WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION: return WebsitePackage.CONTENT_UNIT__OMIT_CAPTION;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS: return WebsitePackage.CONTENT_UNIT__CAPTION_CLASS;
@@ -1314,7 +1375,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		if (baseClass == ContentUnit.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON;
-				case WebsitePackage.CONTENT_UNIT__PATH: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PATH;
+				case WebsitePackage.CONTENT_UNIT__URI_ELEMENT: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT;
+				case WebsitePackage.CONTENT_UNIT__URI_PARENT: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT;
 				case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION;
 				case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS;
@@ -1361,8 +1423,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		result.append(name);
 		result.append(", displayLabel: ");
 		result.append(displayLabel);
-		result.append(", path: ");
-		result.append(path);
+		result.append(", uriElement: ");
+		result.append(uriElement);
 		result.append(", purposeSummary: ");
 		result.append(purposeSummary);
 		result.append(", omitCaption: ");

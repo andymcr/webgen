@@ -559,53 +559,6 @@
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//CommandUnit"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="website.gmfgraph#InterfaceUnitNameLabel"/>
-            <features
-                href="website.ecore#//NamedElement/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.2/@tools.10"/>
-          <diagramNode
-              href="website.gmfgraph#InterfaceUnit"/>
-          <children
-              compartment="//@nodes.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="website.ecore#//CommandUnit/commands"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="website.ecore#//UserCommand"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="website.gmfgraph#CommandNameLabel"/>
-                <features
-                    href="website.ecore#//NamedElement/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="website.gmftool#//@palette/@tools.0/@tools.4"/>
-              <diagramNode
-                  href="website.gmfgraph#Command"/>
-            </ownedChild>
-          </children>
-          <compartments
-              children="//@nodes.6/@ownedChild/@children.1/@ownedChild/@children.0">
-            <compartment
-                href="website.gmfgraph#CommandsCompartment"/>
-          </compartments>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.6/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="website.ecore#//UnitContainer/units"/>
-        <ownedChild>
-          <domainMetaElement
               href="website.ecore#//CreateUnit"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
@@ -617,6 +570,118 @@
           <tool
               xsi:type="gmftool:CreationTool"
               href="website.gmftool#//@palette/@tools.2/@tools.3"/>
+          <diagramNode
+              href="website.gmfgraph#InterfaceUnit"/>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="website.ecore#//DynamicUnit/displayFields"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//UnitElement"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                <features
+                    href="website.ecore#//UnitElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+              <diagramNode
+                  href="website.gmfgraph#InterfaceElement"/>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="website.ecore#//DynamicUnit/displayFields"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//UnitAssociation"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                <features
+                    href="website.ecore#//UnitAssociation/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.0/@tools.3"/>
+              <diagramNode
+                  href="website.gmfgraph#InterfaceAssociation"/>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="website.ecore#//DynamicUnit/displayFields"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//DataTypeField"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                <features
+                    href="website.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.0/@tools.5"/>
+              <diagramNode
+                  href="website.gmfgraph#InterfaceElement"/>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="website.ecore#//DynamicUnit/displayFields"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//DateField"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                <features
+                    href="website.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.0/@tools.6"/>
+              <diagramNode
+                  href="website.gmfgraph#InterfaceElement"/>
+            </ownedChild>
+          </children>
+          <compartments
+              children="//@nodes.6/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.1/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.1/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.1/@ownedChild/@children.3">
+            <compartment
+                href="website.gmfgraph#UnitFieldCompartment"/>
+          </compartments>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="website.ecore#//UnitContainer/units"/>
+        <ownedChild>
+          <domainMetaElement
+              href="website.ecore#//CreateUpdateUnit"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="website.gmfgraph#InterfaceUnitNameLabel"/>
+            <features
+                href="website.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="website.gmftool#//@palette/@tools.2/@tools.4"/>
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
@@ -718,118 +783,6 @@
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//CreateUpdateUnit"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="website.gmfgraph#InterfaceUnitNameLabel"/>
-            <features
-                href="website.ecore#//NamedElement/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.2/@tools.4"/>
-          <diagramNode
-              href="website.gmfgraph#InterfaceUnit"/>
-          <children
-              compartment="//@nodes.6/@ownedChild/@children.3/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="website.ecore#//DynamicUnit/displayFields"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="website.ecore#//UnitElement"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  readOnly="true">
-                <diagramLabel
-                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                <features
-                    href="website.ecore#//UnitElement/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-              <diagramNode
-                  href="website.gmfgraph#InterfaceElement"/>
-            </ownedChild>
-          </children>
-          <children
-              compartment="//@nodes.6/@ownedChild/@children.3/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="website.ecore#//DynamicUnit/displayFields"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="website.ecore#//UnitAssociation"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  readOnly="true">
-                <diagramLabel
-                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                <features
-                    href="website.ecore#//UnitAssociation/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="website.gmftool#//@palette/@tools.0/@tools.3"/>
-              <diagramNode
-                  href="website.gmfgraph#InterfaceAssociation"/>
-            </ownedChild>
-          </children>
-          <children
-              compartment="//@nodes.6/@ownedChild/@children.3/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="website.ecore#//DynamicUnit/displayFields"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="website.ecore#//DataTypeField"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                <features
-                    href="website.ecore#//NamedElement/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="website.gmftool#//@palette/@tools.0/@tools.5"/>
-              <diagramNode
-                  href="website.gmfgraph#InterfaceElement"/>
-            </ownedChild>
-          </children>
-          <children
-              compartment="//@nodes.6/@ownedChild/@children.3/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="website.ecore#//DynamicUnit/displayFields"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="website.ecore#//DateField"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                <features
-                    href="website.ecore#//NamedElement/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="website.gmftool#//@palette/@tools.0/@tools.6"/>
-              <diagramNode
-                  href="website.gmfgraph#InterfaceElement"/>
-            </ownedChild>
-          </children>
-          <compartments
-              children="//@nodes.6/@ownedChild/@children.3/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.3/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.3/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.3/@ownedChild/@children.3">
-            <compartment
-                href="website.gmfgraph#UnitFieldCompartment"/>
-          </compartments>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.6/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="website.ecore#//UnitContainer/units"/>
-        <ownedChild>
-          <domainMetaElement
               href="website.ecore#//CreateSitemapUnit"/>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -855,6 +808,924 @@
           <tool
               xsi:type="gmftool:CreationTool"
               href="website.gmftool#//@palette/@tools.2/@tools.2"/>
+          <diagramNode
+              href="website.gmfgraph#InterfaceUnit"/>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="website.ecore#//DynamicUnit/displayFields"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//UnitElement"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                <features
+                    href="website.ecore#//UnitElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+              <diagramNode
+                  href="website.gmfgraph#InterfaceElement"/>
+              <children
+                  compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="website.ecore#//InlineActionContainer/actions"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="website.ecore#//SelectAction"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping">
+                    <diagramLabel
+                        href="website.gmfgraph#ActionNameLabel"/>
+                    <features
+                        href="website.ecore#//NamedElement/name"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="website.gmftool#//@palette/@tools.3/@tools.0"/>
+                  <diagramNode
+                      href="website.gmfgraph#Action"/>
+                </ownedChild>
+              </children>
+              <compartments
+                  children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.0/@ownedChild/@children.0">
+                <compartment
+                    href="website.gmfgraph#ActionCompartment"/>
+              </compartments>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="website.ecore#//DynamicUnit/displayFields"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//UnitAssociation"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                <features
+                    href="website.ecore#//UnitAssociation/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.0/@tools.3"/>
+              <diagramNode
+                  href="website.gmfgraph#InterfaceAssociation"/>
+              <children
+                  compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="website.ecore#//UnitContainer/units"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="website.ecore#//DetailsUnit"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping">
+                    <diagramLabel
+                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
+                    <features
+                        href="website.ecore#//NamedElement/name"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="website.gmftool#//@palette/@tools.2/@tools.2"/>
+                  <diagramNode
+                      href="website.gmfgraph#InterfaceUnit"/>
+                  <children
+                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                    <containmentFeature
+                        href="website.ecore#//DynamicUnit/displayFields"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="website.ecore#//UnitElement"/>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping"
+                          readOnly="true">
+                        <diagramLabel
+                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                        <features
+                            href="website.ecore#//UnitElement/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+                      <diagramNode
+                          href="website.gmfgraph#InterfaceElement"/>
+                    </ownedChild>
+                  </children>
+                  <children
+                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                    <containmentFeature
+                        href="website.ecore#//DynamicUnit/displayFields"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="website.ecore#//UnitAssociation"/>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping"
+                          readOnly="true">
+                        <diagramLabel
+                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                        <features
+                            href="website.ecore#//UnitAssociation/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
+                      <diagramNode
+                          href="website.gmfgraph#InterfaceAssociation"/>
+                      <children
+                          compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                        <containmentFeature
+                            href="website.ecore#//UnitContainer/units"/>
+                        <ownedChild>
+                          <domainMetaElement
+                              href="website.ecore#//DetailsUnit"/>
+                          <labelMappings
+                              xsi:type="gmfmap:FeatureLabelMapping">
+                            <diagramLabel
+                                href="website.gmfgraph#InterfaceUnitNameLabel"/>
+                            <features
+                                href="website.ecore#//NamedElement/name"/>
+                          </labelMappings>
+                          <tool
+                              xsi:type="gmftool:CreationTool"
+                              href="website.gmftool#//@palette/@tools.2/@tools.2"/>
+                          <diagramNode
+                              href="website.gmfgraph#InterfaceUnit"/>
+                          <children
+                              compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                            <containmentFeature
+                                href="website.ecore#//DynamicUnit/displayFields"/>
+                            <ownedChild>
+                              <domainMetaElement
+                                  href="website.ecore#//UnitElement"/>
+                              <labelMappings
+                                  xsi:type="gmfmap:FeatureLabelMapping"
+                                  readOnly="true">
+                                <diagramLabel
+                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                <features
+                                    href="website.ecore#//UnitElement/name"/>
+                              </labelMappings>
+                              <tool
+                                  xsi:type="gmftool:CreationTool"
+                                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+                              <diagramNode
+                                  href="website.gmfgraph#InterfaceElement"/>
+                            </ownedChild>
+                          </children>
+                          <compartments
+                              children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0">
+                            <compartment
+                                href="website.gmfgraph#UnitFieldCompartment"/>
+                          </compartments>
+                        </ownedChild>
+                      </children>
+                      <children
+                          compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                        <containmentFeature
+                            href="website.ecore#//UnitContainer/units"/>
+                        <ownedChild>
+                          <domainMetaElement
+                              href="website.ecore#//IndexUnit"/>
+                          <labelMappings
+                              xsi:type="gmfmap:FeatureLabelMapping">
+                            <diagramLabel
+                                href="website.gmfgraph#InterfaceUnitNameLabel"/>
+                            <features
+                                href="website.ecore#//NamedElement/name"/>
+                          </labelMappings>
+                          <tool
+                              xsi:type="gmftool:CreationTool"
+                              href="website.gmftool#//@palette/@tools.2/@tools.1"/>
+                          <diagramNode
+                              href="website.gmfgraph#InterfaceUnit"/>
+                          <children
+                              compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                            <containmentFeature
+                                href="website.ecore#//DynamicUnit/displayFields"/>
+                            <ownedChild>
+                              <domainMetaElement
+                                  href="website.ecore#//UnitElement"/>
+                              <labelMappings
+                                  xsi:type="gmfmap:FeatureLabelMapping"
+                                  readOnly="true">
+                                <diagramLabel
+                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                <features
+                                    href="website.ecore#//UnitElement/name"/>
+                              </labelMappings>
+                              <tool
+                                  xsi:type="gmftool:CreationTool"
+                                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+                              <diagramNode
+                                  href="website.gmfgraph#InterfaceElement"/>
+                            </ownedChild>
+                          </children>
+                          <compartments
+                              children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
+                            <compartment
+                                href="website.gmfgraph#UnitFieldCompartment"/>
+                          </compartments>
+                        </ownedChild>
+                      </children>
+                      <compartments
+                          children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
+                        <compartment
+                            href="website.gmfgraph#InterfaceUnitsCompartment"/>
+                      </compartments>
+                    </ownedChild>
+                  </children>
+                  <compartments
+                      children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
+                    <compartment
+                        href="website.gmfgraph#UnitFieldCompartment"/>
+                  </compartments>
+                </ownedChild>
+              </children>
+              <children
+                  compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="website.ecore#//UnitContainer/units"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="website.ecore#//IndexUnit"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping">
+                    <diagramLabel
+                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
+                    <features
+                        href="website.ecore#//NamedElement/name"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="website.gmftool#//@palette/@tools.2/@tools.1"/>
+                  <diagramNode
+                      href="website.gmfgraph#InterfaceUnit"/>
+                  <children
+                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                    <containmentFeature
+                        href="website.ecore#//DynamicUnit/displayFields"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="website.ecore#//UnitElement"/>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping"
+                          readOnly="true">
+                        <diagramLabel
+                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                        <features
+                            href="website.ecore#//UnitElement/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+                      <diagramNode
+                          href="website.gmfgraph#InterfaceElement"/>
+                    </ownedChild>
+                  </children>
+                  <children
+                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                    <containmentFeature
+                        href="website.ecore#//DynamicUnit/displayFields"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="website.ecore#//UnitAssociation"/>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping"
+                          readOnly="true">
+                        <diagramLabel
+                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                        <features
+                            href="website.ecore#//UnitAssociation/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
+                      <diagramNode
+                          href="website.gmfgraph#InterfaceAssociation"/>
+                      <children
+                          compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                        <containmentFeature
+                            href="website.ecore#//UnitContainer/units"/>
+                        <ownedChild>
+                          <domainMetaElement
+                              href="website.ecore#//DetailsUnit"/>
+                          <labelMappings
+                              xsi:type="gmfmap:FeatureLabelMapping">
+                            <diagramLabel
+                                href="website.gmfgraph#InterfaceUnitNameLabel"/>
+                            <features
+                                href="website.ecore#//NamedElement/name"/>
+                          </labelMappings>
+                          <tool
+                              xsi:type="gmftool:CreationTool"
+                              href="website.gmftool#//@palette/@tools.2/@tools.2"/>
+                          <diagramNode
+                              href="website.gmfgraph#InterfaceUnit"/>
+                          <children
+                              compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                            <containmentFeature
+                                href="website.ecore#//DynamicUnit/displayFields"/>
+                            <ownedChild>
+                              <domainMetaElement
+                                  href="website.ecore#//UnitElement"/>
+                              <labelMappings
+                                  xsi:type="gmfmap:FeatureLabelMapping"
+                                  readOnly="true">
+                                <diagramLabel
+                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                <features
+                                    href="website.ecore#//UnitElement/name"/>
+                              </labelMappings>
+                              <tool
+                                  xsi:type="gmftool:CreationTool"
+                                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+                              <diagramNode
+                                  href="website.gmfgraph#InterfaceElement"/>
+                            </ownedChild>
+                          </children>
+                          <children
+                              compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                            <containmentFeature
+                                href="website.ecore#//DynamicUnit/displayFields"/>
+                            <ownedChild>
+                              <domainMetaElement
+                                  href="website.ecore#//UnitAssociation"/>
+                              <labelMappings
+                                  xsi:type="gmfmap:FeatureLabelMapping"
+                                  readOnly="true">
+                                <diagramLabel
+                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                <features
+                                    href="website.ecore#//UnitAssociation/name"/>
+                              </labelMappings>
+                              <tool
+                                  xsi:type="gmftool:CreationTool"
+                                  href="website.gmftool#//@palette/@tools.0/@tools.3"/>
+                              <diagramNode
+                                  href="website.gmfgraph#InterfaceAssociation"/>
+                              <children
+                                  compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                <containmentFeature
+                                    href="website.ecore#//UnitContainer/units"/>
+                                <ownedChild>
+                                  <domainMetaElement
+                                      href="website.ecore#//DetailsUnit"/>
+                                  <labelMappings
+                                      xsi:type="gmfmap:FeatureLabelMapping">
+                                    <diagramLabel
+                                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
+                                    <features
+                                        href="website.ecore#//NamedElement/name"/>
+                                  </labelMappings>
+                                  <tool
+                                      xsi:type="gmftool:CreationTool"
+                                      href="website.gmftool#//@palette/@tools.2/@tools.2"/>
+                                  <diagramNode
+                                      href="website.gmfgraph#InterfaceUnit"/>
+                                  <children
+                                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                                    <containmentFeature
+                                        href="website.ecore#//DynamicUnit/displayFields"/>
+                                    <ownedChild>
+                                      <domainMetaElement
+                                          href="website.ecore#//UnitElement"/>
+                                      <labelMappings
+                                          xsi:type="gmfmap:FeatureLabelMapping"
+                                          readOnly="true">
+                                        <diagramLabel
+                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                        <features
+                                            href="website.ecore#//UnitElement/name"/>
+                                      </labelMappings>
+                                      <tool
+                                          xsi:type="gmftool:CreationTool"
+                                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+                                      <diagramNode
+                                          href="website.gmfgraph#InterfaceElement"/>
+                                    </ownedChild>
+                                  </children>
+                                  <children
+                                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                                    <containmentFeature
+                                        href="website.ecore#//DynamicUnit/displayFields"/>
+                                    <ownedChild>
+                                      <domainMetaElement
+                                          href="website.ecore#//UnitAssociation"/>
+                                      <labelMappings
+                                          xsi:type="gmfmap:FeatureLabelMapping"
+                                          readOnly="true">
+                                        <diagramLabel
+                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                        <features
+                                            href="website.ecore#//UnitAssociation/name"/>
+                                      </labelMappings>
+                                      <tool
+                                          xsi:type="gmftool:CreationTool"
+                                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
+                                      <diagramNode
+                                          href="website.gmfgraph#InterfaceAssociation"/>
+                                    </ownedChild>
+                                  </children>
+                                  <compartments
+                                      children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
+                                    <compartment
+                                        href="website.gmfgraph#UnitFieldCompartment"/>
+                                  </compartments>
+                                </ownedChild>
+                              </children>
+                              <children
+                                  compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                <containmentFeature
+                                    href="website.ecore#//UnitContainer/units"/>
+                                <ownedChild>
+                                  <domainMetaElement
+                                      href="website.ecore#//IndexUnit"/>
+                                  <labelMappings
+                                      xsi:type="gmfmap:FeatureLabelMapping">
+                                    <diagramLabel
+                                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
+                                    <features
+                                        href="website.ecore#//NamedElement/name"/>
+                                  </labelMappings>
+                                  <tool
+                                      xsi:type="gmftool:CreationTool"
+                                      href="website.gmftool#//@palette/@tools.2/@tools.1"/>
+                                  <diagramNode
+                                      href="website.gmfgraph#InterfaceUnit"/>
+                                  <children
+                                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                    <containmentFeature
+                                        href="website.ecore#//DynamicUnit/displayFields"/>
+                                    <ownedChild>
+                                      <domainMetaElement
+                                          href="website.ecore#//UnitElement"/>
+                                      <labelMappings
+                                          xsi:type="gmfmap:FeatureLabelMapping"
+                                          readOnly="true">
+                                        <diagramLabel
+                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                        <features
+                                            href="website.ecore#//UnitElement/name"/>
+                                      </labelMappings>
+                                      <tool
+                                          xsi:type="gmftool:CreationTool"
+                                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+                                      <diagramNode
+                                          href="website.gmfgraph#InterfaceElement"/>
+                                    </ownedChild>
+                                  </children>
+                                  <children
+                                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                    <containmentFeature
+                                        href="website.ecore#//DynamicUnit/displayFields"/>
+                                    <ownedChild>
+                                      <domainMetaElement
+                                          href="website.ecore#//UnitAssociation"/>
+                                      <labelMappings
+                                          xsi:type="gmfmap:FeatureLabelMapping"
+                                          readOnly="true">
+                                        <diagramLabel
+                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                        <features
+                                            href="website.ecore#//UnitAssociation/name"/>
+                                      </labelMappings>
+                                      <tool
+                                          xsi:type="gmftool:CreationTool"
+                                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
+                                      <diagramNode
+                                          href="website.gmfgraph#InterfaceAssociation"/>
+                                    </ownedChild>
+                                  </children>
+                                  <compartments
+                                      children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                                    <compartment
+                                        href="website.gmfgraph#UnitFieldCompartment"/>
+                                  </compartments>
+                                </ownedChild>
+                              </children>
+                              <compartments
+                                  children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
+                                <compartment
+                                    href="website.gmfgraph#InterfaceUnitsCompartment"/>
+                              </compartments>
+                            </ownedChild>
+                          </children>
+                          <compartments
+                              children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
+                            <compartment
+                                href="website.gmfgraph#UnitFieldCompartment"/>
+                          </compartments>
+                        </ownedChild>
+                      </children>
+                      <children
+                          compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                        <containmentFeature
+                            href="website.ecore#//UnitContainer/units"/>
+                        <ownedChild>
+                          <domainMetaElement
+                              href="website.ecore#//IndexUnit"/>
+                          <labelMappings
+                              xsi:type="gmfmap:FeatureLabelMapping">
+                            <diagramLabel
+                                href="website.gmfgraph#InterfaceUnitNameLabel"/>
+                            <features
+                                href="website.ecore#//NamedElement/name"/>
+                          </labelMappings>
+                          <tool
+                              xsi:type="gmftool:CreationTool"
+                              href="website.gmftool#//@palette/@tools.2/@tools.1"/>
+                          <diagramNode
+                              href="website.gmfgraph#InterfaceUnit"/>
+                          <children
+                              compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                            <containmentFeature
+                                href="website.ecore#//DynamicUnit/displayFields"/>
+                            <ownedChild>
+                              <domainMetaElement
+                                  href="website.ecore#//UnitElement"/>
+                              <labelMappings
+                                  xsi:type="gmfmap:FeatureLabelMapping"
+                                  readOnly="true">
+                                <diagramLabel
+                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                <features
+                                    href="website.ecore#//UnitElement/name"/>
+                              </labelMappings>
+                              <tool
+                                  xsi:type="gmftool:CreationTool"
+                                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+                              <diagramNode
+                                  href="website.gmfgraph#InterfaceElement"/>
+                            </ownedChild>
+                          </children>
+                          <children
+                              compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                            <containmentFeature
+                                href="website.ecore#//DynamicUnit/displayFields"/>
+                            <ownedChild>
+                              <domainMetaElement
+                                  href="website.ecore#//UnitAssociation"/>
+                              <labelMappings
+                                  xsi:type="gmfmap:FeatureLabelMapping"
+                                  readOnly="true">
+                                <diagramLabel
+                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                <features
+                                    href="website.ecore#//UnitAssociation/name"/>
+                              </labelMappings>
+                              <tool
+                                  xsi:type="gmftool:CreationTool"
+                                  href="website.gmftool#//@palette/@tools.0/@tools.3"/>
+                              <diagramNode
+                                  href="website.gmfgraph#InterfaceAssociation"/>
+                              <children
+                                  compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                <containmentFeature
+                                    href="website.ecore#//UnitContainer/units"/>
+                                <ownedChild>
+                                  <domainMetaElement
+                                      href="website.ecore#//DetailsUnit"/>
+                                  <labelMappings
+                                      xsi:type="gmfmap:FeatureLabelMapping">
+                                    <diagramLabel
+                                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
+                                    <features
+                                        href="website.ecore#//NamedElement/name"/>
+                                  </labelMappings>
+                                  <tool
+                                      xsi:type="gmftool:CreationTool"
+                                      href="website.gmftool#//@palette/@tools.2/@tools.2"/>
+                                  <diagramNode
+                                      href="website.gmfgraph#InterfaceUnit"/>
+                                  <children
+                                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                                    <containmentFeature
+                                        href="website.ecore#//DynamicUnit/displayFields"/>
+                                    <ownedChild>
+                                      <domainMetaElement
+                                          href="website.ecore#//UnitElement"/>
+                                      <labelMappings
+                                          xsi:type="gmfmap:FeatureLabelMapping"
+                                          readOnly="true">
+                                        <diagramLabel
+                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                        <features
+                                            href="website.ecore#//UnitElement/name"/>
+                                      </labelMappings>
+                                      <tool
+                                          xsi:type="gmftool:CreationTool"
+                                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+                                      <diagramNode
+                                          href="website.gmfgraph#InterfaceElement"/>
+                                    </ownedChild>
+                                  </children>
+                                  <children
+                                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                                    <containmentFeature
+                                        href="website.ecore#//DynamicUnit/displayFields"/>
+                                    <ownedChild>
+                                      <domainMetaElement
+                                          href="website.ecore#//UnitAssociation"/>
+                                      <labelMappings
+                                          xsi:type="gmfmap:FeatureLabelMapping"
+                                          readOnly="true">
+                                        <diagramLabel
+                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                        <features
+                                            href="website.ecore#//UnitAssociation/name"/>
+                                      </labelMappings>
+                                      <tool
+                                          xsi:type="gmftool:CreationTool"
+                                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
+                                      <diagramNode
+                                          href="website.gmfgraph#InterfaceAssociation"/>
+                                    </ownedChild>
+                                  </children>
+                                  <compartments
+                                      children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
+                                    <compartment
+                                        href="website.gmfgraph#UnitFieldCompartment"/>
+                                  </compartments>
+                                </ownedChild>
+                              </children>
+                              <children
+                                  compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                <containmentFeature
+                                    href="website.ecore#//UnitContainer/units"/>
+                                <ownedChild>
+                                  <domainMetaElement
+                                      href="website.ecore#//IndexUnit"/>
+                                  <labelMappings
+                                      xsi:type="gmfmap:FeatureLabelMapping">
+                                    <diagramLabel
+                                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
+                                    <features
+                                        href="website.ecore#//NamedElement/name"/>
+                                  </labelMappings>
+                                  <tool
+                                      xsi:type="gmftool:CreationTool"
+                                      href="website.gmftool#//@palette/@tools.2/@tools.1"/>
+                                  <diagramNode
+                                      href="website.gmfgraph#InterfaceUnit"/>
+                                  <children
+                                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                    <containmentFeature
+                                        href="website.ecore#//DynamicUnit/displayFields"/>
+                                    <ownedChild>
+                                      <domainMetaElement
+                                          href="website.ecore#//UnitElement"/>
+                                      <labelMappings
+                                          xsi:type="gmfmap:FeatureLabelMapping"
+                                          readOnly="true">
+                                        <diagramLabel
+                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                        <features
+                                            href="website.ecore#//UnitElement/name"/>
+                                      </labelMappings>
+                                      <tool
+                                          xsi:type="gmftool:CreationTool"
+                                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+                                      <diagramNode
+                                          href="website.gmfgraph#InterfaceElement"/>
+                                    </ownedChild>
+                                  </children>
+                                  <children
+                                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                                    <containmentFeature
+                                        href="website.ecore#//DynamicUnit/displayFields"/>
+                                    <ownedChild>
+                                      <domainMetaElement
+                                          href="website.ecore#//UnitAssociation"/>
+                                      <labelMappings
+                                          xsi:type="gmfmap:FeatureLabelMapping"
+                                          readOnly="true">
+                                        <diagramLabel
+                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                                        <features
+                                            href="website.ecore#//UnitAssociation/name"/>
+                                      </labelMappings>
+                                      <tool
+                                          xsi:type="gmftool:CreationTool"
+                                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
+                                      <diagramNode
+                                          href="website.gmfgraph#InterfaceAssociation"/>
+                                    </ownedChild>
+                                  </children>
+                                  <compartments
+                                      children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                                    <compartment
+                                        href="website.gmfgraph#UnitFieldCompartment"/>
+                                  </compartments>
+                                </ownedChild>
+                              </children>
+                              <compartments
+                                  children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                                <compartment
+                                    href="website.gmfgraph#InterfaceUnitsCompartment"/>
+                              </compartments>
+                            </ownedChild>
+                          </children>
+                          <compartments
+                              children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                            <compartment
+                                href="website.gmfgraph#UnitFieldCompartment"/>
+                          </compartments>
+                        </ownedChild>
+                      </children>
+                      <compartments
+                          children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
+                        <compartment
+                            href="website.gmfgraph#InterfaceUnitsCompartment"/>
+                      </compartments>
+                    </ownedChild>
+                  </children>
+                  <children
+                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.1">
+                    <containmentFeature
+                        href="website.ecore#//InlineActionContainer/actions"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="website.ecore#//SelectAction"/>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping">
+                        <diagramLabel
+                            href="website.gmfgraph#ActionNameLabel"/>
+                        <features
+                            href="website.ecore#//NamedElement/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="website.gmftool#//@palette/@tools.3/@tools.0"/>
+                      <diagramNode
+                          href="website.gmfgraph#Action"/>
+                    </ownedChild>
+                  </children>
+                  <children
+                      compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.1">
+                    <containmentFeature
+                        href="website.ecore#//InlineActionContainer/actions"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="website.ecore#//DeleteAction"/>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping">
+                        <diagramLabel
+                            href="website.gmfgraph#ActionNameLabel"/>
+                        <features
+                            href="website.ecore#//NamedElement/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="website.gmftool#//@palette/@tools.3/@tools.1"/>
+                      <diagramNode
+                          href="website.gmfgraph#Action"/>
+                    </ownedChild>
+                  </children>
+                  <compartments
+                      children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
+                    <compartment
+                        href="website.gmfgraph#UnitFieldCompartment"/>
+                  </compartments>
+                  <compartments
+                      children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.3">
+                    <compartment
+                        href="website.gmfgraph#ActionCompartment"/>
+                  </compartments>
+                </ownedChild>
+              </children>
+              <children
+                  compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@compartments.1">
+                <containmentFeature
+                    href="website.ecore#//InlineActionContainer/actions"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="website.ecore#//SelectAction"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping">
+                    <diagramLabel
+                        href="website.gmfgraph#ActionNameLabel"/>
+                    <features
+                        href="website.ecore#//NamedElement/name"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="website.gmftool#//@palette/@tools.3/@tools.0"/>
+                  <diagramNode
+                      href="website.gmfgraph#Action"/>
+                </ownedChild>
+              </children>
+              <compartments
+                  children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.1">
+                <compartment
+                    href="website.gmfgraph#InterfaceUnitsCompartment"/>
+              </compartments>
+              <compartments
+                  children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1/@ownedChild/@children.2">
+                <compartment
+                    href="website.gmfgraph#ActionCompartment"/>
+              </compartments>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="website.ecore#//DynamicUnit/displayFields"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//DataTypeField"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                <features
+                    href="website.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.0/@tools.5"/>
+              <diagramNode
+                  href="website.gmfgraph#InterfaceElement"/>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="website.ecore#//DynamicUnit/displayFields"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//DateField"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                <features
+                    href="website.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.0/@tools.6"/>
+              <diagramNode
+                  href="website.gmfgraph#InterfaceElement"/>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.4/@ownedChild/@compartments.1">
+            <containmentFeature
+                href="website.ecore#//DynamicUnit/supportActions"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//UnitSupportAction"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="website.gmfgraph#ActionNameLabel"/>
+                <features
+                    href="website.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.3/@tools.2"/>
+              <diagramNode
+                  href="website.gmfgraph#Action"/>
+            </ownedChild>
+          </children>
+          <compartments
+              children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.4/@ownedChild/@children.3">
+            <compartment
+                href="website.gmfgraph#UnitFieldCompartment"/>
+          </compartments>
+          <compartments
+              children="//@nodes.6/@ownedChild/@children.4/@ownedChild/@children.4">
+            <compartment
+                href="website.gmfgraph#ActionCompartment"/>
+          </compartments>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="website.ecore#//UnitContainer/units"/>
+        <ownedChild>
+          <domainMetaElement
+              href="website.ecore#//IndexUnit"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="website.gmfgraph#InterfaceUnitNameLabel"/>
+            <features
+                href="website.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="website.gmftool#//@palette/@tools.2/@tools.1"/>
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
@@ -952,8 +1823,7 @@
                       <domainMetaElement
                           href="website.ecore#//UnitElement"/>
                       <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping"
-                          readOnly="true">
+                          xsi:type="gmfmap:FeatureLabelMapping">
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
@@ -974,8 +1844,7 @@
                       <domainMetaElement
                           href="website.ecore#//UnitAssociation"/>
                       <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping"
-                          readOnly="true">
+                          xsi:type="gmfmap:FeatureLabelMapping">
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
@@ -986,107 +1855,6 @@
                           href="website.gmftool#//@palette/@tools.0/@tools.3"/>
                       <diagramNode
                           href="website.gmfgraph#InterfaceAssociation"/>
-                      <children
-                          compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                        <containmentFeature
-                            href="website.ecore#//UnitContainer/units"/>
-                        <ownedChild>
-                          <domainMetaElement
-                              href="website.ecore#//DetailsUnit"/>
-                          <labelMappings
-                              xsi:type="gmfmap:FeatureLabelMapping">
-                            <diagramLabel
-                                href="website.gmfgraph#InterfaceUnitNameLabel"/>
-                            <features
-                                href="website.ecore#//NamedElement/name"/>
-                          </labelMappings>
-                          <tool
-                              xsi:type="gmftool:CreationTool"
-                              href="website.gmftool#//@palette/@tools.2/@tools.2"/>
-                          <diagramNode
-                              href="website.gmfgraph#InterfaceUnit"/>
-                          <children
-                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
-                            <containmentFeature
-                                href="website.ecore#//DynamicUnit/displayFields"/>
-                            <ownedChild>
-                              <domainMetaElement
-                                  href="website.ecore#//UnitElement"/>
-                              <labelMappings
-                                  xsi:type="gmfmap:FeatureLabelMapping"
-                                  readOnly="true">
-                                <diagramLabel
-                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                <features
-                                    href="website.ecore#//UnitElement/name"/>
-                              </labelMappings>
-                              <tool
-                                  xsi:type="gmftool:CreationTool"
-                                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-                              <diagramNode
-                                  href="website.gmfgraph#InterfaceElement"/>
-                            </ownedChild>
-                          </children>
-                          <compartments
-                              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0">
-                            <compartment
-                                href="website.gmfgraph#UnitFieldCompartment"/>
-                          </compartments>
-                        </ownedChild>
-                      </children>
-                      <children
-                          compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                        <containmentFeature
-                            href="website.ecore#//UnitContainer/units"/>
-                        <ownedChild>
-                          <domainMetaElement
-                              href="website.ecore#//IndexUnit"/>
-                          <labelMappings
-                              xsi:type="gmfmap:FeatureLabelMapping">
-                            <diagramLabel
-                                href="website.gmfgraph#InterfaceUnitNameLabel"/>
-                            <features
-                                href="website.ecore#//NamedElement/name"/>
-                          </labelMappings>
-                          <tool
-                              xsi:type="gmftool:CreationTool"
-                              href="website.gmftool#//@palette/@tools.2/@tools.1"/>
-                          <diagramNode
-                              href="website.gmfgraph#InterfaceUnit"/>
-                          <children
-                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                            <containmentFeature
-                                href="website.ecore#//DynamicUnit/displayFields"/>
-                            <ownedChild>
-                              <domainMetaElement
-                                  href="website.ecore#//UnitElement"/>
-                              <labelMappings
-                                  xsi:type="gmfmap:FeatureLabelMapping"
-                                  readOnly="true">
-                                <diagramLabel
-                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                <features
-                                    href="website.ecore#//UnitElement/name"/>
-                              </labelMappings>
-                              <tool
-                                  xsi:type="gmftool:CreationTool"
-                                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-                              <diagramNode
-                                  href="website.gmfgraph#InterfaceElement"/>
-                            </ownedChild>
-                          </children>
-                          <compartments
-                              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
-                            <compartment
-                                href="website.gmfgraph#UnitFieldCompartment"/>
-                          </compartments>
-                        </ownedChild>
-                      </children>
-                      <compartments
-                          children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
-                        <compartment
-                            href="website.gmfgraph#InterfaceUnitsCompartment"/>
-                      </compartments>
                     </ownedChild>
                   </children>
                   <compartments
@@ -1123,8 +1891,7 @@
                       <domainMetaElement
                           href="website.ecore#//UnitElement"/>
                       <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping"
-                          readOnly="true">
+                          xsi:type="gmfmap:FeatureLabelMapping">
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
@@ -1145,8 +1912,7 @@
                       <domainMetaElement
                           href="website.ecore#//UnitAssociation"/>
                       <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping"
-                          readOnly="true">
+                          xsi:type="gmfmap:FeatureLabelMapping">
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
@@ -1157,494 +1923,12 @@
                           href="website.gmftool#//@palette/@tools.0/@tools.3"/>
                       <diagramNode
                           href="website.gmfgraph#InterfaceAssociation"/>
-                      <children
-                          compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                        <containmentFeature
-                            href="website.ecore#//UnitContainer/units"/>
-                        <ownedChild>
-                          <domainMetaElement
-                              href="website.ecore#//DetailsUnit"/>
-                          <labelMappings
-                              xsi:type="gmfmap:FeatureLabelMapping">
-                            <diagramLabel
-                                href="website.gmfgraph#InterfaceUnitNameLabel"/>
-                            <features
-                                href="website.ecore#//NamedElement/name"/>
-                          </labelMappings>
-                          <tool
-                              xsi:type="gmftool:CreationTool"
-                              href="website.gmftool#//@palette/@tools.2/@tools.2"/>
-                          <diagramNode
-                              href="website.gmfgraph#InterfaceUnit"/>
-                          <children
-                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
-                            <containmentFeature
-                                href="website.ecore#//DynamicUnit/displayFields"/>
-                            <ownedChild>
-                              <domainMetaElement
-                                  href="website.ecore#//UnitElement"/>
-                              <labelMappings
-                                  xsi:type="gmfmap:FeatureLabelMapping"
-                                  readOnly="true">
-                                <diagramLabel
-                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                <features
-                                    href="website.ecore#//UnitElement/name"/>
-                              </labelMappings>
-                              <tool
-                                  xsi:type="gmftool:CreationTool"
-                                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-                              <diagramNode
-                                  href="website.gmfgraph#InterfaceElement"/>
-                            </ownedChild>
-                          </children>
-                          <children
-                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
-                            <containmentFeature
-                                href="website.ecore#//DynamicUnit/displayFields"/>
-                            <ownedChild>
-                              <domainMetaElement
-                                  href="website.ecore#//UnitAssociation"/>
-                              <labelMappings
-                                  xsi:type="gmfmap:FeatureLabelMapping"
-                                  readOnly="true">
-                                <diagramLabel
-                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                <features
-                                    href="website.ecore#//UnitAssociation/name"/>
-                              </labelMappings>
-                              <tool
-                                  xsi:type="gmftool:CreationTool"
-                                  href="website.gmftool#//@palette/@tools.0/@tools.3"/>
-                              <diagramNode
-                                  href="website.gmfgraph#InterfaceAssociation"/>
-                              <children
-                                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                                <containmentFeature
-                                    href="website.ecore#//UnitContainer/units"/>
-                                <ownedChild>
-                                  <domainMetaElement
-                                      href="website.ecore#//DetailsUnit"/>
-                                  <labelMappings
-                                      xsi:type="gmfmap:FeatureLabelMapping">
-                                    <diagramLabel
-                                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
-                                    <features
-                                        href="website.ecore#//NamedElement/name"/>
-                                  </labelMappings>
-                                  <tool
-                                      xsi:type="gmftool:CreationTool"
-                                      href="website.gmftool#//@palette/@tools.2/@tools.2"/>
-                                  <diagramNode
-                                      href="website.gmfgraph#InterfaceUnit"/>
-                                  <children
-                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
-                                    <containmentFeature
-                                        href="website.ecore#//DynamicUnit/displayFields"/>
-                                    <ownedChild>
-                                      <domainMetaElement
-                                          href="website.ecore#//UnitElement"/>
-                                      <labelMappings
-                                          xsi:type="gmfmap:FeatureLabelMapping"
-                                          readOnly="true">
-                                        <diagramLabel
-                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                        <features
-                                            href="website.ecore#//UnitElement/name"/>
-                                      </labelMappings>
-                                      <tool
-                                          xsi:type="gmftool:CreationTool"
-                                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-                                      <diagramNode
-                                          href="website.gmfgraph#InterfaceElement"/>
-                                    </ownedChild>
-                                  </children>
-                                  <children
-                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
-                                    <containmentFeature
-                                        href="website.ecore#//DynamicUnit/displayFields"/>
-                                    <ownedChild>
-                                      <domainMetaElement
-                                          href="website.ecore#//UnitAssociation"/>
-                                      <labelMappings
-                                          xsi:type="gmfmap:FeatureLabelMapping"
-                                          readOnly="true">
-                                        <diagramLabel
-                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                        <features
-                                            href="website.ecore#//UnitAssociation/name"/>
-                                      </labelMappings>
-                                      <tool
-                                          xsi:type="gmftool:CreationTool"
-                                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
-                                      <diagramNode
-                                          href="website.gmfgraph#InterfaceAssociation"/>
-                                    </ownedChild>
-                                  </children>
-                                  <compartments
-                                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
-                                    <compartment
-                                        href="website.gmfgraph#UnitFieldCompartment"/>
-                                  </compartments>
-                                </ownedChild>
-                              </children>
-                              <children
-                                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                                <containmentFeature
-                                    href="website.ecore#//UnitContainer/units"/>
-                                <ownedChild>
-                                  <domainMetaElement
-                                      href="website.ecore#//IndexUnit"/>
-                                  <labelMappings
-                                      xsi:type="gmfmap:FeatureLabelMapping">
-                                    <diagramLabel
-                                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
-                                    <features
-                                        href="website.ecore#//NamedElement/name"/>
-                                  </labelMappings>
-                                  <tool
-                                      xsi:type="gmftool:CreationTool"
-                                      href="website.gmftool#//@palette/@tools.2/@tools.1"/>
-                                  <diagramNode
-                                      href="website.gmfgraph#InterfaceUnit"/>
-                                  <children
-                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                                    <containmentFeature
-                                        href="website.ecore#//DynamicUnit/displayFields"/>
-                                    <ownedChild>
-                                      <domainMetaElement
-                                          href="website.ecore#//UnitElement"/>
-                                      <labelMappings
-                                          xsi:type="gmfmap:FeatureLabelMapping"
-                                          readOnly="true">
-                                        <diagramLabel
-                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                        <features
-                                            href="website.ecore#//UnitElement/name"/>
-                                      </labelMappings>
-                                      <tool
-                                          xsi:type="gmftool:CreationTool"
-                                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-                                      <diagramNode
-                                          href="website.gmfgraph#InterfaceElement"/>
-                                    </ownedChild>
-                                  </children>
-                                  <children
-                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                                    <containmentFeature
-                                        href="website.ecore#//DynamicUnit/displayFields"/>
-                                    <ownedChild>
-                                      <domainMetaElement
-                                          href="website.ecore#//UnitAssociation"/>
-                                      <labelMappings
-                                          xsi:type="gmfmap:FeatureLabelMapping"
-                                          readOnly="true">
-                                        <diagramLabel
-                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                        <features
-                                            href="website.ecore#//UnitAssociation/name"/>
-                                      </labelMappings>
-                                      <tool
-                                          xsi:type="gmftool:CreationTool"
-                                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
-                                      <diagramNode
-                                          href="website.gmfgraph#InterfaceAssociation"/>
-                                    </ownedChild>
-                                  </children>
-                                  <compartments
-                                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
-                                    <compartment
-                                        href="website.gmfgraph#UnitFieldCompartment"/>
-                                  </compartments>
-                                </ownedChild>
-                              </children>
-                              <compartments
-                                  children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
-                                <compartment
-                                    href="website.gmfgraph#InterfaceUnitsCompartment"/>
-                              </compartments>
-                            </ownedChild>
-                          </children>
-                          <compartments
-                              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
-                            <compartment
-                                href="website.gmfgraph#UnitFieldCompartment"/>
-                          </compartments>
-                        </ownedChild>
-                      </children>
-                      <children
-                          compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                        <containmentFeature
-                            href="website.ecore#//UnitContainer/units"/>
-                        <ownedChild>
-                          <domainMetaElement
-                              href="website.ecore#//IndexUnit"/>
-                          <labelMappings
-                              xsi:type="gmfmap:FeatureLabelMapping">
-                            <diagramLabel
-                                href="website.gmfgraph#InterfaceUnitNameLabel"/>
-                            <features
-                                href="website.ecore#//NamedElement/name"/>
-                          </labelMappings>
-                          <tool
-                              xsi:type="gmftool:CreationTool"
-                              href="website.gmftool#//@palette/@tools.2/@tools.1"/>
-                          <diagramNode
-                              href="website.gmfgraph#InterfaceUnit"/>
-                          <children
-                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                            <containmentFeature
-                                href="website.ecore#//DynamicUnit/displayFields"/>
-                            <ownedChild>
-                              <domainMetaElement
-                                  href="website.ecore#//UnitElement"/>
-                              <labelMappings
-                                  xsi:type="gmfmap:FeatureLabelMapping"
-                                  readOnly="true">
-                                <diagramLabel
-                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                <features
-                                    href="website.ecore#//UnitElement/name"/>
-                              </labelMappings>
-                              <tool
-                                  xsi:type="gmftool:CreationTool"
-                                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-                              <diagramNode
-                                  href="website.gmfgraph#InterfaceElement"/>
-                            </ownedChild>
-                          </children>
-                          <children
-                              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                            <containmentFeature
-                                href="website.ecore#//DynamicUnit/displayFields"/>
-                            <ownedChild>
-                              <domainMetaElement
-                                  href="website.ecore#//UnitAssociation"/>
-                              <labelMappings
-                                  xsi:type="gmfmap:FeatureLabelMapping"
-                                  readOnly="true">
-                                <diagramLabel
-                                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                <features
-                                    href="website.ecore#//UnitAssociation/name"/>
-                              </labelMappings>
-                              <tool
-                                  xsi:type="gmftool:CreationTool"
-                                  href="website.gmftool#//@palette/@tools.0/@tools.3"/>
-                              <diagramNode
-                                  href="website.gmfgraph#InterfaceAssociation"/>
-                              <children
-                                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                                <containmentFeature
-                                    href="website.ecore#//UnitContainer/units"/>
-                                <ownedChild>
-                                  <domainMetaElement
-                                      href="website.ecore#//DetailsUnit"/>
-                                  <labelMappings
-                                      xsi:type="gmfmap:FeatureLabelMapping">
-                                    <diagramLabel
-                                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
-                                    <features
-                                        href="website.ecore#//NamedElement/name"/>
-                                  </labelMappings>
-                                  <tool
-                                      xsi:type="gmftool:CreationTool"
-                                      href="website.gmftool#//@palette/@tools.2/@tools.2"/>
-                                  <diagramNode
-                                      href="website.gmfgraph#InterfaceUnit"/>
-                                  <children
-                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
-                                    <containmentFeature
-                                        href="website.ecore#//DynamicUnit/displayFields"/>
-                                    <ownedChild>
-                                      <domainMetaElement
-                                          href="website.ecore#//UnitElement"/>
-                                      <labelMappings
-                                          xsi:type="gmfmap:FeatureLabelMapping"
-                                          readOnly="true">
-                                        <diagramLabel
-                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                        <features
-                                            href="website.ecore#//UnitElement/name"/>
-                                      </labelMappings>
-                                      <tool
-                                          xsi:type="gmftool:CreationTool"
-                                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-                                      <diagramNode
-                                          href="website.gmfgraph#InterfaceElement"/>
-                                    </ownedChild>
-                                  </children>
-                                  <children
-                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
-                                    <containmentFeature
-                                        href="website.ecore#//DynamicUnit/displayFields"/>
-                                    <ownedChild>
-                                      <domainMetaElement
-                                          href="website.ecore#//UnitAssociation"/>
-                                      <labelMappings
-                                          xsi:type="gmfmap:FeatureLabelMapping"
-                                          readOnly="true">
-                                        <diagramLabel
-                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                        <features
-                                            href="website.ecore#//UnitAssociation/name"/>
-                                      </labelMappings>
-                                      <tool
-                                          xsi:type="gmftool:CreationTool"
-                                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
-                                      <diagramNode
-                                          href="website.gmfgraph#InterfaceAssociation"/>
-                                    </ownedChild>
-                                  </children>
-                                  <compartments
-                                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
-                                    <compartment
-                                        href="website.gmfgraph#UnitFieldCompartment"/>
-                                  </compartments>
-                                </ownedChild>
-                              </children>
-                              <children
-                                  compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                                <containmentFeature
-                                    href="website.ecore#//UnitContainer/units"/>
-                                <ownedChild>
-                                  <domainMetaElement
-                                      href="website.ecore#//IndexUnit"/>
-                                  <labelMappings
-                                      xsi:type="gmfmap:FeatureLabelMapping">
-                                    <diagramLabel
-                                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
-                                    <features
-                                        href="website.ecore#//NamedElement/name"/>
-                                  </labelMappings>
-                                  <tool
-                                      xsi:type="gmftool:CreationTool"
-                                      href="website.gmftool#//@palette/@tools.2/@tools.1"/>
-                                  <diagramNode
-                                      href="website.gmfgraph#InterfaceUnit"/>
-                                  <children
-                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                                    <containmentFeature
-                                        href="website.ecore#//DynamicUnit/displayFields"/>
-                                    <ownedChild>
-                                      <domainMetaElement
-                                          href="website.ecore#//UnitElement"/>
-                                      <labelMappings
-                                          xsi:type="gmfmap:FeatureLabelMapping"
-                                          readOnly="true">
-                                        <diagramLabel
-                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                        <features
-                                            href="website.ecore#//UnitElement/name"/>
-                                      </labelMappings>
-                                      <tool
-                                          xsi:type="gmftool:CreationTool"
-                                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-                                      <diagramNode
-                                          href="website.gmfgraph#InterfaceElement"/>
-                                    </ownedChild>
-                                  </children>
-                                  <children
-                                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                                    <containmentFeature
-                                        href="website.ecore#//DynamicUnit/displayFields"/>
-                                    <ownedChild>
-                                      <domainMetaElement
-                                          href="website.ecore#//UnitAssociation"/>
-                                      <labelMappings
-                                          xsi:type="gmfmap:FeatureLabelMapping"
-                                          readOnly="true">
-                                        <diagramLabel
-                                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                                        <features
-                                            href="website.ecore#//UnitAssociation/name"/>
-                                      </labelMappings>
-                                      <tool
-                                          xsi:type="gmftool:CreationTool"
-                                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
-                                      <diagramNode
-                                          href="website.gmfgraph#InterfaceAssociation"/>
-                                    </ownedChild>
-                                  </children>
-                                  <compartments
-                                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
-                                    <compartment
-                                        href="website.gmfgraph#UnitFieldCompartment"/>
-                                  </compartments>
-                                </ownedChild>
-                              </children>
-                              <compartments
-                                  children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
-                                <compartment
-                                    href="website.gmfgraph#InterfaceUnitsCompartment"/>
-                              </compartments>
-                            </ownedChild>
-                          </children>
-                          <compartments
-                              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
-                            <compartment
-                                href="website.gmfgraph#UnitFieldCompartment"/>
-                          </compartments>
-                        </ownedChild>
-                      </children>
-                      <compartments
-                          children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
-                        <compartment
-                            href="website.gmfgraph#InterfaceUnitsCompartment"/>
-                      </compartments>
-                    </ownedChild>
-                  </children>
-                  <children
-                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.1">
-                    <containmentFeature
-                        href="website.ecore#//InlineActionContainer/actions"/>
-                    <ownedChild>
-                      <domainMetaElement
-                          href="website.ecore#//SelectAction"/>
-                      <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping">
-                        <diagramLabel
-                            href="website.gmfgraph#ActionNameLabel"/>
-                        <features
-                            href="website.ecore#//NamedElement/name"/>
-                      </labelMappings>
-                      <tool
-                          xsi:type="gmftool:CreationTool"
-                          href="website.gmftool#//@palette/@tools.3/@tools.0"/>
-                      <diagramNode
-                          href="website.gmfgraph#Action"/>
-                    </ownedChild>
-                  </children>
-                  <children
-                      compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.1">
-                    <containmentFeature
-                        href="website.ecore#//InlineActionContainer/actions"/>
-                    <ownedChild>
-                      <domainMetaElement
-                          href="website.ecore#//DeleteAction"/>
-                      <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping">
-                        <diagramLabel
-                            href="website.gmfgraph#ActionNameLabel"/>
-                        <features
-                            href="website.ecore#//NamedElement/name"/>
-                      </labelMappings>
-                      <tool
-                          xsi:type="gmftool:CreationTool"
-                          href="website.gmftool#//@palette/@tools.3/@tools.1"/>
-                      <diagramNode
-                          href="website.gmfgraph#Action"/>
                     </ownedChild>
                   </children>
                   <compartments
-                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
+                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
                     <compartment
                         href="website.gmfgraph#UnitFieldCompartment"/>
-                  </compartments>
-                  <compartments
-                      children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.3">
-                    <compartment
-                        href="website.gmfgraph#ActionCompartment"/>
                   </compartments>
                 </ownedChild>
               </children>
@@ -1726,337 +2010,6 @@
           <children
               compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@compartments.1">
             <containmentFeature
-                href="website.ecore#//DynamicUnit/supportActions"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="website.ecore#//UnitSupportAction"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="website.gmfgraph#ActionNameLabel"/>
-                <features
-                    href="website.ecore#//NamedElement/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="website.gmftool#//@palette/@tools.3/@tools.2"/>
-              <diagramNode
-                  href="website.gmfgraph#Action"/>
-            </ownedChild>
-          </children>
-          <compartments
-              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.3">
-            <compartment
-                href="website.gmfgraph#UnitFieldCompartment"/>
-          </compartments>
-          <compartments
-              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.4">
-            <compartment
-                href="website.gmfgraph#ActionCompartment"/>
-          </compartments>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.6/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="website.ecore#//UnitContainer/units"/>
-        <ownedChild>
-          <domainMetaElement
-              href="website.ecore#//IndexUnit"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="website.gmfgraph#InterfaceUnitNameLabel"/>
-            <features
-                href="website.ecore#//NamedElement/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.2/@tools.1"/>
-          <diagramNode
-              href="website.gmfgraph#InterfaceUnit"/>
-          <children
-              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="website.ecore#//DynamicUnit/displayFields"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="website.ecore#//UnitElement"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  readOnly="true">
-                <diagramLabel
-                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                <features
-                    href="website.ecore#//UnitElement/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-              <diagramNode
-                  href="website.gmfgraph#InterfaceElement"/>
-              <children
-                  compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.0/@ownedChild/@compartments.0">
-                <containmentFeature
-                    href="website.ecore#//InlineActionContainer/actions"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="website.ecore#//SelectAction"/>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping">
-                    <diagramLabel
-                        href="website.gmfgraph#ActionNameLabel"/>
-                    <features
-                        href="website.ecore#//NamedElement/name"/>
-                  </labelMappings>
-                  <tool
-                      xsi:type="gmftool:CreationTool"
-                      href="website.gmftool#//@palette/@tools.3/@tools.0"/>
-                  <diagramNode
-                      href="website.gmfgraph#Action"/>
-                </ownedChild>
-              </children>
-              <compartments
-                  children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.0/@ownedChild/@children.0">
-                <compartment
-                    href="website.gmfgraph#ActionCompartment"/>
-              </compartments>
-            </ownedChild>
-          </children>
-          <children
-              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="website.ecore#//DynamicUnit/displayFields"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="website.ecore#//UnitAssociation"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  readOnly="true">
-                <diagramLabel
-                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                <features
-                    href="website.ecore#//UnitAssociation/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="website.gmftool#//@palette/@tools.0/@tools.3"/>
-              <diagramNode
-                  href="website.gmfgraph#InterfaceAssociation"/>
-              <children
-                  compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                <containmentFeature
-                    href="website.ecore#//UnitContainer/units"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="website.ecore#//DetailsUnit"/>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping">
-                    <diagramLabel
-                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
-                    <features
-                        href="website.ecore#//NamedElement/name"/>
-                  </labelMappings>
-                  <tool
-                      xsi:type="gmftool:CreationTool"
-                      href="website.gmftool#//@palette/@tools.2/@tools.2"/>
-                  <diagramNode
-                      href="website.gmfgraph#InterfaceUnit"/>
-                  <children
-                      compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
-                    <containmentFeature
-                        href="website.ecore#//DynamicUnit/displayFields"/>
-                    <ownedChild>
-                      <domainMetaElement
-                          href="website.ecore#//UnitElement"/>
-                      <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping">
-                        <diagramLabel
-                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                        <features
-                            href="website.ecore#//UnitElement/name"/>
-                      </labelMappings>
-                      <tool
-                          xsi:type="gmftool:CreationTool"
-                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-                      <diagramNode
-                          href="website.gmfgraph#InterfaceElement"/>
-                    </ownedChild>
-                  </children>
-                  <children
-                      compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
-                    <containmentFeature
-                        href="website.ecore#//DynamicUnit/displayFields"/>
-                    <ownedChild>
-                      <domainMetaElement
-                          href="website.ecore#//UnitAssociation"/>
-                      <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping">
-                        <diagramLabel
-                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                        <features
-                            href="website.ecore#//UnitAssociation/name"/>
-                      </labelMappings>
-                      <tool
-                          xsi:type="gmftool:CreationTool"
-                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
-                      <diagramNode
-                          href="website.gmfgraph#InterfaceAssociation"/>
-                    </ownedChild>
-                  </children>
-                  <compartments
-                      children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1">
-                    <compartment
-                        href="website.gmfgraph#UnitFieldCompartment"/>
-                  </compartments>
-                </ownedChild>
-              </children>
-              <children
-                  compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                <containmentFeature
-                    href="website.ecore#//UnitContainer/units"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="website.ecore#//IndexUnit"/>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping">
-                    <diagramLabel
-                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
-                    <features
-                        href="website.ecore#//NamedElement/name"/>
-                  </labelMappings>
-                  <tool
-                      xsi:type="gmftool:CreationTool"
-                      href="website.gmftool#//@palette/@tools.2/@tools.1"/>
-                  <diagramNode
-                      href="website.gmfgraph#InterfaceUnit"/>
-                  <children
-                      compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                    <containmentFeature
-                        href="website.ecore#//DynamicUnit/displayFields"/>
-                    <ownedChild>
-                      <domainMetaElement
-                          href="website.ecore#//UnitElement"/>
-                      <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping">
-                        <diagramLabel
-                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                        <features
-                            href="website.ecore#//UnitElement/name"/>
-                      </labelMappings>
-                      <tool
-                          xsi:type="gmftool:CreationTool"
-                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
-                      <diagramNode
-                          href="website.gmfgraph#InterfaceElement"/>
-                    </ownedChild>
-                  </children>
-                  <children
-                      compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
-                    <containmentFeature
-                        href="website.ecore#//DynamicUnit/displayFields"/>
-                    <ownedChild>
-                      <domainMetaElement
-                          href="website.ecore#//UnitAssociation"/>
-                      <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping">
-                        <diagramLabel
-                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                        <features
-                            href="website.ecore#//UnitAssociation/name"/>
-                      </labelMappings>
-                      <tool
-                          xsi:type="gmftool:CreationTool"
-                          href="website.gmftool#//@palette/@tools.0/@tools.3"/>
-                      <diagramNode
-                          href="website.gmfgraph#InterfaceAssociation"/>
-                    </ownedChild>
-                  </children>
-                  <compartments
-                      children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.1">
-                    <compartment
-                        href="website.gmfgraph#UnitFieldCompartment"/>
-                  </compartments>
-                </ownedChild>
-              </children>
-              <children
-                  compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@compartments.1">
-                <containmentFeature
-                    href="website.ecore#//InlineActionContainer/actions"/>
-                <ownedChild>
-                  <domainMetaElement
-                      href="website.ecore#//SelectAction"/>
-                  <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping">
-                    <diagramLabel
-                        href="website.gmfgraph#ActionNameLabel"/>
-                    <features
-                        href="website.ecore#//NamedElement/name"/>
-                  </labelMappings>
-                  <tool
-                      xsi:type="gmftool:CreationTool"
-                      href="website.gmftool#//@palette/@tools.3/@tools.0"/>
-                  <diagramNode
-                      href="website.gmfgraph#Action"/>
-                </ownedChild>
-              </children>
-              <compartments
-                  children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.1">
-                <compartment
-                    href="website.gmfgraph#InterfaceUnitsCompartment"/>
-              </compartments>
-              <compartments
-                  children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1/@ownedChild/@children.2">
-                <compartment
-                    href="website.gmfgraph#ActionCompartment"/>
-              </compartments>
-            </ownedChild>
-          </children>
-          <children
-              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="website.ecore#//DynamicUnit/displayFields"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="website.ecore#//DataTypeField"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                <features
-                    href="website.ecore#//NamedElement/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="website.gmftool#//@palette/@tools.0/@tools.5"/>
-              <diagramNode
-                  href="website.gmfgraph#InterfaceElement"/>
-            </ownedChild>
-          </children>
-          <children
-              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="website.ecore#//DynamicUnit/displayFields"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="website.ecore#//DateField"/>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="website.gmfgraph#InterfaceFieldNameLabel"/>
-                <features
-                    href="website.ecore#//NamedElement/name"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="website.gmftool#//@palette/@tools.0/@tools.6"/>
-              <diagramNode
-                  href="website.gmfgraph#InterfaceElement"/>
-            </ownedChild>
-          </children>
-          <children
-              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.1">
-            <containmentFeature
                 href="website.ecore#//InlineActionContainer/actions"/>
             <ownedChild>
               <domainMetaElement
@@ -2076,7 +2029,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.1">
+              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@compartments.1">
             <containmentFeature
                 href="website.ecore#//InlineActionContainer/actions"/>
             <ownedChild>
@@ -2097,7 +2050,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.6/@ownedChild/@children.6/@ownedChild/@compartments.1">
+              compartment="//@nodes.6/@ownedChild/@children.5/@ownedChild/@compartments.1">
             <containmentFeature
                 href="website.ecore#//InlineActionContainer/actions"/>
             <ownedChild>
@@ -2118,12 +2071,12 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.3">
+              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.3">
             <compartment
                 href="website.gmfgraph#UnitFieldCompartment"/>
           </compartments>
           <compartments
-              children="//@nodes.6/@ownedChild/@children.6/@ownedChild/@children.4 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.5 //@nodes.6/@ownedChild/@children.6/@ownedChild/@children.6">
+              children="//@nodes.6/@ownedChild/@children.5/@ownedChild/@children.4 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.5 //@nodes.6/@ownedChild/@children.5/@ownedChild/@children.6">
             <compartment
                 href="website.gmfgraph#ActionCompartment"/>
           </compartments>
@@ -2170,7 +2123,7 @@
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
-              compartment="//@nodes.6/@ownedChild/@children.8/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.7/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2192,7 +2145,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.6/@ownedChild/@children.8/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.7/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2214,7 +2167,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.6/@ownedChild/@children.8/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.7/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2235,7 +2188,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.6/@ownedChild/@children.8/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.7/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2256,7 +2209,7 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.6/@ownedChild/@children.8/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.8/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.8/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.8/@ownedChild/@children.3">
+              children="//@nodes.6/@ownedChild/@children.7/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.7/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.7/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.7/@ownedChild/@children.3">
             <compartment
                 href="website.gmfgraph#UnitFieldCompartment"/>
           </compartments>
@@ -2303,7 +2256,7 @@
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
           <children
-              compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.9/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2325,7 +2278,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.9/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2345,7 +2298,7 @@
               <diagramNode
                   href="website.gmfgraph#InterfaceAssociation"/>
               <children
-                  compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                  compartment="//@nodes.6/@ownedChild/@children.9/@ownedChild/@children.1/@ownedChild/@compartments.0">
                 <containmentFeature
                     href="website.ecore#//UnitContainer/units"/>
                 <ownedChild>
@@ -2364,7 +2317,7 @@
                   <diagramNode
                       href="website.gmfgraph#InterfaceUnit"/>
                   <children
-                      compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.9/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -2386,7 +2339,7 @@
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                      compartment="//@nodes.6/@ownedChild/@children.9/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
                     <containmentFeature
                         href="website.ecore#//DynamicUnit/displayFields"/>
                     <ownedChild>
@@ -2408,7 +2361,7 @@
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.1">
+                      compartment="//@nodes.6/@ownedChild/@children.9/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.1">
                     <containmentFeature
                         href="website.ecore#//InlineActionContainer/actions"/>
                     <ownedChild>
@@ -2429,7 +2382,7 @@
                     </ownedChild>
                   </children>
                   <children
-                      compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.1">
+                      compartment="//@nodes.6/@ownedChild/@children.9/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.1">
                     <containmentFeature
                         href="website.ecore#//InlineActionContainer/actions"/>
                     <ownedChild>
@@ -2450,26 +2403,26 @@
                     </ownedChild>
                   </children>
                   <compartments
-                      children="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0">
+                      children="//@nodes.6/@ownedChild/@children.9/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.9/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0">
                     <compartment
                         href="website.gmfgraph#UnitFieldCompartment"/>
                   </compartments>
                   <compartments
-                      children="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.3">
+                      children="//@nodes.6/@ownedChild/@children.9/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.9/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.3">
                     <compartment
                         href="website.gmfgraph#ActionCompartment"/>
                   </compartments>
                 </ownedChild>
               </children>
               <compartments
-                  children="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1/@ownedChild/@children.0">
+                  children="//@nodes.6/@ownedChild/@children.9/@ownedChild/@children.1/@ownedChild/@children.0">
                 <compartment
                     href="website.gmfgraph#InterfaceUnitsCompartment"/>
               </compartments>
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.9/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2490,7 +2443,7 @@
             </ownedChild>
           </children>
           <children
-              compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@compartments.0">
+              compartment="//@nodes.6/@ownedChild/@children.9/@ownedChild/@compartments.0">
             <containmentFeature
                 href="website.ecore#//DynamicUnit/displayFields"/>
             <ownedChild>
@@ -2511,14 +2464,14 @@
             </ownedChild>
           </children>
           <compartments
-              children="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.3">
+              children="//@nodes.6/@ownedChild/@children.9/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.9/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.9/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.9/@ownedChild/@children.3">
             <compartment
                 href="website.gmfgraph#UnitFieldCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.6/@ownedChild/@children.6 //@nodes.6/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.5 //@nodes.6/@ownedChild/@children.10 //@nodes.6/@ownedChild/@children.8 //@nodes.6/@ownedChild/@children.3 //@nodes.6/@ownedChild/@children.9 //@nodes.6/@ownedChild/@children.4 //@nodes.6/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.7">
+          children="//@nodes.6/@ownedChild/@children.5 //@nodes.6/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.4 //@nodes.6/@ownedChild/@children.9 //@nodes.6/@ownedChild/@children.7 //@nodes.6/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.8 //@nodes.6/@ownedChild/@children.3 //@nodes.6/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.6">
         <compartment
             href="website.gmfgraph#InterfaceUnitsCompartment"/>
       </compartments>
@@ -2569,27 +2522,6 @@
             href="website.ecore#//Menu/entries"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//FixedCommandMenuEntry"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="website.gmfgraph#MenuEntryNameLabel"/>
-            <features
-                href="website.ecore#//NamedElement/name"/>
-          </labelMappings>
-          <tool
-              xsi:type="gmftool:CreationTool"
-              href="website.gmftool#//@palette/@tools.1/@tools.4"/>
-          <diagramNode
-              href="website.gmfgraph#MenuEntry"/>
-        </ownedChild>
-      </children>
-      <children
-          compartment="//@nodes.7/@ownedChild/@compartments.0">
-        <containmentFeature
-            href="website.ecore#//Menu/entries"/>
-        <ownedChild>
-          <domainMetaElement
               href="website.ecore#//EditStaticTextMenuEntry"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
@@ -2606,7 +2538,7 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.7/@ownedChild/@children.0 //@nodes.7/@ownedChild/@children.2 //@nodes.7/@ownedChild/@children.1">
+          children="//@nodes.7/@ownedChild/@children.0 //@nodes.7/@ownedChild/@children.1">
         <compartment
             href="website.gmfgraph#MenuEntriesCompartment"/>
       </compartments>

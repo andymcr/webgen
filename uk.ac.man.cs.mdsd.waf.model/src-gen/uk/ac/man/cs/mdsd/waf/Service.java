@@ -17,8 +17,9 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getEncapsulates <em>Encapsulates</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getFeatures <em>Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getKeys <em>Keys</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getAccessedBy <em>Accessed By</em>}</li>
  * </ul>
  *
@@ -44,22 +45,6 @@ public interface Service extends NamedElement {
 	EList<EntityOrView> getEncapsulates();
 
 	/**
-	 * Returns the value of the '<em><b>Selections</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.Selection}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Selections</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Selections</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_Selections()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Selection> getSelections();
-
-	/**
 	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ServiceFeature}.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getPartOf <em>Part Of</em>}'.
@@ -76,6 +61,38 @@ public interface Service extends NamedElement {
 	 * @generated
 	 */
 	EList<ServiceFeature> getFeatures();
+
+	/**
+	 * Returns the value of the '<em><b>Keys</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ServiceFeatureReference}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Keys</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Keys</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_Keys()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EList<ServiceFeatureReference> getKeys();
+
+	/**
+	 * Returns the value of the '<em><b>Selections</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.Selection}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selections</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selections</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_Selections()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Selection> getSelections();
 
 	/**
 	 * Returns the value of the '<em><b>Accessed By</b></em>' reference list.

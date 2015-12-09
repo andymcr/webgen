@@ -42,7 +42,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getParentPage <em>Parent Page</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getChildPages <em>Child Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#isAuthenticated <em>Authenticated</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getTopMenuOption <em>Top Menu Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getTopMenuRank <em>Top Menu Rank</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl#getNavigationLabel <em>Navigation Label</em>}</li>
@@ -104,24 +104,24 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	protected boolean authenticated = AUTHENTICATED_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPath()
+	 * @see #getUriElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PATH_EDEFAULT = null;
+	protected static final String URI_ELEMENT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPath()
+	 * @see #getUriElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected String path = PATH_EDEFAULT;
+	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTopMenuOption() <em>Top Menu Option</em>}' attribute.
@@ -405,8 +405,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPath() {
-		return path;
+	public String getUriElement() {
+		return uriElement;
 	}
 
 	/**
@@ -414,11 +414,11 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPath(String newPath) {
-		String oldPath = path;
-		path = newPath;
+	public void setUriElement(String newUriElement) {
+		String oldUriElement = uriElement;
+		uriElement = newUriElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.PAGE__PATH, oldPath, path));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.PAGE__URI_ELEMENT, oldUriElement, uriElement));
 	}
 
 	/**
@@ -514,8 +514,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return getChildPages();
 			case WebsitePackage.PAGE__AUTHENTICATED:
 				return isAuthenticated();
-			case WebsitePackage.PAGE__PATH:
-				return getPath();
+			case WebsitePackage.PAGE__URI_ELEMENT:
+				return getUriElement();
 			case WebsitePackage.PAGE__TOP_MENU_OPTION:
 				return getTopMenuOption();
 			case WebsitePackage.PAGE__TOP_MENU_RANK:
@@ -554,8 +554,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WebsitePackage.PAGE__AUTHENTICATED:
 				setAuthenticated((Boolean)newValue);
 				return;
-			case WebsitePackage.PAGE__PATH:
-				setPath((String)newValue);
+			case WebsitePackage.PAGE__URI_ELEMENT:
+				setUriElement((String)newValue);
 				return;
 			case WebsitePackage.PAGE__TOP_MENU_OPTION:
 				setTopMenuOption((PageTopMenuOptions)newValue);
@@ -596,8 +596,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 			case WebsitePackage.PAGE__AUTHENTICATED:
 				setAuthenticated(AUTHENTICATED_EDEFAULT);
 				return;
-			case WebsitePackage.PAGE__PATH:
-				setPath(PATH_EDEFAULT);
+			case WebsitePackage.PAGE__URI_ELEMENT:
+				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
 			case WebsitePackage.PAGE__TOP_MENU_OPTION:
 				setTopMenuOption(TOP_MENU_OPTION_EDEFAULT);
@@ -634,8 +634,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 				return childPages != null && !childPages.isEmpty();
 			case WebsitePackage.PAGE__AUTHENTICATED:
 				return authenticated != AUTHENTICATED_EDEFAULT;
-			case WebsitePackage.PAGE__PATH:
-				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+			case WebsitePackage.PAGE__URI_ELEMENT:
+				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case WebsitePackage.PAGE__TOP_MENU_OPTION:
 				return topMenuOption != TOP_MENU_OPTION_EDEFAULT;
 			case WebsitePackage.PAGE__TOP_MENU_RANK:
@@ -694,8 +694,8 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (authenticated: ");
 		result.append(authenticated);
-		result.append(", path: ");
-		result.append(path);
+		result.append(", uriElement: ");
+		result.append(uriElement);
 		result.append(", topMenuOption: ");
 		result.append(topMenuOption);
 		result.append(", topMenuRank: ");

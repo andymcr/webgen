@@ -25,8 +25,8 @@ import uk.ac.man.cs.mdsd.waf.ContentUnit;
 import uk.ac.man.cs.mdsd.waf.IncludedAssociation;
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.ServiceAssociation;
+import uk.ac.man.cs.mdsd.waf.ServiceFeatureReference;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
-import uk.ac.man.cs.mdsd.waf.UnitChildFeature;
 import uk.ac.man.cs.mdsd.waf.UnitContainer;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -88,7 +88,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @generated
 	 * @ordered
 	 */
-	protected UnitChildFeature childFeature;
+	protected ServiceFeatureReference childFeature;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -232,7 +232,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitChildFeature getChildFeature() {
+	public ServiceFeatureReference getChildFeature() {
 		return childFeature;
 	}
 
@@ -241,8 +241,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetChildFeature(UnitChildFeature newChildFeature, NotificationChain msgs) {
-		UnitChildFeature oldChildFeature = childFeature;
+	public NotificationChain basicSetChildFeature(ServiceFeatureReference newChildFeature, NotificationChain msgs) {
+		ServiceFeatureReference oldChildFeature = childFeature;
 		childFeature = newChildFeature;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
@@ -256,7 +256,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setChildFeature(UnitChildFeature newChildFeature) {
+	public void setChildFeature(ServiceFeatureReference newChildFeature) {
 		if (newChildFeature != childFeature) {
 			NotificationChain msgs = null;
 			if (childFeature != null)
@@ -439,7 +439,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				setServiceFeature((ServiceAssociation)newValue);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((UnitChildFeature)newValue);
+				setChildFeature((ServiceFeatureReference)newValue);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)newValue);
@@ -473,7 +473,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				setServiceFeature((ServiceAssociation)null);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((UnitChildFeature)null);
+				setChildFeature((ServiceFeatureReference)null);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)null);

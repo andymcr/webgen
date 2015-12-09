@@ -184,6 +184,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateServiceAttribute((ServiceAttribute)value, diagnostics, context);
 			case WebsitePackage.SERVICE_ASSOCIATION:
 				return validateServiceAssociation((ServiceAssociation)value, diagnostics, context);
+			case WebsitePackage.SERVICE_FEATURE_REFERENCE:
+				return validateServiceFeatureReference((ServiceFeatureReference)value, diagnostics, context);
+			case WebsitePackage.SERVICE_ATTRIBUTE_REFERENCE:
+				return validateServiceAttributeReference((ServiceAttributeReference)value, diagnostics, context);
+			case WebsitePackage.SERVICE_ASSOCIATION_REFERENCE:
+				return validateServiceAssociationReference((ServiceAssociationReference)value, diagnostics, context);
 			case WebsitePackage.PAGE:
 				return validatePage((Page)value, diagnostics, context);
 			case WebsitePackage.PAGE_LINK:
@@ -196,8 +202,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateStaticMenu((StaticMenu)value, diagnostics, context);
 			case WebsitePackage.ACTION_MENU_ENTRY:
 				return validateActionMenuEntry((ActionMenuEntry)value, diagnostics, context);
-			case WebsitePackage.FIXED_COMMAND_MENU_ENTRY:
-				return validateFixedCommandMenuEntry((FixedCommandMenuEntry)value, diagnostics, context);
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY:
 				return validateEditStaticTextMenuEntry((EditStaticTextMenuEntry)value, diagnostics, context);
 			case WebsitePackage.DYNAMIC_MENU:
@@ -220,10 +224,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateContentUnit((ContentUnit)value, diagnostics, context);
 			case WebsitePackage.STATIC_UNIT:
 				return validateStaticUnit((StaticUnit)value, diagnostics, context);
-			case WebsitePackage.COMMAND_UNIT:
-				return validateCommandUnit((CommandUnit)value, diagnostics, context);
-			case WebsitePackage.COMMAND:
-				return validateCommand((Command)value, diagnostics, context);
 			case WebsitePackage.USER_COMMAND:
 				return validateUserCommand((UserCommand)value, diagnostics, context);
 			case WebsitePackage.CREATE_SITEMAP_UNIT:
@@ -238,12 +238,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateUnitElement((UnitElement)value, diagnostics, context);
 			case WebsitePackage.UNIT_ASSOCIATION:
 				return validateUnitAssociation((UnitAssociation)value, diagnostics, context);
-			case WebsitePackage.UNIT_CHILD_FEATURE:
-				return validateUnitChildFeature((UnitChildFeature)value, diagnostics, context);
-			case WebsitePackage.UNIT_CHILD_ELEMENT:
-				return validateUnitChildElement((UnitChildElement)value, diagnostics, context);
-			case WebsitePackage.UNIT_CHILD_ASSOCIATION:
-				return validateUnitChildAssociation((UnitChildAssociation)value, diagnostics, context);
 			case WebsitePackage.INTERFACE_FIELD:
 				return validateInterfaceField((InterfaceField)value, diagnostics, context);
 			case WebsitePackage.DATA_TYPE_FIELD:
@@ -1255,25 +1249,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFixedCommandMenuEntry(FixedCommandMenuEntry fixedCommandMenuEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(fixedCommandMenuEntry, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(fixedCommandMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(fixedCommandMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(fixedCommandMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(fixedCommandMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(fixedCommandMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(fixedCommandMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fixedCommandMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fixedCommandMenuEntry, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(fixedCommandMenuEntry, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateEditStaticTextMenuEntry(EditStaticTextMenuEntry editStaticTextMenuEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(editStaticTextMenuEntry, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(editStaticTextMenuEntry, diagnostics, context);
@@ -1769,33 +1744,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateUnitChildFeature(UnitChildFeature unitChildFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(unitChildFeature, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUnitChildElement(UnitChildElement unitChildElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(unitChildElement, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUnitChildAssociation(UnitChildAssociation unitChildAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(unitChildAssociation, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateService(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(service, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(service, diagnostics, context);
@@ -1975,6 +1923,33 @@ public class WebsiteValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateServiceFeatureReference(ServiceFeatureReference serviceFeatureReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(serviceFeatureReference, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateServiceAttributeReference(ServiceAttributeReference serviceAttributeReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(serviceAttributeReference, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateServiceAssociationReference(ServiceAssociationReference serviceAssociationReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(serviceAssociationReference, diagnostics, context);
 	}
 
 	/**
@@ -2557,56 +2532,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCommandUnit(CommandUnit commandUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(commandUnit, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(commandUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(commandUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(commandUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(commandUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(commandUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(commandUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(commandUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(commandUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(commandUnit, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCommand(Command command, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(command, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(command, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(command, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(command, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(command, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(command, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(command, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(command, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(command, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(command, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateUserCommand(UserCommand userCommand, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(userCommand, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(userCommand, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(userCommand, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(userCommand, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(userCommand, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(userCommand, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(userCommand, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(userCommand, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(userCommand, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(userCommand, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(userCommand, diagnostics, context);
 	}
 
 	/**

@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceFeatureReference;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -36,8 +37,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getEncapsulates <em>Encapsulates</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getFeatures <em>Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getKeys <em>Keys</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,16 +56,6 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	protected EList<EntityOrView> encapsulates;
 
 	/**
-	 * The cached value of the '{@link #getSelections() <em>Selections</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSelections()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Selection> selections;
-
-	/**
 	 * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -72,6 +64,26 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @ordered
 	 */
 	protected EList<ServiceFeature> features;
+
+	/**
+	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeys()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ServiceFeatureReference> keys;
+
+	/**
+	 * The cached value of the '{@link #getSelections() <em>Selections</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelections()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Selection> selections;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +145,18 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<ServiceFeatureReference> getKeys() {
+		if (keys == null) {
+			keys = new EObjectContainmentEList<ServiceFeatureReference>(ServiceFeatureReference.class, this, WebsitePackage.SERVICE__KEYS);
+		}
+		return keys;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -155,10 +179,12 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return ((InternalEList<?>)getEncapsulates()).basicRemove(otherEnd, msgs);
-			case WebsitePackage.SERVICE__SELECTIONS:
-				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.SERVICE__FEATURES:
 				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.SERVICE__KEYS:
+				return ((InternalEList<?>)getKeys()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.SERVICE__SELECTIONS:
+				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -173,10 +199,12 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return getEncapsulates();
-			case WebsitePackage.SERVICE__SELECTIONS:
-				return getSelections();
 			case WebsitePackage.SERVICE__FEATURES:
 				return getFeatures();
+			case WebsitePackage.SERVICE__KEYS:
+				return getKeys();
+			case WebsitePackage.SERVICE__SELECTIONS:
+				return getSelections();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -194,13 +222,17 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				getEncapsulates().clear();
 				getEncapsulates().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
-			case WebsitePackage.SERVICE__SELECTIONS:
-				getSelections().clear();
-				getSelections().addAll((Collection<? extends Selection>)newValue);
-				return;
 			case WebsitePackage.SERVICE__FEATURES:
 				getFeatures().clear();
 				getFeatures().addAll((Collection<? extends ServiceFeature>)newValue);
+				return;
+			case WebsitePackage.SERVICE__KEYS:
+				getKeys().clear();
+				getKeys().addAll((Collection<? extends ServiceFeatureReference>)newValue);
+				return;
+			case WebsitePackage.SERVICE__SELECTIONS:
+				getSelections().clear();
+				getSelections().addAll((Collection<? extends Selection>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -217,11 +249,14 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
 				return;
-			case WebsitePackage.SERVICE__SELECTIONS:
-				getSelections().clear();
-				return;
 			case WebsitePackage.SERVICE__FEATURES:
 				getFeatures().clear();
+				return;
+			case WebsitePackage.SERVICE__KEYS:
+				getKeys().clear();
+				return;
+			case WebsitePackage.SERVICE__SELECTIONS:
+				getSelections().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -237,10 +272,12 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return encapsulates != null && !encapsulates.isEmpty();
-			case WebsitePackage.SERVICE__SELECTIONS:
-				return selections != null && !selections.isEmpty();
 			case WebsitePackage.SERVICE__FEATURES:
 				return features != null && !features.isEmpty();
+			case WebsitePackage.SERVICE__KEYS:
+				return keys != null && !keys.isEmpty();
+			case WebsitePackage.SERVICE__SELECTIONS:
+				return selections != null && !selections.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

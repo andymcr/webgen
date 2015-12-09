@@ -79,12 +79,12 @@ public interface UnitAssociation extends IncludedAssociation, UnitFeature, UnitC
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Child Feature</em>' containment reference.
-	 * @see #setChildFeature(UnitChildFeature)
+	 * @see #setChildFeature(ServiceFeatureReference)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation_ChildFeature()
 	 * @model containment="true"
 	 * @generated
 	 */
-	UnitChildFeature getChildFeature();
+	ServiceFeatureReference getChildFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature <em>Child Feature</em>}' containment reference.
@@ -94,7 +94,7 @@ public interface UnitAssociation extends IncludedAssociation, UnitFeature, UnitC
 	 * @see #getChildFeature()
 	 * @generated
 	 */
-	void setChildFeature(UnitChildFeature value);
+	void setChildFeature(ServiceFeatureReference value);
 
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' reference.

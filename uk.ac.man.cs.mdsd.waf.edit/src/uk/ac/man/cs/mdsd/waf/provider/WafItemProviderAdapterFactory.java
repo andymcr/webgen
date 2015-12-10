@@ -944,30 +944,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ActionUnit} instances.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected ActionUnitItemProvider actionUnitItemProvider;
-
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ActionUnit}.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Adapter createActionUnitAdapter()
-  {
-		if (actionUnitItemProvider == null) {
-			actionUnitItemProvider = new ActionUnitItemProvider(this);
-		}
-
-		return actionUnitItemProvider;
-	}
-
-  /**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.RegistrationUnit} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1350,7 +1326,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (indexPageDirectionUnitItemProvider != null) indexPageDirectionUnitItemProvider.dispose();
 		if (indexLineDirectionUnitItemProvider != null) indexLineDirectionUnitItemProvider.dispose();
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
-		if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
 		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();
 		if (loginUnitItemProvider != null) loginUnitItemProvider.dispose();
 		if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();

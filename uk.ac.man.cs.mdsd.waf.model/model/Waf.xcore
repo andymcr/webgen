@@ -390,10 +390,6 @@ class SearchUnit extends ControlUnit {
 	refers IndexUnit[1] resultsDestination opposite targettingSearches
 }
 
-class ActionUnit extends ControlUnit {
-	boolean omitFieldLabels
-}
-
 interface AuthenticationUnit {
 }
 

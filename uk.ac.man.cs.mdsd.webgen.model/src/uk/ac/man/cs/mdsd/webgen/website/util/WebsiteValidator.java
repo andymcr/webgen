@@ -268,8 +268,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateControlUnit((ControlUnit)value, diagnostics, context);
 			case WebsitePackage.SEARCH_UNIT:
 				return validateSearchUnit((SearchUnit)value, diagnostics, context);
-			case WebsitePackage.ACTION_UNIT:
-				return validateActionUnit((ActionUnit)value, diagnostics, context);
 			case WebsitePackage.AUTHENTICATION_UNIT:
 				return validateAuthenticationUnit((AuthenticationUnit)value, diagnostics, context);
 			case WebsitePackage.REGISTRATION_UNIT:
@@ -2836,29 +2834,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(searchUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(searchUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(searchUnit, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateActionUnit(ActionUnit actionUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(actionUnit, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(actionUnit, diagnostics, context);
 		return result;
 	}
 

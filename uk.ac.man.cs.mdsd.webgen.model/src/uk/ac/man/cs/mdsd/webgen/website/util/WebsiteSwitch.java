@@ -851,17 +851,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.ACTION_UNIT: {
-				ActionUnit actionUnit = (ActionUnit)theEObject;
-				T result = caseActionUnit(actionUnit);
-				if (result == null) result = caseControlUnit(actionUnit);
-				if (result == null) result = caseDynamicUnit(actionUnit);
-				if (result == null) result = caseContentUnit(actionUnit);
-				if (result == null) result = caseNamedDisplayElement(actionUnit);
-				if (result == null) result = caseNamedElement(actionUnit);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebsitePackage.AUTHENTICATION_UNIT: {
 				AuthenticationUnit authenticationUnit = (AuthenticationUnit)theEObject;
 				T result = caseAuthenticationUnit(authenticationUnit);
@@ -2283,21 +2272,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSearchUnit(SearchUnit object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Action Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Action Unit</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseActionUnit(ActionUnit object) {
 		return null;
 	}
 

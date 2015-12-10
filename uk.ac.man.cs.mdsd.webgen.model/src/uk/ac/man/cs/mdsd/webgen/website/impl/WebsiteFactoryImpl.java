@@ -117,7 +117,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.DETAILS_UNIT: return createDetailsUnit();
 			case WebsitePackage.INDEX_UNIT: return createIndexUnit();
 			case WebsitePackage.SEARCH_UNIT: return createSearchUnit();
-			case WebsitePackage.ACTION_UNIT: return createActionUnit();
 			case WebsitePackage.REGISTRATION_UNIT: return createRegistrationUnit();
 			case WebsitePackage.LOGIN_UNIT: return createLoginUnit();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT: return createForgottenPasswordUnit();
@@ -753,16 +752,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public SearchUnit createSearchUnit() {
 		SearchUnitImpl searchUnit = new SearchUnitImpl();
 		return searchUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ActionUnit createActionUnit() {
-		ActionUnitImpl actionUnit = new ActionUnitImpl();
-		return actionUnit;
 	}
 
 	/**

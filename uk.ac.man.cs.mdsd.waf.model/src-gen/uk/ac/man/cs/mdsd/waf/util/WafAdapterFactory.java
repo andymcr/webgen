@@ -290,10 +290,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createSearchUnitAdapter();
 			}
 			@Override
-			public Adapter caseActionUnit(ActionUnit object) {
-				return createActionUnitAdapter();
-			}
-			@Override
 			public Adapter caseAuthenticationUnit(AuthenticationUnit object) {
 				return createAuthenticationUnitAdapter();
 			}
@@ -1134,20 +1130,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSearchUnitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ActionUnit <em>Action Unit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ActionUnit
-	 * @generated
-	 */
-	public Adapter createActionUnitAdapter() {
 		return null;
 	}
 

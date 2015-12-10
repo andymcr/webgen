@@ -181,13 +181,6 @@ rule SearchUnit {
 	)
 }
 
--- @extends ControlUnit
-rule ActionUnit {
-	from partialWaf : WAF!ActionUnit
-	to waf : WAF!ActionUnit (
-	)
-}
-
 -- @extends EditUnit
 rule RegistrationUnit {
 	from partialWaf : WAF!RegistrationUnit

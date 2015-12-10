@@ -1080,14 +1080,6 @@ rule SearchUnit {
 	)
 }
 
--- @extends ControlUnit
-rule ActionUnit {
-	from website : Website!ActionUnit
-	to waf : WAF!ActionUnit (
-		omitFieldLabels <- website.omitFieldLabels
-	)
-}
-
 -- @extends EditUnit
 rule RegistrationUnit {
 	from website : Website!RegistrationUnit

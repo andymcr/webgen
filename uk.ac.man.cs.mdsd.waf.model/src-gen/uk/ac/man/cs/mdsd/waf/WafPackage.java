@@ -2505,22 +2505,13 @@ public interface WafPackage extends EPackage {
 	int CONTENT_UNIT__URI_ELEMENT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTENT_UNIT__URI_PARENT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__PURPOSE_SUMMARY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int CONTENT_UNIT__PURPOSE_SUMMARY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -2529,7 +2520,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__OMIT_CAPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int CONTENT_UNIT__OMIT_CAPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -2538,7 +2529,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__CAPTION_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int CONTENT_UNIT__CAPTION_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -2547,7 +2538,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int CONTENT_UNIT__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
@@ -2556,7 +2547,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__LAYOUT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int CONTENT_UNIT__LAYOUT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Content Unit</em>' class.
@@ -2565,7 +2556,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int CONTENT_UNIT_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Content Unit</em>' class.
@@ -2621,15 +2612,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_UNIT__URI_ELEMENT = CONTENT_UNIT__URI_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_UNIT__URI_PARENT = CONTENT_UNIT__URI_PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -2759,15 +2741,6 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__URI_ELEMENT = CONTENT_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_UNIT__URI_PARENT = CONTENT_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2831,13 +2804,31 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__URI_PARENT = CONTENT_UNIT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__PARENT_ASSOCIATION = CONTENT_UNIT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 2;
+	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -2846,7 +2837,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 3;
+	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -2855,7 +2846,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 4;
+	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2864,7 +2855,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
+	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -2873,7 +2864,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
+	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -2882,7 +2873,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
+	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -2891,7 +2882,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
+	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Unit</em>' class.
@@ -2900,7 +2891,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 9;
+	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Unit</em>' class.
@@ -4128,15 +4119,6 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_UNIT__URI_PARENT = DYNAMIC_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4198,6 +4180,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDIT_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__URI_PARENT = DYNAMIC_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__PARENT_ASSOCIATION = DYNAMIC_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -4363,15 +4363,6 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4433,6 +4424,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__PARENT_ASSOCIATION = EDIT_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -4598,15 +4607,6 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UPDATE_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4668,6 +4668,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__PARENT_ASSOCIATION = EDIT_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -4851,15 +4869,6 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4921,6 +4930,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__PARENT_ASSOCIATION = EDIT_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -5131,15 +5158,6 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5201,6 +5219,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UPDATE_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__PARENT_ASSOCIATION = EDIT_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -5375,15 +5411,6 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__URI_PARENT = DYNAMIC_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5445,6 +5472,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__URI_PARENT = DYNAMIC_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__PARENT_ASSOCIATION = DYNAMIC_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -5592,15 +5637,6 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__URI_ELEMENT = DATA_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__URI_PARENT = DATA_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5662,6 +5698,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DETAILS_UNIT__DISPLAY_FIELDS = DATA_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__URI_PARENT = DATA_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__PARENT_ASSOCIATION = DATA_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -5836,15 +5890,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__URI_ELEMENT = DATA_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__URI_PARENT = DATA_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5906,6 +5951,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__DISPLAY_FIELDS = DATA_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__URI_PARENT = DATA_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__PARENT_ASSOCIATION = DATA_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -6161,15 +6224,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_GRID_UNIT__URI_PARENT = INDEX_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6231,6 +6285,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_GRID_UNIT__DISPLAY_FIELDS = INDEX_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__URI_PARENT = INDEX_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__PARENT_ASSOCIATION = INDEX_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -6486,15 +6558,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_PAGE_DIRECTION_UNIT__URI_PARENT = INDEX_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6556,6 +6619,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__DISPLAY_FIELDS = INDEX_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__URI_PARENT = INDEX_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__PARENT_ASSOCIATION = INDEX_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -6811,15 +6892,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_LINE_DIRECTION_UNIT__URI_PARENT = INDEX_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6881,6 +6953,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_LINE_DIRECTION_UNIT__DISPLAY_FIELDS = INDEX_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__URI_PARENT = INDEX_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__PARENT_ASSOCIATION = INDEX_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -7136,15 +7226,6 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_UNIT__URI_PARENT = DYNAMIC_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7206,6 +7287,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__URI_PARENT = DYNAMIC_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__PARENT_ASSOCIATION = DYNAMIC_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -7362,15 +7461,6 @@ public interface WafPackage extends EPackage {
 	int SEARCH_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_UNIT__URI_PARENT = CONTROL_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7432,6 +7522,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__DISPLAY_FIELDS = CONTROL_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__URI_PARENT = CONTROL_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__PARENT_ASSOCIATION = CONTROL_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -7625,15 +7733,6 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7695,6 +7794,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int REGISTRATION_UNIT__DISPLAY_FIELDS = EDIT_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__PARENT_ASSOCIATION = EDIT_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -7869,15 +7986,6 @@ public interface WafPackage extends EPackage {
 	int LOGIN_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN_UNIT__URI_PARENT = CONTROL_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7939,6 +8047,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN_UNIT__DISPLAY_FIELDS = CONTROL_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__URI_PARENT = CONTROL_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__PARENT_ASSOCIATION = CONTROL_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -8131,15 +8257,6 @@ public interface WafPackage extends EPackage {
 	int FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORGOTTEN_PASSWORD_UNIT__URI_PARENT = CONTROL_UNIT__URI_PARENT;
-
-	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8201,6 +8318,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS = CONTROL_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__URI_PARENT = CONTROL_UNIT__URI_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__PARENT_ASSOCIATION = CONTROL_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -10324,17 +10459,6 @@ public interface WafPackage extends EPackage {
 	EAttribute getContentUnit_UriElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriParent <em>Uri Parent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Uri Parent</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ContentUnit#getUriParent()
-	 * @see #getContentUnit()
-	 * @generated
-	 */
-	EReference getContentUnit_UriParent();
-
-	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10452,6 +10576,28 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDynamicUnit_DisplayFields();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getUriParent <em>Uri Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Uri Parent</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getUriParent()
+	 * @see #getDynamicUnit()
+	 * @generated
+	 */
+	EReference getDynamicUnit_UriParent();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getParentAssociation <em>Parent Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parent Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getParentAssociation()
+	 * @see #getDynamicUnit()
+	 * @generated
+	 */
+	EReference getDynamicUnit_ParentAssociation();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}'.
@@ -12831,14 +12977,6 @@ public interface WafPackage extends EPackage {
 		EAttribute CONTENT_UNIT__URI_ELEMENT = eINSTANCE.getContentUnit_UriElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Uri Parent</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTENT_UNIT__URI_PARENT = eINSTANCE.getContentUnit_UriParent();
-
-		/**
 		 * The meta object literal for the '<em><b>Purpose Summary</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -12929,6 +13067,22 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DYNAMIC_UNIT__DISPLAY_FIELDS = eINSTANCE.getDynamicUnit_DisplayFields();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri Parent</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DYNAMIC_UNIT__URI_PARENT = eINSTANCE.getDynamicUnit_UriParent();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent Association</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DYNAMIC_UNIT__PARENT_ASSOCIATION = eINSTANCE.getDynamicUnit_ParentAssociation();
 
 		/**
 		 * The meta object literal for the '<em><b>Support Actions</b></em>' containment reference list feature.

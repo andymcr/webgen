@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
@@ -27,6 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
+import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
@@ -45,12 +47,14 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getUriParent <em>Uri Parent</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getSource <em>Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getUriParent <em>Uri Parent</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getParentAssociation <em>Parent Association</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#isUseParentAssociationSource <em>Use Parent Association Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getFooter <em>Footer</em>}</li>
@@ -127,16 +131,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * @ordered
 	 */
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getUriParent() <em>Uri Parent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriParent()
-	 * @generated
-	 * @ordered
-	 */
-	protected ContentUnit uriParent;
 
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
@@ -217,6 +211,46 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * @ordered
 	 */
 	protected EList<UnitField> displayFields;
+
+	/**
+	 * The cached value of the '{@link #getUriParent() <em>Uri Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriParent()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContentUnit uriParent;
+
+	/**
+	 * The cached value of the '{@link #getParentAssociation() <em>Parent Association</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParentAssociation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Association parentAssociation;
+
+	/**
+	 * The default value of the '{@link #isUseParentAssociationSource() <em>Use Parent Association Source</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseParentAssociationSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isUseParentAssociationSource() <em>Use Parent Association Source</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseParentAssociationSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean useParentAssociationSource = USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSupportActions() <em>Support Actions</em>}' containment reference list.
@@ -597,6 +631,65 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		uriParent = newUriParent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT, oldUriParent, uriParent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Association getParentAssociation() {
+		if (parentAssociation != null && parentAssociation.eIsProxy()) {
+			InternalEObject oldParentAssociation = (InternalEObject)parentAssociation;
+			parentAssociation = (Association)eResolveProxy(oldParentAssociation);
+			if (parentAssociation != oldParentAssociation) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PARENT_ASSOCIATION, oldParentAssociation, parentAssociation));
+			}
+		}
+		return parentAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Association basicGetParentAssociation() {
+		return parentAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParentAssociation(Association newParentAssociation) {
+		Association oldParentAssociation = parentAssociation;
+		parentAssociation = newParentAssociation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PARENT_ASSOCIATION, oldParentAssociation, parentAssociation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isUseParentAssociationSource() {
+		return useParentAssociationSource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUseParentAssociationSource(boolean newUseParentAssociationSource) {
+		boolean oldUseParentAssociationSource = useParentAssociationSource;
+		useParentAssociationSource = newUseParentAssociationSource;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__USE_PARENT_ASSOCIATION_SOURCE, oldUseParentAssociationSource, useParentAssociationSource));
 	}
 
 	/**
@@ -1039,9 +1132,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return getDisplayedOn();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
 				return getUriElement();
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
-				if (resolve) return getUriParent();
-				return basicGetUriParent();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION:
@@ -1053,6 +1143,14 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return basicGetSource();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
+				if (resolve) return getUriParent();
+				return basicGetUriParent();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PARENT_ASSOCIATION:
+				if (resolve) return getParentAssociation();
+				return basicGetParentAssociation();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
+				return isUseParentAssociationSource();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER:
@@ -1103,9 +1201,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
 				setUriElement((String)newValue);
 				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
-				setUriParent((ContentUnit)newValue);
-				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
 				return;
@@ -1121,6 +1216,15 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				getDisplayFields().addAll((Collection<? extends UnitField>)newValue);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
+				setUriParent((ContentUnit)newValue);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PARENT_ASSOCIATION:
+				setParentAssociation((Association)newValue);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
+				setUseParentAssociationSource((Boolean)newValue);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
@@ -1183,9 +1287,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
-				setUriParent((ContentUnit)null);
-				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
 				return;
@@ -1200,6 +1301,15 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
+				setUriParent((ContentUnit)null);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PARENT_ASSOCIATION:
+				setParentAssociation((Association)null);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
+				setUseParentAssociationSource(USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
@@ -1257,8 +1367,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return getDisplayedOn() != null;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
-				return uriParent != null;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION:
@@ -1269,6 +1377,12 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return source != null;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT:
+				return uriParent != null;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PARENT_ASSOCIATION:
+				return parentAssociation != null;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
+				return useParentAssociationSource != USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER:
@@ -1320,7 +1434,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			switch (derivedFeatureID) {
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__DISPLAYED_ON;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__URI_ELEMENT;
-				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT: return WebsitePackage.CONTENT_UNIT__URI_PARENT;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY: return WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION: return WebsitePackage.CONTENT_UNIT__OMIT_CAPTION;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS: return WebsitePackage.CONTENT_UNIT__CAPTION_CLASS;
@@ -1331,6 +1444,9 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			switch (derivedFeatureID) {
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE: return WebsitePackage.DYNAMIC_UNIT__SOURCE;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS: return WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
+				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT: return WebsitePackage.DYNAMIC_UNIT__URI_PARENT;
+				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PARENT_ASSOCIATION: return WebsitePackage.DYNAMIC_UNIT__PARENT_ASSOCIATION;
+				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__USE_PARENT_ASSOCIATION_SOURCE: return WebsitePackage.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS: return WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER: return WebsitePackage.DYNAMIC_UNIT__HEADER;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__FOOTER: return WebsitePackage.DYNAMIC_UNIT__FOOTER;
@@ -1376,7 +1492,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			switch (baseFeatureID) {
 				case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON;
 				case WebsitePackage.CONTENT_UNIT__URI_ELEMENT: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT;
-				case WebsitePackage.CONTENT_UNIT__URI_PARENT: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT;
 				case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION;
 				case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS;
@@ -1387,6 +1502,9 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			switch (baseFeatureID) {
 				case WebsitePackage.DYNAMIC_UNIT__SOURCE: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE;
 				case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS;
+				case WebsitePackage.DYNAMIC_UNIT__URI_PARENT: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_PARENT;
+				case WebsitePackage.DYNAMIC_UNIT__PARENT_ASSOCIATION: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PARENT_ASSOCIATION;
+				case WebsitePackage.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__USE_PARENT_ASSOCIATION_SOURCE;
 				case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER;
 				case WebsitePackage.DYNAMIC_UNIT__FOOTER: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__FOOTER;
@@ -1431,6 +1549,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		result.append(omitCaption);
 		result.append(", captionClass: ");
 		result.append(captionClass);
+		result.append(", useParentAssociationSource: ");
+		result.append(useParentAssociationSource);
 		result.append(", header: ");
 		result.append(header);
 		result.append(", footer: ");

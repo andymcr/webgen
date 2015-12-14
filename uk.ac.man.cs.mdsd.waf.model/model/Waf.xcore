@@ -240,7 +240,6 @@ interface UnitContainer {
 abstract class ContentUnit extends NamedDisplayElement {
 	container UnitContainer[1] displayedOn opposite units
 	String[1] uriElement
-	refers ContentUnit uriParent
 	String purposeSummary
 	boolean omitCaption
 	String captionClass
@@ -256,6 +255,8 @@ class StaticUnit extends ContentUnit {
 abstract class DynamicUnit extends ContentUnit {
 	refers Service[1] service opposite accessedBy
 	contains UnitField[] displayFields opposite displayedOn
+	refers DynamicUnit uriParent
+	refers Association parentAssociation
 	contains UnitSupportAction[] supportActions
 	String header
 	String footer

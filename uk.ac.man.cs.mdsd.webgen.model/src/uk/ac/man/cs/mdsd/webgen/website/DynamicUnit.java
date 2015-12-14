@@ -15,6 +15,9 @@ import java.util.List;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getSource <em>Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getUriParent <em>Uri Parent</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getParentAssociation <em>Parent Association</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#isUseParentAssociationSource <em>Use Parent Association Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getFooter <em>Footer</em>}</li>
@@ -74,6 +77,84 @@ public interface DynamicUnit extends ContentUnit {
 	 * @generated
 	 */
 	List<UnitField> getDisplayFields();
+
+	/**
+	 * Returns the value of the '<em><b>Uri Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Uri Parent</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uri Parent</em>' reference.
+	 * @see #setUriParent(ContentUnit)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDynamicUnit_UriParent()
+	 * @model
+	 * @generated
+	 */
+	ContentUnit getUriParent();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getUriParent <em>Uri Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Uri Parent</em>' reference.
+	 * @see #getUriParent()
+	 * @generated
+	 */
+	void setUriParent(ContentUnit value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent Association</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent Association</em>' reference.
+	 * @see #setParentAssociation(Association)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDynamicUnit_ParentAssociation()
+	 * @model
+	 * @generated
+	 */
+	Association getParentAssociation();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getParentAssociation <em>Parent Association</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent Association</em>' reference.
+	 * @see #getParentAssociation()
+	 * @generated
+	 */
+	void setParentAssociation(Association value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Parent Association Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Use Parent Association Source</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Use Parent Association Source</em>' attribute.
+	 * @see #setUseParentAssociationSource(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDynamicUnit_UseParentAssociationSource()
+	 * @model
+	 * @generated
+	 */
+	boolean isUseParentAssociationSource();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#isUseParentAssociationSource <em>Use Parent Association Source</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Use Parent Association Source</em>' attribute.
+	 * @see #isUseParentAssociationSource()
+	 * @generated
+	 */
+	void setUseParentAssociationSource(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Support Actions</b></em>' containment reference list.

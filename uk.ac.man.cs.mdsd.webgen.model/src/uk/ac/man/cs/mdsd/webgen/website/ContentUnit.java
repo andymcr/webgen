@@ -17,7 +17,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getUriParent <em>Uri Parent</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getCaptionClass <em>Caption Class</em>}</li>
@@ -81,32 +80,6 @@ public interface ContentUnit extends NamedDisplayElement {
 	 * @generated
 	 */
 	void setUriElement(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Uri Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Uri Parent</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uri Parent</em>' reference.
-	 * @see #setUriParent(ContentUnit)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getContentUnit_UriParent()
-	 * @model
-	 * @generated
-	 */
-	ContentUnit getUriParent();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getUriParent <em>Uri Parent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uri Parent</em>' reference.
-	 * @see #getUriParent()
-	 * @generated
-	 */
-	void setUriParent(ContentUnit value);
 
 	/**
 	 * Returns the value of the '<em><b>Purpose Summary</b></em>' attribute.

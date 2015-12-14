@@ -28,7 +28,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getUriParent <em>Uri Parent</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
@@ -58,16 +57,6 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * @ordered
 	 */
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getUriParent() <em>Uri Parent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriParent()
-	 * @generated
-	 * @ordered
-	 */
-	protected ContentUnit uriParent;
 
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
@@ -265,44 +254,6 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContentUnit getUriParent() {
-		if (uriParent != null && uriParent.eIsProxy()) {
-			InternalEObject oldUriParent = (InternalEObject)uriParent;
-			uriParent = (ContentUnit)eResolveProxy(oldUriParent);
-			if (uriParent != oldUriParent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.CONTENT_UNIT__URI_PARENT, oldUriParent, uriParent));
-			}
-		}
-		return uriParent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ContentUnit basicGetUriParent() {
-		return uriParent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUriParent(ContentUnit newUriParent) {
-		ContentUnit oldUriParent = uriParent;
-		uriParent = newUriParent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CONTENT_UNIT__URI_PARENT, oldUriParent, uriParent));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getPurposeSummary() {
 		return purposeSummary;
 	}
@@ -460,9 +411,6 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return basicGetDisplayedOn();
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				return getUriElement();
-			case WafPackage.CONTENT_UNIT__URI_PARENT:
-				if (resolve) return getUriParent();
-				return basicGetUriParent();
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
@@ -490,9 +438,6 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return;
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				setUriElement((String)newValue);
-				return;
-			case WafPackage.CONTENT_UNIT__URI_PARENT:
-				setUriParent((ContentUnit)newValue);
 				return;
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
@@ -527,9 +472,6 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
-			case WafPackage.CONTENT_UNIT__URI_PARENT:
-				setUriParent((ContentUnit)null);
-				return;
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
 				return;
@@ -561,8 +503,6 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return basicGetDisplayedOn() != null;
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
-			case WafPackage.CONTENT_UNIT__URI_PARENT:
-				return uriParent != null;
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:

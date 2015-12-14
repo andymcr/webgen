@@ -46,6 +46,8 @@ public class DynamicUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addServicePropertyDescriptor(object);
+			addUriParentPropertyDescriptor(object);
+			addParentAssociationPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -70,6 +72,50 @@ public class DynamicUnitItemProvider
 				 getString("_UI_DynamicUnit_service_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_service_feature", "_UI_DynamicUnit_type"),
 				 WafPackage.Literals.DYNAMIC_UNIT__SERVICE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Uri Parent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUriParentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_uriParent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_uriParent_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.Literals.DYNAMIC_UNIT__URI_PARENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent Association feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentAssociationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_parentAssociation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_parentAssociation_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.Literals.DYNAMIC_UNIT__PARENT_ASSOCIATION,
 				 true,
 				 false,
 				 true,

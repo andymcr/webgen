@@ -754,6 +754,21 @@ abstract rule DynamicUnit {
 			endif,
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
+		parentAssociation <-
+			if website.parentAssociation.oclIsUndefined() then
+				website.parentAssociation
+			else if website.useParentAssociationSource then
+				website.parentAssociation.findOrmEntityOrView()
+					.getOrmFeature(website.parentAssociation.name)
+			else
+				if website.parentAssociation.oclIsKindOf(Website!EntityAssociation) then
+					thisModule.findOrmEntityOrView(website.parentAssociation.targetEntity.name)
+						.getOrmFeature(website.parentAssociation.targetFeatureName())
+				else
+					website.association.findOrmEntityOrView()
+						.getOrmFeature(website.parentAssociation.name)
+				endif
+			endif endif,
 		header <- website.header,
 		footer <- website.footer,
 		headerClass <- website.headerClass,

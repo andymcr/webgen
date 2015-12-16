@@ -70,8 +70,6 @@ public class RegistrationUnitItemProvider
 			addCaptionClassPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
 			addUriParentPropertyDescriptor(object);
-			addParentAssociationPropertyDescriptor(object);
-			addUseParentAssociationSourcePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -172,50 +170,6 @@ public class RegistrationUnitItemProvider
 				 true,
 				 null,
 				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parent Association feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParentAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_parentAssociation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_parentAssociation_feature", "_UI_DynamicUnit_type"),
-				 WebsitePackage.Literals.DYNAMIC_UNIT__PARENT_ASSOCIATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Use Parent Association Source feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUseParentAssociationSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_useParentAssociationSource_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_useParentAssociationSource_feature", "_UI_DynamicUnit_type"),
-				 WebsitePackage.Literals.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
 				 null));
 	}
 
@@ -623,7 +577,6 @@ public class RegistrationUnitItemProvider
 			case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
 			case WebsitePackage.REGISTRATION_UNIT__OMIT_CAPTION:
 			case WebsitePackage.REGISTRATION_UNIT__CAPTION_CLASS:
-			case WebsitePackage.REGISTRATION_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
 			case WebsitePackage.REGISTRATION_UNIT__HEADER:
 			case WebsitePackage.REGISTRATION_UNIT__FOOTER:
 			case WebsitePackage.REGISTRATION_UNIT__HEADER_CLASS:

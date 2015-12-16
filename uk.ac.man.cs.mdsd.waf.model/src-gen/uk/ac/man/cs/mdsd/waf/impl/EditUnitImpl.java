@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getConfirmLabel <em>Confirm Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getCancelDestination <em>Cancel Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getCancelLabel <em>Cancel Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#isCustomiseValues <em>Customise Values</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +90,26 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * @ordered
 	 */
 	protected String cancelLabel = CANCEL_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCustomiseValues() <em>Customise Values</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCustomiseValues()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CUSTOMISE_VALUES_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCustomiseValues() <em>Customise Values</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCustomiseValues()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean customiseValues = CUSTOMISE_VALUES_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,6 +253,27 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isCustomiseValues() {
+		return customiseValues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCustomiseValues(boolean newCustomiseValues) {
+		boolean oldCustomiseValues = customiseValues;
+		customiseValues = newCustomiseValues;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__CUSTOMISE_VALUES, oldCustomiseValues, customiseValues));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -245,6 +287,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 				return basicGetCancelDestination();
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 				return getCancelLabel();
+			case WafPackage.EDIT_UNIT__CUSTOMISE_VALUES:
+				return isCustomiseValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -268,6 +312,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 				return;
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 				setCancelLabel((String)newValue);
+				return;
+			case WafPackage.EDIT_UNIT__CUSTOMISE_VALUES:
+				setCustomiseValues((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -293,6 +340,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 				setCancelLabel(CANCEL_LABEL_EDEFAULT);
 				return;
+			case WafPackage.EDIT_UNIT__CUSTOMISE_VALUES:
+				setCustomiseValues(CUSTOMISE_VALUES_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -313,6 +363,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 				return cancelDestination != null;
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
 				return CANCEL_LABEL_EDEFAULT == null ? cancelLabel != null : !CANCEL_LABEL_EDEFAULT.equals(cancelLabel);
+			case WafPackage.EDIT_UNIT__CUSTOMISE_VALUES:
+				return customiseValues != CUSTOMISE_VALUES_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -331,6 +383,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 		result.append(confirmLabel);
 		result.append(", cancelLabel: ");
 		result.append(cancelLabel);
+		result.append(", customiseValues: ");
+		result.append(customiseValues);
 		result.append(')');
 		return result.toString();
 	}

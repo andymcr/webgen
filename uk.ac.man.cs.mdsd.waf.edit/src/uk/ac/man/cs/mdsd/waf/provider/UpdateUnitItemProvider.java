@@ -11,9 +11,7 @@ import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import uk.ac.man.cs.mdsd.waf.WafPackage;
 import uk.ac.man.cs.mdsd.waf.UpdateUnit;
 
 /**
@@ -45,31 +43,8 @@ public class UpdateUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTargettingActionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Targetting Actions feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargettingActionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Selectable_targettingActions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Selectable_targettingActions_feature", "_UI_Selectable_type"),
-				 WafPackage.Literals.SELECTABLE__TARGETTING_ACTIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

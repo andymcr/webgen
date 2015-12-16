@@ -16,6 +16,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getEncapsulates <em>Encapsulates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getKeys <em>Keys</em>}</li>
@@ -28,6 +29,34 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * @generated
  */
 public interface Service extends NamedElement {
+	/**
+	 * Returns the value of the '<em><b>Part Of</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.WafModel#getServices <em>Services</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Part Of</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Part Of</em>' container reference.
+	 * @see #setPartOf(WafModel)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_PartOf()
+	 * @see uk.ac.man.cs.mdsd.waf.WafModel#getServices
+	 * @model opposite="services" required="true" transient="false"
+	 * @generated
+	 */
+	WafModel getPartOf();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Service#getPartOf <em>Part Of</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Part Of</em>' container reference.
+	 * @see #getPartOf()
+	 * @generated
+	 */
+	void setPartOf(WafModel value);
+
 	/**
 	 * Returns the value of the '<em><b>Encapsulates</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.EntityOrView}.

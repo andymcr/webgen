@@ -57,8 +57,6 @@ public class DynamicUnitItemProvider
 
 			addSourcePropertyDescriptor(object);
 			addUriParentPropertyDescriptor(object);
-			addParentAssociationPropertyDescriptor(object);
-			addUseParentAssociationSourcePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -128,55 +126,6 @@ public class DynamicUnitItemProvider
 				 true,
 				 null,
 				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parent Association feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addParentAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_DynamicUnit_parentAssociation_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_parentAssociation_feature", "_UI_DynamicUnit_type"),
-			WebsitePackage.Literals.DYNAMIC_UNIT__PARENT_ASSOCIATION,
-			true, false, true, null,
-			getString("_UI_NavigationPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof DynamicUnit) {
-						return getSourceAssociations((DynamicUnit) object);
-					}
-
-					return Collections.emptyList();
-				}
-		});
-	}
-
-	/**
-	 * This adds a property descriptor for the Use Parent Association Source feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUseParentAssociationSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_useParentAssociationSource_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_useParentAssociationSource_feature", "_UI_DynamicUnit_type"),
-				 WebsitePackage.Literals.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
 				 null));
 	}
 
@@ -369,7 +318,6 @@ public class DynamicUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DynamicUnit.class)) {
-			case WebsitePackage.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
 			case WebsitePackage.DYNAMIC_UNIT__HEADER:
 			case WebsitePackage.DYNAMIC_UNIT__FOOTER:
 			case WebsitePackage.DYNAMIC_UNIT__HEADER_CLASS:

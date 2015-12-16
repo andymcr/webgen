@@ -488,7 +488,7 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 */
 	public EList<Service> getServices() {
 		if (services == null) {
-			services = new EObjectContainmentEList<Service>(Service.class, this, WafPackage.WAF_MODEL__SERVICES);
+			services = new EObjectContainmentWithInverseEList<Service>(Service.class, this, WafPackage.WAF_MODEL__SERVICES, WafPackage.SERVICE__PART_OF);
 		}
 		return services;
 	}
@@ -922,6 +922,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WafPackage.WAF_MODEL__SERVICES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getServices()).basicAdd(otherEnd, msgs);
 			case WafPackage.WAF_MODEL__PAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPages()).basicAdd(otherEnd, msgs);
 		}

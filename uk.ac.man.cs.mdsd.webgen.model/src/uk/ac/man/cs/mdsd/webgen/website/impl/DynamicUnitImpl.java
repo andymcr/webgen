@@ -19,10 +19,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction;
@@ -39,8 +37,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getSource <em>Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getUriParent <em>Uri Parent</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getParentAssociation <em>Parent Association</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#isUseParentAssociationSource <em>Use Parent Association Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getFooter <em>Footer</em>}</li>
@@ -82,36 +78,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected ContentUnit uriParent;
-
-	/**
-	 * The cached value of the '{@link #getParentAssociation() <em>Parent Association</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentAssociation()
-	 * @generated
-	 * @ordered
-	 */
-	protected Association parentAssociation;
-
-	/**
-	 * The default value of the '{@link #isUseParentAssociationSource() <em>Use Parent Association Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUseParentAssociationSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isUseParentAssociationSource() <em>Use Parent Association Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUseParentAssociationSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean useParentAssociationSource = USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSupportActions() <em>Support Actions</em>}' containment reference list.
@@ -355,65 +321,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association getParentAssociation() {
-		if (parentAssociation != null && parentAssociation.eIsProxy()) {
-			InternalEObject oldParentAssociation = (InternalEObject)parentAssociation;
-			parentAssociation = (Association)eResolveProxy(oldParentAssociation);
-			if (parentAssociation != oldParentAssociation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.DYNAMIC_UNIT__PARENT_ASSOCIATION, oldParentAssociation, parentAssociation));
-			}
-		}
-		return parentAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Association basicGetParentAssociation() {
-		return parentAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentAssociation(Association newParentAssociation) {
-		Association oldParentAssociation = parentAssociation;
-		parentAssociation = newParentAssociation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DYNAMIC_UNIT__PARENT_ASSOCIATION, oldParentAssociation, parentAssociation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isUseParentAssociationSource() {
-		return useParentAssociationSource;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUseParentAssociationSource(boolean newUseParentAssociationSource) {
-		boolean oldUseParentAssociationSource = useParentAssociationSource;
-		useParentAssociationSource = newUseParentAssociationSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE, oldUseParentAssociationSource, useParentAssociationSource));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public List<UnitSupportAction> getSupportActions() {
 		if (supportActions == null) {
 			supportActions = new EObjectContainmentEList<UnitSupportAction>(UnitSupportAction.class, this, WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS);
@@ -594,11 +501,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WebsitePackage.DYNAMIC_UNIT__URI_PARENT:
 				if (resolve) return getUriParent();
 				return basicGetUriParent();
-			case WebsitePackage.DYNAMIC_UNIT__PARENT_ASSOCIATION:
-				if (resolve) return getParentAssociation();
-				return basicGetParentAssociation();
-			case WebsitePackage.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
-				return isUseParentAssociationSource();
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
 			case WebsitePackage.DYNAMIC_UNIT__HEADER:
@@ -635,12 +537,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return;
 			case WebsitePackage.DYNAMIC_UNIT__URI_PARENT:
 				setUriParent((ContentUnit)newValue);
-				return;
-			case WebsitePackage.DYNAMIC_UNIT__PARENT_ASSOCIATION:
-				setParentAssociation((Association)newValue);
-				return;
-			case WebsitePackage.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
-				setUseParentAssociationSource((Boolean)newValue);
 				return;
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
@@ -685,12 +581,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WebsitePackage.DYNAMIC_UNIT__URI_PARENT:
 				setUriParent((ContentUnit)null);
 				return;
-			case WebsitePackage.DYNAMIC_UNIT__PARENT_ASSOCIATION:
-				setParentAssociation((Association)null);
-				return;
-			case WebsitePackage.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
-				setUseParentAssociationSource(USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT);
-				return;
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				return;
@@ -730,10 +620,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return displayFields != null && !displayFields.isEmpty();
 			case WebsitePackage.DYNAMIC_UNIT__URI_PARENT:
 				return uriParent != null;
-			case WebsitePackage.DYNAMIC_UNIT__PARENT_ASSOCIATION:
-				return parentAssociation != null;
-			case WebsitePackage.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
-				return useParentAssociationSource != USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT;
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
 			case WebsitePackage.DYNAMIC_UNIT__HEADER:
@@ -762,9 +648,7 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (useParentAssociationSource: ");
-		result.append(useParentAssociationSource);
-		result.append(", header: ");
+		result.append(" (header: ");
 		result.append(header);
 		result.append(", footer: ");
 		result.append(footer);

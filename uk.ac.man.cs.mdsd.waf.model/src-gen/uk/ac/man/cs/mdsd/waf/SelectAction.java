@@ -22,7 +22,6 @@ package uk.ac.man.cs.mdsd.waf;
 public interface SelectAction extends InlineAction {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.Selectable#getTargettingActions <em>Targetting Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target</em>' reference isn't clear,
@@ -32,8 +31,7 @@ public interface SelectAction extends InlineAction {
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Selectable)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelectAction_Target()
-	 * @see uk.ac.man.cs.mdsd.waf.Selectable#getTargettingActions
-	 * @model opposite="targettingActions" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Selectable getTarget();

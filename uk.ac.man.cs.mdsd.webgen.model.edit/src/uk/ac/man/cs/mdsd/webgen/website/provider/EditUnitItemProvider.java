@@ -55,6 +55,7 @@ public class EditUnitItemProvider
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
 			addLayoutClassPropertyDescriptor(object);
+			addCustomiseValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -170,6 +171,28 @@ public class EditUnitItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Customise Values feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCustomiseValuesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_customiseValues_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_customiseValues_feature", "_UI_EditUnit_type"),
+				 WebsitePackage.Literals.EDIT_UNIT__CUSTOMISE_VALUES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_BusinessPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -198,6 +221,7 @@ public class EditUnitItemProvider
 			case WebsitePackage.EDIT_UNIT__CONFIRM_LABEL:
 			case WebsitePackage.EDIT_UNIT__CANCEL_LABEL:
 			case WebsitePackage.EDIT_UNIT__LAYOUT_CLASS:
+			case WebsitePackage.EDIT_UNIT__CUSTOMISE_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

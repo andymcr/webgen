@@ -818,13 +818,22 @@ public interface WafPackage extends EPackage {
 	int SERVICE__NAME = OrmPackage.NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE__PART_OF = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Encapsulates</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__ENCAPSULATES = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SERVICE__ENCAPSULATES = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -833,7 +842,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__FEATURES = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SERVICE__FEATURES = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Keys</b></em>' containment reference list.
@@ -842,7 +851,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__KEYS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SERVICE__KEYS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Selections</b></em>' containment reference list.
@@ -851,7 +860,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__SELECTIONS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SERVICE__SELECTIONS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Accessed By</b></em>' reference list.
@@ -860,7 +869,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__ACCESSED_BY = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int SERVICE__ACCESSED_BY = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Service</em>' class.
@@ -869,7 +878,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int SERVICE_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Service</em>' class.
@@ -2395,22 +2404,13 @@ public interface WafPackage extends EPackage {
 	int SELECTABLE = 27;
 
 	/**
-	 * The feature id for the '<em><b>Targetting Actions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTABLE__TARGETTING_ACTIONS = 0;
-
-	/**
 	 * The number of structural features of the '<em>Selectable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTABLE_FEATURE_COUNT = 1;
+	int SELECTABLE_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Selectable</em>' class.
@@ -2813,22 +2813,13 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__URI_PARENT = CONTENT_UNIT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_UNIT__PARENT_ASSOCIATION = CONTENT_UNIT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 4;
+	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -2837,7 +2828,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 5;
+	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -2846,7 +2837,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 6;
+	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2855,7 +2846,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
+	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -2864,7 +2855,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
+	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -2873,7 +2864,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 9;
+	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -2882,7 +2873,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 10;
+	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Unit</em>' class.
@@ -2891,7 +2882,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 11;
+	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Unit</em>' class.
@@ -4191,15 +4182,6 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__URI_PARENT = DYNAMIC_UNIT__URI_PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_UNIT__PARENT_ASSOCIATION = DYNAMIC_UNIT__PARENT_ASSOCIATION;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4299,13 +4281,22 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__CANCEL_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Customise Values</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__CUSTOMISE_VALUES = DYNAMIC_UNIT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Edit Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 4;
+	int EDIT_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Edit Unit</em>' class.
@@ -4435,15 +4426,6 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UNIT__PARENT_ASSOCIATION = EDIT_UNIT__PARENT_ASSOCIATION;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4541,6 +4523,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT__CANCEL_LABEL = EDIT_UNIT__CANCEL_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Customise Values</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__CUSTOMISE_VALUES = EDIT_UNIT__CUSTOMISE_VALUES;
 
 	/**
 	 * The number of structural features of the '<em>Create Unit</em>' class.
@@ -4679,15 +4670,6 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UPDATE_UNIT__PARENT_ASSOCIATION = EDIT_UNIT__PARENT_ASSOCIATION;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4787,13 +4769,13 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__CANCEL_LABEL = EDIT_UNIT__CANCEL_LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Targetting Actions</b></em>' reference list.
+	 * The feature id for the '<em><b>Customise Values</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__TARGETTING_ACTIONS = EDIT_UNIT_FEATURE_COUNT + 0;
+	int CREATE_UPDATE_UNIT__CUSTOMISE_VALUES = EDIT_UNIT__CUSTOMISE_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Clear Label</b></em>' attribute.
@@ -4802,7 +4784,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__CLEAR_LABEL = EDIT_UNIT_FEATURE_COUNT + 1;
+	int CREATE_UPDATE_UNIT__CLEAR_LABEL = EDIT_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Create Update Unit</em>' class.
@@ -4811,7 +4793,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 2;
+	int CREATE_UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Create Update Unit</em>' class.
@@ -4941,15 +4923,6 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__PARENT_ASSOCIATION = EDIT_UNIT__PARENT_ASSOCIATION;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5049,13 +5022,13 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__CANCEL_LABEL = EDIT_UNIT__CANCEL_LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Targetting Actions</b></em>' reference list.
+	 * The feature id for the '<em><b>Customise Values</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__TARGETTING_ACTIONS = EDIT_UNIT_FEATURE_COUNT + 0;
+	int MAP_UNIT__CUSTOMISE_VALUES = EDIT_UNIT__CUSTOMISE_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Read Only</b></em>' attribute.
@@ -5064,7 +5037,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__READ_ONLY = EDIT_UNIT_FEATURE_COUNT + 1;
+	int MAP_UNIT__READ_ONLY = EDIT_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Default Zoom Level</b></em>' attribute.
@@ -5073,7 +5046,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__DEFAULT_ZOOM_LEVEL = EDIT_UNIT_FEATURE_COUNT + 2;
+	int MAP_UNIT__DEFAULT_ZOOM_LEVEL = EDIT_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' reference.
@@ -5082,7 +5055,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__LOCATION = EDIT_UNIT_FEATURE_COUNT + 3;
+	int MAP_UNIT__LOCATION = EDIT_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Place Name</b></em>' reference.
@@ -5091,7 +5064,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__PLACE_NAME = EDIT_UNIT_FEATURE_COUNT + 4;
+	int MAP_UNIT__PLACE_NAME = EDIT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Map Unit</em>' class.
@@ -5100,7 +5073,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 5;
+	int MAP_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Map Unit</em>' class.
@@ -5230,15 +5203,6 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE_UNIT__PARENT_ASSOCIATION = EDIT_UNIT__PARENT_ASSOCIATION;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5338,13 +5302,13 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__CANCEL_LABEL = EDIT_UNIT__CANCEL_LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Targetting Actions</b></em>' reference list.
+	 * The feature id for the '<em><b>Customise Values</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT__TARGETTING_ACTIONS = EDIT_UNIT_FEATURE_COUNT + 0;
+	int UPDATE_UNIT__CUSTOMISE_VALUES = EDIT_UNIT__CUSTOMISE_VALUES;
 
 	/**
 	 * The number of structural features of the '<em>Update Unit</em>' class.
@@ -5353,7 +5317,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 1;
+	int UPDATE_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Update Unit</em>' class.
@@ -5481,15 +5445,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_UNIT__URI_PARENT = DYNAMIC_UNIT__URI_PARENT;
-
-	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__PARENT_ASSOCIATION = DYNAMIC_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -5709,15 +5664,6 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__URI_PARENT = DATA_UNIT__URI_PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__PARENT_ASSOCIATION = DATA_UNIT__PARENT_ASSOCIATION;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5799,22 +5745,13 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__TITLE = DATA_UNIT__TITLE;
 
 	/**
-	 * The feature id for the '<em><b>Targetting Actions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__TARGETTING_ACTIONS = DATA_UNIT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DATA_UNIT_FEATURE_COUNT + 1;
+	int DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY = DATA_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Omit Field Labels</b></em>' attribute.
@@ -5823,7 +5760,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__OMIT_FIELD_LABELS = DATA_UNIT_FEATURE_COUNT + 2;
+	int DETAILS_UNIT__OMIT_FIELD_LABELS = DATA_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Details Unit</em>' class.
@@ -5832,7 +5769,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 3;
+	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Details Unit</em>' class.
@@ -5960,15 +5897,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__URI_PARENT = DATA_UNIT__URI_PARENT;
-
-	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__PARENT_ASSOCIATION = DATA_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -6296,15 +6224,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__URI_PARENT = INDEX_UNIT__URI_PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_GRID_UNIT__PARENT_ASSOCIATION = INDEX_UNIT__PARENT_ASSOCIATION;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6628,15 +6547,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__URI_PARENT = INDEX_UNIT__URI_PARENT;
-
-	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_PAGE_DIRECTION_UNIT__PARENT_ASSOCIATION = INDEX_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -6964,15 +6874,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__URI_PARENT = INDEX_UNIT__URI_PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_LINE_DIRECTION_UNIT__PARENT_ASSOCIATION = INDEX_UNIT__PARENT_ASSOCIATION;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7298,15 +7199,6 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__URI_PARENT = DYNAMIC_UNIT__URI_PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_UNIT__PARENT_ASSOCIATION = DYNAMIC_UNIT__PARENT_ASSOCIATION;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7531,15 +7423,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__URI_PARENT = CONTROL_UNIT__URI_PARENT;
-
-	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_UNIT__PARENT_ASSOCIATION = CONTROL_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -7805,15 +7688,6 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__URI_PARENT = EDIT_UNIT__URI_PARENT;
 
 	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION_UNIT__PARENT_ASSOCIATION = EDIT_UNIT__PARENT_ASSOCIATION;
-
-	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7911,6 +7785,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int REGISTRATION_UNIT__CANCEL_LABEL = EDIT_UNIT__CANCEL_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Customise Values</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__CUSTOMISE_VALUES = EDIT_UNIT__CUSTOMISE_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Authentication System</b></em>' reference.
@@ -8056,15 +7939,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN_UNIT__URI_PARENT = CONTROL_UNIT__URI_PARENT;
-
-	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN_UNIT__PARENT_ASSOCIATION = CONTROL_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -8327,15 +8201,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORGOTTEN_PASSWORD_UNIT__URI_PARENT = CONTROL_UNIT__URI_PARENT;
-
-	/**
-	 * The feature id for the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORGOTTEN_PASSWORD_UNIT__PARENT_ASSOCIATION = CONTROL_UNIT__PARENT_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -9645,6 +9510,17 @@ public interface WafPackage extends EPackage {
 	EClass getService();
 
 	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.waf.Service#getPartOf <em>Part Of</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Part Of</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.Service#getPartOf()
+	 * @see #getService()
+	 * @generated
+	 */
+	EReference getService_PartOf();
+
+	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.waf.Service#getEncapsulates <em>Encapsulates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10395,17 +10271,6 @@ public interface WafPackage extends EPackage {
 	EClass getSelectable();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.waf.Selectable#getTargettingActions <em>Targetting Actions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Targetting Actions</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.Selectable#getTargettingActions()
-	 * @see #getSelectable()
-	 * @generated
-	 */
-	EReference getSelectable_TargettingActions();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.UnitContainer <em>Unit Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10587,17 +10452,6 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDynamicUnit_UriParent();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getParentAssociation <em>Parent Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parent Association</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getParentAssociation()
-	 * @see #getDynamicUnit()
-	 * @generated
-	 */
-	EReference getDynamicUnit_ParentAssociation();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}'.
@@ -11094,6 +10948,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEditUnit_CancelLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.EditUnit#isCustomiseValues <em>Customise Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Customise Values</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.EditUnit#isCustomiseValues()
+	 * @see #getEditUnit()
+	 * @generated
+	 */
+	EAttribute getEditUnit_CustomiseValues();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.CreateUnit <em>Create Unit</em>}'.
@@ -12325,6 +12190,14 @@ public interface WafPackage extends EPackage {
 		EClass SERVICE = eINSTANCE.getService();
 
 		/**
+		 * The meta object literal for the '<em><b>Part Of</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE__PART_OF = eINSTANCE.getService_PartOf();
+
+		/**
 		 * The meta object literal for the '<em><b>Encapsulates</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -12925,14 +12798,6 @@ public interface WafPackage extends EPackage {
 		EClass SELECTABLE = eINSTANCE.getSelectable();
 
 		/**
-		 * The meta object literal for the '<em><b>Targetting Actions</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SELECTABLE__TARGETTING_ACTIONS = eINSTANCE.getSelectable_TargettingActions();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.UnitContainer <em>Unit Container</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13075,14 +12940,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DYNAMIC_UNIT__URI_PARENT = eINSTANCE.getDynamicUnit_UriParent();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent Association</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DYNAMIC_UNIT__PARENT_ASSOCIATION = eINSTANCE.getDynamicUnit_ParentAssociation();
 
 		/**
 		 * The meta object literal for the '<em><b>Support Actions</b></em>' containment reference list feature.
@@ -13471,6 +13328,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EDIT_UNIT__CANCEL_LABEL = eINSTANCE.getEditUnit_CancelLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Customise Values</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EDIT_UNIT__CUSTOMISE_VALUES = eINSTANCE.getEditUnit_CustomiseValues();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.CreateUnitImpl <em>Create Unit</em>}' class.

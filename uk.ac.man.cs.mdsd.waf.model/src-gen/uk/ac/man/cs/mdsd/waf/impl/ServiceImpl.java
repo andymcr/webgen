@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.waf.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,10 +12,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
@@ -26,6 +30,7 @@ import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.ServiceFeature;
 import uk.ac.man.cs.mdsd.waf.ServiceFeatureReference;
+import uk.ac.man.cs.mdsd.waf.WafModel;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -36,6 +41,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getEncapsulates <em>Encapsulates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getKeys <em>Keys</em>}</li>
@@ -120,6 +126,57 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public WafModel getPartOf() {
+		if (eContainerFeatureID() != WafPackage.SERVICE__PART_OF) return null;
+		return (WafModel)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WafModel basicGetPartOf() {
+		if (eContainerFeatureID() != WafPackage.SERVICE__PART_OF) return null;
+		return (WafModel)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPartOf(WafModel newPartOf, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WafPackage.SERVICE__PART_OF, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPartOf(WafModel newPartOf) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WafPackage.SERVICE__PART_OF && newPartOf != null)) {
+			if (EcoreUtil.isAncestor(this, newPartOf))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newPartOf != null)
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WafPackage.WAF_MODEL__SERVICES, WafModel.class, msgs);
+			msgs = basicSetPartOf(newPartOf, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE__PART_OF, newPartOf, newPartOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<EntityOrView> getEncapsulates() {
 		if (encapsulates == null) {
 			encapsulates = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.SERVICE__ENCAPSULATES);
@@ -184,6 +241,10 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WafPackage.SERVICE__PART_OF:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetPartOf((WafModel)otherEnd, msgs);
 			case WafPackage.SERVICE__FEATURES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFeatures()).basicAdd(otherEnd, msgs);
 			case WafPackage.SERVICE__ACCESSED_BY:
@@ -200,6 +261,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WafPackage.SERVICE__PART_OF:
+				return basicSetPartOf(null, msgs);
 			case WafPackage.SERVICE__FEATURES:
 				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
 			case WafPackage.SERVICE__KEYS:
@@ -218,8 +281,25 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case WafPackage.SERVICE__PART_OF:
+				return eInternalContainer().eInverseRemove(this, WafPackage.WAF_MODEL__SERVICES, WafModel.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.SERVICE__PART_OF:
+				if (resolve) return getPartOf();
+				return basicGetPartOf();
 			case WafPackage.SERVICE__ENCAPSULATES:
 				return getEncapsulates();
 			case WafPackage.SERVICE__FEATURES:
@@ -243,6 +323,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.SERVICE__PART_OF:
+				setPartOf((WafModel)newValue);
+				return;
 			case WafPackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
 				getEncapsulates().addAll((Collection<? extends EntityOrView>)newValue);
@@ -275,6 +358,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.SERVICE__PART_OF:
+				setPartOf((WafModel)null);
+				return;
 			case WafPackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
 				return;
@@ -302,6 +388,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.SERVICE__PART_OF:
+				return basicGetPartOf() != null;
 			case WafPackage.SERVICE__ENCAPSULATES:
 				return encapsulates != null && !encapsulates.isEmpty();
 			case WafPackage.SERVICE__FEATURES:

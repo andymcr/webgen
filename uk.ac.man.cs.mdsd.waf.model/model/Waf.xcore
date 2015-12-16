@@ -42,7 +42,7 @@ enum AjaxTechnologies {
 
 class WafModel {
 	refers OrmModel[1] persistence
-	contains Service[] services
+	contains Service[] services opposite partOf
 	contains Page[] pages opposite partOf
 	contains Menu[] menus
 	String[1] siteName
@@ -111,6 +111,7 @@ interface IncludedAssociation extends IncludedFeature {
 
 
 class Service extends NamedElement {
+	refers WafModel[1] partOf opposite services
 	refers EntityOrView[1..*] encapsulates
 	contains ServiceFeature[] features opposite partOf
 	contains ServiceFeatureReference[1..*] ^keys
@@ -230,7 +231,6 @@ class QueryParameter extends NamedElement {
 }
 
 interface Selectable {
-	refers SelectAction[] targettingActions opposite target
 }
 
 interface UnitContainer {
@@ -256,7 +256,6 @@ abstract class DynamicUnit extends ContentUnit {
 	refers Service[1] service opposite accessedBy
 	contains UnitField[] displayFields opposite displayedOn
 	refers DynamicUnit uriParent
-	refers Association parentAssociation
 	contains UnitSupportAction[] supportActions
 	String header
 	String footer
@@ -329,6 +328,7 @@ abstract class EditUnit extends DynamicUnit {
 	String[1] confirmLabel
 	refers Page cancelDestination
 	String cancelLabel
+	boolean customiseValues
 }
 
 class CreateUnit extends EditUnit {
@@ -424,7 +424,7 @@ abstract class InlineAction extends NamedDisplayElement {
 }
 
 class SelectAction extends InlineAction {
-	refers Selectable[1] target opposite targettingActions
+	refers Selectable[1] target
 }
 
 class DeleteAction extends InlineAction {

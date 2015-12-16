@@ -16,6 +16,7 @@ package uk.ac.man.cs.mdsd.waf;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#getConfirmLabel <em>Confirm Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#getCancelDestination <em>Cancel Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#getCancelLabel <em>Cancel Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#isCustomiseValues <em>Customise Values</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getEditUnit()
@@ -126,5 +127,31 @@ public interface EditUnit extends DynamicUnit {
 	 * @generated
 	 */
 	void setCancelLabel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Customise Values</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Customise Values</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Customise Values</em>' attribute.
+	 * @see #setCustomiseValues(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getEditUnit_CustomiseValues()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isCustomiseValues();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.EditUnit#isCustomiseValues <em>Customise Values</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Customise Values</em>' attribute.
+	 * @see #isCustomiseValues()
+	 * @generated
+	 */
+	void setCustomiseValues(boolean value);
 
 } // EditUnit

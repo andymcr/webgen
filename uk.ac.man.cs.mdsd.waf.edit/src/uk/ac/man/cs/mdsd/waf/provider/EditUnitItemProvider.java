@@ -51,6 +51,7 @@ public class EditUnitItemProvider
 			addConfirmLabelPropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
+			addCustomiseValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -144,6 +145,28 @@ public class EditUnitItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Customise Values feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCustomiseValuesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_customiseValues_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_customiseValues_feature", "_UI_EditUnit_type"),
+				 WafPackage.Literals.EDIT_UNIT__CUSTOMISE_VALUES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -171,6 +194,7 @@ public class EditUnitItemProvider
 		switch (notification.getFeatureID(EditUnit.class)) {
 			case WafPackage.EDIT_UNIT__CONFIRM_LABEL:
 			case WafPackage.EDIT_UNIT__CANCEL_LABEL:
+			case WafPackage.EDIT_UNIT__CUSTOMISE_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

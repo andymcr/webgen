@@ -74,6 +74,7 @@ public interface WafModel extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.Service}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.Service#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Services</em>' containment reference list isn't clear,
@@ -82,7 +83,8 @@ public interface WafModel extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Services</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_Services()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.waf.Service#getPartOf
+	 * @model opposite="partOf" containment="true"
 	 * @generated
 	 */
 	EList<Service> getServices();

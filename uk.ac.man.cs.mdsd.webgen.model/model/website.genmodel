@@ -455,9 +455,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/displayFields"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
           propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/uriParent"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/parentAssociation"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//DynamicUnit/useParentAssociationSource"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/supportActions"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//DynamicUnit/header"/>
@@ -529,6 +526,7 @@
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//EditUnit/cancelLabel"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//EditUnit/layoutClass"/>
+      <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute website.ecore#//EditUnit/customiseValues"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//CreateUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//CreateUnit/styleClass"/>

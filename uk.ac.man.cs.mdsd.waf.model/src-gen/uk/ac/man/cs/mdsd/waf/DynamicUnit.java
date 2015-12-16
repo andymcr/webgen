@@ -4,8 +4,6 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.common.util.EList;
 
-import uk.ac.man.cs.mdsd.orm.Association;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Dynamic Unit</b></em>'.
@@ -18,7 +16,6 @@ import uk.ac.man.cs.mdsd.orm.Association;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getService <em>Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getUriParent <em>Uri Parent</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getParentAssociation <em>Parent Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getFooter <em>Footer</em>}</li>
@@ -104,32 +101,6 @@ public interface DynamicUnit extends ContentUnit {
 	 * @generated
 	 */
 	void setUriParent(DynamicUnit value);
-
-	/**
-	 * Returns the value of the '<em><b>Parent Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parent Association</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Association</em>' reference.
-	 * @see #setParentAssociation(Association)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_ParentAssociation()
-	 * @model
-	 * @generated
-	 */
-	Association getParentAssociation();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getParentAssociation <em>Parent Association</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Association</em>' reference.
-	 * @see #getParentAssociation()
-	 * @generated
-	 */
-	void setParentAssociation(Association value);
 
 	/**
 	 * Returns the value of the '<em><b>Support Actions</b></em>' containment reference list.

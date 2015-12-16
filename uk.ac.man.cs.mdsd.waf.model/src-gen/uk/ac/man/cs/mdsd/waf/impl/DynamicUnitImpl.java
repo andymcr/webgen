@@ -18,8 +18,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.orm.Association;
-
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.UnitField;
@@ -37,7 +35,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getService <em>Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getUriParent <em>Uri Parent</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getParentAssociation <em>Parent Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getFooter <em>Footer</em>}</li>
@@ -79,16 +76,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected DynamicUnit uriParent;
-
-	/**
-	 * The cached value of the '{@link #getParentAssociation() <em>Parent Association</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentAssociation()
-	 * @generated
-	 * @ordered
-	 */
-	protected Association parentAssociation;
 
 	/**
 	 * The cached value of the '{@link #getSupportActions() <em>Support Actions</em>}' containment reference list.
@@ -354,44 +341,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association getParentAssociation() {
-		if (parentAssociation != null && parentAssociation.eIsProxy()) {
-			InternalEObject oldParentAssociation = (InternalEObject)parentAssociation;
-			parentAssociation = (Association)eResolveProxy(oldParentAssociation);
-			if (parentAssociation != oldParentAssociation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.DYNAMIC_UNIT__PARENT_ASSOCIATION, oldParentAssociation, parentAssociation));
-			}
-		}
-		return parentAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Association basicGetParentAssociation() {
-		return parentAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentAssociation(Association newParentAssociation) {
-		Association oldParentAssociation = parentAssociation;
-		parentAssociation = newParentAssociation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_UNIT__PARENT_ASSOCIATION, oldParentAssociation, parentAssociation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<UnitSupportAction> getSupportActions() {
 		if (supportActions == null) {
 			supportActions = new EObjectContainmentEList<UnitSupportAction>(UnitSupportAction.class, this, WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS);
@@ -578,9 +527,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__URI_PARENT:
 				if (resolve) return getUriParent();
 				return basicGetUriParent();
-			case WafPackage.DYNAMIC_UNIT__PARENT_ASSOCIATION:
-				if (resolve) return getParentAssociation();
-				return basicGetParentAssociation();
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
 			case WafPackage.DYNAMIC_UNIT__HEADER:
@@ -617,9 +563,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return;
 			case WafPackage.DYNAMIC_UNIT__URI_PARENT:
 				setUriParent((DynamicUnit)newValue);
-				return;
-			case WafPackage.DYNAMIC_UNIT__PARENT_ASSOCIATION:
-				setParentAssociation((Association)newValue);
 				return;
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
@@ -664,9 +607,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__URI_PARENT:
 				setUriParent((DynamicUnit)null);
 				return;
-			case WafPackage.DYNAMIC_UNIT__PARENT_ASSOCIATION:
-				setParentAssociation((Association)null);
-				return;
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				return;
@@ -706,8 +646,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return displayFields != null && !displayFields.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__URI_PARENT:
 				return uriParent != null;
-			case WafPackage.DYNAMIC_UNIT__PARENT_ASSOCIATION:
-				return parentAssociation != null;
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__HEADER:

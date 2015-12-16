@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
@@ -29,7 +28,6 @@ import uk.ac.man.cs.mdsd.webgen.website.LoginUnit;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
-import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
@@ -54,8 +52,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getSource <em>Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getUriParent <em>Uri Parent</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getParentAssociation <em>Parent Association</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#isUseParentAssociationSource <em>Use Parent Association Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getFooter <em>Footer</em>}</li>
@@ -222,36 +218,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * @ordered
 	 */
 	protected ContentUnit uriParent;
-
-	/**
-	 * The cached value of the '{@link #getParentAssociation() <em>Parent Association</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentAssociation()
-	 * @generated
-	 * @ordered
-	 */
-	protected Association parentAssociation;
-
-	/**
-	 * The default value of the '{@link #isUseParentAssociationSource() <em>Use Parent Association Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUseParentAssociationSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isUseParentAssociationSource() <em>Use Parent Association Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUseParentAssociationSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean useParentAssociationSource = USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSupportActions() <em>Support Actions</em>}' containment reference list.
@@ -632,65 +598,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		uriParent = newUriParent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__URI_PARENT, oldUriParent, uriParent));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Association getParentAssociation() {
-		if (parentAssociation != null && parentAssociation.eIsProxy()) {
-			InternalEObject oldParentAssociation = (InternalEObject)parentAssociation;
-			parentAssociation = (Association)eResolveProxy(oldParentAssociation);
-			if (parentAssociation != oldParentAssociation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.LOGIN_UNIT__PARENT_ASSOCIATION, oldParentAssociation, parentAssociation));
-			}
-		}
-		return parentAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Association basicGetParentAssociation() {
-		return parentAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentAssociation(Association newParentAssociation) {
-		Association oldParentAssociation = parentAssociation;
-		parentAssociation = newParentAssociation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__PARENT_ASSOCIATION, oldParentAssociation, parentAssociation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isUseParentAssociationSource() {
-		return useParentAssociationSource;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUseParentAssociationSource(boolean newUseParentAssociationSource) {
-		boolean oldUseParentAssociationSource = useParentAssociationSource;
-		useParentAssociationSource = newUseParentAssociationSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__USE_PARENT_ASSOCIATION_SOURCE, oldUseParentAssociationSource, useParentAssociationSource));
 	}
 
 	/**
@@ -1147,11 +1054,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__URI_PARENT:
 				if (resolve) return getUriParent();
 				return basicGetUriParent();
-			case WebsitePackage.LOGIN_UNIT__PARENT_ASSOCIATION:
-				if (resolve) return getParentAssociation();
-				return basicGetParentAssociation();
-			case WebsitePackage.LOGIN_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
-				return isUseParentAssociationSource();
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
 			case WebsitePackage.LOGIN_UNIT__HEADER:
@@ -1220,12 +1122,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return;
 			case WebsitePackage.LOGIN_UNIT__URI_PARENT:
 				setUriParent((ContentUnit)newValue);
-				return;
-			case WebsitePackage.LOGIN_UNIT__PARENT_ASSOCIATION:
-				setParentAssociation((Association)newValue);
-				return;
-			case WebsitePackage.LOGIN_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
-				setUseParentAssociationSource((Boolean)newValue);
 				return;
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
@@ -1306,12 +1202,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__URI_PARENT:
 				setUriParent((ContentUnit)null);
 				return;
-			case WebsitePackage.LOGIN_UNIT__PARENT_ASSOCIATION:
-				setParentAssociation((Association)null);
-				return;
-			case WebsitePackage.LOGIN_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
-				setUseParentAssociationSource(USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT);
-				return;
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				return;
@@ -1380,10 +1270,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return displayFields != null && !displayFields.isEmpty();
 			case WebsitePackage.LOGIN_UNIT__URI_PARENT:
 				return uriParent != null;
-			case WebsitePackage.LOGIN_UNIT__PARENT_ASSOCIATION:
-				return parentAssociation != null;
-			case WebsitePackage.LOGIN_UNIT__USE_PARENT_ASSOCIATION_SOURCE:
-				return useParentAssociationSource != USE_PARENT_ASSOCIATION_SOURCE_EDEFAULT;
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
 			case WebsitePackage.LOGIN_UNIT__HEADER:
@@ -1446,8 +1332,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.LOGIN_UNIT__SOURCE: return WebsitePackage.DYNAMIC_UNIT__SOURCE;
 				case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS: return WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.LOGIN_UNIT__URI_PARENT: return WebsitePackage.DYNAMIC_UNIT__URI_PARENT;
-				case WebsitePackage.LOGIN_UNIT__PARENT_ASSOCIATION: return WebsitePackage.DYNAMIC_UNIT__PARENT_ASSOCIATION;
-				case WebsitePackage.LOGIN_UNIT__USE_PARENT_ASSOCIATION_SOURCE: return WebsitePackage.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE;
 				case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS: return WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.LOGIN_UNIT__HEADER: return WebsitePackage.DYNAMIC_UNIT__HEADER;
 				case WebsitePackage.LOGIN_UNIT__FOOTER: return WebsitePackage.DYNAMIC_UNIT__FOOTER;
@@ -1504,8 +1388,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.DYNAMIC_UNIT__SOURCE: return WebsitePackage.LOGIN_UNIT__SOURCE;
 				case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.DYNAMIC_UNIT__URI_PARENT: return WebsitePackage.LOGIN_UNIT__URI_PARENT;
-				case WebsitePackage.DYNAMIC_UNIT__PARENT_ASSOCIATION: return WebsitePackage.LOGIN_UNIT__PARENT_ASSOCIATION;
-				case WebsitePackage.DYNAMIC_UNIT__USE_PARENT_ASSOCIATION_SOURCE: return WebsitePackage.LOGIN_UNIT__USE_PARENT_ASSOCIATION_SOURCE;
 				case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER: return WebsitePackage.LOGIN_UNIT__HEADER;
 				case WebsitePackage.DYNAMIC_UNIT__FOOTER: return WebsitePackage.LOGIN_UNIT__FOOTER;
@@ -1550,8 +1432,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		result.append(omitCaption);
 		result.append(", captionClass: ");
 		result.append(captionClass);
-		result.append(", useParentAssociationSource: ");
-		result.append(useParentAssociationSource);
 		result.append(", header: ");
 		result.append(header);
 		result.append(", footer: ");

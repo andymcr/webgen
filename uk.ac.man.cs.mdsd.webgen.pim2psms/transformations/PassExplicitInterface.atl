@@ -767,6 +767,7 @@ abstract rule UnitField {
 	from website : Website!UnitField
 	to waf : WAF!UnitField (
 		cardinality <- website.unitCardinality(),
+		maximumDisplaySize <- website.maximumDisplaySize,
 		dateFormat <- website.dateFormat()
 	)
 }
@@ -777,7 +778,6 @@ abstract rule UnitFeature {
 	to waf : WAF!UnitFeature (
 		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
 		displayOption <- website.collectionDisplayOption,
-		maximumDisplaySize <- website.maximumDisplaySize,
 		autofocus <- website.autofocus
 	)
 }

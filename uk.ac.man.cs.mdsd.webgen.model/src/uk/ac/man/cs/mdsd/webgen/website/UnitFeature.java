@@ -14,7 +14,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#isAutofocus <em>Autofocus</em>}</li>
  * </ul>
  *
@@ -81,33 +80,6 @@ public interface UnitFeature extends IncludedFeature, UnitField, InlineActionCon
 	 * @generated
 	 */
 	void setCollectionDisplayOption(CollectionDisplayOptions value);
-
-	/**
-	 * Returns the value of the '<em><b>Maximum Display Size</b></em>' attribute.
-	 * The default value is <code>"-1"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Maximum Display Size</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Maximum Display Size</em>' attribute.
-	 * @see #setMaximumDisplaySize(int)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitFeature_MaximumDisplaySize()
-	 * @model default="-1" ordered="false"
-	 * @generated
-	 */
-	int getMaximumDisplaySize();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getMaximumDisplaySize <em>Maximum Display Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Maximum Display Size</em>' attribute.
-	 * @see #getMaximumDisplaySize()
-	 * @generated
-	 */
-	void setMaximumDisplaySize(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Autofocus</b></em>' attribute.

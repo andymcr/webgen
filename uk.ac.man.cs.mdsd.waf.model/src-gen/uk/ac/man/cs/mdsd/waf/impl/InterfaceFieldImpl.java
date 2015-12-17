@@ -33,6 +33,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getInputClass <em>Input Class</em>}</li>
@@ -61,6 +62,26 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * @ordered
 	 */
 	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumDisplaySize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAXIMUM_DISPLAY_SIZE_EDEFAULT = -1;
+
+	/**
+	 * The cached value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumDisplaySize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maximumDisplaySize = MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
@@ -211,6 +232,27 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__CARDINALITY, oldCardinality, cardinality));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMaximumDisplaySize() {
+		return maximumDisplaySize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaximumDisplaySize(int newMaximumDisplaySize) {
+		int oldMaximumDisplaySize = maximumDisplaySize;
+		maximumDisplaySize = newMaximumDisplaySize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE, oldMaximumDisplaySize, maximumDisplaySize));
 	}
 
 	/**
@@ -395,6 +437,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return basicGetDisplayedOn();
 			case WafPackage.INTERFACE_FIELD__CARDINALITY:
 				return getCardinality();
+			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
+				return getMaximumDisplaySize();
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				return getDateFormat();
 			case WafPackage.INTERFACE_FIELD__DEFAULT_VALUE:
@@ -421,6 +465,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return;
 			case WafPackage.INTERFACE_FIELD__CARDINALITY:
 				setCardinality((Cardinality)newValue);
+				return;
+			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
+				setMaximumDisplaySize((Integer)newValue);
 				return;
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				setDateFormat((String)newValue);
@@ -452,6 +499,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			case WafPackage.INTERFACE_FIELD__CARDINALITY:
 				setCardinality(CARDINALITY_EDEFAULT);
 				return;
+			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
+				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
+				return;
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
@@ -480,6 +530,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return basicGetDisplayedOn() != null;
 			case WafPackage.INTERFACE_FIELD__CARDINALITY:
 				return cardinality != CARDINALITY_EDEFAULT;
+			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
+				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 			case WafPackage.INTERFACE_FIELD__DEFAULT_VALUE:
@@ -503,6 +555,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			switch (derivedFeatureID) {
 				case WafPackage.INTERFACE_FIELD__DISPLAYED_ON: return WafPackage.UNIT_FIELD__DISPLAYED_ON;
 				case WafPackage.INTERFACE_FIELD__CARDINALITY: return WafPackage.UNIT_FIELD__CARDINALITY;
+				case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.INTERFACE_FIELD__DATE_FORMAT: return WafPackage.UNIT_FIELD__DATE_FORMAT;
 				default: return -1;
 			}
@@ -521,6 +574,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			switch (baseFeatureID) {
 				case WafPackage.UNIT_FIELD__DISPLAYED_ON: return WafPackage.INTERFACE_FIELD__DISPLAYED_ON;
 				case WafPackage.UNIT_FIELD__CARDINALITY: return WafPackage.INTERFACE_FIELD__CARDINALITY;
+				case WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.UNIT_FIELD__DATE_FORMAT: return WafPackage.INTERFACE_FIELD__DATE_FORMAT;
 				default: return -1;
 			}
@@ -540,6 +594,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cardinality: ");
 		result.append(cardinality);
+		result.append(", maximumDisplaySize: ");
+		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);
 		result.append(", inputClass: ");

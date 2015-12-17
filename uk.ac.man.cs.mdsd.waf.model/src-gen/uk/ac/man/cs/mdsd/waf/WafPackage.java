@@ -2977,13 +2977,22 @@ public interface WafPackage extends EPackage {
 	int UNIT_FIELD__CARDINALITY = 1;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = 2;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__DATE_FORMAT = 2;
+	int UNIT_FIELD__DATE_FORMAT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Unit Field</em>' class.
@@ -2992,7 +3001,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD_FEATURE_COUNT = 3;
+	int UNIT_FIELD_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Unit Field</em>' class.
@@ -3104,13 +3113,22 @@ public interface WafPackage extends EPackage {
 	int UNIT_FEATURE__CARDINALITY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__DATE_FORMAT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int UNIT_FEATURE__DATE_FORMAT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -3119,7 +3137,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__ACTIONS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int UNIT_FEATURE__ACTIONS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
@@ -3128,7 +3146,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Display Option</b></em>' attribute.
@@ -3137,16 +3155,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__DISPLAY_OPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int UNIT_FEATURE__DISPLAY_OPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -3276,6 +3285,15 @@ public interface WafPackage extends EPackage {
 	int UNIT_ELEMENT__CARDINALITY = UNIT_FEATURE__CARDINALITY;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__MAXIMUM_DISPLAY_SIZE = UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3310,15 +3328,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ELEMENT__DISPLAY_OPTION = UNIT_FEATURE__DISPLAY_OPTION;
-
-	/**
-	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ELEMENT__MAXIMUM_DISPLAY_SIZE = UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -3502,6 +3511,15 @@ public interface WafPackage extends EPackage {
 	int UNIT_ASSOCIATION__CARDINALITY = UNIT_FEATURE__CARDINALITY;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE = UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3536,15 +3554,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ASSOCIATION__DISPLAY_OPTION = UNIT_FEATURE__DISPLAY_OPTION;
-
-	/**
-	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE = UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -3683,13 +3692,22 @@ public interface WafPackage extends EPackage {
 	int INTERFACE_FIELD__CARDINALITY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DATE_FORMAT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int INTERFACE_FIELD__DATE_FORMAT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
@@ -3698,7 +3716,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DEFAULT_VALUE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int INTERFACE_FIELD__DEFAULT_VALUE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -3707,7 +3725,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__INPUT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int INTERFACE_FIELD__INPUT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Must Match</b></em>' reference.
@@ -3716,7 +3734,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MUST_MATCH = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int INTERFACE_FIELD__MUST_MATCH = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Interface Field</em>' class.
@@ -3725,7 +3743,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int INTERFACE_FIELD_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Interface Field</em>' class.
@@ -3781,6 +3799,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_FIELD__CARDINALITY = INTERFACE_FIELD__CARDINALITY;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FIELD__MAXIMUM_DISPLAY_SIZE = INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -3919,6 +3946,15 @@ public interface WafPackage extends EPackage {
 	int DATE_FIELD__CARDINALITY = INTERFACE_FIELD__CARDINALITY;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_FIELD__MAXIMUM_DISPLAY_SIZE = INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4037,13 +4073,22 @@ public interface WafPackage extends EPackage {
 	int CAPTCHA_FIELD__CARDINALITY = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTCHA_FIELD__MAXIMUM_DISPLAY_SIZE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAPTCHA_FIELD__DATE_FORMAT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int CAPTCHA_FIELD__DATE_FORMAT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Captcha Field</em>' class.
@@ -4052,7 +4097,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPTCHA_FIELD_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int CAPTCHA_FIELD_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Captcha Field</em>' class.
@@ -10584,6 +10629,17 @@ public interface WafPackage extends EPackage {
 	EAttribute getUnitField_Cardinality();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Maximum Display Size</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.UnitField#getMaximumDisplaySize()
+	 * @see #getUnitField()
+	 * @generated
+	 */
+	EAttribute getUnitField_MaximumDisplaySize();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.UnitField#getDateFormat <em>Date Format</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10625,17 +10681,6 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUnitFeature_DisplayOption();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getMaximumDisplaySize <em>Maximum Display Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Maximum Display Size</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.UnitFeature#getMaximumDisplaySize()
-	 * @see #getUnitFeature()
-	 * @generated
-	 */
-	EAttribute getUnitFeature_MaximumDisplaySize();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isAutofocus <em>Autofocus</em>}'.
@@ -13042,6 +13087,14 @@ public interface WafPackage extends EPackage {
 		EAttribute UNIT_FIELD__CARDINALITY = eINSTANCE.getUnitField_Cardinality();
 
 		/**
+		 * The meta object literal for the '<em><b>Maximum Display Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = eINSTANCE.getUnitField_MaximumDisplaySize();
+
+		/**
 		 * The meta object literal for the '<em><b>Date Format</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13074,14 +13127,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNIT_FEATURE__DISPLAY_OPTION = eINSTANCE.getUnitFeature_DisplayOption();
-
-		/**
-		 * The meta object literal for the '<em><b>Maximum Display Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE = eINSTANCE.getUnitFeature_MaximumDisplaySize();
 
 		/**
 		 * The meta object literal for the '<em><b>Autofocus</b></em>' attribute feature.

@@ -52,11 +52,11 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#isAutofocus <em>Autofocus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getUnits <em>Units</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getName <em>Name</em>}</li>
@@ -70,6 +70,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class UnitAssociationImpl extends IncludedAssociationImpl implements UnitAssociation {
+	/**
+	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumDisplaySize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAXIMUM_DISPLAY_SIZE_EDEFAULT = -1;
+
+	/**
+	 * The cached value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumDisplaySize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maximumDisplaySize = MAXIMUM_DISPLAY_SIZE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -139,26 +159,6 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	 * @ordered
 	 */
 	protected CollectionDisplayOptions collectionDisplayOption = COLLECTION_DISPLAY_OPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaximumDisplaySize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int MAXIMUM_DISPLAY_SIZE_EDEFAULT = -1;
-
-	/**
-	 * The cached value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaximumDisplaySize()
-	 * @generated
-	 * @ordered
-	 */
-	protected int maximumDisplaySize = MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isAutofocus() <em>Autofocus</em>}' attribute.
@@ -764,6 +764,8 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 		switch (featureID) {
 			case WebsitePackage.UNIT_ASSOCIATION__DISPLAYED_ON:
 				return getDisplayedOn();
+			case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE:
+				return getMaximumDisplaySize();
 			case WebsitePackage.UNIT_ASSOCIATION__DATE_FORMAT:
 				return getDateFormat();
 			case WebsitePackage.UNIT_ASSOCIATION__ACTIONS:
@@ -772,8 +774,6 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 				return isOnlyDisplayWhenNotEmpty();
 			case WebsitePackage.UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION:
 				return getCollectionDisplayOption();
-			case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE:
-				return getMaximumDisplaySize();
 			case WebsitePackage.UNIT_ASSOCIATION__AUTOFOCUS:
 				return isAutofocus();
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
@@ -809,6 +809,9 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 			case WebsitePackage.UNIT_ASSOCIATION__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
 				return;
+			case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE:
+				setMaximumDisplaySize((Integer)newValue);
+				return;
 			case WebsitePackage.UNIT_ASSOCIATION__DATE_FORMAT:
 				setDateFormat((String)newValue);
 				return;
@@ -821,9 +824,6 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
-				return;
-			case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE:
-				setMaximumDisplaySize((Integer)newValue);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__AUTOFOCUS:
 				setAutofocus((Boolean)newValue);
@@ -863,6 +863,9 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 			case WebsitePackage.UNIT_ASSOCIATION__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
 				return;
+			case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE:
+				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
+				return;
 			case WebsitePackage.UNIT_ASSOCIATION__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
@@ -874,9 +877,6 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
-				return;
-			case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE:
-				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__AUTOFOCUS:
 				setAutofocus(AUTOFOCUS_EDEFAULT);
@@ -913,6 +913,8 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 		switch (featureID) {
 			case WebsitePackage.UNIT_ASSOCIATION__DISPLAYED_ON:
 				return getDisplayedOn() != null;
+			case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE:
+				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WebsitePackage.UNIT_ASSOCIATION__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 			case WebsitePackage.UNIT_ASSOCIATION__ACTIONS:
@@ -921,8 +923,6 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WebsitePackage.UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION:
 				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
-			case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE:
-				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WebsitePackage.UNIT_ASSOCIATION__AUTOFOCUS:
 				return autofocus != AUTOFOCUS_EDEFAULT;
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
@@ -953,6 +953,7 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 		if (baseClass == UnitField.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.UNIT_ASSOCIATION__DISPLAYED_ON: return WebsitePackage.UNIT_FIELD__DISPLAYED_ON;
+				case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE: return WebsitePackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WebsitePackage.UNIT_ASSOCIATION__DATE_FORMAT: return WebsitePackage.UNIT_FIELD__DATE_FORMAT;
 				default: return -1;
 			}
@@ -967,7 +968,6 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 			switch (derivedFeatureID) {
 				case WebsitePackage.UNIT_ASSOCIATION__ONLY_DISPLAY_WHEN_NOT_EMPTY: return WebsitePackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 				case WebsitePackage.UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION: return WebsitePackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION;
-				case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE: return WebsitePackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE;
 				case WebsitePackage.UNIT_ASSOCIATION__AUTOFOCUS: return WebsitePackage.UNIT_FEATURE__AUTOFOCUS;
 				default: return -1;
 			}
@@ -991,6 +991,7 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 		if (baseClass == UnitField.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.UNIT_FIELD__DISPLAYED_ON: return WebsitePackage.UNIT_ASSOCIATION__DISPLAYED_ON;
+				case WebsitePackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE;
 				case WebsitePackage.UNIT_FIELD__DATE_FORMAT: return WebsitePackage.UNIT_ASSOCIATION__DATE_FORMAT;
 				default: return -1;
 			}
@@ -1005,7 +1006,6 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 			switch (baseFeatureID) {
 				case WebsitePackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY: return WebsitePackage.UNIT_ASSOCIATION__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 				case WebsitePackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION: return WebsitePackage.UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION;
-				case WebsitePackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE: return WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE;
 				case WebsitePackage.UNIT_FEATURE__AUTOFOCUS: return WebsitePackage.UNIT_ASSOCIATION__AUTOFOCUS;
 				default: return -1;
 			}
@@ -1029,14 +1029,14 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (dateFormat: ");
+		result.append(" (maximumDisplaySize: ");
+		result.append(maximumDisplaySize);
+		result.append(", dateFormat: ");
 		result.append(dateFormat);
 		result.append(", onlyDisplayWhenNotEmpty: ");
 		result.append(onlyDisplayWhenNotEmpty);
 		result.append(", collectionDisplayOption: ");
 		result.append(collectionDisplayOption);
-		result.append(", maximumDisplaySize: ");
-		result.append(maximumDisplaySize);
 		result.append(", autofocus: ");
 		result.append(autofocus);
 		result.append(')');

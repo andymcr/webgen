@@ -272,6 +272,7 @@ class UnitSupportAction extends NamedDisplayElement {
 interface UnitField {
 	container DynamicUnit[1] displayedOn opposite displayFields
 	Cardinality cardinality
+	int maximumDisplaySize = "-1"
 	String dateFormat
 }
 
@@ -283,7 +284,6 @@ enum CollectionDisplayOptions {
 abstract class UnitFeature extends NamedDisplayElement, IncludedFeature, UnitField, InlineActionContainer {
 	boolean onlyDisplayWhenNotEmpty
 	CollectionDisplayOptions displayOption
-	int maximumDisplaySize = "-1"
 	boolean autofocus
 }
 

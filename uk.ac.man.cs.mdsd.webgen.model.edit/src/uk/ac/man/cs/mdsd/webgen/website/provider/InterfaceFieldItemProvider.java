@@ -46,6 +46,7 @@ public class InterfaceFieldItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
@@ -53,6 +54,28 @@ public class InterfaceFieldItemProvider
 			addInputClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Maximum Display Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaximumDisplaySizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_maximumDisplaySize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_maximumDisplaySize_feature", "_UI_UnitField_type"),
+				 WebsitePackage.Literals.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -202,6 +225,7 @@ public class InterfaceFieldItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(InterfaceField.class)) {
+			case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 			case WebsitePackage.INTERFACE_FIELD__DATE_FORMAT:
 			case WebsitePackage.INTERFACE_FIELD__REQUIRED:
 			case WebsitePackage.INTERFACE_FIELD__DEFAULT_VALUE:

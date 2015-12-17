@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.orm.Cardinality;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getDateFormat <em>Date Format</em>}</li>
  * </ul>
  *
@@ -81,6 +82,33 @@ public interface UnitField extends EObject {
 	 * @generated
 	 */
 	void setCardinality(Cardinality value);
+
+	/**
+	 * Returns the value of the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * The default value is <code>"-1"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Maximum Display Size</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Maximum Display Size</em>' attribute.
+	 * @see #setMaximumDisplaySize(int)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitField_MaximumDisplaySize()
+	 * @model default="-1" unique="false"
+	 * @generated
+	 */
+	int getMaximumDisplaySize();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Maximum Display Size</em>' attribute.
+	 * @see #getMaximumDisplaySize()
+	 * @generated
+	 */
+	void setMaximumDisplaySize(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Date Format</b></em>' attribute.

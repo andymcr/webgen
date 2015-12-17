@@ -58,10 +58,10 @@ public class UnitFeatureItemProvider
 			addFooterClassPropertyDescriptor(object);
 			addDisplayedOnPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
+			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addDisplayOptionPropertyDescriptor(object);
-			addMaximumDisplaySizePropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -309,9 +309,9 @@ public class UnitFeatureItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitFeature_maximumDisplaySize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_maximumDisplaySize_feature", "_UI_UnitFeature_type"),
-				 WafPackage.Literals.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE,
+				 getString("_UI_UnitField_maximumDisplaySize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_maximumDisplaySize_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE,
 				 true,
 				 false,
 				 false,
@@ -410,10 +410,10 @@ public class UnitFeatureItemProvider
 			case WafPackage.UNIT_FEATURE__DISPLAY_CLASS:
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
 			case WafPackage.UNIT_FEATURE__CARDINALITY:
+			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
 			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WafPackage.UNIT_FEATURE__DISPLAY_OPTION:
-			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

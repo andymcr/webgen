@@ -47,6 +47,7 @@ public class CaptchaFieldItemProvider
 
 			addDisplayedOnPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
+			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -93,6 +94,28 @@ public class CaptchaFieldItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Maximum Display Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaximumDisplaySizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_maximumDisplaySize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_maximumDisplaySize_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -157,6 +180,7 @@ public class CaptchaFieldItemProvider
 
 		switch (notification.getFeatureID(CaptchaField.class)) {
 			case WafPackage.CAPTCHA_FIELD__CARDINALITY:
+			case WafPackage.CAPTCHA_FIELD__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.CAPTCHA_FIELD__DATE_FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

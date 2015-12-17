@@ -31,6 +31,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CaptchaFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CaptchaFieldImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CaptchaFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CaptchaFieldImpl#getDateFormat <em>Date Format</em>}</li>
  * </ul>
  *
@@ -56,6 +57,26 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 	 * @ordered
 	 */
 	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumDisplaySize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAXIMUM_DISPLAY_SIZE_EDEFAULT = -1;
+
+	/**
+	 * The cached value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumDisplaySize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maximumDisplaySize = MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
@@ -173,6 +194,27 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getMaximumDisplaySize() {
+		return maximumDisplaySize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaximumDisplaySize(int newMaximumDisplaySize) {
+		int oldMaximumDisplaySize = maximumDisplaySize;
+		maximumDisplaySize = newMaximumDisplaySize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CAPTCHA_FIELD__MAXIMUM_DISPLAY_SIZE, oldMaximumDisplaySize, maximumDisplaySize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getDateFormat() {
 		return dateFormat;
 	}
@@ -246,6 +288,8 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 				return basicGetDisplayedOn();
 			case WafPackage.CAPTCHA_FIELD__CARDINALITY:
 				return getCardinality();
+			case WafPackage.CAPTCHA_FIELD__MAXIMUM_DISPLAY_SIZE:
+				return getMaximumDisplaySize();
 			case WafPackage.CAPTCHA_FIELD__DATE_FORMAT:
 				return getDateFormat();
 		}
@@ -265,6 +309,9 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 				return;
 			case WafPackage.CAPTCHA_FIELD__CARDINALITY:
 				setCardinality((Cardinality)newValue);
+				return;
+			case WafPackage.CAPTCHA_FIELD__MAXIMUM_DISPLAY_SIZE:
+				setMaximumDisplaySize((Integer)newValue);
 				return;
 			case WafPackage.CAPTCHA_FIELD__DATE_FORMAT:
 				setDateFormat((String)newValue);
@@ -287,6 +334,9 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 			case WafPackage.CAPTCHA_FIELD__CARDINALITY:
 				setCardinality(CARDINALITY_EDEFAULT);
 				return;
+			case WafPackage.CAPTCHA_FIELD__MAXIMUM_DISPLAY_SIZE:
+				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
+				return;
 			case WafPackage.CAPTCHA_FIELD__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
@@ -306,6 +356,8 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 				return basicGetDisplayedOn() != null;
 			case WafPackage.CAPTCHA_FIELD__CARDINALITY:
 				return cardinality != CARDINALITY_EDEFAULT;
+			case WafPackage.CAPTCHA_FIELD__MAXIMUM_DISPLAY_SIZE:
+				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WafPackage.CAPTCHA_FIELD__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
 		}
@@ -323,6 +375,7 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 			switch (derivedFeatureID) {
 				case WafPackage.CAPTCHA_FIELD__DISPLAYED_ON: return WafPackage.UNIT_FIELD__DISPLAYED_ON;
 				case WafPackage.CAPTCHA_FIELD__CARDINALITY: return WafPackage.UNIT_FIELD__CARDINALITY;
+				case WafPackage.CAPTCHA_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.CAPTCHA_FIELD__DATE_FORMAT: return WafPackage.UNIT_FIELD__DATE_FORMAT;
 				default: return -1;
 			}
@@ -341,6 +394,7 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 			switch (baseFeatureID) {
 				case WafPackage.UNIT_FIELD__DISPLAYED_ON: return WafPackage.CAPTCHA_FIELD__DISPLAYED_ON;
 				case WafPackage.UNIT_FIELD__CARDINALITY: return WafPackage.CAPTCHA_FIELD__CARDINALITY;
+				case WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.CAPTCHA_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.UNIT_FIELD__DATE_FORMAT: return WafPackage.CAPTCHA_FIELD__DATE_FORMAT;
 				default: return -1;
 			}
@@ -360,6 +414,8 @@ public class CaptchaFieldImpl extends NamedDisplayElementImpl implements Captcha
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (cardinality: ");
 		result.append(cardinality);
+		result.append(", maximumDisplaySize: ");
+		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);
 		result.append(')');

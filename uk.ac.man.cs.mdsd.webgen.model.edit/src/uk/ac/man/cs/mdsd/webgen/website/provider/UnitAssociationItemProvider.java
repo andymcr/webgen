@@ -57,10 +57,10 @@ public class UnitAssociationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
-			addMaximumDisplaySizePropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
 			addServiceFeaturePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
@@ -175,14 +175,14 @@ public class UnitAssociationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitFeature_maximumDisplaySize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_maximumDisplaySize_feature", "_UI_UnitFeature_type"),
-				 WebsitePackage.Literals.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE,
+				 getString("_UI_UnitField_maximumDisplaySize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_maximumDisplaySize_feature", "_UI_UnitField_type"),
+				 WebsitePackage.Literals.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -401,10 +401,10 @@ public class UnitAssociationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitAssociation.class)) {
+			case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE:
 			case WebsitePackage.UNIT_ASSOCIATION__DATE_FORMAT:
 			case WebsitePackage.UNIT_ASSOCIATION__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WebsitePackage.UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION:
-			case WebsitePackage.UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE:
 			case WebsitePackage.UNIT_ASSOCIATION__AUTOFOCUS:
 			case WebsitePackage.UNIT_ASSOCIATION__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

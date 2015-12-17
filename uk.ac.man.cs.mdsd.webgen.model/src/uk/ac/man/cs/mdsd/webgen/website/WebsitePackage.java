@@ -6516,13 +6516,22 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_FIELD__DISPLAYED_ON = 0;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = 1;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__DATE_FORMAT = 1;
+	int UNIT_FIELD__DATE_FORMAT = 2;
 
 	/**
 	 * The number of structural features of the '<em>Unit Field</em>' class.
@@ -6531,7 +6540,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD_FEATURE_COUNT = 2;
+	int UNIT_FIELD_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature <em>Unit Feature</em>}' class.
@@ -6625,13 +6634,22 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_FEATURE__DISPLAYED_ON = INCLUDED_FEATURE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE = INCLUDED_FEATURE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__DATE_FORMAT = INCLUDED_FEATURE_FEATURE_COUNT + 1;
+	int UNIT_FEATURE__DATE_FORMAT = INCLUDED_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -6640,7 +6658,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__ACTIONS = INCLUDED_FEATURE_FEATURE_COUNT + 2;
+	int UNIT_FEATURE__ACTIONS = INCLUDED_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
@@ -6649,7 +6667,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY = INCLUDED_FEATURE_FEATURE_COUNT + 3;
+	int UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY = INCLUDED_FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
@@ -6658,16 +6676,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__COLLECTION_DISPLAY_OPTION = INCLUDED_FEATURE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE = INCLUDED_FEATURE_FEATURE_COUNT + 5;
+	int UNIT_FEATURE__COLLECTION_DISPLAY_OPTION = INCLUDED_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -6806,13 +6815,22 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_ELEMENT__DISPLAYED_ON = INCLUDED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__MAXIMUM_DISPLAY_SIZE = INCLUDED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__DATE_FORMAT = INCLUDED_ELEMENT_FEATURE_COUNT + 1;
+	int UNIT_ELEMENT__DATE_FORMAT = INCLUDED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -6821,7 +6839,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__ACTIONS = INCLUDED_ELEMENT_FEATURE_COUNT + 2;
+	int UNIT_ELEMENT__ACTIONS = INCLUDED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
@@ -6830,7 +6848,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__ONLY_DISPLAY_WHEN_NOT_EMPTY = INCLUDED_ELEMENT_FEATURE_COUNT + 3;
+	int UNIT_ELEMENT__ONLY_DISPLAY_WHEN_NOT_EMPTY = INCLUDED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
@@ -6839,16 +6857,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__COLLECTION_DISPLAY_OPTION = INCLUDED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ELEMENT__MAXIMUM_DISPLAY_SIZE = INCLUDED_ELEMENT_FEATURE_COUNT + 5;
+	int UNIT_ELEMENT__COLLECTION_DISPLAY_OPTION = INCLUDED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -7014,13 +7023,22 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_ASSOCIATION__DISPLAYED_ON = INCLUDED_ASSOCIATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE = INCLUDED_ASSOCIATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__DATE_FORMAT = INCLUDED_ASSOCIATION_FEATURE_COUNT + 1;
+	int UNIT_ASSOCIATION__DATE_FORMAT = INCLUDED_ASSOCIATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -7029,7 +7047,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__ACTIONS = INCLUDED_ASSOCIATION_FEATURE_COUNT + 2;
+	int UNIT_ASSOCIATION__ACTIONS = INCLUDED_ASSOCIATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
@@ -7038,7 +7056,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__ONLY_DISPLAY_WHEN_NOT_EMPTY = INCLUDED_ASSOCIATION_FEATURE_COUNT + 3;
+	int UNIT_ASSOCIATION__ONLY_DISPLAY_WHEN_NOT_EMPTY = INCLUDED_ASSOCIATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
@@ -7047,16 +7065,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION = INCLUDED_ASSOCIATION_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE = INCLUDED_ASSOCIATION_FEATURE_COUNT + 5;
+	int UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION = INCLUDED_ASSOCIATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -7167,13 +7176,22 @@ public interface WebsitePackage extends EPackage {
 	int INTERFACE_FIELD__DISPLAYED_ON = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DATE_FORMAT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int INTERFACE_FIELD__DATE_FORMAT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -7182,7 +7200,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__REQUIRED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int INTERFACE_FIELD__REQUIRED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -7191,7 +7209,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DEFAULT_VALUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int INTERFACE_FIELD__DEFAULT_VALUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Must Match</b></em>' reference.
@@ -7200,7 +7218,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MUST_MATCH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int INTERFACE_FIELD__MUST_MATCH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -7209,7 +7227,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int INTERFACE_FIELD__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Interface Field</em>' class.
@@ -7218,7 +7236,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int INTERFACE_FIELD_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeFieldImpl <em>Data Type Field</em>}' class.
@@ -7256,6 +7274,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_FIELD__DISPLAYED_ON = INTERFACE_FIELD__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FIELD__MAXIMUM_DISPLAY_SIZE = INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -7376,6 +7403,15 @@ public interface WebsitePackage extends EPackage {
 	int DATE_FIELD__DISPLAYED_ON = INTERFACE_FIELD__DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_FIELD__MAXIMUM_DISPLAY_SIZE = INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7485,13 +7521,22 @@ public interface WebsitePackage extends EPackage {
 	int CAPTCHA_FIELD__DISPLAYED_ON = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTCHA_FIELD__MAXIMUM_DISPLAY_SIZE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CAPTCHA_FIELD__DATE_FORMAT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int CAPTCHA_FIELD__DATE_FORMAT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Captcha Field</em>' class.
@@ -7500,7 +7545,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPTCHA_FIELD_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int CAPTCHA_FIELD_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitSupportActionImpl <em>Unit Support Action</em>}' class.
@@ -13199,6 +13244,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getUnitField_DisplayedOn();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Maximum Display Size</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitField#getMaximumDisplaySize()
+	 * @see #getUnitField()
+	 * @generated
+	 */
+	EAttribute getUnitField_MaximumDisplaySize();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#getDateFormat <em>Date Format</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13240,17 +13296,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUnitFeature_CollectionDisplayOption();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getMaximumDisplaySize <em>Maximum Display Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Maximum Display Size</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getMaximumDisplaySize()
-	 * @see #getUnitFeature()
-	 * @generated
-	 */
-	EAttribute getUnitFeature_MaximumDisplaySize();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#isAutofocus <em>Autofocus</em>}'.
@@ -17185,6 +17230,14 @@ public interface WebsitePackage extends EPackage {
 		EReference UNIT_FIELD__DISPLAYED_ON = eINSTANCE.getUnitField_DisplayedOn();
 
 		/**
+		 * The meta object literal for the '<em><b>Maximum Display Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = eINSTANCE.getUnitField_MaximumDisplaySize();
+
+		/**
 		 * The meta object literal for the '<em><b>Date Format</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -17217,14 +17270,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNIT_FEATURE__COLLECTION_DISPLAY_OPTION = eINSTANCE.getUnitFeature_CollectionDisplayOption();
-
-		/**
-		 * The meta object literal for the '<em><b>Maximum Display Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE = eINSTANCE.getUnitFeature_MaximumDisplaySize();
 
 		/**
 		 * The meta object literal for the '<em><b>Autofocus</b></em>' attribute feature.

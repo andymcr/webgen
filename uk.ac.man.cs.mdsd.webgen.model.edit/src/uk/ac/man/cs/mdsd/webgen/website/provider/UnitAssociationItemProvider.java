@@ -261,7 +261,7 @@ public class UnitAssociationItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 

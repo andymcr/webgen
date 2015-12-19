@@ -117,7 +117,7 @@ public class ActionMenuEntryItemProvider extends MenuEntryItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 

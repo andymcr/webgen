@@ -7126,10 +7126,6 @@
             genNodes="//@diagram/@childNodes.22"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="Action Unit"
-            description="Add new action unit to a page"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
             title="Command Unit"
             description="Add a new command unit to a page"/>
       </groups>

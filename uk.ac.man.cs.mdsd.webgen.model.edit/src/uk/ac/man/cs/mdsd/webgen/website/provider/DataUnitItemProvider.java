@@ -64,22 +64,26 @@ public class DataUnitItemProvider
 	 * This adds a property descriptor for the Default Selection feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addDefaultSelectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DataUnit_defaultSelection_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DataUnit_defaultSelection_feature", "_UI_DataUnit_type"),
-				 WebsitePackage.Literals.DATA_UNIT__DEFAULT_SELECTION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_DataUnit_defaultSelection_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DataUnit_defaultSelection_feature", "_UI_DataUnit_type"),
+			WebsitePackage.Literals.DATA_UNIT__DEFAULT_SELECTION,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof DataUnit) {
+						return getSourceSelections((DataUnit) object);
+					}
+					return Collections.emptyList();
+				}
+		});
 	}
 
 	/**
@@ -112,32 +116,6 @@ public class DataUnitItemProvider
 							}
 						}
 						return labels;
-					}
-					return Collections.emptyList();
-				}
-		});
-	}
-
-	/**
-	 * This adds a property descriptor for the Selection feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addSelectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_DataUnit_selection_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_DataUnit_selection_feature", "_UI_DataUnit_type"),
-			WebsitePackage.Literals.DATA_UNIT__DEFAULT_SELECTION,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof DataUnit) {
-						return getSourceSelections((DataUnit) object);
 					}
 					return Collections.emptyList();
 				}

@@ -516,6 +516,7 @@
     </genClasses>
     <genClasses ecoreClass="website.ecore#//CaptchaField"/>
     <genClasses ecoreClass="website.ecore#//UnitSupportAction">
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//UnitSupportAction/disable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//UnitSupportAction/confirmMessage"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//EditUnit">
@@ -612,6 +613,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//InlineAction">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//InlineAction/usedBy"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/disable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/header"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/footer"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/headerClass"/>

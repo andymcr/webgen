@@ -265,6 +265,7 @@ abstract class DynamicUnit extends ContentUnit {
 }
 
 class UnitSupportAction extends NamedDisplayElement {
+	boolean disable
 	String confirmMessage
 }
 
@@ -417,6 +418,7 @@ interface InlineActionContainer {
 
 abstract class InlineAction extends NamedDisplayElement {
 	container InlineActionContainer[1] usedBy opposite actions
+	boolean disable
 	String header
 	String footer
 	String headerClass

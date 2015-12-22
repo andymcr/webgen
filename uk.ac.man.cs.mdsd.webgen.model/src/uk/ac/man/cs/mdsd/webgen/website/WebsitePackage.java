@@ -7567,13 +7567,22 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_SUPPORT_ACTION__DISPLAY_LABEL = NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Disable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_SUPPORT_ACTION__DISABLE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Confirm Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+	int UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Unit Support Action</em>' class.
@@ -7582,7 +7591,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_SUPPORT_ACTION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int UNIT_SUPPORT_ACTION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10519,13 +10528,22 @@ public interface WebsitePackage extends EPackage {
 	int INLINE_ACTION__USED_BY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Disable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INLINE_ACTION__DISABLE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__HEADER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int INLINE_ACTION__HEADER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -10534,7 +10552,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__FOOTER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int INLINE_ACTION__FOOTER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -10543,7 +10561,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int INLINE_ACTION__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -10552,7 +10570,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int INLINE_ACTION__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Inline Action</em>' class.
@@ -10561,7 +10579,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int INLINE_ACTION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10589,6 +10607,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECT_ACTION__USED_BY = INLINE_ACTION__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>Disable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -10670,6 +10697,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DELETE_ACTION__USED_BY = INLINE_ACTION__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>Disable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE_ACTION__DISABLE = INLINE_ACTION__DISABLE;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -10779,6 +10815,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_SUPPORT_ACTION__USED_BY = INLINE_ACTION__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>Disable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_SUPPORT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -13888,6 +13933,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getUnitSupportAction();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction#isDisable <em>Disable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Disable</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction#isDisable()
+	 * @see #getUnitSupportAction()
+	 * @generated
+	 */
+	EAttribute getUnitSupportAction_Disable();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction#getConfirmMessage <em>Confirm Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14866,6 +14922,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInlineAction_UsedBy();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#isDisable <em>Disable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Disable</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.InlineAction#isDisable()
+	 * @see #getInlineAction()
+	 * @generated
+	 */
+	EAttribute getInlineAction_Disable();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getHeader <em>Header</em>}'.
@@ -17729,6 +17796,14 @@ public interface WebsitePackage extends EPackage {
 		EClass UNIT_SUPPORT_ACTION = eINSTANCE.getUnitSupportAction();
 
 		/**
+		 * The meta object literal for the '<em><b>Disable</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_SUPPORT_ACTION__DISABLE = eINSTANCE.getUnitSupportAction_Disable();
+
+		/**
 		 * The meta object literal for the '<em><b>Confirm Message</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -18497,6 +18572,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference INLINE_ACTION__USED_BY = eINSTANCE.getInlineAction_UsedBy();
+
+		/**
+		 * The meta object literal for the '<em><b>Disable</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INLINE_ACTION__DISABLE = eINSTANCE.getInlineAction_Disable();
 
 		/**
 		 * The meta object literal for the '<em><b>Header</b></em>' attribute feature.

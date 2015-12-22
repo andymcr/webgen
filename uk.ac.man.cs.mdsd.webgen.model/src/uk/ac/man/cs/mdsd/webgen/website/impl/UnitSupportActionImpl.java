@@ -19,12 +19,33 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitSupportActionImpl#isDisable <em>Disable</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitSupportActionImpl#getConfirmMessage <em>Confirm Message</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class UnitSupportActionImpl extends NamedDisplayElementImpl implements UnitSupportAction {
+	/**
+	 * The default value of the '{@link #isDisable() <em>Disable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisable()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DISABLE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDisable() <em>Disable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisable()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean disable = DISABLE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getConfirmMessage() <em>Confirm Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -69,6 +90,27 @@ public class UnitSupportActionImpl extends NamedDisplayElementImpl implements Un
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isDisable() {
+		return disable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisable(boolean newDisable) {
+		boolean oldDisable = disable;
+		disable = newDisable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_SUPPORT_ACTION__DISABLE, oldDisable, disable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getConfirmMessage() {
 		return confirmMessage;
 	}
@@ -93,6 +135,8 @@ public class UnitSupportActionImpl extends NamedDisplayElementImpl implements Un
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.UNIT_SUPPORT_ACTION__DISABLE:
+				return isDisable();
 			case WebsitePackage.UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE:
 				return getConfirmMessage();
 		}
@@ -107,6 +151,9 @@ public class UnitSupportActionImpl extends NamedDisplayElementImpl implements Un
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.UNIT_SUPPORT_ACTION__DISABLE:
+				setDisable((Boolean)newValue);
+				return;
 			case WebsitePackage.UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE:
 				setConfirmMessage((String)newValue);
 				return;
@@ -122,6 +169,9 @@ public class UnitSupportActionImpl extends NamedDisplayElementImpl implements Un
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.UNIT_SUPPORT_ACTION__DISABLE:
+				setDisable(DISABLE_EDEFAULT);
+				return;
 			case WebsitePackage.UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE:
 				setConfirmMessage(CONFIRM_MESSAGE_EDEFAULT);
 				return;
@@ -137,6 +187,8 @@ public class UnitSupportActionImpl extends NamedDisplayElementImpl implements Un
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.UNIT_SUPPORT_ACTION__DISABLE:
+				return disable != DISABLE_EDEFAULT;
 			case WebsitePackage.UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE:
 				return CONFIRM_MESSAGE_EDEFAULT == null ? confirmMessage != null : !CONFIRM_MESSAGE_EDEFAULT.equals(confirmMessage);
 		}
@@ -153,7 +205,9 @@ public class UnitSupportActionImpl extends NamedDisplayElementImpl implements Un
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (confirmMessage: ");
+		result.append(" (disable: ");
+		result.append(disable);
+		result.append(", confirmMessage: ");
 		result.append(confirmMessage);
 		result.append(')');
 		return result.toString();

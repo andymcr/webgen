@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#isDisable <em>Disable</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -34,6 +35,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class InlineActionImpl extends NamedDisplayElementImpl implements InlineAction {
+	/**
+	 * The default value of the '{@link #isDisable() <em>Disable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisable()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DISABLE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDisable() <em>Disable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisable()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean disable = DISABLE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -179,6 +200,27 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isDisable() {
+		return disable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisable(boolean newDisable) {
+		boolean oldDisable = disable;
+		disable = newDisable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__DISABLE, oldDisable, disable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getHeader() {
 		return header;
 	}
@@ -312,6 +354,8 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		switch (featureID) {
 			case WebsitePackage.INLINE_ACTION__USED_BY:
 				return getUsedBy();
+			case WebsitePackage.INLINE_ACTION__DISABLE:
+				return isDisable();
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				return getHeader();
 			case WebsitePackage.INLINE_ACTION__FOOTER:
@@ -334,6 +378,9 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		switch (featureID) {
 			case WebsitePackage.INLINE_ACTION__USED_BY:
 				setUsedBy((InlineActionContainer)newValue);
+				return;
+			case WebsitePackage.INLINE_ACTION__DISABLE:
+				setDisable((Boolean)newValue);
 				return;
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				setHeader((String)newValue);
@@ -362,6 +409,9 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 			case WebsitePackage.INLINE_ACTION__USED_BY:
 				setUsedBy((InlineActionContainer)null);
 				return;
+			case WebsitePackage.INLINE_ACTION__DISABLE:
+				setDisable(DISABLE_EDEFAULT);
+				return;
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				setHeader(HEADER_EDEFAULT);
 				return;
@@ -388,6 +438,8 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		switch (featureID) {
 			case WebsitePackage.INLINE_ACTION__USED_BY:
 				return getUsedBy() != null;
+			case WebsitePackage.INLINE_ACTION__DISABLE:
+				return disable != DISABLE_EDEFAULT;
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case WebsitePackage.INLINE_ACTION__FOOTER:
@@ -410,7 +462,9 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (header: ");
+		result.append(" (disable: ");
+		result.append(disable);
+		result.append(", header: ");
 		result.append(header);
 		result.append(", footer: ");
 		result.append(footer);

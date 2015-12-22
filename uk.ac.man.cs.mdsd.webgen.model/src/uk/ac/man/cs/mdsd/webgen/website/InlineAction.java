@@ -13,6 +13,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#isDisable <em>Disable</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getHeaderClass <em>Header Class</em>}</li>
@@ -53,6 +54,32 @@ public interface InlineAction extends NamedDisplayElement {
 	 * @generated
 	 */
 	void setUsedBy(InlineActionContainer value);
+
+	/**
+	 * Returns the value of the '<em><b>Disable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Disable</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Disable</em>' attribute.
+	 * @see #setDisable(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getInlineAction_Disable()
+	 * @model
+	 * @generated
+	 */
+	boolean isDisable();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#isDisable <em>Disable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Disable</em>' attribute.
+	 * @see #isDisable()
+	 * @generated
+	 */
+	void setDisable(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' attribute.

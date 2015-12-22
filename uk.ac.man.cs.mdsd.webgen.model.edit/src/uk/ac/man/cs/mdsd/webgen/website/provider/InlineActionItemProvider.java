@@ -46,12 +46,35 @@ public class InlineActionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDisablePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Disable feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InlineAction_disable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InlineAction_disable_feature", "_UI_InlineAction_type"),
+				 WebsitePackage.Literals.INLINE_ACTION__DISABLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -168,6 +191,7 @@ public class InlineActionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(InlineAction.class)) {
+			case WebsitePackage.INLINE_ACTION__DISABLE:
 			case WebsitePackage.INLINE_ACTION__HEADER:
 			case WebsitePackage.INLINE_ACTION__FOOTER:
 			case WebsitePackage.INLINE_ACTION__HEADER_CLASS:

@@ -901,6 +901,7 @@ rule DateField {
 rule UnitSupportAction {
 	from website : Website!UnitSupportAction
 	to waf : WAF!UnitSupportAction (
+		disable <- website.disable,
 		confirmMessage <- website.confirmMessage
 	)
 }
@@ -1155,6 +1156,7 @@ abstract rule InlineActionContainer {
 abstract rule InlineAction {
 	from website : Website!InlineAction
 	to waf : WAF!InlineAction (
+		disable <- website.disable,
 		header <- website.header,
 		footer <- website.footer,
 		headerClass <- website.headerClass,

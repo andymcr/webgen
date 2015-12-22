@@ -12,6 +12,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction#isDisable <em>Disable</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction#getConfirmMessage <em>Confirm Message</em>}</li>
  * </ul>
  *
@@ -20,6 +21,32 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @generated
  */
 public interface UnitSupportAction extends NamedDisplayElement {
+	/**
+	 * Returns the value of the '<em><b>Disable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Disable</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Disable</em>' attribute.
+	 * @see #setDisable(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitSupportAction_Disable()
+	 * @model
+	 * @generated
+	 */
+	boolean isDisable();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction#isDisable <em>Disable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Disable</em>' attribute.
+	 * @see #isDisable()
+	 * @generated
+	 */
+	void setDisable(boolean value);
+
 	/**
 	 * Returns the value of the '<em><b>Confirm Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->

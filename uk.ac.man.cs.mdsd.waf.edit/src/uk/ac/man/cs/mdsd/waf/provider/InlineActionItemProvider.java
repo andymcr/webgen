@@ -50,6 +50,7 @@ public class InlineActionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addUsedByPropertyDescriptor(object);
+			addDisablePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -82,6 +83,28 @@ public class InlineActionItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Disable feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InlineAction_disable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InlineAction_disable_feature", "_UI_InlineAction_type"),
+				 WafPackage.Literals.INLINE_ACTION__DISABLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Header feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -195,6 +218,7 @@ public class InlineActionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(InlineAction.class)) {
+			case WafPackage.INLINE_ACTION__DISABLE:
 			case WafPackage.INLINE_ACTION__HEADER:
 			case WafPackage.INLINE_ACTION__FOOTER:
 			case WafPackage.INLINE_ACTION__HEADER_CLASS:

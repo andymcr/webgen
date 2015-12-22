@@ -46,9 +46,32 @@ public class UnitSupportActionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDisablePropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Disable feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitSupportAction_disable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitSupportAction_disable_feature", "_UI_UnitSupportAction_type"),
+				 WebsitePackage.Literals.UNIT_SUPPORT_ACTION__DISABLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -110,6 +133,7 @@ public class UnitSupportActionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitSupportAction.class)) {
+			case WebsitePackage.UNIT_SUPPORT_ACTION__DISABLE:
 			case WebsitePackage.UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

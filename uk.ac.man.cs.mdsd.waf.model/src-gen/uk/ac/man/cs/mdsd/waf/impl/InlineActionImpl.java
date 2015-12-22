@@ -27,6 +27,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InlineActionImpl#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InlineActionImpl#isDisable <em>Disable</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InlineActionImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InlineActionImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InlineActionImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -36,6 +37,26 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public abstract class InlineActionImpl extends NamedDisplayElementImpl implements InlineAction {
+	/**
+	 * The default value of the '{@link #isDisable() <em>Disable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisable()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DISABLE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDisable() <em>Disable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDisable()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean disable = DISABLE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -191,6 +212,27 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isDisable() {
+		return disable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisable(boolean newDisable) {
+		boolean oldDisable = disable;
+		disable = newDisable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INLINE_ACTION__DISABLE, oldDisable, disable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getHeader() {
 		return header;
 	}
@@ -325,6 +367,8 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 			case WafPackage.INLINE_ACTION__USED_BY:
 				if (resolve) return getUsedBy();
 				return basicGetUsedBy();
+			case WafPackage.INLINE_ACTION__DISABLE:
+				return isDisable();
 			case WafPackage.INLINE_ACTION__HEADER:
 				return getHeader();
 			case WafPackage.INLINE_ACTION__FOOTER:
@@ -347,6 +391,9 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		switch (featureID) {
 			case WafPackage.INLINE_ACTION__USED_BY:
 				setUsedBy((InlineActionContainer)newValue);
+				return;
+			case WafPackage.INLINE_ACTION__DISABLE:
+				setDisable((Boolean)newValue);
 				return;
 			case WafPackage.INLINE_ACTION__HEADER:
 				setHeader((String)newValue);
@@ -375,6 +422,9 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 			case WafPackage.INLINE_ACTION__USED_BY:
 				setUsedBy((InlineActionContainer)null);
 				return;
+			case WafPackage.INLINE_ACTION__DISABLE:
+				setDisable(DISABLE_EDEFAULT);
+				return;
 			case WafPackage.INLINE_ACTION__HEADER:
 				setHeader(HEADER_EDEFAULT);
 				return;
@@ -401,6 +451,8 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		switch (featureID) {
 			case WafPackage.INLINE_ACTION__USED_BY:
 				return basicGetUsedBy() != null;
+			case WafPackage.INLINE_ACTION__DISABLE:
+				return disable != DISABLE_EDEFAULT;
 			case WafPackage.INLINE_ACTION__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case WafPackage.INLINE_ACTION__FOOTER:
@@ -423,7 +475,9 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (header: ");
+		result.append(" (disable: ");
+		result.append(disable);
+		result.append(", header: ");
 		result.append(header);
 		result.append(", footer: ");
 		result.append(footer);

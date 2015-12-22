@@ -559,7 +559,8 @@
         eType="#//PageLink" eOpposite="#//PageLink/targetPage"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="authenticated" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="topMenuOption" ordered="false"
         eType="#//PageTopMenuOptions" defaultValueLiteral="NeverInclude"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="topMenuRank" ordered="false"
@@ -654,8 +655,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="ContentUnit" abstract="true" eSuperTypes="#//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayedOn" ordered="false"
         lowerBound="1" eType="#//UnitContainer" eOpposite="#//UnitContainer/units"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="purposeSummary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitCaption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="captionClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="unit_caption"/>
@@ -694,7 +696,6 @@
         eType="#//UnitSource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayFields" upperBound="-1"
         eType="#//UnitField" containment="true" eOpposite="#//UnitField/displayedOn"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uriParent" eType="#//ContentUnit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="supportActions" upperBound="-1"
         eType="#//UnitSupportAction" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -827,6 +828,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,create_unit,framed"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CreateUpdateUnit" eSuperTypes="#//EditUnit #//Selectable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="createUriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clearLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
@@ -966,6 +969,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="DeleteAction" eSuperTypes="#//InlineAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//Page"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureSupportAction" eSuperTypes="#//InlineAction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

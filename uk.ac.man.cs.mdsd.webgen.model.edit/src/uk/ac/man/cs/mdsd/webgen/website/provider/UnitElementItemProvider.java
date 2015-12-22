@@ -177,7 +177,7 @@ public class UnitElementItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 

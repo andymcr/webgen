@@ -14,8 +14,8 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getDisplayedOn <em>Displayed On</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getStyleClass <em>Style Class</em>}</li>
@@ -56,32 +56,6 @@ public interface ContentUnit extends NamedDisplayElement {
 	void setDisplayedOn(UnitContainer value);
 
 	/**
-	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Uri Element</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uri Element</em>' attribute.
-	 * @see #setUriElement(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_UriElement()
-	 * @model unique="false" required="true"
-	 * @generated
-	 */
-	String getUriElement();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement <em>Uri Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uri Element</em>' attribute.
-	 * @see #getUriElement()
-	 * @generated
-	 */
-	void setUriElement(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -106,6 +80,33 @@ public interface ContentUnit extends NamedDisplayElement {
 	 * @generated
 	 */
 	void setPurposeSummary(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Uri Element</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uri Element</em>' attribute.
+	 * @see #setUriElement(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_UriElement()
+	 * @model default="" unique="false"
+	 * @generated
+	 */
+	String getUriElement();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Uri Element</em>' attribute.
+	 * @see #getUriElement()
+	 * @generated
+	 */
+	void setUriElement(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Omit Caption</b></em>' attribute.

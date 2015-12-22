@@ -47,10 +47,33 @@ public class CreateUpdateUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCreateUriElementPropertyDescriptor(object);
 			addClearLabelPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Create Uri Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCreateUriElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CreateUpdateUnit_createUriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CreateUpdateUnit_createUriElement_feature", "_UI_CreateUpdateUnit_type"),
+				 WebsitePackage.Literals.CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_NavigationPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -151,6 +174,7 @@ public class CreateUpdateUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CreateUpdateUnit.class)) {
+			case WebsitePackage.CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT:
 			case WebsitePackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 			case WebsitePackage.CREATE_UPDATE_UNIT__STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

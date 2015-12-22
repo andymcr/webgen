@@ -3226,7 +3226,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_UriElement() {
+	public EAttribute getContentUnit_PurposeSummary() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3235,7 +3235,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_PurposeSummary() {
+	public EAttribute getContentUnit_UriElement() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3631,7 +3631,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCreateUpdateUnit_ClearLabel() {
+	public EAttribute getCreateUpdateUnit_CreateUriElement() {
 		return (EAttribute)createUpdateUnitEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -3640,8 +3640,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCreateUpdateUnit_StyleClass() {
+	public EAttribute getCreateUpdateUnit_ClearLabel() {
 		return (EAttribute)createUpdateUnitEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCreateUpdateUnit_StyleClass() {
+		return (EAttribute)createUpdateUnitEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3793,7 +3802,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDynamicUnit_UriParent() {
+	public EReference getDynamicUnit_SupportActions() {
 		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3802,17 +3811,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDynamicUnit_SupportActions() {
-		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getDynamicUnit_Header() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3821,7 +3821,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getDynamicUnit_Footer() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3830,7 +3830,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getDynamicUnit_HeaderClass() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3839,7 +3839,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getDynamicUnit_ControlClass() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3848,7 +3848,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getDynamicUnit_FooterClass() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3857,7 +3857,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getDynamicUnit_ErrorClass() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -4353,6 +4353,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EAttribute getDeleteAction_ConfirmMessage() {
 		return (EAttribute)deleteActionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDeleteAction_UriElement() {
+		return (EAttribute)deleteActionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5034,8 +5043,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		contentUnitEClass = createEClass(CONTENT_UNIT);
 		createEReference(contentUnitEClass, CONTENT_UNIT__DISPLAYED_ON);
-		createEAttribute(contentUnitEClass, CONTENT_UNIT__URI_ELEMENT);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__PURPOSE_SUMMARY);
+		createEAttribute(contentUnitEClass, CONTENT_UNIT__URI_ELEMENT);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__OMIT_CAPTION);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__CAPTION_CLASS);
 
@@ -5055,7 +5064,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		dynamicUnitEClass = createEClass(DYNAMIC_UNIT);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__SOURCE);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__DISPLAY_FIELDS);
-		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__URI_PARENT);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__SUPPORT_ACTIONS);
 		createEAttribute(dynamicUnitEClass, DYNAMIC_UNIT__HEADER);
 		createEAttribute(dynamicUnitEClass, DYNAMIC_UNIT__FOOTER);
@@ -5120,6 +5128,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(createUnitEClass, CREATE_UNIT__STYLE_CLASS);
 
 		createUpdateUnitEClass = createEClass(CREATE_UPDATE_UNIT);
+		createEAttribute(createUpdateUnitEClass, CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT);
 		createEAttribute(createUpdateUnitEClass, CREATE_UPDATE_UNIT__CLEAR_LABEL);
 		createEAttribute(createUpdateUnitEClass, CREATE_UPDATE_UNIT__STYLE_CLASS);
 
@@ -5195,6 +5204,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		deleteActionEClass = createEClass(DELETE_ACTION);
 		createEReference(deleteActionEClass, DELETE_ACTION__DESTINATION);
 		createEAttribute(deleteActionEClass, DELETE_ACTION__CONFIRM_MESSAGE);
+		createEAttribute(deleteActionEClass, DELETE_ACTION__URI_ELEMENT);
 
 		featureSupportActionEClass = createEClass(FEATURE_SUPPORT_ACTION);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE);
@@ -5635,7 +5645,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getPage_ParentPage(), this.getPageLink(), null, "parentPage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPage_ChildPages(), this.getPageLink(), this.getPageLink_TargetPage(), "childPages", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_Authenticated(), ecorePackage.getEBoolean(), "authenticated", "true", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getPage_UriElement(), ecorePackage.getEString(), "uriElement", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPage_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_TopMenuOption(), this.getPageTopMenuOptions(), "topMenuOption", "NeverInclude", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPage_TopMenuRank(), ecorePackage.getEInt(), "topMenuRank", "0", 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPage_NavigationLabel(), ecorePackage.getEString(), "navigationLabel", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5694,8 +5704,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(contentUnitEClass, ContentUnit.class, "ContentUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContentUnit_DisplayedOn(), this.getUnitContainer(), this.getUnitContainer_Units(), "displayedOn", null, 1, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getContentUnit_UriElement(), ecorePackage.getEString(), "uriElement", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_PurposeSummary(), ecorePackage.getEString(), "purposeSummary", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContentUnit_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_OmitCaption(), ecorePackage.getEBooleanObject(), "omitCaption", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_CaptionClass(), ecorePackage.getEString(), "captionClass", "unit_caption", 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -5715,7 +5725,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(dynamicUnitEClass, DynamicUnit.class, "DynamicUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDynamicUnit_Source(), this.getUnitSource(), null, "source", null, 1, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_DisplayFields(), this.getUnitField(), this.getUnitField_DisplayedOn(), "displayFields", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDynamicUnit_UriParent(), this.getContentUnit(), null, "uriParent", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_SupportActions(), this.getUnitSupportAction(), null, "supportActions", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicUnit_Header(), ecorePackage.getEString(), "header", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicUnit_Footer(), ecorePackage.getEString(), "footer", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5780,6 +5789,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getCreateUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,create_unit,framed", 0, 1, CreateUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(createUpdateUnitEClass, CreateUpdateUnit.class, "CreateUpdateUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCreateUpdateUnit_CreateUriElement(), ecorePackage.getEString(), "createUriElement", "", 0, 1, CreateUpdateUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCreateUpdateUnit_ClearLabel(), ecorePackage.getEString(), "clearLabel", null, 0, 1, CreateUpdateUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCreateUpdateUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,create_unit,update_unit,framed", 0, 1, CreateUpdateUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -5855,6 +5865,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(deleteActionEClass, DeleteAction.class, "DeleteAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDeleteAction_Destination(), this.getPage(), null, "destination", null, 0, 1, DeleteAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeleteAction_ConfirmMessage(), ecorePackage.getEString(), "confirmMessage", null, 0, 1, DeleteAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeleteAction_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, DeleteAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureSupportActionEClass, FeatureSupportAction.class, "FeatureSupportAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFeatureSupportAction_ConfirmMessage(), ecorePackage.getEString(), "confirmMessage", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

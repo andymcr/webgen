@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DeleteActionImpl#getDestination <em>Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DeleteActionImpl#getConfirmMessage <em>Confirm Message</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DeleteActionImpl#getUriElement <em>Uri Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,6 +59,26 @@ public class DeleteActionImpl extends InlineActionImpl implements DeleteAction {
 	 * @ordered
 	 */
 	protected String confirmMessage = CONFIRM_MESSAGE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String URI_ELEMENT_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,6 +163,27 @@ public class DeleteActionImpl extends InlineActionImpl implements DeleteAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getUriElement() {
+		return uriElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUriElement(String newUriElement) {
+		String oldUriElement = uriElement;
+		uriElement = newUriElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DELETE_ACTION__URI_ELEMENT, oldUriElement, uriElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -150,6 +192,8 @@ public class DeleteActionImpl extends InlineActionImpl implements DeleteAction {
 				return basicGetDestination();
 			case WebsitePackage.DELETE_ACTION__CONFIRM_MESSAGE:
 				return getConfirmMessage();
+			case WebsitePackage.DELETE_ACTION__URI_ELEMENT:
+				return getUriElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,6 +211,9 @@ public class DeleteActionImpl extends InlineActionImpl implements DeleteAction {
 				return;
 			case WebsitePackage.DELETE_ACTION__CONFIRM_MESSAGE:
 				setConfirmMessage((String)newValue);
+				return;
+			case WebsitePackage.DELETE_ACTION__URI_ELEMENT:
+				setUriElement((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,6 +233,9 @@ public class DeleteActionImpl extends InlineActionImpl implements DeleteAction {
 			case WebsitePackage.DELETE_ACTION__CONFIRM_MESSAGE:
 				setConfirmMessage(CONFIRM_MESSAGE_EDEFAULT);
 				return;
+			case WebsitePackage.DELETE_ACTION__URI_ELEMENT:
+				setUriElement(URI_ELEMENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +252,8 @@ public class DeleteActionImpl extends InlineActionImpl implements DeleteAction {
 				return destination != null;
 			case WebsitePackage.DELETE_ACTION__CONFIRM_MESSAGE:
 				return CONFIRM_MESSAGE_EDEFAULT == null ? confirmMessage != null : !CONFIRM_MESSAGE_EDEFAULT.equals(confirmMessage);
+			case WebsitePackage.DELETE_ACTION__URI_ELEMENT:
+				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -218,6 +270,8 @@ public class DeleteActionImpl extends InlineActionImpl implements DeleteAction {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (confirmMessage: ");
 		result.append(confirmMessage);
+		result.append(", uriElement: ");
+		result.append(uriElement);
 		result.append(')');
 		return result.toString();
 	}

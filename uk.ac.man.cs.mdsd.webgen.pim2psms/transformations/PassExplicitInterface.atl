@@ -709,18 +709,8 @@ abstract rule UnitContainer {
 abstract rule ContentUnit {
 	from website : Website!ContentUnit
 	to waf : WAF!ContentUnit (
-		uriElement <-
-			if not website.uriElement.oclIsUndefined() then
-				website.uriElement
-			else if website.oclIsTypeOf(Website!IndexUnit) then
-				OclUndefined
-			else if website.oclIsKindOf(Website!EditUnit) then
-				'edit'
-			else
-				website.name.lowercaseFirst()
-			endif endif endif,
-		uriParent <- website.uriParent,
 		purposeSummary <- website.purposeSummary,
+		uriElement <- website.uriElement.trim(),
 		omitCaption <-
 			if not website.omitCaption.oclIsUndefined() then
 				website.omitCaption
@@ -920,6 +910,12 @@ rule UnitSupportAction {
 abstract rule EditUnit {
 	from website : Website!EditUnit
 	to waf : WAF!EditUnit (
+		uriElement <-
+			if website.uriElement.trim() <> '' then
+				website.uriElement.trim()
+			else
+				'update'
+			endif,
 		confirmDestination <- website.confirmDestination,
 		confirmLabel <-
 			if not website.confirmLabel.oclIsUndefined() and website.confirmLabel <> '' then
@@ -951,6 +947,12 @@ abstract rule EditUnit {
 rule CreateUnit {
 	from website : Website!CreateUnit
 	to waf : WAF!CreateUnit (
+		uriElement <-
+			if website.uriElement.trim() <> '' then
+				website.uriElement.trim()
+			else
+				'create'
+			endif
 	)
 }
 
@@ -958,6 +960,12 @@ rule CreateUnit {
 rule CreateUpdateUnit {
 	from website : Website!CreateUpdateUnit
 	to waf : WAF!CreateUpdateUnit (
+		createUriElement <-
+			if website.createUriElement.trim() <> '' then
+				website.createUriElement.trim()
+			else
+				'create'
+			endif,
 		clearLabel <- website.clearLabel
 	)
 }
@@ -1004,6 +1012,12 @@ abstract rule DataUnit {
 rule DetailsUnit {
 	from website : Website!DetailsUnit
 	to waf : WAF!DetailsUnit (
+		uriElement <-
+			if website.uriElement.trim() <> '' then
+				website.uriElement.trim()
+			else
+				website.name.createName()
+			endif,
 		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
 		omitFieldLabels <- website.omitFieldLabels
 	)
@@ -1145,7 +1159,13 @@ rule DeleteAction {
 				website.displayLabel.concat('?')
 			else
 				website.name.createLabel().concat('?')
-			endif endif
+			endif endif,
+		uriElement <-
+			if website.uriElement <> '' then
+				website.uriElement
+			else
+				website.name.createName()
+			endif
 	)
 }
 

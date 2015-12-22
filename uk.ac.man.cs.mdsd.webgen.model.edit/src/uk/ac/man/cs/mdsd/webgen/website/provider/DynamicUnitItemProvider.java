@@ -56,7 +56,6 @@ public class DynamicUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSourcePropertyDescriptor(object);
-			addUriParentPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -105,28 +104,6 @@ public class DynamicUnitItemProvider
 					return Collections.emptyList();
 				}
 			});
-	}
-
-	/**
-	 * This adds a property descriptor for the Uri Parent feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUriParentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_uriParent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_uriParent_feature", "_UI_DynamicUnit_type"),
-				 WebsitePackage.Literals.DYNAMIC_UNIT__URI_PARENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_NavigationPropertyCategory"),
-				 null));
 	}
 
 	/**

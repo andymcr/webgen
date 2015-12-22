@@ -64,12 +64,11 @@ public class ForgottenPasswordUnitItemProvider
 
 			addNamePropertyDescriptor(object);
 			addDisplayLabelPropertyDescriptor(object);
-			addUriElementPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
+			addUriElementPropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
-			addUriParentPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -130,50 +129,6 @@ public class ForgottenPasswordUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Uri Element feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUriElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_uriElement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_uriElement_feature", "_UI_ContentUnit_type"),
-				 WebsitePackage.Literals.CONTENT_UNIT__URI_ELEMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Uri Parent feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUriParentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_uriParent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_uriParent_feature", "_UI_DynamicUnit_type"),
-				 WebsitePackage.Literals.DYNAMIC_UNIT__URI_PARENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Purpose Summary feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,6 +147,28 @@ public class ForgottenPasswordUnitItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Uri Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUriElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_uriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_uriElement_feature", "_UI_ContentUnit_type"),
+				 WebsitePackage.Literals.CONTENT_UNIT__URI_ELEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 
@@ -573,8 +550,8 @@ public class ForgottenPasswordUnitItemProvider
 		switch (notification.getFeatureID(ForgottenPasswordUnit.class)) {
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__NAME:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_LABEL:
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER:

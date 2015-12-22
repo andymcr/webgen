@@ -34,7 +34,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getService <em>Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getUriParent <em>Uri Parent</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getFooter <em>Footer</em>}</li>
@@ -66,16 +65,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected EList<UnitField> displayFields;
-
-	/**
-	 * The cached value of the '{@link #getUriParent() <em>Uri Parent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriParent()
-	 * @generated
-	 * @ordered
-	 */
-	protected DynamicUnit uriParent;
 
 	/**
 	 * The cached value of the '{@link #getSupportActions() <em>Support Actions</em>}' containment reference list.
@@ -303,44 +292,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DynamicUnit getUriParent() {
-		if (uriParent != null && uriParent.eIsProxy()) {
-			InternalEObject oldUriParent = (InternalEObject)uriParent;
-			uriParent = (DynamicUnit)eResolveProxy(oldUriParent);
-			if (uriParent != oldUriParent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.DYNAMIC_UNIT__URI_PARENT, oldUriParent, uriParent));
-			}
-		}
-		return uriParent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DynamicUnit basicGetUriParent() {
-		return uriParent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUriParent(DynamicUnit newUriParent) {
-		DynamicUnit oldUriParent = uriParent;
-		uriParent = newUriParent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_UNIT__URI_PARENT, oldUriParent, uriParent));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<UnitSupportAction> getSupportActions() {
 		if (supportActions == null) {
 			supportActions = new EObjectContainmentEList<UnitSupportAction>(UnitSupportAction.class, this, WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS);
@@ -524,9 +475,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return basicGetService();
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
-			case WafPackage.DYNAMIC_UNIT__URI_PARENT:
-				if (resolve) return getUriParent();
-				return basicGetUriParent();
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
 			case WafPackage.DYNAMIC_UNIT__HEADER:
@@ -560,9 +508,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				getDisplayFields().addAll((Collection<? extends UnitField>)newValue);
-				return;
-			case WafPackage.DYNAMIC_UNIT__URI_PARENT:
-				setUriParent((DynamicUnit)newValue);
 				return;
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
@@ -604,9 +549,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
-			case WafPackage.DYNAMIC_UNIT__URI_PARENT:
-				setUriParent((DynamicUnit)null);
-				return;
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				return;
@@ -644,8 +586,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return service != null;
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
-			case WafPackage.DYNAMIC_UNIT__URI_PARENT:
-				return uriParent != null;
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__HEADER:

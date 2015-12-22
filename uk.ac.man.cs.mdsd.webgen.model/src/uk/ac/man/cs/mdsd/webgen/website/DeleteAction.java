@@ -18,6 +18,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DeleteAction#getDestination <em>Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DeleteAction#getConfirmMessage <em>Confirm Message</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DeleteAction#getUriElement <em>Uri Element</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDeleteAction()
@@ -77,4 +78,31 @@ public interface DeleteAction extends InlineAction {
 	 * @generated
 	 */
 	void setConfirmMessage(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Uri Element</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uri Element</em>' attribute.
+	 * @see #setUriElement(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDeleteAction_UriElement()
+	 * @model default=""
+	 * @generated
+	 */
+	String getUriElement();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DeleteAction#getUriElement <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Uri Element</em>' attribute.
+	 * @see #getUriElement()
+	 * @generated
+	 */
+	void setUriElement(String value);
 } // DeleteAction

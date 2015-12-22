@@ -27,8 +27,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getStyleClass <em>Style Class</em>}</li>
@@ -38,26 +38,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements ContentUnit {
-	/**
-	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String URI_ELEMENT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uriElement = URI_ELEMENT_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -77,6 +57,26 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * @ordered
 	 */
 	protected String purposeSummary = PURPOSE_SUMMARY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String URI_ELEMENT_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOmitCaption() <em>Omit Caption</em>}' attribute.
@@ -233,27 +233,6 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getUriElement() {
-		return uriElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUriElement(String newUriElement) {
-		String oldUriElement = uriElement;
-		uriElement = newUriElement;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CONTENT_UNIT__URI_ELEMENT, oldUriElement, uriElement));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getPurposeSummary() {
 		return purposeSummary;
 	}
@@ -268,6 +247,27 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		purposeSummary = newPurposeSummary;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY, oldPurposeSummary, purposeSummary));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getUriElement() {
+		return uriElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUriElement(String newUriElement) {
+		String oldUriElement = uriElement;
+		uriElement = newUriElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CONTENT_UNIT__URI_ELEMENT, oldUriElement, uriElement));
 	}
 
 	/**
@@ -409,10 +409,10 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WafPackage.CONTENT_UNIT__DISPLAYED_ON:
 				if (resolve) return getDisplayedOn();
 				return basicGetDisplayedOn();
-			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
-				return getUriElement();
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
+			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
+				return getUriElement();
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
 				return isOmitCaption();
 			case WafPackage.CONTENT_UNIT__CAPTION_CLASS:
@@ -436,11 +436,11 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WafPackage.CONTENT_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)newValue);
 				return;
-			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
-				setUriElement((String)newValue);
-				return;
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
+				return;
+			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
+				setUriElement((String)newValue);
 				return;
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
 				setOmitCaption((Boolean)newValue);
@@ -469,11 +469,11 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WafPackage.CONTENT_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)null);
 				return;
-			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
-				setUriElement(URI_ELEMENT_EDEFAULT);
-				return;
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
+				return;
+			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
+				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
 				setOmitCaption(OMIT_CAPTION_EDEFAULT);
@@ -501,10 +501,10 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WafPackage.CONTENT_UNIT__DISPLAYED_ON:
 				return basicGetDisplayedOn() != null;
-			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
-				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
+			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
+				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
 				return omitCaption != OMIT_CAPTION_EDEFAULT;
 			case WafPackage.CONTENT_UNIT__CAPTION_CLASS:
@@ -527,10 +527,10 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (uriElement: ");
-		result.append(uriElement);
-		result.append(", purposeSummary: ");
+		result.append(" (purposeSummary: ");
 		result.append(purposeSummary);
+		result.append(", uriElement: ");
+		result.append(uriElement);
 		result.append(", omitCaption: ");
 		result.append(omitCaption);
 		result.append(", captionClass: ");

@@ -51,6 +51,7 @@ public class DeleteActionItemProvider
 
 			addDestinationPropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
+			addUriElementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -100,6 +101,28 @@ public class DeleteActionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Uri Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUriElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DeleteAction_uriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DeleteAction_uriElement_feature", "_UI_DeleteAction_type"),
+				 WebsitePackage.Literals.DELETE_ACTION__URI_ELEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_NavigationPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This returns DeleteAction.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,6 +160,7 @@ public class DeleteActionItemProvider
 
 		switch (notification.getFeatureID(DeleteAction.class)) {
 			case WebsitePackage.DELETE_ACTION__CONFIRM_MESSAGE:
+			case WebsitePackage.DELETE_ACTION__URI_ELEMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

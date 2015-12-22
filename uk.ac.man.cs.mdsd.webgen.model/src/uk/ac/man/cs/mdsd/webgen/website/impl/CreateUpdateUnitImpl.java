@@ -19,6 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl#getCreateUriElement <em>Create Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl#getClearLabel <em>Clear Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
@@ -26,6 +27,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUnit {
+	/**
+	 * The default value of the '{@link #getCreateUriElement() <em>Create Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreateUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CREATE_URI_ELEMENT_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getCreateUriElement() <em>Create Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCreateUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected String createUriElement = CREATE_URI_ELEMENT_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getClearLabel() <em>Clear Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,6 +111,27 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getCreateUriElement() {
+		return createUriElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCreateUriElement(String newCreateUriElement) {
+		String oldCreateUriElement = createUriElement;
+		createUriElement = newCreateUriElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT, oldCreateUriElement, createUriElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getClearLabel() {
 		return clearLabel;
 	}
@@ -135,6 +177,8 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT:
+				return getCreateUriElement();
 			case WebsitePackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				return getClearLabel();
 			case WebsitePackage.CREATE_UPDATE_UNIT__STYLE_CLASS:
@@ -151,6 +195,9 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT:
+				setCreateUriElement((String)newValue);
+				return;
 			case WebsitePackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				setClearLabel((String)newValue);
 				return;
@@ -169,6 +216,9 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT:
+				setCreateUriElement(CREATE_URI_ELEMENT_EDEFAULT);
+				return;
 			case WebsitePackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				setClearLabel(CLEAR_LABEL_EDEFAULT);
 				return;
@@ -187,6 +237,8 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.CREATE_UPDATE_UNIT__CREATE_URI_ELEMENT:
+				return CREATE_URI_ELEMENT_EDEFAULT == null ? createUriElement != null : !CREATE_URI_ELEMENT_EDEFAULT.equals(createUriElement);
 			case WebsitePackage.CREATE_UPDATE_UNIT__CLEAR_LABEL:
 				return CLEAR_LABEL_EDEFAULT == null ? clearLabel != null : !CLEAR_LABEL_EDEFAULT.equals(clearLabel);
 			case WebsitePackage.CREATE_UPDATE_UNIT__STYLE_CLASS:
@@ -205,7 +257,9 @@ public class CreateUpdateUnitImpl extends EditUnitImpl implements CreateUpdateUn
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (clearLabel: ");
+		result.append(" (createUriElement: ");
+		result.append(createUriElement);
+		result.append(", clearLabel: ");
 		result.append(clearLabel);
 		result.append(", styleClass: ");
 		result.append(styleClass);

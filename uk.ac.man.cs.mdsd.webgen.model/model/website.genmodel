@@ -432,8 +432,8 @@
     <genClasses image="false" ecoreClass="website.ecore#//UnitSource"/>
     <genClasses image="false" ecoreClass="website.ecore#//ContentUnit">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ContentUnit/displayedOn"/>
-      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/uriElement"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/purposeSummary"/>
+      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/uriElement"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/omitCaption"/>
       <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""
@@ -456,8 +456,6 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/source"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/displayFields"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
-          propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/uriParent"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/supportActions"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//DynamicUnit/header"/>
@@ -536,6 +534,7 @@
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//CreateUnit/styleClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//CreateUpdateUnit">
+      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//CreateUpdateUnit/createUriElement"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//CreateUpdateUnit/clearLabel"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//CreateUpdateUnit/styleClass"/>
     </genClasses>
@@ -626,6 +625,7 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//DeleteAction/destination"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//DeleteAction/confirmMessage"/>
+      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//DeleteAction/uriElement"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//FeatureSupportAction">
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//FeatureSupportAction/confirmMessage"/>

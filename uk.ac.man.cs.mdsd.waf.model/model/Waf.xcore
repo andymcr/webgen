@@ -201,7 +201,7 @@ class Page extends NamedDisplayElement, UnitContainer {
 	refers Page parentPage opposite childPages
 	refers Page[] childPages opposite parentPage
 	boolean authenticated
-	String[1] uriElement
+	String uriElement = ""
 	PageTopMenuOptions topMenuOption
 	int topMenuRank = "65535"
 	String navigationLabel
@@ -239,8 +239,8 @@ interface UnitContainer {
 
 abstract class ContentUnit extends NamedDisplayElement {
 	container UnitContainer[1] displayedOn opposite units
-	String[1] uriElement
 	String purposeSummary
+	String uriElement = ""
 	boolean omitCaption
 	String captionClass
 	String styleClass
@@ -255,7 +255,6 @@ class StaticUnit extends ContentUnit {
 abstract class DynamicUnit extends ContentUnit {
 	refers Service[1] service opposite accessedBy
 	contains UnitField[] displayFields opposite displayedOn
-	refers DynamicUnit uriParent
 	contains UnitSupportAction[] supportActions
 	String header
 	String footer
@@ -335,6 +334,7 @@ class CreateUnit extends EditUnit {
 }
 
 class CreateUpdateUnit extends EditUnit, Selectable {
+	String createUriElement = ""
 	String clearLabel
 }
 
@@ -430,6 +430,7 @@ class SelectAction extends InlineAction {
 class DeleteAction extends InlineAction {
 	refers Page destination
 	String[1] confirmMessage
+	String[1] uriElement
 }
 
 class FeatureSupportAction extends InlineAction {

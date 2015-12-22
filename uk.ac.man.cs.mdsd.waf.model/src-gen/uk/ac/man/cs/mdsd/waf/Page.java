@@ -134,6 +134,7 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Uri Element</em>' attribute isn't clear,
@@ -143,7 +144,7 @@ public interface Page extends NamedDisplayElement, UnitContainer {
 	 * @return the value of the '<em>Uri Element</em>' attribute.
 	 * @see #setUriElement(String)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getPage_UriElement()
-	 * @model unique="false" required="true"
+	 * @model default="" unique="false"
 	 * @generated
 	 */
 	String getUriElement();

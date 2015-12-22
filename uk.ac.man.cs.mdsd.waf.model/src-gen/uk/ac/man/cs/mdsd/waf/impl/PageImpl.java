@@ -111,7 +111,7 @@ public class PageImpl extends NamedDisplayElementImpl implements Page {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String URI_ELEMENT_EDEFAULT = null;
+	protected static final String URI_ELEMENT_EDEFAULT = "";
 
 	/**
 	 * The cached value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.

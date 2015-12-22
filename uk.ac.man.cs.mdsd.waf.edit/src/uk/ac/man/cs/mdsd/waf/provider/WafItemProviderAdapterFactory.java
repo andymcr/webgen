@@ -1294,13 +1294,13 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
+		if (serviceFeatureItemProvider != null) serviceFeatureItemProvider.dispose();
+		if (serviceAttributeItemProvider != null) serviceAttributeItemProvider.dispose();
+		if (serviceAssociationItemProvider != null) serviceAssociationItemProvider.dispose();
 		if (serviceAttributeReferenceItemProvider != null) serviceAttributeReferenceItemProvider.dispose();
 		if (serviceAssociationReferenceItemProvider != null) serviceAssociationReferenceItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
-		if (serviceFeatureItemProvider != null) serviceFeatureItemProvider.dispose();
-		if (serviceAttributeItemProvider != null) serviceAttributeItemProvider.dispose();
-		if (serviceAssociationItemProvider != null) serviceAssociationItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();

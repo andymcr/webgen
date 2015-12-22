@@ -119,6 +119,21 @@ class Service extends NamedElement {
 	refers DynamicUnit[] accessedBy opposite service
 }
 
+class ServiceFeature extends NamedDisplayElement, IncludedFeature {
+	container Service[1] partOf opposite features
+	Cardinality cardinality
+}
+
+class ServiceAttribute extends ServiceFeature, IncludedAttribute {
+	String interfaceType
+	String placeholder
+	String validationPattern
+	String dateFormat
+}
+
+class ServiceAssociation extends ServiceFeature, IncludedAssociation {
+}
+
 abstract class ServiceFeatureReference {
 }
 
@@ -143,21 +158,6 @@ class Selection extends NamedElement {
 
 class SelectionParameter extends NamedElement {
 	String defaultValue
-}
-
-class ServiceFeature extends NamedDisplayElement, IncludedFeature {
-	container Service[1] partOf opposite features
-	Cardinality cardinality
-}
-
-class ServiceAttribute extends ServiceFeature, IncludedAttribute {
-	String interfaceType
-	String placeholder
-	String validationPattern
-	String dateFormat
-}
-
-class ServiceAssociation extends ServiceFeature, IncludedAssociation {
 }
 
 

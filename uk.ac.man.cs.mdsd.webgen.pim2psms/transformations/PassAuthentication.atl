@@ -131,6 +131,26 @@ rule CasAuthentication {
 }
 
 
+rule AuthenticationService {
+	from waf : WAF!Service (waf.name = 'Authentication')
+	to dummyWaf : WAF!Service (
+		keys <-
+			if waf.keys->notEmpty() then
+				waf.keys
+			else
+				Sequence{thisModule.implicitAuthenticationKey(waf)}
+			endif
+	)
+}
+
+lazy rule implicitAuthenticationKey {
+	from waf : WAF!Service
+	to dummyWaf : WAF!ServiceAttributeReference (
+		attribute <- waf.findServiceFeature('email')
+	)
+}
+
+
 unique lazy rule implicitRegistrationUnit {
 	from website : Website!LocalAuthenticationSystem
 	to waf : WAF!RegistrationUnit (

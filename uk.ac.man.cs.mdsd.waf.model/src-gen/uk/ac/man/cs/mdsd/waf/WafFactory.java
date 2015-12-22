@@ -58,6 +58,33 @@ public interface WafFactory extends EFactory {
 	Service createService();
 
 	/**
+	 * Returns a new object of class '<em>Service Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service Feature</em>'.
+	 * @generated
+	 */
+	ServiceFeature createServiceFeature();
+
+	/**
+	 * Returns a new object of class '<em>Service Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service Attribute</em>'.
+	 * @generated
+	 */
+	ServiceAttribute createServiceAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Service Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service Association</em>'.
+	 * @generated
+	 */
+	ServiceAssociation createServiceAssociation();
+
+	/**
 	 * Returns a new object of class '<em>Service Attribute Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,33 +119,6 @@ public interface WafFactory extends EFactory {
 	 * @generated
 	 */
 	SelectionParameter createSelectionParameter();
-
-	/**
-	 * Returns a new object of class '<em>Service Feature</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Feature</em>'.
-	 * @generated
-	 */
-	ServiceFeature createServiceFeature();
-
-	/**
-	 * Returns a new object of class '<em>Service Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Attribute</em>'.
-	 * @generated
-	 */
-	ServiceAttribute createServiceAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Service Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Association</em>'.
-	 * @generated
-	 */
-	ServiceAssociation createServiceAssociation();
 
 	/**
 	 * Returns a new object of class '<em>Static Menu</em>'.

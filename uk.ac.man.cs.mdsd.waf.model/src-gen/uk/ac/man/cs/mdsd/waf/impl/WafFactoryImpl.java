@@ -61,13 +61,13 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case WafPackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			case WafPackage.SERVICE: return createService();
+			case WafPackage.SERVICE_FEATURE: return createServiceFeature();
+			case WafPackage.SERVICE_ATTRIBUTE: return createServiceAttribute();
+			case WafPackage.SERVICE_ASSOCIATION: return createServiceAssociation();
 			case WafPackage.SERVICE_ATTRIBUTE_REFERENCE: return createServiceAttributeReference();
 			case WafPackage.SERVICE_ASSOCIATION_REFERENCE: return createServiceAssociationReference();
 			case WafPackage.SELECTION: return createSelection();
 			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
-			case WafPackage.SERVICE_FEATURE: return createServiceFeature();
-			case WafPackage.SERVICE_ATTRIBUTE: return createServiceAttribute();
-			case WafPackage.SERVICE_ASSOCIATION: return createServiceAssociation();
 			case WafPackage.STATIC_MENU: return createStaticMenu();
 			case WafPackage.DYNAMIC_MENU: return createDynamicMenu();
 			case WafPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
@@ -195,6 +195,36 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ServiceFeature createServiceFeature() {
+		ServiceFeatureImpl serviceFeature = new ServiceFeatureImpl();
+		return serviceFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceAttribute createServiceAttribute() {
+		ServiceAttributeImpl serviceAttribute = new ServiceAttributeImpl();
+		return serviceAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceAssociation createServiceAssociation() {
+		ServiceAssociationImpl serviceAssociation = new ServiceAssociationImpl();
+		return serviceAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ServiceAttributeReference createServiceAttributeReference() {
 		ServiceAttributeReferenceImpl serviceAttributeReference = new ServiceAttributeReferenceImpl();
 		return serviceAttributeReference;
@@ -228,36 +258,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public SelectionParameter createSelectionParameter() {
 		SelectionParameterImpl selectionParameter = new SelectionParameterImpl();
 		return selectionParameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceFeature createServiceFeature() {
-		ServiceFeatureImpl serviceFeature = new ServiceFeatureImpl();
-		return serviceFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAttribute createServiceAttribute() {
-		ServiceAttributeImpl serviceAttribute = new ServiceAttributeImpl();
-		return serviceAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAssociation createServiceAssociation() {
-		ServiceAssociationImpl serviceAssociation = new ServiceAssociationImpl();
-		return serviceAssociation;
 	}
 
 	/**

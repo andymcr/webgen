@@ -890,245 +890,6 @@ public interface WafPackage extends EPackage {
 	int SERVICE_OPERATION_COUNT = OrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureReferenceImpl <em>Service Feature Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceFeatureReference()
-	 * @generated
-	 */
-	int SERVICE_FEATURE_REFERENCE = 8;
-
-	/**
-	 * The number of structural features of the '<em>Service Feature Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE_REFERENCE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Service Feature Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE_REFERENCE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeReferenceImpl <em>Service Attribute Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceAttributeReference()
-	 * @generated
-	 */
-	int SERVICE_ATTRIBUTE_REFERENCE = 9;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE_REFERENCE__ATTRIBUTE = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Service Attribute Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE_REFERENCE_FEATURE_COUNT = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Service Attribute Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE_REFERENCE_OPERATION_COUNT = SERVICE_FEATURE_REFERENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAssociationReferenceImpl <em>Service Association Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceAssociationReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceAssociationReference()
-	 * @generated
-	 */
-	int SERVICE_ASSOCIATION_REFERENCE = 10;
-
-	/**
-	 * The feature id for the '<em><b>Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION_REFERENCE__ASSOCIATION = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION_REFERENCE__CHILD_FEATURE = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Service Association Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION_REFERENCE_FEATURE_COUNT = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Service Association Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION_REFERENCE_OPERATION_COUNT = SERVICE_FEATURE_REFERENCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl <em>Selection</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.SelectionImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelection()
-	 * @generated
-	 */
-	int SELECTION = 11;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__NAME = OrmPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__PARAMETERS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Joins</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__JOINS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Filter</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__FILTER = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Ordering</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__ORDERING = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Limit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__LIMIT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Selection</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of operations of the '<em>Selection</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_OPERATION_COUNT = OrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.SelectionParameterImpl <em>Selection Parameter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.SelectionParameterImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectionParameter()
-	 * @generated
-	 */
-	int SELECTION_PARAMETER = 12;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER__NAME = OrmPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER__DEFAULT_VALUE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Selection Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Selection Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER_OPERATION_COUNT = OrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl <em>Service Feature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1136,7 +897,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceFeature()
 	 * @generated
 	 */
-	int SERVICE_FEATURE = 13;
+	int SERVICE_FEATURE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1254,7 +1015,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceAttribute()
 	 * @generated
 	 */
-	int SERVICE_ATTRIBUTE = 14;
+	int SERVICE_ATTRIBUTE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1435,7 +1196,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceAssociation()
 	 * @generated
 	 */
-	int SERVICE_ASSOCIATION = 15;
+	int SERVICE_ASSOCIATION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1553,6 +1314,245 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_ASSOCIATION_OPERATION_COUNT = SERVICE_FEATURE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureReferenceImpl <em>Service Feature Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceFeatureReference()
+	 * @generated
+	 */
+	int SERVICE_FEATURE_REFERENCE = 11;
+
+	/**
+	 * The number of structural features of the '<em>Service Feature Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_FEATURE_REFERENCE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Service Feature Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_FEATURE_REFERENCE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeReferenceImpl <em>Service Attribute Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceAttributeReference()
+	 * @generated
+	 */
+	int SERVICE_ATTRIBUTE_REFERENCE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ATTRIBUTE_REFERENCE__ATTRIBUTE = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Service Attribute Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ATTRIBUTE_REFERENCE_FEATURE_COUNT = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Service Attribute Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ATTRIBUTE_REFERENCE_OPERATION_COUNT = SERVICE_FEATURE_REFERENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAssociationReferenceImpl <em>Service Association Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceAssociationReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceAssociationReference()
+	 * @generated
+	 */
+	int SERVICE_ASSOCIATION_REFERENCE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ASSOCIATION_REFERENCE__ASSOCIATION = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ASSOCIATION_REFERENCE__CHILD_FEATURE = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Service Association Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ASSOCIATION_REFERENCE_FEATURE_COUNT = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Service Association Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_ASSOCIATION_REFERENCE_OPERATION_COUNT = SERVICE_FEATURE_REFERENCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl <em>Selection</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.SelectionImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelection()
+	 * @generated
+	 */
+	int SELECTION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__NAME = OrmPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__PARAMETERS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Joins</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__JOINS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Filter</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__FILTER = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Ordering</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__ORDERING = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Limit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__LIMIT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Selection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Selection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION_OPERATION_COUNT = OrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.SelectionParameterImpl <em>Selection Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.SelectionParameterImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectionParameter()
+	 * @generated
+	 */
+	int SELECTION_PARAMETER = 15;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION_PARAMETER__NAME = OrmPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION_PARAMETER__DEFAULT_VALUE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Selection Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION_PARAMETER_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Selection Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION_PARAMETER_OPERATION_COUNT = OrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.MenuImpl <em>Menu</em>}' class.
@@ -9486,6 +9486,102 @@ public interface WafPackage extends EPackage {
 	EReference getService_AccessedBy();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ServiceFeature <em>Service Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Service Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceFeature
+	 * @generated
+	 */
+	EClass getServiceFeature();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getPartOf <em>Part Of</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Part Of</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceFeature#getPartOf()
+	 * @see #getServiceFeature()
+	 * @generated
+	 */
+	EReference getServiceFeature_PartOf();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getCardinality <em>Cardinality</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cardinality</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceFeature#getCardinality()
+	 * @see #getServiceFeature()
+	 * @generated
+	 */
+	EAttribute getServiceFeature_Cardinality();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute <em>Service Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Service Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttribute
+	 * @generated
+	 */
+	EClass getServiceAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getInterfaceType <em>Interface Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Interface Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttribute#getInterfaceType()
+	 * @see #getServiceAttribute()
+	 * @generated
+	 */
+	EAttribute getServiceAttribute_InterfaceType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getPlaceholder <em>Placeholder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Placeholder</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttribute#getPlaceholder()
+	 * @see #getServiceAttribute()
+	 * @generated
+	 */
+	EAttribute getServiceAttribute_Placeholder();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getValidationPattern <em>Validation Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Validation Pattern</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttribute#getValidationPattern()
+	 * @see #getServiceAttribute()
+	 * @generated
+	 */
+	EAttribute getServiceAttribute_ValidationPattern();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getDateFormat <em>Date Format</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Date Format</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttribute#getDateFormat()
+	 * @see #getServiceAttribute()
+	 * @generated
+	 */
+	EAttribute getServiceAttribute_DateFormat();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ServiceAssociation <em>Service Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Service Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ServiceAssociation
+	 * @generated
+	 */
+	EClass getServiceAssociation();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ServiceFeatureReference <em>Service Feature Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9633,102 +9729,6 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSelectionParameter_DefaultValue();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ServiceFeature <em>Service Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceFeature
-	 * @generated
-	 */
-	EClass getServiceFeature();
-
-	/**
-	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getPartOf <em>Part Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Part Of</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceFeature#getPartOf()
-	 * @see #getServiceFeature()
-	 * @generated
-	 */
-	EReference getServiceFeature_PartOf();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceFeature#getCardinality <em>Cardinality</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cardinality</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceFeature#getCardinality()
-	 * @see #getServiceFeature()
-	 * @generated
-	 */
-	EAttribute getServiceFeature_Cardinality();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute <em>Service Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Attribute</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttribute
-	 * @generated
-	 */
-	EClass getServiceAttribute();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getInterfaceType <em>Interface Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Interface Type</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttribute#getInterfaceType()
-	 * @see #getServiceAttribute()
-	 * @generated
-	 */
-	EAttribute getServiceAttribute_InterfaceType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getPlaceholder <em>Placeholder</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Placeholder</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttribute#getPlaceholder()
-	 * @see #getServiceAttribute()
-	 * @generated
-	 */
-	EAttribute getServiceAttribute_Placeholder();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getValidationPattern <em>Validation Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Validation Pattern</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttribute#getValidationPattern()
-	 * @see #getServiceAttribute()
-	 * @generated
-	 */
-	EAttribute getServiceAttribute_ValidationPattern();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ServiceAttribute#getDateFormat <em>Date Format</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Date Format</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttribute#getDateFormat()
-	 * @see #getServiceAttribute()
-	 * @generated
-	 */
-	EAttribute getServiceAttribute_DateFormat();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ServiceAssociation <em>Service Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Association</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceAssociation
-	 * @generated
-	 */
-	EClass getServiceAssociation();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.Menu <em>Menu</em>}'.
@@ -12159,6 +12159,84 @@ public interface WafPackage extends EPackage {
 		EReference SERVICE__ACCESSED_BY = eINSTANCE.getService_AccessedBy();
 
 		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl <em>Service Feature</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceFeature()
+		 * @generated
+		 */
+		EClass SERVICE_FEATURE = eINSTANCE.getServiceFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Part Of</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_FEATURE__PART_OF = eINSTANCE.getServiceFeature_PartOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Cardinality</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_FEATURE__CARDINALITY = eINSTANCE.getServiceFeature_Cardinality();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl <em>Service Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceAttribute()
+		 * @generated
+		 */
+		EClass SERVICE_ATTRIBUTE = eINSTANCE.getServiceAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Interface Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_ATTRIBUTE__INTERFACE_TYPE = eINSTANCE.getServiceAttribute_InterfaceType();
+
+		/**
+		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_ATTRIBUTE__PLACEHOLDER = eINSTANCE.getServiceAttribute_Placeholder();
+
+		/**
+		 * The meta object literal for the '<em><b>Validation Pattern</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_ATTRIBUTE__VALIDATION_PATTERN = eINSTANCE.getServiceAttribute_ValidationPattern();
+
+		/**
+		 * The meta object literal for the '<em><b>Date Format</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE_ATTRIBUTE__DATE_FORMAT = eINSTANCE.getServiceAttribute_DateFormat();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAssociationImpl <em>Service Association</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceAssociationImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceAssociation()
+		 * @generated
+		 */
+		EClass SERVICE_ASSOCIATION = eINSTANCE.getServiceAssociation();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureReferenceImpl <em>Service Feature Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -12279,84 +12357,6 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SELECTION_PARAMETER__DEFAULT_VALUE = eINSTANCE.getSelectionParameter_DefaultValue();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl <em>Service Feature</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceFeature()
-		 * @generated
-		 */
-		EClass SERVICE_FEATURE = eINSTANCE.getServiceFeature();
-
-		/**
-		 * The meta object literal for the '<em><b>Part Of</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE_FEATURE__PART_OF = eINSTANCE.getServiceFeature_PartOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Cardinality</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_FEATURE__CARDINALITY = eINSTANCE.getServiceFeature_Cardinality();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl <em>Service Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceAttribute()
-		 * @generated
-		 */
-		EClass SERVICE_ATTRIBUTE = eINSTANCE.getServiceAttribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Interface Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_ATTRIBUTE__INTERFACE_TYPE = eINSTANCE.getServiceAttribute_InterfaceType();
-
-		/**
-		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_ATTRIBUTE__PLACEHOLDER = eINSTANCE.getServiceAttribute_Placeholder();
-
-		/**
-		 * The meta object literal for the '<em><b>Validation Pattern</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_ATTRIBUTE__VALIDATION_PATTERN = eINSTANCE.getServiceAttribute_ValidationPattern();
-
-		/**
-		 * The meta object literal for the '<em><b>Date Format</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_ATTRIBUTE__DATE_FORMAT = eINSTANCE.getServiceAttribute_DateFormat();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAssociationImpl <em>Service Association</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.ServiceAssociationImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getServiceAssociation()
-		 * @generated
-		 */
-		EClass SERVICE_ASSOCIATION = eINSTANCE.getServiceAssociation();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.MenuImpl <em>Menu</em>}' class.

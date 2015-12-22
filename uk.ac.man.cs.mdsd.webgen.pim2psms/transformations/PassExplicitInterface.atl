@@ -1028,8 +1028,18 @@ abstract rule IndexUnit {
 	from website : Website!IndexUnit
 	to waf : WAF!IndexUnit (
 		omitColumnLabels <- website.omitColumnLabels,
-		filters <- website.filters,
-		pagination <- website.pagination,
+		filters <- website.filters
+			->union(if website.pagination.oclIsUndefined() and website.defaultPaginationSize > 0 then
+					Sequence{thisModule.PaginationFilter(website)}
+				else
+					Sequence{}
+				endif),
+		pagination <-
+			if website.pagination.oclIsUndefined() and website.defaultPaginationSize > 0 then
+					thisModule.PaginationFilter(website)
+				else
+					website.pagination
+				endif,
 		defaultPaginationSize <- website.defaultPaginationSize,
 		nextPageLabel <- website.nextPageLabel,
 		previousPageLabel <- website.previousPageLabel,
@@ -1038,6 +1048,20 @@ abstract rule IndexUnit {
 		lastPageLabel <- website.lastPageLabel,
 		rowClasses <- website.rowClasses.replaceAll(',', ' ')
 	)
+}
+
+unique lazy rule PaginationFilter {
+	from website : Website!IndexUnit
+	to waf : WAF!Filter (
+		name <- 'Pagination',
+		parameters <- Sequence{pageParameter}
+	),
+	pageParameter : WAF!FilterParameter (
+		name <- 'page'
+	)
+	do {
+		waf;
+	}
 }
 
 -- @extends IndexUnit

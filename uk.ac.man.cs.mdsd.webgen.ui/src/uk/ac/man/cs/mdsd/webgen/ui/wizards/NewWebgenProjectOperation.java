@@ -164,9 +164,9 @@ public class NewWebgenProjectOperation extends WorkspaceModifyOperation {
   	}
 
 	private void resourcesKohana(final Bundle bundle) {
-		URL kohanaFile = bundle.getEntry("resources/kohana-v3.3.1.zip");
+		URL kohanaFile = bundle.getEntry("resources/kohana-v3.3.4.zip");
 		final Map<IPath, IPath> kohanaRenames = new HashMap<IPath, IPath>();
-		extractZip(kohanaFile, null, 0, new IPath[] {
+		extractZip(kohanaFile, null, 1, new IPath[] {
 				new Path("install.php"),
 				new Path("application/classes/Controller/Welcome.php"),
 				new Path("modules/cache/tests/"),

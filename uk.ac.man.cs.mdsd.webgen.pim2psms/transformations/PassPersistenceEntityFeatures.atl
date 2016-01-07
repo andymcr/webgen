@@ -185,7 +185,14 @@ abstract rule SingletonResource {
 	from website : Website!ResourceAttribute (website.cardinality <> #Many)
 	to orm : ORM!SingletonResource (
 		persistentType <- 'string',
-		ormType <- 'String',
+		ormType <-
+			let typeName : String = 'String'
+				in let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
+					in if properties.ormTechnology = #DoctrineORM then
+							typeName.toLowerCase()
+						else
+							typeName
+						endif,
 		maximumUploadSize <-
 			if website.maximumUploadSize > 0 then
 				website.maximumUploadSize

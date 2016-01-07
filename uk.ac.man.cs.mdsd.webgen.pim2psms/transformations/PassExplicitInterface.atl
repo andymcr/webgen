@@ -186,14 +186,16 @@ helper context Website!Attribute def: interfaceType() : String
 		else if self.oclIsTypeOf(Website!DateAttribute) then
 			if self.details = #DateAndTime then
 				'datetime'
-			else if self.details = #Date then
+			else if self.details = #DateOnly then
 				'date'
 			else
 				'time'
 			endif endif
+		else if self.oclIsTypeOf(Website!EncapsulatedAttribute) then
+		    self.attribute.interfaceType()
 		else
 			OclUndefined
-		endif endif;
+		endif endif endif;
 
 helper context Website!ServiceAttribute def: interfaceType() : String
 	= if not self.interfaceType.oclIsUndefined() and self.interfaceType <> '' then

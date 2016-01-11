@@ -61,6 +61,35 @@ helper context String def: createAssociationColumnName() : String
 					name.toLower()
 				endif;
 
+helper context Website!DataType def: persistentType() : String
+	= if self.persistentType.oclIsUndefined() and self.persistentType <> '' then
+			self.persistentType
+		else
+			if self.oclIsTypeOf(Website!EnumerationType) then
+				'Integer'
+			else
+				self.name
+			endif
+		endif;
+
+helper context Website!DataType def: ormType() : String
+	= if not self.ormType.oclIsUndefined() and self.ormType <> '' then
+			self.ormType
+		else
+			let typeName : String
+				= if self.oclIsTypeOf(Website!EnumerationType) then
+						'Integer'
+					else
+						self.name
+					endif
+			in let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
+				in if properties.ormTechnology = #DoctrineORM then
+						typeName.toLowerCase()
+					else
+						typeName
+					endif
+		endif;
+
 helper context Website!Association def: targetEntityName() : String
 	= if self.oclIsTypeOf(Website!EncapsulatedAssociation) then
 			self.association.targetEntityName()

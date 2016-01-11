@@ -942,7 +942,8 @@ abstract rule EditUnit {
 				website.confirmLabel
 			else
 				'Cancel'
-			endif
+			endif,
+		customiseValues <- website.customiseValues
 	)
 }
 

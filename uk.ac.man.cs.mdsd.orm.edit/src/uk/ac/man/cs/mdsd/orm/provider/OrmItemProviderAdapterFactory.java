@@ -398,6 +398,52 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.StaticPathElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StaticPathElementItemProvider staticPathElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.StaticPathElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStaticPathElementAdapter() {
+		if (staticPathElementItemProvider == null) {
+			staticPathElementItemProvider = new StaticPathElementItemProvider(this);
+		}
+
+		return staticPathElementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.DatePathElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DatePathElementItemProvider datePathElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.DatePathElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDatePathElementAdapter() {
+		if (datePathElementItemProvider == null) {
+			datePathElementItemProvider = new DatePathElementItemProvider(this);
+		}
+
+		return datePathElementItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.SingletonFile} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -693,6 +739,8 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (collectionElementItemProvider != null) collectionElementItemProvider.dispose();
 		if (singletonDateItemProvider != null) singletonDateItemProvider.dispose();
 		if (collectionDateItemProvider != null) collectionDateItemProvider.dispose();
+		if (staticPathElementItemProvider != null) staticPathElementItemProvider.dispose();
+		if (datePathElementItemProvider != null) datePathElementItemProvider.dispose();
 		if (singletonFileItemProvider != null) singletonFileItemProvider.dispose();
 		if (singletonImageItemProvider != null) singletonImageItemProvider.dispose();
 		if (singletonLocationItemProvider != null) singletonLocationItemProvider.dispose();

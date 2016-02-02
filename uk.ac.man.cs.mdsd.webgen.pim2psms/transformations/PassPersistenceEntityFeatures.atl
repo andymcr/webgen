@@ -183,12 +183,29 @@ abstract rule SingletonResource {
 		validUploadMimeTypes <- website.validUploadMimeTypes,
 		validUploadExtensions <- website.validUploadExtensions,
 		uploadsWithinWebsite <- website.uploadsWithinWebsite,
-		relativeUploadDirectory <-
-			if not website.relativeUploadDirectory.oclIsUndefined() and website.relativeUploadDirectory <> '' then
-				website.relativeUploadDirectory
-			else
-				website.name
-			endif
+		uploadPath <- website.uploadPath
+	)
+}
+
+abstract rule PathElement {
+	from website: Website!PathElement
+	to orm : ORM!PathElement(
+	)
+}
+
+-- @extends PathElement
+rule StaticPathElement {
+	from website: Website!StaticPathElement
+	to orm : ORM!StaticPathElement(
+		element <- website.element
+	)
+}
+
+-- @extends PathElement
+rule DatePathElement {
+	from website: Website!DatePathElement
+	to orm : ORM!DatePathElement(
+		format <- website.format
 	)
 }
 

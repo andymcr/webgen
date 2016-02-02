@@ -7,13 +7,18 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import uk.ac.man.cs.mdsd.webgen.website.PathElement;
 import uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -29,7 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl#getValidUploadMimeTypes <em>Valid Upload Mime Types</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl#getValidUploadExtensions <em>Valid Upload Extensions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl#isUploadsWithinWebsite <em>Uploads Within Website</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl#getRelativeUploadDirectory <em>Relative Upload Directory</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ResourceAttributeImpl#getUploadPath <em>Upload Path</em>}</li>
  * </ul>
  *
  * @generated
@@ -96,24 +101,14 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	protected boolean uploadsWithinWebsite = UPLOADS_WITHIN_WEBSITE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRelativeUploadDirectory() <em>Relative Upload Directory</em>}' attribute.
+	 * The cached value of the '{@link #getUploadPath() <em>Upload Path</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRelativeUploadDirectory()
+	 * @see #getUploadPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String RELATIVE_UPLOAD_DIRECTORY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRelativeUploadDirectory() <em>Relative Upload Directory</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRelativeUploadDirectory()
-	 * @generated
-	 * @ordered
-	 */
-	protected String relativeUploadDirectory = RELATIVE_UPLOAD_DIRECTORY_EDEFAULT;
+	protected EList<PathElement> uploadPath;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,8 +200,11 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRelativeUploadDirectory() {
-		return relativeUploadDirectory;
+	public List<PathElement> getUploadPath() {
+		if (uploadPath == null) {
+			uploadPath = new EObjectContainmentEList<PathElement>(PathElement.class, this, WebsitePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH);
+		}
+		return uploadPath;
 	}
 
 	/**
@@ -214,11 +212,13 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRelativeUploadDirectory(String newRelativeUploadDirectory) {
-		String oldRelativeUploadDirectory = relativeUploadDirectory;
-		relativeUploadDirectory = newRelativeUploadDirectory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.RESOURCE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY, oldRelativeUploadDirectory, relativeUploadDirectory));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
+				return ((InternalEList<?>)getUploadPath()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -237,8 +237,8 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 				return getValidUploadExtensions();
 			case WebsitePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
 				return isUploadsWithinWebsite();
-			case WebsitePackage.RESOURCE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY:
-				return getRelativeUploadDirectory();
+			case WebsitePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
+				return getUploadPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -266,8 +266,9 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 			case WebsitePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
 				setUploadsWithinWebsite((Boolean)newValue);
 				return;
-			case WebsitePackage.RESOURCE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY:
-				setRelativeUploadDirectory((String)newValue);
+			case WebsitePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
+				getUploadPath().clear();
+				getUploadPath().addAll((Collection<? extends PathElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -293,8 +294,8 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 			case WebsitePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
 				setUploadsWithinWebsite(UPLOADS_WITHIN_WEBSITE_EDEFAULT);
 				return;
-			case WebsitePackage.RESOURCE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY:
-				setRelativeUploadDirectory(RELATIVE_UPLOAD_DIRECTORY_EDEFAULT);
+			case WebsitePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
+				getUploadPath().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -316,8 +317,8 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 				return validUploadExtensions != null && !validUploadExtensions.isEmpty();
 			case WebsitePackage.RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE:
 				return uploadsWithinWebsite != UPLOADS_WITHIN_WEBSITE_EDEFAULT;
-			case WebsitePackage.RESOURCE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY:
-				return RELATIVE_UPLOAD_DIRECTORY_EDEFAULT == null ? relativeUploadDirectory != null : !RELATIVE_UPLOAD_DIRECTORY_EDEFAULT.equals(relativeUploadDirectory);
+			case WebsitePackage.RESOURCE_ATTRIBUTE__UPLOAD_PATH:
+				return uploadPath != null && !uploadPath.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -340,8 +341,6 @@ public abstract class ResourceAttributeImpl extends EntityAttributeImpl implemen
 		result.append(validUploadExtensions);
 		result.append(", uploadsWithinWebsite: ");
 		result.append(uploadsWithinWebsite);
-		result.append(", relativeUploadDirectory: ");
-		result.append(relativeUploadDirectory);
 		result.append(')');
 		return result.toString();
 	}

@@ -43,6 +43,7 @@ import uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.DateAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.DateDetails;
 import uk.ac.man.cs.mdsd.webgen.website.DateField;
+import uk.ac.man.cs.mdsd.webgen.website.DatePathElement;
 import uk.ac.man.cs.mdsd.webgen.website.DeleteAction;
 import uk.ac.man.cs.mdsd.webgen.website.DetailsUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
@@ -95,6 +96,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.PageLink;
 import uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.webgen.website.ParameterReference;
+import uk.ac.man.cs.mdsd.webgen.website.PathElement;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.QueryParameter;
 import uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit;
@@ -112,6 +114,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeatureReference;
 import uk.ac.man.cs.mdsd.webgen.website.StaticMenu;
+import uk.ac.man.cs.mdsd.webgen.website.StaticPathElement;
 import uk.ac.man.cs.mdsd.webgen.website.StaticUnit;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
@@ -320,6 +323,27 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass resourceAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pathElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass staticPathElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass datePathElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2002,8 +2026,53 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getResourceAttribute_RelativeUploadDirectory() {
-		return (EAttribute)resourceAttributeEClass.getEStructuralFeatures().get(4);
+	public EReference getResourceAttribute_UploadPath() {
+		return (EReference)resourceAttributeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPathElement() {
+		return pathElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStaticPathElement() {
+		return staticPathElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStaticPathElement_Element() {
+		return (EAttribute)staticPathElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDatePathElement() {
+		return datePathElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDatePathElement_Format() {
+		return (EAttribute)datePathElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -4885,7 +4954,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(resourceAttributeEClass, RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES);
 		createEAttribute(resourceAttributeEClass, RESOURCE_ATTRIBUTE__VALID_UPLOAD_EXTENSIONS);
 		createEAttribute(resourceAttributeEClass, RESOURCE_ATTRIBUTE__UPLOADS_WITHIN_WEBSITE);
-		createEAttribute(resourceAttributeEClass, RESOURCE_ATTRIBUTE__RELATIVE_UPLOAD_DIRECTORY);
+		createEReference(resourceAttributeEClass, RESOURCE_ATTRIBUTE__UPLOAD_PATH);
+
+		pathElementEClass = createEClass(PATH_ELEMENT);
+
+		staticPathElementEClass = createEClass(STATIC_PATH_ELEMENT);
+		createEAttribute(staticPathElementEClass, STATIC_PATH_ELEMENT__ELEMENT);
+
+		datePathElementEClass = createEClass(DATE_PATH_ELEMENT);
+		createEAttribute(datePathElementEClass, DATE_PATH_ELEMENT__FORMAT);
 
 		fileAttributeEClass = createEClass(FILE_ATTRIBUTE);
 
@@ -5307,6 +5384,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		dataTypeAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
 		dateAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
 		resourceAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
+		staticPathElementEClass.getESuperTypes().add(this.getPathElement());
+		datePathElementEClass.getESuperTypes().add(this.getPathElement());
 		fileAttributeEClass.getESuperTypes().add(this.getResourceAttribute());
 		imageAttributeEClass.getESuperTypes().add(this.getResourceAttribute());
 		locationAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
@@ -5548,7 +5627,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getResourceAttribute_ValidUploadMimeTypes(), ecorePackage.getEString(), "validUploadMimeTypes", null, 0, -1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getResourceAttribute_ValidUploadExtensions(), ecorePackage.getEString(), "validUploadExtensions", null, 0, -1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getResourceAttribute_UploadsWithinWebsite(), ecorePackage.getEBoolean(), "uploadsWithinWebsite", null, 0, 1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getResourceAttribute_RelativeUploadDirectory(), ecorePackage.getEString(), "relativeUploadDirectory", null, 0, 1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getResourceAttribute_UploadPath(), this.getPathElement(), null, "uploadPath", null, 0, -1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pathElementEClass, PathElement.class, "PathElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(staticPathElementEClass, StaticPathElement.class, "StaticPathElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStaticPathElement_Element(), ecorePackage.getEString(), "element", null, 1, 1, StaticPathElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(datePathElementEClass, DatePathElement.class, "DatePathElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDatePathElement_Format(), ecorePackage.getEString(), "format", null, 1, 1, DatePathElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fileAttributeEClass, FileAttribute.class, "FileAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

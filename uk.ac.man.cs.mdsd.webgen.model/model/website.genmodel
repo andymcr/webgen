@@ -228,7 +228,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ResourceAttribute/validUploadMimeTypes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ResourceAttribute/validUploadExtensions"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ResourceAttribute/uploadsWithinWebsite"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ResourceAttribute/relativeUploadDirectory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//ResourceAttribute/uploadPath"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="website.ecore#//PathElement"/>
+    <genClasses ecoreClass="website.ecore#//StaticPathElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//StaticPathElement/element"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//DatePathElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//DatePathElement/format"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//FileAttribute"/>
     <genClasses ecoreClass="website.ecore#//ImageAttribute"/>

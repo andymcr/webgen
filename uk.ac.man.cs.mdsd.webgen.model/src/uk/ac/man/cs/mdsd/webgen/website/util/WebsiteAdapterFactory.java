@@ -178,6 +178,18 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createResourceAttributeAdapter();
 			}
 			@Override
+			public Adapter casePathElement(PathElement object) {
+				return createPathElementAdapter();
+			}
+			@Override
+			public Adapter caseStaticPathElement(StaticPathElement object) {
+				return createStaticPathElementAdapter();
+			}
+			@Override
+			public Adapter caseDatePathElement(DatePathElement object) {
+				return createDatePathElementAdapter();
+			}
+			@Override
 			public Adapter caseFileAttribute(FileAttribute object) {
 				return createFileAttributeAdapter();
 			}
@@ -870,6 +882,48 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createResourceAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.PathElement <em>Path Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.PathElement
+	 * @generated
+	 */
+	public Adapter createPathElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.StaticPathElement <em>Static Path Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.StaticPathElement
+	 * @generated
+	 */
+	public Adapter createStaticPathElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.DatePathElement <em>Date Path Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.DatePathElement
+	 * @generated
+	 */
+	public Adapter createDatePathElementAdapter() {
 		return null;
 	}
 

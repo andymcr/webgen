@@ -142,6 +142,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateDateAttribute((DateAttribute)value, diagnostics, context);
 			case WebsitePackage.RESOURCE_ATTRIBUTE:
 				return validateResourceAttribute((ResourceAttribute)value, diagnostics, context);
+			case WebsitePackage.PATH_ELEMENT:
+				return validatePathElement((PathElement)value, diagnostics, context);
+			case WebsitePackage.STATIC_PATH_ELEMENT:
+				return validateStaticPathElement((StaticPathElement)value, diagnostics, context);
+			case WebsitePackage.DATE_PATH_ELEMENT:
+				return validateDatePathElement((DatePathElement)value, diagnostics, context);
 			case WebsitePackage.FILE_ATTRIBUTE:
 				return validateFileAttribute((FileAttribute)value, diagnostics, context);
 			case WebsitePackage.IMAGE_ATTRIBUTE:
@@ -860,6 +866,33 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(resourceAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(resourceAttribute, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePathElement(PathElement pathElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(pathElement, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStaticPathElement(StaticPathElement staticPathElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(staticPathElement, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDatePathElement(DatePathElement datePathElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(datePathElement, diagnostics, context);
 	}
 
 	/**

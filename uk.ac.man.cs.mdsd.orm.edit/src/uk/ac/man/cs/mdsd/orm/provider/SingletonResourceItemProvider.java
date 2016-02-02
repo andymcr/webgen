@@ -9,11 +9,13 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.orm.OrmFactory;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 import uk.ac.man.cs.mdsd.orm.SingletonResource;
 
@@ -50,7 +52,6 @@ public class SingletonResourceItemProvider
 			addValidUploadMimeTypesPropertyDescriptor(object);
 			addValidUploadExtensionsPropertyDescriptor(object);
 			addUploadsWithinWebsitePropertyDescriptor(object);
-			addRelativeUploadDirectoryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -144,25 +145,33 @@ public class SingletonResourceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Relative Upload Directory feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRelativeUploadDirectoryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SingletonResource_relativeUploadDirectory_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonResource_relativeUploadDirectory_feature", "_UI_SingletonResource_type"),
-				 OrmPackage.Literals.SINGLETON_RESOURCE__RELATIVE_UPLOAD_DIRECTORY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(OrmPackage.Literals.SINGLETON_RESOURCE__UPLOAD_PATH);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -195,8 +204,10 @@ public class SingletonResourceItemProvider
 			case OrmPackage.SINGLETON_RESOURCE__VALID_UPLOAD_MIME_TYPES:
 			case OrmPackage.SINGLETON_RESOURCE__VALID_UPLOAD_EXTENSIONS:
 			case OrmPackage.SINGLETON_RESOURCE__UPLOADS_WITHIN_WEBSITE:
-			case OrmPackage.SINGLETON_RESOURCE__RELATIVE_UPLOAD_DIRECTORY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case OrmPackage.SINGLETON_RESOURCE__UPLOAD_PATH:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -212,6 +223,16 @@ public class SingletonResourceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_RESOURCE__UPLOAD_PATH,
+				 OrmFactory.eINSTANCE.createStaticPathElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.SINGLETON_RESOURCE__UPLOAD_PATH,
+				 OrmFactory.eINSTANCE.createDatePathElement()));
 	}
 
 }

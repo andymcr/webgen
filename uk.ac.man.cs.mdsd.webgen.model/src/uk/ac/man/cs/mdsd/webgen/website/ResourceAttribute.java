@@ -17,7 +17,7 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getValidUploadMimeTypes <em>Valid Upload Mime Types</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getValidUploadExtensions <em>Valid Upload Extensions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#isUploadsWithinWebsite <em>Uploads Within Website</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getRelativeUploadDirectory <em>Relative Upload Directory</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getUploadPath <em>Upload Path</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getResourceAttribute()
@@ -111,29 +111,19 @@ public interface ResourceAttribute extends EntityAttribute {
 	void setUploadsWithinWebsite(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Relative Upload Directory</b></em>' attribute.
+	 * Returns the value of the '<em><b>Upload Path</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.PathElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Relative Upload Directory</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Upload Path</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Relative Upload Directory</em>' attribute.
-	 * @see #setRelativeUploadDirectory(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getResourceAttribute_RelativeUploadDirectory()
-	 * @model ordered="false"
+	 * @return the value of the '<em>Upload Path</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getResourceAttribute_UploadPath()
+	 * @model containment="true"
 	 * @generated
 	 */
-	String getRelativeUploadDirectory();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute#getRelativeUploadDirectory <em>Relative Upload Directory</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Relative Upload Directory</em>' attribute.
-	 * @see #getRelativeUploadDirectory()
-	 * @generated
-	 */
-	void setRelativeUploadDirectory(String value);
+	List<PathElement> getUploadPath();
 
 } // ResourceAttribute

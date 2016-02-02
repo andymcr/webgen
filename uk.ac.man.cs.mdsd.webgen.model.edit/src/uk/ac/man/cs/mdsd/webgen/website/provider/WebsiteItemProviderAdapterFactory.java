@@ -505,6 +505,52 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.StaticPathElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StaticPathElementItemProvider staticPathElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.StaticPathElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStaticPathElementAdapter() {
+		if (staticPathElementItemProvider == null) {
+			staticPathElementItemProvider = new StaticPathElementItemProvider(this);
+		}
+
+		return staticPathElementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.DatePathElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DatePathElementItemProvider datePathElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.DatePathElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDatePathElementAdapter() {
+		if (datePathElementItemProvider == null) {
+			datePathElementItemProvider = new DatePathElementItemProvider(this);
+		}
+
+		return datePathElementItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FileAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1720,6 +1766,8 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (entityItemProvider != null) entityItemProvider.dispose();
 		if (dataTypeAttributeItemProvider != null) dataTypeAttributeItemProvider.dispose();
 		if (dateAttributeItemProvider != null) dateAttributeItemProvider.dispose();
+		if (staticPathElementItemProvider != null) staticPathElementItemProvider.dispose();
+		if (datePathElementItemProvider != null) datePathElementItemProvider.dispose();
 		if (fileAttributeItemProvider != null) fileAttributeItemProvider.dispose();
 		if (imageAttributeItemProvider != null) imageAttributeItemProvider.dispose();
 		if (locationAttributeItemProvider != null) locationAttributeItemProvider.dispose();

@@ -189,7 +189,18 @@ abstract class SingletonResource extends SingletonAttribute {
 	unique String[] validUploadMimeTypes
 	unique String[] validUploadExtensions
 	boolean uploadsWithinWebsite
-	String relativeUploadDirectory
+	contains PathElement[] uploadPath
+}
+
+abstract class PathElement {
+}
+
+class StaticPathElement extends PathElement {
+	String[1] element
+}
+
+class DatePathElement extends PathElement {
+	String[1] format
 }
 
 class SingletonFile extends SingletonResource {

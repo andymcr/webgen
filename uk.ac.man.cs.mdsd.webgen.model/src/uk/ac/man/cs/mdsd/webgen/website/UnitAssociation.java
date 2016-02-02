@@ -17,7 +17,7 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getServiceFeature <em>Service Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature <em>Child Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getTitle <em>Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getLabel <em>Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getFilters <em>Filters</em>}</li>
  * </ul>
@@ -97,30 +97,30 @@ public interface UnitAssociation extends IncludedAssociation, UnitFeature, UnitC
 	void setChildFeature(ServiceFeatureReference value);
 
 	/**
-	 * Returns the value of the '<em><b>Title</b></em>' reference.
+	 * Returns the value of the '<em><b>Label</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Title</em>' reference isn't clear,
+	 * If the meaning of the '<em>Label</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Title</em>' reference.
-	 * @see #setTitle(Label)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation_Title()
+	 * @return the value of the '<em>Label</em>' reference.
+	 * @see #setLabel(Label)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation_Label()
 	 * @model
 	 * @generated
 	 */
-	Label getTitle();
+	Label getLabel();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getTitle <em>Title</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getLabel <em>Label</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Title</em>' reference.
-	 * @see #getTitle()
+	 * @param value the new value of the '<em>Label</em>' reference.
+	 * @see #getLabel()
 	 * @generated
 	 */
-	void setTitle(Label value);
+	void setLabel(Label value);
 
 	/**
 	 * Returns the value of the '<em><b>Selection</b></em>' reference.

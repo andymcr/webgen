@@ -835,19 +835,16 @@ endif
 			else
 				OclUndefined
 			endif endif,
--- temp fix while move modellabels from service to entities
---		dynamicLabel <- 
---			if not website.dynamicLabel.oclIsUndefined() then
---				website.dynamicLabel
---			else
---				if website.serviceFeature.oclIsUndefined() then
---					OclUndefined
---				else if website.serviceFeature.oclIsTypeOf(Website!ServiceEntityAssociation) then
---					website.serviceFeature.dynamicLabel
---				else
---					OclUndefined
---				endif endif
---			endif,
+		label <-
+			if website.label.oclIsUndefined() then
+				OclUndefined
+			else if website.label.oclIsKindOf(Website!Attribute) then
+				website.label.findOrmEntityOrView()
+					.getOrmFeature(website.label.name)
+			else
+				thisModule.findOrmEntityOrView(website.label.labelFor.name)
+					.getOrmLabel(website.label.name)
+			endif endif,
 --		filters <- website.filters,
 		maximumDisplaySize <- website.maximumDisplaySize,
 		displayOption <-
@@ -1001,7 +998,7 @@ abstract rule DataUnit {
 			if website.title.oclIsUndefined() then
 				website.title
 			else if website.title.oclIsKindOf(Website!Attribute) then
-				thisModule.findOrmEntityOrView(website.title.partOf.name)
+				website.title.findOrmEntityOrView()
 					.getOrmFeature(website.title.name)
 			else if website.title.oclIsTypeOf(Website!ModelLabel) then
 				thisModule.findOrmEntityOrView(website.title.labelFor.name)

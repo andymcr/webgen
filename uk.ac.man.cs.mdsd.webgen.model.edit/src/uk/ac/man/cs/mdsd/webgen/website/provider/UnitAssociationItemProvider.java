@@ -19,6 +19,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
@@ -63,7 +64,7 @@ public class UnitAssociationItemProvider
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
 			addServiceFeaturePropertyDescriptor(object);
-			addTitlePropertyDescriptor(object);
+			addLabelPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addFiltersPropertyDescriptor(object);
 		}
@@ -244,25 +245,36 @@ public class UnitAssociationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Title feature.
+	 * This adds a property descriptor for the Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	protected void addTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_title_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_title_feature", "_UI_UnitAssociation_type"),
-				 WebsitePackage.Literals.UNIT_ASSOCIATION__TITLE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
+	protected void addLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_UnitAssociation_label_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_label_feature", "_UI_UnitAssociation_type"),
+			WebsitePackage.Literals.UNIT_ASSOCIATION__LABEL,
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof UnitAssociation) {
+						final Set<Label> labels = new HashSet<Label>();
+						for (Service service : getSourceServices((UnitAssociation) object)) {
+							labels.addAll(getFeatureAttributes(service));
+							for (EntityOrView entityOrView : service.getEncapsulates()) {
+								labels.addAll(entityOrView.getLabels());
+							}
+						}
+						return labels;
+					}
+					return Collections.emptyList();
+				}
+			});
 	}
 
 	/**

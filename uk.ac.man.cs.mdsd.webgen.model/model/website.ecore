@@ -785,7 +785,7 @@
         eType="#//ServiceAssociation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//ServiceFeatureReference"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="title" eType="#//Label"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//Label"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
         eType="#//Label"/>

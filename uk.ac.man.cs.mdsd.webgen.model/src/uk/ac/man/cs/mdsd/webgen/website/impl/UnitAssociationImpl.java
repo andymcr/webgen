@@ -62,7 +62,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getServiceFeature <em>Service Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getFilters <em>Filters</em>}</li>
  * </ul>
@@ -221,14 +221,14 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	protected ServiceFeatureReference childFeature;
 
 	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
+	 * The cached value of the '{@link #getLabel() <em>Label</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitle()
+	 * @see #getLabel()
 	 * @generated
 	 * @ordered
 	 */
-	protected Label title;
+	protected Label label;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -616,16 +616,16 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Label getTitle() {
-		if (title != null && title.eIsProxy()) {
-			InternalEObject oldTitle = (InternalEObject)title;
-			title = (Label)eResolveProxy(oldTitle);
-			if (title != oldTitle) {
+	public Label getLabel() {
+		if (label != null && label.eIsProxy()) {
+			InternalEObject oldLabel = (InternalEObject)label;
+			label = (Label)eResolveProxy(oldLabel);
+			if (label != oldLabel) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.UNIT_ASSOCIATION__TITLE, oldTitle, title));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.UNIT_ASSOCIATION__LABEL, oldLabel, label));
 			}
 		}
-		return title;
+		return label;
 	}
 
 	/**
@@ -633,8 +633,8 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Label basicGetTitle() {
-		return title;
+	public Label basicGetLabel() {
+		return label;
 	}
 
 	/**
@@ -642,11 +642,11 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTitle(Label newTitle) {
-		Label oldTitle = title;
-		title = newTitle;
+	public void setLabel(Label newLabel) {
+		Label oldLabel = label;
+		label = newLabel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_ASSOCIATION__TITLE, oldTitle, title));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_ASSOCIATION__LABEL, oldLabel, label));
 	}
 
 	/**
@@ -785,9 +785,9 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 				return basicGetServiceFeature();
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				return getChildFeature();
-			case WebsitePackage.UNIT_ASSOCIATION__TITLE:
-				if (resolve) return getTitle();
-				return basicGetTitle();
+			case WebsitePackage.UNIT_ASSOCIATION__LABEL:
+				if (resolve) return getLabel();
+				return basicGetLabel();
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -838,8 +838,8 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ServiceFeatureReference)newValue);
 				return;
-			case WebsitePackage.UNIT_ASSOCIATION__TITLE:
-				setTitle((Label)newValue);
+			case WebsitePackage.UNIT_ASSOCIATION__LABEL:
+				setLabel((Label)newValue);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)newValue);
@@ -890,8 +890,8 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ServiceFeatureReference)null);
 				return;
-			case WebsitePackage.UNIT_ASSOCIATION__TITLE:
-				setTitle((Label)null);
+			case WebsitePackage.UNIT_ASSOCIATION__LABEL:
+				setLabel((Label)null);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)null);
@@ -933,8 +933,8 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 				return serviceFeature != null;
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				return childFeature != null;
-			case WebsitePackage.UNIT_ASSOCIATION__TITLE:
-				return title != null;
+			case WebsitePackage.UNIT_ASSOCIATION__LABEL:
+				return label != null;
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				return selection != null;
 			case WebsitePackage.UNIT_ASSOCIATION__FILTERS:

@@ -7179,13 +7179,13 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_ASSOCIATION__CHILD_FEATURE = INCLUDED_ASSOCIATION_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * The feature id for the '<em><b>Label</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__TITLE = INCLUDED_ASSOCIATION_FEATURE_COUNT + 11;
+	int UNIT_ASSOCIATION__LABEL = INCLUDED_ASSOCIATION_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -13470,15 +13470,15 @@ public interface WebsitePackage extends EPackage {
 	EReference getUnitAssociation_ChildFeature();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getTitle <em>Title</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getLabel <em>Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Title</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getTitle()
+	 * @return the meta object for the reference '<em>Label</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getLabel()
 	 * @see #getUnitAssociation()
 	 * @generated
 	 */
-	EReference getUnitAssociation_Title();
+	EReference getUnitAssociation_Label();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getSelection <em>Selection</em>}'.
@@ -17499,12 +17499,12 @@ public interface WebsitePackage extends EPackage {
 		EReference UNIT_ASSOCIATION__CHILD_FEATURE = eINSTANCE.getUnitAssociation_ChildFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Label</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNIT_ASSOCIATION__TITLE = eINSTANCE.getUnitAssociation_Title();
+		EReference UNIT_ASSOCIATION__LABEL = eINSTANCE.getUnitAssociation_Label();
 
 		/**
 		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.

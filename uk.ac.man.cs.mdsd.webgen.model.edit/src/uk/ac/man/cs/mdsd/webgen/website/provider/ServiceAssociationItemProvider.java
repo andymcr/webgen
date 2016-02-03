@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -139,22 +138,26 @@ public class ServiceAssociationItemProvider
 	 * This adds a property descriptor for the Selection feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addSelectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceAssociation_selection_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociation_selection_feature", "_UI_ServiceAssociation_type"),
-				 WebsitePackage.Literals.SERVICE_ASSOCIATION__SELECTION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_ServiceAssociation_selection_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociation_selection_feature", "_UI_ServiceAssociation_type"),
+			WebsitePackage.Literals.SERVICE_ASSOCIATION__SELECTION,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof ServiceAssociation) {
+						return getSelections((ServiceAssociation) object);
+					}
+					return Collections.emptyList();
+				}
+			});
 	}
 
 	/**

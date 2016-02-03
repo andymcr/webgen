@@ -21,7 +21,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
-import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
@@ -296,17 +295,10 @@ public class UnitAssociationItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
-						final List<Selection> selections = new LinkedList<Selection>();
-						final UnitAssociation includedAssociation = (UnitAssociation) object;
-						if (includedAssociation.getServiceFeature() != null) {
-							final ServiceAssociation serviceAssociation
-								= includedAssociation.getServiceFeature();
-							for (Service service : getTargetType(serviceAssociation).getServedBy()) {
-								selections.addAll(service.getSelections());
-							}
-							
+						final UnitAssociation association = (UnitAssociation) object;
+						if (association.getServiceFeature() != null) {
+							return getSelections(association.getServiceFeature());
 						}
-						return selections;
 					}
 					return Collections.emptyList();
 				}

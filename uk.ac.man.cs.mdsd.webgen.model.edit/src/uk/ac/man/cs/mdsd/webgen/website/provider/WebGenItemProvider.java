@@ -233,6 +233,15 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return Collections.emptyList();
 	}
 
+	protected Set<Selection> getSelections(final ServiceAssociation association) {
+		final Set<Selection> selections = new HashSet<Selection>();
+		for (Service service : getTargetType(association).getServedBy()) {
+			selections.addAll(service.getSelections());
+		}
+			
+		return selections;
+	}
+
 	protected List<Selection> getSourceSelections(final DynamicUnit unit) {
 		if (unit.getSource() instanceof Service) {
 			final Service service = (Service) unit.getSource();

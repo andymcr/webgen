@@ -6312,7 +6312,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getServiceAssociationReference_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tassociation.name \r\nendif endif endif endif\r\n"
+			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tassociation.name \r\nendif\r\n"
 		   });	
 		addAnnotation
 		  (pageEClass, 

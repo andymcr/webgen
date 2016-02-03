@@ -6294,7 +6294,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (serviceAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "selectionFromCorrectService", "not selection.oclIsUndefined() and not association.oclIsUndefined() implies\r\n\tlet entityOrView : EntityOrView\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\t\tendif endif\r\n\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)"
+			 "selectionFromCorrectService", "not selection.oclIsUndefined() and not association.oclIsUndefined() implies\r\n\tlet entityOrView : EntityOrView\r\n\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n\t\t\telse if useAssociationSource then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\t\tendif endif\r\n\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)"
 		   });	
 		addAnnotation
 		  (getServiceAssociation_Name(), 

@@ -1929,9 +1929,9 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n" +
 		"\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n" +
 		"\t\t\telse if useAssociationSource then\r\n" +
-		"\t\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n" +
-		"\t\t\telse\r\n" +
 		"\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n" +
 		"\t\t\tendif endif\r\n" +
 		"\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)";
 

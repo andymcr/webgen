@@ -42,11 +42,11 @@ helper context WAF!UnitAssociation def: getWebsiteIncludedFeature() : Website!Un
 rule StaticUnit {
 	from partialWaf : WAF!StaticUnit
 	to waf : WAF!StaticUnit (
-		service <-
+		services <-
 			if thisModule.findWebsiteProperties().staticUnitsEditable then
-				thisModule.findWafService('StaticText')
+				Sequence{thisModule.findWafService('StaticText')}
 			else
-				OclUndefined
+				Sequence{}
 			endif
 	)
 }
@@ -54,12 +54,12 @@ rule StaticUnit {
 abstract rule DynamicUnit {
 	from partialWaf : WAF!DynamicUnit
 	to waf : WAF!DynamicUnit (
-		service <-
-			if not waf.service.oclIsUndefined() then
-				waf.service
+		services <-
+			if waf.services->notEmpty() then
+				waf.services
 			else
-				thisModule.findWafService(
-					waf.getWebsiteUnit().source.name)
+				Sequence{thisModule.findWafService(
+					waf.getWebsiteUnit().source->first().name)}
 			endif
 	)
 }

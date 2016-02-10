@@ -19,8 +19,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitElement;
+import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -222,17 +222,15 @@ public class UnitElementItemProvider
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 			if (object instanceof UnitElement) {
-				final List<ServiceAttribute> includedElements = new LinkedList<ServiceAttribute>();
+				final List<ServiceAttribute> elements = new LinkedList<ServiceAttribute>();
 				final DynamicUnit unit = (DynamicUnit) ((UnitElement) object).eContainer();
-				if (unit.getSource() instanceof Service) {
-					for (ServiceFeature feature : ((Service) unit.getSource()).getFeatures()) {
-						if (feature instanceof ServiceAttribute) {
-							includedElements.add((ServiceAttribute) feature);
-						}
+				for (UnitSource source : unit.getSource()) {
+					if (source instanceof Service) {
+						elements.addAll(getAttributes((Service) source));
 					}
 				}
 
-				return includedElements;
+				return elements;
 			}
 			return Collections.emptyList();
 			}

@@ -23,8 +23,8 @@ import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -229,11 +229,9 @@ public class UnitAssociationItemProvider
 				if (object instanceof UnitAssociation) {
 					final List<ServiceAssociation> assocations = new LinkedList<ServiceAssociation>();
 					final DynamicUnit unit = ((UnitAssociation) object).getDisplayedOn();
-					if (unit.getSource() instanceof Service) {
-						for (ServiceFeature feature : ((Service) unit.getSource()).getFeatures()) {
-							if (feature instanceof ServiceAssociation) {
-								assocations.add((ServiceAssociation) feature);
-							}
+					for (UnitSource source : unit.getSource()) {
+						if (source instanceof Service) {
+							assocations.addAll(getAssociations((Service) source));
 						}
 					}
 					return assocations;

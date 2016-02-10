@@ -227,7 +227,7 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 */
 	public EList<DynamicUnit> getAccessedBy() {
 		if (accessedBy == null) {
-			accessedBy = new EObjectWithInverseResolvingEList<DynamicUnit>(DynamicUnit.class, this, WafPackage.SERVICE__ACCESSED_BY, WafPackage.DYNAMIC_UNIT__SERVICE);
+			accessedBy = new EObjectWithInverseResolvingEList.ManyInverse<DynamicUnit>(DynamicUnit.class, this, WafPackage.SERVICE__ACCESSED_BY, WafPackage.DYNAMIC_UNIT__SERVICES);
 		}
 		return accessedBy;
 	}

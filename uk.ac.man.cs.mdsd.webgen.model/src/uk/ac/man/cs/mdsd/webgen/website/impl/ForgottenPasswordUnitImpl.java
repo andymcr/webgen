@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -188,14 +189,14 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	protected String captionClass = CAPTION_CLASS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
 	 */
-	protected UnitSource source;
+	protected EList<UnitSource> source;
 
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
@@ -618,37 +619,11 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitSource getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (UnitSource)eResolveProxy(oldSource);
-			if (source != oldSource) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE, oldSource, source));
-			}
+	public List<UnitSource> getSource() {
+		if (source == null) {
+			source = new EObjectResolvingEList<UnitSource>(UnitSource.class, this, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE);
 		}
 		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnitSource basicGetSource() {
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSource(UnitSource newSource) {
-		UnitSource oldSource = source;
-		source = newSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE, oldSource, source));
 	}
 
 	/**
@@ -997,8 +972,7 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS:
 				return getCaptionClass();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
+				return getSource();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
@@ -1061,7 +1035,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				setCaptionClass((String)newValue);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
-				setSource((UnitSource)newValue);
+				getSource().clear();
+				getSource().addAll((Collection<? extends UnitSource>)newValue);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -1138,7 +1113,7 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				setCaptionClass(CAPTION_CLASS_EDEFAULT);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
-				setSource((UnitSource)null);
+				getSource().clear();
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -1206,7 +1181,7 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS:
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
-				return source != null;
+				return source != null && !source.isEmpty();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:

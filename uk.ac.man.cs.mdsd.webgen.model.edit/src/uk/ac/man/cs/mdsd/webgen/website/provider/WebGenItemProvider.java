@@ -28,6 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ViewFeature;
@@ -121,11 +122,11 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 
 	protected List<Attribute> getSourceAttributes(final DynamicUnit unit) {
 		final List<Attribute> attributes = new LinkedList<Attribute>();
-		if (unit.getSource() != null) {
-			if (unit.getSource() instanceof EntityOrView) {
-				attributes.addAll(getAttributes((EntityOrView) unit.getSource()));
+		for (UnitSource source : unit.getSource()) {
+			if (source instanceof EntityOrView) {
+				attributes.addAll(getAttributes((EntityOrView) source));
 			} else {
-				attributes.addAll(getFeatureAttributes((Service) unit.getSource()));
+				attributes.addAll(getFeatureAttributes((Service) source));
 			}
 		}
 

@@ -45,11 +45,11 @@ abstract rule DynamicUnit {
 			if partialWaf.displayFields->notEmpty() then
 				partialWaf.displayFields
 			else
-				partialWaf.service.features
+				partialWaf.services->first().features
 					->select(f | f.oclIsTypeOf(WAF!ServiceAttribute))
 					->select(f | f.forcedValue.oclIsUndefined())
 					->collect(f | thisModule.implicitUnitAttribute(f))
-				->union(partialWaf.service.features
+				->union(partialWaf.services->first().features
 					->select(f | f.oclIsKindOf(WAF!ServiceAssociation))
 					->select(f | f.forcedValue.oclIsUndefined())
 					->select(f | not partialWaf.oclIsKindOf(WAF!IndexUnit) and not waf.oclIsTypeOf(WAF!CreateUnit))

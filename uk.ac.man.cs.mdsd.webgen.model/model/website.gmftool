@@ -50,15 +50,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="User Command"
-          description="Add a new user command to a unit">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="Data type field"
           description="Add a data type field to an interface unit that is not associated with a persistent property">
         <smallIcon
@@ -203,24 +194,6 @@
           xsi:type="gmftool:CreationTool"
           title="Search Unit"
           description="Add new search unit to a page">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Create Sitemap Unit"
-          description="Add create sitemap unit to a page">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="Command Unit"
-          description="Add a new command unit to a page">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

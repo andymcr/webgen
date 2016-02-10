@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
@@ -48,14 +49,14 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  */
 public abstract class DynamicUnitImpl extends ContentUnitImpl implements DynamicUnit {
 	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
 	 */
-	protected UnitSource source;
+	protected EList<UnitSource> source;
 
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
@@ -221,37 +222,11 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitSource getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (UnitSource)eResolveProxy(oldSource);
-			if (source != oldSource) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.DYNAMIC_UNIT__SOURCE, oldSource, source));
-			}
+	public List<UnitSource> getSource() {
+		if (source == null) {
+			source = new EObjectResolvingEList<UnitSource>(UnitSource.class, this, WebsitePackage.DYNAMIC_UNIT__SOURCE);
 		}
 		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnitSource basicGetSource() {
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSource(UnitSource newSource) {
-		UnitSource oldSource = source;
-		source = newSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DYNAMIC_UNIT__SOURCE, oldSource, source));
 	}
 
 	/**
@@ -444,8 +419,7 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
+				return getSource();
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -476,7 +450,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
-				setSource((UnitSource)newValue);
+				getSource().clear();
+				getSource().addAll((Collection<? extends UnitSource>)newValue);
 				return;
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -517,7 +492,7 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
-				setSource((UnitSource)null);
+				getSource().clear();
 				return;
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -556,7 +531,7 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
-				return source != null;
+				return source != null && !source.isEmpty();
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:

@@ -435,14 +435,15 @@ public class UnitElementImpl extends IncludedElementImpl implements UnitElement 
 		basicSetFeature(newFeature);
 		// eContainer may be undefined when loading resource
 		if ((newFeature != null) && (eContainer() != null)) {
-			final UnitSource source = ((DynamicUnit) eContainer()).getSource();
-			if (source instanceof Service) {
-				for (ServiceFeature feature : ((Service) source).getFeatures()) {
-					if (feature instanceof ServiceAttribute) {
-						final ServiceAttribute attribute = (ServiceAttribute) feature;
-						if (newFeature.equals(attribute.getAttribute())) {
-							basicSetServiceFeature(attribute);
-							break;
+			for (UnitSource source : ((DynamicUnit) eContainer()).getSource()) {
+				if (source instanceof Service) {
+					for (ServiceFeature feature : ((Service) source).getFeatures()) {
+						if (feature instanceof ServiceAttribute) {
+							final ServiceAttribute attribute = (ServiceAttribute) feature;
+							if (newFeature.equals(attribute.getAttribute())) {
+								basicSetServiceFeature(attribute);
+								break;
+							}
 						}
 					}
 				}

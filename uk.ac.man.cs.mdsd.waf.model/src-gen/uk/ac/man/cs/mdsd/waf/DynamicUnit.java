@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getService <em>Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeader <em>Header</em>}</li>
@@ -30,32 +30,22 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface DynamicUnit extends ContentUnit {
 	/**
-	 * Returns the value of the '<em><b>Service</b></em>' reference.
+	 * Returns the value of the '<em><b>Services</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.Service}.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.Service#getAccessedBy <em>Accessed By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Service</em>' reference isn't clear,
+	 * If the meaning of the '<em>Services</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Service</em>' reference.
-	 * @see #setService(Service)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_Service()
+	 * @return the value of the '<em>Services</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_Services()
 	 * @see uk.ac.man.cs.mdsd.waf.Service#getAccessedBy
 	 * @model opposite="accessedBy" required="true"
 	 * @generated
 	 */
-	Service getService();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getService <em>Service</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Service</em>' reference.
-	 * @see #getService()
-	 * @generated
-	 */
-	void setService(Service value);
+	EList<Service> getServices();
 
 	/**
 	 * Returns the value of the '<em><b>Display Fields</b></em>' containment reference list.

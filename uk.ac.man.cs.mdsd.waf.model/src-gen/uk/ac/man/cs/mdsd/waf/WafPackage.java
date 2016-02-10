@@ -2786,13 +2786,13 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__LAYOUT_CLASS = CONTENT_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__SERVICE = CONTENT_UNIT_FEATURE_COUNT + 0;
+	int DYNAMIC_UNIT__SERVICES = CONTENT_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -4200,13 +4200,13 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__LAYOUT_CLASS = DYNAMIC_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__SERVICE = DYNAMIC_UNIT__SERVICE;
+	int EDIT_UNIT__SERVICES = DYNAMIC_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -4435,13 +4435,13 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__LAYOUT_CLASS = EDIT_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UNIT__SERVICE = EDIT_UNIT__SERVICE;
+	int CREATE_UNIT__SERVICES = EDIT_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -4670,13 +4670,13 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__LAYOUT_CLASS = EDIT_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__SERVICE = EDIT_UNIT__SERVICE;
+	int CREATE_UPDATE_UNIT__SERVICES = EDIT_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -4923,13 +4923,13 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__LAYOUT_CLASS = EDIT_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__SERVICE = EDIT_UNIT__SERVICE;
+	int MAP_UNIT__SERVICES = EDIT_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -5194,13 +5194,13 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__LAYOUT_CLASS = EDIT_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT__SERVICE = EDIT_UNIT__SERVICE;
+	int UPDATE_UNIT__SERVICES = EDIT_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -5429,13 +5429,13 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__LAYOUT_CLASS = DYNAMIC_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_UNIT__SERVICE = DYNAMIC_UNIT__SERVICE;
+	int DATA_UNIT__SERVICES = DYNAMIC_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -5637,13 +5637,13 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__LAYOUT_CLASS = DATA_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__SERVICE = DATA_UNIT__SERVICE;
+	int DETAILS_UNIT__SERVICES = DATA_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -5863,13 +5863,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__LAYOUT_CLASS = DATA_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__SERVICE = DATA_UNIT__SERVICE;
+	int INDEX_UNIT__SERVICES = DATA_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -6179,13 +6179,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__LAYOUT_CLASS = INDEX_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_GRID_UNIT__SERVICE = INDEX_UNIT__SERVICE;
+	int INDEX_GRID_UNIT__SERVICES = INDEX_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -6495,13 +6495,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__LAYOUT_CLASS = INDEX_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT__SERVICE = INDEX_UNIT__SERVICE;
+	int INDEX_PAGE_DIRECTION_UNIT__SERVICES = INDEX_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -6811,13 +6811,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__LAYOUT_CLASS = INDEX_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_LINE_DIRECTION_UNIT__SERVICE = INDEX_UNIT__SERVICE;
+	int INDEX_LINE_DIRECTION_UNIT__SERVICES = INDEX_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -7127,13 +7127,13 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__LAYOUT_CLASS = DYNAMIC_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_UNIT__SERVICE = DYNAMIC_UNIT__SERVICE;
+	int CONTROL_UNIT__SERVICES = DYNAMIC_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -7344,13 +7344,13 @@ public interface WafPackage extends EPackage {
 	int SEARCH_UNIT__LAYOUT_CLASS = CONTROL_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_UNIT__SERVICE = CONTROL_UNIT__SERVICE;
+	int SEARCH_UNIT__SERVICES = CONTROL_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -7598,13 +7598,13 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__LAYOUT_CLASS = EDIT_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__SERVICE = EDIT_UNIT__SERVICE;
+	int REGISTRATION_UNIT__SERVICES = EDIT_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -7842,13 +7842,13 @@ public interface WafPackage extends EPackage {
 	int LOGIN_UNIT__LAYOUT_CLASS = CONTROL_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__SERVICE = CONTROL_UNIT__SERVICE;
+	int LOGIN_UNIT__SERVICES = CONTROL_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -8095,13 +8095,13 @@ public interface WafPackage extends EPackage {
 	int FORGOTTEN_PASSWORD_UNIT__LAYOUT_CLASS = CONTROL_UNIT__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__SERVICE = CONTROL_UNIT__SERVICE;
+	int FORGOTTEN_PASSWORD_UNIT__SERVICES = CONTROL_UNIT__SERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -10376,15 +10376,15 @@ public interface WafPackage extends EPackage {
 	EClass getDynamicUnit();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getService <em>Service</em>}'.
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getServices <em>Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Service</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getService()
+	 * @return the meta object for the reference list '<em>Services</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getServices()
 	 * @see #getDynamicUnit()
 	 * @generated
 	 */
-	EReference getDynamicUnit_Service();
+	EReference getDynamicUnit_Services();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}'.
@@ -12906,12 +12906,12 @@ public interface WafPackage extends EPackage {
 		EClass DYNAMIC_UNIT = eINSTANCE.getDynamicUnit();
 
 		/**
-		 * The meta object literal for the '<em><b>Service</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DYNAMIC_UNIT__SERVICE = eINSTANCE.getDynamicUnit_Service();
+		EReference DYNAMIC_UNIT__SERVICES = eINSTANCE.getDynamicUnit_Services();
 
 		/**
 		 * The meta object literal for the '<em><b>Display Fields</b></em>' containment reference list feature.

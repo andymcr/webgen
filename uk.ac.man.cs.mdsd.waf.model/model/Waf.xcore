@@ -116,7 +116,7 @@ class Service extends NamedElement {
 	contains ServiceFeature[] features opposite partOf
 	contains ServiceFeatureReference[1..*] ^keys
 	contains Selection[] selections
-	refers DynamicUnit[] accessedBy opposite service
+	refers DynamicUnit[] accessedBy opposite services
 }
 
 class ServiceFeature extends NamedDisplayElement, IncludedFeature {
@@ -253,7 +253,7 @@ class StaticUnit extends ContentUnit {
 }
 
 abstract class DynamicUnit extends ContentUnit {
-	refers Service[1] service opposite accessedBy
+	refers Service[1..*] services opposite accessedBy
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
 	String header

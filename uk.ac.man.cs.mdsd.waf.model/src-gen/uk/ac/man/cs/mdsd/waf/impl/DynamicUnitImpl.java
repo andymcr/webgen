@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
@@ -32,7 +33,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getService <em>Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
@@ -47,14 +48,14 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  */
 public abstract class DynamicUnitImpl extends ContentUnitImpl implements DynamicUnit {
 	/**
-	 * The cached value of the '{@link #getService() <em>Service</em>}' reference.
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getService()
+	 * @see #getServices()
 	 * @generated
 	 * @ordered
 	 */
-	protected Service service;
+	protected EList<Service> services;
 
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
@@ -220,59 +221,11 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Service getService() {
-		if (service != null && service.eIsProxy()) {
-			InternalEObject oldService = (InternalEObject)service;
-			service = (Service)eResolveProxy(oldService);
-			if (service != oldService) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.DYNAMIC_UNIT__SERVICE, oldService, service));
-			}
+	public EList<Service> getServices() {
+		if (services == null) {
+			services = new EObjectWithInverseResolvingEList.ManyInverse<Service>(Service.class, this, WafPackage.DYNAMIC_UNIT__SERVICES, WafPackage.SERVICE__ACCESSED_BY);
 		}
-		return service;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Service basicGetService() {
-		return service;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetService(Service newService, NotificationChain msgs) {
-		Service oldService = service;
-		service = newService;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_UNIT__SERVICE, oldService, newService);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setService(Service newService) {
-		if (newService != service) {
-			NotificationChain msgs = null;
-			if (service != null)
-				msgs = ((InternalEObject)service).eInverseRemove(this, WafPackage.SERVICE__ACCESSED_BY, Service.class, msgs);
-			if (newService != null)
-				msgs = ((InternalEObject)newService).eInverseAdd(this, WafPackage.SERVICE__ACCESSED_BY, Service.class, msgs);
-			msgs = basicSetService(newService, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_UNIT__SERVICE, newService, newService));
+		return services;
 	}
 
 	/**
@@ -434,10 +387,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICE:
-				if (service != null)
-					msgs = ((InternalEObject)service).eInverseRemove(this, WafPackage.SERVICE__ACCESSED_BY, Service.class, msgs);
-				return basicSetService((Service)otherEnd, msgs);
+			case WafPackage.DYNAMIC_UNIT__SERVICES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getServices()).basicAdd(otherEnd, msgs);
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDisplayFields()).basicAdd(otherEnd, msgs);
 		}
@@ -452,8 +403,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICE:
-				return basicSetService(null, msgs);
+			case WafPackage.DYNAMIC_UNIT__SERVICES:
+				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -470,9 +421,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICE:
-				if (resolve) return getService();
-				return basicGetService();
+			case WafPackage.DYNAMIC_UNIT__SERVICES:
+				return getServices();
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -502,8 +452,9 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICE:
-				setService((Service)newValue);
+			case WafPackage.DYNAMIC_UNIT__SERVICES:
+				getServices().clear();
+				getServices().addAll((Collection<? extends Service>)newValue);
 				return;
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -543,8 +494,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICE:
-				setService((Service)null);
+			case WafPackage.DYNAMIC_UNIT__SERVICES:
+				getServices().clear();
 				return;
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -582,8 +533,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICE:
-				return service != null;
+			case WafPackage.DYNAMIC_UNIT__SERVICES:
+				return services != null && !services.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:

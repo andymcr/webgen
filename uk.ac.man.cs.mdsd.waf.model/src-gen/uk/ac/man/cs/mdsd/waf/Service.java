@@ -126,7 +126,7 @@ public interface Service extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Accessed By</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.DynamicUnit}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getService <em>Service</em>}'.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getServices <em>Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Accessed By</em>' reference list isn't clear,
@@ -135,8 +135,8 @@ public interface Service extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Accessed By</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_AccessedBy()
-	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getService
-	 * @model opposite="service"
+	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getServices
+	 * @model opposite="services"
 	 * @generated
 	 */
 	EList<DynamicUnit> getAccessedBy();

@@ -738,12 +738,7 @@ rule StaticUnit {
 abstract rule DynamicUnit {
 	from website : Website!DynamicUnit
 	to waf : WAF!DynamicUnit (
-		service <-
-			if website.source.oclIsTypeOf(Website!Service) then
-				website.source
-			else
-				OclUndefined
-			endif,
+		services <- website.source->select(s |s.oclIsTypeOf(Website!Service)),
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
 		header <- website.header,

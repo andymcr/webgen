@@ -443,25 +443,26 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 				
 			} else {
 				final EntityAssociation entityAssociation = (EntityAssociation) newAssociation;
-				final UnitSource source = getDisplayedOn().getSource();
-				if (source instanceof Service) {
-					final List<EntityOrView> serviceSource = new LinkedList<EntityOrView>();
-					serviceSource.addAll(((Service) source).getEncapsulates());
-					if (serviceSource.contains(entityAssociation.getPartOf())) {
-						if (!serviceSource.contains(entityAssociation.getTargetEntity())) {
-							setUseAssociationSource(true);
+				for (UnitSource source : getDisplayedOn().getSource()) {
+					if (source instanceof Service) {
+						final List<EntityOrView> serviceSource = new LinkedList<EntityOrView>();
+						serviceSource.addAll(((Service) source).getEncapsulates());
+						if (serviceSource.contains(entityAssociation.getPartOf())) {
+							if (!serviceSource.contains(entityAssociation.getTargetEntity())) {
+								setUseAssociationSource(true);
+							}
+						} else {
+							if (serviceSource.contains(entityAssociation.getTargetEntity())) {
+								setUseAssociationSource(false);
+							}
 						}
+						
+					} else if (source instanceof View) {
+						setUseAssociationSource(true);
 					} else {
-						if (serviceSource.contains(entityAssociation.getTargetEntity())) {
-							setUseAssociationSource(false);
-						}
+						setUseAssociationSource(
+							entityAssociation.getPartOf().equals((Entity) source));
 					}
-					
-				} else if (source instanceof View) {
-					setUseAssociationSource(true);
-				} else {
-					setUseAssociationSource(
-						entityAssociation.getPartOf().equals((Entity) source));
 				}
 				
 			}
@@ -480,14 +481,15 @@ public class UnitAssociationImpl extends IncludedAssociationImpl implements Unit
 		basicSetAssociation(newFeature);
 		// eContainer may be undefined when loading resource
 		if ((newFeature != null) && (eContainer() != null)) {
-			final UnitSource source = ((DynamicUnit) eContainer()).getSource();
-			if (source instanceof Service) {
-				for (ServiceFeature feature : ((Service) source).getFeatures()) {
-					if (feature instanceof ServiceAssociation) {
-						final ServiceAssociation association = (ServiceAssociation) feature;
-						if (newFeature.equals(association.getAssociation())) {
-							basicSetServiceFeature(association);
-							break;
+			for (UnitSource source : ((DynamicUnit) eContainer()).getSource()) {
+				if (source instanceof Service) {
+					for (ServiceFeature feature : ((Service) source).getFeatures()) {
+						if (feature instanceof ServiceAssociation) {
+							final ServiceAssociation association = (ServiceAssociation) feature;
+							if (newFeature.equals(association.getAssociation())) {
+								basicSetServiceFeature(association);
+								break;
+							}
 						}
 					}
 				}

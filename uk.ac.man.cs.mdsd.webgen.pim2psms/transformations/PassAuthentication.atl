@@ -156,7 +156,7 @@ unique lazy rule implicitRegistrationUnit {
 	to waf : WAF!RegistrationUnit (
 		name <- 'registerUser',
 		displayLabel <- 'Register User',
-		service <- thisModule.findWafService('Authentication'),
+		services <- Sequence{thisModule.findWafService('Authentication')},
 		omitCaption <- false,
 		confirmDestination <- 
 			if not website.loginUnit.oclIsUndefined() then
@@ -217,7 +217,7 @@ unique lazy rule implicitLoginUnit {
 	to waf : WAF!LoginUnit (
 		name <- 'Login',
 		displayLabel <- 'Login',
-		service <- thisModule.findWafService('Authentication'),
+		services <- Sequence{thisModule.findWafService('Authentication')},
 		omitCaption <- false,
 		submitLabel <- 'Login',
 		displayFields <-
@@ -259,7 +259,7 @@ unique lazy rule implicitForgottenPasswordUnit {
 	to waf : WAF!ForgottenPasswordUnit (
 		name <- 'ForgottenPassword',
 		displayLabel <- 'Recover Forgotten Password',
-		service <- thisModule.findWafService('Authentication'),
+		services <- Sequence{thisModule.findWafService('Authentication')},
 		omitCaption <- false,
 		submitLabel <- 'Recover Password',
 		displayFields <-
@@ -440,7 +440,7 @@ unique lazy rule implicitManageAuthenticationsPage {
 	users : WAF!IndexGridUnit (
 		name <- 'users',
 		displayLabel <- 'Users',
-		service <- thisModule.findWafService('Authentication'),
+		services <- Sequence{thisModule.findWafService('Authentication')},
 		omitCaption <- false,
 		defaultPaginationSize <- 10,
 		nextPageLabel <- '>',
@@ -469,7 +469,7 @@ unique lazy rule implicitManageAuthenticationsPage {
 	editUser : WAF!UpdateUnit (
 		name <- 'editUser',
 		displayLabel <- 'Edit User',
-		service <- thisModule.findWafService('Authentication'),
+		services <- Sequence{thisModule.findWafService('Authentication')},
 		omitCaption <- false,
 		confirmLabel <- 'Save',
 		displayFields <-

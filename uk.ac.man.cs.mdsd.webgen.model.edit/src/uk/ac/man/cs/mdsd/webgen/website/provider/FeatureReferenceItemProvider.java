@@ -22,7 +22,9 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import uk.ac.man.cs.mdsd.webgen.website.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.website.IncludedFeature;
+import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -86,11 +88,21 @@ public class FeatureReferenceItemProvider
 				public Collection<?> getChoiceOfValues(Object object) {
 					final Set<IncludedFeature> features = new HashSet<IncludedFeature>();
 					if (object instanceof FeatureReference) {
-						final Service service = getCriteriaServiceContext(object);
-						if (service != null) {
-							for (ServiceFeature feature : service.getFeatures()) {
-								if (feature instanceof IncludedFeature) {
-									features.add((IncludedFeature) feature);
+						final Selection selection = getCriteriaSelectionContext(object);
+						if (selection != null) {
+							features.addAll(selection.getUsedBy().getFeatures());
+							for (ServiceAssociation join : selection.getJoins()) {
+								for (Service targetService : getTargetServices(join)) {
+									features.addAll(targetService.getFeatures());
+								}
+							}
+						} else {
+							final Service service = getCriteriaServiceContext(object);
+							if (service != null) {
+								for (ServiceFeature feature : service.getFeatures()) {
+									if (feature instanceof IncludedFeature) {
+										features.add((IncludedFeature) feature);
+									}
 								}
 							}
 						}

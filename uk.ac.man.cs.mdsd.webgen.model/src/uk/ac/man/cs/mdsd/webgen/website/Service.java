@@ -50,6 +50,7 @@ public interface Service extends NamedElement, UnitSource {
 	/**
 	 * Returns the value of the '<em><b>Selections</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Selection}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getUsedBy <em>Used By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Selections</em>' containment reference list isn't clear,
@@ -58,7 +59,8 @@ public interface Service extends NamedElement, UnitSource {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Selections</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getService_Selections()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Selection#getUsedBy
+	 * @model opposite="usedBy" containment="true"
 	 * @generated
 	 */
 	List<Selection> getSelections();

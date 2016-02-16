@@ -4908,13 +4908,22 @@ public interface WebsitePackage extends EPackage {
 	int SELECTION__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Used By</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__USED_BY = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__PARAMETERS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SELECTION__PARAMETERS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Joins</b></em>' reference list.
@@ -4923,7 +4932,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__JOINS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SELECTION__JOINS = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' containment reference.
@@ -4932,7 +4941,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__FILTER = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SELECTION__FILTER = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Ordering</b></em>' containment reference list.
@@ -4941,7 +4950,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__ORDERING = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SELECTION__ORDERING = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Limit</b></em>' attribute.
@@ -4950,7 +4959,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__LIMIT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int SELECTION__LIMIT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Selection</em>' class.
@@ -4959,7 +4968,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int SELECTION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4989,13 +4998,85 @@ public interface WebsitePackage extends EPackage {
 	int SELECTION_PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_FEATURE__DISPLAY_LABEL = INCLUDED_FEATURE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_FEATURE__REQUIRED = INCLUDED_FEATURE__REQUIRED;
+
+	/**
+	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_FEATURE__FORCED_VALUE = INCLUDED_FEATURE__FORCED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Footer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_FEATURE__FOOTER = INCLUDED_FEATURE__FOOTER;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_FEATURE__HEADER_CLASS = INCLUDED_FEATURE__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_FEATURE__INPUT_CLASS = INCLUDED_FEATURE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_FEATURE__DISPLAY_CLASS = INCLUDED_FEATURE__DISPLAY_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_FEATURE__FOOTER_CLASS = INCLUDED_FEATURE__FOOTER_CLASS;
+
+	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE__PART_OF = 0;
+	int SERVICE_FEATURE__PART_OF = INCLUDED_FEATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -5004,7 +5085,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE__DATE_FORMAT = 1;
+	int SERVICE_FEATURE__DATE_FORMAT = INCLUDED_FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Service Feature</em>' class.
@@ -5013,7 +5094,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_FEATURE_COUNT = 2;
+	int SERVICE_FEATURE_FEATURE_COUNT = INCLUDED_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl <em>Service Attribute</em>}' class.
@@ -13770,6 +13851,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getSelection();
 
 	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getUsedBy <em>Used By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Used By</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Selection#getUsedBy()
+	 * @see #getSelection()
+	 * @generated
+	 */
+	EReference getSelection_UsedBy();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17737,6 +17829,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass SELECTION = eINSTANCE.getSelection();
+
+		/**
+		 * The meta object literal for the '<em><b>Used By</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SELECTION__USED_BY = eINSTANCE.getSelection_UsedBy();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.

@@ -66,13 +66,13 @@ public class SelectionItemProvider
 	protected void addJoinsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_Selection_joins_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_Selection_joins_feature", "_UI_Selection_type"),
-			 WebsitePackage.Literals.SELECTION__JOINS,
-			 true, false, true, null,
-			 getString("_UI_ModelPropertyCategory"),
-			 null) {
+			getResourceLocator(),
+			getString("_UI_Selection_joins_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Selection_joins_feature", "_UI_Selection_type"),
+			WebsitePackage.Literals.SELECTION__JOINS,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof Selection) {

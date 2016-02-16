@@ -3214,7 +3214,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Parameters() {
+	public EReference getSelection_UsedBy() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -3223,7 +3223,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Joins() {
+	public EReference getSelection_Parameters() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3232,7 +3232,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Filter() {
+	public EReference getSelection_Joins() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3241,7 +3241,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSelection_Ordering() {
+	public EReference getSelection_Filter() {
 		return (EReference)selectionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -3250,8 +3250,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSelection_Ordering() {
+		return (EReference)selectionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getSelection_Limit() {
-		return (EAttribute)selectionEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)selectionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -5041,6 +5050,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(serviceEClass, SERVICE__SELECTIONS);
 
 		selectionEClass = createEClass(SELECTION);
+		createEReference(selectionEClass, SELECTION__USED_BY);
 		createEReference(selectionEClass, SELECTION__PARAMETERS);
 		createEReference(selectionEClass, SELECTION__JOINS);
 		createEReference(selectionEClass, SELECTION__FILTER);
@@ -5409,6 +5419,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		serviceEClass.getESuperTypes().add(this.getUnitSource());
 		selectionEClass.getESuperTypes().add(this.getNamedElement());
 		selectionParameterEClass.getESuperTypes().add(this.getNamedElement());
+		serviceFeatureEClass.getESuperTypes().add(this.getIncludedFeature());
 		serviceAttributeEClass.getESuperTypes().add(this.getIncludedElement());
 		serviceAttributeEClass.getESuperTypes().add(this.getServiceFeature());
 		serviceAssociationEClass.getESuperTypes().add(this.getIncludedAssociation());
@@ -5711,9 +5722,10 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getService_Encapsulates(), this.getEntityOrView(), this.getEntityOrView_ServedBy(), "encapsulates", null, 1, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Features(), this.getServiceFeature(), this.getServiceFeature_PartOf(), "features", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Keys(), this.getServiceFeatureReference(), null, "keys", null, 1, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getService_Selections(), this.getSelection(), null, "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Selections(), this.getSelection(), this.getSelection_UsedBy(), "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionEClass, Selection.class, "Selection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSelection_UsedBy(), this.getService(), this.getService_Selections(), "usedBy", null, 1, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Parameters(), this.getSelectionParameter(), null, "parameters", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Joins(), this.getServiceAssociation(), null, "joins", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Filter(), theCriteriaPackage.getPredicate(), null, "filter", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -6142,7 +6154,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (dynamicUnitEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "serviceFeaturesMustBeFromSource onlyReferenceFeaturesOnce entitySourceOnlyIfNotEncapsulated serviceSourceImpliesServiceFeaturesSet"
+			 "constraints", "serviceFeaturesMustBeFromSource onlyReferenceFeaturesOnce entitySourceOnlyIfNotEncapsulated serviceSourceRequiresServiceFeatures"
 		   });	
 		addAnnotation
 		  (unitFeatureEClass, 
@@ -6340,10 +6352,10 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (dynamicUnitEClass, 
 		   source, 
 		   new String[] {
-			 "serviceFeaturesMustBeFromSource", "let features : Collection(Feature)\r\n\t= if source.oclIsTypeOf(Entity) then \r\n\t\t\tsource.oclAsType(Entity).features\r\n\t\t\t\t->union(source.oclAsType(Entity).associationEnds)\r\n\t\telse if source.oclIsTypeOf(View) then\r\n\t\t\tsource.oclAsType(View).features\r\n\t\telse\r\n\t\t\tsource.oclAsType(Service).features\r\n\t\t\t\t->collect(f |\r\n\t\t\t\t\tif f.oclIsTypeOf(ServiceAttribute) then\r\n\t\t\t\t\t\tf.oclAsType(ServiceAttribute).attribute\r\n\t\t\t\t\telse\r\n\t\t\t\t\t\tf.oclAsType(ServiceAssociation).association\r\n\t\t\t\t\tendif)\r\n\t\tendif endif\r\n\tin displayFields\r\n\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t->select(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\ttrue\r\n\t\t\telse\r\n\t\t\t\tf.oclAsType(UnitAssociation).association.oclIsTypeOf(ServiceAssociation)\r\n\t\t\tendif)\r\n\t\t->forAll(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\tfeatures->includes(f.oclAsType(UnitElement).attribute)\r\n\t\t\telse\r\n\t\t\t\tfeatures->includes(f.oclAsType(UnitAssociation).association)\r\n\t\t\tendif)",
+			 "serviceFeaturesMustBeFromSource", "let serviceFeatures : Collection(ServiceFeature)\r\n\t= source->select(s | s.oclIsTypeOf(Service)).oclAsType(Service)\r\n\t\t->collect(s | s.features)\r\n\tin displayFields\r\n\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t->select(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\tnot f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()\r\n\t\t\telse\r\n\t\t\t\tnot f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()\r\n\t\t\tendif)\r\n\t\t->forAll(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\tserviceFeatures->includes(f.oclAsType(UnitElement).serviceFeature)\r\n\t\t\telse\r\n\t\t\t\tserviceFeatures->includes(f.oclAsType(UnitAssociation).serviceFeature)\r\n\t\t\tendif)",
 			 "onlyReferenceFeaturesOnce", "displayFields\r\n\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t->select(f | if not f.oclIsTypeOf(UnitAssociation) then\r\n\t\t\ttrue\r\n\t\telse\r\n\t\t\tf.oclAsType(UnitAssociation).childFeature.oclIsUndefined()\r\n\t\tendif)\r\n\t->isUnique(f |\r\n\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\tf.oclAsType(UnitElement).attribute\r\n\t\telse\r\n\t\t\tf.oclAsType(UnitAssociation).association\r\n\t\tendif)",
-			 "entitySourceOnlyIfNotEncapsulated", "source.oclIsTypeOf(Entity) implies source.oclAsType(Entity).servedBy->isEmpty()",
-			 "serviceSourceImpliesServiceFeaturesSet", "source.oclIsTypeOf(Service) implies \r\ndisplayFields\r\n\t->select(f|f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t->forAll(f |\r\n\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\tnot f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()\r\n\t\telse\r\n\t\t\tnot f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()\r\n\t\tendif)"
+			 "entitySourceOnlyIfNotEncapsulated", "source->forAll(s | s.oclIsTypeOf(Entity) implies s.oclAsType(Entity).servedBy->isEmpty())",
+			 "serviceSourceRequiresServiceFeatures", "source->select(s | s.oclIsTypeOf(Service))->notEmpty() implies \r\ndisplayFields\r\n\t->select(f|f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t->forAll(f |\r\n\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\tnot f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()\r\n\t\telse\r\n\t\t\tnot f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()\r\n\t\tendif)"
 		   });	
 		addAnnotation
 		  (unitFeatureEClass, 
@@ -6382,7 +6394,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "canOnlyTitleWithSingletonElement", "not title.oclIsUndefined() implies \r\nif title.oclIsKindOf(EntityAttribute) then\r\n\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\nelse\r\n\ttrue\r\nendif",
-			 "selectionFromSource", "not defaultSelection.oclIsUndefined() implies\r\n\tif source.oclIsUndefined() then\r\n\t\ttrue\r\n\telse if source.oclIsTypeOf(Service) then\r\n\t\tsource.oclAsType(Service).selections->includes(defaultSelection)\r\n\telse\r\n\t\tfalse\r\n\tendif endif"
+			 "selectionFromSource", "not defaultSelection.oclIsUndefined() implies\r\n\tsource->select(s | s.oclIsTypeOf(Service)).oclAsType(Service)\r\n\t\t->collect(s | s.selections)->includes(defaultSelection)"
 		   });	
 		addAnnotation
 		  (inlineActionContainerEClass, 

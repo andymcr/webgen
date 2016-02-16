@@ -135,11 +135,11 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 
 	protected List<Association> getSourceAssociations(final DynamicUnit unit) {
 		final List<Association> associations = new LinkedList<Association>();
-		if (unit.getSource() != null) {
-			if (unit.getSource() instanceof EntityOrView) {
-				associations.addAll(getAssociations((EntityOrView) unit.getSource()));
+		for (UnitSource source : unit.getSource()) {
+			if (source instanceof EntityOrView) {
+				associations.addAll(getAssociations((EntityOrView) source));
 			} else {
-				associations.addAll(getFeatureAssociations((Service) unit.getSource()));
+				associations.addAll(getFeatureAssociations((Service) source));
 			}
 		}
 
@@ -243,15 +243,15 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return selections;
 	}
 
-	protected List<Selection> getSourceSelections(final DynamicUnit unit) {
-		if (unit.getSource() instanceof Service) {
-			final Service service = (Service) unit.getSource();
-			final List<Selection> selections
-				= new LinkedList<Selection>(service.getSelections());
-			return selections;
+	protected Set<Selection> getSourceSelections(final DynamicUnit unit) {
+		final Set<Selection> selections = new HashSet<Selection>();
+		for (UnitSource source : unit.getSource() ) {
+			if (source instanceof Service) {
+				selections.addAll(((Service) source).getSelections());
+			}
 		}
 
-		return Collections.emptyList();
+		return selections;
 	}
 
 	protected Object getCriteriaContext(final Object object) {

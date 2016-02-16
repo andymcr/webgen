@@ -123,7 +123,7 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 */
 	public List<Selection> getSelections() {
 		if (selections == null) {
-			selections = new EObjectContainmentEList<Selection>(Selection.class, this, WebsitePackage.SERVICE__SELECTIONS);
+			selections = new EObjectContainmentWithInverseEList<Selection>(Selection.class, this, WebsitePackage.SERVICE__SELECTIONS, WebsitePackage.SELECTION__USED_BY);
 		}
 		return selections;
 	}
@@ -165,6 +165,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEncapsulates()).basicAdd(otherEnd, msgs);
 			case WebsitePackage.SERVICE__FEATURES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFeatures()).basicAdd(otherEnd, msgs);
+			case WebsitePackage.SERVICE__SELECTIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSelections()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

@@ -484,6 +484,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 			case WebsitePackage.SERVICE_FEATURE: {
 				ServiceFeature serviceFeature = (ServiceFeature)theEObject;
 				T result = caseServiceFeature(serviceFeature);
+				if (result == null) result = caseIncludedFeature(serviceFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

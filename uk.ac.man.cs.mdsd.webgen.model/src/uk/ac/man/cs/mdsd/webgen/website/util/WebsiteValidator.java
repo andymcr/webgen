@@ -2394,7 +2394,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(editUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(editUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(editUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(editUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(editUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2417,7 +2417,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(createUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(createUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(createUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(createUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(createUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2440,7 +2440,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(createUpdateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(createUpdateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(createUpdateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(createUpdateUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(createUpdateUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2463,7 +2463,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(dataUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(dataUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletonElement(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_selectionFromSource(dataUnit, diagnostics, context);
 		return result;
@@ -2510,13 +2510,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DATA_UNIT__SELECTION_FROM_SOURCE__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
-		"\tif source.oclIsUndefined() then\r\n" +
-		"\t\ttrue\r\n" +
-		"\telse if source.oclIsTypeOf(Service) then\r\n" +
-		"\t\tsource.oclAsType(Service).selections->includes(defaultSelection)\r\n" +
-		"\telse\r\n" +
-		"\t\tfalse\r\n" +
-		"\tendif endif";
+		"\tsource->select(s | s.oclIsTypeOf(Service)).oclAsType(Service)\r\n" +
+		"\t\t->collect(s | s.selections)->includes(defaultSelection)";
 
 	/**
 	 * Validates the selectionFromSource constraint of '<em>Data Unit</em>'.
@@ -2605,7 +2600,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(dynamicUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(dynamicUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(dynamicUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(dynamicUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(dynamicUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2615,34 +2610,22 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_UNIT__SERVICE_FEATURES_MUST_BE_FROM_SOURCE__EEXPRESSION = "let features : Collection(Feature)\r\n" +
-		"\t= if source.oclIsTypeOf(Entity) then \r\n" +
-		"\t\t\tsource.oclAsType(Entity).features\r\n" +
-		"\t\t\t\t->union(source.oclAsType(Entity).associationEnds)\r\n" +
-		"\t\telse if source.oclIsTypeOf(View) then\r\n" +
-		"\t\t\tsource.oclAsType(View).features\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tsource.oclAsType(Service).features\r\n" +
-		"\t\t\t\t->collect(f |\r\n" +
-		"\t\t\t\t\tif f.oclIsTypeOf(ServiceAttribute) then\r\n" +
-		"\t\t\t\t\t\tf.oclAsType(ServiceAttribute).attribute\r\n" +
-		"\t\t\t\t\telse\r\n" +
-		"\t\t\t\t\t\tf.oclAsType(ServiceAssociation).association\r\n" +
-		"\t\t\t\t\tendif)\r\n" +
-		"\t\tendif endif\r\n" +
+	protected static final String DYNAMIC_UNIT__SERVICE_FEATURES_MUST_BE_FROM_SOURCE__EEXPRESSION = "let serviceFeatures : Collection(ServiceFeature)\r\n" +
+		"\t= source->select(s | s.oclIsTypeOf(Service)).oclAsType(Service)\r\n" +
+		"\t\t->collect(s | s.features)\r\n" +
 		"\tin displayFields\r\n" +
 		"\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
 		"\t\t->select(f | \r\n" +
 		"\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
-		"\t\t\t\ttrue\r\n" +
+		"\t\t\t\tnot f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()\r\n" +
 		"\t\t\telse\r\n" +
-		"\t\t\t\tf.oclAsType(UnitAssociation).association.oclIsTypeOf(ServiceAssociation)\r\n" +
+		"\t\t\t\tnot f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()\r\n" +
 		"\t\t\tendif)\r\n" +
 		"\t\t->forAll(f | \r\n" +
 		"\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
-		"\t\t\t\tfeatures->includes(f.oclAsType(UnitElement).attribute)\r\n" +
+		"\t\t\t\tserviceFeatures->includes(f.oclAsType(UnitElement).serviceFeature)\r\n" +
 		"\t\t\telse\r\n" +
-		"\t\t\t\tfeatures->includes(f.oclAsType(UnitAssociation).association)\r\n" +
+		"\t\t\t\tserviceFeatures->includes(f.oclAsType(UnitAssociation).serviceFeature)\r\n" +
 		"\t\t\tendif)";
 
 	/**
@@ -2713,7 +2696,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_UNIT__ENTITY_SOURCE_ONLY_IF_NOT_ENCAPSULATED__EEXPRESSION = "source.oclIsTypeOf(Entity) implies source.oclAsType(Entity).servedBy->isEmpty()";
+	protected static final String DYNAMIC_UNIT__ENTITY_SOURCE_ONLY_IF_NOT_ENCAPSULATED__EEXPRESSION = "source->forAll(s | s.oclIsTypeOf(Entity) implies s.oclAsType(Entity).servedBy->isEmpty())";
 
 	/**
 	 * Validates the entitySourceOnlyIfNotEncapsulated constraint of '<em>Dynamic Unit</em>'.
@@ -2737,12 +2720,12 @@ public class WebsiteValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the serviceSourceImpliesServiceFeaturesSet constraint of '<em>Dynamic Unit</em>'.
+	 * The cached validation expression for the serviceSourceRequiresServiceFeatures constraint of '<em>Dynamic Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_UNIT__SERVICE_SOURCE_IMPLIES_SERVICE_FEATURES_SET__EEXPRESSION = "source.oclIsTypeOf(Service) implies \r\n" +
+	protected static final String DYNAMIC_UNIT__SERVICE_SOURCE_REQUIRES_SERVICE_FEATURES__EEXPRESSION = "source->select(s | s.oclIsTypeOf(Service))->notEmpty() implies \r\n" +
 		"displayFields\r\n" +
 		"\t->select(f|f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
 		"\t->forAll(f |\r\n" +
@@ -2753,12 +2736,12 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t\tendif)";
 
 	/**
-	 * Validates the serviceSourceImpliesServiceFeaturesSet constraint of '<em>Dynamic Unit</em>'.
+	 * Validates the serviceSourceRequiresServiceFeatures constraint of '<em>Dynamic Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(DynamicUnit dynamicUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDynamicUnit_serviceSourceRequiresServiceFeatures(DynamicUnit dynamicUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(WebsitePackage.Literals.DYNAMIC_UNIT,
@@ -2766,8 +2749,8 @@ public class WebsiteValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "serviceSourceImpliesServiceFeaturesSet",
-				 DYNAMIC_UNIT__SERVICE_SOURCE_IMPLIES_SERVICE_FEATURES_SET__EEXPRESSION,
+				 "serviceSourceRequiresServiceFeatures",
+				 DYNAMIC_UNIT__SERVICE_SOURCE_REQUIRES_SERVICE_FEATURES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -2792,7 +2775,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(detailsUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(detailsUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletonElement(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_selectionFromSource(detailsUnit, diagnostics, context);
 		return result;
@@ -2817,7 +2800,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(indexUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(indexUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletonElement(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_selectionFromSource(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(indexUnit, diagnostics, context);
@@ -2843,7 +2826,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(controlUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(controlUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(controlUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(controlUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(controlUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2866,7 +2849,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(searchUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(searchUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(searchUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(searchUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(searchUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2898,7 +2881,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(registrationUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(registrationUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(registrationUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(registrationUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(registrationUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2921,7 +2904,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(loginUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(loginUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(loginUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(loginUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(loginUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2944,7 +2927,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(forgottenPasswordUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(forgottenPasswordUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(forgottenPasswordUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(forgottenPasswordUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(forgottenPasswordUnit, diagnostics, context);
 		return result;
 	}
 
@@ -3095,7 +3078,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(updateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(updateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(updateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(updateUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(updateUnit, diagnostics, context);
 		return result;
 	}
 
@@ -3118,7 +3101,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(mapUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(mapUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(mapUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceImpliesServiceFeaturesSet(mapUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(mapUnit, diagnostics, context);
 		return result;
 	}
 

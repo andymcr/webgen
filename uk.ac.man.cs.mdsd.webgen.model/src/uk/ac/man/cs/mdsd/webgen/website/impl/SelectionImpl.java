@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.criteria.Order;
@@ -24,6 +25,7 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
 
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
+import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -35,6 +37,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
@@ -122,6 +125,47 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.SELECTION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service getUsedBy() {
+		if (eContainerFeatureID() != WebsitePackage.SELECTION__USED_BY) return null;
+		return (Service)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetUsedBy(Service newUsedBy, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newUsedBy, WebsitePackage.SELECTION__USED_BY, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUsedBy(Service newUsedBy) {
+		if (newUsedBy != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.SELECTION__USED_BY && newUsedBy != null)) {
+			if (EcoreUtil.isAncestor(this, newUsedBy))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newUsedBy != null)
+				msgs = ((InternalEObject)newUsedBy).eInverseAdd(this, WebsitePackage.SERVICE__SELECTIONS, Service.class, msgs);
+			msgs = basicSetUsedBy(newUsedBy, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SELECTION__USED_BY, newUsedBy, newUsedBy));
 	}
 
 	/**
@@ -230,8 +274,26 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.SELECTION__USED_BY:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetUsedBy((Service)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__USED_BY:
+				return basicSetUsedBy(null, msgs);
 			case WebsitePackage.SELECTION__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.SELECTION__FILTER:
@@ -248,8 +310,24 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case WebsitePackage.SELECTION__USED_BY:
+				return eInternalContainer().eInverseRemove(this, WebsitePackage.SERVICE__SELECTIONS, Service.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__USED_BY:
+				return getUsedBy();
 			case WebsitePackage.SELECTION__PARAMETERS:
 				return getParameters();
 			case WebsitePackage.SELECTION__JOINS:
@@ -273,6 +351,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__USED_BY:
+				setUsedBy((Service)newValue);
+				return;
 			case WebsitePackage.SELECTION__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends SelectionParameter>)newValue);
@@ -303,6 +384,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__USED_BY:
+				setUsedBy((Service)null);
+				return;
 			case WebsitePackage.SELECTION__PARAMETERS:
 				getParameters().clear();
 				return;
@@ -330,6 +414,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.SELECTION__USED_BY:
+				return getUsedBy() != null;
 			case WebsitePackage.SELECTION__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
 			case WebsitePackage.SELECTION__JOINS:

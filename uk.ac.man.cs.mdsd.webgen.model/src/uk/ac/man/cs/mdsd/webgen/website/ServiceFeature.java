@@ -2,8 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Service Feature</b></em>'.
@@ -21,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface ServiceFeature extends EObject {
+public interface ServiceFeature extends IncludedFeature {
 	/**
 	 * Returns the value of the '<em><b>Part Of</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getFeatures <em>Features</em>}'.

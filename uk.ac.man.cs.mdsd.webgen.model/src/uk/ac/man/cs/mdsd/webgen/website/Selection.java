@@ -16,6 +16,7 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getFilter <em>Filter</em>}</li>
@@ -28,6 +29,34 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  * @generated
  */
 public interface Selection extends NamedElement {
+	/**
+	 * Returns the value of the '<em><b>Used By</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getSelections <em>Selections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Used By</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Used By</em>' container reference.
+	 * @see #setUsedBy(Service)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelection_UsedBy()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Service#getSelections
+	 * @model opposite="selections" required="true" transient="false"
+	 * @generated
+	 */
+	Service getUsedBy();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getUsedBy <em>Used By</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Used By</em>' container reference.
+	 * @see #getUsedBy()
+	 * @generated
+	 */
+	void setUsedBy(Service value);
+
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter}.

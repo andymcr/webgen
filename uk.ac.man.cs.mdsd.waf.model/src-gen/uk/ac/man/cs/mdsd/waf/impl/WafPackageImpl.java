@@ -3463,8 +3463,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		interfaceFieldEClass.getESuperTypes().add(this.getUnitField());
 		dataTypeFieldEClass.getESuperTypes().add(this.getInterfaceField());
 		dateFieldEClass.getESuperTypes().add(this.getInterfaceField());
-		captchaFieldEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
-		captchaFieldEClass.getESuperTypes().add(this.getUnitField());
+		captchaFieldEClass.getESuperTypes().add(this.getInterfaceField());
 		editUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		createUnitEClass.getESuperTypes().add(this.getEditUnit());
 		createUpdateUnitEClass.getESuperTypes().add(this.getEditUnit());

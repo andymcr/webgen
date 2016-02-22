@@ -5453,8 +5453,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		interfaceFieldEClass.getESuperTypes().add(this.getUnitField());
 		dataTypeFieldEClass.getESuperTypes().add(this.getInterfaceField());
 		dateFieldEClass.getESuperTypes().add(this.getInterfaceField());
-		captchaFieldEClass.getESuperTypes().add(this.getNamedDisplayElement());
-		captchaFieldEClass.getESuperTypes().add(this.getUnitField());
+		captchaFieldEClass.getESuperTypes().add(this.getInterfaceField());
 		unitSupportActionEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		editUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		createUnitEClass.getESuperTypes().add(this.getEditUnit());

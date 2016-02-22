@@ -746,6 +746,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 			case WebsitePackage.CAPTCHA_FIELD: {
 				CaptchaField captchaField = (CaptchaField)theEObject;
 				T result = caseCaptchaField(captchaField);
+				if (result == null) result = caseInterfaceField(captchaField);
 				if (result == null) result = caseNamedDisplayElement(captchaField);
 				if (result == null) result = caseUnitField(captchaField);
 				if (result == null) result = caseNamedElement(captchaField);

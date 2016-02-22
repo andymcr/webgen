@@ -320,7 +320,7 @@ class DateField extends InterfaceField {
 	String format
 }
 
-class CaptchaField extends NamedDisplayElement, UnitField {
+class CaptchaField extends InterfaceField {
 }
 
 abstract class EditUnit extends DynamicUnit {

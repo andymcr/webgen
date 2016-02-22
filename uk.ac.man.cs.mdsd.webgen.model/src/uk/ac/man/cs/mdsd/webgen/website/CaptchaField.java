@@ -13,6 +13,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface CaptchaField extends NamedDisplayElement, UnitField {
+public interface CaptchaField extends InterfaceField {
 
 } // CaptchaField

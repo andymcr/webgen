@@ -154,7 +154,7 @@ lazy rule implicitAuthenticationKey {
 unique lazy rule implicitRegistrationUnit {
 	from website : Website!LocalAuthenticationSystem
 	to waf : WAF!RegistrationUnit (
-		name <- 'registerUser',
+		name <- 'RegisterUser',
 		displayLabel <- 'Register User',
 		services <- Sequence{thisModule.findWafService('Authentication')},
 		omitCaption <- false,
@@ -170,12 +170,12 @@ unique lazy rule implicitRegistrationUnit {
 				= thisModule.findWafService('Authentication').features
 					->select(f | f.name = 'username' or f.name = 'email' or f.name = 'password')
 				in includedFeatures->select(f | f.name = 'username')
-					->collect(f | thisModule.implicitUnitElement(f))
+					->collect(f | thisModule.implicitUnitAttribute(f))
 				->union(includedFeatures->select(f | f.name = 'email')
-					->collect(f | thisModule.implicitUnitElement(f)))
+					->collect(f | thisModule.implicitUnitAttribute(f)))
 				->union(Sequence{confirmEmail})
 				->union(includedFeatures->select(f | f.name = 'password')
-					->collect(f | thisModule.implicitUnitElement(f)))
+					->collect(f | thisModule.implicitUnitAttribute(f)))
 				->union(Sequence{confirmPassword})
 				->union(if website.useCaptcha then
 						Sequence{thisModule.implicitCaptchaField(website)}

@@ -2,7 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +13,5 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * @model
  * @generated
  */
-public interface CaptchaField extends NamedDisplayElement, UnitField {
+public interface CaptchaField extends InterfaceField {
 } // CaptchaField

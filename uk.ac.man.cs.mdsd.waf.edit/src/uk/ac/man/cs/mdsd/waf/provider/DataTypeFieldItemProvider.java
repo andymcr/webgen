@@ -47,6 +47,7 @@ public class DataTypeFieldItemProvider
 			addCaseInsensitivePropertyDescriptor(object);
 			addObfuscateFormFieldsPropertyDescriptor(object);
 			addEncryptPropertyDescriptor(object);
+			addInterfaceTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -140,6 +141,28 @@ public class DataTypeFieldItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Interface Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInterfaceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DataTypeField_interfaceType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DataTypeField_interfaceType_feature", "_UI_DataTypeField_type"),
+				 WafPackage.Literals.DATA_TYPE_FIELD__INTERFACE_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns DataTypeField.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -179,6 +202,7 @@ public class DataTypeFieldItemProvider
 			case WafPackage.DATA_TYPE_FIELD__CASE_INSENSITIVE:
 			case WafPackage.DATA_TYPE_FIELD__OBFUSCATE_FORM_FIELDS:
 			case WafPackage.DATA_TYPE_FIELD__ENCRYPT:
+			case WafPackage.DATA_TYPE_FIELD__INTERFACE_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

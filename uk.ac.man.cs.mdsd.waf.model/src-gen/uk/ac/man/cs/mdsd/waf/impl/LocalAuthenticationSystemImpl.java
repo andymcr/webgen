@@ -31,6 +31,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getAuthenticationService <em>Authentication Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getLoginAttemptService <em>Login Attempt Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getAutoLoginService <em>Auto Login Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#isUseCaptcha <em>Use Captcha</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#isUseEmailActivation <em>Use Email Activation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#isSendWelcomeEmail <em>Send Welcome Email</em>}</li>
@@ -91,6 +92,26 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @ordered
 	 */
 	protected Service autoLoginService;
+
+	/**
+	 * The default value of the '{@link #isUseCaptcha() <em>Use Captcha</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseCaptcha()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean USE_CAPTCHA_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isUseCaptcha() <em>Use Captcha</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseCaptcha()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean useCaptcha = USE_CAPTCHA_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isAllowSelfRegistration() <em>Allow Self Registration</em>}' attribute.
@@ -389,6 +410,27 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		autoLoginService = newAutoLoginService;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN_SERVICE, oldAutoLoginService, autoLoginService));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isUseCaptcha() {
+		return useCaptcha;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUseCaptcha(boolean newUseCaptcha) {
+		boolean oldUseCaptcha = useCaptcha;
+		useCaptcha = newUseCaptcha;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA, oldUseCaptcha, useCaptcha));
 	}
 
 	/**
@@ -699,6 +741,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN_SERVICE:
 				if (resolve) return getAutoLoginService();
 				return basicGetAutoLoginService();
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
+				return isUseCaptcha();
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				return isAllowSelfRegistration();
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
@@ -740,6 +784,9 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN_SERVICE:
 				setAutoLoginService((Service)newValue);
+				return;
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
+				setUseCaptcha((Boolean)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				setAllowSelfRegistration((Boolean)newValue);
@@ -786,6 +833,9 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN_SERVICE:
 				setAutoLoginService((Service)null);
 				return;
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
+				setUseCaptcha(USE_CAPTCHA_EDEFAULT);
+				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				setAllowSelfRegistration(ALLOW_SELF_REGISTRATION_EDEFAULT);
 				return;
@@ -826,6 +876,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return loginAttemptService != null;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN_SERVICE:
 				return autoLoginService != null;
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
+				return useCaptcha != USE_CAPTCHA_EDEFAULT;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				return allowSelfRegistration != ALLOW_SELF_REGISTRATION_EDEFAULT;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
@@ -852,7 +904,9 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (allowSelfRegistration: ");
+		result.append(" (useCaptcha: ");
+		result.append(useCaptcha);
+		result.append(", allowSelfRegistration: ");
 		result.append(allowSelfRegistration);
 		result.append(", useEmailActivation: ");
 		result.append(useEmailActivation);

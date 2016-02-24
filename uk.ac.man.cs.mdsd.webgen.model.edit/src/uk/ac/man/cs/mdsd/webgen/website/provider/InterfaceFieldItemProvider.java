@@ -52,6 +52,8 @@ public class InterfaceFieldItemProvider
 			addDefaultValuePropertyDescriptor(object);
 			addMustMatchPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
+			addPlaceholderPropertyDescriptor(object);
+			addValidationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -189,6 +191,50 @@ public class InterfaceFieldItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceField_placeholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_placeholder_feature", "_UI_InterfaceField_type"),
+				 WebsitePackage.Literals.INTERFACE_FIELD__PLACEHOLDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Validation Pattern feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValidationPatternPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceField_validationPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_validationPattern_feature", "_UI_InterfaceField_type"),
+				 WebsitePackage.Literals.INTERFACE_FIELD__VALIDATION_PATTERN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns InterfaceField.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -230,6 +276,8 @@ public class InterfaceFieldItemProvider
 			case WebsitePackage.INTERFACE_FIELD__REQUIRED:
 			case WebsitePackage.INTERFACE_FIELD__DEFAULT_VALUE:
 			case WebsitePackage.INTERFACE_FIELD__INPUT_CLASS:
+			case WebsitePackage.INTERFACE_FIELD__PLACEHOLDER:
+			case WebsitePackage.INTERFACE_FIELD__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -16,6 +16,8 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InterfaceField#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InterfaceField#getMustMatch <em>Must Match</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InterfaceField#getInputClass <em>Input Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InterfaceField#getPlaceholder <em>Placeholder</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InterfaceField#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getInterfaceField()
@@ -127,5 +129,57 @@ public interface InterfaceField extends NamedDisplayElement, UnitField {
 	 * @generated
 	 */
 	void setInputClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Placeholder</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Placeholder</em>' attribute.
+	 * @see #setPlaceholder(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getInterfaceField_Placeholder()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getPlaceholder();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.InterfaceField#getPlaceholder <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Placeholder</em>' attribute.
+	 * @see #getPlaceholder()
+	 * @generated
+	 */
+	void setPlaceholder(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Validation Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Validation Pattern</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Validation Pattern</em>' attribute.
+	 * @see #setValidationPattern(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getInterfaceField_ValidationPattern()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getValidationPattern();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.InterfaceField#getValidationPattern <em>Validation Pattern</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Validation Pattern</em>' attribute.
+	 * @see #getValidationPattern()
+	 * @generated
+	 */
+	void setValidationPattern(String value);
 
 } // InterfaceField

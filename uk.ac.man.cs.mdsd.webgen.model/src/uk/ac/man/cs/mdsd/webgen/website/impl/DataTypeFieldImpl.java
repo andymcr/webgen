@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeFieldImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeFieldImpl#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeFieldImpl#isEncrypt <em>Encrypt</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeFieldImpl#getInterfaceType <em>Interface Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,6 +79,26 @@ public class DataTypeFieldImpl extends InterfaceFieldImpl implements DataTypeFie
 	 * @ordered
 	 */
 	protected boolean encrypt = ENCRYPT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTERFACE_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String interfaceType = INTERFACE_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,6 +204,27 @@ public class DataTypeFieldImpl extends InterfaceFieldImpl implements DataTypeFie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInterfaceType() {
+		return interfaceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInterfaceType(String newInterfaceType) {
+		String oldInterfaceType = interfaceType;
+		interfaceType = newInterfaceType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DATA_TYPE_FIELD__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -193,6 +235,8 @@ public class DataTypeFieldImpl extends InterfaceFieldImpl implements DataTypeFie
 				return isObfuscateFormFields();
 			case WebsitePackage.DATA_TYPE_FIELD__ENCRYPT:
 				return isEncrypt();
+			case WebsitePackage.DATA_TYPE_FIELD__INTERFACE_TYPE:
+				return getInterfaceType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,6 +257,9 @@ public class DataTypeFieldImpl extends InterfaceFieldImpl implements DataTypeFie
 				return;
 			case WebsitePackage.DATA_TYPE_FIELD__ENCRYPT:
 				setEncrypt((Boolean)newValue);
+				return;
+			case WebsitePackage.DATA_TYPE_FIELD__INTERFACE_TYPE:
+				setInterfaceType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -235,6 +282,9 @@ public class DataTypeFieldImpl extends InterfaceFieldImpl implements DataTypeFie
 			case WebsitePackage.DATA_TYPE_FIELD__ENCRYPT:
 				setEncrypt(ENCRYPT_EDEFAULT);
 				return;
+			case WebsitePackage.DATA_TYPE_FIELD__INTERFACE_TYPE:
+				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -253,6 +303,8 @@ public class DataTypeFieldImpl extends InterfaceFieldImpl implements DataTypeFie
 				return obfuscateFormFields != OBFUSCATE_FORM_FIELDS_EDEFAULT;
 			case WebsitePackage.DATA_TYPE_FIELD__ENCRYPT:
 				return encrypt != ENCRYPT_EDEFAULT;
+			case WebsitePackage.DATA_TYPE_FIELD__INTERFACE_TYPE:
+				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -271,6 +323,8 @@ public class DataTypeFieldImpl extends InterfaceFieldImpl implements DataTypeFie
 		result.append(obfuscateFormFields);
 		result.append(", encrypt: ");
 		result.append(encrypt);
+		result.append(", interfaceType: ");
+		result.append(interfaceType);
 		result.append(')');
 		return result.toString();
 	}

@@ -54,6 +54,8 @@ public class InterfaceFieldItemProvider
 			addDateFormatPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addMustMatchPropertyDescriptor(object);
+			addPlaceholderPropertyDescriptor(object);
+			addValidationPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -192,6 +194,50 @@ public class InterfaceFieldItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceField_placeholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_placeholder_feature", "_UI_InterfaceField_type"),
+				 WafPackage.Literals.INTERFACE_FIELD__PLACEHOLDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Validation Pattern feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValidationPatternPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceField_validationPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_validationPattern_feature", "_UI_InterfaceField_type"),
+				 WafPackage.Literals.INTERFACE_FIELD__VALIDATION_PATTERN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -253,6 +299,8 @@ public class InterfaceFieldItemProvider
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
+			case WafPackage.INTERFACE_FIELD__PLACEHOLDER:
+			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.INTERFACE_FIELD__DEFAULT_VALUE:

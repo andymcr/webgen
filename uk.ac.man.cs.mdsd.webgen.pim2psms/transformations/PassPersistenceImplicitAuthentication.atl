@@ -78,10 +78,11 @@ rule OrmModel {
 					endif),
 		entitiesAndViews <-
 			let website : Website!WebGenModel = thisModule.findWebGenModel()
+			in let authentication : Website!Authentication
+				= website.websiteProperties.authentication
 			in partialOrm.entitiesAndViews
-				->union(let authentication : Website!Authentication
-					= website.websiteProperties.authentication
-					in if authentication.oclIsUndefined() then
+				->union(if authentication.oclIsUndefined()
+							or website.websiteProperties.frameworkTechnology = #Symfony then
 							Sequence{}
 						else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
 								and authentication.authenticationSource.oclIsUndefined() then
@@ -89,9 +90,8 @@ rule OrmModel {
 						else
 							Sequence{}
 						endif endif)
-				->union(let authentication : Website!Authentication
-					= website.websiteProperties.authentication
-					in if authentication.oclIsUndefined() then
+				->union(if authentication.oclIsUndefined()
+							or website.websiteProperties.frameworkTechnology = #Symfony then
 							Sequence{}
 						else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
 								and authentication.trackLoginAttempts then
@@ -99,9 +99,8 @@ rule OrmModel {
 						else
 							Sequence{}
 						endif endif)
-				->union(let authentication : Website!Authentication
-					= website.websiteProperties.authentication
-					in if authentication.oclIsUndefined() then
+				->union(if authentication.oclIsUndefined()
+							or website.websiteProperties.frameworkTechnology = #Symfony then
 							Sequence{}
 						else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
 								and authentication.allowAutoLogin then

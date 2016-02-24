@@ -32,6 +32,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getMustMatch <em>Must Match</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getInputClass <em>Input Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getPlaceholder <em>Placeholder</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  * </ul>
  *
  * @generated
@@ -146,6 +148,46 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * @ordered
 	 */
 	protected String inputClass = INPUT_CLASS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLACEHOLDER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected String placeholder = PLACEHOLDER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValidationPattern() <em>Validation Pattern</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValidationPattern()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATION_PATTERN_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValidationPattern() <em>Validation Pattern</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValidationPattern()
+	 * @generated
+	 * @ordered
+	 */
+	protected String validationPattern = VALIDATION_PATTERN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -355,6 +397,48 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPlaceholder() {
+		return placeholder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPlaceholder(String newPlaceholder) {
+		String oldPlaceholder = placeholder;
+		placeholder = newPlaceholder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INTERFACE_FIELD__PLACEHOLDER, oldPlaceholder, placeholder));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getValidationPattern() {
+		return validationPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValidationPattern(String newValidationPattern) {
+		String oldValidationPattern = validationPattern;
+		validationPattern = newValidationPattern;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INTERFACE_FIELD__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -417,6 +501,10 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return basicGetMustMatch();
 			case WebsitePackage.INTERFACE_FIELD__INPUT_CLASS:
 				return getInputClass();
+			case WebsitePackage.INTERFACE_FIELD__PLACEHOLDER:
+				return getPlaceholder();
+			case WebsitePackage.INTERFACE_FIELD__VALIDATION_PATTERN:
+				return getValidationPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -449,6 +537,12 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return;
 			case WebsitePackage.INTERFACE_FIELD__INPUT_CLASS:
 				setInputClass((String)newValue);
+				return;
+			case WebsitePackage.INTERFACE_FIELD__PLACEHOLDER:
+				setPlaceholder((String)newValue);
+				return;
+			case WebsitePackage.INTERFACE_FIELD__VALIDATION_PATTERN:
+				setValidationPattern((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -483,6 +577,12 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			case WebsitePackage.INTERFACE_FIELD__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
+			case WebsitePackage.INTERFACE_FIELD__PLACEHOLDER:
+				setPlaceholder(PLACEHOLDER_EDEFAULT);
+				return;
+			case WebsitePackage.INTERFACE_FIELD__VALIDATION_PATTERN:
+				setValidationPattern(VALIDATION_PATTERN_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -509,6 +609,10 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return mustMatch != null;
 			case WebsitePackage.INTERFACE_FIELD__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
+			case WebsitePackage.INTERFACE_FIELD__PLACEHOLDER:
+				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
+			case WebsitePackage.INTERFACE_FIELD__VALIDATION_PATTERN:
+				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -569,6 +673,10 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		result.append(defaultValue);
 		result.append(", inputClass: ");
 		result.append(inputClass);
+		result.append(", placeholder: ");
+		result.append(placeholder);
+		result.append(", validationPattern: ");
+		result.append(validationPattern);
 		result.append(')');
 		return result.toString();
 	}

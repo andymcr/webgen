@@ -511,12 +511,15 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//InterfaceField/mustMatch"/>
       <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//InterfaceField/inputClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//InterfaceField/placeholder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//InterfaceField/validationPattern"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//DataTypeField">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//DataTypeField/dataType"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeField/obfuscateFormFields"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeField/encrypt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeField/interfaceType"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//DateField">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//DateField/details"/>

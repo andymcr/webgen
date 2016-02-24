@@ -941,7 +941,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_AllowSelfRegistration() {
+	public EAttribute getLocalAuthenticationSystem_UseCaptcha() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -950,7 +950,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_UseEmailActivation() {
+	public EAttribute getLocalAuthenticationSystem_AllowSelfRegistration() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -959,7 +959,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLocalAuthenticationSystem_SendWelcomeEmail() {
+	public EAttribute getLocalAuthenticationSystem_UseEmailActivation() {
 		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -968,8 +968,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_RegistrationUnit() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(8);
+	public EAttribute getLocalAuthenticationSystem_SendWelcomeEmail() {
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -977,7 +977,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_LoginUnit() {
+	public EReference getLocalAuthenticationSystem_RegistrationUnit() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -986,8 +986,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_ForgottenPasswordUnit() {
+	public EReference getLocalAuthenticationSystem_LoginUnit() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLocalAuthenticationSystem_ForgottenPasswordUnit() {
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -2210,6 +2219,24 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getInterfaceField_Placeholder() {
+		return (EAttribute)interfaceFieldEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInterfaceField_ValidationPattern() {
+		return (EAttribute)interfaceFieldEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataTypeField() {
 		return dataTypeFieldEClass;
 	}
@@ -2248,6 +2275,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EAttribute getDataTypeField_Encrypt() {
 		return (EAttribute)dataTypeFieldEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataTypeField_InterfaceType() {
+		return (EAttribute)dataTypeFieldEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3085,6 +3121,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SERVICE);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT_SERVICE);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN_SERVICE);
+		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL);
@@ -3261,12 +3298,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(interfaceFieldEClass, INTERFACE_FIELD__DEFAULT_VALUE);
 		createEAttribute(interfaceFieldEClass, INTERFACE_FIELD__INPUT_CLASS);
 		createEReference(interfaceFieldEClass, INTERFACE_FIELD__MUST_MATCH);
+		createEAttribute(interfaceFieldEClass, INTERFACE_FIELD__PLACEHOLDER);
+		createEAttribute(interfaceFieldEClass, INTERFACE_FIELD__VALIDATION_PATTERN);
 
 		dataTypeFieldEClass = createEClass(DATA_TYPE_FIELD);
 		createEReference(dataTypeFieldEClass, DATA_TYPE_FIELD__DATA_TYPE);
 		createEAttribute(dataTypeFieldEClass, DATA_TYPE_FIELD__CASE_INSENSITIVE);
 		createEAttribute(dataTypeFieldEClass, DATA_TYPE_FIELD__OBFUSCATE_FORM_FIELDS);
 		createEAttribute(dataTypeFieldEClass, DATA_TYPE_FIELD__ENCRYPT);
+		createEAttribute(dataTypeFieldEClass, DATA_TYPE_FIELD__INTERFACE_TYPE);
 
 		dateFieldEClass = createEClass(DATE_FIELD);
 		createEAttribute(dateFieldEClass, DATE_FIELD__DETAILS);
@@ -3531,6 +3571,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getLocalAuthenticationSystem_AuthenticationService(), this.getService(), null, "authenticationService", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_LoginAttemptService(), this.getService(), null, "loginAttemptService", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_AutoLoginService(), this.getService(), null, "autoLoginService", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocalAuthenticationSystem_UseCaptcha(), theEcorePackage.getEBoolean(), "useCaptcha", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_AllowSelfRegistration(), theEcorePackage.getEBoolean(), "allowSelfRegistration", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_UseEmailActivation(), theEcorePackage.getEBoolean(), "useEmailActivation", "true", 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_SendWelcomeEmail(), theEcorePackage.getEBoolean(), "sendWelcomeEmail", "true", 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3707,12 +3748,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getInterfaceField_DefaultValue(), theCriteriaPackage.getExpression(), null, "defaultValue", null, 0, 1, InterfaceField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInterfaceField_InputClass(), theEcorePackage.getEString(), "inputClass", null, 0, 1, InterfaceField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInterfaceField_MustMatch(), this.getUnitField(), null, "mustMatch", null, 0, 1, InterfaceField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInterfaceField_Placeholder(), theEcorePackage.getEString(), "placeholder", null, 0, 1, InterfaceField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInterfaceField_ValidationPattern(), theEcorePackage.getEString(), "validationPattern", null, 0, 1, InterfaceField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeFieldEClass, DataTypeField.class, "DataTypeField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataTypeField_DataType(), theOrmPackage.getDataType(), null, "dataType", null, 1, 1, DataTypeField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataTypeField_CaseInsensitive(), theEcorePackage.getEBoolean(), "caseInsensitive", null, 0, 1, DataTypeField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataTypeField_ObfuscateFormFields(), theEcorePackage.getEBoolean(), "obfuscateFormFields", null, 0, 1, DataTypeField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataTypeField_Encrypt(), theEcorePackage.getEBoolean(), "encrypt", null, 0, 1, DataTypeField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataTypeField_InterfaceType(), theEcorePackage.getEString(), "interfaceType", null, 0, 1, DataTypeField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dateFieldEClass, DateField.class, "DateField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDateField_Details(), theOrmPackage.getDateDetails(), "details", null, 1, 1, DateField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

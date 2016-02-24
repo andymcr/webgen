@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.orm.DataType;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DataTypeField#isCaseInsensitive <em>Case Insensitive</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DataTypeField#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DataTypeField#isEncrypt <em>Encrypt</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.DataTypeField#getInterfaceType <em>Interface Type</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDataTypeField()
@@ -127,5 +128,31 @@ public interface DataTypeField extends InterfaceField {
 	 * @generated
 	 */
 	void setEncrypt(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Interface Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Interface Type</em>' attribute.
+	 * @see #setInterfaceType(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDataTypeField_InterfaceType()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getInterfaceType();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DataTypeField#getInterfaceType <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Interface Type</em>' attribute.
+	 * @see #getInterfaceType()
+	 * @generated
+	 */
+	void setInterfaceType(String value);
 
 } // DataTypeField

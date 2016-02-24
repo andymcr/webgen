@@ -18,7 +18,8 @@ rule WafModel {
 				= thisModule.findWebsiteProperties()
 			in partialWaf.pages
 				->union(
-					if websiteProperties.authentication.oclIsUndefined() then
+					if websiteProperties.authentication.oclIsUndefined()
+							or websiteProperties.frameworkTechnology = #Symfony then
 						Sequence{}
 					else if websiteProperties.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
 						let authentication : Website!LocalAuthenticationSystem
@@ -32,7 +33,8 @@ rule WafModel {
 						Sequence{}
 					endif endif)
 				->union(
-					if websiteProperties.authentication.oclIsUndefined() then
+					if websiteProperties.authentication.oclIsUndefined()
+							or websiteProperties.frameworkTechnology = #Symfony then
 						Sequence{}
 					else if websiteProperties.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
 						let authentication : Website!LocalAuthenticationSystem
@@ -74,52 +76,63 @@ rule LocalAuthenticationSystem {
 			thisModule.findWafService(website.userSource.name)
 				.features->any(f | f.name = website.userAuthenticationKey.name),
 		authenticationService <-
-			if not website.authenticationSource.oclIsUndefined() then
+			if thisModule.findWebsiteProperties().frameworkTechnology = #Symfony then
+				OclUndefined
+			else if website.authenticationSource.oclIsUndefined() then
+				thisModule.findWafService('Authentication')
+			else
 				if website.authenticationSource.oclIsTypeOf(Website!Service) then
 					website.authenticationSource
 				else
 					thisModule.findWafService(website.authenticationSource.name)
 				endif
-			else
-				thisModule.findWafService('Authentication')
-			endif,
+			endif endif,
 		loginAttemptService <-
-			if website.trackLoginAttempts then
-				thisModule.findWafService('LoginAttempt')
-			else
+			if not website.trackLoginAttempts
+					or thisModule.findWebsiteProperties().frameworkTechnology = #Symfony then
 				OclUndefined
+			else
+				thisModule.findWafService('LoginAttempt')
 			endif,
+		useCaptcha <- website.useCaptcha,
 		allowSelfRegistration <- website.allowSelfRegistration,
 		autoLoginService <-
-			if website.allowAutoLogin then
-				thisModule.findWafService('AutoLogin')
-			else
+			if not website.allowAutoLogin
+					or thisModule.findWebsiteProperties().frameworkTechnology = #Symfony then
 				OclUndefined
+			else
+				thisModule.findWafService('AutoLogin')
 			endif,
 		useEmailActivation <- website.useEmailActivation,
 		sendWelcomeEmail <- website.sendWelcomeEmail,
 		registrationUnit <-
-			if not website.registrationUnit.oclIsUndefined() then
+			if thisModule.findWebsiteProperties().frameworkTechnology = #Symfony then
+				OclUndefined
+			else if not website.registrationUnit.oclIsUndefined() then
 				website.registrationUnit
 			else if website.allowSelfRegistration then
 				thisModule.implicitRegistrationUnit(website)
 			else
 				OclUndefined
-			endif endif,
+			endif endif endif,
 		loginUnit <-
-			if not website.loginUnit.oclIsUndefined() then
+			if thisModule.findWebsiteProperties().frameworkTechnology = #Symfony then
+				OclUndefined
+			else if not website.loginUnit.oclIsUndefined() then
 				website.loginUnit
 			else
 				thisModule.implicitLoginUnit(website)
-			endif,
+			endif endif,
 		forgottenPasswordUnit <-
-			if not website.forgottenPasswordUnit.oclIsUndefined() then
+			if thisModule.findWebsiteProperties().frameworkTechnology = #Symfony then
+				OclUndefined
+			else if not website.forgottenPasswordUnit.oclIsUndefined() then
 				website.forgottenPasswordUnit
 			else if not website.loginUnit.oclIsUndefined() then
 				thisModule.implicitForgottenPasswordUnit(website)
 			else
 				OclUndefined
-			endif endif
+			endif endif endif
 	)
 }
 
@@ -196,6 +209,7 @@ unique lazy rule implicitRegistrationUnit {
 		cardinality <- #Required,
 		caseInsensitive <- true,
 		displayLabel <- 'Confirm Email',
+		interfaceType <- thisModule.findWebsiteDataType('Email').interfaceType,
 		inputClass <- 'input_attribute'
 		),
 	confirmPassword : WAF!DataTypeField (
@@ -205,6 +219,7 @@ unique lazy rule implicitRegistrationUnit {
 		obfuscateFormFields <- true,
 		encrypt <- true,
 		displayLabel <- 'Confirm Password',
+		interfaceType <- thisModule.findWebsiteDataType('String').interfaceType,
 		inputClass <- 'input_attribute'
 	)
 	do {
@@ -338,6 +353,7 @@ unique lazy rule implicitRememberMeField {
 		dataType <- thisModule.findOrmDataType('Boolean'),
 		cardinality <- #Optional,
 		displayLabel <- 'Remember Me',
+		interfaceType <- thisModule.findWebsiteDataType('Boolean').interfaceType,
 		inputClass <- 'input_checkbox'
 	)
 	do {

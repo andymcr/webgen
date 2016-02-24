@@ -399,13 +399,22 @@ public interface WafPackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN_SERVICE = AUTHENTICATION_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Use Captcha</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA = AUTHENTICATION_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Allow Self Registration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION = AUTHENTICATION_FEATURE_COUNT + 5;
+	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION = AUTHENTICATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Use Email Activation</b></em>' attribute.
@@ -414,7 +423,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION = AUTHENTICATION_FEATURE_COUNT + 6;
+	int LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION = AUTHENTICATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Send Welcome Email</b></em>' attribute.
@@ -423,7 +432,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL = AUTHENTICATION_FEATURE_COUNT + 7;
+	int LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL = AUTHENTICATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Registration Unit</b></em>' reference.
@@ -432,7 +441,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT = AUTHENTICATION_FEATURE_COUNT + 8;
+	int LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT = AUTHENTICATION_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Login Unit</b></em>' reference.
@@ -441,7 +450,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT = AUTHENTICATION_FEATURE_COUNT + 9;
+	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT = AUTHENTICATION_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Forgotten Password Unit</b></em>' reference.
@@ -450,7 +459,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT = AUTHENTICATION_FEATURE_COUNT + 10;
+	int LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT = AUTHENTICATION_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Local Authentication System</em>' class.
@@ -459,7 +468,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 11;
+	int LOCAL_AUTHENTICATION_SYSTEM_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of operations of the '<em>Local Authentication System</em>' class.
@@ -3737,13 +3746,31 @@ public interface WafPackage extends EPackage {
 	int INTERFACE_FIELD__MUST_MATCH = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_FIELD__PLACEHOLDER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_FIELD__VALIDATION_PATTERN = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Interface Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int INTERFACE_FIELD_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Interface Field</em>' class.
@@ -3846,6 +3873,24 @@ public interface WafPackage extends EPackage {
 	int DATA_TYPE_FIELD__MUST_MATCH = INTERFACE_FIELD__MUST_MATCH;
 
 	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FIELD__PLACEHOLDER = INTERFACE_FIELD__PLACEHOLDER;
+
+	/**
+	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FIELD__VALIDATION_PATTERN = INTERFACE_FIELD__VALIDATION_PATTERN;
+
+	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3882,13 +3927,22 @@ public interface WafPackage extends EPackage {
 	int DATA_TYPE_FIELD__ENCRYPT = INTERFACE_FIELD_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FIELD__INTERFACE_TYPE = INTERFACE_FIELD_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Data Type Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_FIELD_FEATURE_COUNT = INTERFACE_FIELD_FEATURE_COUNT + 4;
+	int DATA_TYPE_FIELD_FEATURE_COUNT = INTERFACE_FIELD_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Data Type Field</em>' class.
@@ -3989,6 +4043,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATE_FIELD__MUST_MATCH = INTERFACE_FIELD__MUST_MATCH;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_FIELD__PLACEHOLDER = INTERFACE_FIELD__PLACEHOLDER;
+
+	/**
+	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_FIELD__VALIDATION_PATTERN = INTERFACE_FIELD__VALIDATION_PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>Details</b></em>' attribute.
@@ -4116,6 +4188,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CAPTCHA_FIELD__MUST_MATCH = INTERFACE_FIELD__MUST_MATCH;
+
+	/**
+	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTCHA_FIELD__PLACEHOLDER = INTERFACE_FIELD__PLACEHOLDER;
+
+	/**
+	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTCHA_FIELD__VALIDATION_PATTERN = INTERFACE_FIELD__VALIDATION_PATTERN;
 
 	/**
 	 * The number of structural features of the '<em>Captcha Field</em>' class.
@@ -9266,6 +9356,17 @@ public interface WafPackage extends EPackage {
 	EReference getLocalAuthenticationSystem_AutoLoginService();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Use Captcha</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#isUseCaptcha()
+	 * @see #getLocalAuthenticationSystem()
+	 * @generated
+	 */
+	EAttribute getLocalAuthenticationSystem_UseCaptcha();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#isAllowSelfRegistration <em>Allow Self Registration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10782,6 +10883,28 @@ public interface WafPackage extends EPackage {
 	EReference getInterfaceField_MustMatch();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.InterfaceField#getPlaceholder <em>Placeholder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Placeholder</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.InterfaceField#getPlaceholder()
+	 * @see #getInterfaceField()
+	 * @generated
+	 */
+	EAttribute getInterfaceField_Placeholder();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.InterfaceField#getValidationPattern <em>Validation Pattern</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Validation Pattern</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.InterfaceField#getValidationPattern()
+	 * @see #getInterfaceField()
+	 * @generated
+	 */
+	EAttribute getInterfaceField_ValidationPattern();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.DataTypeField <em>Data Type Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10834,6 +10957,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataTypeField_Encrypt();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DataTypeField#getInterfaceType <em>Interface Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Interface Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DataTypeField#getInterfaceType()
+	 * @see #getDataTypeField()
+	 * @generated
+	 */
+	EAttribute getDataTypeField_InterfaceType();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.DateField <em>Date Field</em>}'.
@@ -12025,6 +12159,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN_SERVICE = eINSTANCE.getLocalAuthenticationSystem_AutoLoginService();
+
+		/**
+		 * The meta object literal for the '<em><b>Use Captcha</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA = eINSTANCE.getLocalAuthenticationSystem_UseCaptcha();
 
 		/**
 		 * The meta object literal for the '<em><b>Allow Self Registration</b></em>' attribute feature.
@@ -13225,6 +13367,22 @@ public interface WafPackage extends EPackage {
 		EReference INTERFACE_FIELD__MUST_MATCH = eINSTANCE.getInterfaceField_MustMatch();
 
 		/**
+		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERFACE_FIELD__PLACEHOLDER = eINSTANCE.getInterfaceField_Placeholder();
+
+		/**
+		 * The meta object literal for the '<em><b>Validation Pattern</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERFACE_FIELD__VALIDATION_PATTERN = eINSTANCE.getInterfaceField_ValidationPattern();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.DataTypeFieldImpl <em>Data Type Field</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13265,6 +13423,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_TYPE_FIELD__ENCRYPT = eINSTANCE.getDataTypeField_Encrypt();
+
+		/**
+		 * The meta object literal for the '<em><b>Interface Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_TYPE_FIELD__INTERFACE_TYPE = eINSTANCE.getDataTypeField_InterfaceType();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.DateFieldImpl <em>Date Field</em>}' class.

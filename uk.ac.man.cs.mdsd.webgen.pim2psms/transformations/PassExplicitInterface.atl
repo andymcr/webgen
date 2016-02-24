@@ -204,6 +204,13 @@ helper context Website!ServiceAttribute def: interfaceType() : String
 			self.attribute.interfaceType()
 		endif;
 
+helper context Website!DataTypeField def: interfaceType() : String
+	= if not self.interfaceType.oclIsUndefined() and self.interfaceType <> '' then
+			self.interfaceType
+		else
+			self.dataType.interfaceType
+		endif;
+
 helper context Website!Attribute def: placeholder() : String
 	= if not self.placeholder.oclIsUndefined() and self.placeholder <> '' then
 			self.placeholder
@@ -222,6 +229,17 @@ helper context Website!ServiceAttribute def: placeholder() : String
 			self.attribute.placeholder()
 		endif;
 
+helper context Website!InterfaceField def: placeholder() : String
+	= if not self.placeholder.oclIsUndefined() and self.placeholder <> '' then
+			self.placeholder
+		else
+			if self.oclIsTypeOf(Website!DataTypeField) then
+				self.dataType.placeholder
+			else
+				OclUndefined
+			endif
+		endif;
+
 helper context Website!Attribute def: validationPattern() : String
 	= if not self.validationPattern.oclIsUndefined() and self.validationPattern <> '' then
 			self.validationPattern
@@ -238,6 +256,17 @@ helper context Website!ServiceAttribute def: validationPattern() : String
 			self.validationPattern
 		else
 			self.attribute.validationPattern()
+		endif;
+
+helper context Website!InterfaceField def: validationPattern() : String
+	= if not self.validationPattern.oclIsUndefined() and self.validationPattern <> '' then
+			self.validationPattern
+		else
+			if self.oclIsTypeOf(Website!DataTypeField) then
+				self.dataType.validationPattern
+			else
+				OclUndefined
+			endif
 		endif;
 
 helper context Website!Attribute def: dateFormat() : String
@@ -867,6 +896,8 @@ abstract rule InterfaceField {
 			endif,
 		defaultValue <- website.defaultValue,
 		mustMatch <- website.mustMatch,
+		placeholder <- website.placeholder(),
+		validationPattern <- website.validationPattern(),
 		inputClass <- website.inputClass
 	)
 }
@@ -878,7 +909,8 @@ rule DataTypeField {
 		dataType <- thisModule.findOrmDataType(website.dataType.name),
 		encrypt <- website.encrypt,
 		caseInsensitive <- website.caseInsensitive,
-		obfuscateFormFields <- website.obfuscateFormFields
+		obfuscateFormFields <- website.obfuscateFormFields,
+		interfaceType <- website.interfaceType()
 	)
 }
 

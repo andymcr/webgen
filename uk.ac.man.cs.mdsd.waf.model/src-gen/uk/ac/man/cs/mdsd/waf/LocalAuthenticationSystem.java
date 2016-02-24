@@ -17,6 +17,7 @@ package uk.ac.man.cs.mdsd.waf;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthenticationService <em>Authentication Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getLoginAttemptService <em>Login Attempt Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAutoLoginService <em>Auto Login Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#isUseEmailActivation <em>Use Email Activation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#isSendWelcomeEmail <em>Send Welcome Email</em>}</li>
@@ -159,6 +160,32 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @generated
 	 */
 	void setAutoLoginService(Service value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Captcha</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Use Captcha</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Use Captcha</em>' attribute.
+	 * @see #setUseCaptcha(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_UseCaptcha()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isUseCaptcha();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Use Captcha</em>' attribute.
+	 * @see #isUseCaptcha()
+	 * @generated
+	 */
+	void setUseCaptcha(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Allow Self Registration</b></em>' attribute.

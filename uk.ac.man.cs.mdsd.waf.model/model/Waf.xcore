@@ -77,6 +77,7 @@ class LocalAuthenticationSystem extends Authentication {
 	refers Service authenticationService
 	refers Service loginAttemptService
 	refers Service autoLoginService
+	boolean useCaptcha
 	boolean allowSelfRegistration
 	boolean useEmailActivation = "true"
 	boolean sendWelcomeEmail = "true"
@@ -306,6 +307,8 @@ abstract class InterfaceField extends NamedDisplayElement, UnitField {
 	contains Expression defaultValue
 	String inputClass
 	refers UnitField mustMatch
+	String placeholder
+	String validationPattern
 }
 
 class DataTypeField extends InterfaceField {
@@ -313,6 +316,7 @@ class DataTypeField extends InterfaceField {
 	boolean caseInsensitive
 	boolean obfuscateFormFields
 	boolean encrypt
+	String interfaceType
 }
 
 class DateField extends InterfaceField {

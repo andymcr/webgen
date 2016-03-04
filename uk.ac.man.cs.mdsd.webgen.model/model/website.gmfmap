@@ -588,6 +588,60 @@
                   href="website.gmftool#//@palette/@tools.0/@tools.3"/>
               <diagramNode
                   href="website.gmfgraph#InterfaceAssociation"/>
+              <children
+                  compartment="//@nodes.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="website.ecore#//UnitContainer/units"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="website.ecore#//CreateUpdateUnit"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping"
+                      readOnly="true">
+                    <diagramLabel
+                        href="website.gmfgraph#InterfaceUnitNameLabel"/>
+                    <features
+                        href="website.ecore#//NamedElement/name"/>
+                  </labelMappings>
+                  <tool
+                      xsi:type="gmftool:CreationTool"
+                      href="website.gmftool#//@palette/@tools.2/@tools.4"/>
+                  <diagramNode
+                      href="website.gmfgraph#InterfaceUnit"/>
+                  <children
+                      compartment="//@nodes.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                    <containmentFeature
+                        href="website.ecore#//DynamicUnit/displayFields"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="website.ecore#//UnitElement"/>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping"
+                          readOnly="true">
+                        <diagramLabel
+                            href="website.gmfgraph#InterfaceFieldNameLabel"/>
+                        <features
+                            href="website.ecore#//UnitElement/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="website.gmftool#//@palette/@tools.0/@tools.2"/>
+                      <diagramNode
+                          href="website.gmfgraph#InterfaceElement"/>
+                    </ownedChild>
+                  </children>
+                  <compartments
+                      children="//@nodes.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0/@ownedChild/@children.0">
+                    <compartment
+                        href="website.gmfgraph#UnitFieldCompartment"/>
+                  </compartments>
+                </ownedChild>
+              </children>
+              <compartments
+                  children="//@nodes.6/@ownedChild/@children.1/@ownedChild/@children.1/@ownedChild/@children.0">
+                <compartment
+                    href="website.gmfgraph#InterfaceUnitsCompartment"/>
+              </compartments>
             </ownedChild>
           </children>
           <children
@@ -1682,7 +1736,8 @@
                       <domainMetaElement
                           href="website.ecore#//UnitElement"/>
                       <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping">
+                          xsi:type="gmfmap:FeatureLabelMapping"
+                          readOnly="true">
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
@@ -2429,7 +2484,8 @@
           <domainMetaElement
               href="website.ecore#//ServiceAttribute"/>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
+              xsi:type="gmfmap:FeatureLabelMapping"
+              readOnly="true">
             <diagramLabel
                 href="website.gmfgraph#IncludedFeatureNameLabel"/>
             <features
@@ -2450,7 +2506,8 @@
           <domainMetaElement
               href="website.ecore#//ServiceAssociation"/>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
+              xsi:type="gmfmap:FeatureLabelMapping"
+              readOnly="true">
             <diagramLabel
                 href="website.gmfgraph#IncludedFeatureNameLabel"/>
             <features

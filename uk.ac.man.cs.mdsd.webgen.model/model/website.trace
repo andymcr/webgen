@@ -433,15 +433,15 @@
     <nodeLabelTraces
         visualID="5179"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7129"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3173"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'UnitElement') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'DynamicUnit') and _containmentMF_.name = 'displayFields')">
     <nodeLabelTraces
         visualID="5180"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7121"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -462,6 +462,9 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'UnitElement') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'DynamicUnit') and _containmentMF_.name = 'displayFields')">
     <nodeLabelTraces
         visualID="5181"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7131"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -601,9 +604,6 @@
     <nodeLabelTraces
         visualID="5200"
         queryText="true"/>
-    <compartmentTraces
-        visualID="7125"
-        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3194"
@@ -623,6 +623,9 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'UnitElement') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'DynamicUnit') and _containmentMF_.name = 'displayFields')">
     <nodeLabelTraces
         visualID="5202"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7132"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -880,6 +883,23 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'ModelLabel') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'EntityOrView') and _containmentMF_.name = 'labels')">
     <nodeLabelTraces
         visualID="5256"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3249"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'CreateUpdateUnit') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'UnitContainer') and _containmentMF_.name = 'units')">
+    <nodeLabelTraces
+        visualID="5257"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7130"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3250"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'UnitElement') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'DynamicUnit') and _containmentMF_.name = 'displayFields')">
+    <nodeLabelTraces
+        visualID="5258"
         queryText="true"/>
   </childNodeTraces>
   <linkTraces

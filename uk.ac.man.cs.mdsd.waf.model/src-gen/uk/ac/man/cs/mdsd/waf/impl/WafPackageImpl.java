@@ -869,8 +869,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAuthentication_Authorises() {
+		return (EReference)authenticationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getAuthentication_LoginLabel() {
-		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -879,7 +888,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getAuthentication_LogoutLabel() {
-		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3112,6 +3121,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(wafModelEClass, WAF_MODEL__STATIC_UNITS_EDITABLE);
 
 		authenticationEClass = createEClass(AUTHENTICATION);
+		createEReference(authenticationEClass, AUTHENTICATION__AUTHORISES);
 		createEAttribute(authenticationEClass, AUTHENTICATION__LOGIN_LABEL);
 		createEAttribute(authenticationEClass, AUTHENTICATION__LOGOUT_LABEL);
 
@@ -3553,7 +3563,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getWafModel_MetaDescription(), theEcorePackage.getEString(), "metaDescription", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_FrameworkTechnology(), this.getFrameworkTechnologies(), "frameworkTechnology", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_AjaxTechnology(), this.getAjaxTechnologies(), "ajaxTechnology", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWafModel_Authentication(), this.getAuthentication(), null, "authentication", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWafModel_Authentication(), this.getAuthentication(), this.getAuthentication_Authorises(), "authentication", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_CaptchaSiteKey(), theEcorePackage.getEString(), "captchaSiteKey", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_CaptchaSecretKey(), theEcorePackage.getEString(), "captchaSecretKey", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_TextEditorURL(), theEcorePackage.getEString(), "textEditorURL", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3562,6 +3572,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getWafModel_StaticUnitsEditable(), theEcorePackage.getEBoolean(), "staticUnitsEditable", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAuthentication_Authorises(), this.getWafModel(), this.getWafModel_Authentication(), "authorises", null, 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthentication_LoginLabel(), theEcorePackage.getEString(), "loginLabel", "", 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthentication_LogoutLabel(), theEcorePackage.getEString(), "logoutLabel", "", 0, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

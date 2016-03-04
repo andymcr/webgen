@@ -55,7 +55,7 @@ class WafModel {
 	String metaDescription
 	FrameworkTechnologies frameworkTechnology
 	AjaxTechnologies ajaxTechnology
-	contains Authentication authentication
+	contains Authentication authentication opposite authorises
 	String captchaSiteKey
 	String captchaSecretKey
 	String textEditorURL
@@ -67,6 +67,7 @@ class WafModel {
 
 
 abstract class Authentication {
+	refers WafModel[1] authorises opposite authentication
 	String[1] loginLabel = ""
 	String logoutLabel = ""
 }

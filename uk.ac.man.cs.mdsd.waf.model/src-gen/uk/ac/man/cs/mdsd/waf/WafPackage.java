@@ -290,13 +290,22 @@ public interface WafPackage extends EPackage {
 	int AUTHENTICATION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Authorises</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION__AUTHORISES = 0;
+
+	/**
 	 * The feature id for the '<em><b>Login Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION__LOGIN_LABEL = 0;
+	int AUTHENTICATION__LOGIN_LABEL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Logout Label</b></em>' attribute.
@@ -305,7 +314,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION__LOGOUT_LABEL = 1;
+	int AUTHENTICATION__LOGOUT_LABEL = 2;
 
 	/**
 	 * The number of structural features of the '<em>Authentication</em>' class.
@@ -314,7 +323,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_FEATURE_COUNT = 2;
+	int AUTHENTICATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Authentication</em>' class.
@@ -334,6 +343,15 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	int LOCAL_AUTHENTICATION_SYSTEM = 2;
+
+	/**
+	 * The feature id for the '<em><b>Authorises</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_AUTHENTICATION_SYSTEM__AUTHORISES = AUTHENTICATION__AUTHORISES;
 
 	/**
 	 * The feature id for the '<em><b>Login Label</b></em>' attribute.
@@ -488,6 +506,15 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	int CAS_AUTHENTICATION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Authorises</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAS_AUTHENTICATION__AUTHORISES = AUTHENTICATION__AUTHORISES;
 
 	/**
 	 * The feature id for the '<em><b>Login Label</b></em>' attribute.
@@ -9269,6 +9296,17 @@ public interface WafPackage extends EPackage {
 	EClass getAuthentication();
 
 	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.waf.Authentication#getAuthorises <em>Authorises</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Authorises</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.Authentication#getAuthorises()
+	 * @see #getAuthentication()
+	 * @generated
+	 */
+	EReference getAuthentication_Authorises();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.Authentication#getLoginLabel <em>Login Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12093,6 +12131,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AUTHENTICATION = eINSTANCE.getAuthentication();
+
+		/**
+		 * The meta object literal for the '<em><b>Authorises</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATION__AUTHORISES = eINSTANCE.getAuthentication_Authorises();
 
 		/**
 		 * The meta object literal for the '<em><b>Login Label</b></em>' attribute feature.

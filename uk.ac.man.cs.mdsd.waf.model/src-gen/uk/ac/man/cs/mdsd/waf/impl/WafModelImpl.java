@@ -760,9 +760,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 		if (newAuthentication != authentication) {
 			NotificationChain msgs = null;
 			if (authentication != null)
-				msgs = ((InternalEObject)authentication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.WAF_MODEL__AUTHENTICATION, null, msgs);
+				msgs = ((InternalEObject)authentication).eInverseRemove(this, WafPackage.AUTHENTICATION__AUTHORISES, Authentication.class, msgs);
 			if (newAuthentication != null)
-				msgs = ((InternalEObject)newAuthentication).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.WAF_MODEL__AUTHENTICATION, null, msgs);
+				msgs = ((InternalEObject)newAuthentication).eInverseAdd(this, WafPackage.AUTHENTICATION__AUTHORISES, Authentication.class, msgs);
 			msgs = basicSetAuthentication(newAuthentication, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -926,6 +926,10 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getServices()).basicAdd(otherEnd, msgs);
 			case WafPackage.WAF_MODEL__PAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPages()).basicAdd(otherEnd, msgs);
+			case WafPackage.WAF_MODEL__AUTHENTICATION:
+				if (authentication != null)
+					msgs = ((InternalEObject)authentication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.WAF_MODEL__AUTHENTICATION, null, msgs);
+				return basicSetAuthentication((Authentication)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

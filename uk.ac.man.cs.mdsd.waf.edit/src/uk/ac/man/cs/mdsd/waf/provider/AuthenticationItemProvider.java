@@ -62,10 +62,33 @@ public class AuthenticationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAuthorisesPropertyDescriptor(object);
 			addLoginLabelPropertyDescriptor(object);
 			addLogoutLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Authorises feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAuthorisesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Authentication_authorises_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Authentication_authorises_feature", "_UI_Authentication_type"),
+				 WafPackage.Literals.AUTHENTICATION__AUTHORISES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

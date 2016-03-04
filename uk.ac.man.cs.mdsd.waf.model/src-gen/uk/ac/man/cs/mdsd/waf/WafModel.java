@@ -391,6 +391,7 @@ public interface WafModel extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Authentication</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.Authentication#getAuthorises <em>Authorises</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Authentication</em>' containment reference isn't clear,
@@ -400,7 +401,8 @@ public interface WafModel extends EObject {
 	 * @return the value of the '<em>Authentication</em>' containment reference.
 	 * @see #setAuthentication(Authentication)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_Authentication()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.waf.Authentication#getAuthorises
+	 * @model opposite="authorises" containment="true"
 	 * @generated
 	 */
 	Authentication getAuthentication();

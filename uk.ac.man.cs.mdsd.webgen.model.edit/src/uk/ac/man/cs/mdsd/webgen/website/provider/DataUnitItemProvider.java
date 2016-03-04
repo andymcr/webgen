@@ -23,6 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -108,11 +109,13 @@ public class DataUnitItemProvider
 						final DataUnit unit = (DataUnit) object;
 						final Set<Label> labels = new HashSet<Label>();
 						labels.addAll(getSourceAttributes(unit));
-						if (unit.getSource() instanceof EntityOrView) {
-							labels.addAll(((EntityOrView) unit.getSource()).getLabels());
-						} else {
-							for (EntityOrView entityOrView : ((Service) unit.getSource()).getEncapsulates()) {
-								labels.addAll(entityOrView.getLabels());
+						for (UnitSource source : unit.getSource()) {
+							if (source instanceof EntityOrView) {
+								labels.addAll(((EntityOrView) source).getLabels());
+							} else {
+								for (EntityOrView entityOrView : ((Service) source).getEncapsulates()) {
+									labels.addAll(entityOrView.getLabels());
+								}
 							}
 						}
 						return labels;

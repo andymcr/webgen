@@ -843,7 +843,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CreateUnit" eSuperTypes="#//EditUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,create_unit,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,create_unit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CreateUpdateUnit" eSuperTypes="#//EditUnit #//Selectable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="createUriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -851,11 +851,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clearLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,create_unit,update_unit,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,create_unit,update_unit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UpdateUnit" eSuperTypes="#//EditUnit #//Selectable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,update_unit,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,update_unit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MapUnit" eSuperTypes="#//EditUnit #//Selectable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -863,7 +863,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultZoomLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="12"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,map_unit,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,map_unit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="location" lowerBound="1"
         eType="#//ServiceAttribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="placeName" eType="#//ServiceAttribute"/>
@@ -887,7 +887,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitFieldLabels" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,details_unit,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,details_unit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="details_content"/>
   </eClassifiers>
@@ -919,7 +919,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastPageLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=">>"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,index_unit,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,index_unit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="index_content"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rowClasses" ordered="false"
@@ -939,21 +939,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="resultsDestination" ordered="false"
         lowerBound="1" eType="#//IndexUnit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,search_unit,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,search_unit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AuthenticationUnit" abstract="true"
       interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="RegistrationUnit" eSuperTypes="#//AuthenticationUnit #//ControlUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,register_unit,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,register_unit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LoginUnit" eSuperTypes="#//AuthenticationUnit #//ControlUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,login_unit,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,login_unit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForgottenPasswordUnit" eSuperTypes="#//AuthenticationUnit #//ControlUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,forgotten_password_unit,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,forgotten_password_unit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InlineActionContainer" abstract="true"
       interface="true">

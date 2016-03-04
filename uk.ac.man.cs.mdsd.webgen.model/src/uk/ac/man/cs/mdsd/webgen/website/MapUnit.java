@@ -80,7 +80,7 @@ public interface MapUnit extends EditUnit, Selectable {
 
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.
-	 * The default value is <code>"unit,map_unit,framed"</code>.
+	 * The default value is <code>"unit,map_unit"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Style Class</em>' attribute isn't clear,
@@ -90,7 +90,7 @@ public interface MapUnit extends EditUnit, Selectable {
 	 * @return the value of the '<em>Style Class</em>' attribute.
 	 * @see #setStyleClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getMapUnit_StyleClass()
-	 * @model default="unit,map_unit,framed" ordered="false"
+	 * @model default="unit,map_unit" ordered="false"
 	 * @generated
 	 */
 	String getStyleClass();

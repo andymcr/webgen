@@ -252,7 +252,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STYLE_CLASS_EDEFAULT = "unit,index_unit,framed";
+	protected static final String STYLE_CLASS_EDEFAULT = "unit,index_unit";
 
 	/**
 	 * The cached value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.

@@ -301,7 +301,7 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.
-	 * The default value is <code>"unit,index_unit,framed"</code>.
+	 * The default value is <code>"unit,index_unit"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Style Class</em>' attribute isn't clear,
@@ -311,7 +311,7 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	 * @return the value of the '<em>Style Class</em>' attribute.
 	 * @see #setStyleClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_StyleClass()
-	 * @model default="unit,index_unit,framed" ordered="false"
+	 * @model default="unit,index_unit" ordered="false"
 	 * @generated
 	 */
 	String getStyleClass();

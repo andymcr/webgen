@@ -37,7 +37,7 @@ public class CreateUnitImpl extends EditUnitImpl implements CreateUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STYLE_CLASS_EDEFAULT = "unit,create_unit,framed";
+	protected static final String STYLE_CLASS_EDEFAULT = "unit,create_unit";
 
 	/**
 	 * The cached value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.

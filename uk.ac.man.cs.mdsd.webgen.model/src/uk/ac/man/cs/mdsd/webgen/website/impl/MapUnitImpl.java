@@ -79,7 +79,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STYLE_CLASS_EDEFAULT = "unit,map_unit,framed";
+	protected static final String STYLE_CLASS_EDEFAULT = "unit,map_unit";
 
 	/**
 	 * The cached value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.

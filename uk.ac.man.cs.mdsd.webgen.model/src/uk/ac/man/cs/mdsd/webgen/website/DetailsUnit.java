@@ -83,7 +83,7 @@ public interface DetailsUnit extends DataUnit, Selectable {
 
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.
-	 * The default value is <code>"unit,details_unit,framed"</code>.
+	 * The default value is <code>"unit,details_unit"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Style Class</em>' attribute isn't clear,
@@ -93,7 +93,7 @@ public interface DetailsUnit extends DataUnit, Selectable {
 	 * @return the value of the '<em>Style Class</em>' attribute.
 	 * @see #setStyleClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDetailsUnit_StyleClass()
-	 * @model default="unit,details_unit,framed" ordered="false"
+	 * @model default="unit,details_unit" ordered="false"
 	 * @generated
 	 */
 	String getStyleClass();

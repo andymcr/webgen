@@ -417,7 +417,7 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STYLE_CLASS_EDEFAULT = "unit,register_unit,framed";
+	protected static final String STYLE_CLASS_EDEFAULT = "unit,register_unit";
 
 	/**
 	 * The cached value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.

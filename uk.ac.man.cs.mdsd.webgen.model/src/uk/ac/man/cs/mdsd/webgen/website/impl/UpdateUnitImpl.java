@@ -37,7 +37,7 @@ public class UpdateUnitImpl extends EditUnitImpl implements UpdateUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STYLE_CLASS_EDEFAULT = "unit,update_unit,framed";
+	protected static final String STYLE_CLASS_EDEFAULT = "unit,update_unit";
 
 	/**
 	 * The cached value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.

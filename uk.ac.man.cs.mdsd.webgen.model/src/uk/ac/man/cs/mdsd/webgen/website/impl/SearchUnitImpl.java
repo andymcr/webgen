@@ -50,7 +50,7 @@ public class SearchUnitImpl extends ControlUnitImpl implements SearchUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STYLE_CLASS_EDEFAULT = "unit,search_unit,framed";
+	protected static final String STYLE_CLASS_EDEFAULT = "unit,search_unit";
 
 	/**
 	 * The cached value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.

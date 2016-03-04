@@ -417,7 +417,7 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STYLE_CLASS_EDEFAULT = "unit,login_unit,framed";
+	protected static final String STYLE_CLASS_EDEFAULT = "unit,login_unit";
 
 	/**
 	 * The cached value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.

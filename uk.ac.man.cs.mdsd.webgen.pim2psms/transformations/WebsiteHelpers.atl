@@ -62,7 +62,7 @@ helper context String def: createAssociationColumnName() : String
 				endif;
 
 helper context Website!DataType def: persistentType() : String
-	= if self.persistentType.oclIsUndefined() and self.persistentType <> '' then
+	= if not self.persistentType.oclIsUndefined() and self.persistentType <> '' then
 			self.persistentType
 		else
 			if self.oclIsTypeOf(Website!EnumerationType) then

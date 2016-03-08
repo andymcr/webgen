@@ -303,6 +303,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UrlAttribute" eSuperTypes="#//EntityAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceAttribute" abstract="true" eSuperTypes="#//EntityAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumUploadSize" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
@@ -679,7 +682,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,static_unit,framed"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutClass" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="static_content"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UserCommand"/>
@@ -691,7 +694,7 @@
         defaultValueLiteral="sitemap.xml"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,create_sitemap_unit,framed"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutClass" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="create_sitemap_content"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DynamicUnit" abstract="true" eSuperTypes="#//ContentUnit">
@@ -837,8 +840,8 @@
         eType="#//Page"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cancelLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="input_form"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="input_form,framed"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customiseValues" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CreateUnit" eSuperTypes="#//EditUnit">
@@ -888,7 +891,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,details_unit"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutClass" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="details_content"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IndexDisplayOption">
@@ -920,8 +923,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=">>"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,index_unit"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="index_content"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="index_content,framed"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rowClasses" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="odd_row,even_row"/>
   </eClassifiers>
@@ -932,7 +935,7 @@
         eType="#//Page"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cancelLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutClass" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="control_form"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SearchUnit" eSuperTypes="#//ControlUnit">

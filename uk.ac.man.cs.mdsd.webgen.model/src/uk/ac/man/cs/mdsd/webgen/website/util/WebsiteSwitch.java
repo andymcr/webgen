@@ -273,6 +273,19 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.URL_ATTRIBUTE: {
+				UrlAttribute urlAttribute = (UrlAttribute)theEObject;
+				T result = caseUrlAttribute(urlAttribute);
+				if (result == null) result = caseEntityAttribute(urlAttribute);
+				if (result == null) result = caseEntityFeature(urlAttribute);
+				if (result == null) result = caseAttribute(urlAttribute);
+				if (result == null) result = caseNamedDisplayElement(urlAttribute);
+				if (result == null) result = caseFeature(urlAttribute);
+				if (result == null) result = caseLabel(urlAttribute);
+				if (result == null) result = caseNamedElement(urlAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.RESOURCE_ATTRIBUTE: {
 				ResourceAttribute resourceAttribute = (ResourceAttribute)theEObject;
 				T result = caseResourceAttribute(resourceAttribute);
@@ -1364,6 +1377,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDateAttribute(DateAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Url Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Url Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUrlAttribute(UrlAttribute object) {
 		return null;
 	}
 

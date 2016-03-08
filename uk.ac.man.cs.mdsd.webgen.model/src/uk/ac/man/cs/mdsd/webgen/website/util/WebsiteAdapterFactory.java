@@ -174,6 +174,10 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createDateAttributeAdapter();
 			}
 			@Override
+			public Adapter caseUrlAttribute(UrlAttribute object) {
+				return createUrlAttributeAdapter();
+			}
+			@Override
 			public Adapter caseResourceAttribute(ResourceAttribute object) {
 				return createResourceAttributeAdapter();
 			}
@@ -868,6 +872,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDateAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.UrlAttribute <em>Url Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UrlAttribute
+	 * @generated
+	 */
+	public Adapter createUrlAttributeAdapter() {
 		return null;
 	}
 

@@ -201,7 +201,7 @@ unique lazy rule implicitRegistrationUnit {
 		controlClass <- 'unit_control',
 		footerClass <- 'unit_footer',
 		errorClass <- 'error',
-		layoutClass <- 'input_form'
+		contentClass <- 'input_form'
 	),
 	confirmEmail : WAF!DataTypeField (
 		name <- 'confirmEmail',
@@ -262,7 +262,7 @@ unique lazy rule implicitLoginUnit {
 		controlClass <- 'unit_control',
 		footerClass <- 'unit_footer',
 		errorClass <- 'error',
-		layoutClass <- 'control_form'
+		contentClass <- 'control_form'
 	)
 	do {
 		waf;
@@ -290,7 +290,7 @@ unique lazy rule implicitForgottenPasswordUnit {
 		controlClass <- 'unit_control',
 		footerClass <- 'unit_footer',
 		errorClass <- 'error',
-		layoutClass <- 'control_form'
+		contentClass <- 'control_form'
 	)
 	do {
 		waf;
@@ -474,7 +474,7 @@ unique lazy rule implicitManageAuthenticationsPage {
 		controlClass <- 'unit_control',
 		footerClass <- 'unit_footer',
 		errorClass <- 'error',
-		layoutClass <- 'index_layout',
+		contentClass <- 'index_layout',
 		rowClasses <- 'odd_row even_row'
 	),
 	editUserAction : WAF!SelectAction (
@@ -501,7 +501,7 @@ unique lazy rule implicitManageAuthenticationsPage {
 		controlClass <- 'unit_control',
 		footerClass <- 'unit_footer',
 		errorClass <- 'error',
-		layoutClass <- 'input_form'
+		contentClass <- 'input_form'
 	)
 	do {
 		waf;

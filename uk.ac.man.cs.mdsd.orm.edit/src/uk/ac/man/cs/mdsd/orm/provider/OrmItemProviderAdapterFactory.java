@@ -398,6 +398,29 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.SingletonURL} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SingletonURLItemProvider singletonURLItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.SingletonURL}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSingletonURLAdapter() {
+		if (singletonURLItemProvider == null) {
+			singletonURLItemProvider = new SingletonURLItemProvider(this);
+		}
+
+		return singletonURLItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.StaticPathElement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -739,6 +762,7 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (collectionElementItemProvider != null) collectionElementItemProvider.dispose();
 		if (singletonDateItemProvider != null) singletonDateItemProvider.dispose();
 		if (collectionDateItemProvider != null) collectionDateItemProvider.dispose();
+		if (singletonURLItemProvider != null) singletonURLItemProvider.dispose();
 		if (staticPathElementItemProvider != null) staticPathElementItemProvider.dispose();
 		if (datePathElementItemProvider != null) datePathElementItemProvider.dispose();
 		if (singletonFileItemProvider != null) singletonFileItemProvider.dispose();

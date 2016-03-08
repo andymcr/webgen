@@ -47,7 +47,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getFirstPageLabel <em>First Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getLastPageLabel <em>Last Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getStyleClass <em>Style Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getRowClasses <em>Row Classes</em>}</li>
  * </ul>
  *
@@ -265,24 +265,24 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected String styleClass = STYLE_CLASS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The default value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LAYOUT_CLASS_EDEFAULT = "index_content";
+	protected static final String CONTENT_CLASS_EDEFAULT = "index_content,framed";
 
 	/**
-	 * The cached value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected String layoutClass = LAYOUT_CLASS_EDEFAULT;
+	protected String contentClass = CONTENT_CLASS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRowClasses() <em>Row Classes</em>}' attribute.
@@ -579,8 +579,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLayoutClass() {
-		return layoutClass;
+	public String getContentClass() {
+		return contentClass;
 	}
 
 	/**
@@ -588,11 +588,11 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLayoutClass(String newLayoutClass) {
-		String oldLayoutClass = layoutClass;
-		layoutClass = newLayoutClass;
+	public void setContentClass(String newContentClass) {
+		String oldContentClass = contentClass;
+		contentClass = newContentClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INDEX_UNIT__LAYOUT_CLASS, oldLayoutClass, layoutClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INDEX_UNIT__CONTENT_CLASS, oldContentClass, contentClass));
 	}
 
 	/**
@@ -680,8 +680,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return getLastPageLabel();
 			case WebsitePackage.INDEX_UNIT__STYLE_CLASS:
 				return getStyleClass();
-			case WebsitePackage.INDEX_UNIT__LAYOUT_CLASS:
-				return getLayoutClass();
+			case WebsitePackage.INDEX_UNIT__CONTENT_CLASS:
+				return getContentClass();
 			case WebsitePackage.INDEX_UNIT__ROW_CLASSES:
 				return getRowClasses();
 		}
@@ -735,8 +735,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
 				return;
-			case WebsitePackage.INDEX_UNIT__LAYOUT_CLASS:
-				setLayoutClass((String)newValue);
+			case WebsitePackage.INDEX_UNIT__CONTENT_CLASS:
+				setContentClass((String)newValue);
 				return;
 			case WebsitePackage.INDEX_UNIT__ROW_CLASSES:
 				setRowClasses((String)newValue);
@@ -789,8 +789,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
-			case WebsitePackage.INDEX_UNIT__LAYOUT_CLASS:
-				setLayoutClass(LAYOUT_CLASS_EDEFAULT);
+			case WebsitePackage.INDEX_UNIT__CONTENT_CLASS:
+				setContentClass(CONTENT_CLASS_EDEFAULT);
 				return;
 			case WebsitePackage.INDEX_UNIT__ROW_CLASSES:
 				setRowClasses(ROW_CLASSES_EDEFAULT);
@@ -831,8 +831,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return LAST_PAGE_LABEL_EDEFAULT == null ? lastPageLabel != null : !LAST_PAGE_LABEL_EDEFAULT.equals(lastPageLabel);
 			case WebsitePackage.INDEX_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
-			case WebsitePackage.INDEX_UNIT__LAYOUT_CLASS:
-				return LAYOUT_CLASS_EDEFAULT == null ? layoutClass != null : !LAYOUT_CLASS_EDEFAULT.equals(layoutClass);
+			case WebsitePackage.INDEX_UNIT__CONTENT_CLASS:
+				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
 			case WebsitePackage.INDEX_UNIT__ROW_CLASSES:
 				return ROW_CLASSES_EDEFAULT == null ? rowClasses != null : !ROW_CLASSES_EDEFAULT.equals(rowClasses);
 		}
@@ -899,8 +899,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		result.append(lastPageLabel);
 		result.append(", styleClass: ");
 		result.append(styleClass);
-		result.append(", layoutClass: ");
-		result.append(layoutClass);
+		result.append(", contentClass: ");
+		result.append(contentClass);
 		result.append(", rowClasses: ");
 		result.append(rowClasses);
 		result.append(')');

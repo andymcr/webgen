@@ -140,6 +140,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateDataTypeAttribute((DataTypeAttribute)value, diagnostics, context);
 			case WebsitePackage.DATE_ATTRIBUTE:
 				return validateDateAttribute((DateAttribute)value, diagnostics, context);
+			case WebsitePackage.URL_ATTRIBUTE:
+				return validateUrlAttribute((UrlAttribute)value, diagnostics, context);
 			case WebsitePackage.RESOURCE_ATTRIBUTE:
 				return validateResourceAttribute((ResourceAttribute)value, diagnostics, context);
 			case WebsitePackage.PATH_ELEMENT:
@@ -846,6 +848,25 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dateAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dateAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dateAttribute, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUrlAttribute(UrlAttribute urlAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(urlAttribute, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(urlAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(urlAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(urlAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(urlAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(urlAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(urlAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(urlAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(urlAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(urlAttribute, diagnostics, context);
 		return result;
 	}
 

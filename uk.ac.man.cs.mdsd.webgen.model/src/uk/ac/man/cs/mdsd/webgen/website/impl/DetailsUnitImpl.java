@@ -26,7 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getStyleClass <em>Style Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getContentClass <em>Content Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,24 +93,24 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	protected String styleClass = STYLE_CLASS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The default value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LAYOUT_CLASS_EDEFAULT = "details_content";
+	protected static final String CONTENT_CLASS_EDEFAULT = "details_content";
 
 	/**
-	 * The cached value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected String layoutClass = LAYOUT_CLASS_EDEFAULT;
+	protected String contentClass = CONTENT_CLASS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,8 +199,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLayoutClass() {
-		return layoutClass;
+	public String getContentClass() {
+		return contentClass;
 	}
 
 	/**
@@ -208,11 +208,11 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLayoutClass(String newLayoutClass) {
-		String oldLayoutClass = layoutClass;
-		layoutClass = newLayoutClass;
+	public void setContentClass(String newContentClass) {
+		String oldContentClass = contentClass;
+		contentClass = newContentClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DETAILS_UNIT__LAYOUT_CLASS, oldLayoutClass, layoutClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DETAILS_UNIT__CONTENT_CLASS, oldContentClass, contentClass));
 	}
 
 	/**
@@ -229,8 +229,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				return isOmitFieldLabels();
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
 				return getStyleClass();
-			case WebsitePackage.DETAILS_UNIT__LAYOUT_CLASS:
-				return getLayoutClass();
+			case WebsitePackage.DETAILS_UNIT__CONTENT_CLASS:
+				return getContentClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,8 +252,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
 				return;
-			case WebsitePackage.DETAILS_UNIT__LAYOUT_CLASS:
-				setLayoutClass((String)newValue);
+			case WebsitePackage.DETAILS_UNIT__CONTENT_CLASS:
+				setContentClass((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -276,8 +276,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
-			case WebsitePackage.DETAILS_UNIT__LAYOUT_CLASS:
-				setLayoutClass(LAYOUT_CLASS_EDEFAULT);
+			case WebsitePackage.DETAILS_UNIT__CONTENT_CLASS:
+				setContentClass(CONTENT_CLASS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -297,8 +297,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
-			case WebsitePackage.DETAILS_UNIT__LAYOUT_CLASS:
-				return LAYOUT_CLASS_EDEFAULT == null ? layoutClass != null : !LAYOUT_CLASS_EDEFAULT.equals(layoutClass);
+			case WebsitePackage.DETAILS_UNIT__CONTENT_CLASS:
+				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -319,8 +319,8 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		result.append(omitFieldLabels);
 		result.append(", styleClass: ");
 		result.append(styleClass);
-		result.append(", layoutClass: ");
-		result.append(layoutClass);
+		result.append(", contentClass: ");
+		result.append(contentClass);
 		result.append(')');
 		return result.toString();
 	}

@@ -61,7 +61,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getSubmitLabel <em>Submit Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getCancelDestination <em>Cancel Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getCancelLabel <em>Cancel Label</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
  *
@@ -389,24 +389,24 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	protected String cancelLabel = CANCEL_LABEL_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The default value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LAYOUT_CLASS_EDEFAULT = "control_form";
+	protected static final String CONTENT_CLASS_EDEFAULT = "control_form";
 
 	/**
-	 * The cached value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected String layoutClass = LAYOUT_CLASS_EDEFAULT;
+	protected String contentClass = CONTENT_CLASS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -861,8 +861,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLayoutClass() {
-		return layoutClass;
+	public String getContentClass() {
+		return contentClass;
 	}
 
 	/**
@@ -870,11 +870,11 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLayoutClass(String newLayoutClass) {
-		String oldLayoutClass = layoutClass;
-		layoutClass = newLayoutClass;
+	public void setContentClass(String newContentClass) {
+		String oldContentClass = contentClass;
+		contentClass = newContentClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__LAYOUT_CLASS, oldLayoutClass, layoutClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS, oldContentClass, contentClass));
 	}
 
 	/**
@@ -996,8 +996,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return basicGetCancelDestination();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL:
 				return getCancelLabel();
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__LAYOUT_CLASS:
-				return getLayoutClass();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS:
+				return getContentClass();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS:
 				return getStyleClass();
 		}
@@ -1073,8 +1073,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL:
 				setCancelLabel((String)newValue);
 				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__LAYOUT_CLASS:
-				setLayoutClass((String)newValue);
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS:
+				setContentClass((String)newValue);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -1148,8 +1148,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL:
 				setCancelLabel(CANCEL_LABEL_EDEFAULT);
 				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__LAYOUT_CLASS:
-				setLayoutClass(LAYOUT_CLASS_EDEFAULT);
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS:
+				setContentClass(CONTENT_CLASS_EDEFAULT);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
@@ -1204,8 +1204,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return cancelDestination != null;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL:
 				return CANCEL_LABEL_EDEFAULT == null ? cancelLabel != null : !CANCEL_LABEL_EDEFAULT.equals(cancelLabel);
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__LAYOUT_CLASS:
-				return LAYOUT_CLASS_EDEFAULT == null ? layoutClass != null : !LAYOUT_CLASS_EDEFAULT.equals(layoutClass);
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS:
+				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 		}
@@ -1260,7 +1260,7 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUBMIT_LABEL: return WebsitePackage.CONTROL_UNIT__SUBMIT_LABEL;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CANCEL_DESTINATION: return WebsitePackage.CONTROL_UNIT__CANCEL_DESTINATION;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL: return WebsitePackage.CONTROL_UNIT__CANCEL_LABEL;
-				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__LAYOUT_CLASS: return WebsitePackage.CONTROL_UNIT__LAYOUT_CLASS;
+				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS: return WebsitePackage.CONTROL_UNIT__CONTENT_CLASS;
 				default: return -1;
 			}
 		}
@@ -1315,7 +1315,7 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				case WebsitePackage.CONTROL_UNIT__SUBMIT_LABEL: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUBMIT_LABEL;
 				case WebsitePackage.CONTROL_UNIT__CANCEL_DESTINATION: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CANCEL_DESTINATION;
 				case WebsitePackage.CONTROL_UNIT__CANCEL_LABEL: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL;
-				case WebsitePackage.CONTROL_UNIT__LAYOUT_CLASS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__LAYOUT_CLASS;
+				case WebsitePackage.CONTROL_UNIT__CONTENT_CLASS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS;
 				default: return -1;
 			}
 		}
@@ -1360,8 +1360,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		result.append(submitLabel);
 		result.append(", cancelLabel: ");
 		result.append(cancelLabel);
-		result.append(", layoutClass: ");
-		result.append(layoutClass);
+		result.append(", contentClass: ");
+		result.append(contentClass);
 		result.append(", styleClass: ");
 		result.append(styleClass);
 		result.append(')');

@@ -188,6 +188,15 @@ public interface WebsiteFactory extends EFactory {
 	DateAttribute createDateAttribute();
 
 	/**
+	 * Returns a new object of class '<em>Url Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Url Attribute</em>'.
+	 * @generated
+	 */
+	UrlAttribute createUrlAttribute();
+
+	/**
 	 * Returns a new object of class '<em>Static Path Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

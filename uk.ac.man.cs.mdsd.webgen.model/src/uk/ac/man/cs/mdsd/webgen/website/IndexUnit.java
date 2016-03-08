@@ -29,7 +29,7 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getFirstPageLabel <em>First Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getLastPageLabel <em>Last Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getStyleClass <em>Style Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getLayoutClass <em>Layout Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getRowClasses <em>Row Classes</em>}</li>
  * </ul>
  *
@@ -327,31 +327,31 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	void setStyleClass(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Layout Class</b></em>' attribute.
-	 * The default value is <code>"index_content"</code>.
+	 * Returns the value of the '<em><b>Content Class</b></em>' attribute.
+	 * The default value is <code>"index_content,framed"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layout Class</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Content Class</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Layout Class</em>' attribute.
-	 * @see #setLayoutClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_LayoutClass()
-	 * @model default="index_content" ordered="false"
+	 * @return the value of the '<em>Content Class</em>' attribute.
+	 * @see #setContentClass(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_ContentClass()
+	 * @model default="index_content,framed" ordered="false"
 	 * @generated
 	 */
-	String getLayoutClass();
+	String getContentClass();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getLayoutClass <em>Layout Class</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getContentClass <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layout Class</em>' attribute.
-	 * @see #getLayoutClass()
+	 * @param value the new value of the '<em>Content Class</em>' attribute.
+	 * @see #getContentClass()
 	 * @generated
 	 */
-	void setLayoutClass(String value);
+	void setContentClass(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Row Classes</b></em>' attribute.

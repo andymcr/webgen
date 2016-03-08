@@ -2577,13 +2577,13 @@ public interface WafPackage extends EPackage {
 	int CONTENT_UNIT__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__LAYOUT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int CONTENT_UNIT__CONTENT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Content Unit</em>' class.
@@ -2686,13 +2686,13 @@ public interface WafPackage extends EPackage {
 	int STATIC_UNIT__STYLE_CLASS = CONTENT_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_UNIT__LAYOUT_CLASS = CONTENT_UNIT__LAYOUT_CLASS;
+	int STATIC_UNIT__CONTENT_CLASS = CONTENT_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Service</b></em>' reference.
@@ -2813,13 +2813,13 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__STYLE_CLASS = CONTENT_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__LAYOUT_CLASS = CONTENT_UNIT__LAYOUT_CLASS;
+	int DYNAMIC_UNIT__CONTENT_CLASS = CONTENT_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -4335,13 +4335,13 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__STYLE_CLASS = DYNAMIC_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__LAYOUT_CLASS = DYNAMIC_UNIT__LAYOUT_CLASS;
+	int EDIT_UNIT__CONTENT_CLASS = DYNAMIC_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -4570,13 +4570,13 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__STYLE_CLASS = EDIT_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UNIT__LAYOUT_CLASS = EDIT_UNIT__LAYOUT_CLASS;
+	int CREATE_UNIT__CONTENT_CLASS = EDIT_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -4805,13 +4805,13 @@ public interface WafPackage extends EPackage {
 	int CREATE_UPDATE_UNIT__STYLE_CLASS = EDIT_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CREATE_UPDATE_UNIT__LAYOUT_CLASS = EDIT_UNIT__LAYOUT_CLASS;
+	int CREATE_UPDATE_UNIT__CONTENT_CLASS = EDIT_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -5058,13 +5058,13 @@ public interface WafPackage extends EPackage {
 	int MAP_UNIT__STYLE_CLASS = EDIT_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__LAYOUT_CLASS = EDIT_UNIT__LAYOUT_CLASS;
+	int MAP_UNIT__CONTENT_CLASS = EDIT_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -5329,13 +5329,13 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__STYLE_CLASS = EDIT_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPDATE_UNIT__LAYOUT_CLASS = EDIT_UNIT__LAYOUT_CLASS;
+	int UPDATE_UNIT__CONTENT_CLASS = EDIT_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -5564,13 +5564,13 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__STYLE_CLASS = DYNAMIC_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_UNIT__LAYOUT_CLASS = DYNAMIC_UNIT__LAYOUT_CLASS;
+	int DATA_UNIT__CONTENT_CLASS = DYNAMIC_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -5772,13 +5772,13 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__STYLE_CLASS = DATA_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__LAYOUT_CLASS = DATA_UNIT__LAYOUT_CLASS;
+	int DETAILS_UNIT__CONTENT_CLASS = DATA_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -5998,13 +5998,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__STYLE_CLASS = DATA_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__LAYOUT_CLASS = DATA_UNIT__LAYOUT_CLASS;
+	int INDEX_UNIT__CONTENT_CLASS = DATA_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -6314,13 +6314,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__STYLE_CLASS = INDEX_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_GRID_UNIT__LAYOUT_CLASS = INDEX_UNIT__LAYOUT_CLASS;
+	int INDEX_GRID_UNIT__CONTENT_CLASS = INDEX_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -6630,13 +6630,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__STYLE_CLASS = INDEX_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT__LAYOUT_CLASS = INDEX_UNIT__LAYOUT_CLASS;
+	int INDEX_PAGE_DIRECTION_UNIT__CONTENT_CLASS = INDEX_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -6946,13 +6946,13 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__STYLE_CLASS = INDEX_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_LINE_DIRECTION_UNIT__LAYOUT_CLASS = INDEX_UNIT__LAYOUT_CLASS;
+	int INDEX_LINE_DIRECTION_UNIT__CONTENT_CLASS = INDEX_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -7262,13 +7262,13 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__STYLE_CLASS = DYNAMIC_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_UNIT__LAYOUT_CLASS = DYNAMIC_UNIT__LAYOUT_CLASS;
+	int CONTROL_UNIT__CONTENT_CLASS = DYNAMIC_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -7479,13 +7479,13 @@ public interface WafPackage extends EPackage {
 	int SEARCH_UNIT__STYLE_CLASS = CONTROL_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEARCH_UNIT__LAYOUT_CLASS = CONTROL_UNIT__LAYOUT_CLASS;
+	int SEARCH_UNIT__CONTENT_CLASS = CONTROL_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -7733,13 +7733,13 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__STYLE_CLASS = EDIT_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__LAYOUT_CLASS = EDIT_UNIT__LAYOUT_CLASS;
+	int REGISTRATION_UNIT__CONTENT_CLASS = EDIT_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -7977,13 +7977,13 @@ public interface WafPackage extends EPackage {
 	int LOGIN_UNIT__STYLE_CLASS = CONTROL_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__LAYOUT_CLASS = CONTROL_UNIT__LAYOUT_CLASS;
+	int LOGIN_UNIT__CONTENT_CLASS = CONTROL_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -8230,13 +8230,13 @@ public interface WafPackage extends EPackage {
 	int FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS = CONTROL_UNIT__STYLE_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Layout Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__LAYOUT_CLASS = CONTROL_UNIT__LAYOUT_CLASS;
+	int FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS = CONTROL_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' reference list.
@@ -10489,15 +10489,15 @@ public interface WafPackage extends EPackage {
 	EAttribute getContentUnit_StyleClass();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getLayoutClass <em>Layout Class</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getContentClass <em>Content Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Layout Class</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ContentUnit#getLayoutClass()
+	 * @return the meta object for the attribute '<em>Content Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ContentUnit#getContentClass()
 	 * @see #getContentUnit()
 	 * @generated
 	 */
-	EAttribute getContentUnit_LayoutClass();
+	EAttribute getContentUnit_ContentClass();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.StaticUnit <em>Static Unit</em>}'.
@@ -13077,12 +13077,12 @@ public interface WafPackage extends EPackage {
 		EAttribute CONTENT_UNIT__STYLE_CLASS = eINSTANCE.getContentUnit_StyleClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Layout Class</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Content Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTENT_UNIT__LAYOUT_CLASS = eINSTANCE.getContentUnit_LayoutClass();
+		EAttribute CONTENT_UNIT__CONTENT_CLASS = eINSTANCE.getContentUnit_ContentClass();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.StaticUnitImpl <em>Static Unit</em>}' class.

@@ -51,7 +51,6 @@ public class ServiceAssociationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDateFormatPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -109,28 +108,6 @@ public class ServiceAssociationItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceAssociation_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociation_name_feature", "_UI_ServiceAssociation_type"),
-				 WebsitePackage.Literals.SERVICE_ASSOCIATION__NAME,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

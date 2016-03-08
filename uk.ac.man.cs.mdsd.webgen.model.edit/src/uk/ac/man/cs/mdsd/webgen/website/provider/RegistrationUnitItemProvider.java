@@ -78,7 +78,7 @@ public class RegistrationUnitItemProvider
 			addSubmitLabelPropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
-			addLayoutClassPropertyDescriptor(object);
+			addContentClassPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -437,19 +437,19 @@ public class RegistrationUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Layout Class feature.
+	 * This adds a property descriptor for the Content Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLayoutClassPropertyDescriptor(Object object) {
+	protected void addContentClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ControlUnit_layoutClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ControlUnit_layoutClass_feature", "_UI_ControlUnit_type"),
-				 WebsitePackage.Literals.CONTROL_UNIT__LAYOUT_CLASS,
+				 getString("_UI_ControlUnit_contentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ControlUnit_contentClass_feature", "_UI_ControlUnit_type"),
+				 WebsitePackage.Literals.CONTROL_UNIT__CONTENT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -562,7 +562,7 @@ public class RegistrationUnitItemProvider
 			case WebsitePackage.REGISTRATION_UNIT__ERROR_CLASS:
 			case WebsitePackage.REGISTRATION_UNIT__SUBMIT_LABEL:
 			case WebsitePackage.REGISTRATION_UNIT__CANCEL_LABEL:
-			case WebsitePackage.REGISTRATION_UNIT__LAYOUT_CLASS:
+			case WebsitePackage.REGISTRATION_UNIT__CONTENT_CLASS:
 			case WebsitePackage.REGISTRATION_UNIT__STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

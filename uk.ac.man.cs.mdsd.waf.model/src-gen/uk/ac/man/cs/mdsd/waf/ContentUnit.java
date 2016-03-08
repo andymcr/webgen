@@ -19,7 +19,7 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getStyleClass <em>Style Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getLayoutClass <em>Layout Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getContentClass <em>Content Class</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit()
@@ -187,29 +187,29 @@ public interface ContentUnit extends NamedDisplayElement {
 	void setStyleClass(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Layout Class</b></em>' attribute.
+	 * Returns the value of the '<em><b>Content Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layout Class</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Content Class</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Layout Class</em>' attribute.
-	 * @see #setLayoutClass(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_LayoutClass()
+	 * @return the value of the '<em>Content Class</em>' attribute.
+	 * @see #setContentClass(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_ContentClass()
 	 * @model unique="false"
 	 * @generated
 	 */
-	String getLayoutClass();
+	String getContentClass();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getLayoutClass <em>Layout Class</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getContentClass <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layout Class</em>' attribute.
-	 * @see #getLayoutClass()
+	 * @param value the new value of the '<em>Content Class</em>' attribute.
+	 * @see #getContentClass()
 	 * @generated
 	 */
-	void setLayoutClass(String value);
+	void setContentClass(String value);
 
 } // ContentUnit

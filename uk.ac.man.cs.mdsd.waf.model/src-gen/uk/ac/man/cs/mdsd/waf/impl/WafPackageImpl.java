@@ -1868,7 +1868,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_LayoutClass() {
+	public EAttribute getContentUnit_ContentClass() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -3260,7 +3260,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__OMIT_CAPTION);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__CAPTION_CLASS);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__STYLE_CLASS);
-		createEAttribute(contentUnitEClass, CONTENT_UNIT__LAYOUT_CLASS);
+		createEAttribute(contentUnitEClass, CONTENT_UNIT__CONTENT_CLASS);
 
 		staticUnitEClass = createEClass(STATIC_UNIT);
 		createEReference(staticUnitEClass, STATIC_UNIT__SERVICE);
@@ -3711,7 +3711,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getContentUnit_OmitCaption(), theEcorePackage.getEBoolean(), "omitCaption", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_CaptionClass(), theEcorePackage.getEString(), "captionClass", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_StyleClass(), theEcorePackage.getEString(), "styleClass", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContentUnit_LayoutClass(), theEcorePackage.getEString(), "layoutClass", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContentUnit_ContentClass(), theEcorePackage.getEString(), "contentClass", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(staticUnitEClass, StaticUnit.class, "StaticUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStaticUnit_Service(), this.getService(), null, "service", null, 0, 1, StaticUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

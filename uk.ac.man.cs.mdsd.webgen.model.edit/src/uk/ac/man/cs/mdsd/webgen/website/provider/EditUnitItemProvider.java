@@ -54,7 +54,7 @@ public class EditUnitItemProvider
 			addConfirmLabelPropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
-			addLayoutClassPropertyDescriptor(object);
+			addContentClassPropertyDescriptor(object);
 			addCustomiseValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -149,19 +149,19 @@ public class EditUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Layout Class feature.
+	 * This adds a property descriptor for the Content Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLayoutClassPropertyDescriptor(Object object) {
+	protected void addContentClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EditUnit_layoutClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_layoutClass_feature", "_UI_EditUnit_type"),
-				 WebsitePackage.Literals.EDIT_UNIT__LAYOUT_CLASS,
+				 getString("_UI_EditUnit_contentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_contentClass_feature", "_UI_EditUnit_type"),
+				 WebsitePackage.Literals.EDIT_UNIT__CONTENT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -220,7 +220,7 @@ public class EditUnitItemProvider
 		switch (notification.getFeatureID(EditUnit.class)) {
 			case WebsitePackage.EDIT_UNIT__CONFIRM_LABEL:
 			case WebsitePackage.EDIT_UNIT__CANCEL_LABEL:
-			case WebsitePackage.EDIT_UNIT__LAYOUT_CLASS:
+			case WebsitePackage.EDIT_UNIT__CONTENT_CLASS:
 			case WebsitePackage.EDIT_UNIT__CUSTOMISE_VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

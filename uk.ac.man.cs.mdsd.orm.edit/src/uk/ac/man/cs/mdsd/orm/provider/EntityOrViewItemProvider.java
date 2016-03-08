@@ -248,6 +248,11 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 OrmFactory.eINSTANCE.createSingletonURL()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ENTITY_OR_VIEW__FEATURES,
 				 OrmFactory.eINSTANCE.createSingletonFile()));
 
 		newChildDescriptors.add

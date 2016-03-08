@@ -29,7 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getConfirmLabel <em>Confirm Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getCancelDestination <em>Cancel Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getCancelLabel <em>Cancel Label</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#isCustomiseValues <em>Customise Values</em>}</li>
  * </ul>
  *
@@ -97,24 +97,24 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	protected String cancelLabel = CANCEL_LABEL_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The default value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LAYOUT_CLASS_EDEFAULT = "input_form";
+	protected static final String CONTENT_CLASS_EDEFAULT = "input_form,framed";
 
 	/**
-	 * The cached value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected String layoutClass = LAYOUT_CLASS_EDEFAULT;
+	protected String contentClass = CONTENT_CLASS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isCustomiseValues() <em>Customise Values</em>}' attribute.
@@ -278,8 +278,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLayoutClass() {
-		return layoutClass;
+	public String getContentClass() {
+		return contentClass;
 	}
 
 	/**
@@ -287,11 +287,11 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLayoutClass(String newLayoutClass) {
-		String oldLayoutClass = layoutClass;
-		layoutClass = newLayoutClass;
+	public void setContentClass(String newContentClass) {
+		String oldContentClass = contentClass;
+		contentClass = newContentClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.EDIT_UNIT__LAYOUT_CLASS, oldLayoutClass, layoutClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.EDIT_UNIT__CONTENT_CLASS, oldContentClass, contentClass));
 	}
 
 	/**
@@ -333,8 +333,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 				return basicGetCancelDestination();
 			case WebsitePackage.EDIT_UNIT__CANCEL_LABEL:
 				return getCancelLabel();
-			case WebsitePackage.EDIT_UNIT__LAYOUT_CLASS:
-				return getLayoutClass();
+			case WebsitePackage.EDIT_UNIT__CONTENT_CLASS:
+				return getContentClass();
 			case WebsitePackage.EDIT_UNIT__CUSTOMISE_VALUES:
 				return isCustomiseValues();
 		}
@@ -361,8 +361,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 			case WebsitePackage.EDIT_UNIT__CANCEL_LABEL:
 				setCancelLabel((String)newValue);
 				return;
-			case WebsitePackage.EDIT_UNIT__LAYOUT_CLASS:
-				setLayoutClass((String)newValue);
+			case WebsitePackage.EDIT_UNIT__CONTENT_CLASS:
+				setContentClass((String)newValue);
 				return;
 			case WebsitePackage.EDIT_UNIT__CUSTOMISE_VALUES:
 				setCustomiseValues((Boolean)newValue);
@@ -391,8 +391,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 			case WebsitePackage.EDIT_UNIT__CANCEL_LABEL:
 				setCancelLabel(CANCEL_LABEL_EDEFAULT);
 				return;
-			case WebsitePackage.EDIT_UNIT__LAYOUT_CLASS:
-				setLayoutClass(LAYOUT_CLASS_EDEFAULT);
+			case WebsitePackage.EDIT_UNIT__CONTENT_CLASS:
+				setContentClass(CONTENT_CLASS_EDEFAULT);
 				return;
 			case WebsitePackage.EDIT_UNIT__CUSTOMISE_VALUES:
 				setCustomiseValues(CUSTOMISE_VALUES_EDEFAULT);
@@ -417,8 +417,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 				return cancelDestination != null;
 			case WebsitePackage.EDIT_UNIT__CANCEL_LABEL:
 				return CANCEL_LABEL_EDEFAULT == null ? cancelLabel != null : !CANCEL_LABEL_EDEFAULT.equals(cancelLabel);
-			case WebsitePackage.EDIT_UNIT__LAYOUT_CLASS:
-				return LAYOUT_CLASS_EDEFAULT == null ? layoutClass != null : !LAYOUT_CLASS_EDEFAULT.equals(layoutClass);
+			case WebsitePackage.EDIT_UNIT__CONTENT_CLASS:
+				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
 			case WebsitePackage.EDIT_UNIT__CUSTOMISE_VALUES:
 				return customiseValues != CUSTOMISE_VALUES_EDEFAULT;
 		}
@@ -439,8 +439,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 		result.append(confirmLabel);
 		result.append(", cancelLabel: ");
 		result.append(cancelLabel);
-		result.append(", layoutClass: ");
-		result.append(layoutClass);
+		result.append(", contentClass: ");
+		result.append(contentClass);
 		result.append(", customiseValues: ");
 		result.append(customiseValues);
 		result.append(')');

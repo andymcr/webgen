@@ -162,6 +162,14 @@ rule CollectionDate {
 }
 
 -- @extends SingletonAttribute
+rule SingletonURL {
+	from website : Website!UrlAttribute (website.cardinality <> #Many)
+	to orm : ORM!SingletonURL (
+		displayValue <- website.displayValue
+	)
+}
+
+-- @extends SingletonAttribute
 abstract rule SingletonResource {
 	from website : Website!ResourceAttribute (website.cardinality <> #Many)
 	to orm : ORM!SingletonResource (

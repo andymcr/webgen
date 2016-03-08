@@ -750,7 +750,7 @@ abstract rule ContentUnit {
 			endif,
 		captionClass <- website.captionClass.replaceAll(',', ' '),
 		styleClass <- website.styleClass.replaceAll(',', ' '),
-		layoutClass <- website.layoutClass.replaceAll(',', ' ')
+		contentClass <- website.contentClass.replaceAll(',', ' ')
 	)
 }
 

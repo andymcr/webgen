@@ -124,6 +124,7 @@ import uk.ac.man.cs.mdsd.webgen.website.UnitField;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction;
 import uk.ac.man.cs.mdsd.webgen.website.UpdateUnit;
+import uk.ac.man.cs.mdsd.webgen.website.UrlAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.UserCommand;
 import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
@@ -316,6 +317,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass dateAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass urlAttributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1974,6 +1982,24 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EAttribute getDateAttribute_Format() {
 		return (EAttribute)dateAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUrlAttribute() {
+		return urlAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUrlAttribute_DisplayValue() {
+		return (EAttribute)urlAttributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -3700,7 +3726,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEditUnit_LayoutClass() {
+	public EAttribute getEditUnit_ContentClass() {
 		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -3826,7 +3852,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStaticUnit_LayoutClass() {
+	public EAttribute getStaticUnit_ContentClass() {
 		return (EAttribute)staticUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3880,7 +3906,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCreateSitemapUnit_LayoutClass() {
+	public EAttribute getCreateSitemapUnit_ContentClass() {
 		return (EAttribute)createSitemapUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -4015,7 +4041,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDetailsUnit_LayoutClass() {
+	public EAttribute getDetailsUnit_ContentClass() {
 		return (EAttribute)detailsUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -4132,7 +4158,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_LayoutClass() {
+	public EAttribute getIndexUnit_ContentClass() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -4186,7 +4212,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getControlUnit_LayoutClass() {
+	public EAttribute getControlUnit_ContentClass() {
 		return (EAttribute)controlUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -4985,6 +5011,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(dateAttributeEClass, DATE_ATTRIBUTE__DETAILS);
 		createEAttribute(dateAttributeEClass, DATE_ATTRIBUTE__FORMAT);
 
+		urlAttributeEClass = createEClass(URL_ATTRIBUTE);
+		createEAttribute(urlAttributeEClass, URL_ATTRIBUTE__DISPLAY_VALUE);
+
 		resourceAttributeEClass = createEClass(RESOURCE_ATTRIBUTE);
 		createEAttribute(resourceAttributeEClass, RESOURCE_ATTRIBUTE__MAXIMUM_UPLOAD_SIZE);
 		createEAttribute(resourceAttributeEClass, RESOURCE_ATTRIBUTE__VALID_UPLOAD_MIME_TYPES);
@@ -5183,7 +5212,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		staticUnitEClass = createEClass(STATIC_UNIT);
 		createEAttribute(staticUnitEClass, STATIC_UNIT__CONTENT);
 		createEAttribute(staticUnitEClass, STATIC_UNIT__STYLE_CLASS);
-		createEAttribute(staticUnitEClass, STATIC_UNIT__LAYOUT_CLASS);
+		createEAttribute(staticUnitEClass, STATIC_UNIT__CONTENT_CLASS);
 
 		userCommandEClass = createEClass(USER_COMMAND);
 
@@ -5191,7 +5220,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(createSitemapUnitEClass, CREATE_SITEMAP_UNIT__DEPLOYED_URL);
 		createEAttribute(createSitemapUnitEClass, CREATE_SITEMAP_UNIT__FILENAME);
 		createEAttribute(createSitemapUnitEClass, CREATE_SITEMAP_UNIT__STYLE_CLASS);
-		createEAttribute(createSitemapUnitEClass, CREATE_SITEMAP_UNIT__LAYOUT_CLASS);
+		createEAttribute(createSitemapUnitEClass, CREATE_SITEMAP_UNIT__CONTENT_CLASS);
 
 		dynamicUnitEClass = createEClass(DYNAMIC_UNIT);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__SOURCE);
@@ -5257,7 +5286,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(editUnitEClass, EDIT_UNIT__CONFIRM_LABEL);
 		createEReference(editUnitEClass, EDIT_UNIT__CANCEL_DESTINATION);
 		createEAttribute(editUnitEClass, EDIT_UNIT__CANCEL_LABEL);
-		createEAttribute(editUnitEClass, EDIT_UNIT__LAYOUT_CLASS);
+		createEAttribute(editUnitEClass, EDIT_UNIT__CONTENT_CLASS);
 		createEAttribute(editUnitEClass, EDIT_UNIT__CUSTOMISE_VALUES);
 
 		createUnitEClass = createEClass(CREATE_UNIT);
@@ -5286,7 +5315,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(detailsUnitEClass, DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY);
 		createEAttribute(detailsUnitEClass, DETAILS_UNIT__OMIT_FIELD_LABELS);
 		createEAttribute(detailsUnitEClass, DETAILS_UNIT__STYLE_CLASS);
-		createEAttribute(detailsUnitEClass, DETAILS_UNIT__LAYOUT_CLASS);
+		createEAttribute(detailsUnitEClass, DETAILS_UNIT__CONTENT_CLASS);
 
 		indexUnitEClass = createEClass(INDEX_UNIT);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__DISPLAY_OPTION);
@@ -5300,14 +5329,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(indexUnitEClass, INDEX_UNIT__FIRST_PAGE_LABEL);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__LAST_PAGE_LABEL);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__STYLE_CLASS);
-		createEAttribute(indexUnitEClass, INDEX_UNIT__LAYOUT_CLASS);
+		createEAttribute(indexUnitEClass, INDEX_UNIT__CONTENT_CLASS);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__ROW_CLASSES);
 
 		controlUnitEClass = createEClass(CONTROL_UNIT);
 		createEAttribute(controlUnitEClass, CONTROL_UNIT__SUBMIT_LABEL);
 		createEReference(controlUnitEClass, CONTROL_UNIT__CANCEL_DESTINATION);
 		createEAttribute(controlUnitEClass, CONTROL_UNIT__CANCEL_LABEL);
-		createEAttribute(controlUnitEClass, CONTROL_UNIT__LAYOUT_CLASS);
+		createEAttribute(controlUnitEClass, CONTROL_UNIT__CONTENT_CLASS);
 
 		searchUnitEClass = createEClass(SEARCH_UNIT);
 		createEReference(searchUnitEClass, SEARCH_UNIT__RESULTS_DESTINATION);
@@ -5423,6 +5452,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		entityAttributeEClass.getESuperTypes().add(this.getAttribute());
 		dataTypeAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
 		dateAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
+		urlAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
 		resourceAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
 		staticPathElementEClass.getESuperTypes().add(this.getPathElement());
 		datePathElementEClass.getESuperTypes().add(this.getPathElement());
@@ -5662,6 +5692,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getDateAttribute_Details(), this.getDateDetails(), "details", "DateOnly", 1, 1, DateAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDateAttribute_Format(), ecorePackage.getEString(), "format", null, 0, 1, DateAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEClass(urlAttributeEClass, UrlAttribute.class, "UrlAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUrlAttribute_DisplayValue(), ecorePackage.getEString(), "displayValue", null, 0, 1, UrlAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(resourceAttributeEClass, ResourceAttribute.class, "ResourceAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getResourceAttribute_MaximumUploadSize(), ecorePackage.getEInt(), "maximumUploadSize", "-1", 0, 1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getResourceAttribute_ValidUploadMimeTypes(), ecorePackage.getEString(), "validUploadMimeTypes", null, 0, -1, ResourceAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5860,7 +5893,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(staticUnitEClass, StaticUnit.class, "StaticUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStaticUnit_Content(), ecorePackage.getEString(), "content", null, 0, 1, StaticUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStaticUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,static_unit,framed", 0, 1, StaticUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getStaticUnit_LayoutClass(), ecorePackage.getEString(), "layoutClass", "static_content", 0, 1, StaticUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getStaticUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "static_content", 0, 1, StaticUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(userCommandEClass, UserCommand.class, "UserCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -5868,7 +5901,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getCreateSitemapUnit_DeployedURL(), ecorePackage.getEString(), "deployedURL", null, 1, 1, CreateSitemapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCreateSitemapUnit_Filename(), ecorePackage.getEString(), "filename", "sitemap.xml", 1, 1, CreateSitemapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCreateSitemapUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,create_sitemap_unit,framed", 0, 1, CreateSitemapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCreateSitemapUnit_LayoutClass(), ecorePackage.getEString(), "layoutClass", "create_sitemap_content", 0, 1, CreateSitemapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCreateSitemapUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "create_sitemap_content", 0, 1, CreateSitemapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(dynamicUnitEClass, DynamicUnit.class, "DynamicUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDynamicUnit_Source(), this.getUnitSource(), null, "source", null, 1, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5934,7 +5967,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getEditUnit_ConfirmLabel(), ecorePackage.getEString(), "confirmLabel", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEditUnit_CancelDestination(), this.getPage(), null, "cancelDestination", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEditUnit_CancelLabel(), ecorePackage.getEString(), "cancelLabel", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getEditUnit_LayoutClass(), ecorePackage.getEString(), "layoutClass", "input_form", 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getEditUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "input_form,framed", 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEditUnit_CustomiseValues(), ecorePackage.getEBoolean(), "customiseValues", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(createUnitEClass, CreateUnit.class, "CreateUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -5963,7 +5996,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getDetailsUnit_OnlyDisplayWhenNotEmpty(), ecorePackage.getEBoolean(), "onlyDisplayWhenNotEmpty", "false", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDetailsUnit_OmitFieldLabels(), ecorePackage.getEBoolean(), "omitFieldLabels", "false", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDetailsUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,details_unit", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDetailsUnit_LayoutClass(), ecorePackage.getEString(), "layoutClass", "details_content", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getDetailsUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "details_content", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(indexUnitEClass, IndexUnit.class, "IndexUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIndexUnit_DisplayOption(), this.getIndexDisplayOption(), "displayOption", "Grid", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5977,14 +6010,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getIndexUnit_FirstPageLabel(), ecorePackage.getEString(), "firstPageLabel", "<<", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getIndexUnit_LastPageLabel(), ecorePackage.getEString(), "lastPageLabel", ">>", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getIndexUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,index_unit", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getIndexUnit_LayoutClass(), ecorePackage.getEString(), "layoutClass", "index_content", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getIndexUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "index_content,framed", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getIndexUnit_RowClasses(), ecorePackage.getEString(), "rowClasses", "odd_row,even_row", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(controlUnitEClass, ControlUnit.class, "ControlUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getControlUnit_SubmitLabel(), ecorePackage.getEString(), "submitLabel", null, 0, 1, ControlUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getControlUnit_CancelDestination(), this.getPage(), null, "cancelDestination", null, 0, 1, ControlUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getControlUnit_CancelLabel(), ecorePackage.getEString(), "cancelLabel", null, 0, 1, ControlUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getControlUnit_LayoutClass(), ecorePackage.getEString(), "layoutClass", "control_form", 0, 1, ControlUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getControlUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "control_form", 0, 1, ControlUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(searchUnitEClass, SearchUnit.class, "SearchUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSearchUnit_ResultsDestination(), this.getIndexUnit(), null, "resultsDestination", null, 1, 1, SearchUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

@@ -223,6 +223,9 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//DateAttribute/details"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DateAttribute/format"/>
     </genClasses>
+    <genClasses ecoreClass="website.ecore#//UrlAttribute">
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//UrlAttribute/displayValue"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//ResourceAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ResourceAttribute/maximumUploadSize"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ResourceAttribute/validUploadMimeTypes"/>
@@ -344,15 +347,13 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ServiceFeature/dateFormat"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//ServiceAttribute">
-      <genFeatures property="Readonly" createChild="false" propertyCategory="Model"
-          ecoreFeature="ecore:EAttribute website.ecore#//ServiceAttribute/name"/>
+      <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//ServiceAttribute/name"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ServiceAttribute/interfaceType"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ServiceAttribute/placeholder"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ServiceAttribute/validationPattern"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//ServiceAssociation">
-      <genFeatures property="Readonly" createChild="false" propertyCategory="Model"
-          ecoreFeature="ecore:EAttribute website.ecore#//ServiceAssociation/name"/>
+      <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//ServiceAssociation/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//ServiceAssociation/selection"/>
     </genClasses>
@@ -450,15 +451,14 @@
     <genClasses ecoreClass="website.ecore#//StaticUnit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//StaticUnit/content"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//StaticUnit/styleClass"/>
-      <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//StaticUnit/layoutClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//StaticUnit/contentClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//UserCommand"/>
     <genClasses ecoreClass="website.ecore#//CreateSitemapUnit">
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//CreateSitemapUnit/deployedURL"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//CreateSitemapUnit/filename"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//CreateSitemapUnit/styleClass"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//CreateSitemapUnit/layoutClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//CreateSitemapUnit/contentClass"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//DynamicUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
@@ -539,7 +539,7 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//EditUnit/cancelDestination"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//EditUnit/cancelLabel"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//EditUnit/layoutClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//EditUnit/contentClass"/>
       <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute website.ecore#//EditUnit/customiseValues"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//CreateUnit">
@@ -571,7 +571,7 @@
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//DetailsUnit/omitFieldLabels"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//DetailsUnit/styleClass"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//DetailsUnit/layoutClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//DetailsUnit/contentClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//IndexUnit">
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
@@ -590,7 +590,7 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/firstPageLabel"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/lastPageLabel"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/styleClass"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/layoutClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/contentClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/rowClasses"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//ControlUnit">
@@ -599,8 +599,7 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//ControlUnit/cancelDestination"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ControlUnit/cancelLabel"/>
-      <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//ControlUnit/layoutClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//ControlUnit/contentClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//SearchUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertyDescription=""

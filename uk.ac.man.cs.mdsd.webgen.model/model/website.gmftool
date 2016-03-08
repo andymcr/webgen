@@ -344,6 +344,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="URL Attribute"
+          description="Add a URL attribute to an entity">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="File Attribute"
           description="Add a file attribute to an entity">
         <smallIcon

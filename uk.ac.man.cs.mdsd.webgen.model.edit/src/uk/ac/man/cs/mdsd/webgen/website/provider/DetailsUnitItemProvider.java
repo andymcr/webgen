@@ -53,7 +53,7 @@ public class DetailsUnitItemProvider
 			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
-			addLayoutClassPropertyDescriptor(object);
+			addContentClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -125,19 +125,19 @@ public class DetailsUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Layout Class feature.
+	 * This adds a property descriptor for the Content Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLayoutClassPropertyDescriptor(Object object) {
+	protected void addContentClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DetailsUnit_layoutClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_layoutClass_feature", "_UI_DetailsUnit_type"),
-				 WebsitePackage.Literals.DETAILS_UNIT__LAYOUT_CLASS,
+				 getString("_UI_DetailsUnit_contentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_contentClass_feature", "_UI_DetailsUnit_type"),
+				 WebsitePackage.Literals.DETAILS_UNIT__CONTENT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -186,7 +186,7 @@ public class DetailsUnitItemProvider
 			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
-			case WebsitePackage.DETAILS_UNIT__LAYOUT_CLASS:
+			case WebsitePackage.DETAILS_UNIT__CONTENT_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

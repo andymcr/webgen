@@ -246,7 +246,7 @@ abstract class ContentUnit extends NamedDisplayElement {
 	boolean omitCaption
 	String captionClass
 	String styleClass
-	String layoutClass
+	String contentClass
 }
 
 class StaticUnit extends ContentUnit {

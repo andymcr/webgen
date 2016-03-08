@@ -52,7 +52,6 @@ public class ServiceAttributeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDateFormatPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
@@ -112,28 +111,6 @@ public class ServiceAttributeItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceAttribute_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_name_feature", "_UI_ServiceAttribute_type"),
-				 WebsitePackage.Literals.SERVICE_ATTRIBUTE__NAME,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

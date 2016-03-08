@@ -62,7 +62,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getSubmitLabel <em>Submit Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getCancelDestination <em>Cancel Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getCancelLabel <em>Cancel Label</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
  *
@@ -390,24 +390,24 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	protected String cancelLabel = CANCEL_LABEL_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The default value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LAYOUT_CLASS_EDEFAULT = "control_form";
+	protected static final String CONTENT_CLASS_EDEFAULT = "control_form";
 
 	/**
-	 * The cached value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected String layoutClass = LAYOUT_CLASS_EDEFAULT;
+	protected String contentClass = CONTENT_CLASS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -862,8 +862,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLayoutClass() {
-		return layoutClass;
+	public String getContentClass() {
+		return contentClass;
 	}
 
 	/**
@@ -871,11 +871,11 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLayoutClass(String newLayoutClass) {
-		String oldLayoutClass = layoutClass;
-		layoutClass = newLayoutClass;
+	public void setContentClass(String newContentClass) {
+		String oldContentClass = contentClass;
+		contentClass = newContentClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.REGISTRATION_UNIT__LAYOUT_CLASS, oldLayoutClass, layoutClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.REGISTRATION_UNIT__CONTENT_CLASS, oldContentClass, contentClass));
 	}
 
 	/**
@@ -997,8 +997,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return basicGetCancelDestination();
 			case WebsitePackage.REGISTRATION_UNIT__CANCEL_LABEL:
 				return getCancelLabel();
-			case WebsitePackage.REGISTRATION_UNIT__LAYOUT_CLASS:
-				return getLayoutClass();
+			case WebsitePackage.REGISTRATION_UNIT__CONTENT_CLASS:
+				return getContentClass();
 			case WebsitePackage.REGISTRATION_UNIT__STYLE_CLASS:
 				return getStyleClass();
 		}
@@ -1074,8 +1074,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			case WebsitePackage.REGISTRATION_UNIT__CANCEL_LABEL:
 				setCancelLabel((String)newValue);
 				return;
-			case WebsitePackage.REGISTRATION_UNIT__LAYOUT_CLASS:
-				setLayoutClass((String)newValue);
+			case WebsitePackage.REGISTRATION_UNIT__CONTENT_CLASS:
+				setContentClass((String)newValue);
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -1149,8 +1149,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			case WebsitePackage.REGISTRATION_UNIT__CANCEL_LABEL:
 				setCancelLabel(CANCEL_LABEL_EDEFAULT);
 				return;
-			case WebsitePackage.REGISTRATION_UNIT__LAYOUT_CLASS:
-				setLayoutClass(LAYOUT_CLASS_EDEFAULT);
+			case WebsitePackage.REGISTRATION_UNIT__CONTENT_CLASS:
+				setContentClass(CONTENT_CLASS_EDEFAULT);
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
@@ -1205,8 +1205,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return cancelDestination != null;
 			case WebsitePackage.REGISTRATION_UNIT__CANCEL_LABEL:
 				return CANCEL_LABEL_EDEFAULT == null ? cancelLabel != null : !CANCEL_LABEL_EDEFAULT.equals(cancelLabel);
-			case WebsitePackage.REGISTRATION_UNIT__LAYOUT_CLASS:
-				return LAYOUT_CLASS_EDEFAULT == null ? layoutClass != null : !LAYOUT_CLASS_EDEFAULT.equals(layoutClass);
+			case WebsitePackage.REGISTRATION_UNIT__CONTENT_CLASS:
+				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
 			case WebsitePackage.REGISTRATION_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 		}
@@ -1261,7 +1261,7 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				case WebsitePackage.REGISTRATION_UNIT__SUBMIT_LABEL: return WebsitePackage.CONTROL_UNIT__SUBMIT_LABEL;
 				case WebsitePackage.REGISTRATION_UNIT__CANCEL_DESTINATION: return WebsitePackage.CONTROL_UNIT__CANCEL_DESTINATION;
 				case WebsitePackage.REGISTRATION_UNIT__CANCEL_LABEL: return WebsitePackage.CONTROL_UNIT__CANCEL_LABEL;
-				case WebsitePackage.REGISTRATION_UNIT__LAYOUT_CLASS: return WebsitePackage.CONTROL_UNIT__LAYOUT_CLASS;
+				case WebsitePackage.REGISTRATION_UNIT__CONTENT_CLASS: return WebsitePackage.CONTROL_UNIT__CONTENT_CLASS;
 				default: return -1;
 			}
 		}
@@ -1316,7 +1316,7 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				case WebsitePackage.CONTROL_UNIT__SUBMIT_LABEL: return WebsitePackage.REGISTRATION_UNIT__SUBMIT_LABEL;
 				case WebsitePackage.CONTROL_UNIT__CANCEL_DESTINATION: return WebsitePackage.REGISTRATION_UNIT__CANCEL_DESTINATION;
 				case WebsitePackage.CONTROL_UNIT__CANCEL_LABEL: return WebsitePackage.REGISTRATION_UNIT__CANCEL_LABEL;
-				case WebsitePackage.CONTROL_UNIT__LAYOUT_CLASS: return WebsitePackage.REGISTRATION_UNIT__LAYOUT_CLASS;
+				case WebsitePackage.CONTROL_UNIT__CONTENT_CLASS: return WebsitePackage.REGISTRATION_UNIT__CONTENT_CLASS;
 				default: return -1;
 			}
 		}
@@ -1361,8 +1361,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		result.append(submitLabel);
 		result.append(", cancelLabel: ");
 		result.append(cancelLabel);
-		result.append(", layoutClass: ");
-		result.append(layoutClass);
+		result.append(", contentClass: ");
+		result.append(contentClass);
 		result.append(", styleClass: ");
 		result.append(styleClass);
 		result.append(')');

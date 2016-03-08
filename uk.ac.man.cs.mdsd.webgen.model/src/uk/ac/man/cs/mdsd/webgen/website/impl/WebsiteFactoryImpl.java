@@ -74,6 +74,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.ENTITY: return createEntity();
 			case WebsitePackage.DATA_TYPE_ATTRIBUTE: return createDataTypeAttribute();
 			case WebsitePackage.DATE_ATTRIBUTE: return createDateAttribute();
+			case WebsitePackage.URL_ATTRIBUTE: return createUrlAttribute();
 			case WebsitePackage.STATIC_PATH_ELEMENT: return createStaticPathElement();
 			case WebsitePackage.DATE_PATH_ELEMENT: return createDatePathElement();
 			case WebsitePackage.FILE_ATTRIBUTE: return createFileAttribute();
@@ -374,6 +375,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public DateAttribute createDateAttribute() {
 		DateAttributeImpl dateAttribute = new DateAttributeImpl();
 		return dateAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UrlAttribute createUrlAttribute() {
+		UrlAttributeImpl urlAttribute = new UrlAttributeImpl();
+		return urlAttribute;
 	}
 
 	/**

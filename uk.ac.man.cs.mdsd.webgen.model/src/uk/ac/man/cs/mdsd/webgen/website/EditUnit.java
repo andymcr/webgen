@@ -20,7 +20,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getConfirmLabel <em>Confirm Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getCancelDestination <em>Cancel Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getCancelLabel <em>Cancel Label</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getLayoutClass <em>Layout Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#isCustomiseValues <em>Customise Values</em>}</li>
  * </ul>
  *
@@ -134,31 +134,31 @@ public interface EditUnit extends DynamicUnit {
 	void setCancelLabel(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Layout Class</b></em>' attribute.
-	 * The default value is <code>"input_form"</code>.
+	 * Returns the value of the '<em><b>Content Class</b></em>' attribute.
+	 * The default value is <code>"input_form,framed"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Layout Class</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Content Class</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Layout Class</em>' attribute.
-	 * @see #setLayoutClass(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEditUnit_LayoutClass()
-	 * @model default="input_form" ordered="false"
+	 * @return the value of the '<em>Content Class</em>' attribute.
+	 * @see #setContentClass(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEditUnit_ContentClass()
+	 * @model default="input_form,framed" ordered="false"
 	 * @generated
 	 */
-	String getLayoutClass();
+	String getContentClass();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getLayoutClass <em>Layout Class</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getContentClass <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Layout Class</em>' attribute.
-	 * @see #getLayoutClass()
+	 * @param value the new value of the '<em>Content Class</em>' attribute.
+	 * @see #getContentClass()
 	 * @generated
 	 */
-	void setLayoutClass(String value);
+	void setContentClass(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Customise Values</b></em>' attribute.

@@ -505,6 +505,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UrlAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UrlAttributeItemProvider urlAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UrlAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUrlAttributeAdapter() {
+		if (urlAttributeItemProvider == null) {
+			urlAttributeItemProvider = new UrlAttributeItemProvider(this);
+		}
+
+		return urlAttributeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.StaticPathElement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1766,6 +1789,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (entityItemProvider != null) entityItemProvider.dispose();
 		if (dataTypeAttributeItemProvider != null) dataTypeAttributeItemProvider.dispose();
 		if (dateAttributeItemProvider != null) dateAttributeItemProvider.dispose();
+		if (urlAttributeItemProvider != null) urlAttributeItemProvider.dispose();
 		if (staticPathElementItemProvider != null) staticPathElementItemProvider.dispose();
 		if (datePathElementItemProvider != null) datePathElementItemProvider.dispose();
 		if (fileAttributeItemProvider != null) fileAttributeItemProvider.dispose();

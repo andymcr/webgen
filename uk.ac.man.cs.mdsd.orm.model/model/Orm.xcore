@@ -178,10 +178,14 @@ interface DateAttribute {
 	DateDetails details
 }
 
-class SingletonDate extends SingletonAttribute , DateAttribute {
+class SingletonDate extends SingletonAttribute, DateAttribute {
 }
 
-class CollectionDate extends CollectionAttribute , DateAttribute {
+class CollectionDate extends CollectionAttribute, DateAttribute {
+}
+
+class SingletonURL extends SingletonAttribute {
+	String displayValue
 }
 
 abstract class SingletonResource extends SingletonAttribute {

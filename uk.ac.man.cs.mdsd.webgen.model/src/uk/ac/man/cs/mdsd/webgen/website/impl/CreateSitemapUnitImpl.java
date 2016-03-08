@@ -22,7 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateSitemapUnitImpl#getDeployedURL <em>Deployed URL</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateSitemapUnitImpl#getFilename <em>Filename</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateSitemapUnitImpl#getStyleClass <em>Style Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateSitemapUnitImpl#getLayoutClass <em>Layout Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateSitemapUnitImpl#getContentClass <em>Content Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,24 +89,24 @@ public class CreateSitemapUnitImpl extends ContentUnitImpl implements CreateSite
 	protected String styleClass = STYLE_CLASS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The default value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LAYOUT_CLASS_EDEFAULT = "create_sitemap_content";
+	protected static final String CONTENT_CLASS_EDEFAULT = "create_sitemap_content";
 
 	/**
-	 * The cached value of the '{@link #getLayoutClass() <em>Layout Class</em>}' attribute.
+	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLayoutClass()
+	 * @see #getContentClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected String layoutClass = LAYOUT_CLASS_EDEFAULT;
+	protected String contentClass = CONTENT_CLASS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,8 +195,8 @@ public class CreateSitemapUnitImpl extends ContentUnitImpl implements CreateSite
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLayoutClass() {
-		return layoutClass;
+	public String getContentClass() {
+		return contentClass;
 	}
 
 	/**
@@ -204,11 +204,11 @@ public class CreateSitemapUnitImpl extends ContentUnitImpl implements CreateSite
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLayoutClass(String newLayoutClass) {
-		String oldLayoutClass = layoutClass;
-		layoutClass = newLayoutClass;
+	public void setContentClass(String newContentClass) {
+		String oldContentClass = contentClass;
+		contentClass = newContentClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CREATE_SITEMAP_UNIT__LAYOUT_CLASS, oldLayoutClass, layoutClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CREATE_SITEMAP_UNIT__CONTENT_CLASS, oldContentClass, contentClass));
 	}
 
 	/**
@@ -225,8 +225,8 @@ public class CreateSitemapUnitImpl extends ContentUnitImpl implements CreateSite
 				return getFilename();
 			case WebsitePackage.CREATE_SITEMAP_UNIT__STYLE_CLASS:
 				return getStyleClass();
-			case WebsitePackage.CREATE_SITEMAP_UNIT__LAYOUT_CLASS:
-				return getLayoutClass();
+			case WebsitePackage.CREATE_SITEMAP_UNIT__CONTENT_CLASS:
+				return getContentClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -248,8 +248,8 @@ public class CreateSitemapUnitImpl extends ContentUnitImpl implements CreateSite
 			case WebsitePackage.CREATE_SITEMAP_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
 				return;
-			case WebsitePackage.CREATE_SITEMAP_UNIT__LAYOUT_CLASS:
-				setLayoutClass((String)newValue);
+			case WebsitePackage.CREATE_SITEMAP_UNIT__CONTENT_CLASS:
+				setContentClass((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -272,8 +272,8 @@ public class CreateSitemapUnitImpl extends ContentUnitImpl implements CreateSite
 			case WebsitePackage.CREATE_SITEMAP_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
-			case WebsitePackage.CREATE_SITEMAP_UNIT__LAYOUT_CLASS:
-				setLayoutClass(LAYOUT_CLASS_EDEFAULT);
+			case WebsitePackage.CREATE_SITEMAP_UNIT__CONTENT_CLASS:
+				setContentClass(CONTENT_CLASS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -293,8 +293,8 @@ public class CreateSitemapUnitImpl extends ContentUnitImpl implements CreateSite
 				return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals(filename);
 			case WebsitePackage.CREATE_SITEMAP_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
-			case WebsitePackage.CREATE_SITEMAP_UNIT__LAYOUT_CLASS:
-				return LAYOUT_CLASS_EDEFAULT == null ? layoutClass != null : !LAYOUT_CLASS_EDEFAULT.equals(layoutClass);
+			case WebsitePackage.CREATE_SITEMAP_UNIT__CONTENT_CLASS:
+				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -315,8 +315,8 @@ public class CreateSitemapUnitImpl extends ContentUnitImpl implements CreateSite
 		result.append(filename);
 		result.append(", styleClass: ");
 		result.append(styleClass);
-		result.append(", layoutClass: ");
-		result.append(layoutClass);
+		result.append(", contentClass: ");
+		result.append(contentClass);
 		result.append(')');
 		return result.toString();
 	}

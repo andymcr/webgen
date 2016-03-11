@@ -22,23 +22,12 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAttributeImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAttributeImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements ModelLabelAttribute {
-	/**
-	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.MODEL_LABEL_ATTRIBUTE__NAME).getSettingDelegate();
-
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -66,24 +55,6 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.MODEL_LABEL_ATTRIBUTE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		NAME__ESETTING_DELEGATE.dynamicSet(this, null, 0, newName);
 	}
 
 	/**
@@ -132,8 +103,6 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__NAME:
-				return getName();
 			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
 				if (resolve) return getAttribute();
 				return basicGetAttribute();
@@ -149,9 +118,6 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__NAME:
-				setName((String)newValue);
-				return;
 			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)newValue);
 				return;
@@ -167,9 +133,6 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__NAME:
-				NAME__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
-				return;
 			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)null);
 				return;
@@ -185,8 +148,6 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__NAME:
-				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
 				return attribute != null;
 		}

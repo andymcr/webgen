@@ -47,33 +47,10 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
 			addDynamicLabelPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelLabelAssociation_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_name_feature", "_UI_ModelLabelAssociation_type"),
-				 WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -157,10 +134,8 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ModelLabelAssociation)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ModelLabelAssociation_type") :
-			getString("_UI_ModelLabelAssociation_type") + " " + label;
+		ModelLabelAssociation modelLabelAssociation = (ModelLabelAssociation)object;
+		return getString("_UI_ModelLabelAssociation_type") + " " + modelLabelAssociation.isUseAssociationSource();
 	}
 	
 
@@ -176,7 +151,6 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ModelLabelAssociation.class)) {
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION__NAME:
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

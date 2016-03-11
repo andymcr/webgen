@@ -2322,17 +2322,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getModelLabelAttribute_Name() {
-		return (EAttribute)modelLabelAttributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getModelLabelAttribute_Attribute() {
-		return (EReference)modelLabelAttributeEClass.getEStructuralFeatures().get(1);
+		return (EReference)modelLabelAttributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2349,17 +2340,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getModelLabelAssociation_Name() {
-		return (EAttribute)modelLabelAssociationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getModelLabelAssociation_Association() {
-		return (EReference)modelLabelAssociationEClass.getEStructuralFeatures().get(1);
+		return (EReference)modelLabelAssociationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2368,7 +2350,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getModelLabelAssociation_DynamicLabel() {
-		return (EReference)modelLabelAssociationEClass.getEStructuralFeatures().get(2);
+		return (EReference)modelLabelAssociationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2377,7 +2359,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getModelLabelAssociation_UseAssociationSource() {
-		return (EAttribute)modelLabelAssociationEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)modelLabelAssociationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -4976,11 +4958,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(modelLabelFeatureEClass, MODEL_LABEL_FEATURE__PART_OF);
 
 		modelLabelAttributeEClass = createEClass(MODEL_LABEL_ATTRIBUTE);
-		createEAttribute(modelLabelAttributeEClass, MODEL_LABEL_ATTRIBUTE__NAME);
 		createEReference(modelLabelAttributeEClass, MODEL_LABEL_ATTRIBUTE__ATTRIBUTE);
 
 		modelLabelAssociationEClass = createEClass(MODEL_LABEL_ASSOCIATION);
-		createEAttribute(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__NAME);
 		createEReference(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__ASSOCIATION);
 		createEReference(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL);
 		createEAttribute(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE);
@@ -5657,11 +5637,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getModelLabelFeature_PartOf(), this.getModelLabel(), this.getModelLabel_Features(), "partOf", null, 1, 1, ModelLabelFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelLabelAttributeEClass, ModelLabelAttribute.class, "ModelLabelAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getModelLabelAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, ModelLabelAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModelLabelAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, ModelLabelAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelLabelAssociationEClass, ModelLabelAssociation.class, "ModelLabelAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getModelLabelAssociation_Name(), ecorePackage.getEString(), "name", null, 1, 1, ModelLabelAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModelLabelAssociation_Association(), this.getEntityAssociation(), null, "association", null, 1, 1, ModelLabelAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModelLabelAssociation_DynamicLabel(), this.getModelLabel(), null, "dynamicLabel", null, 0, 1, ModelLabelAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModelLabelAssociation_UseAssociationSource(), ecorePackage.getEBoolean(), "useAssociationSource", null, 0, 1, ModelLabelAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6289,18 +6267,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "nameNeedsAtLeastOneCharacter", "not name.oclIsUndefined() implies name.size() > 0"
-		   });	
-		addAnnotation
-		  (getModelLabelAttribute_Name(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n\tattribute.oclAsType(EncapsulatedAttribute).name\r\nelse\r\n\tattribute.oclAsType(EntityAttribute).name\r\nendif endif"
-		   });	
-		addAnnotation
-		  (getModelLabelAssociation_Name(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse \r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).name\r\n\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\telse\r\n\t\t\tassociation.oclAsType(ViewAssociation).opposite.name\r\n\t\tendif\r\n\telse\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(EntityAssociation).name\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetFeatureName\r\n\t\tendif\r\n\tendif endif\r\nendif"
 		   });	
 		addAnnotation
 		  (entityEClass, 

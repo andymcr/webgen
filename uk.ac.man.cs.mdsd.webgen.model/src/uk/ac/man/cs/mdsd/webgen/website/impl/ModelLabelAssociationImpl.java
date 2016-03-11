@@ -23,7 +23,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAssociationImpl#getDynamicLabel <em>Dynamic Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAssociationImpl#isUseAssociationSource <em>Use Association Source</em>}</li>
@@ -32,16 +31,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements ModelLabelAssociation {
-	/**
-	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__NAME).getSettingDelegate();
-
 	/**
 	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -99,24 +88,6 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		NAME__ESETTING_DELEGATE.dynamicSet(this, null, 0, newName);
 	}
 
 	/**
@@ -235,8 +206,6 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION__NAME:
-				return getName();
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
 				if (resolve) return getAssociation();
 				return basicGetAssociation();
@@ -257,9 +226,6 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION__NAME:
-				setName((String)newValue);
-				return;
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
 				setAssociation((EntityAssociation)newValue);
 				return;
@@ -281,9 +247,6 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION__NAME:
-				NAME__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
-				return;
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
 				setAssociation((EntityAssociation)null);
 				return;
@@ -305,8 +268,6 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION__NAME:
-				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION:
 				return association != null;
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:

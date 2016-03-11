@@ -183,12 +183,10 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ModelLabelFeature/partOf"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//ModelLabelAttribute">
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ModelLabelAttribute/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ModelLabelAttribute/attribute"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//ModelLabelAssociation">
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ModelLabelAssociation/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ModelLabelAssociation/association"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"

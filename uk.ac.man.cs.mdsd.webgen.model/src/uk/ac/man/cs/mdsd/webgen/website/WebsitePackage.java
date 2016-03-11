@@ -1841,22 +1841,13 @@ public interface WebsitePackage extends EPackage {
 	int MODEL_LABEL_ATTRIBUTE__PART_OF = MODEL_LABEL_FEATURE__PART_OF;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_LABEL_ATTRIBUTE__NAME = MODEL_LABEL_FEATURE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ATTRIBUTE__ATTRIBUTE = MODEL_LABEL_FEATURE_FEATURE_COUNT + 1;
+	int MODEL_LABEL_ATTRIBUTE__ATTRIBUTE = MODEL_LABEL_FEATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Model Label Attribute</em>' class.
@@ -1865,7 +1856,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ATTRIBUTE_FEATURE_COUNT = MODEL_LABEL_FEATURE_FEATURE_COUNT + 2;
+	int MODEL_LABEL_ATTRIBUTE_FEATURE_COUNT = MODEL_LABEL_FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAssociationImpl <em>Model Label Association</em>}' class.
@@ -1887,22 +1878,13 @@ public interface WebsitePackage extends EPackage {
 	int MODEL_LABEL_ASSOCIATION__PART_OF = MODEL_LABEL_FEATURE__PART_OF;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_LABEL_ASSOCIATION__NAME = MODEL_LABEL_FEATURE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ASSOCIATION__ASSOCIATION = MODEL_LABEL_FEATURE_FEATURE_COUNT + 1;
+	int MODEL_LABEL_ASSOCIATION__ASSOCIATION = MODEL_LABEL_FEATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Label</b></em>' reference.
@@ -1911,7 +1893,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL = MODEL_LABEL_FEATURE_FEATURE_COUNT + 2;
+	int MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL = MODEL_LABEL_FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Use Association Source</b></em>' attribute.
@@ -1920,7 +1902,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE = MODEL_LABEL_FEATURE_FEATURE_COUNT + 3;
+	int MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE = MODEL_LABEL_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Model Label Association</em>' class.
@@ -1929,7 +1911,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ASSOCIATION_FEATURE_COUNT = MODEL_LABEL_FEATURE_FEATURE_COUNT + 4;
+	int MODEL_LABEL_ASSOCIATION_FEATURE_COUNT = MODEL_LABEL_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -13051,17 +13033,6 @@ public interface WebsitePackage extends EPackage {
 	EClass getModelLabelAttribute();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute#getName()
-	 * @see #getModelLabelAttribute()
-	 * @generated
-	 */
-	EAttribute getModelLabelAttribute_Name();
-
-	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute#getAttribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13081,17 +13052,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getModelLabelAssociation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#getName()
-	 * @see #getModelLabelAssociation()
-	 * @generated
-	 */
-	EAttribute getModelLabelAssociation_Name();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#getAssociation <em>Association</em>}'.
@@ -17298,14 +17258,6 @@ public interface WebsitePackage extends EPackage {
 		EClass MODEL_LABEL_ATTRIBUTE = eINSTANCE.getModelLabelAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MODEL_LABEL_ATTRIBUTE__NAME = eINSTANCE.getModelLabelAttribute_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -17322,14 +17274,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass MODEL_LABEL_ASSOCIATION = eINSTANCE.getModelLabelAssociation();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MODEL_LABEL_ASSOCIATION__NAME = eINSTANCE.getModelLabelAssociation_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Association</b></em>' reference feature.

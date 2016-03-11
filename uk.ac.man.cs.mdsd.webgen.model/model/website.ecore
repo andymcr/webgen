@@ -229,20 +229,10 @@
         eType="#//ModelLabel" eOpposite="#//ModelLabel/features"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModelLabelAttribute" eSuperTypes="#//ModelLabelFeature">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if attribute.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else if attribute.oclIsTypeOf(EncapsulatedAttribute) then&#xD;&#xA;&#x9;attribute.oclAsType(EncapsulatedAttribute).name&#xD;&#xA;else&#xD;&#xA;&#x9;attribute.oclAsType(EntityAttribute).name&#xD;&#xA;endif endif"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
         eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModelLabelAssociation" eSuperTypes="#//ModelLabelFeature">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if association.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else &#xD;&#xA;&#x9;if association.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).name&#xD;&#xA;&#x9;else if association.oclIsTypeOf(ViewAssociation) then&#xD;&#xA;&#x9;&#x9;if useAssociationSource then&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).name&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).opposite.name&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if useAssociationSource then&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).name&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).targetFeatureName&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif endif&#xD;&#xA;endif"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="association" lowerBound="1"
         eType="#//EntityAssociation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicLabel" eType="#//ModelLabel"/>

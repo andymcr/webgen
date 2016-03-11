@@ -165,7 +165,9 @@ rule CollectionDate {
 rule SingletonURL {
 	from website : Website!UrlAttribute (website.cardinality <> #Many)
 	to orm : ORM!SingletonURL (
-		displayValue <- website.displayValue
+		displayValue <- website.displayValue,
+		persistentType <- thisModule.findWebsiteDataType('String').persistentType(),
+		ormType <- thisModule.findWebsiteDataType('String').ormType()
 	)
 }
 

@@ -23,6 +23,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.criteria.Order;
 import uk.ac.man.cs.mdsd.criteria.Predicate;
 
+import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
@@ -40,6 +42,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getNewJoins2 <em>New Joins2</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getLimit <em>Limit</em>}</li>
@@ -67,6 +70,16 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @ordered
 	 */
 	protected EList<ServiceAssociation> joins;
+
+	/**
+	 * The cached value of the '{@link #getNewJoins2() <em>New Joins2</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNewJoins2()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Association> newJoins2;
 
 	/**
 	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' containment reference.
@@ -190,6 +203,18 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			joins = new EObjectResolvingEList<ServiceAssociation>(ServiceAssociation.class, this, WebsitePackage.SELECTION__JOINS);
 		}
 		return joins;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<Association> getNewJoins2() {
+		if (newJoins2 == null) {
+			newJoins2 = new EObjectResolvingEList<Association>(Association.class, this, WebsitePackage.SELECTION__NEW_JOINS2);
+		}
+		return newJoins2;
 	}
 
 	/**
@@ -332,6 +357,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return getParameters();
 			case WebsitePackage.SELECTION__JOINS:
 				return getJoins();
+			case WebsitePackage.SELECTION__NEW_JOINS2:
+				return getNewJoins2();
 			case WebsitePackage.SELECTION__FILTER:
 				return getFilter();
 			case WebsitePackage.SELECTION__ORDERING:
@@ -361,6 +388,10 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WebsitePackage.SELECTION__JOINS:
 				getJoins().clear();
 				getJoins().addAll((Collection<? extends ServiceAssociation>)newValue);
+				return;
+			case WebsitePackage.SELECTION__NEW_JOINS2:
+				getNewJoins2().clear();
+				getNewJoins2().addAll((Collection<? extends Association>)newValue);
 				return;
 			case WebsitePackage.SELECTION__FILTER:
 				setFilter((Predicate)newValue);
@@ -393,6 +424,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WebsitePackage.SELECTION__JOINS:
 				getJoins().clear();
 				return;
+			case WebsitePackage.SELECTION__NEW_JOINS2:
+				getNewJoins2().clear();
+				return;
 			case WebsitePackage.SELECTION__FILTER:
 				setFilter((Predicate)null);
 				return;
@@ -420,6 +454,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return parameters != null && !parameters.isEmpty();
 			case WebsitePackage.SELECTION__JOINS:
 				return joins != null && !joins.isEmpty();
+			case WebsitePackage.SELECTION__NEW_JOINS2:
+				return newJoins2 != null && !newJoins2.isEmpty();
 			case WebsitePackage.SELECTION__FILTER:
 				return filter != null;
 			case WebsitePackage.SELECTION__ORDERING:

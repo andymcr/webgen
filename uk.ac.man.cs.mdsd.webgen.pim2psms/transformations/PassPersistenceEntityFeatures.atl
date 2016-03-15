@@ -49,7 +49,6 @@ rule Entity {
 	from partialOrm : ORM!Entity
 	to orm : ORM!Entity (
 		-- features via partOf in features
-		keys <- thisModule.findWebsiteEntityOrView(partialOrm.name).keys
 	)
 }
 
@@ -58,6 +57,7 @@ abstract rule EntityFeature {
 	from website : Website!EntityFeature
 	to orm : ORM!EntityFeature (
 		partOf <- thisModule.findOrmEntityOrView(website.partOf.name),
+		cardinality <- website.cardinality,
 		headerClass <- website.headerClass,
 		inputClass <- website.inputClass,
 		displayClass <- website.displayClass,
@@ -376,8 +376,7 @@ rule OneToOneAssociationWithContainment {
 	to orm : ORM!SingletonAssociation (
 		associationRelationship <- #OneToOne,
 		opposite <- associationEnd,
-		owningEnd <- false,
-		container <- true,
+		contains <- true,
 		required <- website.cardinality = #Required
 	),
 	associationEnd : ORM!SingletonAssociation (
@@ -387,6 +386,7 @@ rule OneToOneAssociationWithContainment {
 		associationRelationship <- #OneToOne,
 		opposite <- orm,
 		owningEnd <- true,
+		container <- true,
 		visible <- website.bidirectional,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
@@ -409,8 +409,7 @@ rule OneToManyAssociationWithContainment {
 	to orm : ORM!CollectionAssociation (
 		associationRelationship <- #OneToMany,
 		opposite <- associationEnd,
-		owningEnd <- false,
-		container <- true
+		contains <- true
 	),
 	associationEnd : ORM!SingletonAssociation (
 		name <- website.targetFeatureName(),
@@ -419,6 +418,7 @@ rule OneToManyAssociationWithContainment {
 		associationRelationship <- #ManyToOne,
 		opposite <- orm,
 		owningEnd <- true,
+		container <- true,
 		visible <- website.bidirectional,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then

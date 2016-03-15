@@ -16,8 +16,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.Service;
@@ -34,6 +37,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
@@ -56,6 +60,16 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected EList<Service> services;
+
+	/**
+	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntities()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EntityOrView> entities;
 
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
@@ -226,6 +240,18 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			services = new EObjectWithInverseResolvingEList.ManyInverse<Service>(Service.class, this, WafPackage.DYNAMIC_UNIT__SERVICES, WafPackage.SERVICE__ACCESSED_BY);
 		}
 		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EntityOrView> getEntities() {
+		if (entities == null) {
+			entities = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.DYNAMIC_UNIT__ENTITIES);
+		}
+		return entities;
 	}
 
 	/**
@@ -423,6 +449,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WafPackage.DYNAMIC_UNIT__SERVICES:
 				return getServices();
+			case WafPackage.DYNAMIC_UNIT__ENTITIES:
+				return getEntities();
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -455,6 +483,10 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__SERVICES:
 				getServices().clear();
 				getServices().addAll((Collection<? extends Service>)newValue);
+				return;
+			case WafPackage.DYNAMIC_UNIT__ENTITIES:
+				getEntities().clear();
+				getEntities().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -497,6 +529,9 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__SERVICES:
 				getServices().clear();
 				return;
+			case WafPackage.DYNAMIC_UNIT__ENTITIES:
+				getEntities().clear();
+				return;
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
@@ -535,6 +570,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WafPackage.DYNAMIC_UNIT__SERVICES:
 				return services != null && !services.isEmpty();
+			case WafPackage.DYNAMIC_UNIT__ENTITIES:
+				return entities != null && !entities.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:

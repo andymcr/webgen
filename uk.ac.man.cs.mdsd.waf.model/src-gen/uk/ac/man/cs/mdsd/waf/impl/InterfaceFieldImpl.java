@@ -14,10 +14,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.criteria.Expression;
 
-import uk.ac.man.cs.mdsd.orm.Cardinality;
+import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
-import uk.ac.man.cs.mdsd.orm.impl.NamedDisplayElementImpl;
-
+import uk.ac.man.cs.mdsd.waf.DisplayElement;
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.InterfaceField;
 import uk.ac.man.cs.mdsd.waf.UnitField;
@@ -31,39 +30,40 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDateFormat <em>Date Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#isRequired <em>Required</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDefaultValue <em>Default Value</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getMustMatch <em>Must Match</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getValidationPattern <em>Validation Pattern</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getInputClass <em>Input Class</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl implements InterfaceField {
+public abstract class InterfaceFieldImpl extends NamedElementImpl implements InterfaceField {
 	/**
-	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
+	 * The default value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
+	 * @see #getDisplayLabel()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Cardinality CARDINALITY_EDEFAULT = Cardinality.OPTIONAL;
+	protected static final String DISPLAY_LABEL_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
+	 * The cached value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
+	 * @see #getDisplayLabel()
 	 * @generated
 	 * @ordered
 	 */
-	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
+	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
@@ -106,6 +106,26 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	protected String dateFormat = DATE_FORMAT_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isRequired() <em>Required</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRequired()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean REQUIRED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isRequired() <em>Required</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isRequired()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean required = REQUIRED_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,26 +134,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * @ordered
 	 */
 	protected Expression defaultValue;
-
-	/**
-	 * The default value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInputClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String INPUT_CLASS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInputClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected String inputClass = INPUT_CLASS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getMustMatch() <em>Must Match</em>}' reference.
@@ -186,6 +186,26 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	protected String validationPattern = VALIDATION_PATTERN_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INPUT_CLASS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String inputClass = INPUT_CLASS_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -202,6 +222,27 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.INTERFACE_FIELD;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDisplayLabel() {
+		return displayLabel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisplayLabel(String newDisplayLabel) {
+		String oldDisplayLabel = displayLabel;
+		displayLabel = newDisplayLabel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__DISPLAY_LABEL, oldDisplayLabel, displayLabel));
 	}
 
 	/**
@@ -260,27 +301,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cardinality getCardinality() {
-		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCardinality(Cardinality newCardinality) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__CARDINALITY, oldCardinality, cardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getMaximumDisplaySize() {
 		return maximumDisplaySize;
 	}
@@ -316,6 +336,27 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		dateFormat = newDateFormat;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__DATE_FORMAT, oldDateFormat, dateFormat));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isRequired() {
+		return required;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequired(boolean newRequired) {
+		boolean oldRequired = required;
+		required = newRequired;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__REQUIRED, oldRequired, required));
 	}
 
 	/**
@@ -359,27 +400,6 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__DEFAULT_VALUE, newDefaultValue, newDefaultValue));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getInputClass() {
-		return inputClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInputClass(String newInputClass) {
-		String oldInputClass = inputClass;
-		inputClass = newInputClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__INPUT_CLASS, oldInputClass, inputClass));
 	}
 
 	/**
@@ -467,6 +487,27 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInputClass() {
+		return inputClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInputClass(String newInputClass) {
+		String oldInputClass = inputClass;
+		inputClass = newInputClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__INPUT_CLASS, oldInputClass, inputClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -516,19 +557,19 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.INTERFACE_FIELD__DISPLAY_LABEL:
+				return getDisplayLabel();
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				if (resolve) return getDisplayedOn();
 				return basicGetDisplayedOn();
-			case WafPackage.INTERFACE_FIELD__CARDINALITY:
-				return getCardinality();
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return getMaximumDisplaySize();
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				return getDateFormat();
+			case WafPackage.INTERFACE_FIELD__REQUIRED:
+				return isRequired();
 			case WafPackage.INTERFACE_FIELD__DEFAULT_VALUE:
 				return getDefaultValue();
-			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
-				return getInputClass();
 			case WafPackage.INTERFACE_FIELD__MUST_MATCH:
 				if (resolve) return getMustMatch();
 				return basicGetMustMatch();
@@ -536,6 +577,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return getPlaceholder();
 			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
 				return getValidationPattern();
+			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
+				return getInputClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -548,11 +591,11 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.INTERFACE_FIELD__DISPLAY_LABEL:
+				setDisplayLabel((String)newValue);
+				return;
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
-				return;
-			case WafPackage.INTERFACE_FIELD__CARDINALITY:
-				setCardinality((Cardinality)newValue);
 				return;
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize((Integer)newValue);
@@ -560,11 +603,11 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				setDateFormat((String)newValue);
 				return;
+			case WafPackage.INTERFACE_FIELD__REQUIRED:
+				setRequired((Boolean)newValue);
+				return;
 			case WafPackage.INTERFACE_FIELD__DEFAULT_VALUE:
 				setDefaultValue((Expression)newValue);
-				return;
-			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
-				setInputClass((String)newValue);
 				return;
 			case WafPackage.INTERFACE_FIELD__MUST_MATCH:
 				setMustMatch((UnitField)newValue);
@@ -574,6 +617,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return;
 			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
 				setValidationPattern((String)newValue);
+				return;
+			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
+				setInputClass((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -587,11 +633,11 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.INTERFACE_FIELD__DISPLAY_LABEL:
+				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
+				return;
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
-				return;
-			case WafPackage.INTERFACE_FIELD__CARDINALITY:
-				setCardinality(CARDINALITY_EDEFAULT);
 				return;
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
@@ -599,11 +645,11 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
 				return;
+			case WafPackage.INTERFACE_FIELD__REQUIRED:
+				setRequired(REQUIRED_EDEFAULT);
+				return;
 			case WafPackage.INTERFACE_FIELD__DEFAULT_VALUE:
 				setDefaultValue((Expression)null);
-				return;
-			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
-				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
 			case WafPackage.INTERFACE_FIELD__MUST_MATCH:
 				setMustMatch((UnitField)null);
@@ -613,6 +659,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return;
 			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
 				setValidationPattern(VALIDATION_PATTERN_EDEFAULT);
+				return;
+			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
+				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -626,24 +675,26 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.INTERFACE_FIELD__DISPLAY_LABEL:
+				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return basicGetDisplayedOn() != null;
-			case WafPackage.INTERFACE_FIELD__CARDINALITY:
-				return cardinality != CARDINALITY_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
+			case WafPackage.INTERFACE_FIELD__REQUIRED:
+				return required != REQUIRED_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__DEFAULT_VALUE:
 				return defaultValue != null;
-			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
-				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 			case WafPackage.INTERFACE_FIELD__MUST_MATCH:
 				return mustMatch != null;
 			case WafPackage.INTERFACE_FIELD__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
+			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
+				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -655,10 +706,15 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == DisplayElement.class) {
+			switch (derivedFeatureID) {
+				case WafPackage.INTERFACE_FIELD__DISPLAY_LABEL: return WafPackage.DISPLAY_ELEMENT__DISPLAY_LABEL;
+				default: return -1;
+			}
+		}
 		if (baseClass == UnitField.class) {
 			switch (derivedFeatureID) {
 				case WafPackage.INTERFACE_FIELD__DISPLAYED_ON: return WafPackage.UNIT_FIELD__DISPLAYED_ON;
-				case WafPackage.INTERFACE_FIELD__CARDINALITY: return WafPackage.UNIT_FIELD__CARDINALITY;
 				case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.INTERFACE_FIELD__DATE_FORMAT: return WafPackage.UNIT_FIELD__DATE_FORMAT;
 				default: return -1;
@@ -674,10 +730,15 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == DisplayElement.class) {
+			switch (baseFeatureID) {
+				case WafPackage.DISPLAY_ELEMENT__DISPLAY_LABEL: return WafPackage.INTERFACE_FIELD__DISPLAY_LABEL;
+				default: return -1;
+			}
+		}
 		if (baseClass == UnitField.class) {
 			switch (baseFeatureID) {
 				case WafPackage.UNIT_FIELD__DISPLAYED_ON: return WafPackage.INTERFACE_FIELD__DISPLAYED_ON;
-				case WafPackage.UNIT_FIELD__CARDINALITY: return WafPackage.INTERFACE_FIELD__CARDINALITY;
 				case WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.UNIT_FIELD__DATE_FORMAT: return WafPackage.INTERFACE_FIELD__DATE_FORMAT;
 				default: return -1;
@@ -696,18 +757,20 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (cardinality: ");
-		result.append(cardinality);
+		result.append(" (displayLabel: ");
+		result.append(displayLabel);
 		result.append(", maximumDisplaySize: ");
 		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);
-		result.append(", inputClass: ");
-		result.append(inputClass);
+		result.append(", required: ");
+		result.append(required);
 		result.append(", placeholder: ");
 		result.append(placeholder);
 		result.append(", validationPattern: ");
 		result.append(validationPattern);
+		result.append(", inputClass: ");
+		result.append(inputClass);
 		result.append(')');
 		return result.toString();
 	}

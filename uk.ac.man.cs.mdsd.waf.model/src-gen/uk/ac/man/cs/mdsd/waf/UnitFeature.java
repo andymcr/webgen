@@ -2,7 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
+import uk.ac.man.cs.mdsd.criteria.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,18 +13,50 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getForcedValue <em>Forced Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getDisplayOption <em>Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#isAutofocus <em>Autofocus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getFooter <em>Footer</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getHeaderClass <em>Header Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getInputClass <em>Input Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getDisplayClass <em>Display Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getFooterClass <em>Footer Class</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature()
  * @model abstract="true"
  * @generated
  */
-public interface UnitFeature extends NamedDisplayElement, IncludedFeature, UnitField, InlineActionContainer {
+public interface UnitFeature extends UnitField, InlineActionContainer {
+	/**
+	 * Returns the value of the '<em><b>Forced Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Forced Value</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Forced Value</em>' containment reference.
+	 * @see #setForcedValue(Expression)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature_ForcedValue()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Expression getForcedValue();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getForcedValue <em>Forced Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Forced Value</em>' containment reference.
+	 * @see #getForcedValue()
+	 * @generated
+	 */
+	void setForcedValue(Expression value);
+
 	/**
 	 * Returns the value of the '<em><b>Only Display When Not Empty</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Only Display When Not Empty</em>' attribute isn't clear,
@@ -34,7 +66,7 @@ public interface UnitFeature extends NamedDisplayElement, IncludedFeature, UnitF
 	 * @return the value of the '<em>Only Display When Not Empty</em>' attribute.
 	 * @see #setOnlyDisplayWhenNotEmpty(boolean)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature_OnlyDisplayWhenNotEmpty()
-	 * @model unique="false"
+	 * @model default="false" unique="false"
 	 * @generated
 	 */
 	boolean isOnlyDisplayWhenNotEmpty();
@@ -48,35 +80,6 @@ public interface UnitFeature extends NamedDisplayElement, IncludedFeature, UnitF
 	 * @generated
 	 */
 	void setOnlyDisplayWhenNotEmpty(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Display Option</b></em>' attribute.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Display Option</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Display Option</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions
-	 * @see #setDisplayOption(CollectionDisplayOptions)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature_DisplayOption()
-	 * @model unique="false"
-	 * @generated
-	 */
-	CollectionDisplayOptions getDisplayOption();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getDisplayOption <em>Display Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Display Option</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions
-	 * @see #getDisplayOption()
-	 * @generated
-	 */
-	void setDisplayOption(CollectionDisplayOptions value);
 
 	/**
 	 * Returns the value of the '<em><b>Autofocus</b></em>' attribute.
@@ -103,5 +106,135 @@ public interface UnitFeature extends NamedDisplayElement, IncludedFeature, UnitF
 	 * @generated
 	 */
 	void setAutofocus(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Footer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Footer</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Footer</em>' attribute.
+	 * @see #setFooter(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature_Footer()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getFooter();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getFooter <em>Footer</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Footer</em>' attribute.
+	 * @see #getFooter()
+	 * @generated
+	 */
+	void setFooter(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Header Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Header Class</em>' attribute.
+	 * @see #setHeaderClass(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature_HeaderClass()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getHeaderClass();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getHeaderClass <em>Header Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Header Class</em>' attribute.
+	 * @see #getHeaderClass()
+	 * @generated
+	 */
+	void setHeaderClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Input Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Input Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Input Class</em>' attribute.
+	 * @see #setInputClass(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature_InputClass()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getInputClass();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getInputClass <em>Input Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Input Class</em>' attribute.
+	 * @see #getInputClass()
+	 * @generated
+	 */
+	void setInputClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Display Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Display Class</em>' attribute.
+	 * @see #setDisplayClass(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature_DisplayClass()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getDisplayClass();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getDisplayClass <em>Display Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Display Class</em>' attribute.
+	 * @see #getDisplayClass()
+	 * @generated
+	 */
+	void setDisplayClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Footer Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Footer Class</em>' attribute.
+	 * @see #setFooterClass(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitFeature_FooterClass()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getFooterClass();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitFeature#getFooterClass <em>Footer Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Footer Class</em>' attribute.
+	 * @see #getFooterClass()
+	 * @generated
+	 */
+	void setFooterClass(String value);
 
 } // UnitFeature

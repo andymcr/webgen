@@ -63,7 +63,7 @@ public class UnitAssociationItemProvider
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
 			addServiceFeaturePropertyDescriptor(object);
-			addLabelPropertyDescriptor(object);
+			addValueDisplayPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addFiltersPropertyDescriptor(object);
 		}
@@ -247,13 +247,13 @@ public class UnitAssociationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addLabelPropertyDescriptor(Object object) {
+	protected void addValueDisplayPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_UnitAssociation_label_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_label_feature", "_UI_UnitAssociation_type"),
-			WebsitePackage.Literals.UNIT_ASSOCIATION__LABEL,
+			getString("_UI_UnitAssociation_valueDisplay_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_valueDisplay_feature", "_UI_UnitAssociation_type"),
+			WebsitePackage.Literals.UNIT_ASSOCIATION__VALUE_DISPLAY,
 			true, false, true, null,
 			getString("_UI_InterfacePropertyCategory"),
 			null) {

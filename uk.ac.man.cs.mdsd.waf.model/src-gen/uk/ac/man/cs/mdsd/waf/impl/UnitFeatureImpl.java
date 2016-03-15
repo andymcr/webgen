@@ -20,17 +20,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.criteria.Expression;
 
-import uk.ac.man.cs.mdsd.orm.Cardinality;
-
-import uk.ac.man.cs.mdsd.orm.impl.NamedDisplayElementImpl;
-
-import uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
-import uk.ac.man.cs.mdsd.waf.IncludedFeature;
 import uk.ac.man.cs.mdsd.waf.InlineAction;
 import uk.ac.man.cs.mdsd.waf.InlineActionContainer;
 import uk.ac.man.cs.mdsd.waf.UnitFeature;
-import uk.ac.man.cs.mdsd.waf.UnitField;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -41,25 +34,73 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDateFormat <em>Date Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getForcedValue <em>Forced Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isAutofocus <em>Autofocus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getFooterClass <em>Footer Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDisplayedOn <em>Displayed On</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDateFormat <em>Date Format</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getActions <em>Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDisplayOption <em>Display Option</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isAutofocus <em>Autofocus</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements UnitFeature {
+public abstract class UnitFeatureImpl extends DisplayElementImpl implements UnitFeature {
+	/**
+	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumDisplaySize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAXIMUM_DISPLAY_SIZE_EDEFAULT = -1;
+
+	/**
+	 * The cached value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumDisplaySize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maximumDisplaySize = MAXIMUM_DISPLAY_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDateFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DATE_FORMAT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDateFormat()
+	 * @generated
+	 * @ordered
+	 */
+	protected String dateFormat = DATE_FORMAT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<InlineAction> actions;
+
 	/**
 	 * The cached value of the '{@link #getForcedValue() <em>Forced Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -69,6 +110,46 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 	 * @ordered
 	 */
 	protected Expression forcedValue;
+
+	/**
+	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnlyDisplayWhenNotEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOnlyDisplayWhenNotEmpty()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean onlyDisplayWhenNotEmpty = ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isAutofocus() <em>Autofocus</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAutofocus()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean AUTOFOCUS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isAutofocus() <em>Autofocus</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAutofocus()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean autofocus = AUTOFOCUS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFooter() <em>Footer</em>}' attribute.
@@ -171,136 +252,6 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 	protected String footerClass = FOOTER_CLASS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Cardinality CARDINALITY_EDEFAULT = Cardinality.OPTIONAL;
-
-	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaximumDisplaySize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int MAXIMUM_DISPLAY_SIZE_EDEFAULT = -1;
-
-	/**
-	 * The cached value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaximumDisplaySize()
-	 * @generated
-	 * @ordered
-	 */
-	protected int maximumDisplaySize = MAXIMUM_DISPLAY_SIZE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDateFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DATE_FORMAT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDateFormat() <em>Date Format</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDateFormat()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dateFormat = DATE_FORMAT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<InlineAction> actions;
-
-	/**
-	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOnlyDisplayWhenNotEmpty()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean onlyDisplayWhenNotEmpty = ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDisplayOption() <em>Display Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final CollectionDisplayOptions DISPLAY_OPTION_EDEFAULT = CollectionDisplayOptions.LINE_DIRECTION;
-
-	/**
-	 * The cached value of the '{@link #getDisplayOption() <em>Display Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected CollectionDisplayOptions displayOption = DISPLAY_OPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isAutofocus() <em>Autofocus</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAutofocus()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean AUTOFOCUS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isAutofocus() <em>Autofocus</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAutofocus()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean autofocus = AUTOFOCUS_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -317,6 +268,111 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.UNIT_FEATURE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DynamicUnit getDisplayedOn() {
+		if (eContainerFeatureID() != WafPackage.UNIT_FEATURE__DISPLAYED_ON) return null;
+		return (DynamicUnit)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DynamicUnit basicGetDisplayedOn() {
+		if (eContainerFeatureID() != WafPackage.UNIT_FEATURE__DISPLAYED_ON) return null;
+		return (DynamicUnit)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDisplayedOn(DynamicUnit newDisplayedOn, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDisplayedOn, WafPackage.UNIT_FEATURE__DISPLAYED_ON, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisplayedOn(DynamicUnit newDisplayedOn) {
+		if (newDisplayedOn != eInternalContainer() || (eContainerFeatureID() != WafPackage.UNIT_FEATURE__DISPLAYED_ON && newDisplayedOn != null)) {
+			if (EcoreUtil.isAncestor(this, newDisplayedOn))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDisplayedOn != null)
+				msgs = ((InternalEObject)newDisplayedOn).eInverseAdd(this, WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS, DynamicUnit.class, msgs);
+			msgs = basicSetDisplayedOn(newDisplayedOn, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMaximumDisplaySize() {
+		return maximumDisplaySize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaximumDisplaySize(int newMaximumDisplaySize) {
+		int oldMaximumDisplaySize = maximumDisplaySize;
+		maximumDisplaySize = newMaximumDisplaySize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE, oldMaximumDisplaySize, maximumDisplaySize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDateFormat() {
+		return dateFormat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDateFormat(String newDateFormat) {
+		String oldDateFormat = dateFormat;
+		dateFormat = newDateFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__DATE_FORMAT, oldDateFormat, dateFormat));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<InlineAction> getActions() {
+		if (actions == null) {
+			actions = new EObjectContainmentWithInverseEList<InlineAction>(InlineAction.class, this, WafPackage.UNIT_FEATURE__ACTIONS, WafPackage.INLINE_ACTION__USED_BY);
+		}
+		return actions;
 	}
 
 	/**
@@ -360,6 +416,48 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__FORCED_VALUE, newForcedValue, newForcedValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOnlyDisplayWhenNotEmpty() {
+		return onlyDisplayWhenNotEmpty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOnlyDisplayWhenNotEmpty(boolean newOnlyDisplayWhenNotEmpty) {
+		boolean oldOnlyDisplayWhenNotEmpty = onlyDisplayWhenNotEmpty;
+		onlyDisplayWhenNotEmpty = newOnlyDisplayWhenNotEmpty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY, oldOnlyDisplayWhenNotEmpty, onlyDisplayWhenNotEmpty));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isAutofocus() {
+		return autofocus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAutofocus(boolean newAutofocus) {
+		boolean oldAutofocus = autofocus;
+		autofocus = newAutofocus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__AUTOFOCUS, oldAutofocus, autofocus));
 	}
 
 	/**
@@ -472,195 +570,6 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DynamicUnit getDisplayedOn() {
-		if (eContainerFeatureID() != WafPackage.UNIT_FEATURE__DISPLAYED_ON) return null;
-		return (DynamicUnit)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DynamicUnit basicGetDisplayedOn() {
-		if (eContainerFeatureID() != WafPackage.UNIT_FEATURE__DISPLAYED_ON) return null;
-		return (DynamicUnit)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDisplayedOn(DynamicUnit newDisplayedOn, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDisplayedOn, WafPackage.UNIT_FEATURE__DISPLAYED_ON, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDisplayedOn(DynamicUnit newDisplayedOn) {
-		if (newDisplayedOn != eInternalContainer() || (eContainerFeatureID() != WafPackage.UNIT_FEATURE__DISPLAYED_ON && newDisplayedOn != null)) {
-			if (EcoreUtil.isAncestor(this, newDisplayedOn))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newDisplayedOn != null)
-				msgs = ((InternalEObject)newDisplayedOn).eInverseAdd(this, WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS, DynamicUnit.class, msgs);
-			msgs = basicSetDisplayedOn(newDisplayedOn, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Cardinality getCardinality() {
-		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCardinality(Cardinality newCardinality) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__CARDINALITY, oldCardinality, cardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getMaximumDisplaySize() {
-		return maximumDisplaySize;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMaximumDisplaySize(int newMaximumDisplaySize) {
-		int oldMaximumDisplaySize = maximumDisplaySize;
-		maximumDisplaySize = newMaximumDisplaySize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE, oldMaximumDisplaySize, maximumDisplaySize));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDateFormat() {
-		return dateFormat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDateFormat(String newDateFormat) {
-		String oldDateFormat = dateFormat;
-		dateFormat = newDateFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__DATE_FORMAT, oldDateFormat, dateFormat));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<InlineAction> getActions() {
-		if (actions == null) {
-			actions = new EObjectContainmentWithInverseEList<InlineAction>(InlineAction.class, this, WafPackage.UNIT_FEATURE__ACTIONS, WafPackage.INLINE_ACTION__USED_BY);
-		}
-		return actions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isOnlyDisplayWhenNotEmpty() {
-		return onlyDisplayWhenNotEmpty;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOnlyDisplayWhenNotEmpty(boolean newOnlyDisplayWhenNotEmpty) {
-		boolean oldOnlyDisplayWhenNotEmpty = onlyDisplayWhenNotEmpty;
-		onlyDisplayWhenNotEmpty = newOnlyDisplayWhenNotEmpty;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY, oldOnlyDisplayWhenNotEmpty, onlyDisplayWhenNotEmpty));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CollectionDisplayOptions getDisplayOption() {
-		return displayOption;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDisplayOption(CollectionDisplayOptions newDisplayOption) {
-		CollectionDisplayOptions oldDisplayOption = displayOption;
-		displayOption = newDisplayOption == null ? DISPLAY_OPTION_EDEFAULT : newDisplayOption;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__DISPLAY_OPTION, oldDisplayOption, displayOption));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isAutofocus() {
-		return autofocus;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAutofocus(boolean newAutofocus) {
-		boolean oldAutofocus = autofocus;
-		autofocus = newAutofocus;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__AUTOFOCUS, oldAutofocus, autofocus));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -683,12 +592,12 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
-				return basicSetForcedValue(null, msgs);
 			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
 				return basicSetDisplayedOn(null, msgs);
 			case WafPackage.UNIT_FEATURE__ACTIONS:
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
+			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
+				return basicSetForcedValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -715,8 +624,21 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
+				if (resolve) return getDisplayedOn();
+				return basicGetDisplayedOn();
+			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
+				return getMaximumDisplaySize();
+			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
+				return getDateFormat();
+			case WafPackage.UNIT_FEATURE__ACTIONS:
+				return getActions();
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				return getForcedValue();
+			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				return isOnlyDisplayWhenNotEmpty();
+			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
+				return isAutofocus();
 			case WafPackage.UNIT_FEATURE__FOOTER:
 				return getFooter();
 			case WafPackage.UNIT_FEATURE__HEADER_CLASS:
@@ -727,23 +649,6 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 				return getDisplayClass();
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
 				return getFooterClass();
-			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
-				if (resolve) return getDisplayedOn();
-				return basicGetDisplayedOn();
-			case WafPackage.UNIT_FEATURE__CARDINALITY:
-				return getCardinality();
-			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
-				return getMaximumDisplaySize();
-			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
-				return getDateFormat();
-			case WafPackage.UNIT_FEATURE__ACTIONS:
-				return getActions();
-			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				return isOnlyDisplayWhenNotEmpty();
-			case WafPackage.UNIT_FEATURE__DISPLAY_OPTION:
-				return getDisplayOption();
-			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
-				return isAutofocus();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -757,8 +662,27 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
+				setDisplayedOn((DynamicUnit)newValue);
+				return;
+			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
+				setMaximumDisplaySize((Integer)newValue);
+				return;
+			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
+				setDateFormat((String)newValue);
+				return;
+			case WafPackage.UNIT_FEATURE__ACTIONS:
+				getActions().clear();
+				getActions().addAll((Collection<? extends InlineAction>)newValue);
+				return;
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)newValue);
+				return;
+			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
+				return;
+			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
+				setAutofocus((Boolean)newValue);
 				return;
 			case WafPackage.UNIT_FEATURE__FOOTER:
 				setFooter((String)newValue);
@@ -775,31 +699,6 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
 				setFooterClass((String)newValue);
 				return;
-			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
-				setDisplayedOn((DynamicUnit)newValue);
-				return;
-			case WafPackage.UNIT_FEATURE__CARDINALITY:
-				setCardinality((Cardinality)newValue);
-				return;
-			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
-				setMaximumDisplaySize((Integer)newValue);
-				return;
-			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
-				setDateFormat((String)newValue);
-				return;
-			case WafPackage.UNIT_FEATURE__ACTIONS:
-				getActions().clear();
-				getActions().addAll((Collection<? extends InlineAction>)newValue);
-				return;
-			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
-				return;
-			case WafPackage.UNIT_FEATURE__DISPLAY_OPTION:
-				setDisplayOption((CollectionDisplayOptions)newValue);
-				return;
-			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
-				setAutofocus((Boolean)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -812,8 +711,26 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
+				setDisplayedOn((DynamicUnit)null);
+				return;
+			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
+				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
+				return;
+			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
+				setDateFormat(DATE_FORMAT_EDEFAULT);
+				return;
+			case WafPackage.UNIT_FEATURE__ACTIONS:
+				getActions().clear();
+				return;
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)null);
+				return;
+			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
+				return;
+			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
+				setAutofocus(AUTOFOCUS_EDEFAULT);
 				return;
 			case WafPackage.UNIT_FEATURE__FOOTER:
 				setFooter(FOOTER_EDEFAULT);
@@ -830,30 +747,6 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
 				setFooterClass(FOOTER_CLASS_EDEFAULT);
 				return;
-			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
-				setDisplayedOn((DynamicUnit)null);
-				return;
-			case WafPackage.UNIT_FEATURE__CARDINALITY:
-				setCardinality(CARDINALITY_EDEFAULT);
-				return;
-			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
-				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
-				return;
-			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
-				setDateFormat(DATE_FORMAT_EDEFAULT);
-				return;
-			case WafPackage.UNIT_FEATURE__ACTIONS:
-				getActions().clear();
-				return;
-			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
-				return;
-			case WafPackage.UNIT_FEATURE__DISPLAY_OPTION:
-				setDisplayOption(DISPLAY_OPTION_EDEFAULT);
-				return;
-			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
-				setAutofocus(AUTOFOCUS_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -866,8 +759,20 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
+				return basicGetDisplayedOn() != null;
+			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
+				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
+			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
+				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
+			case WafPackage.UNIT_FEATURE__ACTIONS:
+				return actions != null && !actions.isEmpty();
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				return forcedValue != null;
+			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
+				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
+			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
+				return autofocus != AUTOFOCUS_EDEFAULT;
 			case WafPackage.UNIT_FEATURE__FOOTER:
 				return FOOTER_EDEFAULT == null ? footer != null : !FOOTER_EDEFAULT.equals(footer);
 			case WafPackage.UNIT_FEATURE__HEADER_CLASS:
@@ -878,22 +783,6 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 				return DISPLAY_CLASS_EDEFAULT == null ? displayClass != null : !DISPLAY_CLASS_EDEFAULT.equals(displayClass);
 			case WafPackage.UNIT_FEATURE__FOOTER_CLASS:
 				return FOOTER_CLASS_EDEFAULT == null ? footerClass != null : !FOOTER_CLASS_EDEFAULT.equals(footerClass);
-			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
-				return basicGetDisplayedOn() != null;
-			case WafPackage.UNIT_FEATURE__CARDINALITY:
-				return cardinality != CARDINALITY_EDEFAULT;
-			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
-				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
-			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
-				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
-			case WafPackage.UNIT_FEATURE__ACTIONS:
-				return actions != null && !actions.isEmpty();
-			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
-			case WafPackage.UNIT_FEATURE__DISPLAY_OPTION:
-				return displayOption != DISPLAY_OPTION_EDEFAULT;
-			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
-				return autofocus != AUTOFOCUS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -905,26 +794,6 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedFeature.class) {
-			switch (derivedFeatureID) {
-				case WafPackage.UNIT_FEATURE__FORCED_VALUE: return WafPackage.INCLUDED_FEATURE__FORCED_VALUE;
-				case WafPackage.UNIT_FEATURE__FOOTER: return WafPackage.INCLUDED_FEATURE__FOOTER;
-				case WafPackage.UNIT_FEATURE__HEADER_CLASS: return WafPackage.INCLUDED_FEATURE__HEADER_CLASS;
-				case WafPackage.UNIT_FEATURE__INPUT_CLASS: return WafPackage.INCLUDED_FEATURE__INPUT_CLASS;
-				case WafPackage.UNIT_FEATURE__DISPLAY_CLASS: return WafPackage.INCLUDED_FEATURE__DISPLAY_CLASS;
-				case WafPackage.UNIT_FEATURE__FOOTER_CLASS: return WafPackage.INCLUDED_FEATURE__FOOTER_CLASS;
-				default: return -1;
-			}
-		}
-		if (baseClass == UnitField.class) {
-			switch (derivedFeatureID) {
-				case WafPackage.UNIT_FEATURE__DISPLAYED_ON: return WafPackage.UNIT_FIELD__DISPLAYED_ON;
-				case WafPackage.UNIT_FEATURE__CARDINALITY: return WafPackage.UNIT_FIELD__CARDINALITY;
-				case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE: return WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
-				case WafPackage.UNIT_FEATURE__DATE_FORMAT: return WafPackage.UNIT_FIELD__DATE_FORMAT;
-				default: return -1;
-			}
-		}
 		if (baseClass == InlineActionContainer.class) {
 			switch (derivedFeatureID) {
 				case WafPackage.UNIT_FEATURE__ACTIONS: return WafPackage.INLINE_ACTION_CONTAINER__ACTIONS;
@@ -941,26 +810,6 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedFeature.class) {
-			switch (baseFeatureID) {
-				case WafPackage.INCLUDED_FEATURE__FORCED_VALUE: return WafPackage.UNIT_FEATURE__FORCED_VALUE;
-				case WafPackage.INCLUDED_FEATURE__FOOTER: return WafPackage.UNIT_FEATURE__FOOTER;
-				case WafPackage.INCLUDED_FEATURE__HEADER_CLASS: return WafPackage.UNIT_FEATURE__HEADER_CLASS;
-				case WafPackage.INCLUDED_FEATURE__INPUT_CLASS: return WafPackage.UNIT_FEATURE__INPUT_CLASS;
-				case WafPackage.INCLUDED_FEATURE__DISPLAY_CLASS: return WafPackage.UNIT_FEATURE__DISPLAY_CLASS;
-				case WafPackage.INCLUDED_FEATURE__FOOTER_CLASS: return WafPackage.UNIT_FEATURE__FOOTER_CLASS;
-				default: return -1;
-			}
-		}
-		if (baseClass == UnitField.class) {
-			switch (baseFeatureID) {
-				case WafPackage.UNIT_FIELD__DISPLAYED_ON: return WafPackage.UNIT_FEATURE__DISPLAYED_ON;
-				case WafPackage.UNIT_FIELD__CARDINALITY: return WafPackage.UNIT_FEATURE__CARDINALITY;
-				case WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE;
-				case WafPackage.UNIT_FIELD__DATE_FORMAT: return WafPackage.UNIT_FEATURE__DATE_FORMAT;
-				default: return -1;
-			}
-		}
 		if (baseClass == InlineActionContainer.class) {
 			switch (baseFeatureID) {
 				case WafPackage.INLINE_ACTION_CONTAINER__ACTIONS: return WafPackage.UNIT_FEATURE__ACTIONS;
@@ -980,7 +829,15 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (footer: ");
+		result.append(" (maximumDisplaySize: ");
+		result.append(maximumDisplaySize);
+		result.append(", dateFormat: ");
+		result.append(dateFormat);
+		result.append(", onlyDisplayWhenNotEmpty: ");
+		result.append(onlyDisplayWhenNotEmpty);
+		result.append(", autofocus: ");
+		result.append(autofocus);
+		result.append(", footer: ");
 		result.append(footer);
 		result.append(", headerClass: ");
 		result.append(headerClass);
@@ -990,18 +847,6 @@ public abstract class UnitFeatureImpl extends NamedDisplayElementImpl implements
 		result.append(displayClass);
 		result.append(", footerClass: ");
 		result.append(footerClass);
-		result.append(", cardinality: ");
-		result.append(cardinality);
-		result.append(", maximumDisplaySize: ");
-		result.append(maximumDisplaySize);
-		result.append(", dateFormat: ");
-		result.append(dateFormat);
-		result.append(", onlyDisplayWhenNotEmpty: ");
-		result.append(onlyDisplayWhenNotEmpty);
-		result.append(", displayOption: ");
-		result.append(displayOption);
-		result.append(", autofocus: ");
-		result.append(autofocus);
 		result.append(')');
 		return result.toString();
 	}

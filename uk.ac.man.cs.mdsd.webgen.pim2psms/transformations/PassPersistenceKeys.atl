@@ -1,0 +1,41 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
+
+module PassPersistenceKeys;
+create dummyOrm : ORM refining orm : ORM, website : Website;
+
+uses WebsiteHelpers;
+
+
+abstract rule EntityOrView {
+	from partialOrm : ORM!EntityOrView
+	to orm : ORM!EntityOrView (
+		keys <-
+			let entityOrView : Website!EntityOrView
+				= thisModule.findWebsiteEntityOrView(partialOrm.name)
+				in entityOrView.keys->collect(k |
+					if entityOrView.features->includes(k) then
+						thisModule.findOrmEntityOrView(partialOrm.name)
+							.getOrmFeature(k.name)
+					else
+						thisModule.findOrmEntityOrView(k.targetEntity.name)
+							.getOrmFeature(k.targetFeatureName)
+					endif)
+	)
+}
+
+-- @extends EntityOrView
+rule Entity {
+	from partialOrm : ORM!Entity
+	to orm : ORM!Entity (
+	)
+}
+
+-- @extends EntityOrView
+rule View {
+	from partialOrm : ORM!View
+	to orm : ORM!View (
+	)
+}

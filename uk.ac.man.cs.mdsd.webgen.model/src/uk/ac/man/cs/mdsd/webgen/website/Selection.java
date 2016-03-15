@@ -19,6 +19,7 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getJoins <em>Joins</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getNewJoins2 <em>New Joins2</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getLimit <em>Limit</em>}</li>
@@ -88,6 +89,22 @@ public interface Selection extends NamedElement {
 	 * @generated
 	 */
 	List<ServiceAssociation> getJoins();
+
+	/**
+	 * Returns the value of the '<em><b>New Joins2</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Association}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>New Joins2</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>New Joins2</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelection_NewJoins2()
+	 * @model
+	 * @generated
+	 */
+	List<Association> getNewJoins2();
 
 	/**
 	 * Returns the value of the '<em><b>Filter</b></em>' containment reference.

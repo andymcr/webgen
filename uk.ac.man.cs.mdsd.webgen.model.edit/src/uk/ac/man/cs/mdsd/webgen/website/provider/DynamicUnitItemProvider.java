@@ -56,6 +56,7 @@ public class DynamicUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSourcePropertyDescriptor(object);
+			addEntitiesPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -104,6 +105,28 @@ public class DynamicUnitItemProvider
 					return Collections.emptyList();
 				}
 			});
+	}
+
+	/**
+	 * This adds a property descriptor for the Entities feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntitiesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_entities_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_entities_feature", "_UI_DynamicUnit_type"),
+				 WebsitePackage.Literals.DYNAMIC_UNIT__ENTITIES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**

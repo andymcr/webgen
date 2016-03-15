@@ -1,8 +1,8 @@
 -- @atlcompiler emftvm 
 --
 -- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
--- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
--- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.xcore
+-- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.xcore
 
 module PassImplicitStaticInterface;
 create dummyWaf : WAF refining waf : WAF, website : Website, orm : ORM;
@@ -91,9 +91,11 @@ unique lazy rule implicitStaticTextPage {
 	}
 }
 
-lazy abstract rule implicitIncludedFeature {
-	from partialWaf : WAF!IncludedFeature
-	to waf : WAF!IncludedFeature (
+lazy abstract rule implicitUnitFeature {
+	from partialWaf : WAF!ServiceFeature
+	to waf : WAF!UnitFeature (
+		cardinality <- partialWaf.cardinality,
+		onlyDisplayWhenNotEmpty <- false,
 		displayLabel <- partialWaf.displayLabel,
 		headerClass <- partialWaf.headerClass,
 		inputClass <- partialWaf.inputClass,
@@ -102,30 +104,12 @@ lazy abstract rule implicitIncludedFeature {
 	)
 }
 
--- @extends implicitIncludedFeature
-lazy abstract rule implicitIncludedAttribute {
-	from partialWaf : WAF!IncludedAttribute
-	to waf : WAF!IncludedAttribute (
-		obfuscateFormFields <- partialWaf.obfuscateFormFields,
-		dateFormat <- partialWaf.dateFormat
-	)
-}
-
---@extends implicitIncludedFeature
-lazy abstract rule implicitUnitFeature {
-	from partialWaf : WAF!ServiceFeature
-	to waf : WAF!UnitFeature (
-		name <- partialWaf.name,
-		cardinality <- partialWaf.cardinality,
-		onlyDisplayWhenNotEmpty <- false
-	)
-}
-
--- @extends implicitUnitFeature, implicitIncludedAttribute
+-- @extends implicitUnitFeature
 lazy rule implicitUnitAttribute {
 	from partialWaf : WAF!ServiceAttribute
-	to waf : WAF!UnitElement (
-		serviceFeature <- partialWaf
+	to waf : WAF!UnitAttribute (
+		obfuscateFormFields <- partialWaf.obfuscateFormFields,
+		dateFormat <- partialWaf.dateFormat
 	)
 	do {
 		waf;

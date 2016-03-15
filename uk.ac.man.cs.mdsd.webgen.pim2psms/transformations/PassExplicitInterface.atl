@@ -69,35 +69,6 @@ helper context Website!ServiceAssociation def: serviceCardinality(localRequired 
 			self.association.featureTargetCardinality(self.required or localRequired)
 		endif;
 
-helper context Website!UnitElement def: unitCardinality() : Boolean
-	= if not self.serviceFeature.oclIsUndefined() then
-			self.serviceFeature.serviceCardinality(self.required)
-		else
-			self.attribute.featureCardinality(self.required)
-		endif;
-
-helper context Website!UnitAssociation def: unitCardinality() : Boolean
-	= if not self.serviceFeature.oclIsUndefined() then
-			self.serviceFeature.serviceCardinality(self.required)
-		else
-if not self.association.oclIsUndefined() then
-			if self.useAssociationSource then
-				self.association.featureCardinality(self.required)
-			else
-				self.association.featureTargetCardinality(self.required)
-			endif
-else
-	#Optional
-endif
-		endif;
-
-helper context Website!InterfaceField def: unitCardinality() : ORM!Cardinality
-	= if self.required then
-			#Required
-		else
-			#Optional
-		endif;
-
 
 helper context Website!Attribute def: attributeLabel() : String
 	= if not self.displayLabel.oclIsUndefined() and self.displayLabel <> '' then
@@ -383,119 +354,19 @@ abstract rule NamedDisplayElement {
 }
 
 
-abstract rule IncludedFeature {
-	from website : Website!IncludedFeature
-	to waf : WAF!IncludedFeature (
-		forcedValue <- website.forcedValue,
-		footer <- website.footer
-	)
-}
-
--- @extends IncludedFeature
-abstract rule IncludedAttribute {
-	from website : Website!IncludedElement
-	to waf : WAF!IncludedAttribute (
-		obfuscateFormFields <- website.obfuscateFormFields,
-		defaultValue <- website.defaultValue,
-		headerClass <-
-			if not website.headerClass.oclIsUndefined() and website.headerClass <> '' then
-				website.headerClass
-			else
-				if not website.attribute.oclIsUndefined() then
-					website.attribute.headerClass
-				else
-					''
-				endif
-			endif,
-		inputClass <-
-			if not website.inputClass.oclIsUndefined() and website.inputClass <> '' then
-				website.inputClass
-			else
-				if not website.attribute.oclIsUndefined() then
-					website.attribute.inputClass
-				else
-					''
-				endif
-			endif,
-		displayClass <-
-			if not website.displayClass.oclIsUndefined() and website.displayClass <> '' then
-				website.displayClass
-			else
-				if not website.attribute.oclIsUndefined() then
-					website.attribute.displayClass
-				else
-					''
-				endif
-			endif,
-		footerClass <-
-			if not website.footerClass.oclIsUndefined() and website.footerClass <> '' then
-				website.footerClass
-			else
-				if not website.attribute.oclIsUndefined() then
-					website.attribute.footerClass
-				else
-					''
-				endif
-			endif
-	)
-}
-
--- @extends IncludedFeature
-abstract rule IncludedAssociation {
-	from website : Website!IncludedAssociation
-	to waf : WAF!IncludedAssociation (
-		headerClass <-
-			if not website.headerClass.oclIsUndefined() and website.headerClass <> '' then
-				website.headerClass
-			else
-				if not website.association.oclIsUndefined() then
-					website.association.headerClass
-				else
-					''
-				endif
-			endif,
-		inputClass <-
-			if not website.inputClass.oclIsUndefined() and website.inputClass <> '' then
-				website.inputClass
-			else
-				if not website.association.oclIsUndefined() then
-					website.association.inputClass
-				else
-					''
-				endif
-			endif,
-		displayClass <-
-			if not website.displayClass.oclIsUndefined() and website.displayClass <> '' then
-				website.displayClass
-			else
-				if not website.association.oclIsUndefined() then
-					website.association.displayClass
-				else
-					''
-				endif
-			endif,
-		footerClass <-
-			if not website.footerClass.oclIsUndefined() and website.footerClass <> '' then
-				website.footerClass
-			else
-				if not website.association.oclIsUndefined() then
-					website.association.footerClass
-				else
-					''
-				endif
-			endif
-	)
-}
-
-
 -- @extends NamedElement
 rule Service {
 	from website : Website!Service
 	to waf : WAF!Service (
 		encapsulates <-
 			website.encapsulates->collect(e | thisModule.findOrmEntityOrView(e.name)),
+		serves <-
+			if website.serves.oclIsUndefined() then
+				OclUndefined
+			else
+				thisModule.findOrmEntityOrView(website.serves.name)
+			endif,
 		features <- website.features,
-		keys <- website.keys,
 		selections <- website.selections
 	)
 } 
@@ -505,7 +376,9 @@ rule Selection {
 	from website : Website!Selection
 	to waf : WAF!Selection (
 		parameters <- website.parameters,
-		joins <- website.joins,
+		joins <- website.newJoins2
+			->collect(a | thisModule.findOrmEntityOrView(a.refImmediateComposite().name)
+				.getOrmFeature(a.name)),
 		filter <- website.filter,
 		ordering <- website.ordering,
 		limit <- website.limit
@@ -520,7 +393,6 @@ rule SelectionParameter {
 	)
 }
 
--- @extends IncludedFeature
 abstract rule ServiceFeature {
 	from website : Website!ServiceFeature
 	to waf : WAF!ServiceFeature (
@@ -529,7 +401,7 @@ abstract rule ServiceFeature {
 	)
 }
 
--- @extends ServiceFeature, IncludedAttribute
+-- @extends ServiceFeature
 rule ServiceAttribute {
 	from website : Website!ServiceAttribute
 	to waf : WAF!ServiceAttribute (
@@ -544,7 +416,7 @@ rule ServiceAttribute {
 	)
 }
 
--- @extends ServiceFeature, IncludedAssociation
+-- @extends ServiceFeature
 rule ServiceAssociation {
 	from website : Website!ServiceAssociation
 	to waf : WAF!ServiceAssociation (
@@ -557,7 +429,6 @@ rule ServiceAssociation {
 				thisModule.findOrmEntityOrView(website.association.targetEntityName())
 					.getOrmFeature(website.association.targetFeatureName())
 			endif
-
 	)
 }
 
@@ -768,6 +639,7 @@ abstract rule DynamicUnit {
 	from website : Website!DynamicUnit
 	to waf : WAF!DynamicUnit (
 		services <- website.source->select(s |s.oclIsTypeOf(Website!Service)),
+		entities <- website.entities,
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
 		header <- website.header,
@@ -782,118 +654,162 @@ abstract rule DynamicUnit {
 abstract rule UnitField {
 	from website : Website!UnitField
 	to waf : WAF!UnitField (
-		cardinality <- website.unitCardinality(),
 		maximumDisplaySize <- website.maximumDisplaySize,
 		dateFormat <- website.dateFormat()
 	)
 }
 
--- @extends UnitField, IncludedFeature, InlineActionContainer
+-- @extends UnitField, InlineActionContainer
 abstract rule UnitFeature {
 	from website : Website!UnitFeature
 	to waf : WAF!UnitFeature (
+		forcedValue <- website.forcedValue,
 		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
-		displayOption <- website.collectionDisplayOption,
-		autofocus <- website.autofocus
+		autofocus <- website.autofocus,
+		footer <- website.footer
 	)
 }
 
--- @extends UnitFeature, IncludedAttribute
-rule UnitElement {
+-- @extends UnitFeature
+rule UnitAttribute {
 	from website : Website!UnitElement
-	to waf : WAF!UnitElement (
-		name <- website.name,
+	to waf : WAF!UnitAttribute (
 		attribute <- website.attribute.findOrmEntityOrView()
-				.getOrmFeature(website.attribute.name),
-		serviceFeature <- website.serviceFeature,
+			.getOrmFeature(website.attribute.name),
 		displayLabel <- website.attributeLabel(),
+		defaultValue <- website.defaultValue,
+		obfuscateFormFields <- website.obfuscateFormFields,
 		placeholder <-
 			if not website.placeholder.oclIsUndefined() and website.placeholder <> '' then
 				website.placeholder
-			else if not website.serviceFeature.oclIsUndefined() then
-				website.serviceFeature.placeholder()
 			else
 				website.attribute.placeholder()
-			endif endif,
+			endif,
 		validationPattern <-
 			if not website.validationPattern.oclIsUndefined() and website.validationPattern <> '' then
 				website.validationPattern
-			else if not website.serviceFeature.oclIsUndefined() then
-				website.serviceFeature.validationPattern()
 			else
 				website.attribute.validationPattern()
-			endif endif
+			endif,
+		headerClass <-
+			if not website.headerClass.oclIsUndefined() and website.headerClass <> '' then
+				website.headerClass
+			else
+				if not website.attribute.oclIsUndefined() then
+					website.attribute.headerClass
+				else
+					OclUndefined
+				endif
+			endif,
+		inputClass <-
+			if not website.inputClass.oclIsUndefined() and website.inputClass <> '' then
+				website.inputClass
+			else
+				if not website.attribute.oclIsUndefined() then
+					website.attribute.inputClass
+				else
+					OclUndefined
+				endif
+			endif,
+		displayClass <-
+			if not website.displayClass.oclIsUndefined() and website.displayClass <> '' then
+				website.displayClass
+			else
+				if not website.attribute.oclIsUndefined() then
+					website.attribute.displayClass
+				else
+					OclUndefined
+				endif
+			endif,
+		footerClass <-
+			if not website.footerClass.oclIsUndefined() and website.footerClass <> '' then
+				website.footerClass
+			else
+				if not website.attribute.oclIsUndefined() then
+					website.attribute.footerClass
+				else
+					OclUndefined
+				endif
+			endif
 	)
 }
 
--- @extends UnitFeature, IncludedAssociation, UnitContainer
+-- @extends UnitFeature, UnitContainer
 rule UnitAssociation {
 	from website : Website!UnitAssociation
 	to waf : WAF!UnitAssociation (
-		name <- website.name,
 		association <-
 			if website.useAssociationSource then
 				website.association.findOrmEntityOrView()
 					.getOrmFeature(website.association.name)
 			else
-if not website.association.oclIsUndefined() then
-	if website.association.oclIsKindOf(Website!EntityAssociation) then
-				thisModule.findOrmEntityOrView(website.association.targetEntity.name)
+				thisModule.findOrmEntityOrView(website.association.targetEntityName())
 					.getOrmFeature(website.association.targetFeatureName())
-	else
-		website.association.findOrmEntityOrView()
-			.getOrmFeature(website.association.name)
-	endif
-else
-	OclUndefined
-endif
 			endif,
-		serviceFeature <- website.serviceFeature,
 		displayLabel <- website.associationLabel(),
-		childFeature <- website.childFeature,
-		selection <-
-			if not website.selection.oclIsUndefined() then
-				website.selection
-			else if not website.serviceFeature.oclIsUndefined() then
-				website.serviceFeature.selection
-			else
+--		childFeature <- website.childFeature,
+		selection <- website.selection,
+		valueDisplay <-
+			if website.valueDisplay.oclIsUndefined() then
 				OclUndefined
-			endif endif,
-		label <-
-			if website.label.oclIsUndefined() then
-				OclUndefined
-			else if website.label.oclIsKindOf(Website!Attribute) then
-				website.label.findOrmEntityOrView()
-					.getOrmFeature(website.label.name)
+			else if website.valueDisplay.oclIsKindOf(Website!Attribute) then
+				website.valueDisplay.findOrmEntityOrView()
+					.getOrmFeature(website.valueDisplay.name)
 			else
-				thisModule.findOrmEntityOrView(website.label.labelFor.name)
-					.getOrmLabel(website.label.name)
+				thisModule.findOrmEntityOrView(website.valueDisplay.labelFor.name)
+					.getOrmLabel(website.valueDisplay.name)
 			endif endif,
+		displayOption <- website.collectionDisplayOption,
 --		filters <- website.filters,
-		maximumDisplaySize <- website.maximumDisplaySize,
-		displayOption <-
-			if website.collectionDisplayOption = #LineDirection then
-				#LineDirection
+		headerClass <-
+			if not website.headerClass.oclIsUndefined() and website.headerClass <> '' then
+				website.headerClass
 			else
-				#PageDirection
+				if not website.association.oclIsUndefined() then
+					website.association.headerClass
+				else
+					OclUndefined
+				endif
+			endif,
+		inputClass <-
+			if not website.inputClass.oclIsUndefined() and website.inputClass <> '' then
+				website.inputClass
+			else
+				if not website.association.oclIsUndefined() then
+					website.association.inputClass
+				else
+					OclUndefined
+				endif
+			endif,
+		displayClass <-
+			if not website.displayClass.oclIsUndefined() and website.displayClass <> '' then
+				website.displayClass
+			else
+				if not website.association.oclIsUndefined() then
+					website.association.displayClass
+				else
+					OclUndefined
+				endif
+			endif,
+		footerClass <-
+			if not website.footerClass.oclIsUndefined() and website.footerClass <> '' then
+				website.footerClass
+			else
+				if not website.association.oclIsUndefined() then
+					website.association.footerClass
+				else
+					OclUndefined
+				endif
 			endif
 	)
 }
 
--- @extends UnitField, NamedDisplayElement
+-- @extends UnitField, NamedElement
 abstract rule InterfaceField {
 	from website : Website!InterfaceField
 	to waf : WAF!InterfaceField (
-		cardinality <-
-			if website.required.oclIsUndefined() then
-				#Optional
-			else
-				if website.required then
-					#Required
-				else
-					#Optional
-				endif
-			endif,
+		displayLabel <- website.displayLabel,
+		required <- website.required,
 		defaultValue <- website.defaultValue,
 		mustMatch <- website.mustMatch,
 		placeholder <- website.placeholder(),
@@ -907,10 +823,9 @@ rule DataTypeField {
 	from website : Website!DataTypeField
 	to waf : WAF!DataTypeField (
 		dataType <- thisModule.findOrmDataType(website.dataType.name),
-		encrypt <- website.encrypt,
 		caseInsensitive <- website.caseInsensitive,
 		obfuscateFormFields <- website.obfuscateFormFields,
-		interfaceType <- website.interfaceType()
+		encrypt <- website.encrypt
 	)
 }
 
@@ -920,6 +835,13 @@ rule DateField {
 	to waf : WAF!DateField (
 		details <- website.details,
 		format <- website.format
+	)
+}
+
+-- @extends InterfaceField
+rule CaptchaField {
+	from website : Website!CaptchaField
+	to waf : WAF!CaptchaField (
 	)
 }
 

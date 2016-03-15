@@ -47,6 +47,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 
 			addOppositePropertyDescriptor(object);
 			addContainerPropertyDescriptor(object);
+			addContainsPropertyDescriptor(object);
 			addOwningEndPropertyDescriptor(object);
 			addVisiblePropertyDescriptor(object);
 			addPivotTableNamePropertyDescriptor(object);
@@ -90,6 +91,28 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 getString("_UI_EntityAssociation_container_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_container_feature", "_UI_EntityAssociation_type"),
 				 OrmPackage.Literals.ENTITY_ASSOCIATION__CONTAINER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Contains feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAssociation_contains_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_contains_feature", "_UI_EntityAssociation_type"),
+				 OrmPackage.Literals.ENTITY_ASSOCIATION__CONTAINS,
 				 true,
 				 false,
 				 false,
@@ -192,6 +215,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 
 		switch (notification.getFeatureID(EntityAssociation.class)) {
 			case OrmPackage.ENTITY_ASSOCIATION__CONTAINER:
+			case OrmPackage.ENTITY_ASSOCIATION__CONTAINS:
 			case OrmPackage.ENTITY_ASSOCIATION__OWNING_END:
 			case OrmPackage.ENTITY_ASSOCIATION__VISIBLE:
 			case OrmPackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:

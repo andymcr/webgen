@@ -14,7 +14,6 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
 
 import uk.ac.man.cs.mdsd.orm.Attribute;
 
-import uk.ac.man.cs.mdsd.waf.IncludedAttribute;
 import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -26,58 +25,18 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getAttribute <em>Attribute</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getDateFormat <em>Date Format</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#isObfuscateFormFields <em>Obfuscate Form Fields</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceAttributeImpl#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceAttribute {
-	/**
-	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttribute()
-	 * @generated
-	 * @ordered
-	 */
-	protected Attribute attribute;
-
-	/**
-	 * The default value of the '{@link #isObfuscateFormFields() <em>Obfuscate Form Fields</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isObfuscateFormFields()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean OBFUSCATE_FORM_FIELDS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isObfuscateFormFields() <em>Obfuscate Form Fields</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isObfuscateFormFields()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean obfuscateFormFields = OBFUSCATE_FORM_FIELDS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDefaultValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression defaultValue;
-
 	/**
 	 * The default value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -159,6 +118,46 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 	protected String dateFormat = DATE_FORMAT_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttribute()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute attribute;
+
+	/**
+	 * The default value of the '{@link #isObfuscateFormFields() <em>Obfuscate Form Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isObfuscateFormFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OBFUSCATE_FORM_FIELDS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isObfuscateFormFields() <em>Obfuscate Form Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isObfuscateFormFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean obfuscateFormFields = OBFUSCATE_FORM_FIELDS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDefaultValue() <em>Default Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expression defaultValue;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -175,6 +174,90 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.SERVICE_ATTRIBUTE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getInterfaceType() {
+		return interfaceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInterfaceType(String newInterfaceType) {
+		String oldInterfaceType = interfaceType;
+		interfaceType = newInterfaceType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPlaceholder() {
+		return placeholder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPlaceholder(String newPlaceholder) {
+		String oldPlaceholder = placeholder;
+		placeholder = newPlaceholder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER, oldPlaceholder, placeholder));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getValidationPattern() {
+		return validationPattern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValidationPattern(String newValidationPattern) {
+		String oldValidationPattern = validationPattern;
+		validationPattern = newValidationPattern;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDateFormat() {
+		return dateFormat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDateFormat(String newDateFormat) {
+		String oldDateFormat = dateFormat;
+		dateFormat = newDateFormat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT, oldDateFormat, dateFormat));
 	}
 
 	/**
@@ -284,90 +367,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getInterfaceType() {
-		return interfaceType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInterfaceType(String newInterfaceType) {
-		String oldInterfaceType = interfaceType;
-		interfaceType = newInterfaceType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPlaceholder() {
-		return placeholder;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPlaceholder(String newPlaceholder) {
-		String oldPlaceholder = placeholder;
-		placeholder = newPlaceholder;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER, oldPlaceholder, placeholder));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getValidationPattern() {
-		return validationPattern;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValidationPattern(String newValidationPattern) {
-		String oldValidationPattern = validationPattern;
-		validationPattern = newValidationPattern;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__VALIDATION_PATTERN, oldValidationPattern, validationPattern));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDateFormat() {
-		return dateFormat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDateFormat(String newDateFormat) {
-		String oldDateFormat = dateFormat;
-		dateFormat = newDateFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT, oldDateFormat, dateFormat));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -385,13 +384,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
-				if (resolve) return getAttribute();
-				return basicGetAttribute();
-			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
-				return isObfuscateFormFields();
-			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
-				return getDefaultValue();
 			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				return getInterfaceType();
 			case WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
@@ -400,6 +392,13 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 				return getValidationPattern();
 			case WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 				return getDateFormat();
+			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
+				if (resolve) return getAttribute();
+				return basicGetAttribute();
+			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
+				return isObfuscateFormFields();
+			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
+				return getDefaultValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -412,15 +411,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
-				setAttribute((Attribute)newValue);
-				return;
-			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
-				setObfuscateFormFields((Boolean)newValue);
-				return;
-			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
-				setDefaultValue((Expression)newValue);
-				return;
 			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType((String)newValue);
 				return;
@@ -432,6 +422,15 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 				return;
 			case WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 				setDateFormat((String)newValue);
+				return;
+			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
+				setAttribute((Attribute)newValue);
+				return;
+			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
+				setObfuscateFormFields((Boolean)newValue);
+				return;
+			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
+				setDefaultValue((Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -445,15 +444,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
-				setAttribute((Attribute)null);
-				return;
-			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
-				setObfuscateFormFields(OBFUSCATE_FORM_FIELDS_EDEFAULT);
-				return;
-			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
-				setDefaultValue((Expression)null);
-				return;
 			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
 				return;
@@ -465,6 +455,15 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 				return;
 			case WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 				setDateFormat(DATE_FORMAT_EDEFAULT);
+				return;
+			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
+				setAttribute((Attribute)null);
+				return;
+			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
+				setObfuscateFormFields(OBFUSCATE_FORM_FIELDS_EDEFAULT);
+				return;
+			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
+				setDefaultValue((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -478,12 +477,6 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
-				return attribute != null;
-			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
-				return obfuscateFormFields != OBFUSCATE_FORM_FIELDS_EDEFAULT;
-			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
-				return defaultValue != null;
 			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 			case WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
@@ -492,44 +485,14 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
 			case WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
 				return DATE_FORMAT_EDEFAULT == null ? dateFormat != null : !DATE_FORMAT_EDEFAULT.equals(dateFormat);
+			case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE:
+				return attribute != null;
+			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
+				return obfuscateFormFields != OBFUSCATE_FORM_FIELDS_EDEFAULT;
+			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
+				return defaultValue != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedAttribute.class) {
-			switch (derivedFeatureID) {
-				case WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE: return WafPackage.INCLUDED_ATTRIBUTE__ATTRIBUTE;
-				case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS: return WafPackage.INCLUDED_ATTRIBUTE__OBFUSCATE_FORM_FIELDS;
-				case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE: return WafPackage.INCLUDED_ATTRIBUTE__DEFAULT_VALUE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedAttribute.class) {
-			switch (baseFeatureID) {
-				case WafPackage.INCLUDED_ATTRIBUTE__ATTRIBUTE: return WafPackage.SERVICE_ATTRIBUTE__ATTRIBUTE;
-				case WafPackage.INCLUDED_ATTRIBUTE__OBFUSCATE_FORM_FIELDS: return WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS;
-				case WafPackage.INCLUDED_ATTRIBUTE__DEFAULT_VALUE: return WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -542,9 +505,7 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (obfuscateFormFields: ");
-		result.append(obfuscateFormFields);
-		result.append(", interfaceType: ");
+		result.append(" (interfaceType: ");
 		result.append(interfaceType);
 		result.append(", placeholder: ");
 		result.append(placeholder);
@@ -552,6 +513,8 @@ public class ServiceAttributeImpl extends ServiceFeatureImpl implements ServiceA
 		result.append(validationPattern);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);
+		result.append(", obfuscateFormFields: ");
+		result.append(obfuscateFormFields);
 		result.append(')');
 		return result.toString();
 	}

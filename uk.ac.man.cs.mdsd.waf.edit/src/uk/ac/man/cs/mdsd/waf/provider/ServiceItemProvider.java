@@ -52,6 +52,7 @@ public class ServiceItemProvider
 
 			addPartOfPropertyDescriptor(object);
 			addEncapsulatesPropertyDescriptor(object);
+			addServesPropertyDescriptor(object);
 			addAccessedByPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -102,6 +103,28 @@ public class ServiceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Serves feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addServesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Service_serves_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Service_serves_feature", "_UI_Service_type"),
+				 WafPackage.Literals.SERVICE__SERVES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Accessed By feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -136,7 +159,6 @@ public class ServiceItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.SERVICE__FEATURES);
-			childrenFeatures.add(WafPackage.Literals.SERVICE__KEYS);
 			childrenFeatures.add(WafPackage.Literals.SERVICE__SELECTIONS);
 		}
 		return childrenFeatures;
@@ -193,7 +215,6 @@ public class ServiceItemProvider
 
 		switch (notification.getFeatureID(Service.class)) {
 			case WafPackage.SERVICE__FEATURES:
-			case WafPackage.SERVICE__KEYS:
 			case WafPackage.SERVICE__SELECTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -226,16 +247,6 @@ public class ServiceItemProvider
 			(createChildParameter
 				(WafPackage.Literals.SERVICE__FEATURES,
 				 WafFactory.eINSTANCE.createServiceAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.SERVICE__KEYS,
-				 WafFactory.eINSTANCE.createServiceAttributeReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.SERVICE__KEYS,
-				 WafFactory.eINSTANCE.createServiceAssociationReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

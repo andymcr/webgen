@@ -5,7 +5,9 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -16,8 +18,14 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
+import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.Entity;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -52,6 +60,7 @@ public class SelectionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addJoinsPropertyDescriptor(object);
+			addNewJoins2PropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -78,6 +87,34 @@ public class SelectionItemProvider
 				if (object instanceof Selection) {
 					final Service service = (Service) ((Selection) object).eContainer();
 					return getAssociations(service);
+				}
+
+				return Collections.emptyList();
+			}
+		});
+	}
+
+	/**
+	 * This adds a property descriptor for the New Joins2 feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addNewJoins2PropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_Selection_newJoins2_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Selection_newJoins2_feature", "_UI_Selection_type"),
+			WebsitePackage.Literals.SELECTION__NEW_JOINS2,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				if (object instanceof Selection) {
+					final Service service = (Service) ((Selection) object).eContainer();
+					return getAssociations(service.getServes());
 				}
 
 				return Collections.emptyList();

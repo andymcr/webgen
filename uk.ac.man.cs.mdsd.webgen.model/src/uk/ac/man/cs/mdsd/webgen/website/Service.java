@@ -18,6 +18,7 @@ import java.util.List;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getEncapsulates <em>Encapsulates</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getServes <em>Serves</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Service#getSelections <em>Selections</em>}</li>
@@ -46,6 +47,32 @@ public interface Service extends NamedElement, UnitSource {
 	 * @generated
 	 */
 	List<EntityOrView> getEncapsulates();
+
+	/**
+	 * Returns the value of the '<em><b>Serves</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Serves</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Serves</em>' reference.
+	 * @see #setServes(EntityOrView)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getService_Serves()
+	 * @model required="true"
+	 * @generated
+	 */
+	EntityOrView getServes();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getServes <em>Serves</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Serves</em>' reference.
+	 * @see #getServes()
+	 * @generated
+	 */
+	void setServes(EntityOrView value);
 
 	/**
 	 * Returns the value of the '<em><b>Selections</b></em>' containment reference list.

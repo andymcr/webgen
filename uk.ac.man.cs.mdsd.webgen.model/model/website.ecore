@@ -184,7 +184,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral" eSuperTypes="#//NamedDisplayElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="EntityOrView" abstract="true" eSuperTypes="#//Classifier">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="keys" upperBound="-1" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keys" upperBound="-1" eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="servedBy" upperBound="-1"
         eType="#//Service" eOpposite="#//Service/encapsulates"/>
@@ -462,6 +462,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" lowerBound="1"
         upperBound="-1" eType="#//EntityOrView" eOpposite="#//EntityOrView/servedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serves" lowerBound="1"
+        eType="#//EntityOrView"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//ServiceFeature" containment="true" eOpposite="#//ServiceFeature/partOf"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="keys" lowerBound="1" upperBound="-1"
@@ -476,6 +478,8 @@
         eType="#//SelectionParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="joins" upperBound="-1"
         eType="#//ServiceAssociation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newJoins2" upperBound="-1"
+        eType="#//Association"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filter" ordered="false"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
         containment="true"/>
@@ -697,8 +701,10 @@
       <details key="entitySourceOnlyIfNotEncapsulated" value="source->forAll(s | s.oclIsTypeOf(Entity) implies s.oclAsType(Entity).servedBy->isEmpty())"/>
       <details key="serviceSourceRequiresServiceFeatures" value="source->select(s | s.oclIsTypeOf(Service))->notEmpty() implies &#xD;&#xA;displayFields&#xD;&#xA;&#x9;->select(f|f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)&#xD;&#xA;&#x9;->forAll(f |&#xD;&#xA;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;not f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;not f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;endif)"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        upperBound="-1" eType="#//UnitSource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" upperBound="-1"
+        eType="#//UnitSource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
+        upperBound="-1" eType="#//EntityOrView"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayFields" upperBound="-1"
         eType="#//UnitField" containment="true" eOpposite="#//UnitField/displayedOn"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="supportActions" upperBound="-1"
@@ -781,7 +787,7 @@
         eType="#//ServiceAssociation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//ServiceFeatureReference"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//Label"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueDisplay" eType="#//Label"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
         eType="#//Label"/>

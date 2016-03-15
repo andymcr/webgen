@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -50,7 +51,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> keys;
+	protected EList<Feature> keys;
 
 	/**
 	 * The default value of the '{@link #getTableName() <em>Table Name</em>}' attribute.
@@ -116,18 +117,6 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<Attribute> getKeys() {
-		if (keys == null) {
-			keys = new EObjectResolvingEList<Attribute>(Attribute.class, this, WebsitePackage.ENTITY_OR_VIEW__KEYS);
-		}
-		return keys;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getTableName() {
 		return tableName;
 	}
@@ -166,6 +155,18 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			labels = new EObjectContainmentWithInverseEList<ModelLabel>(ModelLabel.class, this, WebsitePackage.ENTITY_OR_VIEW__LABELS, WebsitePackage.MODEL_LABEL__LABEL_FOR);
 		}
 		return labels;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<Feature> getKeys() {
+		if (keys == null) {
+			keys = new EObjectResolvingEList<Feature>(Feature.class, this, WebsitePackage.ENTITY_OR_VIEW__KEYS);
+		}
+		return keys;
 	}
 
 	/**
@@ -232,7 +233,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		switch (featureID) {
 			case WebsitePackage.ENTITY_OR_VIEW__KEYS:
 				getKeys().clear();
-				getKeys().addAll((Collection<? extends Attribute>)newValue);
+				getKeys().addAll((Collection<? extends Feature>)newValue);
 				return;
 			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
 				setTableName((String)newValue);

@@ -152,6 +152,8 @@ public class TransformUsingEmftVm {
 			ormInputModels, null);
 		executeRefiningPass("PassPersistenceViewAndLabelFeatures", ormModelName, ormModel,
 			ormInputModels, null);
+		executeRefiningPass("PassPersistenceKeys",
+				ormModelName, ormModel, ormInputModels, null);
 		executeRefiningPass("PassPersistenceImplicitStatic", ormModelName,
 			ormModel, ormInputModels, null);
 		executeRefiningPass("PassPersistenceImplicitAuthentication",
@@ -173,14 +175,6 @@ public class TransformUsingEmftVm {
 		final Model wafTraceModelP2 = createModel("trace_waf_p2");
 		executeRefiningPass("PassImplicitService", wafModelName, wafModel,
 			wafInputModels, wafTraceModelP2);
-
-		final Model wafTraceModelP3 = createModel("trace_waf_p3");
-		executeRefiningPass("PassImplicitServiceEntityFeatures", wafModelName,
-			wafModel, wafInputModels, wafTraceModelP3);
-
-		final Model wafTraceModelP4 = createModel("trace_waf_p4");
-		executeRefiningPass("PassImplicitServiceUse", wafModelName, wafModel,
-			wafInputModels, wafTraceModelP4);
 
 		final Model wafTraceModelP5 = createModel("trace_waf_p5");
 		executeRefiningPass("PassImplicitStaticInterface", wafModelName,

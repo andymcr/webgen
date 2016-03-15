@@ -90,16 +90,8 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createCasAuthenticationAdapter();
 			}
 			@Override
-			public Adapter caseIncludedFeature(IncludedFeature object) {
-				return createIncludedFeatureAdapter();
-			}
-			@Override
-			public Adapter caseIncludedAttribute(IncludedAttribute object) {
-				return createIncludedAttributeAdapter();
-			}
-			@Override
-			public Adapter caseIncludedAssociation(IncludedAssociation object) {
-				return createIncludedAssociationAdapter();
+			public Adapter caseDisplayElement(DisplayElement object) {
+				return createDisplayElementAdapter();
 			}
 			@Override
 			public Adapter caseService(Service object) {
@@ -214,8 +206,8 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createUnitFeatureAdapter();
 			}
 			@Override
-			public Adapter caseUnitElement(UnitElement object) {
-				return createUnitElementAdapter();
+			public Adapter caseUnitAttribute(UnitAttribute object) {
+				return createUnitAttributeAdapter();
 			}
 			@Override
 			public Adapter caseUnitAssociation(UnitAssociation object) {
@@ -434,44 +426,16 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.IncludedFeature <em>Included Feature</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.DisplayElement <em>Display Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.IncludedFeature
+	 * @see uk.ac.man.cs.mdsd.waf.DisplayElement
 	 * @generated
 	 */
-	public Adapter createIncludedFeatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.IncludedAttribute <em>Included Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.IncludedAttribute
-	 * @generated
-	 */
-	public Adapter createIncludedAttributeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.IncludedAssociation <em>Included Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.IncludedAssociation
-	 * @generated
-	 */
-	public Adapter createIncludedAssociationAdapter() {
+	public Adapter createDisplayElementAdapter() {
 		return null;
 	}
 
@@ -868,16 +832,16 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.UnitElement <em>Unit Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.UnitAttribute <em>Unit Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.UnitElement
+	 * @see uk.ac.man.cs.mdsd.waf.UnitAttribute
 	 * @generated
 	 */
-	public Adapter createUnitElementAdapter() {
+	public Adapter createUnitAttributeAdapter() {
 		return null;
 	}
 

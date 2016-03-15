@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.LoginUnit;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
@@ -51,6 +52,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getHeader <em>Header</em>}</li>
@@ -198,6 +200,16 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * @ordered
 	 */
 	protected EList<UnitSource> source;
+
+	/**
+	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntities()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EntityOrView> entities;
 
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
@@ -632,6 +644,18 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<EntityOrView> getEntities() {
+		if (entities == null) {
+			entities = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.LOGIN_UNIT__ENTITIES);
+		}
+		return entities;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<UnitField> getDisplayFields() {
 		if (displayFields == null) {
 			displayFields = new EObjectContainmentWithInverseEList<UnitField>(UnitField.class, this, WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS, WebsitePackage.UNIT_FIELD__DISPLAYED_ON);
@@ -974,6 +998,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return getCaptionClass();
 			case WebsitePackage.LOGIN_UNIT__SOURCE:
 				return getSource();
+			case WebsitePackage.LOGIN_UNIT__ENTITIES:
+				return getEntities();
 			case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
@@ -1038,6 +1064,10 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__SOURCE:
 				getSource().clear();
 				getSource().addAll((Collection<? extends UnitSource>)newValue);
+				return;
+			case WebsitePackage.LOGIN_UNIT__ENTITIES:
+				getEntities().clear();
+				getEntities().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
 			case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -1116,6 +1146,9 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__SOURCE:
 				getSource().clear();
 				return;
+			case WebsitePackage.LOGIN_UNIT__ENTITIES:
+				getEntities().clear();
+				return;
 			case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
@@ -1183,6 +1216,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
 			case WebsitePackage.LOGIN_UNIT__SOURCE:
 				return source != null && !source.isEmpty();
+			case WebsitePackage.LOGIN_UNIT__ENTITIES:
+				return entities != null && !entities.isEmpty();
 			case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
@@ -1245,6 +1280,7 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		if (baseClass == DynamicUnit.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.LOGIN_UNIT__SOURCE: return WebsitePackage.DYNAMIC_UNIT__SOURCE;
+				case WebsitePackage.LOGIN_UNIT__ENTITIES: return WebsitePackage.DYNAMIC_UNIT__ENTITIES;
 				case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS: return WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS: return WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.LOGIN_UNIT__HEADER: return WebsitePackage.DYNAMIC_UNIT__HEADER;
@@ -1300,6 +1336,7 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		if (baseClass == DynamicUnit.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.DYNAMIC_UNIT__SOURCE: return WebsitePackage.LOGIN_UNIT__SOURCE;
+				case WebsitePackage.DYNAMIC_UNIT__ENTITIES: return WebsitePackage.LOGIN_UNIT__ENTITIES;
 				case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER: return WebsitePackage.LOGIN_UNIT__HEADER;

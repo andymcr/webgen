@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -70,15 +71,16 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_keys_feature", "_UI_EntityOrView_type"),
 			WebsitePackage.Literals.ENTITY_OR_VIEW__KEYS,
 			true, false, true, null,
-			getString("_UI_PersistencePropertyCategory"),
+			getString("_UI_ModelPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof Entity) {
-						return ((Entity) object).getFeatures();
-					} else {
+						return ((Entity) object).getAllFeatures();
+					} else if (object instanceof View) {
 						return ((View) object).getFeatures();
 					}
+					return Collections.emptyList();
 				}
 			});
 	}

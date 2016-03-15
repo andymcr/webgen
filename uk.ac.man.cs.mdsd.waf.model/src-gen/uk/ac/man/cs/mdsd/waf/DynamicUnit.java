@@ -4,6 +4,8 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.common.util.EList;
 
+import uk.ac.man.cs.mdsd.orm.EntityOrView;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Dynamic Unit</b></em>'.
@@ -14,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getServices <em>Services</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeader <em>Header</em>}</li>
@@ -46,6 +49,22 @@ public interface DynamicUnit extends ContentUnit {
 	 * @generated
 	 */
 	EList<Service> getServices();
+
+	/**
+	 * Returns the value of the '<em><b>Entities</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.EntityOrView}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entities</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entities</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_Entities()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<EntityOrView> getEntities();
 
 	/**
 	 * Returns the value of the '<em><b>Display Fields</b></em>' containment reference list.

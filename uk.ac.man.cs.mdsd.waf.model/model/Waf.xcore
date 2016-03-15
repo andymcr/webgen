@@ -18,6 +18,8 @@ import uk.ac.man.cs.mdsd.orm.Attribute
 import uk.ac.man.cs.mdsd.orm.Cardinality
 import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.DateDetails
+import uk.ac.man.cs.mdsd.orm.EntityAssociation
+import uk.ac.man.cs.mdsd.orm.EntityAttribute
 import uk.ac.man.cs.mdsd.orm.EntityOrView
 import uk.ac.man.cs.mdsd.orm.Label
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
@@ -91,7 +93,23 @@ class CasAuthentication extends Authentication {
 }
 
 
-interface IncludedFeature {
+abstract class DisplayElement {
+	String[1] displayLabel
+}
+
+
+class Service extends NamedElement {
+	refers WafModel[1] partOf opposite services
+	refers EntityOrView[1..*] encapsulates
+	refers EntityOrView[1] serves
+	contains ServiceFeature[] features opposite partOf
+	contains Selection[] selections
+	refers DynamicUnit[] accessedBy opposite services
+}
+
+class ServiceFeature extends NamedDisplayElement {
+	container Service[1] partOf opposite features
+	Cardinality cardinality
 	contains Expression forcedValue
 	String footer
 	// style classes in service features are used when creating implicit unit fields
@@ -101,39 +119,18 @@ interface IncludedFeature {
 	String footerClass
 }
 
-interface IncludedAttribute extends IncludedFeature {
+class ServiceAttribute extends ServiceFeature {
+	String interfaceType
+	String placeholder
+	String validationPattern
+	String dateFormat
 	refers Attribute[1] attribute
 	boolean obfuscateFormFields
 	contains Expression defaultValue
 }
 
-interface IncludedAssociation extends IncludedFeature {
+class ServiceAssociation extends ServiceFeature {
 	refers Association[1] association
-}
-
-
-class Service extends NamedElement {
-	refers WafModel[1] partOf opposite services
-	refers EntityOrView[1..*] encapsulates
-	contains ServiceFeature[] features opposite partOf
-	contains ServiceFeatureReference[1..*] ^keys
-	contains Selection[] selections
-	refers DynamicUnit[] accessedBy opposite services
-}
-
-class ServiceFeature extends NamedDisplayElement, IncludedFeature {
-	container Service[1] partOf opposite features
-	Cardinality cardinality
-}
-
-class ServiceAttribute extends ServiceFeature, IncludedAttribute {
-	String interfaceType
-	String placeholder
-	String validationPattern
-	String dateFormat
-}
-
-class ServiceAssociation extends ServiceFeature, IncludedAssociation {
 }
 
 abstract class ServiceFeatureReference {
@@ -152,7 +149,7 @@ class ServiceAssociationReference extends ServiceFeatureReference {
 
 class Selection extends NamedElement {
 	contains SelectionParameter[] parameters
-	refers ServiceAssociation[] joins
+	refers Association[] joins
 	contains Predicate filter
 	contains Order[] ordering
 	int limit = "0"
@@ -256,6 +253,7 @@ class StaticUnit extends ContentUnit {
 
 abstract class DynamicUnit extends ContentUnit {
 	refers Service[1..*] services opposite accessedBy
+	refers EntityOrView[1..*] entities
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
 	String header
@@ -271,11 +269,37 @@ class UnitSupportAction extends NamedDisplayElement {
 	String confirmMessage
 }
 
-interface UnitField {
+interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
-	Cardinality cardinality
 	int maximumDisplaySize = "-1"
 	String dateFormat
+}
+
+abstract class UnitFeature extends UnitField, InlineActionContainer {
+	contains Expression forcedValue
+	boolean onlyDisplayWhenNotEmpty = "false"
+	boolean autofocus
+	String footer
+	String headerClass
+	String inputClass
+	String displayClass
+	String footerClass
+}
+
+class UnitAttribute extends UnitFeature {
+	refers Attribute[1] attribute
+	derived String[1] name get {
+		if (attribute != null)
+			attribute.name
+	}
+//--	derived Cardinality cardinality get {
+//--		if (attribute instanceof EntityAttribute)
+//			attribute.cardinality
+//	}
+	contains Expression defaultValue
+	boolean obfuscateFormFields
+	String placeholder
+	String validationPattern
 }
 
 enum CollectionDisplayOptions {
@@ -283,33 +307,26 @@ enum CollectionDisplayOptions {
 	PageDirection = 1
 }
 
-abstract class UnitFeature extends NamedDisplayElement, IncludedFeature, UnitField, InlineActionContainer {
-	boolean onlyDisplayWhenNotEmpty
-	CollectionDisplayOptions displayOption
-	boolean autofocus
-}
-
-class UnitElement extends UnitFeature, IncludedAttribute {
-	refers ServiceAttribute[1] serviceFeature
-	String placeholder
-	String validationPattern
-}
-
-class UnitAssociation extends UnitFeature, IncludedAssociation, UnitContainer {
-	refers ServiceAssociation[1] serviceFeature
-	contains ServiceFeatureReference childFeature
+class UnitAssociation extends UnitFeature, UnitContainer {
+	refers Association[1] association
+	derived String[1] name get {
+		if (association != null)
+			association.name
+	}
 	refers Selection selection
-	refers Label label
+	refers Label valueDisplay
+	CollectionDisplayOptions displayOption
 	// for selecting inputs
 	refers Label[] filters
 }
 
-abstract class InterfaceField extends NamedDisplayElement, UnitField {
+abstract class InterfaceField extends NamedElement, UnitField {
+	boolean required
 	contains Expression defaultValue
-	String inputClass
 	refers UnitField mustMatch
 	String placeholder
 	String validationPattern
+	String inputClass
 }
 
 class DataTypeField extends InterfaceField {
@@ -317,7 +334,6 @@ class DataTypeField extends InterfaceField {
 	boolean caseInsensitive
 	boolean obfuscateFormFields
 	boolean encrypt
-	String interfaceType
 }
 
 class DateField extends InterfaceField {

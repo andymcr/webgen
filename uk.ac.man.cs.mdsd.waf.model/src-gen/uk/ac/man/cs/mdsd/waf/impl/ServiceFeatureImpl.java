@@ -18,7 +18,6 @@ import uk.ac.man.cs.mdsd.orm.Cardinality;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedDisplayElementImpl;
 
-import uk.ac.man.cs.mdsd.waf.IncludedFeature;
 import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.ServiceFeature;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -31,19 +30,39 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl#getPartOf <em>Part Of</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl#getForcedValue <em>Forced Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl#getFooterClass <em>Footer Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl#getPartOf <em>Part Of</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceFeatureImpl#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ServiceFeatureImpl extends NamedDisplayElementImpl implements ServiceFeature {
+	/**
+	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCardinality()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Cardinality CARDINALITY_EDEFAULT = Cardinality.OPTIONAL;
+
+	/**
+	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCardinality()
+	 * @generated
+	 * @ordered
+	 */
+	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getForcedValue() <em>Forced Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -155,26 +174,6 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 	protected String footerClass = FOOTER_CLASS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Cardinality CARDINALITY_EDEFAULT = Cardinality.OPTIONAL;
-
-	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected Cardinality cardinality = CARDINALITY_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -191,6 +190,78 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.SERVICE_FEATURE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service getPartOf() {
+		if (eContainerFeatureID() != WafPackage.SERVICE_FEATURE__PART_OF) return null;
+		return (Service)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service basicGetPartOf() {
+		if (eContainerFeatureID() != WafPackage.SERVICE_FEATURE__PART_OF) return null;
+		return (Service)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPartOf(Service newPartOf, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WafPackage.SERVICE_FEATURE__PART_OF, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPartOf(Service newPartOf) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WafPackage.SERVICE_FEATURE__PART_OF && newPartOf != null)) {
+			if (EcoreUtil.isAncestor(this, newPartOf))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newPartOf != null)
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WafPackage.SERVICE__FEATURES, Service.class, msgs);
+			msgs = basicSetPartOf(newPartOf, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_FEATURE__PART_OF, newPartOf, newPartOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cardinality getCardinality() {
+		return cardinality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCardinality(Cardinality newCardinality) {
+		Cardinality oldCardinality = cardinality;
+		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_FEATURE__CARDINALITY, oldCardinality, cardinality));
 	}
 
 	/**
@@ -346,78 +417,6 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Service getPartOf() {
-		if (eContainerFeatureID() != WafPackage.SERVICE_FEATURE__PART_OF) return null;
-		return (Service)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Service basicGetPartOf() {
-		if (eContainerFeatureID() != WafPackage.SERVICE_FEATURE__PART_OF) return null;
-		return (Service)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPartOf(Service newPartOf, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPartOf, WafPackage.SERVICE_FEATURE__PART_OF, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPartOf(Service newPartOf) {
-		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WafPackage.SERVICE_FEATURE__PART_OF && newPartOf != null)) {
-			if (EcoreUtil.isAncestor(this, newPartOf))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newPartOf != null)
-				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WafPackage.SERVICE__FEATURES, Service.class, msgs);
-			msgs = basicSetPartOf(newPartOf, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_FEATURE__PART_OF, newPartOf, newPartOf));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Cardinality getCardinality() {
-		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCardinality(Cardinality newCardinality) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SERVICE_FEATURE__CARDINALITY, oldCardinality, cardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -437,10 +436,10 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.SERVICE_FEATURE__FORCED_VALUE:
-				return basicSetForcedValue(null, msgs);
 			case WafPackage.SERVICE_FEATURE__PART_OF:
 				return basicSetPartOf(null, msgs);
+			case WafPackage.SERVICE_FEATURE__FORCED_VALUE:
+				return basicSetForcedValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -467,6 +466,11 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.SERVICE_FEATURE__PART_OF:
+				if (resolve) return getPartOf();
+				return basicGetPartOf();
+			case WafPackage.SERVICE_FEATURE__CARDINALITY:
+				return getCardinality();
 			case WafPackage.SERVICE_FEATURE__FORCED_VALUE:
 				return getForcedValue();
 			case WafPackage.SERVICE_FEATURE__FOOTER:
@@ -479,11 +483,6 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 				return getDisplayClass();
 			case WafPackage.SERVICE_FEATURE__FOOTER_CLASS:
 				return getFooterClass();
-			case WafPackage.SERVICE_FEATURE__PART_OF:
-				if (resolve) return getPartOf();
-				return basicGetPartOf();
-			case WafPackage.SERVICE_FEATURE__CARDINALITY:
-				return getCardinality();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -496,6 +495,12 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.SERVICE_FEATURE__PART_OF:
+				setPartOf((Service)newValue);
+				return;
+			case WafPackage.SERVICE_FEATURE__CARDINALITY:
+				setCardinality((Cardinality)newValue);
+				return;
 			case WafPackage.SERVICE_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)newValue);
 				return;
@@ -514,12 +519,6 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 			case WafPackage.SERVICE_FEATURE__FOOTER_CLASS:
 				setFooterClass((String)newValue);
 				return;
-			case WafPackage.SERVICE_FEATURE__PART_OF:
-				setPartOf((Service)newValue);
-				return;
-			case WafPackage.SERVICE_FEATURE__CARDINALITY:
-				setCardinality((Cardinality)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -532,6 +531,12 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.SERVICE_FEATURE__PART_OF:
+				setPartOf((Service)null);
+				return;
+			case WafPackage.SERVICE_FEATURE__CARDINALITY:
+				setCardinality(CARDINALITY_EDEFAULT);
+				return;
 			case WafPackage.SERVICE_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)null);
 				return;
@@ -550,12 +555,6 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 			case WafPackage.SERVICE_FEATURE__FOOTER_CLASS:
 				setFooterClass(FOOTER_CLASS_EDEFAULT);
 				return;
-			case WafPackage.SERVICE_FEATURE__PART_OF:
-				setPartOf((Service)null);
-				return;
-			case WafPackage.SERVICE_FEATURE__CARDINALITY:
-				setCardinality(CARDINALITY_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -568,6 +567,10 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.SERVICE_FEATURE__PART_OF:
+				return basicGetPartOf() != null;
+			case WafPackage.SERVICE_FEATURE__CARDINALITY:
+				return cardinality != CARDINALITY_EDEFAULT;
 			case WafPackage.SERVICE_FEATURE__FORCED_VALUE:
 				return forcedValue != null;
 			case WafPackage.SERVICE_FEATURE__FOOTER:
@@ -580,54 +583,8 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 				return DISPLAY_CLASS_EDEFAULT == null ? displayClass != null : !DISPLAY_CLASS_EDEFAULT.equals(displayClass);
 			case WafPackage.SERVICE_FEATURE__FOOTER_CLASS:
 				return FOOTER_CLASS_EDEFAULT == null ? footerClass != null : !FOOTER_CLASS_EDEFAULT.equals(footerClass);
-			case WafPackage.SERVICE_FEATURE__PART_OF:
-				return basicGetPartOf() != null;
-			case WafPackage.SERVICE_FEATURE__CARDINALITY:
-				return cardinality != CARDINALITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedFeature.class) {
-			switch (derivedFeatureID) {
-				case WafPackage.SERVICE_FEATURE__FORCED_VALUE: return WafPackage.INCLUDED_FEATURE__FORCED_VALUE;
-				case WafPackage.SERVICE_FEATURE__FOOTER: return WafPackage.INCLUDED_FEATURE__FOOTER;
-				case WafPackage.SERVICE_FEATURE__HEADER_CLASS: return WafPackage.INCLUDED_FEATURE__HEADER_CLASS;
-				case WafPackage.SERVICE_FEATURE__INPUT_CLASS: return WafPackage.INCLUDED_FEATURE__INPUT_CLASS;
-				case WafPackage.SERVICE_FEATURE__DISPLAY_CLASS: return WafPackage.INCLUDED_FEATURE__DISPLAY_CLASS;
-				case WafPackage.SERVICE_FEATURE__FOOTER_CLASS: return WafPackage.INCLUDED_FEATURE__FOOTER_CLASS;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedFeature.class) {
-			switch (baseFeatureID) {
-				case WafPackage.INCLUDED_FEATURE__FORCED_VALUE: return WafPackage.SERVICE_FEATURE__FORCED_VALUE;
-				case WafPackage.INCLUDED_FEATURE__FOOTER: return WafPackage.SERVICE_FEATURE__FOOTER;
-				case WafPackage.INCLUDED_FEATURE__HEADER_CLASS: return WafPackage.SERVICE_FEATURE__HEADER_CLASS;
-				case WafPackage.INCLUDED_FEATURE__INPUT_CLASS: return WafPackage.SERVICE_FEATURE__INPUT_CLASS;
-				case WafPackage.INCLUDED_FEATURE__DISPLAY_CLASS: return WafPackage.SERVICE_FEATURE__DISPLAY_CLASS;
-				case WafPackage.INCLUDED_FEATURE__FOOTER_CLASS: return WafPackage.SERVICE_FEATURE__FOOTER_CLASS;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -640,7 +597,9 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (footer: ");
+		result.append(" (cardinality: ");
+		result.append(cardinality);
+		result.append(", footer: ");
 		result.append(footer);
 		result.append(", headerClass: ");
 		result.append(headerClass);
@@ -650,8 +609,6 @@ public class ServiceFeatureImpl extends NamedDisplayElementImpl implements Servi
 		result.append(displayClass);
 		result.append(", footerClass: ");
 		result.append(footerClass);
-		result.append(", cardinality: ");
-		result.append(cardinality);
 		result.append(')');
 		return result.toString();
 	}

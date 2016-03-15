@@ -79,7 +79,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.QUERY_PARAMETER: return createQueryParameter();
 			case WafPackage.STATIC_UNIT: return createStaticUnit();
 			case WafPackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
-			case WafPackage.UNIT_ELEMENT: return createUnitElement();
+			case WafPackage.UNIT_ATTRIBUTE: return createUnitAttribute();
 			case WafPackage.UNIT_ASSOCIATION: return createUnitAssociation();
 			case WafPackage.DATA_TYPE_FIELD: return createDataTypeField();
 			case WafPackage.DATE_FIELD: return createDateField();
@@ -375,9 +375,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitElement createUnitElement() {
-		UnitElementImpl unitElement = new UnitElementImpl();
-		return unitElement;
+	public UnitAttribute createUnitAttribute() {
+		UnitAttributeImpl unitAttribute = new UnitAttributeImpl();
+		return unitAttribute;
 	}
 
 	/**

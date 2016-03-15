@@ -46,6 +46,7 @@ public class DynamicUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addServicesPropertyDescriptor(object);
+			addEntitiesPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -70,6 +71,28 @@ public class DynamicUnitItemProvider
 				 getString("_UI_DynamicUnit_services_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_services_feature", "_UI_DynamicUnit_type"),
 				 WafPackage.Literals.DYNAMIC_UNIT__SERVICES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Entities feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntitiesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DynamicUnit_entities_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_entities_feature", "_UI_DynamicUnit_type"),
+				 WafPackage.Literals.DYNAMIC_UNIT__ENTITIES,
 				 true,
 				 false,
 				 true,
@@ -297,7 +320,7 @@ public class DynamicUnitItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS,
-				 WafFactory.eINSTANCE.createUnitElement()));
+				 WafFactory.eINSTANCE.createUnitAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

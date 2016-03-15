@@ -21,11 +21,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.criteria.Order;
 import uk.ac.man.cs.mdsd.criteria.Predicate;
 
+import uk.ac.man.cs.mdsd.orm.Association;
+
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.SelectionParameter;
-import uk.ac.man.cs.mdsd.waf.ServiceAssociation;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -64,7 +65,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ServiceAssociation> joins;
+	protected EList<Association> joins;
 
 	/**
 	 * The cached value of the '{@link #getFilter() <em>Filter</em>}' containment reference.
@@ -142,9 +143,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ServiceAssociation> getJoins() {
+	public EList<Association> getJoins() {
 		if (joins == null) {
-			joins = new EObjectResolvingEList<ServiceAssociation>(ServiceAssociation.class, this, WafPackage.SELECTION__JOINS);
+			joins = new EObjectResolvingEList<Association>(Association.class, this, WafPackage.SELECTION__JOINS);
 		}
 		return joins;
 	}
@@ -280,7 +281,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return;
 			case WafPackage.SELECTION__JOINS:
 				getJoins().clear();
-				getJoins().addAll((Collection<? extends ServiceAssociation>)newValue);
+				getJoins().addAll((Collection<? extends Association>)newValue);
 				return;
 			case WafPackage.SELECTION__FILTER:
 				setFilter((Predicate)newValue);

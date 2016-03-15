@@ -2,9 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import org.eclipse.emf.ecore.EObject;
-
-import uk.ac.man.cs.mdsd.orm.Cardinality;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +13,6 @@ import uk.ac.man.cs.mdsd.orm.Cardinality;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getDisplayedOn <em>Displayed On</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getDateFormat <em>Date Format</em>}</li>
  * </ul>
@@ -25,7 +21,7 @@ import uk.ac.man.cs.mdsd.orm.Cardinality;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface UnitField extends EObject {
+public interface UnitField extends DisplayElement {
 	/**
 	 * Returns the value of the '<em><b>Displayed On</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}'.
@@ -53,35 +49,6 @@ public interface UnitField extends EObject {
 	 * @generated
 	 */
 	void setDisplayedOn(DynamicUnit value);
-
-	/**
-	 * Returns the value of the '<em><b>Cardinality</b></em>' attribute.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.orm.Cardinality}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cardinality</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cardinality</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.orm.Cardinality
-	 * @see #setCardinality(Cardinality)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitField_Cardinality()
-	 * @model unique="false"
-	 * @generated
-	 */
-	Cardinality getCardinality();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitField#getCardinality <em>Cardinality</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cardinality</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.orm.Cardinality
-	 * @see #getCardinality()
-	 * @generated
-	 */
-	void setCardinality(Cardinality value);
 
 	/**
 	 * Returns the value of the '<em><b>Maximum Display Size</b></em>' attribute.

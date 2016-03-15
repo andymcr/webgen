@@ -52,6 +52,8 @@ public class ServiceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addEncapsulatesPropertyDescriptor(object);
+			addServesPropertyDescriptor(object);
+			addKeysPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -73,6 +75,50 @@ public class ServiceItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Serves feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addServesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Service_serves_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Service_serves_feature", "_UI_Service_type"),
+				 WebsitePackage.Literals.SERVICE__SERVES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Keys feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addKeysPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Service_keys_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Service_keys_feature", "_UI_Service_type"),
+				 WebsitePackage.Literals.SERVICE__KEYS,
+				 true,
+				 false,
+				 false,
 				 null,
 				 getString("_UI_ModelPropertyCategory"),
 				 null));

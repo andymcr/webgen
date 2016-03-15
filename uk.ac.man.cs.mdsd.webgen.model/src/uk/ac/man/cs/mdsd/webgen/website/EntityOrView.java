@@ -25,22 +25,6 @@ import java.util.List;
  */
 public interface EntityOrView extends Classifier {
 	/**
-	 * Returns the value of the '<em><b>Keys</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Attribute}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Keys</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Keys</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_Keys()
-	 * @model
-	 * @generated
-	 */
-	List<Attribute> getKeys();
-
-	/**
 	 * Returns the value of the '<em><b>Table Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -101,5 +85,21 @@ public interface EntityOrView extends Classifier {
 	 * @generated
 	 */
 	List<ModelLabel> getLabels();
+
+	/**
+	 * Returns the value of the '<em><b>Keys</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Feature}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Keys</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Keys</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_Keys()
+	 * @model
+	 * @generated
+	 */
+	List<Feature> getKeys();
 
 } // EntityOrView

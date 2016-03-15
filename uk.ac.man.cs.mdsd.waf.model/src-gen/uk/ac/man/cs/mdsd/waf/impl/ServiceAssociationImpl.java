@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.orm.Association;
 
-import uk.ac.man.cs.mdsd.waf.IncludedAssociation;
 import uk.ac.man.cs.mdsd.waf.ServiceAssociation;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -153,38 +152,6 @@ public class ServiceAssociationImpl extends ServiceFeatureImpl implements Servic
 				return association != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedAssociation.class) {
-			switch (derivedFeatureID) {
-				case WafPackage.SERVICE_ASSOCIATION__ASSOCIATION: return WafPackage.INCLUDED_ASSOCIATION__ASSOCIATION;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == IncludedAssociation.class) {
-			switch (baseFeatureID) {
-				case WafPackage.INCLUDED_ASSOCIATION__ASSOCIATION: return WafPackage.SERVICE_ASSOCIATION__ASSOCIATION;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ServiceAssociationImpl

@@ -9,6 +9,7 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 import java.util.Collection;
 
 import java.util.List;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -37,6 +39,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getEncapsulates <em>Encapsulates</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getServes <em>Serves</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
@@ -54,6 +57,16 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @ordered
 	 */
 	protected EList<EntityOrView> encapsulates;
+
+	/**
+	 * The cached value of the '{@link #getServes() <em>Serves</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getServes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityOrView serves;
 
 	/**
 	 * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
@@ -114,6 +127,44 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			encapsulates = new EObjectWithInverseResolvingEList.ManyInverse<EntityOrView>(EntityOrView.class, this, WebsitePackage.SERVICE__ENCAPSULATES, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY);
 		}
 		return encapsulates;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getServes() {
+		if (serves != null && serves.eIsProxy()) {
+			InternalEObject oldServes = (InternalEObject)serves;
+			serves = (EntityOrView)eResolveProxy(oldServes);
+			if (serves != oldServes) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SERVICE__SERVES, oldServes, serves));
+			}
+		}
+		return serves;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetServes() {
+		return serves;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setServes(EntityOrView newServes) {
+		EntityOrView oldServes = serves;
+		serves = newServes;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE__SERVES, oldServes, serves));
 	}
 
 	/**
@@ -201,6 +252,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return getEncapsulates();
+			case WebsitePackage.SERVICE__SERVES:
+				if (resolve) return getServes();
+				return basicGetServes();
 			case WebsitePackage.SERVICE__FEATURES:
 				return getFeatures();
 			case WebsitePackage.SERVICE__KEYS:
@@ -223,6 +277,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
 				getEncapsulates().addAll((Collection<? extends EntityOrView>)newValue);
+				return;
+			case WebsitePackage.SERVICE__SERVES:
+				setServes((EntityOrView)newValue);
 				return;
 			case WebsitePackage.SERVICE__FEATURES:
 				getFeatures().clear();
@@ -251,6 +308,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				getEncapsulates().clear();
 				return;
+			case WebsitePackage.SERVICE__SERVES:
+				setServes((EntityOrView)null);
+				return;
 			case WebsitePackage.SERVICE__FEATURES:
 				getFeatures().clear();
 				return;
@@ -274,6 +334,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 		switch (featureID) {
 			case WebsitePackage.SERVICE__ENCAPSULATES:
 				return encapsulates != null && !encapsulates.isEmpty();
+			case WebsitePackage.SERVICE__SERVES:
+				return serves != null;
 			case WebsitePackage.SERVICE__FEATURES:
 				return features != null && !features.isEmpty();
 			case WebsitePackage.SERVICE__KEYS:

@@ -7,6 +7,7 @@ import org.eclipse.emf.common.util.EList;
 import uk.ac.man.cs.mdsd.criteria.Order;
 import uk.ac.man.cs.mdsd.criteria.Predicate;
 
+import uk.ac.man.cs.mdsd.orm.Association;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
 /**
@@ -48,7 +49,7 @@ public interface Selection extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Joins</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ServiceAssociation}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.Association}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Joins</em>' reference list isn't clear,
@@ -60,7 +61,7 @@ public interface Selection extends NamedElement {
 	 * @model
 	 * @generated
 	 */
-	EList<ServiceAssociation> getJoins();
+	EList<Association> getJoins();
 
 	/**
 	 * Returns the value of the '<em><b>Filter</b></em>' containment reference.

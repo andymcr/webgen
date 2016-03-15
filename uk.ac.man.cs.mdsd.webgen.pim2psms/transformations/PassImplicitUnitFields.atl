@@ -42,16 +42,14 @@ abstract rule DynamicUnit {
 	from partialWaf : WAF!DynamicUnit
 	to waf : WAF!DynamicUnit (
 		displayFields <-
-			if partialWaf.displayFields->notEmpty() then
+			if partialWaf.displayFields->notEmpty() or partialWaf.entities->isEmpty() then
 				partialWaf.displayFields
 			else
-				partialWaf.services->first().features
-					->select(f | f.oclIsTypeOf(WAF!ServiceAttribute))
-					->select(f | f.forcedValue.oclIsUndefined())
+				partialWaf.entities->first().features
+					->select(f | f.oclIsTypeOf(WAF!EntityAttribute))
 					->collect(f | thisModule.implicitUnitAttribute(f))
-				->union(partialWaf.services->first().features
-					->select(f | f.oclIsKindOf(WAF!ServiceAssociation))
-					->select(f | f.forcedValue.oclIsUndefined())
+				->union(partialWaf.entities->first().features
+					->select(f | f.oclIsKindOf(WAF!EntityAssociation))
 					->select(f | not partialWaf.oclIsKindOf(WAF!IndexUnit) and not waf.oclIsTypeOf(WAF!CreateUnit))
 					->collect(f | thisModule.implicitUnitAssociation(f)))
 				endif
@@ -59,26 +57,16 @@ abstract rule DynamicUnit {
 }
 
 lazy abstract rule implicitUnitFeature {
-	from partialWaf : WAF!ServiceFeature
+	from partialWaf : WAF!EntityFeature
 	to waf : WAF!UnitFeature (
-		name <- partialWaf.name,
-		cardinality <- partialWaf.cardinality,
-		onlyDisplayWhenNotEmpty <- false,
-		-- from IncludedFeature
-		displayLabel <- partialWaf.displayLabel,
-		headerClass <- partialWaf.headerClass,
-		inputClass <- partialWaf.inputClass,
-		displayClass <- partialWaf.displayClass,
-		footerClass <- partialWaf.footerClass
 	)
 }
 
 --@extends implicitUnitFeature
 lazy rule implicitUnitAttribute {
-	from partialWaf : WAF!ServiceAttribute
-	to waf : WAF!UnitElement (
-		serviceFeature <- partialWaf,
-		dateFormat <- partialWaf.dateFormat
+	from partialWaf : WAF!EntityAttribute
+	to waf : WAF!UnitAttribute (
+		attribute <- partialWaf
 	)
 	do {
 		waf;
@@ -87,9 +75,9 @@ lazy rule implicitUnitAttribute {
 
 --@extends implicitUnitFeature
 lazy rule implicitUnitAssociation {
-	from partialWaf : WAF!ServiceAssociation
+	from partialWaf : WAF!EntityAssociation
 	to waf : WAF!UnitAssociation (
-		serviceFeature <- partialWaf
+		association <- partialWaf
 	)
 	do {
 		waf;

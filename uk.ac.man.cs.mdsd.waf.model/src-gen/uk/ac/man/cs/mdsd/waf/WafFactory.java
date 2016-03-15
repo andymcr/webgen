@@ -220,13 +220,13 @@ public interface WafFactory extends EFactory {
 	UnitSupportAction createUnitSupportAction();
 
 	/**
-	 * Returns a new object of class '<em>Unit Element</em>'.
+	 * Returns a new object of class '<em>Unit Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unit Element</em>'.
+	 * @return a new object of class '<em>Unit Attribute</em>'.
 	 * @generated
 	 */
-	UnitElement createUnitElement();
+	UnitAttribute createUnitAttribute();
 
 	/**
 	 * Returns a new object of class '<em>Unit Association</em>'.

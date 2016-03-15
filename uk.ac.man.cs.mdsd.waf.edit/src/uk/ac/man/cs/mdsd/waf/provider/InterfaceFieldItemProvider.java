@@ -14,7 +14,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
-import uk.ac.man.cs.mdsd.orm.provider.NamedDisplayElementItemProvider;
+import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.waf.InterfaceField;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -26,7 +26,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class InterfaceFieldItemProvider
-	extends NamedDisplayElementItemProvider {
+	extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -48,16 +48,39 @@ public class InterfaceFieldItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDisplayLabelPropertyDescriptor(object);
 			addDisplayedOnPropertyDescriptor(object);
-			addCardinalityPropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
-			addInputClassPropertyDescriptor(object);
+			addRequiredPropertyDescriptor(object);
 			addMustMatchPropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
+			addInputClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Display Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisplayLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DisplayElement_displayLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DisplayElement_displayLabel_feature", "_UI_DisplayElement_type"),
+				 WafPackage.Literals.DISPLAY_ELEMENT__DISPLAY_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -84,28 +107,6 @@ public class InterfaceFieldItemProvider
 	}
 
   /**
-	 * This adds a property descriptor for the Cardinality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCardinalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_cardinality_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_cardinality_feature", "_UI_UnitField_type"),
-				 WafPackage.Literals.UNIT_FIELD__CARDINALITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Maximum Display Size feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -145,6 +146,28 @@ public class InterfaceFieldItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Required feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceField_required_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_required_feature", "_UI_InterfaceField_type"),
+				 WafPackage.Literals.INTERFACE_FIELD__REQUIRED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -295,12 +318,13 @@ public class InterfaceFieldItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(InterfaceField.class)) {
-			case WafPackage.INTERFACE_FIELD__CARDINALITY:
+			case WafPackage.INTERFACE_FIELD__DISPLAY_LABEL:
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
-			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
+			case WafPackage.INTERFACE_FIELD__REQUIRED:
 			case WafPackage.INTERFACE_FIELD__PLACEHOLDER:
 			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
+			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.INTERFACE_FIELD__DEFAULT_VALUE:

@@ -57,9 +57,9 @@ public class ServiceAssociationItemProvider extends ServiceFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedAssociation_association_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedAssociation_association_feature", "_UI_IncludedAssociation_type"),
-				 WafPackage.Literals.INCLUDED_ASSOCIATION__ASSOCIATION,
+				 getString("_UI_ServiceAssociation_association_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociation_association_feature", "_UI_ServiceAssociation_type"),
+				 WafPackage.Literals.SERVICE_ASSOCIATION__ASSOCIATION,
 				 true,
 				 false,
 				 true,

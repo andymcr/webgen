@@ -98,23 +98,9 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.INCLUDED_FEATURE: {
-				IncludedFeature includedFeature = (IncludedFeature)theEObject;
-				T result = caseIncludedFeature(includedFeature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.INCLUDED_ATTRIBUTE: {
-				IncludedAttribute includedAttribute = (IncludedAttribute)theEObject;
-				T result = caseIncludedAttribute(includedAttribute);
-				if (result == null) result = caseIncludedFeature(includedAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.INCLUDED_ASSOCIATION: {
-				IncludedAssociation includedAssociation = (IncludedAssociation)theEObject;
-				T result = caseIncludedAssociation(includedAssociation);
-				if (result == null) result = caseIncludedFeature(includedAssociation);
+			case WafPackage.DISPLAY_ELEMENT: {
+				DisplayElement displayElement = (DisplayElement)theEObject;
+				T result = caseDisplayElement(displayElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -129,7 +115,6 @@ public class WafSwitch<T> extends Switch<T> {
 				ServiceFeature serviceFeature = (ServiceFeature)theEObject;
 				T result = caseServiceFeature(serviceFeature);
 				if (result == null) result = caseNamedDisplayElement(serviceFeature);
-				if (result == null) result = caseIncludedFeature(serviceFeature);
 				if (result == null) result = caseNamedElement(serviceFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -138,9 +123,7 @@ public class WafSwitch<T> extends Switch<T> {
 				ServiceAttribute serviceAttribute = (ServiceAttribute)theEObject;
 				T result = caseServiceAttribute(serviceAttribute);
 				if (result == null) result = caseServiceFeature(serviceAttribute);
-				if (result == null) result = caseIncludedAttribute(serviceAttribute);
 				if (result == null) result = caseNamedDisplayElement(serviceAttribute);
-				if (result == null) result = caseIncludedFeature(serviceAttribute);
 				if (result == null) result = caseNamedElement(serviceAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -149,9 +132,7 @@ public class WafSwitch<T> extends Switch<T> {
 				ServiceAssociation serviceAssociation = (ServiceAssociation)theEObject;
 				T result = caseServiceAssociation(serviceAssociation);
 				if (result == null) result = caseServiceFeature(serviceAssociation);
-				if (result == null) result = caseIncludedAssociation(serviceAssociation);
 				if (result == null) result = caseNamedDisplayElement(serviceAssociation);
-				if (result == null) result = caseIncludedFeature(serviceAssociation);
 				if (result == null) result = caseNamedElement(serviceAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -326,30 +307,26 @@ public class WafSwitch<T> extends Switch<T> {
 			case WafPackage.UNIT_FIELD: {
 				UnitField unitField = (UnitField)theEObject;
 				T result = caseUnitField(unitField);
+				if (result == null) result = caseDisplayElement(unitField);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case WafPackage.UNIT_FEATURE: {
 				UnitFeature unitFeature = (UnitFeature)theEObject;
 				T result = caseUnitFeature(unitFeature);
-				if (result == null) result = caseNamedDisplayElement(unitFeature);
-				if (result == null) result = caseIncludedFeature(unitFeature);
 				if (result == null) result = caseUnitField(unitFeature);
 				if (result == null) result = caseInlineActionContainer(unitFeature);
-				if (result == null) result = caseNamedElement(unitFeature);
+				if (result == null) result = caseDisplayElement(unitFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.UNIT_ELEMENT: {
-				UnitElement unitElement = (UnitElement)theEObject;
-				T result = caseUnitElement(unitElement);
-				if (result == null) result = caseUnitFeature(unitElement);
-				if (result == null) result = caseIncludedAttribute(unitElement);
-				if (result == null) result = caseNamedDisplayElement(unitElement);
-				if (result == null) result = caseIncludedFeature(unitElement);
-				if (result == null) result = caseUnitField(unitElement);
-				if (result == null) result = caseInlineActionContainer(unitElement);
-				if (result == null) result = caseNamedElement(unitElement);
+			case WafPackage.UNIT_ATTRIBUTE: {
+				UnitAttribute unitAttribute = (UnitAttribute)theEObject;
+				T result = caseUnitAttribute(unitAttribute);
+				if (result == null) result = caseUnitFeature(unitAttribute);
+				if (result == null) result = caseUnitField(unitAttribute);
+				if (result == null) result = caseInlineActionContainer(unitAttribute);
+				if (result == null) result = caseDisplayElement(unitAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -357,22 +334,19 @@ public class WafSwitch<T> extends Switch<T> {
 				UnitAssociation unitAssociation = (UnitAssociation)theEObject;
 				T result = caseUnitAssociation(unitAssociation);
 				if (result == null) result = caseUnitFeature(unitAssociation);
-				if (result == null) result = caseIncludedAssociation(unitAssociation);
 				if (result == null) result = caseUnitContainer(unitAssociation);
-				if (result == null) result = caseNamedDisplayElement(unitAssociation);
-				if (result == null) result = caseIncludedFeature(unitAssociation);
 				if (result == null) result = caseUnitField(unitAssociation);
 				if (result == null) result = caseInlineActionContainer(unitAssociation);
-				if (result == null) result = caseNamedElement(unitAssociation);
+				if (result == null) result = caseDisplayElement(unitAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case WafPackage.INTERFACE_FIELD: {
 				InterfaceField interfaceField = (InterfaceField)theEObject;
 				T result = caseInterfaceField(interfaceField);
-				if (result == null) result = caseNamedDisplayElement(interfaceField);
-				if (result == null) result = caseUnitField(interfaceField);
 				if (result == null) result = caseNamedElement(interfaceField);
+				if (result == null) result = caseUnitField(interfaceField);
+				if (result == null) result = caseDisplayElement(interfaceField);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -380,9 +354,9 @@ public class WafSwitch<T> extends Switch<T> {
 				DataTypeField dataTypeField = (DataTypeField)theEObject;
 				T result = caseDataTypeField(dataTypeField);
 				if (result == null) result = caseInterfaceField(dataTypeField);
-				if (result == null) result = caseNamedDisplayElement(dataTypeField);
-				if (result == null) result = caseUnitField(dataTypeField);
 				if (result == null) result = caseNamedElement(dataTypeField);
+				if (result == null) result = caseUnitField(dataTypeField);
+				if (result == null) result = caseDisplayElement(dataTypeField);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -390,9 +364,9 @@ public class WafSwitch<T> extends Switch<T> {
 				DateField dateField = (DateField)theEObject;
 				T result = caseDateField(dateField);
 				if (result == null) result = caseInterfaceField(dateField);
-				if (result == null) result = caseNamedDisplayElement(dateField);
-				if (result == null) result = caseUnitField(dateField);
 				if (result == null) result = caseNamedElement(dateField);
+				if (result == null) result = caseUnitField(dateField);
+				if (result == null) result = caseDisplayElement(dateField);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -400,9 +374,9 @@ public class WafSwitch<T> extends Switch<T> {
 				CaptchaField captchaField = (CaptchaField)theEObject;
 				T result = caseCaptchaField(captchaField);
 				if (result == null) result = caseInterfaceField(captchaField);
-				if (result == null) result = caseNamedDisplayElement(captchaField);
-				if (result == null) result = caseUnitField(captchaField);
 				if (result == null) result = caseNamedElement(captchaField);
+				if (result == null) result = caseUnitField(captchaField);
+				if (result == null) result = caseDisplayElement(captchaField);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -737,47 +711,17 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Included Feature</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Display Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Included Feature</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Display Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseIncludedFeature(IncludedFeature object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Included Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Included Attribute</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIncludedAttribute(IncludedAttribute object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Included Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Included Association</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIncludedAssociation(IncludedAssociation object) {
+	public T caseDisplayElement(DisplayElement object) {
 		return null;
 	}
 
@@ -1202,17 +1146,17 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unit Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Unit Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unit Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Unit Attribute</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUnitElement(UnitElement object) {
+	public T caseUnitAttribute(UnitAttribute object) {
 		return null;
 	}
 

@@ -54,13 +54,13 @@ public class ServiceFeatureItemProvider extends NamedDisplayElementItemProvider 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPartOfPropertyDescriptor(object);
+			addCardinalityPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
-			addPartOfPropertyDescriptor(object);
-			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,9 +76,9 @@ public class ServiceFeatureItemProvider extends NamedDisplayElementItemProvider 
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_footer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_footer_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__FOOTER,
+				 getString("_UI_ServiceFeature_footer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceFeature_footer_feature", "_UI_ServiceFeature_type"),
+				 WafPackage.Literals.SERVICE_FEATURE__FOOTER,
 				 true,
 				 false,
 				 false,
@@ -98,9 +98,9 @@ public class ServiceFeatureItemProvider extends NamedDisplayElementItemProvider 
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_headerClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_headerClass_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__HEADER_CLASS,
+				 getString("_UI_ServiceFeature_headerClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceFeature_headerClass_feature", "_UI_ServiceFeature_type"),
+				 WafPackage.Literals.SERVICE_FEATURE__HEADER_CLASS,
 				 true,
 				 false,
 				 false,
@@ -120,9 +120,9 @@ public class ServiceFeatureItemProvider extends NamedDisplayElementItemProvider 
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_inputClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_inputClass_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__INPUT_CLASS,
+				 getString("_UI_ServiceFeature_inputClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceFeature_inputClass_feature", "_UI_ServiceFeature_type"),
+				 WafPackage.Literals.SERVICE_FEATURE__INPUT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -142,9 +142,9 @@ public class ServiceFeatureItemProvider extends NamedDisplayElementItemProvider 
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_displayClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_displayClass_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__DISPLAY_CLASS,
+				 getString("_UI_ServiceFeature_displayClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceFeature_displayClass_feature", "_UI_ServiceFeature_type"),
+				 WafPackage.Literals.SERVICE_FEATURE__DISPLAY_CLASS,
 				 true,
 				 false,
 				 false,
@@ -164,9 +164,9 @@ public class ServiceFeatureItemProvider extends NamedDisplayElementItemProvider 
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedFeature_footerClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedFeature_footerClass_feature", "_UI_IncludedFeature_type"),
-				 WafPackage.Literals.INCLUDED_FEATURE__FOOTER_CLASS,
+				 getString("_UI_ServiceFeature_footerClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceFeature_footerClass_feature", "_UI_ServiceFeature_type"),
+				 WafPackage.Literals.SERVICE_FEATURE__FOOTER_CLASS,
 				 true,
 				 false,
 				 false,
@@ -231,7 +231,7 @@ public class ServiceFeatureItemProvider extends NamedDisplayElementItemProvider 
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE);
+			childrenFeatures.add(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -287,12 +287,12 @@ public class ServiceFeatureItemProvider extends NamedDisplayElementItemProvider 
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ServiceFeature.class)) {
+			case WafPackage.SERVICE_FEATURE__CARDINALITY:
 			case WafPackage.SERVICE_FEATURE__FOOTER:
 			case WafPackage.SERVICE_FEATURE__HEADER_CLASS:
 			case WafPackage.SERVICE_FEATURE__INPUT_CLASS:
 			case WafPackage.SERVICE_FEATURE__DISPLAY_CLASS:
 			case WafPackage.SERVICE_FEATURE__FOOTER_CLASS:
-			case WafPackage.SERVICE_FEATURE__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.SERVICE_FEATURE__FORCED_VALUE:
@@ -315,77 +315,77 @@ public class ServiceFeatureItemProvider extends NamedDisplayElementItemProvider 
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 WafFactory.eINSTANCE.createModelReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 WafFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 WafFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE,
+				(WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 	}
 

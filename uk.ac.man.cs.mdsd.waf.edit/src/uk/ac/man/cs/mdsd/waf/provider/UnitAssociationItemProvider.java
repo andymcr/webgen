@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
@@ -48,9 +49,10 @@ public class UnitAssociationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAssociationPropertyDescriptor(object);
-			addServiceFeaturePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
-			addLabelPropertyDescriptor(object);
+			addValueDisplayPropertyDescriptor(object);
+			addDisplayOptionPropertyDescriptor(object);
 			addFiltersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -67,9 +69,9 @@ public class UnitAssociationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedAssociation_association_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedAssociation_association_feature", "_UI_IncludedAssociation_type"),
-				 WafPackage.Literals.INCLUDED_ASSOCIATION__ASSOCIATION,
+				 getString("_UI_UnitAssociation_association_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_association_feature", "_UI_UnitAssociation_type"),
+				 WafPackage.Literals.UNIT_ASSOCIATION__ASSOCIATION,
 				 true,
 				 false,
 				 true,
@@ -79,29 +81,28 @@ public class UnitAssociationItemProvider
 	}
 
 		/**
-	 * This adds a property descriptor for the Service Feature feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected void addServiceFeaturePropertyDescriptor(Object object)
-  {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_serviceFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_serviceFeature_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.Literals.UNIT_ASSOCIATION__SERVICE_FEATURE,
-				 true,
+				 getString("_UI_UnitAssociation_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_name_feature", "_UI_UnitAssociation_type"),
+				 WafPackage.Literals.UNIT_ASSOCIATION__NAME,
 				 false,
-				 true,
-				 null,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
-  /**
+		/**
 	 * This adds a property descriptor for the Selection feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -125,23 +126,45 @@ public class UnitAssociationItemProvider
 	}
 
   /**
-	 * This adds a property descriptor for the Label feature.
+	 * This adds a property descriptor for the Value Display feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLabelPropertyDescriptor(Object object) {
+	protected void addValueDisplayPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_label_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_label_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.Literals.UNIT_ASSOCIATION__LABEL,
+				 getString("_UI_UnitAssociation_valueDisplay_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_valueDisplay_feature", "_UI_UnitAssociation_type"),
+				 WafPackage.Literals.UNIT_ASSOCIATION__VALUE_DISPLAY,
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+		/**
+	 * This adds a property descriptor for the Display Option feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDisplayOptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitAssociation_displayOption_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_displayOption_feature", "_UI_UnitAssociation_type"),
+				 WafPackage.Literals.UNIT_ASSOCIATION__DISPLAY_OPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -182,7 +205,6 @@ public class UnitAssociationItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.UNIT_CONTAINER__UNITS);
-			childrenFeatures.add(WafPackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -241,8 +263,11 @@ public class UnitAssociationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitAssociation.class)) {
+			case WafPackage.UNIT_ASSOCIATION__NAME:
+			case WafPackage.UNIT_ASSOCIATION__DISPLAY_OPTION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
-			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -325,16 +350,6 @@ public class UnitAssociationItemProvider
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
 				 WafFactory.eINSTANCE.createForgottenPasswordUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
-				 WafFactory.eINSTANCE.createServiceAttributeReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
-				 WafFactory.eINSTANCE.createServiceAssociationReference()));
 	}
 
 }

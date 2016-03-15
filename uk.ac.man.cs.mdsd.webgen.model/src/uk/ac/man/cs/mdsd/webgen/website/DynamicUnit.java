@@ -14,6 +14,7 @@ import java.util.List;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getSource <em>Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getHeader <em>Header</em>}</li>
@@ -42,10 +43,26 @@ public interface DynamicUnit extends ContentUnit {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDynamicUnit_Source()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	List<UnitSource> getSource();
+
+	/**
+	 * Returns the value of the '<em><b>Entities</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entities</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entities</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDynamicUnit_Entities()
+	 * @model required="true"
+	 * @generated
+	 */
+	List<EntityOrView> getEntities();
 
 	/**
 	 * Returns the value of the '<em><b>Display Fields</b></em>' containment reference list.

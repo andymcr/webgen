@@ -48,12 +48,12 @@ public class ServiceAttributeItemProvider extends ServiceFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAttributePropertyDescriptor(object);
-			addObfuscateFormFieldsPropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
+			addAttributePropertyDescriptor(object);
+			addObfuscateFormFieldsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -69,9 +69,9 @@ public class ServiceAttributeItemProvider extends ServiceFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedAttribute_obfuscateFormFields_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedAttribute_obfuscateFormFields_feature", "_UI_IncludedAttribute_type"),
-				 WafPackage.Literals.INCLUDED_ATTRIBUTE__OBFUSCATE_FORM_FIELDS,
+				 getString("_UI_ServiceAttribute_obfuscateFormFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_obfuscateFormFields_feature", "_UI_ServiceAttribute_type"),
+				 WafPackage.Literals.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS,
 				 true,
 				 false,
 				 false,
@@ -91,9 +91,9 @@ public class ServiceAttributeItemProvider extends ServiceFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncludedAttribute_attribute_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedAttribute_attribute_feature", "_UI_IncludedAttribute_type"),
-				 WafPackage.Literals.INCLUDED_ATTRIBUTE__ATTRIBUTE,
+				 getString("_UI_ServiceAttribute_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttribute_attribute_feature", "_UI_ServiceAttribute_type"),
+				 WafPackage.Literals.SERVICE_ATTRIBUTE__ATTRIBUTE,
 				 true,
 				 false,
 				 true,
@@ -202,7 +202,7 @@ public class ServiceAttributeItemProvider extends ServiceFeatureItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE);
+			childrenFeatures.add(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -258,11 +258,11 @@ public class ServiceAttributeItemProvider extends ServiceFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ServiceAttribute.class)) {
-			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 			case WafPackage.SERVICE_ATTRIBUTE__INTERFACE_TYPE:
 			case WafPackage.SERVICE_ATTRIBUTE__PLACEHOLDER:
 			case WafPackage.SERVICE_ATTRIBUTE__VALIDATION_PATTERN:
 			case WafPackage.SERVICE_ATTRIBUTE__DATE_FORMAT:
+			case WafPackage.SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.SERVICE_ATTRIBUTE__DEFAULT_VALUE:
@@ -285,77 +285,77 @@ public class ServiceAttributeItemProvider extends ServiceFeatureItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createModelReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE,
+				(WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 	}
 
@@ -371,8 +371,8 @@ public class ServiceAttributeItemProvider extends ServiceFeatureItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.INCLUDED_FEATURE__FORCED_VALUE ||
-			childFeature == WafPackage.Literals.INCLUDED_ATTRIBUTE__DEFAULT_VALUE;
+			childFeature == WafPackage.Literals.SERVICE_FEATURE__FORCED_VALUE ||
+			childFeature == WafPackage.Literals.SERVICE_ATTRIBUTE__DEFAULT_VALUE;
 
 		if (qualify) {
 			return getString

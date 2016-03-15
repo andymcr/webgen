@@ -136,11 +136,10 @@ class ModelLabelAssociation extends ModelLabelFeature {
 
 
 class Entity extends EntityOrView {
-	refers Entity[] ^contains opposite ^container
-	refers Entity ^container opposite ^contains
 }
 
 abstract class EntityFeature extends Feature {
+	Cardinality cardinality
 	String[1] columnName
 }
 
@@ -221,7 +220,8 @@ class SingletonLocation extends SingletonAttribute {
 abstract class EntityAssociation extends EntityFeature, Association {
 	refers EntityAssociation[1] ^opposite
 	boolean[1] ^container = "false"
-	boolean[1] owningEnd
+	boolean[1] ^contains = "false"
+	boolean[1] owningEnd = "false"
 	boolean[1] visible = "true"
 	String pivotTableName
 }

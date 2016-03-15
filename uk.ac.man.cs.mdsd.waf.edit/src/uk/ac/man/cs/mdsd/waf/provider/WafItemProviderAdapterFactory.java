@@ -608,30 +608,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitElement} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitAttribute} instances.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected UnitElementItemProvider unitElementItemProvider;
+	protected UnitAttributeItemProvider unitAttributeItemProvider;
 
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitElement}.
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.UnitAttribute}.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Adapter createUnitElementAdapter()
-  {
-		if (unitElementItemProvider == null) {
-			unitElementItemProvider = new UnitElementItemProvider(this);
+	@Override
+	public Adapter createUnitAttributeAdapter() {
+		if (unitAttributeItemProvider == null) {
+			unitAttributeItemProvider = new UnitAttributeItemProvider(this);
 		}
 
-		return unitElementItemProvider;
+		return unitAttributeItemProvider;
 	}
 
-  /**
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitAssociation} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1312,7 +1311,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();
-		if (unitElementItemProvider != null) unitElementItemProvider.dispose();
+		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();

@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
@@ -50,6 +51,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getHeader <em>Header</em>}</li>
@@ -197,6 +199,16 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * @ordered
 	 */
 	protected EList<UnitSource> source;
+
+	/**
+	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntities()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EntityOrView> entities;
 
 	/**
 	 * The cached value of the '{@link #getDisplayFields() <em>Display Fields</em>}' containment reference list.
@@ -631,6 +643,18 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<EntityOrView> getEntities() {
+		if (entities == null) {
+			entities = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES);
+		}
+		return entities;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<UnitField> getDisplayFields() {
 		if (displayFields == null) {
 			displayFields = new EObjectContainmentWithInverseEList<UnitField>(UnitField.class, this, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS, WebsitePackage.UNIT_FIELD__DISPLAYED_ON);
@@ -973,6 +997,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return getCaptionClass();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
 				return getSource();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES:
+				return getEntities();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				return getDisplayFields();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
@@ -1037,6 +1063,10 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
 				getSource().clear();
 				getSource().addAll((Collection<? extends UnitSource>)newValue);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES:
+				getEntities().clear();
+				getEntities().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
@@ -1115,6 +1145,9 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
 				getSource().clear();
 				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES:
+				getEntities().clear();
+				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				getDisplayFields().clear();
 				return;
@@ -1182,6 +1215,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
 				return source != null && !source.isEmpty();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES:
+				return entities != null && !entities.isEmpty();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				return displayFields != null && !displayFields.isEmpty();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
@@ -1244,6 +1279,7 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		if (baseClass == DynamicUnit.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE: return WebsitePackage.DYNAMIC_UNIT__SOURCE;
+				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES: return WebsitePackage.DYNAMIC_UNIT__ENTITIES;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS: return WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS: return WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER: return WebsitePackage.DYNAMIC_UNIT__HEADER;
@@ -1299,6 +1335,7 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		if (baseClass == DynamicUnit.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.DYNAMIC_UNIT__SOURCE: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE;
+				case WebsitePackage.DYNAMIC_UNIT__ENTITIES: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES;
 				case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER;

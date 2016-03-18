@@ -64,8 +64,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.SERVICE_FEATURE: return createServiceFeature();
 			case WafPackage.SERVICE_ATTRIBUTE: return createServiceAttribute();
 			case WafPackage.SERVICE_ASSOCIATION: return createServiceAssociation();
-			case WafPackage.SERVICE_ATTRIBUTE_REFERENCE: return createServiceAttributeReference();
-			case WafPackage.SERVICE_ASSOCIATION_REFERENCE: return createServiceAssociationReference();
 			case WafPackage.SELECTION: return createSelection();
 			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WafPackage.STATIC_MENU: return createStaticMenu();
@@ -81,6 +79,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
 			case WafPackage.UNIT_ATTRIBUTE: return createUnitAttribute();
 			case WafPackage.UNIT_ASSOCIATION: return createUnitAssociation();
+			case WafPackage.CHILD_ATTRIBUTE: return createChildAttribute();
+			case WafPackage.CHILD_ASSOCIATION: return createChildAssociation();
 			case WafPackage.DATA_TYPE_FIELD: return createDataTypeField();
 			case WafPackage.DATE_FIELD: return createDateField();
 			case WafPackage.CAPTCHA_FIELD: return createCaptchaField();
@@ -218,26 +218,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public ServiceAssociation createServiceAssociation() {
 		ServiceAssociationImpl serviceAssociation = new ServiceAssociationImpl();
 		return serviceAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAttributeReference createServiceAttributeReference() {
-		ServiceAttributeReferenceImpl serviceAttributeReference = new ServiceAttributeReferenceImpl();
-		return serviceAttributeReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAssociationReference createServiceAssociationReference() {
-		ServiceAssociationReferenceImpl serviceAssociationReference = new ServiceAssociationReferenceImpl();
-		return serviceAssociationReference;
 	}
 
 	/**
@@ -388,6 +368,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public UnitAssociation createUnitAssociation() {
 		UnitAssociationImpl unitAssociation = new UnitAssociationImpl();
 		return unitAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildAttribute createChildAttribute() {
+		ChildAttributeImpl childAttribute = new ChildAttributeImpl();
+		return childAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildAssociation createChildAssociation() {
+		ChildAssociationImpl childAssociation = new ChildAssociationImpl();
+		return childAssociation;
 	}
 
 	/**

@@ -37,6 +37,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#isRequired <em>Required</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getMustMatch <em>Must Match</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getInputClass <em>Input Class</em>}</li>
@@ -144,6 +145,26 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * @ordered
 	 */
 	protected UnitField mustMatch;
+
+	/**
+	 * The default value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTERFACE_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String interfaceType = INTERFACE_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
@@ -445,6 +466,27 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getInterfaceType() {
+		return interfaceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInterfaceType(String newInterfaceType) {
+		String oldInterfaceType = interfaceType;
+		interfaceType = newInterfaceType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPlaceholder() {
 		return placeholder;
 	}
@@ -573,6 +615,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__MUST_MATCH:
 				if (resolve) return getMustMatch();
 				return basicGetMustMatch();
+			case WafPackage.INTERFACE_FIELD__INTERFACE_TYPE:
+				return getInterfaceType();
 			case WafPackage.INTERFACE_FIELD__PLACEHOLDER:
 				return getPlaceholder();
 			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
@@ -611,6 +655,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return;
 			case WafPackage.INTERFACE_FIELD__MUST_MATCH:
 				setMustMatch((UnitField)newValue);
+				return;
+			case WafPackage.INTERFACE_FIELD__INTERFACE_TYPE:
+				setInterfaceType((String)newValue);
 				return;
 			case WafPackage.INTERFACE_FIELD__PLACEHOLDER:
 				setPlaceholder((String)newValue);
@@ -654,6 +701,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__MUST_MATCH:
 				setMustMatch((UnitField)null);
 				return;
+			case WafPackage.INTERFACE_FIELD__INTERFACE_TYPE:
+				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
+				return;
 			case WafPackage.INTERFACE_FIELD__PLACEHOLDER:
 				setPlaceholder(PLACEHOLDER_EDEFAULT);
 				return;
@@ -689,6 +739,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return defaultValue != null;
 			case WafPackage.INTERFACE_FIELD__MUST_MATCH:
 				return mustMatch != null;
+			case WafPackage.INTERFACE_FIELD__INTERFACE_TYPE:
+				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 			case WafPackage.INTERFACE_FIELD__PLACEHOLDER:
 				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
@@ -765,6 +817,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		result.append(dateFormat);
 		result.append(", required: ");
 		result.append(required);
+		result.append(", interfaceType: ");
+		result.append(interfaceType);
 		result.append(", placeholder: ");
 		result.append(placeholder);
 		result.append(", validationPattern: ");

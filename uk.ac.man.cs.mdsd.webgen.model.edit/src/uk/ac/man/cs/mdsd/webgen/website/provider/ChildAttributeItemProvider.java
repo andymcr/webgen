@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.waf.provider;
+package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
@@ -11,23 +11,25 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.waf.WafPackage;
+import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceAttributeReference} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ChildAttribute} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceAttributeReferenceItemProvider extends ServiceFeatureReferenceItemProvider {
+public class ChildAttributeItemProvider extends ChildFeatureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttributeReferenceItemProvider(AdapterFactory adapterFactory) {
+	public ChildAttributeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,26 +60,26 @@ public class ServiceAttributeReferenceItemProvider extends ServiceFeatureReferen
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ServiceAttributeReference_attribute_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttributeReference_attribute_feature", "_UI_ServiceAttributeReference_type"),
-				 WafPackage.Literals.SERVICE_ATTRIBUTE_REFERENCE__ATTRIBUTE,
+				 getString("_UI_ChildAttribute_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildAttribute_attribute_feature", "_UI_ChildAttribute_type"),
+				 WebsitePackage.Literals.CHILD_ATTRIBUTE__ATTRIBUTE,
 				 true,
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This returns ServiceAttributeReference.gif.
+	 * This returns ChildAttribute.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceAttributeReference"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChildAttribute"));
 	}
 
 	/**
@@ -88,7 +90,10 @@ public class ServiceAttributeReferenceItemProvider extends ServiceFeatureReferen
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ServiceAttributeReference_type");
+		String label = ((ChildAttribute)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ChildAttribute_type") :
+			getString("_UI_ChildAttribute_type") + " " + label;
 	}
 	
 
@@ -102,6 +107,12 @@ public class ServiceAttributeReferenceItemProvider extends ServiceFeatureReferen
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ChildAttribute.class)) {
+			case WebsitePackage.CHILD_ATTRIBUTE__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

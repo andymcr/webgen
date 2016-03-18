@@ -205,6 +205,7 @@ public class UnitAssociationItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.UNIT_CONTAINER__UNITS);
+			childrenFeatures.add(WafPackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -268,6 +269,7 @@ public class UnitAssociationItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
+			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -350,6 +352,16 @@ public class UnitAssociationItemProvider
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
 				 WafFactory.eINSTANCE.createForgottenPasswordUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
+				 WafFactory.eINSTANCE.createChildAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
+				 WafFactory.eINSTANCE.createChildAssociation()));
 	}
 
 }

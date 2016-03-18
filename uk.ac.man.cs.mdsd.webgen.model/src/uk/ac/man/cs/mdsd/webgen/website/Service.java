@@ -43,7 +43,7 @@ public interface Service extends NamedElement, UnitSource {
 	 * @return the value of the '<em>Encapsulates</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getService_Encapsulates()
 	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy
-	 * @model opposite="servedBy" required="true"
+	 * @model opposite="servedBy"
 	 * @generated
 	 */
 	List<EntityOrView> getEncapsulates();

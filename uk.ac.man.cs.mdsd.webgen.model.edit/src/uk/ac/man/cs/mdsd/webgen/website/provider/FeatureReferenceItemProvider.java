@@ -20,8 +20,9 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.FeatureReference;
-import uk.ac.man.cs.mdsd.webgen.website.IncludedFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
@@ -64,6 +65,8 @@ public class FeatureReferenceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addFieldPropertyDescriptor(object);
+			addField2PropertyDescriptor(object);
+			addFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,7 +89,7 @@ public class FeatureReferenceItemProvider
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
-					final Set<IncludedFeature> features = new HashSet<IncludedFeature>();
+					final Set<ServiceFeature> features = new HashSet<ServiceFeature>();
 					if (object instanceof FeatureReference) {
 						final Selection selection = getCriteriaSelectionContext(object);
 						if (selection != null) {
@@ -100,13 +103,100 @@ public class FeatureReferenceItemProvider
 							final Service service = getCriteriaServiceContext(object);
 							if (service != null) {
 								for (ServiceFeature feature : service.getFeatures()) {
-									if (feature instanceof IncludedFeature) {
-										features.add((IncludedFeature) feature);
+									if (feature instanceof ServiceFeature) {
+										features.add((ServiceFeature) feature);
 									}
 								}
 							}
 						}
 					}
+					return features;
+				}
+		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Field2 feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addField2PropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_FeatureReference_field2_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_FeatureReference_field2_feature", "_UI_FeatureReference_type"),
+			WebsitePackage.Literals.FEATURE_REFERENCE__FIELD2,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					final Set<Feature> features = new HashSet<Feature>();
+					if (object instanceof FeatureReference) {
+						final Selection selection = getCriteriaSelectionContext(object);
+						if (selection != null) {
+							final Service service = selection.getUsedBy();
+							features.addAll(getFeatures(service));
+							for (Association join : selection.getNewJoins2()) {
+								features.addAll(getTargetFeatures(join, service.getServes()));
+							}
+						} else {
+//							final Service service = getCriteriaServiceContext(object);
+//							if (service != null) {
+//								for (ServiceFeature feature : service.getFeatures()) {
+//									if (feature instanceof ServiceFeature) {
+//										features.add((ServiceFeature) feature);
+//									}
+//								}
+//							}
+						}
+					}
+					return features;
+				}
+		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_FeatureReference_feature_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_FeatureReference_feature_feature", "_UI_FeatureReference_type"),
+			WebsitePackage.Literals.FEATURE_REFERENCE__FEATURE,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					final Set<Feature> features = new HashSet<Feature>();
+					if (object instanceof FeatureReference) {
+						final Selection selection = getCriteriaSelectionContext(object);
+						if (selection != null) {
+							final Service service = selection.getUsedBy();
+							features.addAll(getFeatures(service));
+							for (Association join : selection.getNewJoins2()) {
+								features.addAll(getTargetFeatures(join, service.getServes()));
+							}
+							return features;
+						}
+//						final Service service = getCriteriaServiceContext(object);
+//						if (service != null) {
+//							for (ServiceFeature feature : service.getFeatures()) {
+//								if (feature instanceof ServiceFeature) {
+//									features.add((ServiceFeature) feature);
+//								}
+//							}
+//						}
+					}
+
 					return features;
 				}
 		});

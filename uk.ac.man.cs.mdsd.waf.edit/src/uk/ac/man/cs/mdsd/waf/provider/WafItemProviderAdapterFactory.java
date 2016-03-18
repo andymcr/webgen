@@ -187,52 +187,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceAttributeReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServiceAttributeReferenceItemProvider serviceAttributeReferenceItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceAttributeReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createServiceAttributeReferenceAdapter() {
-		if (serviceAttributeReferenceItemProvider == null) {
-			serviceAttributeReferenceItemProvider = new ServiceAttributeReferenceItemProvider(this);
-		}
-
-		return serviceAttributeReferenceItemProvider;
-	}
-
-		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ServiceAssociationReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServiceAssociationReferenceItemProvider serviceAssociationReferenceItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceAssociationReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createServiceAssociationReferenceAdapter() {
-		if (serviceAssociationReferenceItemProvider == null) {
-			serviceAssociationReferenceItemProvider = new ServiceAssociationReferenceItemProvider(this);
-		}
-
-		return serviceAssociationReferenceItemProvider;
-	}
-
-		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Selection} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -655,6 +609,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ChildAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildAttributeItemProvider childAttributeItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ChildAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildAttributeAdapter() {
+		if (childAttributeItemProvider == null) {
+			childAttributeItemProvider = new ChildAttributeItemProvider(this);
+		}
+
+		return childAttributeItemProvider;
+	}
+
+		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ChildAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildAssociationItemProvider childAssociationItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ChildAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildAssociationAdapter() {
+		if (childAssociationItemProvider == null) {
+			childAssociationItemProvider = new ChildAssociationItemProvider(this);
+		}
+
+		return childAssociationItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DataTypeField} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1296,8 +1296,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (serviceFeatureItemProvider != null) serviceFeatureItemProvider.dispose();
 		if (serviceAttributeItemProvider != null) serviceAttributeItemProvider.dispose();
 		if (serviceAssociationItemProvider != null) serviceAssociationItemProvider.dispose();
-		if (serviceAttributeReferenceItemProvider != null) serviceAttributeReferenceItemProvider.dispose();
-		if (serviceAssociationReferenceItemProvider != null) serviceAssociationReferenceItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
@@ -1313,6 +1311,8 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
+		if (childAttributeItemProvider != null) childAttributeItemProvider.dispose();
+		if (childAssociationItemProvider != null) childAssociationItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
 		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();

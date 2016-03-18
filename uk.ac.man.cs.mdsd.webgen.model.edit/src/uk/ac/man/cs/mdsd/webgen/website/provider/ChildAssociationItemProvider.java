@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.waf.provider;
+package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
@@ -15,24 +15,24 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.waf.ServiceAssociationReference;
-import uk.ac.man.cs.mdsd.waf.WafFactory;
-import uk.ac.man.cs.mdsd.waf.WafPackage;
+import uk.ac.man.cs.mdsd.webgen.website.ChildAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
+import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceAssociationReference} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ChildAssociation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceAssociationReferenceItemProvider extends ServiceFeatureReferenceItemProvider {
+public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAssociationReferenceItemProvider(AdapterFactory adapterFactory) {
+	public ChildAssociationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,14 +63,14 @@ public class ServiceAssociationReferenceItemProvider extends ServiceFeatureRefer
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ServiceAssociationReference_association_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociationReference_association_feature", "_UI_ServiceAssociationReference_type"),
-				 WafPackage.Literals.SERVICE_ASSOCIATION_REFERENCE__ASSOCIATION,
+				 getString("_UI_ChildAssociation_association_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildAssociation_association_feature", "_UI_ChildAssociation_type"),
+				 WebsitePackage.Literals.CHILD_ASSOCIATION__ASSOCIATION,
 				 true,
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -86,7 +86,7 @@ public class ServiceAssociationReferenceItemProvider extends ServiceFeatureRefer
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.SERVICE_ASSOCIATION_REFERENCE__CHILD_FEATURE);
+			childrenFeatures.add(WebsitePackage.Literals.CHILD_ASSOCIATION__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -105,14 +105,14 @@ public class ServiceAssociationReferenceItemProvider extends ServiceFeatureRefer
 	}
 
 	/**
-	 * This returns ServiceAssociationReference.gif.
+	 * This returns ChildAssociation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceAssociationReference"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChildAssociation"));
 	}
 
 	/**
@@ -123,7 +123,10 @@ public class ServiceAssociationReferenceItemProvider extends ServiceFeatureRefer
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ServiceAssociationReference_type");
+		String label = ((ChildAssociation)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ChildAssociation_type") :
+			getString("_UI_ChildAssociation_type") + " " + label;
 	}
 	
 
@@ -138,8 +141,11 @@ public class ServiceAssociationReferenceItemProvider extends ServiceFeatureRefer
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ServiceAssociationReference.class)) {
-			case WafPackage.SERVICE_ASSOCIATION_REFERENCE__CHILD_FEATURE:
+		switch (notification.getFeatureID(ChildAssociation.class)) {
+			case WebsitePackage.CHILD_ASSOCIATION__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -159,13 +165,13 @@ public class ServiceAssociationReferenceItemProvider extends ServiceFeatureRefer
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.SERVICE_ASSOCIATION_REFERENCE__CHILD_FEATURE,
-				 WafFactory.eINSTANCE.createServiceAttributeReference()));
+				(WebsitePackage.Literals.CHILD_ASSOCIATION__CHILD_FEATURE,
+				 WebsiteFactory.eINSTANCE.createChildAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.SERVICE_ASSOCIATION_REFERENCE__CHILD_FEATURE,
-				 WafFactory.eINSTANCE.createServiceAssociationReference()));
+				(WebsitePackage.Literals.CHILD_ASSOCIATION__CHILD_FEATURE,
+				 WebsiteFactory.eINSTANCE.createChildAssociation()));
 	}
 
 }

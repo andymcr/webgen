@@ -97,9 +97,10 @@ abstract class EntityOrView extends Classifier {
 	contains ModelLabel[] labels opposite labelFor
 }
 
+
 abstract class Feature extends NamedDisplayElement {
 	container EntityOrView[1] partOf opposite features
-	// style classes are used when creating implicit service features
+	// style classes are used when creating implicit entity features
 	String headerClass
 	String inputClass
 	String displayClass
@@ -112,6 +113,7 @@ abstract class Attribute extends Feature, Label {
 
 abstract class Association extends Feature {
 }
+
 
 interface Label {
 }

@@ -85,24 +85,6 @@ public interface WafFactory extends EFactory {
 	ServiceAssociation createServiceAssociation();
 
 	/**
-	 * Returns a new object of class '<em>Service Attribute Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Attribute Reference</em>'.
-	 * @generated
-	 */
-	ServiceAttributeReference createServiceAttributeReference();
-
-	/**
-	 * Returns a new object of class '<em>Service Association Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Association Reference</em>'.
-	 * @generated
-	 */
-	ServiceAssociationReference createServiceAssociationReference();
-
-	/**
 	 * Returns a new object of class '<em>Selection</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +218,24 @@ public interface WafFactory extends EFactory {
 	 * @generated
 	 */
 	UnitAssociation createUnitAssociation();
+
+	/**
+	 * Returns a new object of class '<em>Child Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child Attribute</em>'.
+	 * @generated
+	 */
+	ChildAttribute createChildAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Child Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child Association</em>'.
+	 * @generated
+	 */
+	ChildAssociation createChildAssociation();
 
 	/**
 	 * Returns a new object of class '<em>Data Type Field</em>'.

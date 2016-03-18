@@ -4,6 +4,8 @@ package uk.ac.man.cs.mdsd.waf;
 
 import uk.ac.man.cs.mdsd.criteria.Path;
 
+import uk.ac.man.cs.mdsd.orm.Feature;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Feature Reference</b></em>'.
@@ -30,12 +32,12 @@ public interface FeatureReference extends Path {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Feature</em>' reference.
-	 * @see #setFeature(ServiceFeature)
+	 * @see #setFeature(Feature)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFeatureReference_Feature()
 	 * @model required="true"
 	 * @generated
 	 */
-	ServiceFeature getFeature();
+	Feature getFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.FeatureReference#getFeature <em>Feature</em>}' reference.
@@ -45,6 +47,6 @@ public interface FeatureReference extends Path {
 	 * @see #getFeature()
 	 * @generated
 	 */
-	void setFeature(ServiceFeature value);
+	void setFeature(Feature value);
 
 } // FeatureReference

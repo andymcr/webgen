@@ -19,6 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
@@ -39,8 +40,23 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		super(adapterFactory);
 	}
 
-	protected List<Attribute> getAttributes(final EntityOrView entityOrView) {
-		final List<Attribute> attributes = new LinkedList<Attribute>();
+	protected Set<Feature> getFeatures(final EntityOrView entityOrView) {
+		final Set<Feature> features = new HashSet<Feature>();
+		if (entityOrView instanceof Entity) {
+			for (EntityFeature feature : ((Entity) entityOrView).getAllFeatures()) {
+				features.add(feature);
+			}
+		} else {
+			for (ViewFeature feature : ((View) entityOrView).getFeatures()) {
+				features.add(feature);
+			}
+		}
+
+		return features;
+	}
+
+	protected Set<Attribute> getAttributes(final EntityOrView entityOrView) {
+		final Set<Attribute> attributes = new HashSet<Attribute>();
 		if (entityOrView instanceof Entity) {
 			for (EntityFeature feature : ((Entity) entityOrView).getAllFeatures()) {
 				if (feature instanceof Attribute) {
@@ -79,8 +95,47 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return associations;
 	}
 
-	protected List<Attribute> getFeatureAttributes(final Service service) {
-		final List<Attribute> attributes = new LinkedList<Attribute>();
+	protected Set<Association> getTargetAssociations(final Association association) {
+		final Set<Association> associations = new HashSet<Association>();
+		if (association instanceof EntityAssociation) {
+			final EntityAssociation entityAssociation = (EntityAssociation) association;
+			associations.addAll(getAssociations(entityAssociation.getTargetEntity()));
+		}
+
+		return associations;
+	}
+
+	protected Set<Attribute> getTargetAttributes(final Association association) {
+		final Set<Attribute> attributes = new HashSet<Attribute>();
+		if (association instanceof EntityAssociation) {
+			final EntityAssociation entityAssociation = (EntityAssociation) association;
+			attributes.addAll(getAttributes(entityAssociation.getTargetEntity()));
+		}
+
+		return attributes;
+	}
+
+	protected Set<Feature> getTargetFeatures(final Association association,
+			final EntityOrView entityOrView) {
+		if (entityOrView instanceof Entity) {
+			final Entity entity = (Entity) entityOrView;
+			final EntityAssociation entityAssociation = (EntityAssociation) association;
+			if (entity.getFeatures().contains(association)) {
+				return getFeatures(entityAssociation.getTargetEntity());
+			} else {
+				return getFeatures(entityAssociation.getPartOf());
+			}
+// TODO handle view
+		}
+		return Collections.emptySet();
+	}
+
+	protected Set<Feature> getFeatures(final Service service) {
+		return getFeatures(service.getServes());
+	}
+
+	protected Set<Attribute> getFeatureAttributes(final Service service) {
+		final Set<Attribute> attributes = new HashSet<Attribute>();
 		for (EntityOrView entityOrView : service.getEncapsulates()) {
 			attributes.addAll(getAttributes(entityOrView));
 		}
@@ -88,8 +143,8 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return attributes;
 	}
 
-	protected List<Association> getFeatureAssociations(final Service service) {
-		final List<Association> associations = new LinkedList<Association>();
+	protected Set<Association> getFeatureAssociations(final Service service) {
+		final Set<Association> associations = new HashSet<Association>();
 		for (EntityOrView entityOrView : service.getEncapsulates()) {
 			associations.addAll(getAssociations(entityOrView));
 		}
@@ -97,8 +152,8 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return associations;
 	}
 
-	protected List<ServiceAttribute> getAttributes(final Service service) {
-		final List<ServiceAttribute> attributes = new LinkedList<ServiceAttribute>();
+	protected Set<ServiceAttribute> getAttributes(final Service service) {
+		final Set<ServiceAttribute> attributes = new HashSet<ServiceAttribute>();
 		for (ServiceFeature feature : service.getFeatures()) {
 			if (feature instanceof ServiceAttribute) {
 				attributes.add((ServiceAttribute) feature);
@@ -108,8 +163,8 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return attributes;
 	}
 
-	protected List<ServiceAssociation> getAssociations(final Service service) {
-		final List<ServiceAssociation> associations = new LinkedList<ServiceAssociation>();
+	protected Set<ServiceAssociation> getAssociations(final Service service) {
+		final Set<ServiceAssociation> associations = new HashSet<ServiceAssociation>();
 		for (ServiceFeature feature : service.getFeatures()) {
 			if (feature instanceof ServiceAssociation
 					&&!associations.contains((ServiceAssociation) feature)) {
@@ -120,8 +175,8 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return associations;
 	}
 
-	protected List<Attribute> getSourceAttributes(final DynamicUnit unit) {
-		final List<Attribute> attributes = new LinkedList<Attribute>();
+	protected Set<Attribute> getSourceAttributes(final DynamicUnit unit) {
+		final Set<Attribute> attributes = new HashSet<Attribute>();
 		for (UnitSource source : unit.getSource()) {
 			if (source instanceof EntityOrView) {
 				attributes.addAll(getAttributes((EntityOrView) source));
@@ -133,8 +188,8 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return attributes;
 	}
 
-	protected List<Association> getSourceAssociations(final DynamicUnit unit) {
-		final List<Association> associations = new LinkedList<Association>();
+	protected Set<Association> getSourceAssociations(final DynamicUnit unit) {
+		final Set<Association> associations = new HashSet<Association>();
 		for (UnitSource source : unit.getSource()) {
 			if (source instanceof EntityOrView) {
 				associations.addAll(getAssociations((EntityOrView) source));
@@ -282,10 +337,10 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	protected Selection getCriteriaSelectionContext(final Object object) {
 		Object container = getCriteriaContext(object);
 		while (container != null) {
-			container = getCriteriaContext(container);
 			if (container instanceof Selection) {
 				return (Selection) container;
 			}
+			container = getCriteriaContext(container);
 		}
 
 		return null;

@@ -18,9 +18,8 @@ import uk.ac.man.cs.mdsd.orm.Attribute
 import uk.ac.man.cs.mdsd.orm.Cardinality
 import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.DateDetails
-import uk.ac.man.cs.mdsd.orm.EntityAssociation
-import uk.ac.man.cs.mdsd.orm.EntityAttribute
 import uk.ac.man.cs.mdsd.orm.EntityOrView
+import uk.ac.man.cs.mdsd.orm.Feature
 import uk.ac.man.cs.mdsd.orm.Label
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
@@ -131,19 +130,6 @@ class ServiceAttribute extends ServiceFeature {
 
 class ServiceAssociation extends ServiceFeature {
 	refers Association[1] association
-}
-
-abstract class ServiceFeatureReference {
-}
-
-class ServiceAttributeReference extends ServiceFeatureReference {
-	refers ServiceAttribute[1] attribute
-}
-
-class ServiceAssociationReference extends ServiceFeatureReference {
-	// ServiceEntityAssociation ???
-	refers ServiceAssociation[1] association
-	contains ServiceFeatureReference childFeature
 }
 
 
@@ -292,10 +278,6 @@ class UnitAttribute extends UnitFeature {
 		if (attribute != null)
 			attribute.name
 	}
-//--	derived Cardinality cardinality get {
-//--		if (attribute instanceof EntityAttribute)
-//			attribute.cardinality
-//	}
 	contains Expression defaultValue
 	boolean obfuscateFormFields
 	String placeholder
@@ -313,6 +295,7 @@ class UnitAssociation extends UnitFeature, UnitContainer {
 		if (association != null)
 			association.name
 	}
+	contains ChildFeature childFeature
 	refers Selection selection
 	refers Label valueDisplay
 	CollectionDisplayOptions displayOption
@@ -320,10 +303,31 @@ class UnitAssociation extends UnitFeature, UnitContainer {
 	refers Label[] filters
 }
 
+abstract class ChildFeature {
+}
+
+class ChildAttribute extends ChildFeature {
+	derived String name get {
+		if (attribute != null)
+			attribute.name
+	}
+	refers Attribute[1] attribute
+}
+
+class ChildAssociation extends ChildFeature {
+	derived String name get {
+		if (association != null)
+			association.name
+	}
+	refers Association[1] association
+	contains ChildFeature childFeature
+}
+
 abstract class InterfaceField extends NamedElement, UnitField {
 	boolean required
 	contains Expression defaultValue
 	refers UnitField mustMatch
+	String interfaceType
 	String placeholder
 	String validationPattern
 	String inputClass
@@ -466,7 +470,7 @@ class ModelReference extends Path {
 }
 
 class FeatureReference extends Path {
-	refers ServiceFeature[1] feature
+	refers Feature[1] feature
 }
 
 class ParameterReference extends Path {

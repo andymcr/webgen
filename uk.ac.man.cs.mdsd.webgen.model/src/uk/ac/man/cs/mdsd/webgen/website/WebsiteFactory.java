@@ -512,6 +512,24 @@ public interface WebsiteFactory extends EFactory {
 	UnitAssociation createUnitAssociation();
 
 	/**
+	 * Returns a new object of class '<em>Child Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child Attribute</em>'.
+	 * @generated
+	 */
+	ChildAttribute createChildAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Child Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child Association</em>'.
+	 * @generated
+	 */
+	ChildAssociation createChildAssociation();
+
+	/**
 	 * Returns a new object of class '<em>Data Type Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

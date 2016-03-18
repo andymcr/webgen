@@ -18,6 +18,7 @@ import uk.ac.man.cs.mdsd.orm.Label;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getDisplayOption <em>Display Option</em>}</li>
@@ -70,6 +71,32 @@ public interface UnitAssociation extends UnitFeature, UnitContainer {
 	 * @generated
 	 */
 	String getName();
+
+	/**
+	 * Returns the value of the '<em><b>Child Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Child Feature</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Child Feature</em>' containment reference.
+	 * @see #setChildFeature(ChildFeature)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_ChildFeature()
+	 * @model containment="true"
+	 * @generated
+	 */
+	ChildFeature getChildFeature();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getChildFeature <em>Child Feature</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Child Feature</em>' containment reference.
+	 * @see #getChildFeature()
+	 * @generated
+	 */
+	void setChildFeature(ChildFeature value);
 
 	/**
 	 * Returns the value of the '<em><b>Selection</b></em>' reference.

@@ -10,8 +10,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import uk.ac.man.cs.mdsd.orm.Feature;
+
 import uk.ac.man.cs.mdsd.waf.FeatureReference;
-import uk.ac.man.cs.mdsd.waf.ServiceFeature;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -36,7 +37,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceFeature feature;
+	protected Feature feature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,10 +63,10 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceFeature getFeature() {
+	public Feature getFeature() {
 		if (feature != null && feature.eIsProxy()) {
 			InternalEObject oldFeature = (InternalEObject)feature;
-			feature = (ServiceFeature)eResolveProxy(oldFeature);
+			feature = (Feature)eResolveProxy(oldFeature);
 			if (feature != oldFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.FEATURE_REFERENCE__FEATURE, oldFeature, feature));
@@ -79,7 +80,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceFeature basicGetFeature() {
+	public Feature basicGetFeature() {
 		return feature;
 	}
 
@@ -88,8 +89,8 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFeature(ServiceFeature newFeature) {
-		ServiceFeature oldFeature = feature;
+	public void setFeature(Feature newFeature) {
+		Feature oldFeature = feature;
 		feature = newFeature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.FEATURE_REFERENCE__FEATURE, oldFeature, feature));
@@ -119,7 +120,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WafPackage.FEATURE_REFERENCE__FEATURE:
-				setFeature((ServiceFeature)newValue);
+				setFeature((Feature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -134,7 +135,7 @@ public class FeatureReferenceImpl extends MinimalEObjectImpl.Container implement
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WafPackage.FEATURE_REFERENCE__FEATURE:
-				setFeature((ServiceFeature)null);
+				setFeature((Feature)null);
 				return;
 		}
 		super.eUnset(featureID);

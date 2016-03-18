@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.waf.provider;
+package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
@@ -17,16 +17,15 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ServiceFeatureReference} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ChildFeature} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceFeatureReferenceItemProvider 
-	extends ItemProviderAdapter
+public class ChildFeatureItemProvider 
+	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -39,7 +38,7 @@ public class ServiceFeatureReferenceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceFeatureReferenceItemProvider(AdapterFactory adapterFactory) {
+	public ChildFeatureItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -66,7 +65,7 @@ public class ServiceFeatureReferenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ServiceFeatureReference_type");
+		return getString("_UI_ChildFeature_type");
 	}
 	
 
@@ -103,7 +102,7 @@ public class ServiceFeatureReferenceItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return WafEditPlugin.INSTANCE;
+		return WebsiteEditPlugin.INSTANCE;
 	}
 
 }

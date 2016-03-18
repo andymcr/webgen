@@ -151,14 +151,14 @@ rule AuthenticationService {
 			if waf.keys->notEmpty() then
 				waf.keys
 			else
-				Sequence{thisModule.implicitAuthenticationKey(waf)}
+				Sequence{} -- Sequence{thisModule.implicitAuthenticationKey(waf)}
 			endif
 	)
 }
 
 lazy rule implicitAuthenticationKey {
 	from waf : WAF!Service
-	to dummyWaf : WAF!ServiceAttributeReference (
+	to dummyWaf : WAF!ChildAttribute (
 		attribute <- waf.findServiceFeature('email')
 	)
 }

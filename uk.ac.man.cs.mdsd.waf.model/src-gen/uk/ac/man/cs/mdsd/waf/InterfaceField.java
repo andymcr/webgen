@@ -18,6 +18,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.InterfaceField#isRequired <em>Required</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.InterfaceField#getDefaultValue <em>Default Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.InterfaceField#getMustMatch <em>Must Match</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.InterfaceField#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.InterfaceField#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.InterfaceField#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.InterfaceField#getInputClass <em>Input Class</em>}</li>
@@ -105,6 +106,32 @@ public interface InterfaceField extends NamedElement, UnitField {
 	 * @generated
 	 */
 	void setMustMatch(UnitField value);
+
+	/**
+	 * Returns the value of the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Interface Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Interface Type</em>' attribute.
+	 * @see #setInterfaceType(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getInterfaceField_InterfaceType()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getInterfaceType();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.InterfaceField#getInterfaceType <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Interface Type</em>' attribute.
+	 * @see #getInterfaceType()
+	 * @generated
+	 */
+	void setInterfaceType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.

@@ -349,6 +349,7 @@ public class UnitAssociationItemProvider
 			childrenFeatures.add(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
 			childrenFeatures.add(WebsitePackage.Literals.UNIT_CONTAINER__UNITS);
 			childrenFeatures.add(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE);
+			childrenFeatures.add(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE2);
 		}
 		return childrenFeatures;
 	}
@@ -414,6 +415,7 @@ public class UnitAssociationItemProvider
 			case WebsitePackage.UNIT_ASSOCIATION__ACTIONS:
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
+			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE2:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -515,6 +517,16 @@ public class UnitAssociationItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createServiceAssociationReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE2,
+				 WebsiteFactory.eINSTANCE.createChildAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE2,
+				 WebsiteFactory.eINSTANCE.createChildAssociation()));
 	}
 
 }

@@ -46,10 +46,10 @@ abstract rule DynamicUnit {
 				partialWaf.displayFields
 			else
 				partialWaf.entities->first().features
-					->select(f | f.oclIsTypeOf(WAF!EntityAttribute))
+					->select(f | f.oclIsKindOf(WAF!Attribute))
 					->collect(f | thisModule.implicitUnitAttribute(f))
 				->union(partialWaf.entities->first().features
-					->select(f | f.oclIsKindOf(WAF!EntityAssociation))
+					->select(f | f.oclIsKindOf(WAF!Association))
 					->select(f | not partialWaf.oclIsKindOf(WAF!IndexUnit) and not waf.oclIsTypeOf(WAF!CreateUnit))
 					->collect(f | thisModule.implicitUnitAssociation(f)))
 				endif
@@ -64,7 +64,7 @@ lazy abstract rule implicitUnitFeature {
 
 --@extends implicitUnitFeature
 lazy rule implicitUnitAttribute {
-	from partialWaf : WAF!EntityAttribute
+	from partialWaf : WAF!Attribute
 	to waf : WAF!UnitAttribute (
 		attribute <- partialWaf
 	)
@@ -75,7 +75,7 @@ lazy rule implicitUnitAttribute {
 
 --@extends implicitUnitFeature
 lazy rule implicitUnitAssociation {
-	from partialWaf : WAF!EntityAssociation
+	from partialWaf : WAF!Association
 	to waf : WAF!UnitAssociation (
 		association <- partialWaf
 	)

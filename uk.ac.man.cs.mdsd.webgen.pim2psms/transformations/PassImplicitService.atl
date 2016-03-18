@@ -7,57 +7,29 @@
 module PassImplicitService;
 create dummyWaf : WAF refining waf : WAF, orm : ORM;
 
-uses WebsiteHelpers;
-
 
 rule WafModel {
 	from partialWaf : WAF!WafModel
 	to waf : WAF!WafModel (
 		services <- partialWaf.services
-			->union(let entities : Set(ORM!Entity)
-				= partialWaf.persistence.entitiesAndViews
-					->select(e | e.oclIsTypeOf(ORM!Entity))
-				in entities.asSet()->symmetricDifference(
-					partialWaf.services
-						->collect(s | s.encapsulates)->flatten()
-						->select(e | e.oclIsTypeOf(ORM!Entity)).asSet()
-					).asSequence()
-				->collect(e | thisModule.implicitServiceForEntity(e))
-			)
-			->union(let views : Set(ORM!View)
-				= partialWaf.persistence.entitiesAndViews
-					->select(v | v.oclIsTypeOf(ORM!View))
-				in views.asSet()->symmetricDifference(
-					partialWaf.services
-						->collect(s | s.encapsulates)->flatten()
-						->select(v | v.oclIsTypeOf(ORM!View)).asSet()
-					).asSequence()
-				->collect(v | thisModule.implicitServiceForView(v))
+			->union(let servered : Sequence(ORM!EntityOrView)
+				= partialWaf.services->collect(s | s.serves)
+				in partialWaf.persistence.entitiesAndViews
+					->select(eov | servered->excludes(eov))
+					->collect(eov | thisModule.implicitService(eov))
 			)
 	)
 }
 
 
 lazy rule implicitServiceForEntity {
-	from orm : ORM!Entity
+	from orm : ORM!EntityOrView
 	to waf : WAF!Service (
 -- TODO pularise
 		name <- orm.name, 
-		encapsulates <- Sequence{orm}
+		serves <- orm
 	)
 	do {
 		waf;
 	}
-} 
-
-lazy rule implicitServiceForView {
-	from orm : ORM!View
-	to waf : WAF!Service (
--- TODO pularise
-		name <- orm.name, 
-		encapsulates <- Sequence{orm}
-	)
-	do {
-		waf;
-	}
-} 
+}

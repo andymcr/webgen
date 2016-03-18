@@ -20,6 +20,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
+import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
@@ -33,6 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getName <em>Name</em>}</li>
@@ -45,6 +47,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl implements EncapsulatedAssociation {
+	/**
+	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChildFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected ChildFeature childFeature;
+
 	/**
 	 * The cached value of the '{@link #getEncapsulatedBy() <em>Encapsulated By</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -152,6 +164,49 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.ENCAPSULATED_ASSOCIATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildFeature getChildFeature() {
+		return childFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetChildFeature(ChildFeature newChildFeature, NotificationChain msgs) {
+		ChildFeature oldChildFeature = childFeature;
+		childFeature = newChildFeature;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setChildFeature(ChildFeature newChildFeature) {
+		if (newChildFeature != childFeature) {
+			NotificationChain msgs = null;
+			if (childFeature != null)
+				msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE, null, msgs);
+			if (newChildFeature != null)
+				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE, null, msgs);
+			msgs = basicSetChildFeature(newChildFeature, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE, newChildFeature, newChildFeature));
 	}
 
 	/**
@@ -408,6 +463,8 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE:
+				return basicSetChildFeature(null, msgs);
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
 				return ((InternalEList<?>)getEncapsulatedBy()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
@@ -424,6 +481,8 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE:
+				return getChildFeature();
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
 				return getEncapsulatedBy();
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
@@ -453,6 +512,9 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE:
+				setChildFeature((ChildFeature)newValue);
+				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
 				getEncapsulatedBy().addAll((Collection<? extends EncapsulatedAssociation>)newValue);
@@ -487,6 +549,9 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE:
+				setChildFeature((ChildFeature)null);
+				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
 				return;
@@ -520,6 +585,8 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE:
+				return childFeature != null;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
 				return encapsulatedBy != null && !encapsulatedBy.isEmpty();
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
@@ -547,6 +614,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
+				case WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
 				default: return -1;
@@ -564,6 +632,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
+				case WebsitePackage.ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS;
 				default: return -1;

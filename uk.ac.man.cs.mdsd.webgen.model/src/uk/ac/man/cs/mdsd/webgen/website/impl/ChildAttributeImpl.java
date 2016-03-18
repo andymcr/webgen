@@ -5,28 +5,40 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
-import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model Label Attribute</b></em>'.
+ * An implementation of the model object '<em><b>Child Attribute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAttributeImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildAttributeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildAttributeImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements ModelLabelAttribute {
+public class ChildAttributeImpl extends ChildFeatureImpl implements ChildAttribute {
+	/**
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.CHILD_ATTRIBUTE__NAME).getSettingDelegate();
+
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -42,7 +54,7 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelLabelAttributeImpl() {
+	protected ChildAttributeImpl() {
 		super();
 	}
 
@@ -53,7 +65,16 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WebsitePackage.Literals.MODEL_LABEL_ATTRIBUTE;
+		return WebsitePackage.Literals.CHILD_ATTRIBUTE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -67,7 +88,7 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 			attribute = (Attribute)eResolveProxy(oldAttribute);
 			if (attribute != oldAttribute) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
 			}
 		}
 		return attribute;
@@ -91,7 +112,7 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 		Attribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
 	}
 
 	/**
@@ -102,7 +123,9 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
+			case WebsitePackage.CHILD_ATTRIBUTE__NAME:
+				return getName();
+			case WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE:
 				if (resolve) return getAttribute();
 				return basicGetAttribute();
 		}
@@ -117,7 +140,7 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
+			case WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)newValue);
 				return;
 		}
@@ -132,7 +155,7 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
+			case WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)null);
 				return;
 		}
@@ -147,10 +170,12 @@ public class ModelLabelAttributeImpl extends ModelLabelFeatureImpl implements Mo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__ATTRIBUTE:
+			case WebsitePackage.CHILD_ATTRIBUTE__NAME:
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE:
 				return attribute != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ModelLabelAttributeImpl
+} //ChildAttributeImpl

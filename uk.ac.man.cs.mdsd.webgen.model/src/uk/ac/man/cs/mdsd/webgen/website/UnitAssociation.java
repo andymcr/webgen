@@ -17,6 +17,7 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getServiceFeature <em>Service Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature <em>Child Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature2 <em>Child Feature2</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getFilters <em>Filters</em>}</li>
@@ -95,6 +96,32 @@ public interface UnitAssociation extends IncludedAssociation, UnitFeature, UnitC
 	 * @generated
 	 */
 	void setChildFeature(ServiceFeatureReference value);
+
+	/**
+	 * Returns the value of the '<em><b>Child Feature2</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Child Feature2</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Child Feature2</em>' containment reference.
+	 * @see #setChildFeature2(ChildFeature)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation_ChildFeature2()
+	 * @model containment="true"
+	 * @generated
+	 */
+	ChildFeature getChildFeature2();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature2 <em>Child Feature2</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Child Feature2</em>' containment reference.
+	 * @see #getChildFeature2()
+	 * @generated
+	 */
+	void setChildFeature2(ChildFeature value);
 
 	/**
 	 * Returns the value of the '<em><b>Value Display</b></em>' reference.

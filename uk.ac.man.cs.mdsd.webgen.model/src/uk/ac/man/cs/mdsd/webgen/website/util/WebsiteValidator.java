@@ -246,6 +246,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateUnitElement((UnitElement)value, diagnostics, context);
 			case WebsitePackage.UNIT_ASSOCIATION:
 				return validateUnitAssociation((UnitAssociation)value, diagnostics, context);
+			case WebsitePackage.CHILD_FEATURE:
+				return validateChildFeature((ChildFeature)value, diagnostics, context);
+			case WebsitePackage.CHILD_ATTRIBUTE:
+				return validateChildAttribute((ChildAttribute)value, diagnostics, context);
+			case WebsitePackage.CHILD_ASSOCIATION:
+				return validateChildAssociation((ChildAssociation)value, diagnostics, context);
 			case WebsitePackage.INTERFACE_FIELD:
 				return validateInterfaceField((InterfaceField)value, diagnostics, context);
 			case WebsitePackage.DATA_TYPE_FIELD:
@@ -1789,6 +1795,33 @@ public class WebsiteValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChildFeature(ChildFeature childFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(childFeature, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChildAttribute(ChildAttribute childAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(childAttribute, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChildAssociation(ChildAssociation childAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(childAssociation, diagnostics, context);
 	}
 
 	/**

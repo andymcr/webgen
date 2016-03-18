@@ -110,18 +110,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createServiceAssociationAdapter();
 			}
 			@Override
-			public Adapter caseServiceFeatureReference(ServiceFeatureReference object) {
-				return createServiceFeatureReferenceAdapter();
-			}
-			@Override
-			public Adapter caseServiceAttributeReference(ServiceAttributeReference object) {
-				return createServiceAttributeReferenceAdapter();
-			}
-			@Override
-			public Adapter caseServiceAssociationReference(ServiceAssociationReference object) {
-				return createServiceAssociationReferenceAdapter();
-			}
-			@Override
 			public Adapter caseSelection(Selection object) {
 				return createSelectionAdapter();
 			}
@@ -212,6 +200,18 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseUnitAssociation(UnitAssociation object) {
 				return createUnitAssociationAdapter();
+			}
+			@Override
+			public Adapter caseChildFeature(ChildFeature object) {
+				return createChildFeatureAdapter();
+			}
+			@Override
+			public Adapter caseChildAttribute(ChildAttribute object) {
+				return createChildAttributeAdapter();
+			}
+			@Override
+			public Adapter caseChildAssociation(ChildAssociation object) {
+				return createChildAssociationAdapter();
 			}
 			@Override
 			public Adapter caseInterfaceField(InterfaceField object) {
@@ -492,48 +492,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceAssociationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ServiceFeatureReference <em>Service Feature Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceFeatureReference
-	 * @generated
-	 */
-	public Adapter createServiceFeatureReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ServiceAttributeReference <em>Service Attribute Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceAttributeReference
-	 * @generated
-	 */
-	public Adapter createServiceAttributeReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ServiceAssociationReference <em>Service Association Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ServiceAssociationReference
-	 * @generated
-	 */
-	public Adapter createServiceAssociationReferenceAdapter() {
 		return null;
 	}
 
@@ -856,6 +814,48 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUnitAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildFeature <em>Child Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildFeature
+	 * @generated
+	 */
+	public Adapter createChildFeatureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildAttribute <em>Child Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildAttribute
+	 * @generated
+	 */
+	public Adapter createChildAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildAssociation <em>Child Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildAssociation
+	 * @generated
+	 */
+	public Adapter createChildAssociationAdapter() {
 		return null;
 	}
 

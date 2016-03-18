@@ -210,6 +210,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Association" abstract="true" interface="true"
       eSuperTypes="#//Feature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//ChildFeature"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulatedBy" upperBound="-1"
         eType="#//EncapsulatedAssociation" eOpposite="#//EncapsulatedAssociation/association"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -460,8 +462,8 @@
       <details key="onlyIncludeFeaturesOnce" value="features->isUnique(f |&#xD;&#xA;&#x9;if f.oclIsTypeOf(ServiceAttribute) then&#xD;&#xA;&#x9;&#x9;f.oclAsType(ServiceAttribute).attribute&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;f.oclAsType(ServiceAssociation).association&#xD;&#xA;&#x9;endif)"/>
       <details key="featuresMustBeFromEncapsulated" value="let encapsulatedFeatures : Collection(Feature)&#xD;&#xA;&#x9;= let entities : Sequence(Entity)&#xD;&#xA;&#x9;&#x9;= encapsulates->select(e | e.oclIsTypeOf(Entity)).oclAsType(Entity)&#xD;&#xA;&#x9;&#x9;in entities->collect(e | e.features).oclAsType(Feature)&#xD;&#xA;&#x9;&#x9;&#x9;->union(entities->collect(e | e.associationEnds).oclAsType(Feature))&#xD;&#xA;--&#x9;&#x9;&#x9;->union(encapsulates->select(v | v.oclIsTypeOf(View)).oclAsType(View)&#xD;&#xA;--&#x9;&#x9;&#x9;&#x9;->collect(v | v.features).oclAsType(Feature))&#xD;&#xA;in features&#xD;&#xA;&#x9;->forAll(f | encapsulatedFeatures->includes(&#xD;&#xA;&#x9;&#x9;if f.oclIsTypeOf(ServiceAttribute) then&#xD;&#xA;&#x9;&#x9;&#x9;f.oclAsType(ServiceAttribute).attribute&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;f.oclAsType(ServiceAssociation).association&#xD;&#xA;&#x9;&#x9;endif))"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" lowerBound="1"
-        upperBound="-1" eType="#//EntityOrView" eOpposite="#//EntityOrView/servedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" upperBound="-1"
+        eType="#//EntityOrView" eOpposite="#//EntityOrView/servedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serves" lowerBound="1"
         eType="#//EntityOrView"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
@@ -787,10 +789,35 @@
         eType="#//ServiceAssociation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//ServiceFeatureReference"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature2" eType="#//ChildFeature"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="valueDisplay" eType="#//Label"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
         eType="#//Label"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChildFeature" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChildAttribute" eSuperTypes="#//ChildFeature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if attribute.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;attribute.name&#xD;&#xA;endif&#xD;&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" ordered="false"
+        eType="#//Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChildAssociation" eSuperTypes="#//ChildFeature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if association.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;association.name &#xD;&#xA;endif&#xD;&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association" ordered="false"
+        eType="#//Association"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//ChildFeature"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceField" abstract="true" eSuperTypes="#//NamedDisplayElement #//UnitField">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" ordered="false"
@@ -999,7 +1026,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureReference" eSuperTypes="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path">
     <eStructuralFeatures xsi:type="ecore:EReference" name="field" ordered="false"
-        lowerBound="1" eType="#//IncludedFeature"/>
+        eType="#//IncludedFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="field2" eType="#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="#//Feature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterReference" eSuperTypes="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"

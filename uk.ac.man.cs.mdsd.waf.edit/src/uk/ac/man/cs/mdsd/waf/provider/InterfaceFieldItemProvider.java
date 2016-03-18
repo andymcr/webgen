@@ -54,6 +54,7 @@ public class InterfaceFieldItemProvider
 			addDateFormatPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
 			addMustMatchPropertyDescriptor(object);
+			addInterfaceTypePropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
@@ -217,6 +218,28 @@ public class InterfaceFieldItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Interface Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInterfaceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InterfaceField_interfaceType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InterfaceField_interfaceType_feature", "_UI_InterfaceField_type"),
+				 WafPackage.Literals.INTERFACE_FIELD__INTERFACE_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Placeholder feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -322,6 +345,7 @@ public class InterfaceFieldItemProvider
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
 			case WafPackage.INTERFACE_FIELD__REQUIRED:
+			case WafPackage.INTERFACE_FIELD__INTERFACE_TYPE:
 			case WafPackage.INTERFACE_FIELD__PLACEHOLDER:
 			case WafPackage.INTERFACE_FIELD__VALIDATION_PATTERN:
 			case WafPackage.INTERFACE_FIELD__INPUT_CLASS:

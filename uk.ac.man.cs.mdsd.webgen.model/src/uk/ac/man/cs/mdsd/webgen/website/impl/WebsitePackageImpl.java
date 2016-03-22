@@ -6621,13 +6621,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getChildAttribute_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tattribute.name\r\nendif\r\n"
+			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(EntityAttribute) then\r\n\tattribute.oclAsType(EntityAttribute).name\r\nelse\r\n\tattribute.oclAsType(EncapsulatedAttribute).name\r\nendif endif\r\n"
 		   });	
 		addAnnotation
 		  (getChildAssociation_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tassociation.name \r\nendif\r\n"
+			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse if association.oclIsKindOf(EntityAssociation) then\r\n\tassociation.oclAsType(EntityAssociation).name\r\nelse if association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\tassociation.oclAsType(EncapsulatedAssociation).name\r\nelse\r\n\tassociation.oclAsType(ViewAssociation).name \r\nendif endif endif\r\n"
 		   });	
 		addAnnotation
 		  (dataUnitEClass, 

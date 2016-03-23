@@ -100,11 +100,6 @@ abstract class EntityOrView extends Classifier {
 
 abstract class Feature extends NamedDisplayElement {
 	container EntityOrView[1] partOf opposite features
-	// style classes are used when creating implicit entity features
-	String headerClass
-	String inputClass
-	String displayClass
-	String footerClass
 }
 
 abstract class Attribute extends Feature, Label {

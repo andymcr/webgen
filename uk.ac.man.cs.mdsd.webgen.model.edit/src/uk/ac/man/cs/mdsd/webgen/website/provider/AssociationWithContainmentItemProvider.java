@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment} object.
@@ -64,14 +65,20 @@ public class AssociationWithContainmentItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((AssociationWithContainment)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AssociationWithContainment_type") :
-			getString("_UI_AssociationWithContainment_type") + " " + label;
+		String targetLabel = ((EntityAssociation) object).getTargetFeatureName();
+		if ((targetLabel != null) && (targetLabel.length() == 0)) {
+			targetLabel = null;
+		}
+		return label == null || label.length() == 0
+			? getString("_UI_AssociationWithContainment_type")
+				+ (targetLabel == null ? "" : targetLabel)
+			: getString("_UI_AssociationWithContainment_type") + " " + label
+				+ (targetLabel == null ? "" : " (" + targetLabel + ")");
 	}
 
 	/**

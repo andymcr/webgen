@@ -148,7 +148,7 @@ public class LocalAuthenticationSystemItemProvider
 							if (source instanceof Service) {
 								final List<Association> features = new LinkedList<Association>();
 								for (EntityOrView entityOrView : ((Service) source).getEncapsulates()) {
-									features.addAll(getAssociations(entityOrView));
+									features.addAll(getAllAssociations(entityOrView));
 								}
 								return features;
 							}

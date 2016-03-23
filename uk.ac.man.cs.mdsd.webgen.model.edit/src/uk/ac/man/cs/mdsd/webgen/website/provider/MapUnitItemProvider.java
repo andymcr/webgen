@@ -5,8 +5,9 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -15,11 +16,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.LocationAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
-import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -55,7 +54,9 @@ public class MapUnitItemProvider
 			addDefaultZoomLevelPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addLocationPropertyDescriptor(object);
+			addLocation2PropertyDescriptor(object);
 			addPlaceNamePropertyDescriptor(object);
+			addPlaceName2PropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -130,34 +131,47 @@ public class MapUnitItemProvider
 	 * This adds a property descriptor for the Place Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addPlaceNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MapUnit_placeName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_placeName_feature", "_UI_MapUnit_type"),
+				 WebsitePackage.Literals.MAP_UNIT__PLACE_NAME,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Place Name2 feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addPlaceName2PropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_MapUnit_placeName_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_placeName_feature", "_UI_MapUnit_type"),
-			WebsitePackage.Literals.MAP_UNIT__PLACE_NAME,
+			getString("_UI_MapUnit_placeName2_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_placeName2_feature", "_UI_MapUnit_type"),
+			WebsitePackage.Literals.MAP_UNIT__PLACE_NAME2,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof MapUnit) {
-						final MapUnit unit = (MapUnit)object;
-						final List<ServiceAttribute> attributes = new LinkedList<ServiceAttribute>();
-						if (unit.getSource() instanceof Service) {
-							for (ServiceFeature feature : ((Service) unit.getSource()).getFeatures()) {
-								if (feature instanceof ServiceAttribute) {
-									attributes.add((ServiceAttribute) feature);
-								}
-							}
-						}
-					
-						return attributes;
+						return getAttributes((MapUnit) object);
 					}
-					return Collections.emptyList();
+
+					return Collections.emptySet();
 				}
 			});
 	}
@@ -166,37 +180,54 @@ public class MapUnitItemProvider
 	 * This adds a property descriptor for the Location feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addLocationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MapUnit_location_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_location_feature", "_UI_MapUnit_type"),
+				 WebsitePackage.Literals.MAP_UNIT__LOCATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Location2 feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addLocation2PropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_MapUnit_location_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_location_feature", "_UI_MapUnit_type"),
-			WebsitePackage.Literals.MAP_UNIT__LOCATION,
+			getString("_UI_MapUnit_location2_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_location2_feature", "_UI_MapUnit_type"),
+			WebsitePackage.Literals.MAP_UNIT__LOCATION2,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof MapUnit) {
-						final MapUnit unit = (MapUnit)object;
-						final List<ServiceAttribute> attributes = new LinkedList<ServiceAttribute>();
-						if (unit.getSource() instanceof Service) {
-							for (ServiceFeature feature : ((Service) unit.getSource()).getFeatures()) {
-								if (feature instanceof ServiceAttribute) {
-									final ServiceAttribute attribute = (ServiceAttribute) feature;
-									if (attribute.getAttribute() instanceof LocationAttribute) {
-										attributes.add(attribute);
-									}
-								}
+						final Set<LocationAttribute> attributes = new HashSet<LocationAttribute>();
+						for (Attribute attribute : getAttributes((MapUnit) object)) {
+							if (attribute instanceof LocationAttribute) {
+								attributes.add((LocationAttribute) attribute);
 							}
 						}
 					
 						return attributes;
 					}
-					return Collections.emptyList();
+
+					return Collections.emptySet();
 				}
 			});
 	}

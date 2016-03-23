@@ -6,7 +6,6 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -18,13 +17,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
-import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -89,8 +83,8 @@ public class UnitAssociationItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
-						return getSourceAssociations(
-							(DynamicUnit) ((UnitAssociation) object).eContainer());
+						final UnitAssociation association = (UnitAssociation) object;
+						return getAssociations(association.getDisplayedOn());
 					}
 
 					return Collections.emptyList();
@@ -212,33 +206,22 @@ public class UnitAssociationItemProvider
 	 * This adds a property descriptor for the Service Feature feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addServiceFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_UnitAssociation_serviceFeature_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_serviceFeature_feature", "_UI_UnitAssociation_type"),
-			WebsitePackage.Literals.UNIT_ASSOCIATION__SERVICE_FEATURE,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-			@Override
-			public Collection<?> getChoiceOfValues(Object object) {
-				if (object instanceof UnitAssociation) {
-					final List<ServiceAssociation> assocations = new LinkedList<ServiceAssociation>();
-					final DynamicUnit unit = ((UnitAssociation) object).getDisplayedOn();
-					for (UnitSource source : unit.getSource()) {
-						if (source instanceof Service) {
-							assocations.addAll(getAssociations((Service) source));
-						}
-					}
-					return assocations;
-				}
-				return Collections.emptyList();
-			}
-		});
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitAssociation_serviceFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_serviceFeature_feature", "_UI_UnitAssociation_type"),
+				 WebsitePackage.Literals.UNIT_ASSOCIATION__SERVICE_FEATURE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -261,12 +244,12 @@ public class UnitAssociationItemProvider
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
 						final Set<Label> labels = new HashSet<Label>();
-						for (Service service : getSourceServices((UnitAssociation) object)) {
-							labels.addAll(getFeatureAttributes(service));
-							for (EntityOrView entityOrView : service.getEncapsulates()) {
-								labels.addAll(entityOrView.getLabels());
-							}
-						}
+//						for (Service service : getSourceServices((UnitAssociation) object)) {
+//							labels.addAll(getFeatureAttributes(service));
+//							for (EntityOrView entityOrView : service.getEncapsulates()) {
+//								labels.addAll(entityOrView.getLabels());
+//							}
+//						}
 						return labels;
 					}
 					return Collections.emptyList();
@@ -293,10 +276,10 @@ public class UnitAssociationItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
-						final UnitAssociation association = (UnitAssociation) object;
-						if (association.getServiceFeature() != null) {
-							return getSelections(association.getServiceFeature());
-						}
+//						final UnitAssociation association = (UnitAssociation) object;
+//						if (association.getServiceFeature() != null) {
+//							return getSelections(association.getServiceFeature());
+//						}
 					}
 					return Collections.emptyList();
 				}
@@ -323,9 +306,9 @@ public class UnitAssociationItemProvider
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
 						final Set<Label> filters = new HashSet<Label>();
-						for (Service service : getSourceServices((UnitAssociation) object)) {
-							filters.addAll(getFeatureAttributes(service));
-						}
+//						for (Service service : getSourceServices((UnitAssociation) object)) {
+//							filters.addAll(getFeatureAttributes(service));
+//						}
 						return filters;
 					}
 

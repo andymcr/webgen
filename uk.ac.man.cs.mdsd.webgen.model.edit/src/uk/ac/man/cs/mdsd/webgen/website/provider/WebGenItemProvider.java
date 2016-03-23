@@ -2,7 +2,6 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -13,8 +12,9 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
+import uk.ac.man.cs.mdsd.webgen.website.ChildAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
@@ -25,15 +25,10 @@ import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.View;
-import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ViewFeature;
-import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 
 public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	public WebGenItemProvider(AdapterFactory adapterFactory) {
@@ -58,7 +53,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	protected Set<Attribute> getAttributes(final EntityOrView entityOrView) {
 		final Set<Attribute> attributes = new HashSet<Attribute>();
 		if (entityOrView instanceof Entity) {
-			for (EntityFeature feature : ((Entity) entityOrView).getAllFeatures()) {
+			for (EntityFeature feature : ((Entity) entityOrView).getFeatures()) {
 				if (feature instanceof Attribute) {
 					attributes.add((Attribute) feature);
 				}
@@ -78,12 +73,11 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		final Set<Association> associations = new HashSet<Association>();
 		if (entityOrView instanceof Entity) {
 			final Entity entity = (Entity) entityOrView;
-			for (EntityFeature feature : entity.getAllFeatures()) {
+			for (EntityFeature feature : entity.getFeatures()) {
 				if (feature instanceof Association) {
 					associations.add((Association) feature);
 				}
 			}
-			associations.addAll(entity.getAssociationEnds());
 		} else {
 			for (ViewFeature feature : ((View) entityOrView).getFeatures()) {
 				if (feature instanceof Association) {
@@ -95,11 +89,51 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return associations;
 	}
 
-	protected Set<Association> getTargetAssociations(final Association association) {
+	protected Set<Association> getAllAssociations(final EntityOrView entityOrView) {
+		final Set<Association> associations = new HashSet<Association>();
+		if (entityOrView instanceof Entity) {
+			final Entity entity = (Entity) entityOrView;
+			for (EntityFeature feature : entity.getAllFeatures()) {
+				if (feature instanceof Association) {
+					associations.add((Association) feature);
+				}
+			}
+		} else {
+			for (ViewFeature feature : ((View) entityOrView).getFeatures()) {
+				if (feature instanceof Association) {
+					associations.add((Association) feature);
+				}
+			}
+		}
+
+		return associations;
+	}
+
+	protected Set<Attribute> getSourceAttributes(final Association association) {
+		final Set<Attribute> attributes = new HashSet<Attribute>();
+		if (association instanceof EntityAssociation) {
+			final EntityAssociation entityAssociation = (EntityAssociation) association;
+			attributes.addAll(getAttributes(entityAssociation.getPartOf()));
+		}
+
+		return attributes;
+	}
+
+	protected Set<Association> getSourceAssociations(final Association association) {
 		final Set<Association> associations = new HashSet<Association>();
 		if (association instanceof EntityAssociation) {
 			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			associations.addAll(getAssociations(entityAssociation.getTargetEntity()));
+			associations.addAll(getAssociations(entityAssociation.getPartOf()));
+		}
+
+		return associations;
+	}
+
+	protected Set<Association> getAllSourceAssociations(final Association association) {
+		final Set<Association> associations = new HashSet<Association>();
+		if (association instanceof EntityAssociation) {
+			final EntityAssociation entityAssociation = (EntityAssociation) association;
+			associations.addAll(getAllAssociations(entityAssociation.getPartOf()));
 		}
 
 		return associations;
@@ -113,6 +147,26 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 
 		return attributes;
+	}
+
+	protected Set<Association> getTargetAssociations(final Association association) {
+		final Set<Association> associations = new HashSet<Association>();
+		if (association instanceof EntityAssociation) {
+			final EntityAssociation entityAssociation = (EntityAssociation) association;
+			associations.addAll(getAssociations(entityAssociation.getTargetEntity()));
+		}
+
+		return associations;
+	}
+
+	protected Set<Association> getAllTargetAssociations(final Association association) {
+		final Set<Association> associations = new HashSet<Association>();
+		if (association instanceof EntityAssociation) {
+			final EntityAssociation entityAssociation = (EntityAssociation) association;
+			associations.addAll(getAllAssociations(entityAssociation.getTargetEntity()));
+		}
+
+		return associations;
 	}
 
 	protected Set<Feature> getTargetFeatures(final Association association,
@@ -134,147 +188,108 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return getFeatures(service.getServes());
 	}
 
-	protected Set<Attribute> getFeatureAttributes(final Service service) {
+	protected Set<Association> getAssociations(final Service service) {
+		return getAllAssociations(service.getServes());
+	}
+
+	protected Set<Attribute> getAttributes(final DynamicUnit unit) {
 		final Set<Attribute> attributes = new HashSet<Attribute>();
-		for (EntityOrView entityOrView : service.getEncapsulates()) {
+		for (EntityOrView entityOrView : unit.getEntities()) {
 			attributes.addAll(getAttributes(entityOrView));
 		}
 
 		return attributes;
 	}
 
-	protected Set<Association> getFeatureAssociations(final Service service) {
+	protected Set<Association> getAssociations(final DynamicUnit unit) {
 		final Set<Association> associations = new HashSet<Association>();
-		for (EntityOrView entityOrView : service.getEncapsulates()) {
-			associations.addAll(getAssociations(entityOrView));
+		for (EntityOrView entityOrView : unit.getEntities()) {
+			associations.addAll(getAllAssociations(entityOrView));
 		}
 
 		return associations;
 	}
 
-	protected Set<ServiceAttribute> getAttributes(final Service service) {
-		final Set<ServiceAttribute> attributes = new HashSet<ServiceAttribute>();
-		for (ServiceFeature feature : service.getFeatures()) {
-			if (feature instanceof ServiceAttribute) {
-				attributes.add((ServiceAttribute) feature);
+	protected Boolean isSourceAssociation(final UnitAssociation association) {
+		for (EntityOrView entityOrView : association.getDisplayedOn().getEntities()) {
+			if (getAssociations(entityOrView).contains(association.getAssociation())) {
+				return true;
 			}
 		}
 
-		return attributes;
+		return false;
 	}
 
-	protected Set<ServiceAssociation> getAssociations(final Service service) {
-		final Set<ServiceAssociation> associations = new HashSet<ServiceAssociation>();
-		for (ServiceFeature feature : service.getFeatures()) {
-			if (feature instanceof ServiceAssociation
-					&&!associations.contains((ServiceAssociation) feature)) {
-				associations.add((ServiceAssociation) feature);
-			}
-		}
-
-		return associations;
-	}
-
-	protected Set<Attribute> getSourceAttributes(final DynamicUnit unit) {
-		final Set<Attribute> attributes = new HashSet<Attribute>();
-		for (UnitSource source : unit.getSource()) {
-			if (source instanceof EntityOrView) {
-				attributes.addAll(getAttributes((EntityOrView) source));
-			} else {
-				attributes.addAll(getFeatureAttributes((Service) source));
-			}
-		}
-
-		return attributes;
-	}
-
-	protected Set<Association> getSourceAssociations(final DynamicUnit unit) {
-		final Set<Association> associations = new HashSet<Association>();
-		for (UnitSource source : unit.getSource()) {
-			if (source instanceof EntityOrView) {
-				associations.addAll(getAssociations((EntityOrView) source));
-			} else {
-				associations.addAll(getFeatureAssociations((Service) source));
-			}
-		}
-
-		return associations;
-	}
-
-	protected List<Service> getAllServices(final ServiceAssociation association) {
-		final Service parentService = association.getPartOf();
-		if (parentService.eContainer() instanceof WebGenModel) {
-			WebGenModel model = (WebGenModel) parentService.eContainer();
-			return model.getServices();
-		} else {
-			return Collections.emptyList();
-		}
-	}
-
-	protected EntityOrView getSourceType(final ServiceAssociation association) {
-		final ServiceAssociation serviceAssociation = (ServiceAssociation) association;
-		if (serviceAssociation.getAssociation() instanceof ViewAssociation) {
-			return ((ViewAssociation) serviceAssociation.getAssociation()).getPartOf();
-		} else if (serviceAssociation.getAssociation() instanceof EncapsulatedAssociation) {
-			final EncapsulatedAssociation encapsulatedAssociation
-				= (EncapsulatedAssociation) serviceAssociation.getAssociation();
-			if (encapsulatedAssociation.isUseAssociationSource()) {
-	//			return encapsulatedAssociation.getAssociation().getTargetEntity();
-			} else {
-	//			return encapsulatedAssociation.getAssociation().getPartOf();
+	protected Boolean isSourceAssociation(final ChildAssociation association) {
+		if (association.eContainer() instanceof UnitAssociation) {
+			final UnitAssociation parent = (UnitAssociation) association.eContainer();
+			if (parent.getAssociation() != null) {
+				if (isSourceAssociation(parent)) {
+					return getTargetAssociations(parent.getAssociation()).contains(association.getAssociation());
+				} else {
+					return getSourceAssociations(parent.getAssociation()).contains(association.getAssociation());
+				}
 			}
 		} else {
-			final EntityAssociation entityAssociation
-				= (EntityAssociation) serviceAssociation.getAssociation();
-			if (serviceAssociation.isUseAssociationSource()) {
-				return entityAssociation.getTargetEntity();
-			} else {
-				return entityAssociation.getPartOf();
+			final ChildAssociation parent = (ChildAssociation) association.eContainer();
+			if (parent.getAssociation() != null) {
+				if (isSourceAssociation(parent)) {
+					return getTargetAssociations(parent.getAssociation()).contains(association.getAssociation());
+				} else {
+					return getSourceAssociations(parent.getAssociation()).contains(association.getAssociation());
+				}
 			}
 		}
 
-		return null;
+		return false;
 	}
 
-	protected EntityOrView getTargetType(final ServiceAssociation association) {
-		final ServiceAssociation serviceAssociation = (ServiceAssociation) association;
-		if (serviceAssociation.getAssociation() instanceof ViewAssociation) {
-				
-		} else if (serviceAssociation.getAssociation() instanceof EncapsulatedAssociation) {
-			final EncapsulatedAssociation encapsulatedAssociation
-				= (EncapsulatedAssociation) serviceAssociation.getAssociation();
-			if (encapsulatedAssociation.isUseAssociationSource()) {
-//				return encapsulatedAssociation.getAssociation().getTargetEntity();
-			} else {
-//				return encapsulatedAssociation.getAssociation().getPartOf();
+	protected Set<Attribute> getAttributes(final ChildAttribute attribute) {
+		if (attribute.eContainer() instanceof UnitAssociation) {
+			final UnitAssociation parent = ((UnitAssociation) attribute.eContainer());
+			if (parent.getAssociation() != null) {
+				if (isSourceAssociation(parent)) {
+					return getTargetAttributes(parent.getAssociation());
+				} else {
+					return getSourceAttributes(parent.getAssociation());
+				}
 			}
 		} else {
-			final EntityAssociation entityAssociation
-				= (EntityAssociation) serviceAssociation.getAssociation();
-			if (serviceAssociation.isUseAssociationSource()) {
-				return entityAssociation.getTargetEntity();
-			} else {
-				return entityAssociation.getPartOf();
+			final ChildAssociation parent = (ChildAssociation) attribute.eContainer();
+			if (parent.getAssociation() != null) {
+				if (isSourceAssociation(parent)) {
+					return getTargetAttributes(parent.getAssociation());
+				} else {
+					return getSourceAttributes(parent.getAssociation());
+				}
 			}
 		}
 
-		return null;
+		return Collections.emptySet();
 	}
 
-	protected List<Service> getSourceServices(final ServiceAssociation association) {
-		return getSourceType(association).getServedBy();
-	}
-
-	protected List<Service> getTargetServices(final ServiceAssociation association) {
-		return getTargetType(association).getServedBy();
-	}
-
-	protected List<Service> getSourceServices(final UnitAssociation association) {
-		if (association.getServiceFeature() != null) {
-			return getSourceServices(association.getServiceFeature());
+	protected Set<Association> getAssociations(final ChildAssociation association) {
+		if (association.eContainer() instanceof UnitAssociation) {
+			final UnitAssociation parent = ((UnitAssociation) association.eContainer());
+			if (parent.getAssociation() != null) {
+				if (isSourceAssociation(parent)) {
+					return getAllTargetAssociations(parent.getAssociation());
+				} else {
+					return getAllSourceAssociations(parent.getAssociation());
+				}
+			}
+		} else {
+			final ChildAssociation parent = (ChildAssociation) association.eContainer();
+			if (parent.getAssociation() != null) {
+				if (isSourceAssociation(parent)) {
+					return getAllTargetAssociations(parent.getAssociation());
+				} else {
+					return getAllSourceAssociations(parent.getAssociation());
+				}
+			}
 		}
 
-		return null;
+		return Collections.emptySet();
 	}
 
 	protected List<Filter> getFilters(final Query query) {
@@ -287,15 +302,6 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 
 		return Collections.emptyList();
-	}
-
-	protected Set<Selection> getSelections(final ServiceAssociation association) {
-		final Set<Selection> selections = new HashSet<Selection>();
-		for (Service service : getTargetType(association).getServedBy()) {
-			selections.addAll(service.getSelections());
-		}
-			
-		return selections;
 	}
 
 	protected Set<Selection> getSourceSelections(final DynamicUnit unit) {

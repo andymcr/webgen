@@ -73,7 +73,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof ModelLabelAssociation) {
 					final ModelLabel label = (ModelLabel) ((EObject) object).eContainer();
-					return getAssociations(label.getLabelFor());
+					return getAllAssociations(label.getLabelFor());
 				}
 
 				return Collections.emptyList();

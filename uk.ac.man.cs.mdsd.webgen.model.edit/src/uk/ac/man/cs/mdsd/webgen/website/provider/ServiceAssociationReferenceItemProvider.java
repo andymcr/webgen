@@ -4,23 +4,17 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference;
-import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -61,38 +55,22 @@ public class ServiceAssociationReferenceItemProvider extends ServiceFeatureRefer
 	 * This adds a property descriptor for the Association feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_ServiceAssociationReference_association_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociationReference_association_feature", "_UI_ServiceAssociationReference_type"),
-			WebsitePackage.Literals.SERVICE_ASSOCIATION_REFERENCE__ASSOCIATION,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof ServiceAssociationReference) {
-						final EObject eContainer = ((EObject) object).eContainer();
-						if (eContainer instanceof Service) {
-							return getAssociations((Service) eContainer);
-						} else if (eContainer instanceof UnitAssociation) {
-							final ServiceAssociation association
-								= ((UnitAssociation) eContainer).getServiceFeature();
-							return getAssociations(getTargetServices(association).get(0));
-						} else {
-							final ServiceAssociation association
-								= ((ServiceAssociationReference) eContainer).getAssociation();
-							return getAssociations(getTargetServices(association).get(0));
-						}
-					}
-
-					return Collections.emptyList();
-				}
-			});
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServiceAssociationReference_association_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociationReference_association_feature", "_UI_ServiceAssociationReference_type"),
+				 WebsitePackage.Literals.SERVICE_ASSOCIATION_REFERENCE__ASSOCIATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**

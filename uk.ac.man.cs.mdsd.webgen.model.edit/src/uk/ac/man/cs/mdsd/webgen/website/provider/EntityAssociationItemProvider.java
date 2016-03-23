@@ -292,14 +292,16 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EntityAssociation)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_EntityAssociation_type") :
-			getString("_UI_EntityAssociation_type") + " " + label;
+		String targetLabel = ((EntityAssociation) object).getTargetFeatureName();
+		return label == null || label.length() == 0
+			? getString("_UI_EntityAssociation_type")
+					+ (targetLabel == null ? "" : " (" + targetLabel + ")")
+			: getString("_UI_EntityAssociation_type") + " " + label;
 	}
 	
 

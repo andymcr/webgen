@@ -9,8 +9,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.orm.Attribute;
+import uk.ac.man.cs.mdsd.orm.SingletonLocation;
+
 import uk.ac.man.cs.mdsd.waf.MapUnit;
-import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -78,7 +80,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceAttribute location;
+	protected SingletonLocation location;
 
 	/**
 	 * The cached value of the '{@link #getPlaceName() <em>Place Name</em>}' reference.
@@ -88,7 +90,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceAttribute placeName;
+	protected Attribute placeName;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,10 +158,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttribute getLocation() {
+	public SingletonLocation getLocation() {
 		if (location != null && location.eIsProxy()) {
 			InternalEObject oldLocation = (InternalEObject)location;
-			location = (ServiceAttribute)eResolveProxy(oldLocation);
+			location = (SingletonLocation)eResolveProxy(oldLocation);
 			if (location != oldLocation) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.MAP_UNIT__LOCATION, oldLocation, location));
@@ -173,7 +175,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttribute basicGetLocation() {
+	public SingletonLocation basicGetLocation() {
 		return location;
 	}
 
@@ -182,8 +184,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLocation(ServiceAttribute newLocation) {
-		ServiceAttribute oldLocation = location;
+	public void setLocation(SingletonLocation newLocation) {
+		SingletonLocation oldLocation = location;
 		location = newLocation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.MAP_UNIT__LOCATION, oldLocation, location));
@@ -194,10 +196,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttribute getPlaceName() {
+	public Attribute getPlaceName() {
 		if (placeName != null && placeName.eIsProxy()) {
 			InternalEObject oldPlaceName = (InternalEObject)placeName;
-			placeName = (ServiceAttribute)eResolveProxy(oldPlaceName);
+			placeName = (Attribute)eResolveProxy(oldPlaceName);
 			if (placeName != oldPlaceName) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.MAP_UNIT__PLACE_NAME, oldPlaceName, placeName));
@@ -211,7 +213,7 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttribute basicGetPlaceName() {
+	public Attribute basicGetPlaceName() {
 		return placeName;
 	}
 
@@ -220,8 +222,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPlaceName(ServiceAttribute newPlaceName) {
-		ServiceAttribute oldPlaceName = placeName;
+	public void setPlaceName(Attribute newPlaceName) {
+		Attribute oldPlaceName = placeName;
 		placeName = newPlaceName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.MAP_UNIT__PLACE_NAME, oldPlaceName, placeName));
@@ -264,10 +266,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				setDefaultZoomLevel((Integer)newValue);
 				return;
 			case WafPackage.MAP_UNIT__LOCATION:
-				setLocation((ServiceAttribute)newValue);
+				setLocation((SingletonLocation)newValue);
 				return;
 			case WafPackage.MAP_UNIT__PLACE_NAME:
-				setPlaceName((ServiceAttribute)newValue);
+				setPlaceName((Attribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -288,10 +290,10 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				setDefaultZoomLevel(DEFAULT_ZOOM_LEVEL_EDEFAULT);
 				return;
 			case WafPackage.MAP_UNIT__LOCATION:
-				setLocation((ServiceAttribute)null);
+				setLocation((SingletonLocation)null);
 				return;
 			case WafPackage.MAP_UNIT__PLACE_NAME:
-				setPlaceName((ServiceAttribute)null);
+				setPlaceName((Attribute)null);
 				return;
 		}
 		super.eUnset(featureID);

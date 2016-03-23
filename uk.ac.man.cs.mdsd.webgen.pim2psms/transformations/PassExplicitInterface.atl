@@ -63,20 +63,25 @@ helper context Website!UnitElement def: attributeLabel() : String
 			self.attribute.attributeLabel()
 		endif;
 
-helper context Website!Association def: associationLabel(unit : Website!DynamicUnit) : String
-	= if not self.displayLabel.oclIsUndefined() and  self.displayLabel <> '' then
-			self.displayLabel
+helper context Website!UnitAssociation def: isSourceAssociation() : Boolean
+	= self.displayedOn.entities->collect(e | e.features)->flatten()->includes(self.association);
+
+helper context Website!ChildAssociation def: isSourceAssociation() : Boolean
+	= if self.refImmediateComposite().isSourceAssociation() then
+			self.refImmediateComposite().association.getTarget().features->includes(self.association)
 		else
-			let parents : Sequence(Website!EntityOrView)
-				= unit.entities->select(e | e.features->includes(self))
-				in if parents->notEmpty() then
-						self.associationLabel()
-					else if unit.entities->notEmpty() then
-						self.associationTargetLabel()
-					else
-						OclUndefined
-					endif endif
+			self.refImmediateComposite().association.partOf.features->includes(self.association)
 		endif;
+
+helper context Website!UnitAssociation def: associationLabel() : String
+	= if not self.displayLabel.oclIsUndefined() and  self.displayLabel <> ''
+				or self.association.oclIsUndefined() then
+			self.displayLabel
+		else if self.isSourceAssociation() then
+			self.association.associationLabel()
+		else
+			self.association.associationTargetLabel()
+		endif endif;
 
 
 helper context Website!Attribute def: interfaceType() : String
@@ -214,7 +219,7 @@ helper context Website!Association def: findOrmEntityOrView(entityOrView : Websi
 			thisModule.findOrmEntityOrView(self.partOf.name) -- TODO fix
 		endif endif;
 
-helper context Website!Feature def: findOrmAttribute() : ORM!Attribute
+helper context Website!Attribute def: findOrmAttribute() : ORM!Attribute
 	= thisModule.findOrmEntityOrView(self.partOf.name)
 		.getOrmFeature(self.name);
 
@@ -226,6 +231,19 @@ helper context Website!Association def: findOrmAssociation(entityOrView : Websit
 				self.targetFeatureName()
 			endif
 		in self.findOrmEntityOrView(entityOrView).getOrmFeature(name);
+
+helper context Website!Association def: findOrmSourceAssociation() : ORM!Association
+	= self.findOrmAssociation(self.partOf);
+
+helper context Website!Association def: getTarget(): Website!EntityOrView
+	= if self.oclIsTypeOf(Website!EncapsulatedAssociation) then
+			self.association.getTarget()
+		else
+			self.targetEntity
+		endif;
+
+helper context Website!Association def: findOrmTargetAssociation() : ORM!Association
+	= self.findOrmAssociation(self.getTarget());
 
 helper context Website!Expression def: findContainingSelection() : Website!Selection
 	= if self.refImmediateComposite().oclIsUndefined() then
@@ -247,16 +265,27 @@ helper context Website!Feature def: findOrmFeature(reference : Website!FeatureRe
 			OclUndefined
 		endif endif;
 
-helper context Website!Association def: findOrmAssociation(unit : Website!DynamicUnit) : ORM!Association
-	= let parents : Sequence(Website!EntityOrView)
-		= unit.entities->select(e | e.features->includes(self))
-		in if parents->notEmpty() then
-				self.findOrmAssociation(parents->first())
-			else if unit.entities->notEmpty() then
-				self.findOrmAssociation(unit.entities->first())
+helper context Website!UnitAssociation def: findOrmAssociation() : ORM!Association
+	= if self.association.oclIsUndefined() then
+			OclUndefined
+		else if self.isSourceAssociation() then
+			self.association.findOrmSourceAssociation()
+		else if self.displayedOn.entities->notEmpty() then
+			self.association.findOrmTargetAssociation()
+		else
+			OclUndefined
+		endif endif endif;
+
+helper context Website!ChildAssociation def: findOrmAssociation() : ORM!Association
+	= if self.association.oclIsUndefined() or self.refImmediateComposite().association.oclIsUndefined() then
+			OclUndefined
+		else
+			if self.isSourceAssociation() then
+				self.association.findOrmSourceAssociation()
 			else
-				OclUndefined
-			endif endif;
+				self.association.findOrmTargetAssociation()
+			endif
+		endif;
 
 
 rule WafModel {
@@ -587,8 +616,7 @@ abstract rule UnitFeature {
 rule UnitAttribute {
 	from website : Website!UnitElement
 	to waf : WAF!UnitAttribute (
-		attribute <- website.attribute.findOrmEntityOrView()
-			.getOrmFeature(website.attribute.name),
+		attribute <- website.attribute.findOrmAttribute(),
 		displayLabel <- website.attributeLabel(),
 		defaultValue <- website.defaultValue,
 		obfuscateFormFields <- website.obfuscateFormFields,
@@ -651,9 +679,9 @@ rule UnitAttribute {
 rule UnitAssociation {
 	from website : Website!UnitAssociation
 	to waf : WAF!UnitAssociation (
-		association <- website.association.findOrmAssociation(website.displayedOn),
-		displayLabel <- website.association.associationLabel(website.displayedOn),
-		childFeature <- website.childFeature,
+		association <- website.findOrmAssociation(),
+		displayLabel <- website.associationLabel(),
+		childFeature <- website.childFeature2,
 		selection <- website.selection,
 		valueDisplay <-
 			if website.valueDisplay.oclIsUndefined() then
@@ -720,7 +748,7 @@ abstract rule ChildFeature {
 rule ChildAttribute {
 	from website : Website!ChildAttribute
 	to waf : WAF!ChildAttribute (
-		attribute <- website.attribute
+		attribute <- website.attribute.findOrmAttribute()
 	)
 }
 
@@ -728,8 +756,12 @@ rule ChildAttribute {
 rule ChildAssociation {
 	from website : Website!ChildAssociation
 	to waf : WAF!ChildAssociation (
-		association <- website.association,
+		association <- website.findOrmAssociation(),
 		childFeature <- website.childFeature
+, source <- website.isSourceAssociation(),
+-- sourceName <- website,
+targetName <- website.association.getTarget().name
+-- parentTarget <- thisModule.findOrmEntityOrView()
 	)
 }
 
@@ -855,8 +887,8 @@ rule MapUnit {
 	to waf : WAF!MapUnit (
 		readOnly <- website.readOnly,
 		defaultZoomLevel <- website.defaultZoomLevel,
-		location <- website.location,
-		placeName <- website.placeName
+		location <- website.location2.findOrmAttribute(),
+		placeName <- website.placeName2.findOrmAttribute()
 	)
 }
 

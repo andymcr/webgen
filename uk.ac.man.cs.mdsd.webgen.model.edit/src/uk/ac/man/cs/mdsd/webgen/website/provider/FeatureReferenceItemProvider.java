@@ -25,8 +25,6 @@ import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -75,51 +73,29 @@ public class FeatureReferenceItemProvider
 	 * This adds a property descriptor for the Field feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_FeatureReference_field_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_FeatureReference_field_feature", "_UI_FeatureReference_type"),
-			WebsitePackage.Literals.FEATURE_REFERENCE__FIELD,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					final Set<ServiceFeature> features = new HashSet<ServiceFeature>();
-					if (object instanceof FeatureReference) {
-						final Selection selection = getCriteriaSelectionContext(object);
-						if (selection != null) {
-							features.addAll(selection.getUsedBy().getFeatures());
-							for (ServiceAssociation join : selection.getJoins()) {
-								for (Service targetService : getTargetServices(join)) {
-									features.addAll(targetService.getFeatures());
-								}
-							}
-						} else {
-							final Service service = getCriteriaServiceContext(object);
-							if (service != null) {
-								for (ServiceFeature feature : service.getFeatures()) {
-									if (feature instanceof ServiceFeature) {
-										features.add((ServiceFeature) feature);
-									}
-								}
-							}
-						}
-					}
-					return features;
-				}
-		});
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeatureReference_field_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureReference_field_feature", "_UI_FeatureReference_type"),
+				 WebsitePackage.Literals.FEATURE_REFERENCE__FIELD,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Field2 feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addField2PropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
@@ -143,14 +119,14 @@ public class FeatureReferenceItemProvider
 								features.addAll(getTargetFeatures(join, service.getServes()));
 							}
 						} else {
-//							final Service service = getCriteriaServiceContext(object);
-//							if (service != null) {
-//								for (ServiceFeature feature : service.getFeatures()) {
-//									if (feature instanceof ServiceFeature) {
-//										features.add((ServiceFeature) feature);
+//								final Service service = getCriteriaServiceContext(object);
+//								if (service != null) {
+//									for (ServiceFeature feature : service.getFeatures()) {
+//										if (feature instanceof ServiceFeature) {
+//											features.add((ServiceFeature) feature);
+//										}
 //									}
 //								}
-//							}
 						}
 					}
 					return features;

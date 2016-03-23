@@ -5,7 +5,6 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -16,11 +15,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.UnitElement;
-import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -84,8 +79,8 @@ public class UnitElementItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitElement) {
-						return getSourceAttributes(
-							(DynamicUnit) ((UnitElement) object).eContainer());
+						final UnitElement attribute = (UnitElement) object;
+						return getAttributes(attribute.getDisplayedOn());
 					}
 
 					return Collections.emptyList();
@@ -207,34 +202,22 @@ public class UnitElementItemProvider
 	 * This adds a property descriptor for the Service Feature feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addServiceFeaturePropertyDescriptor(Object object) {
-	itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-		((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-		getResourceLocator(),
-		getString("_UI_UnitElement_serviceFeature_feature"),
-		getString("_UI_PropertyDescriptor_description", "_UI_UnitElement_serviceFeature_feature", "_UI_UnitElement_type"),
-		WebsitePackage.Literals.UNIT_ELEMENT__SERVICE_FEATURE,
-		true, false, true, null,
-		getString("_UI_ModelPropertyCategory"),
-		null) {
-			@Override
-			public Collection<?> getChoiceOfValues(Object object) {
-			if (object instanceof UnitElement) {
-				final List<ServiceAttribute> elements = new LinkedList<ServiceAttribute>();
-				final DynamicUnit unit = (DynamicUnit) ((UnitElement) object).eContainer();
-				for (UnitSource source : unit.getSource()) {
-					if (source instanceof Service) {
-						elements.addAll(getAttributes((Service) source));
-					}
-				}
-
-				return elements;
-			}
-			return Collections.emptyList();
-			}
-		});
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitElement_serviceFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitElement_serviceFeature_feature", "_UI_UnitElement_type"),
+				 WebsitePackage.Literals.UNIT_ELEMENT__SERVICE_FEATURE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**

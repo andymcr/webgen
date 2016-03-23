@@ -46,12 +46,19 @@ abstract rule DynamicUnit {
 				partialWaf.displayFields
 			else
 				partialWaf.entities->first().features
+					->select(f | if f.oclIsKindOf(Website!EntityFeature) then f.visible else true endif)
 					->select(f | f.oclIsKindOf(WAF!Attribute))
 					->collect(f | thisModule.implicitUnitAttribute(f))
-				->union(partialWaf.entities->first().features
-					->select(f | f.oclIsKindOf(WAF!Association))
-					->select(f | not partialWaf.oclIsKindOf(WAF!IndexUnit) and not waf.oclIsTypeOf(WAF!CreateUnit))
-					->collect(f | thisModule.implicitUnitAssociation(f)))
+				->union(
+					if not partialWaf.oclIsKindOf(WAF!IndexUnit) and not waf.oclIsTypeOf(WAF!CreateUnit) then
+						Sequence{}
+					else
+						partialWaf.entities
+							->collect(e | e.features)->flatten()
+							->select(f | if f.oclIsKindOf(ORM!EntityAssociation) then f.visible or f.container else true endif)
+							->select(f | f.oclIsKindOf(WAF!Association))
+							->collect(f | thisModule.implicitUnitAssociation(f))
+					endif)
 				endif
 	)
 }
@@ -59,6 +66,43 @@ abstract rule DynamicUnit {
 lazy abstract rule implicitUnitFeature {
 	from partialWaf : WAF!EntityFeature
 	to waf : WAF!UnitFeature (
+		displayLabel <- partialWaf.displayLabel,
+		headerClass <-
+			let feature : Website!Feature
+				= thisModule.findWebsiteEntityOrView(partialWaf.partOf.name)
+					.getWebsiteFeature(partialWaf.name)
+				in if feature.oclIsUndefined() then
+						'?? XXXX ??'
+					else
+						feature.headerClass
+					endif,
+		inputClass <-
+			let feature : Website!Feature
+				= thisModule.findWebsiteEntityOrView(partialWaf.partOf.name)
+					.getWebsiteFeature(partialWaf.name)
+				in if feature.oclIsUndefined() then
+						'?? XXXX ??'
+					else
+						feature.inputClass
+					endif,
+		displayClass <-
+			let feature : Website!Feature
+				= thisModule.findWebsiteEntityOrView(partialWaf.partOf.name)
+					.getWebsiteFeature(partialWaf.name)
+				in if feature.oclIsUndefined() then
+						'?? XXXX ??'
+					else
+						feature.displayClass
+					endif,
+		footerClass <-
+			let feature : Website!Feature
+				= thisModule.findWebsiteEntityOrView(partialWaf.partOf.name)
+					.getWebsiteFeature(partialWaf.name)
+				in if feature.oclIsUndefined() then
+						'?? XXXX ??'
+					else
+						feature.footerClass
+					endif
 	)
 }
 

@@ -3374,13 +3374,49 @@ public interface WafPackage extends EPackage {
 	int CHILD_ASSOCIATION__CHILD_FEATURE = CHILD_FEATURE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_ASSOCIATION__SOURCE = CHILD_FEATURE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Source Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_ASSOCIATION__SOURCE_NAME = CHILD_FEATURE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Target Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_ASSOCIATION__TARGET_NAME = CHILD_FEATURE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Parent Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_ASSOCIATION__PARENT_TARGET = CHILD_FEATURE_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Child Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION_FEATURE_COUNT = CHILD_FEATURE_FEATURE_COUNT + 3;
+	int CHILD_ASSOCIATION_FEATURE_COUNT = CHILD_FEATURE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Child Association</em>' class.
@@ -10882,6 +10918,50 @@ public interface WafPackage extends EPackage {
 	EReference getChildAssociation_ChildFeature();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildAssociation#getSource()
+	 * @see #getChildAssociation()
+	 * @generated
+	 */
+	EAttribute getChildAssociation_Source();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getSourceName <em>Source Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildAssociation#getSourceName()
+	 * @see #getChildAssociation()
+	 * @generated
+	 */
+	EAttribute getChildAssociation_SourceName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getTargetName <em>Target Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildAssociation#getTargetName()
+	 * @see #getChildAssociation()
+	 * @generated
+	 */
+	EAttribute getChildAssociation_TargetName();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getParentTarget <em>Parent Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parent Target</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildAssociation#getParentTarget()
+	 * @see #getChildAssociation()
+	 * @generated
+	 */
+	EReference getChildAssociation_ParentTarget();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.InterfaceField <em>Interface Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13476,6 +13556,38 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CHILD_ASSOCIATION__CHILD_FEATURE = eINSTANCE.getChildAssociation_ChildFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHILD_ASSOCIATION__SOURCE = eINSTANCE.getChildAssociation_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHILD_ASSOCIATION__SOURCE_NAME = eINSTANCE.getChildAssociation_SourceName();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHILD_ASSOCIATION__TARGET_NAME = eINSTANCE.getChildAssociation_TargetName();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHILD_ASSOCIATION__PARENT_TARGET = eINSTANCE.getChildAssociation_ParentTarget();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl <em>Interface Field</em>}' class.

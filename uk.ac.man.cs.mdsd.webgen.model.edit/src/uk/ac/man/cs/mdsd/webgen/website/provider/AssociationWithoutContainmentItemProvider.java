@@ -17,7 +17,9 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -114,14 +116,20 @@ public class AssociationWithoutContainmentItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((AssociationWithoutContainment)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AssociationWithoutContainment_type") :
-			getString("_UI_AssociationWithoutContainment_type") + " " + label;
+		String targetLabel = ((EntityAssociation) object).getTargetFeatureName();
+		if ((targetLabel != null) && (targetLabel.length() == 0)) {
+			targetLabel = null;
+		}
+		return label == null || label.length() == 0
+			? getString("_UI_AssociationWithoutContainment_type")
+				+ (targetLabel == null ? "" : targetLabel)
+			: getString("_UI_AssociationWithoutContainment_type") + " " + label
+				+ (targetLabel == null ? "" : " (" + targetLabel + ")");
 	}
 
 	/**

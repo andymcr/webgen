@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.orm.Label
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
+import uk.ac.man.cs.mdsd.orm.SingletonLocation
 
 
 enum FrameworkTechnologies {
@@ -321,6 +322,10 @@ class ChildAssociation extends ChildFeature {
 	}
 	refers Association[1] association
 	contains ChildFeature childFeature
+	Boolean source
+	String sourceName
+	String targetName
+	refers EntityOrView[1] parentTarget
 }
 
 abstract class InterfaceField extends NamedElement, UnitField {
@@ -367,8 +372,8 @@ class CreateUpdateUnit extends EditUnit, Selectable {
 class MapUnit extends EditUnit, Selectable {
 	boolean readOnly
 	int defaultZoomLevel
-	refers ServiceAttribute location
-	refers ServiceAttribute placeName
+	refers SingletonLocation[1] location
+	refers Attribute placeName
 }
 
 class UpdateUnit extends EditUnit, Selectable {

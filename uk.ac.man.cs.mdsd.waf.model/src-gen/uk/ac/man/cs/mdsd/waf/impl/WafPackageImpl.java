@@ -2275,6 +2275,42 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getChildAssociation_Source() {
+		return (EAttribute)childAssociationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getChildAssociation_SourceName() {
+		return (EAttribute)childAssociationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getChildAssociation_TargetName() {
+		return (EAttribute)childAssociationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChildAssociation_ParentTarget() {
+		return (EReference)childAssociationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInterfaceField() {
 		return interfaceFieldEClass;
 	}
@@ -3404,6 +3440,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(childAssociationEClass, CHILD_ASSOCIATION__NAME);
 		createEReference(childAssociationEClass, CHILD_ASSOCIATION__ASSOCIATION);
 		createEReference(childAssociationEClass, CHILD_ASSOCIATION__CHILD_FEATURE);
+		createEAttribute(childAssociationEClass, CHILD_ASSOCIATION__SOURCE);
+		createEAttribute(childAssociationEClass, CHILD_ASSOCIATION__SOURCE_NAME);
+		createEAttribute(childAssociationEClass, CHILD_ASSOCIATION__TARGET_NAME);
+		createEReference(childAssociationEClass, CHILD_ASSOCIATION__PARENT_TARGET);
 
 		interfaceFieldEClass = createEClass(INTERFACE_FIELD);
 		createEAttribute(interfaceFieldEClass, INTERFACE_FIELD__REQUIRED);
@@ -3857,6 +3897,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getChildAssociation_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ChildAssociation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getChildAssociation_Association(), theOrmPackage.getAssociation(), null, "association", null, 1, 1, ChildAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getChildAssociation_ChildFeature(), this.getChildFeature(), null, "childFeature", null, 0, 1, ChildAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChildAssociation_Source(), theEcorePackage.getEBooleanObject(), "source", null, 0, 1, ChildAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChildAssociation_SourceName(), theEcorePackage.getEString(), "sourceName", null, 0, 1, ChildAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChildAssociation_TargetName(), theEcorePackage.getEString(), "targetName", null, 0, 1, ChildAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getChildAssociation_ParentTarget(), theOrmPackage.getEntityOrView(), null, "parentTarget", null, 1, 1, ChildAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceFieldEClass, InterfaceField.class, "InterfaceField", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInterfaceField_Required(), theEcorePackage.getEBoolean(), "required", null, 0, 1, InterfaceField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3895,8 +3939,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(mapUnitEClass, MapUnit.class, "MapUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMapUnit_ReadOnly(), theEcorePackage.getEBoolean(), "readOnly", null, 0, 1, MapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMapUnit_DefaultZoomLevel(), theEcorePackage.getEInt(), "defaultZoomLevel", null, 0, 1, MapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMapUnit_Location(), this.getServiceAttribute(), null, "location", null, 0, 1, MapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMapUnit_PlaceName(), this.getServiceAttribute(), null, "placeName", null, 0, 1, MapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMapUnit_Location(), theOrmPackage.getSingletonLocation(), null, "location", null, 1, 1, MapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMapUnit_PlaceName(), theOrmPackage.getAttribute(), null, "placeName", null, 0, 1, MapUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(updateUnitEClass, UpdateUnit.class, "UpdateUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

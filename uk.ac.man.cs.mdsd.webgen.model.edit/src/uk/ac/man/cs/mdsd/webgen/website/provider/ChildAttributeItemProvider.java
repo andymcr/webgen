@@ -4,13 +4,14 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
@@ -53,22 +54,27 @@ public class ChildAttributeItemProvider extends ChildFeatureItemProvider {
 	 * This adds a property descriptor for the Attribute feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addAttributePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ChildAttribute_attribute_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChildAttribute_attribute_feature", "_UI_ChildAttribute_type"),
-				 WebsitePackage.Literals.CHILD_ATTRIBUTE__ATTRIBUTE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_ChildAttribute_attribute_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ChildAttribute_attribute_feature", "_UI_ServiceAssociationReference_type"),
+				WebsitePackage.Literals.CHILD_ATTRIBUTE__ATTRIBUTE,
+				true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof ChildAttribute) {
+						return getAttributes((ChildAttribute) object);
+					}
+
+					return Collections.emptyList();
+				}
+			});
 	}
 
 	/**

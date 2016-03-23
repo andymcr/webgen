@@ -108,7 +108,7 @@ public class DataUnitItemProvider
 					if (object instanceof DataUnit) {
 						final DataUnit unit = (DataUnit) object;
 						final Set<Label> labels = new HashSet<Label>();
-						labels.addAll(getSourceAttributes(unit));
+						labels.addAll(getAttributes(unit));
 						for (UnitSource source : unit.getSource()) {
 							if (source instanceof EntityOrView) {
 								labels.addAll(((EntityOrView) source).getLabels());

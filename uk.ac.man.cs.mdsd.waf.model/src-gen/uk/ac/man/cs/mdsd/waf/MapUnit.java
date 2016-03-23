@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
+import uk.ac.man.cs.mdsd.orm.Attribute;
+import uk.ac.man.cs.mdsd.orm.SingletonLocation;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,12 +86,12 @@ public interface MapUnit extends EditUnit, Selectable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Location</em>' reference.
-	 * @see #setLocation(ServiceAttribute)
+	 * @see #setLocation(SingletonLocation)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getMapUnit_Location()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	ServiceAttribute getLocation();
+	SingletonLocation getLocation();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.MapUnit#getLocation <em>Location</em>}' reference.
@@ -99,7 +101,7 @@ public interface MapUnit extends EditUnit, Selectable {
 	 * @see #getLocation()
 	 * @generated
 	 */
-	void setLocation(ServiceAttribute value);
+	void setLocation(SingletonLocation value);
 
 	/**
 	 * Returns the value of the '<em><b>Place Name</b></em>' reference.
@@ -110,12 +112,12 @@ public interface MapUnit extends EditUnit, Selectable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Place Name</em>' reference.
-	 * @see #setPlaceName(ServiceAttribute)
+	 * @see #setPlaceName(Attribute)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getMapUnit_PlaceName()
 	 * @model
 	 * @generated
 	 */
-	ServiceAttribute getPlaceName();
+	Attribute getPlaceName();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.MapUnit#getPlaceName <em>Place Name</em>}' reference.
@@ -125,6 +127,6 @@ public interface MapUnit extends EditUnit, Selectable {
 	 * @see #getPlaceName()
 	 * @generated
 	 */
-	void setPlaceName(ServiceAttribute value);
+	void setPlaceName(Attribute value);
 
 } // MapUnit

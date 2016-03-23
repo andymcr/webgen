@@ -104,7 +104,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 						final View view = ((EncapsulatedAssociation) object).getPartOf();
 						final List<Association> associations = new LinkedList<Association>();
 						for (EntityOrView entityOrView : view.getEncapsulates()) {
-							associations.addAll(getAssociations(entityOrView));
+							associations.addAll(getAllAssociations(entityOrView));
 						}
 						return associations;
 					}

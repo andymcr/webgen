@@ -105,7 +105,7 @@ public class SelectionItemProvider
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof Selection) {
 					final Service service = (Service) ((Selection) object).eContainer();
-					return getAssociations(service.getServes());
+					return getAllAssociations(service.getServes());
 				}
 
 				return Collections.emptyList();

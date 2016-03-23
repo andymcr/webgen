@@ -79,7 +79,7 @@ public class ServiceAssociationItemProvider
 							= (Service) ((ServiceAssociation) object).eContainer();
 						final List<Association> associations = new LinkedList<Association>();
 						for (EntityOrView entityOrView : service.getEncapsulates()) {
-							associations.addAll(getAssociations(entityOrView));
+							associations.addAll(getAllAssociations(entityOrView));
 						}
 						return associations;
 					}
@@ -115,26 +115,22 @@ public class ServiceAssociationItemProvider
 	 * This adds a property descriptor for the Selection feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addSelectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_ServiceAssociation_selection_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociation_selection_feature", "_UI_ServiceAssociation_type"),
-			WebsitePackage.Literals.SERVICE_ASSOCIATION__SELECTION,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof ServiceAssociation) {
-						return getSelections((ServiceAssociation) object);
-					}
-					return Collections.emptyList();
-				}
-			});
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ServiceAssociation_selection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAssociation_selection_feature", "_UI_ServiceAssociation_type"),
+				 WebsitePackage.Literals.SERVICE_ASSOCIATION__SELECTION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**

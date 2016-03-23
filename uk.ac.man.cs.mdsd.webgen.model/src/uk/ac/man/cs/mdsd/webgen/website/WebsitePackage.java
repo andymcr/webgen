@@ -9457,13 +9457,31 @@ public interface WebsitePackage extends EPackage {
 	int MAP_UNIT__LOCATION = EDIT_UNIT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Location2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__LOCATION2 = EDIT_UNIT_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Place Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__PLACE_NAME = EDIT_UNIT_FEATURE_COUNT + 4;
+	int MAP_UNIT__PLACE_NAME = EDIT_UNIT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Place Name2</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__PLACE_NAME2 = EDIT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Map Unit</em>' class.
@@ -9472,7 +9490,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 5;
+	int MAP_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -16025,6 +16043,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getMapUnit_PlaceName();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName2 <em>Place Name2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Place Name2</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName2()
+	 * @see #getMapUnit()
+	 * @generated
+	 */
+	EReference getMapUnit_PlaceName2();
+
+	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16034,6 +16063,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMapUnit_Location();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation2 <em>Location2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Location2</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation2()
+	 * @see #getMapUnit()
+	 * @generated
+	 */
+	EReference getMapUnit_Location2();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.SelectAction <em>Select Action</em>}'.
@@ -19857,12 +19897,28 @@ public interface WebsitePackage extends EPackage {
 		EReference MAP_UNIT__PLACE_NAME = eINSTANCE.getMapUnit_PlaceName();
 
 		/**
+		 * The meta object literal for the '<em><b>Place Name2</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAP_UNIT__PLACE_NAME2 = eINSTANCE.getMapUnit_PlaceName2();
+
+		/**
 		 * The meta object literal for the '<em><b>Location</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference MAP_UNIT__LOCATION = eINSTANCE.getMapUnit_Location();
+
+		/**
+		 * The meta object literal for the '<em><b>Location2</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAP_UNIT__LOCATION2 = eINSTANCE.getMapUnit_Location2();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectActionImpl <em>Select Action</em>}' class.

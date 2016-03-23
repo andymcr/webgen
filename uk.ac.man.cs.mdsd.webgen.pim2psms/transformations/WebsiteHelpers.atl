@@ -157,6 +157,9 @@ helper context Website!Feature def: inverseCollectionType() : ORM!CollectionType
 helper def: findWebsiteEntityOrView(name : String) : Website!EntityOrView
 	= Website!EntityOrView.allInstancesFrom('website')->any(e | e.name = name);
 
+helper context Website!EntityOrView def: getWebsiteFeature(featureName : String) : Website!Feature
+	= self.features->any(f | f.name = featureName);
+
 helper def: findWebsiteDataType(name : String) : Website!EntityOrView
 	= Website!DataType.allInstancesFrom('website')->any(t | t.name = name);
 

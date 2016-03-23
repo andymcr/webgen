@@ -57,11 +57,7 @@ abstract rule EntityFeature {
 	from website : Website!EntityFeature
 	to orm : ORM!EntityFeature (
 		partOf <- thisModule.findOrmEntityOrView(website.partOf.name),
-		cardinality <- website.cardinality,
-		headerClass <- website.headerClass,
-		inputClass <- website.inputClass,
-		displayClass <- website.displayClass,
-		footerClass <- website.footerClass
+		cardinality <- website.cardinality
 	)
 }
 
@@ -250,8 +246,7 @@ abstract rule EntityAssociation {
 			else
 				website.name.createAssociationColumnName()
 			endif,
-		pivotTableName <- website.createPivotTableName(),
-		inputClass <- website.inputClass
+		pivotTableName <- website.createPivotTableName()
 	)
 }
 
@@ -279,11 +274,7 @@ rule OneToOneAssociationWithoutContainment {
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
 		required <- website.targetCardinality = #Required,
-		pivotTableName <- website.createPivotTableName(),
-		headerClass <- website.targetHeaderClass,
-		inputClass <- website.targetInputClass,
-		displayClass <- website.targetDisplayClass,
-		footerClass <- website.targetFooterClass
+		pivotTableName <- website.createPivotTableName()
 	)
 }
 
@@ -304,11 +295,7 @@ rule ManyToOneAssociationWithoutContainment {
 		opposite <- orm,
 		owningEnd <- false,
 		visible <- website.bidirectional,
-		pivotTableName <- website.createPivotTableName(),
-		headerClass <- website.targetHeaderClass,
-		inputClass <- website.targetInputClass,
-		displayClass <- website.targetDisplayClass,
-		footerClass <- website.targetFooterClass
+		pivotTableName <- website.createPivotTableName()
 	)
 }
 
@@ -336,11 +323,7 @@ rule OneToManyAssociationWithoutContainment {
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
 		required <- website.targetCardinality = #Required,
-		pivotTableName <- website.createPivotTableName(),
-		headerClass <- website.targetHeaderClass,
-		inputClass <- website.targetInputClass,
-		displayClass <- website.targetDisplayClass,
-		footerClass <- website.targetFooterClass
+		pivotTableName <- website.createPivotTableName()
 	)
 }
 
@@ -362,11 +345,7 @@ rule ManyToManyAssociationWithoutContainment {
 		owningEnd <- false,
 		pivotTableName <- website.createPivotTableName(),
 		visible <- website.bidirectional,
-		columnName <- website.targetFeatureName().createAssociationColumnName(),
-		headerClass <- website.targetHeaderClass,
-		inputClass <- website.targetInputClass,
-		displayClass <- website.targetDisplayClass,
-		footerClass <- website.targetFooterClass
+		columnName <- website.targetFeatureName().createAssociationColumnName()
 	)
 }
 
@@ -395,11 +374,7 @@ rule OneToOneAssociationWithContainment {
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
 		required <- true,
-		pivotTableName <- website.createPivotTableName(),
-		headerClass <- website.targetHeaderClass,
-		inputClass <- website.targetInputClass,
-		displayClass <- website.targetDisplayClass,
-		footerClass <- website.targetFooterClass
+		pivotTableName <- website.createPivotTableName()
 	)
 }
 
@@ -427,10 +402,6 @@ rule OneToManyAssociationWithContainment {
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
 		required <- true,
-		pivotTableName <- website.createPivotTableName(),
-		headerClass <- website.targetHeaderClass,
-		inputClass <- website.targetInputClass,
-		displayClass <- website.targetDisplayClass,
-		footerClass <- website.targetFooterClass
+		pivotTableName <- website.createPivotTableName()
 	)
 }

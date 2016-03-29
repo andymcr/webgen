@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: SearchUnitItemProvider.java,v 1.5 2013/04/16 06:12:09 andy Exp $
  */
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
@@ -27,8 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SearchUnitItemProvider
-	extends ControlUnitItemProvider {
+public class SearchUnitItemProvider extends ControlUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

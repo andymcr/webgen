@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import uk.ac.man.cs.mdsd.webgen.website.EnumerationLiteral;
 
 /**
@@ -22,8 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.EnumerationLiteral;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EnumerationLiteralItemProvider
-	extends NamedDisplayElementItemProvider {
+public class EnumerationLiteralItemProvider extends NamedDisplayElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -25,8 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResourceAttributeItemProvider
-	extends EntityAttributeItemProvider {
+public class ResourceAttributeItemProvider extends EntityAttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

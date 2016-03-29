@@ -10,7 +10,9 @@ import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -33,7 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureReferenceItemProvider
+public class FeatureReferenceItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -91,7 +93,7 @@ public class FeatureReferenceItemProvider
 						if (selection != null) {
 							final Service service = selection.getUsedBy();
 							features.addAll(getFeatures(service));
-							for (Association join : selection.getNewJoins2()) {
+							for (Association join : selection.getJoins()) {
 								features.addAll(getTargetFeatures(join, service.getServes()));
 							}
 							return features;

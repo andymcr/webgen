@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import uk.ac.man.cs.mdsd.webgen.website.CaptchaField;
 
 /**
@@ -18,8 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.website.CaptchaField;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CaptchaFieldItemProvider
-	extends InterfaceFieldItemProvider {
+public class CaptchaFieldItemProvider extends InterfaceFieldItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

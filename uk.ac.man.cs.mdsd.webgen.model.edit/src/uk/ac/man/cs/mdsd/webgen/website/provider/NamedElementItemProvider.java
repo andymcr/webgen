@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: NamedElementItemProvider.java,v 1.5 2014/06/27 07:52:17 andy Exp $
  */
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
@@ -34,7 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class NamedElementItemProvider
+public class NamedElementItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,

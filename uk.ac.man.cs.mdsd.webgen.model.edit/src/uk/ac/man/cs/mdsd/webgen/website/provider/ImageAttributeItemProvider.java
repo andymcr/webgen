@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import uk.ac.man.cs.mdsd.webgen.website.ImageAttribute;
 
 /**
@@ -18,8 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ImageAttribute;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ImageAttributeItemProvider
-	extends ResourceAttributeItemProvider {
+public class ImageAttributeItemProvider extends ResourceAttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

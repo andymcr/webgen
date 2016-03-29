@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: UpdateUnitItemProvider.java,v 1.7 2012/03/15 17:04:18 andy Exp $
  */
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
@@ -27,8 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UpdateUnitItemProvider
-	extends EditUnitItemProvider {
+public class UpdateUnitItemProvider extends EditUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

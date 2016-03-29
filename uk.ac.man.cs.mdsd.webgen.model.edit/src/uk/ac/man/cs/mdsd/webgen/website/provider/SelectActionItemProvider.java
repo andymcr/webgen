@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: SelectActionItemProvider.java,v 1.12 2014/06/27 07:52:17 andy Exp $
  */
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
@@ -12,6 +8,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -26,8 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SelectActionItemProvider
-	extends InlineActionItemProvider {
+public class SelectActionItemProvider extends InlineActionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

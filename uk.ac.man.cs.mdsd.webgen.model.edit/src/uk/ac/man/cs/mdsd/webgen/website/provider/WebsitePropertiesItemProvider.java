@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: WebsitePropertiesItemProvider.java,v 1.18 2014/06/27 07:52:17 andy Exp $
  */
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
@@ -34,7 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  * <!-- end-user-doc -->
  * @generated
  */
-public class WebsitePropertiesItemProvider
+public class WebsitePropertiesItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,

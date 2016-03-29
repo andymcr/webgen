@@ -27,8 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EditUnitItemProvider
-	extends DynamicUnitItemProvider {
+public class EditUnitItemProvider extends DynamicUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

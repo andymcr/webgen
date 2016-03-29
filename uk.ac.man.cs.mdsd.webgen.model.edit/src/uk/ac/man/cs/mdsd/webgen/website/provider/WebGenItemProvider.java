@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
+import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
@@ -220,6 +221,18 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 
 		return associations;
+	}
+
+	protected Boolean isSourceAssociation(final ModelLabelAssociation label) {
+		if (label.getAssociation() != null) {
+			if (label.getPartOf() instanceof Entity) {
+				return ((Entity) label.getPartOf()).getFeatures().contains(label.getAssociation());
+			} else {
+				return ((View) label.getPartOf()).getFeatures().contains(label.getAssociation());
+			}
+		}
+
+		return false;
 	}
 
 	protected Boolean isSourceAssociation(final UnitAssociation association) {

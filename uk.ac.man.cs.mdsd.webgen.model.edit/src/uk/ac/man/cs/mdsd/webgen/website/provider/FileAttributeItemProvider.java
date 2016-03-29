@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import uk.ac.man.cs.mdsd.webgen.website.FileAttribute;
 
 /**
@@ -18,8 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.website.FileAttribute;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FileAttributeItemProvider
-	extends ResourceAttributeItemProvider {
+public class FileAttributeItemProvider extends ResourceAttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

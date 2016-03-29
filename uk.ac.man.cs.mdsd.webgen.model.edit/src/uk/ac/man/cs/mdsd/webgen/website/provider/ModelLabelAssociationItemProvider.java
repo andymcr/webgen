@@ -9,11 +9,12 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation;
@@ -102,7 +103,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 				if (object instanceof ModelLabelAssociation) {
 					final ModelLabelAssociation label = (ModelLabelAssociation) object;
 					if (label.getAssociation() != null) {
-						if (label.isUseAssociationSource()) {
+						if (isSourceAssociation(label)) {
 							return label.getAssociation().getTargetEntity().getLabels();
 						} else {
 							return label.getAssociation().getPartOf().getLabels();
@@ -134,8 +135,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	 */
 	@Override
 	public String getText(Object object) {
-		ModelLabelAssociation modelLabelAssociation = (ModelLabelAssociation)object;
-		return getString("_UI_ModelLabelAssociation_type") + " " + modelLabelAssociation.isUseAssociationSource();
+		return getString("_UI_ModelLabelAssociation_type");
 	}
 	
 
@@ -149,12 +149,6 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ModelLabelAssociation.class)) {
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

@@ -6,20 +6,23 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
+
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
-
 
 /**
  * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Selection} object.
@@ -27,8 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SelectionItemProvider
-	extends NamedElementItemProvider {
+public class SelectionItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -50,7 +52,7 @@ public class SelectionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNewJoins2PropertyDescriptor(object);
+			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -62,13 +64,13 @@ public class SelectionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addNewJoins2PropertyDescriptor(Object object) {
+	protected void addJoinsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_Selection_newJoins2_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Selection_newJoins2_feature", "_UI_Selection_type"),
-			WebsitePackage.Literals.SELECTION__NEW_JOINS2,
+			getString("_UI_Selection_joins_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Selection_joins_feature", "_UI_Selection_type"),
+			WebsitePackage.Literals.SELECTION__JOINS,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {

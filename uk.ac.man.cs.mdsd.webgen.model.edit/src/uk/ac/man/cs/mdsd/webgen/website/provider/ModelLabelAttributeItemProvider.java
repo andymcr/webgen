@@ -9,10 +9,13 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;

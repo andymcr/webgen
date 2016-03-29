@@ -31,7 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UnitContainerItemProvider
+public class UnitContainerItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,

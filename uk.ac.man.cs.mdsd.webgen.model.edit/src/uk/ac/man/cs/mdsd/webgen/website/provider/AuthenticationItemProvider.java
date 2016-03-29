@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import uk.ac.man.cs.mdsd.webgen.website.Authentication;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -33,7 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AuthenticationItemProvider
+public class AuthenticationItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,

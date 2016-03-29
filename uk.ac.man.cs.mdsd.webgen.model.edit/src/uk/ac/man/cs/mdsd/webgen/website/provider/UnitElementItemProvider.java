@@ -9,13 +9,16 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
+
 import uk.ac.man.cs.mdsd.webgen.website.UnitElement;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -26,8 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UnitElementItemProvider
-	extends UnitFeatureItemProvider {
+public class UnitElementItemProvider extends UnitFeatureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -58,7 +60,7 @@ public class UnitElementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Feature feature.
+	 * This adds a property descriptor for the Attribute feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -80,7 +82,7 @@ public class UnitElementItemProvider
 						return getAttributes(attribute.getDisplayedOn());
 					}
 
-					return Collections.emptyList();
+					return Collections.emptySet();
 				}
 			});
 	}

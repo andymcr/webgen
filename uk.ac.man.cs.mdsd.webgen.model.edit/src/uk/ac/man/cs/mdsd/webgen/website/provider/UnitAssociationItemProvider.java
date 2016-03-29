@@ -11,7 +11,9 @@ import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -28,8 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UnitAssociationItemProvider
-	extends UnitFeatureItemProvider {
+public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,7 +61,7 @@ public class UnitAssociationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Feature feature.
+	 * This adds a property descriptor for the Association feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -82,13 +83,13 @@ public class UnitAssociationItemProvider
 						return getAssociations(association.getDisplayedOn());
 					}
 
-					return Collections.emptyList();
+					return Collections.emptySet();
 				}
 		});
 	}
 
 	/**
-	 * This adds a property descriptor for the Label feature.
+	 * This adds a property descriptor for the Value Display feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -115,7 +116,7 @@ public class UnitAssociationItemProvider
 //						}
 						return labels;
 					}
-					return Collections.emptyList();
+					return Collections.emptySet();
 				}
 			});
 	}
@@ -144,7 +145,7 @@ public class UnitAssociationItemProvider
 //							return getSelections(association.getServiceFeature());
 //						}
 					}
-					return Collections.emptyList();
+					return Collections.emptySet();
 				}
 			});
 	}
@@ -175,7 +176,7 @@ public class UnitAssociationItemProvider
 						return filters;
 					}
 
-					return Collections.emptyList();
+					return Collections.emptySet();
 				}
 			});
 	}
@@ -193,7 +194,7 @@ public class UnitAssociationItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.UNIT_CONTAINER__UNITS);
-			childrenFeatures.add(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE2);
+			childrenFeatures.add(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -252,7 +253,7 @@ public class UnitAssociationItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
-			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE2:
+			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -337,12 +338,12 @@ public class UnitAssociationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE2,
+				(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE2,
+				(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAssociation()));
 	}
 

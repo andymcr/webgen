@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: PageLinkItemProvider.java,v 1.3 2014/06/27 07:52:17 andy Exp $
  */
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
@@ -28,7 +24,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PageLinkItemProvider
+public class PageLinkItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,

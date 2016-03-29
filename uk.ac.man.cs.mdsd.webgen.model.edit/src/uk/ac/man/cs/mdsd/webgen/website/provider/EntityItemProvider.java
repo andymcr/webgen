@@ -27,8 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityItemProvider
-	extends EntityOrViewItemProvider {
+public class EntityItemProvider extends EntityOrViewItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

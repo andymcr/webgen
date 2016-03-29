@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: PageItemProvider.java,v 1.19 2014/06/27 07:52:17 andy Exp $
  */
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
@@ -30,8 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PageItemProvider
-	extends NamedDisplayElementItemProvider {
+public class PageItemProvider extends NamedDisplayElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -62,72 +57,6 @@ public class PageItemProvider
 			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Navigation Label feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNavigationLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_navigationLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_navigationLabel_feature", "_UI_Page_type"),
-				 WebsitePackage.Literals.PAGE__NAVIGATION_LABEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Side Menu feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSideMenuPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_sideMenu_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_sideMenu_feature", "_UI_Page_type"),
-				 WebsitePackage.Literals.PAGE__SIDE_MENU,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Style Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStyleClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_styleClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_styleClass_feature", "_UI_Page_type"),
-				 WebsitePackage.Literals.PAGE__STYLE_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_StylePropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -215,6 +144,72 @@ public class PageItemProvider
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 getString("_UI_NavigationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Navigation Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNavigationLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_navigationLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_navigationLabel_feature", "_UI_Page_type"),
+				 WebsitePackage.Literals.PAGE__NAVIGATION_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Side Menu feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSideMenuPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_sideMenu_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_sideMenu_feature", "_UI_Page_type"),
+				 WebsitePackage.Literals.PAGE__SIDE_MENU,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_NavigationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Style Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStyleClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_styleClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_styleClass_feature", "_UI_Page_type"),
+				 WebsitePackage.Literals.PAGE__STYLE_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 

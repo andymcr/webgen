@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CurrentUserReferenceItemProvider
+public class CurrentUserReferenceItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,

@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 
@@ -23,8 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AssociationWithContainmentItemProvider
-	extends EntityAssociationItemProvider {
+public class AssociationWithContainmentItemProvider extends EntityAssociationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

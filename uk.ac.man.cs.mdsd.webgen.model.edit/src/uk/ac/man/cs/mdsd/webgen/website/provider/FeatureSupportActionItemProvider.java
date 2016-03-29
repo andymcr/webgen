@@ -23,8 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureSupportActionItemProvider
-	extends InlineActionItemProvider {
+public class FeatureSupportActionItemProvider extends InlineActionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -1,23 +1,23 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id: WebsiteItemProviderAdapterFactory.java,v 1.55 2014/08/22 14:32:46 andy Exp $
  */
 package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.edit.command.CommandParameter;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -38,8 +38,11 @@ import uk.ac.man.cs.mdsd.criteria.PredicateEqualityOperator;
 import uk.ac.man.cs.mdsd.criteria.PredicateIsEmpty;
 import uk.ac.man.cs.mdsd.criteria.PredicateIsOperator;
 import uk.ac.man.cs.mdsd.criteria.PredicateLikeOperator;
+
 import uk.ac.man.cs.mdsd.criteria.util.CriteriaSwitch;
+
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
+
 import uk.ac.man.cs.mdsd.webgen.website.util.WebsiteAdapterFactory;
 
 /**
@@ -344,121 +347,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.View} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ViewItemProvider viewItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.View}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createViewAdapter() {
-		if (viewItemProvider == null) {
-			viewItemProvider = new ViewItemProvider(this);
-		}
-
-		return viewItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EncapsulatedFeatureItemProvider encapsulatedFeatureItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEncapsulatedFeatureAdapter() {
-		if (encapsulatedFeatureItemProvider == null) {
-			encapsulatedFeatureItemProvider = new EncapsulatedFeatureItemProvider(this);
-		}
-
-		return encapsulatedFeatureItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EncapsulatedAttributeItemProvider encapsulatedAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEncapsulatedAttributeAdapter() {
-		if (encapsulatedAttributeItemProvider == null) {
-			encapsulatedAttributeItemProvider = new EncapsulatedAttributeItemProvider(this);
-		}
-
-		return encapsulatedAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EncapsulatedAssociationItemProvider encapsulatedAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEncapsulatedAssociationAdapter() {
-		if (encapsulatedAssociationItemProvider == null) {
-			encapsulatedAssociationItemProvider = new EncapsulatedAssociationItemProvider(this);
-		}
-
-		return encapsulatedAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ViewAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ViewAssociationItemProvider viewAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ViewAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createViewAssociationAdapter() {
-		if (viewAssociationItemProvider == null) {
-			viewAssociationItemProvider = new ViewAssociationItemProvider(this);
-		}
-
-		return viewAssociationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -689,6 +577,190 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.View} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ViewItemProvider viewItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.View}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createViewAdapter() {
+		if (viewItemProvider == null) {
+			viewItemProvider = new ViewItemProvider(this);
+		}
+
+		return viewItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EncapsulatedFeatureItemProvider encapsulatedFeatureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedFeature}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEncapsulatedFeatureAdapter() {
+		if (encapsulatedFeatureItemProvider == null) {
+			encapsulatedFeatureItemProvider = new EncapsulatedFeatureItemProvider(this);
+		}
+
+		return encapsulatedFeatureItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EncapsulatedAttributeItemProvider encapsulatedAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEncapsulatedAttributeAdapter() {
+		if (encapsulatedAttributeItemProvider == null) {
+			encapsulatedAttributeItemProvider = new EncapsulatedAttributeItemProvider(this);
+		}
+
+		return encapsulatedAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EncapsulatedAssociationItemProvider encapsulatedAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEncapsulatedAssociationAdapter() {
+		if (encapsulatedAssociationItemProvider == null) {
+			encapsulatedAssociationItemProvider = new EncapsulatedAssociationItemProvider(this);
+		}
+
+		return encapsulatedAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ViewAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ViewAssociationItemProvider viewAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ViewAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createViewAssociationAdapter() {
+		if (viewAssociationItemProvider == null) {
+			viewAssociationItemProvider = new ViewAssociationItemProvider(this);
+		}
+
+		return viewAssociationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Service} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServiceItemProvider serviceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Service}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createServiceAdapter() {
+		if (serviceItemProvider == null) {
+			serviceItemProvider = new ServiceItemProvider(this);
+		}
+
+		return serviceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Selection} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SelectionItemProvider selectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Selection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSelectionAdapter() {
+		if (selectionItemProvider == null) {
+			selectionItemProvider = new SelectionItemProvider(this);
+		}
+
+		return selectionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SelectionParameterItemProvider selectionParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSelectionParameterAdapter() {
+		if (selectionParameterItemProvider == null) {
+			selectionParameterItemProvider = new SelectionParameterItemProvider(this);
+		}
+
+		return selectionParameterItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Page} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -712,49 +784,26 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Query} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.PageLink} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected QueryItemProvider queryItemProvider;
+	protected PageLinkItemProvider pageLinkItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Query}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.PageLink}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createQueryAdapter() {
-		if (queryItemProvider == null) {
-			queryItemProvider = new QueryItemProvider(this);
+	public Adapter createPageLinkAdapter() {
+		if (pageLinkItemProvider == null) {
+			pageLinkItemProvider = new PageLinkItemProvider(this);
 		}
 
-		return queryItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.QueryParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected QueryParameterItemProvider queryParameterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.QueryParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createQueryParameterAdapter() {
-		if (queryParameterItemProvider == null) {
-			queryParameterItemProvider = new QueryParameterItemProvider(this);
-		}
-
-		return queryParameterItemProvider;
+		return pageLinkItemProvider;
 	}
 
 	/**
@@ -896,233 +945,49 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.PageLink} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Query} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PageLinkItemProvider pageLinkItemProvider;
+	protected QueryItemProvider queryItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.PageLink}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Query}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPageLinkAdapter() {
-		if (pageLinkItemProvider == null) {
-			pageLinkItemProvider = new PageLinkItemProvider(this);
+	public Adapter createQueryAdapter() {
+		if (queryItemProvider == null) {
+			queryItemProvider = new QueryItemProvider(this);
 		}
 
-		return pageLinkItemProvider;
+		return queryItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CaptchaField} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.QueryParameter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CaptchaFieldItemProvider captchaFieldItemProvider;
+	protected QueryParameterItemProvider queryParameterItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CaptchaField}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.QueryParameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCaptchaFieldAdapter() {
-		if (captchaFieldItemProvider == null) {
-			captchaFieldItemProvider = new CaptchaFieldItemProvider(this);
+	public Adapter createQueryParameterAdapter() {
+		if (queryParameterItemProvider == null) {
+			queryParameterItemProvider = new QueryParameterItemProvider(this);
 		}
 
-		return captchaFieldItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UnitSupportActionItemProvider unitSupportActionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUnitSupportActionAdapter() {
-		if (unitSupportActionItemProvider == null) {
-			unitSupportActionItemProvider = new UnitSupportActionItemProvider(this);
-		}
-
-		return unitSupportActionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Service} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServiceItemProvider serviceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Service}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createServiceAdapter() {
-		if (serviceItemProvider == null) {
-			serviceItemProvider = new ServiceItemProvider(this);
-		}
-
-		return serviceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Selection} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SelectionItemProvider selectionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.Selection}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSelectionAdapter() {
-		if (selectionItemProvider == null) {
-			selectionItemProvider = new SelectionItemProvider(this);
-		}
-
-		return selectionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SelectionParameterItemProvider selectionParameterItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSelectionParameterAdapter() {
-		if (selectionParameterItemProvider == null) {
-			selectionParameterItemProvider = new SelectionParameterItemProvider(this);
-		}
-
-		return selectionParameterItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CreateUnitItemProvider createUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CreateUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCreateUnitAdapter() {
-		if (createUnitItemProvider == null) {
-			createUnitItemProvider = new CreateUnitItemProvider(this);
-		}
-
-		return createUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CreateUpdateUnitItemProvider createUpdateUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCreateUpdateUnitAdapter() {
-		if (createUpdateUnitItemProvider == null) {
-			createUpdateUnitItemProvider = new CreateUpdateUnitItemProvider(this);
-		}
-
-		return createUpdateUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UpdateUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UpdateUnitItemProvider updateUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UpdateUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUpdateUnitAdapter() {
-		if (updateUnitItemProvider == null) {
-			updateUnitItemProvider = new UpdateUnitItemProvider(this);
-		}
-
-		return updateUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.MapUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MapUnitItemProvider mapUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.MapUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMapUnitAdapter() {
-		if (mapUnitItemProvider == null) {
-			mapUnitItemProvider = new MapUnitItemProvider(this);
-		}
-
-		return mapUnitItemProvider;
+		return queryParameterItemProvider;
 	}
 
 	/**
@@ -1330,6 +1195,144 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		}
 
 		return dateFieldItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CaptchaField} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CaptchaFieldItemProvider captchaFieldItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CaptchaField}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCaptchaFieldAdapter() {
+		if (captchaFieldItemProvider == null) {
+			captchaFieldItemProvider = new CaptchaFieldItemProvider(this);
+		}
+
+		return captchaFieldItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UnitSupportActionItemProvider unitSupportActionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUnitSupportActionAdapter() {
+		if (unitSupportActionItemProvider == null) {
+			unitSupportActionItemProvider = new UnitSupportActionItemProvider(this);
+		}
+
+		return unitSupportActionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CreateUnitItemProvider createUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CreateUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCreateUnitAdapter() {
+		if (createUnitItemProvider == null) {
+			createUnitItemProvider = new CreateUnitItemProvider(this);
+		}
+
+		return createUnitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CreateUpdateUnitItemProvider createUpdateUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCreateUpdateUnitAdapter() {
+		if (createUpdateUnitItemProvider == null) {
+			createUpdateUnitItemProvider = new CreateUpdateUnitItemProvider(this);
+		}
+
+		return createUpdateUnitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UpdateUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UpdateUnitItemProvider updateUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UpdateUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUpdateUnitAdapter() {
+		if (updateUnitItemProvider == null) {
+			updateUnitItemProvider = new UpdateUnitItemProvider(this);
+		}
+
+		return updateUnitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.MapUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MapUnitItemProvider mapUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.MapUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMapUnitAdapter() {
+		if (mapUnitItemProvider == null) {
+			mapUnitItemProvider = new MapUnitItemProvider(this);
+		}
+
+		return mapUnitItemProvider;
 	}
 
 	/**

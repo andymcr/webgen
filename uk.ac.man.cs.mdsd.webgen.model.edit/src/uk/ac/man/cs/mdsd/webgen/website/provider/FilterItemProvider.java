@@ -77,7 +77,7 @@ public class FilterItemProvider extends NamedElementItemProvider {
 						return getSelections(
 							(IndexUnit) ((Filter) object).eContainer());
 					}
-					return Collections.emptyList();
+					return Collections.emptySet();
 				}
 			});
 	}

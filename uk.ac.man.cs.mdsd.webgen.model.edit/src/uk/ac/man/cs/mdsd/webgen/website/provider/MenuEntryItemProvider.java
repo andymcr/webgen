@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MenuEntryItemProvider
+public class MenuEntryItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,

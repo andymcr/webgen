@@ -5,13 +5,15 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -102,14 +104,14 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof EncapsulatedAssociation) {
 						final View view = ((EncapsulatedAssociation) object).getPartOf();
-						final List<Association> associations = new LinkedList<Association>();
+						final Set<Association> associations = new HashSet<Association>();
 						for (EntityOrView entityOrView : view.getEncapsulates()) {
 							associations.addAll(getAllAssociations(entityOrView));
 						}
 						return associations;
 					}
 
-					return Collections.emptyList();
+					return Collections.emptySet();
 				}
 		});
 	}
@@ -161,7 +163,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 						}
 					}
 
-					return Collections.emptyList();
+					return Collections.emptySet();
 				}
 		});
 	}

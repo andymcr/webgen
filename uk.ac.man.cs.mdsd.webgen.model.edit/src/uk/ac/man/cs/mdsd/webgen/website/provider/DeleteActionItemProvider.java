@@ -17,6 +17,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import uk.ac.man.cs.mdsd.webgen.website.DeleteAction;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -26,8 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DeleteActionItemProvider
-	extends InlineActionItemProvider {
+public class DeleteActionItemProvider extends InlineActionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

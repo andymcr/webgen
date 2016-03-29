@@ -33,7 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ForgottenPasswordUnitItemProvider
+public class ForgottenPasswordUnitItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,

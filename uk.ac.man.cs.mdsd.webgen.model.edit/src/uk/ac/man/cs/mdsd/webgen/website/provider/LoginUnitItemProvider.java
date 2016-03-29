@@ -33,7 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LoginUnitItemProvider
+public class LoginUnitItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,

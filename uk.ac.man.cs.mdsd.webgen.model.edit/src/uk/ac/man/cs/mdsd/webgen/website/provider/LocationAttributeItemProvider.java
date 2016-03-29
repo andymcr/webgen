@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import uk.ac.man.cs.mdsd.webgen.website.LocationAttribute;
 
 /**
@@ -18,8 +19,7 @@ import uk.ac.man.cs.mdsd.webgen.website.LocationAttribute;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LocationAttributeItemProvider
-	extends EntityAttributeItemProvider {
+public class LocationAttributeItemProvider extends EntityAttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -26,8 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MenuItemProvider
-	extends NamedDisplayElementItemProvider {
+public class MenuItemProvider extends NamedDisplayElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

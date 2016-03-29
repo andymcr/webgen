@@ -5,8 +5,9 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -149,14 +150,14 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof EncapsulatedAttribute) {
 						final View view = ((EncapsulatedAttribute) object).getPartOf();
-						final List<Attribute> attributes = new LinkedList<Attribute>();
+						final Set<Attribute> attributes = new HashSet<Attribute>();
 						for (EntityOrView entityOrView : view.getEncapsulates()) {
 							attributes.addAll(getAttributes(entityOrView));
 						}
 						return attributes;
 					}
 
-					return Collections.emptyList();
+					return Collections.emptySet();
 				}
 		});
 	}

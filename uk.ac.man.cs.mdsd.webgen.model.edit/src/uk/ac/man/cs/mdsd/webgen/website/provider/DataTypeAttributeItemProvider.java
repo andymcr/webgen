@@ -13,6 +13,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -22,8 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataTypeAttributeItemProvider
-	extends EntityAttributeItemProvider {
+public class DataTypeAttributeItemProvider extends EntityAttributeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

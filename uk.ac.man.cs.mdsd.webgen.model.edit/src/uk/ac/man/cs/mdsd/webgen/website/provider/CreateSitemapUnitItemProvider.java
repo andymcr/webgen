@@ -23,8 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CreateSitemapUnitItemProvider
-	extends ContentUnitItemProvider {
+public class CreateSitemapUnitItemProvider extends ContentUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -11,6 +11,7 @@ import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -27,8 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MapUnitItemProvider
-	extends EditUnitItemProvider {
+public class MapUnitItemProvider extends EditUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -53,8 +53,8 @@ public class MapUnitItemProvider
 			addReadOnlyPropertyDescriptor(object);
 			addDefaultZoomLevelPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
-			addLocation2PropertyDescriptor(object);
-			addPlaceName2PropertyDescriptor(object);
+			addLocationPropertyDescriptor(object);
+			addPlaceNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -126,45 +126,18 @@ public class MapUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Place Name2 feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addPlaceName2PropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_MapUnit_placeName2_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_placeName2_feature", "_UI_MapUnit_type"),
-			WebsitePackage.Literals.MAP_UNIT__PLACE_NAME2,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof MapUnit) {
-						return getAttributes((MapUnit) object);
-					}
-
-					return Collections.emptySet();
-				}
-			});
-	}
-
-	/**
 	 * This adds a property descriptor for the Location2 feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addLocation2PropertyDescriptor(Object object) {
+	protected void addLocationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_MapUnit_location2_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_location2_feature", "_UI_MapUnit_type"),
-			WebsitePackage.Literals.MAP_UNIT__LOCATION2,
+			getString("_UI_MapUnit_location_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_location_feature", "_UI_MapUnit_type"),
+			WebsitePackage.Literals.MAP_UNIT__LOCATION,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
@@ -179,6 +152,33 @@ public class MapUnitItemProvider
 						}
 					
 						return attributes;
+					}
+
+					return Collections.emptySet();
+				}
+			});
+	}
+
+	/**
+	 * This adds a property descriptor for the Place Name2 feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addPlaceNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_MapUnit_placeName_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_placeName_feature", "_UI_MapUnit_type"),
+			WebsitePackage.Literals.MAP_UNIT__PLACE_NAME,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof MapUnit) {
+						return getAttributes((MapUnit) object);
 					}
 
 					return Collections.emptySet();

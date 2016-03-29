@@ -27,7 +27,6 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -40,7 +39,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getNewJoins2 <em>New Joins2</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
@@ -59,16 +57,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @ordered
 	 */
 	protected EList<SelectionParameter> parameters;
-
-	/**
-	 * The cached value of the '{@link #getJoins() <em>Joins</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJoins()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ServiceAssociation> joins;
 
 	/**
 	 * The cached value of the '{@link #getNewJoins2() <em>New Joins2</em>}' reference list.
@@ -190,18 +178,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			parameters = new EObjectContainmentEList<SelectionParameter>(SelectionParameter.class, this, WebsitePackage.SELECTION__PARAMETERS);
 		}
 		return parameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public List<ServiceAssociation> getJoins() {
-		if (joins == null) {
-			joins = new EObjectResolvingEList<ServiceAssociation>(ServiceAssociation.class, this, WebsitePackage.SELECTION__JOINS);
-		}
-		return joins;
 	}
 
 	/**
@@ -354,8 +330,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return getUsedBy();
 			case WebsitePackage.SELECTION__PARAMETERS:
 				return getParameters();
-			case WebsitePackage.SELECTION__JOINS:
-				return getJoins();
 			case WebsitePackage.SELECTION__NEW_JOINS2:
 				return getNewJoins2();
 			case WebsitePackage.SELECTION__FILTER:
@@ -383,10 +357,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WebsitePackage.SELECTION__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends SelectionParameter>)newValue);
-				return;
-			case WebsitePackage.SELECTION__JOINS:
-				getJoins().clear();
-				getJoins().addAll((Collection<? extends ServiceAssociation>)newValue);
 				return;
 			case WebsitePackage.SELECTION__NEW_JOINS2:
 				getNewJoins2().clear();
@@ -420,9 +390,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WebsitePackage.SELECTION__PARAMETERS:
 				getParameters().clear();
 				return;
-			case WebsitePackage.SELECTION__JOINS:
-				getJoins().clear();
-				return;
 			case WebsitePackage.SELECTION__NEW_JOINS2:
 				getNewJoins2().clear();
 				return;
@@ -451,8 +418,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return getUsedBy() != null;
 			case WebsitePackage.SELECTION__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
-			case WebsitePackage.SELECTION__JOINS:
-				return joins != null && !joins.isEmpty();
 			case WebsitePackage.SELECTION__NEW_JOINS2:
 				return newJoins2 != null && !newJoins2.isEmpty();
 			case WebsitePackage.SELECTION__FILTER:

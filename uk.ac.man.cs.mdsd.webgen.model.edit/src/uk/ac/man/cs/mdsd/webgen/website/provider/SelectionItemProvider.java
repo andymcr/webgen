@@ -50,39 +50,10 @@ public class SelectionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addJoinsPropertyDescriptor(object);
 			addNewJoins2PropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Joins feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addJoinsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_Selection_joins_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Selection_joins_feature", "_UI_Selection_type"),
-			WebsitePackage.Literals.SELECTION__JOINS,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-			@Override
-			public Collection<?> getChoiceOfValues(Object object) {
-				if (object instanceof Selection) {
-					final Service service = (Service) ((Selection) object).eContainer();
-					return getAssociations(service);
-				}
-
-				return Collections.emptyList();
-			}
-		});
 	}
 
 	/**

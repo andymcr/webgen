@@ -90,10 +90,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.SERVICE: return createService();
 			case WebsitePackage.SELECTION: return createSelection();
 			case WebsitePackage.SELECTION_PARAMETER: return createSelectionParameter();
-			case WebsitePackage.SERVICE_ATTRIBUTE: return createServiceAttribute();
-			case WebsitePackage.SERVICE_ASSOCIATION: return createServiceAssociation();
-			case WebsitePackage.SERVICE_ATTRIBUTE_REFERENCE: return createServiceAttributeReference();
-			case WebsitePackage.SERVICE_ASSOCIATION_REFERENCE: return createServiceAssociationReference();
 			case WebsitePackage.PAGE: return createPage();
 			case WebsitePackage.PAGE_LINK: return createPageLink();
 			case WebsitePackage.STATIC_MENU: return createStaticMenu();
@@ -122,6 +118,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.DETAILS_UNIT: return createDetailsUnit();
 			case WebsitePackage.INDEX_UNIT: return createIndexUnit();
 			case WebsitePackage.SEARCH_UNIT: return createSearchUnit();
+			case WebsitePackage.ACTION_UNIT: return createActionUnit();
 			case WebsitePackage.REGISTRATION_UNIT: return createRegistrationUnit();
 			case WebsitePackage.LOGIN_UNIT: return createLoginUnit();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT: return createForgottenPasswordUnit();
@@ -614,46 +611,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttribute createServiceAttribute() {
-		ServiceAttributeImpl serviceAttribute = new ServiceAttributeImpl();
-		return serviceAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAssociation createServiceAssociation() {
-		ServiceAssociationImpl serviceAssociation = new ServiceAssociationImpl();
-		return serviceAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAttributeReference createServiceAttributeReference() {
-		ServiceAttributeReferenceImpl serviceAttributeReference = new ServiceAttributeReferenceImpl();
-		return serviceAttributeReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAssociationReference createServiceAssociationReference() {
-		ServiceAssociationReferenceImpl serviceAssociationReference = new ServiceAssociationReferenceImpl();
-		return serviceAssociationReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public CreateUnit createCreateUnit() {
 		CreateUnitImpl createUnit = new CreateUnitImpl();
 		return createUnit;
@@ -807,6 +764,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public SearchUnit createSearchUnit() {
 		SearchUnitImpl searchUnit = new SearchUnitImpl();
 		return searchUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActionUnit createActionUnit() {
+		ActionUnitImpl actionUnit = new ActionUnitImpl();
+		return actionUnit;
 	}
 
 	/**

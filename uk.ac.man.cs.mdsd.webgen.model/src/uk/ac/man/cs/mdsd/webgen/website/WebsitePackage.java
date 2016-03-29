@@ -514,7 +514,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPage()
 	 * @generated
 	 */
-	int PAGE = 54;
+	int PAGE = 45;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageLinkImpl <em>Page Link</em>}' class.
@@ -524,7 +524,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPageLink()
 	 * @generated
 	 */
-	int PAGE_LINK = 55;
+	int PAGE_LINK = 46;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl <em>Service</em>}' class.
@@ -534,7 +534,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getService()
 	 * @generated
 	 */
-	int SERVICE = 45;
+	int SERVICE = 42;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl <em>Content Unit</em>}' class.
@@ -544,27 +544,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getContentUnit()
 	 * @generated
 	 */
-	int CONTENT_UNIT = 69;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.IncludedFeatureImpl <em>Included Feature</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.IncludedFeatureImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIncludedFeature()
-	 * @generated
-	 */
-	int INCLUDED_FEATURE = 42;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitSource <em>Unit Source</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitSource
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitSource()
-	 * @generated
-	 */
-	int UNIT_SOURCE = 68;
+	int CONTENT_UNIT = 59;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl <em>Edit Unit</em>}' class.
@@ -574,7 +554,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getEditUnit()
 	 * @generated
 	 */
-	int EDIT_UNIT = 86;
+	int EDIT_UNIT = 76;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUnitImpl <em>Create Unit</em>}' class.
@@ -584,7 +564,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCreateUnit()
 	 * @generated
 	 */
-	int CREATE_UNIT = 87;
+	int CREATE_UNIT = 77;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataUnitImpl <em>Data Unit</em>}' class.
@@ -594,7 +574,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDataUnit()
 	 * @generated
 	 */
-	int DATA_UNIT = 91;
+	int DATA_UNIT = 81;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UpdateUnitImpl <em>Update Unit</em>}' class.
@@ -604,7 +584,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUpdateUnit()
 	 * @generated
 	 */
-	int UPDATE_UNIT = 89;
+	int UPDATE_UNIT = 79;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl <em>Details Unit</em>}' class.
@@ -614,7 +594,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDetailsUnit()
 	 * @generated
 	 */
-	int DETAILS_UNIT = 92;
+	int DETAILS_UNIT = 82;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl <em>Index Unit</em>}' class.
@@ -624,7 +604,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIndexUnit()
 	 * @generated
 	 */
-	int INDEX_UNIT = 93;
+	int INDEX_UNIT = 83;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectActionImpl <em>Select Action</em>}' class.
@@ -634,7 +614,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 102;
+	int SELECT_ACTION = 93;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DeleteActionImpl <em>Delete Action</em>}' class.
@@ -644,7 +624,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 103;
+	int DELETE_ACTION = 94;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl <em>Authentication</em>}' class.
@@ -730,13 +710,13 @@ public interface WebsitePackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_LABEL = AUTHENTICATION__LOGOUT_LABEL;
 
 	/**
-	 * The feature id for the '<em><b>User Source</b></em>' reference.
+	 * The feature id for the '<em><b>User</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USER_SOURCE = AUTHENTICATION_FEATURE_COUNT + 0;
+	int LOCAL_AUTHENTICATION_SYSTEM__USER = AUTHENTICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>User Authentication Key</b></em>' reference.
@@ -748,13 +728,13 @@ public interface WebsitePackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY = AUTHENTICATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Authentication Source</b></em>' reference.
+	 * The feature id for the '<em><b>Authentication</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE = AUTHENTICATION_FEATURE_COUNT + 2;
+	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION = AUTHENTICATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Use Captcha</b></em>' attribute.
@@ -1457,46 +1437,6 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_ATTRIBUTE = 22;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.IncludedElementImpl <em>Included Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.IncludedElementImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIncludedElement()
-	 * @generated
-	 */
-	int INCLUDED_ELEMENT = 43;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.IncludedAssociationImpl <em>Included Association</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.IncludedAssociationImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIncludedAssociation()
-	 * @generated
-	 */
-	int INCLUDED_ASSOCIATION = 44;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceFeature <em>Service Feature</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceFeature
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceFeature()
-	 * @generated
-	 */
-	int SERVICE_FEATURE = 48;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationImpl <em>Service Association</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceAssociation()
-	 * @generated
-	 */
-	int SERVICE_ASSOCIATION = 50;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl <em>Selection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1504,7 +1444,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelection()
 	 * @generated
 	 */
-	int SELECTION = 46;
+	int SELECTION = 43;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionParameterImpl <em>Selection Parameter</em>}' class.
@@ -1514,7 +1454,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelectionParameter()
 	 * @generated
 	 */
-	int SELECTION_PARAMETER = 47;
+	int SELECTION_PARAMETER = 44;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuImpl <em>Menu</em>}' class.
@@ -1524,7 +1464,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMenu()
 	 * @generated
 	 */
-	int MENU = 56;
+	int MENU = 47;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuEntryImpl <em>Menu Entry</em>}' class.
@@ -1534,7 +1474,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMenuEntry()
 	 * @generated
 	 */
-	int MENU_ENTRY = 57;
+	int MENU_ENTRY = 48;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.StaticMenuImpl <em>Static Menu</em>}' class.
@@ -1544,7 +1484,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getStaticMenu()
 	 * @generated
 	 */
-	int STATIC_MENU = 58;
+	int STATIC_MENU = 49;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicMenuImpl <em>Dynamic Menu</em>}' class.
@@ -1554,7 +1494,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDynamicMenu()
 	 * @generated
 	 */
-	int DYNAMIC_MENU = 61;
+	int DYNAMIC_MENU = 52;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitContainerImpl <em>Unit Container</em>}' class.
@@ -1564,17 +1504,17 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitContainer()
 	 * @generated
 	 */
-	int UNIT_CONTAINER = 67;
+	int UNIT_CONTAINER = 58;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField <em>Unit Field</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFieldImpl <em>Unit Field</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitField
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.UnitFieldImpl
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitField()
 	 * @generated
 	 */
-	int UNIT_FIELD = 74;
+	int UNIT_FIELD = 64;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl <em>Interface Field</em>}' class.
@@ -1584,7 +1524,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 81;
+	int INTERFACE_FIELD = 71;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl <em>Create Update Unit</em>}' class.
@@ -1594,7 +1534,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCreateUpdateUnit()
 	 * @generated
 	 */
-	int CREATE_UPDATE_UNIT = 88;
+	int CREATE_UPDATE_UNIT = 78;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.StaticUnitImpl <em>Static Unit</em>}' class.
@@ -1604,7 +1544,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getStaticUnit()
 	 * @generated
 	 */
-	int STATIC_UNIT = 70;
+	int STATIC_UNIT = 60;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl <em>Dynamic Unit</em>}' class.
@@ -1614,7 +1554,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDynamicUnit()
 	 * @generated
 	 */
-	int DYNAMIC_UNIT = 73;
+	int DYNAMIC_UNIT = 63;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ActionMenuEntryImpl <em>Action Menu Entry</em>}' class.
@@ -1624,7 +1564,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getActionMenuEntry()
 	 * @generated
 	 */
-	int ACTION_MENU_ENTRY = 59;
+	int ACTION_MENU_ENTRY = 50;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditStaticTextMenuEntryImpl <em>Edit Static Text Menu Entry</em>}' class.
@@ -1634,7 +1574,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getEditStaticTextMenuEntry()
 	 * @generated
 	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY = 60;
+	int EDIT_STATIC_TEXT_MENU_ENTRY = 51;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.QueryImpl <em>Query</em>}' class.
@@ -1644,7 +1584,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getQuery()
 	 * @generated
 	 */
-	int QUERY = 64;
+	int QUERY = 55;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.QueryParameterImpl <em>Query Parameter</em>}' class.
@@ -1654,7 +1594,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getQueryParameter()
 	 * @generated
 	 */
-	int QUERY_PARAMETER = 65;
+	int QUERY_PARAMETER = 56;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -1849,46 +1789,6 @@ public interface WebsitePackage extends EPackage {
 	int ENCAPSULATED_ASSOCIATION = 40;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl <em>Service Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceAttribute()
-	 * @generated
-	 */
-	int SERVICE_ATTRIBUTE = 49;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceFeatureReferenceImpl <em>Service Feature Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ServiceFeatureReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceFeatureReference()
-	 * @generated
-	 */
-	int SERVICE_FEATURE_REFERENCE = 51;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeReferenceImpl <em>Service Attribute Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceAttributeReference()
-	 * @generated
-	 */
-	int SERVICE_ATTRIBUTE_REFERENCE = 52;
-
-	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationReferenceImpl <em>Service Association Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationReferenceImpl
-	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceAssociationReference()
-	 * @generated
-	 */
-	int SERVICE_ASSOCIATION_REFERENCE = 53;
-
-	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterImpl <em>Filter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1896,7 +1796,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFilter()
 	 * @generated
 	 */
-	int FILTER = 62;
+	int FILTER = 53;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterParameterImpl <em>Filter Parameter</em>}' class.
@@ -1906,7 +1806,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFilterParameter()
 	 * @generated
 	 */
-	int FILTER_PARAMETER = 63;
+	int FILTER_PARAMETER = 54;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Selectable <em>Selectable</em>}' class.
@@ -1916,7 +1816,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelectable()
 	 * @generated
 	 */
-	int SELECTABLE = 66;
+	int SELECTABLE = 57;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UserCommandImpl <em>User Command</em>}' class.
@@ -1926,7 +1826,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUserCommand()
 	 * @generated
 	 */
-	int USER_COMMAND = 71;
+	int USER_COMMAND = 61;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateSitemapUnitImpl <em>Create Sitemap Unit</em>}' class.
@@ -1936,17 +1836,17 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCreateSitemapUnit()
 	 * @generated
 	 */
-	int CREATE_SITEMAP_UNIT = 72;
+	int CREATE_SITEMAP_UNIT = 62;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature <em>Unit Feature</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl <em>Unit Feature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitFeature()
 	 * @generated
 	 */
-	int UNIT_FEATURE = 75;
+	int UNIT_FEATURE = 65;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitElementImpl <em>Unit Element</em>}' class.
@@ -1956,7 +1856,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitElement()
 	 * @generated
 	 */
-	int UNIT_ELEMENT = 76;
+	int UNIT_ELEMENT = 66;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl <em>Unit Association</em>}' class.
@@ -1966,7 +1866,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitAssociation()
 	 * @generated
 	 */
-	int UNIT_ASSOCIATION = 77;
+	int UNIT_ASSOCIATION = 67;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeFieldImpl <em>Data Type Field</em>}' class.
@@ -1976,7 +1876,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDataTypeField()
 	 * @generated
 	 */
-	int DATA_TYPE_FIELD = 82;
+	int DATA_TYPE_FIELD = 72;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DateFieldImpl <em>Date Field</em>}' class.
@@ -1986,7 +1886,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDateField()
 	 * @generated
 	 */
-	int DATE_FIELD = 83;
+	int DATE_FIELD = 73;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CaptchaFieldImpl <em>Captcha Field</em>}' class.
@@ -1996,7 +1896,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCaptchaField()
 	 * @generated
 	 */
-	int CAPTCHA_FIELD = 84;
+	int CAPTCHA_FIELD = 74;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitSupportActionImpl <em>Unit Support Action</em>}' class.
@@ -2006,7 +1906,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitSupportAction()
 	 * @generated
 	 */
-	int UNIT_SUPPORT_ACTION = 85;
+	int UNIT_SUPPORT_ACTION = 75;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl <em>Map Unit</em>}' class.
@@ -2016,7 +1916,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMapUnit()
 	 * @generated
 	 */
-	int MAP_UNIT = 90;
+	int MAP_UNIT = 80;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ControlUnitImpl <em>Control Unit</em>}' class.
@@ -2026,7 +1926,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 94;
+	int CONTROL_UNIT = 84;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SearchUnitImpl <em>Search Unit</em>}' class.
@@ -2036,7 +1936,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 95;
+	int SEARCH_UNIT = 85;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationUnit <em>Authentication Unit</em>}' class.
@@ -2046,7 +1946,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 96;
+	int AUTHENTICATION_UNIT = 87;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl <em>Registration Unit</em>}' class.
@@ -2056,7 +1956,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 97;
+	int REGISTRATION_UNIT = 88;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl <em>Login Unit</em>}' class.
@@ -2066,7 +1966,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 98;
+	int LOGIN_UNIT = 89;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl <em>Forgotten Password Unit</em>}' class.
@@ -2076,7 +1976,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 99;
+	int FORGOTTEN_PASSWORD_UNIT = 90;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer <em>Inline Action Container</em>}' class.
@@ -2086,7 +1986,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 100;
+	int INLINE_ACTION_CONTAINER = 91;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl <em>Inline Action</em>}' class.
@@ -2096,7 +1996,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 101;
+	int INLINE_ACTION = 92;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureSupportActionImpl <em>Feature Support Action</em>}' class.
@@ -2106,7 +2006,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 104;
+	int FEATURE_SUPPORT_ACTION = 95;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelReferenceImpl <em>Model Reference</em>}' class.
@@ -2116,7 +2016,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getModelReference()
 	 * @generated
 	 */
-	int MODEL_REFERENCE = 105;
+	int MODEL_REFERENCE = 96;
 
 	/**
 	 * The number of structural features of the '<em>Label</em>' class.
@@ -5017,294 +4917,6 @@ public interface WebsitePackage extends EPackage {
 	int VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_FEATURE__DISPLAY_LABEL = 0;
-
-	/**
-	 * The feature id for the '<em><b>Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_FEATURE__REQUIRED = 1;
-
-	/**
-	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_FEATURE__FORCED_VALUE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Footer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_FEATURE__FOOTER = 3;
-
-	/**
-	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_FEATURE__HEADER_CLASS = 4;
-
-	/**
-	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_FEATURE__INPUT_CLASS = 5;
-
-	/**
-	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_FEATURE__DISPLAY_CLASS = 6;
-
-	/**
-	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_FEATURE__FOOTER_CLASS = 7;
-
-	/**
-	 * The number of structural features of the '<em>Included Feature</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_FEATURE_FEATURE_COUNT = 8;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT__DISPLAY_LABEL = INCLUDED_FEATURE__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT__REQUIRED = INCLUDED_FEATURE__REQUIRED;
-
-	/**
-	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT__FORCED_VALUE = INCLUDED_FEATURE__FORCED_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Footer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT__FOOTER = INCLUDED_FEATURE__FOOTER;
-
-	/**
-	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT__HEADER_CLASS = INCLUDED_FEATURE__HEADER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT__INPUT_CLASS = INCLUDED_FEATURE__INPUT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT__DISPLAY_CLASS = INCLUDED_FEATURE__DISPLAY_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT__FOOTER_CLASS = INCLUDED_FEATURE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT__ATTRIBUTE = INCLUDED_FEATURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Obfuscate Form Fields</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT__OBFUSCATE_FORM_FIELDS = INCLUDED_FEATURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT__DEFAULT_VALUE = INCLUDED_FEATURE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Included Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ELEMENT_FEATURE_COUNT = INCLUDED_FEATURE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ASSOCIATION__DISPLAY_LABEL = INCLUDED_FEATURE__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ASSOCIATION__REQUIRED = INCLUDED_FEATURE__REQUIRED;
-
-	/**
-	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ASSOCIATION__FORCED_VALUE = INCLUDED_FEATURE__FORCED_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Footer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ASSOCIATION__FOOTER = INCLUDED_FEATURE__FOOTER;
-
-	/**
-	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ASSOCIATION__HEADER_CLASS = INCLUDED_FEATURE__HEADER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ASSOCIATION__INPUT_CLASS = INCLUDED_FEATURE__INPUT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ASSOCIATION__DISPLAY_CLASS = INCLUDED_FEATURE__DISPLAY_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ASSOCIATION__FOOTER_CLASS = INCLUDED_FEATURE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ASSOCIATION__ASSOCIATION = INCLUDED_FEATURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Use Association Source</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ASSOCIATION__USE_ASSOCIATION_SOURCE = INCLUDED_FEATURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Included Association</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCLUDED_ASSOCIATION_FEATURE_COUNT = INCLUDED_FEATURE_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5314,40 +4926,13 @@ public interface WebsitePackage extends EPackage {
 	int SERVICE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Encapsulates</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE__ENCAPSULATES = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Serves</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__SERVES = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE__FEATURES = NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Keys</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE__KEYS = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SERVICE__SERVES = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Selections</b></em>' containment reference list.
@@ -5356,7 +4941,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__SELECTIONS = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int SERVICE__SELECTIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Service</em>' class.
@@ -5365,7 +4950,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int SERVICE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5395,22 +4980,13 @@ public interface WebsitePackage extends EPackage {
 	int SELECTION__PARAMETERS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Joins</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__JOINS = NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>New Joins2</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__NEW_JOINS2 = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SELECTION__NEW_JOINS2 = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' containment reference.
@@ -5419,7 +4995,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__FILTER = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int SELECTION__FILTER = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Ordering</b></em>' containment reference list.
@@ -5428,7 +5004,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__ORDERING = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int SELECTION__ORDERING = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Limit</b></em>' attribute.
@@ -5437,7 +5013,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__LIMIT = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int SELECTION__LIMIT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Selection</em>' class.
@@ -5446,7 +5022,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int SELECTION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5474,474 +5050,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECTION_PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE__DISPLAY_LABEL = INCLUDED_FEATURE__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE__REQUIRED = INCLUDED_FEATURE__REQUIRED;
-
-	/**
-	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE__FORCED_VALUE = INCLUDED_FEATURE__FORCED_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Footer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE__FOOTER = INCLUDED_FEATURE__FOOTER;
-
-	/**
-	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE__HEADER_CLASS = INCLUDED_FEATURE__HEADER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE__INPUT_CLASS = INCLUDED_FEATURE__INPUT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE__DISPLAY_CLASS = INCLUDED_FEATURE__DISPLAY_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE__FOOTER_CLASS = INCLUDED_FEATURE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE__PART_OF = INCLUDED_FEATURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE__DATE_FORMAT = INCLUDED_FEATURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Service Feature</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE_FEATURE_COUNT = INCLUDED_FEATURE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__DISPLAY_LABEL = INCLUDED_ELEMENT__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__REQUIRED = INCLUDED_ELEMENT__REQUIRED;
-
-	/**
-	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__FORCED_VALUE = INCLUDED_ELEMENT__FORCED_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Footer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__FOOTER = INCLUDED_ELEMENT__FOOTER;
-
-	/**
-	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__HEADER_CLASS = INCLUDED_ELEMENT__HEADER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__INPUT_CLASS = INCLUDED_ELEMENT__INPUT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__DISPLAY_CLASS = INCLUDED_ELEMENT__DISPLAY_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__FOOTER_CLASS = INCLUDED_ELEMENT__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__ATTRIBUTE = INCLUDED_ELEMENT__ATTRIBUTE;
-
-	/**
-	 * The feature id for the '<em><b>Obfuscate Form Fields</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS = INCLUDED_ELEMENT__OBFUSCATE_FORM_FIELDS;
-
-	/**
-	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__DEFAULT_VALUE = INCLUDED_ELEMENT__DEFAULT_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__PART_OF = INCLUDED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__DATE_FORMAT = INCLUDED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__NAME = INCLUDED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__INTERFACE_TYPE = INCLUDED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__PLACEHOLDER = INCLUDED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE__VALIDATION_PATTERN = INCLUDED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Service Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE_FEATURE_COUNT = INCLUDED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__DISPLAY_LABEL = INCLUDED_ASSOCIATION__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__REQUIRED = INCLUDED_ASSOCIATION__REQUIRED;
-
-	/**
-	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__FORCED_VALUE = INCLUDED_ASSOCIATION__FORCED_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Footer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__FOOTER = INCLUDED_ASSOCIATION__FOOTER;
-
-	/**
-	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__HEADER_CLASS = INCLUDED_ASSOCIATION__HEADER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__INPUT_CLASS = INCLUDED_ASSOCIATION__INPUT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__DISPLAY_CLASS = INCLUDED_ASSOCIATION__DISPLAY_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__FOOTER_CLASS = INCLUDED_ASSOCIATION__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__ASSOCIATION = INCLUDED_ASSOCIATION__ASSOCIATION;
-
-	/**
-	 * The feature id for the '<em><b>Use Association Source</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__USE_ASSOCIATION_SOURCE = INCLUDED_ASSOCIATION__USE_ASSOCIATION_SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__PART_OF = INCLUDED_ASSOCIATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__DATE_FORMAT = INCLUDED_ASSOCIATION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__NAME = INCLUDED_ASSOCIATION_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Selection</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION__SELECTION = INCLUDED_ASSOCIATION_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Service Association</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION_FEATURE_COUNT = INCLUDED_ASSOCIATION_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Service Feature Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_FEATURE_REFERENCE_FEATURE_COUNT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE_REFERENCE__NAME = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE_REFERENCE__ATTRIBUTE = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Service Attribute Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ATTRIBUTE_REFERENCE_FEATURE_COUNT = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION_REFERENCE__NAME = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION_REFERENCE__ASSOCIATION = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION_REFERENCE__CHILD_FEATURE = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Service Association Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_ASSOCIATION_REFERENCE_FEATURE_COUNT = SERVICE_FEATURE_REFERENCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6394,13 +5502,13 @@ public interface WebsitePackage extends EPackage {
 	int DYNAMIC_MENU__LAYOUT_CLASS = MENU__LAYOUT_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference.
+	 * The feature id for the '<em><b>Entity Or View</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__SERVICE = MENU_FEATURE_COUNT + 0;
+	int DYNAMIC_MENU__ENTITY_OR_VIEW = MENU_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -6412,13 +5520,13 @@ public interface WebsitePackage extends EPackage {
 	int DYNAMIC_MENU__SELECTION = MENU_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Dynamic Title</b></em>' reference.
+	 * The feature id for the '<em><b>Title</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_MENU__DYNAMIC_TITLE = MENU_FEATURE_COUNT + 2;
+	int DYNAMIC_MENU__TITLE = MENU_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Menu</em>' class.
@@ -6590,15 +5698,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_CONTAINER_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of structural features of the '<em>Unit Source</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_SOURCE_FEATURE_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6952,22 +6051,13 @@ public interface WebsitePackage extends EPackage {
 	int DYNAMIC_UNIT__CAPTION_CLASS = CONTENT_UNIT__CAPTION_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_UNIT__SOURCE = CONTENT_UNIT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ENTITIES = CONTENT_UNIT_FEATURE_COUNT + 1;
+	int DYNAMIC_UNIT__ENTITIES = CONTENT_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -6976,7 +6066,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 2;
+	int DYNAMIC_UNIT__DISPLAY_FIELDS = CONTENT_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -6985,7 +6075,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 3;
+	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -6994,7 +6084,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 4;
+	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -7003,7 +6093,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 5;
+	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -7012,7 +6102,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
+	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -7021,7 +6111,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
+	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -7030,7 +6120,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
+	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -7039,7 +6129,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 9;
+	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Unit</em>' class.
@@ -7048,7 +6138,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 10;
+	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -7087,85 +6177,13 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_FIELD_FEATURE_COUNT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__DISPLAY_LABEL = INCLUDED_FEATURE__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__REQUIRED = INCLUDED_FEATURE__REQUIRED;
-
-	/**
-	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__FORCED_VALUE = INCLUDED_FEATURE__FORCED_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Footer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__FOOTER = INCLUDED_FEATURE__FOOTER;
-
-	/**
-	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__HEADER_CLASS = INCLUDED_FEATURE__HEADER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__INPUT_CLASS = INCLUDED_FEATURE__INPUT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__DISPLAY_CLASS = INCLUDED_FEATURE__DISPLAY_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__FOOTER_CLASS = INCLUDED_FEATURE__FOOTER_CLASS;
-
-	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__DISPLAYED_ON = INCLUDED_FEATURE_FEATURE_COUNT + 0;
+	int UNIT_FEATURE__DISPLAYED_ON = UNIT_FIELD__DISPLAYED_ON;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -7174,7 +6192,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE = INCLUDED_FEATURE_FEATURE_COUNT + 1;
+	int UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE = UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -7183,7 +6201,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__DATE_FORMAT = INCLUDED_FEATURE_FEATURE_COUNT + 2;
+	int UNIT_FEATURE__DATE_FORMAT = UNIT_FIELD__DATE_FORMAT;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -7192,7 +6210,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__ACTIONS = INCLUDED_FEATURE_FEATURE_COUNT + 3;
+	int UNIT_FEATURE__ACTIONS = UNIT_FIELD_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
@@ -7201,7 +6219,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY = INCLUDED_FEATURE_FEATURE_COUNT + 4;
+	int UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY = UNIT_FIELD_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
@@ -7210,7 +6228,43 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__COLLECTION_DISPLAY_OPTION = INCLUDED_FEATURE_FEATURE_COUNT + 5;
+	int UNIT_FEATURE__COLLECTION_DISPLAY_OPTION = UNIT_FIELD_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__DISPLAY_LABEL = UNIT_FIELD_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__REQUIRED = UNIT_FIELD_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__FORCED_VALUE = UNIT_FIELD_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Footer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__FOOTER = UNIT_FIELD_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -7219,7 +6273,43 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__AUTOFOCUS = INCLUDED_FEATURE_FEATURE_COUNT + 6;
+	int UNIT_FEATURE__AUTOFOCUS = UNIT_FIELD_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__HEADER_CLASS = UNIT_FIELD_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__INPUT_CLASS = UNIT_FIELD_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__DISPLAY_CLASS = UNIT_FIELD_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__FOOTER_CLASS = UNIT_FIELD_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Unit Feature</em>' class.
@@ -7228,7 +6318,61 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE_FEATURE_COUNT = INCLUDED_FEATURE_FEATURE_COUNT + 7;
+	int UNIT_FEATURE_FEATURE_COUNT = UNIT_FIELD_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__DISPLAYED_ON = UNIT_FEATURE__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__MAXIMUM_DISPLAY_SIZE = UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__DATE_FORMAT = UNIT_FEATURE__DATE_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__ACTIONS = UNIT_FEATURE__ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__ONLY_DISPLAY_WHEN_NOT_EMPTY = UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY;
+
+	/**
+	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__COLLECTION_DISPLAY_OPTION = UNIT_FEATURE__COLLECTION_DISPLAY_OPTION;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -7237,7 +6381,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__DISPLAY_LABEL = INCLUDED_ELEMENT__DISPLAY_LABEL;
+	int UNIT_ELEMENT__DISPLAY_LABEL = UNIT_FEATURE__DISPLAY_LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -7246,7 +6390,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__REQUIRED = INCLUDED_ELEMENT__REQUIRED;
+	int UNIT_ELEMENT__REQUIRED = UNIT_FEATURE__REQUIRED;
 
 	/**
 	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
@@ -7255,7 +6399,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__FORCED_VALUE = INCLUDED_ELEMENT__FORCED_VALUE;
+	int UNIT_ELEMENT__FORCED_VALUE = UNIT_FEATURE__FORCED_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -7264,7 +6408,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__FOOTER = INCLUDED_ELEMENT__FOOTER;
+	int UNIT_ELEMENT__FOOTER = UNIT_FEATURE__FOOTER;
+
+	/**
+	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__AUTOFOCUS = UNIT_FEATURE__AUTOFOCUS;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -7273,7 +6426,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__HEADER_CLASS = INCLUDED_ELEMENT__HEADER_CLASS;
+	int UNIT_ELEMENT__HEADER_CLASS = UNIT_FEATURE__HEADER_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -7282,7 +6435,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__INPUT_CLASS = INCLUDED_ELEMENT__INPUT_CLASS;
+	int UNIT_ELEMENT__INPUT_CLASS = UNIT_FEATURE__INPUT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -7291,7 +6444,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__DISPLAY_CLASS = INCLUDED_ELEMENT__DISPLAY_CLASS;
+	int UNIT_ELEMENT__DISPLAY_CLASS = UNIT_FEATURE__DISPLAY_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -7300,7 +6453,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__FOOTER_CLASS = INCLUDED_ELEMENT__FOOTER_CLASS;
+	int UNIT_ELEMENT__FOOTER_CLASS = UNIT_FEATURE__FOOTER_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -7309,16 +6462,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__ATTRIBUTE = INCLUDED_ELEMENT__ATTRIBUTE;
+	int UNIT_ELEMENT__ATTRIBUTE = UNIT_FEATURE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Obfuscate Form Fields</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS = INCLUDED_ELEMENT__OBFUSCATE_FORM_FIELDS;
+	int UNIT_ELEMENT__NAME = UNIT_FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
@@ -7327,88 +6480,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__DEFAULT_VALUE = INCLUDED_ELEMENT__DEFAULT_VALUE;
+	int UNIT_ELEMENT__DEFAULT_VALUE = UNIT_FEATURE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
+	 * The feature id for the '<em><b>Obfuscate Form Fields</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__DISPLAYED_ON = INCLUDED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ELEMENT__MAXIMUM_DISPLAY_SIZE = INCLUDED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ELEMENT__DATE_FORMAT = INCLUDED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ELEMENT__ACTIONS = INCLUDED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ELEMENT__ONLY_DISPLAY_WHEN_NOT_EMPTY = INCLUDED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ELEMENT__COLLECTION_DISPLAY_OPTION = INCLUDED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ELEMENT__AUTOFOCUS = INCLUDED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ELEMENT__NAME = INCLUDED_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Service Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ELEMENT__SERVICE_FEATURE = INCLUDED_ELEMENT_FEATURE_COUNT + 8;
+	int UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS = UNIT_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -7417,7 +6498,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__PLACEHOLDER = INCLUDED_ELEMENT_FEATURE_COUNT + 9;
+	int UNIT_ELEMENT__PLACEHOLDER = UNIT_FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -7426,7 +6507,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT__VALIDATION_PATTERN = INCLUDED_ELEMENT_FEATURE_COUNT + 10;
+	int UNIT_ELEMENT__VALIDATION_PATTERN = UNIT_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Unit Element</em>' class.
@@ -7435,97 +6516,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ELEMENT_FEATURE_COUNT = INCLUDED_ELEMENT_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__DISPLAY_LABEL = INCLUDED_ASSOCIATION__DISPLAY_LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Required</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__REQUIRED = INCLUDED_ASSOCIATION__REQUIRED;
-
-	/**
-	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__FORCED_VALUE = INCLUDED_ASSOCIATION__FORCED_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Footer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__FOOTER = INCLUDED_ASSOCIATION__FOOTER;
-
-	/**
-	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__HEADER_CLASS = INCLUDED_ASSOCIATION__HEADER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__INPUT_CLASS = INCLUDED_ASSOCIATION__INPUT_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__DISPLAY_CLASS = INCLUDED_ASSOCIATION__DISPLAY_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__FOOTER_CLASS = INCLUDED_ASSOCIATION__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__ASSOCIATION = INCLUDED_ASSOCIATION__ASSOCIATION;
-
-	/**
-	 * The feature id for the '<em><b>Use Association Source</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__USE_ASSOCIATION_SOURCE = INCLUDED_ASSOCIATION__USE_ASSOCIATION_SOURCE;
+	int UNIT_ELEMENT_FEATURE_COUNT = UNIT_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -7534,7 +6525,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__DISPLAYED_ON = INCLUDED_ASSOCIATION_FEATURE_COUNT + 0;
+	int UNIT_ASSOCIATION__DISPLAYED_ON = UNIT_FEATURE__DISPLAYED_ON;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -7543,7 +6534,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE = INCLUDED_ASSOCIATION_FEATURE_COUNT + 1;
+	int UNIT_ASSOCIATION__MAXIMUM_DISPLAY_SIZE = UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -7552,7 +6543,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__DATE_FORMAT = INCLUDED_ASSOCIATION_FEATURE_COUNT + 2;
+	int UNIT_ASSOCIATION__DATE_FORMAT = UNIT_FEATURE__DATE_FORMAT;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -7561,7 +6552,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__ACTIONS = INCLUDED_ASSOCIATION_FEATURE_COUNT + 3;
+	int UNIT_ASSOCIATION__ACTIONS = UNIT_FEATURE__ACTIONS;
 
 	/**
 	 * The feature id for the '<em><b>Only Display When Not Empty</b></em>' attribute.
@@ -7570,7 +6561,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__ONLY_DISPLAY_WHEN_NOT_EMPTY = INCLUDED_ASSOCIATION_FEATURE_COUNT + 4;
+	int UNIT_ASSOCIATION__ONLY_DISPLAY_WHEN_NOT_EMPTY = UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY;
 
 	/**
 	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
@@ -7579,7 +6570,43 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION = INCLUDED_ASSOCIATION_FEATURE_COUNT + 5;
+	int UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION = UNIT_FEATURE__COLLECTION_DISPLAY_OPTION;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__DISPLAY_LABEL = UNIT_FEATURE__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Required</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__REQUIRED = UNIT_FEATURE__REQUIRED;
+
+	/**
+	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__FORCED_VALUE = UNIT_FEATURE__FORCED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Footer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__FOOTER = UNIT_FEATURE__FOOTER;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -7588,7 +6615,43 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__AUTOFOCUS = INCLUDED_ASSOCIATION_FEATURE_COUNT + 6;
+	int UNIT_ASSOCIATION__AUTOFOCUS = UNIT_FEATURE__AUTOFOCUS;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__HEADER_CLASS = UNIT_FEATURE__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__INPUT_CLASS = UNIT_FEATURE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__DISPLAY_CLASS = UNIT_FEATURE__DISPLAY_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__FOOTER_CLASS = UNIT_FEATURE__FOOTER_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Units</b></em>' containment reference list.
@@ -7597,7 +6660,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__UNITS = INCLUDED_ASSOCIATION_FEATURE_COUNT + 7;
+	int UNIT_ASSOCIATION__UNITS = UNIT_FEATURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__ASSOCIATION = UNIT_FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7606,25 +6678,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__NAME = INCLUDED_ASSOCIATION_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Service Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__SERVICE_FEATURE = INCLUDED_ASSOCIATION_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__CHILD_FEATURE = INCLUDED_ASSOCIATION_FEATURE_COUNT + 10;
+	int UNIT_ASSOCIATION__NAME = UNIT_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature2</b></em>' containment reference.
@@ -7633,7 +6687,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__CHILD_FEATURE2 = INCLUDED_ASSOCIATION_FEATURE_COUNT + 11;
+	int UNIT_ASSOCIATION__CHILD_FEATURE2 = UNIT_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Value Display</b></em>' reference.
@@ -7642,7 +6696,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__VALUE_DISPLAY = INCLUDED_ASSOCIATION_FEATURE_COUNT + 12;
+	int UNIT_ASSOCIATION__VALUE_DISPLAY = UNIT_FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -7651,7 +6705,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__SELECTION = INCLUDED_ASSOCIATION_FEATURE_COUNT + 13;
+	int UNIT_ASSOCIATION__SELECTION = UNIT_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Filters</b></em>' reference list.
@@ -7660,7 +6714,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__FILTERS = INCLUDED_ASSOCIATION_FEATURE_COUNT + 14;
+	int UNIT_ASSOCIATION__FILTERS = UNIT_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Unit Association</em>' class.
@@ -7669,7 +6723,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION_FEATURE_COUNT = INCLUDED_ASSOCIATION_FEATURE_COUNT + 15;
+	int UNIT_ASSOCIATION_FEATURE_COUNT = UNIT_FEATURE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildFeatureImpl <em>Child Feature</em>}' class.
@@ -7679,7 +6733,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getChildFeature()
 	 * @generated
 	 */
-	int CHILD_FEATURE = 78;
+	int CHILD_FEATURE = 68;
 
 	/**
 	 * The number of structural features of the '<em>Child Feature</em>' class.
@@ -7698,7 +6752,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getChildAttribute()
 	 * @generated
 	 */
-	int CHILD_ATTRIBUTE = 79;
+	int CHILD_ATTRIBUTE = 69;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7735,7 +6789,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getChildAssociation()
 	 * @generated
 	 */
-	int CHILD_ASSOCIATION = 80;
+	int CHILD_ASSOCIATION = 70;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8368,15 +7422,6 @@ public interface WebsitePackage extends EPackage {
 	int EDIT_UNIT__CAPTION_CLASS = DYNAMIC_UNIT__CAPTION_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_UNIT__SOURCE = DYNAMIC_UNIT__SOURCE;
-
-	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8582,15 +7627,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT__CAPTION_CLASS = EDIT_UNIT__CAPTION_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UNIT__SOURCE = EDIT_UNIT__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
@@ -8807,15 +7843,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__CAPTION_CLASS = EDIT_UNIT__CAPTION_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UPDATE_UNIT__SOURCE = EDIT_UNIT__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
@@ -9052,15 +8079,6 @@ public interface WebsitePackage extends EPackage {
 	int UPDATE_UNIT__CAPTION_CLASS = EDIT_UNIT__CAPTION_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE_UNIT__SOURCE = EDIT_UNIT__SOURCE;
-
-	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9277,15 +8295,6 @@ public interface WebsitePackage extends EPackage {
 	int MAP_UNIT__CAPTION_CLASS = EDIT_UNIT__CAPTION_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__SOURCE = EDIT_UNIT__SOURCE;
-
-	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9448,31 +8457,13 @@ public interface WebsitePackage extends EPackage {
 	int MAP_UNIT__STYLE_CLASS = EDIT_UNIT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Location</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__LOCATION = EDIT_UNIT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Location2</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__LOCATION2 = EDIT_UNIT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Place Name</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__PLACE_NAME = EDIT_UNIT_FEATURE_COUNT + 5;
+	int MAP_UNIT__LOCATION2 = EDIT_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Place Name2</b></em>' reference.
@@ -9481,7 +8472,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__PLACE_NAME2 = EDIT_UNIT_FEATURE_COUNT + 6;
+	int MAP_UNIT__PLACE_NAME2 = EDIT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Map Unit</em>' class.
@@ -9490,7 +8481,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 7;
+	int MAP_UNIT_FEATURE_COUNT = EDIT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9554,15 +8545,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_UNIT__CAPTION_CLASS = DYNAMIC_UNIT__CAPTION_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__SOURCE = DYNAMIC_UNIT__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
@@ -9734,15 +8716,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DETAILS_UNIT__CAPTION_CLASS = DATA_UNIT__CAPTION_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__SOURCE = DATA_UNIT__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
@@ -9950,15 +8923,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__CAPTION_CLASS = DATA_UNIT__CAPTION_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__SOURCE = DATA_UNIT__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
@@ -10258,15 +9222,6 @@ public interface WebsitePackage extends EPackage {
 	int CONTROL_UNIT__CAPTION_CLASS = DYNAMIC_UNIT__CAPTION_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_UNIT__SOURCE = DYNAMIC_UNIT__SOURCE;
-
-	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10456,15 +9411,6 @@ public interface WebsitePackage extends EPackage {
 	int SEARCH_UNIT__CAPTION_CLASS = CONTROL_UNIT__CAPTION_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_UNIT__SOURCE = CONTROL_UNIT__SOURCE;
-
-	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10609,6 +9555,214 @@ public interface WebsitePackage extends EPackage {
 	int SEARCH_UNIT_FEATURE_COUNT = CONTROL_UNIT_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ActionUnitImpl <em>Action Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ActionUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getActionUnit()
+	 * @generated
+	 */
+	int ACTION_UNIT = 86;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__NAME = CONTROL_UNIT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__DISPLAY_LABEL = CONTROL_UNIT__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__DISPLAYED_ON = CONTROL_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__PURPOSE_SUMMARY = CONTROL_UNIT__PURPOSE_SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__OMIT_CAPTION = CONTROL_UNIT__OMIT_CAPTION;
+
+	/**
+	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__CAPTION_CLASS = CONTROL_UNIT__CAPTION_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Entities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__ENTITIES = CONTROL_UNIT__ENTITIES;
+
+	/**
+	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__DISPLAY_FIELDS = CONTROL_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__SUPPORT_ACTIONS = CONTROL_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__HEADER = CONTROL_UNIT__HEADER;
+
+	/**
+	 * The feature id for the '<em><b>Footer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__FOOTER = CONTROL_UNIT__FOOTER;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__HEADER_CLASS = CONTROL_UNIT__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__CONTROL_CLASS = CONTROL_UNIT__CONTROL_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__FOOTER_CLASS = CONTROL_UNIT__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__ERROR_CLASS = CONTROL_UNIT__ERROR_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__SUBMIT_LABEL = CONTROL_UNIT__SUBMIT_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__CANCEL_DESTINATION = CONTROL_UNIT__CANCEL_DESTINATION;
+
+	/**
+	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__CANCEL_LABEL = CONTROL_UNIT__CANCEL_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__CONTENT_CLASS = CONTROL_UNIT__CONTENT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__STYLE_CLASS = CONTROL_UNIT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Action Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT_FEATURE_COUNT = CONTROL_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10681,22 +9835,13 @@ public interface WebsitePackage extends EPackage {
 	int REGISTRATION_UNIT__CAPTION_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION_UNIT__SOURCE = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
+	int REGISTRATION_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -10705,7 +9850,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
+	int REGISTRATION_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -10714,7 +9859,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
+	int REGISTRATION_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -10723,7 +9868,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
+	int REGISTRATION_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -10732,7 +9877,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+	int REGISTRATION_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -10741,7 +9886,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int REGISTRATION_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -10750,7 +9895,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int REGISTRATION_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -10759,7 +9904,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int REGISTRATION_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -10768,7 +9913,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int REGISTRATION_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -10777,7 +9922,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int REGISTRATION_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -10786,7 +9931,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int REGISTRATION_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -10795,7 +9940,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int REGISTRATION_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -10804,7 +9949,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int REGISTRATION_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -10813,7 +9958,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int REGISTRATION_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of structural features of the '<em>Registration Unit</em>' class.
@@ -10822,7 +9967,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int REGISTRATION_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10888,22 +10033,13 @@ public interface WebsitePackage extends EPackage {
 	int LOGIN_UNIT__CAPTION_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN_UNIT__SOURCE = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
+	int LOGIN_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -10912,7 +10048,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
+	int LOGIN_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -10921,7 +10057,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
+	int LOGIN_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -10930,7 +10066,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
+	int LOGIN_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -10939,7 +10075,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+	int LOGIN_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -10948,7 +10084,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int LOGIN_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -10957,7 +10093,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int LOGIN_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -10966,7 +10102,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int LOGIN_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -10975,7 +10111,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int LOGIN_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -10984,7 +10120,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int LOGIN_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -10993,7 +10129,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int LOGIN_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -11002,7 +10138,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int LOGIN_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -11011,7 +10147,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int LOGIN_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -11020,7 +10156,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int LOGIN_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of structural features of the '<em>Login Unit</em>' class.
@@ -11029,7 +10165,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int LOGIN_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11095,22 +10231,13 @@ public interface WebsitePackage extends EPackage {
 	int FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORGOTTEN_PASSWORD_UNIT__SOURCE = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
-
-	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
+	int FORGOTTEN_PASSWORD_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -11119,7 +10246,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
+	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -11128,7 +10255,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
+	int FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -11137,7 +10264,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
+	int FORGOTTEN_PASSWORD_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -11146,7 +10273,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+	int FORGOTTEN_PASSWORD_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -11155,7 +10282,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int FORGOTTEN_PASSWORD_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -11164,7 +10291,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int FORGOTTEN_PASSWORD_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -11173,7 +10300,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int FORGOTTEN_PASSWORD_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -11182,7 +10309,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int FORGOTTEN_PASSWORD_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -11191,7 +10318,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int FORGOTTEN_PASSWORD_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -11200,7 +10327,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int FORGOTTEN_PASSWORD_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -11209,7 +10336,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -11218,7 +10345,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -11227,7 +10354,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The number of structural features of the '<em>Forgotten Password Unit</em>' class.
@@ -11236,7 +10363,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int FORGOTTEN_PASSWORD_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -11651,25 +10778,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 106;
-
-	/**
-	 * The feature id for the '<em><b>Field</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_REFERENCE__FIELD = CriteriaPackage.PATH_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Field2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_REFERENCE__FIELD2 = CriteriaPackage.PATH_FEATURE_COUNT + 1;
+	int FEATURE_REFERENCE = 97;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -11678,7 +10787,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE__FEATURE = CriteriaPackage.PATH_FEATURE_COUNT + 2;
+	int FEATURE_REFERENCE__FEATURE = CriteriaPackage.PATH_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Feature Reference</em>' class.
@@ -11687,7 +10796,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_REFERENCE_FEATURE_COUNT = CriteriaPackage.PATH_FEATURE_COUNT + 3;
+	int FEATURE_REFERENCE_FEATURE_COUNT = CriteriaPackage.PATH_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ParameterReferenceImpl <em>Parameter Reference</em>}' class.
@@ -11697,7 +10806,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getParameterReference()
 	 * @generated
 	 */
-	int PARAMETER_REFERENCE = 107;
+	int PARAMETER_REFERENCE = 98;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -11725,7 +10834,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCurrentUserReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 108;
+	int CURRENT_USER_REFERENCE = 99;
 
 	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
@@ -11744,7 +10853,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDatabaseTechnologies()
 	 * @generated
 	 */
-	int DATABASE_TECHNOLOGIES = 109;
+	int DATABASE_TECHNOLOGIES = 100;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies <em>Orm Technologies</em>}' enum.
@@ -11754,7 +10863,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getOrmTechnologies()
 	 * @generated
 	 */
-	int ORM_TECHNOLOGIES = 110;
+	int ORM_TECHNOLOGIES = 101;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
@@ -11764,7 +10873,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 111;
+	int FRAMEWORK_TECHNOLOGIES = 102;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -11774,7 +10883,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 112;
+	int AJAX_TECHNOLOGIES = 103;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Cardinality <em>Cardinality</em>}' enum.
@@ -11784,7 +10893,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 113;
+	int CARDINALITY = 104;
 
 
 	/**
@@ -11795,7 +10904,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 114;
+	int DATE_DETAILS = 105;
 
 
 	/**
@@ -11806,7 +10915,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 115;
+	int PAGE_TOP_MENU_OPTIONS = 106;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -11816,7 +10925,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 116;
+	int COLLECTION_DISPLAY_OPTIONS = 107;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -11826,7 +10935,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 117;
+	int INDEX_DISPLAY_OPTION = 108;
 
 
 	/**
@@ -13772,15 +12881,15 @@ public interface WebsitePackage extends EPackage {
 	EClass getDynamicMenu();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicMenu#getService <em>Service</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicMenu#getEntityOrView <em>Entity Or View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Service</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DynamicMenu#getService()
+	 * @return the meta object for the reference '<em>Entity Or View</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.DynamicMenu#getEntityOrView()
 	 * @see #getDynamicMenu()
 	 * @generated
 	 */
-	EReference getDynamicMenu_Service();
+	EReference getDynamicMenu_EntityOrView();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicMenu#getSelection <em>Selection</em>}'.
@@ -13794,15 +12903,15 @@ public interface WebsitePackage extends EPackage {
 	EReference getDynamicMenu_Selection();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicMenu#getDynamicTitle <em>Dynamic Title</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicMenu#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Dynamic Title</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DynamicMenu#getDynamicTitle()
+	 * @return the meta object for the reference '<em>Title</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.DynamicMenu#getTitle()
 	 * @see #getDynamicMenu()
 	 * @generated
 	 */
-	EReference getDynamicMenu_DynamicTitle();
+	EReference getDynamicMenu_Title();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Filter <em>Filter</em>}'.
@@ -13966,16 +13075,6 @@ public interface WebsitePackage extends EPackage {
 	EReference getUnitContainer_Units();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.UnitSource <em>Unit Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Unit Source</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitSource
-	 * @generated
-	 */
-	EClass getUnitSource();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField <em>Unit Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14051,6 +13150,50 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getUnitFeature_CollectionDisplayOption();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getDisplayLabel <em>Display Label</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Display Label</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getDisplayLabel()
+	 * @see #getUnitFeature()
+	 * @generated
+	 */
+	EAttribute getUnitFeature_DisplayLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#isRequired <em>Required</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Required</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature#isRequired()
+	 * @see #getUnitFeature()
+	 * @generated
+	 */
+	EAttribute getUnitFeature_Required();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getForcedValue <em>Forced Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Forced Value</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getForcedValue()
+	 * @see #getUnitFeature()
+	 * @generated
+	 */
+	EReference getUnitFeature_ForcedValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getFooter <em>Footer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Footer</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getFooter()
+	 * @see #getUnitFeature()
+	 * @generated
+	 */
+	EAttribute getUnitFeature_Footer();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#isAutofocus <em>Autofocus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14062,6 +13205,50 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getUnitFeature_Autofocus();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getHeaderClass <em>Header Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Header Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getHeaderClass()
+	 * @see #getUnitFeature()
+	 * @generated
+	 */
+	EAttribute getUnitFeature_HeaderClass();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getInputClass <em>Input Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Input Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getInputClass()
+	 * @see #getUnitFeature()
+	 * @generated
+	 */
+	EAttribute getUnitFeature_InputClass();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getDisplayClass <em>Display Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Display Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getDisplayClass()
+	 * @see #getUnitFeature()
+	 * @generated
+	 */
+	EAttribute getUnitFeature_DisplayClass();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getFooterClass <em>Footer Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Footer Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getFooterClass()
+	 * @see #getUnitFeature()
+	 * @generated
+	 */
+	EAttribute getUnitFeature_FooterClass();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement <em>Unit Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14070,6 +13257,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getUnitElement();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitElement#getAttribute()
+	 * @see #getUnitElement()
+	 * @generated
+	 */
+	EReference getUnitElement_Attribute();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement#getName <em>Name</em>}'.
@@ -14083,15 +13281,26 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getUnitElement_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement#getServiceFeature <em>Service Feature</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Service Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitElement#getServiceFeature()
+	 * @return the meta object for the containment reference '<em>Default Value</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitElement#getDefaultValue()
 	 * @see #getUnitElement()
 	 * @generated
 	 */
-	EReference getUnitElement_ServiceFeature();
+	EReference getUnitElement_DefaultValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement#isObfuscateFormFields <em>Obfuscate Form Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Obfuscate Form Fields</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitElement#isObfuscateFormFields()
+	 * @see #getUnitElement()
+	 * @generated
+	 */
+	EAttribute getUnitElement_ObfuscateFormFields();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitElement#getPlaceholder <em>Placeholder</em>}'.
@@ -14126,6 +13335,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getUnitAssociation();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getAssociation <em>Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getAssociation()
+	 * @see #getUnitAssociation()
+	 * @generated
+	 */
+	EReference getUnitAssociation_Association();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14135,28 +13355,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUnitAssociation_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getServiceFeature <em>Service Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Service Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getServiceFeature()
-	 * @see #getUnitAssociation()
-	 * @generated
-	 */
-	EReference getUnitAssociation_ServiceFeature();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature <em>Child Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Child Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature()
-	 * @see #getUnitAssociation()
-	 * @generated
-	 */
-	EReference getUnitAssociation_ChildFeature();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature2 <em>Child Feature2</em>}'.
@@ -14298,17 +13496,6 @@ public interface WebsitePackage extends EPackage {
 	EClass getService();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getEncapsulates <em>Encapsulates</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Encapsulates</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Service#getEncapsulates()
-	 * @see #getService()
-	 * @generated
-	 */
-	EReference getService_Encapsulates();
-
-	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getServes <em>Serves</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14329,231 +13516,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getService_Selections();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getFeatures <em>Features</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Features</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Service#getFeatures()
-	 * @see #getService()
-	 * @generated
-	 */
-	EReference getService_Features();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getKeys <em>Keys</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Keys</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Service#getKeys()
-	 * @see #getService()
-	 * @generated
-	 */
-	EReference getService_Keys();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceFeature <em>Service Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceFeature
-	 * @generated
-	 */
-	EClass getServiceFeature();
-
-	/**
-	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceFeature#getPartOf <em>Part Of</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Part Of</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceFeature#getPartOf()
-	 * @see #getServiceFeature()
-	 * @generated
-	 */
-	EReference getServiceFeature_PartOf();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceFeature#getDateFormat <em>Date Format</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Date Format</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceFeature#getDateFormat()
-	 * @see #getServiceFeature()
-	 * @generated
-	 */
-	EAttribute getServiceFeature_DateFormat();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute <em>Service Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Attribute</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute
-	 * @generated
-	 */
-	EClass getServiceAttribute();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getName()
-	 * @see #getServiceAttribute()
-	 * @generated
-	 */
-	EAttribute getServiceAttribute_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getInterfaceType <em>Interface Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Interface Type</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getInterfaceType()
-	 * @see #getServiceAttribute()
-	 * @generated
-	 */
-	EAttribute getServiceAttribute_InterfaceType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getPlaceholder <em>Placeholder</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Placeholder</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getPlaceholder()
-	 * @see #getServiceAttribute()
-	 * @generated
-	 */
-	EAttribute getServiceAttribute_Placeholder();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getValidationPattern <em>Validation Pattern</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Validation Pattern</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute#getValidationPattern()
-	 * @see #getServiceAttribute()
-	 * @generated
-	 */
-	EAttribute getServiceAttribute_ValidationPattern();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation <em>Service Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Association</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation
-	 * @generated
-	 */
-	EClass getServiceAssociation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getName()
-	 * @see #getServiceAssociation()
-	 * @generated
-	 */
-	EAttribute getServiceAssociation_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getSelection <em>Selection</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Selection</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation#getSelection()
-	 * @see #getServiceAssociation()
-	 * @generated
-	 */
-	EReference getServiceAssociation_Selection();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceFeatureReference <em>Service Feature Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Feature Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceFeatureReference
-	 * @generated
-	 */
-	EClass getServiceFeatureReference();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference <em>Service Attribute Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Attribute Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference
-	 * @generated
-	 */
-	EClass getServiceAttributeReference();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference#getName()
-	 * @see #getServiceAttributeReference()
-	 * @generated
-	 */
-	EAttribute getServiceAttributeReference_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference#getAttribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attribute</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference#getAttribute()
-	 * @see #getServiceAttributeReference()
-	 * @generated
-	 */
-	EReference getServiceAttributeReference_Attribute();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference <em>Service Association Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Service Association Reference</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference
-	 * @generated
-	 */
-	EClass getServiceAssociationReference();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference#getName()
-	 * @see #getServiceAssociationReference()
-	 * @generated
-	 */
-	EAttribute getServiceAssociationReference_Name();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference#getAssociation <em>Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Association</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference#getAssociation()
-	 * @see #getServiceAssociationReference()
-	 * @generated
-	 */
-	EReference getServiceAssociationReference_Association();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference#getChildFeature <em>Child Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Child Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference#getChildFeature()
-	 * @see #getServiceAssociationReference()
-	 * @generated
-	 */
-	EReference getServiceAssociationReference_ChildFeature();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Selection <em>Selection</em>}'.
@@ -14586,17 +13548,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSelection_Parameters();
-
-	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getJoins <em>Joins</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Joins</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Selection#getJoins()
-	 * @see #getSelection()
-	 * @generated
-	 */
-	EReference getSelection_Joins();
 
 	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getNewJoins2 <em>New Joins2</em>}'.
@@ -14933,179 +13884,6 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getUnitSupportAction_ConfirmMessage();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature <em>Included Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Included Feature</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedFeature
-	 * @generated
-	 */
-	EClass getIncludedFeature();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#isRequired <em>Required</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Required</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#isRequired()
-	 * @see #getIncludedFeature()
-	 * @generated
-	 */
-	EAttribute getIncludedFeature_Required();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getForcedValue <em>Forced Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Forced Value</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getForcedValue()
-	 * @see #getIncludedFeature()
-	 * @generated
-	 */
-	EReference getIncludedFeature_ForcedValue();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getDisplayLabel <em>Display Label</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Display Label</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getDisplayLabel()
-	 * @see #getIncludedFeature()
-	 * @generated
-	 */
-	EAttribute getIncludedFeature_DisplayLabel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getFooter <em>Footer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Footer</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getFooter()
-	 * @see #getIncludedFeature()
-	 * @generated
-	 */
-	EAttribute getIncludedFeature_Footer();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getHeaderClass <em>Header Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Header Class</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getHeaderClass()
-	 * @see #getIncludedFeature()
-	 * @generated
-	 */
-	EAttribute getIncludedFeature_HeaderClass();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getInputClass <em>Input Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Input Class</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getInputClass()
-	 * @see #getIncludedFeature()
-	 * @generated
-	 */
-	EAttribute getIncludedFeature_InputClass();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getDisplayClass <em>Display Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Display Class</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getDisplayClass()
-	 * @see #getIncludedFeature()
-	 * @generated
-	 */
-	EAttribute getIncludedFeature_DisplayClass();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getFooterClass <em>Footer Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Footer Class</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedFeature#getFooterClass()
-	 * @see #getIncludedFeature()
-	 * @generated
-	 */
-	EAttribute getIncludedFeature_FooterClass();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedElement <em>Included Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Included Element</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedElement
-	 * @generated
-	 */
-	EClass getIncludedElement();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedElement#getAttribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attribute</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedElement#getAttribute()
-	 * @see #getIncludedElement()
-	 * @generated
-	 */
-	EReference getIncludedElement_Attribute();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedElement#isObfuscateFormFields <em>Obfuscate Form Fields</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Obfuscate Form Fields</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedElement#isObfuscateFormFields()
-	 * @see #getIncludedElement()
-	 * @generated
-	 */
-	EAttribute getIncludedElement_ObfuscateFormFields();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedElement#getDefaultValue <em>Default Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Default Value</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedElement#getDefaultValue()
-	 * @see #getIncludedElement()
-	 * @generated
-	 */
-	EReference getIncludedElement_DefaultValue();
-
-	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation <em>Included Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Included Association</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation
-	 * @generated
-	 */
-	EClass getIncludedAssociation();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation#getAssociation <em>Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Association</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation#getAssociation()
-	 * @see #getIncludedAssociation()
-	 * @generated
-	 */
-	EReference getIncludedAssociation_Association();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation#isUseAssociationSource <em>Use Association Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Use Association Source</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.IncludedAssociation#isUseAssociationSource()
-	 * @see #getIncludedAssociation()
-	 * @generated
-	 */
-	EAttribute getIncludedAssociation_UseAssociationSource();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit <em>Edit Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15393,17 +14171,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDynamicUnit();
-
-	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Source</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getSource()
-	 * @see #getDynamicUnit()
-	 * @generated
-	 */
-	EReference getDynamicUnit_Source();
 
 	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getEntities <em>Entities</em>}'.
@@ -15798,6 +14565,27 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getSearchUnit_StyleClass();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ActionUnit <em>Action Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Action Unit</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ActionUnit
+	 * @generated
+	 */
+	EClass getActionUnit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ActionUnit#getStyleClass <em>Style Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Style Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ActionUnit#getStyleClass()
+	 * @see #getActionUnit()
+	 * @generated
+	 */
+	EAttribute getActionUnit_StyleClass();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationUnit <em>Authentication Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16032,17 +14820,6 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getMapUnit_StyleClass();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName <em>Place Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Place Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName()
-	 * @see #getMapUnit()
-	 * @generated
-	 */
-	EReference getMapUnit_PlaceName();
-
-	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName2 <em>Place Name2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16052,17 +14829,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMapUnit_PlaceName2();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation <em>Location</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Location</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation()
-	 * @see #getMapUnit()
-	 * @generated
-	 */
-	EReference getMapUnit_Location();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation2 <em>Location2</em>}'.
@@ -16190,28 +14956,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFeatureReference();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.FeatureReference#getField <em>Field</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Field</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.FeatureReference#getField()
-	 * @see #getFeatureReference()
-	 * @generated
-	 */
-	EReference getFeatureReference_Field();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.FeatureReference#getField2 <em>Field2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Field2</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.FeatureReference#getField2()
-	 * @see #getFeatureReference()
-	 * @generated
-	 */
-	EReference getFeatureReference_Field2();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.FeatureReference#getFeature <em>Feature</em>}'.
@@ -16349,15 +15093,15 @@ public interface WebsitePackage extends EPackage {
 	EClass getLocalAuthenticationSystem();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserSource <em>User Source</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUser <em>User</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>User Source</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserSource()
+	 * @return the meta object for the reference '<em>User</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUser()
 	 * @see #getLocalAuthenticationSystem()
 	 * @generated
 	 */
-	EReference getLocalAuthenticationSystem_UserSource();
+	EReference getLocalAuthenticationSystem_User();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserAuthenticationKey <em>User Authentication Key</em>}'.
@@ -16371,15 +15115,15 @@ public interface WebsitePackage extends EPackage {
 	EReference getLocalAuthenticationSystem_UserAuthenticationKey();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthenticationSource <em>Authentication Source</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Authentication Source</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthenticationSource()
+	 * @return the meta object for the reference '<em>Authentication</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthentication()
 	 * @see #getLocalAuthenticationSystem()
 	 * @generated
 	 */
-	EReference getLocalAuthenticationSystem_AuthenticationSource();
+	EReference getLocalAuthenticationSystem_Authentication();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}'.
@@ -18109,12 +16853,12 @@ public interface WebsitePackage extends EPackage {
 		EClass DYNAMIC_MENU = eINSTANCE.getDynamicMenu();
 
 		/**
-		 * The meta object literal for the '<em><b>Service</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Entity Or View</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DYNAMIC_MENU__SERVICE = eINSTANCE.getDynamicMenu_Service();
+		EReference DYNAMIC_MENU__ENTITY_OR_VIEW = eINSTANCE.getDynamicMenu_EntityOrView();
 
 		/**
 		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
@@ -18125,12 +16869,12 @@ public interface WebsitePackage extends EPackage {
 		EReference DYNAMIC_MENU__SELECTION = eINSTANCE.getDynamicMenu_Selection();
 
 		/**
-		 * The meta object literal for the '<em><b>Dynamic Title</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DYNAMIC_MENU__DYNAMIC_TITLE = eINSTANCE.getDynamicMenu_DynamicTitle();
+		EReference DYNAMIC_MENU__TITLE = eINSTANCE.getDynamicMenu_Title();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterImpl <em>Filter</em>}' class.
@@ -18261,20 +17005,10 @@ public interface WebsitePackage extends EPackage {
 		EReference UNIT_CONTAINER__UNITS = eINSTANCE.getUnitContainer_Units();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitSource <em>Unit Source</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFieldImpl <em>Unit Field</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.UnitSource
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitSource()
-		 * @generated
-		 */
-		EClass UNIT_SOURCE = eINSTANCE.getUnitSource();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField <em>Unit Field</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.UnitField
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.UnitFieldImpl
 		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitField()
 		 * @generated
 		 */
@@ -18305,10 +17039,10 @@ public interface WebsitePackage extends EPackage {
 		EAttribute UNIT_FIELD__DATE_FORMAT = eINSTANCE.getUnitField_DateFormat();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature <em>Unit Feature</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl <em>Unit Feature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl
 		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitFeature()
 		 * @generated
 		 */
@@ -18331,12 +17065,76 @@ public interface WebsitePackage extends EPackage {
 		EAttribute UNIT_FEATURE__COLLECTION_DISPLAY_OPTION = eINSTANCE.getUnitFeature_CollectionDisplayOption();
 
 		/**
+		 * The meta object literal for the '<em><b>Display Label</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FEATURE__DISPLAY_LABEL = eINSTANCE.getUnitFeature_DisplayLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FEATURE__REQUIRED = eINSTANCE.getUnitFeature_Required();
+
+		/**
+		 * The meta object literal for the '<em><b>Forced Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNIT_FEATURE__FORCED_VALUE = eINSTANCE.getUnitFeature_ForcedValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Footer</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FEATURE__FOOTER = eINSTANCE.getUnitFeature_Footer();
+
+		/**
 		 * The meta object literal for the '<em><b>Autofocus</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute UNIT_FEATURE__AUTOFOCUS = eINSTANCE.getUnitFeature_Autofocus();
+
+		/**
+		 * The meta object literal for the '<em><b>Header Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FEATURE__HEADER_CLASS = eINSTANCE.getUnitFeature_HeaderClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Input Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FEATURE__INPUT_CLASS = eINSTANCE.getUnitFeature_InputClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Display Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FEATURE__DISPLAY_CLASS = eINSTANCE.getUnitFeature_DisplayClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Footer Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FEATURE__FOOTER_CLASS = eINSTANCE.getUnitFeature_FooterClass();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitElementImpl <em>Unit Element</em>}' class.
@@ -18349,6 +17147,14 @@ public interface WebsitePackage extends EPackage {
 		EClass UNIT_ELEMENT = eINSTANCE.getUnitElement();
 
 		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNIT_ELEMENT__ATTRIBUTE = eINSTANCE.getUnitElement_Attribute();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -18357,12 +17163,20 @@ public interface WebsitePackage extends EPackage {
 		EAttribute UNIT_ELEMENT__NAME = eINSTANCE.getUnitElement_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Service Feature</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Default Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNIT_ELEMENT__SERVICE_FEATURE = eINSTANCE.getUnitElement_ServiceFeature();
+		EReference UNIT_ELEMENT__DEFAULT_VALUE = eINSTANCE.getUnitElement_DefaultValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Obfuscate Form Fields</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS = eINSTANCE.getUnitElement_ObfuscateFormFields();
 
 		/**
 		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
@@ -18391,28 +17205,20 @@ public interface WebsitePackage extends EPackage {
 		EClass UNIT_ASSOCIATION = eINSTANCE.getUnitAssociation();
 
 		/**
+		 * The meta object literal for the '<em><b>Association</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNIT_ASSOCIATION__ASSOCIATION = eINSTANCE.getUnitAssociation_Association();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute UNIT_ASSOCIATION__NAME = eINSTANCE.getUnitAssociation_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Service Feature</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNIT_ASSOCIATION__SERVICE_FEATURE = eINSTANCE.getUnitAssociation_ServiceFeature();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Feature</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNIT_ASSOCIATION__CHILD_FEATURE = eINSTANCE.getUnitAssociation_ChildFeature();
 
 		/**
 		 * The meta object literal for the '<em><b>Child Feature2</b></em>' containment reference feature.
@@ -18527,14 +17333,6 @@ public interface WebsitePackage extends EPackage {
 		EClass SERVICE = eINSTANCE.getService();
 
 		/**
-		 * The meta object literal for the '<em><b>Encapsulates</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE__ENCAPSULATES = eINSTANCE.getService_Encapsulates();
-
-		/**
 		 * The meta object literal for the '<em><b>Serves</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -18549,186 +17347,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SERVICE__SELECTIONS = eINSTANCE.getService_Selections();
-
-		/**
-		 * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE__FEATURES = eINSTANCE.getService_Features();
-
-		/**
-		 * The meta object literal for the '<em><b>Keys</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE__KEYS = eINSTANCE.getService_Keys();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.ServiceFeature <em>Service Feature</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.ServiceFeature
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceFeature()
-		 * @generated
-		 */
-		EClass SERVICE_FEATURE = eINSTANCE.getServiceFeature();
-
-		/**
-		 * The meta object literal for the '<em><b>Part Of</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE_FEATURE__PART_OF = eINSTANCE.getServiceFeature_PartOf();
-
-		/**
-		 * The meta object literal for the '<em><b>Date Format</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_FEATURE__DATE_FORMAT = eINSTANCE.getServiceFeature_DateFormat();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl <em>Service Attribute</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceAttribute()
-		 * @generated
-		 */
-		EClass SERVICE_ATTRIBUTE = eINSTANCE.getServiceAttribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_ATTRIBUTE__NAME = eINSTANCE.getServiceAttribute_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Interface Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_ATTRIBUTE__INTERFACE_TYPE = eINSTANCE.getServiceAttribute_InterfaceType();
-
-		/**
-		 * The meta object literal for the '<em><b>Placeholder</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_ATTRIBUTE__PLACEHOLDER = eINSTANCE.getServiceAttribute_Placeholder();
-
-		/**
-		 * The meta object literal for the '<em><b>Validation Pattern</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_ATTRIBUTE__VALIDATION_PATTERN = eINSTANCE.getServiceAttribute_ValidationPattern();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationImpl <em>Service Association</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceAssociation()
-		 * @generated
-		 */
-		EClass SERVICE_ASSOCIATION = eINSTANCE.getServiceAssociation();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_ASSOCIATION__NAME = eINSTANCE.getServiceAssociation_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE_ASSOCIATION__SELECTION = eINSTANCE.getServiceAssociation_Selection();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceFeatureReferenceImpl <em>Service Feature Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ServiceFeatureReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceFeatureReference()
-		 * @generated
-		 */
-		EClass SERVICE_FEATURE_REFERENCE = eINSTANCE.getServiceFeatureReference();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeReferenceImpl <em>Service Attribute Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAttributeReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceAttributeReference()
-		 * @generated
-		 */
-		EClass SERVICE_ATTRIBUTE_REFERENCE = eINSTANCE.getServiceAttributeReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_ATTRIBUTE_REFERENCE__NAME = eINSTANCE.getServiceAttributeReference_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE_ATTRIBUTE_REFERENCE__ATTRIBUTE = eINSTANCE.getServiceAttributeReference_Attribute();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationReferenceImpl <em>Service Association Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ServiceAssociationReferenceImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getServiceAssociationReference()
-		 * @generated
-		 */
-		EClass SERVICE_ASSOCIATION_REFERENCE = eINSTANCE.getServiceAssociationReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SERVICE_ASSOCIATION_REFERENCE__NAME = eINSTANCE.getServiceAssociationReference_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Association</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE_ASSOCIATION_REFERENCE__ASSOCIATION = eINSTANCE.getServiceAssociationReference_Association();
-
-		/**
-		 * The meta object literal for the '<em><b>Child Feature</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SERVICE_ASSOCIATION_REFERENCE__CHILD_FEATURE = eINSTANCE.getServiceAssociationReference_ChildFeature();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl <em>Selection</em>}' class.
@@ -18755,14 +17373,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SELECTION__PARAMETERS = eINSTANCE.getSelection_Parameters();
-
-		/**
-		 * The meta object literal for the '<em><b>Joins</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SELECTION__JOINS = eINSTANCE.getSelection_Joins();
 
 		/**
 		 * The meta object literal for the '<em><b>New Joins2</b></em>' reference list feature.
@@ -19027,140 +17637,6 @@ public interface WebsitePackage extends EPackage {
 		EAttribute UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE = eINSTANCE.getUnitSupportAction_ConfirmMessage();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.IncludedFeatureImpl <em>Included Feature</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.IncludedFeatureImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIncludedFeature()
-		 * @generated
-		 */
-		EClass INCLUDED_FEATURE = eINSTANCE.getIncludedFeature();
-
-		/**
-		 * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INCLUDED_FEATURE__REQUIRED = eINSTANCE.getIncludedFeature_Required();
-
-		/**
-		 * The meta object literal for the '<em><b>Forced Value</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INCLUDED_FEATURE__FORCED_VALUE = eINSTANCE.getIncludedFeature_ForcedValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Display Label</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INCLUDED_FEATURE__DISPLAY_LABEL = eINSTANCE.getIncludedFeature_DisplayLabel();
-
-		/**
-		 * The meta object literal for the '<em><b>Footer</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INCLUDED_FEATURE__FOOTER = eINSTANCE.getIncludedFeature_Footer();
-
-		/**
-		 * The meta object literal for the '<em><b>Header Class</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INCLUDED_FEATURE__HEADER_CLASS = eINSTANCE.getIncludedFeature_HeaderClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Input Class</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INCLUDED_FEATURE__INPUT_CLASS = eINSTANCE.getIncludedFeature_InputClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Display Class</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INCLUDED_FEATURE__DISPLAY_CLASS = eINSTANCE.getIncludedFeature_DisplayClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Footer Class</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INCLUDED_FEATURE__FOOTER_CLASS = eINSTANCE.getIncludedFeature_FooterClass();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.IncludedElementImpl <em>Included Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.IncludedElementImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIncludedElement()
-		 * @generated
-		 */
-		EClass INCLUDED_ELEMENT = eINSTANCE.getIncludedElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INCLUDED_ELEMENT__ATTRIBUTE = eINSTANCE.getIncludedElement_Attribute();
-
-		/**
-		 * The meta object literal for the '<em><b>Obfuscate Form Fields</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INCLUDED_ELEMENT__OBFUSCATE_FORM_FIELDS = eINSTANCE.getIncludedElement_ObfuscateFormFields();
-
-		/**
-		 * The meta object literal for the '<em><b>Default Value</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INCLUDED_ELEMENT__DEFAULT_VALUE = eINSTANCE.getIncludedElement_DefaultValue();
-
-		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.IncludedAssociationImpl <em>Included Association</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.IncludedAssociationImpl
-		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIncludedAssociation()
-		 * @generated
-		 */
-		EClass INCLUDED_ASSOCIATION = eINSTANCE.getIncludedAssociation();
-
-		/**
-		 * The meta object literal for the '<em><b>Association</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INCLUDED_ASSOCIATION__ASSOCIATION = eINSTANCE.getIncludedAssociation_Association();
-
-		/**
-		 * The meta object literal for the '<em><b>Use Association Source</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INCLUDED_ASSOCIATION__USE_ASSOCIATION_SOURCE = eINSTANCE.getIncludedAssociation_UseAssociationSource();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl <em>Edit Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -19391,14 +17867,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass DYNAMIC_UNIT = eINSTANCE.getDynamicUnit();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DYNAMIC_UNIT__SOURCE = eINSTANCE.getDynamicUnit_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Entities</b></em>' reference list feature.
@@ -19697,6 +18165,24 @@ public interface WebsitePackage extends EPackage {
 		EAttribute SEARCH_UNIT__STYLE_CLASS = eINSTANCE.getSearchUnit_StyleClass();
 
 		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ActionUnitImpl <em>Action Unit</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ActionUnitImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getActionUnit()
+		 * @generated
+		 */
+		EClass ACTION_UNIT = eINSTANCE.getActionUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Style Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION_UNIT__STYLE_CLASS = eINSTANCE.getActionUnit_StyleClass();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationUnit <em>Authentication Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -19889,28 +18375,12 @@ public interface WebsitePackage extends EPackage {
 		EAttribute MAP_UNIT__STYLE_CLASS = eINSTANCE.getMapUnit_StyleClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Place Name</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAP_UNIT__PLACE_NAME = eINSTANCE.getMapUnit_PlaceName();
-
-		/**
 		 * The meta object literal for the '<em><b>Place Name2</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference MAP_UNIT__PLACE_NAME2 = eINSTANCE.getMapUnit_PlaceName2();
-
-		/**
-		 * The meta object literal for the '<em><b>Location</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MAP_UNIT__LOCATION = eINSTANCE.getMapUnit_Location();
 
 		/**
 		 * The meta object literal for the '<em><b>Location2</b></em>' reference feature.
@@ -20017,22 +18487,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass FEATURE_REFERENCE = eINSTANCE.getFeatureReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Field</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE_REFERENCE__FIELD = eINSTANCE.getFeatureReference_Field();
-
-		/**
-		 * The meta object literal for the '<em><b>Field2</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FEATURE_REFERENCE__FIELD2 = eINSTANCE.getFeatureReference_Field2();
 
 		/**
 		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
@@ -20155,12 +18609,12 @@ public interface WebsitePackage extends EPackage {
 		EClass LOCAL_AUTHENTICATION_SYSTEM = eINSTANCE.getLocalAuthenticationSystem();
 
 		/**
-		 * The meta object literal for the '<em><b>User Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>User</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LOCAL_AUTHENTICATION_SYSTEM__USER_SOURCE = eINSTANCE.getLocalAuthenticationSystem_UserSource();
+		EReference LOCAL_AUTHENTICATION_SYSTEM__USER = eINSTANCE.getLocalAuthenticationSystem_User();
 
 		/**
 		 * The meta object literal for the '<em><b>User Authentication Key</b></em>' reference feature.
@@ -20171,12 +18625,12 @@ public interface WebsitePackage extends EPackage {
 		EReference LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY = eINSTANCE.getLocalAuthenticationSystem_UserAuthenticationKey();
 
 		/**
-		 * The meta object literal for the '<em><b>Authentication Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Authentication</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE = eINSTANCE.getLocalAuthenticationSystem_AuthenticationSource();
+		EReference LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION = eINSTANCE.getLocalAuthenticationSystem_Authentication();
 
 		/**
 		 * The meta object literal for the '<em><b>Use Captcha</b></em>' attribute feature.

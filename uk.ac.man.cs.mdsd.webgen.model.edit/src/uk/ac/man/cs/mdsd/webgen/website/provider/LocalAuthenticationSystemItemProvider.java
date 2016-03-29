@@ -4,28 +4,16 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.Association;
-import uk.ac.man.cs.mdsd.webgen.website.Classifier;
-import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem;
-import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
-import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -57,9 +45,9 @@ public class LocalAuthenticationSystemItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUserSourcePropertyDescriptor(object);
+			addUserPropertyDescriptor(object);
 			addUserAuthenticationKeyPropertyDescriptor(object);
-			addAuthenticationSourcePropertyDescriptor(object);
+			addAuthenticationPropertyDescriptor(object);
 			addUseCaptchaPropertyDescriptor(object);
 			addAllowSelfRegistrationPropertyDescriptor(object);
 			addTrackLoginAttemptsPropertyDescriptor(object);
@@ -74,43 +62,25 @@ public class LocalAuthenticationSystemItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the User Source feature.
+	 * This adds a property descriptor for the User feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	protected void addUserSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_LocalAuthenticationSystem_userSource_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_userSource_feature", "_UI_LocalAuthenticationSystem_type"),
-			WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USER_SOURCE,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof LocalAuthenticationSystem) {
-						final EObject eRoot = EcoreUtil.getRootContainer((LocalAuthenticationSystem) object);
-						if (eRoot instanceof WebGenModel) {
-							final WebGenModel model = (WebGenModel) eRoot;
-							final List<UnitSource> sources = new LinkedList<UnitSource>();
-							sources.addAll(model.getServices());
-							for (Classifier classifier : model.getClassifiers()) {
-								if (classifier instanceof Entity) {
-									final Entity entity = (Entity) classifier;
-									if (entity.getServedBy().size() == 0) {
-										sources.add(entity);
-									}
-								}
-							}
-							return sources;
-						}
-					}
-					return Collections.emptyList();
-				}
-			});
+	protected void addUserPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_user_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_user_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -132,27 +102,27 @@ public class LocalAuthenticationSystemItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof LocalAuthenticationSystem) {
-						final LocalAuthenticationSystem authSystem
-							= (LocalAuthenticationSystem) object;
-						if (authSystem.getUserSource() != null) {
-							final UnitSource source = authSystem.getUserSource();
-							if (source instanceof Entity) {
-								final List<EntityFeature> features = new LinkedList<EntityFeature>();
-								for (EntityFeature feature : ((Entity) source).getFeatures()) {
-									if (!(feature instanceof Association)) {
-										features.add(feature);
-									}
-								}
-								return features;
-							}
-							if (source instanceof Service) {
-								final List<Association> features = new LinkedList<Association>();
-								for (EntityOrView entityOrView : ((Service) source).getEncapsulates()) {
-									features.addAll(getAllAssociations(entityOrView));
-								}
-								return features;
-							}
-						}
+//						final LocalAuthenticationSystem authSystem
+//							= (LocalAuthenticationSystem) object;
+//						if (authSystem.getUserSource() != null) {
+//							final UnitSource source = authSystem.getUserSource();
+//							if (source instanceof Entity) {
+//								final List<EntityFeature> features = new LinkedList<EntityFeature>();
+//								for (EntityFeature feature : ((Entity) source).getFeatures()) {
+//									if (!(feature instanceof Association)) {
+//										features.add(feature);
+//									}
+//								}
+//								return features;
+//							}
+//							if (source instanceof Service) {
+//								final List<Association> features = new LinkedList<Association>();
+//								for (EntityOrView entityOrView : ((Service) source).getEncapsulates()) {
+//									features.addAll(getAllAssociations(entityOrView));
+//								}
+//								return features;
+//							}
+//						}
 					}
 					return super.getChoiceOfValues(object);
 				}
@@ -160,24 +130,24 @@ public class LocalAuthenticationSystemItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Authentication Source feature.
+	 * This adds a property descriptor for the Authentication feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAuthenticationSourcePropertyDescriptor(Object object) {
+	protected void addAuthenticationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_authenticationSource_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_authenticationSource_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE,
+				 getString("_UI_LocalAuthenticationSystem_authentication_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_authentication_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION,
 				 true,
 				 false,
 				 true,
 				 null,
-				 getString("_UI_AuthenticationPropertyCategory"),
+				 null,
 				 null));
 	}
 

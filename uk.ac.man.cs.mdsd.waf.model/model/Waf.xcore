@@ -75,9 +75,9 @@ abstract class Authentication {
 }
 
 class LocalAuthenticationSystem extends Authentication {
-	refers Service[1] userService
-	refers ServiceAttribute[1] userAuthenticationKey
-	refers Service authenticationService
+	refers EntityOrView[1] user
+	refers Attribute[1] userAuthenticationKey
+	refers EntityOrView authentication
 	refers Service loginAttemptService
 	refers Service autoLoginService
 	boolean useCaptcha
@@ -100,39 +100,9 @@ abstract class DisplayElement {
 
 class Service extends NamedElement {
 	refers WafModel[1] partOf opposite services
-	refers EntityOrView[1..*] encapsulates
 	refers EntityOrView[1] serves
-	contains ServiceFeature[] features opposite partOf
 	contains Selection[] selections
-	refers DynamicUnit[] accessedBy opposite services
 }
-
-class ServiceFeature extends NamedDisplayElement {
-	container Service[1] partOf opposite features
-	Cardinality cardinality
-	contains Expression forcedValue
-	String footer
-	// style classes in service features are used when creating implicit unit fields
-	String headerClass
-	String inputClass
-	String displayClass
-	String footerClass
-}
-
-class ServiceAttribute extends ServiceFeature {
-	String interfaceType
-	String placeholder
-	String validationPattern
-	String dateFormat
-	refers Attribute[1] attribute
-	boolean obfuscateFormFields
-	contains Expression defaultValue
-}
-
-class ServiceAssociation extends ServiceFeature {
-	refers Association[1] association
-}
-
 
 class Selection extends NamedElement {
 	contains SelectionParameter[] parameters
@@ -159,9 +129,9 @@ class StaticMenu extends Menu {
 }
 
 class DynamicMenu extends Menu {
-	refers Service[1] service
+	refers EntityOrView[1] entityOrView
 	refers Selection[1] selection
-	refers ServiceAttribute dynamicTitle
+	refers Label title
 }
 
 abstract class MenuEntry {
@@ -239,7 +209,6 @@ class StaticUnit extends ContentUnit {
 }
 
 abstract class DynamicUnit extends ContentUnit {
-	refers Service[1..*] services opposite accessedBy
 	refers EntityOrView[1..*] entities
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
@@ -420,6 +389,9 @@ abstract class ControlUnit extends DynamicUnit {
 
 class SearchUnit extends ControlUnit {
 	refers IndexUnit[1] resultsDestination opposite targettingSearches
+}
+
+class ActionUnit extends ControlUnit {
 }
 
 interface AuthenticationUnit {

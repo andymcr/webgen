@@ -219,7 +219,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				Entity entity = (Entity)theEObject;
 				T result = caseEntity(entity);
 				if (result == null) result = caseEntityOrView(entity);
-				if (result == null) result = caseUnitSource(entity);
 				if (result == null) result = caseClassifier(entity);
 				if (result == null) result = caseNamedDisplayElement(entity);
 				if (result == null) result = caseNamedElement(entity);
@@ -452,31 +451,10 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.INCLUDED_FEATURE: {
-				IncludedFeature includedFeature = (IncludedFeature)theEObject;
-				T result = caseIncludedFeature(includedFeature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.INCLUDED_ELEMENT: {
-				IncludedElement includedElement = (IncludedElement)theEObject;
-				T result = caseIncludedElement(includedElement);
-				if (result == null) result = caseIncludedFeature(includedElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.INCLUDED_ASSOCIATION: {
-				IncludedAssociation includedAssociation = (IncludedAssociation)theEObject;
-				T result = caseIncludedAssociation(includedAssociation);
-				if (result == null) result = caseIncludedFeature(includedAssociation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebsitePackage.SERVICE: {
 				Service service = (Service)theEObject;
 				T result = caseService(service);
 				if (result == null) result = caseNamedElement(service);
-				if (result == null) result = caseUnitSource(service);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -491,51 +469,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				SelectionParameter selectionParameter = (SelectionParameter)theEObject;
 				T result = caseSelectionParameter(selectionParameter);
 				if (result == null) result = caseNamedElement(selectionParameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.SERVICE_FEATURE: {
-				ServiceFeature serviceFeature = (ServiceFeature)theEObject;
-				T result = caseServiceFeature(serviceFeature);
-				if (result == null) result = caseIncludedFeature(serviceFeature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.SERVICE_ATTRIBUTE: {
-				ServiceAttribute serviceAttribute = (ServiceAttribute)theEObject;
-				T result = caseServiceAttribute(serviceAttribute);
-				if (result == null) result = caseIncludedElement(serviceAttribute);
-				if (result == null) result = caseServiceFeature(serviceAttribute);
-				if (result == null) result = caseIncludedFeature(serviceAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.SERVICE_ASSOCIATION: {
-				ServiceAssociation serviceAssociation = (ServiceAssociation)theEObject;
-				T result = caseServiceAssociation(serviceAssociation);
-				if (result == null) result = caseIncludedAssociation(serviceAssociation);
-				if (result == null) result = caseServiceFeature(serviceAssociation);
-				if (result == null) result = caseIncludedFeature(serviceAssociation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.SERVICE_FEATURE_REFERENCE: {
-				ServiceFeatureReference serviceFeatureReference = (ServiceFeatureReference)theEObject;
-				T result = caseServiceFeatureReference(serviceFeatureReference);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.SERVICE_ATTRIBUTE_REFERENCE: {
-				ServiceAttributeReference serviceAttributeReference = (ServiceAttributeReference)theEObject;
-				T result = caseServiceAttributeReference(serviceAttributeReference);
-				if (result == null) result = caseServiceFeatureReference(serviceAttributeReference);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.SERVICE_ASSOCIATION_REFERENCE: {
-				ServiceAssociationReference serviceAssociationReference = (ServiceAssociationReference)theEObject;
-				T result = caseServiceAssociationReference(serviceAssociationReference);
-				if (result == null) result = caseServiceFeatureReference(serviceAssociationReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -642,12 +575,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.UNIT_SOURCE: {
-				UnitSource unitSource = (UnitSource)theEObject;
-				T result = caseUnitSource(unitSource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebsitePackage.CONTENT_UNIT: {
 				ContentUnit contentUnit = (ContentUnit)theEObject;
 				T result = caseContentUnit(contentUnit);
@@ -698,7 +625,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 			case WebsitePackage.UNIT_FEATURE: {
 				UnitFeature unitFeature = (UnitFeature)theEObject;
 				T result = caseUnitFeature(unitFeature);
-				if (result == null) result = caseIncludedFeature(unitFeature);
 				if (result == null) result = caseUnitField(unitFeature);
 				if (result == null) result = caseInlineActionContainer(unitFeature);
 				if (result == null) result = defaultCase(theEObject);
@@ -707,9 +633,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 			case WebsitePackage.UNIT_ELEMENT: {
 				UnitElement unitElement = (UnitElement)theEObject;
 				T result = caseUnitElement(unitElement);
-				if (result == null) result = caseIncludedElement(unitElement);
 				if (result == null) result = caseUnitFeature(unitElement);
-				if (result == null) result = caseIncludedFeature(unitElement);
 				if (result == null) result = caseUnitField(unitElement);
 				if (result == null) result = caseInlineActionContainer(unitElement);
 				if (result == null) result = defaultCase(theEObject);
@@ -718,10 +642,8 @@ public class WebsiteSwitch<T> extends Switch<T> {
 			case WebsitePackage.UNIT_ASSOCIATION: {
 				UnitAssociation unitAssociation = (UnitAssociation)theEObject;
 				T result = caseUnitAssociation(unitAssociation);
-				if (result == null) result = caseIncludedAssociation(unitAssociation);
 				if (result == null) result = caseUnitFeature(unitAssociation);
 				if (result == null) result = caseUnitContainer(unitAssociation);
-				if (result == null) result = caseIncludedFeature(unitAssociation);
 				if (result == null) result = caseUnitField(unitAssociation);
 				if (result == null) result = caseInlineActionContainer(unitAssociation);
 				if (result == null) result = defaultCase(theEObject);
@@ -903,6 +825,17 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseContentUnit(searchUnit);
 				if (result == null) result = caseNamedDisplayElement(searchUnit);
 				if (result == null) result = caseNamedElement(searchUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.ACTION_UNIT: {
+				ActionUnit actionUnit = (ActionUnit)theEObject;
+				T result = caseActionUnit(actionUnit);
+				if (result == null) result = caseControlUnit(actionUnit);
+				if (result == null) result = caseDynamicUnit(actionUnit);
+				if (result == null) result = caseContentUnit(actionUnit);
+				if (result == null) result = caseNamedDisplayElement(actionUnit);
+				if (result == null) result = caseNamedElement(actionUnit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1866,21 +1799,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unit Source</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unit Source</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUnitSource(UnitSource object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Unit Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -2001,96 +1919,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Feature</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Feature</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServiceFeature(ServiceFeature object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Attribute</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServiceAttribute(ServiceAttribute object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Association</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServiceAssociation(ServiceAssociation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Feature Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Feature Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServiceFeatureReference(ServiceFeatureReference object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Attribute Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Attribute Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServiceAttributeReference(ServiceAttributeReference object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Association Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Association Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServiceAssociationReference(ServiceAssociationReference object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Selection</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -2207,51 +2035,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUnitSupportAction(UnitSupportAction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Included Feature</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Included Feature</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIncludedFeature(IncludedFeature object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Included Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Included Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIncludedElement(IncludedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Included Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Included Association</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIncludedAssociation(IncludedAssociation object) {
 		return null;
 	}
 
@@ -2432,6 +2215,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSearchUnit(SearchUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActionUnit(ActionUnit object) {
 		return null;
 	}
 

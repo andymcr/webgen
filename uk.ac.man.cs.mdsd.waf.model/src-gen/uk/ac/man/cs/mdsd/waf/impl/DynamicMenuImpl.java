@@ -9,10 +9,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Label;
+
 import uk.ac.man.cs.mdsd.waf.DynamicMenu;
 import uk.ac.man.cs.mdsd.waf.Selection;
-import uk.ac.man.cs.mdsd.waf.Service;
-import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -23,23 +24,23 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicMenuImpl#getService <em>Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicMenuImpl#getEntityOrView <em>Entity Or View</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicMenuImpl#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicMenuImpl#getDynamicTitle <em>Dynamic Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicMenuImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	/**
-	 * The cached value of the '{@link #getService() <em>Service</em>}' reference.
+	 * The cached value of the '{@link #getEntityOrView() <em>Entity Or View</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getService()
+	 * @see #getEntityOrView()
 	 * @generated
 	 * @ordered
 	 */
-	protected Service service;
+	protected EntityOrView entityOrView;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -52,14 +53,14 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	protected Selection selection;
 
 	/**
-	 * The cached value of the '{@link #getDynamicTitle() <em>Dynamic Title</em>}' reference.
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDynamicTitle()
+	 * @see #getTitle()
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceAttribute dynamicTitle;
+	protected Label title;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,16 +86,16 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Service getService() {
-		if (service != null && service.eIsProxy()) {
-			InternalEObject oldService = (InternalEObject)service;
-			service = (Service)eResolveProxy(oldService);
-			if (service != oldService) {
+	public EntityOrView getEntityOrView() {
+		if (entityOrView != null && entityOrView.eIsProxy()) {
+			InternalEObject oldEntityOrView = (InternalEObject)entityOrView;
+			entityOrView = (EntityOrView)eResolveProxy(oldEntityOrView);
+			if (entityOrView != oldEntityOrView) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.DYNAMIC_MENU__SERVICE, oldService, service));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.DYNAMIC_MENU__ENTITY_OR_VIEW, oldEntityOrView, entityOrView));
 			}
 		}
-		return service;
+		return entityOrView;
 	}
 
 	/**
@@ -102,8 +103,8 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Service basicGetService() {
-		return service;
+	public EntityOrView basicGetEntityOrView() {
+		return entityOrView;
 	}
 
 	/**
@@ -111,11 +112,11 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setService(Service newService) {
-		Service oldService = service;
-		service = newService;
+	public void setEntityOrView(EntityOrView newEntityOrView) {
+		EntityOrView oldEntityOrView = entityOrView;
+		entityOrView = newEntityOrView;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_MENU__SERVICE, oldService, service));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_MENU__ENTITY_OR_VIEW, oldEntityOrView, entityOrView));
 	}
 
 	/**
@@ -161,16 +162,16 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttribute getDynamicTitle() {
-		if (dynamicTitle != null && dynamicTitle.eIsProxy()) {
-			InternalEObject oldDynamicTitle = (InternalEObject)dynamicTitle;
-			dynamicTitle = (ServiceAttribute)eResolveProxy(oldDynamicTitle);
-			if (dynamicTitle != oldDynamicTitle) {
+	public Label getTitle() {
+		if (title != null && title.eIsProxy()) {
+			InternalEObject oldTitle = (InternalEObject)title;
+			title = (Label)eResolveProxy(oldTitle);
+			if (title != oldTitle) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.DYNAMIC_MENU__DYNAMIC_TITLE, oldDynamicTitle, dynamicTitle));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.DYNAMIC_MENU__TITLE, oldTitle, title));
 			}
 		}
-		return dynamicTitle;
+		return title;
 	}
 
 	/**
@@ -178,8 +179,8 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttribute basicGetDynamicTitle() {
-		return dynamicTitle;
+	public Label basicGetTitle() {
+		return title;
 	}
 
 	/**
@@ -187,11 +188,11 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDynamicTitle(ServiceAttribute newDynamicTitle) {
-		ServiceAttribute oldDynamicTitle = dynamicTitle;
-		dynamicTitle = newDynamicTitle;
+	public void setTitle(Label newTitle) {
+		Label oldTitle = title;
+		title = newTitle;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_MENU__DYNAMIC_TITLE, oldDynamicTitle, dynamicTitle));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_MENU__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -202,15 +203,15 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_MENU__SERVICE:
-				if (resolve) return getService();
-				return basicGetService();
+			case WafPackage.DYNAMIC_MENU__ENTITY_OR_VIEW:
+				if (resolve) return getEntityOrView();
+				return basicGetEntityOrView();
 			case WafPackage.DYNAMIC_MENU__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
-			case WafPackage.DYNAMIC_MENU__DYNAMIC_TITLE:
-				if (resolve) return getDynamicTitle();
-				return basicGetDynamicTitle();
+			case WafPackage.DYNAMIC_MENU__TITLE:
+				if (resolve) return getTitle();
+				return basicGetTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -223,14 +224,14 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_MENU__SERVICE:
-				setService((Service)newValue);
+			case WafPackage.DYNAMIC_MENU__ENTITY_OR_VIEW:
+				setEntityOrView((EntityOrView)newValue);
 				return;
 			case WafPackage.DYNAMIC_MENU__SELECTION:
 				setSelection((Selection)newValue);
 				return;
-			case WafPackage.DYNAMIC_MENU__DYNAMIC_TITLE:
-				setDynamicTitle((ServiceAttribute)newValue);
+			case WafPackage.DYNAMIC_MENU__TITLE:
+				setTitle((Label)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -244,14 +245,14 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_MENU__SERVICE:
-				setService((Service)null);
+			case WafPackage.DYNAMIC_MENU__ENTITY_OR_VIEW:
+				setEntityOrView((EntityOrView)null);
 				return;
 			case WafPackage.DYNAMIC_MENU__SELECTION:
 				setSelection((Selection)null);
 				return;
-			case WafPackage.DYNAMIC_MENU__DYNAMIC_TITLE:
-				setDynamicTitle((ServiceAttribute)null);
+			case WafPackage.DYNAMIC_MENU__TITLE:
+				setTitle((Label)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -265,12 +266,12 @@ public class DynamicMenuImpl extends MenuImpl implements DynamicMenu {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_MENU__SERVICE:
-				return service != null;
+			case WafPackage.DYNAMIC_MENU__ENTITY_OR_VIEW:
+				return entityOrView != null;
 			case WafPackage.DYNAMIC_MENU__SELECTION:
 				return selection != null;
-			case WafPackage.DYNAMIC_MENU__DYNAMIC_TITLE:
-				return dynamicTitle != null;
+			case WafPackage.DYNAMIC_MENU__TITLE:
+				return title != null;
 		}
 		return super.eIsSet(featureID);
 	}

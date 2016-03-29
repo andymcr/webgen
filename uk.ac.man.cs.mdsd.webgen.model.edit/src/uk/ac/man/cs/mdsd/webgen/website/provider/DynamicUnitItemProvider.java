@@ -4,25 +4,17 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.Classifier;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.Entity;
-import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
-import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -55,7 +47,6 @@ public class DynamicUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourcePropertyDescriptor(object);
 			addEntitiesPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
@@ -65,46 +56,6 @@ public class DynamicUnitItemProvider
 			addErrorClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Source feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_DynamicUnit_source_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_source_feature", "_UI_DynamicUnit_type"),
-			WebsitePackage.Literals.DYNAMIC_UNIT__SOURCE,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof DynamicUnit) {
-						final EObject eRoot = EcoreUtil.getRootContainer((DynamicUnit) object);
-						if (eRoot instanceof WebGenModel) {
-							final WebGenModel model = (WebGenModel) eRoot;
-							final List<UnitSource> sources = new LinkedList<UnitSource>();
-							sources.addAll(model.getServices());
-							for (Classifier classifier : model.getClassifiers()) {
-								if (classifier instanceof Entity) {
-									final Entity entity = (Entity) classifier;
-									if (entity.getServedBy().size() == 0) {
-										sources.add(entity);
-									}
-								}
-							}
-							return sources;
-						}
-					}
-					return Collections.emptyList();
-				}
-			});
 	}
 
 	/**

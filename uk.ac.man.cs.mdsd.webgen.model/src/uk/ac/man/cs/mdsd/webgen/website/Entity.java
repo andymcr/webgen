@@ -26,7 +26,7 @@ import java.util.List;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featureNameUniqueWithinEntity='features->isUnique(name)' keysFromLocalFeatures='features->union(associationEnds)->includesAll(keys)'"
  * @generated
  */
-public interface Entity extends EntityOrView, UnitSource {
+public interface Entity extends EntityOrView {
 	/**
 	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature}.

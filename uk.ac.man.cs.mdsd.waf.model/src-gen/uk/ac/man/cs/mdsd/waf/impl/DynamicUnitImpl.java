@@ -17,13 +17,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
-import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.UnitField;
 import uk.ac.man.cs.mdsd.waf.UnitSupportAction;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -36,7 +34,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
@@ -51,16 +48,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public abstract class DynamicUnitImpl extends ContentUnitImpl implements DynamicUnit {
-	/**
-	 * The cached value of the '{@link #getServices() <em>Services</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getServices()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Service> services;
-
 	/**
 	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -235,18 +222,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Service> getServices() {
-		if (services == null) {
-			services = new EObjectWithInverseResolvingEList.ManyInverse<Service>(Service.class, this, WafPackage.DYNAMIC_UNIT__SERVICES, WafPackage.SERVICE__ACCESSED_BY);
-		}
-		return services;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<EntityOrView> getEntities() {
 		if (entities == null) {
 			entities = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.DYNAMIC_UNIT__ENTITIES);
@@ -413,8 +388,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getServices()).basicAdd(otherEnd, msgs);
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDisplayFields()).basicAdd(otherEnd, msgs);
 		}
@@ -429,8 +402,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICES:
-				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
@@ -447,8 +418,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICES:
-				return getServices();
 			case WafPackage.DYNAMIC_UNIT__ENTITIES:
 				return getEntities();
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
@@ -480,10 +449,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICES:
-				getServices().clear();
-				getServices().addAll((Collection<? extends Service>)newValue);
-				return;
 			case WafPackage.DYNAMIC_UNIT__ENTITIES:
 				getEntities().clear();
 				getEntities().addAll((Collection<? extends EntityOrView>)newValue);
@@ -526,9 +491,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICES:
-				getServices().clear();
-				return;
 			case WafPackage.DYNAMIC_UNIT__ENTITIES:
 				getEntities().clear();
 				return;
@@ -568,8 +530,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.DYNAMIC_UNIT__SERVICES:
-				return services != null && !services.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__ENTITIES:
 				return entities != null && !entities.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:

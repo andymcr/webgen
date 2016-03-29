@@ -27,10 +27,6 @@ helper context Website!Page def: pageSideMenu() : Website!Menu
 		endif endif;
 
 
-helper context Website!Service def: feature(name : String) : Website!ServiceFeature
-	= self.features->any(f | f.name = name);
-
-
 helper context Website!Attribute def: attributeLabel() : String
 	= if not self.displayLabel.oclIsUndefined() and self.displayLabel <> '' then
 			self.displayLabel
@@ -287,6 +283,15 @@ helper context Website!ChildAssociation def: findOrmAssociation() : ORM!Associat
 			endif
 		endif;
 
+helper context Website!Label def: findOrmLabel() : ORM!Label
+	= if self.oclIsKindOf(Website!Attribute) then
+		self.findOrmEntityOrView().getOrmFeature(self.name)
+	else if self.oclIsTypeOf(Website!ModelLabel) then
+		thisModule.findOrmEntityOrView(self.labelFor.name).getOrmLabel(self.name)
+	else
+		self.title
+	endif endif;
+
 
 rule WafModel {
 	from website : Website!WebGenModel, orm : ORM!OrmModel
@@ -345,15 +350,12 @@ abstract rule NamedDisplayElement {
 rule Service {
 	from website : Website!Service
 	to waf : WAF!Service (
-		encapsulates <-
-			website.encapsulates->collect(e | thisModule.findOrmEntityOrView(e.name)),
 		serves <-
 			if website.serves.oclIsUndefined() then
 				OclUndefined
 			else
 				thisModule.findOrmEntityOrView(website.serves.name)
 			endif,
-		features <- website.features,
 		selections <- website.selections
 	)
 } 
@@ -381,18 +383,6 @@ rule SelectionParameter {
 	from website : Website!SelectionParameter
 	to waf : WAF!SelectionParameter (
 		defaultValue <- website.defaultValue
-	)
-}
-
-rule ServiceAttribute {
-	from website : Website!ServiceAttribute
-	to waf : WAF!ServiceAttribute (
-	)
-}
-
-rule ServiceAssociation {
-	from website : Website!ServiceAssociation
-	to waf : WAF!ServiceAssociation (
 	)
 }
 
@@ -480,9 +470,19 @@ rule EditStaticTextMenuEntry {
 rule DynamicMenu {
 	from website : Website!DynamicMenu
 	to waf : WAF!DynamicMenu (
-		service <- website.service,
+		entityOrView <-
+			if website.entityOrView.oclIsUndefined() then
+				OclUndefined
+			else
+				website.entityOrView.findOrmEntityOrView()
+			endif,
 		selection <- website.selection,
-		dynamicTitle <- website.dynamicTitle
+		title <-
+			if website.title.oclIsUndefined() then
+				website.title
+			else
+				website.title.findOrmLabel()
+			endif
 	)
 }
 
@@ -579,7 +579,6 @@ rule StaticUnit {
 abstract rule DynamicUnit {
 	from website : Website!DynamicUnit
 	to waf : WAF!DynamicUnit (
-		services <- website.source->select(s |s.oclIsTypeOf(Website!Service)),
 		entities <- website.entities
 			->collect(e | thisModule.findOrmEntityOrView(e.name)),
 		displayFields <- website.displayFields,
@@ -686,13 +685,9 @@ rule UnitAssociation {
 		valueDisplay <-
 			if website.valueDisplay.oclIsUndefined() then
 				OclUndefined
-			else if website.valueDisplay.oclIsKindOf(Website!Attribute) then
-				website.valueDisplay.findOrmEntityOrView()
-					.getOrmFeature(website.valueDisplay.name)
 			else
-				thisModule.findOrmEntityOrView(website.valueDisplay.labelFor.name)
-					.getOrmLabel(website.valueDisplay.name)
-			endif endif,
+				website.valueDisplay.findOrmLabel()
+			endif,
 		displayOption <- website.collectionDisplayOption,
 --		filters <- website.filters,
 		headerClass <-
@@ -888,7 +883,12 @@ rule MapUnit {
 		readOnly <- website.readOnly,
 		defaultZoomLevel <- website.defaultZoomLevel,
 		location <- website.location2.findOrmAttribute(),
-		placeName <- website.placeName2.findOrmAttribute()
+		placeName <-
+			if website.placeName2.oclIsUndefined() then
+				website.placeName2
+			else
+				website.placeName2.findOrmAttribute()
+			endif
 	)
 }
 
@@ -907,15 +907,9 @@ abstract rule DataUnit {
 		title <-
 			if website.title.oclIsUndefined() then
 				website.title
-			else if website.title.oclIsKindOf(Website!Attribute) then
-				website.title.findOrmEntityOrView()
-					.getOrmFeature(website.title.name)
-			else if website.title.oclIsTypeOf(Website!ModelLabel) then
-				thisModule.findOrmEntityOrView(website.title.labelFor.name)
-					.getOrmLabel(website.title.name)
 			else
-				website.title
-			endif endif endif
+				website.title.findOrmLabel()
+			endif
 	)
 }
 
@@ -1026,6 +1020,13 @@ rule SearchUnit {
 	from website : Website!SearchUnit
 	to waf : WAF!SearchUnit (
 		resultsDestination <- website.resultsDestination
+	)
+}
+
+-- @extends ControlUnit
+rule ActionUnit {
+	from website : Website!ActionUnit
+	to waf : WAF!ActionUnit (
 	)
 }
 

@@ -22,7 +22,7 @@ rule WafModel {
 }
 
 
-lazy rule implicitServiceForEntity {
+lazy rule implicitService {
 	from orm : ORM!EntityOrView
 	to waf : WAF!Service (
 -- TODO pularise

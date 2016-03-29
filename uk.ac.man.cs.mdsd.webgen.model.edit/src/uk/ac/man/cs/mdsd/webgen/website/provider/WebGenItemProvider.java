@@ -14,6 +14,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.ChildAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
@@ -22,11 +23,11 @@ import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
+import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewFeature;
 
@@ -109,6 +110,13 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return associations;
 	}
 
+	protected Set<Label> getLabels(final EntityOrView entityOrView) {
+		final Set<Label> labels = new HashSet<Label>();
+		labels.addAll(getAttributes(entityOrView));
+
+		return labels;
+	}
+
 	protected Set<Attribute> getSourceAttributes(final Association association) {
 		final Set<Attribute> attributes = new HashSet<Attribute>();
 		if (association instanceof EntityAssociation) {
@@ -185,7 +193,11 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	}
 
 	protected Set<Feature> getFeatures(final Service service) {
-		return getFeatures(service.getServes());
+		if (service.getServes() != null) {
+			return getFeatures(service.getServes());
+		}
+
+		return Collections.emptySet();
 	}
 
 	protected Set<Association> getAssociations(final Service service) {
@@ -304,12 +316,26 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return Collections.emptyList();
 	}
 
-	protected Set<Selection> getSourceSelections(final DynamicUnit unit) {
+	protected Set<Selection> getSelections(final EntityOrView entityOrView) {
 		final Set<Selection> selections = new HashSet<Selection>();
-		for (UnitSource source : unit.getSource() ) {
-			if (source instanceof Service) {
-				selections.addAll(((Service) source).getSelections());
-			}
+		for (Service service : entityOrView.getServedBy()) {
+			selections.addAll(service.getSelections());
+		}
+
+		return selections;
+	}
+	protected Set<Selection> getSelections(final DynamicMenu menu) {
+		if (menu.getEntityOrView() != null) {
+			return getSelections(menu.getEntityOrView());
+		}
+
+		return Collections.emptySet();
+	}
+
+	protected Set<Selection> getSelections(final DynamicUnit unit) {
+		final Set<Selection> selections = new HashSet<Selection>();
+		for (EntityOrView entityOrView : unit.getEntities()) {
+			selections.addAll(getSelections(entityOrView));
 		}
 
 		return selections;
@@ -323,22 +349,22 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 	}
 
-	protected Service getCriteriaServiceContext(final Object object) {
-		Object container = getCriteriaContext(object);
-		while (container != null) {
-			container = getCriteriaContext(container);
-			if (container instanceof Service) {
-				return (Service) container;
-			} else if (container instanceof DynamicUnit) {
-				final DynamicUnit containingUnit = (DynamicUnit) container;
-				if (containingUnit.getSource() instanceof Service) {
-					return (Service) containingUnit.getSource();
-				}
-			}
-		}
-
-		return null;
-	}
+//	protected Service getCriteriaServiceContext(final Object object) {
+//		Object container = getCriteriaContext(object);
+//		while (container != null) {
+//			container = getCriteriaContext(container);
+//			if (container instanceof Service) {
+//				return (Service) container;
+//			} else if (container instanceof DynamicUnit) {
+//				final DynamicUnit containingUnit = (DynamicUnit) container;
+////				if (containingUnit.getSource() instanceof Service) {
+////					return (Service) containingUnit.getSource();
+////				}
+//			}
+//		}
+//
+//		return null;
+//	}
 
 	protected Selection getCriteriaSelectionContext(final Object object) {
 		Object container = getCriteriaContext(object);

@@ -869,9 +869,6 @@
       name="SelectionsCompartment"
       figure="SelectionFigure"/>
   <compartments
-      name="ServiceFeaturesCompartment"
-      figure="ServiceFeaturesFigure"/>
-  <compartments
       name="UnitFieldCompartment"
       figure="UnitFeaturesFigure"/>
   <labels

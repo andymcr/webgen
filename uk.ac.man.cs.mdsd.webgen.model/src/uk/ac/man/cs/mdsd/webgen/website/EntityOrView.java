@@ -53,7 +53,6 @@ public interface EntityOrView extends Classifier {
 	/**
 	 * Returns the value of the '<em><b>Served By</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Service}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getEncapsulates <em>Encapsulates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Served By</em>' reference list isn't clear,
@@ -62,8 +61,7 @@ public interface EntityOrView extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Served By</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_ServedBy()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Service#getEncapsulates
-	 * @model opposite="encapsulates"
+	 * @model
 	 * @generated
 	 */
 	List<Service> getServedBy();

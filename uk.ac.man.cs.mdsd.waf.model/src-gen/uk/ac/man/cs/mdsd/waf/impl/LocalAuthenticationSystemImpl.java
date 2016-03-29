@@ -10,12 +10,14 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.orm.Attribute;
+import uk.ac.man.cs.mdsd.orm.EntityOrView;
+
 import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem;
 import uk.ac.man.cs.mdsd.waf.LoginUnit;
 import uk.ac.man.cs.mdsd.waf.RegistrationUnit;
 import uk.ac.man.cs.mdsd.waf.Service;
-import uk.ac.man.cs.mdsd.waf.ServiceAttribute;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -26,9 +28,9 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getUserService <em>User Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getUser <em>User</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getUserAuthenticationKey <em>User Authentication Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getAuthenticationService <em>Authentication Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getLoginAttemptService <em>Login Attempt Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getAutoLoginService <em>Auto Login Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#isUseCaptcha <em>Use Captcha</em>}</li>
@@ -44,14 +46,14 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  */
 public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements LocalAuthenticationSystem {
 	/**
-	 * The cached value of the '{@link #getUserService() <em>User Service</em>}' reference.
+	 * The cached value of the '{@link #getUser() <em>User</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUserService()
+	 * @see #getUser()
 	 * @generated
 	 * @ordered
 	 */
-	protected Service userService;
+	protected EntityOrView user;
 
 	/**
 	 * The cached value of the '{@link #getUserAuthenticationKey() <em>User Authentication Key</em>}' reference.
@@ -61,17 +63,17 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceAttribute userAuthenticationKey;
+	protected Attribute userAuthenticationKey;
 
 	/**
-	 * The cached value of the '{@link #getAuthenticationService() <em>Authentication Service</em>}' reference.
+	 * The cached value of the '{@link #getAuthentication() <em>Authentication</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthenticationService()
+	 * @see #getAuthentication()
 	 * @generated
 	 * @ordered
 	 */
-	protected Service authenticationService;
+	protected EntityOrView authentication;
 
 	/**
 	 * The cached value of the '{@link #getLoginAttemptService() <em>Login Attempt Service</em>}' reference.
@@ -227,16 +229,16 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Service getUserService() {
-		if (userService != null && userService.eIsProxy()) {
-			InternalEObject oldUserService = (InternalEObject)userService;
-			userService = (Service)eResolveProxy(oldUserService);
-			if (userService != oldUserService) {
+	public EntityOrView getUser() {
+		if (user != null && user.eIsProxy()) {
+			InternalEObject oldUser = (InternalEObject)user;
+			user = (EntityOrView)eResolveProxy(oldUser);
+			if (user != oldUser) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SERVICE, oldUserService, userService));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER, oldUser, user));
 			}
 		}
-		return userService;
+		return user;
 	}
 
 	/**
@@ -244,8 +246,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Service basicGetUserService() {
-		return userService;
+	public EntityOrView basicGetUser() {
+		return user;
 	}
 
 	/**
@@ -253,11 +255,11 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUserService(Service newUserService) {
-		Service oldUserService = userService;
-		userService = newUserService;
+	public void setUser(EntityOrView newUser) {
+		EntityOrView oldUser = user;
+		user = newUser;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SERVICE, oldUserService, userService));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER, oldUser, user));
 	}
 
 	/**
@@ -265,10 +267,10 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttribute getUserAuthenticationKey() {
+	public Attribute getUserAuthenticationKey() {
 		if (userAuthenticationKey != null && userAuthenticationKey.eIsProxy()) {
 			InternalEObject oldUserAuthenticationKey = (InternalEObject)userAuthenticationKey;
-			userAuthenticationKey = (ServiceAttribute)eResolveProxy(oldUserAuthenticationKey);
+			userAuthenticationKey = (Attribute)eResolveProxy(oldUserAuthenticationKey);
 			if (userAuthenticationKey != oldUserAuthenticationKey) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY, oldUserAuthenticationKey, userAuthenticationKey));
@@ -282,7 +284,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttribute basicGetUserAuthenticationKey() {
+	public Attribute basicGetUserAuthenticationKey() {
 		return userAuthenticationKey;
 	}
 
@@ -291,8 +293,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUserAuthenticationKey(ServiceAttribute newUserAuthenticationKey) {
-		ServiceAttribute oldUserAuthenticationKey = userAuthenticationKey;
+	public void setUserAuthenticationKey(Attribute newUserAuthenticationKey) {
+		Attribute oldUserAuthenticationKey = userAuthenticationKey;
 		userAuthenticationKey = newUserAuthenticationKey;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY, oldUserAuthenticationKey, userAuthenticationKey));
@@ -303,16 +305,16 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Service getAuthenticationService() {
-		if (authenticationService != null && authenticationService.eIsProxy()) {
-			InternalEObject oldAuthenticationService = (InternalEObject)authenticationService;
-			authenticationService = (Service)eResolveProxy(oldAuthenticationService);
-			if (authenticationService != oldAuthenticationService) {
+	public EntityOrView getAuthentication() {
+		if (authentication != null && authentication.eIsProxy()) {
+			InternalEObject oldAuthentication = (InternalEObject)authentication;
+			authentication = (EntityOrView)eResolveProxy(oldAuthentication);
+			if (authentication != oldAuthentication) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SERVICE, oldAuthenticationService, authenticationService));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION, oldAuthentication, authentication));
 			}
 		}
-		return authenticationService;
+		return authentication;
 	}
 
 	/**
@@ -320,8 +322,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Service basicGetAuthenticationService() {
-		return authenticationService;
+	public EntityOrView basicGetAuthentication() {
+		return authentication;
 	}
 
 	/**
@@ -329,11 +331,11 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAuthenticationService(Service newAuthenticationService) {
-		Service oldAuthenticationService = authenticationService;
-		authenticationService = newAuthenticationService;
+	public void setAuthentication(EntityOrView newAuthentication) {
+		EntityOrView oldAuthentication = authentication;
+		authentication = newAuthentication;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SERVICE, oldAuthenticationService, authenticationService));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION, oldAuthentication, authentication));
 	}
 
 	/**
@@ -726,15 +728,15 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SERVICE:
-				if (resolve) return getUserService();
-				return basicGetUserService();
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
+				if (resolve) return getUser();
+				return basicGetUser();
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
 				if (resolve) return getUserAuthenticationKey();
 				return basicGetUserAuthenticationKey();
-			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SERVICE:
-				if (resolve) return getAuthenticationService();
-				return basicGetAuthenticationService();
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
+				if (resolve) return getAuthentication();
+				return basicGetAuthentication();
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT_SERVICE:
 				if (resolve) return getLoginAttemptService();
 				return basicGetLoginAttemptService();
@@ -770,14 +772,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SERVICE:
-				setUserService((Service)newValue);
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
+				setUser((EntityOrView)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
-				setUserAuthenticationKey((ServiceAttribute)newValue);
+				setUserAuthenticationKey((Attribute)newValue);
 				return;
-			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SERVICE:
-				setAuthenticationService((Service)newValue);
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
+				setAuthentication((EntityOrView)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT_SERVICE:
 				setLoginAttemptService((Service)newValue);
@@ -818,14 +820,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SERVICE:
-				setUserService((Service)null);
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
+				setUser((EntityOrView)null);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
-				setUserAuthenticationKey((ServiceAttribute)null);
+				setUserAuthenticationKey((Attribute)null);
 				return;
-			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SERVICE:
-				setAuthenticationService((Service)null);
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
+				setAuthentication((EntityOrView)null);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT_SERVICE:
 				setLoginAttemptService((Service)null);
@@ -866,12 +868,12 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SERVICE:
-				return userService != null;
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
+				return user != null;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
 				return userAuthenticationKey != null;
-			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SERVICE:
-				return authenticationService != null;
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
+				return authentication != null;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT_SERVICE:
 				return loginAttemptService != null;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN_SERVICE:

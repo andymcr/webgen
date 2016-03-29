@@ -9,12 +9,19 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 import uk.ac.man.cs.mdsd.webgen.website.UnitElement;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -26,7 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class UnitElementItemProvider
-	extends IncludedElementItemProvider {
+	extends UnitFeatureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -48,12 +55,8 @@ public class UnitElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMaximumDisplaySizePropertyDescriptor(object);
-			addDateFormatPropertyDescriptor(object);
-			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
-			addCollectionDisplayOptionPropertyDescriptor(object);
-			addAutofocusPropertyDescriptor(object);
-			addServiceFeaturePropertyDescriptor(object);
+			addAttributePropertyDescriptor(object);
+			addObfuscateFormFieldsPropertyDescriptor(object);
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 		}
@@ -70,9 +73,9 @@ public class UnitElementItemProvider
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_IncludedElement_attribute_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_IncludedElement_attribute_feature", "_UI_IncludedElement_type"),
-			WebsitePackage.Literals.INCLUDED_ELEMENT__ATTRIBUTE,
+			getString("_UI_UnitElement_attribute_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_UnitElement_attribute_feature", "_UI_UnitElement_type"),
+			WebsitePackage.Literals.UNIT_ELEMENT__ATTRIBUTE,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
@@ -89,134 +92,24 @@ public class UnitElementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Date Format feature.
+	 * This adds a property descriptor for the Obfuscate Form Fields feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDateFormatPropertyDescriptor(Object object) {
+	protected void addObfuscateFormFieldsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitField_dateFormat_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_dateFormat_feature", "_UI_UnitField_type"),
-				 WebsitePackage.Literals.UNIT_FIELD__DATE_FORMAT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Only Display When Not Empty feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOnlyDisplayWhenNotEmptyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitFeature_onlyDisplayWhenNotEmpty_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_onlyDisplayWhenNotEmpty_feature", "_UI_UnitFeature_type"),
-				 WebsitePackage.Literals.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY,
+				 getString("_UI_UnitElement_obfuscateFormFields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitElement_obfuscateFormFields_feature", "_UI_UnitElement_type"),
+				 WebsitePackage.Literals.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Collection Display Option feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCollectionDisplayOptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitFeature_collectionDisplayOption_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_collectionDisplayOption_feature", "_UI_UnitFeature_type"),
-				 WebsitePackage.Literals.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Maximum Display Size feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMaximumDisplaySizePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitField_maximumDisplaySize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_maximumDisplaySize_feature", "_UI_UnitField_type"),
-				 WebsitePackage.Literals.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Autofocus feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAutofocusPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitFeature_autofocus_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_autofocus_feature", "_UI_UnitFeature_type"),
-				 WebsitePackage.Literals.UNIT_FEATURE__AUTOFOCUS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Service Feature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addServiceFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitElement_serviceFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitElement_serviceFeature_feature", "_UI_UnitElement_type"),
-				 WebsitePackage.Literals.UNIT_ELEMENT__SERVICE_FEATURE,
-				 true,
-				 false,
-				 true,
 				 null,
-				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -276,7 +169,7 @@ public class UnitElementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
+			childrenFeatures.add(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -331,17 +224,13 @@ public class UnitElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitElement.class)) {
-			case WebsitePackage.UNIT_ELEMENT__MAXIMUM_DISPLAY_SIZE:
-			case WebsitePackage.UNIT_ELEMENT__DATE_FORMAT:
-			case WebsitePackage.UNIT_ELEMENT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-			case WebsitePackage.UNIT_ELEMENT__COLLECTION_DISPLAY_OPTION:
-			case WebsitePackage.UNIT_ELEMENT__AUTOFOCUS:
 			case WebsitePackage.UNIT_ELEMENT__NAME:
+			case WebsitePackage.UNIT_ELEMENT__OBFUSCATE_FORM_FIELDS:
 			case WebsitePackage.UNIT_ELEMENT__PLACEHOLDER:
 			case WebsitePackage.UNIT_ELEMENT__VALIDATION_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebsitePackage.UNIT_ELEMENT__ACTIONS:
+			case WebsitePackage.UNIT_ELEMENT__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -361,18 +250,78 @@ public class UnitElementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
-				 WebsiteFactory.eINSTANCE.createSelectAction()));
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 WebsiteFactory.eINSTANCE.createModelReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
-				 WebsiteFactory.eINSTANCE.createDeleteAction()));
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 WebsiteFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
-				 WebsiteFactory.eINSTANCE.createFeatureSupportAction()));
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createNullLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createStringLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createCurrentTime()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 	}
 
 	/**
@@ -387,8 +336,8 @@ public class UnitElementItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WebsitePackage.Literals.INCLUDED_FEATURE__FORCED_VALUE ||
-			childFeature == WebsitePackage.Literals.INCLUDED_ELEMENT__DEFAULT_VALUE;
+			childFeature == WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE ||
+			childFeature == WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE;
 
 		if (qualify) {
 			return getString

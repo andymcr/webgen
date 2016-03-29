@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitField()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
 public interface UnitField extends EObject {

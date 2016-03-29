@@ -13,7 +13,6 @@ import java.util.List;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getSource <em>Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
@@ -27,27 +26,11 @@ import java.util.List;
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDynamicUnit()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='serviceFeaturesMustBeFromSource onlyReferenceFeaturesOnce entitySourceOnlyIfNotEncapsulated serviceSourceRequiresServiceFeatures'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL serviceFeaturesMustBeFromSource='let serviceFeatures : Collection(ServiceFeature)\r\n\t= source->select(s | s.oclIsTypeOf(Service)).oclAsType(Service)\r\n\t\t->collect(s | s.features)\r\n\tin displayFields\r\n\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t->select(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\tnot f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()\r\n\t\t\telse\r\n\t\t\t\tnot f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()\r\n\t\t\tendif)\r\n\t\t->forAll(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\tserviceFeatures->includes(f.oclAsType(UnitElement).serviceFeature)\r\n\t\t\telse\r\n\t\t\t\tserviceFeatures->includes(f.oclAsType(UnitAssociation).serviceFeature)\r\n\t\t\tendif)' onlyReferenceFeaturesOnce='displayFields\r\n\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t->select(f | if not f.oclIsTypeOf(UnitAssociation) then\r\n\t\t\ttrue\r\n\t\telse\r\n\t\t\tf.oclAsType(UnitAssociation).childFeature.oclIsUndefined()\r\n\t\tendif)\r\n\t->isUnique(f |\r\n\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\tf.oclAsType(UnitElement).attribute\r\n\t\telse\r\n\t\t\tf.oclAsType(UnitAssociation).association\r\n\t\tendif)' entitySourceOnlyIfNotEncapsulated='source->forAll(s | s.oclIsTypeOf(Entity) implies s.oclAsType(Entity).servedBy->isEmpty())' serviceSourceRequiresServiceFeatures='source->select(s | s.oclIsTypeOf(Service))->notEmpty() implies \r\ndisplayFields\r\n\t->select(f|f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t->forAll(f |\r\n\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\tnot f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()\r\n\t\telse\r\n\t\t\tnot f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()\r\n\t\tendif)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='featuresMustBeFromEntities'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featuresMustBeFromEntities='let eovFeatures : Collection(Feature)\r\n\t= self.entities->collect(\r\n\t\teov | if eov.oclIsTypeOf(Entity) then\r\n\t\t\t\teov.oclAsType(Entity).features\r\n\t\t\telse\r\n\t\t\t\teov.oclAsType(View).features\r\n\t\t\tendif)\r\n\tin displayFields\r\n\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t->select(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n\t\t\telse\r\n\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n\t\t\tendif)\r\n\t\t->forAll(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n\t\t\telse\r\n\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n\t\t\tendif)'"
  * @generated
  */
 public interface DynamicUnit extends ContentUnit {
-	/**
-	 * Returns the value of the '<em><b>Source</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.UnitSource}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Source</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDynamicUnit_Source()
-	 * @model
-	 * @generated
-	 */
-	List<UnitSource> getSource();
-
 	/**
 	 * Returns the value of the '<em><b>Entities</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView}.

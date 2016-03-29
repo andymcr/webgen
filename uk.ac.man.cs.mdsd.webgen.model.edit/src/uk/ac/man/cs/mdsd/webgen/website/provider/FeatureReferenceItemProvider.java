@@ -62,76 +62,9 @@ public class FeatureReferenceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFieldPropertyDescriptor(object);
-			addField2PropertyDescriptor(object);
 			addFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Field feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFieldPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FeatureReference_field_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureReference_field_feature", "_UI_FeatureReference_type"),
-				 WebsitePackage.Literals.FEATURE_REFERENCE__FIELD,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Field2 feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addField2PropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_FeatureReference_field2_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_FeatureReference_field2_feature", "_UI_FeatureReference_type"),
-			WebsitePackage.Literals.FEATURE_REFERENCE__FIELD2,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					final Set<Feature> features = new HashSet<Feature>();
-					if (object instanceof FeatureReference) {
-						final Selection selection = getCriteriaSelectionContext(object);
-						if (selection != null) {
-							final Service service = selection.getUsedBy();
-							features.addAll(getFeatures(service));
-							for (Association join : selection.getNewJoins2()) {
-								features.addAll(getTargetFeatures(join, service.getServes()));
-							}
-						} else {
-//								final Service service = getCriteriaServiceContext(object);
-//								if (service != null) {
-//									for (ServiceFeature feature : service.getFeatures()) {
-//										if (feature instanceof ServiceFeature) {
-//											features.add((ServiceFeature) feature);
-//										}
-//									}
-//								}
-						}
-					}
-					return features;
-				}
-		});
 	}
 
 	/**

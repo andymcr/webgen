@@ -172,6 +172,9 @@ helper context Website!Feature def: findOrmTargetEntity() : ORM!Entity
 helper def: findOrmEntityOrView(name : String) : ORM!EntityOrView
 	= ORM!EntityOrView.allInstancesFrom('orm')->any(e | e.name = name);
 
+helper context Website!EntityOrView def: findOrmEntityOrView() : ORM!EntityOrView
+	= ORM!EntityOrView.allInstancesFrom('orm')->any(eov | eov.name = self.name);
+
 helper context Website!Feature def: findOrmEntityOrView() : ORM!EntityOrView
 	= thisModule.findOrmEntityOrView(self.partOf.name);
 
@@ -187,13 +190,8 @@ helper def: findOrmCollection(name : String) : ORM!DataType
 
 
 helper def: findWafService(name : String) : WAF!Service
-	= WAF!Service.allInstancesFrom('waf')->any(d | d.name = name);
+	= WAF!Service.allInstancesFrom('waf')->any(s | s.serves.name = name);
 
 
 helper def: findWafMenu(name : String) : WAF!Menu
 	= WAF!Menu.allInstancesFrom('waf')->select(m | m.name = name)->first();
-
-
-helper context WAF!Service def: findServiceFeature(name : String) : WAF!ServiceFeature
-	= self.features->any(f | f.name = name);
-

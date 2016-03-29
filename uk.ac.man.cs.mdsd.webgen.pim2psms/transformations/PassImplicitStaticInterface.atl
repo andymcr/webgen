@@ -31,7 +31,7 @@ unique lazy rule implicitStaticTextPage {
 		displayLabel <- 'Manage Static Text',
 		units <- Sequence{text, editText},
 		authenticated <- true,
-		path <- 'static',
+		uriElement <- 'static',
 		topMenuOption <- #IncludeWhenAuthenticated,
 		topMenuRank <- 100,
 		navigationLabel <- 'Static Text',
@@ -42,17 +42,17 @@ unique lazy rule implicitStaticTextPage {
 	text : WAF!IndexGridUnit (
 		name <- 'Text',
 		displayLabel <- 'Text',
-		service <- thisModule.findWafService('StaticText'),
+		entities <- Sequence{thisModule.findOrmEntityOrView('StaticText')},
 		omitCaption <- false,
 		defaultPaginationSize <- 10,
 		nextPageLabel <- '&gt;',
 		previousPageLabel <- '%lt;',
 		displayFields <-
-			let includedFeatures : Sequence(WAF!IncludedFeature)
-				= thisModule.findWafService('StaticText').features
+			let features : Sequence(WAF!EntityFeature)
+				= thisModule.findOrmEntityOrView('StaticText').features
 					->select(f | f.name = 'name')
-				in includedFeatures
-					->collect(f | thisModule.implicitUnitElement(f)),
+				in features
+					->collect(f | thisModule.implicitUnitAttribute(f)),
 		actions <- Sequence{editTextAction},
 		styleClass <- 'unit index_unit framed',
 		headerClass <- 'unit_header',
@@ -60,7 +60,7 @@ unique lazy rule implicitStaticTextPage {
 		controlClass <- 'unit_control',
 		footerClass <- 'unit_footer',
 		errorClass <- 'error',
-		layoutClass <- 'index_layout',
+		contentClass <- 'index_layout',
 		rowClasses <- 'odd_row even_row'
 	),
 	editTextAction : WAF!SelectAction (
@@ -71,20 +71,20 @@ unique lazy rule implicitStaticTextPage {
 	editText : WAF!CreateUpdateUnit (
 		name <- 'AddEditText',
 		displayLabel <- 'Add/Edit Static Text',
-		service <- thisModule.findWafService('StaticText'),
+		entities <- Sequence{thisModule.findOrmEntityOrView('StaticText')},
 		omitCaption <- false,
 		confirmLabel <- 'Save',
 		clearLabel <- 'Clear',
 		displayFields <-
-			thisModule.findWafService('StaticText').features
-				->collect(f | thisModule.implicitUnitElement(f)),
+			thisModule.findOrmEntityOrView('StaticText').features
+				->collect(f | thisModule.implicitUnitAttribute(f)),
 		styleClass <- 'unit update_unit framed',
 		headerClass <- 'unit_header',
 		captionClass <- 'unit_caption',
 		controlClass <- 'unit_control',
 		footerClass <- 'unit_footer',
 		errorClass <- 'error',
-		layoutClass <- 'input_form'
+		contentClass <- 'input_form'
 	)
 	do {
 		waf;
@@ -92,24 +92,18 @@ unique lazy rule implicitStaticTextPage {
 }
 
 lazy abstract rule implicitUnitFeature {
-	from partialWaf : WAF!ServiceFeature
+	from partialWaf : ORM!EntityFeature
 	to waf : WAF!UnitFeature (
-		cardinality <- partialWaf.cardinality,
-		onlyDisplayWhenNotEmpty <- false,
 		displayLabel <- partialWaf.displayLabel,
-		headerClass <- partialWaf.headerClass,
-		inputClass <- partialWaf.inputClass,
-		displayClass <- partialWaf.displayClass,
-		footerClass <- partialWaf.footerClass
+		inputClass <- 'input_attribute'
 	)
 }
 
 -- @extends implicitUnitFeature
 lazy rule implicitUnitAttribute {
-	from partialWaf : WAF!ServiceAttribute
+	from partialWaf : ORM!SingletonElement
 	to waf : WAF!UnitAttribute (
-		obfuscateFormFields <- partialWaf.obfuscateFormFields,
-		dateFormat <- partialWaf.dateFormat
+		attribute <- partialWaf
 	)
 	do {
 		waf;

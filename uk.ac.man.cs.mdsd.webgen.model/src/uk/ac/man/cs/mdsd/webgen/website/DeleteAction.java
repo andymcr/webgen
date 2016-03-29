@@ -22,7 +22,8 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDeleteAction()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='canOnlyDeleteSingletons'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL canOnlyDeleteSingletons='if usedBy.oclIsKindOf(UnitElement) then\r\n\tlet attribute : Attribute\r\n\t\t= usedBy.oclAsType(UnitElement).attribute\r\n\t\tin if attribute.oclIsKindOf(EntityAttribute) then\r\n\t\t\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tfalse -- attribute.oclAsType(EncapsulatedAttribute).attribute.cardinality <> Cardinalty::Many\r\n\t\t\tendif\r\nelse if usedBy.oclIsKindOf(UnitAssociation) then\r\n\tlet association : Association\r\n\t\t= usedBy.oclAsType(UnitAssociation).association\r\n\t\tin if association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n\t\t\telse if association.oclIsKindOf(EncapsulatedAssociation) then\r\n\t\t\t\tfalse -- association.oclAsType(EncapsulatedAssociation).attribute.cardinality <> Cardinalty::Many\r\n\t\t\telse\r\n\t\t\t\tfalse -- association.oclAsType(ViewAssociation)\r\n\t\t\tendif endif\r\nelse\r\n\tusedBy.oclIsTypeOf(IndexUnit)\r\nendif endif\r\n'"
  * @generated
  */
 public interface DeleteAction extends InlineAction {

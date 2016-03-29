@@ -183,6 +183,11 @@ public class UnitContainerItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_CONTAINER__UNITS,
+				 WebsiteFactory.eINSTANCE.createActionUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_CONTAINER__UNITS,
 				 WebsiteFactory.eINSTANCE.createRegistrationUnit()));
 
 		newChildDescriptors.add

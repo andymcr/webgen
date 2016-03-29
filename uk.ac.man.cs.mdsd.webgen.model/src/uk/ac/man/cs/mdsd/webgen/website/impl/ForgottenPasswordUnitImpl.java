@@ -31,7 +31,6 @@ import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
-import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -50,7 +49,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getSource <em>Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getSupportActions <em>Support Actions</em>}</li>
@@ -189,16 +187,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * @ordered
 	 */
 	protected String captionClass = CAPTION_CLASS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<UnitSource> source;
 
 	/**
 	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
@@ -631,18 +619,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<UnitSource> getSource() {
-		if (source == null) {
-			source = new EObjectResolvingEList<UnitSource>(UnitSource.class, this, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE);
-		}
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public List<EntityOrView> getEntities() {
 		if (entities == null) {
 			entities = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES);
@@ -995,8 +971,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return getOmitCaption();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS:
 				return getCaptionClass();
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
-				return getSource();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES:
 				return getEntities();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
@@ -1059,10 +1033,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS:
 				setCaptionClass((String)newValue);
-				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
-				getSource().clear();
-				getSource().addAll((Collection<? extends UnitSource>)newValue);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES:
 				getEntities().clear();
@@ -1142,9 +1112,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS:
 				setCaptionClass(CAPTION_CLASS_EDEFAULT);
 				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
-				getSource().clear();
-				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES:
 				getEntities().clear();
 				return;
@@ -1213,8 +1180,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return OMIT_CAPTION_EDEFAULT == null ? omitCaption != null : !OMIT_CAPTION_EDEFAULT.equals(omitCaption);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS:
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE:
-				return source != null && !source.isEmpty();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES:
 				return entities != null && !entities.isEmpty();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
@@ -1278,7 +1243,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		}
 		if (baseClass == DynamicUnit.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE: return WebsitePackage.DYNAMIC_UNIT__SOURCE;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES: return WebsitePackage.DYNAMIC_UNIT__ENTITIES;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS: return WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS: return WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
@@ -1334,7 +1298,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		}
 		if (baseClass == DynamicUnit.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.DYNAMIC_UNIT__SOURCE: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SOURCE;
 				case WebsitePackage.DYNAMIC_UNIT__ENTITIES: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES;
 				case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS;

@@ -39,7 +39,7 @@ rule WafModel {
 					else if websiteProperties.authentication.oclIsTypeOf(Website!LocalAuthenticationSystem) then
 						let authentication : Website!LocalAuthenticationSystem
 							= websiteProperties.authentication.oclAsType(Website!LocalAuthenticationSystem)
-						in if authentication.authenticationSource.oclIsUndefined() then
+						in if authentication.authentication.oclIsUndefined() then
 								if authentication.allowSelfRegistration  then
 									Sequence{
 										thisModule.implicitRegistrationPage(authentication),
@@ -71,21 +71,27 @@ abstract rule Authentication {
 rule LocalAuthenticationSystem {
 	from website : Website!LocalAuthenticationSystem
 	to waf : WAF!LocalAuthenticationSystem (
-		userService <- thisModule.findWafService(website.userSource.name),
+		user <-
+			if website.user.oclIsUndefined() then
+				OclUndefined
+			else
+				thisModule.findOrmEntityOrView(website.user.name)
+			endif,
 		userAuthenticationKey <-
-			thisModule.findWafService(website.userSource.name)
-				.features->any(f | f.name = website.userAuthenticationKey.name),
-		authenticationService <-
+			if website.user.oclIsUndefined() 
+					or website.userAuthenticationKey.oclIsUndefined() then
+				OclUndefined
+			else
+				thisModule.findOrmEntityOrView(website.user.name)
+					.getOrmFeature(website.userAuthenticationKey.name)
+			endif,
+		authentication <-
 			if thisModule.findWebsiteProperties().frameworkTechnology = #Symfony then
 				OclUndefined
-			else if website.authenticationSource.oclIsUndefined() then
-				thisModule.findWafService('Authentication')
+			else if website.authentication.oclIsUndefined() then
+				thisModule.findOrmEntityOrView('Authentication')
 			else
-				if website.authenticationSource.oclIsTypeOf(Website!Service) then
-					website.authenticationSource
-				else
-					thisModule.findWafService(website.authenticationSource.name)
-				endif
+				thisModule.findOrmEntityOrView(website.authentication.name)
 			endif endif,
 		loginAttemptService <-
 			if not website.trackLoginAttempts
@@ -144,36 +150,15 @@ rule CasAuthentication {
 }
 
 
-rule AuthenticationService {
-	from waf : WAF!Service (waf.name = 'Authentication')
-	to dummyWaf : WAF!Service (
-		keys <-
-			if waf.keys->notEmpty() then
-				waf.keys
-			else
-				Sequence{} -- Sequence{thisModule.implicitAuthenticationKey(waf)}
-			endif
-	)
-}
-
-lazy rule implicitAuthenticationKey {
-	from waf : WAF!Service
-	to dummyWaf : WAF!ChildAttribute (
-		attribute <- waf.findServiceFeature('email')
-	)
-}
-
-
 unique lazy rule implicitRegistrationUnit {
 	from website : Website!LocalAuthenticationSystem
 	to waf : WAF!RegistrationUnit (
 		name <- 'RegisterUser',
 		displayLabel <- 'Register User',
-		services <- Sequence{thisModule.findWafService('Authentication')},
 		omitCaption <- false,
 		confirmDestination <- 
 			if not website.loginUnit.oclIsUndefined() then
-				website.loginUnit.refImmediateComposite()
+				website.loginUnit.displayedOn
 			else
 				thisModule.implicitLoginPage(website)
 			endif,
@@ -183,12 +168,12 @@ unique lazy rule implicitRegistrationUnit {
 				= thisModule.findOrmEntityOrView('Authentication').features
 					->select(f | f.name = 'username' or f.name = 'email' or f.name = 'password')
 				in features->select(f | f.name = 'username')
-					->collect(f | thisModule.implicitUnitAttribute(f))
+					->collect(f | thisModule.implicitUnitElementAttribute(f))
 				->union(features->select(f | f.name = 'email')
-					->collect(f | thisModule.implicitUnitAttribute(f)))
+					->collect(f | thisModule.implicitUnitElementAttribute(f)))
 				->union(Sequence{confirmEmail})
 				->union(features->select(f | f.name = 'password')
-					->collect(f | thisModule.implicitUnitAttribute(f)))
+					->collect(f | thisModule.implicitUnitElementAttribute(f)))
 				->union(Sequence{confirmPassword})
 				->union(if website.useCaptcha then
 						Sequence{thisModule.implicitCaptchaField(website)}
@@ -206,7 +191,7 @@ unique lazy rule implicitRegistrationUnit {
 	confirmEmail : WAF!DataTypeField (
 		name <- 'confirmEmail',
 		dataType <- thisModule.findOrmDataType('Email'),
-		cardinality <- #Required,
+		required <- true,
 		caseInsensitive <- true,
 		displayLabel <- 'Confirm Email',
 		interfaceType <- thisModule.findWebsiteDataType('Email').interfaceType,
@@ -215,7 +200,7 @@ unique lazy rule implicitRegistrationUnit {
 	confirmPassword : WAF!DataTypeField (
 		name <- 'confirmPassword',
 		dataType <- thisModule.findOrmDataType('String'),
-		cardinality <- #Required,
+		required <- true,
 		obfuscateFormFields <- true,
 		encrypt <- true,
 		displayLabel <- 'Confirm Password',
@@ -232,24 +217,18 @@ unique lazy rule implicitLoginUnit {
 	to waf : WAF!LoginUnit (
 		name <- 'Login',
 		displayLabel <- 'Login',
-		services <- Sequence{thisModule.findWafService('Authentication')},
 		omitCaption <- false,
 		submitLabel <- 'Login',
 		displayFields <-
-			let includedFeatures : Sequence(WAF!IncludedFeature)
-				= thisModule.findWafService('Authentication').features
+			let features : Sequence(ORM!EntityFeature)
+				= thisModule.findOrmEntityOrView('Authentication').features
 					->select(f | f.name = 'email' or f.name = 'password')
-				in includedFeatures->select(f | f.name = 'email')
-					->collect(f | thisModule.implicitUnitAttribute(f))
-				->union(includedFeatures->select(f | f.name = 'password')
-					->collect(f | thisModule.implicitUnitAttribute(f)))
+				in features->select(f | f.name = 'email')
+					->collect(f | thisModule.implicitUnitElementAttribute(f))
+				->union(features->select(f | f.name = 'password')
+					->collect(f | thisModule.implicitUnitElementAttribute(f)))
 				->union(if website.allowAutoLogin then
 						Sequence{thisModule.implicitRememberMeField(website)}
-					else
-						Sequence{}
-					endif)
-				->union(if website.useCaptcha then
-						Sequence{thisModule.implicitCaptchaField2(website)}
 					else
 						Sequence{}
 					endif),
@@ -274,15 +253,14 @@ unique lazy rule implicitForgottenPasswordUnit {
 	to waf : WAF!ForgottenPasswordUnit (
 		name <- 'ForgottenPassword',
 		displayLabel <- 'Recover Forgotten Password',
-		services <- Sequence{thisModule.findWafService('Authentication')},
 		omitCaption <- false,
 		submitLabel <- 'Recover Password',
 		displayFields <-
-			let includedFeatures : Sequence(WAF!IncludedFeature)
-				= thisModule.findWafService('Authentication').features
+			let features : Sequence(ORM!EntityFeature)
+				= thisModule.findOrmEntityOrView('Authentication').features
 					->select(f | f.name = 'email')
-				in includedFeatures
-					->collect(f | thisModule.implicitUnitAttribute(f)),
+				in features
+					->collect(f | thisModule.implicitUnitElementAttribute(f)),
 -- assigned in next pass		loginIdField <- OclUndefined,
 		styleClass <- 'unit forgotten_password_unit framed',
 		headerClass <- 'unit_header',
@@ -299,14 +277,27 @@ unique lazy rule implicitForgottenPasswordUnit {
 
 
 lazy abstract rule implicitUnitFeature {
-	from partialWaf : WAF!EntityFeature
+	from partialWaf : ORM!EntityFeature
 	to waf : WAF!UnitFeature (
+-- TODO		displayLabel <- partialWaf.displayLabel,
+		inputClass <- 'input_attribute'
 	)
 }
 
 -- @extends implicitUnitFeature
-lazy rule implicitUnitAttribute {
-	from partialWaf : WAF!EntityAttribute
+lazy rule implicitUnitElementAttribute {
+	from partialWaf : ORM!SingletonElement
+	to waf : WAF!UnitAttribute (
+		attribute <- partialWaf
+	)
+	do {
+		waf;
+	}
+}
+
+-- @extends implicitUnitFeature
+lazy rule implicitUnitDateAttribute {
+	from partialWaf : ORM!SingletonDate
 	to waf : WAF!UnitAttribute (
 		attribute <- partialWaf
 	)
@@ -320,7 +311,7 @@ unique lazy rule implicitRememberMeField {
 	to waf : WAF!DataTypeField (
 		name <- 'rememberMe',
 		dataType <- thisModule.findOrmDataType('Boolean'),
-		cardinality <- #Optional,
+		required <- false,
 		displayLabel <- 'Remember Me',
 		interfaceType <- thisModule.findWebsiteDataType('Boolean').interfaceType,
 		inputClass <- 'input_checkbox'
@@ -331,16 +322,6 @@ unique lazy rule implicitRememberMeField {
 }
 
 lazy rule implicitCaptchaField {
-	from website : Website!LocalAuthenticationSystem
-	to waf : WAF!CaptchaField (
-		name <- 'captcha'
-	)
-	do {
-		waf;
-	}
-}
-
-lazy rule implicitCaptchaField2 {
 	from website : Website!LocalAuthenticationSystem
 	to waf : WAF!CaptchaField (
 		name <- 'captcha'
@@ -425,17 +406,21 @@ unique lazy rule implicitManageAuthenticationsPage {
 	users : WAF!IndexGridUnit (
 		name <- 'users',
 		displayLabel <- 'Users',
-		services <- Sequence{thisModule.findWafService('Authentication')},
 		omitCaption <- false,
 		defaultPaginationSize <- 10,
 		nextPageLabel <- '>',
 		previousPageLabel <- '<',
 		displayFields <-
-			let includedFeatures : Sequence(WAF!IncludedFeature)
-				= thisModule.findWafService('Authentication').features
+			let features : Sequence(ORM!EntityFeature)
+				= thisModule.findOrmEntityOrView('Authentication').features
 					->select(f | f.name = 'username' or f.name = 'email' or f.name = 'lastLogin')
-				in includedFeatures
-					->collect(f | thisModule.implicitUnitAttribute(f)),
+				in features
+					->collect(f | 
+						if f.name <> 'lastLogin' then
+							thisModule.implicitUnitElementAttribute(f)
+						else
+							thisModule.implicitUnitDateAttribute(f)
+						endif),
 		actions <- Sequence{editUserAction},
 		styleClass <- 'unit index_unit framed',
 		headerClass <- 'unit_header',
@@ -454,16 +439,15 @@ unique lazy rule implicitManageAuthenticationsPage {
 	editUser : WAF!UpdateUnit (
 		name <- 'editUser',
 		displayLabel <- 'Edit User',
-		services <- Sequence{thisModule.findWafService('Authentication')},
 		omitCaption <- false,
 		confirmLabel <- 'Save',
 		displayFields <-
-			let includedFeatures : Sequence(WAF!IncludedFeature)
-				= thisModule.findWafService('Authentication').features
+			let features : Sequence(ORM!EntityFeature)
+				= thisModule.findOrmEntityOrView('Authentication').features
 					->select(f | f.name <> 'password')
-				in includedFeatures
-					->select(f | f.oclIsKindOf(WAF!IncludedAttribute))
-					->collect(f | thisModule.implicitUnitAttribute(f)),
+				in features
+					->select(f | f.oclIsTypeOf(WAF!SingletonElement))
+					->collect(f | thisModule.implicitUnitElementAttribute(f)),
 		styleClass <- 'unit update_unit framed',
 		headerClass <- 'unit_header',
 		captionClass <- 'unit_caption',

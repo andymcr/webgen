@@ -74,7 +74,7 @@ public class FilterItemProvider extends NamedElementItemProvider {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof Filter) {
-						return getSourceSelections(
+						return getSelections(
 							(IndexUnit) ((Filter) object).eContainer());
 					}
 					return Collections.emptyList();

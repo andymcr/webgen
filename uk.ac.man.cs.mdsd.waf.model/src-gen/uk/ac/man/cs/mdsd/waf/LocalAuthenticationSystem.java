@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
+import uk.ac.man.cs.mdsd.orm.Attribute;
+import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,9 +14,9 @@ package uk.ac.man.cs.mdsd.waf;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUserService <em>User Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUser <em>User</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUserAuthenticationKey <em>User Authentication Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthenticationService <em>Authentication Service</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getLoginAttemptService <em>Login Attempt Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAutoLoginService <em>Auto Login Service</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}</li>
@@ -32,30 +34,30 @@ package uk.ac.man.cs.mdsd.waf;
  */
 public interface LocalAuthenticationSystem extends Authentication {
 	/**
-	 * Returns the value of the '<em><b>User Service</b></em>' reference.
+	 * Returns the value of the '<em><b>User</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>User Service</em>' reference isn't clear,
+	 * If the meaning of the '<em>User</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Service</em>' reference.
-	 * @see #setUserService(Service)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_UserService()
+	 * @return the value of the '<em>User</em>' reference.
+	 * @see #setUser(EntityOrView)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_User()
 	 * @model required="true"
 	 * @generated
 	 */
-	Service getUserService();
+	EntityOrView getUser();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUserService <em>User Service</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUser <em>User</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Service</em>' reference.
-	 * @see #getUserService()
+	 * @param value the new value of the '<em>User</em>' reference.
+	 * @see #getUser()
 	 * @generated
 	 */
-	void setUserService(Service value);
+	void setUser(EntityOrView value);
 
 	/**
 	 * Returns the value of the '<em><b>User Authentication Key</b></em>' reference.
@@ -66,12 +68,12 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>User Authentication Key</em>' reference.
-	 * @see #setUserAuthenticationKey(ServiceAttribute)
+	 * @see #setUserAuthenticationKey(Attribute)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_UserAuthenticationKey()
 	 * @model required="true"
 	 * @generated
 	 */
-	ServiceAttribute getUserAuthenticationKey();
+	Attribute getUserAuthenticationKey();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUserAuthenticationKey <em>User Authentication Key</em>}' reference.
@@ -81,33 +83,33 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @see #getUserAuthenticationKey()
 	 * @generated
 	 */
-	void setUserAuthenticationKey(ServiceAttribute value);
+	void setUserAuthenticationKey(Attribute value);
 
 	/**
-	 * Returns the value of the '<em><b>Authentication Service</b></em>' reference.
+	 * Returns the value of the '<em><b>Authentication</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Authentication Service</em>' reference isn't clear,
+	 * If the meaning of the '<em>Authentication</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Authentication Service</em>' reference.
-	 * @see #setAuthenticationService(Service)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_AuthenticationService()
+	 * @return the value of the '<em>Authentication</em>' reference.
+	 * @see #setAuthentication(EntityOrView)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_Authentication()
 	 * @model
 	 * @generated
 	 */
-	Service getAuthenticationService();
+	EntityOrView getAuthentication();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthenticationService <em>Authentication Service</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Authentication Service</em>' reference.
-	 * @see #getAuthenticationService()
+	 * @param value the new value of the '<em>Authentication</em>' reference.
+	 * @see #getAuthentication()
 	 * @generated
 	 */
-	void setAuthenticationService(Service value);
+	void setAuthentication(EntityOrView value);
 
 	/**
 	 * Returns the value of the '<em><b>Login Attempt Service</b></em>' reference.

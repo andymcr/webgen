@@ -58,33 +58,6 @@ public interface WafFactory extends EFactory {
 	Service createService();
 
 	/**
-	 * Returns a new object of class '<em>Service Feature</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Feature</em>'.
-	 * @generated
-	 */
-	ServiceFeature createServiceFeature();
-
-	/**
-	 * Returns a new object of class '<em>Service Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Attribute</em>'.
-	 * @generated
-	 */
-	ServiceAttribute createServiceAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Service Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Association</em>'.
-	 * @generated
-	 */
-	ServiceAssociation createServiceAssociation();
-
-	/**
 	 * Returns a new object of class '<em>Selection</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -344,6 +317,15 @@ public interface WafFactory extends EFactory {
 	 * @generated
 	 */
 	SearchUnit createSearchUnit();
+
+	/**
+	 * Returns a new object of class '<em>Action Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Action Unit</em>'.
+	 * @generated
+	 */
+	ActionUnit createActionUnit();
 
 	/**
 	 * Returns a new object of class '<em>Registration Unit</em>'.

@@ -61,9 +61,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case WafPackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			case WafPackage.SERVICE: return createService();
-			case WafPackage.SERVICE_FEATURE: return createServiceFeature();
-			case WafPackage.SERVICE_ATTRIBUTE: return createServiceAttribute();
-			case WafPackage.SERVICE_ASSOCIATION: return createServiceAssociation();
 			case WafPackage.SELECTION: return createSelection();
 			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WafPackage.STATIC_MENU: return createStaticMenu();
@@ -93,6 +90,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.INDEX_PAGE_DIRECTION_UNIT: return createIndexPageDirectionUnit();
 			case WafPackage.INDEX_LINE_DIRECTION_UNIT: return createIndexLineDirectionUnit();
 			case WafPackage.SEARCH_UNIT: return createSearchUnit();
+			case WafPackage.ACTION_UNIT: return createActionUnit();
 			case WafPackage.REGISTRATION_UNIT: return createRegistrationUnit();
 			case WafPackage.LOGIN_UNIT: return createLoginUnit();
 			case WafPackage.FORGOTTEN_PASSWORD_UNIT: return createForgottenPasswordUnit();
@@ -188,36 +186,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public Service createService() {
 		ServiceImpl service = new ServiceImpl();
 		return service;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceFeature createServiceFeature() {
-		ServiceFeatureImpl serviceFeature = new ServiceFeatureImpl();
-		return serviceFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAttribute createServiceAttribute() {
-		ServiceAttributeImpl serviceAttribute = new ServiceAttributeImpl();
-		return serviceAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAssociation createServiceAssociation() {
-		ServiceAssociationImpl serviceAssociation = new ServiceAssociationImpl();
-		return serviceAssociation;
 	}
 
 	/**
@@ -508,6 +476,16 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public SearchUnit createSearchUnit() {
 		SearchUnitImpl searchUnit = new SearchUnitImpl();
 		return searchUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActionUnit createActionUnit() {
+		ActionUnitImpl actionUnit = new ActionUnitImpl();
+		return actionUnit;
 	}
 
 	/**

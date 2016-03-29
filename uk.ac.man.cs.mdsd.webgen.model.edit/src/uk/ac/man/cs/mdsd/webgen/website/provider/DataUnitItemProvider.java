@@ -22,8 +22,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
-import uk.ac.man.cs.mdsd.webgen.website.Service;
-import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -80,9 +78,9 @@ public class DataUnitItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof DataUnit) {
-						return getSourceSelections((DataUnit) object);
+						return getSelections((DataUnit) object);
 					}
-					return Collections.emptyList();
+					return Collections.emptySet();
 				}
 		});
 	}
@@ -108,19 +106,13 @@ public class DataUnitItemProvider
 					if (object instanceof DataUnit) {
 						final DataUnit unit = (DataUnit) object;
 						final Set<Label> labels = new HashSet<Label>();
-						labels.addAll(getAttributes(unit));
-						for (UnitSource source : unit.getSource()) {
-							if (source instanceof EntityOrView) {
-								labels.addAll(((EntityOrView) source).getLabels());
-							} else {
-								for (EntityOrView entityOrView : ((Service) source).getEncapsulates()) {
-									labels.addAll(entityOrView.getLabels());
-								}
-							}
+						for (EntityOrView entityOrView : unit.getEntities()) {
+							labels.addAll(getLabels(entityOrView));
 						}
 						return labels;
 					}
-					return Collections.emptyList();
+
+					return Collections.emptySet();
 				}
 		});
 	}

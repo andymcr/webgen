@@ -43,9 +43,9 @@ public class LocalAuthenticationSystemItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUserServicePropertyDescriptor(object);
+			addUserPropertyDescriptor(object);
 			addUserAuthenticationKeyPropertyDescriptor(object);
-			addAuthenticationServicePropertyDescriptor(object);
+			addAuthenticationPropertyDescriptor(object);
 			addLoginAttemptServicePropertyDescriptor(object);
 			addAutoLoginServicePropertyDescriptor(object);
 			addUseCaptchaPropertyDescriptor(object);
@@ -60,19 +60,19 @@ public class LocalAuthenticationSystemItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the User Service feature.
+	 * This adds a property descriptor for the User feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUserServicePropertyDescriptor(Object object) {
+	protected void addUserPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_userService_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_userService_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USER_SERVICE,
+				 getString("_UI_LocalAuthenticationSystem_user_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_user_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USER,
 				 true,
 				 false,
 				 true,
@@ -104,19 +104,19 @@ public class LocalAuthenticationSystemItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Authentication Service feature.
+	 * This adds a property descriptor for the Authentication feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAuthenticationServicePropertyDescriptor(Object object) {
+	protected void addAuthenticationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_authenticationService_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_authenticationService_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SERVICE,
+				 getString("_UI_LocalAuthenticationSystem_authentication_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_authentication_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION,
 				 true,
 				 false,
 				 true,

@@ -18,7 +18,6 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getParameters <em>Parameters</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getNewJoins2 <em>New Joins2</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getOrdering <em>Ordering</em>}</li>
@@ -73,22 +72,6 @@ public interface Selection extends NamedElement {
 	 * @generated
 	 */
 	List<SelectionParameter> getParameters();
-
-	/**
-	 * Returns the value of the '<em><b>Joins</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Joins</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Joins</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelection_Joins()
-	 * @model
-	 * @generated
-	 */
-	List<ServiceAssociation> getJoins();
 
 	/**
 	 * Returns the value of the '<em><b>New Joins2</b></em>' reference list.

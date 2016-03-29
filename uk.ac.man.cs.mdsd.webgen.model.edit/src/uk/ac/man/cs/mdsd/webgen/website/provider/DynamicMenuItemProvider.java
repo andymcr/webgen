@@ -5,9 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -15,9 +13,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
-import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -49,27 +44,27 @@ public class DynamicMenuItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addServicePropertyDescriptor(object);
+			addEntityOrViewPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
-			addDynamicTitlePropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Service feature.
+	 * This adds a property descriptor for the Entity Or View feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addServicePropertyDescriptor(Object object) {
+	protected void addEntityOrViewPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DynamicMenu_service_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicMenu_service_feature", "_UI_DynamicMenu_type"),
-				 WebsitePackage.Literals.DYNAMIC_MENU__SERVICE,
+				 getString("_UI_DynamicMenu_entityOrView_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicMenu_entityOrView_feature", "_UI_DynamicMenu_type"),
+				 WebsitePackage.Literals.DYNAMIC_MENU__ENTITY_OR_VIEW,
 				 true,
 				 false,
 				 true,
@@ -97,51 +92,42 @@ public class DynamicMenuItemProvider
 					@Override
 					public Collection<?> getChoiceOfValues(Object object) {
 						if (object instanceof DynamicMenu) {
-							final DynamicMenu menu = (DynamicMenu) object;
-							final List<Selection> selections = new LinkedList<Selection>();
-							if (menu.getService() != null) {
-								selections.addAll(menu.getService().getSelections());
-							}
-							return selections;
+							return getSelections((DynamicMenu) object);
 						}
-						return Collections.emptyList();
+
+						return Collections.emptySet();
 					}
 			});
 	}
 
 	/**
-	 * This adds a property descriptor for the Dynamic Title feature.
+	 * This adds a property descriptor for the Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addDynamicTitlePropertyDescriptor(Object object) {
+	protected void addTitlePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_DynamicMenu_dynamicTitle_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_DynamicMenu_dynamicTitle_feature", "_UI_DynamicMenu_type"),
-				 WebsitePackage.Literals.DYNAMIC_MENU__DYNAMIC_TITLE,
-				true, false, true, null,
-				getString("_UI_InterfacePropertyCategory"),
-				null) {
-					@Override
-					public Collection<?> getChoiceOfValues(Object object) {
-						if (object instanceof DynamicMenu) {
-							final DynamicMenu menu = (DynamicMenu) object;
-							final List<ServiceAttribute> elements = new LinkedList<ServiceAttribute>();
-							if (menu.getService() != null) {
-								for (ServiceFeature includedFeature : menu.getService().getFeatures()) {
-									if (includedFeature instanceof ServiceAttribute) {
-										elements.add((ServiceAttribute) includedFeature);
-									}
-								}
-							}
-							return elements;
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_DynamicMenu_title_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DynamicMenu_title_feature", "_UI_DataUnit_type"),
+			WebsitePackage.Literals.DYNAMIC_MENU__TITLE,
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof DynamicMenu) {
+						final DynamicMenu menu = (DynamicMenu) object;
+						if (menu.getEntityOrView() != null) {
+							return getLabels(menu.getEntityOrView());
 						}
-						return Collections.emptyList();
 					}
-			});
+
+					return Collections.emptySet();
+				}
+		});
 	}
 
 	/**

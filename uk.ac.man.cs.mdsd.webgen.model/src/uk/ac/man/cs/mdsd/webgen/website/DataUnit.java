@@ -23,8 +23,8 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDataUnit()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='canOnlyTitleWithSingletonElement selectionFromSource'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL canOnlyTitleWithSingletonElement='not title.oclIsUndefined() implies \r\nif title.oclIsKindOf(EntityAttribute) then\r\n\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\nelse\r\n\ttrue\r\nendif' selectionFromSource='not defaultSelection.oclIsUndefined() implies\r\n\tsource->select(s | s.oclIsTypeOf(Service)).oclAsType(Service)\r\n\t\t->collect(s | s.selections)->includes(defaultSelection)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='canOnlyTitleWithSingletonElement selectionValidChoice'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL canOnlyTitleWithSingletonElement='not title.oclIsUndefined() implies \r\nif title.oclIsKindOf(EntityAttribute) then\r\n\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\nelse\r\n\ttrue\r\nendif' selectionValidChoice='not defaultSelection.oclIsUndefined() implies\r\n\tentities->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(defaultSelection)'"
  * @generated
  */
 public interface DataUnit extends DynamicUnit {

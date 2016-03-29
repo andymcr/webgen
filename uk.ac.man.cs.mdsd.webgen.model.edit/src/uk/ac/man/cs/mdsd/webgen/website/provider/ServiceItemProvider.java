@@ -51,33 +51,9 @@ public class ServiceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEncapsulatesPropertyDescriptor(object);
 			addServesPropertyDescriptor(object);
-			addKeysPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Encapsulates feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEncapsulatesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_encapsulates_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_encapsulates_feature", "_UI_Service_type"),
-				 WebsitePackage.Literals.SERVICE__ENCAPSULATES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -103,28 +79,6 @@ public class ServiceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Keys feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addKeysPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Service_keys_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Service_keys_feature", "_UI_Service_type"),
-				 WebsitePackage.Literals.SERVICE__KEYS,
-				 true,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -136,8 +90,6 @@ public class ServiceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.SERVICE__FEATURES);
-			childrenFeatures.add(WebsitePackage.Literals.SERVICE__KEYS);
 			childrenFeatures.add(WebsitePackage.Literals.SERVICE__SELECTIONS);
 		}
 		return childrenFeatures;
@@ -193,8 +145,6 @@ public class ServiceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Service.class)) {
-			case WebsitePackage.SERVICE__FEATURES:
-			case WebsitePackage.SERVICE__KEYS:
 			case WebsitePackage.SERVICE__SELECTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -212,26 +162,6 @@ public class ServiceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.SERVICE__FEATURES,
-				 WebsiteFactory.eINSTANCE.createServiceAttribute()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.SERVICE__FEATURES,
-				 WebsiteFactory.eINSTANCE.createServiceAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.SERVICE__KEYS,
-				 WebsiteFactory.eINSTANCE.createServiceAttributeReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.SERVICE__KEYS,
-				 WebsiteFactory.eINSTANCE.createServiceAssociationReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

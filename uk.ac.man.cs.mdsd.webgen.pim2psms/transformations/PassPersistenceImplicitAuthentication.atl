@@ -85,7 +85,7 @@ rule OrmModel {
 							or website.websiteProperties.frameworkTechnology = #Symfony then
 							Sequence{}
 						else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
-								and authentication.authenticationSource.oclIsUndefined() then
+								and authentication.authentication.oclIsUndefined() then
 							Sequence{thisModule.implicitAuthenticationSystemEntity(authentication)}
 						else
 							Sequence{}
@@ -170,8 +170,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- true,
 		columnName <- 'username',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	password : ORM!SingletonElement (
 		name <- 'password',
@@ -183,8 +182,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		encrypt <- true,
 		columnName <- 'password',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	salt : ORM!SingletonElement (
 		name <- 'salt',
@@ -195,8 +193,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		obfuscateFormFields <- true,
 		columnName <- 'salt',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	email : ORM!SingletonElement (
 		name <- 'email',
@@ -207,8 +204,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		caseInsensitive <- true,
 		columnName <- 'email',
 		persistentType <- website.getPersistentType('Email'),
-		ormType <- website.getOrmType('Email'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('Email')
 	),
 	activated : ORM!SingletonElement (
 		name <- 'activated',
@@ -220,8 +216,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		defaultValue <- activatedDefault,
 		columnName <- 'activated',
 		persistentType <- website.getPersistentType('Boolean'),
-		ormType <- website.getOrmType('Boolean'),
-		inputClass <- 'input_checkbox'
+		ormType <- website.getOrmType('Boolean')
 	),
 	activatedDefault : ORM!IntegerLiteral (
 		value <- 1
@@ -235,8 +230,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		defaultValue <- bannedDefault,
 		columnName <- 'banned',
 		persistentType <- website.getPersistentType('Boolean'),
-		ormType <- website.getOrmType('Boolean'),
-		inputClass <- 'input_checkbox'
+		ormType <- website.getOrmType('Boolean')
 	),
 	bannedDefault : ORM!IntegerLiteral (
 		value <- 0
@@ -249,8 +243,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- false,
 		columnName <- 'ban_reason',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	newPasswordKey : ORM!SingletonElement (
 		name <- 'newPasswordKey',
@@ -260,8 +253,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- false,
 		columnName <- 'new_password_key',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	newPasswordRequested : ORM!SingletonDate (
 		name <- 'newPasswordRequested',
@@ -270,8 +262,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- false,
 		columnName <- 'new_password_requested',
 		details <- #DateAndTime,
-		ormType <- 'datetime',
-		inputClass <- 'input_attribute'
+		ormType <- 'datetime'
 	),
 	newEmail : ORM!SingletonElement (
 		name <- 'newEmail',
@@ -281,8 +272,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- false,
 		columnName <- 'new_email',
 		persistentType <- website.getPersistentType('Email'),
-		ormType <- website.getOrmType('Email'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('Email')
 	),
 	newEmailKey : ORM!SingletonElement (
 		name <- 'newEmailKey',
@@ -292,8 +282,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- false,
 		columnName <- 'new_email_key',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	lastIp : ORM!SingletonElement (
 		name <- 'lastIp',
@@ -304,8 +293,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- true,
 		columnName <- 'last_ip',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	lastIpDefault : ORM!StringLiteral (
 		value <- '0.0.0.0'
@@ -318,8 +306,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		"unique" <- false,
 		columnName <- 'last_login',
 		details <- #DateAndTime,
-		ormType <- 'datetime',
-		inputClass <- 'input_attribute'
+		ormType <- 'datetime'
 	),
 	lastLoginDefault : ORM!StringLiteral (
 		value <- '0000-00-00 00:00:00'
@@ -346,8 +333,7 @@ unique lazy rule implicitLoginAttemptEntity {
 		"unique" <- false,
 		columnName <- 'login_id',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	ipAddress : ORM!SingletonElement (
 		name <- 'ipAddress',
@@ -357,8 +343,7 @@ unique lazy rule implicitLoginAttemptEntity {
 		"unique" <- false,
 		columnName <- 'ip_address',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	time : ORM!SingletonDate (
 		name <- 'time',
@@ -367,8 +352,7 @@ unique lazy rule implicitLoginAttemptEntity {
 		"unique" <- false,
 		columnName <- 'time',
 		details <- #DateAndTime,
-		ormType <- 'datetime',
-		inputClass <- 'input_attribute'
+		ormType <- 'datetime'
 	)
 	do {
 		orm;
@@ -393,8 +377,7 @@ unique lazy rule implicitAutoLoginEntity {
 		"unique" <- false,
 		columnName <- 'key',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	userAgent : ORM!SingletonElement (
 		name <- 'userAgent',
@@ -404,8 +387,7 @@ unique lazy rule implicitAutoLoginEntity {
 		"unique" <- false,
 		columnName <- 'user_agent',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	lastIpAddress : ORM!SingletonElement (
 		name <- 'lastIpAddress',
@@ -415,8 +397,7 @@ unique lazy rule implicitAutoLoginEntity {
 		"unique" <- false,
 		columnName <- 'last_ip_address',
 		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String'),
-		inputClass <- 'input_attribute'
+		ormType <- website.getOrmType('String')
 	),
 	lastLogin : ORM!SingletonDate (
 		name <- 'lastLogin',
@@ -425,8 +406,7 @@ unique lazy rule implicitAutoLoginEntity {
 		"unique" <- false,
 		columnName <- 'last_login',
 		details <- #DateAndTime,
-		ormType <- 'datetime',
-		inputClass <- 'input_attribute'
+		ormType <- 'datetime'
 	)
 	do {
 		orm;
@@ -442,8 +422,7 @@ unique lazy rule implicitAuthenticationFeature {
 		owningEnd <- true,
 		required <- true,
 		associationRelationship <- #ManyToOne,
-		columnName <- 'authentication_id',
-		inputClass <- 'input_association'
+		columnName <- 'authentication_id'
 	)
 	do {
 		orm;
@@ -457,10 +436,9 @@ unique lazy rule implicitAutoLoginOpposite {
 		displayLabel <- 'autoLogin',
 		owningEnd <- false,
 		visible <- false,
-		associationRelationship <- #OneToMany,
+		associationRelationship <- #OneToMany
 -- multual instance creation
---		opposite <- thisModule.implicitAuthenticationFeature(website),
-		inputClass <- 'input_association'
+--		opposite <- thisModule.implicitAuthenticationFeature(website)
 	)
 	do {
 		orm;

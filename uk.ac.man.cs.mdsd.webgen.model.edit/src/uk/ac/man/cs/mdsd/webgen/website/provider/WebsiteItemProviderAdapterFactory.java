@@ -1034,98 +1034,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServiceAttributeItemProvider serviceAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createServiceAttributeAdapter() {
-		if (serviceAttributeItemProvider == null) {
-			serviceAttributeItemProvider = new ServiceAttributeItemProvider(this);
-		}
-
-		return serviceAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServiceAssociationItemProvider serviceAssociationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createServiceAssociationAdapter() {
-		if (serviceAssociationItemProvider == null) {
-			serviceAssociationItemProvider = new ServiceAssociationItemProvider(this);
-		}
-
-		return serviceAssociationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServiceAttributeReferenceItemProvider serviceAttributeReferenceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createServiceAttributeReferenceAdapter() {
-		if (serviceAttributeReferenceItemProvider == null) {
-			serviceAttributeReferenceItemProvider = new ServiceAttributeReferenceItemProvider(this);
-		}
-
-		return serviceAttributeReferenceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServiceAssociationReferenceItemProvider serviceAssociationReferenceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAssociationReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createServiceAssociationReferenceAdapter() {
-		if (serviceAssociationReferenceItemProvider == null) {
-			serviceAssociationReferenceItemProvider = new ServiceAssociationReferenceItemProvider(this);
-		}
-
-		return serviceAssociationReferenceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1494,6 +1402,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ActionUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ActionUnitItemProvider actionUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ActionUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createActionUnitAdapter() {
+		if (actionUnitItemProvider == null) {
+			actionUnitItemProvider = new ActionUnitItemProvider(this);
+		}
+
+		return actionUnitItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1851,10 +1782,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
-		if (serviceAttributeItemProvider != null) serviceAttributeItemProvider.dispose();
-		if (serviceAssociationItemProvider != null) serviceAssociationItemProvider.dispose();
-		if (serviceAttributeReferenceItemProvider != null) serviceAttributeReferenceItemProvider.dispose();
-		if (serviceAssociationReferenceItemProvider != null) serviceAssociationReferenceItemProvider.dispose();
 		if (pageItemProvider != null) pageItemProvider.dispose();
 		if (pageLinkItemProvider != null) pageLinkItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
@@ -1883,6 +1810,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (detailsUnitItemProvider != null) detailsUnitItemProvider.dispose();
 		if (indexUnitItemProvider != null) indexUnitItemProvider.dispose();
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
+		if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
 		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();
 		if (loginUnitItemProvider != null) loginUnitItemProvider.dispose();
 		if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();

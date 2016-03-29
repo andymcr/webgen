@@ -174,30 +174,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateEncapsulatedAssociation((EncapsulatedAssociation)value, diagnostics, context);
 			case WebsitePackage.VIEW_ASSOCIATION:
 				return validateViewAssociation((ViewAssociation)value, diagnostics, context);
-			case WebsitePackage.INCLUDED_FEATURE:
-				return validateIncludedFeature((IncludedFeature)value, diagnostics, context);
-			case WebsitePackage.INCLUDED_ELEMENT:
-				return validateIncludedElement((IncludedElement)value, diagnostics, context);
-			case WebsitePackage.INCLUDED_ASSOCIATION:
-				return validateIncludedAssociation((IncludedAssociation)value, diagnostics, context);
 			case WebsitePackage.SERVICE:
 				return validateService((Service)value, diagnostics, context);
 			case WebsitePackage.SELECTION:
 				return validateSelection((Selection)value, diagnostics, context);
 			case WebsitePackage.SELECTION_PARAMETER:
 				return validateSelectionParameter((SelectionParameter)value, diagnostics, context);
-			case WebsitePackage.SERVICE_FEATURE:
-				return validateServiceFeature((ServiceFeature)value, diagnostics, context);
-			case WebsitePackage.SERVICE_ATTRIBUTE:
-				return validateServiceAttribute((ServiceAttribute)value, diagnostics, context);
-			case WebsitePackage.SERVICE_ASSOCIATION:
-				return validateServiceAssociation((ServiceAssociation)value, diagnostics, context);
-			case WebsitePackage.SERVICE_FEATURE_REFERENCE:
-				return validateServiceFeatureReference((ServiceFeatureReference)value, diagnostics, context);
-			case WebsitePackage.SERVICE_ATTRIBUTE_REFERENCE:
-				return validateServiceAttributeReference((ServiceAttributeReference)value, diagnostics, context);
-			case WebsitePackage.SERVICE_ASSOCIATION_REFERENCE:
-				return validateServiceAssociationReference((ServiceAssociationReference)value, diagnostics, context);
 			case WebsitePackage.PAGE:
 				return validatePage((Page)value, diagnostics, context);
 			case WebsitePackage.PAGE_LINK:
@@ -226,8 +208,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateSelectable((Selectable)value, diagnostics, context);
 			case WebsitePackage.UNIT_CONTAINER:
 				return validateUnitContainer((UnitContainer)value, diagnostics, context);
-			case WebsitePackage.UNIT_SOURCE:
-				return validateUnitSource((UnitSource)value, diagnostics, context);
 			case WebsitePackage.CONTENT_UNIT:
 				return validateContentUnit((ContentUnit)value, diagnostics, context);
 			case WebsitePackage.STATIC_UNIT:
@@ -282,6 +262,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateControlUnit((ControlUnit)value, diagnostics, context);
 			case WebsitePackage.SEARCH_UNIT:
 				return validateSearchUnit((SearchUnit)value, diagnostics, context);
+			case WebsitePackage.ACTION_UNIT:
+				return validateActionUnit((ActionUnit)value, diagnostics, context);
 			case WebsitePackage.AUTHENTICATION_UNIT:
 				return validateAuthenticationUnit((AuthenticationUnit)value, diagnostics, context);
 			case WebsitePackage.REGISTRATION_UNIT:
@@ -1556,15 +1538,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateUnitSource(UnitSource unitSource, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(unitSource, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateUnitField(UnitField unitField, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(unitField, diagnostics, context);
 	}
@@ -1663,44 +1636,10 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(unitElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_cannotReduceCardinality(unitElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyGiveDefaultValueForSingletons(unitElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyForceSingletonValues(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitFeature_atMostOneSelectAction(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitFeature_noDeleteActions(unitElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateUnitElement_serviceFeatureMustBeConsistent(unitElement, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the serviceFeatureMustBeConsistent constraint of '<em>Unit Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String UNIT_ELEMENT__SERVICE_FEATURE_MUST_BE_CONSISTENT__EEXPRESSION = "not attribute.oclIsUndefined() and not serviceFeature.oclIsUndefined()\r\n" +
-		"implies attribute = serviceFeature.attribute";
-
-	/**
-	 * Validates the serviceFeatureMustBeConsistent constraint of '<em>Unit Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUnitElement_serviceFeatureMustBeConsistent(UnitElement unitElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.UNIT_ELEMENT,
-				 unitElement,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "serviceFeatureMustBeConsistent",
-				 UNIT_ELEMENT__SERVICE_FEATURE_MUST_BE_CONSISTENT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
@@ -1718,33 +1657,29 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(unitAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedAssociation_cannotReduceCardinality(unitAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedAssociation_canOnlyForceSingletonValues(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitFeature_atMostOneSelectAction(unitAssociation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitFeature_noDeleteActions(unitAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateUnitAssociation_serviceFeatureMustBeConsistent(unitAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateUnitAssociation_selectionFromCorrectService(unitAssociation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateUnitAssociation_selectionValidChoice(unitAssociation, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the serviceFeatureMustBeConsistent constraint of '<em>Unit Association</em>'.
+	 * The cached validation expression for the selectionValidChoice constraint of '<em>Unit Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String UNIT_ASSOCIATION__SERVICE_FEATURE_MUST_BE_CONSISTENT__EEXPRESSION = "not association.oclIsUndefined() and not serviceFeature.oclIsUndefined() implies\r\n" +
-		"\tassociation = serviceFeature.association\r\n" +
-		"";
+	protected static final String UNIT_ASSOCIATION__SELECTION_VALID_CHOICE__EEXPRESSION = "not selection.oclIsUndefined() implies\r\n" +
+		"\tdisplayedOn.entities->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)";
 
 	/**
-	 * Validates the serviceFeatureMustBeConsistent constraint of '<em>Unit Association</em>'.
+	 * Validates the selectionValidChoice constraint of '<em>Unit Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateUnitAssociation_serviceFeatureMustBeConsistent(UnitAssociation unitAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateUnitAssociation_selectionValidChoice(UnitAssociation unitAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(WebsitePackage.Literals.UNIT_ASSOCIATION,
@@ -1752,46 +1687,8 @@ public class WebsiteValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "serviceFeatureMustBeConsistent",
-				 UNIT_ASSOCIATION__SERVICE_FEATURE_MUST_BE_CONSISTENT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the selectionFromCorrectService constraint of '<em>Unit Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String UNIT_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION = "not selection.oclIsUndefined() and not association.oclIsUndefined() implies\r\n" +
-		"\tlet entityOrView : EntityOrView\r\n" +
-		"\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n" +
-		"\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n" +
-		"\t\t\telse if useAssociationSource then\r\n" +
-		"\t\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n" +
-		"\t\t\tendif endif\r\n" +
-		"\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)";
-
-	/**
-	 * Validates the selectionFromCorrectService constraint of '<em>Unit Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateUnitAssociation_selectionFromCorrectService(UnitAssociation unitAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.UNIT_ASSOCIATION,
-				 unitAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "selectionFromCorrectService",
-				 UNIT_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION,
+				 "selectionValidChoice",
+				 UNIT_ASSOCIATION__SELECTION_VALID_CHOICE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1840,201 +1737,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(service, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validateService_onlyIncludeFeaturesOnce(service, diagnostics, context);
-		if (result || diagnostics != null) result &= validateService_featuresMustBeFromEncapsulated(service, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the onlyIncludeFeaturesOnce constraint of '<em>Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SERVICE__ONLY_INCLUDE_FEATURES_ONCE__EEXPRESSION = "features->isUnique(f |\r\n" +
-		"\tif f.oclIsTypeOf(ServiceAttribute) then\r\n" +
-		"\t\tf.oclAsType(ServiceAttribute).attribute\r\n" +
-		"\telse\r\n" +
-		"\t\tf.oclAsType(ServiceAssociation).association\r\n" +
-		"\tendif)";
-
-	/**
-	 * Validates the onlyIncludeFeaturesOnce constraint of '<em>Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateService_onlyIncludeFeaturesOnce(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.SERVICE,
-				 service,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "onlyIncludeFeaturesOnce",
-				 SERVICE__ONLY_INCLUDE_FEATURES_ONCE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the featuresMustBeFromEncapsulated constraint of '<em>Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SERVICE__FEATURES_MUST_BE_FROM_ENCAPSULATED__EEXPRESSION = "let encapsulatedFeatures : Collection(Feature)\r\n" +
-		"\t= let entities : Sequence(Entity)\r\n" +
-		"\t\t= encapsulates->select(e | e.oclIsTypeOf(Entity)).oclAsType(Entity)\r\n" +
-		"\t\tin entities->collect(e | e.features).oclAsType(Feature)\r\n" +
-		"\t\t\t->union(entities->collect(e | e.associationEnds).oclAsType(Feature))\r\n" +
-		"--\t\t\t->union(encapsulates->select(v | v.oclIsTypeOf(View)).oclAsType(View)\r\n" +
-		"--\t\t\t\t->collect(v | v.features).oclAsType(Feature))\r\n" +
-		"in features\r\n" +
-		"\t->forAll(f | encapsulatedFeatures->includes(\r\n" +
-		"\t\tif f.oclIsTypeOf(ServiceAttribute) then\r\n" +
-		"\t\t\tf.oclAsType(ServiceAttribute).attribute\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tf.oclAsType(ServiceAssociation).association\r\n" +
-		"\t\tendif))";
-
-	/**
-	 * Validates the featuresMustBeFromEncapsulated constraint of '<em>Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateService_featuresMustBeFromEncapsulated(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.SERVICE,
-				 service,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "featuresMustBeFromEncapsulated",
-				 SERVICE__FEATURES_MUST_BE_FROM_ENCAPSULATED__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceFeature(ServiceFeature serviceFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(serviceFeature, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceAttribute(ServiceAttribute serviceAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(serviceAttribute, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(serviceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(serviceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(serviceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(serviceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(serviceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(serviceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(serviceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(serviceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_cannotReduceCardinality(serviceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyGiveDefaultValueForSingletons(serviceAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyForceSingletonValues(serviceAttribute, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceAssociation(ServiceAssociation serviceAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(serviceAssociation, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(serviceAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(serviceAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(serviceAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(serviceAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(serviceAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(serviceAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(serviceAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(serviceAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedAssociation_cannotReduceCardinality(serviceAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedAssociation_canOnlyForceSingletonValues(serviceAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateServiceAssociation_selectionFromCorrectService(serviceAssociation, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the selectionFromCorrectService constraint of '<em>Service Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SERVICE_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION = "not selection.oclIsUndefined() and not association.oclIsUndefined() implies\r\n" +
-		"\tlet entityOrView : EntityOrView\r\n" +
-		"\t\t= if association.oclIsTypeOf(ViewAssociation) then\r\n" +
-		"\t\t\t\tassociation.oclAsType(ViewAssociation).partOf\r\n" +
-		"\t\t\telse if useAssociationSource then\r\n" +
-		"\t\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n" +
-		"\t\t\tendif endif\r\n" +
-		"\tin entityOrView.servedBy->collect(s | s.selections)->includes(selection)";
-
-	/**
-	 * Validates the selectionFromCorrectService constraint of '<em>Service Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceAssociation_selectionFromCorrectService(ServiceAssociation serviceAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.SERVICE_ASSOCIATION,
-				 serviceAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "selectionFromCorrectService",
-				 SERVICE_ASSOCIATION__SELECTION_FROM_CORRECT_SERVICE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceFeatureReference(ServiceFeatureReference serviceFeatureReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(serviceFeatureReference, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceAttributeReference(ServiceAttributeReference serviceAttributeReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(serviceAttributeReference, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateServiceAssociationReference(ServiceAssociationReference serviceAssociationReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(serviceAssociationReference, diagnostics, context);
 	}
 
 	/**
@@ -2194,246 +1897,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateIncludedFeature(IncludedFeature includedFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(includedFeature, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIncludedElement(IncludedElement includedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(includedElement, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(includedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(includedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(includedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(includedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(includedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(includedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(includedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(includedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_cannotReduceCardinality(includedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyGiveDefaultValueForSingletons(includedElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedElement_canOnlyForceSingletonValues(includedElement, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the cannotReduceCardinality constraint of '<em>Included Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String INCLUDED_ELEMENT__CANNOT_REDUCE_CARDINALITY__EEXPRESSION = "not attribute.oclIsUndefined() implies\r\n" +
-		"\tif attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
-		"\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required implies required\r\n" +
-		"\telse\r\n" +
-		"\t\tattribute.oclAsType(EntityAttribute).cardinality = Cardinality::Required implies required\r\n" +
-		"\tendif";
-
-	/**
-	 * Validates the cannotReduceCardinality constraint of '<em>Included Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIncludedElement_cannotReduceCardinality(IncludedElement includedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.INCLUDED_ELEMENT,
-				 includedElement,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "cannotReduceCardinality",
-				 INCLUDED_ELEMENT__CANNOT_REDUCE_CARDINALITY__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the canOnlyGiveDefaultValueForSingletons constraint of '<em>Included Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String INCLUDED_ELEMENT__CAN_ONLY_GIVE_DEFAULT_VALUE_FOR_SINGLETONS__EEXPRESSION = "not attribute.oclIsUndefined() and not defaultValue.oclIsUndefined() implies\r\n" +
-		"\tif attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
-		"\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
-		"\telse\r\n" +
-		"\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
-		"\tendif";
-
-	/**
-	 * Validates the canOnlyGiveDefaultValueForSingletons constraint of '<em>Included Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIncludedElement_canOnlyGiveDefaultValueForSingletons(IncludedElement includedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.INCLUDED_ELEMENT,
-				 includedElement,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "canOnlyGiveDefaultValueForSingletons",
-				 INCLUDED_ELEMENT__CAN_ONLY_GIVE_DEFAULT_VALUE_FOR_SINGLETONS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the canOnlyForceSingletonValues constraint of '<em>Included Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String INCLUDED_ELEMENT__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION = "not attribute.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n" +
-		"\tif attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
-		"\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
-		"\telse\r\n" +
-		"\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
-		"\tendif";
-
-	/**
-	 * Validates the canOnlyForceSingletonValues constraint of '<em>Included Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIncludedElement_canOnlyForceSingletonValues(IncludedElement includedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.INCLUDED_ELEMENT,
-				 includedElement,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "canOnlyForceSingletonValues",
-				 INCLUDED_ELEMENT__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIncludedAssociation(IncludedAssociation includedAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(includedAssociation, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(includedAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(includedAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(includedAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(includedAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(includedAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(includedAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(includedAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(includedAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedAssociation_cannotReduceCardinality(includedAssociation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncludedAssociation_canOnlyForceSingletonValues(includedAssociation, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the cannotReduceCardinality constraint of '<em>Included Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String INCLUDED_ASSOCIATION__CANNOT_REDUCE_CARDINALITY__EEXPRESSION = "not association.oclIsUndefined() implies\r\n" +
-		"\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n" +
-		"\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality = Cardinality::Required implies required\r\n" +
-		"\telse if association.oclIsTypeOf(ViewAssociation) then\r\n" +
-		"\t\tif useAssociationSource then\r\n" +
-		"\t\t\tassociation.oclAsType(ViewAssociation).cardinality = Cardinality::Required implies required\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tassociation.oclAsType(ViewAssociation).opposite.cardinality = Cardinality::Required implies required\r\n" +
-		"\t\tendif\r\n" +
-		"\telse if useAssociationSource then\r\n" +
-		"\t\tassociation.oclAsType(EntityAssociation).cardinality = Cardinality::Required implies required\r\n" +
-		"\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n" +
-		"\t\trequired\r\n" +
-		"\telse\r\n" +
-		"\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality = Cardinality::Required implies required\r\n" +
-		"\tendif endif endif endif";
-
-	/**
-	 * Validates the cannotReduceCardinality constraint of '<em>Included Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIncludedAssociation_cannotReduceCardinality(IncludedAssociation includedAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.INCLUDED_ASSOCIATION,
-				 includedAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "cannotReduceCardinality",
-				 INCLUDED_ASSOCIATION__CANNOT_REDUCE_CARDINALITY__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the canOnlyForceSingletonValues constraint of '<em>Included Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String INCLUDED_ASSOCIATION__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION = "not association.oclIsUndefined() and not forcedValue.oclIsUndefined() implies\r\n" +
-		"\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n" +
-		"\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n" +
-		"\telse if association.oclIsTypeOf(ViewAssociation) then\r\n" +
-		"\t\tif useAssociationSource then\r\n" +
-		"\t\t\tassociation.oclAsType(ViewAssociation).cardinality <> Cardinality::Many\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tassociation.oclAsType(ViewAssociation).opposite.cardinality <> Cardinality::Many\r\n" +
-		"\t\tendif\r\n" +
-		"\telse if useAssociationSource then\r\n" +
-		"\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n" +
-		"\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n" +
-		"\t\ttrue\r\n" +
-		"\telse\r\n" +
-		"\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n" +
-		"\tendif endif endif endif";
-
-	/**
-	 * Validates the canOnlyForceSingletonValues constraint of '<em>Included Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateIncludedAssociation_canOnlyForceSingletonValues(IncludedAssociation includedAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.INCLUDED_ASSOCIATION,
-				 includedAssociation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "canOnlyForceSingletonValues",
-				 INCLUDED_ASSOCIATION__CAN_ONLY_FORCE_SINGLETON_VALUES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateEditUnit(EditUnit editUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(editUnit, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(editUnit, diagnostics, context);
@@ -2445,10 +1908,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(editUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(editUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(editUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(editUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(editUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(editUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(editUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(editUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2468,10 +1928,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(createUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(createUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(createUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(createUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(createUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(createUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(createUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(createUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2491,10 +1948,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(createUpdateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(createUpdateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(createUpdateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(createUpdateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(createUpdateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(createUpdateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(createUpdateUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(createUpdateUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2514,12 +1968,9 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dataUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(dataUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(dataUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(dataUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(dataUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletonElement(dataUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataUnit_selectionFromSource(dataUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(dataUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2558,22 +2009,21 @@ public class WebsiteValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the selectionFromSource constraint of '<em>Data Unit</em>'.
+	 * The cached validation expression for the selectionValidChoice constraint of '<em>Data Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DATA_UNIT__SELECTION_FROM_SOURCE__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
-		"\tsource->select(s | s.oclIsTypeOf(Service)).oclAsType(Service)\r\n" +
-		"\t\t->collect(s | s.selections)->includes(defaultSelection)";
+	protected static final String DATA_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
+		"\tentities->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(defaultSelection)";
 
 	/**
-	 * Validates the selectionFromSource constraint of '<em>Data Unit</em>'.
+	 * Validates the selectionValidChoice constraint of '<em>Data Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDataUnit_selectionFromSource(DataUnit dataUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDataUnit_selectionValidChoice(DataUnit dataUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(WebsitePackage.Literals.DATA_UNIT,
@@ -2581,8 +2031,8 @@ public class WebsiteValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "selectionFromSource",
-				 DATA_UNIT__SELECTION_FROM_SOURCE__EEXPRESSION,
+				 "selectionValidChoice",
+				 DATA_UNIT__SELECTION_VALID_CHOICE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -2651,44 +2101,45 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dynamicUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dynamicUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dynamicUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(dynamicUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(dynamicUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(dynamicUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(dynamicUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(dynamicUnit, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the serviceFeaturesMustBeFromSource constraint of '<em>Dynamic Unit</em>'.
+	 * The cached validation expression for the featuresMustBeFromEntities constraint of '<em>Dynamic Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_UNIT__SERVICE_FEATURES_MUST_BE_FROM_SOURCE__EEXPRESSION = "let serviceFeatures : Collection(ServiceFeature)\r\n" +
-		"\t= source->select(s | s.oclIsTypeOf(Service)).oclAsType(Service)\r\n" +
-		"\t\t->collect(s | s.features)\r\n" +
+	protected static final String DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_ENTITIES__EEXPRESSION = "let eovFeatures : Collection(Feature)\r\n" +
+		"\t= self.entities->collect(\r\n" +
+		"\t\teov | if eov.oclIsTypeOf(Entity) then\r\n" +
+		"\t\t\t\teov.oclAsType(Entity).features\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\teov.oclAsType(View).features\r\n" +
+		"\t\t\tendif)\r\n" +
 		"\tin displayFields\r\n" +
 		"\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
 		"\t\t->select(f | \r\n" +
 		"\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
-		"\t\t\t\tnot f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()\r\n" +
+		"\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n" +
 		"\t\t\telse\r\n" +
-		"\t\t\t\tnot f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()\r\n" +
+		"\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n" +
 		"\t\t\tendif)\r\n" +
 		"\t\t->forAll(f | \r\n" +
 		"\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
-		"\t\t\t\tserviceFeatures->includes(f.oclAsType(UnitElement).serviceFeature)\r\n" +
+		"\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n" +
 		"\t\t\telse\r\n" +
-		"\t\t\t\tserviceFeatures->includes(f.oclAsType(UnitAssociation).serviceFeature)\r\n" +
+		"\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n" +
 		"\t\t\tendif)";
 
 	/**
-	 * Validates the serviceFeaturesMustBeFromSource constraint of '<em>Dynamic Unit</em>'.
+	 * Validates the featuresMustBeFromEntities constraint of '<em>Dynamic Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDynamicUnit_serviceFeaturesMustBeFromSource(DynamicUnit dynamicUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDynamicUnit_featuresMustBeFromEntities(DynamicUnit dynamicUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(WebsitePackage.Literals.DYNAMIC_UNIT,
@@ -2696,115 +2147,8 @@ public class WebsiteValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "serviceFeaturesMustBeFromSource",
-				 DYNAMIC_UNIT__SERVICE_FEATURES_MUST_BE_FROM_SOURCE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the onlyReferenceFeaturesOnce constraint of '<em>Dynamic Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DYNAMIC_UNIT__ONLY_REFERENCE_FEATURES_ONCE__EEXPRESSION = "displayFields\r\n" +
-		"\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
-		"\t->select(f | if not f.oclIsTypeOf(UnitAssociation) then\r\n" +
-		"\t\t\ttrue\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tf.oclAsType(UnitAssociation).childFeature.oclIsUndefined()\r\n" +
-		"\t\tendif)\r\n" +
-		"\t->isUnique(f |\r\n" +
-		"\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
-		"\t\t\tf.oclAsType(UnitElement).attribute\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tf.oclAsType(UnitAssociation).association\r\n" +
-		"\t\tendif)";
-
-	/**
-	 * Validates the onlyReferenceFeaturesOnce constraint of '<em>Dynamic Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDynamicUnit_onlyReferenceFeaturesOnce(DynamicUnit dynamicUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.DYNAMIC_UNIT,
-				 dynamicUnit,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "onlyReferenceFeaturesOnce",
-				 DYNAMIC_UNIT__ONLY_REFERENCE_FEATURES_ONCE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the entitySourceOnlyIfNotEncapsulated constraint of '<em>Dynamic Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DYNAMIC_UNIT__ENTITY_SOURCE_ONLY_IF_NOT_ENCAPSULATED__EEXPRESSION = "source->forAll(s | s.oclIsTypeOf(Entity) implies s.oclAsType(Entity).servedBy->isEmpty())";
-
-	/**
-	 * Validates the entitySourceOnlyIfNotEncapsulated constraint of '<em>Dynamic Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(DynamicUnit dynamicUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.DYNAMIC_UNIT,
-				 dynamicUnit,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "entitySourceOnlyIfNotEncapsulated",
-				 DYNAMIC_UNIT__ENTITY_SOURCE_ONLY_IF_NOT_ENCAPSULATED__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the serviceSourceRequiresServiceFeatures constraint of '<em>Dynamic Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DYNAMIC_UNIT__SERVICE_SOURCE_REQUIRES_SERVICE_FEATURES__EEXPRESSION = "source->select(s | s.oclIsTypeOf(Service))->notEmpty() implies \r\n" +
-		"displayFields\r\n" +
-		"\t->select(f|f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
-		"\t->forAll(f |\r\n" +
-		"\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
-		"\t\t\tnot f.oclAsType(UnitElement).serviceFeature.oclIsUndefined()\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tnot f.oclAsType(UnitAssociation).serviceFeature.oclIsUndefined()\r\n" +
-		"\t\tendif)";
-
-	/**
-	 * Validates the serviceSourceRequiresServiceFeatures constraint of '<em>Dynamic Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDynamicUnit_serviceSourceRequiresServiceFeatures(DynamicUnit dynamicUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.DYNAMIC_UNIT,
-				 dynamicUnit,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "serviceSourceRequiresServiceFeatures",
-				 DYNAMIC_UNIT__SERVICE_SOURCE_REQUIRES_SERVICE_FEATURES__EEXPRESSION,
+				 "featuresMustBeFromEntities",
+				 DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_ENTITIES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -2826,12 +2170,9 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(detailsUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(detailsUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(detailsUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(detailsUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(detailsUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletonElement(detailsUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataUnit_selectionFromSource(detailsUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(detailsUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2851,12 +2192,9 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(indexUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(indexUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(indexUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(indexUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(indexUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletonElement(indexUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataUnit_selectionFromSource(indexUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(indexUnit, diagnostics, context);
 		return result;
 	}
@@ -2877,10 +2215,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(controlUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(controlUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(controlUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(controlUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(controlUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(controlUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(controlUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(controlUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2900,10 +2235,27 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(searchUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(searchUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(searchUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(searchUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(searchUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(searchUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(searchUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(searchUnit, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateActionUnit(ActionUnit actionUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(actionUnit, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(actionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(actionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(actionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(actionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(actionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(actionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(actionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(actionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(actionUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(actionUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2932,10 +2284,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(registrationUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(registrationUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(registrationUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(registrationUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(registrationUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(registrationUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(registrationUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(registrationUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2955,10 +2304,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(loginUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(loginUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(loginUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(loginUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(loginUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(loginUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(loginUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(loginUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2978,10 +2324,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(forgottenPasswordUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(forgottenPasswordUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(forgottenPasswordUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(forgottenPasswordUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(forgottenPasswordUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(forgottenPasswordUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(forgottenPasswordUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(forgottenPasswordUnit, diagnostics, context);
 		return result;
 	}
 
@@ -3049,68 +2392,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(inlineAction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(inlineAction, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(inlineAction, diagnostics, context);
-		if (result || diagnostics != null) result &= validateInlineAction_canOnlyLinkToSingletonFeatures(inlineAction, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the canOnlyLinkToSingletonFeatures constraint of '<em>Inline Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String INLINE_ACTION__CAN_ONLY_LINK_TO_SINGLETON_FEATURES__EEXPRESSION = "usedBy.oclIsKindOf(UnitFeature) implies\r\n" +
-		"\tif usedBy.oclIsKindOf(UnitElement) then\r\n" +
-		"\t\tlet attribute : UnitElement = usedBy.oclAsType(UnitElement)\r\n" +
-		"\t\tin not attribute.attribute.oclIsUndefined() implies\r\n" +
-		"\t\t\tif attribute.attribute.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
-		"\t\t\t\tattribute.attribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tattribute.attribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
-		"\t\t\tendif\r\n" +
-		"\telse\r\n" +
-		"\t\tlet association : UnitAssociation = usedBy.oclAsType(UnitAssociation)\r\n" +
-		"\t\tin not association.association.oclIsUndefined() implies\r\n" +
-		"\t\t\tif association.association.oclIsTypeOf(EncapsulatedAssociation) then\r\n" +
-		"\t\t\t\tassociation.association.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n" +
-		"\t\t\telse if association.association.oclIsTypeOf(ViewAssociation) then\r\n" +
-		"\t\t\t\tlet viewAssociation : ViewAssociation = association.association.oclAsType(ViewAssociation)\r\n" +
-		"\t\t\t\tin if association.useAssociationSource then\r\n" +
-		"\t\t\t\t\t\tviewAssociation.cardinality <> Cardinality::Many\r\n" +
-		"\t\t\t\t\telse\r\n" +
-		"\t\t\t\t\t\tviewAssociation.opposite.cardinality <> Cardinality::Many\r\n" +
-		"\t\t\t\t\tendif\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tlet entityAssociation : EntityAssociation = association.association.oclAsType(EntityAssociation)\r\n" +
-		"\t\t\t\tin if association.useAssociationSource then\r\n" +
-		"\t\t\t\t\t\tentityAssociation.cardinality <> Cardinality::Many\r\n" +
-		"\t\t\t\t\telse if entityAssociation.oclIsTypeOf(AssociationWithContainment) then\r\n" +
-		"\t\t\t\t\t\ttrue\r\n" +
-		"\t\t\t\t\telse\r\n" +
-		"\t\t\t\t\t\tentityAssociation.oclAsType(AssociationWithoutContainment).targetCardinality <> Cardinality::Many\r\n" +
-		"\t\t\t\t\tendif endif\r\n" +
-		"\t\t\tendif endif\r\n" +
-		"\tendif";
-
-	/**
-	 * Validates the canOnlyLinkToSingletonFeatures constraint of '<em>Inline Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateInlineAction_canOnlyLinkToSingletonFeatures(InlineAction inlineAction, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.INLINE_ACTION,
-				 inlineAction,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "canOnlyLinkToSingletonFeatures",
-				 INLINE_ACTION__CAN_ONLY_LINK_TO_SINGLETON_FEATURES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
@@ -3129,10 +2411,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(updateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(updateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(updateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(updateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(updateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(updateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(updateUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(updateUnit, diagnostics, context);
 		return result;
 	}
 
@@ -3152,10 +2431,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(mapUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(mapUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(mapUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceFeaturesMustBeFromSource(mapUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_onlyReferenceFeaturesOnce(mapUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_entitySourceOnlyIfNotEncapsulated(mapUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_serviceSourceRequiresServiceFeatures(mapUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(mapUnit, diagnostics, context);
 		return result;
 	}
 
@@ -3175,7 +2451,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(selectAction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(selectAction, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(selectAction, diagnostics, context);
-		if (result || diagnostics != null) result &= validateInlineAction_canOnlyLinkToSingletonFeatures(selectAction, diagnostics, context);
 		return result;
 	}
 
@@ -3195,8 +2470,58 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(deleteAction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(deleteAction, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(deleteAction, diagnostics, context);
-		if (result || diagnostics != null) result &= validateInlineAction_canOnlyLinkToSingletonFeatures(deleteAction, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDeleteAction_canOnlyDeleteSingletons(deleteAction, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the canOnlyDeleteSingletons constraint of '<em>Delete Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELETE_ACTION__CAN_ONLY_DELETE_SINGLETONS__EEXPRESSION = "if usedBy.oclIsKindOf(UnitElement) then\r\n" +
+		"\tlet attribute : Attribute\r\n" +
+		"\t\t= usedBy.oclAsType(UnitElement).attribute\r\n" +
+		"\t\tin if attribute.oclIsKindOf(EntityAttribute) then\r\n" +
+		"\t\t\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tfalse -- attribute.oclAsType(EncapsulatedAttribute).attribute.cardinality <> Cardinalty::Many\r\n" +
+		"\t\t\tendif\r\n" +
+		"else if usedBy.oclIsKindOf(UnitAssociation) then\r\n" +
+		"\tlet association : Association\r\n" +
+		"\t\t= usedBy.oclAsType(UnitAssociation).association\r\n" +
+		"\t\tin if association.oclIsKindOf(EntityAssociation) then\r\n" +
+		"\t\t\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\t\t\telse if association.oclIsKindOf(EncapsulatedAssociation) then\r\n" +
+		"\t\t\t\tfalse -- association.oclAsType(EncapsulatedAssociation).attribute.cardinality <> Cardinalty::Many\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tfalse -- association.oclAsType(ViewAssociation)\r\n" +
+		"\t\t\tendif endif\r\n" +
+		"else\r\n" +
+		"\tusedBy.oclIsTypeOf(IndexUnit)\r\n" +
+		"endif endif\r\n" +
+		"";
+
+	/**
+	 * Validates the canOnlyDeleteSingletons constraint of '<em>Delete Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDeleteAction_canOnlyDeleteSingletons(DeleteAction deleteAction, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.DELETE_ACTION,
+				 deleteAction,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "canOnlyDeleteSingletons",
+				 DELETE_ACTION__CAN_ONLY_DELETE_SINGLETONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -3215,7 +2540,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(featureSupportAction, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(featureSupportAction, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(featureSupportAction, diagnostics, context);
-		if (result || diagnostics != null) result &= validateInlineAction_canOnlyLinkToSingletonFeatures(featureSupportAction, diagnostics, context);
 		return result;
 	}
 

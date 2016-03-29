@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
@@ -139,7 +138,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 */
 	public List<Service> getServedBy() {
 		if (servedBy == null) {
-			servedBy = new EObjectWithInverseResolvingEList.ManyInverse<Service>(Service.class, this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY, WebsitePackage.SERVICE__ENCAPSULATES);
+			servedBy = new EObjectResolvingEList<Service>(Service.class, this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY);
 		}
 		return servedBy;
 	}
@@ -177,8 +176,6 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getServedBy()).basicAdd(otherEnd, msgs);
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLabels()).basicAdd(otherEnd, msgs);
 		}
@@ -193,8 +190,6 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
-				return ((InternalEList<?>)getServedBy()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
 				return ((InternalEList<?>)getLabels()).basicRemove(otherEnd, msgs);
 		}

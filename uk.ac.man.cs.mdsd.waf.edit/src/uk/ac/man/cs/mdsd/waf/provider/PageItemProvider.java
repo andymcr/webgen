@@ -432,6 +432,11 @@ public class PageItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				 WafFactory.eINSTANCE.createActionUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
 				 WafFactory.eINSTANCE.createRegistrationUnit()));
 
 		newChildDescriptors.add

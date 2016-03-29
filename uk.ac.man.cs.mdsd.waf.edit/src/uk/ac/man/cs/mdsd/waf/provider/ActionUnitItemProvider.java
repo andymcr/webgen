@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.website.provider;
+package uk.ac.man.cs.mdsd.waf.provider;
 
 
 import java.util.Collection;
@@ -9,36 +9,24 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import uk.ac.man.cs.mdsd.waf.ActionUnit;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceFeatureReference} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ActionUnit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceFeatureReferenceItemProvider 
-	extends WebGenItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ActionUnitItemProvider extends ControlUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceFeatureReferenceItemProvider(AdapterFactory adapterFactory) {
+	public ActionUnitItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,6 +46,17 @@ public class ServiceFeatureReferenceItemProvider
 	}
 
 	/**
+	 * This returns ActionUnit.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActionUnit"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,7 +64,10 @@ public class ServiceFeatureReferenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ServiceFeatureReference_type");
+		String label = ((ActionUnit)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ActionUnit_type") :
+			getString("_UI_ActionUnit_type") + " " + label;
 	}
 	
 
@@ -92,17 +94,6 @@ public class ServiceFeatureReferenceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return WebsiteEditPlugin.INSTANCE;
 	}
 
 }

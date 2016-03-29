@@ -395,42 +395,6 @@ public interface WebsiteFactory extends EFactory {
 	SelectionParameter createSelectionParameter();
 
 	/**
-	 * Returns a new object of class '<em>Service Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Attribute</em>'.
-	 * @generated
-	 */
-	ServiceAttribute createServiceAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Service Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Association</em>'.
-	 * @generated
-	 */
-	ServiceAssociation createServiceAssociation();
-
-	/**
-	 * Returns a new object of class '<em>Service Attribute Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Attribute Reference</em>'.
-	 * @generated
-	 */
-	ServiceAttributeReference createServiceAttributeReference();
-
-	/**
-	 * Returns a new object of class '<em>Service Association Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Association Reference</em>'.
-	 * @generated
-	 */
-	ServiceAssociationReference createServiceAssociationReference();
-
-	/**
 	 * Returns a new object of class '<em>Create Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -573,6 +537,15 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	SearchUnit createSearchUnit();
+
+	/**
+	 * Returns a new object of class '<em>Action Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Action Unit</em>'.
+	 * @generated
+	 */
+	ActionUnit createActionUnit();
 
 	/**
 	 * Returns a new object of class '<em>Registration Unit</em>'.

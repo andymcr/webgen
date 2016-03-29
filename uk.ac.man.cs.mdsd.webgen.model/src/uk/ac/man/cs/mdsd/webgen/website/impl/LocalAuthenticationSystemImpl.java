@@ -10,11 +10,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem;
 import uk.ac.man.cs.mdsd.webgen.website.LoginUnit;
 import uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit;
-import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -25,9 +25,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getUserSource <em>User Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getUser <em>User</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getUserAuthenticationKey <em>User Authentication Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getAuthenticationSource <em>Authentication Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isUseCaptcha <em>Use Captcha</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isTrackLoginAttempts <em>Track Login Attempts</em>}</li>
@@ -43,14 +43,14 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  */
 public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements LocalAuthenticationSystem {
 	/**
-	 * The cached value of the '{@link #getUserSource() <em>User Source</em>}' reference.
+	 * The cached value of the '{@link #getUser() <em>User</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUserSource()
+	 * @see #getUser()
 	 * @generated
 	 * @ordered
 	 */
-	protected UnitSource userSource;
+	protected EntityOrView user;
 
 	/**
 	 * The cached value of the '{@link #getUserAuthenticationKey() <em>User Authentication Key</em>}' reference.
@@ -63,14 +63,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	protected Attribute userAuthenticationKey;
 
 	/**
-	 * The cached value of the '{@link #getAuthenticationSource() <em>Authentication Source</em>}' reference.
+	 * The cached value of the '{@link #getAuthentication() <em>Authentication</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAuthenticationSource()
+	 * @see #getAuthentication()
 	 * @generated
 	 * @ordered
 	 */
-	protected UnitSource authenticationSource;
+	protected EntityOrView authentication;
 
 	/**
 	 * The default value of the '{@link #isUseCaptcha() <em>Use Captcha</em>}' attribute.
@@ -246,16 +246,16 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitSource getUserSource() {
-		if (userSource != null && userSource.eIsProxy()) {
-			InternalEObject oldUserSource = (InternalEObject)userSource;
-			userSource = (UnitSource)eResolveProxy(oldUserSource);
-			if (userSource != oldUserSource) {
+	public EntityOrView getUser() {
+		if (user != null && user.eIsProxy()) {
+			InternalEObject oldUser = (InternalEObject)user;
+			user = (EntityOrView)eResolveProxy(oldUser);
+			if (user != oldUser) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SOURCE, oldUserSource, userSource));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER, oldUser, user));
 			}
 		}
-		return userSource;
+		return user;
 	}
 
 	/**
@@ -263,8 +263,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitSource basicGetUserSource() {
-		return userSource;
+	public EntityOrView basicGetUser() {
+		return user;
 	}
 
 	/**
@@ -272,11 +272,11 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUserSource(UnitSource newUserSource) {
-		UnitSource oldUserSource = userSource;
-		userSource = newUserSource;
+	public void setUser(EntityOrView newUser) {
+		EntityOrView oldUser = user;
+		user = newUser;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SOURCE, oldUserSource, userSource));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER, oldUser, user));
 	}
 
 	/**
@@ -322,16 +322,16 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitSource getAuthenticationSource() {
-		if (authenticationSource != null && authenticationSource.eIsProxy()) {
-			InternalEObject oldAuthenticationSource = (InternalEObject)authenticationSource;
-			authenticationSource = (UnitSource)eResolveProxy(oldAuthenticationSource);
-			if (authenticationSource != oldAuthenticationSource) {
+	public EntityOrView getAuthentication() {
+		if (authentication != null && authentication.eIsProxy()) {
+			InternalEObject oldAuthentication = (InternalEObject)authentication;
+			authentication = (EntityOrView)eResolveProxy(oldAuthentication);
+			if (authentication != oldAuthentication) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE, oldAuthenticationSource, authenticationSource));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION, oldAuthentication, authentication));
 			}
 		}
-		return authenticationSource;
+		return authentication;
 	}
 
 	/**
@@ -339,8 +339,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitSource basicGetAuthenticationSource() {
-		return authenticationSource;
+	public EntityOrView basicGetAuthentication() {
+		return authentication;
 	}
 
 	/**
@@ -348,11 +348,11 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAuthenticationSource(UnitSource newAuthenticationSource) {
-		UnitSource oldAuthenticationSource = authenticationSource;
-		authenticationSource = newAuthenticationSource;
+	public void setAuthentication(EntityOrView newAuthentication) {
+		EntityOrView oldAuthentication = authentication;
+		authentication = newAuthentication;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE, oldAuthenticationSource, authenticationSource));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION, oldAuthentication, authentication));
 	}
 
 	/**
@@ -603,15 +603,15 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SOURCE:
-				if (resolve) return getUserSource();
-				return basicGetUserSource();
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
+				if (resolve) return getUser();
+				return basicGetUser();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
 				if (resolve) return getUserAuthenticationKey();
 				return basicGetUserAuthenticationKey();
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE:
-				if (resolve) return getAuthenticationSource();
-				return basicGetAuthenticationSource();
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
+				if (resolve) return getAuthentication();
+				return basicGetAuthentication();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				return isUseCaptcha();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
@@ -645,14 +645,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SOURCE:
-				setUserSource((UnitSource)newValue);
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
+				setUser((EntityOrView)newValue);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
 				setUserAuthenticationKey((Attribute)newValue);
 				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE:
-				setAuthenticationSource((UnitSource)newValue);
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
+				setAuthentication((EntityOrView)newValue);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				setUseCaptcha((Boolean)newValue);
@@ -693,14 +693,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SOURCE:
-				setUserSource((UnitSource)null);
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
+				setUser((EntityOrView)null);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
 				setUserAuthenticationKey((Attribute)null);
 				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE:
-				setAuthenticationSource((UnitSource)null);
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
+				setAuthentication((EntityOrView)null);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				setUseCaptcha(USE_CAPTCHA_EDEFAULT);
@@ -741,12 +741,12 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_SOURCE:
-				return userSource != null;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
+				return user != null;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
 				return userAuthenticationKey != null;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_SOURCE:
-				return authenticationSource != null;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
+				return authentication != null;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				return useCaptcha != USE_CAPTCHA_EDEFAULT;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:

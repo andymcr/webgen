@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.LocationAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -26,9 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#isReadOnly <em>Read Only</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getDefaultZoomLevel <em>Default Zoom Level</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getStyleClass <em>Style Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getLocation2 <em>Location2</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getPlaceName <em>Place Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl#getPlaceName2 <em>Place Name2</em>}</li>
  * </ul>
  *
@@ -96,16 +93,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	protected String styleClass = STYLE_CLASS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getLocation() <em>Location</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected ServiceAttribute location;
-
-	/**
 	 * The cached value of the '{@link #getLocation2() <em>Location2</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,16 +101,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * @ordered
 	 */
 	protected LocationAttribute location2;
-
-	/**
-	 * The cached value of the '{@link #getPlaceName() <em>Place Name</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPlaceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected ServiceAttribute placeName;
 
 	/**
 	 * The cached value of the '{@link #getPlaceName2() <em>Place Name2</em>}' reference.
@@ -222,44 +199,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttribute getPlaceName() {
-		if (placeName != null && placeName.eIsProxy()) {
-			InternalEObject oldPlaceName = (InternalEObject)placeName;
-			placeName = (ServiceAttribute)eResolveProxy(oldPlaceName);
-			if (placeName != oldPlaceName) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.MAP_UNIT__PLACE_NAME, oldPlaceName, placeName));
-			}
-		}
-		return placeName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAttribute basicGetPlaceName() {
-		return placeName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPlaceName(ServiceAttribute newPlaceName) {
-		ServiceAttribute oldPlaceName = placeName;
-		placeName = newPlaceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.MAP_UNIT__PLACE_NAME, oldPlaceName, placeName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Attribute getPlaceName2() {
 		if (placeName2 != null && placeName2.eIsProxy()) {
 			InternalEObject oldPlaceName2 = (InternalEObject)placeName2;
@@ -291,44 +230,6 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 		placeName2 = newPlaceName2;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.MAP_UNIT__PLACE_NAME2, oldPlaceName2, placeName2));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAttribute getLocation() {
-		if (location != null && location.eIsProxy()) {
-			InternalEObject oldLocation = (InternalEObject)location;
-			location = (ServiceAttribute)eResolveProxy(oldLocation);
-			if (location != oldLocation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.MAP_UNIT__LOCATION, oldLocation, location));
-			}
-		}
-		return location;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceAttribute basicGetLocation() {
-		return location;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLocation(ServiceAttribute newLocation) {
-		ServiceAttribute oldLocation = location;
-		location = newLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.MAP_UNIT__LOCATION, oldLocation, location));
 	}
 
 	/**
@@ -383,15 +284,9 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				return getDefaultZoomLevel();
 			case WebsitePackage.MAP_UNIT__STYLE_CLASS:
 				return getStyleClass();
-			case WebsitePackage.MAP_UNIT__LOCATION:
-				if (resolve) return getLocation();
-				return basicGetLocation();
 			case WebsitePackage.MAP_UNIT__LOCATION2:
 				if (resolve) return getLocation2();
 				return basicGetLocation2();
-			case WebsitePackage.MAP_UNIT__PLACE_NAME:
-				if (resolve) return getPlaceName();
-				return basicGetPlaceName();
 			case WebsitePackage.MAP_UNIT__PLACE_NAME2:
 				if (resolve) return getPlaceName2();
 				return basicGetPlaceName2();
@@ -416,14 +311,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 			case WebsitePackage.MAP_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
 				return;
-			case WebsitePackage.MAP_UNIT__LOCATION:
-				setLocation((ServiceAttribute)newValue);
-				return;
 			case WebsitePackage.MAP_UNIT__LOCATION2:
 				setLocation2((LocationAttribute)newValue);
-				return;
-			case WebsitePackage.MAP_UNIT__PLACE_NAME:
-				setPlaceName((ServiceAttribute)newValue);
 				return;
 			case WebsitePackage.MAP_UNIT__PLACE_NAME2:
 				setPlaceName2((Attribute)newValue);
@@ -449,14 +338,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 			case WebsitePackage.MAP_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
-			case WebsitePackage.MAP_UNIT__LOCATION:
-				setLocation((ServiceAttribute)null);
-				return;
 			case WebsitePackage.MAP_UNIT__LOCATION2:
 				setLocation2((LocationAttribute)null);
-				return;
-			case WebsitePackage.MAP_UNIT__PLACE_NAME:
-				setPlaceName((ServiceAttribute)null);
 				return;
 			case WebsitePackage.MAP_UNIT__PLACE_NAME2:
 				setPlaceName2((Attribute)null);
@@ -479,12 +362,8 @@ public class MapUnitImpl extends EditUnitImpl implements MapUnit {
 				return defaultZoomLevel != DEFAULT_ZOOM_LEVEL_EDEFAULT;
 			case WebsitePackage.MAP_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
-			case WebsitePackage.MAP_UNIT__LOCATION:
-				return location != null;
 			case WebsitePackage.MAP_UNIT__LOCATION2:
 				return location2 != null;
-			case WebsitePackage.MAP_UNIT__PLACE_NAME:
-				return placeName != null;
 			case WebsitePackage.MAP_UNIT__PLACE_NAME2:
 				return placeName2 != null;
 		}

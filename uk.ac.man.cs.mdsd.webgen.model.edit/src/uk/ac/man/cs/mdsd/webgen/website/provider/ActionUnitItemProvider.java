@@ -8,26 +8,29 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference;
+
+import uk.ac.man.cs.mdsd.webgen.website.ActionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ServiceAttributeReference} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ActionUnit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServiceAttributeReferenceItemProvider extends ServiceFeatureReferenceItemProvider {
+public class ActionUnitItemProvider extends ControlUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ServiceAttributeReferenceItemProvider(AdapterFactory adapterFactory) {
+	public ActionUnitItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,42 +45,42 @@ public class ServiceAttributeReferenceItemProvider extends ServiceFeatureReferen
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAttributePropertyDescriptor(object);
+			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Attribute feature.
+	 * This adds a property descriptor for the Style Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAttributePropertyDescriptor(Object object) {
+	protected void addStyleClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ServiceAttributeReference_attribute_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceAttributeReference_attribute_feature", "_UI_ServiceAttributeReference_type"),
-				 WebsitePackage.Literals.SERVICE_ATTRIBUTE_REFERENCE__ATTRIBUTE,
+				 getString("_UI_ActionUnit_styleClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ActionUnit_styleClass_feature", "_UI_ActionUnit_type"),
+				 WebsitePackage.Literals.ACTION_UNIT__STYLE_CLASS,
 				 true,
 				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_StylePropertyCategory"),
 				 null));
 	}
 
 	/**
-	 * This returns ServiceAttributeReference.gif.
+	 * This returns ActionUnit.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceAttributeReference"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActionUnit"));
 	}
 
 	/**
@@ -88,10 +91,10 @@ public class ServiceAttributeReferenceItemProvider extends ServiceFeatureReferen
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ServiceAttributeReference)object).getName();
+		String label = ((ActionUnit)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ServiceAttributeReference_type") :
-			getString("_UI_ServiceAttributeReference_type") + " " + label;
+			getString("_UI_ActionUnit_type") :
+			getString("_UI_ActionUnit_type") + " " + label;
 	}
 	
 
@@ -106,8 +109,8 @@ public class ServiceAttributeReferenceItemProvider extends ServiceFeatureReferen
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ServiceAttributeReference.class)) {
-			case WebsitePackage.SERVICE_ATTRIBUTE_REFERENCE__NAME:
+		switch (notification.getFeatureID(ActionUnit.class)) {
+			case WebsitePackage.ACTION_UNIT__STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

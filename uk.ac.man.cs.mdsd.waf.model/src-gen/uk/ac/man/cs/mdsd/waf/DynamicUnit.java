@@ -15,7 +15,6 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
@@ -32,24 +31,6 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
  * @generated
  */
 public interface DynamicUnit extends ContentUnit {
-	/**
-	 * Returns the value of the '<em><b>Services</b></em>' reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.Service}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.Service#getAccessedBy <em>Accessed By</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Services</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Services</em>' reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_Services()
-	 * @see uk.ac.man.cs.mdsd.waf.Service#getAccessedBy
-	 * @model opposite="accessedBy" required="true"
-	 * @generated
-	 */
-	EList<Service> getServices();
-
 	/**
 	 * Returns the value of the '<em><b>Entities</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.EntityOrView}.

@@ -111,32 +111,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.SERVICE_FEATURE: {
-				ServiceFeature serviceFeature = (ServiceFeature)theEObject;
-				T result = caseServiceFeature(serviceFeature);
-				if (result == null) result = caseNamedDisplayElement(serviceFeature);
-				if (result == null) result = caseNamedElement(serviceFeature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.SERVICE_ATTRIBUTE: {
-				ServiceAttribute serviceAttribute = (ServiceAttribute)theEObject;
-				T result = caseServiceAttribute(serviceAttribute);
-				if (result == null) result = caseServiceFeature(serviceAttribute);
-				if (result == null) result = caseNamedDisplayElement(serviceAttribute);
-				if (result == null) result = caseNamedElement(serviceAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.SERVICE_ASSOCIATION: {
-				ServiceAssociation serviceAssociation = (ServiceAssociation)theEObject;
-				T result = caseServiceAssociation(serviceAssociation);
-				if (result == null) result = caseServiceFeature(serviceAssociation);
-				if (result == null) result = caseNamedDisplayElement(serviceAssociation);
-				if (result == null) result = caseNamedElement(serviceAssociation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.SELECTION: {
 				Selection selection = (Selection)theEObject;
 				T result = caseSelection(selection);
@@ -531,6 +505,17 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.ACTION_UNIT: {
+				ActionUnit actionUnit = (ActionUnit)theEObject;
+				T result = caseActionUnit(actionUnit);
+				if (result == null) result = caseControlUnit(actionUnit);
+				if (result == null) result = caseDynamicUnit(actionUnit);
+				if (result == null) result = caseContentUnit(actionUnit);
+				if (result == null) result = caseNamedDisplayElement(actionUnit);
+				if (result == null) result = caseNamedElement(actionUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.AUTHENTICATION_UNIT: {
 				AuthenticationUnit authenticationUnit = (AuthenticationUnit)theEObject;
 				T result = caseAuthenticationUnit(authenticationUnit);
@@ -737,51 +722,6 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseService(Service object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Feature</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Feature</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServiceFeature(ServiceFeature object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Attribute</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServiceAttribute(ServiceAttribute object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service Association</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseServiceAssociation(ServiceAssociation object) {
 		return null;
 	}
 
@@ -1427,6 +1367,21 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSearchUnit(SearchUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Action Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Action Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActionUnit(ActionUnit object) {
 		return null;
 	}
 

@@ -13,9 +13,9 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserSource <em>User Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUser <em>User</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserAuthenticationKey <em>User Authentication Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthenticationSource <em>Authentication Source</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isTrackLoginAttempts <em>Track Login Attempts</em>}</li>
@@ -34,30 +34,30 @@ package uk.ac.man.cs.mdsd.webgen.website;
  */
 public interface LocalAuthenticationSystem extends Authentication {
 	/**
-	 * Returns the value of the '<em><b>User Source</b></em>' reference.
+	 * Returns the value of the '<em><b>User</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>User Source</em>' reference isn't clear,
+	 * If the meaning of the '<em>User</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Source</em>' reference.
-	 * @see #setUserSource(UnitSource)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_UserSource()
+	 * @return the value of the '<em>User</em>' reference.
+	 * @see #setUser(EntityOrView)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_User()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	UnitSource getUserSource();
+	EntityOrView getUser();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserSource <em>User Source</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUser <em>User</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Source</em>' reference.
-	 * @see #getUserSource()
+	 * @param value the new value of the '<em>User</em>' reference.
+	 * @see #getUser()
 	 * @generated
 	 */
-	void setUserSource(UnitSource value);
+	void setUser(EntityOrView value);
 
 	/**
 	 * Returns the value of the '<em><b>User Authentication Key</b></em>' reference.
@@ -86,30 +86,30 @@ public interface LocalAuthenticationSystem extends Authentication {
 	void setUserAuthenticationKey(Attribute value);
 
 	/**
-	 * Returns the value of the '<em><b>Authentication Source</b></em>' reference.
+	 * Returns the value of the '<em><b>Authentication</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Authentication Source</em>' reference isn't clear,
+	 * If the meaning of the '<em>Authentication</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Authentication Source</em>' reference.
-	 * @see #setAuthenticationSource(UnitSource)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_AuthenticationSource()
+	 * @return the value of the '<em>Authentication</em>' reference.
+	 * @see #setAuthentication(EntityOrView)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_Authentication()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	UnitSource getAuthenticationSource();
+	EntityOrView getAuthentication();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthenticationSource <em>Authentication Source</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Authentication Source</em>' reference.
-	 * @see #getAuthenticationSource()
+	 * @param value the new value of the '<em>Authentication</em>' reference.
+	 * @see #getAuthentication()
 	 * @generated
 	 */
-	void setAuthenticationSource(UnitSource value);
+	void setAuthentication(EntityOrView value);
 
 	/**
 	 * Returns the value of the '<em><b>Use Captcha</b></em>' attribute.

@@ -53,9 +53,7 @@ public class MapUnitItemProvider
 			addReadOnlyPropertyDescriptor(object);
 			addDefaultZoomLevelPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
-			addLocationPropertyDescriptor(object);
 			addLocation2PropertyDescriptor(object);
-			addPlaceNamePropertyDescriptor(object);
 			addPlaceName2PropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -128,28 +126,6 @@ public class MapUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Place Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPlaceNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MapUnit_placeName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_placeName_feature", "_UI_MapUnit_type"),
-				 WebsitePackage.Literals.MAP_UNIT__PLACE_NAME,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Place Name2 feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,28 +150,6 @@ public class MapUnitItemProvider
 					return Collections.emptySet();
 				}
 			});
-	}
-
-	/**
-	 * This adds a property descriptor for the Location feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MapUnit_location_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MapUnit_location_feature", "_UI_MapUnit_type"),
-				 WebsitePackage.Literals.MAP_UNIT__LOCATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

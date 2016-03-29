@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
-import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -35,7 +34,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getSource <em>Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
@@ -50,16 +48,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class DynamicUnitImpl extends ContentUnitImpl implements DynamicUnit {
-	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<UnitSource> source;
-
 	/**
 	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -227,18 +215,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.DYNAMIC_UNIT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public List<UnitSource> getSource() {
-		if (source == null) {
-			source = new EObjectResolvingEList<UnitSource>(UnitSource.class, this, WebsitePackage.DYNAMIC_UNIT__SOURCE);
-		}
-		return source;
 	}
 
 	/**
@@ -442,8 +418,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
-				return getSource();
 			case WebsitePackage.DYNAMIC_UNIT__ENTITIES:
 				return getEntities();
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
@@ -475,10 +449,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
-				getSource().clear();
-				getSource().addAll((Collection<? extends UnitSource>)newValue);
-				return;
 			case WebsitePackage.DYNAMIC_UNIT__ENTITIES:
 				getEntities().clear();
 				getEntities().addAll((Collection<? extends EntityOrView>)newValue);
@@ -521,9 +491,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
-				getSource().clear();
-				return;
 			case WebsitePackage.DYNAMIC_UNIT__ENTITIES:
 				getEntities().clear();
 				return;
@@ -563,8 +530,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.DYNAMIC_UNIT__SOURCE:
-				return source != null && !source.isEmpty();
 			case WebsitePackage.DYNAMIC_UNIT__ENTITIES:
 				return entities != null && !entities.isEmpty();
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:

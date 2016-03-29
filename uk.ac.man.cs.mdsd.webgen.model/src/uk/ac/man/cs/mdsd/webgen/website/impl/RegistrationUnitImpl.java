@@ -32,7 +32,6 @@ import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
-import uk.ac.man.cs.mdsd.webgen.website.UnitSource;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -51,7 +50,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getSource <em>Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getSupportActions <em>Support Actions</em>}</li>
@@ -190,16 +188,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * @ordered
 	 */
 	protected String captionClass = CAPTION_CLASS_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<UnitSource> source;
 
 	/**
 	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
@@ -632,18 +620,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<UnitSource> getSource() {
-		if (source == null) {
-			source = new EObjectResolvingEList<UnitSource>(UnitSource.class, this, WebsitePackage.REGISTRATION_UNIT__SOURCE);
-		}
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public List<EntityOrView> getEntities() {
 		if (entities == null) {
 			entities = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.REGISTRATION_UNIT__ENTITIES);
@@ -996,8 +972,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return getOmitCaption();
 			case WebsitePackage.REGISTRATION_UNIT__CAPTION_CLASS:
 				return getCaptionClass();
-			case WebsitePackage.REGISTRATION_UNIT__SOURCE:
-				return getSource();
 			case WebsitePackage.REGISTRATION_UNIT__ENTITIES:
 				return getEntities();
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS:
@@ -1060,10 +1034,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__CAPTION_CLASS:
 				setCaptionClass((String)newValue);
-				return;
-			case WebsitePackage.REGISTRATION_UNIT__SOURCE:
-				getSource().clear();
-				getSource().addAll((Collection<? extends UnitSource>)newValue);
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__ENTITIES:
 				getEntities().clear();
@@ -1143,9 +1113,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			case WebsitePackage.REGISTRATION_UNIT__CAPTION_CLASS:
 				setCaptionClass(CAPTION_CLASS_EDEFAULT);
 				return;
-			case WebsitePackage.REGISTRATION_UNIT__SOURCE:
-				getSource().clear();
-				return;
 			case WebsitePackage.REGISTRATION_UNIT__ENTITIES:
 				getEntities().clear();
 				return;
@@ -1214,8 +1181,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return OMIT_CAPTION_EDEFAULT == null ? omitCaption != null : !OMIT_CAPTION_EDEFAULT.equals(omitCaption);
 			case WebsitePackage.REGISTRATION_UNIT__CAPTION_CLASS:
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
-			case WebsitePackage.REGISTRATION_UNIT__SOURCE:
-				return source != null && !source.isEmpty();
 			case WebsitePackage.REGISTRATION_UNIT__ENTITIES:
 				return entities != null && !entities.isEmpty();
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS:
@@ -1279,7 +1244,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		}
 		if (baseClass == DynamicUnit.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.REGISTRATION_UNIT__SOURCE: return WebsitePackage.DYNAMIC_UNIT__SOURCE;
 				case WebsitePackage.REGISTRATION_UNIT__ENTITIES: return WebsitePackage.DYNAMIC_UNIT__ENTITIES;
 				case WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS: return WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.REGISTRATION_UNIT__SUPPORT_ACTIONS: return WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
@@ -1335,7 +1299,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		}
 		if (baseClass == DynamicUnit.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.DYNAMIC_UNIT__SOURCE: return WebsitePackage.REGISTRATION_UNIT__SOURCE;
 				case WebsitePackage.DYNAMIC_UNIT__ENTITIES: return WebsitePackage.REGISTRATION_UNIT__ENTITIES;
 				case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebsitePackage.REGISTRATION_UNIT__SUPPORT_ACTIONS;

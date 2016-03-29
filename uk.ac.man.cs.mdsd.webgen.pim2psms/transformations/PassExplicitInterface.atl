@@ -179,8 +179,8 @@ helper context Website!UnitField def: dateFormat() : String
 		else if self.oclIsTypeOf(Website!UnitElement) then
 			self.attribute.dateFormat()
 		else if self.oclIsTypeOf(Website!UnitAssociation) then
-			if not self.childFeature2.oclIsUndefined() then
-				self.childFeature2.dateFormat()
+			if not self.childFeature.oclIsUndefined() then
+				self.childFeature.dateFormat()
 			else
 				OclUndefined
 			endif
@@ -369,7 +369,7 @@ rule Selection {
 			if website.usedBy.oclIsUndefined() then
 				Sequence{}
 			else
-				website.newJoins2
+				website.joins
 					->collect(a | a.findOrmAssociation(website.usedBy.serves))
 			endif,
 		filter <- website.filter,
@@ -680,7 +680,7 @@ rule UnitAssociation {
 	to waf : WAF!UnitAssociation (
 		association <- website.findOrmAssociation(),
 		displayLabel <- website.associationLabel(),
-		childFeature <- website.childFeature2,
+		childFeature <- website.childFeature,
 		selection <- website.selection,
 		valueDisplay <-
 			if website.valueDisplay.oclIsUndefined() then
@@ -882,12 +882,12 @@ rule MapUnit {
 	to waf : WAF!MapUnit (
 		readOnly <- website.readOnly,
 		defaultZoomLevel <- website.defaultZoomLevel,
-		location <- website.location2.findOrmAttribute(),
+		location <- website.location.findOrmAttribute(),
 		placeName <-
-			if website.placeName2.oclIsUndefined() then
-				website.placeName2
+			if website.placeName.oclIsUndefined() then
+				website.placeName
 			else
-				website.placeName2.findOrmAttribute()
+				website.placeName.findOrmAttribute()
 			endif
 	)
 }

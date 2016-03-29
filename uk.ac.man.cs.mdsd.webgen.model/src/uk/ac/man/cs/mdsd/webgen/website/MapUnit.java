@@ -15,8 +15,8 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#isReadOnly <em>Read Only</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getDefaultZoomLevel <em>Default Zoom Level</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getStyleClass <em>Style Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation2 <em>Location2</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName2 <em>Place Name2</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation <em>Location</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName <em>Place Name</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getMapUnit()
@@ -106,55 +106,55 @@ public interface MapUnit extends EditUnit, Selectable {
 	void setStyleClass(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Place Name2</b></em>' reference.
+	 * Returns the value of the '<em><b>Location</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Place Name2</em>' reference isn't clear,
+	 * If the meaning of the '<em>Location</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Place Name2</em>' reference.
-	 * @see #setPlaceName2(Attribute)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getMapUnit_PlaceName2()
-	 * @model
-	 * @generated
-	 */
-	Attribute getPlaceName2();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName2 <em>Place Name2</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Place Name2</em>' reference.
-	 * @see #getPlaceName2()
-	 * @generated
-	 */
-	void setPlaceName2(Attribute value);
-
-	/**
-	 * Returns the value of the '<em><b>Location2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Location2</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Location2</em>' reference.
-	 * @see #setLocation2(LocationAttribute)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getMapUnit_Location2()
+	 * @return the value of the '<em>Location</em>' reference.
+	 * @see #setLocation(LocationAttribute)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getMapUnit_Location()
 	 * @model required="true"
 	 * @generated
 	 */
-	LocationAttribute getLocation2();
+	LocationAttribute getLocation();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation2 <em>Location2</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation <em>Location</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Location2</em>' reference.
-	 * @see #getLocation2()
+	 * @param value the new value of the '<em>Location</em>' reference.
+	 * @see #getLocation()
 	 * @generated
 	 */
-	void setLocation2(LocationAttribute value);
+	void setLocation(LocationAttribute value);
+
+	/**
+	 * Returns the value of the '<em><b>Place Name</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Place Name</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Place Name</em>' reference.
+	 * @see #setPlaceName(Attribute)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getMapUnit_PlaceName()
+	 * @model
+	 * @generated
+	 */
+	Attribute getPlaceName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName <em>Place Name</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Place Name</em>' reference.
+	 * @see #getPlaceName()
+	 * @generated
+	 */
+	void setPlaceName(Attribute value);
 
 } // MapUnit

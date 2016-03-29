@@ -190,7 +190,6 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ModelLabelAssociation/association"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ModelLabelAssociation/dynamicLabel"/>
-      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ModelLabelAssociation/useAssociationSource"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Entity">
       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Entity/features"/>
@@ -302,7 +301,7 @@
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           ecoreFeature="ecore:EReference website.ecore#//Selection/parameters"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//Selection/newJoins2"/>
+          ecoreFeature="ecore:EReference website.ecore#//Selection/joins"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           ecoreFeature="ecore:EReference website.ecore#//Selection/filter"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
@@ -444,7 +443,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/association"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//UnitAssociation/name"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
-          ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/childFeature2"/>
+          ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/childFeature"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/valueDisplay"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
@@ -520,9 +519,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//MapUnit/defaultZoomLevel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//MapUnit/styleClass"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//MapUnit/location2"/>
+          ecoreFeature="ecore:EReference website.ecore#//MapUnit/location"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//MapUnit/placeName2"/>
+          ecoreFeature="ecore:EReference website.ecore#//MapUnit/placeName"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//DataUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

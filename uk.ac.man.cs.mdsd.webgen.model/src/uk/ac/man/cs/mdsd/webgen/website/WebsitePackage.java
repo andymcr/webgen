@@ -2145,22 +2145,13 @@ public interface WebsitePackage extends EPackage {
 	int MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL = MODEL_LABEL_FEATURE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Use Association Source</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE = MODEL_LABEL_FEATURE_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Model Label Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ASSOCIATION_FEATURE_COUNT = MODEL_LABEL_FEATURE_FEATURE_COUNT + 3;
+	int MODEL_LABEL_ASSOCIATION_FEATURE_COUNT = MODEL_LABEL_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4980,13 +4971,13 @@ public interface WebsitePackage extends EPackage {
 	int SELECTION__PARAMETERS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>New Joins2</b></em>' reference list.
+	 * The feature id for the '<em><b>Joins</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__NEW_JOINS2 = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SELECTION__JOINS = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' containment reference.
@@ -6681,13 +6672,13 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_ASSOCIATION__NAME = UNIT_FEATURE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Child Feature2</b></em>' containment reference.
+	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__CHILD_FEATURE2 = UNIT_FEATURE_FEATURE_COUNT + 3;
+	int UNIT_ASSOCIATION__CHILD_FEATURE = UNIT_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Value Display</b></em>' reference.
@@ -8457,22 +8448,22 @@ public interface WebsitePackage extends EPackage {
 	int MAP_UNIT__STYLE_CLASS = EDIT_UNIT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Location2</b></em>' reference.
+	 * The feature id for the '<em><b>Location</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__LOCATION2 = EDIT_UNIT_FEATURE_COUNT + 3;
+	int MAP_UNIT__LOCATION = EDIT_UNIT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Place Name2</b></em>' reference.
+	 * The feature id for the '<em><b>Place Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_UNIT__PLACE_NAME2 = EDIT_UNIT_FEATURE_COUNT + 4;
+	int MAP_UNIT__PLACE_NAME = EDIT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Map Unit</em>' class.
@@ -12541,17 +12532,6 @@ public interface WebsitePackage extends EPackage {
 	EReference getModelLabelAssociation_DynamicLabel();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#isUseAssociationSource <em>Use Association Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Use Association Source</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#isUseAssociationSource()
-	 * @see #getModelLabelAssociation()
-	 * @generated
-	 */
-	EAttribute getModelLabelAssociation_UseAssociationSource();
-
-	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment <em>Association Without Containment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13357,15 +13337,15 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getUnitAssociation_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature2 <em>Child Feature2</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature <em>Child Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Child Feature2</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature2()
+	 * @return the meta object for the containment reference '<em>Child Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature()
 	 * @see #getUnitAssociation()
 	 * @generated
 	 */
-	EReference getUnitAssociation_ChildFeature2();
+	EReference getUnitAssociation_ChildFeature();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getValueDisplay <em>Value Display</em>}'.
@@ -13550,15 +13530,15 @@ public interface WebsitePackage extends EPackage {
 	EReference getSelection_Parameters();
 
 	/**
-	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getNewJoins2 <em>New Joins2</em>}'.
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getJoins <em>Joins</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>New Joins2</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Selection#getNewJoins2()
+	 * @return the meta object for the reference list '<em>Joins</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Selection#getJoins()
 	 * @see #getSelection()
 	 * @generated
 	 */
-	EReference getSelection_NewJoins2();
+	EReference getSelection_Joins();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getFilter <em>Filter</em>}'.
@@ -14820,26 +14800,26 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getMapUnit_StyleClass();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName2 <em>Place Name2</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Place Name2</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName2()
+	 * @return the meta object for the reference '<em>Location</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation()
 	 * @see #getMapUnit()
 	 * @generated
 	 */
-	EReference getMapUnit_PlaceName2();
+	EReference getMapUnit_Location();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation2 <em>Location2</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName <em>Place Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Location2</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.MapUnit#getLocation2()
+	 * @return the meta object for the reference '<em>Place Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.MapUnit#getPlaceName()
 	 * @see #getMapUnit()
 	 * @generated
 	 */
-	EReference getMapUnit_Location2();
+	EReference getMapUnit_PlaceName();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.SelectAction <em>Select Action</em>}'.
@@ -16573,14 +16553,6 @@ public interface WebsitePackage extends EPackage {
 		EReference MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL = eINSTANCE.getModelLabelAssociation_DynamicLabel();
 
 		/**
-		 * The meta object literal for the '<em><b>Use Association Source</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE = eINSTANCE.getModelLabelAssociation_UseAssociationSource();
-
-		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationWithoutContainmentImpl <em>Association Without Containment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -17221,12 +17193,12 @@ public interface WebsitePackage extends EPackage {
 		EAttribute UNIT_ASSOCIATION__NAME = eINSTANCE.getUnitAssociation_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Child Feature2</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Child Feature</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNIT_ASSOCIATION__CHILD_FEATURE2 = eINSTANCE.getUnitAssociation_ChildFeature2();
+		EReference UNIT_ASSOCIATION__CHILD_FEATURE = eINSTANCE.getUnitAssociation_ChildFeature();
 
 		/**
 		 * The meta object literal for the '<em><b>Value Display</b></em>' reference feature.
@@ -17375,12 +17347,12 @@ public interface WebsitePackage extends EPackage {
 		EReference SELECTION__PARAMETERS = eINSTANCE.getSelection_Parameters();
 
 		/**
-		 * The meta object literal for the '<em><b>New Joins2</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Joins</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SELECTION__NEW_JOINS2 = eINSTANCE.getSelection_NewJoins2();
+		EReference SELECTION__JOINS = eINSTANCE.getSelection_Joins();
 
 		/**
 		 * The meta object literal for the '<em><b>Filter</b></em>' containment reference feature.
@@ -18375,20 +18347,20 @@ public interface WebsitePackage extends EPackage {
 		EAttribute MAP_UNIT__STYLE_CLASS = eINSTANCE.getMapUnit_StyleClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Place Name2</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Location</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAP_UNIT__PLACE_NAME2 = eINSTANCE.getMapUnit_PlaceName2();
+		EReference MAP_UNIT__LOCATION = eINSTANCE.getMapUnit_Location();
 
 		/**
-		 * The meta object literal for the '<em><b>Location2</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Place Name</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MAP_UNIT__LOCATION2 = eINSTANCE.getMapUnit_Location2();
+		EReference MAP_UNIT__PLACE_NAME = eINSTANCE.getMapUnit_PlaceName();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectActionImpl <em>Select Action</em>}' class.

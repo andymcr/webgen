@@ -10,6 +10,10 @@ uses WebsiteHelpers;
 uses PersistenceExpression;
 
 
+helper context Website!ModelLabelAssociation def: isSourceAssociation() : Boolean
+	= self.partOf.features->includes(self.association);
+
+
 abstract rule NamedElement {
 	from website : Website!NamedElement
 	to orm : ORM!NamedElement (
@@ -57,14 +61,14 @@ rule ModelLabelAssociation {
 	from website : Website!ModelLabelAssociation
 	to orm : ORM!ModelLabelAssociation (
 		association <-
-			if website.association.oclIsKindOf(Website!EntityAssociation) then
-				if website.useAssociationSource then
-					website.association.findOrmEntityOrView().getOrmFeature(website.association.name)
-				else
-					website.association.findOrmTargetEntity().getOrmFeature(website.association.targetFeatureName)
-				endif
-			else
+			if website.association.oclIsUndefined() then
 				website.association
+			else
+				if website.isSourceAssociation() then
+					website.association.findOrmTargetEntity().getOrmFeature(website.association.targetFeatureName)
+				else
+					website.association.findOrmEntityOrView().getOrmFeature(website.association.name)
+				endif
 			endif,
 		dynamicLabel <- website.dynamicLabel
 	)

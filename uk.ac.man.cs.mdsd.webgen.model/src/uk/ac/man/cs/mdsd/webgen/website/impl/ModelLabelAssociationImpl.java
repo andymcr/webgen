@@ -24,7 +24,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAssociationImpl#getDynamicLabel <em>Dynamic Label</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAssociationImpl#isUseAssociationSource <em>Use Association Source</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,26 +48,6 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 * @ordered
 	 */
 	protected ModelLabel dynamicLabel;
-
-	/**
-	 * The default value of the '{@link #isUseAssociationSource() <em>Use Association Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUseAssociationSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean USE_ASSOCIATION_SOURCE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isUseAssociationSource() <em>Use Association Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUseAssociationSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean useAssociationSource = USE_ASSOCIATION_SOURCE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,22 +97,11 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setAssociation(EntityAssociation newAssociation) {
 		EntityAssociation oldAssociation = association;
 		association = newAssociation;
-		// eContainer may be undefined when loading resource (used by getPartOf)
-		if ((newAssociation != null) && (eContainer() != null)) {
-			if (newAssociation instanceof EntityAssociation) {
-				final EntityAssociation entityAssociation = (EntityAssociation) newAssociation;
-				if (getPartOf().getLabelFor().equals(entityAssociation.getPartOf())) {
-					setUseAssociationSource(true);
-				} else if (getPartOf().getLabelFor().equals(entityAssociation.getTargetEntity())) {
-					setUseAssociationSource(false);
-				}
-			}
-		}
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.MODEL_LABEL_ASSOCIATION__ASSOCIATION, oldAssociation, association));
 	}
@@ -181,27 +149,6 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isUseAssociationSource() {
-		return useAssociationSource;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUseAssociationSource(boolean newUseAssociationSource) {
-		boolean oldUseAssociationSource = useAssociationSource;
-		useAssociationSource = newUseAssociationSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE, oldUseAssociationSource, useAssociationSource));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -211,8 +158,6 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
 				if (resolve) return getDynamicLabel();
 				return basicGetDynamicLabel();
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE:
-				return isUseAssociationSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -230,9 +175,6 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 				return;
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
 				setDynamicLabel((ModelLabel)newValue);
-				return;
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE:
-				setUseAssociationSource((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -252,9 +194,6 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
 				setDynamicLabel((ModelLabel)null);
 				return;
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE:
-				setUseAssociationSource(USE_ASSOCIATION_SOURCE_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -271,26 +210,8 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 				return association != null;
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
 				return dynamicLabel != null;
-			case WebsitePackage.MODEL_LABEL_ASSOCIATION__USE_ASSOCIATION_SOURCE:
-				return useAssociationSource != USE_ASSOCIATION_SOURCE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (useAssociationSource: ");
-		result.append(useAssociationSource);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ModelLabelAssociationImpl

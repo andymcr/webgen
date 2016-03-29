@@ -238,7 +238,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="association" lowerBound="1"
         eType="#//EntityAssociation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicLabel" eType="#//ModelLabel"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useAssociationSource" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//EntityOrView">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -416,7 +415,7 @@
         eType="#//Service" eOpposite="#//Service/selections"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//SelectionParameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newJoins2" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="joins" upperBound="-1"
         eType="#//Association"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filter" ordered="false"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
@@ -673,7 +672,7 @@
         <details key="derivation" value="if association.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;if association.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;let parentFeatures : Sequence(Feature)&#xD;&#xA;&#x9;&#x9;= self.displayedOn.entities->collect(&#xD;&#xA;&#x9;&#x9;&#x9;eov | if eov.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eov.oclAsType(Entity).features&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eov.oclAsType(View).features&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;&#x9;in if parentFeatures->includes(self.association) then&#xD;&#xA;&#x9;&#x9;&#x9;if self.association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;self.association.oclAsType(EntityAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;if self.association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;self.association.oclAsType(EntityAssociation).targetFeatureName&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).opposite.name&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature2" eType="#//ChildFeature"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//ChildFeature"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="valueDisplay" eType="#//Label"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
@@ -774,9 +773,9 @@
         defaultValueLiteral="12"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,map_unit"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="location2" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" lowerBound="1"
         eType="#//LocationAttribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="placeName2" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="placeName" eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataUnit" abstract="true" eSuperTypes="#//DynamicUnit">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

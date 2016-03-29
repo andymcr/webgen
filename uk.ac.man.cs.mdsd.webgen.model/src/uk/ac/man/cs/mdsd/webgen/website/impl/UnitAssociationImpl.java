@@ -36,7 +36,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getUnits <em>Units</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getChildFeature2 <em>Child Feature2</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getFilters <em>Filters</em>}</li>
@@ -76,14 +76,14 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.UNIT_ASSOCIATION__NAME).getSettingDelegate();
 
 	/**
-	 * The cached value of the '{@link #getChildFeature2() <em>Child Feature2</em>}' containment reference.
+	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getChildFeature2()
+	 * @see #getChildFeature()
 	 * @generated
 	 * @ordered
 	 */
-	protected ChildFeature childFeature2;
+	protected ChildFeature childFeature;
 
 	/**
 	 * The cached value of the '{@link #getValueDisplay() <em>Value Display</em>}' reference.
@@ -198,8 +198,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildFeature getChildFeature2() {
-		return childFeature2;
+	public ChildFeature getChildFeature() {
+		return childFeature;
 	}
 
 	/**
@@ -207,11 +207,11 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetChildFeature2(ChildFeature newChildFeature2, NotificationChain msgs) {
-		ChildFeature oldChildFeature2 = childFeature2;
-		childFeature2 = newChildFeature2;
+	public NotificationChain basicSetChildFeature(ChildFeature newChildFeature, NotificationChain msgs) {
+		ChildFeature oldChildFeature = childFeature;
+		childFeature = newChildFeature;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE2, oldChildFeature2, newChildFeature2);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -222,18 +222,18 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setChildFeature2(ChildFeature newChildFeature2) {
-		if (newChildFeature2 != childFeature2) {
+	public void setChildFeature(ChildFeature newChildFeature) {
+		if (newChildFeature != childFeature) {
 			NotificationChain msgs = null;
-			if (childFeature2 != null)
-				msgs = ((InternalEObject)childFeature2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE2, null, msgs);
-			if (newChildFeature2 != null)
-				msgs = ((InternalEObject)newChildFeature2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE2, null, msgs);
-			msgs = basicSetChildFeature2(newChildFeature2, msgs);
+			if (childFeature != null)
+				msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE, null, msgs);
+			if (newChildFeature != null)
+				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE, null, msgs);
+			msgs = basicSetChildFeature(newChildFeature, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE2, newChildFeature2, newChildFeature2));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE, newChildFeature, newChildFeature));
 	}
 
 	/**
@@ -349,8 +349,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 		switch (featureID) {
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
 				return ((InternalEList<?>)getUnits()).basicRemove(otherEnd, msgs);
-			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE2:
-				return basicSetChildFeature2(null, msgs);
+			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
+				return basicSetChildFeature(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -370,8 +370,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return basicGetAssociation();
 			case WebsitePackage.UNIT_ASSOCIATION__NAME:
 				return getName();
-			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE2:
-				return getChildFeature2();
+			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
+				return getChildFeature();
 			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				if (resolve) return getValueDisplay();
 				return basicGetValueDisplay();
@@ -400,8 +400,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)newValue);
 				return;
-			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE2:
-				setChildFeature2((ChildFeature)newValue);
+			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
+				setChildFeature((ChildFeature)newValue);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				setValueDisplay((Label)newValue);
@@ -431,8 +431,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)null);
 				return;
-			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE2:
-				setChildFeature2((ChildFeature)null);
+			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
+				setChildFeature((ChildFeature)null);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				setValueDisplay((Label)null);
@@ -461,8 +461,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return association != null;
 			case WebsitePackage.UNIT_ASSOCIATION__NAME:
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE2:
-				return childFeature2 != null;
+			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
+				return childFeature != null;
 			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				return valueDisplay != null;
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:

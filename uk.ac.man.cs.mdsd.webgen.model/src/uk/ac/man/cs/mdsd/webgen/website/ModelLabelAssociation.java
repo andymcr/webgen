@@ -14,7 +14,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#getDynamicLabel <em>Dynamic Label</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#isUseAssociationSource <em>Use Association Source</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabelAssociation()
@@ -73,31 +72,5 @@ public interface ModelLabelAssociation extends ModelLabelFeature {
 	 * @generated
 	 */
 	void setDynamicLabel(ModelLabel value);
-
-	/**
-	 * Returns the value of the '<em><b>Use Association Source</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Use Association Source</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Use Association Source</em>' attribute.
-	 * @see #setUseAssociationSource(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabelAssociation_UseAssociationSource()
-	 * @model
-	 * @generated
-	 */
-	boolean isUseAssociationSource();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#isUseAssociationSource <em>Use Association Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Use Association Source</em>' attribute.
-	 * @see #isUseAssociationSource()
-	 * @generated
-	 */
-	void setUseAssociationSource(boolean value);
 
 } // ModelLabelAssociation

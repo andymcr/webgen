@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.orm.Association;
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 import uk.ac.man.cs.mdsd.waf.ChildAssociation;
 import uk.ac.man.cs.mdsd.waf.ChildFeature;
@@ -33,7 +32,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getSource <em>Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getSourceName <em>Source Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getTargetName <em>Target Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getParentTarget <em>Parent Target</em>}</li>
  * </ul>
  *
  * @generated
@@ -128,16 +126,6 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	 * @ordered
 	 */
 	protected String targetName = TARGET_NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParentTarget() <em>Parent Target</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParentTarget()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityOrView parentTarget;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -323,44 +311,6 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getParentTarget() {
-		if (parentTarget != null && parentTarget.eIsProxy()) {
-			InternalEObject oldParentTarget = (InternalEObject)parentTarget;
-			parentTarget = (EntityOrView)eResolveProxy(oldParentTarget);
-			if (parentTarget != oldParentTarget) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.CHILD_ASSOCIATION__PARENT_TARGET, oldParentTarget, parentTarget));
-			}
-		}
-		return parentTarget;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView basicGetParentTarget() {
-		return parentTarget;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParentTarget(EntityOrView newParentTarget) {
-		EntityOrView oldParentTarget = parentTarget;
-		parentTarget = newParentTarget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_ASSOCIATION__PARENT_TARGET, oldParentTarget, parentTarget));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -391,9 +341,6 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 				return getSourceName();
 			case WafPackage.CHILD_ASSOCIATION__TARGET_NAME:
 				return getTargetName();
-			case WafPackage.CHILD_ASSOCIATION__PARENT_TARGET:
-				if (resolve) return getParentTarget();
-				return basicGetParentTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -420,9 +367,6 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 				return;
 			case WafPackage.CHILD_ASSOCIATION__TARGET_NAME:
 				setTargetName((String)newValue);
-				return;
-			case WafPackage.CHILD_ASSOCIATION__PARENT_TARGET:
-				setParentTarget((EntityOrView)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -451,9 +395,6 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 			case WafPackage.CHILD_ASSOCIATION__TARGET_NAME:
 				setTargetName(TARGET_NAME_EDEFAULT);
 				return;
-			case WafPackage.CHILD_ASSOCIATION__PARENT_TARGET:
-				setParentTarget((EntityOrView)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -478,8 +419,6 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 				return SOURCE_NAME_EDEFAULT == null ? sourceName != null : !SOURCE_NAME_EDEFAULT.equals(sourceName);
 			case WafPackage.CHILD_ASSOCIATION__TARGET_NAME:
 				return TARGET_NAME_EDEFAULT == null ? targetName != null : !TARGET_NAME_EDEFAULT.equals(targetName);
-			case WafPackage.CHILD_ASSOCIATION__PARENT_TARGET:
-				return parentTarget != null;
 		}
 		return super.eIsSet(featureID);
 	}

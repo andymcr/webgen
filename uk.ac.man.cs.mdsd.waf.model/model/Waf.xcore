@@ -6,7 +6,7 @@
 	editDirectory="/uk.ac.man.cs.mdsd.waf.edit/src",
 	editPluginID="uk.ac.man.cs.mdsd.waf.edit",
 	childCreationExtenders="true",
-	complianceLevel="6.0")
+	complianceLevel="6.0", editorDirectory="/uk.ac.man.cs.mdsd.waf.editor/src")
 package uk.ac.man.cs.mdsd.waf
 
 import uk.ac.man.cs.mdsd.criteria.Expression
@@ -15,7 +15,6 @@ import uk.ac.man.cs.mdsd.criteria.Path
 import uk.ac.man.cs.mdsd.criteria.Predicate
 import uk.ac.man.cs.mdsd.orm.Association
 import uk.ac.man.cs.mdsd.orm.Attribute
-import uk.ac.man.cs.mdsd.orm.Cardinality
 import uk.ac.man.cs.mdsd.orm.DataType
 import uk.ac.man.cs.mdsd.orm.DateDetails
 import uk.ac.man.cs.mdsd.orm.EntityOrView
@@ -294,7 +293,6 @@ class ChildAssociation extends ChildFeature {
 	Boolean source
 	String sourceName
 	String targetName
-	refers EntityOrView[1] parentTarget
 }
 
 abstract class InterfaceField extends NamedElement, UnitField {

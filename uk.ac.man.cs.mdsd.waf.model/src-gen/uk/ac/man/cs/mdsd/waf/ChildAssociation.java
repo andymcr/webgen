@@ -3,7 +3,6 @@
 package uk.ac.man.cs.mdsd.waf;
 
 import uk.ac.man.cs.mdsd.orm.Association;
-import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +19,6 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getSource <em>Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getSourceName <em>Source Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getTargetName <em>Target Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getParentTarget <em>Parent Target</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getChildAssociation()
@@ -173,31 +171,5 @@ public interface ChildAssociation extends ChildFeature {
 	 * @generated
 	 */
 	void setTargetName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Parent Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parent Target</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent Target</em>' reference.
-	 * @see #setParentTarget(EntityOrView)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getChildAssociation_ParentTarget()
-	 * @model required="true"
-	 * @generated
-	 */
-	EntityOrView getParentTarget();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getParentTarget <em>Parent Target</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent Target</em>' reference.
-	 * @see #getParentTarget()
-	 * @generated
-	 */
-	void setParentTarget(EntityOrView value);
 
 } // ChildAssociation

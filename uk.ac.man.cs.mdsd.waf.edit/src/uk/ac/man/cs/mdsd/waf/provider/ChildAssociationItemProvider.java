@@ -53,7 +53,6 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 			addSourcePropertyDescriptor(object);
 			addSourceNamePropertyDescriptor(object);
 			addTargetNamePropertyDescriptor(object);
-			addParentTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -164,28 +163,6 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parent Target feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParentTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ChildAssociation_parentTarget_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChildAssociation_parentTarget_feature", "_UI_ChildAssociation_type"),
-				 WafPackage.Literals.CHILD_ASSOCIATION__PARENT_TARGET,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

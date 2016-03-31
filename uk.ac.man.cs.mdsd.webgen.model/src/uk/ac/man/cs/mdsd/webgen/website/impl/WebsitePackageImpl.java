@@ -5851,7 +5851,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (localAuthenticationSystemEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "entitySourceOnlyIfNotEncapsulated authenticationKeyFromUserSource authenticationKeyRequiredAttribute captchaRequiresKeys"
+			 "constraints", "authenticationKeyFromUser authenticationKeyRequiredAttribute captchaRequiresKeys"
 		   });	
 		addAnnotation
 		  (namedElementEClass, 
@@ -5887,7 +5887,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (dynamicMenuEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "entriesMustBeFromSource onlyIncludeFeaturesOnce mustSelectSingleton dynamicTitleFromService canOnlyTitleWithSingletonElement"
+			 "constraints", "entriesMustBeFromSource onlyIncludeFeaturesOnce mustSelectSingleton titleFromEntityOrView canOnlyTitleWithSingletons"
 		   });	
 		addAnnotation
 		  (dynamicUnitEClass, 
@@ -5947,10 +5947,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (localAuthenticationSystemEClass, 
 		   source, 
 		   new String[] {
-			 "authenticationKeyFromUserSource", "not userSource.oclIsUndefined() implies\r\n\tlet features : Collection(Feature)\r\n\t\t= if userSource.oclIsTypeOf(Entity) then\r\n\t\t\t\tuserSource.oclAsType(Entity).features\r\n\t\t\telse if userSource.oclIsTypeOf(View) then\r\n\t\t\t\tuserSource.oclAsType(View).features\r\n\t\t\telse let entities : Sequence(Entity)\r\n\t\t\t\t\t= userSource.oclAsType(Service).encapsulates->select(e | e.oclIsTypeOf(Entity)).oclAsType(Entity)\r\n\t\t\t\tin entities->collect(e | e.features)->union(entities->collect(e | e.associationEnds))\r\n\t\t\t\t\t->union(userSource.oclAsType(Service).encapsulates->select(v | v.oclIsTypeOf(View)).oclAsType(View)->collect(v | v.features))\r\n\t\t\tendif endif\r\n\tin features->includes(userAuthenticationKey)",
+			 "authenticationKeyFromUser", "not user.oclIsUndefined() implies\r\n\tlet features : Collection(Feature)\r\n\t\t= if user.oclIsTypeOf(Entity) then\r\n\t\t\t\tuser.oclAsType(Entity).features\r\n\t\t\telse\r\n\t\t\t\tuser.oclAsType(View).features\r\n\t\t\tendif\r\n\tin features->includes(userAuthenticationKey)",
 			 "authenticationKeyRequiredAttribute", "not userAuthenticationKey.oclIsUndefined() implies\r\n\tif userAuthenticationKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\tuserAuthenticationKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n\telse\r\n\t\tuserAuthenticationKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n\tendif",
-			 "captchaRequiresKeys", "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()",
-			 "entitySourceOnlyIfNotEncapsulated", "userSource.oclIsTypeOf(Entity) implies userSource.oclAsType(Entity).servedBy->isEmpty()"
+			 "captchaRequiresKeys", "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()"
 		   });	
 		addAnnotation
 		  (namedElementEClass, 
@@ -5993,7 +5992,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getEncapsulatedAssociation_Cardinality(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\tCardinality::Optional\r\nelse \r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality\r\n\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(ViewAssociation).cardinality\r\n\t\telse\r\n\t\t\tassociation.oclAsType(ViewAssociation).opposite.cardinality\r\n\t\tendif\r\n\telse\r\n\t\tif useAssociationSource then\r\n\t\t\tassociation.oclAsType(EntityAssociation).cardinality\r\n\t\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\tCardinality::Required\r\n\t\telse\r\n\t\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality \r\n\t\tendif endif\r\n\tendif endif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\tCardinality::Optional\r\nelse\r\n\tlet isSourceAssociation : Boolean\r\n\t\t= partOf.encapsulates->collect(eov | if eov.oclIsTypeOf(Entity) then eov.oclAsType(Entity).features else eov.oclAsType(View).features endif)->includes(association)\r\n\t\tin if association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\t\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality\r\n\t\t\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tif isSourceAssociation then\r\n\t\t\t\t\tassociation.oclAsType(ViewAssociation).cardinality\r\n\t\t\t\telse\r\n\t\t\t\t\tassociation.oclAsType(ViewAssociation).opposite.cardinality\r\n\t\t\t\tendif\r\n\t\t\telse\r\n\t\t\t\tif isSourceAssociation then\r\n\t\t\t\t\tassociation.oclAsType(EntityAssociation).cardinality\r\n\t\t\t\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\t\t\tCardinality::Required\r\n\t\t\t\telse\r\n\t\t\t\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality \r\n\t\t\t\tendif endif\r\n\t\t\tendif endif\r\nendif"
 		   });	
 		addAnnotation
 		  (pageEClass, 
@@ -6014,8 +6013,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "entriesMustBeFromSource", "true",
 			 "onlyIncludeFeaturesOnce", "true",
 			 "mustSelectSingleton", "not selection.oclIsUndefined() implies selection.limit = 1",
-			 "dynamicTitleFromService", "not dynamicTitle.oclIsUndefined() implies\r\n\tif service.oclIsUndefined() then\r\n \t\tfalse\r\n\telse\r\n\t\tservice.features->includes(dynamicTitle)\r\n\tendif",
-			 "canOnlyTitleWithSingletonElement", "not dynamicTitle.oclIsUndefined() implies dynamicTitle.attribute.cardinality <> Cardinality::Many"
+			 "titleFromEntityOrView", "not title.oclIsUndefined() implies\r\n\tif entityOrView.oclIsUndefined() then\r\n \t\tfalse\r\n\telse\r\n\t\tif entityOrView.oclIsTypeOf(Entity) then\r\n\t\t\tentityOrView.oclAsType(Entity).features->includes(title)\r\n\t\telse\r\n\t\t\tentityOrView.oclAsType(View).features->includes(title)\r\n\t\tendif\r\n\tendif",
+			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies\r\n\tif title.oclIsKindOf(EntityFeature) then\r\n\t\ttitle.oclAsType(EntityFeature).cardinality <> Cardinality::Many\r\n\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\telse if title.oclIsKindOf(EncapsulatedAssociation) then\r\n\t\ttitle.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n\telse\r\n\t\tfalse\r\n\tendif endif endif"
 		   });	
 		addAnnotation
 		  (dynamicUnitEClass, 

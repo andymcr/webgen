@@ -1322,8 +1322,8 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDynamicMenu_entriesMustBeFromSource(dynamicMenu, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicMenu_onlyIncludeFeaturesOnce(dynamicMenu, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicMenu_mustSelectSingleton(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicMenu_dynamicTitleFromService(dynamicMenu, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicMenu_canOnlyTitleWithSingletonElement(dynamicMenu, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicMenu_titleFromEntityOrView(dynamicMenu, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicMenu_canOnlyTitleWithSingletons(dynamicMenu, diagnostics, context);
 		return result;
 	}
 
@@ -1415,25 +1415,29 @@ public class WebsiteValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the dynamicTitleFromService constraint of '<em>Dynamic Menu</em>'.
+	 * The cached validation expression for the titleFromEntityOrView constraint of '<em>Dynamic Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_MENU__DYNAMIC_TITLE_FROM_SERVICE__EEXPRESSION = "not dynamicTitle.oclIsUndefined() implies\r\n" +
-		"\tif service.oclIsUndefined() then\r\n" +
+	protected static final String DYNAMIC_MENU__TITLE_FROM_ENTITY_OR_VIEW__EEXPRESSION = "not title.oclIsUndefined() implies\r\n" +
+		"\tif entityOrView.oclIsUndefined() then\r\n" +
 		" \t\tfalse\r\n" +
 		"\telse\r\n" +
-		"\t\tservice.features->includes(dynamicTitle)\r\n" +
+		"\t\tif entityOrView.oclIsTypeOf(Entity) then\r\n" +
+		"\t\t\tentityOrView.oclAsType(Entity).features->includes(title)\r\n" +
+		"\t\telse\r\n" +
+		"\t\t\tentityOrView.oclAsType(View).features->includes(title)\r\n" +
+		"\t\tendif\r\n" +
 		"\tendif";
 
 	/**
-	 * Validates the dynamicTitleFromService constraint of '<em>Dynamic Menu</em>'.
+	 * Validates the titleFromEntityOrView constraint of '<em>Dynamic Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDynamicMenu_dynamicTitleFromService(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDynamicMenu_titleFromEntityOrView(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(WebsitePackage.Literals.DYNAMIC_MENU,
@@ -1441,28 +1445,37 @@ public class WebsiteValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "dynamicTitleFromService",
-				 DYNAMIC_MENU__DYNAMIC_TITLE_FROM_SERVICE__EEXPRESSION,
+				 "titleFromEntityOrView",
+				 DYNAMIC_MENU__TITLE_FROM_ENTITY_OR_VIEW__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the canOnlyTitleWithSingletonElement constraint of '<em>Dynamic Menu</em>'.
+	 * The cached validation expression for the canOnlyTitleWithSingletons constraint of '<em>Dynamic Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_MENU__CAN_ONLY_TITLE_WITH_SINGLETON_ELEMENT__EEXPRESSION = "not dynamicTitle.oclIsUndefined() implies dynamicTitle.attribute.cardinality <> Cardinality::Many";
+	protected static final String DYNAMIC_MENU__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION = "not title.oclIsUndefined() implies\r\n" +
+		"\tif title.oclIsKindOf(EntityFeature) then\r\n" +
+		"\t\ttitle.oclAsType(EntityFeature).cardinality <> Cardinality::Many\r\n" +
+		"\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n" +
+		"\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\telse if title.oclIsKindOf(EncapsulatedAssociation) then\r\n" +
+		"\t\ttitle.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n" +
+		"\telse\r\n" +
+		"\t\tfalse\r\n" +
+		"\tendif endif endif";
 
 	/**
-	 * Validates the canOnlyTitleWithSingletonElement constraint of '<em>Dynamic Menu</em>'.
+	 * Validates the canOnlyTitleWithSingletons constraint of '<em>Dynamic Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDynamicMenu_canOnlyTitleWithSingletonElement(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDynamicMenu_canOnlyTitleWithSingletons(DynamicMenu dynamicMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(WebsitePackage.Literals.DYNAMIC_MENU,
@@ -1470,8 +1483,8 @@ public class WebsiteValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "canOnlyTitleWithSingletonElement",
-				 DYNAMIC_MENU__CAN_ONLY_TITLE_WITH_SINGLETON_ELEMENT__EEXPRESSION,
+				 "canOnlyTitleWithSingletons",
+				 DYNAMIC_MENU__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -2639,68 +2652,34 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(localAuthenticationSystem, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(localAuthenticationSystem, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLocalAuthenticationSystem_entitySourceOnlyIfNotEncapsulated(localAuthenticationSystem, diagnostics, context);
-		if (result || diagnostics != null) result &= validateLocalAuthenticationSystem_authenticationKeyFromUserSource(localAuthenticationSystem, diagnostics, context);
+		if (result || diagnostics != null) result &= validateLocalAuthenticationSystem_authenticationKeyFromUser(localAuthenticationSystem, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLocalAuthenticationSystem_authenticationKeyRequiredAttribute(localAuthenticationSystem, diagnostics, context);
 		if (result || diagnostics != null) result &= validateLocalAuthenticationSystem_captchaRequiresKeys(localAuthenticationSystem, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the entitySourceOnlyIfNotEncapsulated constraint of '<em>Local Authentication System</em>'.
+	 * The cached validation expression for the authenticationKeyFromUser constraint of '<em>Local Authentication System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LOCAL_AUTHENTICATION_SYSTEM__ENTITY_SOURCE_ONLY_IF_NOT_ENCAPSULATED__EEXPRESSION = "userSource.oclIsTypeOf(Entity) implies userSource.oclAsType(Entity).servedBy->isEmpty()";
-
-	/**
-	 * Validates the entitySourceOnlyIfNotEncapsulated constraint of '<em>Local Authentication System</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLocalAuthenticationSystem_entitySourceOnlyIfNotEncapsulated(LocalAuthenticationSystem localAuthenticationSystem, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM,
-				 localAuthenticationSystem,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "entitySourceOnlyIfNotEncapsulated",
-				 LOCAL_AUTHENTICATION_SYSTEM__ENTITY_SOURCE_ONLY_IF_NOT_ENCAPSULATED__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the authenticationKeyFromUserSource constraint of '<em>Local Authentication System</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_FROM_USER_SOURCE__EEXPRESSION = "not userSource.oclIsUndefined() implies\r\n" +
+	protected static final String LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_FROM_USER__EEXPRESSION = "not user.oclIsUndefined() implies\r\n" +
 		"\tlet features : Collection(Feature)\r\n" +
-		"\t\t= if userSource.oclIsTypeOf(Entity) then\r\n" +
-		"\t\t\t\tuserSource.oclAsType(Entity).features\r\n" +
-		"\t\t\telse if userSource.oclIsTypeOf(View) then\r\n" +
-		"\t\t\t\tuserSource.oclAsType(View).features\r\n" +
-		"\t\t\telse let entities : Sequence(Entity)\r\n" +
-		"\t\t\t\t\t= userSource.oclAsType(Service).encapsulates->select(e | e.oclIsTypeOf(Entity)).oclAsType(Entity)\r\n" +
-		"\t\t\t\tin entities->collect(e | e.features)->union(entities->collect(e | e.associationEnds))\r\n" +
-		"\t\t\t\t\t->union(userSource.oclAsType(Service).encapsulates->select(v | v.oclIsTypeOf(View)).oclAsType(View)->collect(v | v.features))\r\n" +
-		"\t\t\tendif endif\r\n" +
+		"\t\t= if user.oclIsTypeOf(Entity) then\r\n" +
+		"\t\t\t\tuser.oclAsType(Entity).features\r\n" +
+		"\t\t\telse\r\n" +
+		"\t\t\t\tuser.oclAsType(View).features\r\n" +
+		"\t\t\tendif\r\n" +
 		"\tin features->includes(userAuthenticationKey)";
 
 	/**
-	 * Validates the authenticationKeyFromUserSource constraint of '<em>Local Authentication System</em>'.
+	 * Validates the authenticationKeyFromUser constraint of '<em>Local Authentication System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateLocalAuthenticationSystem_authenticationKeyFromUserSource(LocalAuthenticationSystem localAuthenticationSystem, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateLocalAuthenticationSystem_authenticationKeyFromUser(LocalAuthenticationSystem localAuthenticationSystem, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM,
@@ -2708,8 +2687,8 @@ public class WebsiteValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "authenticationKeyFromUserSource",
-				 LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_FROM_USER_SOURCE__EEXPRESSION,
+				 "authenticationKeyFromUser",
+				 LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_FROM_USER__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

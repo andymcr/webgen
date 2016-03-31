@@ -14,7 +14,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getAssociation <em>Association</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#isUseAssociationSource <em>Use Association Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getEncapsulatedTarget <em>Encapsulated Target</em>}</li>
  * </ul>
@@ -78,32 +77,6 @@ public interface EncapsulatedAssociation extends EncapsulatedFeature, Associatio
 	 * @generated
 	 */
 	void setAssociation(Association value);
-
-	/**
-	 * Returns the value of the '<em><b>Use Association Source</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Use Association Source</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Use Association Source</em>' attribute.
-	 * @see #setUseAssociationSource(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEncapsulatedAssociation_UseAssociationSource()
-	 * @model
-	 * @generated
-	 */
-	boolean isUseAssociationSource();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#isUseAssociationSource <em>Use Association Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Use Association Source</em>' attribute.
-	 * @see #isUseAssociationSource()
-	 * @generated
-	 */
-	void setUseAssociationSource(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Cardinality</b></em>' attribute.

@@ -10,8 +10,11 @@ uses WebsiteHelpers;
 uses PersistenceExpression;
 
 
+helper context Website!EncapsulatedAssociation def: isSourceAssociation() : Boolean
+	= self.partOf.encapsulates->collect(eov | eov.features)->flatten()->includes(self.association);
+
 helper context Website!ModelLabelAssociation def: isSourceAssociation() : Boolean
-	= self.partOf.features->includes(self.association);
+	= self.partOf.labelFor.features->includes(self.association);
 
 
 abstract rule NamedElement {
@@ -65,9 +68,9 @@ rule ModelLabelAssociation {
 				website.association
 			else
 				if website.isSourceAssociation() then
-					website.association.findOrmTargetEntity().getOrmFeature(website.association.targetFeatureName)
-				else
 					website.association.findOrmEntityOrView().getOrmFeature(website.association.name)
+				else
+					website.association.findOrmTargetEntity().getOrmFeature(website.association.targetFeatureName)
 				endif
 			endif,
 		dynamicLabel <- website.dynamicLabel
@@ -205,14 +208,14 @@ rule EncapsulatedAssociation {
 	from website : Website!EncapsulatedAssociation
 	to orm : ORM!EncapsulatedAssociation (
 		association <-
-			if website.association.oclIsKindOf(Website!EntityAssociation) then
-				if website.useAssociationSource then
+			if website.association.oclIsUndefined() then
+				website.association
+			else
+				if website.isSourceAssociation() then
 					website.association.findOrmEntityOrView().getOrmFeature(website.association.name)
 				else
 					website.association.findOrmTargetEntity().getOrmFeature(website.association.targetFeatureName)
 				endif
-			else
-				website.association
 			endif,
 		encapsulatedTarget <- website.encapsulatedTarget,
 		columnName <-

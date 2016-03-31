@@ -17,13 +17,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
-import uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment;
-import uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -39,7 +35,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getAssociation <em>Association</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#isUseAssociationSource <em>Use Association Source</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getEncapsulatedTarget <em>Encapsulated Target</em>}</li>
  * </ul>
@@ -106,26 +101,6 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @ordered
 	 */
 	protected Association association;
-
-	/**
-	 * The default value of the '{@link #isUseAssociationSource() <em>Use Association Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUseAssociationSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean USE_ASSOCIATION_SOURCE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isUseAssociationSource() <em>Use Association Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isUseAssociationSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean useAssociationSource = USE_ASSOCIATION_SOURCE_EDEFAULT;
 
 	/**
 	 * The cached setting delegate for the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
@@ -289,26 +264,11 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public NotificationChain basicSetAssociation(Association newAssociation, NotificationChain msgs) {
 		Association oldAssociation = association;
 		association = newAssociation;
-		// eContainer may be undefined when loading resource (used by getPartOf)
-		if ((newAssociation != null) && (eContainer() != null)) {
-			if (newAssociation instanceof EntityAssociation) {
-				final EntityAssociation entityAssociation = (EntityAssociation) newAssociation;
-				if (getPartOf().getEncapsulates().contains(entityAssociation.getPartOf())) {
-					if (!getPartOf().getEncapsulates().contains(entityAssociation.getTargetEntity())) {
-						setUseAssociationSource(true);
-					}
-				} else {
-					if (getPartOf().getEncapsulates().contains(entityAssociation.getTargetEntity())) {
-						setUseAssociationSource(false);
-					}
-				}
-			}
-		}
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION, oldAssociation, newAssociation);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
@@ -333,51 +293,6 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION, newAssociation, newAssociation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isUseAssociationSource() {
-		return useAssociationSource;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void setUseAssociationSource(boolean newUseAssociationSource) {
-		boolean oldUseAssociationSource = useAssociationSource;
-		useAssociationSource = newUseAssociationSource;
-		if (getAssociation() != null) {
-			if (getAssociation() instanceof EntityAssociation){
-				final EntityAssociation association = (EntityAssociation) getAssociation();
-				if (useAssociationSource) {
-					setCardinality(association.getCardinality());
-				} else {
-					if (association instanceof AssociationWithContainment) {
-						setCardinality(Cardinality.REQUIRED);
-					} else {
-						setCardinality(((AssociationWithoutContainment) getAssociation()).getTargetCardinality());
-					}
-				}
-			} else if (getAssociation() instanceof EncapsulatedAssociation) {
-				final EncapsulatedAssociation association = (EncapsulatedAssociation) getAssociation();
-				setCardinality(association.getCardinality());
-			} else {
-				final ViewAssociation association = (ViewAssociation) getAssociation();
-				if (useAssociationSource) {
-					setCardinality(association.getCardinality());
-				} else {
-					setCardinality(association.getOpposite().getCardinality());
-				}
-			}
-		}
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENCAPSULATED_ASSOCIATION__USE_ASSOCIATION_SOURCE, oldUseAssociationSource, useAssociationSource));
 	}
 
 	/**
@@ -492,8 +407,6 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				if (resolve) return getAssociation();
 				return basicGetAssociation();
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION__USE_ASSOCIATION_SOURCE:
-				return isUseAssociationSource();
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				return getCardinality();
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
@@ -528,9 +441,6 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)newValue);
 				return;
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION__USE_ASSOCIATION_SOURCE:
-				setUseAssociationSource((Boolean)newValue);
-				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				setCardinality((Cardinality)newValue);
 				return;
@@ -564,9 +474,6 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)null);
 				return;
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION__USE_ASSOCIATION_SOURCE:
-				setUseAssociationSource(USE_ASSOCIATION_SOURCE_EDEFAULT);
-				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				CARDINALITY__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
@@ -595,8 +502,6 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				return association != null;
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION__USE_ASSOCIATION_SOURCE:
-				return useAssociationSource != USE_ASSOCIATION_SOURCE_EDEFAULT;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				return CARDINALITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
@@ -653,8 +558,6 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (inputClass: ");
 		result.append(inputClass);
-		result.append(", useAssociationSource: ");
-		result.append(useAssociationSource);
 		result.append(')');
 		return result.toString();
 	}

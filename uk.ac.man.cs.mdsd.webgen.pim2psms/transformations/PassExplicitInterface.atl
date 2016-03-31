@@ -870,7 +870,7 @@ rule CreateUpdateUnit {
 			if website.createUriElement.trim() <> '' then
 				website.createUriElement.trim()
 			else
-				'create'
+				'update'
 			endif,
 		clearLabel <- website.clearLabel
 	)

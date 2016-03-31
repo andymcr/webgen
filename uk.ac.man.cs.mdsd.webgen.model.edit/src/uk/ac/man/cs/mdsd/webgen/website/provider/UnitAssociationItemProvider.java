@@ -140,10 +140,14 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof UnitAssociation) {
-//						final UnitAssociation association = (UnitAssociation) object;
-//						if (association.getServiceFeature() != null) {
-//							return getSelections(association.getServiceFeature());
-//						}
+						final UnitAssociation association = (UnitAssociation) object;
+						if (association.getAssociation() != null) {
+							if (isSourceAssociation(association)) {
+								return getSelections(getTargetType(association.getAssociation()));
+							} else {
+								return getSelections(getSourceType(association.getAssociation()));
+							}
+						}
 					}
 					return Collections.emptySet();
 				}

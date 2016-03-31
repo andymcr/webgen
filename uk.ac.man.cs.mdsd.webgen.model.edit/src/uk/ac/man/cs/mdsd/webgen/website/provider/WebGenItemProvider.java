@@ -16,6 +16,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ChildAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
@@ -191,6 +192,28 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 // TODO handle view
 		}
 		return Collections.emptySet();
+	}
+
+	protected EntityOrView getSourceType(final Association association) {
+		if (association instanceof EntityAssociation) {
+			return ((EntityAssociation) association).getPartOf();
+		} else if (association instanceof EncapsulatedAssociation) {
+			return getSourceType(((EncapsulatedAssociation) association).getAssociation());
+		} else {
+			// TODO handle view
+			return null;
+		}
+	}
+
+	protected EntityOrView getTargetType(final Association association) {
+		if (association instanceof EntityAssociation) {
+			return ((EntityAssociation) association).getTargetEntity();
+		} else if (association instanceof EncapsulatedAssociation) {
+			return getTargetType(((EncapsulatedAssociation) association).getAssociation());
+		} else {
+			// TODO handle view
+			return null;
+		}
 	}
 
 	protected Set<Feature> getFeatures(final Service service) {

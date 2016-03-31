@@ -436,7 +436,7 @@ class DeleteAction extends InlineAction {
 }
 
 class FeatureSupportAction extends InlineAction {
-	String[1] confirmMessage
+	String confirmMessage
 }
 
 

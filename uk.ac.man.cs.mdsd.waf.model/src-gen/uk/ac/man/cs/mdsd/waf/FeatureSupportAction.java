@@ -31,7 +31,7 @@ public interface FeatureSupportAction extends InlineAction {
 	 * @return the value of the '<em>Confirm Message</em>' attribute.
 	 * @see #setConfirmMessage(String)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFeatureSupportAction_ConfirmMessage()
-	 * @model unique="false" required="true"
+	 * @model unique="false"
 	 * @generated
 	 */
 	String getConfirmMessage();

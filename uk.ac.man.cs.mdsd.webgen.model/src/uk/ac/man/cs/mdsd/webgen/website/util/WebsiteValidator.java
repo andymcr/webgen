@@ -2127,7 +2127,7 @@ public class WebsiteValidator extends EObjectValidator {
 	protected static final String DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_ENTITIES__EEXPRESSION = "let eovFeatures : Collection(Feature)\r\n" +
 		"\t= self.entities->collect(\r\n" +
 		"\t\teov | if eov.oclIsTypeOf(Entity) then\r\n" +
-		"\t\t\t\teov.oclAsType(Entity).features\r\n" +
+		"\t\t\t\teov.oclAsType(Entity).features->union(eov.oclAsType(Entity).associationEnds)\r\n" +
 		"\t\t\telse\r\n" +
 		"\t\t\t\teov.oclAsType(View).features\r\n" +
 		"\t\t\tendif)\r\n" +

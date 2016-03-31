@@ -238,7 +238,6 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 		switch (notification.getFeatureID(EncapsulatedAssociation.class)) {
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__NAME:
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION__USE_ASSOCIATION_SOURCE:
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

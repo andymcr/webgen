@@ -59,16 +59,6 @@ helper context Website!UnitElement def: attributeLabel() : String
 			self.attribute.attributeLabel()
 		endif;
 
-helper context Website!UnitAssociation def: isSourceAssociation() : Boolean
-	= self.displayedOn.entities->collect(e | e.features)->flatten()->includes(self.association);
-
-helper context Website!ChildAssociation def: isSourceAssociation() : Boolean
-	= if self.refImmediateComposite().isSourceAssociation() then
-			self.refImmediateComposite().association.getTarget().features->includes(self.association)
-		else
-			self.refImmediateComposite().association.partOf.features->includes(self.association)
-		endif;
-
 helper context Website!UnitAssociation def: associationLabel() : String
 	= if not self.displayLabel.oclIsUndefined() and  self.displayLabel <> ''
 				or self.association.oclIsUndefined() then
@@ -276,7 +266,7 @@ helper context Website!ChildAssociation def: findOrmAssociation() : ORM!Associat
 	= if self.association.oclIsUndefined() or self.refImmediateComposite().association.oclIsUndefined() then
 			OclUndefined
 		else
-			if self.isSourceAssociation() then
+			if self.isSourceAssociation then
 				self.association.findOrmSourceAssociation()
 			else
 				self.association.findOrmTargetAssociation()

@@ -17,23 +17,31 @@ import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
-import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.View;
 
 public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	public WebGenItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+	}
+
+	protected EntityOrView getTargetType(final Association association) {
+		if (association instanceof EntityAssociation) {
+			return ((EntityAssociation) association).getTargetEntity();
+		} else if (association instanceof EncapsulatedAssociation) {
+			return ((EncapsulatedAssociation) association).getTargetEntity();
+		} else {
+			// TODO handle view
+			return null;
+		}
 	}
 
 	protected Set<Label> getLabels(final EntityOrView entityOrView) {
@@ -41,103 +49,6 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		labels.addAll(entityOrView.getAttributes());
 
 		return labels;
-	}
-
-	protected Set<Attribute> getSourceAttributes(final Association association) {
-		final Set<Attribute> attributes = new HashSet<Attribute>();
-		if (association instanceof EntityAssociation) {
-			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			attributes.addAll(entityAssociation.getPartOf().getAttributes());
-		}
-
-		return attributes;
-	}
-
-	protected Set<Association> getSourceAssociations(final Association association) {
-		final Set<Association> associations = new HashSet<Association>();
-		if (association instanceof EntityAssociation) {
-			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			associations.addAll(entityAssociation.getPartOf().getAssociations());
-		}
-
-		return associations;
-	}
-
-	protected Set<Association> getAllSourceAssociations(final Association association) {
-		final Set<Association> associations = new HashSet<Association>();
-		if (association instanceof EntityAssociation) {
-			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			associations.addAll(entityAssociation.getPartOf().getAllAssociations());
-		}
-
-		return associations;
-	}
-
-	protected Set<Attribute> getTargetAttributes(final Association association) {
-		final Set<Attribute> attributes = new HashSet<Attribute>();
-		if (association instanceof EntityAssociation) {
-			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			attributes.addAll(entityAssociation.getTargetEntity().getAttributes());
-		}
-
-		return attributes;
-	}
-
-	protected Set<Association> getTargetAssociations(final Association association) {
-		final Set<Association> associations = new HashSet<Association>();
-		if (association instanceof EntityAssociation) {
-			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			associations.addAll(entityAssociation.getTargetEntity().getAssociations());
-		}
-
-		return associations;
-	}
-
-	protected Set<Association> getAllTargetAssociations(final Association association) {
-		final Set<Association> associations = new HashSet<Association>();
-		if (association instanceof EntityAssociation) {
-			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			associations.addAll(entityAssociation.getTargetEntity().getAllAssociations());
-		}
-
-		return associations;
-	}
-
-	protected List<Feature> getTargetFeatures(final Association association,
-			final EntityOrView entityOrView) {
-		if (entityOrView instanceof Entity) {
-			final Entity entity = (Entity) entityOrView;
-			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			if (entity.getFeatures().contains(association)) {
-				return entityAssociation.getTargetEntity().getFeatures();
-			} else {
-				return entityAssociation.getPartOf().getFeatures();
-			}
-// TODO handle view
-		}
-		return Collections.emptyList();
-	}
-
-	protected EntityOrView getSourceType(final Association association) {
-		if (association instanceof EntityAssociation) {
-			return ((EntityAssociation) association).getPartOf();
-		} else if (association instanceof EncapsulatedAssociation) {
-			return getSourceType(((EncapsulatedAssociation) association).getAssociation());
-		} else {
-			// TODO handle view
-			return null;
-		}
-	}
-
-	protected EntityOrView getTargetType(final Association association) {
-		if (association instanceof EntityAssociation) {
-			return ((EntityAssociation) association).getTargetEntity();
-		} else if (association instanceof EncapsulatedAssociation) {
-			return getTargetType(((EncapsulatedAssociation) association).getAssociation());
-		} else {
-			// TODO handle view
-			return null;
-		}
 	}
 
 	protected List<Feature> getFeatures(final Service service) {
@@ -170,98 +81,40 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return associations;
 	}
 
-	protected Boolean isSourceAssociation(final ModelLabelAssociation label) {
-		if (label.getAssociation() != null) {
-			if (label.getPartOf() instanceof Entity) {
-				return ((Entity) label.getPartOf()).getFeatures().contains(label.getAssociation());
-			} else {
-				return ((View) label.getPartOf()).getFeatures().contains(label.getAssociation());
-			}
-		}
-
-		return false;
-	}
-
-	protected Boolean isSourceAssociation(final UnitAssociation association) {
-		for (EntityOrView entityOrView : association.getDisplayedOn().getEntities()) {
-			if (entityOrView.getAssociations().contains(association.getAssociation())) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	protected Boolean isSourceAssociation(final ChildAssociation association) {
-		if (association.eContainer() instanceof UnitAssociation) {
-			final UnitAssociation parent = (UnitAssociation) association.eContainer();
-			if (parent.getAssociation() != null) {
-				if (isSourceAssociation(parent)) {
-					return getTargetAssociations(parent.getAssociation()).contains(association.getAssociation());
-				} else {
-					return getSourceAssociations(parent.getAssociation()).contains(association.getAssociation());
-				}
-			}
-		} else {
-			final ChildAssociation parent = (ChildAssociation) association.eContainer();
-			if (parent.getAssociation() != null) {
-				if (isSourceAssociation(parent)) {
-					return getTargetAssociations(parent.getAssociation()).contains(association.getAssociation());
-				} else {
-					return getSourceAssociations(parent.getAssociation()).contains(association.getAssociation());
-				}
-			}
-		}
-
-		return false;
-	}
-
-	protected Set<Attribute> getAttributes(final ChildAttribute attribute) {
+	protected List<Attribute> getAttributes(final ChildAttribute attribute) {
 		if (attribute.eContainer() instanceof UnitAssociation) {
 			final UnitAssociation parent = ((UnitAssociation) attribute.eContainer());
 			if (parent.getAssociation() != null) {
-				if (isSourceAssociation(parent)) {
-					return getTargetAttributes(parent.getAssociation());
+				if (parent.isIsSourceAssociation()) {
+					return parent.getTargetEntity().getAttributes();
 				} else {
-					return getSourceAttributes(parent.getAssociation());
+					return parent.getSourceEntity().getAttributes();
 				}
 			}
 		} else {
 			final ChildAssociation parent = (ChildAssociation) attribute.eContainer();
 			if (parent.getAssociation() != null) {
-				if (isSourceAssociation(parent)) {
-					return getTargetAttributes(parent.getAssociation());
+				if (parent.isIsSourceAssociation()) {
+					return parent.getTargetEntity().getAttributes();
 				} else {
-					return getSourceAttributes(parent.getAssociation());
+					return parent.getSourceEntity().getAttributes();
 				}
 			}
 		}
 
-		return Collections.emptySet();
+		return Collections.emptyList();
 	}
 
-	protected Set<Association> getAssociations(final ChildAssociation association) {
-		if (association.eContainer() instanceof UnitAssociation) {
-			final UnitAssociation parent = ((UnitAssociation) association.eContainer());
-			if (parent.getAssociation() != null) {
-				if (isSourceAssociation(parent)) {
-					return getAllTargetAssociations(parent.getAssociation());
-				} else {
-					return getAllSourceAssociations(parent.getAssociation());
-				}
-			}
-		} else {
-			final ChildAssociation parent = (ChildAssociation) association.eContainer();
-			if (parent.getAssociation() != null) {
-				if (isSourceAssociation(parent)) {
-					return getAllTargetAssociations(parent.getAssociation());
-				} else {
-					return getAllSourceAssociations(parent.getAssociation());
-				}
+	protected List<Association> getAssociations(final ChildAssociation association) {
+		if (association.getPartOf().getAssociation() != null) {
+			if (association.getPartOf().isIsSourceAssociation()) {
+				return association.getPartOf().getTargetEntity().getAllAssociations();
+			} else {
+				return association.getPartOf().getSourceEntity().getAllAssociations();
 			}
 		}
 
-		return Collections.emptySet();
+		return Collections.emptyList();
 	}
 
 	protected List<Filter> getFilters(final Query query) {

@@ -51,7 +51,6 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 
 			addAssociationPropertyDescriptor(object);
 			addDynamicLabelPropertyDescriptor(object);
-			addIsSourceAssociationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -105,7 +104,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 				if (object instanceof ModelLabelAssociation) {
 					final ModelLabelAssociation label = (ModelLabelAssociation) object;
 					if (label.getAssociation() != null) {
-						if (isSourceAssociation(label)) {
+						if (label.isIsSourceAssociation()) {
 							return label.getAssociation().getTargetEntity().getLabels();
 						} else {
 							return label.getAssociation().getPartOf().getLabels();
@@ -116,28 +115,6 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 				return Collections.emptyList();
 			}
 		});
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Source Association feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsSourceAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelLabelAssociation_isSourceAssociation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_isSourceAssociation_feature", "_UI_ModelLabelAssociation_type"),
-				 WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**

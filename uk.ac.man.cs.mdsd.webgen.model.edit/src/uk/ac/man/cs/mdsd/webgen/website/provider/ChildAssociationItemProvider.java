@@ -64,9 +64,9 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_ChildAssociation_association_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ChildAssociation_association_feature", "_UI_ServiceAssociationReference_type"),
-			WebsitePackage.Literals.CHILD_ASSOCIATION__ASSOCIATION,
+			getString("_UI_PathAssociationElement_association_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_PathAssociationElement_association_feature", "_UI_PathAssociationElement_type"),
+			WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__ASSOCIATION,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
@@ -93,7 +93,7 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.CHILD_ASSOCIATION__CHILD_FEATURE);
+			childrenFeatures.add(WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -149,6 +149,7 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ChildAssociation.class)) {
+			case WebsitePackage.CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION:
 			case WebsitePackage.CHILD_ASSOCIATION__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
@@ -172,12 +173,12 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.CHILD_ASSOCIATION__CHILD_FEATURE,
+				(WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.CHILD_ASSOCIATION__CHILD_FEATURE,
+				(WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAssociation()));
 	}
 

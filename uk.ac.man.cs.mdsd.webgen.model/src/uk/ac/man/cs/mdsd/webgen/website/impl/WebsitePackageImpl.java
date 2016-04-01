@@ -97,6 +97,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.PageLink;
 import uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.webgen.website.ParameterReference;
+import uk.ac.man.cs.mdsd.webgen.website.PathAssociationElement;
 import uk.ac.man.cs.mdsd.webgen.website.PathElement;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.QueryParameter;
@@ -549,6 +550,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass unitElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pathAssociationElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3039,6 +3047,60 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPathAssociationElement() {
+		return pathAssociationElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPathAssociationElement_Association() {
+		return (EReference)pathAssociationElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPathAssociationElement_ChildFeature() {
+		return (EReference)pathAssociationElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPathAssociationElement_IsSourceAssociation() {
+		return (EAttribute)pathAssociationElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPathAssociationElement_SourceEntity() {
+		return (EReference)pathAssociationElementEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPathAssociationElement_TargetEntity() {
+		return (EReference)pathAssociationElementEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUnitAssociation() {
 		return unitAssociationEClass;
 	}
@@ -3048,26 +3110,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUnitAssociation_Association() {
-		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getUnitAssociation_Name() {
-		return (EAttribute)unitAssociationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUnitAssociation_ChildFeature() {
-		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)unitAssociationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -3076,7 +3120,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getUnitAssociation_ValueDisplay() {
-		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(3);
+		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3085,7 +3129,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getUnitAssociation_Selection() {
-		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(4);
+		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3094,25 +3138,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getUnitAssociation_Filters() {
-		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getUnitAssociation_IsSourceAssociation() {
-		return (EAttribute)unitAssociationEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUnitAssociation_TargetEntity() {
-		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(7);
+		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3122,6 +3148,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EClass getChildFeature() {
 		return childFeatureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChildFeature_PartOf() {
+		return (EReference)childFeatureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -3167,24 +3202,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EAttribute getChildAssociation_Name() {
 		return (EAttribute)childAssociationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getChildAssociation_Association() {
-		return (EReference)childAssociationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getChildAssociation_ChildFeature() {
-		return (EReference)childAssociationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5079,17 +5096,21 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(unitElementEClass, UNIT_ELEMENT__PLACEHOLDER);
 		createEAttribute(unitElementEClass, UNIT_ELEMENT__VALIDATION_PATTERN);
 
+		pathAssociationElementEClass = createEClass(PATH_ASSOCIATION_ELEMENT);
+		createEReference(pathAssociationElementEClass, PATH_ASSOCIATION_ELEMENT__ASSOCIATION);
+		createEReference(pathAssociationElementEClass, PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE);
+		createEAttribute(pathAssociationElementEClass, PATH_ASSOCIATION_ELEMENT__IS_SOURCE_ASSOCIATION);
+		createEReference(pathAssociationElementEClass, PATH_ASSOCIATION_ELEMENT__SOURCE_ENTITY);
+		createEReference(pathAssociationElementEClass, PATH_ASSOCIATION_ELEMENT__TARGET_ENTITY);
+
 		unitAssociationEClass = createEClass(UNIT_ASSOCIATION);
-		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__ASSOCIATION);
 		createEAttribute(unitAssociationEClass, UNIT_ASSOCIATION__NAME);
-		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__CHILD_FEATURE);
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__VALUE_DISPLAY);
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__SELECTION);
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__FILTERS);
-		createEAttribute(unitAssociationEClass, UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION);
-		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__TARGET_ENTITY);
 
 		childFeatureEClass = createEClass(CHILD_FEATURE);
+		createEReference(childFeatureEClass, CHILD_FEATURE__PART_OF);
 
 		childAttributeEClass = createEClass(CHILD_ATTRIBUTE);
 		createEAttribute(childAttributeEClass, CHILD_ATTRIBUTE__NAME);
@@ -5097,8 +5118,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		childAssociationEClass = createEClass(CHILD_ASSOCIATION);
 		createEAttribute(childAssociationEClass, CHILD_ASSOCIATION__NAME);
-		createEReference(childAssociationEClass, CHILD_ASSOCIATION__ASSOCIATION);
-		createEReference(childAssociationEClass, CHILD_ASSOCIATION__CHILD_FEATURE);
 
 		interfaceFieldEClass = createEClass(INTERFACE_FIELD);
 		createEAttribute(interfaceFieldEClass, INTERFACE_FIELD__REQUIRED);
@@ -5341,8 +5360,10 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		unitElementEClass.getESuperTypes().add(this.getUnitFeature());
 		unitAssociationEClass.getESuperTypes().add(this.getUnitFeature());
 		unitAssociationEClass.getESuperTypes().add(this.getUnitContainer());
+		unitAssociationEClass.getESuperTypes().add(this.getPathAssociationElement());
 		childAttributeEClass.getESuperTypes().add(this.getChildFeature());
 		childAssociationEClass.getESuperTypes().add(this.getChildFeature());
+		childAssociationEClass.getESuperTypes().add(this.getPathAssociationElement());
 		interfaceFieldEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		interfaceFieldEClass.getESuperTypes().add(this.getUnitField());
 		dataTypeFieldEClass.getESuperTypes().add(this.getInterfaceField());
@@ -5733,17 +5754,21 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getUnitElement_Placeholder(), ecorePackage.getEString(), "placeholder", null, 0, 1, UnitElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getUnitElement_ValidationPattern(), ecorePackage.getEString(), "validationPattern", null, 0, 1, UnitElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEClass(pathAssociationElementEClass, PathAssociationElement.class, "PathAssociationElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPathAssociationElement_Association(), this.getAssociation(), null, "association", null, 1, 1, PathAssociationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPathAssociationElement_ChildFeature(), this.getChildFeature(), this.getChildFeature_PartOf(), "childFeature", null, 0, 1, PathAssociationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPathAssociationElement_IsSourceAssociation(), ecorePackage.getEBoolean(), "isSourceAssociation", null, 1, 1, PathAssociationElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPathAssociationElement_SourceEntity(), this.getEntityOrView(), null, "sourceEntity", null, 0, 1, PathAssociationElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPathAssociationElement_TargetEntity(), this.getEntityOrView(), null, "targetEntity", null, 0, 1, PathAssociationElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
 		initEClass(unitAssociationEClass, UnitAssociation.class, "UnitAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnitAssociation_Association(), this.getAssociation(), null, "association", null, 1, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getUnitAssociation_Name(), ecorePackage.getEString(), "name", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getUnitAssociation_ChildFeature(), this.getChildFeature(), null, "childFeature", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_ValueDisplay(), this.getLabel(), null, "valueDisplay", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_Selection(), this.getSelection(), null, "selection", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_Filters(), this.getLabel(), null, "filters", null, 0, -1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUnitAssociation_IsSourceAssociation(), ecorePackage.getEBoolean(), "isSourceAssociation", null, 1, 1, UnitAssociation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getUnitAssociation_TargetEntity(), this.getEntityOrView(), null, "targetEntity", null, 0, 1, UnitAssociation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(childFeatureEClass, ChildFeature.class, "ChildFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChildFeature_PartOf(), this.getPathAssociationElement(), this.getPathAssociationElement_ChildFeature(), "partOf", null, 0, 1, ChildFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(childAttributeEClass, ChildAttribute.class, "ChildAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getChildAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, ChildAttribute.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
@@ -5751,8 +5776,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(childAssociationEClass, ChildAssociation.class, "ChildAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getChildAssociation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ChildAssociation.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getChildAssociation_Association(), this.getAssociation(), null, "association", null, 0, 1, ChildAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getChildAssociation_ChildFeature(), this.getChildFeature(), null, "childFeature", null, 0, 1, ChildAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceFieldEClass, InterfaceField.class, "InterfaceField", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInterfaceField_Required(), ecorePackage.getEBoolean(), "required", null, 0, 1, InterfaceField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -6038,7 +6061,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (dataUnitEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "canOnlyTitleWithSingletonElement selectionValidChoice"
+			 "constraints", "canOnlyTitleWithSingletons selectionValidChoice"
 		   });	
 		addAnnotation
 		  (inlineActionContainerEClass, 
@@ -6124,7 +6147,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getModelLabelAssociation_IsSourceAssociation(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not association.oclIsUndefined() implies\r\n\tpartOf.features->includes(association)"
+			 "derivation", "not association.oclIsUndefined() implies\r\n\tpartOf.labelFor.features->includes(association)"
 		   });	
 		addAnnotation
 		  (entityEClass, 
@@ -6222,6 +6245,24 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "derivation", "if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(EncapsulatedAttribute) then\r\n\tattribute.oclAsType(EncapsulatedAttribute).name\r\nelse\r\n\tattribute.oclAsType(EntityAttribute).name\r\nendif endif"
 		   });	
 		addAnnotation
+		  (getPathAssociationElement_IsSourceAssociation(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if self.oclIsKindOf(UnitAssociation) then\r\n\tnot association.oclIsUndefined() implies\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\nelse\r\n\tlet partOf : PathAssociationElement = self.oclAsType(ChildAssociation).partOf\r\n\t\tin not association.oclIsUndefined() implies\r\n\t\t\tif partOf.isSourceAssociation then\r\n\t\t\t\tpartOf.targetEntity.associations->includes(association)\r\n\t\t\telse\r\n\t\t\t\tpartOf.sourceEntity.associations->includes(association)\r\n\t\t\tendif\r\nendif"
+		   });	
+		addAnnotation
+		  (getPathAssociationElement_SourceEntity(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\tendif\r\nendif"
+		   });	
+		addAnnotation
+		  (getPathAssociationElement_TargetEntity(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif"
+		   });	
+		addAnnotation
 		  (unitAssociationEClass, 
 		   source, 
 		   new String[] {
@@ -6232,18 +6273,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).name\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\tendif\r\n\t\telse\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).targetFeatureName\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).opposite.name\r\n\t\t\tendif\r\n\t\tendif\r\n\tendif\r\nendif"
-		   });	
-		addAnnotation
-		  (getUnitAssociation_IsSourceAssociation(), 
-		   source, 
-		   new String[] {
-			 "derivation", "not association.oclIsUndefined() implies\r\n\tdisplayedOn.entities->collect(eov | eov.associations)->includes(association)"
-		   });	
-		addAnnotation
-		  (getUnitAssociation_TargetEntity(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (getChildAttribute_Name(), 
@@ -6261,7 +6290,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (dataUnitEClass, 
 		   source, 
 		   new String[] {
-			 "canOnlyTitleWithSingletonElement", "not title.oclIsUndefined() implies \r\nif title.oclIsKindOf(EntityAttribute) then\r\n\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\nelse\r\n\ttrue\r\nendif",
+			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies \r\n\tif title.oclIsKindOf(EntityAttribute) then\r\n\t\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\telse\r\n\t\ttrue\r\n\tendif endif",
 			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tentities->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(defaultSelection)"
 		   });	
 		addAnnotation
@@ -6274,7 +6303,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (deleteActionEClass, 
 		   source, 
 		   new String[] {
-			 "canOnlyDeleteSingletons", "if usedBy.oclIsKindOf(UnitElement) then\r\n\tlet attribute : Attribute\r\n\t\t= usedBy.oclAsType(UnitElement).attribute\r\n\t\tin if attribute.oclIsKindOf(EntityAttribute) then\r\n\t\t\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tfalse -- attribute.oclAsType(EncapsulatedAttribute).attribute.cardinality <> Cardinalty::Many\r\n\t\t\tendif\r\nelse if usedBy.oclIsKindOf(UnitAssociation) then\r\n\tlet association : Association\r\n\t\t= usedBy.oclAsType(UnitAssociation).association\r\n\t\tin if association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n\t\t\telse if association.oclIsKindOf(EncapsulatedAssociation) then\r\n\t\t\t\tfalse -- association.oclAsType(EncapsulatedAssociation).attribute.cardinality <> Cardinalty::Many\r\n\t\t\telse\r\n\t\t\t\tfalse -- association.oclAsType(ViewAssociation)\r\n\t\t\tendif endif\r\nelse\r\n\tusedBy.oclIsTypeOf(IndexUnit)\r\nendif endif\r\n"
+			 "canOnlyDeleteSingletons", "if usedBy.oclIsKindOf(UnitElement) then\r\n\tlet attribute : Attribute\r\n\t\t= usedBy.oclAsType(UnitElement).attribute\r\n\t\tin if attribute.oclIsKindOf(EntityAttribute) then\r\n\t\t\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\t\t\tendif\r\nelse if usedBy.oclIsKindOf(UnitAssociation) then\r\n\tlet association : Association\r\n\t\t= usedBy.oclAsType(UnitAssociation).association\r\n\t\tin if association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n\t\t\telse if association.oclIsKindOf(EncapsulatedAssociation) then\r\n\t\t\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n\t\t\telse\r\n\t\t\t\tfalse -- association.oclAsType(ViewAssociation)\r\n\t\t\tendif endif\r\nelse\r\n\tusedBy.oclIsTypeOf(IndexUnit)\r\nendif endif\r\n"
 		   });
 	}
 

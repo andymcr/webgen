@@ -51,7 +51,6 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 
 			addKeysPropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
-			addFeaturesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -102,28 +101,6 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_PersistencePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Features feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFeaturesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EntityOrView_features_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_features_feature", "_UI_EntityOrView_type"),
-				 WebsitePackage.Literals.ENTITY_OR_VIEW__FEATURES,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
 				 null));
 	}
 

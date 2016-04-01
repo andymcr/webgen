@@ -62,7 +62,7 @@ public class ChildAttributeItemProvider extends ChildFeatureItemProvider {
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
 			getString("_UI_ChildAttribute_attribute_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ChildAttribute_attribute_feature", "_UI_ServiceAssociationReference_type"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ChildAttribute_attribute_feature", "_UI_ChildAttribute_type"),
 			WebsitePackage.Literals.CHILD_ATTRIBUTE__ATTRIBUTE,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),

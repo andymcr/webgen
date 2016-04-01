@@ -14,14 +14,10 @@ import java.util.List;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getFilters <em>Filters</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#isIsSourceAssociation <em>Is Source Association</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getTargetEntity <em>Target Entity</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation()
@@ -29,33 +25,7 @@ import java.util.List;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionValidChoice='targetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)'"
  * @generated
  */
-public interface UnitAssociation extends UnitFeature, UnitContainer {
-	/**
-	 * Returns the value of the '<em><b>Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Association</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Association</em>' reference.
-	 * @see #setAssociation(Association)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation_Association()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	Association getAssociation();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getAssociation <em>Association</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Association</em>' reference.
-	 * @see #getAssociation()
-	 * @generated
-	 */
-	void setAssociation(Association value);
-
+public interface UnitAssociation extends UnitFeature, UnitContainer, PathAssociationElement {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,32 +41,6 @@ public interface UnitAssociation extends UnitFeature, UnitContainer {
 	 * @generated
 	 */
 	String getName();
-
-	/**
-	 * Returns the value of the '<em><b>Child Feature</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Child Feature</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Child Feature</em>' containment reference.
-	 * @see #setChildFeature(ChildFeature)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation_ChildFeature()
-	 * @model containment="true"
-	 * @generated
-	 */
-	ChildFeature getChildFeature();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getChildFeature <em>Child Feature</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Child Feature</em>' containment reference.
-	 * @see #getChildFeature()
-	 * @generated
-	 */
-	void setChildFeature(ChildFeature value);
 
 	/**
 	 * Returns the value of the '<em><b>Value Display</b></em>' reference.
@@ -165,37 +109,5 @@ public interface UnitAssociation extends UnitFeature, UnitContainer {
 	 * @generated
 	 */
 	List<Label> getFilters();
-
-	/**
-	 * Returns the value of the '<em><b>Is Source Association</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Source Association</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Source Association</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation_IsSourceAssociation()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tdisplayedOn.entities->collect(eov | eov.associations)->includes(association)'"
-	 * @generated
-	 */
-	boolean isIsSourceAssociation();
-
-	/**
-	 * Returns the value of the '<em><b>Target Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Target Entity</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Entity</em>' reference.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation_TargetEntity()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif'"
-	 * @generated
-	 */
-	EntityOrView getTargetEntity();
 
 } // UnitAssociation

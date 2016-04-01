@@ -154,7 +154,7 @@
           ecoreFeature="ecore:EReference website.ecore#//EntityOrView/servedBy"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"
           ecoreFeature="ecore:EReference website.ecore#//EntityOrView/labels"/>
-      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/features"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/features"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//EntityOrView/allFeatures"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/attributes"/>
@@ -198,7 +198,7 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ModelLabelAssociation/association"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ModelLabelAssociation/dynamicLabel"/>
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ModelLabelAssociation/isSourceAssociation"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ModelLabelAssociation/isSourceAssociation"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Entity">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//Entity/entityFeatures"/>
@@ -452,21 +452,27 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//UnitElement/placeholder"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//UnitElement/validationPattern"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//UnitAssociation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/association"/>
-      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//UnitAssociation/name"/>
+    <genClasses image="false" ecoreClass="website.ecore#//PathAssociationElement">
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//PathAssociationElement/association"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
-          ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/childFeature"/>
+          ecoreFeature="ecore:EReference website.ecore#//PathAssociationElement/childFeature"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//PathAssociationElement/isSourceAssociation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//PathAssociationElement/sourceEntity"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//PathAssociationElement/targetEntity"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//UnitAssociation">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//UnitAssociation/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/valueDisplay"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/selection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/filters"/>
-      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//UnitAssociation/isSourceAssociation"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/targetEntity"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="website.ecore#//ChildFeature"/>
+    <genClasses image="false" ecoreClass="website.ecore#//ChildFeature">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ChildFeature/partOf"/>
+    </genClasses>
     <genClasses ecoreClass="website.ecore#//ChildAttribute">
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ChildAttribute/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
@@ -474,10 +480,6 @@
     </genClasses>
     <genClasses ecoreClass="website.ecore#//ChildAssociation">
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ChildAssociation/name"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//ChildAssociation/association"/>
-      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
-          ecoreFeature="ecore:EReference website.ecore#//ChildAssociation/childFeature"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//InterfaceField">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//InterfaceField/required"/>

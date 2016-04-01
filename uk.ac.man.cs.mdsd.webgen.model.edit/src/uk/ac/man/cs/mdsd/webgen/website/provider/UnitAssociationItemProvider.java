@@ -70,9 +70,9 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_UnitAssociation_association_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_association_feature", "_UI_UnitAssociation_type"),
-			WebsitePackage.Literals.UNIT_ASSOCIATION__ASSOCIATION,
+			getString("_UI_PathAssociationElement_association_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_PathAssociationElement_association_feature", "_UI_PathAssociationElement_type"),
+			WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__ASSOCIATION,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
@@ -142,10 +142,10 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 					if (object instanceof UnitAssociation) {
 						final UnitAssociation association = (UnitAssociation) object;
 						if (association.getAssociation() != null) {
-							if (isSourceAssociation(association)) {
-								return getSelections(getTargetType(association.getAssociation()));
+							if (association.isIsSourceAssociation()) {
+								return getSelections(association.getTargetEntity());
 							} else {
-								return getSelections(getSourceType(association.getAssociation()));
+								return getSelections(association.getSourceEntity());
 							}
 						}
 					}
@@ -198,7 +198,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.UNIT_CONTAINER__UNITS);
-			childrenFeatures.add(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE);
+			childrenFeatures.add(WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -253,8 +253,8 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitAssociation.class)) {
-			case WebsitePackage.UNIT_ASSOCIATION__NAME:
 			case WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+			case WebsitePackage.UNIT_ASSOCIATION__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
@@ -343,12 +343,12 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
+				(WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
+				(WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAssociation()));
 	}
 

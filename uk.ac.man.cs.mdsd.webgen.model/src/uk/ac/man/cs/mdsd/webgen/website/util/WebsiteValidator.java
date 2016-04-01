@@ -224,6 +224,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateUnitFeature((UnitFeature)value, diagnostics, context);
 			case WebsitePackage.UNIT_ELEMENT:
 				return validateUnitElement((UnitElement)value, diagnostics, context);
+			case WebsitePackage.PATH_ASSOCIATION_ELEMENT:
+				return validatePathAssociationElement((PathAssociationElement)value, diagnostics, context);
 			case WebsitePackage.UNIT_ASSOCIATION:
 				return validateUnitAssociation((UnitAssociation)value, diagnostics, context);
 			case WebsitePackage.CHILD_FEATURE:
@@ -1654,6 +1656,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validatePathAssociationElement(PathAssociationElement pathAssociationElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(pathAssociationElement, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateUnitAssociation(UnitAssociation unitAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(unitAssociation, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(unitAssociation, diagnostics, context);
@@ -1975,31 +1986,33 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(dataUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletonElement(dataUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletons(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(dataUnit, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the canOnlyTitleWithSingletonElement constraint of '<em>Data Unit</em>'.
+	 * The cached validation expression for the canOnlyTitleWithSingletons constraint of '<em>Data Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DATA_UNIT__CAN_ONLY_TITLE_WITH_SINGLETON_ELEMENT__EEXPRESSION = "not title.oclIsUndefined() implies \r\n" +
-		"if title.oclIsKindOf(EntityAttribute) then\r\n" +
-		"\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
-		"else\r\n" +
-		"\ttrue\r\n" +
-		"endif";
+	protected static final String DATA_UNIT__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION = "not title.oclIsUndefined() implies \r\n" +
+		"\tif title.oclIsKindOf(EntityAttribute) then\r\n" +
+		"\t\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n" +
+		"\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
+		"\telse\r\n" +
+		"\t\ttrue\r\n" +
+		"\tendif endif";
 
 	/**
-	 * Validates the canOnlyTitleWithSingletonElement constraint of '<em>Data Unit</em>'.
+	 * Validates the canOnlyTitleWithSingletons constraint of '<em>Data Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDataUnit_canOnlyTitleWithSingletonElement(DataUnit dataUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDataUnit_canOnlyTitleWithSingletons(DataUnit dataUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(WebsitePackage.Literals.DATA_UNIT,
@@ -2007,8 +2020,8 @@ public class WebsiteValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "canOnlyTitleWithSingletonElement",
-				 DATA_UNIT__CAN_ONLY_TITLE_WITH_SINGLETON_ELEMENT__EEXPRESSION,
+				 "canOnlyTitleWithSingletons",
+				 DATA_UNIT__CAN_ONLY_TITLE_WITH_SINGLETONS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -2172,7 +2185,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(detailsUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletonElement(detailsUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletons(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(detailsUnit, diagnostics, context);
 		return result;
 	}
@@ -2194,7 +2207,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(indexUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletonElement(indexUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletons(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(indexUnit, diagnostics, context);
 		return result;
@@ -2487,7 +2500,7 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t\tin if attribute.oclIsKindOf(EntityAttribute) then\r\n" +
 		"\t\t\t\tattribute.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n" +
 		"\t\t\telse\r\n" +
-		"\t\t\t\tfalse -- attribute.oclAsType(EncapsulatedAttribute).attribute.cardinality <> Cardinalty::Many\r\n" +
+		"\t\t\t\tattribute.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n" +
 		"\t\t\tendif\r\n" +
 		"else if usedBy.oclIsKindOf(UnitAssociation) then\r\n" +
 		"\tlet association : Association\r\n" +
@@ -2495,7 +2508,7 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t\tin if association.oclIsKindOf(EntityAssociation) then\r\n" +
 		"\t\t\t\tassociation.oclAsType(EntityAssociation).cardinality <> Cardinality::Many\r\n" +
 		"\t\t\telse if association.oclIsKindOf(EncapsulatedAssociation) then\r\n" +
-		"\t\t\t\tfalse -- association.oclAsType(EncapsulatedAssociation).attribute.cardinality <> Cardinalty::Many\r\n" +
+		"\t\t\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n" +
 		"\t\t\telse\r\n" +
 		"\t\t\t\tfalse -- association.oclAsType(ViewAssociation)\r\n" +
 		"\t\t\tendif endif\r\n" +

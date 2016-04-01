@@ -10,13 +10,6 @@ uses WebsiteHelpers;
 uses PersistenceExpression;
 
 
-helper context Website!EncapsulatedAssociation def: isSourceAssociation() : Boolean
-	= self.partOf.encapsulates->collect(eov | eov.features)->flatten()->includes(self.association);
-
-helper context Website!ModelLabelAssociation def: isSourceAssociation() : Boolean
-	= self.partOf.labelFor.features->includes(self.association);
-
-
 abstract rule NamedElement {
 	from website : Website!NamedElement
 	to orm : ORM!NamedElement (
@@ -67,7 +60,7 @@ rule ModelLabelAssociation {
 			if website.association.oclIsUndefined() then
 				website.association
 			else
-				if website.isSourceAssociation() then
+				if website.isSourceAssociation then
 					website.association.findOrmEntityOrView().getOrmFeature(website.association.name)
 				else
 					website.association.findOrmTargetEntity().getOrmFeature(website.association.targetFeatureName)
@@ -211,7 +204,7 @@ rule EncapsulatedAssociation {
 			if website.association.oclIsUndefined() then
 				website.association
 			else
-				if website.isSourceAssociation() then
+				if website.isSourceAssociation then
 					website.association.findOrmEntityOrView().getOrmFeature(website.association.name)
 				else
 					website.association.findOrmTargetEntity().getOrmFeature(website.association.targetFeatureName)

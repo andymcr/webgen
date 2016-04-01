@@ -16,9 +16,6 @@ import uk.ac.man.cs.mdsd.orm.Association;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getChildFeature <em>Child Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getSource <em>Source</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getSourceName <em>Source Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getTargetName <em>Target Name</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getChildAssociation()
@@ -93,83 +90,5 @@ public interface ChildAssociation extends ChildFeature {
 	 * @generated
 	 */
 	void setChildFeature(ChildFeature value);
-
-	/**
-	 * Returns the value of the '<em><b>Source</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Source</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source</em>' attribute.
-	 * @see #setSource(Boolean)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getChildAssociation_Source()
-	 * @model unique="false"
-	 * @generated
-	 */
-	Boolean getSource();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getSource <em>Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' attribute.
-	 * @see #getSource()
-	 * @generated
-	 */
-	void setSource(Boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Source Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Source Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Name</em>' attribute.
-	 * @see #setSourceName(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getChildAssociation_SourceName()
-	 * @model unique="false"
-	 * @generated
-	 */
-	String getSourceName();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getSourceName <em>Source Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Name</em>' attribute.
-	 * @see #getSourceName()
-	 * @generated
-	 */
-	void setSourceName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Target Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Target Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Name</em>' attribute.
-	 * @see #setTargetName(String)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getChildAssociation_TargetName()
-	 * @model unique="false"
-	 * @generated
-	 */
-	String getTargetName();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ChildAssociation#getTargetName <em>Target Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Name</em>' attribute.
-	 * @see #getTargetName()
-	 * @generated
-	 */
-	void setTargetName(String value);
 
 } // ChildAssociation

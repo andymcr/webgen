@@ -73,7 +73,7 @@ helper context Website!UnitAssociation def: associationLabel() : String
 	= if not self.displayLabel.oclIsUndefined() and  self.displayLabel <> ''
 				or self.association.oclIsUndefined() then
 			self.displayLabel
-		else if self.isSourceAssociation() then
+		else if self.isSourceAssociation then
 			self.association.associationLabel()
 		else
 			self.association.associationTargetLabel()
@@ -264,7 +264,7 @@ helper context Website!Feature def: findOrmFeature(reference : Website!FeatureRe
 helper context Website!UnitAssociation def: findOrmAssociation() : ORM!Association
 	= if self.association.oclIsUndefined() then
 			OclUndefined
-		else if self.isSourceAssociation() then
+		else if self.isSourceAssociation then
 			self.association.findOrmSourceAssociation()
 		else if self.displayedOn.entities->notEmpty() then
 			self.association.findOrmTargetAssociation()
@@ -753,10 +753,6 @@ rule ChildAssociation {
 	to waf : WAF!ChildAssociation (
 		association <- website.findOrmAssociation(),
 		childFeature <- website.childFeature
-, source <- website.isSourceAssociation(),
--- sourceName <- website,
-targetName <- website.association.getTarget().name
--- parentTarget <- thisModule.findOrmEntityOrView()
 	)
 }
 

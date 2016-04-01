@@ -28,6 +28,7 @@ import java.util.List;
 public interface Service extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Serves</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy <em>Served By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Serves</em>' reference isn't clear,
@@ -37,7 +38,8 @@ public interface Service extends NamedElement {
 	 * @return the value of the '<em>Serves</em>' reference.
 	 * @see #setServes(EntityOrView)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getService_Serves()
-	 * @model required="true"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy
+	 * @model opposite="servedBy" required="true"
 	 * @generated
 	 */
 	EntityOrView getServes();

@@ -1464,6 +1464,51 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEntityOrView_Features() {
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntityOrView_AllFeatures() {
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntityOrView_Attributes() {
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntityOrView_Associations() {
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntityOrView_AllAssociations() {
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getEntityOrView_Keys() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(0);
 	}
@@ -1511,6 +1556,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EClass getEntity() {
 		return entityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntity_EntityFeatures() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1599,7 +1653,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getView_Features() {
+	public EReference getView_ViewFeatures() {
 		return (EReference)viewEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1726,7 +1780,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getEncapsulatedAssociation_Cardinality() {
-		return (EAttribute)encapsulatedAssociationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)encapsulatedAssociationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1735,7 +1789,34 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getEncapsulatedAssociation_EncapsulatedTarget() {
-		return (EReference)encapsulatedAssociationEClass.getEStructuralFeatures().get(3);
+		return (EReference)encapsulatedAssociationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEncapsulatedAssociation_IsSourceAssociation() {
+		return (EAttribute)encapsulatedAssociationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEncapsulatedAssociation_SourceEntity() {
+		return (EReference)encapsulatedAssociationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEncapsulatedAssociation_TargetEntity() {
+		return (EReference)encapsulatedAssociationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1763,15 +1844,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EAttribute getViewAssociation_Cardinality() {
 		return (EAttribute)viewAssociationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEntity_Features() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2303,6 +2375,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EReference getModelLabelAssociation_DynamicLabel() {
 		return (EReference)modelLabelAssociationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getModelLabelAssociation_IsSourceAssociation() {
+		return (EAttribute)modelLabelAssociationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3014,6 +3095,24 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EReference getUnitAssociation_Filters() {
 		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnitAssociation_IsSourceAssociation() {
+		return (EAttribute)unitAssociationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUnitAssociation_TargetEntity() {
+		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -4712,6 +4811,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__TABLE_NAME);
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__SERVED_BY);
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__LABELS);
+		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__FEATURES);
+		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__ALL_FEATURES);
+		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__ATTRIBUTES);
+		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__ASSOCIATIONS);
+		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__ALL_ASSOCIATIONS);
 
 		featureEClass = createEClass(FEATURE);
 		createEAttribute(featureEClass, FEATURE__HEADER_CLASS);
@@ -4745,9 +4849,10 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		modelLabelAssociationEClass = createEClass(MODEL_LABEL_ASSOCIATION);
 		createEReference(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__ASSOCIATION);
 		createEReference(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL);
+		createEAttribute(modelLabelAssociationEClass, MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION);
 
 		entityEClass = createEClass(ENTITY);
-		createEReference(entityEClass, ENTITY__FEATURES);
+		createEReference(entityEClass, ENTITY__ENTITY_FEATURES);
 		createEReference(entityEClass, ENTITY__ASSOCIATION_ENDS);
 
 		entityFeatureEClass = createEClass(ENTITY_FEATURE);
@@ -4815,7 +4920,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		viewEClass = createEClass(VIEW);
 		createEReference(viewEClass, VIEW__ENCAPSULATES);
-		createEReference(viewEClass, VIEW__FEATURES);
+		createEReference(viewEClass, VIEW__VIEW_FEATURES);
 
 		viewFeatureEClass = createEClass(VIEW_FEATURE);
 		createEReference(viewFeatureEClass, VIEW_FEATURE__PART_OF);
@@ -4833,8 +4938,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		encapsulatedAssociationEClass = createEClass(ENCAPSULATED_ASSOCIATION);
 		createEAttribute(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__NAME);
 		createEReference(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__ASSOCIATION);
-		createEAttribute(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__CARDINALITY);
 		createEReference(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET);
+		createEAttribute(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION);
+		createEAttribute(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__CARDINALITY);
+		createEReference(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY);
+		createEReference(encapsulatedAssociationEClass, ENCAPSULATED_ASSOCIATION__TARGET_ENTITY);
 
 		viewAssociationEClass = createEClass(VIEW_ASSOCIATION);
 		createEReference(viewAssociationEClass, VIEW_ASSOCIATION__OPPOSITE);
@@ -4978,6 +5086,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__VALUE_DISPLAY);
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__SELECTION);
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__FILTERS);
+		createEAttribute(unitAssociationEClass, UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION);
+		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__TARGET_ENTITY);
 
 		childFeatureEClass = createEClass(CHILD_FEATURE);
 
@@ -5353,8 +5463,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(entityOrViewEClass, EntityOrView.class, "EntityOrView", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntityOrView_Keys(), this.getFeature(), null, "keys", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityOrView_TableName(), ecorePackage.getEString(), "tableName", null, 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntityOrView_ServedBy(), this.getService(), null, "servedBy", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityOrView_ServedBy(), this.getService(), this.getService_Serves(), "servedBy", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityOrView_Labels(), this.getModelLabel(), this.getModelLabel_LabelFor(), "labels", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityOrView_Features(), this.getFeature(), null, "features", null, 0, -1, EntityOrView.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityOrView_AllFeatures(), this.getFeature(), null, "allFeatures", null, 0, -1, EntityOrView.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityOrView_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, EntityOrView.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityOrView_Associations(), this.getAssociation(), null, "associations", null, 0, -1, EntityOrView.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityOrView_AllAssociations(), this.getAssociation(), null, "allAssociations", null, 0, -1, EntityOrView.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureEClass, Feature.class, "Feature", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFeature_HeaderClass(), ecorePackage.getEString(), "headerClass", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5388,13 +5503,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(modelLabelAssociationEClass, ModelLabelAssociation.class, "ModelLabelAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModelLabelAssociation_Association(), this.getEntityAssociation(), null, "association", null, 1, 1, ModelLabelAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModelLabelAssociation_DynamicLabel(), this.getModelLabel(), null, "dynamicLabel", null, 0, 1, ModelLabelAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelLabelAssociation_IsSourceAssociation(), ecorePackage.getEBoolean(), "isSourceAssociation", null, 1, 1, ModelLabelAssociation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntity_Features(), this.getEntityFeature(), this.getEntityFeature_PartOf(), "features", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_EntityFeatures(), this.getEntityFeature(), this.getEntityFeature_PartOf(), "entityFeatures", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_AssociationEnds(), this.getEntityAssociation(), this.getEntityAssociation_TargetEntity(), "associationEnds", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityFeatureEClass, EntityFeature.class, "EntityFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntityFeature_PartOf(), this.getEntity(), this.getEntity_Features(), "partOf", null, 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityFeature_PartOf(), this.getEntity(), this.getEntity_EntityFeatures(), "partOf", null, 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_Cardinality(), this.getCardinality(), "cardinality", "Optional", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_Unique(), ecorePackage.getEBoolean(), "unique", "true", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_Ordered(), ecorePackage.getEBoolean(), "ordered", "false", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5458,10 +5574,10 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getView_Encapsulates(), this.getEntityOrView(), null, "encapsulates", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getView_Features(), this.getViewFeature(), this.getViewFeature_PartOf(), "features", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_ViewFeatures(), this.getViewFeature(), this.getViewFeature_PartOf(), "viewFeatures", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewFeatureEClass, ViewFeature.class, "ViewFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getViewFeature_PartOf(), this.getView(), this.getView_Features(), "partOf", null, 1, 1, ViewFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getViewFeature_PartOf(), this.getView(), this.getView_ViewFeatures(), "partOf", null, 1, 1, ViewFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(encapsulatedFeatureEClass, EncapsulatedFeature.class, "EncapsulatedFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEncapsulatedFeature_DisplayLabel(), ecorePackage.getEString(), "displayLabel", null, 0, 1, EncapsulatedFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5474,17 +5590,20 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getEncapsulatedAttribute_Cardinality(), this.getCardinality(), "cardinality", null, 1, 1, EncapsulatedAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(encapsulatedAssociationEClass, EncapsulatedAssociation.class, "EncapsulatedAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEncapsulatedAssociation_Name(), ecorePackage.getEString(), "name", null, 1, 1, EncapsulatedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEncapsulatedAssociation_Name(), ecorePackage.getEString(), "name", null, 1, 1, EncapsulatedAssociation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getEncapsulatedAssociation_Association(), this.getAssociation(), this.getAssociation_EncapsulatedBy(), "association", null, 1, 1, EncapsulatedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEncapsulatedAssociation_Cardinality(), this.getCardinality(), "cardinality", null, 1, 1, EncapsulatedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEncapsulatedAssociation_EncapsulatedTarget(), this.getEncapsulatedAssociation(), null, "encapsulatedTarget", null, 0, 1, EncapsulatedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEncapsulatedAssociation_IsSourceAssociation(), ecorePackage.getEBoolean(), "isSourceAssociation", null, 1, 1, EncapsulatedAssociation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEncapsulatedAssociation_Cardinality(), this.getCardinality(), "cardinality", null, 1, 1, EncapsulatedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEncapsulatedAssociation_SourceEntity(), this.getEntity(), null, "sourceEntity", null, 1, 1, EncapsulatedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEncapsulatedAssociation_TargetEntity(), this.getEntity(), null, "targetEntity", null, 1, 1, EncapsulatedAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewAssociationEClass, ViewAssociation.class, "ViewAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getViewAssociation_Opposite(), this.getEncapsulatedAssociation(), null, "opposite", null, 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getViewAssociation_Cardinality(), this.getCardinality(), "cardinality", "Optional", 1, 1, ViewAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getService_Serves(), this.getEntityOrView(), null, "serves", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Serves(), this.getEntityOrView(), this.getEntityOrView_ServedBy(), "serves", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Selections(), this.getSelection(), this.getSelection_UsedBy(), "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionEClass, Selection.class, "Selection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -5621,6 +5740,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getUnitAssociation_ValueDisplay(), this.getLabel(), null, "valueDisplay", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_Selection(), this.getSelection(), null, "selection", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_Filters(), this.getLabel(), null, "filters", null, 0, -1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnitAssociation_IsSourceAssociation(), ecorePackage.getEBoolean(), "isSourceAssociation", null, 1, 1, UnitAssociation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getUnitAssociation_TargetEntity(), this.getEntityOrView(), null, "targetEntity", null, 0, 1, UnitAssociation.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(childFeatureEClass, ChildFeature.class, "ChildFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -5860,10 +5981,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "constraints", "nameNeedsAtLeastOneCharacter"
 		   });	
 		addAnnotation
+		  (entityOrViewEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "keysFromLocalFeatures"
+		   });	
+		addAnnotation
 		  (entityEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "featureNameUniqueWithinEntity keysFromLocalFeatures"
+			 "constraints", "featureNameUniqueWithinEntity"
 		   });	
 		addAnnotation
 		  (associationWithoutContainmentEClass, 
@@ -5947,7 +6074,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (localAuthenticationSystemEClass, 
 		   source, 
 		   new String[] {
-			 "authenticationKeyFromUser", "not user.oclIsUndefined() implies\r\n\tlet features : Collection(Feature)\r\n\t\t= if user.oclIsTypeOf(Entity) then\r\n\t\t\t\tuser.oclAsType(Entity).features\r\n\t\t\telse\r\n\t\t\t\tuser.oclAsType(View).features\r\n\t\t\tendif\r\n\tin features->includes(userAuthenticationKey)",
+			 "authenticationKeyFromUser", "not user.oclIsUndefined() and not userAuthenticationKey.oclIsUndefined() implies\r\n\tuser.features->includes(userAuthenticationKey)",
 			 "authenticationKeyRequiredAttribute", "not userAuthenticationKey.oclIsUndefined() implies\r\n\tif userAuthenticationKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\tuserAuthenticationKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n\telse\r\n\t\tuserAuthenticationKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n\tendif",
 			 "captchaRequiresKeys", "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()"
 		   });	
@@ -5958,11 +6085,52 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "nameNeedsAtLeastOneCharacter", "not name.oclIsUndefined() implies name.size() > 0"
 		   });	
 		addAnnotation
+		  (entityOrViewEClass, 
+		   source, 
+		   new String[] {
+			 "keysFromLocalFeatures", "allFeatures->includesAll(keys)"
+		   });	
+		addAnnotation
+		  (getEntityOrView_Features(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif"
+		   });	
+		addAnnotation
+		  (getEntityOrView_AllFeatures(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures->union(self.oclAsType(Entity).associationEnds)->asOrderedSet()\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif"
+		   });	
+		addAnnotation
+		  (getEntityOrView_Attributes(), 
+		   source, 
+		   new String[] {
+			 "derivation", "features->select(f | f.oclIsKindOf(Attribute)).oclAsType(Attribute)->asOrderedSet()"
+		   });	
+		addAnnotation
+		  (getEntityOrView_Associations(), 
+		   source, 
+		   new String[] {
+			 "derivation", "features->select(f | f.oclIsKindOf(Association)).oclAsType(Association)->asOrderedSet()"
+		   });	
+		addAnnotation
+		  (getEntityOrView_AllAssociations(), 
+		   source, 
+		   new String[] {
+			 "derivation", "allFeatures->select(f | f.oclIsKindOf(Association)).oclAsType(Association)->asOrderedSet()"
+		   });	
+		addAnnotation
+		  (getModelLabelAssociation_IsSourceAssociation(), 
+		   source, 
+		   new String[] {
+			 "derivation", "not association.oclIsUndefined() implies\r\n\tpartOf.features->includes(association)"
+		   });	
+		addAnnotation
 		  (entityEClass, 
 		   source, 
 		   new String[] {
-			 "featureNameUniqueWithinEntity", "features->isUnique(name)",
-			 "keysFromLocalFeatures", "features->union(associationEnds)->includesAll(keys)"
+			 "featureNameUniqueWithinEntity", "entityFeatures->isUnique(f | f.name)"
 		   });	
 		addAnnotation
 		  (associationWithoutContainmentEClass, 
@@ -5986,13 +6154,31 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getEncapsulatedAssociation_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if not self.alias.oclIsUndefined() then\r\n\tif self.alias <> \'\' then\r\n\t\tself.alias\r\n\telse\r\n\t\t\'empty alias\'\r\n\tendif\r\nelse if association.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).name\r\n\telse\r\n\tlet parentFeatures : Sequence(Feature)\r\n\t\t= self.partOf.encapsulates->collect(\r\n\t\t\teov | if eov.oclIsTypeOf(Entity) then\r\n\t\t\t\t\teov.oclAsType(Entity).features\r\n\t\t\t\telse\r\n\t\t\t\t\teov.oclAsType(View).features\r\n\t\t\t\tendif)\r\n\t\tin if parentFeatures->includes(self.association) then\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\tendif\r\n\t\telse\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).targetFeatureName\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).opposite.name\r\n\t\t\tendif\r\n\t\tendif\r\n\tendif\r\nendif endif"
+			 "derivation", "if not alias.oclIsUndefined() then\r\n\tif alias <> \'\' then\r\n\t\talias\r\n\telse\r\n\t\t\'empty alias\'\r\n\tendif\r\nelse if association.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).name\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\tendif\r\n\t\telse\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).targetFeatureName\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).opposite.name\r\n\t\t\tendif\r\n\t\tendif\r\n\tendif\r\nendif endif"
+		   });	
+		addAnnotation
+		  (getEncapsulatedAssociation_IsSourceAssociation(), 
+		   source, 
+		   new String[] {
+			 "derivation", "not association.oclIsUndefined() implies\r\n\tpartOf.encapsulates->collect(eov | eov.features)->includes(association)"
 		   });	
 		addAnnotation
 		  (getEncapsulatedAssociation_Cardinality(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\tCardinality::Optional\r\nelse\r\n\tlet isSourceAssociation : Boolean\r\n\t\t= partOf.encapsulates->collect(eov | if eov.oclIsTypeOf(Entity) then eov.oclAsType(Entity).features else eov.oclAsType(View).features endif)->includes(association)\r\n\t\tin if association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\t\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality\r\n\t\t\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\t\t\tif isSourceAssociation then\r\n\t\t\t\t\tassociation.oclAsType(ViewAssociation).cardinality\r\n\t\t\t\telse\r\n\t\t\t\t\tassociation.oclAsType(ViewAssociation).opposite.cardinality\r\n\t\t\t\tendif\r\n\t\t\telse\r\n\t\t\t\tif isSourceAssociation then\r\n\t\t\t\t\tassociation.oclAsType(EntityAssociation).cardinality\r\n\t\t\t\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\t\t\tCardinality::Required\r\n\t\t\t\telse\r\n\t\t\t\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality \r\n\t\t\t\tendif endif\r\n\t\t\tendif endif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\tCardinality::Optional\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).cardinality\r\n\telse if association.oclIsTypeOf(ViewAssociation) then\r\n\t\tif isSourceAssociation then\r\n\t\t\tassociation.oclAsType(ViewAssociation).cardinality\r\n\t\telse\r\n\t\t\tassociation.oclAsType(ViewAssociation).opposite.cardinality\r\n\t\tendif\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tassociation.oclAsType(EntityAssociation).cardinality\r\n\t\telse if association.oclIsTypeOf(AssociationWithContainment) then\r\n\t\t\tCardinality::Required\r\n\t\telse\r\n\t\t\tassociation.oclAsType(AssociationWithoutContainment).targetCardinality \r\n\t\tendif endif\r\n\tendif endif\r\nendif"
+		   });	
+		addAnnotation
+		  (getEncapsulatedAssociation_SourceEntity(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity \r\n\t\tendif\r\n\tendif\r\nendif"
+		   });	
+		addAnnotation
+		  (getEncapsulatedAssociation_TargetEntity(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity \r\n\t\telse\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (pageEClass, 
@@ -6013,14 +6199,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "entriesMustBeFromSource", "true",
 			 "onlyIncludeFeaturesOnce", "true",
 			 "mustSelectSingleton", "not selection.oclIsUndefined() implies selection.limit = 1",
-			 "titleFromEntityOrView", "not title.oclIsUndefined() implies\r\n\tif entityOrView.oclIsUndefined() then\r\n \t\tfalse\r\n\telse\r\n\t\tif entityOrView.oclIsTypeOf(Entity) then\r\n\t\t\tentityOrView.oclAsType(Entity).features->includes(title)\r\n\t\telse\r\n\t\t\tentityOrView.oclAsType(View).features->includes(title)\r\n\t\tendif\r\n\tendif",
+			 "titleFromEntityOrView", "not title.oclIsUndefined() and not entityOrView.oclIsUndefined() implies\r\n\tentityOrView.features->includes(title)",
 			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies\r\n\tif title.oclIsKindOf(EntityFeature) then\r\n\t\ttitle.oclAsType(EntityFeature).cardinality <> Cardinality::Many\r\n\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\telse if title.oclIsKindOf(EncapsulatedAssociation) then\r\n\t\ttitle.oclAsType(EncapsulatedAssociation).cardinality <> Cardinality::Many\r\n\telse\r\n\t\tfalse\r\n\tendif endif endif"
 		   });	
 		addAnnotation
 		  (dynamicUnitEClass, 
 		   source, 
 		   new String[] {
-			 "featuresMustBeFromEntities", "let eovFeatures : Collection(Feature)\r\n\t= self.entities->collect(\r\n\t\teov | if eov.oclIsTypeOf(Entity) then\r\n\t\t\t\teov.oclAsType(Entity).features->union(eov.oclAsType(Entity).associationEnds)\r\n\t\t\telse\r\n\t\t\t\teov.oclAsType(View).features\r\n\t\t\tendif)\r\n\tin displayFields\r\n\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t->select(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n\t\t\telse\r\n\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n\t\t\tendif)\r\n\t\t->forAll(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n\t\t\telse\r\n\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n\t\t\tendif)"
+			 "featuresMustBeFromEntities", "let eovFeatures : Collection(Feature)\r\n\t= self.entities->collect(eov | eov.allFeatures)\r\n\tin displayFields\r\n\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n\t\t->select(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n\t\t\telse\r\n\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n\t\t\tendif)\r\n\t\t->forAll(f | \r\n\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n\t\t\telse\r\n\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n\t\t\tendif)"
 		   });	
 		addAnnotation
 		  (unitFeatureEClass, 
@@ -6039,13 +6225,25 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (unitAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "selectionValidChoice", "not selection.oclIsUndefined() implies\r\n\tdisplayedOn.entities->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)"
+			 "selectionValidChoice", "targetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)"
 		   });	
 		addAnnotation
 		  (getUnitAssociation_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).name\r\n\telse\r\n\tlet parentFeatures : Sequence(Feature)\r\n\t\t= self.displayedOn.entities->collect(\r\n\t\t\teov | if eov.oclIsTypeOf(Entity) then\r\n\t\t\t\t\teov.oclAsType(Entity).features\r\n\t\t\t\telse\r\n\t\t\t\t\teov.oclAsType(View).features\r\n\t\t\t\tendif)\r\n\t\tin if parentFeatures->includes(self.association) then\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\tendif\r\n\t\telse\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).targetFeatureName\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).opposite.name\r\n\t\t\tendif\r\n\t\tendif\r\n\tendif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).name\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).name\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).name\r\n\t\t\tendif\r\n\t\telse\r\n\t\t\tif self.association.oclIsKindOf(EntityAssociation) then\r\n\t\t\t\tself.association.oclAsType(EntityAssociation).targetFeatureName\r\n\t\t\telse\r\n\t\t\t\tassociation.oclAsType(ViewAssociation).opposite.name\r\n\t\t\tendif\r\n\t\tendif\r\n\tendif\r\nendif"
+		   });	
+		addAnnotation
+		  (getUnitAssociation_IsSourceAssociation(), 
+		   source, 
+		   new String[] {
+			 "derivation", "not association.oclIsUndefined() implies\r\n\tdisplayedOn.entities->collect(eov | eov.associations)->includes(association)"
+		   });	
+		addAnnotation
+		  (getUnitAssociation_TargetEntity(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (getChildAttribute_Name(), 

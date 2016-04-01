@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
@@ -40,6 +41,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getFilters <em>Filters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#isIsSourceAssociation <em>Is Source Association</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  * </ul>
  *
  * @generated
@@ -114,6 +117,26 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @ordered
 	 */
 	protected EList<Label> filters;
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsSourceAssociation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.UNIT_ASSOCIATION__TARGET_ENTITY).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -329,6 +352,33 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsSourceAssociation() {
+		return (Boolean)IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getTargetEntity() {
+		return (EntityOrView)TARGET_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetTargetEntity() {
+		return (EntityOrView)TARGET_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -380,6 +430,11 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return basicGetSelection();
 			case WebsitePackage.UNIT_ASSOCIATION__FILTERS:
 				return getFilters();
+			case WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+				return isIsSourceAssociation();
+			case WebsitePackage.UNIT_ASSOCIATION__TARGET_ENTITY:
+				if (resolve) return getTargetEntity();
+				return basicGetTargetEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -469,6 +524,10 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return selection != null;
 			case WebsitePackage.UNIT_ASSOCIATION__FILTERS:
 				return filters != null && !filters.isEmpty();
+			case WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+				return IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.UNIT_ASSOCIATION__TARGET_ENTITY:
+				return TARGET_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

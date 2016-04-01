@@ -378,7 +378,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPartOf != null)
-				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.ENTITY__FEATURES, Entity.class, msgs);
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.ENTITY__ENTITY_FEATURES, Entity.class, msgs);
 			msgs = basicSetPartOf(newPartOf, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -425,7 +425,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case WebsitePackage.ENTITY_FEATURE__PART_OF:
-				return eInternalContainer().eInverseRemove(this, WebsitePackage.ENTITY__FEATURES, Entity.class, msgs);
+				return eInternalContainer().eInverseRemove(this, WebsitePackage.ENTITY__ENTITY_FEATURES, Entity.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

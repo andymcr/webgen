@@ -208,7 +208,7 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPartOf != null)
-				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.VIEW__FEATURES, View.class, msgs);
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.VIEW__VIEW_FEATURES, View.class, msgs);
 			msgs = basicSetPartOf(newPartOf, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -255,7 +255,7 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
-				return eInternalContainer().eInverseRemove(this, WebsitePackage.VIEW__FEATURES, View.class, msgs);
+				return eInternalContainer().eInverseRemove(this, WebsitePackage.VIEW__VIEW_FEATURES, View.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

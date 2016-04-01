@@ -34,7 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getFeatures <em>Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getEntityFeatures <em>Entity Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl#getAssociationEnds <em>Association Ends</em>}</li>
  * </ul>
  *
@@ -42,14 +42,14 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  */
 public class EntityImpl extends EntityOrViewImpl implements Entity {
 	/**
-	 * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
+	 * The cached value of the '{@link #getEntityFeatures() <em>Entity Features</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFeatures()
+	 * @see #getEntityFeatures()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntityFeature> features;
+	protected EList<EntityFeature> entityFeatures;
 
 	/**
 	 * The cached value of the '{@link #getAssociationEnds() <em>Association Ends</em>}' reference list.
@@ -85,24 +85,11 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<EntityFeature> getFeatures() {
-		if (features == null) {
-			features = new EObjectContainmentWithInverseEList<EntityFeature>(EntityFeature.class, this, WebsitePackage.ENTITY__FEATURES, WebsitePackage.ENTITY_FEATURE__PART_OF);
+	public List<EntityFeature> getEntityFeatures() {
+		if (entityFeatures == null) {
+			entityFeatures = new EObjectContainmentWithInverseEList<EntityFeature>(EntityFeature.class, this, WebsitePackage.ENTITY__ENTITY_FEATURES, WebsitePackage.ENTITY_FEATURE__PART_OF);
 		}
-		return features;
-	}
-
-	/**
-	 * @generated NOT
-	 */
-	public List<EntityFeature> getAllFeatures() {
-		final List<EntityFeature> features = new LinkedList<EntityFeature>(getFeatures());
-		for (EntityAssociation end : getAssociationEnds()) {
-			if (end.getBidirectional()) {
-				features.add(end);
-			}
-		}
-		return features;
+		return entityFeatures;
 	}
 
 	/**
@@ -126,8 +113,8 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY__FEATURES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFeatures()).basicAdd(otherEnd, msgs);
+			case WebsitePackage.ENTITY__ENTITY_FEATURES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEntityFeatures()).basicAdd(otherEnd, msgs);
 			case WebsitePackage.ENTITY__ASSOCIATION_ENDS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAssociationEnds()).basicAdd(otherEnd, msgs);
 		}
@@ -142,8 +129,8 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY__FEATURES:
-				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.ENTITY__ENTITY_FEATURES:
+				return ((InternalEList<?>)getEntityFeatures()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.ENTITY__ASSOCIATION_ENDS:
 				return ((InternalEList<?>)getAssociationEnds()).basicRemove(otherEnd, msgs);
 		}
@@ -158,8 +145,8 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY__FEATURES:
-				return getFeatures();
+			case WebsitePackage.ENTITY__ENTITY_FEATURES:
+				return getEntityFeatures();
 			case WebsitePackage.ENTITY__ASSOCIATION_ENDS:
 				return getAssociationEnds();
 		}
@@ -175,9 +162,9 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY__FEATURES:
-				getFeatures().clear();
-				getFeatures().addAll((Collection<? extends EntityFeature>)newValue);
+			case WebsitePackage.ENTITY__ENTITY_FEATURES:
+				getEntityFeatures().clear();
+				getEntityFeatures().addAll((Collection<? extends EntityFeature>)newValue);
 				return;
 			case WebsitePackage.ENTITY__ASSOCIATION_ENDS:
 				getAssociationEnds().clear();
@@ -195,8 +182,8 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY__FEATURES:
-				getFeatures().clear();
+			case WebsitePackage.ENTITY__ENTITY_FEATURES:
+				getEntityFeatures().clear();
 				return;
 			case WebsitePackage.ENTITY__ASSOCIATION_ENDS:
 				getAssociationEnds().clear();
@@ -213,8 +200,8 @@ public class EntityImpl extends EntityOrViewImpl implements Entity {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY__FEATURES:
-				return features != null && !features.isEmpty();
+			case WebsitePackage.ENTITY__ENTITY_FEATURES:
+				return entityFeatures != null && !entityFeatures.isEmpty();
 			case WebsitePackage.ENTITY__ASSOCIATION_ENDS:
 				return associationEnds != null && !associationEnds.isEmpty();
 		}

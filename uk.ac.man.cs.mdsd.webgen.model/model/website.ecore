@@ -117,7 +117,7 @@
       <details key="constraints" value="authenticationKeyFromUser authenticationKeyRequiredAttribute captchaRequiresKeys"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="authenticationKeyFromUser" value="not user.oclIsUndefined() implies&#xD;&#xA;&#x9;let features : Collection(Feature)&#xD;&#xA;&#x9;&#x9;= if user.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;user.oclAsType(Entity).features&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;user.oclAsType(View).features&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;in features->includes(userAuthenticationKey)"/>
+      <details key="authenticationKeyFromUser" value="not user.oclIsUndefined() and not userAuthenticationKey.oclIsUndefined() implies&#xD;&#xA;&#x9;user.features->includes(userAuthenticationKey)"/>
       <details key="authenticationKeyRequiredAttribute" value="not userAuthenticationKey.oclIsUndefined() implies&#xD;&#xA;&#x9;if userAuthenticationKey.oclIsTypeOf(EncapsulatedAttribute) then&#xD;&#xA;&#x9;&#x9;userAuthenticationKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;userAuthenticationKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required&#xD;&#xA;&#x9;endif"/>
       <details key="captchaRequiresKeys" value="useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()"/>
     </eAnnotations>
@@ -183,12 +183,50 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral" eSuperTypes="#//NamedDisplayElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="EntityOrView" abstract="true" eSuperTypes="#//Classifier">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="keysFromLocalFeatures"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="keysFromLocalFeatures" value="allFeatures->includesAll(keys)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="keys" upperBound="-1" eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="servedBy" upperBound="-1"
-        eType="#//Service"/>
+        eType="#//Service" eOpposite="#//Service/serves"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
         eType="#//ModelLabel" containment="true" eOpposite="#//ModelLabel/labelFor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//Feature" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if self.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;self.oclAsType(Entity).entityFeatures&#xD;&#xA;else&#xD;&#xA;&#x9;self.oclAsType(View).viewFeatures&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allFeatures" upperBound="-1"
+        eType="#//Feature" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if self.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;self.oclAsType(Entity).entityFeatures->union(self.oclAsType(Entity).associationEnds)->asOrderedSet()&#xD;&#xA;else&#xD;&#xA;&#x9;self.oclAsType(View).viewFeatures&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="features->select(f | f.oclIsKindOf(Attribute)).oclAsType(Attribute)->asOrderedSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associations" upperBound="-1"
+        eType="#//Association" changeable="false" volatile="true" transient="true"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="features->select(f | f.oclIsKindOf(Association)).oclAsType(Association)->asOrderedSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allAssociations" upperBound="-1"
+        eType="#//Association" changeable="false" volatile="true" transient="true"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="allFeatures->select(f | f.oclIsKindOf(Association)).oclAsType(Association)->asOrderedSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -237,16 +275,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="association" lowerBound="1"
         eType="#//EntityAssociation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicLabel" eType="#//ModelLabel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSourceAssociation" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="not association.oclIsUndefined() implies&#xD;&#xA;&#x9;partOf.features->includes(association)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//EntityOrView">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="featureNameUniqueWithinEntity keysFromLocalFeatures"/>
+      <details key="constraints" value="featureNameUniqueWithinEntity"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="featureNameUniqueWithinEntity" value="features->isUnique(name)"/>
-      <details key="keysFromLocalFeatures" value="features->union(associationEnds)->includesAll(keys)"/>
+      <details key="featureNameUniqueWithinEntity" value="entityFeatures->isUnique(f | f.name)"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityFeatures" upperBound="-1"
         eType="#//EntityFeature" containment="true" eOpposite="#//EntityFeature/partOf"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="associationEnds" upperBound="-1"
         eType="#//EntityAssociation" eOpposite="#//EntityAssociation/targetEntity"/>
@@ -258,7 +302,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntityFeature" abstract="true" eSuperTypes="#//NamedDisplayElement #//Feature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" lowerBound="1"
-        eType="#//Entity" eOpposite="#//Entity/features"/>
+        eType="#//Entity" eOpposite="#//Entity/entityFeatures"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" lowerBound="1"
         eType="#//Cardinality" defaultValueLiteral="Optional"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unique" lowerBound="1"
@@ -352,12 +396,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="View" eSuperTypes="#//EntityOrView">
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" upperBound="-1"
         eType="#//EntityOrView"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="viewFeatures" upperBound="-1"
         eType="#//ViewFeature" containment="true" eOpposite="#//ViewFeature/partOf"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewFeature" abstract="true" eSuperTypes="#//Feature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" lowerBound="1"
-        eType="#//View" eOpposite="#//View/features"/>
+        eType="#//View" eOpposite="#//View/viewFeatures"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EncapsulatedFeature" eSuperTypes="#//ViewFeature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayLabel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -381,20 +425,40 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EncapsulatedAssociation" eSuperTypes="#//EncapsulatedFeature #//Association">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if not self.alias.oclIsUndefined() then&#xD;&#xA;&#x9;if self.alias &lt;> '' then&#xD;&#xA;&#x9;&#x9;self.alias&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'empty alias'&#xD;&#xA;&#x9;endif&#xD;&#xA;else if association.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;if association.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;let parentFeatures : Sequence(Feature)&#xD;&#xA;&#x9;&#x9;= self.partOf.encapsulates->collect(&#xD;&#xA;&#x9;&#x9;&#x9;eov | if eov.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eov.oclAsType(Entity).features&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eov.oclAsType(View).features&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;&#x9;in if parentFeatures->includes(self.association) then&#xD;&#xA;&#x9;&#x9;&#x9;if self.association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;self.association.oclAsType(EntityAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;if self.association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;self.association.oclAsType(EntityAssociation).targetFeatureName&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).opposite.name&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;endif endif"/>
+        <details key="derivation" value="if not alias.oclIsUndefined() then&#xD;&#xA;&#x9;if alias &lt;> '' then&#xD;&#xA;&#x9;&#x9;alias&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'empty alias'&#xD;&#xA;&#x9;endif&#xD;&#xA;else if association.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;if association.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if isSourceAssociation then&#xD;&#xA;&#x9;&#x9;&#x9;if self.association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;self.association.oclAsType(EntityAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;if self.association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;self.association.oclAsType(EntityAssociation).targetFeatureName&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).opposite.name&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;endif endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="association" lowerBound="1"
         eType="#//Association" eOpposite="#//Association/encapsulatedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulatedTarget" eType="#//EncapsulatedAssociation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSourceAssociation" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="not association.oclIsUndefined() implies&#xD;&#xA;&#x9;partOf.encapsulates->collect(eov | eov.features)->includes(association)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" lowerBound="1"
         eType="#//Cardinality">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if association.oclIsUndefined() then&#xD;&#xA;&#x9;Cardinality::Optional&#xD;&#xA;else&#xD;&#xA;&#x9;let isSourceAssociation : Boolean&#xD;&#xA;&#x9;&#x9;= partOf.encapsulates->collect(eov | if eov.oclIsTypeOf(Entity) then eov.oclAsType(Entity).features else eov.oclAsType(View).features endif)->includes(association)&#xD;&#xA;&#x9;&#x9;in if association.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).cardinality&#xD;&#xA;&#x9;&#x9;&#x9;else if association.oclIsTypeOf(ViewAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if isSourceAssociation then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).cardinality&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).opposite.cardinality&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if isSourceAssociation then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).cardinality&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else if association.oclIsTypeOf(AssociationWithContainment) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Cardinality::Required&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;association.oclAsType(AssociationWithoutContainment).targetCardinality &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif endif&#xD;&#xA;&#x9;&#x9;&#x9;endif endif&#xD;&#xA;endif"/>
+        <details key="derivation" value="if association.oclIsUndefined() then&#xD;&#xA;&#x9;Cardinality::Optional&#xD;&#xA;else&#xD;&#xA;&#x9;if association.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).cardinality&#xD;&#xA;&#x9;else if association.oclIsTypeOf(ViewAssociation) then&#xD;&#xA;&#x9;&#x9;if isSourceAssociation then&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).cardinality&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).opposite.cardinality&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if isSourceAssociation then&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).cardinality&#xD;&#xA;&#x9;&#x9;else if association.oclIsTypeOf(AssociationWithContainment) then&#xD;&#xA;&#x9;&#x9;&#x9;Cardinality::Required&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(AssociationWithoutContainment).targetCardinality &#xD;&#xA;&#x9;&#x9;endif endif&#xD;&#xA;&#x9;endif endif&#xD;&#xA;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulatedTarget" eType="#//EncapsulatedAssociation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEntity" lowerBound="1"
+        eType="#//Entity">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if association.oclIsUndefined() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;if association.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).sourceEntity&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if isSourceAssociation then&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).partOf&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).targetEntity &#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetEntity" lowerBound="1"
+        eType="#//Entity">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if association.oclIsUndefined() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;if association.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).targetEntity&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if isSourceAssociation then&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).targetEntity &#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).partOf&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewAssociation" eSuperTypes="#//NamedDisplayElement #//ViewFeature #//Association">
     <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" lowerBound="1"
@@ -404,7 +468,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="serves" lowerBound="1"
-        eType="#//EntityOrView"/>
+        eType="#//EntityOrView" eOpposite="#//EntityOrView/servedBy"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selections" upperBound="-1"
         eType="#//Selection" containment="true" eOpposite="#//Selection/usedBy"/>
   </eClassifiers>
@@ -500,7 +564,7 @@
       <details key="entriesMustBeFromSource" value="true"/>
       <details key="onlyIncludeFeaturesOnce" value="true"/>
       <details key="mustSelectSingleton" value="not selection.oclIsUndefined() implies selection.limit = 1"/>
-      <details key="titleFromEntityOrView" value="not title.oclIsUndefined() implies&#xD;&#xA;&#x9;if entityOrView.oclIsUndefined() then&#xD;&#xA; &#x9;&#x9;false&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if entityOrView.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;&#x9;&#x9;entityOrView.oclAsType(Entity).features->includes(title)&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;entityOrView.oclAsType(View).features->includes(title)&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif"/>
+      <details key="titleFromEntityOrView" value="not title.oclIsUndefined() and not entityOrView.oclIsUndefined() implies&#xD;&#xA;&#x9;entityOrView.features->includes(title)"/>
       <details key="canOnlyTitleWithSingletons" value="not title.oclIsUndefined() implies&#xD;&#xA;&#x9;if title.oclIsKindOf(EntityFeature) then&#xD;&#xA;&#x9;&#x9;title.oclAsType(EntityFeature).cardinality &lt;> Cardinality::Many&#xD;&#xA;&#x9;else if title.oclIsKindOf(EncapsulatedAttribute) then&#xD;&#xA;&#x9;&#x9;title.oclAsType(EncapsulatedAttribute).cardinality &lt;> Cardinality::Many&#xD;&#xA;&#x9;else if title.oclIsKindOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;title.oclAsType(EncapsulatedAssociation).cardinality &lt;> Cardinality::Many&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;false&#xD;&#xA;&#x9;endif endif endif"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entityOrView" lowerBound="1"
@@ -572,7 +636,7 @@
       <details key="constraints" value="featuresMustBeFromEntities"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="featuresMustBeFromEntities" value="let eovFeatures : Collection(Feature)&#xD;&#xA;&#x9;= self.entities->collect(&#xD;&#xA;&#x9;&#x9;eov | if eov.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;eov.oclAsType(Entity).features->union(eov.oclAsType(Entity).associationEnds)&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;eov.oclAsType(View).features&#xD;&#xA;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;in displayFields&#xD;&#xA;&#x9;&#x9;->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)&#xD;&#xA;&#x9;&#x9;->select(f | &#xD;&#xA;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;not f.oclAsType(UnitElement).attribute.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;not f.oclAsType(UnitAssociation).association.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;&#x9;->forAll(f | &#xD;&#xA;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;eovFeatures->includes(f.oclAsType(UnitElement).attribute)&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;eovFeatures->includes(f.oclAsType(UnitAssociation).association)&#xD;&#xA;&#x9;&#x9;&#x9;endif)"/>
+      <details key="featuresMustBeFromEntities" value="let eovFeatures : Collection(Feature)&#xD;&#xA;&#x9;= self.entities->collect(eov | eov.allFeatures)&#xD;&#xA;&#x9;in displayFields&#xD;&#xA;&#x9;&#x9;->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)&#xD;&#xA;&#x9;&#x9;->select(f | &#xD;&#xA;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;not f.oclAsType(UnitElement).attribute.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;not f.oclAsType(UnitAssociation).association.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;&#x9;->forAll(f | &#xD;&#xA;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;eovFeatures->includes(f.oclAsType(UnitElement).attribute)&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;eovFeatures->includes(f.oclAsType(UnitAssociation).association)&#xD;&#xA;&#x9;&#x9;&#x9;endif)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" lowerBound="1"
         upperBound="-1" eType="#//EntityOrView"/>
@@ -660,14 +724,14 @@
       <details key="constraints" value="selectionValidChoice"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="selectionValidChoice" value="not selection.oclIsUndefined() implies&#xD;&#xA;&#x9;displayedOn.entities->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)"/>
+      <details key="selectionValidChoice" value="targetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="association" ordered="false"
         lowerBound="1" eType="#//Association"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if association.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;if association.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;let parentFeatures : Sequence(Feature)&#xD;&#xA;&#x9;&#x9;= self.displayedOn.entities->collect(&#xD;&#xA;&#x9;&#x9;&#x9;eov | if eov.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eov.oclAsType(Entity).features&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eov.oclAsType(View).features&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;&#x9;in if parentFeatures->includes(self.association) then&#xD;&#xA;&#x9;&#x9;&#x9;if self.association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;self.association.oclAsType(EntityAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;if self.association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;self.association.oclAsType(EntityAssociation).targetFeatureName&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).opposite.name&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+        <details key="derivation" value="if association.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else&#xD;&#xA;&#x9;if association.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if isSourceAssociation then&#xD;&#xA;&#x9;&#x9;&#x9;if self.association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;self.association.oclAsType(EntityAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).name&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;if self.association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;self.association.oclAsType(EntityAssociation).targetFeatureName&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;association.oclAsType(ViewAssociation).opposite.name&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//ChildFeature"
@@ -676,6 +740,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
         eType="#//Label"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSourceAssociation" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="not association.oclIsUndefined() implies&#xD;&#xA;&#x9;displayedOn.entities->collect(eov | eov.associations)->includes(association)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetEntity" eType="#//EntityOrView"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if association.oclIsUndefined() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;if isSourceAssociation then&#xD;&#xA;&#x9;&#x9;if association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).targetEntity&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).targetEntity&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if association.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(EntityAssociation).partOf&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;association.oclAsType(EncapsulatedAssociation).sourceEntity&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChildFeature" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ChildAttribute" eSuperTypes="#//ChildFeature">

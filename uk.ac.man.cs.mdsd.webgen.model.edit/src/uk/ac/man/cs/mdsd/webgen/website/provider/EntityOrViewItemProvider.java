@@ -17,9 +17,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -53,6 +51,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 
 			addKeysPropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
+			addFeaturesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,12 +74,11 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof Entity) {
-						return ((Entity) object).getAllFeatures();
-					} else if (object instanceof View) {
-						return ((View) object).getFeatures();
+					if (object instanceof EntityOrView) {
+						return ((EntityOrView) object).getAllFeatures();
 					}
-					return Collections.emptyList();
+
+					return Collections.emptySet();
 				}
 			});
 	}
@@ -104,6 +102,28 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Features feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFeaturesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_features_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_features_feature", "_UI_EntityOrView_type"),
+				 WebsitePackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
 				 null));
 	}
 

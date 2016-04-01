@@ -11,13 +11,17 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
@@ -36,6 +40,11 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getTableName <em>Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getServedBy <em>Served By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getLabels <em>Labels</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getFeatures <em>Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAllFeatures <em>All Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAssociations <em>Associations</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAllAssociations <em>All Associations</em>}</li>
  * </ul>
  *
  * @generated
@@ -92,6 +101,56 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	protected EList<ModelLabel> labels;
 
 	/**
+	 * The cached setting delegate for the '{@link #getFeatures() <em>Features</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFeatures()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate FEATURES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ENTITY_OR_VIEW__FEATURES).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getAllFeatures() <em>All Features</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllFeatures()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ALL_FEATURES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ENTITY_OR_VIEW__ALL_FEATURES).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getAttributes() <em>Attributes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ATTRIBUTES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ENTITY_OR_VIEW__ATTRIBUTES).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getAssociations() <em>Associations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssociations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ASSOCIATIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ENTITY_OR_VIEW__ASSOCIATIONS).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getAllAssociations() <em>All Associations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllAssociations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ALL_ASSOCIATIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ENTITY_OR_VIEW__ALL_ASSOCIATIONS).getSettingDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -138,7 +197,7 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 */
 	public List<Service> getServedBy() {
 		if (servedBy == null) {
-			servedBy = new EObjectResolvingEList<Service>(Service.class, this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY);
+			servedBy = new EObjectWithInverseResolvingEList<Service>(Service.class, this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY, WebsitePackage.SERVICE__SERVES);
 		}
 		return servedBy;
 	}
@@ -153,6 +212,56 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			labels = new EObjectContainmentWithInverseEList<ModelLabel>(ModelLabel.class, this, WebsitePackage.ENTITY_OR_VIEW__LABELS, WebsitePackage.MODEL_LABEL__LABEL_FOR);
 		}
 		return labels;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Feature> getFeatures() {
+		return (List<Feature>)FEATURES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Feature> getAllFeatures() {
+		return (List<Feature>)ALL_FEATURES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Attribute> getAttributes() {
+		return (List<Attribute>)ATTRIBUTES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Association> getAssociations() {
+		return (List<Association>)ASSOCIATIONS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Association> getAllAssociations() {
+		return (List<Association>)ALL_ASSOCIATIONS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -176,6 +285,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getServedBy()).basicAdd(otherEnd, msgs);
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLabels()).basicAdd(otherEnd, msgs);
 		}
@@ -190,6 +301,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
+				return ((InternalEList<?>)getServedBy()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
 				return ((InternalEList<?>)getLabels()).basicRemove(otherEnd, msgs);
 		}
@@ -212,6 +325,16 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return getServedBy();
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
 				return getLabels();
+			case WebsitePackage.ENTITY_OR_VIEW__FEATURES:
+				return getFeatures();
+			case WebsitePackage.ENTITY_OR_VIEW__ALL_FEATURES:
+				return getAllFeatures();
+			case WebsitePackage.ENTITY_OR_VIEW__ATTRIBUTES:
+				return getAttributes();
+			case WebsitePackage.ENTITY_OR_VIEW__ASSOCIATIONS:
+				return getAssociations();
+			case WebsitePackage.ENTITY_OR_VIEW__ALL_ASSOCIATIONS:
+				return getAllAssociations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -284,6 +407,16 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return servedBy != null && !servedBy.isEmpty();
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
 				return labels != null && !labels.isEmpty();
+			case WebsitePackage.ENTITY_OR_VIEW__FEATURES:
+				return FEATURES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.ENTITY_OR_VIEW__ALL_FEATURES:
+				return ALL_FEATURES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.ENTITY_OR_VIEW__ATTRIBUTES:
+				return ATTRIBUTES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.ENTITY_OR_VIEW__ASSOCIATIONS:
+				return ASSOCIATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.ENTITY_OR_VIEW__ALL_ASSOCIATIONS:
+				return ALL_ASSOCIATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

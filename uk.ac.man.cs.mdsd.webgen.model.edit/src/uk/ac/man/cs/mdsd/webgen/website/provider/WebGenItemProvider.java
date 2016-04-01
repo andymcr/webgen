@@ -19,7 +19,6 @@ import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
@@ -31,90 +30,15 @@ import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.View;
-import uk.ac.man.cs.mdsd.webgen.website.ViewFeature;
 
 public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	public WebGenItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
-	protected Set<Feature> getFeatures(final EntityOrView entityOrView) {
-		final Set<Feature> features = new HashSet<Feature>();
-		if (entityOrView instanceof Entity) {
-			for (EntityFeature feature : ((Entity) entityOrView).getAllFeatures()) {
-				features.add(feature);
-			}
-		} else {
-			for (ViewFeature feature : ((View) entityOrView).getFeatures()) {
-				features.add(feature);
-			}
-		}
-
-		return features;
-	}
-
-	protected Set<Attribute> getAttributes(final EntityOrView entityOrView) {
-		final Set<Attribute> attributes = new HashSet<Attribute>();
-		if (entityOrView instanceof Entity) {
-			for (EntityFeature feature : ((Entity) entityOrView).getFeatures()) {
-				if (feature instanceof Attribute) {
-					attributes.add((Attribute) feature);
-				}
-			}
-		} else {
-			for (ViewFeature feature : ((View) entityOrView).getFeatures()) {
-				if (feature instanceof Attribute) {
-					attributes.add((Attribute) feature);
-				}
-			}
-		}
-
-		return attributes;
-	}
-
-	protected Set<Association> getAssociations(final EntityOrView entityOrView) {
-		final Set<Association> associations = new HashSet<Association>();
-		if (entityOrView instanceof Entity) {
-			final Entity entity = (Entity) entityOrView;
-			for (EntityFeature feature : entity.getFeatures()) {
-				if (feature instanceof Association) {
-					associations.add((Association) feature);
-				}
-			}
-		} else {
-			for (ViewFeature feature : ((View) entityOrView).getFeatures()) {
-				if (feature instanceof Association) {
-					associations.add((Association) feature);
-				}
-			}
-		}
-
-		return associations;
-	}
-
-	protected Set<Association> getAllAssociations(final EntityOrView entityOrView) {
-		final Set<Association> associations = new HashSet<Association>();
-		if (entityOrView instanceof Entity) {
-			final Entity entity = (Entity) entityOrView;
-			for (EntityFeature feature : entity.getAllFeatures()) {
-				if (feature instanceof Association) {
-					associations.add((Association) feature);
-				}
-			}
-		} else {
-			for (ViewFeature feature : ((View) entityOrView).getFeatures()) {
-				if (feature instanceof Association) {
-					associations.add((Association) feature);
-				}
-			}
-		}
-
-		return associations;
-	}
-
 	protected Set<Label> getLabels(final EntityOrView entityOrView) {
 		final Set<Label> labels = new HashSet<Label>();
-		labels.addAll(getAttributes(entityOrView));
+		labels.addAll(entityOrView.getAttributes());
 
 		return labels;
 	}
@@ -123,7 +47,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		final Set<Attribute> attributes = new HashSet<Attribute>();
 		if (association instanceof EntityAssociation) {
 			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			attributes.addAll(getAttributes(entityAssociation.getPartOf()));
+			attributes.addAll(entityAssociation.getPartOf().getAttributes());
 		}
 
 		return attributes;
@@ -133,7 +57,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		final Set<Association> associations = new HashSet<Association>();
 		if (association instanceof EntityAssociation) {
 			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			associations.addAll(getAssociations(entityAssociation.getPartOf()));
+			associations.addAll(entityAssociation.getPartOf().getAssociations());
 		}
 
 		return associations;
@@ -143,7 +67,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		final Set<Association> associations = new HashSet<Association>();
 		if (association instanceof EntityAssociation) {
 			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			associations.addAll(getAllAssociations(entityAssociation.getPartOf()));
+			associations.addAll(entityAssociation.getPartOf().getAllAssociations());
 		}
 
 		return associations;
@@ -153,7 +77,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		final Set<Attribute> attributes = new HashSet<Attribute>();
 		if (association instanceof EntityAssociation) {
 			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			attributes.addAll(getAttributes(entityAssociation.getTargetEntity()));
+			attributes.addAll(entityAssociation.getTargetEntity().getAttributes());
 		}
 
 		return attributes;
@@ -163,7 +87,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		final Set<Association> associations = new HashSet<Association>();
 		if (association instanceof EntityAssociation) {
 			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			associations.addAll(getAssociations(entityAssociation.getTargetEntity()));
+			associations.addAll(entityAssociation.getTargetEntity().getAssociations());
 		}
 
 		return associations;
@@ -173,25 +97,25 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		final Set<Association> associations = new HashSet<Association>();
 		if (association instanceof EntityAssociation) {
 			final EntityAssociation entityAssociation = (EntityAssociation) association;
-			associations.addAll(getAllAssociations(entityAssociation.getTargetEntity()));
+			associations.addAll(entityAssociation.getTargetEntity().getAllAssociations());
 		}
 
 		return associations;
 	}
 
-	protected Set<Feature> getTargetFeatures(final Association association,
+	protected List<Feature> getTargetFeatures(final Association association,
 			final EntityOrView entityOrView) {
 		if (entityOrView instanceof Entity) {
 			final Entity entity = (Entity) entityOrView;
 			final EntityAssociation entityAssociation = (EntityAssociation) association;
 			if (entity.getFeatures().contains(association)) {
-				return getFeatures(entityAssociation.getTargetEntity());
+				return entityAssociation.getTargetEntity().getFeatures();
 			} else {
-				return getFeatures(entityAssociation.getPartOf());
+				return entityAssociation.getPartOf().getFeatures();
 			}
 // TODO handle view
 		}
-		return Collections.emptySet();
+		return Collections.emptyList();
 	}
 
 	protected EntityOrView getSourceType(final Association association) {
@@ -216,22 +140,22 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 	}
 
-	protected Set<Feature> getFeatures(final Service service) {
+	protected List<Feature> getFeatures(final Service service) {
 		if (service.getServes() != null) {
-			return getFeatures(service.getServes());
+			return service.getServes().getFeatures();
 		}
 
-		return Collections.emptySet();
+		return Collections.emptyList();
 	}
 
-	protected Set<Association> getAssociations(final Service service) {
-		return getAllAssociations(service.getServes());
+	protected List<Association> getAssociations(final Service service) {
+		return service.getServes().getAllAssociations();
 	}
 
 	protected Set<Attribute> getAttributes(final DynamicUnit unit) {
 		final Set<Attribute> attributes = new HashSet<Attribute>();
 		for (EntityOrView entityOrView : unit.getEntities()) {
-			attributes.addAll(getAttributes(entityOrView));
+			attributes.addAll(entityOrView.getAttributes());
 		}
 
 		return attributes;
@@ -240,7 +164,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	protected Set<Association> getAssociations(final DynamicUnit unit) {
 		final Set<Association> associations = new HashSet<Association>();
 		for (EntityOrView entityOrView : unit.getEntities()) {
-			associations.addAll(getAllAssociations(entityOrView));
+			associations.addAll(entityOrView.getAllAssociations());
 		}
 
 		return associations;
@@ -260,7 +184,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 
 	protected Boolean isSourceAssociation(final UnitAssociation association) {
 		for (EntityOrView entityOrView : association.getDisplayedOn().getEntities()) {
-			if (getAssociations(entityOrView).contains(association.getAssociation())) {
+			if (entityOrView.getAssociations().contains(association.getAssociation())) {
 				return true;
 			}
 		}

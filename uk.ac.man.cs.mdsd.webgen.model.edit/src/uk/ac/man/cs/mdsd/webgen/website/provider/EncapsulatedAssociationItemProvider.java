@@ -56,8 +56,9 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 
 			addInputClassPropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
-			addCardinalityPropertyDescriptor(object);
 			addEncapsulatedTargetPropertyDescriptor(object);
+			addIsSourceAssociationPropertyDescriptor(object);
+			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -106,7 +107,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 						final View view = ((EncapsulatedAssociation) object).getPartOf();
 						final Set<Association> associations = new HashSet<Association>();
 						for (EntityOrView entityOrView : view.getEncapsulates()) {
-							associations.addAll(getAllAssociations(entityOrView));
+							associations.addAll(entityOrView.getAllAssociations());
 						}
 						return associations;
 					}
@@ -166,6 +167,28 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 					return Collections.emptySet();
 				}
 		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Source Association feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsSourceAssociationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EncapsulatedAssociation_isSourceAssociation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedAssociation_isSourceAssociation_feature", "_UI_EncapsulatedAssociation_type"),
+				 WebsitePackage.Literals.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -238,6 +261,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 		switch (notification.getFeatureID(EncapsulatedAssociation.class)) {
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__NAME:
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION:
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

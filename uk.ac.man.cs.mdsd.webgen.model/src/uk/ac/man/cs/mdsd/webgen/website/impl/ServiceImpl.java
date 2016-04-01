@@ -111,11 +111,33 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setServes(EntityOrView newServes) {
+	public NotificationChain basicSetServes(EntityOrView newServes, NotificationChain msgs) {
 		EntityOrView oldServes = serves;
 		serves = newServes;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE__SERVES, oldServes, serves));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE__SERVES, oldServes, newServes);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setServes(EntityOrView newServes) {
+		if (newServes != serves) {
+			NotificationChain msgs = null;
+			if (serves != null)
+				msgs = ((InternalEObject)serves).eInverseRemove(this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY, EntityOrView.class, msgs);
+			if (newServes != null)
+				msgs = ((InternalEObject)newServes).eInverseAdd(this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY, EntityOrView.class, msgs);
+			msgs = basicSetServes(newServes, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SERVICE__SERVES, newServes, newServes));
 	}
 
 	/**
@@ -139,6 +161,10 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.SERVICE__SERVES:
+				if (serves != null)
+					msgs = ((InternalEObject)serves).eInverseRemove(this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY, EntityOrView.class, msgs);
+				return basicSetServes((EntityOrView)otherEnd, msgs);
 			case WebsitePackage.SERVICE__SELECTIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSelections()).basicAdd(otherEnd, msgs);
 		}
@@ -153,6 +179,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WebsitePackage.SERVICE__SERVES:
+				return basicSetServes(null, msgs);
 			case WebsitePackage.SERVICE__SELECTIONS:
 				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
 		}

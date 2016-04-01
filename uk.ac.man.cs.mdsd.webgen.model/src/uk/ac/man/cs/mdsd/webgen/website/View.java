@@ -14,7 +14,7 @@ import java.util.List;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.View#getEncapsulates <em>Encapsulates</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.View#getFeatures <em>Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.View#getViewFeatures <em>View Features</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getView()
@@ -39,21 +39,21 @@ public interface View extends EntityOrView {
 	List<EntityOrView> getEncapsulates();
 
 	/**
-	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>View Features</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.ViewFeature}.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.ViewFeature#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Features</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>View Features</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Features</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getView_Features()
+	 * @return the value of the '<em>View Features</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getView_ViewFeatures()
 	 * @see uk.ac.man.cs.mdsd.webgen.website.ViewFeature#getPartOf
 	 * @model opposite="partOf" containment="true"
 	 * @generated
 	 */
-	List<ViewFeature> getFeatures();
+	List<ViewFeature> getViewFeatures();
 
 } // View

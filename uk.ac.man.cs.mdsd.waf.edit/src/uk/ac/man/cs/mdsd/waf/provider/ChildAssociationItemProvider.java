@@ -50,9 +50,6 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 
 			addNamePropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
-			addSourcePropertyDescriptor(object);
-			addSourceNamePropertyDescriptor(object);
-			addTargetNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,72 +94,6 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Source feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ChildAssociation_source_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChildAssociation_source_feature", "_UI_ChildAssociation_type"),
-				 WafPackage.Literals.CHILD_ASSOCIATION__SOURCE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Source Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSourceNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ChildAssociation_sourceName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChildAssociation_sourceName_feature", "_UI_ChildAssociation_type"),
-				 WafPackage.Literals.CHILD_ASSOCIATION__SOURCE_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Target Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ChildAssociation_targetName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChildAssociation_targetName_feature", "_UI_ChildAssociation_type"),
-				 WafPackage.Literals.CHILD_ASSOCIATION__TARGET_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -236,9 +167,6 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 
 		switch (notification.getFeatureID(ChildAssociation.class)) {
 			case WafPackage.CHILD_ASSOCIATION__NAME:
-			case WafPackage.CHILD_ASSOCIATION__SOURCE:
-			case WafPackage.CHILD_ASSOCIATION__SOURCE_NAME:
-			case WafPackage.CHILD_ASSOCIATION__TARGET_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE:

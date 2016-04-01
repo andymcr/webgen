@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -50,6 +51,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 
 			addAssociationPropertyDescriptor(object);
 			addDynamicLabelPropertyDescriptor(object);
+			addIsSourceAssociationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,7 +76,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof ModelLabelAssociation) {
 					final ModelLabel label = (ModelLabel) ((EObject) object).eContainer();
-					return getAllAssociations(label.getLabelFor());
+					return label.getLabelFor().getAllAssociations();
 				}
 
 				return Collections.emptyList();
@@ -117,6 +119,28 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Source Association feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsSourceAssociationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelLabelAssociation_isSourceAssociation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAssociation_isSourceAssociation_feature", "_UI_ModelLabelAssociation_type"),
+				 WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns ModelLabelAssociation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -135,7 +159,8 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ModelLabelAssociation_type");
+		ModelLabelAssociation modelLabelAssociation = (ModelLabelAssociation)object;
+		return getString("_UI_ModelLabelAssociation_type") + " " + modelLabelAssociation.isIsSourceAssociation();
 	}
 	
 
@@ -149,6 +174,12 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ModelLabelAssociation.class)) {
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

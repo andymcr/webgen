@@ -86,7 +86,7 @@ public class ViewItemProvider extends EntityOrViewItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.VIEW__FEATURES);
+			childrenFeatures.add(WebsitePackage.Literals.VIEW__VIEW_FEATURES);
 		}
 		return childrenFeatures;
 	}
@@ -142,7 +142,7 @@ public class ViewItemProvider extends EntityOrViewItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(View.class)) {
-			case WebsitePackage.VIEW__FEATURES:
+			case WebsitePackage.VIEW__VIEW_FEATURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -162,22 +162,22 @@ public class ViewItemProvider extends EntityOrViewItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.VIEW__FEATURES,
+				(WebsitePackage.Literals.VIEW__VIEW_FEATURES,
 				 WebsiteFactory.eINSTANCE.createEncapsulatedFeature()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.VIEW__FEATURES,
+				(WebsitePackage.Literals.VIEW__VIEW_FEATURES,
 				 WebsiteFactory.eINSTANCE.createEncapsulatedAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.VIEW__FEATURES,
+				(WebsitePackage.Literals.VIEW__VIEW_FEATURES,
 				 WebsiteFactory.eINSTANCE.createEncapsulatedAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.VIEW__FEATURES,
+				(WebsitePackage.Literals.VIEW__VIEW_FEATURES,
 				 WebsiteFactory.eINSTANCE.createViewAssociation()));
 	}
 

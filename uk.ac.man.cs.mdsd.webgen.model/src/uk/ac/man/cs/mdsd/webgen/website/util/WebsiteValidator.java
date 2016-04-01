@@ -589,7 +589,37 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityOrView, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityOrView, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entityOrView, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityOrView_keysFromLocalFeatures(entityOrView, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the keysFromLocalFeatures constraint of '<em>Entity Or View</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ENTITY_OR_VIEW__KEYS_FROM_LOCAL_FEATURES__EEXPRESSION = "allFeatures->includesAll(keys)";
+
+	/**
+	 * Validates the keysFromLocalFeatures constraint of '<em>Entity Or View</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEntityOrView_keysFromLocalFeatures(EntityOrView entityOrView, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.ENTITY_OR_VIEW,
+				 entityOrView,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "keysFromLocalFeatures",
+				 ENTITY_OR_VIEW__KEYS_FROM_LOCAL_FEATURES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -617,8 +647,8 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entity, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityOrView_keysFromLocalFeatures(entity, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntity_featureNameUniqueWithinEntity(entity, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntity_keysFromLocalFeatures(entity, diagnostics, context);
 		return result;
 	}
 
@@ -628,7 +658,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ENTITY__FEATURE_NAME_UNIQUE_WITHIN_ENTITY__EEXPRESSION = "features->isUnique(name)";
+	protected static final String ENTITY__FEATURE_NAME_UNIQUE_WITHIN_ENTITY__EEXPRESSION = "entityFeatures->isUnique(f | f.name)";
 
 	/**
 	 * Validates the featureNameUniqueWithinEntity constraint of '<em>Entity</em>'.
@@ -646,35 +676,6 @@ public class WebsiteValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "featureNameUniqueWithinEntity",
 				 ENTITY__FEATURE_NAME_UNIQUE_WITHIN_ENTITY__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the keysFromLocalFeatures constraint of '<em>Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ENTITY__KEYS_FROM_LOCAL_FEATURES__EEXPRESSION = "features->union(associationEnds)->includesAll(keys)";
-
-	/**
-	 * Validates the keysFromLocalFeatures constraint of '<em>Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEntity_keysFromLocalFeatures(Entity entity, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.ENTITY,
-				 entity,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "keysFromLocalFeatures",
-				 ENTITY__KEYS_FROM_LOCAL_FEATURES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -734,6 +735,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(view, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(view, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(view, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityOrView_keysFromLocalFeatures(view, diagnostics, context);
 		return result;
 	}
 
@@ -1420,16 +1422,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_MENU__TITLE_FROM_ENTITY_OR_VIEW__EEXPRESSION = "not title.oclIsUndefined() implies\r\n" +
-		"\tif entityOrView.oclIsUndefined() then\r\n" +
-		" \t\tfalse\r\n" +
-		"\telse\r\n" +
-		"\t\tif entityOrView.oclIsTypeOf(Entity) then\r\n" +
-		"\t\t\tentityOrView.oclAsType(Entity).features->includes(title)\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tentityOrView.oclAsType(View).features->includes(title)\r\n" +
-		"\t\tendif\r\n" +
-		"\tendif";
+	protected static final String DYNAMIC_MENU__TITLE_FROM_ENTITY_OR_VIEW__EEXPRESSION = "not title.oclIsUndefined() and not entityOrView.oclIsUndefined() implies\r\n" +
+		"\tentityOrView.features->includes(title)";
 
 	/**
 	 * Validates the titleFromEntityOrView constraint of '<em>Dynamic Menu</em>'.
@@ -1683,8 +1677,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String UNIT_ASSOCIATION__SELECTION_VALID_CHOICE__EEXPRESSION = "not selection.oclIsUndefined() implies\r\n" +
-		"\tdisplayedOn.entities->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)";
+	protected static final String UNIT_ASSOCIATION__SELECTION_VALID_CHOICE__EEXPRESSION = "targetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)";
 
 	/**
 	 * Validates the selectionValidChoice constraint of '<em>Unit Association</em>'.
@@ -2125,12 +2118,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_ENTITIES__EEXPRESSION = "let eovFeatures : Collection(Feature)\r\n" +
-		"\t= self.entities->collect(\r\n" +
-		"\t\teov | if eov.oclIsTypeOf(Entity) then\r\n" +
-		"\t\t\t\teov.oclAsType(Entity).features->union(eov.oclAsType(Entity).associationEnds)\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\teov.oclAsType(View).features\r\n" +
-		"\t\t\tendif)\r\n" +
+		"\t= self.entities->collect(eov | eov.allFeatures)\r\n" +
 		"\tin displayFields\r\n" +
 		"\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
 		"\t\t->select(f | \r\n" +
@@ -2664,14 +2652,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_FROM_USER__EEXPRESSION = "not user.oclIsUndefined() implies\r\n" +
-		"\tlet features : Collection(Feature)\r\n" +
-		"\t\t= if user.oclIsTypeOf(Entity) then\r\n" +
-		"\t\t\t\tuser.oclAsType(Entity).features\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tuser.oclAsType(View).features\r\n" +
-		"\t\t\tendif\r\n" +
-		"\tin features->includes(userAuthenticationKey)";
+	protected static final String LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_FROM_USER__EEXPRESSION = "not user.oclIsUndefined() and not userAuthenticationKey.oclIsUndefined() implies\r\n" +
+		"\tuser.features->includes(userAuthenticationKey)";
 
 	/**
 	 * Validates the authenticationKeyFromUser constraint of '<em>Local Authentication System</em>'.

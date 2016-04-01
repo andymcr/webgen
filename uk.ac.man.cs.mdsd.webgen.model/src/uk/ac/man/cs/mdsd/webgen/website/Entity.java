@@ -17,38 +17,33 @@ import java.util.List;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures <em>Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getEntityFeatures <em>Entity Features</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getAssociationEnds <em>Association Ends</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='featureNameUniqueWithinEntity keysFromLocalFeatures'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featureNameUniqueWithinEntity='features->isUnique(name)' keysFromLocalFeatures='features->union(associationEnds)->includesAll(keys)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='featureNameUniqueWithinEntity'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL featureNameUniqueWithinEntity='entityFeatures->isUnique(f | f.name)'"
  * @generated
  */
 public interface Entity extends EntityOrView {
 	/**
-	 * Returns the value of the '<em><b>Features</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Entity Features</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature}.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Features</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Entity Features</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Features</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_Features()
+	 * @return the value of the '<em>Entity Features</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntity_EntityFeatures()
 	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getPartOf
 	 * @model opposite="partOf" containment="true"
 	 * @generated
 	 */
-	List<EntityFeature> getFeatures();
-
-	/**
-	 * @generated NOT
-	 */
-	List<EntityFeature> getAllFeatures();
+	List<EntityFeature> getEntityFeatures();
 
 	/**
 	 * Returns the value of the '<em><b>Association Ends</b></em>' reference list.

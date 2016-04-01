@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -24,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAssociationImpl#getDynamicLabel <em>Dynamic Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelLabelAssociationImpl#isIsSourceAssociation <em>Is Source Association</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,6 +50,16 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 * @ordered
 	 */
 	protected ModelLabel dynamicLabel;
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsSourceAssociation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +161,15 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsSourceAssociation() {
+		return (Boolean)IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -158,6 +179,8 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
 				if (resolve) return getDynamicLabel();
 				return basicGetDynamicLabel();
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+				return isIsSourceAssociation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -210,6 +233,8 @@ public class ModelLabelAssociationImpl extends ModelLabelFeatureImpl implements 
 				return association != null;
 			case WebsitePackage.MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL:
 				return dynamicLabel != null;
+			case WebsitePackage.MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+				return IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

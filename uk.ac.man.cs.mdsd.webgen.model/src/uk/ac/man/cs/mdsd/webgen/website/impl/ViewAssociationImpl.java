@@ -280,7 +280,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPartOf != null)
-				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.VIEW__FEATURES, View.class, msgs);
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.VIEW__VIEW_FEATURES, View.class, msgs);
 			msgs = basicSetPartOf(newPartOf, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -469,7 +469,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
-				return eInternalContainer().eInverseRemove(this, WebsitePackage.VIEW__FEATURES, View.class, msgs);
+				return eInternalContainer().eInverseRemove(this, WebsitePackage.VIEW__VIEW_FEATURES, View.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

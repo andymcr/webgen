@@ -254,6 +254,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 
 		switch (notification.getFeatureID(UnitAssociation.class)) {
 			case WebsitePackage.UNIT_ASSOCIATION__NAME:
+			case WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:

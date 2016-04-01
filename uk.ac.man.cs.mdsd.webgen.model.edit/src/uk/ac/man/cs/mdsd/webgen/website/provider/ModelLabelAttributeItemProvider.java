@@ -73,7 +73,7 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof ModelLabelAttribute) {
 					final ModelLabel label = (ModelLabel) ((EObject) object).eContainer();
-					return getAttributes(label.getLabelFor());
+					return label.getLabelFor().getAttributes();
 				}
 
 				return Collections.emptyList();

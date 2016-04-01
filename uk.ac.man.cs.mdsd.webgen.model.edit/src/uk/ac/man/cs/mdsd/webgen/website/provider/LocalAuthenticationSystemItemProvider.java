@@ -79,7 +79,7 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_AuthenticationPropertyCategory"),
 				 null));
 	}
 
@@ -102,28 +102,13 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof LocalAuthenticationSystem) {
-//						final LocalAuthenticationSystem authSystem
-//							= (LocalAuthenticationSystem) object;
-//						if (authSystem.getUserSource() != null) {
-//							final UnitSource source = authSystem.getUserSource();
-//							if (source instanceof Entity) {
-//								final List<EntityFeature> features = new LinkedList<EntityFeature>();
-//								for (EntityFeature feature : ((Entity) source).getFeatures()) {
-//									if (!(feature instanceof Association)) {
-//										features.add(feature);
-//									}
-//								}
-//								return features;
-//							}
-//							if (source instanceof Service) {
-//								final List<Association> features = new LinkedList<Association>();
-//								for (EntityOrView entityOrView : ((Service) source).getEncapsulates()) {
-//									features.addAll(getAllAssociations(entityOrView));
-//								}
-//								return features;
-//							}
-//						}
+						final LocalAuthenticationSystem system
+							= (LocalAuthenticationSystem) object;
+						if (system.getUser() != null) {
+							return system.getUser().getAttributes();
+						}
 					}
+
 					return super.getChoiceOfValues(object);
 				}
 			});
@@ -147,7 +132,7 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_AuthenticationPropertyCategory"),
 				 null));
 	}
 

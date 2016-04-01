@@ -1209,13 +1209,58 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_OR_VIEW__LABELS = CLASSIFIER_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__FEATURES = CLASSIFIER_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>All Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__ALL_FEATURES = CLASSIFIER_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__ATTRIBUTES = CLASSIFIER_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Associations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>All Associations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__ALL_ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Entity Or View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 4;
+	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature <em>Feature</em>}' class.
@@ -2145,13 +2190,22 @@ public interface WebsitePackage extends EPackage {
 	int MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL = MODEL_LABEL_FEATURE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION = MODEL_LABEL_FEATURE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Model Label Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_LABEL_ASSOCIATION_FEATURE_COUNT = MODEL_LABEL_FEATURE_FEATURE_COUNT + 2;
+	int MODEL_LABEL_ASSOCIATION_FEATURE_COUNT = MODEL_LABEL_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2208,13 +2262,58 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY__LABELS = ENTITY_OR_VIEW__LABELS;
 
 	/**
-	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__FEATURES = ENTITY_OR_VIEW_FEATURE_COUNT + 0;
+	int ENTITY__FEATURES = ENTITY_OR_VIEW__FEATURES;
+
+	/**
+	 * The feature id for the '<em><b>All Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__ALL_FEATURES = ENTITY_OR_VIEW__ALL_FEATURES;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__ATTRIBUTES = ENTITY_OR_VIEW__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Associations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__ASSOCIATIONS = ENTITY_OR_VIEW__ASSOCIATIONS;
+
+	/**
+	 * The feature id for the '<em><b>All Associations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__ALL_ASSOCIATIONS = ENTITY_OR_VIEW__ALL_ASSOCIATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Entity Features</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__ENTITY_FEATURES = ENTITY_OR_VIEW_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Association Ends</b></em>' reference list.
@@ -4377,6 +4476,51 @@ public interface WebsitePackage extends EPackage {
 	int VIEW__LABELS = ENTITY_OR_VIEW__LABELS;
 
 	/**
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__FEATURES = ENTITY_OR_VIEW__FEATURES;
+
+	/**
+	 * The feature id for the '<em><b>All Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__ALL_FEATURES = ENTITY_OR_VIEW__ALL_FEATURES;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__ATTRIBUTES = ENTITY_OR_VIEW__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Associations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__ASSOCIATIONS = ENTITY_OR_VIEW__ASSOCIATIONS;
+
+	/**
+	 * The feature id for the '<em><b>All Associations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__ALL_ASSOCIATIONS = ENTITY_OR_VIEW__ALL_ASSOCIATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Encapsulates</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4386,13 +4530,13 @@ public interface WebsitePackage extends EPackage {
 	int VIEW__ENCAPSULATES = ENTITY_OR_VIEW_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
+	 * The feature id for the '<em><b>View Features</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW__FEATURES = ENTITY_OR_VIEW_FEATURE_COUNT + 1;
+	int VIEW__VIEW_FEATURES = ENTITY_OR_VIEW_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>View</em>' class.
@@ -4764,22 +4908,49 @@ public interface WebsitePackage extends EPackage {
 	int ENCAPSULATED_ASSOCIATION__ASSOCIATION = ENCAPSULATED_FEATURE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_ASSOCIATION__CARDINALITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Encapsulated Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET = ENCAPSULATED_FEATURE_FEATURE_COUNT + 6;
+	int ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET = ENCAPSULATED_FEATURE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION = ENCAPSULATED_FEATURE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__CARDINALITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__TARGET_ENTITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Encapsulated Association</em>' class.
@@ -4788,7 +4959,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION_FEATURE_COUNT = ENCAPSULATED_FEATURE_FEATURE_COUNT + 7;
+	int ENCAPSULATED_ASSOCIATION_FEATURE_COUNT = ENCAPSULATED_FEATURE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6699,13 +6870,31 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_ASSOCIATION__FILTERS = UNIT_FEATURE_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION = UNIT_FEATURE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__TARGET_ENTITY = UNIT_FEATURE_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Unit Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION_FEATURE_COUNT = UNIT_FEATURE_FEATURE_COUNT + 7;
+	int UNIT_ASSOCIATION_FEATURE_COUNT = UNIT_FEATURE_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildFeatureImpl <em>Child Feature</em>}' class.
@@ -11506,6 +11695,61 @@ public interface WebsitePackage extends EPackage {
 	EReference getEntityOrView_Labels();
 
 	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getFeatures <em>Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Features</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getFeatures()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EReference getEntityOrView_Features();
+
+	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAllFeatures <em>All Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>All Features</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAllFeatures()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EReference getEntityOrView_AllFeatures();
+
+	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Attributes</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAttributes()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EReference getEntityOrView_Attributes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAssociations <em>Associations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Associations</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAssociations()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EReference getEntityOrView_Associations();
+
+	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAllAssociations <em>All Associations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>All Associations</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAllAssociations()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EReference getEntityOrView_AllAssociations();
+
+	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getKeys <em>Keys</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11568,6 +11812,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntity();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getEntityFeatures <em>Entity Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Entity Features</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Entity#getEntityFeatures()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EReference getEntity_EntityFeatures();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature <em>Entity Feature</em>}'.
@@ -11666,15 +11921,15 @@ public interface WebsitePackage extends EPackage {
 	EReference getView_Encapsulates();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.View#getFeatures <em>Features</em>}'.
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.View#getViewFeatures <em>View Features</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Features</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.View#getFeatures()
+	 * @return the meta object for the containment reference list '<em>View Features</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.View#getViewFeatures()
 	 * @see #getView()
 	 * @generated
 	 */
-	EReference getView_Features();
+	EReference getView_ViewFeatures();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ViewFeature <em>View Feature</em>}'.
@@ -11838,6 +12093,39 @@ public interface WebsitePackage extends EPackage {
 	EReference getEncapsulatedAssociation_EncapsulatedTarget();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#isIsSourceAssociation <em>Is Source Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Source Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#isIsSourceAssociation()
+	 * @see #getEncapsulatedAssociation()
+	 * @generated
+	 */
+	EAttribute getEncapsulatedAssociation_IsSourceAssociation();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getSourceEntity <em>Source Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source Entity</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getSourceEntity()
+	 * @see #getEncapsulatedAssociation()
+	 * @generated
+	 */
+	EReference getEncapsulatedAssociation_SourceEntity();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getTargetEntity <em>Target Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target Entity</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getTargetEntity()
+	 * @see #getEncapsulatedAssociation()
+	 * @generated
+	 */
+	EReference getEncapsulatedAssociation_TargetEntity();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ViewAssociation <em>View Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11868,17 +12156,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getViewAssociation_Cardinality();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures <em>Features</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Features</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EReference getEntity_Features();
 
 	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getAssociationEnds <em>Association Ends</em>}'.
@@ -12510,6 +12787,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getModelLabelAssociation_DynamicLabel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#isIsSourceAssociation <em>Is Source Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Source Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#isIsSourceAssociation()
+	 * @see #getModelLabelAssociation()
+	 * @generated
+	 */
+	EAttribute getModelLabelAssociation_IsSourceAssociation();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment <em>Association Without Containment</em>}'.
@@ -13359,6 +13647,28 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getUnitAssociation_Filters();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#isIsSourceAssociation <em>Is Source Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Source Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#isIsSourceAssociation()
+	 * @see #getUnitAssociation()
+	 * @generated
+	 */
+	EAttribute getUnitAssociation_IsSourceAssociation();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getTargetEntity <em>Target Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target Entity</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getTargetEntity()
+	 * @see #getUnitAssociation()
+	 * @generated
+	 */
+	EReference getUnitAssociation_TargetEntity();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ChildFeature <em>Child Feature</em>}'.
@@ -15717,6 +16027,46 @@ public interface WebsitePackage extends EPackage {
 		EReference ENTITY_OR_VIEW__LABELS = eINSTANCE.getEntityOrView_Labels();
 
 		/**
+		 * The meta object literal for the '<em><b>Features</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_OR_VIEW__FEATURES = eINSTANCE.getEntityOrView_Features();
+
+		/**
+		 * The meta object literal for the '<em><b>All Features</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_OR_VIEW__ALL_FEATURES = eINSTANCE.getEntityOrView_AllFeatures();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_OR_VIEW__ATTRIBUTES = eINSTANCE.getEntityOrView_Attributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Associations</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_OR_VIEW__ASSOCIATIONS = eINSTANCE.getEntityOrView_Associations();
+
+		/**
+		 * The meta object literal for the '<em><b>All Associations</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_OR_VIEW__ALL_ASSOCIATIONS = eINSTANCE.getEntityOrView_AllAssociations();
+
+		/**
 		 * The meta object literal for the '<em><b>Keys</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -15767,6 +16117,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY = eINSTANCE.getEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity Features</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__ENTITY_FEATURES = eINSTANCE.getEntity_EntityFeatures();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl <em>Entity Feature</em>}' class.
@@ -15847,12 +16205,12 @@ public interface WebsitePackage extends EPackage {
 		EReference VIEW__ENCAPSULATES = eINSTANCE.getView_Encapsulates();
 
 		/**
-		 * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>View Features</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VIEW__FEATURES = eINSTANCE.getView_Features();
+		EReference VIEW__VIEW_FEATURES = eINSTANCE.getView_ViewFeatures();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl <em>View Feature</em>}' class.
@@ -15983,6 +16341,30 @@ public interface WebsitePackage extends EPackage {
 		EReference ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET = eINSTANCE.getEncapsulatedAssociation_EncapsulatedTarget();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Source Association</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION = eINSTANCE.getEncapsulatedAssociation_IsSourceAssociation();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY = eINSTANCE.getEncapsulatedAssociation_SourceEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENCAPSULATED_ASSOCIATION__TARGET_ENTITY = eINSTANCE.getEncapsulatedAssociation_TargetEntity();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl <em>View Association</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16007,14 +16389,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VIEW_ASSOCIATION__CARDINALITY = eINSTANCE.getViewAssociation_Cardinality();
-
-		/**
-		 * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTITY__FEATURES = eINSTANCE.getEntity_Features();
 
 		/**
 		 * The meta object literal for the '<em><b>Association Ends</b></em>' reference list feature.
@@ -16523,6 +16897,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MODEL_LABEL_ASSOCIATION__DYNAMIC_LABEL = eINSTANCE.getModelLabelAssociation_DynamicLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Source Association</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_LABEL_ASSOCIATION__IS_SOURCE_ASSOCIATION = eINSTANCE.getModelLabelAssociation_IsSourceAssociation();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationWithoutContainmentImpl <em>Association Without Containment</em>}' class.
@@ -17195,6 +17577,22 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference UNIT_ASSOCIATION__FILTERS = eINSTANCE.getUnitAssociation_Filters();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Source Association</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION = eINSTANCE.getUnitAssociation_IsSourceAssociation();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNIT_ASSOCIATION__TARGET_ENTITY = eINSTANCE.getUnitAssociation_TargetEntity();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildFeatureImpl <em>Child Feature</em>}' class.

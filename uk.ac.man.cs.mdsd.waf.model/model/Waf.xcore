@@ -290,9 +290,6 @@ class ChildAssociation extends ChildFeature {
 	}
 	refers Association[1] association
 	contains ChildFeature childFeature
-	Boolean source
-	String sourceName
-	String targetName
 }
 
 abstract class InterfaceField extends NamedElement, UnitField {

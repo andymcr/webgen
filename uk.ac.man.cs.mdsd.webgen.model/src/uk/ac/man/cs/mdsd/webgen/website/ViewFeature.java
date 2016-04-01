@@ -22,7 +22,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
 public interface ViewFeature extends Feature {
 	/**
 	 * Returns the value of the '<em><b>Part Of</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.View#getFeatures <em>Features</em>}'.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.View#getViewFeatures <em>View Features</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Part Of</em>' container reference isn't clear,
@@ -32,8 +32,8 @@ public interface ViewFeature extends Feature {
 	 * @return the value of the '<em>Part Of</em>' container reference.
 	 * @see #setPartOf(View)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getViewFeature_PartOf()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.View#getFeatures
-	 * @model opposite="features" required="true" transient="false"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.View#getViewFeatures
+	 * @model opposite="viewFeatures" required="true" transient="false"
 	 * @generated
 	 */
 	View getPartOf();

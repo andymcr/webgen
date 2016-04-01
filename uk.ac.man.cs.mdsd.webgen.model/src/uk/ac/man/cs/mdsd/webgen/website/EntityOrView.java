@@ -17,10 +17,17 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getTableName <em>Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy <em>Served By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getLabels <em>Labels</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getFeatures <em>Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAllFeatures <em>All Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAssociations <em>Associations</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAllAssociations <em>All Associations</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='keysFromLocalFeatures'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL keysFromLocalFeatures='allFeatures->includesAll(keys)'"
  * @generated
  */
 public interface EntityOrView extends Classifier {
@@ -53,6 +60,7 @@ public interface EntityOrView extends Classifier {
 	/**
 	 * Returns the value of the '<em><b>Served By</b></em>' reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Service}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Service#getServes <em>Serves</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Served By</em>' reference list isn't clear,
@@ -61,7 +69,8 @@ public interface EntityOrView extends Classifier {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Served By</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_ServedBy()
-	 * @model
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Service#getServes
+	 * @model opposite="serves"
 	 * @generated
 	 */
 	List<Service> getServedBy();
@@ -83,6 +92,91 @@ public interface EntityOrView extends Classifier {
 	 * @generated
 	 */
 	List<ModelLabel> getLabels();
+
+	/**
+	 * Returns the value of the '<em><b>Features</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Feature}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Features</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Features</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_Features()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif'"
+	 * @generated
+	 */
+	List<Feature> getFeatures();
+
+	/**
+	 * Returns the value of the '<em><b>All Features</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Feature}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>All Features</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>All Features</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_AllFeatures()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures->union(self.oclAsType(Entity).associationEnds)->asOrderedSet()\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif'"
+	 * @generated
+	 */
+	List<Feature> getAllFeatures();
+
+	/**
+	 * Returns the value of the '<em><b>Attributes</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Attribute}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Attributes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attributes</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_Attributes()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='features->select(f | f.oclIsKindOf(Attribute)).oclAsType(Attribute)->asOrderedSet()'"
+	 * @generated
+	 */
+	List<Attribute> getAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Associations</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Association}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Associations</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Associations</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_Associations()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='features->select(f | f.oclIsKindOf(Association)).oclAsType(Association)->asOrderedSet()'"
+	 * @generated
+	 */
+	List<Association> getAssociations();
+
+	/**
+	 * Returns the value of the '<em><b>All Associations</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.Association}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>All Associations</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>All Associations</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_AllAssociations()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='allFeatures->select(f | f.oclIsKindOf(Association)).oclAsType(Association)->asOrderedSet()'"
+	 * @generated
+	 */
+	List<Association> getAllAssociations();
 
 	/**
 	 * Returns the value of the '<em><b>Keys</b></em>' reference list.

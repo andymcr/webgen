@@ -14,6 +14,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#getDynamicLabel <em>Dynamic Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation#isIsSourceAssociation <em>Is Source Association</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabelAssociation()
@@ -72,5 +73,21 @@ public interface ModelLabelAssociation extends ModelLabelFeature {
 	 * @generated
 	 */
 	void setDynamicLabel(ModelLabel value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Source Association</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Source Association</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Source Association</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabelAssociation_IsSourceAssociation()
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tpartOf.features->includes(association)'"
+	 * @generated
+	 */
+	boolean isIsSourceAssociation();
 
 } // ModelLabelAssociation

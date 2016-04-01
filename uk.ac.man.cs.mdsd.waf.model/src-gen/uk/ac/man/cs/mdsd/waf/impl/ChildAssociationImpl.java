@@ -29,9 +29,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getSource <em>Source</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getSourceName <em>Source Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getTargetName <em>Target Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,66 +63,6 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	 * @ordered
 	 */
 	protected ChildFeature childFeature;
-
-	/**
-	 * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Boolean SOURCE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected Boolean source = SOURCE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSourceName() <em>Source Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSourceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SOURCE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSourceName() <em>Source Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSourceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String sourceName = SOURCE_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTargetName() <em>Target Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargetName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TARGET_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTargetName() <em>Target Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargetName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String targetName = TARGET_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,69 +185,6 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Boolean getSource() {
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSource(Boolean newSource) {
-		Boolean oldSource = source;
-		source = newSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_ASSOCIATION__SOURCE, oldSource, source));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getSourceName() {
-		return sourceName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSourceName(String newSourceName) {
-		String oldSourceName = sourceName;
-		sourceName = newSourceName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_ASSOCIATION__SOURCE_NAME, oldSourceName, sourceName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getTargetName() {
-		return targetName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTargetName(String newTargetName) {
-		String oldTargetName = targetName;
-		targetName = newTargetName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_ASSOCIATION__TARGET_NAME, oldTargetName, targetName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -335,12 +209,6 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 				return basicGetAssociation();
 			case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE:
 				return getChildFeature();
-			case WafPackage.CHILD_ASSOCIATION__SOURCE:
-				return getSource();
-			case WafPackage.CHILD_ASSOCIATION__SOURCE_NAME:
-				return getSourceName();
-			case WafPackage.CHILD_ASSOCIATION__TARGET_NAME:
-				return getTargetName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -358,15 +226,6 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 				return;
 			case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ChildFeature)newValue);
-				return;
-			case WafPackage.CHILD_ASSOCIATION__SOURCE:
-				setSource((Boolean)newValue);
-				return;
-			case WafPackage.CHILD_ASSOCIATION__SOURCE_NAME:
-				setSourceName((String)newValue);
-				return;
-			case WafPackage.CHILD_ASSOCIATION__TARGET_NAME:
-				setTargetName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -386,15 +245,6 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 			case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ChildFeature)null);
 				return;
-			case WafPackage.CHILD_ASSOCIATION__SOURCE:
-				setSource(SOURCE_EDEFAULT);
-				return;
-			case WafPackage.CHILD_ASSOCIATION__SOURCE_NAME:
-				setSourceName(SOURCE_NAME_EDEFAULT);
-				return;
-			case WafPackage.CHILD_ASSOCIATION__TARGET_NAME:
-				setTargetName(TARGET_NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -413,34 +263,8 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 				return association != null;
 			case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE:
 				return childFeature != null;
-			case WafPackage.CHILD_ASSOCIATION__SOURCE:
-				return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
-			case WafPackage.CHILD_ASSOCIATION__SOURCE_NAME:
-				return SOURCE_NAME_EDEFAULT == null ? sourceName != null : !SOURCE_NAME_EDEFAULT.equals(sourceName);
-			case WafPackage.CHILD_ASSOCIATION__TARGET_NAME:
-				return TARGET_NAME_EDEFAULT == null ? targetName != null : !TARGET_NAME_EDEFAULT.equals(targetName);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (source: ");
-		result.append(source);
-		result.append(", sourceName: ");
-		result.append(sourceName);
-		result.append(", targetName: ");
-		result.append(targetName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ChildAssociationImpl

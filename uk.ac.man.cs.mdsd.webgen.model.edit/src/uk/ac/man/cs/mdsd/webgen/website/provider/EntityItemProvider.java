@@ -19,6 +19,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
+import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -65,7 +66,7 @@ public class EntityItemProvider extends EntityOrViewItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.ENTITY__FEATURES);
+			childrenFeatures.add(WebsitePackage.Literals.ENTITY__ENTITY_FEATURES);
 		}
 		return childrenFeatures;
 	}
@@ -120,7 +121,7 @@ public class EntityItemProvider extends EntityOrViewItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Entity.class)) {
-			case WebsitePackage.ENTITY__FEATURES:
+			case WebsitePackage.ENTITY__ENTITY_FEATURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -137,6 +138,46 @@ public class EntityItemProvider extends EntityOrViewItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebsiteFactory.eINSTANCE.createDataTypeAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebsiteFactory.eINSTANCE.createDateAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebsiteFactory.eINSTANCE.createUrlAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebsiteFactory.eINSTANCE.createFileAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebsiteFactory.eINSTANCE.createImageAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebsiteFactory.eINSTANCE.createLocationAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebsiteFactory.eINSTANCE.createAssociationWithoutContainment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ENTITY__ENTITY_FEATURES,
+				 WebsiteFactory.eINSTANCE.createAssociationWithContainment()));
 	}
 
 }

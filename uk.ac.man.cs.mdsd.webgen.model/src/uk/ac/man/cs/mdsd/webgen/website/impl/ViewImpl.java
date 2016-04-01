@@ -29,7 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewImpl#getEncapsulates <em>Encapsulates</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewImpl#getFeatures <em>Features</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewImpl#getViewFeatures <em>View Features</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,14 +46,14 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	protected EList<EntityOrView> encapsulates;
 
 	/**
-	 * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
+	 * The cached value of the '{@link #getViewFeatures() <em>View Features</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFeatures()
+	 * @see #getViewFeatures()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ViewFeature> features;
+	protected EList<ViewFeature> viewFeatures;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +91,11 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<ViewFeature> getFeatures() {
-		if (features == null) {
-			features = new EObjectContainmentWithInverseEList<ViewFeature>(ViewFeature.class, this, WebsitePackage.VIEW__FEATURES, WebsitePackage.VIEW_FEATURE__PART_OF);
+	public List<ViewFeature> getViewFeatures() {
+		if (viewFeatures == null) {
+			viewFeatures = new EObjectContainmentWithInverseEList<ViewFeature>(ViewFeature.class, this, WebsitePackage.VIEW__VIEW_FEATURES, WebsitePackage.VIEW_FEATURE__PART_OF);
 		}
-		return features;
+		return viewFeatures;
 	}
 
 	/**
@@ -107,8 +107,8 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.VIEW__FEATURES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFeatures()).basicAdd(otherEnd, msgs);
+			case WebsitePackage.VIEW__VIEW_FEATURES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getViewFeatures()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -121,8 +121,8 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.VIEW__FEATURES:
-				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.VIEW__VIEW_FEATURES:
+				return ((InternalEList<?>)getViewFeatures()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -137,8 +137,8 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 		switch (featureID) {
 			case WebsitePackage.VIEW__ENCAPSULATES:
 				return getEncapsulates();
-			case WebsitePackage.VIEW__FEATURES:
-				return getFeatures();
+			case WebsitePackage.VIEW__VIEW_FEATURES:
+				return getViewFeatures();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,9 +156,9 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 				getEncapsulates().clear();
 				getEncapsulates().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
-			case WebsitePackage.VIEW__FEATURES:
-				getFeatures().clear();
-				getFeatures().addAll((Collection<? extends ViewFeature>)newValue);
+			case WebsitePackage.VIEW__VIEW_FEATURES:
+				getViewFeatures().clear();
+				getViewFeatures().addAll((Collection<? extends ViewFeature>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -175,8 +175,8 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 			case WebsitePackage.VIEW__ENCAPSULATES:
 				getEncapsulates().clear();
 				return;
-			case WebsitePackage.VIEW__FEATURES:
-				getFeatures().clear();
+			case WebsitePackage.VIEW__VIEW_FEATURES:
+				getViewFeatures().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -192,8 +192,8 @@ public class ViewImpl extends EntityOrViewImpl implements View {
 		switch (featureID) {
 			case WebsitePackage.VIEW__ENCAPSULATES:
 				return encapsulates != null && !encapsulates.isEmpty();
-			case WebsitePackage.VIEW__FEATURES:
-				return features != null && !features.isEmpty();
+			case WebsitePackage.VIEW__VIEW_FEATURES:
+				return viewFeatures != null && !viewFeatures.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

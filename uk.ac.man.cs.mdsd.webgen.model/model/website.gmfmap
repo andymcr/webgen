@@ -169,7 +169,7 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/features"/>
+            href="website.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
               href="website.ecore#//DataTypeAttribute"/>
@@ -190,7 +190,7 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/features"/>
+            href="website.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
               href="website.ecore#//DateAttribute"/>
@@ -211,7 +211,7 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/features"/>
+            href="website.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
               href="website.ecore#//UrlAttribute"/>
@@ -232,7 +232,7 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/features"/>
+            href="website.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
               href="website.ecore#//FileAttribute"/>
@@ -253,7 +253,7 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/features"/>
+            href="website.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
               href="website.ecore#//ImageAttribute"/>
@@ -274,7 +274,7 @@
       <children
           compartment="//@nodes.4/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//Entity/features"/>
+            href="website.ecore#//Entity/entityFeatures"/>
         <ownedChild>
           <domainMetaElement
               href="website.ecore#//LocationAttribute"/>
@@ -367,7 +367,7 @@
       <children
           compartment="//@nodes.5/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//View/features"/>
+            href="website.ecore#//View/viewFeatures"/>
         <ownedChild>
           <domainMetaElement
               href="website.ecore#//EncapsulatedAttribute"/>
@@ -388,7 +388,7 @@
       <children
           compartment="//@nodes.5/@ownedChild/@compartments.0">
         <containmentFeature
-            href="website.ecore#//View/features"/>
+            href="website.ecore#//View/viewFeatures"/>
         <ownedChild>
           <domainMetaElement
               href="website.ecore#//EncapsulatedAssociation"/>
@@ -2549,7 +2549,7 @@
           href="website.ecore#//AssociationWithoutContainment/targetCardinality"/>
     </labelMappings>
     <containmentFeature
-        href="website.ecore#//Entity/features"/>
+        href="website.ecore#//Entity/entityFeatures"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="website.gmftool#//@palette/@tools.6/@tools.11"/>
@@ -2580,7 +2580,7 @@
           href="website.ecore#//EntityFeature/cardinality"/>
     </labelMappings>
     <containmentFeature
-        href="website.ecore#//Entity/features"/>
+        href="website.ecore#//Entity/entityFeatures"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="website.gmftool#//@palette/@tools.6/@tools.12"/>
@@ -2594,7 +2594,7 @@
     <domainMetaElement
         href="website.ecore#//ViewAssociation"/>
     <containmentFeature
-        href="website.ecore#//View/features"/>
+        href="website.ecore#//View/viewFeatures"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="website.gmftool#//@palette/@tools.6/@tools.15"/>

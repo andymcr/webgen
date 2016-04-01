@@ -152,7 +152,7 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 						final View view = ((EncapsulatedAttribute) object).getPartOf();
 						final Set<Attribute> attributes = new HashSet<Attribute>();
 						for (EntityOrView entityOrView : view.getEncapsulates()) {
-							attributes.addAll(getAttributes(entityOrView));
+							attributes.addAll(entityOrView.getAttributes());
 						}
 						return attributes;
 					}

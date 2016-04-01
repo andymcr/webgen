@@ -156,10 +156,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3054"
+        visualID="3252"
         editPartClassName="DataTypeAttributeEditPart"
         itemSemanticEditPolicyClassName="DataTypeAttributeItemSemanticEditPolicy"
-        notationViewFactoryClassName="DataTypeAttributeViewFactory"
         canonicalEditPolicyClassName="DataTypeAttributeCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DataTypeAttributeGraphicalNodeEditPolicy"
         createCommandClassName="DataTypeAttributeCreateCommand"
@@ -185,15 +184,14 @@
         <metaClass
             href="website.genmodel#//website/DataTypeAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5059"
+          visualID="5260"
           editPartClassName="DataTypeAttributeNameEditPart"
           itemSemanticEditPolicyClassName="DataTypeAttributeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="DataTypeAttributeNameViewFactory"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -210,10 +208,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3014"
+        visualID="3253"
         editPartClassName="DateAttributeEditPart"
         itemSemanticEditPolicyClassName="DateAttributeItemSemanticEditPolicy"
-        notationViewFactoryClassName="DateAttributeViewFactory"
         canonicalEditPolicyClassName="DateAttributeCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DateAttributeGraphicalNodeEditPolicy"
         createCommandClassName="DateAttributeCreateCommand"
@@ -239,15 +236,14 @@
         <metaClass
             href="website.genmodel#//website/DateAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5018"
+          visualID="5261"
           editPartClassName="DateAttributeNameEditPart"
           itemSemanticEditPolicyClassName="DateAttributeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="DateAttributeNameViewFactory"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -264,7 +260,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3251"
+        visualID="3254"
         editPartClassName="UrlAttributeEditPart"
         itemSemanticEditPolicyClassName="UrlAttributeItemSemanticEditPolicy"
         canonicalEditPolicyClassName="UrlAttributeCanonicalEditPolicy"
@@ -292,12 +288,12 @@
         <metaClass
             href="website.genmodel#//website/UrlAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5259"
+          visualID="5262"
           editPartClassName="UrlAttributeNameEditPart"
           itemSemanticEditPolicyClassName="UrlAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -316,10 +312,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3152"
+        visualID="3255"
         editPartClassName="FileAttributeEditPart"
         itemSemanticEditPolicyClassName="FileAttributeItemSemanticEditPolicy"
-        notationViewFactoryClassName="FileAttributeViewFactory"
         canonicalEditPolicyClassName="FileAttributeCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="FileAttributeGraphicalNodeEditPolicy"
         createCommandClassName="FileAttributeCreateCommand"
@@ -345,15 +340,14 @@
         <metaClass
             href="website.genmodel#//website/FileAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5160"
+          visualID="5263"
           editPartClassName="FileAttributeNameEditPart"
           itemSemanticEditPolicyClassName="FileAttributeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="FileAttributeNameViewFactory"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -370,7 +364,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3235"
+        visualID="3256"
         editPartClassName="ImageAttributeEditPart"
         itemSemanticEditPolicyClassName="ImageAttributeItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ImageAttributeCanonicalEditPolicy"
@@ -394,12 +388,12 @@
         <metaClass
             href="website.genmodel#//website/ImageAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5242"
+          visualID="5264"
           editPartClassName="ImageAttributeNameEditPart"
           itemSemanticEditPolicyClassName="ImageAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -418,10 +412,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3230"
+        visualID="3257"
         editPartClassName="LocationAttributeEditPart"
         itemSemanticEditPolicyClassName="LocationAttributeItemSemanticEditPolicy"
-        notationViewFactoryClassName="LocationAttributeViewFactory"
         canonicalEditPolicyClassName="LocationAttributeCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="LocationAttributeGraphicalNodeEditPolicy"
         createCommandClassName="LocationAttributeCreateCommand"
@@ -447,15 +440,14 @@
         <metaClass
             href="website.genmodel#//website/LocationAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
       </modelFacet>
       <labels
-          visualID="5237"
+          visualID="5265"
           editPartClassName="LocationAttributeNameEditPart"
           itemSemanticEditPolicyClassName="LocationAttributeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="LocationAttributeNameViewFactory"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -578,7 +570,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3243"
+        visualID="3258"
         editPartClassName="EncapsulatedAttributeEditPart"
         itemSemanticEditPolicyClassName="EncapsulatedAttributeItemSemanticEditPolicy"
         canonicalEditPolicyClassName="EncapsulatedAttributeCanonicalEditPolicy"
@@ -606,12 +598,12 @@
         <metaClass
             href="website.genmodel#//website/EncapsulatedAttribute"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/View/features"/>
+            href="website.genmodel#//website/View/viewFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/View/features"/>
+            href="website.genmodel#//website/View/viewFeatures"/>
       </modelFacet>
       <labels
-          visualID="5251"
+          visualID="5266"
           editPartClassName="EncapsulatedAttributeNameEditPart"
           itemSemanticEditPolicyClassName="EncapsulatedAttributeNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -630,7 +622,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3244"
+        visualID="3259"
         editPartClassName="EncapsulatedAssociationEditPart"
         itemSemanticEditPolicyClassName="EncapsulatedAssociationItemSemanticEditPolicy"
         canonicalEditPolicyClassName="EncapsulatedAssociationCanonicalEditPolicy"
@@ -658,12 +650,12 @@
         <metaClass
             href="website.genmodel#//website/EncapsulatedAssociation"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/View/features"/>
+            href="website.genmodel#//website/View/viewFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/View/features"/>
+            href="website.genmodel#//website/View/viewFeatures"/>
       </modelFacet>
       <labels
-          visualID="5252"
+          visualID="5267"
           editPartClassName="EncapsulatedAssociationNameEditPart"
           itemSemanticEditPolicyClassName="EncapsulatedAssociationNameItemSemanticEditPolicy"
           elementIcon="true">
@@ -6002,9 +5994,9 @@
         <metaClass
             href="website.genmodel#//website/AssociationWithoutContainment"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
         <targetMetaFeature
             href="website.genmodel#//website/EntityAssociation/targetEntity"/>
       </modelFacet>
@@ -6080,9 +6072,9 @@
         <metaClass
             href="website.genmodel#//website/AssociationWithContainment"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/Entity/features"/>
+            href="website.genmodel#//website/Entity/entityFeatures"/>
         <targetMetaFeature
             href="website.genmodel#//website/EntityAssociation/targetEntity"/>
       </modelFacet>
@@ -6154,9 +6146,9 @@
         <metaClass
             href="website.genmodel#//website/ViewAssociation"/>
         <containmentMetaFeature
-            href="website.genmodel#//website/View/features"/>
+            href="website.genmodel#//website/View/viewFeatures"/>
         <childMetaFeature
-            href="website.genmodel#//website/View/features"/>
+            href="website.genmodel#//website/View/viewFeatures"/>
         <targetMetaFeature
             href="website.genmodel#//website/ViewAssociation/opposite"/>
       </modelFacet>

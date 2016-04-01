@@ -20,6 +20,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -35,8 +36,11 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getAssociation <em>Association</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getEncapsulatedTarget <em>Encapsulated Target</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#isIsSourceAssociation <em>Is Source Association</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getSourceEntity <em>Source Entity</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,6 +107,26 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	protected Association association;
 
 	/**
+	 * The cached value of the '{@link #getEncapsulatedTarget() <em>Encapsulated Target</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEncapsulatedTarget()
+	 * @generated
+	 * @ordered
+	 */
+	protected EncapsulatedAssociation encapsulatedTarget;
+
+	/**
+	 * The cached setting delegate for the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsSourceAssociation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
+
+	/**
 	 * The cached setting delegate for the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,14 +137,24 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	protected EStructuralFeature.Internal.SettingDelegate CARDINALITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ENCAPSULATED_ASSOCIATION__CARDINALITY).getSettingDelegate();
 
 	/**
-	 * The cached value of the '{@link #getEncapsulatedTarget() <em>Encapsulated Target</em>}' reference.
+	 * The cached setting delegate for the '{@link #getSourceEntity() <em>Source Entity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEncapsulatedTarget()
+	 * @see #getSourceEntity()
 	 * @generated
 	 * @ordered
 	 */
-	protected EncapsulatedAssociation encapsulatedTarget;
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -224,15 +258,6 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 */
 	public String getName() {
 		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		NAME__ESETTING_DELEGATE.dynamicSet(this, null, 0, newName);
 	}
 
 	/**
@@ -356,6 +381,69 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsSourceAssociation() {
+		return (Boolean)IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity getSourceEntity() {
+		return (Entity)SOURCE_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity basicGetSourceEntity() {
+		return (Entity)SOURCE_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSourceEntity(Entity newSourceEntity) {
+		SOURCE_ENTITY__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSourceEntity);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity getTargetEntity() {
+		return (Entity)TARGET_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity basicGetTargetEntity() {
+		return (Entity)TARGET_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTargetEntity(Entity newTargetEntity) {
+		TARGET_ENTITY__ESETTING_DELEGATE.dynamicSet(this, null, 0, newTargetEntity);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -407,11 +495,19 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				if (resolve) return getAssociation();
 				return basicGetAssociation();
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
-				return getCardinality();
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
 				if (resolve) return getEncapsulatedTarget();
 				return basicGetEncapsulatedTarget();
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+				return isIsSourceAssociation();
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
+				return getCardinality();
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY:
+				if (resolve) return getSourceEntity();
+				return basicGetSourceEntity();
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY:
+				if (resolve) return getTargetEntity();
+				return basicGetTargetEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -435,17 +531,20 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 				setInputClass((String)newValue);
 				return;
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION__NAME:
-				setName((String)newValue);
-				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)newValue);
+				return;
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
+				setEncapsulatedTarget((EncapsulatedAssociation)newValue);
 				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				setCardinality((Cardinality)newValue);
 				return;
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
-				setEncapsulatedTarget((EncapsulatedAssociation)newValue);
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY:
+				setSourceEntity((Entity)newValue);
+				return;
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY:
+				setTargetEntity((Entity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -468,17 +567,20 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION__NAME:
-				NAME__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
-				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)null);
+				return;
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
+				setEncapsulatedTarget((EncapsulatedAssociation)null);
 				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
 				CARDINALITY__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
-				setEncapsulatedTarget((EncapsulatedAssociation)null);
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY:
+				setSourceEntity((Entity)null);
+				return;
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY:
+				setTargetEntity((Entity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -502,10 +604,16 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				return association != null;
-			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
-				return CARDINALITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET:
 				return encapsulatedTarget != null;
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+				return IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CARDINALITY:
+				return CARDINALITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY:
+				return SOURCE_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY:
+				return TARGET_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

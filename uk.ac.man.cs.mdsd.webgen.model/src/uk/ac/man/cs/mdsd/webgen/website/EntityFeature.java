@@ -25,7 +25,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
 public interface EntityFeature extends NamedDisplayElement, Feature {
 	/**
 	 * Returns the value of the '<em><b>Part Of</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures <em>Features</em>}'.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getEntityFeatures <em>Entity Features</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Part Of</em>' container reference isn't clear,
@@ -35,8 +35,8 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * @return the value of the '<em>Part Of</em>' container reference.
 	 * @see #setPartOf(Entity)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityFeature_PartOf()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Entity#getFeatures
-	 * @model opposite="features" required="true" transient="false"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Entity#getEntityFeatures
+	 * @model opposite="entityFeatures" required="true" transient="false"
 	 * @generated
 	 */
 	Entity getPartOf();

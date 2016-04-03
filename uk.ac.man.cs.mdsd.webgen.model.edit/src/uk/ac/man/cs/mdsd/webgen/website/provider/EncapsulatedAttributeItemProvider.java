@@ -104,7 +104,7 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_ValidationPropertyCategory"),
 				 null));
 	}
 

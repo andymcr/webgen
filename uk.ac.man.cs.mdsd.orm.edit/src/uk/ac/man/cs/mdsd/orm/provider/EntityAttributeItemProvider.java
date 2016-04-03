@@ -47,10 +47,33 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addValidationPatternPropertyDescriptor(object);
 			addPersistentTypePropertyDescriptor(object);
 			addOrmTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Validation Pattern feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValidationPatternPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Attribute_validationPattern_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_validationPattern_feature", "_UI_Attribute_type"),
+				 OrmPackage.Literals.ATTRIBUTE__VALIDATION_PATTERN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -154,6 +177,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityAttribute.class)) {
+			case OrmPackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 			case OrmPackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 			case OrmPackage.ENTITY_ATTRIBUTE__ORM_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -192,6 +192,7 @@ rule EncapsulatedAttribute {
 			else
 				website.name.createAttributeColumnName()
 			endif,
+		validationPattern <- website.validationPattern(),
 		defaultValue <- website.defaultValue
 	)
 }

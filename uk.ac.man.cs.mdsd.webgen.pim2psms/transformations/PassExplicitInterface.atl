@@ -124,17 +124,6 @@ helper context Website!InterfaceField def: placeholder() : String
 			endif
 		endif;
 
-helper context Website!Attribute def: validationPattern() : String
-	= if not self.validationPattern.oclIsUndefined() and self.validationPattern <> '' then
-			self.validationPattern
-		else
-			if self.oclIsTypeOf(Website!DataTypeAttribute) then
-				self.dataType.validationPattern
-			else
-				OclUndefined
-			endif
-		endif;
-
 helper context Website!InterfaceField def: validationPattern() : String
 	= if not self.validationPattern.oclIsUndefined() and self.validationPattern <> '' then
 			self.validationPattern
@@ -615,12 +604,7 @@ rule UnitAttribute {
 			else
 				website.attribute.placeholder()
 			endif,
-		validationPattern <-
-			if not website.validationPattern.oclIsUndefined() and website.validationPattern <> '' then
-				website.validationPattern
-			else
-				website.attribute.validationPattern()
-			endif,
+		validationPattern <- website.validationPattern,
 		headerClass <-
 			if not website.headerClass.oclIsUndefined() and website.headerClass <> '' then
 				website.headerClass

@@ -154,6 +154,18 @@ helper context Website!Feature def: inverseCollectionType() : ORM!CollectionType
 	endif;
 
 
+helper context Website!Attribute def: validationPattern() : String
+	= if not self.validationPattern.oclIsUndefined() and self.validationPattern <> '' then
+			self.validationPattern
+		else
+			if self.oclIsTypeOf(Website!DataTypeAttribute) then
+				self.dataType.validationPattern
+			else
+				OclUndefined
+			endif
+		endif;
+
+
 helper def: findWebsiteEntityOrView(name : String) : Website!EntityOrView
 	= Website!EntityOrView.allInstancesFrom('website')->any(e | e.name = name);
 

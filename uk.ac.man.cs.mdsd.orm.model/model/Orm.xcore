@@ -104,6 +104,7 @@ abstract class Feature extends NamedDisplayElement {
 
 abstract class Attribute extends Feature, Label {
 	contains Expression defaultValue
+	String validationPattern
 }
 
 abstract class Association extends Feature {

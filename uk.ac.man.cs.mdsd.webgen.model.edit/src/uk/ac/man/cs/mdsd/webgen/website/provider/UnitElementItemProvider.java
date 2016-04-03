@@ -105,7 +105,7 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -149,7 +149,7 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 getString("_UI_ValidationPropertyCategory"),
 				 null));
 	}
 

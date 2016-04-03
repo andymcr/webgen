@@ -34,7 +34,8 @@ abstract rule NamedDisplayElement {
 abstract rule Attribute {
 	from website : Website!Attribute
 	to orm : ORM!Attribute (
-		defaultValue <- website.defaultValue
+		defaultValue <- website.defaultValue,
+		validationPattern <- website.validationPattern()
 	)
 }
 

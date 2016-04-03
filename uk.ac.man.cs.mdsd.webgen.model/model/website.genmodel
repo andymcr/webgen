@@ -170,7 +170,8 @@
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           propertyDescription="" ecoreFeature="ecore:EReference website.ecore#//Attribute/defaultValue"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Attribute/placeholder"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Attribute/validationPattern"/>
+      <genFeatures createChild="false" propertyCategory="Validation" propertyDescription=""
+          ecoreFeature="ecore:EAttribute website.ecore#//Attribute/validationPattern"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Attribute/inputClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Association">
@@ -448,9 +449,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//UnitElement/attribute"/>
       <genFeatures property="None" createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute website.ecore#//UnitElement/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//UnitElement/defaultValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//UnitElement/obfuscateFormFields"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//UnitElement/obfuscateFormFields"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//UnitElement/placeholder"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//UnitElement/validationPattern"/>
+      <genFeatures createChild="false" propertyCategory="Validation" ecoreFeature="ecore:EAttribute website.ecore#//UnitElement/validationPattern"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//PathAssociationElement">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

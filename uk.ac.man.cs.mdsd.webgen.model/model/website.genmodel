@@ -435,7 +435,7 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//UnitFeature/collectionDisplayOption"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//UnitFeature/displayLabel"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//UnitFeature/required"/>
-      <genFeatures property="None" children="true" createChild="true" propertyCategory="Business"
+      <genFeatures children="true" createChild="true" propertyCategory="Business"
           ecoreFeature="ecore:EReference website.ecore#//UnitFeature/forcedValue"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//UnitFeature/footer"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""

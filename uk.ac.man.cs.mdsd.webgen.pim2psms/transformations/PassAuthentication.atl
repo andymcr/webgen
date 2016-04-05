@@ -163,6 +163,7 @@ unique lazy rule implicitRegistrationUnit {
 				thisModule.implicitLoginPage(website)
 			endif,
 		confirmLabel <- 'Register',
+		entities <- Sequence{thisModule.findOrmEntityOrView('Authentication')},
 		displayFields <-
 			let features : Sequence(ORM!EntityFeature)
 				= thisModule.findOrmEntityOrView('Authentication').features
@@ -219,6 +220,7 @@ unique lazy rule implicitLoginUnit {
 		displayLabel <- 'Login',
 		omitCaption <- false,
 		submitLabel <- 'Login',
+		entities <- Sequence{thisModule.findOrmEntityOrView('Authentication')},
 		displayFields <-
 			let features : Sequence(ORM!EntityFeature)
 				= thisModule.findOrmEntityOrView('Authentication').features
@@ -255,6 +257,7 @@ unique lazy rule implicitForgottenPasswordUnit {
 		displayLabel <- 'Recover Forgotten Password',
 		omitCaption <- false,
 		submitLabel <- 'Recover Password',
+		entities <- Sequence{thisModule.findOrmEntityOrView('Authentication')},
 		displayFields <-
 			let features : Sequence(ORM!EntityFeature)
 				= thisModule.findOrmEntityOrView('Authentication').features
@@ -279,7 +282,7 @@ unique lazy rule implicitForgottenPasswordUnit {
 lazy abstract rule implicitUnitFeature {
 	from partialWaf : ORM!EntityFeature
 	to waf : WAF!UnitFeature (
--- TODO		displayLabel <- partialWaf.displayLabel,
+		displayLabel <- partialWaf.displayLabel,
 		inputClass <- 'input_attribute'
 	)
 }
@@ -324,7 +327,8 @@ unique lazy rule implicitRememberMeField {
 lazy rule implicitCaptchaField {
 	from website : Website!LocalAuthenticationSystem
 	to waf : WAF!CaptchaField (
-		name <- 'captcha'
+		name <- 'captcha',
+		displayLabel <- 'Captcha'
 	)
 	do {
 		waf;
@@ -410,6 +414,7 @@ unique lazy rule implicitManageAuthenticationsPage {
 		defaultPaginationSize <- 10,
 		nextPageLabel <- '>',
 		previousPageLabel <- '<',
+		entities <- Sequence{thisModule.findOrmEntityOrView('Authentication')},
 		displayFields <-
 			let features : Sequence(ORM!EntityFeature)
 				= thisModule.findOrmEntityOrView('Authentication').features
@@ -441,6 +446,7 @@ unique lazy rule implicitManageAuthenticationsPage {
 		displayLabel <- 'Edit User',
 		omitCaption <- false,
 		confirmLabel <- 'Save',
+		entities <- Sequence{thisModule.findOrmEntityOrView('Authentication')},
 		displayFields <-
 			let features : Sequence(ORM!EntityFeature)
 				= thisModule.findOrmEntityOrView('Authentication').features

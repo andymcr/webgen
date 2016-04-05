@@ -54,6 +54,7 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addDisplayLabelPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
+			addForcedValuePropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -149,6 +150,28 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Forced Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addForcedValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_forcedValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_forcedValue_feature", "_UI_UnitFeature_type"),
+				 WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_BusinessPropertyCategory"),
 				 null));
 	}
 

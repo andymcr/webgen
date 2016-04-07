@@ -79,6 +79,7 @@ public class LoginUnitItemProvider
 			addCancelDestinationPropertyDescriptor(object);
 			addCancelLabelPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
+			addLogoutUriElementPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -459,6 +460,28 @@ public class LoginUnitItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Logout Uri Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogoutUriElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LoginUnit_logoutUriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LoginUnit_logoutUriElement_feature", "_UI_LoginUnit_type"),
+				 WebsitePackage.Literals.LOGIN_UNIT__LOGOUT_URI_ELEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Style Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -563,6 +586,7 @@ public class LoginUnitItemProvider
 			case WebsitePackage.LOGIN_UNIT__SUBMIT_LABEL:
 			case WebsitePackage.LOGIN_UNIT__CANCEL_LABEL:
 			case WebsitePackage.LOGIN_UNIT__CONTENT_CLASS:
+			case WebsitePackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT:
 			case WebsitePackage.LOGIN_UNIT__STYLE_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

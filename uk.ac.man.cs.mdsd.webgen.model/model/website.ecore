@@ -112,6 +112,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="logoutLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="Logout"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AuthenticationKeyTypes">
+    <eLiterals name="Email"/>
+    <eLiterals name="ScreenName" value="1"/>
+    <eLiterals name="Username" value="2"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LocalAuthenticationSystem" eSuperTypes="#//Authentication">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="authenticationKeyFromUser authenticationKeyRequiredAttribute captchaRequiresKeys"/>
@@ -123,10 +128,12 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="user" ordered="false" lowerBound="1"
         eType="#//EntityOrView"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="userAuthenticationKey"
-        ordered="false" lowerBound="1" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userKey" ordered="false"
+        lowerBound="1" eType="#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authentication" ordered="false"
         eType="#//EntityOrView"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="authenticationKey" lowerBound="1"
+        eType="#//AuthenticationKeyTypes"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="useCaptcha" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
@@ -944,6 +951,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,register_unit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LoginUnit" eSuperTypes="#//AuthenticationUnit #//ControlUnit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logoutUriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="&quot;logout&quot;"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,login_unit"/>
   </eClassifiers>

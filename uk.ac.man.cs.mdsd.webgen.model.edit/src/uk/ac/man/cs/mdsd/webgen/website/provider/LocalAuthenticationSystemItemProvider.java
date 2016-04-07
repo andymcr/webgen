@@ -46,8 +46,9 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 			super.getPropertyDescriptors(object);
 
 			addUserPropertyDescriptor(object);
-			addUserAuthenticationKeyPropertyDescriptor(object);
+			addUserKeyPropertyDescriptor(object);
 			addAuthenticationPropertyDescriptor(object);
+			addAuthenticationKeyPropertyDescriptor(object);
 			addUseCaptchaPropertyDescriptor(object);
 			addAllowSelfRegistrationPropertyDescriptor(object);
 			addTrackLoginAttemptsPropertyDescriptor(object);
@@ -84,20 +85,20 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 	}
 
 	/**
-	 * This adds a property descriptor for the Authentication Key feature.
+	 * This adds a property descriptor for the User Key feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addUserAuthenticationKeyPropertyDescriptor(Object object) {
+	protected void addUserKeyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_LocalAuthenticationSystem_userAuthenticationKey_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_userAuthenticationKey_feature", "_UI_LocalAuthenticationSystem_type"),
-			WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY,
+			getString("_UI_LocalAuthenticationSystem_userKey_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_userKey_feature", "_UI_LocalAuthenticationSystem_type"),
+			WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY,
 			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
+			getString("_UI_AuthenticationPropertyCategory"),
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
@@ -132,6 +133,28 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 				 false,
 				 true,
 				 null,
+				 getString("_UI_AuthenticationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Authentication Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAuthenticationKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_authenticationKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_authenticationKey_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_AuthenticationPropertyCategory"),
 				 null));
 	}
@@ -371,6 +394,7 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LocalAuthenticationSystem.class)) {
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS:

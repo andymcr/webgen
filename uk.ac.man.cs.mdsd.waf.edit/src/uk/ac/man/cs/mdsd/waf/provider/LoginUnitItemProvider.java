@@ -9,6 +9,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 import uk.ac.man.cs.mdsd.waf.LoginUnit;
 
@@ -45,6 +47,7 @@ public class LoginUnitItemProvider
 			addLoginIdFieldPropertyDescriptor(object);
 			addPasswordFieldPropertyDescriptor(object);
 			addRememberMeFieldPropertyDescriptor(object);
+			addLogoutUriElementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -138,6 +141,28 @@ public class LoginUnitItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Logout Uri Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogoutUriElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LoginUnit_logoutUriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LoginUnit_logoutUriElement_feature", "_UI_LoginUnit_type"),
+				 WafPackage.Literals.LOGIN_UNIT__LOGOUT_URI_ELEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns LoginUnit.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,6 +197,12 @@ public class LoginUnitItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(LoginUnit.class)) {
+			case WafPackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

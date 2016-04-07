@@ -1013,7 +1013,8 @@ rule LoginUnit {
 	to waf : WAF!LoginUnit (
 		loginIdField <- website.loginIdField,
 		passwordField <- website.passwordField,
-		rememberMeField <- website.rememberMeField
+		rememberMeField <- website.rememberMeField,
+		logoutUriElement <- website.logoutUriElement
 	)
 }
 

@@ -16,6 +16,7 @@ package uk.ac.man.cs.mdsd.waf;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LoginUnit#getLoginIdField <em>Login Id Field</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LoginUnit#getPasswordField <em>Password Field</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LoginUnit#getRememberMeField <em>Remember Me Field</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.LoginUnit#getLogoutUriElement <em>Logout Uri Element</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLoginUnit()
@@ -128,5 +129,31 @@ public interface LoginUnit extends ControlUnit, AuthenticationUnit {
 	 * @generated
 	 */
 	void setRememberMeField(UnitField value);
+
+	/**
+	 * Returns the value of the '<em><b>Logout Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Logout Uri Element</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Logout Uri Element</em>' attribute.
+	 * @see #setLogoutUriElement(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLoginUnit_LogoutUriElement()
+	 * @model unique="false" required="true"
+	 * @generated
+	 */
+	String getLogoutUriElement();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LoginUnit#getLogoutUriElement <em>Logout Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Logout Uri Element</em>' attribute.
+	 * @see #getLogoutUriElement()
+	 * @generated
+	 */
+	void setLogoutUriElement(String value);
 
 } // LoginUnit

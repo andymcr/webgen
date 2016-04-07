@@ -27,6 +27,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LoginUnitImpl#getLoginIdField <em>Login Id Field</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LoginUnitImpl#getPasswordField <em>Password Field</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LoginUnitImpl#getRememberMeField <em>Remember Me Field</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LoginUnitImpl#getLogoutUriElement <em>Logout Uri Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -71,6 +72,26 @@ public class LoginUnitImpl extends ControlUnitImpl implements LoginUnit {
 	 * @ordered
 	 */
 	protected UnitField rememberMeField;
+
+	/**
+	 * The default value of the '{@link #getLogoutUriElement() <em>Logout Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogoutUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LOGOUT_URI_ELEMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLogoutUriElement() <em>Logout Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogoutUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected String logoutUriElement = LOGOUT_URI_ELEMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -270,6 +291,27 @@ public class LoginUnitImpl extends ControlUnitImpl implements LoginUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getLogoutUriElement() {
+		return logoutUriElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLogoutUriElement(String newLogoutUriElement) {
+		String oldLogoutUriElement = logoutUriElement;
+		logoutUriElement = newLogoutUriElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT, oldLogoutUriElement, logoutUriElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -315,6 +357,8 @@ public class LoginUnitImpl extends ControlUnitImpl implements LoginUnit {
 			case WafPackage.LOGIN_UNIT__REMEMBER_ME_FIELD:
 				if (resolve) return getRememberMeField();
 				return basicGetRememberMeField();
+			case WafPackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT:
+				return getLogoutUriElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -338,6 +382,9 @@ public class LoginUnitImpl extends ControlUnitImpl implements LoginUnit {
 				return;
 			case WafPackage.LOGIN_UNIT__REMEMBER_ME_FIELD:
 				setRememberMeField((UnitField)newValue);
+				return;
+			case WafPackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT:
+				setLogoutUriElement((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -363,6 +410,9 @@ public class LoginUnitImpl extends ControlUnitImpl implements LoginUnit {
 			case WafPackage.LOGIN_UNIT__REMEMBER_ME_FIELD:
 				setRememberMeField((UnitField)null);
 				return;
+			case WafPackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT:
+				setLogoutUriElement(LOGOUT_URI_ELEMENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -383,8 +433,26 @@ public class LoginUnitImpl extends ControlUnitImpl implements LoginUnit {
 				return passwordField != null;
 			case WafPackage.LOGIN_UNIT__REMEMBER_ME_FIELD:
 				return rememberMeField != null;
+			case WafPackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT:
+				return LOGOUT_URI_ELEMENT_EDEFAULT == null ? logoutUriElement != null : !LOGOUT_URI_ELEMENT_EDEFAULT.equals(logoutUriElement);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (logoutUriElement: ");
+		result.append(logoutUriElement);
+		result.append(')');
+		return result.toString();
 	}
 
 } //LoginUnitImpl

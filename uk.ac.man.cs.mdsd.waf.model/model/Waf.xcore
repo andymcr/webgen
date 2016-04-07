@@ -73,18 +73,25 @@ abstract class Authentication {
 	String logoutLabel = ""
 }
 
+enum AuthenticationKeyType {
+	Email = 1
+	ScreenName = 2
+	Username = 3
+}
+
 class LocalAuthenticationSystem extends Authentication {
 	refers EntityOrView[1] user
-	refers Attribute[1] userAuthenticationKey
+	refers Attribute[1] userKey
 	refers EntityOrView authentication
-	refers Service loginAttemptService
-	refers Service autoLoginService
+	AuthenticationKeyType[1] authenticationKey
+	refers EntityOrView loginAttempt
+	refers EntityOrView autoLogin
 	boolean useCaptcha
 	boolean allowSelfRegistration
 	boolean useEmailActivation = "true"
 	boolean sendWelcomeEmail = "true"
 	refers RegistrationUnit registrationUnit opposite authenticationSystem
-	refers LoginUnit[1] loginUnit opposite authenticationSystem
+	refers LoginUnit loginUnit opposite authenticationSystem
 	refers ForgottenPasswordUnit forgottenPasswordUnit opposite authenticationSystem
 }
 
@@ -401,6 +408,7 @@ class LoginUnit extends ControlUnit, AuthenticationUnit {
 	refers UnitField[1] loginIdField
 	refers UnitField[1] passwordField
 	refers UnitField rememberMeField
+	String[1] logoutUriElement
 }
 
 class ForgottenPasswordUnit extends ControlUnit, AuthenticationUnit {

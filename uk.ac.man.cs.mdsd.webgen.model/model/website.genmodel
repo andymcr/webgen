@@ -33,6 +33,11 @@
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/jQuery"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/AngularJS"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//AuthenticationKeyTypes">
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AuthenticationKeyTypes/Email"/>
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AuthenticationKeyTypes/ScreenName"/>
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//AuthenticationKeyTypes/Username"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//Cardinality">
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//Cardinality/Optional"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//Cardinality/Required"/>
@@ -111,9 +116,10 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/user"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/userAuthenticationKey"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/userKey"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/authentication"/>
+      <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/authenticationKey"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/useCaptcha"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/allowSelfRegistration"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/trackLoginAttempts"/>
@@ -596,6 +602,7 @@
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//RegistrationUnit/styleClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//LoginUnit">
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//LoginUnit/logoutUriElement"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//LoginUnit/styleClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//ForgottenPasswordUnit">

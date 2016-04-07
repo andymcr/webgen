@@ -381,13 +381,13 @@ public interface WafPackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM__USER = AUTHENTICATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>User Authentication Key</b></em>' reference.
+	 * The feature id for the '<em><b>User Key</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY = AUTHENTICATION_FEATURE_COUNT + 1;
+	int LOCAL_AUTHENTICATION_SYSTEM__USER_KEY = AUTHENTICATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Authentication</b></em>' reference.
@@ -399,22 +399,31 @@ public interface WafPackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION = AUTHENTICATION_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Login Attempt Service</b></em>' reference.
+	 * The feature id for the '<em><b>Authentication Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT_SERVICE = AUTHENTICATION_FEATURE_COUNT + 3;
+	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY = AUTHENTICATION_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Auto Login Service</b></em>' reference.
+	 * The feature id for the '<em><b>Login Attempt</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN_SERVICE = AUTHENTICATION_FEATURE_COUNT + 4;
+	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT = AUTHENTICATION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Auto Login</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN = AUTHENTICATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Use Captcha</b></em>' attribute.
@@ -423,7 +432,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA = AUTHENTICATION_FEATURE_COUNT + 5;
+	int LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA = AUTHENTICATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Allow Self Registration</b></em>' attribute.
@@ -432,7 +441,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION = AUTHENTICATION_FEATURE_COUNT + 6;
+	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION = AUTHENTICATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Use Email Activation</b></em>' attribute.
@@ -441,7 +450,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION = AUTHENTICATION_FEATURE_COUNT + 7;
+	int LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION = AUTHENTICATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Send Welcome Email</b></em>' attribute.
@@ -450,7 +459,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL = AUTHENTICATION_FEATURE_COUNT + 8;
+	int LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL = AUTHENTICATION_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Registration Unit</b></em>' reference.
@@ -459,7 +468,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT = AUTHENTICATION_FEATURE_COUNT + 9;
+	int LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT = AUTHENTICATION_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Login Unit</b></em>' reference.
@@ -468,7 +477,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT = AUTHENTICATION_FEATURE_COUNT + 10;
+	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT = AUTHENTICATION_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Forgotten Password Unit</b></em>' reference.
@@ -477,7 +486,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT = AUTHENTICATION_FEATURE_COUNT + 11;
+	int LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT = AUTHENTICATION_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Local Authentication System</em>' class.
@@ -486,7 +495,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 12;
+	int LOCAL_AUTHENTICATION_SYSTEM_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of operations of the '<em>Local Authentication System</em>' class.
@@ -7622,13 +7631,22 @@ public interface WafPackage extends EPackage {
 	int LOGIN_UNIT__REMEMBER_ME_FIELD = CONTROL_UNIT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Logout Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__LOGOUT_URI_ELEMENT = CONTROL_UNIT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Login Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT_FEATURE_COUNT = CONTROL_UNIT_FEATURE_COUNT + 4;
+	int LOGIN_UNIT_FEATURE_COUNT = CONTROL_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Login Unit</em>' class.
@@ -8516,6 +8534,16 @@ public interface WafPackage extends EPackage {
 	int AJAX_TECHNOLOGIES = 64;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyType <em>Authentication Key Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyType
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyType()
+	 * @generated
+	 */
+	int AUTHENTICATION_KEY_TYPE = 65;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8523,7 +8551,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 65;
+	int PAGE_TOP_MENU_OPTIONS = 66;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -8533,7 +8561,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 66;
+	int COLLECTION_DISPLAY_OPTIONS = 67;
 
 
 	/**
@@ -8842,15 +8870,15 @@ public interface WafPackage extends EPackage {
 	EReference getLocalAuthenticationSystem_User();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUserAuthenticationKey <em>User Authentication Key</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUserKey <em>User Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>User Authentication Key</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUserAuthenticationKey()
+	 * @return the meta object for the reference '<em>User Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUserKey()
 	 * @see #getLocalAuthenticationSystem()
 	 * @generated
 	 */
-	EReference getLocalAuthenticationSystem_UserAuthenticationKey();
+	EReference getLocalAuthenticationSystem_UserKey();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}'.
@@ -8864,26 +8892,37 @@ public interface WafPackage extends EPackage {
 	EReference getLocalAuthenticationSystem_Authentication();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getLoginAttemptService <em>Login Attempt Service</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Login Attempt Service</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getLoginAttemptService()
+	 * @return the meta object for the attribute '<em>Authentication Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthenticationKey()
 	 * @see #getLocalAuthenticationSystem()
 	 * @generated
 	 */
-	EReference getLocalAuthenticationSystem_LoginAttemptService();
+	EAttribute getLocalAuthenticationSystem_AuthenticationKey();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAutoLoginService <em>Auto Login Service</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getLoginAttempt <em>Login Attempt</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Auto Login Service</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAutoLoginService()
+	 * @return the meta object for the reference '<em>Login Attempt</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getLoginAttempt()
 	 * @see #getLocalAuthenticationSystem()
 	 * @generated
 	 */
-	EReference getLocalAuthenticationSystem_AutoLoginService();
+	EReference getLocalAuthenticationSystem_LoginAttempt();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAutoLogin <em>Auto Login</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Auto Login</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAutoLogin()
+	 * @see #getLocalAuthenticationSystem()
+	 * @generated
+	 */
+	EReference getLocalAuthenticationSystem_AutoLogin();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}'.
@@ -10981,6 +11020,17 @@ public interface WafPackage extends EPackage {
 	EReference getLoginUnit_RememberMeField();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.LoginUnit#getLogoutUriElement <em>Logout Uri Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Logout Uri Element</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.LoginUnit#getLogoutUriElement()
+	 * @see #getLoginUnit()
+	 * @generated
+	 */
+	EAttribute getLoginUnit_LogoutUriElement();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit <em>Forgotten Password Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11288,6 +11338,16 @@ public interface WafPackage extends EPackage {
 	EEnum getAjaxTechnologies();
 
 	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyType <em>Authentication Key Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Authentication Key Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyType
+	 * @generated
+	 */
+	EEnum getAuthenticationKeyType();
+
+	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11561,12 +11621,12 @@ public interface WafPackage extends EPackage {
 		EReference LOCAL_AUTHENTICATION_SYSTEM__USER = eINSTANCE.getLocalAuthenticationSystem_User();
 
 		/**
-		 * The meta object literal for the '<em><b>User Authentication Key</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>User Key</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY = eINSTANCE.getLocalAuthenticationSystem_UserAuthenticationKey();
+		EReference LOCAL_AUTHENTICATION_SYSTEM__USER_KEY = eINSTANCE.getLocalAuthenticationSystem_UserKey();
 
 		/**
 		 * The meta object literal for the '<em><b>Authentication</b></em>' reference feature.
@@ -11577,20 +11637,28 @@ public interface WafPackage extends EPackage {
 		EReference LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION = eINSTANCE.getLocalAuthenticationSystem_Authentication();
 
 		/**
-		 * The meta object literal for the '<em><b>Login Attempt Service</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Authentication Key</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT_SERVICE = eINSTANCE.getLocalAuthenticationSystem_LoginAttemptService();
+		EAttribute LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY = eINSTANCE.getLocalAuthenticationSystem_AuthenticationKey();
 
 		/**
-		 * The meta object literal for the '<em><b>Auto Login Service</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Login Attempt</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN_SERVICE = eINSTANCE.getLocalAuthenticationSystem_AutoLoginService();
+		EReference LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT = eINSTANCE.getLocalAuthenticationSystem_LoginAttempt();
+
+		/**
+		 * The meta object literal for the '<em><b>Auto Login</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCAL_AUTHENTICATION_SYSTEM__AUTO_LOGIN = eINSTANCE.getLocalAuthenticationSystem_AutoLogin();
 
 		/**
 		 * The meta object literal for the '<em><b>Use Captcha</b></em>' attribute feature.
@@ -13253,6 +13321,14 @@ public interface WafPackage extends EPackage {
 		EReference LOGIN_UNIT__REMEMBER_ME_FIELD = eINSTANCE.getLoginUnit_RememberMeField();
 
 		/**
+		 * The meta object literal for the '<em><b>Logout Uri Element</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGIN_UNIT__LOGOUT_URI_ELEMENT = eINSTANCE.getLoginUnit_LogoutUriElement();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ForgottenPasswordUnitImpl <em>Forgotten Password Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -13507,6 +13583,16 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum AJAX_TECHNOLOGIES = eINSTANCE.getAjaxTechnologies();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyType <em>Authentication Key Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyType
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyType()
+		 * @generated
+		 */
+		EEnum AUTHENTICATION_KEY_TYPE = eINSTANCE.getAuthenticationKeyType();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.

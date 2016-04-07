@@ -63,6 +63,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getCancelDestination <em>Cancel Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getCancelLabel <em>Cancel Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getContentClass <em>Content Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getLogoutUriElement <em>Logout Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getStyleClass <em>Style Class</em>}</li>
  * </ul>
  *
@@ -408,6 +409,26 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * @ordered
 	 */
 	protected String contentClass = CONTENT_CLASS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLogoutUriElement() <em>Logout Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogoutUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LOGOUT_URI_ELEMENT_EDEFAULT = "\"logout\"";
+
+	/**
+	 * The cached value of the '{@link #getLogoutUriElement() <em>Logout Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogoutUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected String logoutUriElement = LOGOUT_URI_ELEMENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -883,6 +904,27 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getLogoutUriElement() {
+		return logoutUriElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLogoutUriElement(String newLogoutUriElement) {
+		String oldLogoutUriElement = logoutUriElement;
+		logoutUriElement = newLogoutUriElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT, oldLogoutUriElement, logoutUriElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getStyleClass() {
 		return styleClass;
 	}
@@ -999,6 +1041,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return getCancelLabel();
 			case WebsitePackage.LOGIN_UNIT__CONTENT_CLASS:
 				return getContentClass();
+			case WebsitePackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT:
+				return getLogoutUriElement();
 			case WebsitePackage.LOGIN_UNIT__STYLE_CLASS:
 				return getStyleClass();
 		}
@@ -1077,6 +1121,9 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__CONTENT_CLASS:
 				setContentClass((String)newValue);
 				return;
+			case WebsitePackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT:
+				setLogoutUriElement((String)newValue);
+				return;
 			case WebsitePackage.LOGIN_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
 				return;
@@ -1152,6 +1199,9 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__CONTENT_CLASS:
 				setContentClass(CONTENT_CLASS_EDEFAULT);
 				return;
+			case WebsitePackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT:
+				setLogoutUriElement(LOGOUT_URI_ELEMENT_EDEFAULT);
+				return;
 			case WebsitePackage.LOGIN_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
@@ -1207,6 +1257,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return CANCEL_LABEL_EDEFAULT == null ? cancelLabel != null : !CANCEL_LABEL_EDEFAULT.equals(cancelLabel);
 			case WebsitePackage.LOGIN_UNIT__CONTENT_CLASS:
 				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
+			case WebsitePackage.LOGIN_UNIT__LOGOUT_URI_ELEMENT:
+				return LOGOUT_URI_ELEMENT_EDEFAULT == null ? logoutUriElement != null : !LOGOUT_URI_ELEMENT_EDEFAULT.equals(logoutUriElement);
 			case WebsitePackage.LOGIN_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 		}
@@ -1363,6 +1415,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		result.append(cancelLabel);
 		result.append(", contentClass: ");
 		result.append(contentClass);
+		result.append(", logoutUriElement: ");
+		result.append(logoutUriElement);
 		result.append(", styleClass: ");
 		result.append(styleClass);
 		result.append(')');

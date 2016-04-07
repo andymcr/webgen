@@ -14,8 +14,9 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUser <em>User</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserAuthenticationKey <em>User Authentication Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserKey <em>User Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isTrackLoginAttempts <em>Track Login Attempts</em>}</li>
@@ -60,30 +61,30 @@ public interface LocalAuthenticationSystem extends Authentication {
 	void setUser(EntityOrView value);
 
 	/**
-	 * Returns the value of the '<em><b>User Authentication Key</b></em>' reference.
+	 * Returns the value of the '<em><b>User Key</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>User Authentication Key</em>' reference isn't clear,
+	 * If the meaning of the '<em>User Key</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Authentication Key</em>' reference.
-	 * @see #setUserAuthenticationKey(Attribute)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_UserAuthenticationKey()
+	 * @return the value of the '<em>User Key</em>' reference.
+	 * @see #setUserKey(Attribute)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_UserKey()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	Attribute getUserAuthenticationKey();
+	Attribute getUserKey();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserAuthenticationKey <em>User Authentication Key</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserKey <em>User Key</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Authentication Key</em>' reference.
-	 * @see #getUserAuthenticationKey()
+	 * @param value the new value of the '<em>User Key</em>' reference.
+	 * @see #getUserKey()
 	 * @generated
 	 */
-	void setUserAuthenticationKey(Attribute value);
+	void setUserKey(Attribute value);
 
 	/**
 	 * Returns the value of the '<em><b>Authentication</b></em>' reference.
@@ -110,6 +111,35 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @generated
 	 */
 	void setAuthentication(EntityOrView value);
+
+	/**
+	 * Returns the value of the '<em><b>Authentication Key</b></em>' attribute.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationKeyTypes}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Authentication Key</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Authentication Key</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AuthenticationKeyTypes
+	 * @see #setAuthenticationKey(AuthenticationKeyTypes)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_AuthenticationKey()
+	 * @model required="true"
+	 * @generated
+	 */
+	AuthenticationKeyTypes getAuthenticationKey();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Authentication Key</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AuthenticationKeyTypes
+	 * @see #getAuthenticationKey()
+	 * @generated
+	 */
+	void setAuthenticationKey(AuthenticationKeyTypes value);
 
 	/**
 	 * Returns the value of the '<em><b>Use Captcha</b></em>' attribute.

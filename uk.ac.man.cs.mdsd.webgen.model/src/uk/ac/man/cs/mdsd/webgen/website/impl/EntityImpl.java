@@ -7,8 +7,6 @@
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
 import java.util.Collection;
-import java.util.LinkedList;
-
 import java.util.List;
 import org.eclipse.emf.common.notify.NotificationChain;
 

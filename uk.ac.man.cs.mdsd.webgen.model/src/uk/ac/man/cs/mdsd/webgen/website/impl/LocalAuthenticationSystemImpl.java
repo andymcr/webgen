@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
+import uk.ac.man.cs.mdsd.webgen.website.AuthenticationKeyTypes;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem;
@@ -26,8 +27,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getUser <em>User</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getUserAuthenticationKey <em>User Authentication Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getUserKey <em>User Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getAuthentication <em>Authentication</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getAuthenticationKey <em>Authentication Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isUseCaptcha <em>Use Captcha</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isTrackLoginAttempts <em>Track Login Attempts</em>}</li>
@@ -53,14 +55,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	protected EntityOrView user;
 
 	/**
-	 * The cached value of the '{@link #getUserAuthenticationKey() <em>User Authentication Key</em>}' reference.
+	 * The cached value of the '{@link #getUserKey() <em>User Key</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUserAuthenticationKey()
+	 * @see #getUserKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected Attribute userAuthenticationKey;
+	protected Attribute userKey;
 
 	/**
 	 * The cached value of the '{@link #getAuthentication() <em>Authentication</em>}' reference.
@@ -71,6 +73,26 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @ordered
 	 */
 	protected EntityOrView authentication;
+
+	/**
+	 * The default value of the '{@link #getAuthenticationKey() <em>Authentication Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAuthenticationKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final AuthenticationKeyTypes AUTHENTICATION_KEY_EDEFAULT = AuthenticationKeyTypes.EMAIL;
+
+	/**
+	 * The cached value of the '{@link #getAuthenticationKey() <em>Authentication Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAuthenticationKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected AuthenticationKeyTypes authenticationKey = AUTHENTICATION_KEY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isUseCaptcha() <em>Use Captcha</em>}' attribute.
@@ -284,16 +306,16 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute getUserAuthenticationKey() {
-		if (userAuthenticationKey != null && userAuthenticationKey.eIsProxy()) {
-			InternalEObject oldUserAuthenticationKey = (InternalEObject)userAuthenticationKey;
-			userAuthenticationKey = (Attribute)eResolveProxy(oldUserAuthenticationKey);
-			if (userAuthenticationKey != oldUserAuthenticationKey) {
+	public Attribute getUserKey() {
+		if (userKey != null && userKey.eIsProxy()) {
+			InternalEObject oldUserKey = (InternalEObject)userKey;
+			userKey = (Attribute)eResolveProxy(oldUserKey);
+			if (userKey != oldUserKey) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY, oldUserAuthenticationKey, userAuthenticationKey));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY, oldUserKey, userKey));
 			}
 		}
-		return userAuthenticationKey;
+		return userKey;
 	}
 
 	/**
@@ -301,8 +323,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute basicGetUserAuthenticationKey() {
-		return userAuthenticationKey;
+	public Attribute basicGetUserKey() {
+		return userKey;
 	}
 
 	/**
@@ -310,11 +332,11 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUserAuthenticationKey(Attribute newUserAuthenticationKey) {
-		Attribute oldUserAuthenticationKey = userAuthenticationKey;
-		userAuthenticationKey = newUserAuthenticationKey;
+	public void setUserKey(Attribute newUserKey) {
+		Attribute oldUserKey = userKey;
+		userKey = newUserKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY, oldUserAuthenticationKey, userAuthenticationKey));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY, oldUserKey, userKey));
 	}
 
 	/**
@@ -353,6 +375,27 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		authentication = newAuthentication;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION, oldAuthentication, authentication));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AuthenticationKeyTypes getAuthenticationKey() {
+		return authenticationKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAuthenticationKey(AuthenticationKeyTypes newAuthenticationKey) {
+		AuthenticationKeyTypes oldAuthenticationKey = authenticationKey;
+		authenticationKey = newAuthenticationKey == null ? AUTHENTICATION_KEY_EDEFAULT : newAuthenticationKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY, oldAuthenticationKey, authenticationKey));
 	}
 
 	/**
@@ -606,12 +649,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
 				if (resolve) return getUser();
 				return basicGetUser();
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
-				if (resolve) return getUserAuthenticationKey();
-				return basicGetUserAuthenticationKey();
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
+				if (resolve) return getUserKey();
+				return basicGetUserKey();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
 				if (resolve) return getAuthentication();
 				return basicGetAuthentication();
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
+				return getAuthenticationKey();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				return isUseCaptcha();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
@@ -648,11 +693,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
 				setUser((EntityOrView)newValue);
 				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
-				setUserAuthenticationKey((Attribute)newValue);
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
+				setUserKey((Attribute)newValue);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
 				setAuthentication((EntityOrView)newValue);
+				return;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
+				setAuthenticationKey((AuthenticationKeyTypes)newValue);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				setUseCaptcha((Boolean)newValue);
@@ -696,11 +744,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
 				setUser((EntityOrView)null);
 				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
-				setUserAuthenticationKey((Attribute)null);
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
+				setUserKey((Attribute)null);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
 				setAuthentication((EntityOrView)null);
+				return;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
+				setAuthenticationKey(AUTHENTICATION_KEY_EDEFAULT);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				setUseCaptcha(USE_CAPTCHA_EDEFAULT);
@@ -743,10 +794,12 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		switch (featureID) {
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
 				return user != null;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_AUTHENTICATION_KEY:
-				return userAuthenticationKey != null;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
+				return userKey != null;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
 				return authentication != null;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
+				return authenticationKey != AUTHENTICATION_KEY_EDEFAULT;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				return useCaptcha != USE_CAPTCHA_EDEFAULT;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
@@ -779,7 +832,9 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (useCaptcha: ");
+		result.append(" (authenticationKey: ");
+		result.append(authenticationKey);
+		result.append(", useCaptcha: ");
 		result.append(useCaptcha);
 		result.append(", allowSelfRegistration: ");
 		result.append(allowSelfRegistration);

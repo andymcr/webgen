@@ -182,6 +182,7 @@ unique lazy rule implicitRegistrationUnit {
 					else
 						Sequence{}
 					endif),
+		noRouteParameters <- false,
 		styleClass <- 'unit register_unit framed',
 		headerClass <- 'unit_header',
 		captionClass <- 'unit_caption',
@@ -240,6 +241,7 @@ unique lazy rule implicitLoginUnit {
 -- assigned in next pass		rememberMeField <- rememberMe,
 		uriElement <- 'login',
 		logoutUriElement <- 'logout',
+		noRouteParameters <- false,
 		styleClass <- 'unit login_unit framed',
 		headerClass <- 'unit_header',
 		captionClass <- 'unit_caption',
@@ -269,6 +271,7 @@ unique lazy rule implicitForgottenPasswordUnit {
 					->collect(f | thisModule.implicitUnitAttribute(f)),
 -- assigned in next pass		loginIdField <- OclUndefined,
 		uriElement <- 'forgotten',
+		noRouteParameters <- false,
 		styleClass <- 'unit forgotten_password_unit framed',
 		headerClass <- 'unit_header',
 		captionClass <- 'unit_caption',
@@ -444,6 +447,7 @@ unique lazy rule implicitManageAuthenticationsPage {
 							thisModule.implicitUnitAttribute(f)
 						endif),
 		actions <- Sequence{editUserAction},
+		noRouteParameters <- false,
 		styleClass <- 'unit index_unit framed',
 		headerClass <- 'unit_header',
 		captionClass <- 'unit_caption',
@@ -476,6 +480,7 @@ unique lazy rule implicitManageAuthenticationsPage {
 						else
 							thisModule.implicitUnitAttribute(f)
 						endif),
+		noRouteParameters <- false,
 		styleClass <- 'unit update_unit framed',
 		headerClass <- 'unit_header',
 		captionClass <- 'unit_caption',

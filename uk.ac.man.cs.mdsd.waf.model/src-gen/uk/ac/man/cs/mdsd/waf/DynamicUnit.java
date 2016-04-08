@@ -18,6 +18,7 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getNoRouteParameters <em>No Route Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeaderClass <em>Header Class</em>}</li>
@@ -80,6 +81,32 @@ public interface DynamicUnit extends ContentUnit {
 	 * @generated
 	 */
 	EList<UnitSupportAction> getSupportActions();
+
+	/**
+	 * Returns the value of the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>No Route Parameters</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>No Route Parameters</em>' attribute.
+	 * @see #setNoRouteParameters(Boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_NoRouteParameters()
+	 * @model unique="false"
+	 * @generated
+	 */
+	Boolean getNoRouteParameters();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getNoRouteParameters <em>No Route Parameters</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>No Route Parameters</em>' attribute.
+	 * @see #getNoRouteParameters()
+	 * @generated
+	 */
+	void setNoRouteParameters(Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' attribute.

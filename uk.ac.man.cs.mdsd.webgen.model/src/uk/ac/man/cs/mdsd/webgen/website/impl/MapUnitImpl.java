@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.LocationAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
+import uk.ac.man.cs.mdsd.webgen.website.Selectable;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**

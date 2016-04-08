@@ -218,6 +218,7 @@ abstract class DynamicUnit extends ContentUnit {
 	refers EntityOrView[1..*] entities
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
+	Boolean noRouteParameters
 	String header
 	String footer
 	String headerClass

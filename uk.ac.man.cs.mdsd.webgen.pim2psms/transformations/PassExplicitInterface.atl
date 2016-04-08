@@ -562,6 +562,7 @@ abstract rule DynamicUnit {
 			->collect(e | thisModule.findOrmEntityOrView(e.name)),
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
+		noRouteParameters <- website.noRouteParameters,
 		header <- website.header,
 		footer <- website.footer,
 		headerClass <- website.headerClass,

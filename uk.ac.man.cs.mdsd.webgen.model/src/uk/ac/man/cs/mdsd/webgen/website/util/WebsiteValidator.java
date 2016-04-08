@@ -2676,8 +2676,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_FROM_USER__EEXPRESSION = "not user.oclIsUndefined() and not userAuthenticationKey.oclIsUndefined() implies\r\n" +
-		"\tuser.features->includes(userAuthenticationKey)";
+	protected static final String LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_FROM_USER__EEXPRESSION = "not user.oclIsUndefined() and not userKey.oclIsUndefined() implies\r\n" +
+		"\tuser.features->includes(userKey)";
 
 	/**
 	 * Validates the authenticationKeyFromUser constraint of '<em>Local Authentication System</em>'.
@@ -2706,11 +2706,11 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION = "not userAuthenticationKey.oclIsUndefined() implies\r\n" +
-		"\tif userAuthenticationKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
-		"\t\tuserAuthenticationKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n" +
+	protected static final String LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY_REQUIRED_ATTRIBUTE__EEXPRESSION = "not userKey.oclIsUndefined() implies\r\n" +
+		"\tif userKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n" +
+		"\t\tuserKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n" +
 		"\telse\r\n" +
-		"\t\tuserAuthenticationKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n" +
+		"\t\tuserKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n" +
 		"\tendif";
 
 	/**

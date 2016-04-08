@@ -2049,13 +2049,22 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__NO_ROUTE_PARAMETERS = CONTENT_UNIT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 3;
+	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -2064,7 +2073,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 4;
+	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2073,7 +2082,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 5;
+	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -2082,7 +2091,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
+	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -2091,7 +2100,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
+	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -2100,7 +2109,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
+	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Unit</em>' class.
@@ -2109,7 +2118,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 9;
+	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Unit</em>' class.
@@ -3655,6 +3664,15 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__SUPPORT_ACTIONS = DYNAMIC_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__NO_ROUTE_PARAMETERS = DYNAMIC_UNIT__NO_ROUTE_PARAMETERS;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3890,6 +3908,15 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__SUPPORT_ACTIONS = EDIT_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__NO_ROUTE_PARAMETERS = EDIT_UNIT__NO_ROUTE_PARAMETERS;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4123,6 +4150,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__SUPPORT_ACTIONS = EDIT_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__NO_ROUTE_PARAMETERS = EDIT_UNIT__NO_ROUTE_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -4376,6 +4412,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__SUPPORT_ACTIONS = EDIT_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__NO_ROUTE_PARAMETERS = EDIT_UNIT__NO_ROUTE_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -4649,6 +4694,15 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__SUPPORT_ACTIONS = EDIT_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__NO_ROUTE_PARAMETERS = EDIT_UNIT__NO_ROUTE_PARAMETERS;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4884,6 +4938,15 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__SUPPORT_ACTIONS = DYNAMIC_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__NO_ROUTE_PARAMETERS = DYNAMIC_UNIT__NO_ROUTE_PARAMETERS;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5090,6 +5153,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DETAILS_UNIT__SUPPORT_ACTIONS = DATA_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__NO_ROUTE_PARAMETERS = DATA_UNIT__NO_ROUTE_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -5316,6 +5388,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__SUPPORT_ACTIONS = DATA_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__NO_ROUTE_PARAMETERS = DATA_UNIT__NO_ROUTE_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -5634,6 +5715,15 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__SUPPORT_ACTIONS = INDEX_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__NO_ROUTE_PARAMETERS = INDEX_UNIT__NO_ROUTE_PARAMETERS;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5948,6 +6038,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__SUPPORT_ACTIONS = INDEX_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__NO_ROUTE_PARAMETERS = INDEX_UNIT__NO_ROUTE_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -6266,6 +6365,15 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__SUPPORT_ACTIONS = INDEX_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__NO_ROUTE_PARAMETERS = INDEX_UNIT__NO_ROUTE_PARAMETERS;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6582,6 +6690,15 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__SUPPORT_ACTIONS = DYNAMIC_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__NO_ROUTE_PARAMETERS = DYNAMIC_UNIT__NO_ROUTE_PARAMETERS;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6797,6 +6914,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__SUPPORT_ACTIONS = CONTROL_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__NO_ROUTE_PARAMETERS = CONTROL_UNIT__NO_ROUTE_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -7023,6 +7149,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTION_UNIT__SUPPORT_ACTIONS = CONTROL_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__NO_ROUTE_PARAMETERS = CONTROL_UNIT__NO_ROUTE_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -7270,6 +7405,15 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__SUPPORT_ACTIONS = EDIT_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__NO_ROUTE_PARAMETERS = EDIT_UNIT__NO_ROUTE_PARAMETERS;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7512,6 +7656,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN_UNIT__SUPPORT_ACTIONS = CONTROL_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__NO_ROUTE_PARAMETERS = CONTROL_UNIT__NO_ROUTE_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -7774,6 +7927,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS = CONTROL_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__NO_ROUTE_PARAMETERS = CONTROL_UNIT__NO_ROUTE_PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -9793,6 +9955,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDynamicUnit_SupportActions();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getNoRouteParameters <em>No Route Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>No Route Parameters</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getNoRouteParameters()
+	 * @see #getDynamicUnit()
+	 * @generated
+	 */
+	EAttribute getDynamicUnit_NoRouteParameters();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeader <em>Header</em>}'.
@@ -12349,6 +12522,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DYNAMIC_UNIT__SUPPORT_ACTIONS = eINSTANCE.getDynamicUnit_SupportActions();
+
+		/**
+		 * The meta object literal for the '<em><b>No Route Parameters</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DYNAMIC_UNIT__NO_ROUTE_PARAMETERS = eINSTANCE.getDynamicUnit_NoRouteParameters();
 
 		/**
 		 * The meta object literal for the '<em><b>Header</b></em>' attribute feature.

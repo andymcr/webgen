@@ -95,9 +95,9 @@ public class FeatureReferenceItemProvider
 							features.addAll(getFeatures(service));
 							for (Association join : selection.getJoins()) {
 								if (service.getServes().getAssociations().contains(join)) {
-									features.addAll(getTargetType(join).getAssociations());
+									features.addAll(getTargetType(join).getAllFeatures());
 								} else {
-									features.addAll(service.getServes().getAssociations());
+									features.addAll(getSourceType(join).getAllFeatures());
 								}
 							}
 							return features;

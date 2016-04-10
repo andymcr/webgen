@@ -33,6 +33,17 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		super(adapterFactory);
 	}
 
+	protected EntityOrView getSourceType(final Association association) {
+		if (association instanceof EntityAssociation) {
+			return ((EntityAssociation) association).getPartOf();
+		} else if (association instanceof EncapsulatedAssociation) {
+			return ((EncapsulatedAssociation) association).getSourceEntity();
+		} else {
+			// TODO handle view
+			return null;
+		}
+	}
+
 	protected EntityOrView getTargetType(final Association association) {
 		if (association instanceof EntityAssociation) {
 			return ((EntityAssociation) association).getTargetEntity();

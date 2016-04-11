@@ -22,7 +22,7 @@ import java.util.List;
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='selectionValidChoice'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionValidChoice='targetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionValidChoice='not selection.oclIsUndefined() implies\r\n\ttargetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)'"
  * @generated
  */
 public interface UnitAssociation extends UnitFeature, UnitContainer, PathAssociationElement {

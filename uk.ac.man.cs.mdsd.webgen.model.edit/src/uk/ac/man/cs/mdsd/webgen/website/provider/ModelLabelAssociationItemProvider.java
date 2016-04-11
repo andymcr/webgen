@@ -104,11 +104,7 @@ public class ModelLabelAssociationItemProvider extends ModelLabelFeatureItemProv
 				if (object instanceof ModelLabelAssociation) {
 					final ModelLabelAssociation label = (ModelLabelAssociation) object;
 					if (label.getAssociation() != null) {
-						if (label.isIsSourceAssociation()) {
-							return label.getAssociation().getTargetEntity().getLabels();
-						} else {
-							return label.getAssociation().getPartOf().getLabels();
-						}
+						return label.getAssociation().getTargetEntity().getLabels();
 					}
 				}
 

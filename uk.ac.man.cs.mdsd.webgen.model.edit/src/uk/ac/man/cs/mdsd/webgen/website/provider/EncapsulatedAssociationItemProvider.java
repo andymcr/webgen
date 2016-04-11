@@ -57,7 +57,6 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 			addInputClassPropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
 			addEncapsulatedTargetPropertyDescriptor(object);
-			addIsSourceAssociationPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -167,28 +166,6 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 					return Collections.emptySet();
 				}
 		});
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Source Association feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsSourceAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EncapsulatedAssociation_isSourceAssociation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EncapsulatedAssociation_isSourceAssociation_feature", "_UI_EncapsulatedAssociation_type"),
-				 WebsitePackage.Literals.ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**

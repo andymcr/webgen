@@ -90,7 +90,7 @@ public interface PathAssociationElement extends EObject {
 	 * @return the value of the '<em>Is Source Association</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getPathAssociationElement_IsSourceAssociation()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsKindOf(UnitAssociation) then\r\n\tnot association.oclIsUndefined() implies\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\nelse\r\n\tlet partOf : PathAssociationElement = self.oclAsType(ChildAssociation).partOf\r\n\t\tin not association.oclIsUndefined() implies\r\n\t\t\tif partOf.isSourceAssociation then\r\n\t\t\t\tpartOf.targetEntity.associations->includes(association)\r\n\t\t\telse\r\n\t\t\t\tpartOf.sourceEntity.associations->includes(association)\r\n\t\t\tendif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse\r\n\t\tlet partOf : PathAssociationElement = self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin if partOf.isSourceAssociation then\r\n\t\t\t\t\tpartOf.targetEntity.associations->includes(association)\r\n\t\t\t\telse\r\n\t\t\t\t\tpartOf.sourceEntity.associations->includes(association)\r\n\t\t\t\tendif\r\n\tendif'"
 	 * @generated
 	 */
 	boolean isIsSourceAssociation();
@@ -106,7 +106,7 @@ public interface PathAssociationElement extends EObject {
 	 * @return the value of the '<em>Source Entity</em>' reference.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getPathAssociationElement_SourceEntity()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\telse\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\tendif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\tendif\r\nendif'"
 	 * @generated
 	 */
 	EntityOrView getSourceEntity();
@@ -122,7 +122,7 @@ public interface PathAssociationElement extends EObject {
 	 * @return the value of the '<em>Target Entity</em>' reference.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getPathAssociationElement_TargetEntity()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\telse\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\tendif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif'"
 	 * @generated
 	 */
 	EntityOrView getTargetEntity();

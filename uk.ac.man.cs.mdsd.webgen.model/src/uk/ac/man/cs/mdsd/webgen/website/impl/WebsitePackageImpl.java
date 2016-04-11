@@ -6304,25 +6304,25 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getPathAssociationElement_IsSourceAssociation(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if self.oclIsKindOf(UnitAssociation) then\r\n\tnot association.oclIsUndefined() implies\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\nelse\r\n\tlet partOf : PathAssociationElement = self.oclAsType(ChildAssociation).partOf\r\n\t\tin not association.oclIsUndefined() implies\r\n\t\t\tif partOf.isSourceAssociation then\r\n\t\t\t\tpartOf.targetEntity.associations->includes(association)\r\n\t\t\telse\r\n\t\t\t\tpartOf.sourceEntity.associations->includes(association)\r\n\t\t\tendif\r\nendif"
+			 "derivation", "not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse\r\n\t\tlet partOf : PathAssociationElement = self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin if partOf.isSourceAssociation then\r\n\t\t\t\t\tpartOf.targetEntity.associations->includes(association)\r\n\t\t\t\telse\r\n\t\t\t\t\tpartOf.sourceEntity.associations->includes(association)\r\n\t\t\t\tendif\r\n\tendif"
 		   });	
 		addAnnotation
 		  (getPathAssociationElement_SourceEntity(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\telse\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\tendif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (getPathAssociationElement_TargetEntity(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\telse\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\tendif\r\nendif"
+			 "derivation", "if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif isSourceAssociation then\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\t\tendif\r\n\telse\r\n\t\tif association.oclIsKindOf(EntityAssociation) then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });	
 		addAnnotation
 		  (unitAssociationEClass, 
 		   source, 
 		   new String[] {
-			 "selectionValidChoice", "targetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)"
+			 "selectionValidChoice", "not selection.oclIsUndefined() implies\r\n\ttargetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)"
 		   });	
 		addAnnotation
 		  (getUnitAssociation_Name(), 

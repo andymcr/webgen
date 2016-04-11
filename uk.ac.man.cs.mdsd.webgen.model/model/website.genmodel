@@ -297,7 +297,7 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//EncapsulatedAssociation/association"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//EncapsulatedAssociation/encapsulatedTarget"/>
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//EncapsulatedAssociation/isSourceAssociation"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//EncapsulatedAssociation/isSourceAssociation"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EncapsulatedAssociation/cardinality"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//EncapsulatedAssociation/sourceEntity"/>

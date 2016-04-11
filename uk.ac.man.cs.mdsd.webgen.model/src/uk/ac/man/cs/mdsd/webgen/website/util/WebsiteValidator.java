@@ -1690,7 +1690,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String UNIT_ASSOCIATION__SELECTION_VALID_CHOICE__EEXPRESSION = "targetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)";
+	protected static final String UNIT_ASSOCIATION__SELECTION_VALID_CHOICE__EEXPRESSION = "not selection.oclIsUndefined() implies\r\n" +
+		"\ttargetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)";
 
 	/**
 	 * Validates the selectionValidChoice constraint of '<em>Unit Association</em>'.

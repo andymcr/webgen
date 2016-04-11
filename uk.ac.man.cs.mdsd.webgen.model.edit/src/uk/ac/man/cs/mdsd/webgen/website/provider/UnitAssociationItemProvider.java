@@ -142,11 +142,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 					if (object instanceof UnitAssociation) {
 						final UnitAssociation association = (UnitAssociation) object;
 						if (association.getAssociation() != null) {
-							if (association.isIsSourceAssociation()) {
-								return getSelections(association.getTargetEntity());
-							} else {
-								return getSelections(association.getSourceEntity());
-							}
+							return getSelections(association.getTargetEntity());
 						}
 					}
 					return Collections.emptySet();

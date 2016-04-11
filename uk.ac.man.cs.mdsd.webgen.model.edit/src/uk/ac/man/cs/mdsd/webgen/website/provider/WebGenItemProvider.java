@@ -96,20 +96,12 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		if (attribute.eContainer() instanceof UnitAssociation) {
 			final UnitAssociation parent = ((UnitAssociation) attribute.eContainer());
 			if (parent.getAssociation() != null) {
-				if (parent.isIsSourceAssociation()) {
-					return parent.getTargetEntity().getAttributes();
-				} else {
-					return parent.getSourceEntity().getAttributes();
-				}
+				return parent.getTargetEntity().getAttributes();
 			}
 		} else {
 			final ChildAssociation parent = (ChildAssociation) attribute.eContainer();
 			if (parent.getAssociation() != null) {
-				if (parent.isIsSourceAssociation()) {
-					return parent.getTargetEntity().getAttributes();
-				} else {
-					return parent.getSourceEntity().getAttributes();
-				}
+				return parent.getTargetEntity().getAttributes();
 			}
 		}
 
@@ -118,11 +110,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 
 	protected List<Association> getAssociations(final ChildAssociation association) {
 		if (association.getPartOf().getAssociation() != null) {
-			if (association.getPartOf().isIsSourceAssociation()) {
-				return association.getPartOf().getTargetEntity().getAllAssociations();
-			} else {
-				return association.getPartOf().getSourceEntity().getAllAssociations();
-			}
+			return association.getPartOf().getTargetEntity().getAllAssociations();
 		}
 
 		return Collections.emptyList();

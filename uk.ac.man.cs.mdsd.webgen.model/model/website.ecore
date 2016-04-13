@@ -211,7 +211,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="allFeatures" upperBound="-1"
         eType="#//Feature" changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if self.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;self.oclAsType(Entity).entityFeatures->union(self.oclAsType(Entity).associationEnds)->asOrderedSet()&#xD;&#xA;else&#xD;&#xA;&#x9;self.oclAsType(View).viewFeatures&#xD;&#xA;endif"/>
+        <details key="derivation" value="if self.oclIsTypeOf(Entity) then&#xD;&#xA;&#x9;self.oclAsType(Entity).entityFeatures->union(self.oclAsType(Entity).associationEnds->select(e | e.bidirectional))->asOrderedSet()&#xD;&#xA;else&#xD;&#xA;&#x9;self.oclAsType(View).viewFeatures&#xD;&#xA;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
@@ -400,7 +400,7 @@
         defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssociationWithContainment" eSuperTypes="#//EntityAssociation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceVisble" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceVisible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="View" eSuperTypes="#//EntityOrView">
@@ -556,7 +556,7 @@
       <details key="constraints" value="onlyStaticEntries"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="onlyStaticEntries" value="entries->select(e | e.oclIsKindOf(MenuIncludedFeature))->isEmpty()"/>
+      <details key="onlyStaticEntries" value="entries->select(e | e.oclIsKindOf(MenuFeature))->isEmpty()"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionMenuEntry" eSuperTypes="#//MenuEntry #//NamedDisplayElement">
@@ -584,6 +584,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
         eType="#//Label"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MenuFeature" eSuperTypes="#//MenuEntry"/>
   <eClassifiers xsi:type="ecore:EClass" name="Filter" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//FilterParameter" containment="true"/>

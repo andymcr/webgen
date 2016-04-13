@@ -272,7 +272,7 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationWithoutContainment/targetUnique"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//AssociationWithContainment">
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationWithContainment/sourceVisble"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationWithContainment/sourceVisible"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//View">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
@@ -377,6 +377,7 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//DynamicMenu/title"/>
     </genClasses>
+    <genClasses ecoreClass="website.ecore#//MenuFeature"/>
     <genClasses ecoreClass="website.ecore#//Filter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//Filter/parameters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Filter/selection"/>

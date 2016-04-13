@@ -286,6 +286,10 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createDynamicMenuAdapter();
 			}
 			@Override
+			public Adapter caseMenuFeature(MenuFeature object) {
+				return createMenuFeatureAdapter();
+			}
+			@Override
 			public Adapter caseFilter(Filter object) {
 				return createFilterAdapter();
 			}
@@ -1230,6 +1234,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDynamicMenuAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.MenuFeature <em>Menu Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.MenuFeature
+	 * @generated
+	 */
+	public Adapter createMenuFeatureAdapter() {
 		return null;
 	}
 

@@ -122,7 +122,7 @@ public interface EntityOrView extends Classifier {
 	 * @return the value of the '<em>All Features</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_AllFeatures()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures->union(self.oclAsType(Entity).associationEnds)->asOrderedSet()\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures->union(self.oclAsType(Entity).associationEnds->select(e | e.bidirectional))->asOrderedSet()\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif'"
 	 * @generated
 	 */
 	List<Feature> getAllFeatures();

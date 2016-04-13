@@ -11,7 +11,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getStaticMenu()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='onlyStaticEntries'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL onlyStaticEntries='entries->select(e | e.oclIsKindOf(MenuIncludedFeature))->isEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL onlyStaticEntries='entries->select(e | e.oclIsKindOf(MenuFeature))->isEmpty()'"
  * @generated
  */
 public interface StaticMenu extends Menu {

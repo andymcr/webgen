@@ -50,25 +50,25 @@ public class AssociationWithContainmentItemProvider extends EntityAssociationIte
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourceVisblePropertyDescriptor(object);
+			addSourceVisiblePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Source Visble feature.
+	 * This adds a property descriptor for the Source Visible feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourceVisblePropertyDescriptor(Object object) {
+	protected void addSourceVisiblePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AssociationWithContainment_sourceVisble_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationWithContainment_sourceVisble_feature", "_UI_AssociationWithContainment_type"),
-				 WebsitePackage.Literals.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISBLE,
+				 getString("_UI_AssociationWithContainment_sourceVisible_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationWithContainment_sourceVisible_feature", "_UI_AssociationWithContainment_type"),
+				 WebsitePackage.Literals.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE,
 				 true,
 				 false,
 				 false,
@@ -120,7 +120,7 @@ public class AssociationWithContainmentItemProvider extends EntityAssociationIte
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AssociationWithContainment.class)) {
-			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISBLE:
+			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

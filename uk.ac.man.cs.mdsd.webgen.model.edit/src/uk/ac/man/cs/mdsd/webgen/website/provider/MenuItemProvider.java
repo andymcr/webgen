@@ -233,6 +233,11 @@ public class MenuItemProvider extends NamedDisplayElementItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.MENU__ENTRIES,
 				 WebsiteFactory.eINSTANCE.createEditStaticTextMenuEntry()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.MENU__ENTRIES,
+				 WebsiteFactory.eINSTANCE.createMenuFeature()));
 	}
 
 }

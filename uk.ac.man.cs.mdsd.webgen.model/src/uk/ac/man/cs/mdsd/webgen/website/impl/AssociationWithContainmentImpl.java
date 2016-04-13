@@ -21,31 +21,30 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationWithContainmentImpl#isSourceVisble <em>Source Visble</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationWithContainmentImpl#isSourceVisible <em>Source Visible</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AssociationWithContainmentImpl extends EntityAssociationImpl implements AssociationWithContainment {
 	/**
-	 * The default value of the '{@link #isSourceVisble() <em>Source Visble</em>}' attribute.
+	 * The default value of the '{@link #isSourceVisible() <em>Source Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSourceVisble()
+	 * @see #isSourceVisible()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SOURCE_VISBLE_EDEFAULT = true;
+	protected static final boolean SOURCE_VISIBLE_EDEFAULT = true;
 	/**
-	 * The cached value of the '{@link #isSourceVisble() <em>Source Visble</em>}' attribute.
+	 * The cached value of the '{@link #isSourceVisible() <em>Source Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSourceVisble()
+	 * @see #isSourceVisible()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean sourceVisble = SOURCE_VISBLE_EDEFAULT;
-
+	protected boolean sourceVisible = SOURCE_VISIBLE_EDEFAULT;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,8 +69,8 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSourceVisble() {
-		return sourceVisble;
+	public boolean isSourceVisible() {
+		return sourceVisible;
 	}
 
 	/**
@@ -79,11 +78,11 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSourceVisble(boolean newSourceVisble) {
-		boolean oldSourceVisble = sourceVisble;
-		sourceVisble = newSourceVisble;
+	public void setSourceVisible(boolean newSourceVisible) {
+		boolean oldSourceVisible = sourceVisible;
+		sourceVisible = newSourceVisible;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISBLE, oldSourceVisble, sourceVisble));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE, oldSourceVisible, sourceVisible));
 	}
 
 	/**
@@ -94,8 +93,8 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISBLE:
-				return isSourceVisble();
+			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
+				return isSourceVisible();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,8 +107,8 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISBLE:
-				setSourceVisble((Boolean)newValue);
+			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
+				setSourceVisible((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +122,8 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISBLE:
-				setSourceVisble(SOURCE_VISBLE_EDEFAULT);
+			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
+				setSourceVisible(SOURCE_VISIBLE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +137,8 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISBLE:
-				return sourceVisble != SOURCE_VISBLE_EDEFAULT;
+			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE:
+				return sourceVisible != SOURCE_VISIBLE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,8 +153,8 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (sourceVisble: ");
-		result.append(sourceVisble);
+		result.append(" (sourceVisible: ");
+		result.append(sourceVisible);
 		result.append(')');
 		return result.toString();
 	}

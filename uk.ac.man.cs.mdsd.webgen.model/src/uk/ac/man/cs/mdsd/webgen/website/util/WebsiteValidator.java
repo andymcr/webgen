@@ -196,6 +196,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateEditStaticTextMenuEntry((EditStaticTextMenuEntry)value, diagnostics, context);
 			case WebsitePackage.DYNAMIC_MENU:
 				return validateDynamicMenu((DynamicMenu)value, diagnostics, context);
+			case WebsitePackage.MENU_FEATURE:
+				return validateMenuFeature((MenuFeature)value, diagnostics, context);
 			case WebsitePackage.FILTER:
 				return validateFilter((Filter)value, diagnostics, context);
 			case WebsitePackage.FILTER_PARAMETER:
@@ -1248,7 +1250,7 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATIC_MENU__ONLY_STATIC_ENTRIES__EEXPRESSION = "entries->select(e | e.oclIsKindOf(MenuIncludedFeature))->isEmpty()";
+	protected static final String STATIC_MENU__ONLY_STATIC_ENTRIES__EEXPRESSION = "entries->select(e | e.oclIsKindOf(MenuFeature))->isEmpty()";
 
 	/**
 	 * Validates the onlyStaticEntries constraint of '<em>Static Menu</em>'.
@@ -1486,6 +1488,15 @@ public class WebsiteValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMenuFeature(MenuFeature menuFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(menuFeature, diagnostics, context);
 	}
 
 	/**

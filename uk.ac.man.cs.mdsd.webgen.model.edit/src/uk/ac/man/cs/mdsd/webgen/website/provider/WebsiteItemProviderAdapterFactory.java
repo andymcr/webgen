@@ -899,6 +899,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.MenuFeature} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MenuFeatureItemProvider menuFeatureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.MenuFeature}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMenuFeatureAdapter() {
+		if (menuFeatureItemProvider == null) {
+			menuFeatureItemProvider = new MenuFeatureItemProvider(this);
+		}
+
+		return menuFeatureItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Filter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1791,6 +1814,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();
 		if (editStaticTextMenuEntryItemProvider != null) editStaticTextMenuEntryItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
+		if (menuFeatureItemProvider != null) menuFeatureItemProvider.dispose();
 		if (filterItemProvider != null) filterItemProvider.dispose();
 		if (filterParameterItemProvider != null) filterParameterItemProvider.dispose();
 		if (queryItemProvider != null) queryItemProvider.dispose();

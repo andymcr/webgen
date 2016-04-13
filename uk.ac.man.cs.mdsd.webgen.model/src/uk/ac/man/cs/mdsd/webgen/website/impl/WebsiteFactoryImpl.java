@@ -96,6 +96,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY: return createEditStaticTextMenuEntry();
 			case WebsitePackage.DYNAMIC_MENU: return createDynamicMenu();
+			case WebsitePackage.MENU_FEATURE: return createMenuFeature();
 			case WebsitePackage.FILTER: return createFilter();
 			case WebsitePackage.FILTER_PARAMETER: return createFilterParameter();
 			case WebsitePackage.QUERY: return createQuery();
@@ -528,6 +529,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public DynamicMenu createDynamicMenu() {
 		DynamicMenuImpl dynamicMenu = new DynamicMenuImpl();
 		return dynamicMenu;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MenuFeature createMenuFeature() {
+		MenuFeatureImpl menuFeature = new MenuFeatureImpl();
+		return menuFeature;
 	}
 
 	/**

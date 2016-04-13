@@ -16,7 +16,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment#isSourceVisble <em>Source Visble</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment#isSourceVisible <em>Source Visible</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationWithContainment()
@@ -26,29 +26,29 @@ package uk.ac.man.cs.mdsd.webgen.website;
 public interface AssociationWithContainment extends EntityAssociation {
 
 	/**
-	 * Returns the value of the '<em><b>Source Visble</b></em>' attribute.
+	 * Returns the value of the '<em><b>Source Visible</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source Visble</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Source Visible</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Visble</em>' attribute.
-	 * @see #setSourceVisble(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationWithContainment_SourceVisble()
+	 * @return the value of the '<em>Source Visible</em>' attribute.
+	 * @see #setSourceVisible(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationWithContainment_SourceVisible()
 	 * @model default="true"
 	 * @generated
 	 */
-	boolean isSourceVisble();
+	boolean isSourceVisible();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment#isSourceVisble <em>Source Visble</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment#isSourceVisible <em>Source Visible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Visble</em>' attribute.
-	 * @see #isSourceVisble()
+	 * @param value the new value of the '<em>Source Visible</em>' attribute.
+	 * @see #isSourceVisible()
 	 * @generated
 	 */
-	void setSourceVisble(boolean value);
+	void setSourceVisible(boolean value);
 } // AssociationWithContainment

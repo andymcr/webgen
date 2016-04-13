@@ -86,6 +86,7 @@ import uk.ac.man.cs.mdsd.webgen.website.LoginUnit;
 import uk.ac.man.cs.mdsd.webgen.website.MapUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Menu;
 import uk.ac.man.cs.mdsd.webgen.website.MenuEntry;
+import uk.ac.man.cs.mdsd.webgen.website.MenuFeature;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute;
@@ -502,6 +503,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass dynamicMenuEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass menuFeatureEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2443,7 +2451,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssociationWithContainment_SourceVisble() {
+	public EAttribute getAssociationWithContainment_SourceVisible() {
 		return (EAttribute)associationWithContainmentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -2715,6 +2723,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EReference getDynamicMenu_Title() {
 		return (EReference)dynamicMenuEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMenuFeature() {
+		return menuFeatureEClass;
 	}
 
 	/**
@@ -4988,7 +5005,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(associationWithoutContainmentEClass, ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE);
 
 		associationWithContainmentEClass = createEClass(ASSOCIATION_WITH_CONTAINMENT);
-		createEAttribute(associationWithContainmentEClass, ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISBLE);
+		createEAttribute(associationWithContainmentEClass, ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE);
 
 		viewEClass = createEClass(VIEW);
 		createEReference(viewEClass, VIEW__ENCAPSULATES);
@@ -5071,6 +5088,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(dynamicMenuEClass, DYNAMIC_MENU__ENTITY_OR_VIEW);
 		createEReference(dynamicMenuEClass, DYNAMIC_MENU__SELECTION);
 		createEReference(dynamicMenuEClass, DYNAMIC_MENU__TITLE);
+
+		menuFeatureEClass = createEClass(MENU_FEATURE);
 
 		filterEClass = createEClass(FILTER);
 		createEReference(filterEClass, FILTER__PARAMETERS);
@@ -5407,6 +5426,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		editStaticTextMenuEntryEClass.getESuperTypes().add(this.getMenuEntry());
 		editStaticTextMenuEntryEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		dynamicMenuEClass.getESuperTypes().add(this.getMenu());
+		menuFeatureEClass.getESuperTypes().add(this.getMenuEntry());
 		filterEClass.getESuperTypes().add(this.getNamedElement());
 		filterParameterEClass.getESuperTypes().add(this.getNamedElement());
 		contentUnitEClass.getESuperTypes().add(this.getNamedDisplayElement());
@@ -5651,7 +5671,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getAssociationWithoutContainment_TargetUnique(), ecorePackage.getEBooleanObject(), "targetUnique", "true", 1, 1, AssociationWithoutContainment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(associationWithContainmentEClass, AssociationWithContainment.class, "AssociationWithContainment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAssociationWithContainment_SourceVisble(), ecorePackage.getEBoolean(), "sourceVisble", "true", 0, 1, AssociationWithContainment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssociationWithContainment_SourceVisible(), ecorePackage.getEBoolean(), "sourceVisible", "true", 0, 1, AssociationWithContainment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getView_Encapsulates(), this.getEntityOrView(), null, "encapsulates", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5734,6 +5754,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getDynamicMenu_EntityOrView(), this.getEntityOrView(), null, "entityOrView", null, 1, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicMenu_Selection(), this.getSelection(), null, "selection", null, 1, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicMenu_Title(), this.getLabel(), null, "title", null, 0, 1, DynamicMenu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(menuFeatureEClass, MenuFeature.class, "MenuFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(filterEClass, Filter.class, "Filter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFilter_Parameters(), this.getFilterParameter(), null, "parameters", null, 0, -1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6190,7 +6212,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getEntityOrView_AllFeatures(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures->union(self.oclAsType(Entity).associationEnds)->asOrderedSet()\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif"
+			 "derivation", "if self.oclIsTypeOf(Entity) then\r\n\tself.oclAsType(Entity).entityFeatures->union(self.oclAsType(Entity).associationEnds->select(e | e.bidirectional))->asOrderedSet()\r\nelse\r\n\tself.oclAsType(View).viewFeatures\r\nendif"
 		   });	
 		addAnnotation
 		  (getEntityOrView_Attributes(), 
@@ -6280,7 +6302,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (staticMenuEClass, 
 		   source, 
 		   new String[] {
-			 "onlyStaticEntries", "entries->select(e | e.oclIsKindOf(MenuIncludedFeature))->isEmpty()"
+			 "onlyStaticEntries", "entries->select(e | e.oclIsKindOf(MenuFeature))->isEmpty()"
 		   });	
 		addAnnotation
 		  (dynamicMenuEClass, 

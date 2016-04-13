@@ -323,6 +323,15 @@ public interface WebsiteFactory extends EFactory {
 	DynamicMenu createDynamicMenu();
 
 	/**
+	 * Returns a new object of class '<em>Menu Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Menu Feature</em>'.
+	 * @generated
+	 */
+	MenuFeature createMenuFeature();
+
+	/**
 	 * Returns a new object of class '<em>Filter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

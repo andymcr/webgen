@@ -35,7 +35,7 @@ public class AssociationWithContainmentImpl extends EntityAssociationImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SOURCE_VISBLE_EDEFAULT = false;
+	protected static final boolean SOURCE_VISBLE_EDEFAULT = true;
 	/**
 	 * The cached value of the '{@link #isSourceVisble() <em>Source Visble</em>}' attribute.
 	 * <!-- begin-user-doc -->

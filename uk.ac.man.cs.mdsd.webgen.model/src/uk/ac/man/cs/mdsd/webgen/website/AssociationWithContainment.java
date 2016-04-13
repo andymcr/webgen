@@ -27,6 +27,7 @@ public interface AssociationWithContainment extends EntityAssociation {
 
 	/**
 	 * Returns the value of the '<em><b>Source Visble</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source Visble</em>' attribute isn't clear,
@@ -36,7 +37,7 @@ public interface AssociationWithContainment extends EntityAssociation {
 	 * @return the value of the '<em>Source Visble</em>' attribute.
 	 * @see #setSourceVisble(boolean)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationWithContainment_SourceVisble()
-	 * @model
+	 * @model default="true"
 	 * @generated
 	 */
 	boolean isSourceVisble();

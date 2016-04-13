@@ -4422,13 +4422,22 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION_WITH_CONTAINMENT__TARGET_FOOTER_CLASS = ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Source Visble</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISBLE = ENTITY_ASSOCIATION_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Association With Containment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_WITH_CONTAINMENT_FEATURE_COUNT = ENTITY_ASSOCIATION_FEATURE_COUNT + 0;
+	int ASSOCIATION_WITH_CONTAINMENT_FEATURE_COUNT = ENTITY_ASSOCIATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -13132,6 +13141,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getAssociationWithContainment();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment#isSourceVisble <em>Source Visble</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Visble</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment#isSourceVisble()
+	 * @see #getAssociationWithContainment()
+	 * @generated
+	 */
+	EAttribute getAssociationWithContainment_SourceVisble();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Page <em>Page</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17284,6 +17304,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ASSOCIATION_WITH_CONTAINMENT = eINSTANCE.getAssociationWithContainment();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Visble</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISBLE = eINSTANCE.getAssociationWithContainment_SourceVisble();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageImpl <em>Page</em>}' class.

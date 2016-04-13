@@ -271,7 +271,9 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationWithoutContainment/targetCardinality"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationWithoutContainment/targetUnique"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//AssociationWithContainment"/>
+    <genClasses ecoreClass="website.ecore#//AssociationWithContainment">
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationWithContainment/sourceVisble"/>
+    </genClasses>
     <genClasses ecoreClass="website.ecore#//View">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//View/encapsulates"/>

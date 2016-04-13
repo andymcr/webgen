@@ -153,9 +153,10 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		autoKeyName <- 'id',
 		keys <- Sequence{email},
 		displayLabel <- 'Authentication',
-		features <- Sequence{username, password, salt, email, activated, banned,
-				banReason, newPasswordKey, newPasswordRequested, newEmail,
-				newEmailKey, lastIp, lastLogin}
+		features <- Sequence{username, usernameCanonical, email, emailCanonical,
+				password, salt, enabled, locked, expired, expiresAt, confirmationToken,
+				passwordRequestedAt, passwordChangedAt, credentialsExpired,
+				credentialsExpireAt, roles, lastLogin, lastIp}
 			->union(
 				if website.allowAutoLogin then
 					Sequence{thisModule.implicitAutoLoginOpposite(website)}
@@ -172,6 +173,38 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		columnName <- 'username',
 		persistentType <- website.getPersistentType('String'),
 		ormType <- website.getOrmType('String')
+	),
+	usernameCanonical : ORM!SingletonElement (
+		name <- 'usernameCanonical',
+		displayLabel <- 'Username (Canonical)',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		"unique" <- true,
+		columnName <- 'username_canonical',
+		persistentType <- website.getPersistentType('String'),
+		ormType <- website.getOrmType('String')
+	),
+	email : ORM!SingletonElement (
+		name <- 'email',
+		displayLabel <- 'Email',
+		dataType <- website.getDataType('Email'),
+		required <- true,
+		"unique" <- true,
+		caseInsensitive <- true,
+		columnName <- 'email',
+		persistentType <- website.getPersistentType('Email'),
+		ormType <- website.getOrmType('Email')
+	),
+	emailCanonical : ORM!SingletonElement (
+		name <- 'emailCanonical',
+		displayLabel <- 'Email (Canonical)',
+		dataType <- website.getDataType('Email'),
+		required <- true,
+		"unique" <- true,
+		caseInsensitive <- true,
+		columnName <- 'email_canonical',
+		persistentType <- website.getPersistentType('Email'),
+		ormType <- website.getOrmType('Email')
 	),
 	password : ORM!SingletonElement (
 		name <- 'password',
@@ -196,121 +229,148 @@ unique lazy rule implicitAuthenticationSystemEntity {
 		persistentType <- website.getPersistentType('String'),
 		ormType <- website.getOrmType('String')
 	),
-	email : ORM!SingletonElement (
-		name <- 'email',
-		displayLabel <- 'Email',
-		dataType <- website.getDataType('Email'),
-		required <- true,
-		"unique" <- true,
-		caseInsensitive <- true,
-		columnName <- 'email',
-		persistentType <- website.getPersistentType('Email'),
-		ormType <- website.getOrmType('Email')
-	),
-	activated : ORM!SingletonElement (
-		name <- 'activated',
-		displayLabel <- 'Activated',
+	enabled : ORM!SingletonElement (
+		name <- 'enabled',
+		displayLabel <- 'Enabled',
 		dataType <- website.getDataType('Boolean'),
 		ormType <- website.getOrmType('Boolean'),
 		required <- true,
 		"unique" <- false,
-		defaultValue <- activatedDefault,
-		columnName <- 'activated',
+		columnName <- 'enabled',
+		defaultValue <- enabledDefault,
 		persistentType <- website.getPersistentType('Boolean'),
 		ormType <- website.getOrmType('Boolean')
 	),
-	activatedDefault : ORM!IntegerLiteral (
+	enabledDefault : ORM!IntegerLiteral (
 		value <- 1
 	),
-	banned : ORM!SingletonElement (
-		name <- 'banned',
-		displayLabel <- 'Banned',
+	locked : ORM!SingletonElement (
+		name <- 'localed',
+		displayLabel <- 'Locked',
 		dataType <- website.getDataType('Boolean'),
+		ormType <- website.getOrmType('Boolean'),
 		required <- true,
 		"unique" <- false,
-		defaultValue <- bannedDefault,
-		columnName <- 'banned',
+		columnName <- 'locked',
+		defaultValue <- lockedDefault,
 		persistentType <- website.getPersistentType('Boolean'),
 		ormType <- website.getOrmType('Boolean')
 	),
-	bannedDefault : ORM!IntegerLiteral (
+	lockedDefault : ORM!IntegerLiteral (
 		value <- 0
 	),
-	banReason : ORM!SingletonElement (
-		name <- 'banReason',
-		displayLabel <- 'Ban reason',
-		dataType <- website.getDataType('String'),
-		required <- false,
+	expired : ORM!SingletonElement (
+		name <- 'expired',
+		displayLabel <- 'Expired',
+		dataType <- website.getDataType('Boolean'),
+		ormType <- website.getOrmType('Boolean'),
+		required <- true,
 		"unique" <- false,
-		columnName <- 'ban_reason',
-		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String')
+		columnName <- 'expired',
+		defaultValue <- expiredDefault,
+		persistentType <- website.getPersistentType('Boolean'),
+		ormType <- website.getOrmType('Boolean')
 	),
-	newPasswordKey : ORM!SingletonElement (
-		name <- 'newPasswordKey',
-		displayLabel <- 'New password Key',
-		dataType <- website.getDataType('String'),
-		required <- false,
-		"unique" <- false,
-		columnName <- 'new_password_key',
-		persistentType <- website.getPersistentType('String'),
-		ormType <- website.getOrmType('String')
+	expiredDefault : ORM!IntegerLiteral (
+		value <- 0
 	),
-	newPasswordRequested : ORM!SingletonDate (
-		name <- 'newPasswordRequested',
-		displayLabel <- 'New Password Requested',
+	expiresAt : ORM!SingletonDate (
+		name <- 'expiresAt',
+		displayLabel <- 'Expires At',
 		required <- false,
+		defaultValue <- lastLoginDefault,
 		"unique" <- false,
-		columnName <- 'new_password_requested',
+		columnName <- 'expires_at',
 		details <- #DateAndTime,
 		ormType <- 'datetime'
 	),
-	newEmail : ORM!SingletonElement (
-		name <- 'newEmail',
-		displayLabel <- 'New Email',
-		dataType <- website.getDataType('Email'),
-		required <- false,
-		"unique" <- false,
-		columnName <- 'new_email',
-		persistentType <- website.getPersistentType('Email'),
-		ormType <- website.getOrmType('Email')
-	),
-	newEmailKey : ORM!SingletonElement (
-		name <- 'newEmailKey',
-		displayLabel <- 'New Email Key',
+	confirmationToken : ORM!SingletonElement (
+		name <- 'confirmationToken',
+		displayLabel <- 'Confirmation Token',
 		dataType <- website.getDataType('String'),
 		required <- false,
 		"unique" <- false,
-		columnName <- 'new_email_key',
+		columnName <- 'confirmation_token',
 		persistentType <- website.getPersistentType('String'),
 		ormType <- website.getOrmType('String')
 	),
-	lastIp : ORM!SingletonElement (
-		name <- 'lastIp',
-		displayLabel <- 'lastIp',
+	passwordRequestedAt : ORM!SingletonDate (
+		name <- 'passwordRequestedAt',
+		displayLabel <- 'Password Requested At',
+		required <- false,
+		"unique" <- false,
+		columnName <- 'password_requested_at',
+		details <- #DateAndTime,
+		ormType <- 'datetime'
+	),
+	passwordChangedAt : ORM!SingletonDate (
+		name <- 'passwordChangedAt',
+		displayLabel <- 'Password Changed At',
+		required <- false,
+		"unique" <- false,
+		columnName <- 'password_changed_at',
+		details <- #DateAndTime,
+		ormType <- 'datetime'
+	),
+	credentialsExpired : ORM!SingletonElement (
+		name <- 'credentialsExpired',
+		displayLabel <- 'Credentials Expired',
+		dataType <- website.getDataType('Boolean'),
+		required <- false,
+		"unique" <- false,
+		columnName <- 'credentials_expired',
+		persistentType <- website.getPersistentType('Boolean'),
+		ormType <- website.getOrmType('Boolean')
+	),
+	credentialsExpireAt : ORM!SingletonDate (
+		name <- 'credentialsExpireAt',
+		displayLabel <- 'Credentials Expire At',
+		required <- false,
+		"unique" <- false,
+		columnName <- 'credentials_expire_at',
+		details <- #DateAndTime,
+		ormType <- 'datetime'
+	),
+	roles : ORM!SingletonElement (
+		name <- 'roles',
+		displayLabel <- 'Roles',
 		dataType <- website.getDataType('String'),
 		required <- true,
-		defaultValue <- lastIpDefault,
-		"unique" <- true,
-		columnName <- 'last_ip',
+		"unique" <- false,
+		columnName <- 'roles',
+		defaultValue <- roleDefault,
 		persistentType <- website.getPersistentType('String'),
 		ormType <- website.getOrmType('String')
 	),
-	lastIpDefault : ORM!StringLiteral (
+	roleDefault : ORM!StringLiteral (
 		value <- '0.0.0.0'
 	),
 	lastLogin : ORM!SingletonDate (
 		name <- 'lastLogin',
 		displayLabel <- 'Last Login',
 		required <- true,
-		defaultValue <- lastLoginDefault,
 		"unique" <- false,
 		columnName <- 'last_login',
 		details <- #DateAndTime,
+		defaultValue <- lastLoginDefault,
 		ormType <- 'datetime'
 	),
 	lastLoginDefault : ORM!StringLiteral (
 		value <- '0000-00-00 00:00:00'
+	),
+	lastIp : ORM!SingletonElement (
+		name <- 'lastIp',
+		displayLabel <- 'lastIp',
+		dataType <- website.getDataType('String'),
+		required <- true,
+		"unique" <- true,
+		columnName <- 'last_ip',
+		defaultValue <- lastIpDefault,
+		persistentType <- website.getPersistentType('String'),
+		ormType <- website.getOrmType('String')
+	),
+	lastIpDefault : ORM!StringLiteral (
+		value <- '0.0.0.0'
 	)
 	do {
 		orm;

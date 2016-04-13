@@ -357,6 +357,7 @@ rule OneToOneAssociationWithContainment {
 		associationRelationship <- #OneToOne,
 		opposite <- associationEnd,
 		contains <- true,
+		visible <- website.sourceVisible,
 		required <- website.cardinality = #Required
 	),
 	associationEnd : ORM!SingletonAssociation (
@@ -385,7 +386,8 @@ rule OneToManyAssociationWithContainment {
 	to orm : ORM!CollectionAssociation (
 		associationRelationship <- #OneToMany,
 		opposite <- associationEnd,
-		contains <- true
+		contains <- true,
+		visible <- website.sourceVisible
 	),
 	associationEnd : ORM!SingletonAssociation (
 		name <- website.targetFeatureName(),

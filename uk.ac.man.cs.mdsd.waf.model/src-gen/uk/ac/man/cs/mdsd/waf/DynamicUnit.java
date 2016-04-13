@@ -84,6 +84,7 @@ public interface DynamicUnit extends ContentUnit {
 
 	/**
 	 * Returns the value of the '<em><b>No Route Parameters</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>No Route Parameters</em>' attribute isn't clear,
@@ -93,7 +94,7 @@ public interface DynamicUnit extends ContentUnit {
 	 * @return the value of the '<em>No Route Parameters</em>' attribute.
 	 * @see #setNoRouteParameters(Boolean)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_NoRouteParameters()
-	 * @model unique="false"
+	 * @model default="false" unique="false"
 	 * @generated
 	 */
 	Boolean getNoRouteParameters();

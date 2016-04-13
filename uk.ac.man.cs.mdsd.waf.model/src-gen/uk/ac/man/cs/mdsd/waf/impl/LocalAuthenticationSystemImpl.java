@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uk.ac.man.cs.mdsd.orm.Attribute;
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
-import uk.ac.man.cs.mdsd.waf.AuthenticationKeyType;
+import uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes;
 import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem;
 import uk.ac.man.cs.mdsd.waf.LoginUnit;
@@ -84,7 +84,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final AuthenticationKeyType AUTHENTICATION_KEY_EDEFAULT = AuthenticationKeyType.EMAIL;
+	protected static final AuthenticationKeyTypes AUTHENTICATION_KEY_EDEFAULT = AuthenticationKeyTypes.EMAIL;
 
 	/**
 	 * The cached value of the '{@link #getAuthenticationKey() <em>Authentication Key</em>}' attribute.
@@ -94,7 +94,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected AuthenticationKeyType authenticationKey = AUTHENTICATION_KEY_EDEFAULT;
+	protected AuthenticationKeyTypes authenticationKey = AUTHENTICATION_KEY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getLoginAttempt() <em>Login Attempt</em>}' reference.
@@ -364,7 +364,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AuthenticationKeyType getAuthenticationKey() {
+	public AuthenticationKeyTypes getAuthenticationKey() {
 		return authenticationKey;
 	}
 
@@ -373,8 +373,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAuthenticationKey(AuthenticationKeyType newAuthenticationKey) {
-		AuthenticationKeyType oldAuthenticationKey = authenticationKey;
+	public void setAuthenticationKey(AuthenticationKeyTypes newAuthenticationKey) {
+		AuthenticationKeyTypes oldAuthenticationKey = authenticationKey;
 		authenticationKey = newAuthenticationKey == null ? AUTHENTICATION_KEY_EDEFAULT : newAuthenticationKey;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY, oldAuthenticationKey, authenticationKey));
@@ -826,7 +826,7 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				setAuthentication((EntityOrView)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
-				setAuthenticationKey((AuthenticationKeyType)newValue);
+				setAuthenticationKey((AuthenticationKeyTypes)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT:
 				setLoginAttempt((EntityOrView)newValue);

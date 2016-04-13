@@ -19,7 +19,7 @@ import uk.ac.man.cs.mdsd.waf.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.waf.ActionUnit;
 import uk.ac.man.cs.mdsd.waf.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.waf.Authentication;
-import uk.ac.man.cs.mdsd.waf.AuthenticationKeyType;
+import uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes;
 import uk.ac.man.cs.mdsd.waf.AuthenticationUnit;
 import uk.ac.man.cs.mdsd.waf.CaptchaField;
 import uk.ac.man.cs.mdsd.waf.CasAuthentication;
@@ -553,7 +553,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum authenticationKeyTypeEEnum = null;
+	private EEnum authenticationKeyTypesEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2969,8 +2969,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getAuthenticationKeyType() {
-		return authenticationKeyTypeEEnum;
+	public EEnum getAuthenticationKeyTypes() {
+		return authenticationKeyTypesEEnum;
 	}
 
 	/**
@@ -3342,7 +3342,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		// Create enums
 		frameworkTechnologiesEEnum = createEEnum(FRAMEWORK_TECHNOLOGIES);
 		ajaxTechnologiesEEnum = createEEnum(AJAX_TECHNOLOGIES);
-		authenticationKeyTypeEEnum = createEEnum(AUTHENTICATION_KEY_TYPE);
+		authenticationKeyTypesEEnum = createEEnum(AUTHENTICATION_KEY_TYPES);
 		pageTopMenuOptionsEEnum = createEEnum(PAGE_TOP_MENU_OPTIONS);
 		collectionDisplayOptionsEEnum = createEEnum(COLLECTION_DISPLAY_OPTIONS);
 	}
@@ -3482,7 +3482,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getLocalAuthenticationSystem_User(), theOrmPackage.getEntityOrView(), null, "user", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_UserKey(), theOrmPackage.getAttribute(), null, "userKey", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_Authentication(), theOrmPackage.getEntityOrView(), null, "authentication", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLocalAuthenticationSystem_AuthenticationKey(), this.getAuthenticationKeyType(), "authenticationKey", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocalAuthenticationSystem_AuthenticationKey(), this.getAuthenticationKeyTypes(), "authenticationKey", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_LoginAttempt(), theOrmPackage.getEntityOrView(), null, "loginAttempt", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_AutoLogin(), theOrmPackage.getEntityOrView(), null, "autoLogin", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_UseCaptcha(), theEcorePackage.getEBoolean(), "useCaptcha", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3587,7 +3587,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getDynamicUnit_Entities(), theOrmPackage.getEntityOrView(), null, "entities", null, 1, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_DisplayFields(), this.getUnitField(), this.getUnitField_DisplayedOn(), "displayFields", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_SupportActions(), this.getUnitSupportAction(), null, "supportActions", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDynamicUnit_NoRouteParameters(), theEcorePackage.getEBooleanObject(), "noRouteParameters", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDynamicUnit_NoRouteParameters(), theEcorePackage.getEBooleanObject(), "noRouteParameters", "false", 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicUnit_Header(), theEcorePackage.getEString(), "header", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicUnit_Footer(), theEcorePackage.getEString(), "footer", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicUnit_HeaderClass(), theEcorePackage.getEString(), "headerClass", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3784,10 +3784,9 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		addEEnumLiteral(ajaxTechnologiesEEnum, AjaxTechnologies.JQUERY);
 		addEEnumLiteral(ajaxTechnologiesEEnum, AjaxTechnologies.ANGULAR_JS);
 
-		initEEnum(authenticationKeyTypeEEnum, AuthenticationKeyType.class, "AuthenticationKeyType");
-		addEEnumLiteral(authenticationKeyTypeEEnum, AuthenticationKeyType.EMAIL);
-		addEEnumLiteral(authenticationKeyTypeEEnum, AuthenticationKeyType.SCREEN_NAME);
-		addEEnumLiteral(authenticationKeyTypeEEnum, AuthenticationKeyType.USERNAME);
+		initEEnum(authenticationKeyTypesEEnum, AuthenticationKeyTypes.class, "AuthenticationKeyTypes");
+		addEEnumLiteral(authenticationKeyTypesEEnum, AuthenticationKeyTypes.EMAIL);
+		addEEnumLiteral(authenticationKeyTypesEEnum, AuthenticationKeyTypes.USERNAME);
 
 		initEEnum(pageTopMenuOptionsEEnum, PageTopMenuOptions.class, "PageTopMenuOptions");
 		addEEnumLiteral(pageTopMenuOptionsEEnum, PageTopMenuOptions.NEVER_INCLUDE);

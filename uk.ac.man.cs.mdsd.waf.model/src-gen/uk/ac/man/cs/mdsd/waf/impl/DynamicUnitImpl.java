@@ -87,7 +87,7 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Boolean NO_ROUTE_PARAMETERS_EDEFAULT = null;
+	protected static final Boolean NO_ROUTE_PARAMETERS_EDEFAULT = Boolean.FALSE;
 
 	/**
 	 * The cached value of the '{@link #getNoRouteParameters() <em>No Route Parameters</em>}' attribute.

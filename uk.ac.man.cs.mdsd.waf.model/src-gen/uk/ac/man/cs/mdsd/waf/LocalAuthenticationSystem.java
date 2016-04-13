@@ -114,7 +114,7 @@ public interface LocalAuthenticationSystem extends Authentication {
 
 	/**
 	 * Returns the value of the '<em><b>Authentication Key</b></em>' attribute.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyType}.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Authentication Key</em>' attribute isn't clear,
@@ -122,24 +122,24 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Authentication Key</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyType
-	 * @see #setAuthenticationKey(AuthenticationKeyType)
+	 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes
+	 * @see #setAuthenticationKey(AuthenticationKeyTypes)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_AuthenticationKey()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
-	AuthenticationKeyType getAuthenticationKey();
+	AuthenticationKeyTypes getAuthenticationKey();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Authentication Key</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyType
+	 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes
 	 * @see #getAuthenticationKey()
 	 * @generated
 	 */
-	void setAuthenticationKey(AuthenticationKeyType value);
+	void setAuthenticationKey(AuthenticationKeyTypes value);
 
 	/**
 	 * Returns the value of the '<em><b>Login Attempt</b></em>' reference.

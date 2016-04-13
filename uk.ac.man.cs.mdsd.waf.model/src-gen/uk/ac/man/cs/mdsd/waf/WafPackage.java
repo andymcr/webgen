@@ -8696,14 +8696,14 @@ public interface WafPackage extends EPackage {
 	int AJAX_TECHNOLOGIES = 64;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyType <em>Authentication Key Type</em>}' enum.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyType
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyType()
+	 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPE = 65;
+	int AUTHENTICATION_KEY_TYPES = 65;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -11511,14 +11511,14 @@ public interface WafPackage extends EPackage {
 	EEnum getAjaxTechnologies();
 
 	/**
-	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyType <em>Authentication Key Type</em>}'.
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Authentication Key Type</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyType
+	 * @return the meta object for enum '<em>Authentication Key Types</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes
 	 * @generated
 	 */
-	EEnum getAuthenticationKeyType();
+	EEnum getAuthenticationKeyTypes();
 
 	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}'.
@@ -13766,14 +13766,14 @@ public interface WafPackage extends EPackage {
 		EEnum AJAX_TECHNOLOGIES = eINSTANCE.getAjaxTechnologies();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyType <em>Authentication Key Type</em>}' enum.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyType
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyType()
+		 * @see uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyTypes()
 		 * @generated
 		 */
-		EEnum AUTHENTICATION_KEY_TYPE = eINSTANCE.getAuthenticationKeyType();
+		EEnum AUTHENTICATION_KEY_TYPES = eINSTANCE.getAuthenticationKeyTypes();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.

@@ -118,8 +118,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return createFrameworkTechnologiesFromString(eDataType, initialValue);
 			case WafPackage.AJAX_TECHNOLOGIES:
 				return createAjaxTechnologiesFromString(eDataType, initialValue);
-			case WafPackage.AUTHENTICATION_KEY_TYPE:
-				return createAuthenticationKeyTypeFromString(eDataType, initialValue);
+			case WafPackage.AUTHENTICATION_KEY_TYPES:
+				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
 			case WafPackage.PAGE_TOP_MENU_OPTIONS:
 				return createPageTopMenuOptionsFromString(eDataType, initialValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -141,8 +141,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return convertFrameworkTechnologiesToString(eDataType, instanceValue);
 			case WafPackage.AJAX_TECHNOLOGIES:
 				return convertAjaxTechnologiesToString(eDataType, instanceValue);
-			case WafPackage.AUTHENTICATION_KEY_TYPE:
-				return convertAuthenticationKeyTypeToString(eDataType, instanceValue);
+			case WafPackage.AUTHENTICATION_KEY_TYPES:
+				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
 			case WafPackage.PAGE_TOP_MENU_OPTIONS:
 				return convertPageTopMenuOptionsToString(eDataType, instanceValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -637,8 +637,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AuthenticationKeyType createAuthenticationKeyTypeFromString(EDataType eDataType, String initialValue) {
-		AuthenticationKeyType result = AuthenticationKeyType.get(initialValue);
+	public AuthenticationKeyTypes createAuthenticationKeyTypesFromString(EDataType eDataType, String initialValue) {
+		AuthenticationKeyTypes result = AuthenticationKeyTypes.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -648,7 +648,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertAuthenticationKeyTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertAuthenticationKeyTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

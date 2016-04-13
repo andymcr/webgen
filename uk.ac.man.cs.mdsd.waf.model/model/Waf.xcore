@@ -73,17 +73,16 @@ abstract class Authentication {
 	String logoutLabel = ""
 }
 
-enum AuthenticationKeyType {
+enum AuthenticationKeyTypes {
 	Email = 1
-	ScreenName = 2
-	Username = 3
+	Username = 2
 }
 
 class LocalAuthenticationSystem extends Authentication {
 	refers EntityOrView[1] user
 	refers Attribute[1] userKey
 	refers EntityOrView authentication
-	AuthenticationKeyType[1] authenticationKey
+	AuthenticationKeyTypes[1] authenticationKey
 	refers EntityOrView loginAttempt
 	refers EntityOrView autoLogin
 	boolean useCaptcha
@@ -218,7 +217,7 @@ abstract class DynamicUnit extends ContentUnit {
 	refers EntityOrView[1..*] entities
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
-	Boolean noRouteParameters
+	Boolean noRouteParameters = "false"
 	String header
 	String footer
 	String headerClass

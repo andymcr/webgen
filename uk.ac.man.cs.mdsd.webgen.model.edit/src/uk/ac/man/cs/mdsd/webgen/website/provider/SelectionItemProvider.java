@@ -5,7 +5,9 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -18,9 +20,9 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
-
+import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -77,11 +79,17 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				if (object instanceof Selection) {
-					final Service service = (Service) ((Selection) object).eContainer();
-					return service.getServes().getAllAssociations();
+					final Set<EntityOrView> entitiesAndViews
+						= getEntitiesAndViews((Selection) object);
+					final Set<Association> associations = new HashSet<Association>();
+					for (EntityOrView entityOrView : entitiesAndViews) {
+						associations.addAll(entityOrView.getAllAssociations());
+					}
+
+					return associations;
 				}
 
-				return Collections.emptyList();
+				return Collections.emptySet();
 			}
 		});
 	}

@@ -52,6 +52,8 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 			addDisplayClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
+			addSourceEntityXPropertyDescriptor(object);
+			addTargetEntityXPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -142,6 +144,50 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_StylePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Source Entity X feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourceEntityXPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_sourceEntityX_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_sourceEntityX_feature", "_UI_Association_type"),
+				 WebsitePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Target Entity X feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetEntityXPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_targetEntityX_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_targetEntityX_feature", "_UI_Association_type"),
+				 WebsitePackage.Literals.ASSOCIATION__TARGET_ENTITY_X,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
 				 null));
 	}
 

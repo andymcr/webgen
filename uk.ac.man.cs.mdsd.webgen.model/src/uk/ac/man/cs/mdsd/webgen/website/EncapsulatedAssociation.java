@@ -151,23 +151,12 @@ public interface EncapsulatedAssociation extends EncapsulatedFeature, Associatio
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Entity</em>' reference.
-	 * @see #setSourceEntity(Entity)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEncapsulatedAssociation_SourceEntity()
-	 * @model required="true"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).sourceEntity\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\telse\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity \r\n\t\tendif\r\n\tendif\r\nendif'"
 	 * @generated
 	 */
 	Entity getSourceEntity();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getSourceEntity <em>Source Entity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Entity</em>' reference.
-	 * @see #getSourceEntity()
-	 * @generated
-	 */
-	void setSourceEntity(Entity value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Entity</b></em>' reference.
@@ -178,22 +167,11 @@ public interface EncapsulatedAssociation extends EncapsulatedFeature, Associatio
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Entity</em>' reference.
-	 * @see #setTargetEntity(Entity)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEncapsulatedAssociation_TargetEntity()
-	 * @model required="true"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if association.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\tif association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tassociation.oclAsType(EncapsulatedAssociation).targetEntity\r\n\telse\r\n\t\tif isSourceAssociation then\r\n\t\t\tassociation.oclAsType(EntityAssociation).targetEntity \r\n\t\telse\r\n\t\t\tassociation.oclAsType(EntityAssociation).partOf\r\n\t\tendif\r\n\tendif\r\nendif'"
 	 * @generated
 	 */
 	Entity getTargetEntity();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation#getTargetEntity <em>Target Entity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Entity</em>' reference.
-	 * @see #getTargetEntity()
-	 * @generated
-	 */
-	void setTargetEntity(Entity value);
 
 } // EncapsulatedAssociation

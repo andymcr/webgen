@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -20,6 +21,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewAssociation;
@@ -41,6 +43,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getInputClass <em>Input Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getSourceEntityX <em>Source Entity X</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getTargetEntityX <em>Target Entity X</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getOpposite <em>Opposite</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getCardinality <em>Cardinality</em>}</li>
  * </ul>
@@ -138,6 +142,24 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @ordered
 	 */
 	protected String inputClass = INPUT_CLASS_EDEFAULT;
+	/**
+	 * The cached setting delegate for the '{@link #getSourceEntityX() <em>Source Entity X</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceEntityX()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #getTargetEntityX() <em>Target Entity X</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetEntityX()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
 	/**
 	 * The cached value of the '{@link #getOpposite() <em>Opposite</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -390,6 +412,42 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EntityOrView getSourceEntityX() {
+		return (EntityOrView)SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetSourceEntityX() {
+		return (EntityOrView)SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getTargetEntityX() {
+		return (EntityOrView)TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetTargetEntityX() {
+		return (EntityOrView)TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EncapsulatedAssociation getOpposite() {
 		if (opposite != null && opposite.eIsProxy()) {
 			InternalEObject oldOpposite = (InternalEObject)opposite;
@@ -496,6 +554,12 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return getEncapsulatedBy();
 			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 				return getInputClass();
+			case WebsitePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X:
+				if (resolve) return getSourceEntityX();
+				return basicGetSourceEntityX();
+			case WebsitePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X:
+				if (resolve) return getTargetEntityX();
+				return basicGetTargetEntityX();
 			case WebsitePackage.VIEW_ASSOCIATION__OPPOSITE:
 				if (resolve) return getOpposite();
 				return basicGetOpposite();
@@ -607,6 +671,10 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return encapsulatedBy != null && !encapsulatedBy.isEmpty();
 			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
+			case WebsitePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X:
+				return SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X:
+				return TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.VIEW_ASSOCIATION__OPPOSITE:
 				return opposite != null;
 			case WebsitePackage.VIEW_ASSOCIATION__CARDINALITY:
@@ -641,6 +709,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
+				case WebsitePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X;
+				case WebsitePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X: return WebsitePackage.ASSOCIATION__TARGET_ENTITY_X;
 				default: return -1;
 			}
 		}
@@ -673,6 +743,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.ASSOCIATION__CHILD_FEATURE: return WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS;
+				case WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X;
+				case WebsitePackage.ASSOCIATION__TARGET_ENTITY_X: return WebsitePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X;
 				default: return -1;
 			}
 		}

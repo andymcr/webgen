@@ -22,11 +22,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
-import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -91,14 +90,8 @@ public class FeatureReferenceItemProvider
 					if (object instanceof FeatureReference) {
 						final Selection selection = getCriteriaSelectionContext(object);
 						if (selection != null) {
-							final Service service = selection.getUsedBy();
-							features.addAll(getFeatures(service));
-							for (Association join : selection.getJoins()) {
-								if (service.getServes().getAssociations().contains(join)) {
-									features.addAll(getTargetType(join).getAllFeatures());
-								} else {
-									features.addAll(getSourceType(join).getAllFeatures());
-								}
+							for (EntityOrView entityOrView : getEntitiesAndViews(selection)) {
+								features.addAll(entityOrView.getAllFeatures());
 							}
 							return features;
 						}

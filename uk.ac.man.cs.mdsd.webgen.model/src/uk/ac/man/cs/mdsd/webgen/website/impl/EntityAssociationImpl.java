@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -20,6 +21,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -33,6 +35,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getInputClass <em>Input Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getSourceEntityX <em>Source Entity X</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetEntityX <em>Target Entity X</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
@@ -86,6 +90,26 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * @ordered
 	 */
 	protected String inputClass = INPUT_CLASS_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getSourceEntityX() <em>Source Entity X</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceEntityX()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ASSOCIATION__SOURCE_ENTITY_X).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getTargetEntityX() <em>Target Entity X</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetEntityX()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
@@ -459,6 +483,42 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EntityOrView getSourceEntityX() {
+		return (EntityOrView)SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetSourceEntityX() {
+		return (EntityOrView)SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getTargetEntityX() {
+		return (EntityOrView)TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetTargetEntityX() {
+		return (EntityOrView)TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTargetFeatureName() {
 		return targetFeatureName;
 	}
@@ -631,6 +691,12 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return getEncapsulatedBy();
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				return getInputClass();
+			case WebsitePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X:
+				if (resolve) return getSourceEntityX();
+				return basicGetSourceEntityX();
+			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X:
+				if (resolve) return getTargetEntityX();
+				return basicGetTargetEntityX();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				if (resolve) return getTargetEntity();
 				return basicGetTargetEntity();
@@ -766,6 +832,10 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return encapsulatedBy != null && !encapsulatedBy.isEmpty();
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
+			case WebsitePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X:
+				return SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X:
+				return TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				return targetEntity != null;
 			case WebsitePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
@@ -800,6 +870,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
+				case WebsitePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X;
+				case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X: return WebsitePackage.ASSOCIATION__TARGET_ENTITY_X;
 				default: return -1;
 			}
 		}
@@ -818,6 +890,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				case WebsitePackage.ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS;
+				case WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X;
+				case WebsitePackage.ASSOCIATION__TARGET_ENTITY_X: return WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X;
 				default: return -1;
 			}
 		}

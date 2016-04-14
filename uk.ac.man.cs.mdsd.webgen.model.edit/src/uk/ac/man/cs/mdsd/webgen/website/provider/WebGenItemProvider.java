@@ -74,6 +74,27 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return service.getServes().getAllAssociations();
 	}
 
+	protected Set<EntityOrView> getEntitiesAndViews(final Selection selection) {
+		final Set<EntityOrView> entitiesAndViews = new HashSet<EntityOrView>();
+		entitiesAndViews.add(((Service) selection.eContainer()).getServes());
+		final Set<Association> joins = new HashSet<Association>(selection.getJoins());
+		while (!joins.isEmpty()) {
+			final Set<Association> handled = new HashSet<Association>();
+			for (Association join : joins) {
+				if (entitiesAndViews.contains(join.getSourceEntityX())) {
+					entitiesAndViews.add(join.getTargetEntityX());
+					handled.add(join);
+				} else if (entitiesAndViews.contains(join.getTargetEntityX())) {
+					entitiesAndViews.add(join.getSourceEntityX());
+					handled.add(join);
+				}
+			}
+			joins.removeAll(handled);
+		}
+
+		return entitiesAndViews;
+	}
+
 	protected Set<Attribute> getAttributes(final DynamicUnit unit) {
 		final Set<Attribute> attributes = new HashSet<Attribute>();
 		for (EntityOrView entityOrView : unit.getEntities()) {

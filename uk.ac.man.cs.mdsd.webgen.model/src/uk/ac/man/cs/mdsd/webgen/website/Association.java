@@ -21,6 +21,8 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getInputClass <em>Input Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getSourceEntityX <em>Source Entity X</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getTargetEntityX <em>Target Entity X</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation()
@@ -99,5 +101,37 @@ public interface Association extends Feature {
 	 * @generated
 	 */
 	void setInputClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Source Entity X</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source Entity X</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source Entity X</em>' reference.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation_SourceEntityX()
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsKindOf(EntityAssociation) then\r\n\tself.oclAsType(EntityAssociation).partOf\r\nelse if self.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tself.oclAsType(EncapsulatedAssociation).sourceEntity\r\nelse\r\n\tself.oclAsType(ViewAssociation).partOf\r\nendif endif'"
+	 * @generated
+	 */
+	EntityOrView getSourceEntityX();
+
+	/**
+	 * Returns the value of the '<em><b>Target Entity X</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target Entity X</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target Entity X</em>' reference.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation_TargetEntityX()
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsKindOf(EntityAssociation) then\r\n\tself.oclAsType(EntityAssociation).targetEntity\r\nelse if self.oclIsTypeOf(EncapsulatedAssociation) then\r\n\t\tself.oclAsType(EncapsulatedAssociation).targetEntity\r\nelse\r\n\tnull\r\nendif endif'"
+	 * @generated
+	 */
+	EntityOrView getTargetEntityX();
 
 } // Association

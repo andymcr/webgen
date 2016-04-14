@@ -278,15 +278,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		NAME__ESETTING_DELEGATE.dynamicSet(this, null, 0, newName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Attribute getAttribute() {
 		if (attribute != null && attribute.eIsProxy()) {
 			InternalEObject oldAttribute = (InternalEObject)attribute;
@@ -399,9 +390,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 			case WebsitePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
 				setInputClass((String)newValue);
 				return;
-			case WebsitePackage.ENCAPSULATED_ATTRIBUTE__NAME:
-				setName((String)newValue);
-				return;
 			case WebsitePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)newValue);
 				return;
@@ -431,9 +419,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 				return;
 			case WebsitePackage.ENCAPSULATED_ATTRIBUTE__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
-				return;
-			case WebsitePackage.ENCAPSULATED_ATTRIBUTE__NAME:
-				NAME__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
 				return;
 			case WebsitePackage.ENCAPSULATED_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)null);

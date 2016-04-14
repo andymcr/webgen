@@ -19,6 +19,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getFilter <em>Filter</em>}</li>
@@ -31,6 +32,34 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * @generated
  */
 public interface Selection extends NamedElement {
+	/**
+	 * Returns the value of the '<em><b>Part Of</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.Service#getSelections <em>Selections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Part Of</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Part Of</em>' container reference.
+	 * @see #setPartOf(Service)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelection_PartOf()
+	 * @see uk.ac.man.cs.mdsd.waf.Service#getSelections
+	 * @model opposite="selections" transient="false"
+	 * @generated
+	 */
+	Service getPartOf();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Selection#getPartOf <em>Part Of</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Part Of</em>' container reference.
+	 * @see #getPartOf()
+	 * @generated
+	 */
+	void setPartOf(Service value);
+
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.SelectionParameter}.

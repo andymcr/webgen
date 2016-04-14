@@ -682,13 +682,22 @@ public interface WafPackage extends EPackage {
 	int SELECTION__NAME = OrmPackage.NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__PART_OF = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__PARAMETERS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SELECTION__PARAMETERS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Joins</b></em>' reference list.
@@ -697,7 +706,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__JOINS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SELECTION__JOINS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' containment reference.
@@ -706,7 +715,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__FILTER = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SELECTION__FILTER = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Ordering</b></em>' containment reference list.
@@ -715,7 +724,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__ORDERING = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SELECTION__ORDERING = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Limit</b></em>' attribute.
@@ -724,7 +733,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__LIMIT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int SELECTION__LIMIT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Selection</em>' class.
@@ -733,7 +742,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int SELECTION_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Selection</em>' class.
@@ -9248,6 +9257,17 @@ public interface WafPackage extends EPackage {
 	EClass getSelection();
 
 	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.waf.Selection#getPartOf <em>Part Of</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Part Of</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.Selection#getPartOf()
+	 * @see #getSelection()
+	 * @generated
+	 */
+	EReference getSelection_PartOf();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.Selection#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11960,6 +11980,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SELECTION = eINSTANCE.getSelection();
+
+		/**
+		 * The meta object literal for the '<em><b>Part Of</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SELECTION__PART_OF = eINSTANCE.getSelection_PartOf();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.criteria.Order;
@@ -27,6 +28,7 @@ import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.SelectionParameter;
+import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -37,6 +39,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
@@ -124,6 +127,57 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.SELECTION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service getPartOf() {
+		if (eContainerFeatureID() != WafPackage.SELECTION__PART_OF) return null;
+		return (Service)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Service basicGetPartOf() {
+		if (eContainerFeatureID() != WafPackage.SELECTION__PART_OF) return null;
+		return (Service)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPartOf(Service newPartOf, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WafPackage.SELECTION__PART_OF, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPartOf(Service newPartOf) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WafPackage.SELECTION__PART_OF && newPartOf != null)) {
+			if (EcoreUtil.isAncestor(this, newPartOf))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newPartOf != null)
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WafPackage.SERVICE__SELECTIONS, Service.class, msgs);
+			msgs = basicSetPartOf(newPartOf, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SELECTION__PART_OF, newPartOf, newPartOf));
 	}
 
 	/**
@@ -232,8 +286,26 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WafPackage.SELECTION__PART_OF:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetPartOf((Service)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case WafPackage.SELECTION__PART_OF:
+				return basicSetPartOf(null, msgs);
 			case WafPackage.SELECTION__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 			case WafPackage.SELECTION__FILTER:
@@ -250,8 +322,25 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case WafPackage.SELECTION__PART_OF:
+				return eInternalContainer().eInverseRemove(this, WafPackage.SERVICE__SELECTIONS, Service.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.SELECTION__PART_OF:
+				if (resolve) return getPartOf();
+				return basicGetPartOf();
 			case WafPackage.SELECTION__PARAMETERS:
 				return getParameters();
 			case WafPackage.SELECTION__JOINS:
@@ -275,6 +364,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.SELECTION__PART_OF:
+				setPartOf((Service)newValue);
+				return;
 			case WafPackage.SELECTION__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends SelectionParameter>)newValue);
@@ -305,6 +397,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.SELECTION__PART_OF:
+				setPartOf((Service)null);
+				return;
 			case WafPackage.SELECTION__PARAMETERS:
 				getParameters().clear();
 				return;
@@ -332,6 +427,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.SELECTION__PART_OF:
+				return basicGetPartOf() != null;
 			case WafPackage.SELECTION__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
 			case WafPackage.SELECTION__JOINS:

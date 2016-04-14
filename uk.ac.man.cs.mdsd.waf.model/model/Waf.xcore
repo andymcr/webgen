@@ -106,10 +106,11 @@ abstract class DisplayElement {
 class Service extends NamedElement {
 	refers WafModel[1] partOf opposite services
 	refers EntityOrView[1] serves
-	contains Selection[] selections
+	contains Selection[] selections opposite partOf
 }
 
 class Selection extends NamedElement {
+	container Service partOf opposite selections
 	contains SelectionParameter[] parameters
 	refers Association[] joins
 	contains Predicate filter

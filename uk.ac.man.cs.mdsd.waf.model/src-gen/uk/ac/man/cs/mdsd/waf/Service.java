@@ -83,6 +83,7 @@ public interface Service extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Selections</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.Selection}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.Selection#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Selections</em>' containment reference list isn't clear,
@@ -91,7 +92,8 @@ public interface Service extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Selections</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_Selections()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.waf.Selection#getPartOf
+	 * @model opposite="partOf" containment="true"
 	 * @generated
 	 */
 	EList<Selection> getSelections();

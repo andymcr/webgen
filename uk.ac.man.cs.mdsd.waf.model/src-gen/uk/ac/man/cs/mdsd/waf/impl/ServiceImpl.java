@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -178,7 +178,7 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 */
 	public EList<Selection> getSelections() {
 		if (selections == null) {
-			selections = new EObjectContainmentEList<Selection>(Selection.class, this, WafPackage.SERVICE__SELECTIONS);
+			selections = new EObjectContainmentWithInverseEList<Selection>(Selection.class, this, WafPackage.SERVICE__SELECTIONS, WafPackage.SELECTION__PART_OF);
 		}
 		return selections;
 	}
@@ -188,6 +188,7 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -195,6 +196,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetPartOf((WafModel)otherEnd, msgs);
+			case WafPackage.SERVICE__SELECTIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSelections()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

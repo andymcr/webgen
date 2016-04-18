@@ -23,6 +23,7 @@ import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
+import uk.ac.man.cs.mdsd.webgen.website.SelectionField;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -54,10 +55,46 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addFieldsPropertyDescriptor(object);
 			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_Selection_fields_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Selection_fields_feature", "_UI_Selection_type"),
+			WebsitePackage.Literals.SELECTION__FIELDS,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				if (object instanceof Selection) {
+					final Set<EntityOrView> entitiesAndViews
+						= getEntitiesAndViews((Selection) object);
+					final Set<SelectionField> fields = new HashSet<SelectionField>();
+					for (EntityOrView entityOrView : entitiesAndViews) {
+						fields.add(entityOrView);
+						fields.addAll(entityOrView.getAttributes());
+					}
+
+					return fields;
+				}
+
+				return Collections.emptySet();
+			}
+		});
 	}
 
 	/**

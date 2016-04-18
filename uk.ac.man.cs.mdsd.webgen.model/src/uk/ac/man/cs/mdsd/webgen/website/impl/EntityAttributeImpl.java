@@ -15,6 +15,7 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
+import uk.ac.man.cs.mdsd.webgen.website.SelectionField;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -343,6 +344,11 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				default: return -1;
 			}
 		}
+		if (baseClass == SelectionField.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == Attribute.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE: return WebsitePackage.ATTRIBUTE__DEFAULT_VALUE;
@@ -363,6 +369,11 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Label.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == SelectionField.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}

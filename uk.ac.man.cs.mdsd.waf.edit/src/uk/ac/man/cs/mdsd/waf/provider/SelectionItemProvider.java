@@ -134,6 +134,7 @@ public class SelectionItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.SELECTION__PARAMETERS);
+			childrenFeatures.add(WafPackage.Literals.SELECTION__FIELDS);
 			childrenFeatures.add(WafPackage.Literals.SELECTION__FILTER);
 			childrenFeatures.add(WafPackage.Literals.SELECTION__ORDERING);
 		}
@@ -194,6 +195,7 @@ public class SelectionItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.SELECTION__PARAMETERS:
+			case WafPackage.SELECTION__FIELDS:
 			case WafPackage.SELECTION__FILTER:
 			case WafPackage.SELECTION__ORDERING:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -217,6 +219,16 @@ public class SelectionItemProvider
 			(createChildParameter
 				(WafPackage.Literals.SELECTION__PARAMETERS,
 				 WafFactory.eINSTANCE.createSelectionParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.SELECTION__FIELDS,
+				 WafFactory.eINSTANCE.createSelectEntityOrView()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.SELECTION__FIELDS,
+				 WafFactory.eINSTANCE.createSelectAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

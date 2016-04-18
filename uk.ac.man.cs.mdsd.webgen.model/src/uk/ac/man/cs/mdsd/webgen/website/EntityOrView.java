@@ -30,7 +30,7 @@ import java.util.List;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL keysFromLocalFeatures='allFeatures->includesAll(keys)'"
  * @generated
  */
-public interface EntityOrView extends Classifier {
+public interface EntityOrView extends Classifier, SelectionField {
 	/**
 	 * Returns the value of the '<em><b>Table Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -118,6 +118,26 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.SELECT_FIELD: {
+				SelectField selectField = (SelectField)theEObject;
+				T result = caseSelectField(selectField);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.SELECT_ENTITY_OR_VIEW: {
+				SelectEntityOrView selectEntityOrView = (SelectEntityOrView)theEObject;
+				T result = caseSelectEntityOrView(selectEntityOrView);
+				if (result == null) result = caseSelectField(selectEntityOrView);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.SELECT_ATTRIBUTE: {
+				SelectAttribute selectAttribute = (SelectAttribute)theEObject;
+				T result = caseSelectAttribute(selectAttribute);
+				if (result == null) result = caseSelectField(selectAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.SELECTION_PARAMETER: {
 				SelectionParameter selectionParameter = (SelectionParameter)theEObject;
 				T result = caseSelectionParameter(selectionParameter);
@@ -737,6 +757,51 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSelection(Selection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Select Field</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Select Field</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSelectField(SelectField object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Select Entity Or View</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Select Entity Or View</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSelectEntityOrView(SelectEntityOrView object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Select Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Select Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSelectAttribute(SelectAttribute object) {
 		return null;
 	}
 

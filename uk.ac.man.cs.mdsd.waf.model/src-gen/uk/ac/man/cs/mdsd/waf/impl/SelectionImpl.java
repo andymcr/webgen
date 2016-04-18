@@ -26,6 +26,7 @@ import uk.ac.man.cs.mdsd.orm.Association;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
+import uk.ac.man.cs.mdsd.waf.SelectField;
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.SelectionParameter;
 import uk.ac.man.cs.mdsd.waf.Service;
@@ -41,6 +42,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
@@ -59,6 +61,16 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @ordered
 	 */
 	protected EList<SelectionParameter> parameters;
+
+	/**
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SelectField> fields;
 
 	/**
 	 * The cached value of the '{@link #getJoins() <em>Joins</em>}' reference list.
@@ -197,6 +209,18 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SelectField> getFields() {
+		if (fields == null) {
+			fields = new EObjectContainmentEList<SelectField>(SelectField.class, this, WafPackage.SELECTION__FIELDS);
+		}
+		return fields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Association> getJoins() {
 		if (joins == null) {
 			joins = new EObjectResolvingEList<Association>(Association.class, this, WafPackage.SELECTION__JOINS);
@@ -308,6 +332,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return basicSetPartOf(null, msgs);
 			case WafPackage.SELECTION__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case WafPackage.SELECTION__FIELDS:
+				return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
 			case WafPackage.SELECTION__FILTER:
 				return basicSetFilter(null, msgs);
 			case WafPackage.SELECTION__ORDERING:
@@ -343,6 +369,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return basicGetPartOf();
 			case WafPackage.SELECTION__PARAMETERS:
 				return getParameters();
+			case WafPackage.SELECTION__FIELDS:
+				return getFields();
 			case WafPackage.SELECTION__JOINS:
 				return getJoins();
 			case WafPackage.SELECTION__FILTER:
@@ -370,6 +398,10 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WafPackage.SELECTION__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends SelectionParameter>)newValue);
+				return;
+			case WafPackage.SELECTION__FIELDS:
+				getFields().clear();
+				getFields().addAll((Collection<? extends SelectField>)newValue);
 				return;
 			case WafPackage.SELECTION__JOINS:
 				getJoins().clear();
@@ -403,6 +435,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WafPackage.SELECTION__PARAMETERS:
 				getParameters().clear();
 				return;
+			case WafPackage.SELECTION__FIELDS:
+				getFields().clear();
+				return;
 			case WafPackage.SELECTION__JOINS:
 				getJoins().clear();
 				return;
@@ -431,6 +466,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return basicGetPartOf() != null;
 			case WafPackage.SELECTION__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case WafPackage.SELECTION__FIELDS:
+				return fields != null && !fields.isEmpty();
 			case WafPackage.SELECTION__JOINS:
 				return joins != null && !joins.isEmpty();
 			case WafPackage.SELECTION__FILTER:

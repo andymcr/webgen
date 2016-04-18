@@ -67,6 +67,24 @@ public interface WafFactory extends EFactory {
 	Selection createSelection();
 
 	/**
+	 * Returns a new object of class '<em>Select Entity Or View</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Select Entity Or View</em>'.
+	 * @generated
+	 */
+	SelectEntityOrView createSelectEntityOrView();
+
+	/**
+	 * Returns a new object of class '<em>Select Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Select Attribute</em>'.
+	 * @generated
+	 */
+	SelectAttribute createSelectAttribute();
+
+	/**
 	 * Returns a new object of class '<em>Selection Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

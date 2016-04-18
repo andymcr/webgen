@@ -178,6 +178,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateService((Service)value, diagnostics, context);
 			case WebsitePackage.SELECTION:
 				return validateSelection((Selection)value, diagnostics, context);
+			case WebsitePackage.SELECTION_FIELD:
+				return validateSelectionField((SelectionField)value, diagnostics, context);
 			case WebsitePackage.SELECTION_PARAMETER:
 				return validateSelectionParameter((SelectionParameter)value, diagnostics, context);
 			case WebsitePackage.PAGE:
@@ -1788,6 +1790,15 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(selection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(selection, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSelectionField(SelectionField selectionField, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(selectionField, diagnostics, context);
 	}
 
 	/**

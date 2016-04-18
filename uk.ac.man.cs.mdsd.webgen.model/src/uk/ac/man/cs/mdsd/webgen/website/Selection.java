@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getFields <em>Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getFilter <em>Filter</em>}</li>
@@ -56,6 +57,22 @@ public interface Selection extends NamedElement {
 	 * @generated
 	 */
 	void setUsedBy(Service value);
+
+	/**
+	 * Returns the value of the '<em><b>Fields</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.SelectionField}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fields</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fields</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelection_Fields()
+	 * @model
+	 * @generated
+	 */
+	List<SelectionField> getFields();
 
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.

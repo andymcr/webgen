@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
 
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
+import uk.ac.man.cs.mdsd.webgen.website.SelectionField;
 import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -38,6 +39,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
@@ -48,6 +50,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class SelectionImpl extends NamedElementImpl implements Selection {
+	/**
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SelectionField> fields;
+
 	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -166,6 +178,18 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SELECTION__USED_BY, newUsedBy, newUsedBy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<SelectionField> getFields() {
+		if (fields == null) {
+			fields = new EObjectResolvingEList<SelectionField>(SelectionField.class, this, WebsitePackage.SELECTION__FIELDS);
+		}
+		return fields;
 	}
 
 	/**
@@ -328,6 +352,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		switch (featureID) {
 			case WebsitePackage.SELECTION__USED_BY:
 				return getUsedBy();
+			case WebsitePackage.SELECTION__FIELDS:
+				return getFields();
 			case WebsitePackage.SELECTION__PARAMETERS:
 				return getParameters();
 			case WebsitePackage.SELECTION__JOINS:
@@ -353,6 +379,10 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		switch (featureID) {
 			case WebsitePackage.SELECTION__USED_BY:
 				setUsedBy((Service)newValue);
+				return;
+			case WebsitePackage.SELECTION__FIELDS:
+				getFields().clear();
+				getFields().addAll((Collection<? extends SelectionField>)newValue);
 				return;
 			case WebsitePackage.SELECTION__PARAMETERS:
 				getParameters().clear();
@@ -387,6 +417,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WebsitePackage.SELECTION__USED_BY:
 				setUsedBy((Service)null);
 				return;
+			case WebsitePackage.SELECTION__FIELDS:
+				getFields().clear();
+				return;
 			case WebsitePackage.SELECTION__PARAMETERS:
 				getParameters().clear();
 				return;
@@ -416,6 +449,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		switch (featureID) {
 			case WebsitePackage.SELECTION__USED_BY:
 				return getUsedBy() != null;
+			case WebsitePackage.SELECTION__FIELDS:
+				return fields != null && !fields.isEmpty();
 			case WebsitePackage.SELECTION__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
 			case WebsitePackage.SELECTION__JOINS:

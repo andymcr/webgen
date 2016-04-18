@@ -102,6 +102,18 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createSelectionAdapter();
 			}
 			@Override
+			public Adapter caseSelectField(SelectField object) {
+				return createSelectFieldAdapter();
+			}
+			@Override
+			public Adapter caseSelectEntityOrView(SelectEntityOrView object) {
+				return createSelectEntityOrViewAdapter();
+			}
+			@Override
+			public Adapter caseSelectAttribute(SelectAttribute object) {
+				return createSelectAttributeAdapter();
+			}
+			@Override
 			public Adapter caseSelectionParameter(SelectionParameter object) {
 				return createSelectionParameterAdapter();
 			}
@@ -456,6 +468,48 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSelectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.SelectField <em>Select Field</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.SelectField
+	 * @generated
+	 */
+	public Adapter createSelectFieldAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.SelectEntityOrView <em>Select Entity Or View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.SelectEntityOrView
+	 * @generated
+	 */
+	public Adapter createSelectEntityOrViewAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.SelectAttribute <em>Select Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.SelectAttribute
+	 * @generated
+	 */
+	public Adapter createSelectAttributeAdapter() {
 		return null;
 	}
 

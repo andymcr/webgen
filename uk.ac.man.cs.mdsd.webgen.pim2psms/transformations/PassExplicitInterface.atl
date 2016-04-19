@@ -1150,6 +1150,14 @@ rule NullLiteral {
 }
 
 -- @extends Literal
+rule BooleanLiteral {
+	from website : Website!BooleanLiteral (website.isInterfaceContainer())
+	to waf : WAF!BooleanLiteral (
+		value <- website.value
+	)
+}
+
+-- @extends Literal
 rule IntegerLiteral {
 	from website : Website!IntegerLiteral (website.isInterfaceContainer())
 	to waf : WAF!IntegerLiteral (
@@ -1161,6 +1169,14 @@ rule IntegerLiteral {
 rule StringLiteral {
 	from website : Website!StringLiteral (website.isInterfaceContainer())
 	to waf : WAF!StringLiteral (
+		value <- website.value
+	)
+}
+
+-- @extends Literal
+rule TimeLiteral {
+	from website : Website!TimeLiteral (website.isInterfaceContainer())
+	to waf : WAF!TimeLiteral (
 		value <- website.value
 	)
 }

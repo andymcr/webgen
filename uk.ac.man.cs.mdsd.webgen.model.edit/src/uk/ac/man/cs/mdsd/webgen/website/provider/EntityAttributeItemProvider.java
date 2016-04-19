@@ -231,12 +231,22 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createBooleanLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createStringLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createTimeLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter

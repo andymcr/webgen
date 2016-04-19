@@ -30,6 +30,14 @@ rule NullLiteral {
 }
 
 -- @extends Literal
+rule BooleanLiteral {
+	from website : Website!BooleanLiteral (website.isPersistentContainer())
+	to orm : ORM!BooleanLiteral (
+		value <- website.value
+	)
+}
+
+-- @extends Literal
 rule IntegerLiteral {
 	from website : Website!IntegerLiteral (website.isPersistentContainer())
 	to orm : ORM!IntegerLiteral (
@@ -41,6 +49,14 @@ rule IntegerLiteral {
 rule StringLiteral {
 	from website : Website!StringLiteral (website.isPersistentContainer())
 	to orm : ORM!StringLiteral (
+		value <- website.value
+	)
+}
+
+-- @extends Literal
+rule TimeLiteral {
+	from website : Website!TimeLiteral (website.isPersistentContainer())
+	to orm : ORM!TimeLiteral (
 		value <- website.value
 	)
 }

@@ -271,7 +271,7 @@
         eType="#//EntityOrView" changeable="false" volatile="true" transient="true"
         derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if self.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;self.oclAsType(EntityAssociation).targetEntity&#xD;&#xA;else if self.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;self.oclAsType(EncapsulatedAssociation).targetEntity&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif endif"/>
+        <details key="derivation" value="if self.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;self.oclAsType(EntityAssociation).targetEntity&#xD;&#xA;else if self.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;self.oclAsType(EncapsulatedAssociation).targetEntity&#xD;&#xA;else&#xD;&#xA;&#x9;-- TODO get other end&#xD;&#xA;&#x9;self.oclAsType(ViewAssociation).partOf&#xD;&#xA;endif endif"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -1023,6 +1023,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureSupportAction" eSuperTypes="#//InlineAction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModelReference" eSuperTypes="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path">
     <eStructuralFeatures xsi:type="ecore:EReference" name="unit" ordered="false" lowerBound="1"

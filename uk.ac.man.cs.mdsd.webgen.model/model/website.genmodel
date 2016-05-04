@@ -641,6 +641,7 @@
     </genClasses>
     <genClasses ecoreClass="website.ecore#//FeatureSupportAction">
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//FeatureSupportAction/confirmMessage"/>
+      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//FeatureSupportAction/uriElement"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//ModelReference">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

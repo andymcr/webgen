@@ -182,6 +182,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateSelectionField((SelectionField)value, diagnostics, context);
 			case WebsitePackage.SELECTION_PARAMETER:
 				return validateSelectionParameter((SelectionParameter)value, diagnostics, context);
+			case WebsitePackage.BUSINESS_OPERATION:
+				return validateBusinessOperation((BusinessOperation)value, diagnostics, context);
 			case WebsitePackage.PAGE:
 				return validatePage((Page)value, diagnostics, context);
 			case WebsitePackage.PAGE_LINK:
@@ -310,6 +312,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateCardinality((Cardinality)value, diagnostics, context);
 			case WebsitePackage.DATE_DETAILS:
 				return validateDateDetails((DateDetails)value, diagnostics, context);
+			case WebsitePackage.OPERATION_RESULT_TYPES:
+				return validateOperationResultTypes((OperationResultTypes)value, diagnostics, context);
 			case WebsitePackage.PAGE_TOP_MENU_OPTIONS:
 				return validatePageTopMenuOptions((PageTopMenuOptions)value, diagnostics, context);
 			case WebsitePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -1825,6 +1829,25 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateBusinessOperation(BusinessOperation businessOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(businessOperation, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(businessOperation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(businessOperation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateContentUnit(ContentUnit contentUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(contentUnit, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(contentUnit, diagnostics, context);
@@ -2810,6 +2833,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDateDetails(DateDetails dateDetails, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOperationResultTypes(OperationResultTypes operationResultTypes, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

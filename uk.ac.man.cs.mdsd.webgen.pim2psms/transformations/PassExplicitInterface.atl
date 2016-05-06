@@ -335,7 +335,8 @@ rule Service {
 			else
 				thisModule.findOrmEntityOrView(website.serves.name)
 			endif,
-		selections <- website.selections
+		selections <- website.selections,
+		operations <- website.operations
 	)
 } 
 
@@ -383,6 +384,14 @@ rule SelectionParameter {
 	from website : Website!SelectionParameter
 	to waf : WAF!SelectionParameter (
 		defaultValue <- website.defaultValue
+	)
+}
+
+-- @extends NamedElement
+rule BusinessOperation {
+	from website : Website!BusinessOperation
+	to waf : WAF!BusinessOperation (
+		resultType <- website.resultType
 	)
 }
 
@@ -1103,6 +1112,7 @@ rule DeleteAction {
 rule FeatureSupportAction {
 	from website : Website!FeatureSupportAction 
 	to waf : WAF!FeatureSupportAction (
+		operation <- website.operation,
 		confirmMessage <-
 			if not website.confirmMessage.oclIsUndefined() and website.confirmMessage <> '' then
 				website.confirmMessage

@@ -45,10 +45,33 @@ public class FeatureSupportActionItemProvider extends InlineActionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOperationPropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Operation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOperationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeatureSupportAction_operation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureSupportAction_operation_feature", "_UI_FeatureSupportAction_type"),
+				 WebsitePackage.Literals.FEATURE_SUPPORT_ACTION__OPERATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_BusinessPropertyCategory"),
+				 null));
 	}
 
 	/**

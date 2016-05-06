@@ -19,6 +19,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getServes <em>Serves</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getSelections <em>Selections</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Service#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService()
@@ -97,5 +98,23 @@ public interface Service extends NamedElement {
 	 * @generated
 	 */
 	EList<Selection> getSelections();
+
+	/**
+	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.BusinessOperation}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.BusinessOperation#getPartOf <em>Part Of</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operations</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getService_Operations()
+	 * @see uk.ac.man.cs.mdsd.waf.BusinessOperation#getPartOf
+	 * @model opposite="partOf" containment="true"
+	 * @generated
+	 */
+	EList<BusinessOperation> getOperations();
 
 } // Service

@@ -6,8 +6,10 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.webgen.website.BusinessOperation;
 import uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -19,6 +21,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureSupportActionImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureSupportActionImpl#getConfirmMessage <em>Confirm Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureSupportActionImpl#getUriElement <em>Uri Element</em>}</li>
  * </ul>
@@ -26,6 +29,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class FeatureSupportActionImpl extends InlineActionImpl implements FeatureSupportAction {
+	/**
+	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperation()
+	 * @generated
+	 * @ordered
+	 */
+	protected BusinessOperation operation;
+
 	/**
 	 * The default value of the '{@link #getConfirmMessage() <em>Confirm Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,6 +103,44 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BusinessOperation getOperation() {
+		if (operation != null && operation.eIsProxy()) {
+			InternalEObject oldOperation = (InternalEObject)operation;
+			operation = (BusinessOperation)eResolveProxy(oldOperation);
+			if (operation != oldOperation) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.FEATURE_SUPPORT_ACTION__OPERATION, oldOperation, operation));
+			}
+		}
+		return operation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BusinessOperation basicGetOperation() {
+		return operation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOperation(BusinessOperation newOperation) {
+		BusinessOperation oldOperation = operation;
+		operation = newOperation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FEATURE_SUPPORT_ACTION__OPERATION, oldOperation, operation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getConfirmMessage() {
 		return confirmMessage;
 	}
@@ -135,6 +186,9 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.FEATURE_SUPPORT_ACTION__OPERATION:
+				if (resolve) return getOperation();
+				return basicGetOperation();
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE:
 				return getConfirmMessage();
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
@@ -151,6 +205,9 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.FEATURE_SUPPORT_ACTION__OPERATION:
+				setOperation((BusinessOperation)newValue);
+				return;
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE:
 				setConfirmMessage((String)newValue);
 				return;
@@ -169,6 +226,9 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.FEATURE_SUPPORT_ACTION__OPERATION:
+				setOperation((BusinessOperation)null);
+				return;
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE:
 				setConfirmMessage(CONFIRM_MESSAGE_EDEFAULT);
 				return;
@@ -187,6 +247,8 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.FEATURE_SUPPORT_ACTION__OPERATION:
+				return operation != null;
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE:
 				return CONFIRM_MESSAGE_EDEFAULT == null ? confirmMessage != null : !CONFIRM_MESSAGE_EDEFAULT.equals(confirmMessage);
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:

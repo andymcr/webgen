@@ -12,7 +12,9 @@ package uk.ac.man.cs.mdsd.waf;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getOperation <em>Operation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getConfirmMessage <em>Confirm Message</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getUriElement <em>Uri Element</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFeatureSupportAction()
@@ -20,6 +22,32 @@ package uk.ac.man.cs.mdsd.waf;
  * @generated
  */
 public interface FeatureSupportAction extends InlineAction {
+	/**
+	 * Returns the value of the '<em><b>Operation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operation</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation</em>' reference.
+	 * @see #setOperation(BusinessOperation)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFeatureSupportAction_Operation()
+	 * @model required="true"
+	 * @generated
+	 */
+	BusinessOperation getOperation();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getOperation <em>Operation</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operation</em>' reference.
+	 * @see #getOperation()
+	 * @generated
+	 */
+	void setOperation(BusinessOperation value);
+
 	/**
 	 * Returns the value of the '<em><b>Confirm Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -45,5 +73,31 @@ public interface FeatureSupportAction extends InlineAction {
 	 * @generated
 	 */
 	void setConfirmMessage(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Uri Element</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uri Element</em>' attribute.
+	 * @see #setUriElement(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFeatureSupportAction_UriElement()
+	 * @model unique="false" required="true"
+	 * @generated
+	 */
+	String getUriElement();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction#getUriElement <em>Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Uri Element</em>' attribute.
+	 * @see #getUriElement()
+	 * @generated
+	 */
+	void setUriElement(String value);
 
 } // FeatureSupportAction

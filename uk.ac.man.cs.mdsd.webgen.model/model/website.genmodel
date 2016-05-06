@@ -48,6 +48,10 @@
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//DateDetails/TimeOnly"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//DateDetails/DateAndTime"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//OperationResultTypes">
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//OperationResultTypes/None"/>
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//OperationResultTypes/File"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//PageTopMenuOptions">
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//PageTopMenuOptions/NeverInclude"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//PageTopMenuOptions/AlwaysInclude"/>
@@ -318,6 +322,8 @@
           ecoreFeature="ecore:EReference website.ecore#//Service/serves"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           ecoreFeature="ecore:EReference website.ecore#//Service/selections"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference website.ecore#//Service/operations"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Selection">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Selection/usedBy"/>
@@ -336,6 +342,9 @@
     <genClasses image="false" ecoreClass="website.ecore#//SelectionField"/>
     <genClasses ecoreClass="website.ecore#//SelectionParameter">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//SelectionParameter/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//BusinessOperation">
+      <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute website.ecore#//BusinessOperation/resultType"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Page">
       <genFeatures property="None" notify="false" createChild="false" propertyCategory="Model"
@@ -640,6 +649,8 @@
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//DeleteAction/uriElement"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//FeatureSupportAction">
+      <genFeatures notify="false" createChild="false" propertyCategory="Business"
+          propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//FeatureSupportAction/operation"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//FeatureSupportAction/confirmMessage"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//FeatureSupportAction/uriElement"/>
     </genClasses>

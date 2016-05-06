@@ -2518,10 +2518,36 @@
               href="website.gmfgraph#Selection"/>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="website.ecore#//Service/operations"/>
+        <ownedChild>
+          <domainMetaElement
+              href="website.ecore#//BusinessOperation"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="website.gmfgraph#OperationNameLabel"/>
+            <features
+                href="website.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="website.gmftool#//@palette/@tools.4/@tools.3"/>
+          <diagramNode
+              href="website.gmfgraph#Operation"/>
+        </ownedChild>
+      </children>
       <compartments
           children="//@nodes.8/@ownedChild/@children.0">
         <compartment
             href="website.gmfgraph#SelectionsCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.8/@ownedChild/@children.1">
+        <compartment
+            href="website.gmfgraph#OperationsCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>

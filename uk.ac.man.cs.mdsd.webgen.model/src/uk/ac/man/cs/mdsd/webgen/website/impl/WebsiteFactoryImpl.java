@@ -90,6 +90,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.SERVICE: return createService();
 			case WebsitePackage.SELECTION: return createSelection();
 			case WebsitePackage.SELECTION_PARAMETER: return createSelectionParameter();
+			case WebsitePackage.BUSINESS_OPERATION: return createBusinessOperation();
 			case WebsitePackage.PAGE: return createPage();
 			case WebsitePackage.PAGE_LINK: return createPageLink();
 			case WebsitePackage.STATIC_MENU: return createStaticMenu();
@@ -157,6 +158,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return createCardinalityFromString(eDataType, initialValue);
 			case WebsitePackage.DATE_DETAILS:
 				return createDateDetailsFromString(eDataType, initialValue);
+			case WebsitePackage.OPERATION_RESULT_TYPES:
+				return createOperationResultTypesFromString(eDataType, initialValue);
 			case WebsitePackage.PAGE_TOP_MENU_OPTIONS:
 				return createPageTopMenuOptionsFromString(eDataType, initialValue);
 			case WebsitePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -190,6 +193,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return convertCardinalityToString(eDataType, instanceValue);
 			case WebsitePackage.DATE_DETAILS:
 				return convertDateDetailsToString(eDataType, instanceValue);
+			case WebsitePackage.OPERATION_RESULT_TYPES:
+				return convertOperationResultTypesToString(eDataType, instanceValue);
 			case WebsitePackage.PAGE_TOP_MENU_OPTIONS:
 				return convertPageTopMenuOptionsToString(eDataType, instanceValue);
 			case WebsitePackage.COLLECTION_DISPLAY_OPTIONS:
@@ -626,6 +631,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BusinessOperation createBusinessOperation() {
+		BusinessOperationImpl businessOperation = new BusinessOperationImpl();
+		return businessOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CreateUnit createCreateUnit() {
 		CreateUnitImpl createUnit = new CreateUnitImpl();
 		return createUnit;
@@ -1028,6 +1043,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * @generated
 	 */
 	public String convertDateDetailsToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OperationResultTypes createOperationResultTypesFromString(EDataType eDataType, String initialValue) {
+		OperationResultTypes result = OperationResultTypes.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOperationResultTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

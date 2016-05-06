@@ -5,30 +5,36 @@ package uk.ac.man.cs.mdsd.waf.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import uk.ac.man.cs.mdsd.waf.FeatureSupportAction;
+import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
+
+import uk.ac.man.cs.mdsd.waf.BusinessOperation;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.FeatureSupportAction} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.BusinessOperation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureSupportActionItemProvider
-	extends InlineActionItemProvider {
+public class BusinessOperationItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureSupportActionItemProvider(AdapterFactory adapterFactory) {
+	public BusinessOperationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -43,27 +49,26 @@ public class FeatureSupportActionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOperationPropertyDescriptor(object);
-			addConfirmMessagePropertyDescriptor(object);
-			addUriElementPropertyDescriptor(object);
+			addPartOfPropertyDescriptor(object);
+			addResultTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Operation feature.
+	 * This adds a property descriptor for the Part Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOperationPropertyDescriptor(Object object) {
+	protected void addPartOfPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_FeatureSupportAction_operation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureSupportAction_operation_feature", "_UI_FeatureSupportAction_type"),
-				 WafPackage.Literals.FEATURE_SUPPORT_ACTION__OPERATION,
+				 getString("_UI_BusinessOperation_partOf_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_partOf_feature", "_UI_BusinessOperation_type"),
+				 WafPackage.Literals.BUSINESS_OPERATION__PART_OF,
 				 true,
 				 false,
 				 true,
@@ -73,19 +78,19 @@ public class FeatureSupportActionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Confirm Message feature.
+	 * This adds a property descriptor for the Result Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addConfirmMessagePropertyDescriptor(Object object) {
+	protected void addResultTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_FeatureSupportAction_confirmMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureSupportAction_confirmMessage_feature", "_UI_FeatureSupportAction_type"),
-				 WafPackage.Literals.FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE,
+				 getString("_UI_BusinessOperation_resultType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_resultType_feature", "_UI_BusinessOperation_type"),
+				 WafPackage.Literals.BUSINESS_OPERATION__RESULT_TYPE,
 				 true,
 				 false,
 				 false,
@@ -95,36 +100,14 @@ public class FeatureSupportActionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Uri Element feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUriElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FeatureSupportAction_uriElement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureSupportAction_uriElement_feature", "_UI_FeatureSupportAction_type"),
-				 WafPackage.Literals.FEATURE_SUPPORT_ACTION__URI_ELEMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns FeatureSupportAction.gif.
+	 * This returns BusinessOperation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/FeatureSupportAction"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/BusinessOperation"));
 	}
 
 	/**
@@ -135,11 +118,12 @@ public class FeatureSupportActionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FeatureSupportAction)object).getName();
+		String label = ((BusinessOperation)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_FeatureSupportAction_type") :
-			getString("_UI_FeatureSupportAction_type") + " " + label;
+			getString("_UI_BusinessOperation_type") :
+			getString("_UI_BusinessOperation_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -152,9 +136,8 @@ public class FeatureSupportActionItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(FeatureSupportAction.class)) {
-			case WafPackage.FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE:
-			case WafPackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
+		switch (notification.getFeatureID(BusinessOperation.class)) {
+			case WafPackage.BUSINESS_OPERATION__RESULT_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -171,6 +154,17 @@ public class FeatureSupportActionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return WafEditPlugin.INSTANCE;
 	}
 
 }

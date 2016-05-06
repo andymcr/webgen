@@ -761,6 +761,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.BusinessOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BusinessOperationItemProvider businessOperationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.BusinessOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBusinessOperationAdapter() {
+		if (businessOperationItemProvider == null) {
+			businessOperationItemProvider = new BusinessOperationItemProvider(this);
+		}
+
+		return businessOperationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Page} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1808,6 +1831,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
+		if (businessOperationItemProvider != null) businessOperationItemProvider.dispose();
 		if (pageItemProvider != null) pageItemProvider.dispose();
 		if (pageLinkItemProvider != null) pageLinkItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();

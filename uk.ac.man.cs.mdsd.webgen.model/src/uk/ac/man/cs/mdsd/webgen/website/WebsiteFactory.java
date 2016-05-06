@@ -404,6 +404,15 @@ public interface WebsiteFactory extends EFactory {
 	SelectionParameter createSelectionParameter();
 
 	/**
+	 * Returns a new object of class '<em>Business Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Business Operation</em>'.
+	 * @generated
+	 */
+	BusinessOperation createBusinessOperation();
+
+	/**
 	 * Returns a new object of class '<em>Create Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

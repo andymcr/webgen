@@ -280,6 +280,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.BusinessOperation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BusinessOperationItemProvider businessOperationItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.BusinessOperation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBusinessOperationAdapter() {
+		if (businessOperationItemProvider == null) {
+			businessOperationItemProvider = new BusinessOperationItemProvider(this);
+		}
+
+		return businessOperationItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.StaticMenu} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1297,6 +1320,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (selectEntityOrViewItemProvider != null) selectEntityOrViewItemProvider.dispose();
 		if (selectAttributeItemProvider != null) selectAttributeItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
+		if (businessOperationItemProvider != null) businessOperationItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();

@@ -26,6 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.Authentication;
 import uk.ac.man.cs.mdsd.webgen.website.AuthenticationKeyTypes;
 import uk.ac.man.cs.mdsd.webgen.website.AuthenticationUnit;
+import uk.ac.man.cs.mdsd.webgen.website.BusinessOperation;
 import uk.ac.man.cs.mdsd.webgen.website.CaptchaField;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.CasAuthentication;
@@ -94,6 +95,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ModelLabelFeature;
 import uk.ac.man.cs.mdsd.webgen.website.ModelReference;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
+import uk.ac.man.cs.mdsd.webgen.website.OperationResultTypes;
 import uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.PageLink;
@@ -629,6 +631,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass businessOperationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass contentUnitEClass = null;
 
 	/**
@@ -910,6 +919,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EEnum dateDetailsEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum operationResultTypesEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3296,6 +3312,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getService_Operations() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSelection() {
 		return selectionEClass;
 	}
@@ -3388,6 +3413,24 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EAttribute getSelectionParameter_DefaultValue() {
 		return (EAttribute)selectionParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBusinessOperation() {
+		return businessOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBusinessOperation_ResultType() {
+		return (EAttribute)businessOperationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -4502,8 +4545,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFeatureSupportAction_Operation() {
+		return (EReference)featureSupportActionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getFeatureSupportAction_ConfirmMessage() {
-		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -4512,7 +4564,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getFeatureSupportAction_UriElement() {
-		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -4817,6 +4869,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getOperationResultTypes() {
+		return operationResultTypesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPageTopMenuOptions() {
 		return pageTopMenuOptionsEEnum;
 	}
@@ -5095,6 +5156,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		serviceEClass = createEClass(SERVICE);
 		createEReference(serviceEClass, SERVICE__SERVES);
 		createEReference(serviceEClass, SERVICE__SELECTIONS);
+		createEReference(serviceEClass, SERVICE__OPERATIONS);
 
 		selectionEClass = createEClass(SELECTION);
 		createEReference(selectionEClass, SELECTION__USED_BY);
@@ -5109,6 +5171,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		selectionParameterEClass = createEClass(SELECTION_PARAMETER);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__DEFAULT_VALUE);
+
+		businessOperationEClass = createEClass(BUSINESS_OPERATION);
+		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_TYPE);
 
 		pageEClass = createEClass(PAGE);
 		createEReference(pageEClass, PAGE__PARENT_PAGE);
@@ -5372,6 +5437,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(deleteActionEClass, DELETE_ACTION__URI_ELEMENT);
 
 		featureSupportActionEClass = createEClass(FEATURE_SUPPORT_ACTION);
+		createEReference(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__OPERATION);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__URI_ELEMENT);
 
@@ -5394,6 +5460,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		authenticationKeyTypesEEnum = createEEnum(AUTHENTICATION_KEY_TYPES);
 		cardinalityEEnum = createEEnum(CARDINALITY);
 		dateDetailsEEnum = createEEnum(DATE_DETAILS);
+		operationResultTypesEEnum = createEEnum(OPERATION_RESULT_TYPES);
 		pageTopMenuOptionsEEnum = createEEnum(PAGE_TOP_MENU_OPTIONS);
 		collectionDisplayOptionsEEnum = createEEnum(COLLECTION_DISPLAY_OPTIONS);
 		indexDisplayOptionEEnum = createEEnum(INDEX_DISPLAY_OPTION);
@@ -5478,6 +5545,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		serviceEClass.getESuperTypes().add(this.getNamedElement());
 		selectionEClass.getESuperTypes().add(this.getNamedElement());
 		selectionParameterEClass.getESuperTypes().add(this.getNamedElement());
+		businessOperationEClass.getESuperTypes().add(this.getNamedElement());
 		pageEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		pageEClass.getESuperTypes().add(this.getUnitContainer());
 		menuEClass.getESuperTypes().add(this.getNamedDisplayElement());
@@ -5769,6 +5837,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getService_Serves(), this.getEntityOrView(), this.getEntityOrView_ServedBy(), "serves", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Selections(), this.getSelection(), this.getSelection_UsedBy(), "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Operations(), this.getBusinessOperation(), null, "operations", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionEClass, Selection.class, "Selection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelection_UsedBy(), this.getService(), this.getService_Selections(), "usedBy", null, 1, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5783,6 +5852,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(selectionParameterEClass, SelectionParameter.class, "SelectionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSelectionParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(businessOperationEClass, BusinessOperation.class, "BusinessOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBusinessOperation_ResultType(), this.getOperationResultTypes(), "resultType", null, 1, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPage_ParentPage(), this.getPageLink(), null, "parentPage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -6046,6 +6118,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getDeleteAction_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, DeleteAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureSupportActionEClass, FeatureSupportAction.class, "FeatureSupportAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFeatureSupportAction_Operation(), this.getBusinessOperation(), null, "operation", null, 1, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureSupportAction_ConfirmMessage(), ecorePackage.getEString(), "confirmMessage", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureSupportAction_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -6100,6 +6173,10 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		addEEnumLiteral(dateDetailsEEnum, DateDetails.DATE_ONLY);
 		addEEnumLiteral(dateDetailsEEnum, DateDetails.TIME_ONLY);
 		addEEnumLiteral(dateDetailsEEnum, DateDetails.DATE_AND_TIME);
+
+		initEEnum(operationResultTypesEEnum, OperationResultTypes.class, "OperationResultTypes");
+		addEEnumLiteral(operationResultTypesEEnum, OperationResultTypes.NONE);
+		addEEnumLiteral(operationResultTypesEEnum, OperationResultTypes.FILE);
 
 		initEEnum(pageTopMenuOptionsEEnum, PageTopMenuOptions.class, "PageTopMenuOptions");
 		addEEnumLiteral(pageTopMenuOptionsEEnum, PageTopMenuOptions.NEVER_INCLUDE);

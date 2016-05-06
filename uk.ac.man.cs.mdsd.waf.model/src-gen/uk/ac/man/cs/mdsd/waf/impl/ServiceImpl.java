@@ -22,6 +22,7 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
+import uk.ac.man.cs.mdsd.waf.BusinessOperation;
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.WafModel;
@@ -38,6 +39,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getServes <em>Serves</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ServiceImpl#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,6 +64,16 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @ordered
 	 */
 	protected EList<Selection> selections;
+
+	/**
+	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BusinessOperation> operations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,6 +200,18 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<BusinessOperation> getOperations() {
+		if (operations == null) {
+			operations = new EObjectContainmentWithInverseEList<BusinessOperation>(BusinessOperation.class, this, WafPackage.SERVICE__OPERATIONS, WafPackage.BUSINESS_OPERATION__PART_OF);
+		}
+		return operations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -198,6 +222,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return basicSetPartOf((WafModel)otherEnd, msgs);
 			case WafPackage.SERVICE__SELECTIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSelections()).basicAdd(otherEnd, msgs);
+			case WafPackage.SERVICE__OPERATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOperations()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -214,6 +240,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return basicSetPartOf(null, msgs);
 			case WafPackage.SERVICE__SELECTIONS:
 				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
+			case WafPackage.SERVICE__OPERATIONS:
+				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -248,6 +276,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return basicGetServes();
 			case WafPackage.SERVICE__SELECTIONS:
 				return getSelections();
+			case WafPackage.SERVICE__OPERATIONS:
+				return getOperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -271,6 +301,10 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				getSelections().clear();
 				getSelections().addAll((Collection<? extends Selection>)newValue);
 				return;
+			case WafPackage.SERVICE__OPERATIONS:
+				getOperations().clear();
+				getOperations().addAll((Collection<? extends BusinessOperation>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -292,6 +326,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case WafPackage.SERVICE__SELECTIONS:
 				getSelections().clear();
 				return;
+			case WafPackage.SERVICE__OPERATIONS:
+				getOperations().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -310,6 +347,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return serves != null;
 			case WafPackage.SERVICE__SELECTIONS:
 				return selections != null && !selections.isEmpty();
+			case WafPackage.SERVICE__OPERATIONS:
+				return operations != null && !operations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

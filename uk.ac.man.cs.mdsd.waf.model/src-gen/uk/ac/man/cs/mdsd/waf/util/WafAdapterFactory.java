@@ -118,6 +118,10 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createSelectionParameterAdapter();
 			}
 			@Override
+			public Adapter caseBusinessOperation(BusinessOperation object) {
+				return createBusinessOperationAdapter();
+			}
+			@Override
 			public Adapter caseMenu(Menu object) {
 				return createMenuAdapter();
 			}
@@ -524,6 +528,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSelectionParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.BusinessOperation <em>Business Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.BusinessOperation
+	 * @generated
+	 */
+	public Adapter createBusinessOperationAdapter() {
 		return null;
 	}
 

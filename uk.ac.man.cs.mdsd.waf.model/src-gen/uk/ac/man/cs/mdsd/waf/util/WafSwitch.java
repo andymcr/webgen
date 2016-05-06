@@ -145,6 +145,13 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.BUSINESS_OPERATION: {
+				BusinessOperation businessOperation = (BusinessOperation)theEObject;
+				T result = caseBusinessOperation(businessOperation);
+				if (result == null) result = caseNamedElement(businessOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.MENU: {
 				Menu menu = (Menu)theEObject;
 				T result = caseMenu(menu);
@@ -817,6 +824,21 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSelectionParameter(SelectionParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Business Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Business Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBusinessOperation(BusinessOperation object) {
 		return null;
 	}
 

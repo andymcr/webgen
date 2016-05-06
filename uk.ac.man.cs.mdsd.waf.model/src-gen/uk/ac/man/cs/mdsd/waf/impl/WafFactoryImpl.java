@@ -65,6 +65,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.SELECT_ENTITY_OR_VIEW: return createSelectEntityOrView();
 			case WafPackage.SELECT_ATTRIBUTE: return createSelectAttribute();
 			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
+			case WafPackage.BUSINESS_OPERATION: return createBusinessOperation();
 			case WafPackage.STATIC_MENU: return createStaticMenu();
 			case WafPackage.DYNAMIC_MENU: return createDynamicMenu();
 			case WafPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
@@ -122,6 +123,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return createAjaxTechnologiesFromString(eDataType, initialValue);
 			case WafPackage.AUTHENTICATION_KEY_TYPES:
 				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
+			case WafPackage.OPERATION_RESULT_TYPES:
+				return createOperationResultTypesFromString(eDataType, initialValue);
 			case WafPackage.PAGE_TOP_MENU_OPTIONS:
 				return createPageTopMenuOptionsFromString(eDataType, initialValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -145,6 +148,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return convertAjaxTechnologiesToString(eDataType, instanceValue);
 			case WafPackage.AUTHENTICATION_KEY_TYPES:
 				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
+			case WafPackage.OPERATION_RESULT_TYPES:
+				return convertOperationResultTypesToString(eDataType, instanceValue);
 			case WafPackage.PAGE_TOP_MENU_OPTIONS:
 				return convertPageTopMenuOptionsToString(eDataType, instanceValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -232,6 +237,16 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public SelectionParameter createSelectionParameter() {
 		SelectionParameterImpl selectionParameter = new SelectionParameterImpl();
 		return selectionParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BusinessOperation createBusinessOperation() {
+		BusinessOperationImpl businessOperation = new BusinessOperationImpl();
+		return businessOperation;
 	}
 
 	/**
@@ -671,6 +686,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * @generated
 	 */
 	public String convertAuthenticationKeyTypesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OperationResultTypes createOperationResultTypesFromString(EDataType eDataType, String initialValue) {
+		OperationResultTypes result = OperationResultTypes.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOperationResultTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

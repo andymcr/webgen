@@ -12,6 +12,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction#getOperation <em>Operation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction#getConfirmMessage <em>Confirm Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction#getUriElement <em>Uri Element</em>}</li>
  * </ul>
@@ -21,6 +22,32 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @generated
  */
 public interface FeatureSupportAction extends InlineAction {
+	/**
+	 * Returns the value of the '<em><b>Operation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operation</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation</em>' reference.
+	 * @see #setOperation(BusinessOperation)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeatureSupportAction_Operation()
+	 * @model required="true"
+	 * @generated
+	 */
+	BusinessOperation getOperation();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction#getOperation <em>Operation</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operation</em>' reference.
+	 * @see #getOperation()
+	 * @generated
+	 */
+	void setOperation(BusinessOperation value);
+
 	/**
 	 * Returns the value of the '<em><b>Confirm Message</b></em>' attribute.
 	 * <!-- begin-user-doc -->

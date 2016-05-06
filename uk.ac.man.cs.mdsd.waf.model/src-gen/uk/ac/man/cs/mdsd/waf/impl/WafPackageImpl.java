@@ -21,6 +21,7 @@ import uk.ac.man.cs.mdsd.waf.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.waf.Authentication;
 import uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes;
 import uk.ac.man.cs.mdsd.waf.AuthenticationUnit;
+import uk.ac.man.cs.mdsd.waf.BusinessOperation;
 import uk.ac.man.cs.mdsd.waf.CaptchaField;
 import uk.ac.man.cs.mdsd.waf.CasAuthentication;
 import uk.ac.man.cs.mdsd.waf.ChildAssociation;
@@ -61,6 +62,7 @@ import uk.ac.man.cs.mdsd.waf.MapUnit;
 import uk.ac.man.cs.mdsd.waf.Menu;
 import uk.ac.man.cs.mdsd.waf.MenuEntry;
 import uk.ac.man.cs.mdsd.waf.ModelReference;
+import uk.ac.man.cs.mdsd.waf.OperationResultTypes;
 import uk.ac.man.cs.mdsd.waf.Page;
 import uk.ac.man.cs.mdsd.waf.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.waf.ParameterReference;
@@ -172,6 +174,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass selectionParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass businessOperationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -578,6 +587,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EEnum authenticationKeyTypesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum operationResultTypesEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1085,6 +1101,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getService_Operations() {
+		return (EReference)serviceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSelection() {
 		return selectionEClass;
 	}
@@ -1213,6 +1238,33 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EAttribute getSelectionParameter_DefaultValue() {
 		return (EAttribute)selectionParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBusinessOperation() {
+		return businessOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBusinessOperation_PartOf() {
+		return (EReference)businessOperationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBusinessOperation_ResultType() {
+		return (EAttribute)businessOperationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2966,8 +3018,26 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFeatureSupportAction_Operation() {
+		return (EReference)featureSupportActionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getFeatureSupportAction_ConfirmMessage() {
-		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeatureSupportAction_UriElement() {
+		return (EAttribute)featureSupportActionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3058,6 +3128,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EEnum getAuthenticationKeyTypes() {
 		return authenticationKeyTypesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getOperationResultTypes() {
+		return operationResultTypesEEnum;
 	}
 
 	/**
@@ -3158,6 +3237,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(serviceEClass, SERVICE__PART_OF);
 		createEReference(serviceEClass, SERVICE__SERVES);
 		createEReference(serviceEClass, SERVICE__SELECTIONS);
+		createEReference(serviceEClass, SERVICE__OPERATIONS);
 
 		selectionEClass = createEClass(SELECTION);
 		createEReference(selectionEClass, SELECTION__PART_OF);
@@ -3178,6 +3258,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		selectionParameterEClass = createEClass(SELECTION_PARAMETER);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__DEFAULT_VALUE);
+
+		businessOperationEClass = createEClass(BUSINESS_OPERATION);
+		createEReference(businessOperationEClass, BUSINESS_OPERATION__PART_OF);
+		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_TYPE);
 
 		menuEClass = createEClass(MENU);
 		createEReference(menuEClass, MENU__ENTRIES);
@@ -3423,7 +3507,9 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(deleteActionEClass, DELETE_ACTION__URI_ELEMENT);
 
 		featureSupportActionEClass = createEClass(FEATURE_SUPPORT_ACTION);
+		createEReference(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__OPERATION);
 		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE);
+		createEAttribute(featureSupportActionEClass, FEATURE_SUPPORT_ACTION__URI_ELEMENT);
 
 		modelReferenceEClass = createEClass(MODEL_REFERENCE);
 		createEReference(modelReferenceEClass, MODEL_REFERENCE__UNIT);
@@ -3440,6 +3526,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		frameworkTechnologiesEEnum = createEEnum(FRAMEWORK_TECHNOLOGIES);
 		ajaxTechnologiesEEnum = createEEnum(AJAX_TECHNOLOGIES);
 		authenticationKeyTypesEEnum = createEEnum(AUTHENTICATION_KEY_TYPES);
+		operationResultTypesEEnum = createEEnum(OPERATION_RESULT_TYPES);
 		pageTopMenuOptionsEEnum = createEEnum(PAGE_TOP_MENU_OPTIONS);
 		collectionDisplayOptionsEEnum = createEEnum(COLLECTION_DISPLAY_OPTIONS);
 	}
@@ -3484,6 +3571,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		selectEntityOrViewEClass.getESuperTypes().add(this.getSelectField());
 		selectAttributeEClass.getESuperTypes().add(this.getSelectField());
 		selectionParameterEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
+		businessOperationEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		menuEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		staticMenuEClass.getESuperTypes().add(this.getMenu());
 		dynamicMenuEClass.getESuperTypes().add(this.getMenu());
@@ -3601,6 +3689,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getService_PartOf(), this.getWafModel(), this.getWafModel_Services(), "partOf", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Serves(), theOrmPackage.getEntityOrView(), null, "serves", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Selections(), this.getSelection(), this.getSelection_PartOf(), "selections", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Operations(), this.getBusinessOperation(), this.getBusinessOperation_PartOf(), "operations", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionEClass, Selection.class, "Selection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelection_PartOf(), this.getService(), this.getService_Selections(), "partOf", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3621,6 +3710,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(selectionParameterEClass, SelectionParameter.class, "SelectionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSelectionParameter_DefaultValue(), theEcorePackage.getEString(), "defaultValue", null, 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(businessOperationEClass, BusinessOperation.class, "BusinessOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBusinessOperation_PartOf(), this.getService(), this.getService_Operations(), "partOf", null, 1, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBusinessOperation_ResultType(), this.getOperationResultTypes(), "resultType", null, 1, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(menuEClass, Menu.class, "Menu", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMenu_Entries(), this.getMenuEntry(), this.getMenuEntry_PartOf(), "entries", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3866,7 +3959,9 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getDeleteAction_UriElement(), theEcorePackage.getEString(), "uriElement", null, 1, 1, DeleteAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureSupportActionEClass, FeatureSupportAction.class, "FeatureSupportAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFeatureSupportAction_Operation(), this.getBusinessOperation(), null, "operation", null, 1, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureSupportAction_ConfirmMessage(), theEcorePackage.getEString(), "confirmMessage", null, 0, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeatureSupportAction_UriElement(), theEcorePackage.getEString(), "uriElement", null, 1, 1, FeatureSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelReferenceEClass, ModelReference.class, "ModelReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModelReference_Unit(), this.getDynamicUnit(), null, "unit", null, 1, 1, ModelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3896,6 +3991,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEEnum(authenticationKeyTypesEEnum, AuthenticationKeyTypes.class, "AuthenticationKeyTypes");
 		addEEnumLiteral(authenticationKeyTypesEEnum, AuthenticationKeyTypes.EMAIL);
 		addEEnumLiteral(authenticationKeyTypesEEnum, AuthenticationKeyTypes.USERNAME);
+
+		initEEnum(operationResultTypesEEnum, OperationResultTypes.class, "OperationResultTypes");
+		addEEnumLiteral(operationResultTypesEEnum, OperationResultTypes.NONE);
+		addEEnumLiteral(operationResultTypesEEnum, OperationResultTypes.FILE);
 
 		initEEnum(pageTopMenuOptionsEEnum, PageTopMenuOptions.class, "PageTopMenuOptions");
 		addEEnumLiteral(pageTopMenuOptionsEEnum, PageTopMenuOptions.NEVER_INCLUDE);

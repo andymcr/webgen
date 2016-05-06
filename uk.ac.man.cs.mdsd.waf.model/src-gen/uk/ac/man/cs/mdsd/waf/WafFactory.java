@@ -94,6 +94,15 @@ public interface WafFactory extends EFactory {
 	SelectionParameter createSelectionParameter();
 
 	/**
+	 * Returns a new object of class '<em>Business Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Business Operation</em>'.
+	 * @generated
+	 */
+	BusinessOperation createBusinessOperation();
+
+	/**
 	 * Returns a new object of class '<em>Static Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

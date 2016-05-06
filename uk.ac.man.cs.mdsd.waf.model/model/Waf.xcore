@@ -107,6 +107,7 @@ class Service extends NamedElement {
 	refers WafModel[1] partOf opposite services
 	refers EntityOrView[1] serves
 	contains Selection[] selections opposite partOf
+	contains BusinessOperation[] operations opposite partOf
 }
 
 class Selection extends NamedElement {
@@ -132,6 +133,16 @@ class SelectAttribute extends SelectField {
 
 class SelectionParameter extends NamedElement {
 	String defaultValue
+}
+
+class BusinessOperation extends NamedElement {
+	container Service[1] partOf opposite operations
+	OperationResultTypes[1] resultType
+}
+
+enum OperationResultTypes {
+	None
+	File = 1
 }
 
 
@@ -454,7 +465,9 @@ class DeleteAction extends InlineAction {
 }
 
 class FeatureSupportAction extends InlineAction {
+	refers BusinessOperation[1] operation
 	String confirmMessage
+	String[1] uriElement
 }
 
 

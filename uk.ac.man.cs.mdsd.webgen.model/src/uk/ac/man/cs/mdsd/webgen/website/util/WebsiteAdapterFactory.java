@@ -258,6 +258,10 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createSelectionParameterAdapter();
 			}
 			@Override
+			public Adapter caseBusinessOperation(BusinessOperation object) {
+				return createBusinessOperationAdapter();
+			}
+			@Override
 			public Adapter casePage(Page object) {
 				return createPageAdapter();
 			}
@@ -1476,6 +1480,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSelectionParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.BusinessOperation <em>Business Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.BusinessOperation
+	 * @generated
+	 */
+	public Adapter createBusinessOperationAdapter() {
 		return null;
 	}
 

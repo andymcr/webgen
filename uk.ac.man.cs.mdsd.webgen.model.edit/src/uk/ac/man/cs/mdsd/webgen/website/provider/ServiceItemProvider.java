@@ -87,6 +87,7 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.SERVICE__SELECTIONS);
+			childrenFeatures.add(WebsitePackage.Literals.SERVICE__OPERATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -142,6 +143,7 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(Service.class)) {
 			case WebsitePackage.SERVICE__SELECTIONS:
+			case WebsitePackage.SERVICE__OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -163,6 +165,11 @@ public class ServiceItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.SERVICE__SELECTIONS,
 				 WebsiteFactory.eINSTANCE.createSelection()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.SERVICE__OPERATIONS,
+				 WebsiteFactory.eINSTANCE.createBusinessOperation()));
 	}
 
 }

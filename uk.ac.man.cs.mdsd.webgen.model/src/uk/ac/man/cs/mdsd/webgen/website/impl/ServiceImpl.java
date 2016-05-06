@@ -18,9 +18,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import uk.ac.man.cs.mdsd.webgen.website.BusinessOperation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
@@ -36,6 +38,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getServes <em>Serves</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getSelections <em>Selections</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,6 +63,16 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * @ordered
 	 */
 	protected EList<Selection> selections;
+
+	/**
+	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BusinessOperation> operations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,6 +170,18 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<BusinessOperation> getOperations() {
+		if (operations == null) {
+			operations = new EObjectContainmentEList<BusinessOperation>(BusinessOperation.class, this, WebsitePackage.SERVICE__OPERATIONS);
+		}
+		return operations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -183,6 +208,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return basicSetServes(null, msgs);
 			case WebsitePackage.SERVICE__SELECTIONS:
 				return ((InternalEList<?>)getSelections()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.SERVICE__OPERATIONS:
+				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -200,6 +227,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return basicGetServes();
 			case WebsitePackage.SERVICE__SELECTIONS:
 				return getSelections();
+			case WebsitePackage.SERVICE__OPERATIONS:
+				return getOperations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -220,6 +249,10 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				getSelections().clear();
 				getSelections().addAll((Collection<? extends Selection>)newValue);
 				return;
+			case WebsitePackage.SERVICE__OPERATIONS:
+				getOperations().clear();
+				getOperations().addAll((Collection<? extends BusinessOperation>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -238,6 +271,9 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 			case WebsitePackage.SERVICE__SELECTIONS:
 				getSelections().clear();
 				return;
+			case WebsitePackage.SERVICE__OPERATIONS:
+				getOperations().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -254,6 +290,8 @@ public class ServiceImpl extends NamedElementImpl implements Service {
 				return serves != null;
 			case WebsitePackage.SERVICE__SELECTIONS:
 				return selections != null && !selections.isEmpty();
+			case WebsitePackage.SERVICE__OPERATIONS:
+				return operations != null && !operations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

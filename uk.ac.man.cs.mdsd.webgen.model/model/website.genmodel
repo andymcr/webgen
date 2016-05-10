@@ -653,6 +653,7 @@
           propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//FeatureSupportAction/operation"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//FeatureSupportAction/confirmMessage"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//FeatureSupportAction/uriElement"/>
+      <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute website.ecore#//FeatureSupportAction/fileExtension"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//ModelReference">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

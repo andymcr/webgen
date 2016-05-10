@@ -138,6 +138,7 @@ class SelectionParameter extends NamedElement {
 class BusinessOperation extends NamedElement {
 	container Service[1] partOf opposite operations
 	OperationResultTypes[1] resultType
+	String resultMimeType
 }
 
 enum OperationResultTypes {
@@ -468,6 +469,7 @@ class FeatureSupportAction extends InlineAction {
 	refers BusinessOperation[1] operation
 	String confirmMessage
 	String[1] uriElement
+	String fileExtension
 }
 
 

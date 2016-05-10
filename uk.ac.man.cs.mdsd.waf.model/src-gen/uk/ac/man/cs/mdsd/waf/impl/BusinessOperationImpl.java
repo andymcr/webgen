@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.BusinessOperationImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.BusinessOperationImpl#getResultType <em>Result Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.BusinessOperationImpl#getResultMimeType <em>Result Mime Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,6 +54,26 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	 * @ordered
 	 */
 	protected OperationResultTypes resultType = RESULT_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getResultMimeType() <em>Result Mime Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResultMimeType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RESULT_MIME_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getResultMimeType() <em>Result Mime Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResultMimeType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String resultMimeType = RESULT_MIME_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,6 +171,27 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getResultMimeType() {
+		return resultMimeType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResultMimeType(String newResultMimeType) {
+		String oldResultMimeType = resultMimeType;
+		resultMimeType = newResultMimeType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.BUSINESS_OPERATION__RESULT_MIME_TYPE, oldResultMimeType, resultMimeType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -202,6 +244,8 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 				return basicGetPartOf();
 			case WafPackage.BUSINESS_OPERATION__RESULT_TYPE:
 				return getResultType();
+			case WafPackage.BUSINESS_OPERATION__RESULT_MIME_TYPE:
+				return getResultMimeType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,6 +263,9 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 				return;
 			case WafPackage.BUSINESS_OPERATION__RESULT_TYPE:
 				setResultType((OperationResultTypes)newValue);
+				return;
+			case WafPackage.BUSINESS_OPERATION__RESULT_MIME_TYPE:
+				setResultMimeType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -238,6 +285,9 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 			case WafPackage.BUSINESS_OPERATION__RESULT_TYPE:
 				setResultType(RESULT_TYPE_EDEFAULT);
 				return;
+			case WafPackage.BUSINESS_OPERATION__RESULT_MIME_TYPE:
+				setResultMimeType(RESULT_MIME_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -254,6 +304,8 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 				return basicGetPartOf() != null;
 			case WafPackage.BUSINESS_OPERATION__RESULT_TYPE:
 				return resultType != RESULT_TYPE_EDEFAULT;
+			case WafPackage.BUSINESS_OPERATION__RESULT_MIME_TYPE:
+				return RESULT_MIME_TYPE_EDEFAULT == null ? resultMimeType != null : !RESULT_MIME_TYPE_EDEFAULT.equals(resultMimeType);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,6 +322,8 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (resultType: ");
 		result.append(resultType);
+		result.append(", resultMimeType: ");
+		result.append(resultMimeType);
 		result.append(')');
 		return result.toString();
 	}

@@ -1124,7 +1124,8 @@ rule FeatureSupportAction {
 				website.uriElement
 			else
 				website.name.createName()
-			endif
+			endif,
+		fileExtension <- website.fileExtension
 	)
 }
 

@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureSupportActionImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureSupportActionImpl#getConfirmMessage <em>Confirm Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureSupportActionImpl#getUriElement <em>Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureSupportActionImpl#getFileExtension <em>File Extension</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,6 +79,26 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 	 * @ordered
 	 */
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getFileExtension() <em>File Extension</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFileExtension()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FILE_EXTENSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFileExtension() <em>File Extension</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFileExtension()
+	 * @generated
+	 * @ordered
+	 */
+	protected String fileExtension = FILE_EXTENSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,6 +204,27 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getFileExtension() {
+		return fileExtension;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFileExtension(String newFileExtension) {
+		String oldFileExtension = fileExtension;
+		fileExtension = newFileExtension;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION, oldFileExtension, fileExtension));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -193,6 +235,8 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 				return getConfirmMessage();
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
 				return getUriElement();
+			case WebsitePackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION:
+				return getFileExtension();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,6 +257,9 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 				return;
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
 				setUriElement((String)newValue);
+				return;
+			case WebsitePackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION:
+				setFileExtension((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -235,6 +282,9 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
+			case WebsitePackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION:
+				setFileExtension(FILE_EXTENSION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -253,6 +303,8 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 				return CONFIRM_MESSAGE_EDEFAULT == null ? confirmMessage != null : !CONFIRM_MESSAGE_EDEFAULT.equals(confirmMessage);
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
+			case WebsitePackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION:
+				return FILE_EXTENSION_EDEFAULT == null ? fileExtension != null : !FILE_EXTENSION_EDEFAULT.equals(fileExtension);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -271,6 +323,8 @@ public class FeatureSupportActionImpl extends InlineActionImpl implements Featur
 		result.append(confirmMessage);
 		result.append(", uriElement: ");
 		result.append(uriElement);
+		result.append(", fileExtension: ");
+		result.append(fileExtension);
 		result.append(')');
 		return result.toString();
 	}

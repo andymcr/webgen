@@ -51,6 +51,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 
 			addPartOfPropertyDescriptor(object);
 			addResultTypePropertyDescriptor(object);
+			addResultMimeTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -100,6 +101,28 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Result Mime Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResultMimeTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessOperation_resultMimeType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_resultMimeType_feature", "_UI_BusinessOperation_type"),
+				 WafPackage.Literals.BUSINESS_OPERATION__RESULT_MIME_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns BusinessOperation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,6 +161,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(BusinessOperation.class)) {
 			case WafPackage.BUSINESS_OPERATION__RESULT_TYPE:
+			case WafPackage.BUSINESS_OPERATION__RESULT_MIME_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

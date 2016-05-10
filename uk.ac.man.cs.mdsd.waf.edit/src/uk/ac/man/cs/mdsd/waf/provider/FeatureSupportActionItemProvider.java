@@ -46,6 +46,7 @@ public class FeatureSupportActionItemProvider
 			addOperationPropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
+			addFileExtensionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -117,6 +118,28 @@ public class FeatureSupportActionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the File Extension feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFileExtensionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeatureSupportAction_fileExtension_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureSupportAction_fileExtension_feature", "_UI_FeatureSupportAction_type"),
+				 WafPackage.Literals.FEATURE_SUPPORT_ACTION__FILE_EXTENSION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns FeatureSupportAction.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,6 +178,7 @@ public class FeatureSupportActionItemProvider
 		switch (notification.getFeatureID(FeatureSupportAction.class)) {
 			case WafPackage.FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE:
 			case WafPackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
+			case WafPackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

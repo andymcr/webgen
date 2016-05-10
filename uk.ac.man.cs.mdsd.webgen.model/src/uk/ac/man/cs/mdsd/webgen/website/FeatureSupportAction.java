@@ -15,6 +15,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction#getOperation <em>Operation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction#getConfirmMessage <em>Confirm Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction#getUriElement <em>Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction#getFileExtension <em>File Extension</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeatureSupportAction()
@@ -100,5 +101,31 @@ public interface FeatureSupportAction extends InlineAction {
 	 * @generated
 	 */
 	void setUriElement(String value);
+
+	/**
+	 * Returns the value of the '<em><b>File Extension</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>File Extension</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>File Extension</em>' attribute.
+	 * @see #setFileExtension(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeatureSupportAction_FileExtension()
+	 * @model
+	 * @generated
+	 */
+	String getFileExtension();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction#getFileExtension <em>File Extension</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>File Extension</em>' attribute.
+	 * @see #getFileExtension()
+	 * @generated
+	 */
+	void setFileExtension(String value);
 
 } // FeatureSupportAction

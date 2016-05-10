@@ -48,6 +48,7 @@ public class FeatureSupportActionItemProvider extends InlineActionItemProvider {
 			addOperationPropertyDescriptor(object);
 			addConfirmMessagePropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
+			addFileExtensionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -119,6 +120,28 @@ public class FeatureSupportActionItemProvider extends InlineActionItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the File Extension feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFileExtensionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeatureSupportAction_fileExtension_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureSupportAction_fileExtension_feature", "_UI_FeatureSupportAction_type"),
+				 WebsitePackage.Literals.FEATURE_SUPPORT_ACTION__FILE_EXTENSION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_BusinessPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This returns FeatureSupportAction.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -157,6 +180,7 @@ public class FeatureSupportActionItemProvider extends InlineActionItemProvider {
 		switch (notification.getFeatureID(FeatureSupportAction.class)) {
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__CONFIRM_MESSAGE:
 			case WebsitePackage.FEATURE_SUPPORT_ACTION__URI_ELEMENT:
+			case WebsitePackage.FEATURE_SUPPORT_ACTION__FILE_EXTENSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

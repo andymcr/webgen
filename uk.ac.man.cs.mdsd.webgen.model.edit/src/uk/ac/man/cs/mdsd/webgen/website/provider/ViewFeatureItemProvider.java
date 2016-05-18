@@ -62,6 +62,8 @@ public class ViewFeatureItemProvider
 			addHeaderClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
+			addSerializationGroupsPropertyDescriptor(object);
+			addSerializationExposePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -133,6 +135,50 @@ public class ViewFeatureItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Serialization Groups feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSerializationGroupsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_serializationGroups_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationGroups_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__SERIALIZATION_GROUPS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SerializationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Serialization Expose feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSerializationExposePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_serializationExpose_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationExpose_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__SERIALIZATION_EXPOSE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_SerializationPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -162,6 +208,8 @@ public class ViewFeatureItemProvider
 			case WebsitePackage.VIEW_FEATURE__HEADER_CLASS:
 			case WebsitePackage.VIEW_FEATURE__DISPLAY_CLASS:
 			case WebsitePackage.VIEW_FEATURE__FOOTER_CLASS:
+			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
+			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

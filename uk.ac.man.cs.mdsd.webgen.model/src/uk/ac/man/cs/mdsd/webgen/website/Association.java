@@ -23,6 +23,7 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getSourceEntityX <em>Source Entity X</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getTargetEntityX <em>Target Entity X</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getSerializationMaxDepth <em>Serialization Max Depth</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation()
@@ -133,5 +134,32 @@ public interface Association extends Feature {
 	 * @generated
 	 */
 	EntityOrView getTargetEntityX();
+
+	/**
+	 * Returns the value of the '<em><b>Serialization Max Depth</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Serialization Max Depth</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Serialization Max Depth</em>' attribute.
+	 * @see #setSerializationMaxDepth(int)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation_SerializationMaxDepth()
+	 * @model default="1"
+	 * @generated
+	 */
+	int getSerializationMaxDepth();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Association#getSerializationMaxDepth <em>Serialization Max Depth</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Serialization Max Depth</em>' attribute.
+	 * @see #getSerializationMaxDepth()
+	 * @generated
+	 */
+	void setSerializationMaxDepth(int value);
 
 } // Association

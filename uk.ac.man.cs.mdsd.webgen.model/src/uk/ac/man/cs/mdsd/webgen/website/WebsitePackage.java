@@ -1263,13 +1263,22 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_OR_VIEW__ALL_ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Exclude All</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = CLASSIFIER_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Entity Or View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 9;
+	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature <em>Feature</em>}' class.
@@ -1309,13 +1318,31 @@ public interface WebsitePackage extends EPackage {
 	int FEATURE__FOOTER_CLASS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__SERIALIZATION_GROUPS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__SERIALIZATION_EXPOSE = 4;
+
+	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = 3;
+	int FEATURE_FEATURE_COUNT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -1343,6 +1370,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE__FOOTER_CLASS = FEATURE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
@@ -1687,6 +1732,24 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION__FOOTER_CLASS = FEATURE__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1732,13 +1795,22 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION__TARGET_ENTITY_X = FEATURE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__SERIALIZATION_MAX_DEPTH = FEATURE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 5;
+	int ASSOCIATION_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Label <em>Label</em>}' class.
@@ -2334,6 +2406,15 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY__ALL_ASSOCIATIONS = ENTITY_OR_VIEW__ALL_ASSOCIATIONS;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Exclude All</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__SERIALIZATION_EXCLUDE_ALL = ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL;
+
+	/**
 	 * The feature id for the '<em><b>Entity Features</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2406,13 +2487,31 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_FEATURE__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__SERIALIZATION_GROUPS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__SERIALIZATION_EXPOSE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int ENTITY_FEATURE__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -2421,7 +2520,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int ENTITY_FEATURE__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
@@ -2430,7 +2529,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__UNIQUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int ENTITY_FEATURE__UNIQUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
@@ -2439,7 +2538,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ORDERED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int ENTITY_FEATURE__ORDERED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -2448,7 +2547,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLUMN_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int ENTITY_FEATURE__COLUMN_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Entity Feature</em>' class.
@@ -2457,7 +2556,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int ENTITY_FEATURE_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2503,6 +2602,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ATTRIBUTE__FOOTER_CLASS = ENTITY_FEATURE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -2638,6 +2755,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__FOOTER_CLASS = ENTITY_ATTRIBUTE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -2838,6 +2973,24 @@ public interface WebsitePackage extends EPackage {
 	int DATE_ATTRIBUTE__FOOTER_CLASS = ENTITY_ATTRIBUTE__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2991,6 +3144,24 @@ public interface WebsitePackage extends EPackage {
 	int URL_ATTRIBUTE__FOOTER_CLASS = ENTITY_ATTRIBUTE__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3133,6 +3304,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__FOOTER_CLASS = ENTITY_ATTRIBUTE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -3360,6 +3549,24 @@ public interface WebsitePackage extends EPackage {
 	int FILE_ATTRIBUTE__FOOTER_CLASS = RESOURCE_ATTRIBUTE__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__SERIALIZATION_GROUPS = RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__SERIALIZATION_EXPOSE = RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3538,6 +3745,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_ATTRIBUTE__FOOTER_CLASS = RESOURCE_ATTRIBUTE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__SERIALIZATION_GROUPS = RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__SERIALIZATION_EXPOSE = RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -3720,6 +3945,24 @@ public interface WebsitePackage extends EPackage {
 	int LOCATION_ATTRIBUTE__FOOTER_CLASS = ENTITY_ATTRIBUTE__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3855,6 +4098,24 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_ASSOCIATION__FOOTER_CLASS = ENTITY_FEATURE__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__SERIALIZATION_GROUPS = ENTITY_FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE = ENTITY_FEATURE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3945,13 +4206,22 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_ASSOCIATION__TARGET_ENTITY_X = ENTITY_FEATURE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH = ENTITY_FEATURE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_ENTITY = ENTITY_FEATURE_FEATURE_COUNT + 5;
+	int ENTITY_ASSOCIATION__TARGET_ENTITY = ENTITY_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Bidirectional</b></em>' attribute.
@@ -3960,7 +4230,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__BIDIRECTIONAL = ENTITY_FEATURE_FEATURE_COUNT + 6;
+	int ENTITY_ASSOCIATION__BIDIRECTIONAL = ENTITY_FEATURE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Pivot Table Name</b></em>' attribute.
@@ -3969,7 +4239,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__PIVOT_TABLE_NAME = ENTITY_FEATURE_FEATURE_COUNT + 7;
+	int ENTITY_ASSOCIATION__PIVOT_TABLE_NAME = ENTITY_FEATURE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Target Feature Name</b></em>' attribute.
@@ -3978,7 +4248,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_FEATURE_NAME = ENTITY_FEATURE_FEATURE_COUNT + 8;
+	int ENTITY_ASSOCIATION__TARGET_FEATURE_NAME = ENTITY_FEATURE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Target Display Label</b></em>' attribute.
@@ -3987,7 +4257,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL = ENTITY_FEATURE_FEATURE_COUNT + 9;
+	int ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL = ENTITY_FEATURE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Target Header Class</b></em>' attribute.
@@ -3996,7 +4266,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_HEADER_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 10;
+	int ENTITY_ASSOCIATION__TARGET_HEADER_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Target Input Class</b></em>' attribute.
@@ -4005,7 +4275,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_INPUT_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 11;
+	int ENTITY_ASSOCIATION__TARGET_INPUT_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Target Display Class</b></em>' attribute.
@@ -4014,7 +4284,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 12;
+	int ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Target Footer Class</b></em>' attribute.
@@ -4023,7 +4293,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 13;
+	int ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Entity Association</em>' class.
@@ -4032,7 +4302,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 14;
+	int ENTITY_ASSOCIATION_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4078,6 +4348,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITHOUT_CONTAINMENT__FOOTER_CLASS = ENTITY_ASSOCIATION__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__SERIALIZATION_GROUPS = ENTITY_ASSOCIATION__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__SERIALIZATION_EXPOSE = ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -4168,6 +4456,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_ENTITY_X = ENTITY_ASSOCIATION__TARGET_ENTITY_X;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__SERIALIZATION_MAX_DEPTH = ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
@@ -4323,6 +4620,24 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION_WITH_CONTAINMENT__FOOTER_CLASS = ENTITY_ASSOCIATION__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__SERIALIZATION_GROUPS = ENTITY_ASSOCIATION__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__SERIALIZATION_EXPOSE = ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4411,6 +4726,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITH_CONTAINMENT__TARGET_ENTITY_X = ENTITY_ASSOCIATION__TARGET_ENTITY_X;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__SERIALIZATION_MAX_DEPTH = ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
@@ -4611,6 +4935,15 @@ public interface WebsitePackage extends EPackage {
 	int VIEW__ALL_ASSOCIATIONS = ENTITY_OR_VIEW__ALL_ASSOCIATIONS;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Exclude All</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__SERIALIZATION_EXCLUDE_ALL = ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL;
+
+	/**
 	 * The feature id for the '<em><b>Encapsulates</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4665,6 +4998,24 @@ public interface WebsitePackage extends EPackage {
 	int VIEW_FEATURE__FOOTER_CLASS = FEATURE__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4708,6 +5059,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENCAPSULATED_FEATURE__FOOTER_CLASS = VIEW_FEATURE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS = VIEW_FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE = VIEW_FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -4780,6 +5149,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENCAPSULATED_ATTRIBUTE__FOOTER_CLASS = ENCAPSULATED_FEATURE__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ATTRIBUTE__SERIALIZATION_GROUPS = ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ATTRIBUTE__SERIALIZATION_EXPOSE = ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -4917,6 +5304,24 @@ public interface WebsitePackage extends EPackage {
 	int ENCAPSULATED_ASSOCIATION__FOOTER_CLASS = ENCAPSULATED_FEATURE__FOOTER_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__SERIALIZATION_GROUPS = ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__SERIALIZATION_EXPOSE = ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4998,13 +5403,22 @@ public interface WebsitePackage extends EPackage {
 	int ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X = ENCAPSULATED_FEATURE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH = ENCAPSULATED_FEATURE_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION__NAME = ENCAPSULATED_FEATURE_FEATURE_COUNT + 5;
+	int ENCAPSULATED_ASSOCIATION__NAME = ENCAPSULATED_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Association</b></em>' reference.
@@ -5013,7 +5427,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION__ASSOCIATION = ENCAPSULATED_FEATURE_FEATURE_COUNT + 6;
+	int ENCAPSULATED_ASSOCIATION__ASSOCIATION = ENCAPSULATED_FEATURE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Encapsulated Target</b></em>' reference.
@@ -5022,7 +5436,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET = ENCAPSULATED_FEATURE_FEATURE_COUNT + 7;
+	int ENCAPSULATED_ASSOCIATION__ENCAPSULATED_TARGET = ENCAPSULATED_FEATURE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
@@ -5031,7 +5445,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION = ENCAPSULATED_FEATURE_FEATURE_COUNT + 8;
+	int ENCAPSULATED_ASSOCIATION__IS_SOURCE_ASSOCIATION = ENCAPSULATED_FEATURE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -5040,7 +5454,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION__CARDINALITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 9;
+	int ENCAPSULATED_ASSOCIATION__CARDINALITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
@@ -5049,7 +5463,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 10;
+	int ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
@@ -5058,7 +5472,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION__TARGET_ENTITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 11;
+	int ENCAPSULATED_ASSOCIATION__TARGET_ENTITY = ENCAPSULATED_FEATURE_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Encapsulated Association</em>' class.
@@ -5067,7 +5481,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION_FEATURE_COUNT = ENCAPSULATED_FEATURE_FEATURE_COUNT + 12;
+	int ENCAPSULATED_ASSOCIATION_FEATURE_COUNT = ENCAPSULATED_FEATURE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5115,13 +5529,31 @@ public interface WebsitePackage extends EPackage {
 	int VIEW_ASSOCIATION__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_ASSOCIATION__SERIALIZATION_GROUPS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_ASSOCIATION__SERIALIZATION_EXPOSE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int VIEW_ASSOCIATION__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -5130,7 +5562,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__CHILD_FEATURE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int VIEW_ASSOCIATION__CHILD_FEATURE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Encapsulated By</b></em>' reference list.
@@ -5139,7 +5571,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCAPSULATED_BY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int VIEW_ASSOCIATION__ENCAPSULATED_BY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -5148,7 +5580,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int VIEW_ASSOCIATION__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity X</b></em>' reference.
@@ -5157,7 +5589,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity X</b></em>' reference.
@@ -5166,7 +5598,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__TARGET_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int VIEW_ASSOCIATION__TARGET_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Opposite</b></em>' reference.
@@ -5175,7 +5616,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__OPPOSITE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int VIEW_ASSOCIATION__OPPOSITE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -5184,7 +5625,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int VIEW_ASSOCIATION__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>View Association</em>' class.
@@ -5193,7 +5634,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -12296,6 +12737,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getEntityOrView_AllAssociations();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#isSerializationExcludeAll <em>Serialization Exclude All</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Serialization Exclude All</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#isSerializationExcludeAll()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EAttribute getEntityOrView_SerializationExcludeAll();
+
+	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getKeys <em>Keys</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12348,6 +12800,28 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFeature_FooterClass();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getSerializationGroups <em>Serialization Groups</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Serialization Groups</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Feature#getSerializationGroups()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_SerializationGroups();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isSerializationExpose <em>Serialization Expose</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Serialization Expose</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Feature#isSerializationExpose()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_SerializationExpose();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Entity <em>Entity</em>}'.
@@ -13228,6 +13702,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAssociation_TargetEntityX();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Association#getSerializationMaxDepth <em>Serialization Max Depth</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Serialization Max Depth</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Association#getSerializationMaxDepth()
+	 * @see #getAssociation()
+	 * @generated
+	 */
+	EAttribute getAssociation_SerializationMaxDepth();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Label <em>Label</em>}'.
@@ -16805,6 +17290,14 @@ public interface WebsitePackage extends EPackage {
 		EReference ENTITY_OR_VIEW__ALL_ASSOCIATIONS = eINSTANCE.getEntityOrView_AllAssociations();
 
 		/**
+		 * The meta object literal for the '<em><b>Serialization Exclude All</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = eINSTANCE.getEntityOrView_SerializationExcludeAll();
+
+		/**
 		 * The meta object literal for the '<em><b>Keys</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -16845,6 +17338,22 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FEATURE__FOOTER_CLASS = eINSTANCE.getFeature_FooterClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Serialization Groups</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__SERIALIZATION_GROUPS = eINSTANCE.getFeature_SerializationGroups();
+
+		/**
+		 * The meta object literal for the '<em><b>Serialization Expose</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__SERIALIZATION_EXPOSE = eINSTANCE.getFeature_SerializationExpose();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityImpl <em>Entity</em>}' class.
@@ -17545,6 +18054,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSOCIATION__TARGET_ENTITY_X = eINSTANCE.getAssociation_TargetEntityX();
+
+		/**
+		 * The meta object literal for the '<em><b>Serialization Max Depth</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATION__SERIALIZATION_MAX_DEPTH = eINSTANCE.getAssociation_SerializationMaxDepth();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.Label <em>Label</em>}' class.

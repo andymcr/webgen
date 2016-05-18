@@ -1557,6 +1557,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEntityOrView_SerializationExcludeAll() {
+		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getEntityOrView_Keys() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(0);
 	}
@@ -1595,6 +1604,24 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EAttribute getFeature_FooterClass() {
 		return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeature_SerializationGroups() {
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeature_SerializationExpose() {
+		return (EAttribute)featureEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2333,6 +2360,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EReference getAssociation_TargetEntityX() {
 		return (EReference)associationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAssociation_SerializationMaxDepth() {
+		return (EAttribute)associationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -5027,11 +5063,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__ATTRIBUTES);
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__ASSOCIATIONS);
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__ALL_ASSOCIATIONS);
+		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL);
 
 		featureEClass = createEClass(FEATURE);
 		createEAttribute(featureEClass, FEATURE__HEADER_CLASS);
 		createEAttribute(featureEClass, FEATURE__DISPLAY_CLASS);
 		createEAttribute(featureEClass, FEATURE__FOOTER_CLASS);
+		createEAttribute(featureEClass, FEATURE__SERIALIZATION_GROUPS);
+		createEAttribute(featureEClass, FEATURE__SERIALIZATION_EXPOSE);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEReference(attributeEClass, ATTRIBUTE__DEFAULT_VALUE);
@@ -5045,6 +5084,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(associationEClass, ASSOCIATION__INPUT_CLASS);
 		createEReference(associationEClass, ASSOCIATION__SOURCE_ENTITY_X);
 		createEReference(associationEClass, ASSOCIATION__TARGET_ENTITY_X);
+		createEAttribute(associationEClass, ASSOCIATION__SERIALIZATION_MAX_DEPTH);
 
 		labelEClass = createEClass(LABEL);
 
@@ -5709,11 +5749,14 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getEntityOrView_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, EntityOrView.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityOrView_Associations(), this.getAssociation(), null, "associations", null, 0, -1, EntityOrView.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityOrView_AllAssociations(), this.getAssociation(), null, "allAssociations", null, 0, -1, EntityOrView.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityOrView_SerializationExcludeAll(), ecorePackage.getEBoolean(), "serializationExcludeAll", "false", 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureEClass, Feature.class, "Feature", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFeature_HeaderClass(), ecorePackage.getEString(), "headerClass", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_DisplayClass(), ecorePackage.getEString(), "displayClass", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_FooterClass(), ecorePackage.getEString(), "footerClass", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_SerializationGroups(), ecorePackage.getEString(), "serializationGroups", "", 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeature_SerializationExpose(), ecorePackage.getEBoolean(), "serializationExpose", "true", 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttribute_DefaultValue(), theCriteriaPackage.getExpression(), null, "defaultValue", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5727,6 +5770,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getAssociation_InputClass(), ecorePackage.getEString(), "inputClass", "input_association", 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAssociation_SourceEntityX(), this.getEntityOrView(), null, "sourceEntityX", null, 1, 1, Association.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAssociation_TargetEntityX(), this.getEntityOrView(), null, "targetEntityX", null, 1, 1, Association.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssociation_SerializationMaxDepth(), ecorePackage.getEInt(), "serializationMaxDepth", "1", 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(labelEClass, Label.class, "Label", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

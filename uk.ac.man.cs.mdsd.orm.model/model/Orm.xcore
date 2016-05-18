@@ -95,11 +95,14 @@ abstract class EntityOrView extends Classifier {
 	String autoKeyName
 	String tableName
 	contains ModelLabel[] labels opposite labelFor
+	Boolean[1] serializationExcludeAll = "false"
 }
 
 
 abstract class Feature extends NamedDisplayElement {
 	container EntityOrView[1] partOf opposite features
+	Boolean[1] serializationExpose = "true"
+	String[] serializationGroups
 }
 
 abstract class Attribute extends Feature, Label {
@@ -108,6 +111,7 @@ abstract class Attribute extends Feature, Label {
 }
 
 abstract class Association extends Feature {
+	Integer[1] serializationMaxDepth = "1"
 }
 
 

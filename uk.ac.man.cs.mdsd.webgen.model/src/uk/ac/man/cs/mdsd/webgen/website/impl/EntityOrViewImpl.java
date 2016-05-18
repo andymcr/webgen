@@ -45,6 +45,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAssociations <em>Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAllAssociations <em>All Associations</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#isSerializationExcludeAll <em>Serialization Exclude All</em>}</li>
  * </ul>
  *
  * @generated
@@ -149,6 +150,26 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate ALL_ASSOCIATIONS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ENTITY_OR_VIEW__ALL_ASSOCIATIONS).getSettingDelegate();
+
+	/**
+	 * The default value of the '{@link #isSerializationExcludeAll() <em>Serialization Exclude All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSerializationExcludeAll()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SERIALIZATION_EXCLUDE_ALL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSerializationExcludeAll() <em>Serialization Exclude All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSerializationExcludeAll()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean serializationExcludeAll = SERIALIZATION_EXCLUDE_ALL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,6 +290,27 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSerializationExcludeAll() {
+		return serializationExcludeAll;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSerializationExcludeAll(boolean newSerializationExcludeAll) {
+		boolean oldSerializationExcludeAll = serializationExcludeAll;
+		serializationExcludeAll = newSerializationExcludeAll;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL, oldSerializationExcludeAll, serializationExcludeAll));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<Feature> getKeys() {
 		if (keys == null) {
 			keys = new EObjectResolvingEList<Feature>(Feature.class, this, WebsitePackage.ENTITY_OR_VIEW__KEYS);
@@ -335,6 +377,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return getAssociations();
 			case WebsitePackage.ENTITY_OR_VIEW__ALL_ASSOCIATIONS:
 				return getAllAssociations();
+			case WebsitePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
+				return isSerializationExcludeAll();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -363,6 +407,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				getLabels().clear();
 				getLabels().addAll((Collection<? extends ModelLabel>)newValue);
 				return;
+			case WebsitePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
+				setSerializationExcludeAll((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -386,6 +433,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return;
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
 				getLabels().clear();
+				return;
+			case WebsitePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
+				setSerializationExcludeAll(SERIALIZATION_EXCLUDE_ALL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -417,6 +467,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return ASSOCIATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.ENTITY_OR_VIEW__ALL_ASSOCIATIONS:
 				return ALL_ASSOCIATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
+				return serializationExcludeAll != SERIALIZATION_EXCLUDE_ALL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -433,6 +485,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (tableName: ");
 		result.append(tableName);
+		result.append(", serializationExcludeAll: ");
+		result.append(serializationExcludeAll);
 		result.append(')');
 		return result.toString();
 	}

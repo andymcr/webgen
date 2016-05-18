@@ -52,6 +52,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			addKeysPropertyDescriptor(object);
 			addAutoKeyNamePropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
+			addSerializationExcludeAllPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -145,6 +146,28 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Serialization Exclude All feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSerializationExcludeAllPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_serializationExcludeAll_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_serializationExcludeAll_feature", "_UI_EntityOrView_type"),
+				 OrmPackage.Literals.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -204,6 +227,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		switch (notification.getFeatureID(EntityOrView.class)) {
 			case OrmPackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 			case OrmPackage.ENTITY_OR_VIEW__TABLE_NAME:
+			case OrmPackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ENTITY_OR_VIEW__FEATURES:

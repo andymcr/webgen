@@ -51,6 +51,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 
 			addKeysPropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
+			addSerializationExcludeAllPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -101,6 +102,28 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Serialization Exclude All feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSerializationExcludeAllPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_serializationExcludeAll_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_serializationExcludeAll_feature", "_UI_EntityOrView_type"),
+				 WebsitePackage.Literals.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_SerializationPropertyCategory"),
 				 null));
 	}
 
@@ -162,6 +185,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 
 		switch (notification.getFeatureID(EntityOrView.class)) {
 			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
+			case WebsitePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:

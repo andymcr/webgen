@@ -37,6 +37,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getSourceEntityX <em>Source Entity X</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getTargetEntityX <em>Target Entity X</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getSerializationMaxDepth <em>Serialization Max Depth</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getEncapsulatedTarget <em>Encapsulated Target</em>}</li>
@@ -108,6 +109,26 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
+
+	/**
+	 * The default value of the '{@link #getSerializationMaxDepth() <em>Serialization Max Depth</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSerializationMaxDepth()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SERIALIZATION_MAX_DEPTH_EDEFAULT = 1;
+
+	/**
+	 * The cached value of the '{@link #getSerializationMaxDepth() <em>Serialization Max Depth</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSerializationMaxDepth()
+	 * @generated
+	 * @ordered
+	 */
+	protected int serializationMaxDepth = SERIALIZATION_MAX_DEPTH_EDEFAULT;
 
 	/**
 	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
@@ -308,6 +329,27 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	 */
 	public EntityOrView basicGetTargetEntityX() {
 		return (EntityOrView)TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getSerializationMaxDepth() {
+		return serializationMaxDepth;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSerializationMaxDepth(int newSerializationMaxDepth) {
+		int oldSerializationMaxDepth = serializationMaxDepth;
+		serializationMaxDepth = newSerializationMaxDepth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH, oldSerializationMaxDepth, serializationMaxDepth));
 	}
 
 	/**
@@ -537,6 +579,8 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X:
 				if (resolve) return getTargetEntityX();
 				return basicGetTargetEntityX();
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				return getSerializationMaxDepth();
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__NAME:
 				return getName();
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
@@ -578,6 +622,9 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 				setInputClass((String)newValue);
 				return;
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				setSerializationMaxDepth((Integer)newValue);
+				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)newValue);
 				return;
@@ -607,6 +654,9 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
+				return;
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				setSerializationMaxDepth(SERIALIZATION_MAX_DEPTH_EDEFAULT);
 				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)null);
@@ -639,6 +689,8 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 				return SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X:
 				return TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				return serializationMaxDepth != SERIALIZATION_MAX_DEPTH_EDEFAULT;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__NAME:
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION:
@@ -671,6 +723,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 				case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
 				case WebsitePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X;
 				case WebsitePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X: return WebsitePackage.ASSOCIATION__TARGET_ENTITY_X;
+				case WebsitePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebsitePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}
@@ -691,6 +744,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS;
 				case WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.ENCAPSULATED_ASSOCIATION__SOURCE_ENTITY_X;
 				case WebsitePackage.ASSOCIATION__TARGET_ENTITY_X: return WebsitePackage.ENCAPSULATED_ASSOCIATION__TARGET_ENTITY_X;
+				case WebsitePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebsitePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}
@@ -709,6 +763,8 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (inputClass: ");
 		result.append(inputClass);
+		result.append(", serializationMaxDepth: ");
+		result.append(serializationMaxDepth);
 		result.append(')');
 		return result.toString();
 	}

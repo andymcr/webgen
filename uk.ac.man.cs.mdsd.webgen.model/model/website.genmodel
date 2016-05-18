@@ -170,11 +170,15 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/attributes"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/associations"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/allAssociations"/>
+      <genFeatures createChild="false" propertyCategory="Serialization" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/serializationExcludeAll"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//Feature">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Feature/headerClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Feature/displayClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Feature/footerClass"/>
+      <genFeatures createChild="false" propertyCategory="Serialization" ecoreFeature="ecore:EAttribute website.ecore#//Feature/serializationGroups"/>
+      <genFeatures createChild="false" propertyCategory="Serialization" propertyDescription=""
+          ecoreFeature="ecore:EAttribute website.ecore#//Feature/serializationExpose"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Attribute">
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
@@ -192,6 +196,7 @@
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Association/inputClass"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Association/sourceEntityX"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Association/targetEntityX"/>
+      <genFeatures createChild="false" propertyCategory="Serialization" ecoreFeature="ecore:EAttribute website.ecore#//Association/serializationMaxDepth"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//Label"/>
     <genClasses ecoreClass="website.ecore#//ModelLabel">

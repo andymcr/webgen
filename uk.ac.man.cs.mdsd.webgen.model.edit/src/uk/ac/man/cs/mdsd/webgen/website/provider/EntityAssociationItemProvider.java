@@ -51,6 +51,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			addInputClassPropertyDescriptor(object);
 			addSourceEntityXPropertyDescriptor(object);
 			addTargetEntityXPropertyDescriptor(object);
+			addSerializationMaxDepthPropertyDescriptor(object);
 			addBidirectionalPropertyDescriptor(object);
 			addPivotTableNamePropertyDescriptor(object);
 			addTargetFeatureNamePropertyDescriptor(object);
@@ -126,6 +127,28 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 false,
 				 null,
 				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Serialization Max Depth feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSerializationMaxDepthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_serializationMaxDepth_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_serializationMaxDepth_feature", "_UI_Association_type"),
+				 WebsitePackage.Literals.ASSOCIATION__SERIALIZATION_MAX_DEPTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_SerializationPropertyCategory"),
 				 null));
 	}
 
@@ -365,6 +388,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 
 		switch (notification.getFeatureID(EntityAssociation.class)) {
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
+			case WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 			case WebsitePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 			case WebsitePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:

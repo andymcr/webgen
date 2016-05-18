@@ -2,6 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getFooterClass <em>Footer Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getSerializationGroups <em>Serialization Groups</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isSerializationExpose <em>Serialization Expose</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature()
@@ -101,4 +104,47 @@ public interface Feature extends EObject {
 	 * @generated
 	 */
 	void setFooterClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Serialization Groups</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Serialization Groups</em>' attribute list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature_SerializationGroups()
+	 * @model default=""
+	 * @generated
+	 */
+	List<String> getSerializationGroups();
+
+	/**
+	 * Returns the value of the '<em><b>Serialization Expose</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Serialization Expose</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Serialization Expose</em>' attribute.
+	 * @see #setSerializationExpose(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature_SerializationExpose()
+	 * @model default="true"
+	 * @generated
+	 */
+	boolean isSerializationExpose();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isSerializationExpose <em>Serialization Expose</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Serialization Expose</em>' attribute.
+	 * @see #isSerializationExpose()
+	 * @generated
+	 */
+	void setSerializationExpose(boolean value);
 } // Feature

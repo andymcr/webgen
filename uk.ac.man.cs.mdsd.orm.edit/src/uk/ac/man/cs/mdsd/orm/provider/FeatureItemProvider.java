@@ -14,6 +14,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.orm.Feature;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
@@ -47,6 +49,8 @@ public class FeatureItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
+			addSerializationExposePropertyDescriptor(object);
+			addSerializationGroupsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -69,6 +73,50 @@ public class FeatureItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Serialization Expose feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSerializationExposePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_serializationExpose_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationExpose_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__SERIALIZATION_EXPOSE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Serialization Groups feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSerializationGroupsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_serializationGroups_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationGroups_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__SERIALIZATION_GROUPS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -97,6 +145,13 @@ public class FeatureItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Feature.class)) {
+			case OrmPackage.FEATURE__SERIALIZATION_EXPOSE:
+			case OrmPackage.FEATURE__SERIALIZATION_GROUPS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

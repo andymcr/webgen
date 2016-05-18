@@ -22,6 +22,7 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAssociations <em>Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAllAssociations <em>All Associations</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#isSerializationExcludeAll <em>Serialization Exclude All</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView()
@@ -177,6 +178,33 @@ public interface EntityOrView extends Classifier, SelectionField {
 	 * @generated
 	 */
 	List<Association> getAllAssociations();
+
+	/**
+	 * Returns the value of the '<em><b>Serialization Exclude All</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Serialization Exclude All</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Serialization Exclude All</em>' attribute.
+	 * @see #setSerializationExcludeAll(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_SerializationExcludeAll()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isSerializationExcludeAll();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#isSerializationExcludeAll <em>Serialization Exclude All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Serialization Exclude All</em>' attribute.
+	 * @see #isSerializationExcludeAll()
+	 * @generated
+	 */
+	void setSerializationExcludeAll(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Keys</b></em>' reference list.

@@ -31,6 +31,15 @@ abstract rule NamedDisplayElement {
 }
 
 
+abstract rule Feature {
+	from website : Website!Feature
+	to orm : ORM!Feature (
+		serializationExpose <- website.serializationExpose,
+		serializationGroups <- website.serializationGroups
+	)
+}
+
+-- @extends Feature
 abstract rule Attribute {
 	from website : Website!Attribute
 	to orm : ORM!Attribute (
@@ -39,9 +48,11 @@ abstract rule Attribute {
 	)
 }
 
+-- @extends Feature
 abstract rule Association {
 	from website : Website!Association
 	to orm : ORM!Association (
+		serializationMaxDepth <- website.serializationMaxDepth
 	)
 }
 

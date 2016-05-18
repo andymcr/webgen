@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -39,12 +40,15 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getFooterClass <em>Footer Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getSourceEntityX <em>Source Entity X</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getTargetEntityX <em>Target Entity X</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getSerializationMaxDepth <em>Serialization Max Depth</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getOpposite <em>Opposite</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getCardinality <em>Cardinality</em>}</li>
  * </ul>
@@ -107,6 +111,33 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 */
 	protected String footerClass = FOOTER_CLASS_EDEFAULT;
 	/**
+	 * The cached value of the '{@link #getSerializationGroups() <em>Serialization Groups</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSerializationGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> serializationGroups;
+	/**
+	 * The default value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSerializationExpose()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SERIALIZATION_EXPOSE_EDEFAULT = true;
+	/**
+	 * The cached value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSerializationExpose()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean serializationExpose = SERIALIZATION_EXPOSE_EDEFAULT;
+	/**
 	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -160,6 +191,24 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
+	/**
+	 * The default value of the '{@link #getSerializationMaxDepth() <em>Serialization Max Depth</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSerializationMaxDepth()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SERIALIZATION_MAX_DEPTH_EDEFAULT = 1;
+	/**
+	 * The cached value of the '{@link #getSerializationMaxDepth() <em>Serialization Max Depth</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSerializationMaxDepth()
+	 * @generated
+	 * @ordered
+	 */
+	protected int serializationMaxDepth = SERIALIZATION_MAX_DEPTH_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getOpposite() <em>Opposite</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -267,6 +316,39 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		footerClass = newFooterClass;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS, oldFooterClass, footerClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSerializationExpose() {
+		return serializationExpose;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSerializationExpose(boolean newSerializationExpose) {
+		boolean oldSerializationExpose = serializationExpose;
+		serializationExpose = newSerializationExpose;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE, oldSerializationExpose, serializationExpose));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<String> getSerializationGroups() {
+		if (serializationGroups == null) {
+			serializationGroups = new EDataTypeUniqueEList<String>(String.class, this, WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS);
+		}
+		return serializationGroups;
 	}
 
 	/**
@@ -448,6 +530,27 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getSerializationMaxDepth() {
+		return serializationMaxDepth;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSerializationMaxDepth(int newSerializationMaxDepth) {
+		int oldSerializationMaxDepth = serializationMaxDepth;
+		serializationMaxDepth = newSerializationMaxDepth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH, oldSerializationMaxDepth, serializationMaxDepth));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EncapsulatedAssociation getOpposite() {
 		if (opposite != null && opposite.eIsProxy()) {
 			InternalEObject oldOpposite = (InternalEObject)opposite;
@@ -546,6 +649,10 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return getDisplayClass();
 			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 				return getFooterClass();
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+				return getSerializationGroups();
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+				return isSerializationExpose();
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				return getPartOf();
 			case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE:
@@ -560,6 +667,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case WebsitePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X:
 				if (resolve) return getTargetEntityX();
 				return basicGetTargetEntityX();
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				return getSerializationMaxDepth();
 			case WebsitePackage.VIEW_ASSOCIATION__OPPOSITE:
 				if (resolve) return getOpposite();
 				return basicGetOpposite();
@@ -587,6 +696,13 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 				setFooterClass((String)newValue);
 				return;
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+				getSerializationGroups().clear();
+				getSerializationGroups().addAll((Collection<? extends String>)newValue);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+				setSerializationExpose((Boolean)newValue);
+				return;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				setPartOf((View)newValue);
 				return;
@@ -599,6 +715,9 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 				setInputClass((String)newValue);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				setSerializationMaxDepth((Integer)newValue);
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__OPPOSITE:
 				setOpposite((EncapsulatedAssociation)newValue);
@@ -627,6 +746,12 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 				setFooterClass(FOOTER_CLASS_EDEFAULT);
 				return;
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+				getSerializationGroups().clear();
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
+				return;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				setPartOf((View)null);
 				return;
@@ -638,6 +763,9 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				setSerializationMaxDepth(SERIALIZATION_MAX_DEPTH_EDEFAULT);
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__OPPOSITE:
 				setOpposite((EncapsulatedAssociation)null);
@@ -663,6 +791,10 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return DISPLAY_CLASS_EDEFAULT == null ? displayClass != null : !DISPLAY_CLASS_EDEFAULT.equals(displayClass);
 			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 				return FOOTER_CLASS_EDEFAULT == null ? footerClass != null : !FOOTER_CLASS_EDEFAULT.equals(footerClass);
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+				return serializationGroups != null && !serializationGroups.isEmpty();
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				return getPartOf() != null;
 			case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE:
@@ -675,6 +807,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X:
 				return TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				return serializationMaxDepth != SERIALIZATION_MAX_DEPTH_EDEFAULT;
 			case WebsitePackage.VIEW_ASSOCIATION__OPPOSITE:
 				return opposite != null;
 			case WebsitePackage.VIEW_ASSOCIATION__CARDINALITY:
@@ -695,6 +829,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS: return WebsitePackage.FEATURE__HEADER_CLASS;
 				case WebsitePackage.VIEW_ASSOCIATION__DISPLAY_CLASS: return WebsitePackage.FEATURE__DISPLAY_CLASS;
 				case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS: return WebsitePackage.FEATURE__FOOTER_CLASS;
+				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS: return WebsitePackage.FEATURE__SERIALIZATION_GROUPS;
+				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE: return WebsitePackage.FEATURE__SERIALIZATION_EXPOSE;
 				default: return -1;
 			}
 		}
@@ -711,6 +847,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
 				case WebsitePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X;
 				case WebsitePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X: return WebsitePackage.ASSOCIATION__TARGET_ENTITY_X;
+				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebsitePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}
@@ -729,6 +866,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.FEATURE__HEADER_CLASS: return WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS;
 				case WebsitePackage.FEATURE__DISPLAY_CLASS: return WebsitePackage.VIEW_ASSOCIATION__DISPLAY_CLASS;
 				case WebsitePackage.FEATURE__FOOTER_CLASS: return WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS;
+				case WebsitePackage.FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS;
+				case WebsitePackage.FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE;
 				default: return -1;
 			}
 		}
@@ -745,6 +884,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS;
 				case WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X;
 				case WebsitePackage.ASSOCIATION__TARGET_ENTITY_X: return WebsitePackage.VIEW_ASSOCIATION__TARGET_ENTITY_X;
+				case WebsitePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}
@@ -767,8 +907,14 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		result.append(displayClass);
 		result.append(", footerClass: ");
 		result.append(footerClass);
+		result.append(", serializationGroups: ");
+		result.append(serializationGroups);
+		result.append(", serializationExpose: ");
+		result.append(serializationExpose);
 		result.append(", inputClass: ");
 		result.append(inputClass);
+		result.append(", serializationMaxDepth: ");
+		result.append(serializationMaxDepth);
 		result.append(", cardinality: ");
 		result.append(cardinality);
 		result.append(')');

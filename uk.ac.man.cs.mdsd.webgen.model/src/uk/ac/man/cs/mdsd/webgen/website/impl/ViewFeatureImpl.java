@@ -2,15 +2,19 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
+import java.util.Collection;
+import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewFeature;
@@ -27,6 +31,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getFooterClass <em>Footer Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getPartOf <em>Part Of</em>}</li>
  * </ul>
  *
@@ -92,6 +98,36 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	 * @ordered
 	 */
 	protected String footerClass = FOOTER_CLASS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSerializationGroups() <em>Serialization Groups</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSerializationGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> serializationGroups;
+
+	/**
+	 * The default value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSerializationExpose()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SERIALIZATION_EXPOSE_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSerializationExpose()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean serializationExpose = SERIALIZATION_EXPOSE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,6 +209,39 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 		footerClass = newFooterClass;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__FOOTER_CLASS, oldFooterClass, footerClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<String> getSerializationGroups() {
+		if (serializationGroups == null) {
+			serializationGroups = new EDataTypeUniqueEList<String>(String.class, this, WebsitePackage.VIEW_FEATURE__SERIALIZATION_GROUPS);
+		}
+		return serializationGroups;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSerializationExpose() {
+		return serializationExpose;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSerializationExpose(boolean newSerializationExpose) {
+		boolean oldSerializationExpose = serializationExpose;
+		serializationExpose = newSerializationExpose;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE, oldSerializationExpose, serializationExpose));
 	}
 
 	/**
@@ -274,6 +343,10 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return getDisplayClass();
 			case WebsitePackage.VIEW_FEATURE__FOOTER_CLASS:
 				return getFooterClass();
+			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
+				return getSerializationGroups();
+			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
+				return isSerializationExpose();
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				return getPartOf();
 		}
@@ -285,6 +358,7 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -296,6 +370,13 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return;
 			case WebsitePackage.VIEW_FEATURE__FOOTER_CLASS:
 				setFooterClass((String)newValue);
+				return;
+			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
+				getSerializationGroups().clear();
+				getSerializationGroups().addAll((Collection<? extends String>)newValue);
+				return;
+			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
+				setSerializationExpose((Boolean)newValue);
 				return;
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				setPartOf((View)newValue);
@@ -321,6 +402,12 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 			case WebsitePackage.VIEW_FEATURE__FOOTER_CLASS:
 				setFooterClass(FOOTER_CLASS_EDEFAULT);
 				return;
+			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
+				getSerializationGroups().clear();
+				return;
+			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
+				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
+				return;
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				setPartOf((View)null);
 				return;
@@ -342,6 +429,10 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return DISPLAY_CLASS_EDEFAULT == null ? displayClass != null : !DISPLAY_CLASS_EDEFAULT.equals(displayClass);
 			case WebsitePackage.VIEW_FEATURE__FOOTER_CLASS:
 				return FOOTER_CLASS_EDEFAULT == null ? footerClass != null : !FOOTER_CLASS_EDEFAULT.equals(footerClass);
+			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
+				return serializationGroups != null && !serializationGroups.isEmpty();
+			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
+				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				return getPartOf() != null;
 		}
@@ -364,6 +455,10 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 		result.append(displayClass);
 		result.append(", footerClass: ");
 		result.append(footerClass);
+		result.append(", serializationGroups: ");
+		result.append(serializationGroups);
+		result.append(", serializationExpose: ");
+		result.append(serializationExpose);
 		result.append(')');
 		return result.toString();
 	}

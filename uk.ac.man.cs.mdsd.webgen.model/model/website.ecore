@@ -234,11 +234,17 @@
         <details key="derivation" value="allFeatures->select(f | f.oclIsKindOf(Association)).oclAsType(Association)->asOrderedSet()"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serializationExcludeAll"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="footerClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serializationGroups" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serializationExpose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true" interface="true"
       eSuperTypes="#//Feature #//Label #//SelectionField">
@@ -274,6 +280,8 @@
         <details key="derivation" value="if self.oclIsKindOf(EntityAssociation) then&#xD;&#xA;&#x9;self.oclAsType(EntityAssociation).targetEntity&#xD;&#xA;else if self.oclIsTypeOf(EncapsulatedAssociation) then&#xD;&#xA;&#x9;&#x9;self.oclAsType(EncapsulatedAssociation).targetEntity&#xD;&#xA;else&#xD;&#xA;&#x9;-- TODO get other end&#xD;&#xA;&#x9;self.oclAsType(ViewAssociation).partOf&#xD;&#xA;endif endif"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serializationMaxDepth"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Label" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ModelLabel" eSuperTypes="#//NamedElement #//Label">

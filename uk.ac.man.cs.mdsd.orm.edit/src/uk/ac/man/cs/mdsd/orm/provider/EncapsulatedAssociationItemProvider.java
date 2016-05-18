@@ -10,6 +10,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.orm.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
@@ -41,10 +43,33 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSerializationMaxDepthPropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
 			addEncapsulatedTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Serialization Max Depth feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSerializationMaxDepthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_serializationMaxDepth_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_serializationMaxDepth_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__SERIALIZATION_MAX_DEPTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -127,6 +152,12 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(EncapsulatedAssociation.class)) {
+			case OrmPackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

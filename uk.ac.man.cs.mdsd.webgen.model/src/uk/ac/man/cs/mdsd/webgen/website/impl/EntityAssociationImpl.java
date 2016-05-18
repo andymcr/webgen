@@ -37,6 +37,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getSourceEntityX <em>Source Entity X</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetEntityX <em>Target Entity X</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getSerializationMaxDepth <em>Serialization Max Depth</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
@@ -110,6 +111,26 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY_X__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ASSOCIATION__TARGET_ENTITY_X).getSettingDelegate();
+
+	/**
+	 * The default value of the '{@link #getSerializationMaxDepth() <em>Serialization Max Depth</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSerializationMaxDepth()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SERIALIZATION_MAX_DEPTH_EDEFAULT = 1;
+
+	/**
+	 * The cached value of the '{@link #getSerializationMaxDepth() <em>Serialization Max Depth</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSerializationMaxDepth()
+	 * @generated
+	 * @ordered
+	 */
+	protected int serializationMaxDepth = SERIALIZATION_MAX_DEPTH_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
@@ -519,6 +540,27 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getSerializationMaxDepth() {
+		return serializationMaxDepth;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSerializationMaxDepth(int newSerializationMaxDepth) {
+		int oldSerializationMaxDepth = serializationMaxDepth;
+		serializationMaxDepth = newSerializationMaxDepth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH, oldSerializationMaxDepth, serializationMaxDepth));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTargetFeatureName() {
 		return targetFeatureName;
 	}
@@ -697,6 +739,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X:
 				if (resolve) return getTargetEntityX();
 				return basicGetTargetEntityX();
+			case WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				return getSerializationMaxDepth();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				if (resolve) return getTargetEntity();
 				return basicGetTargetEntity();
@@ -738,6 +782,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				setInputClass((String)newValue);
+				return;
+			case WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				setSerializationMaxDepth((Integer)newValue);
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				setTargetEntity((Entity)newValue);
@@ -786,6 +833,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
+				return;
+			case WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				setSerializationMaxDepth(SERIALIZATION_MAX_DEPTH_EDEFAULT);
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				setTargetEntity((Entity)null);
@@ -836,6 +886,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return SOURCE_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X:
 				return TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
+				return serializationMaxDepth != SERIALIZATION_MAX_DEPTH_EDEFAULT;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				return targetEntity != null;
 			case WebsitePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
@@ -872,6 +924,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
 				case WebsitePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X;
 				case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X: return WebsitePackage.ASSOCIATION__TARGET_ENTITY_X;
+				case WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebsitePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}
@@ -892,6 +945,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS;
 				case WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X;
 				case WebsitePackage.ASSOCIATION__TARGET_ENTITY_X: return WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY_X;
+				case WebsitePackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH: return WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 				default: return -1;
 			}
 		}
@@ -910,6 +964,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (inputClass: ");
 		result.append(inputClass);
+		result.append(", serializationMaxDepth: ");
+		result.append(serializationMaxDepth);
 		result.append(", bidirectional: ");
 		result.append(bidirectional);
 		result.append(", pivotTableName: ");

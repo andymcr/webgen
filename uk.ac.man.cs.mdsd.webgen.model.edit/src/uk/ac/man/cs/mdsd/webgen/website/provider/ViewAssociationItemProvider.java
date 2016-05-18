@@ -51,9 +51,12 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 			addHeaderClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
+			addSerializationGroupsPropertyDescriptor(object);
+			addSerializationExposePropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addSourceEntityXPropertyDescriptor(object);
 			addTargetEntityXPropertyDescriptor(object);
+			addSerializationMaxDepthPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -126,6 +129,50 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Serialization Expose feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSerializationExposePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_serializationExpose_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationExpose_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__SERIALIZATION_EXPOSE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_SerializationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Serialization Groups feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSerializationGroupsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_serializationGroups_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_serializationGroups_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__SERIALIZATION_GROUPS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SerializationPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Input Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -188,6 +235,28 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 null,
 				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Serialization Max Depth feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSerializationMaxDepthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_serializationMaxDepth_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_serializationMaxDepth_feature", "_UI_Association_type"),
+				 WebsitePackage.Literals.ASSOCIATION__SERIALIZATION_MAX_DEPTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_SerializationPropertyCategory"),
 				 null));
 	}
 
@@ -284,7 +353,10 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 			case WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS:
 			case WebsitePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
 			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
 			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 			case WebsitePackage.VIEW_ASSOCIATION__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

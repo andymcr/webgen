@@ -152,7 +152,8 @@ abstract rule EntityOrView {
 				website.tableName
 			else
 				website.name.createTableName()
-			endif
+			endif,
+		serializationExcludeAll <- website.serializationExcludeAll
 	)
 }
 

@@ -299,13 +299,22 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__DATABASE_NAME = 17;
 
 	/**
+	 * The feature id for the '<em><b>Database Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__DATABASE_PORT = 18;
+
+	/**
 	 * The feature id for the '<em><b>Database Username</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DATABASE_USERNAME = 18;
+	int WEBSITE_PROPERTIES__DATABASE_USERNAME = 19;
 
 	/**
 	 * The feature id for the '<em><b>Database Password</b></em>' attribute.
@@ -314,7 +323,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__DATABASE_PASSWORD = 19;
+	int WEBSITE_PROPERTIES__DATABASE_PASSWORD = 20;
 
 	/**
 	 * The feature id for the '<em><b>Orm Technology</b></em>' attribute.
@@ -323,7 +332,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__ORM_TECHNOLOGY = 20;
+	int WEBSITE_PROPERTIES__ORM_TECHNOLOGY = 21;
+
+	/**
+	 * The feature id for the '<em><b>Log Changes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__LOG_CHANGES = 22;
 
 	/**
 	 * The feature id for the '<em><b>Framework Technology</b></em>' attribute.
@@ -332,7 +350,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 21;
+	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 23;
 
 	/**
 	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
@@ -341,7 +359,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 22;
+	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 24;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
@@ -350,7 +368,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 23;
+	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 25;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
@@ -359,7 +377,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 24;
+	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 26;
 
 	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
@@ -368,7 +386,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 25;
+	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 27;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -377,7 +395,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 26;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 28;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -386,7 +404,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SIDE_MENU = 27;
+	int WEBSITE_PROPERTIES__SIDE_MENU = 29;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -395,7 +413,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 28;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 30;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -404,7 +422,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 29;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 31;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -12370,6 +12388,17 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_DatabaseName();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabasePort <em>Database Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Database Port</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabasePort()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_DatabasePort();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseUsername <em>Database Username</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12401,6 +12430,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWebsiteProperties_OrmTechnology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isLogChanges <em>Log Changes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Log Changes</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isLogChanges()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_LogChanges();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getFrameworkTechnology <em>Framework Technology</em>}'.
@@ -17004,6 +17044,14 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEBSITE_PROPERTIES__DATABASE_NAME = eINSTANCE.getWebsiteProperties_DatabaseName();
 
 		/**
+		 * The meta object literal for the '<em><b>Database Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__DATABASE_PORT = eINSTANCE.getWebsiteProperties_DatabasePort();
+
+		/**
 		 * The meta object literal for the '<em><b>Database Username</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -17026,6 +17074,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WEBSITE_PROPERTIES__ORM_TECHNOLOGY = eINSTANCE.getWebsiteProperties_OrmTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Log Changes</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__LOG_CHANGES = eINSTANCE.getWebsiteProperties_LogChanges();
 
 		/**
 		 * The meta object literal for the '<em><b>Framework Technology</b></em>' attribute feature.

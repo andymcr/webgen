@@ -20,13 +20,15 @@ class OrmModel {
 	contains DataType[] dataTypes
 	contains EntityOrView[] entitiesAndViews opposite partOf
 	contains CollectionType[] collectionTypes
-	unordered DatabaseTechnologies databaseTechnology = "MySql"
+	DatabaseTechnologies databaseTechnology = "MySql"
 	String databasePrefix
 	String databaseHost
+	String databasePort
 	String databaseName
 	String databaseUsername
 	String databasePassword
 	OrmTechnologies ormTechnology
+	boolean logChanges
 }
 
 enum Cardinality {

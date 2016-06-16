@@ -77,9 +77,11 @@ public class WebsitePropertiesItemProvider
 			addDatabasePrefixPropertyDescriptor(object);
 			addDatabaseHostPropertyDescriptor(object);
 			addDatabaseNamePropertyDescriptor(object);
+			addDatabasePortPropertyDescriptor(object);
 			addDatabaseUsernamePropertyDescriptor(object);
 			addDatabasePasswordPropertyDescriptor(object);
 			addOrmTechnologyPropertyDescriptor(object);
+			addLogChangesPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
 			addAjaxTechnologyPropertyDescriptor(object);
 			addCaptchaSiteKeyPropertyDescriptor(object);
@@ -489,6 +491,28 @@ public class WebsitePropertiesItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Database Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDatabasePortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_databasePort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_databasePort_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__DATABASE_PORT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Database Username feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -551,6 +575,28 @@ public class WebsitePropertiesItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_FrameworkPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Log Changes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogChangesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_logChanges_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_logChanges_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__LOG_CHANGES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
 				 null));
 	}
 
@@ -785,9 +831,11 @@ public class WebsitePropertiesItemProvider
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PREFIX:
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_HOST:
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_NAME:
+			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PORT:
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_USERNAME:
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PASSWORD:
 			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
+			case WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES:
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:

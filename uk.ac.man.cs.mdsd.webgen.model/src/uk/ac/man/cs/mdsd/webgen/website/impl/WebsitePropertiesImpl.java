@@ -47,9 +47,11 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDatabasePrefix <em>Database Prefix</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDatabaseHost <em>Database Host</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDatabaseName <em>Database Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDatabasePort <em>Database Port</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDatabaseUsername <em>Database Username</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDatabasePassword <em>Database Password</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getOrmTechnology <em>Orm Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isLogChanges <em>Log Changes</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
@@ -414,6 +416,26 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	protected String databaseName = DATABASE_NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getDatabasePort() <em>Database Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDatabasePort()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DATABASE_PORT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDatabasePort() <em>Database Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDatabasePort()
+	 * @generated
+	 * @ordered
+	 */
+	protected String databasePort = DATABASE_PORT_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getDatabaseUsername() <em>Database Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -472,6 +494,26 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @ordered
 	 */
 	protected OrmTechnologies ormTechnology = ORM_TECHNOLOGY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isLogChanges() <em>Log Changes</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isLogChanges()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean LOG_CHANGES_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isLogChanges() <em>Log Changes</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isLogChanges()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean logChanges = LOG_CHANGES_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.
@@ -1047,6 +1089,27 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getDatabasePort() {
+		return databasePort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDatabasePort(String newDatabasePort) {
+		String oldDatabasePort = databasePort;
+		databasePort = newDatabasePort;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PORT, oldDatabasePort, databasePort));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getDatabaseUsername() {
 		return databaseUsername;
 	}
@@ -1103,6 +1166,27 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		ormTechnology = newOrmTechnology == null ? ORM_TECHNOLOGY_EDEFAULT : newOrmTechnology;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY, oldOrmTechnology, ormTechnology));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isLogChanges() {
+		return logChanges;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLogChanges(boolean newLogChanges) {
+		boolean oldLogChanges = logChanges;
+		logChanges = newLogChanges;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES, oldLogChanges, logChanges));
 	}
 
 	/**
@@ -1364,12 +1448,16 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return getDatabaseHost();
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_NAME:
 				return getDatabaseName();
+			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PORT:
+				return getDatabasePort();
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_USERNAME:
 				return getDatabaseUsername();
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PASSWORD:
 				return getDatabasePassword();
 			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
 				return getOrmTechnology();
+			case WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES:
+				return isLogChanges();
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
@@ -1453,6 +1541,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_NAME:
 				setDatabaseName((String)newValue);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PORT:
+				setDatabasePort((String)newValue);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_USERNAME:
 				setDatabaseUsername((String)newValue);
 				return;
@@ -1461,6 +1552,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
 				setOrmTechnology((OrmTechnologies)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES:
+				setLogChanges((Boolean)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
@@ -1552,6 +1646,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_NAME:
 				setDatabaseName(DATABASE_NAME_EDEFAULT);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PORT:
+				setDatabasePort(DATABASE_PORT_EDEFAULT);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_USERNAME:
 				setDatabaseUsername(DATABASE_USERNAME_EDEFAULT);
 				return;
@@ -1560,6 +1657,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
 				setOrmTechnology(ORM_TECHNOLOGY_EDEFAULT);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES:
+				setLogChanges(LOG_CHANGES_EDEFAULT);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
@@ -1633,12 +1733,16 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return DATABASE_HOST_EDEFAULT == null ? databaseHost != null : !DATABASE_HOST_EDEFAULT.equals(databaseHost);
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_NAME:
 				return DATABASE_NAME_EDEFAULT == null ? databaseName != null : !DATABASE_NAME_EDEFAULT.equals(databaseName);
+			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PORT:
+				return DATABASE_PORT_EDEFAULT == null ? databasePort != null : !DATABASE_PORT_EDEFAULT.equals(databasePort);
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_USERNAME:
 				return DATABASE_USERNAME_EDEFAULT == null ? databaseUsername != null : !DATABASE_USERNAME_EDEFAULT.equals(databaseUsername);
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PASSWORD:
 				return DATABASE_PASSWORD_EDEFAULT == null ? databasePassword != null : !DATABASE_PASSWORD_EDEFAULT.equals(databasePassword);
 			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
 				return ormTechnology != ORM_TECHNOLOGY_EDEFAULT;
+			case WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES:
+				return logChanges != LOG_CHANGES_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
@@ -1703,12 +1807,16 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(databaseHost);
 		result.append(", databaseName: ");
 		result.append(databaseName);
+		result.append(", databasePort: ");
+		result.append(databasePort);
 		result.append(", databaseUsername: ");
 		result.append(databaseUsername);
 		result.append(", databasePassword: ");
 		result.append(databasePassword);
 		result.append(", ormTechnology: ");
 		result.append(ormTechnology);
+		result.append(", logChanges: ");
+		result.append(logChanges);
 		result.append(", frameworkTechnology: ");
 		result.append(frameworkTechnology);
 		result.append(", ajaxTechnology: ");

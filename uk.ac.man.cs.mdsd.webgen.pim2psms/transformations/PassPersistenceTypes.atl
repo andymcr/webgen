@@ -65,10 +65,12 @@ rule Website {
 			endif endif,
 		databasePrefix <- website.websiteProperties.databasePrefix,
 		databaseHost <- website.websiteProperties.databaseHost,
+		databasePort <- website.websiteProperties.databasePort,
 		databaseName <- website.websiteProperties.databaseName,
 		databaseUsername <- website.websiteProperties.databaseUsername,
 		databasePassword <- website.websiteProperties.databasePassword,
-		ormTechnology <- website.websiteProperties.ormTechnology
+		ormTechnology <- website.websiteProperties.ormTechnology,
+		logChanges <- website.websiteProperties.logChanges
 	)
 }
 

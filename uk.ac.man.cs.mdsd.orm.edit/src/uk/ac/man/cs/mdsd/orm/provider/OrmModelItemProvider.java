@@ -65,10 +65,12 @@ public class OrmModelItemProvider
 			addDatabaseTechnologyPropertyDescriptor(object);
 			addDatabasePrefixPropertyDescriptor(object);
 			addDatabaseHostPropertyDescriptor(object);
+			addDatabasePortPropertyDescriptor(object);
 			addDatabaseNamePropertyDescriptor(object);
 			addDatabaseUsernamePropertyDescriptor(object);
 			addDatabasePasswordPropertyDescriptor(object);
 			addOrmTechnologyPropertyDescriptor(object);
+			addLogChangesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -131,6 +133,28 @@ public class OrmModelItemProvider
 				 getString("_UI_OrmModel_databaseHost_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_databaseHost_feature", "_UI_OrmModel_type"),
 				 OrmPackage.Literals.ORM_MODEL__DATABASE_HOST,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Database Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDatabasePortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OrmModel_databasePort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_databasePort_feature", "_UI_OrmModel_type"),
+				 OrmPackage.Literals.ORM_MODEL__DATABASE_PORT,
 				 true,
 				 false,
 				 false,
@@ -228,6 +252,28 @@ public class OrmModelItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Log Changes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLogChangesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OrmModel_logChanges_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_logChanges_feature", "_UI_OrmModel_type"),
+				 OrmPackage.Literals.ORM_MODEL__LOG_CHANGES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -299,10 +345,12 @@ public class OrmModelItemProvider
 			case OrmPackage.ORM_MODEL__DATABASE_TECHNOLOGY:
 			case OrmPackage.ORM_MODEL__DATABASE_PREFIX:
 			case OrmPackage.ORM_MODEL__DATABASE_HOST:
+			case OrmPackage.ORM_MODEL__DATABASE_PORT:
 			case OrmPackage.ORM_MODEL__DATABASE_NAME:
 			case OrmPackage.ORM_MODEL__DATABASE_USERNAME:
 			case OrmPackage.ORM_MODEL__DATABASE_PASSWORD:
 			case OrmPackage.ORM_MODEL__ORM_TECHNOLOGY:
+			case OrmPackage.ORM_MODEL__LOG_CHANGES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ORM_MODEL__DATA_TYPES:

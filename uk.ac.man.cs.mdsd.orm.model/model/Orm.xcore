@@ -28,7 +28,8 @@ class OrmModel {
 	String databaseUsername
 	String databasePassword
 	OrmTechnologies ormTechnology
-	boolean logChanges
+	boolean timestampCreation
+	boolean timestampUpdates
 }
 
 enum Cardinality {

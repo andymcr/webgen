@@ -1287,7 +1287,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_LogChanges() {
+	public EAttribute getWebsiteProperties_TimestampCreation() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(22);
 	}
 
@@ -1296,7 +1296,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_FrameworkTechnology() {
+	public EAttribute getWebsiteProperties_TimestampUpdates() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(23);
 	}
 
@@ -1305,7 +1305,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_AjaxTechnology() {
+	public EAttribute getWebsiteProperties_FrameworkTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(24);
 	}
 
@@ -1314,7 +1314,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_CaptchaSiteKey() {
+	public EAttribute getWebsiteProperties_AjaxTechnology() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(25);
 	}
 
@@ -1323,7 +1323,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_CaptchaSecretKey() {
+	public EAttribute getWebsiteProperties_CaptchaSiteKey() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(26);
 	}
 
@@ -1332,7 +1332,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_TextEditorURL() {
+	public EAttribute getWebsiteProperties_CaptchaSecretKey() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(27);
 	}
 
@@ -1341,7 +1341,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_TopNavigationId() {
+	public EAttribute getWebsiteProperties_TextEditorURL() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(28);
 	}
 
@@ -1350,8 +1350,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWebsiteProperties_TopNavigationId() {
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(29);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWebsiteProperties_SideMenu() {
-		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(29);
+		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(30);
 	}
 
 	/**
@@ -1360,7 +1369,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getWebsiteProperties_StaticUnitsEditable() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(30);
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(31);
 	}
 
 	/**
@@ -5021,7 +5030,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DATABASE_USERNAME);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__DATABASE_PASSWORD);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__ORM_TECHNOLOGY);
-		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__LOG_CHANGES);
+		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__TIMESTAMP_CREATION);
+		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__TIMESTAMP_UPDATES);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__AJAX_TECHNOLOGY);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY);
@@ -5709,7 +5719,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebsiteProperties_DatabaseUsername(), ecorePackage.getEString(), "databaseUsername", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_DatabasePassword(), ecorePackage.getEString(), "databasePassword", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_OrmTechnology(), this.getOrmTechnologies(), "ormTechnology", "Kohana", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWebsiteProperties_LogChanges(), ecorePackage.getEBoolean(), "logChanges", "true", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebsiteProperties_TimestampCreation(), ecorePackage.getEBoolean(), "timestampCreation", "true", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebsiteProperties_TimestampUpdates(), ecorePackage.getEBoolean(), "timestampUpdates", "true", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_FrameworkTechnology(), this.getFrameworkTechnologies(), "frameworkTechnology", "Kohana", 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_AjaxTechnology(), this.getAjaxTechnologies(), "ajaxTechnology", "None", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_CaptchaSiteKey(), ecorePackage.getEString(), "captchaSiteKey", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

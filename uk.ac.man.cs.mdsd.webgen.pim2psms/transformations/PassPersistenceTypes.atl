@@ -70,7 +70,8 @@ rule Website {
 		databaseUsername <- website.websiteProperties.databaseUsername,
 		databasePassword <- website.websiteProperties.databasePassword,
 		ormTechnology <- website.websiteProperties.ormTechnology,
-		logChanges <- website.websiteProperties.logChanges
+		timestampCreation <- website.websiteProperties.timestampCreation,
+		timestampUpdates <- website.websiteProperties.timestampUpdates
 	)
 }
 

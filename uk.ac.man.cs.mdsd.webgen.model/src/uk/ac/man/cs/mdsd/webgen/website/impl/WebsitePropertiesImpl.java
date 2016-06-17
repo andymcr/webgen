@@ -51,7 +51,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDatabaseUsername <em>Database Username</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getDatabasePassword <em>Database Password</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getOrmTechnology <em>Orm Technology</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isLogChanges <em>Log Changes</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isTimestampCreation <em>Timestamp Creation</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isTimestampUpdates <em>Timestamp Updates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
@@ -496,24 +497,44 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	protected OrmTechnologies ormTechnology = ORM_TECHNOLOGY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isLogChanges() <em>Log Changes</em>}' attribute.
+	 * The default value of the '{@link #isTimestampCreation() <em>Timestamp Creation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isLogChanges()
+	 * @see #isTimestampCreation()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean LOG_CHANGES_EDEFAULT = true;
+	protected static final boolean TIMESTAMP_CREATION_EDEFAULT = true;
 
 	/**
-	 * The cached value of the '{@link #isLogChanges() <em>Log Changes</em>}' attribute.
+	 * The cached value of the '{@link #isTimestampCreation() <em>Timestamp Creation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isLogChanges()
+	 * @see #isTimestampCreation()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean logChanges = LOG_CHANGES_EDEFAULT;
+	protected boolean timestampCreation = TIMESTAMP_CREATION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isTimestampUpdates() <em>Timestamp Updates</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTimestampUpdates()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean TIMESTAMP_UPDATES_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isTimestampUpdates() <em>Timestamp Updates</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTimestampUpdates()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean timestampUpdates = TIMESTAMP_UPDATES_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFrameworkTechnology() <em>Framework Technology</em>}' attribute.
@@ -1173,8 +1194,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isLogChanges() {
-		return logChanges;
+	public boolean isTimestampCreation() {
+		return timestampCreation;
 	}
 
 	/**
@@ -1182,11 +1203,32 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLogChanges(boolean newLogChanges) {
-		boolean oldLogChanges = logChanges;
-		logChanges = newLogChanges;
+	public void setTimestampCreation(boolean newTimestampCreation) {
+		boolean oldTimestampCreation = timestampCreation;
+		timestampCreation = newTimestampCreation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES, oldLogChanges, logChanges));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_CREATION, oldTimestampCreation, timestampCreation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isTimestampUpdates() {
+		return timestampUpdates;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTimestampUpdates(boolean newTimestampUpdates) {
+		boolean oldTimestampUpdates = timestampUpdates;
+		timestampUpdates = newTimestampUpdates;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_UPDATES, oldTimestampUpdates, timestampUpdates));
 	}
 
 	/**
@@ -1456,8 +1498,10 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return getDatabasePassword();
 			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
 				return getOrmTechnology();
-			case WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES:
-				return isLogChanges();
+			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_CREATION:
+				return isTimestampCreation();
+			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_UPDATES:
+				return isTimestampUpdates();
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
@@ -1553,8 +1597,11 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
 				setOrmTechnology((OrmTechnologies)newValue);
 				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES:
-				setLogChanges((Boolean)newValue);
+			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_CREATION:
+				setTimestampCreation((Boolean)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_UPDATES:
+				setTimestampUpdates((Boolean)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
@@ -1658,8 +1705,11 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
 				setOrmTechnology(ORM_TECHNOLOGY_EDEFAULT);
 				return;
-			case WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES:
-				setLogChanges(LOG_CHANGES_EDEFAULT);
+			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_CREATION:
+				setTimestampCreation(TIMESTAMP_CREATION_EDEFAULT);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_UPDATES:
+				setTimestampUpdates(TIMESTAMP_UPDATES_EDEFAULT);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
@@ -1741,8 +1791,10 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return DATABASE_PASSWORD_EDEFAULT == null ? databasePassword != null : !DATABASE_PASSWORD_EDEFAULT.equals(databasePassword);
 			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
 				return ormTechnology != ORM_TECHNOLOGY_EDEFAULT;
-			case WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES:
-				return logChanges != LOG_CHANGES_EDEFAULT;
+			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_CREATION:
+				return timestampCreation != TIMESTAMP_CREATION_EDEFAULT;
+			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_UPDATES:
+				return timestampUpdates != TIMESTAMP_UPDATES_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
@@ -1815,8 +1867,10 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(databasePassword);
 		result.append(", ormTechnology: ");
 		result.append(ormTechnology);
-		result.append(", logChanges: ");
-		result.append(logChanges);
+		result.append(", timestampCreation: ");
+		result.append(timestampCreation);
+		result.append(", timestampUpdates: ");
+		result.append(timestampUpdates);
 		result.append(", frameworkTechnology: ");
 		result.append(frameworkTechnology);
 		result.append(", ajaxTechnology: ");

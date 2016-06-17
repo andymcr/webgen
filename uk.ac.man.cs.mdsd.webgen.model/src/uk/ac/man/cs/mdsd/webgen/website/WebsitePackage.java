@@ -335,13 +335,22 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__ORM_TECHNOLOGY = 21;
 
 	/**
-	 * The feature id for the '<em><b>Log Changes</b></em>' attribute.
+	 * The feature id for the '<em><b>Timestamp Creation</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__LOG_CHANGES = 22;
+	int WEBSITE_PROPERTIES__TIMESTAMP_CREATION = 22;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp Updates</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__TIMESTAMP_UPDATES = 23;
 
 	/**
 	 * The feature id for the '<em><b>Framework Technology</b></em>' attribute.
@@ -350,7 +359,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 23;
+	int WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY = 24;
 
 	/**
 	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
@@ -359,7 +368,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 24;
+	int WEBSITE_PROPERTIES__AJAX_TECHNOLOGY = 25;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
@@ -368,7 +377,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 25;
+	int WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY = 26;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
@@ -377,7 +386,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 26;
+	int WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY = 27;
 
 	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
@@ -386,7 +395,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 27;
+	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 28;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -395,7 +404,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 28;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 29;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -404,7 +413,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SIDE_MENU = 29;
+	int WEBSITE_PROPERTIES__SIDE_MENU = 30;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -413,7 +422,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 30;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 31;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -422,7 +431,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 31;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 32;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -12432,15 +12441,26 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_OrmTechnology();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isLogChanges <em>Log Changes</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampCreation <em>Timestamp Creation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Log Changes</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isLogChanges()
+	 * @return the meta object for the attribute '<em>Timestamp Creation</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampCreation()
 	 * @see #getWebsiteProperties()
 	 * @generated
 	 */
-	EAttribute getWebsiteProperties_LogChanges();
+	EAttribute getWebsiteProperties_TimestampCreation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampUpdates <em>Timestamp Updates</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Timestamp Updates</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampUpdates()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_TimestampUpdates();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getFrameworkTechnology <em>Framework Technology</em>}'.
@@ -17076,12 +17096,20 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEBSITE_PROPERTIES__ORM_TECHNOLOGY = eINSTANCE.getWebsiteProperties_OrmTechnology();
 
 		/**
-		 * The meta object literal for the '<em><b>Log Changes</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Timestamp Creation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WEBSITE_PROPERTIES__LOG_CHANGES = eINSTANCE.getWebsiteProperties_LogChanges();
+		EAttribute WEBSITE_PROPERTIES__TIMESTAMP_CREATION = eINSTANCE.getWebsiteProperties_TimestampCreation();
+
+		/**
+		 * The meta object literal for the '<em><b>Timestamp Updates</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__TIMESTAMP_UPDATES = eINSTANCE.getWebsiteProperties_TimestampUpdates();
 
 		/**
 		 * The meta object literal for the '<em><b>Framework Technology</b></em>' attribute feature.

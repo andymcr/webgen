@@ -70,7 +70,8 @@ public class OrmModelItemProvider
 			addDatabaseUsernamePropertyDescriptor(object);
 			addDatabasePasswordPropertyDescriptor(object);
 			addOrmTechnologyPropertyDescriptor(object);
-			addLogChangesPropertyDescriptor(object);
+			addTimestampCreationPropertyDescriptor(object);
+			addTimestampUpdatesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -252,19 +253,41 @@ public class OrmModelItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Log Changes feature.
+	 * This adds a property descriptor for the Timestamp Creation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLogChangesPropertyDescriptor(Object object) {
+	protected void addTimestampCreationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_OrmModel_logChanges_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_logChanges_feature", "_UI_OrmModel_type"),
-				 OrmPackage.Literals.ORM_MODEL__LOG_CHANGES,
+				 getString("_UI_OrmModel_timestampCreation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_timestampCreation_feature", "_UI_OrmModel_type"),
+				 OrmPackage.Literals.ORM_MODEL__TIMESTAMP_CREATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Timestamp Updates feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimestampUpdatesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OrmModel_timestampUpdates_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_timestampUpdates_feature", "_UI_OrmModel_type"),
+				 OrmPackage.Literals.ORM_MODEL__TIMESTAMP_UPDATES,
 				 true,
 				 false,
 				 false,
@@ -350,7 +373,8 @@ public class OrmModelItemProvider
 			case OrmPackage.ORM_MODEL__DATABASE_USERNAME:
 			case OrmPackage.ORM_MODEL__DATABASE_PASSWORD:
 			case OrmPackage.ORM_MODEL__ORM_TECHNOLOGY:
-			case OrmPackage.ORM_MODEL__LOG_CHANGES:
+			case OrmPackage.ORM_MODEL__TIMESTAMP_CREATION:
+			case OrmPackage.ORM_MODEL__TIMESTAMP_UPDATES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ORM_MODEL__DATA_TYPES:

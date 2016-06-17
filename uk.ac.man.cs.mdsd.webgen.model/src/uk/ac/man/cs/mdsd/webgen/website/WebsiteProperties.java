@@ -39,7 +39,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabaseUsername <em>Database Username</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getDatabasePassword <em>Database Password</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getOrmTechnology <em>Orm Technology</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isLogChanges <em>Log Changes</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampCreation <em>Timestamp Creation</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampUpdates <em>Timestamp Updates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getFrameworkTechnology <em>Framework Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
@@ -642,31 +643,58 @@ public interface WebsiteProperties extends EObject {
 	void setOrmTechnology(OrmTechnologies value);
 
 	/**
-	 * Returns the value of the '<em><b>Log Changes</b></em>' attribute.
+	 * Returns the value of the '<em><b>Timestamp Creation</b></em>' attribute.
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Log Changes</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Timestamp Creation</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Log Changes</em>' attribute.
-	 * @see #setLogChanges(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_LogChanges()
+	 * @return the value of the '<em>Timestamp Creation</em>' attribute.
+	 * @see #setTimestampCreation(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_TimestampCreation()
 	 * @model default="true"
 	 * @generated
 	 */
-	boolean isLogChanges();
+	boolean isTimestampCreation();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isLogChanges <em>Log Changes</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampCreation <em>Timestamp Creation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Log Changes</em>' attribute.
-	 * @see #isLogChanges()
+	 * @param value the new value of the '<em>Timestamp Creation</em>' attribute.
+	 * @see #isTimestampCreation()
 	 * @generated
 	 */
-	void setLogChanges(boolean value);
+	void setTimestampCreation(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Timestamp Updates</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Timestamp Updates</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Timestamp Updates</em>' attribute.
+	 * @see #setTimestampUpdates(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_TimestampUpdates()
+	 * @model default="true"
+	 * @generated
+	 */
+	boolean isTimestampUpdates();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isTimestampUpdates <em>Timestamp Updates</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Timestamp Updates</em>' attribute.
+	 * @see #isTimestampUpdates()
+	 * @generated
+	 */
+	void setTimestampUpdates(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Framework Technology</b></em>' attribute.

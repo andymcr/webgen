@@ -81,7 +81,8 @@ public class WebsitePropertiesItemProvider
 			addDatabaseUsernamePropertyDescriptor(object);
 			addDatabasePasswordPropertyDescriptor(object);
 			addOrmTechnologyPropertyDescriptor(object);
-			addLogChangesPropertyDescriptor(object);
+			addTimestampCreationPropertyDescriptor(object);
+			addTimestampUpdatesPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
 			addAjaxTechnologyPropertyDescriptor(object);
 			addCaptchaSiteKeyPropertyDescriptor(object);
@@ -579,19 +580,41 @@ public class WebsitePropertiesItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Log Changes feature.
+	 * This adds a property descriptor for the Timestamp Creation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLogChangesPropertyDescriptor(Object object) {
+	protected void addTimestampCreationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_WebsiteProperties_logChanges_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_logChanges_feature", "_UI_WebsiteProperties_type"),
-				 WebsitePackage.Literals.WEBSITE_PROPERTIES__LOG_CHANGES,
+				 getString("_UI_WebsiteProperties_timestampCreation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_timestampCreation_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__TIMESTAMP_CREATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Timestamp Updates feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimestampUpdatesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_timestampUpdates_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_timestampUpdates_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__TIMESTAMP_UPDATES,
 				 true,
 				 false,
 				 false,
@@ -835,7 +858,8 @@ public class WebsitePropertiesItemProvider
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_USERNAME:
 			case WebsitePackage.WEBSITE_PROPERTIES__DATABASE_PASSWORD:
 			case WebsitePackage.WEBSITE_PROPERTIES__ORM_TECHNOLOGY:
-			case WebsitePackage.WEBSITE_PROPERTIES__LOG_CHANGES:
+			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_CREATION:
+			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_UPDATES:
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:

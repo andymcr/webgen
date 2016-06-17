@@ -102,7 +102,10 @@
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databaseUsername"/>
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/databasePassword"/>
       <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/ormTechnology"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/logChanges"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" propertyDescription=""
+          ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/timestampCreation"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" propertyDescription=""
+          ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/timestampUpdates"/>
       <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/frameworkTechnology"/>
       <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/ajaxTechnology"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSiteKey"/>

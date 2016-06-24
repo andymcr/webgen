@@ -272,6 +272,8 @@
     <genClasses ecoreClass="website.ecore#//ImageAttribute"/>
     <genClasses ecoreClass="website.ecore#//LocationAttribute"/>
     <genClasses image="false" ecoreClass="website.ecore#//EntityAssociation">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference website.ecore#//EntityAssociation/keys"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//EntityAssociation/targetEntity"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityAssociation/bidirectional"/>
@@ -289,6 +291,13 @@
     </genClasses>
     <genClasses ecoreClass="website.ecore#//AssociationWithContainment">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationWithContainment/sourceVisible"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//AssociationKey">
+      <genFeatures property="None" notify="false" createChild="false" propertyCategory="Model"
+          ecoreFeature="ecore:EReference website.ecore#//AssociationKey/keyFor"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//AssociationKey/key"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationKey/columnName"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//View">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

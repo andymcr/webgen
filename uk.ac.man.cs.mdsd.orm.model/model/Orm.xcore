@@ -117,7 +117,6 @@ abstract class Association extends Feature {
 	Integer[1] serializationMaxDepth = "1"
 }
 
-
 interface Label {
 }
 
@@ -228,6 +227,7 @@ abstract class EntityAssociation extends EntityFeature, Association {
 	boolean[1] ^contains = "false"
 	boolean[1] owningEnd = "false"
 	boolean[1] visible = "true"
+	contains AssociationKey[] ^keys opposite keyFor
 	String pivotTableName
 }
 
@@ -251,6 +251,12 @@ enum CollectionAssociationRelationships {
 class CollectionAssociation extends EntityAssociation {
 	refers CollectionType[1] collectionType
 	CollectionAssociationRelationships associationRelationship
+}
+
+class AssociationKey {
+	container EntityAssociation[1] keyFor opposite ^keys
+	refers Attribute[1] key
+	String columnName
 }
 
 

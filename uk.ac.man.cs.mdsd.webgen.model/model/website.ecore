@@ -399,6 +399,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ImageAttribute" eSuperTypes="#//ResourceAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="LocationAttribute" eSuperTypes="#//EntityAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="EntityAssociation" abstract="true" eSuperTypes="#//EntityFeature #//Association">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keys" upperBound="-1" eType="#//AssociationKey"
+        containment="true" eOpposite="#//AssociationKey/keyFor"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetEntity" lowerBound="1"
         eType="#//Entity" eOpposite="#//Entity/associationEnds"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bidirectional" lowerBound="1"
@@ -429,6 +431,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="AssociationWithContainment" eSuperTypes="#//EntityAssociation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceVisible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssociationKey">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyFor" lowerBound="1"
+        eType="#//EntityAssociation" eOpposite="#//EntityAssociation/keys"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" lowerBound="1" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="View" eSuperTypes="#//EntityOrView">
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" upperBound="-1"

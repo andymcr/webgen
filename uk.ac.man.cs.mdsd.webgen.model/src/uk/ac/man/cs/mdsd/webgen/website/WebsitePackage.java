@@ -541,7 +541,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPage()
 	 * @generated
 	 */
-	int PAGE = 47;
+	int PAGE = 48;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.PageLinkImpl <em>Page Link</em>}' class.
@@ -551,7 +551,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPageLink()
 	 * @generated
 	 */
-	int PAGE_LINK = 48;
+	int PAGE_LINK = 49;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl <em>Service</em>}' class.
@@ -561,7 +561,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getService()
 	 * @generated
 	 */
-	int SERVICE = 42;
+	int SERVICE = 43;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl <em>Content Unit</em>}' class.
@@ -571,7 +571,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getContentUnit()
 	 * @generated
 	 */
-	int CONTENT_UNIT = 62;
+	int CONTENT_UNIT = 63;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl <em>Edit Unit</em>}' class.
@@ -581,7 +581,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getEditUnit()
 	 * @generated
 	 */
-	int EDIT_UNIT = 80;
+	int EDIT_UNIT = 81;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUnitImpl <em>Create Unit</em>}' class.
@@ -591,7 +591,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCreateUnit()
 	 * @generated
 	 */
-	int CREATE_UNIT = 81;
+	int CREATE_UNIT = 82;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataUnitImpl <em>Data Unit</em>}' class.
@@ -601,7 +601,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDataUnit()
 	 * @generated
 	 */
-	int DATA_UNIT = 85;
+	int DATA_UNIT = 86;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UpdateUnitImpl <em>Update Unit</em>}' class.
@@ -611,7 +611,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUpdateUnit()
 	 * @generated
 	 */
-	int UPDATE_UNIT = 83;
+	int UPDATE_UNIT = 84;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl <em>Details Unit</em>}' class.
@@ -621,7 +621,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDetailsUnit()
 	 * @generated
 	 */
-	int DETAILS_UNIT = 86;
+	int DETAILS_UNIT = 87;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl <em>Index Unit</em>}' class.
@@ -631,7 +631,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIndexUnit()
 	 * @generated
 	 */
-	int INDEX_UNIT = 87;
+	int INDEX_UNIT = 88;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectActionImpl <em>Select Action</em>}' class.
@@ -641,7 +641,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 97;
+	int SELECT_ACTION = 98;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DeleteActionImpl <em>Delete Action</em>}' class.
@@ -651,7 +651,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 98;
+	int DELETE_ACTION = 99;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl <em>Authentication</em>}' class.
@@ -1470,7 +1470,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getView()
 	 * @generated
 	 */
-	int VIEW = 36;
+	int VIEW = 37;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl <em>View Feature</em>}' class.
@@ -1480,7 +1480,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getViewFeature()
 	 * @generated
 	 */
-	int VIEW_FEATURE = 37;
+	int VIEW_FEATURE = 38;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl <em>View Association</em>}' class.
@@ -1490,7 +1490,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getViewAssociation()
 	 * @generated
 	 */
-	int VIEW_ASSOCIATION = 41;
+	int VIEW_ASSOCIATION = 42;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeAttributeImpl <em>Data Type Attribute</em>}' class.
@@ -1570,7 +1570,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelection()
 	 * @generated
 	 */
-	int SELECTION = 43;
+	int SELECTION = 44;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionParameterImpl <em>Selection Parameter</em>}' class.
@@ -1580,7 +1580,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelectionParameter()
 	 * @generated
 	 */
-	int SELECTION_PARAMETER = 45;
+	int SELECTION_PARAMETER = 46;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuImpl <em>Menu</em>}' class.
@@ -1590,7 +1590,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMenu()
 	 * @generated
 	 */
-	int MENU = 49;
+	int MENU = 50;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.MenuEntryImpl <em>Menu Entry</em>}' class.
@@ -1600,7 +1600,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMenuEntry()
 	 * @generated
 	 */
-	int MENU_ENTRY = 50;
+	int MENU_ENTRY = 51;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.StaticMenuImpl <em>Static Menu</em>}' class.
@@ -1610,7 +1610,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getStaticMenu()
 	 * @generated
 	 */
-	int STATIC_MENU = 51;
+	int STATIC_MENU = 52;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicMenuImpl <em>Dynamic Menu</em>}' class.
@@ -1620,7 +1620,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDynamicMenu()
 	 * @generated
 	 */
-	int DYNAMIC_MENU = 54;
+	int DYNAMIC_MENU = 55;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitContainerImpl <em>Unit Container</em>}' class.
@@ -1630,7 +1630,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitContainer()
 	 * @generated
 	 */
-	int UNIT_CONTAINER = 61;
+	int UNIT_CONTAINER = 62;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFieldImpl <em>Unit Field</em>}' class.
@@ -1640,7 +1640,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitField()
 	 * @generated
 	 */
-	int UNIT_FIELD = 67;
+	int UNIT_FIELD = 68;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl <em>Interface Field</em>}' class.
@@ -1650,7 +1650,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 75;
+	int INTERFACE_FIELD = 76;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateUpdateUnitImpl <em>Create Update Unit</em>}' class.
@@ -1660,7 +1660,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCreateUpdateUnit()
 	 * @generated
 	 */
-	int CREATE_UPDATE_UNIT = 82;
+	int CREATE_UPDATE_UNIT = 83;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.StaticUnitImpl <em>Static Unit</em>}' class.
@@ -1670,7 +1670,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getStaticUnit()
 	 * @generated
 	 */
-	int STATIC_UNIT = 63;
+	int STATIC_UNIT = 64;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl <em>Dynamic Unit</em>}' class.
@@ -1680,7 +1680,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDynamicUnit()
 	 * @generated
 	 */
-	int DYNAMIC_UNIT = 66;
+	int DYNAMIC_UNIT = 67;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ActionMenuEntryImpl <em>Action Menu Entry</em>}' class.
@@ -1690,7 +1690,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getActionMenuEntry()
 	 * @generated
 	 */
-	int ACTION_MENU_ENTRY = 52;
+	int ACTION_MENU_ENTRY = 53;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditStaticTextMenuEntryImpl <em>Edit Static Text Menu Entry</em>}' class.
@@ -1700,7 +1700,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getEditStaticTextMenuEntry()
 	 * @generated
 	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY = 53;
+	int EDIT_STATIC_TEXT_MENU_ENTRY = 54;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.QueryImpl <em>Query</em>}' class.
@@ -1710,7 +1710,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getQuery()
 	 * @generated
 	 */
-	int QUERY = 58;
+	int QUERY = 59;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.QueryParameterImpl <em>Query Parameter</em>}' class.
@@ -1720,7 +1720,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getQueryParameter()
 	 * @generated
 	 */
-	int QUERY_PARAMETER = 59;
+	int QUERY_PARAMETER = 60;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -1840,6 +1840,16 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 6;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationKeyImpl <em>Association Key</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.AssociationKeyImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAssociationKey()
+	 * @generated
+	 */
+	int ASSOCIATION_KEY = 36;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Label <em>Label</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1937,7 +1947,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getEncapsulatedFeature()
 	 * @generated
 	 */
-	int ENCAPSULATED_FEATURE = 38;
+	int ENCAPSULATED_FEATURE = 39;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAttributeImpl <em>Encapsulated Attribute</em>}' class.
@@ -1947,7 +1957,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getEncapsulatedAttribute()
 	 * @generated
 	 */
-	int ENCAPSULATED_ATTRIBUTE = 39;
+	int ENCAPSULATED_ATTRIBUTE = 40;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl <em>Encapsulated Association</em>}' class.
@@ -1957,7 +1967,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getEncapsulatedAssociation()
 	 * @generated
 	 */
-	int ENCAPSULATED_ASSOCIATION = 40;
+	int ENCAPSULATED_ASSOCIATION = 41;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterImpl <em>Filter</em>}' class.
@@ -1967,7 +1977,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFilter()
 	 * @generated
 	 */
-	int FILTER = 56;
+	int FILTER = 57;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterParameterImpl <em>Filter Parameter</em>}' class.
@@ -1977,7 +1987,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFilterParameter()
 	 * @generated
 	 */
-	int FILTER_PARAMETER = 57;
+	int FILTER_PARAMETER = 58;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Selectable <em>Selectable</em>}' class.
@@ -1987,7 +1997,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelectable()
 	 * @generated
 	 */
-	int SELECTABLE = 60;
+	int SELECTABLE = 61;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UserCommandImpl <em>User Command</em>}' class.
@@ -1997,7 +2007,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUserCommand()
 	 * @generated
 	 */
-	int USER_COMMAND = 64;
+	int USER_COMMAND = 65;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CreateSitemapUnitImpl <em>Create Sitemap Unit</em>}' class.
@@ -2007,7 +2017,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCreateSitemapUnit()
 	 * @generated
 	 */
-	int CREATE_SITEMAP_UNIT = 65;
+	int CREATE_SITEMAP_UNIT = 66;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl <em>Unit Feature</em>}' class.
@@ -2017,7 +2027,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitFeature()
 	 * @generated
 	 */
-	int UNIT_FEATURE = 68;
+	int UNIT_FEATURE = 69;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitElementImpl <em>Unit Element</em>}' class.
@@ -2027,7 +2037,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitElement()
 	 * @generated
 	 */
-	int UNIT_ELEMENT = 69;
+	int UNIT_ELEMENT = 70;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl <em>Unit Association</em>}' class.
@@ -2037,7 +2047,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitAssociation()
 	 * @generated
 	 */
-	int UNIT_ASSOCIATION = 71;
+	int UNIT_ASSOCIATION = 72;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DataTypeFieldImpl <em>Data Type Field</em>}' class.
@@ -2047,7 +2057,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDataTypeField()
 	 * @generated
 	 */
-	int DATA_TYPE_FIELD = 76;
+	int DATA_TYPE_FIELD = 77;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DateFieldImpl <em>Date Field</em>}' class.
@@ -2057,7 +2067,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDateField()
 	 * @generated
 	 */
-	int DATE_FIELD = 77;
+	int DATE_FIELD = 78;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CaptchaFieldImpl <em>Captcha Field</em>}' class.
@@ -2067,7 +2077,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCaptchaField()
 	 * @generated
 	 */
-	int CAPTCHA_FIELD = 78;
+	int CAPTCHA_FIELD = 79;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitSupportActionImpl <em>Unit Support Action</em>}' class.
@@ -2077,7 +2087,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getUnitSupportAction()
 	 * @generated
 	 */
-	int UNIT_SUPPORT_ACTION = 79;
+	int UNIT_SUPPORT_ACTION = 80;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.MapUnitImpl <em>Map Unit</em>}' class.
@@ -2087,7 +2097,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMapUnit()
 	 * @generated
 	 */
-	int MAP_UNIT = 84;
+	int MAP_UNIT = 85;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ControlUnitImpl <em>Control Unit</em>}' class.
@@ -2097,7 +2107,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 88;
+	int CONTROL_UNIT = 89;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SearchUnitImpl <em>Search Unit</em>}' class.
@@ -2107,7 +2117,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 89;
+	int SEARCH_UNIT = 90;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationUnit <em>Authentication Unit</em>}' class.
@@ -2117,7 +2127,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 91;
+	int AUTHENTICATION_UNIT = 92;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl <em>Registration Unit</em>}' class.
@@ -2127,7 +2137,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 92;
+	int REGISTRATION_UNIT = 93;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl <em>Login Unit</em>}' class.
@@ -2137,7 +2147,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 93;
+	int LOGIN_UNIT = 94;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl <em>Forgotten Password Unit</em>}' class.
@@ -2147,7 +2157,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 94;
+	int FORGOTTEN_PASSWORD_UNIT = 95;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer <em>Inline Action Container</em>}' class.
@@ -2157,7 +2167,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 95;
+	int INLINE_ACTION_CONTAINER = 96;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl <em>Inline Action</em>}' class.
@@ -2167,7 +2177,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 96;
+	int INLINE_ACTION = 97;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureSupportActionImpl <em>Feature Support Action</em>}' class.
@@ -2177,7 +2187,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 99;
+	int FEATURE_SUPPORT_ACTION = 100;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelReferenceImpl <em>Model Reference</em>}' class.
@@ -2187,7 +2197,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getModelReference()
 	 * @generated
 	 */
-	int MODEL_REFERENCE = 100;
+	int MODEL_REFERENCE = 101;
 
 	/**
 	 * The number of structural features of the '<em>Label</em>' class.
@@ -4242,13 +4252,22 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH = ENTITY_FEATURE_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Keys</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__KEYS = ENTITY_FEATURE_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_ENTITY = ENTITY_FEATURE_FEATURE_COUNT + 6;
+	int ENTITY_ASSOCIATION__TARGET_ENTITY = ENTITY_FEATURE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Bidirectional</b></em>' attribute.
@@ -4257,7 +4276,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__BIDIRECTIONAL = ENTITY_FEATURE_FEATURE_COUNT + 7;
+	int ENTITY_ASSOCIATION__BIDIRECTIONAL = ENTITY_FEATURE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Pivot Table Name</b></em>' attribute.
@@ -4266,7 +4285,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__PIVOT_TABLE_NAME = ENTITY_FEATURE_FEATURE_COUNT + 8;
+	int ENTITY_ASSOCIATION__PIVOT_TABLE_NAME = ENTITY_FEATURE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Target Feature Name</b></em>' attribute.
@@ -4275,7 +4294,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_FEATURE_NAME = ENTITY_FEATURE_FEATURE_COUNT + 9;
+	int ENTITY_ASSOCIATION__TARGET_FEATURE_NAME = ENTITY_FEATURE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Target Display Label</b></em>' attribute.
@@ -4284,7 +4303,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL = ENTITY_FEATURE_FEATURE_COUNT + 10;
+	int ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL = ENTITY_FEATURE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Target Header Class</b></em>' attribute.
@@ -4293,7 +4312,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_HEADER_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 11;
+	int ENTITY_ASSOCIATION__TARGET_HEADER_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Target Input Class</b></em>' attribute.
@@ -4302,7 +4321,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_INPUT_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 12;
+	int ENTITY_ASSOCIATION__TARGET_INPUT_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Target Display Class</b></em>' attribute.
@@ -4311,7 +4330,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 13;
+	int ENTITY_ASSOCIATION__TARGET_DISPLAY_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Target Footer Class</b></em>' attribute.
@@ -4320,7 +4339,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 14;
+	int ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Entity Association</em>' class.
@@ -4329,7 +4348,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 15;
+	int ENTITY_ASSOCIATION_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4492,6 +4511,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITHOUT_CONTAINMENT__SERIALIZATION_MAX_DEPTH = ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
+
+	/**
+	 * The feature id for the '<em><b>Keys</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__KEYS = ENTITY_ASSOCIATION__KEYS;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
@@ -4764,6 +4792,15 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION_WITH_CONTAINMENT__SERIALIZATION_MAX_DEPTH = ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH;
 
 	/**
+	 * The feature id for the '<em><b>Keys</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__KEYS = ENTITY_ASSOCIATION__KEYS;
+
+	/**
 	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4861,6 +4898,42 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITH_CONTAINMENT_FEATURE_COUNT = ENTITY_ASSOCIATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Key For</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_KEY__KEY_FOR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_KEY__KEY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_KEY__COLUMN_NAME = 2;
+
+	/**
+	 * The number of structural features of the '<em>Association Key</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_KEY_FEATURE_COUNT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5797,7 +5870,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelectionField()
 	 * @generated
 	 */
-	int SELECTION_FIELD = 44;
+	int SELECTION_FIELD = 45;
 
 	/**
 	 * The number of structural features of the '<em>Selection Field</em>' class.
@@ -5843,7 +5916,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getBusinessOperation()
 	 * @generated
 	 */
-	int BUSINESS_OPERATION = 46;
+	int BUSINESS_OPERATION = 47;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6366,7 +6439,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getMenuFeature()
 	 * @generated
 	 */
-	int MENU_FEATURE = 55;
+	int MENU_FEATURE = 56;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7384,7 +7457,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPathAssociationElement()
 	 * @generated
 	 */
-	int PATH_ASSOCIATION_ELEMENT = 70;
+	int PATH_ASSOCIATION_ELEMENT = 71;
 
 	/**
 	 * The feature id for the '<em><b>Association</b></em>' reference.
@@ -7682,7 +7755,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getChildFeature()
 	 * @generated
 	 */
-	int CHILD_FEATURE = 72;
+	int CHILD_FEATURE = 73;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7710,7 +7783,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getChildAttribute()
 	 * @generated
 	 */
-	int CHILD_ATTRIBUTE = 73;
+	int CHILD_ATTRIBUTE = 74;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7756,7 +7829,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getChildAssociation()
 	 * @generated
 	 */
-	int CHILD_ASSOCIATION = 74;
+	int CHILD_ASSOCIATION = 75;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -10655,7 +10728,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getActionUnit()
 	 * @generated
 	 */
-	int ACTION_UNIT = 90;
+	int ACTION_UNIT = 91;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11943,7 +12016,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 101;
+	int FEATURE_REFERENCE = 102;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -11971,7 +12044,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getParameterReference()
 	 * @generated
 	 */
-	int PARAMETER_REFERENCE = 102;
+	int PARAMETER_REFERENCE = 103;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -11999,7 +12072,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCurrentUserReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 103;
+	int CURRENT_USER_REFERENCE = 104;
 
 	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
@@ -12018,7 +12091,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDatabaseTechnologies()
 	 * @generated
 	 */
-	int DATABASE_TECHNOLOGIES = 104;
+	int DATABASE_TECHNOLOGIES = 105;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies <em>Orm Technologies</em>}' enum.
@@ -12028,7 +12101,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getOrmTechnologies()
 	 * @generated
 	 */
-	int ORM_TECHNOLOGIES = 105;
+	int ORM_TECHNOLOGIES = 106;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
@@ -12038,7 +12111,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 106;
+	int FRAMEWORK_TECHNOLOGIES = 107;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -12048,7 +12121,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 107;
+	int AJAX_TECHNOLOGIES = 108;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -12058,7 +12131,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 108;
+	int AUTHENTICATION_KEY_TYPES = 109;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Cardinality <em>Cardinality</em>}' enum.
@@ -12068,7 +12141,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 109;
+	int CARDINALITY = 110;
 
 
 	/**
@@ -12079,7 +12152,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 110;
+	int DATE_DETAILS = 111;
 
 
 	/**
@@ -12090,7 +12163,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 111;
+	int OPERATION_RESULT_TYPES = 112;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -12100,7 +12173,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 112;
+	int PAGE_TOP_MENU_OPTIONS = 113;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -12110,7 +12183,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 113;
+	int COLLECTION_DISPLAY_OPTIONS = 114;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -12120,7 +12193,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 114;
+	int INDEX_DISPLAY_OPTION = 115;
 
 
 	/**
@@ -13600,6 +13673,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getEntityAssociation();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getKeys <em>Keys</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Keys</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getKeys()
+	 * @see #getEntityAssociation()
+	 * @generated
+	 */
+	EReference getEntityAssociation_Keys();
+
+	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getTargetEntity <em>Target Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13773,6 +13857,49 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAssociation_SerializationMaxDepth();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey <em>Association Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Association Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationKey
+	 * @generated
+	 */
+	EClass getAssociationKey();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKeyFor <em>Key For</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Key For</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKeyFor()
+	 * @see #getAssociationKey()
+	 * @generated
+	 */
+	EReference getAssociationKey_KeyFor();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKey()
+	 * @see #getAssociationKey()
+	 * @generated
+	 */
+	EReference getAssociationKey_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getColumnName <em>Column Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Column Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getColumnName()
+	 * @see #getAssociationKey()
+	 * @generated
+	 */
+	EAttribute getAssociationKey_ColumnName();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Label <em>Label</em>}'.
@@ -18018,6 +18145,14 @@ public interface WebsitePackage extends EPackage {
 		EClass ENTITY_ASSOCIATION = eINSTANCE.getEntityAssociation();
 
 		/**
+		 * The meta object literal for the '<em><b>Keys</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_ASSOCIATION__KEYS = eINSTANCE.getEntityAssociation_Keys();
+
+		/**
 		 * The meta object literal for the '<em><b>Target Entity</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -18146,6 +18281,40 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ASSOCIATION__SERIALIZATION_MAX_DEPTH = eINSTANCE.getAssociation_SerializationMaxDepth();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationKeyImpl <em>Association Key</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.AssociationKeyImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAssociationKey()
+		 * @generated
+		 */
+		EClass ASSOCIATION_KEY = eINSTANCE.getAssociationKey();
+
+		/**
+		 * The meta object literal for the '<em><b>Key For</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATION_KEY__KEY_FOR = eINSTANCE.getAssociationKey_KeyFor();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATION_KEY__KEY = eINSTANCE.getAssociationKey_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Column Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATION_KEY__COLUMN_NAME = eINSTANCE.getAssociationKey_ColumnName();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.Label <em>Label</em>}' class.

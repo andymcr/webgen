@@ -14,9 +14,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.AssociationKey;
 import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
@@ -38,6 +40,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getSourceEntityX <em>Source Entity X</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetEntityX <em>Target Entity X</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getSerializationMaxDepth <em>Serialization Max Depth</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
@@ -131,6 +134,16 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * @ordered
 	 */
 	protected int serializationMaxDepth = SERIALIZATION_MAX_DEPTH_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeys()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AssociationKey> keys;
 
 	/**
 	 * The cached value of the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
@@ -319,6 +332,18 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.ENTITY_ASSOCIATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<AssociationKey> getKeys() {
+		if (keys == null) {
+			keys = new EObjectContainmentWithInverseEList<AssociationKey>(AssociationKey.class, this, WebsitePackage.ENTITY_ASSOCIATION__KEYS, WebsitePackage.ASSOCIATION_KEY__KEY_FOR);
+		}
+		return keys;
 	}
 
 	/**
@@ -693,6 +718,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		switch (featureID) {
 			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEncapsulatedBy()).basicAdd(otherEnd, msgs);
+			case WebsitePackage.ENTITY_ASSOCIATION__KEYS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getKeys()).basicAdd(otherEnd, msgs);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				if (targetEntity != null)
 					msgs = ((InternalEObject)targetEntity).eInverseRemove(this, WebsitePackage.ENTITY__ASSOCIATION_ENDS, Entity.class, msgs);
@@ -713,6 +740,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return basicSetChildFeature(null, msgs);
 			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				return ((InternalEList<?>)getEncapsulatedBy()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.ENTITY_ASSOCIATION__KEYS:
+				return ((InternalEList<?>)getKeys()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				return basicSetTargetEntity(null, msgs);
 		}
@@ -741,6 +770,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return basicGetTargetEntityX();
 			case WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				return getSerializationMaxDepth();
+			case WebsitePackage.ENTITY_ASSOCIATION__KEYS:
+				return getKeys();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				if (resolve) return getTargetEntity();
 				return basicGetTargetEntity();
@@ -785,6 +816,10 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				setSerializationMaxDepth((Integer)newValue);
+				return;
+			case WebsitePackage.ENTITY_ASSOCIATION__KEYS:
+				getKeys().clear();
+				getKeys().addAll((Collection<? extends AssociationKey>)newValue);
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				setTargetEntity((Entity)newValue);
@@ -837,6 +872,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 			case WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				setSerializationMaxDepth(SERIALIZATION_MAX_DEPTH_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_ASSOCIATION__KEYS:
+				getKeys().clear();
+				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				setTargetEntity((Entity)null);
 				return;
@@ -888,6 +926,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return TARGET_ENTITY_X__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				return serializationMaxDepth != SERIALIZATION_MAX_DEPTH_EDEFAULT;
+			case WebsitePackage.ENTITY_ASSOCIATION__KEYS:
+				return keys != null && !keys.isEmpty();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				return targetEntity != null;
 			case WebsitePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:

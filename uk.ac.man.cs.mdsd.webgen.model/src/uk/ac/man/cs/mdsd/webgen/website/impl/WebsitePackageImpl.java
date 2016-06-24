@@ -20,6 +20,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.ActionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.AssociationKey;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithContainment;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
@@ -387,6 +388,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass associationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass associationKeyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2259,7 +2267,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityAssociation_TargetEntity() {
+	public EReference getEntityAssociation_Keys() {
 		return (EReference)entityAssociationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -2268,8 +2276,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_Bidirectional() {
-		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(1);
+	public EReference getEntityAssociation_TargetEntity() {
+		return (EReference)entityAssociationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2277,7 +2285,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_PivotTableName() {
+	public EAttribute getEntityAssociation_Bidirectional() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -2286,7 +2294,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetFeatureName() {
+	public EAttribute getEntityAssociation_PivotTableName() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -2295,7 +2303,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetDisplayLabel() {
+	public EAttribute getEntityAssociation_TargetFeatureName() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -2304,7 +2312,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetHeaderClass() {
+	public EAttribute getEntityAssociation_TargetDisplayLabel() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2313,7 +2321,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetInputClass() {
+	public EAttribute getEntityAssociation_TargetHeaderClass() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -2322,7 +2330,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetDisplayClass() {
+	public EAttribute getEntityAssociation_TargetInputClass() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -2331,8 +2339,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityAssociation_TargetFooterClass() {
+	public EAttribute getEntityAssociation_TargetDisplayClass() {
 		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityAssociation_TargetFooterClass() {
+		return (EAttribute)entityAssociationEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -2396,6 +2413,42 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EAttribute getAssociation_SerializationMaxDepth() {
 		return (EAttribute)associationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAssociationKey() {
+		return associationKeyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAssociationKey_KeyFor() {
+		return (EReference)associationKeyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAssociationKey_Key() {
+		return (EReference)associationKeyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAssociationKey_ColumnName() {
+		return (EAttribute)associationKeyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5185,6 +5238,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		locationAttributeEClass = createEClass(LOCATION_ATTRIBUTE);
 
 		entityAssociationEClass = createEClass(ENTITY_ASSOCIATION);
+		createEReference(entityAssociationEClass, ENTITY_ASSOCIATION__KEYS);
 		createEReference(entityAssociationEClass, ENTITY_ASSOCIATION__TARGET_ENTITY);
 		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__BIDIRECTIONAL);
 		createEAttribute(entityAssociationEClass, ENTITY_ASSOCIATION__PIVOT_TABLE_NAME);
@@ -5201,6 +5255,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		associationWithContainmentEClass = createEClass(ASSOCIATION_WITH_CONTAINMENT);
 		createEAttribute(associationWithContainmentEClass, ASSOCIATION_WITH_CONTAINMENT__SOURCE_VISIBLE);
+
+		associationKeyEClass = createEClass(ASSOCIATION_KEY);
+		createEReference(associationKeyEClass, ASSOCIATION_KEY__KEY_FOR);
+		createEReference(associationKeyEClass, ASSOCIATION_KEY__KEY);
+		createEAttribute(associationKeyEClass, ASSOCIATION_KEY__COLUMN_NAME);
 
 		viewEClass = createEClass(VIEW);
 		createEReference(viewEClass, VIEW__ENCAPSULATES);
@@ -5874,6 +5933,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(locationAttributeEClass, LocationAttribute.class, "LocationAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entityAssociationEClass, EntityAssociation.class, "EntityAssociation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEntityAssociation_Keys(), this.getAssociationKey(), this.getAssociationKey_KeyFor(), "keys", null, 0, -1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityAssociation_TargetEntity(), this.getEntity(), this.getEntity_AssociationEnds(), "targetEntity", null, 1, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityAssociation_Bidirectional(), ecorePackage.getEBooleanObject(), "bidirectional", "false", 1, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityAssociation_PivotTableName(), ecorePackage.getEString(), "pivotTableName", null, 0, 1, EntityAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5890,6 +5950,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(associationWithContainmentEClass, AssociationWithContainment.class, "AssociationWithContainment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAssociationWithContainment_SourceVisible(), ecorePackage.getEBoolean(), "sourceVisible", "true", 0, 1, AssociationWithContainment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(associationKeyEClass, AssociationKey.class, "AssociationKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAssociationKey_KeyFor(), this.getEntityAssociation(), this.getEntityAssociation_Keys(), "keyFor", null, 1, 1, AssociationKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssociationKey_Key(), this.getAttribute(), null, "key", null, 1, 1, AssociationKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssociationKey_ColumnName(), ecorePackage.getEString(), "columnName", null, 0, 1, AssociationKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getView_Encapsulates(), this.getEntityOrView(), null, "encapsulates", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

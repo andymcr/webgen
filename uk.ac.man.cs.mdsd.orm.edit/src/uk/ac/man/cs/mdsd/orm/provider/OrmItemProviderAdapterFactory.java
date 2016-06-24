@@ -191,6 +191,29 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.AssociationKey} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AssociationKeyItemProvider associationKeyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.orm.AssociationKey}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAssociationKeyAdapter() {
+		if (associationKeyItemProvider == null) {
+			associationKeyItemProvider = new AssociationKeyItemProvider(this);
+		}
+
+		return associationKeyItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.orm.Entity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -770,6 +793,7 @@ public class OrmItemProviderAdapterFactory extends OrmAdapterFactory implements 
 		if (singletonLocationItemProvider != null) singletonLocationItemProvider.dispose();
 		if (singletonAssociationItemProvider != null) singletonAssociationItemProvider.dispose();
 		if (collectionAssociationItemProvider != null) collectionAssociationItemProvider.dispose();
+		if (associationKeyItemProvider != null) associationKeyItemProvider.dispose();
 		if (viewItemProvider != null) viewItemProvider.dispose();
 		if (encapsulatedAttributeItemProvider != null) encapsulatedAttributeItemProvider.dispose();
 		if (encapsulatedAssociationItemProvider != null) encapsulatedAssociationItemProvider.dispose();

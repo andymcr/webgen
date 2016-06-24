@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import java.util.List;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -12,6 +14,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getTargetEntity <em>Target Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getPivotTableName <em>Pivot Table Name</em>}</li>
@@ -28,6 +31,24 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @generated
  */
 public interface EntityAssociation extends EntityFeature, Association {
+	/**
+	 * Returns the value of the '<em><b>Keys</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKeyFor <em>Key For</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Keys</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Keys</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityAssociation_Keys()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKeyFor
+	 * @model opposite="keyFor" containment="true"
+	 * @generated
+	 */
+	List<AssociationKey> getKeys();
+
 	/**
 	 * Returns the value of the '<em><b>Target Entity</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Entity#getAssociationEnds <em>Association Ends</em>}'.

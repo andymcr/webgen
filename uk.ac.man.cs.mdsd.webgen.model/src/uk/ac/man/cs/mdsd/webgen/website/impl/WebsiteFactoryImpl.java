@@ -82,6 +82,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.LOCATION_ATTRIBUTE: return createLocationAttribute();
 			case WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT: return createAssociationWithoutContainment();
 			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT: return createAssociationWithContainment();
+			case WebsitePackage.ASSOCIATION_KEY: return createAssociationKey();
 			case WebsitePackage.VIEW: return createView();
 			case WebsitePackage.ENCAPSULATED_FEATURE: return createEncapsulatedFeature();
 			case WebsitePackage.ENCAPSULATED_ATTRIBUTE: return createEncapsulatedAttribute();
@@ -274,6 +275,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public EnumerationLiteral createEnumerationLiteral() {
 		EnumerationLiteralImpl enumerationLiteral = new EnumerationLiteralImpl();
 		return enumerationLiteral;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssociationKey createAssociationKey() {
+		AssociationKeyImpl associationKey = new AssociationKeyImpl();
+		return associationKey;
 	}
 
 	/**

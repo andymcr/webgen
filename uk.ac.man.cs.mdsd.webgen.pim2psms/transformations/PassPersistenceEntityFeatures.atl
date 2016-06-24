@@ -258,7 +258,8 @@ abstract rule EntityAssociation {
 			else
 				website.name.createAssociationColumnName()
 			endif,
-		pivotTableName <- website.createPivotTableName()
+		pivotTableName <- website.createPivotTableName(),
+		keys <- website.keys
 	)
 }
 
@@ -417,5 +418,18 @@ rule OneToManyAssociationWithContainment {
 			endif,
 		required <- true,
 		pivotTableName <- website.createPivotTableName()
+	)
+}
+
+rule AssocationKey {
+	from website : Website!AssociationKey
+	to orm : ORM!AssociationKey (
+		key <- website.key,
+		columnName <-
+			if not website.columnName.oclIsUndefined() then
+				website.columnName
+			else
+				website.key.name.createAttributeColumnName()
+			endif
 	)
 }

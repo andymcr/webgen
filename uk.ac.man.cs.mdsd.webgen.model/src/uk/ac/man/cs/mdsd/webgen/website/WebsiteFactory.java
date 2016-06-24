@@ -89,6 +89,15 @@ public interface WebsiteFactory extends EFactory {
 	EnumerationLiteral createEnumerationLiteral();
 
 	/**
+	 * Returns a new object of class '<em>Association Key</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Association Key</em>'.
+	 * @generated
+	 */
+	AssociationKey createAssociationKey();
+
+	/**
 	 * Returns a new object of class '<em>Model Label</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

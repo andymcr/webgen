@@ -162,6 +162,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateAssociationWithoutContainment((AssociationWithoutContainment)value, diagnostics, context);
 			case WebsitePackage.ASSOCIATION_WITH_CONTAINMENT:
 				return validateAssociationWithContainment((AssociationWithContainment)value, diagnostics, context);
+			case WebsitePackage.ASSOCIATION_KEY:
+				return validateAssociationKey((AssociationKey)value, diagnostics, context);
 			case WebsitePackage.VIEW:
 				return validateView((View)value, diagnostics, context);
 			case WebsitePackage.VIEW_FEATURE:
@@ -1001,6 +1003,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 */
 	public boolean validateAssociation(Association association, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(association, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssociationKey(AssociationKey associationKey, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(associationKey, diagnostics, context);
 	}
 
 	/**

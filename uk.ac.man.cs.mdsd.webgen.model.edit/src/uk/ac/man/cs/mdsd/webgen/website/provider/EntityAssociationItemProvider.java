@@ -341,6 +341,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.ASSOCIATION__CHILD_FEATURE);
+			childrenFeatures.add(WebsitePackage.Literals.ENTITY_ASSOCIATION__KEYS);
 		}
 		return childrenFeatures;
 	}
@@ -400,6 +401,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
+			case WebsitePackage.ENTITY_ASSOCIATION__KEYS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -426,6 +428,11 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.ASSOCIATION__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ENTITY_ASSOCIATION__KEYS,
+				 WebsiteFactory.eINSTANCE.createAssociationKey()));
 	}
 
 }

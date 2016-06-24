@@ -255,6 +255,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AssociationKeyItemProvider associationKeyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAssociationKeyAdapter() {
+		if (associationKeyItemProvider == null) {
+			associationKeyItemProvider = new AssociationKeyItemProvider(this);
+		}
+
+		return associationKeyItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ModelLabel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1823,6 +1846,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (locationAttributeItemProvider != null) locationAttributeItemProvider.dispose();
 		if (associationWithoutContainmentItemProvider != null) associationWithoutContainmentItemProvider.dispose();
 		if (associationWithContainmentItemProvider != null) associationWithContainmentItemProvider.dispose();
+		if (associationKeyItemProvider != null) associationKeyItemProvider.dispose();
 		if (viewItemProvider != null) viewItemProvider.dispose();
 		if (encapsulatedFeatureItemProvider != null) encapsulatedFeatureItemProvider.dispose();
 		if (encapsulatedAttributeItemProvider != null) encapsulatedAttributeItemProvider.dispose();

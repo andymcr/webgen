@@ -16,6 +16,8 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityAttribute()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='primaryKeyRequired'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL primaryKeyRequired='primaryKey implies cardinality <> Cardinality::Optional'"
  * @generated
  */
 public interface EntityAttribute extends EntityFeature, Attribute {

@@ -6419,6 +6419,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "constraints", "featureNameUniqueWithinEntity"
 		   });	
 		addAnnotation
+		  (entityAttributeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "primaryKeyRequired"
+		   });	
+		addAnnotation
 		  (associationWithoutContainmentEClass, 
 		   source, 
 		   new String[] {
@@ -6580,6 +6586,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "featureNameUniqueWithinEntity", "entityFeatures->isUnique(f | f.name)"
+		   });	
+		addAnnotation
+		  (entityAttributeEClass, 
+		   source, 
+		   new String[] {
+			 "primaryKeyRequired", "primaryKey implies cardinality <> Cardinality::Optional"
 		   });	
 		addAnnotation
 		  (associationWithoutContainmentEClass, 

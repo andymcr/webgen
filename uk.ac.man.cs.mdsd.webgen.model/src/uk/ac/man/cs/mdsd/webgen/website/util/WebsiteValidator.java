@@ -730,7 +730,37 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entityAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entityAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(entityAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(entityAttribute, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the primaryKeyRequired constraint of '<em>Entity Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ENTITY_ATTRIBUTE__PRIMARY_KEY_REQUIRED__EEXPRESSION = "primaryKey implies cardinality <> Cardinality::Optional";
+
+	/**
+	 * Validates the primaryKeyRequired constraint of '<em>Entity Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEntityAttribute_primaryKeyRequired(EntityAttribute entityAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.ENTITY_ATTRIBUTE,
+				 entityAttribute,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "primaryKeyRequired",
+				 ENTITY_ATTRIBUTE__PRIMARY_KEY_REQUIRED__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -833,6 +863,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dataTypeAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dataTypeAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dataTypeAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(dataTypeAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -852,6 +883,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dateAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dateAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dateAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(dateAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -871,6 +903,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(urlAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(urlAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(urlAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(urlAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -890,6 +923,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(resourceAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(resourceAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(resourceAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(resourceAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -936,6 +970,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fileAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fileAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(fileAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(fileAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -955,6 +990,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(imageAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(imageAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(imageAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(imageAttribute, diagnostics, context);
 		return result;
 	}
 
@@ -974,6 +1010,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(locationAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(locationAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(locationAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntityAttribute_primaryKeyRequired(locationAttribute, diagnostics, context);
 		return result;
 	}
 

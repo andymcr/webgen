@@ -18,11 +18,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import uk.ac.man.cs.mdsd.orm.AssociationKey;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
 /**
@@ -61,8 +57,8 @@ public class AssociationKeyItemProvider
 			super.getPropertyDescriptors(object);
 
 			addKeyForPropertyDescriptor(object);
-			addKeyPropertyDescriptor(object);
-			addColumnNamePropertyDescriptor(object);
+			addSourceFeaturePropertyDescriptor(object);
+			addTargetFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,19 +86,19 @@ public class AssociationKeyItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Key feature.
+	 * This adds a property descriptor for the Source Feature feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addKeyPropertyDescriptor(Object object) {
+	protected void addSourceFeaturePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AssociationKey_key_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationKey_key_feature", "_UI_AssociationKey_type"),
-				 OrmPackage.Literals.ASSOCIATION_KEY__KEY,
+				 getString("_UI_AssociationKey_sourceFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationKey_sourceFeature_feature", "_UI_AssociationKey_type"),
+				 OrmPackage.Literals.ASSOCIATION_KEY__SOURCE_FEATURE,
 				 true,
 				 false,
 				 true,
@@ -112,23 +108,23 @@ public class AssociationKeyItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Column Name feature.
+	 * This adds a property descriptor for the Target Feature feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addColumnNamePropertyDescriptor(Object object) {
+	protected void addTargetFeaturePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AssociationKey_columnName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationKey_columnName_feature", "_UI_AssociationKey_type"),
-				 OrmPackage.Literals.ASSOCIATION_KEY__COLUMN_NAME,
+				 getString("_UI_AssociationKey_targetFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationKey_targetFeature_feature", "_UI_AssociationKey_type"),
+				 OrmPackage.Literals.ASSOCIATION_KEY__TARGET_FEATURE,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -152,10 +148,7 @@ public class AssociationKeyItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AssociationKey)object).getColumnName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AssociationKey_type") :
-			getString("_UI_AssociationKey_type") + " " + label;
+		return getString("_UI_AssociationKey_type");
 	}
 	
 
@@ -169,12 +162,6 @@ public class AssociationKeyItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(AssociationKey.class)) {
-			case OrmPackage.ASSOCIATION_KEY__COLUMN_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

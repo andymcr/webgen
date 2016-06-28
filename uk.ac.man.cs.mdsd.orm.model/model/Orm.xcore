@@ -150,6 +150,7 @@ abstract class EntityFeature extends Feature {
 abstract class EntityAttribute extends EntityFeature, Attribute {
 	String[1] persistentType
 	String[1] ormType
+	boolean primaryKey
 }
 
 abstract class SingletonAttribute extends EntityAttribute {
@@ -255,8 +256,8 @@ class CollectionAssociation extends EntityAssociation {
 
 class AssociationKey {
 	container EntityAssociation[1] keyFor opposite ^keys
-	refers Attribute[1] key
-	String columnName
+	refers EntityAttribute[1] sourceFeature
+	refers EntityAttribute[1] targetFeature
 }
 
 

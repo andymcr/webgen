@@ -63,6 +63,8 @@ public class AuthenticationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAuthorisesPropertyDescriptor(object);
+			addUserPropertyDescriptor(object);
+			addUserKeyPropertyDescriptor(object);
 			addLoginLabelPropertyDescriptor(object);
 			addLogoutLabelPropertyDescriptor(object);
 		}
@@ -83,6 +85,50 @@ public class AuthenticationItemProvider
 				 getString("_UI_Authentication_authorises_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Authentication_authorises_feature", "_UI_Authentication_type"),
 				 WafPackage.Literals.AUTHENTICATION__AUTHORISES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the User feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUserPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Authentication_user_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Authentication_user_feature", "_UI_Authentication_type"),
+				 WafPackage.Literals.AUTHENTICATION__USER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the User Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUserKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Authentication_userKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Authentication_userKey_feature", "_UI_Authentication_type"),
+				 WafPackage.Literals.AUTHENTICATION__USER_KEY,
 				 true,
 				 false,
 				 true,

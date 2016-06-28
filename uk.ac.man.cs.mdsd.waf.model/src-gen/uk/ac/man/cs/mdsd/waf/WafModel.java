@@ -8,6 +8,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import uk.ac.man.cs.mdsd.orm.OrmModel;
 
+import uk.ac.man.cs.mdsd.rest.API;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Model</b></em>'.
@@ -38,6 +40,7 @@ import uk.ac.man.cs.mdsd.orm.OrmModel;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getRestApi <em>Rest Api</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel()
@@ -572,5 +575,31 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	void setStaticUnitsEditable(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Rest Api</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rest Api</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rest Api</em>' reference.
+	 * @see #setRestApi(API)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_RestApi()
+	 * @model
+	 * @generated
+	 */
+	API getRestApi();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#getRestApi <em>Rest Api</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rest Api</em>' reference.
+	 * @see #getRestApi()
+	 * @generated
+	 */
+	void setRestApi(API value);
 
 } // WafModel

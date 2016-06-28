@@ -2,7 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import uk.ac.man.cs.mdsd.orm.Attribute;
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 /**
@@ -14,8 +13,6 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUser <em>User</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUserKey <em>User Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getLoginAttempt <em>Login Attempt</em>}</li>
@@ -34,58 +31,6 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
  * @generated
  */
 public interface LocalAuthenticationSystem extends Authentication {
-	/**
-	 * Returns the value of the '<em><b>User</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>User</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User</em>' reference.
-	 * @see #setUser(EntityOrView)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_User()
-	 * @model required="true"
-	 * @generated
-	 */
-	EntityOrView getUser();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUser <em>User</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User</em>' reference.
-	 * @see #getUser()
-	 * @generated
-	 */
-	void setUser(EntityOrView value);
-
-	/**
-	 * Returns the value of the '<em><b>User Key</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>User Key</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Key</em>' reference.
-	 * @see #setUserKey(Attribute)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getLocalAuthenticationSystem_UserKey()
-	 * @model required="true"
-	 * @generated
-	 */
-	Attribute getUserKey();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem#getUserKey <em>User Key</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Key</em>' reference.
-	 * @see #getUserKey()
-	 * @generated
-	 */
-	void setUserKey(Attribute value);
-
 	/**
 	 * Returns the value of the '<em><b>Authentication</b></em>' reference.
 	 * <!-- begin-user-doc -->

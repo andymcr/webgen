@@ -13,6 +13,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import uk.ac.man.cs.mdsd.orm.Attribute;
+import uk.ac.man.cs.mdsd.orm.EntityOrView;
+
 import uk.ac.man.cs.mdsd.waf.Authentication;
 import uk.ac.man.cs.mdsd.waf.WafModel;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -26,6 +29,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.AuthenticationImpl#getAuthorises <em>Authorises</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.AuthenticationImpl#getUser <em>User</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.AuthenticationImpl#getUserKey <em>User Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.AuthenticationImpl#getLoginLabel <em>Login Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.AuthenticationImpl#getLogoutLabel <em>Logout Label</em>}</li>
  * </ul>
@@ -33,6 +38,26 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container implements Authentication {
+	/**
+	 * The cached value of the '{@link #getUser() <em>User</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUser()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityOrView user;
+
+	/**
+	 * The cached value of the '{@link #getUserKey() <em>User Key</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attribute userKey;
+
 	/**
 	 * The default value of the '{@link #getLoginLabel() <em>Login Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -148,6 +173,82 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EntityOrView getUser() {
+		if (user != null && user.eIsProxy()) {
+			InternalEObject oldUser = (InternalEObject)user;
+			user = (EntityOrView)eResolveProxy(oldUser);
+			if (user != oldUser) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.AUTHENTICATION__USER, oldUser, user));
+			}
+		}
+		return user;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetUser() {
+		return user;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUser(EntityOrView newUser) {
+		EntityOrView oldUser = user;
+		user = newUser;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.AUTHENTICATION__USER, oldUser, user));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute getUserKey() {
+		if (userKey != null && userKey.eIsProxy()) {
+			InternalEObject oldUserKey = (InternalEObject)userKey;
+			userKey = (Attribute)eResolveProxy(oldUserKey);
+			if (userKey != oldUserKey) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.AUTHENTICATION__USER_KEY, oldUserKey, userKey));
+			}
+		}
+		return userKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute basicGetUserKey() {
+		return userKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUserKey(Attribute newUserKey) {
+		Attribute oldUserKey = userKey;
+		userKey = newUserKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.AUTHENTICATION__USER_KEY, oldUserKey, userKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getLoginLabel() {
 		return loginLabel;
 	}
@@ -240,6 +341,12 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 			case WafPackage.AUTHENTICATION__AUTHORISES:
 				if (resolve) return getAuthorises();
 				return basicGetAuthorises();
+			case WafPackage.AUTHENTICATION__USER:
+				if (resolve) return getUser();
+				return basicGetUser();
+			case WafPackage.AUTHENTICATION__USER_KEY:
+				if (resolve) return getUserKey();
+				return basicGetUserKey();
 			case WafPackage.AUTHENTICATION__LOGIN_LABEL:
 				return getLoginLabel();
 			case WafPackage.AUTHENTICATION__LOGOUT_LABEL:
@@ -258,6 +365,12 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 		switch (featureID) {
 			case WafPackage.AUTHENTICATION__AUTHORISES:
 				setAuthorises((WafModel)newValue);
+				return;
+			case WafPackage.AUTHENTICATION__USER:
+				setUser((EntityOrView)newValue);
+				return;
+			case WafPackage.AUTHENTICATION__USER_KEY:
+				setUserKey((Attribute)newValue);
 				return;
 			case WafPackage.AUTHENTICATION__LOGIN_LABEL:
 				setLoginLabel((String)newValue);
@@ -280,6 +393,12 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 			case WafPackage.AUTHENTICATION__AUTHORISES:
 				setAuthorises((WafModel)null);
 				return;
+			case WafPackage.AUTHENTICATION__USER:
+				setUser((EntityOrView)null);
+				return;
+			case WafPackage.AUTHENTICATION__USER_KEY:
+				setUserKey((Attribute)null);
+				return;
 			case WafPackage.AUTHENTICATION__LOGIN_LABEL:
 				setLoginLabel(LOGIN_LABEL_EDEFAULT);
 				return;
@@ -300,6 +419,10 @@ public abstract class AuthenticationImpl extends MinimalEObjectImpl.Container im
 		switch (featureID) {
 			case WafPackage.AUTHENTICATION__AUTHORISES:
 				return basicGetAuthorises() != null;
+			case WafPackage.AUTHENTICATION__USER:
+				return user != null;
+			case WafPackage.AUTHENTICATION__USER_KEY:
+				return userKey != null;
 			case WafPackage.AUTHENTICATION__LOGIN_LABEL:
 				return LOGIN_LABEL_EDEFAULT == null ? loginLabel != null : !LOGIN_LABEL_EDEFAULT.equals(loginLabel);
 			case WafPackage.AUTHENTICATION__LOGOUT_LABEL:

@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.OrmModel;
 
+import uk.ac.man.cs.mdsd.rest.API;
+
 import uk.ac.man.cs.mdsd.waf.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.waf.Authentication;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
@@ -59,6 +61,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getRestApi <em>Rest Api</em>}</li>
  * </ul>
  *
  * @generated
@@ -423,6 +426,16 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * @ordered
 	 */
 	protected boolean staticUnitsEditable = STATIC_UNITS_EDITABLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRestApi() <em>Rest Api</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRestApi()
+	 * @generated
+	 * @ordered
+	 */
+	protected API restApi;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -918,6 +931,44 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public API getRestApi() {
+		if (restApi != null && restApi.eIsProxy()) {
+			InternalEObject oldRestApi = (InternalEObject)restApi;
+			restApi = (API)eResolveProxy(oldRestApi);
+			if (restApi != oldRestApi) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.WAF_MODEL__REST_API, oldRestApi, restApi));
+			}
+		}
+		return restApi;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public API basicGetRestApi() {
+		return restApi;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRestApi(API newRestApi) {
+		API oldRestApi = restApi;
+		restApi = newRestApi;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__REST_API, oldRestApi, restApi));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -1006,6 +1057,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return basicGetSideMenu();
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				return isStaticUnitsEditable();
+			case WafPackage.WAF_MODEL__REST_API:
+				if (resolve) return getRestApi();
+				return basicGetRestApi();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1085,6 +1139,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				setStaticUnitsEditable((Boolean)newValue);
 				return;
+			case WafPackage.WAF_MODEL__REST_API:
+				setRestApi((API)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1160,6 +1217,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				setStaticUnitsEditable(STATIC_UNITS_EDITABLE_EDEFAULT);
 				return;
+			case WafPackage.WAF_MODEL__REST_API:
+				setRestApi((API)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1214,6 +1274,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return sideMenu != null;
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				return staticUnitsEditable != STATIC_UNITS_EDITABLE_EDEFAULT;
+			case WafPackage.WAF_MODEL__REST_API:
+				return restApi != null;
 		}
 		return super.eIsSet(featureID);
 	}

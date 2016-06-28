@@ -15,6 +15,8 @@ import uk.ac.man.cs.mdsd.criteria.CriteriaPackage;
 
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
+import uk.ac.man.cs.mdsd.rest.RestPackage;
+
 import uk.ac.man.cs.mdsd.waf.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.waf.ActionUnit;
 import uk.ac.man.cs.mdsd.waf.AjaxTechnologies;
@@ -656,7 +658,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		OrmPackage.eINSTANCE.eClass();
+		RestPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theWafPackage.createPackageContents();
@@ -876,6 +878,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getWafModel_RestApi() {
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAuthentication() {
 		return authenticationEClass;
 	}
@@ -894,8 +905,26 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAuthentication_User() {
+		return (EReference)authenticationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAuthentication_UserKey() {
+		return (EReference)authenticationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getAuthentication_LoginLabel() {
-		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -904,7 +933,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getAuthentication_LogoutLabel() {
-		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -921,7 +950,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_User() {
+	public EReference getLocalAuthenticationSystem_Authentication() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -930,26 +959,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_UserKey() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLocalAuthenticationSystem_Authentication() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getLocalAuthenticationSystem_AuthenticationKey() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -958,7 +969,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getLocalAuthenticationSystem_LoginAttempt() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(4);
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -967,7 +978,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getLocalAuthenticationSystem_AutoLogin() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(5);
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -976,7 +987,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getLocalAuthenticationSystem_UseCaptcha() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -985,7 +996,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getLocalAuthenticationSystem_AllowSelfRegistration() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -994,7 +1005,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getLocalAuthenticationSystem_UseEmailActivation() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1003,7 +1014,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getLocalAuthenticationSystem_SendWelcomeEmail() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1012,7 +1023,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getLocalAuthenticationSystem_RegistrationUnit() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(10);
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1021,7 +1032,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getLocalAuthenticationSystem_LoginUnit() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(11);
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1030,7 +1041,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getLocalAuthenticationSystem_ForgottenPasswordUnit() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(12);
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -3225,15 +3236,16 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(wafModelEClass, WAF_MODEL__TOP_NAVIGATION_ID);
 		createEReference(wafModelEClass, WAF_MODEL__SIDE_MENU);
 		createEAttribute(wafModelEClass, WAF_MODEL__STATIC_UNITS_EDITABLE);
+		createEReference(wafModelEClass, WAF_MODEL__REST_API);
 
 		authenticationEClass = createEClass(AUTHENTICATION);
 		createEReference(authenticationEClass, AUTHENTICATION__AUTHORISES);
+		createEReference(authenticationEClass, AUTHENTICATION__USER);
+		createEReference(authenticationEClass, AUTHENTICATION__USER_KEY);
 		createEAttribute(authenticationEClass, AUTHENTICATION__LOGIN_LABEL);
 		createEAttribute(authenticationEClass, AUTHENTICATION__LOGOUT_LABEL);
 
 		localAuthenticationSystemEClass = createEClass(LOCAL_AUTHENTICATION_SYSTEM);
-		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USER);
-		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USER_KEY);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__LOGIN_ATTEMPT);
@@ -3577,6 +3589,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		// Obtain other dependent packages
 		OrmPackage theOrmPackage = (OrmPackage)EPackage.Registry.INSTANCE.getEPackage(OrmPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		RestPackage theRestPackage = (RestPackage)EPackage.Registry.INSTANCE.getEPackage(RestPackage.eNS_URI);
 		CriteriaPackage theCriteriaPackage = (CriteriaPackage)EPackage.Registry.INSTANCE.getEPackage(CriteriaPackage.eNS_URI);
 
 		// Create type parameters
@@ -3679,15 +3692,16 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getWafModel_TopNavigationId(), theEcorePackage.getEString(), "topNavigationId", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_SideMenu(), this.getMenu(), null, "sideMenu", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_StaticUnitsEditable(), theEcorePackage.getEBoolean(), "staticUnitsEditable", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWafModel_RestApi(), theRestPackage.getAPI(), null, "restApi", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAuthentication_Authorises(), this.getWafModel(), this.getWafModel_Authentication(), "authorises", null, 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAuthentication_User(), theOrmPackage.getEntityOrView(), null, "user", null, 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAuthentication_UserKey(), theOrmPackage.getAttribute(), null, "userKey", null, 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthentication_LoginLabel(), theEcorePackage.getEString(), "loginLabel", "", 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAuthentication_LogoutLabel(), theEcorePackage.getEString(), "logoutLabel", "", 0, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(localAuthenticationSystemEClass, LocalAuthenticationSystem.class, "LocalAuthenticationSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLocalAuthenticationSystem_User(), theOrmPackage.getEntityOrView(), null, "user", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLocalAuthenticationSystem_UserKey(), theOrmPackage.getAttribute(), null, "userKey", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_Authentication(), theOrmPackage.getEntityOrView(), null, "authentication", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_AuthenticationKey(), this.getAuthenticationKeyTypes(), "authenticationKey", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_LoginAttempt(), theOrmPackage.getEntityOrView(), null, "loginAttempt", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

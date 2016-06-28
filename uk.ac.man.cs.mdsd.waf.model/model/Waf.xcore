@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
 import uk.ac.man.cs.mdsd.orm.SingletonLocation
+import uk.ac.man.cs.mdsd.rest.API
 
 
 enum FrameworkTechnologies {
@@ -63,12 +64,14 @@ class WafModel {
 	String topNavigationId
 	refers Menu sideMenu
 	boolean staticUnitsEditable
-	
+	refers API restApi
 }
 
 
 abstract class Authentication {
 	refers WafModel[1] authorises opposite authentication
+	refers EntityOrView[1] user
+	refers Attribute[1] userKey
 	String[1] loginLabel = ""
 	String logoutLabel = ""
 }
@@ -79,8 +82,6 @@ enum AuthenticationKeyTypes {
 }
 
 class LocalAuthenticationSystem extends Authentication {
-	refers EntityOrView[1] user
-	refers Attribute[1] userKey
 	refers EntityOrView authentication
 	AuthenticationKeyTypes[1] authenticationKey
 	refers EntityOrView loginAttempt

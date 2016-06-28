@@ -68,53 +68,9 @@ public class AssociationKeyItemProvider
 	 * This adds a property descriptor for the Source Feature feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSourceFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AssociationKey_sourceFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationKey_sourceFeature_feature", "_UI_AssociationKey_type"),
-				 WebsitePackage.Literals.ASSOCIATION_KEY__SOURCE_FEATURE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Target Feature feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AssociationKey_targetFeature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationKey_targetFeature_feature", "_UI_AssociationKey_type"),
-				 WebsitePackage.Literals.ASSOCIATION_KEY__TARGET_FEATURE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Source Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addSourceKeyPropertyDescriptor(Object object) {
+	protected void addSourceFeaturePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
@@ -137,12 +93,12 @@ public class AssociationKeyItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Target Key feature.
+	 * This adds a property descriptor for the Target Feature feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addTargetKeyPropertyDescriptor(Object object) {
+	protected void addTargetFeaturePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),

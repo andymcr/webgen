@@ -118,14 +118,14 @@
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//Authentication">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//Authentication/authenticates"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
+          propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Authentication/user"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
+          propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Authentication/userKey"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Authentication/loginLabel"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Authentication/logoutLabel"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//LocalAuthenticationSystem">
-      <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/user"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/userKey"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Authentication"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//LocalAuthenticationSystem/authentication"/>
       <genFeatures createChild="false" propertyCategory="Authentication" ecoreFeature="ecore:EAttribute website.ecore#//LocalAuthenticationSystem/authenticationKey"/>
@@ -235,7 +235,9 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/ordered"/>
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/columnName"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="website.ecore#//EntityAttribute"/>
+    <genClasses image="false" ecoreClass="website.ecore#//EntityAttribute">
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityAttribute/primaryKey"/>
+    </genClasses>
     <genClasses ecoreClass="website.ecore#//DataTypeAttribute">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertyDescription=""
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//DataTypeAttribute/dataType"/>
@@ -296,8 +298,9 @@
       <genFeatures property="None" notify="false" createChild="false" propertyCategory="Model"
           ecoreFeature="ecore:EReference website.ecore#//AssociationKey/keyFor"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//AssociationKey/key"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationKey/columnName"/>
+          ecoreFeature="ecore:EReference website.ecore#//AssociationKey/sourceFeature"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//AssociationKey/targetFeature"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//View">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

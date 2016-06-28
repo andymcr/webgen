@@ -1745,6 +1745,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEntityAttribute_PrimaryKey() {
+		return (EAttribute)entityAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getView() {
 		return viewEClass;
 	}
@@ -2438,7 +2447,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAssociationKey_Key() {
+	public EReference getAssociationKey_SourceFeature() {
 		return (EReference)associationKeyEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2447,8 +2456,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssociationKey_ColumnName() {
-		return (EAttribute)associationKeyEClass.getEStructuralFeatures().get(2);
+	public EReference getAssociationKey_TargetFeature() {
+		return (EReference)associationKeyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -4823,8 +4832,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAuthentication_User() {
+		return (EReference)authenticationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAuthentication_UserKey() {
+		return (EReference)authenticationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getAuthentication_LoginLabel() {
-		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -4833,7 +4860,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getAuthentication_LogoutLabel() {
-		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)authenticationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -4850,7 +4877,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_User() {
+	public EReference getLocalAuthenticationSystem_Authentication() {
 		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -4859,26 +4886,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalAuthenticationSystem_UserKey() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLocalAuthenticationSystem_Authentication() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getLocalAuthenticationSystem_AuthenticationKey() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -4887,7 +4896,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getLocalAuthenticationSystem_UseCaptcha() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -4896,7 +4905,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getLocalAuthenticationSystem_AllowSelfRegistration() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -4905,7 +4914,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getLocalAuthenticationSystem_TrackLoginAttempts() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -4914,7 +4923,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getLocalAuthenticationSystem_AllowAutoLogin() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -4923,7 +4932,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getLocalAuthenticationSystem_UseEmailActivation() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -4932,7 +4941,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getLocalAuthenticationSystem_SendWelcomeEmail() {
-		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)localAuthenticationSystemEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -4941,7 +4950,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getLocalAuthenticationSystem_RegistrationUnit() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(10);
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -4950,7 +4959,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getLocalAuthenticationSystem_LoginUnit() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(11);
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -4959,7 +4968,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getLocalAuthenticationSystem_ForgottenPasswordUnit() {
-		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(12);
+		return (EReference)localAuthenticationSystemEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -5096,12 +5105,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		authenticationEClass = createEClass(AUTHENTICATION);
 		createEReference(authenticationEClass, AUTHENTICATION__AUTHENTICATES);
+		createEReference(authenticationEClass, AUTHENTICATION__USER);
+		createEReference(authenticationEClass, AUTHENTICATION__USER_KEY);
 		createEAttribute(authenticationEClass, AUTHENTICATION__LOGIN_LABEL);
 		createEAttribute(authenticationEClass, AUTHENTICATION__LOGOUT_LABEL);
 
 		localAuthenticationSystemEClass = createEClass(LOCAL_AUTHENTICATION_SYSTEM);
-		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USER);
-		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USER_KEY);
 		createEReference(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY);
 		createEAttribute(localAuthenticationSystemEClass, LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA);
@@ -5199,6 +5208,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__COLUMN_NAME);
 
 		entityAttributeEClass = createEClass(ENTITY_ATTRIBUTE);
+		createEAttribute(entityAttributeEClass, ENTITY_ATTRIBUTE__PRIMARY_KEY);
 
 		dataTypeAttributeEClass = createEClass(DATA_TYPE_ATTRIBUTE);
 		createEReference(dataTypeAttributeEClass, DATA_TYPE_ATTRIBUTE__DATA_TYPE);
@@ -5258,8 +5268,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		associationKeyEClass = createEClass(ASSOCIATION_KEY);
 		createEReference(associationKeyEClass, ASSOCIATION_KEY__KEY_FOR);
-		createEReference(associationKeyEClass, ASSOCIATION_KEY__KEY);
-		createEAttribute(associationKeyEClass, ASSOCIATION_KEY__COLUMN_NAME);
+		createEReference(associationKeyEClass, ASSOCIATION_KEY__SOURCE_FEATURE);
+		createEReference(associationKeyEClass, ASSOCIATION_KEY__TARGET_FEATURE);
 
 		viewEClass = createEClass(VIEW);
 		createEReference(viewEClass, VIEW__ENCAPSULATES);
@@ -5791,12 +5801,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAuthentication_Authenticates(), this.getWebsiteProperties(), this.getWebsiteProperties_Authentication(), "authenticates", null, 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAuthentication_User(), this.getEntityOrView(), null, "user", null, 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAuthentication_UserKey(), this.getAttribute(), null, "userKey", null, 1, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAuthentication_LoginLabel(), ecorePackage.getEString(), "loginLabel", "Login", 0, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAuthentication_LogoutLabel(), ecorePackage.getEString(), "logoutLabel", "Logout", 0, 1, Authentication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(localAuthenticationSystemEClass, LocalAuthenticationSystem.class, "LocalAuthenticationSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLocalAuthenticationSystem_User(), this.getEntityOrView(), null, "user", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getLocalAuthenticationSystem_UserKey(), this.getAttribute(), null, "userKey", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getLocalAuthenticationSystem_Authentication(), this.getEntityOrView(), null, "authentication", null, 0, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_AuthenticationKey(), this.getAuthenticationKeyTypes(), "authenticationKey", null, 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocalAuthenticationSystem_UseCaptcha(), ecorePackage.getEBoolean(), "useCaptcha", "true", 1, 1, LocalAuthenticationSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5894,6 +5904,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getEntityFeature_ColumnName(), ecorePackage.getEString(), "columnName", null, 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(entityAttributeEClass, EntityAttribute.class, "EntityAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEntityAttribute_PrimaryKey(), ecorePackage.getEBoolean(), "primaryKey", null, 0, 1, EntityAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeAttributeEClass, DataTypeAttribute.class, "DataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataTypeAttribute_DataType(), this.getDataType(), null, "dataType", null, 1, 1, DataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -5953,8 +5964,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(associationKeyEClass, AssociationKey.class, "AssociationKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssociationKey_KeyFor(), this.getEntityAssociation(), this.getEntityAssociation_Keys(), "keyFor", null, 1, 1, AssociationKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAssociationKey_Key(), this.getAttribute(), null, "key", null, 1, 1, AssociationKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssociationKey_ColumnName(), ecorePackage.getEString(), "columnName", null, 0, 1, AssociationKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssociationKey_SourceFeature(), this.getEntityAttribute(), null, "sourceFeature", null, 1, 1, AssociationKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssociationKey_TargetFeature(), this.getEntityAttribute(), null, "targetFeature", null, 1, 1, AssociationKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getView_Encapsulates(), this.getEntityOrView(), null, "encapsulates", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6378,10 +6389,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "constraints", "classifierNameUnique pageNameUnique menuNameUnique "
 		   });	
 		addAnnotation
+		  (authenticationEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "userKeyFromUser userKeyRequiredAttribute"
+		   });	
+		addAnnotation
 		  (localAuthenticationSystemEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "authenticationKeyFromUser authenticationKeyRequiredAttribute captchaRequiresKeys"
+			 "constraints", "captchaRequiresKeys"
 		   });	
 		addAnnotation
 		  (namedElementEClass, 
@@ -6450,6 +6467,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "constraints", "canOnlyTitleWithSingletons selectionValidChoice"
 		   });	
 		addAnnotation
+		  (detailsUnitEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "selectionMustBeSingleton"
+		   });	
+		addAnnotation
 		  (inlineActionContainerEClass, 
 		   source, 
 		   new String[] {
@@ -6480,11 +6503,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "menuNameUnique", "menus->isUnique(name)"
 		   });	
 		addAnnotation
+		  (authenticationEClass, 
+		   source, 
+		   new String[] {
+			 "userKeyFromUser", "not user.oclIsUndefined() and not userKey.oclIsUndefined() implies\r\n\tuser.features->includes(userKey)",
+			 "userKeyRequiredAttribute", "not userKey.oclIsUndefined() implies\r\n\tif userKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\tuserKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n\telse\r\n\t\tuserKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n\tendif"
+		   });	
+		addAnnotation
 		  (localAuthenticationSystemEClass, 
 		   source, 
 		   new String[] {
-			 "authenticationKeyFromUser", "not user.oclIsUndefined() and not userKey.oclIsUndefined() implies\r\n\tuser.features->includes(userKey)",
-			 "authenticationKeyRequiredAttribute", "not userKey.oclIsUndefined() implies\r\n\tif userKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\tuserKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n\telse\r\n\t\tuserKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n\tendif",
 			 "captchaRequiresKeys", "useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()"
 		   });	
 		addAnnotation
@@ -6690,6 +6718,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   new String[] {
 			 "canOnlyTitleWithSingletons", "not title.oclIsUndefined() implies \r\n\tif title.oclIsKindOf(EntityAttribute) then\r\n\t\ttitle.oclAsType(EntityAttribute).cardinality <> Cardinality::Many\r\n\telse if title.oclIsKindOf(EncapsulatedAttribute) then\r\n\t\ttitle.oclAsType(EncapsulatedAttribute).cardinality <> Cardinality::Many\r\n\telse\r\n\t\ttrue\r\n\tendif endif",
 			 "selectionValidChoice", "not defaultSelection.oclIsUndefined() implies\r\n\tentities->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(defaultSelection)"
+		   });	
+		addAnnotation
+		  (detailsUnitEClass, 
+		   source, 
+		   new String[] {
+			 "selectionMustBeSingleton", "not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit = 1"
 		   });	
 		addAnnotation
 		  (inlineActionContainerEClass, 

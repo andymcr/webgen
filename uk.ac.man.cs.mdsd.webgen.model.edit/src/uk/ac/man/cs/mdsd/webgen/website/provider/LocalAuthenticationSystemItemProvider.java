@@ -45,8 +45,6 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUserPropertyDescriptor(object);
-			addUserKeyPropertyDescriptor(object);
 			addAuthenticationPropertyDescriptor(object);
 			addAuthenticationKeyPropertyDescriptor(object);
 			addUseCaptchaPropertyDescriptor(object);
@@ -60,59 +58,6 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 			addForgottenPasswordUnitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the User feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUserPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_user_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_user_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_AuthenticationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the User Key feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addUserKeyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_LocalAuthenticationSystem_userKey_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_userKey_feature", "_UI_LocalAuthenticationSystem_type"),
-			WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY,
-			true, false, true, null,
-			getString("_UI_AuthenticationPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof LocalAuthenticationSystem) {
-						final LocalAuthenticationSystem system
-							= (LocalAuthenticationSystem) object;
-						if (system.getUser() != null) {
-							return system.getUser().getAttributes();
-						}
-					}
-
-					return super.getChoiceOfValues(object);
-				}
-			});
 	}
 
 	/**

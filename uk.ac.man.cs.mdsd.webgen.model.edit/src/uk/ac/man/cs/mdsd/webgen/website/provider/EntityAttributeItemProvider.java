@@ -53,6 +53,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			addPlaceholderPropertyDescriptor(object);
 			addValidationPatternPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
+			addPrimaryKeyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -124,6 +125,28 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Primary Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPrimaryKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAttribute_primaryKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_primaryKey_feature", "_UI_EntityAttribute_type"),
+				 WebsitePackage.Literals.ENTITY_ATTRIBUTE__PRIMARY_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -183,6 +206,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			case WebsitePackage.ENTITY_ATTRIBUTE__PLACEHOLDER:
 			case WebsitePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
+			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:

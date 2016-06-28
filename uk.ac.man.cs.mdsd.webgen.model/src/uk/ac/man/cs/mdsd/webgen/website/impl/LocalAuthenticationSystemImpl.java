@@ -26,8 +26,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getUser <em>User</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getUserKey <em>User Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getAuthenticationKey <em>Authentication Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isUseCaptcha <em>Use Captcha</em>}</li>
@@ -44,26 +42,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements LocalAuthenticationSystem {
-	/**
-	 * The cached value of the '{@link #getUser() <em>User</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUser()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityOrView user;
-
-	/**
-	 * The cached value of the '{@link #getUserKey() <em>User Key</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUserKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected Attribute userKey;
-
 	/**
 	 * The cached value of the '{@link #getAuthentication() <em>Authentication</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -261,82 +239,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView getUser() {
-		if (user != null && user.eIsProxy()) {
-			InternalEObject oldUser = (InternalEObject)user;
-			user = (EntityOrView)eResolveProxy(oldUser);
-			if (user != oldUser) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER, oldUser, user));
-			}
-		}
-		return user;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityOrView basicGetUser() {
-		return user;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUser(EntityOrView newUser) {
-		EntityOrView oldUser = user;
-		user = newUser;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER, oldUser, user));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute getUserKey() {
-		if (userKey != null && userKey.eIsProxy()) {
-			InternalEObject oldUserKey = (InternalEObject)userKey;
-			userKey = (Attribute)eResolveProxy(oldUserKey);
-			if (userKey != oldUserKey) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY, oldUserKey, userKey));
-			}
-		}
-		return userKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attribute basicGetUserKey() {
-		return userKey;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUserKey(Attribute newUserKey) {
-		Attribute oldUserKey = userKey;
-		userKey = newUserKey;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY, oldUserKey, userKey));
 	}
 
 	/**
@@ -646,12 +548,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
-				if (resolve) return getUser();
-				return basicGetUser();
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
-				if (resolve) return getUserKey();
-				return basicGetUserKey();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
 				if (resolve) return getAuthentication();
 				return basicGetAuthentication();
@@ -690,12 +586,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
-				setUser((EntityOrView)newValue);
-				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
-				setUserKey((Attribute)newValue);
-				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
 				setAuthentication((EntityOrView)newValue);
 				return;
@@ -741,12 +631,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
-				setUser((EntityOrView)null);
-				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
-				setUserKey((Attribute)null);
-				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
 				setAuthentication((EntityOrView)null);
 				return;
@@ -792,10 +676,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER:
-				return user != null;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USER_KEY:
-				return userKey != null;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION:
 				return authentication != null;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:

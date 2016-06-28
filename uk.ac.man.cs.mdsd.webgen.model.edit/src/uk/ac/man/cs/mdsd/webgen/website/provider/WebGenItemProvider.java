@@ -174,7 +174,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return selections;
 	}
 
-	protected Object getCriteriaContext(final Object object) {
+	protected Object getContext(final Object object) {
 		if (object instanceof EObject) {
 			return ((EObject) object).eContainer();
 		} else {
@@ -200,12 +200,12 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 //	}
 
 	protected Selection getCriteriaSelectionContext(final Object object) {
-		Object container = getCriteriaContext(object);
+		Object container = getContext(object);
 		while (container != null) {
 			if (container instanceof Selection) {
 				return (Selection) container;
 			}
-			container = getCriteriaContext(container);
+			container = getContext(container);
 		}
 
 		return null;

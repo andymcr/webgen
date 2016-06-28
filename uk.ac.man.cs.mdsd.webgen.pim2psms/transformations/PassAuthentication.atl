@@ -62,15 +62,6 @@ rule WafModel {
 abstract rule Authentication {
 	from website : Website!Authentication
 	to waf : WAF!Authentication (
-		loginLabel <- website.loginLabel,
-		logoutLabel <- website.logoutLabel
-	)
-}
-
--- @extends Authentication
-rule LocalAuthenticationSystem {
-	from website : Website!LocalAuthenticationSystem
-	to waf : WAF!LocalAuthenticationSystem (
 		user <-
 			if website.user.oclIsUndefined() then
 				OclUndefined
@@ -85,6 +76,15 @@ rule LocalAuthenticationSystem {
 				thisModule.findOrmEntityOrView(website.user.name)
 					.getOrmFeature(website.userKey.name)
 			endif,
+		loginLabel <- website.loginLabel,
+		logoutLabel <- website.logoutLabel
+	)
+}
+
+-- @extends Authentication
+rule LocalAuthenticationSystem {
+	from website : Website!LocalAuthenticationSystem
+	to waf : WAF!LocalAuthenticationSystem (
 		authentication <-
 			if thisModule.findWebsiteProperties().frameworkTechnology = #Symfony then
 				OclUndefined

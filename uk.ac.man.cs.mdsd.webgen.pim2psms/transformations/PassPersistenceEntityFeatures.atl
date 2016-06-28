@@ -82,7 +82,8 @@ abstract rule EntityAttribute {
 				website.columnName
 			else
 				website.name.createAttributeColumnName()
-			endif
+			endif,
+		primaryKey <- website.primaryKey
 	)
 }
 
@@ -424,12 +425,7 @@ rule OneToManyAssociationWithContainment {
 rule AssocationKey {
 	from website : Website!AssociationKey
 	to orm : ORM!AssociationKey (
-		key <- website.key,
-		columnName <-
-			if not website.columnName.oclIsUndefined() then
-				website.columnName
-			else
-				website.key.name.createAttributeColumnName()
-			endif
+		sourceFeature <- website.sourceFeature,
+		targetFeature <- website.targetFeature
 	)
 }

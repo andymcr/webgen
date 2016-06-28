@@ -30,6 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getPlaceholder <em>Placeholder</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getInputClass <em>Input Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#isPrimaryKey <em>Primary Key</em>}</li>
  * </ul>
  *
  * @generated
@@ -104,6 +105,26 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * @ordered
 	 */
 	protected String inputClass = INPUT_CLASS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isPrimaryKey() <em>Primary Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPrimaryKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PRIMARY_KEY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isPrimaryKey() <em>Primary Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPrimaryKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean primaryKey = PRIMARY_KEY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,6 +256,27 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isPrimaryKey() {
+		return primaryKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPrimaryKey(boolean newPrimaryKey) {
+		boolean oldPrimaryKey = primaryKey;
+		primaryKey = newPrimaryKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY, oldPrimaryKey, primaryKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -260,6 +302,8 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return getValidationPattern();
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				return getInputClass();
+			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
+				return isPrimaryKey();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -283,6 +327,9 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return;
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				setInputClass((String)newValue);
+				return;
+			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
+				setPrimaryKey((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -308,6 +355,9 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				setInputClass(INPUT_CLASS_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
+				setPrimaryKey(PRIMARY_KEY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -328,6 +378,8 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return VALIDATION_PATTERN_EDEFAULT == null ? validationPattern != null : !VALIDATION_PATTERN_EDEFAULT.equals(validationPattern);
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
+			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
+				return primaryKey != PRIMARY_KEY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -406,6 +458,8 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		result.append(validationPattern);
 		result.append(", inputClass: ");
 		result.append(inputClass);
+		result.append(", primaryKey: ");
+		result.append(primaryKey);
 		result.append(')');
 		return result.toString();
 	}

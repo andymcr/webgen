@@ -673,13 +673,31 @@ public interface WebsitePackage extends EPackage {
 	int AUTHENTICATION__AUTHENTICATES = 0;
 
 	/**
+	 * The feature id for the '<em><b>User</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION__USER = 1;
+
+	/**
+	 * The feature id for the '<em><b>User Key</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHENTICATION__USER_KEY = 2;
+
+	/**
 	 * The feature id for the '<em><b>Login Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION__LOGIN_LABEL = 1;
+	int AUTHENTICATION__LOGIN_LABEL = 3;
 
 	/**
 	 * The feature id for the '<em><b>Logout Label</b></em>' attribute.
@@ -688,7 +706,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION__LOGOUT_LABEL = 2;
+	int AUTHENTICATION__LOGOUT_LABEL = 4;
 
 	/**
 	 * The number of structural features of the '<em>Authentication</em>' class.
@@ -697,7 +715,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHENTICATION_FEATURE_COUNT = 3;
+	int AUTHENTICATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl <em>Local Authentication System</em>}' class.
@@ -719,6 +737,24 @@ public interface WebsitePackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATES = AUTHENTICATION__AUTHENTICATES;
 
 	/**
+	 * The feature id for the '<em><b>User</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_AUTHENTICATION_SYSTEM__USER = AUTHENTICATION__USER;
+
+	/**
+	 * The feature id for the '<em><b>User Key</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_AUTHENTICATION_SYSTEM__USER_KEY = AUTHENTICATION__USER_KEY;
+
+	/**
 	 * The feature id for the '<em><b>Login Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -737,31 +773,13 @@ public interface WebsitePackage extends EPackage {
 	int LOCAL_AUTHENTICATION_SYSTEM__LOGOUT_LABEL = AUTHENTICATION__LOGOUT_LABEL;
 
 	/**
-	 * The feature id for the '<em><b>User</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USER = AUTHENTICATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>User Key</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USER_KEY = AUTHENTICATION_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Authentication</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION = AUTHENTICATION_FEATURE_COUNT + 2;
+	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION = AUTHENTICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Authentication Key</b></em>' attribute.
@@ -770,7 +788,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY = AUTHENTICATION_FEATURE_COUNT + 3;
+	int LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY = AUTHENTICATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Use Captcha</b></em>' attribute.
@@ -779,7 +797,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA = AUTHENTICATION_FEATURE_COUNT + 4;
+	int LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA = AUTHENTICATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Allow Self Registration</b></em>' attribute.
@@ -788,7 +806,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION = AUTHENTICATION_FEATURE_COUNT + 5;
+	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION = AUTHENTICATION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Track Login Attempts</b></em>' attribute.
@@ -797,7 +815,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS = AUTHENTICATION_FEATURE_COUNT + 6;
+	int LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS = AUTHENTICATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Allow Auto Login</b></em>' attribute.
@@ -806,7 +824,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN = AUTHENTICATION_FEATURE_COUNT + 7;
+	int LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN = AUTHENTICATION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Use Email Activation</b></em>' attribute.
@@ -815,7 +833,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION = AUTHENTICATION_FEATURE_COUNT + 8;
+	int LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION = AUTHENTICATION_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Send Welcome Email</b></em>' attribute.
@@ -824,7 +842,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL = AUTHENTICATION_FEATURE_COUNT + 9;
+	int LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL = AUTHENTICATION_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Registration Unit</b></em>' reference.
@@ -833,7 +851,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT = AUTHENTICATION_FEATURE_COUNT + 10;
+	int LOCAL_AUTHENTICATION_SYSTEM__REGISTRATION_UNIT = AUTHENTICATION_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Login Unit</b></em>' reference.
@@ -842,7 +860,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT = AUTHENTICATION_FEATURE_COUNT + 11;
+	int LOCAL_AUTHENTICATION_SYSTEM__LOGIN_UNIT = AUTHENTICATION_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Forgotten Password Unit</b></em>' reference.
@@ -851,7 +869,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT = AUTHENTICATION_FEATURE_COUNT + 12;
+	int LOCAL_AUTHENTICATION_SYSTEM__FORGOTTEN_PASSWORD_UNIT = AUTHENTICATION_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Local Authentication System</em>' class.
@@ -860,7 +878,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_AUTHENTICATION_SYSTEM_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 13;
+	int LOCAL_AUTHENTICATION_SYSTEM_FEATURE_COUNT = AUTHENTICATION_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.CasAuthenticationImpl <em>Cas Authentication</em>}' class.
@@ -880,6 +898,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CAS_AUTHENTICATION__AUTHENTICATES = AUTHENTICATION__AUTHENTICATES;
+
+	/**
+	 * The feature id for the '<em><b>User</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAS_AUTHENTICATION__USER = AUTHENTICATION__USER;
+
+	/**
+	 * The feature id for the '<em><b>User Key</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAS_AUTHENTICATION__USER_KEY = AUTHENTICATION__USER_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Login Label</b></em>' attribute.
@@ -2740,13 +2776,22 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_ATTRIBUTE__INPUT_CLASS = ENTITY_FEATURE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Primary Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__PRIMARY_KEY = ENTITY_FEATURE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Entity Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 4;
+	int ENTITY_ATTRIBUTE_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2891,6 +2936,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__INPUT_CLASS = ENTITY_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Primary Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
@@ -3109,6 +3163,15 @@ public interface WebsitePackage extends EPackage {
 	int DATE_ATTRIBUTE__INPUT_CLASS = ENTITY_ATTRIBUTE__INPUT_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Primary Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
+
+	/**
 	 * The feature id for the '<em><b>Details</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3280,6 +3343,15 @@ public interface WebsitePackage extends EPackage {
 	int URL_ATTRIBUTE__INPUT_CLASS = ENTITY_ATTRIBUTE__INPUT_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Primary Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
+
+	/**
 	 * The feature id for the '<em><b>Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3440,6 +3512,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__INPUT_CLASS = ENTITY_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Primary Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
@@ -3685,6 +3766,15 @@ public interface WebsitePackage extends EPackage {
 	int FILE_ATTRIBUTE__INPUT_CLASS = RESOURCE_ATTRIBUTE__INPUT_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Primary Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__PRIMARY_KEY = RESOURCE_ATTRIBUTE__PRIMARY_KEY;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3883,6 +3973,15 @@ public interface WebsitePackage extends EPackage {
 	int IMAGE_ATTRIBUTE__INPUT_CLASS = RESOURCE_ATTRIBUTE__INPUT_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Primary Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__PRIMARY_KEY = RESOURCE_ATTRIBUTE__PRIMARY_KEY;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4079,6 +4178,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int LOCATION_ATTRIBUTE__INPUT_CLASS = ENTITY_ATTRIBUTE__INPUT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Primary Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
 	 * The number of structural features of the '<em>Location Attribute</em>' class.
@@ -4909,22 +5017,22 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION_KEY__KEY_FOR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' reference.
+	 * The feature id for the '<em><b>Source Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_KEY__KEY = 1;
+	int ASSOCIATION_KEY__SOURCE_FEATURE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Target Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_KEY__COLUMN_NAME = 2;
+	int ASSOCIATION_KEY__TARGET_FEATURE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Association Key</em>' class.
@@ -13053,6 +13161,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getEntityAttribute();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#isPrimaryKey <em>Primary Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Primary Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#isPrimaryKey()
+	 * @see #getEntityAttribute()
+	 * @generated
+	 */
+	EAttribute getEntityAttribute_PrimaryKey();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.View <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13880,26 +13999,26 @@ public interface WebsitePackage extends EPackage {
 	EReference getAssociationKey_KeyFor();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKey <em>Key</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getSourceFeature <em>Source Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Key</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKey()
+	 * @return the meta object for the reference '<em>Source Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getSourceFeature()
 	 * @see #getAssociationKey()
 	 * @generated
 	 */
-	EReference getAssociationKey_Key();
+	EReference getAssociationKey_SourceFeature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getColumnName <em>Column Name</em>}'.
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getTargetFeature <em>Target Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Column Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getColumnName()
+	 * @return the meta object for the reference '<em>Target Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getTargetFeature()
 	 * @see #getAssociationKey()
 	 * @generated
 	 */
-	EAttribute getAssociationKey_ColumnName();
+	EReference getAssociationKey_TargetFeature();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Label <em>Label</em>}'.
@@ -16720,6 +16839,28 @@ public interface WebsitePackage extends EPackage {
 	EReference getAuthentication_Authenticates();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.Authentication#getUser <em>User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>User</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Authentication#getUser()
+	 * @see #getAuthentication()
+	 * @generated
+	 */
+	EReference getAuthentication_User();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.Authentication#getUserKey <em>User Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>User Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Authentication#getUserKey()
+	 * @see #getAuthentication()
+	 * @generated
+	 */
+	EReference getAuthentication_UserKey();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Authentication#getLoginLabel <em>Login Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16750,28 +16891,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getLocalAuthenticationSystem();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUser <em>User</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>User</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUser()
-	 * @see #getLocalAuthenticationSystem()
-	 * @generated
-	 */
-	EReference getLocalAuthenticationSystem_User();
-
-	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserKey <em>User Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>User Key</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserKey()
-	 * @see #getLocalAuthenticationSystem()
-	 * @generated
-	 */
-	EReference getLocalAuthenticationSystem_UserKey();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}'.
@@ -17645,6 +17764,14 @@ public interface WebsitePackage extends EPackage {
 		EClass ENTITY_ATTRIBUTE = eINSTANCE.getEntityAttribute();
 
 		/**
+		 * The meta object literal for the '<em><b>Primary Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_ATTRIBUTE__PRIMARY_KEY = eINSTANCE.getEntityAttribute_PrimaryKey();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewImpl <em>View</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -18301,20 +18428,20 @@ public interface WebsitePackage extends EPackage {
 		EReference ASSOCIATION_KEY__KEY_FOR = eINSTANCE.getAssociationKey_KeyFor();
 
 		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSOCIATION_KEY__KEY = eINSTANCE.getAssociationKey_Key();
+		EReference ASSOCIATION_KEY__SOURCE_FEATURE = eINSTANCE.getAssociationKey_SourceFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Column Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Target Feature</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASSOCIATION_KEY__COLUMN_NAME = eINSTANCE.getAssociationKey_ColumnName();
+		EReference ASSOCIATION_KEY__TARGET_FEATURE = eINSTANCE.getAssociationKey_TargetFeature();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.Label <em>Label</em>}' class.
@@ -20571,6 +20698,22 @@ public interface WebsitePackage extends EPackage {
 		EReference AUTHENTICATION__AUTHENTICATES = eINSTANCE.getAuthentication_Authenticates();
 
 		/**
+		 * The meta object literal for the '<em><b>User</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATION__USER = eINSTANCE.getAuthentication_User();
+
+		/**
+		 * The meta object literal for the '<em><b>User Key</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTHENTICATION__USER_KEY = eINSTANCE.getAuthentication_UserKey();
+
+		/**
 		 * The meta object literal for the '<em><b>Login Label</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -20595,22 +20738,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass LOCAL_AUTHENTICATION_SYSTEM = eINSTANCE.getLocalAuthenticationSystem();
-
-		/**
-		 * The meta object literal for the '<em><b>User</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LOCAL_AUTHENTICATION_SYSTEM__USER = eINSTANCE.getLocalAuthenticationSystem_User();
-
-		/**
-		 * The meta object literal for the '<em><b>User Key</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LOCAL_AUTHENTICATION_SYSTEM__USER_KEY = eINSTANCE.getLocalAuthenticationSystem_UserKey();
 
 		/**
 		 * The meta object literal for the '<em><b>Authentication</b></em>' reference feature.

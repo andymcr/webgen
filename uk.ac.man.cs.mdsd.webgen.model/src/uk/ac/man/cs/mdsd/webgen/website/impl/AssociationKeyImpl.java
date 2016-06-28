@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationKey;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -28,42 +29,32 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationKeyImpl#getKeyFor <em>Key For</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationKeyImpl#getKey <em>Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationKeyImpl#getColumnName <em>Column Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationKeyImpl#getSourceFeature <em>Source Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationKeyImpl#getTargetFeature <em>Target Feature</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	/**
-	 * The cached value of the '{@link #getKey() <em>Key</em>}' reference.
+	 * The cached value of the '{@link #getSourceFeature() <em>Source Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKey()
+	 * @see #getSourceFeature()
 	 * @generated
 	 * @ordered
 	 */
-	protected Attribute key;
+	protected EntityAttribute sourceFeature;
 
 	/**
-	 * The default value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
+	 * The cached value of the '{@link #getTargetFeature() <em>Target Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getColumnName()
+	 * @see #getTargetFeature()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String COLUMN_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColumnName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String columnName = COLUMN_NAME_EDEFAULT;
+	protected EntityAttribute targetFeature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,16 +121,16 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute getKey() {
-		if (key != null && key.eIsProxy()) {
-			InternalEObject oldKey = (InternalEObject)key;
-			key = (Attribute)eResolveProxy(oldKey);
-			if (key != oldKey) {
+	public EntityAttribute getSourceFeature() {
+		if (sourceFeature != null && sourceFeature.eIsProxy()) {
+			InternalEObject oldSourceFeature = (InternalEObject)sourceFeature;
+			sourceFeature = (EntityAttribute)eResolveProxy(oldSourceFeature);
+			if (sourceFeature != oldSourceFeature) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.ASSOCIATION_KEY__KEY, oldKey, key));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.ASSOCIATION_KEY__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
 			}
 		}
-		return key;
+		return sourceFeature;
 	}
 
 	/**
@@ -147,8 +138,8 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute basicGetKey() {
-		return key;
+	public EntityAttribute basicGetSourceFeature() {
+		return sourceFeature;
 	}
 
 	/**
@@ -156,11 +147,11 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setKey(Attribute newKey) {
-		Attribute oldKey = key;
-		key = newKey;
+	public void setSourceFeature(EntityAttribute newSourceFeature) {
+		EntityAttribute oldSourceFeature = sourceFeature;
+		sourceFeature = newSourceFeature;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ASSOCIATION_KEY__KEY, oldKey, key));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ASSOCIATION_KEY__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
 	}
 
 	/**
@@ -168,8 +159,16 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getColumnName() {
-		return columnName;
+	public EntityAttribute getTargetFeature() {
+		if (targetFeature != null && targetFeature.eIsProxy()) {
+			InternalEObject oldTargetFeature = (InternalEObject)targetFeature;
+			targetFeature = (EntityAttribute)eResolveProxy(oldTargetFeature);
+			if (targetFeature != oldTargetFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.ASSOCIATION_KEY__TARGET_FEATURE, oldTargetFeature, targetFeature));
+			}
+		}
+		return targetFeature;
 	}
 
 	/**
@@ -177,11 +176,20 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setColumnName(String newColumnName) {
-		String oldColumnName = columnName;
-		columnName = newColumnName;
+	public EntityAttribute basicGetTargetFeature() {
+		return targetFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTargetFeature(EntityAttribute newTargetFeature) {
+		EntityAttribute oldTargetFeature = targetFeature;
+		targetFeature = newTargetFeature;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ASSOCIATION_KEY__COLUMN_NAME, oldColumnName, columnName));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ASSOCIATION_KEY__TARGET_FEATURE, oldTargetFeature, targetFeature));
 	}
 
 	/**
@@ -238,11 +246,12 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 		switch (featureID) {
 			case WebsitePackage.ASSOCIATION_KEY__KEY_FOR:
 				return getKeyFor();
-			case WebsitePackage.ASSOCIATION_KEY__KEY:
-				if (resolve) return getKey();
-				return basicGetKey();
-			case WebsitePackage.ASSOCIATION_KEY__COLUMN_NAME:
-				return getColumnName();
+			case WebsitePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
+				if (resolve) return getSourceFeature();
+				return basicGetSourceFeature();
+			case WebsitePackage.ASSOCIATION_KEY__TARGET_FEATURE:
+				if (resolve) return getTargetFeature();
+				return basicGetTargetFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -258,11 +267,11 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 			case WebsitePackage.ASSOCIATION_KEY__KEY_FOR:
 				setKeyFor((EntityAssociation)newValue);
 				return;
-			case WebsitePackage.ASSOCIATION_KEY__KEY:
-				setKey((Attribute)newValue);
+			case WebsitePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
+				setSourceFeature((EntityAttribute)newValue);
 				return;
-			case WebsitePackage.ASSOCIATION_KEY__COLUMN_NAME:
-				setColumnName((String)newValue);
+			case WebsitePackage.ASSOCIATION_KEY__TARGET_FEATURE:
+				setTargetFeature((EntityAttribute)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -279,11 +288,11 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 			case WebsitePackage.ASSOCIATION_KEY__KEY_FOR:
 				setKeyFor((EntityAssociation)null);
 				return;
-			case WebsitePackage.ASSOCIATION_KEY__KEY:
-				setKey((Attribute)null);
+			case WebsitePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
+				setSourceFeature((EntityAttribute)null);
 				return;
-			case WebsitePackage.ASSOCIATION_KEY__COLUMN_NAME:
-				setColumnName(COLUMN_NAME_EDEFAULT);
+			case WebsitePackage.ASSOCIATION_KEY__TARGET_FEATURE:
+				setTargetFeature((EntityAttribute)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -299,28 +308,12 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 		switch (featureID) {
 			case WebsitePackage.ASSOCIATION_KEY__KEY_FOR:
 				return getKeyFor() != null;
-			case WebsitePackage.ASSOCIATION_KEY__KEY:
-				return key != null;
-			case WebsitePackage.ASSOCIATION_KEY__COLUMN_NAME:
-				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
+			case WebsitePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
+				return sourceFeature != null;
+			case WebsitePackage.ASSOCIATION_KEY__TARGET_FEATURE:
+				return targetFeature != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (columnName: ");
-		result.append(columnName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AssociationKeyImpl

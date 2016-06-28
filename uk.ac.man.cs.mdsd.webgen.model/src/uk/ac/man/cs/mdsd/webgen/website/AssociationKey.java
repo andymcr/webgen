@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKeyFor <em>Key For</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKey <em>Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getColumnName <em>Column Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getSourceFeature <em>Source Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getTargetFeature <em>Target Feature</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationKey()
@@ -52,55 +52,55 @@ public interface AssociationKey extends EObject {
 	void setKeyFor(EntityAssociation value);
 
 	/**
-	 * Returns the value of the '<em><b>Key</b></em>' reference.
+	 * Returns the value of the '<em><b>Source Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Key</em>' reference isn't clear,
+	 * If the meaning of the '<em>Source Feature</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Key</em>' reference.
-	 * @see #setKey(Attribute)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationKey_Key()
+	 * @return the value of the '<em>Source Feature</em>' reference.
+	 * @see #setSourceFeature(EntityAttribute)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationKey_SourceFeature()
 	 * @model required="true"
 	 * @generated
 	 */
-	Attribute getKey();
+	EntityAttribute getSourceFeature();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKey <em>Key</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getSourceFeature <em>Source Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Key</em>' reference.
-	 * @see #getKey()
+	 * @param value the new value of the '<em>Source Feature</em>' reference.
+	 * @see #getSourceFeature()
 	 * @generated
 	 */
-	void setKey(Attribute value);
+	void setSourceFeature(EntityAttribute value);
 
 	/**
-	 * Returns the value of the '<em><b>Column Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Target Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Column Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Target Feature</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Column Name</em>' attribute.
-	 * @see #setColumnName(String)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationKey_ColumnName()
-	 * @model
+	 * @return the value of the '<em>Target Feature</em>' reference.
+	 * @see #setTargetFeature(EntityAttribute)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationKey_TargetFeature()
+	 * @model required="true"
 	 * @generated
 	 */
-	String getColumnName();
+	EntityAttribute getTargetFeature();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getColumnName <em>Column Name</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getTargetFeature <em>Target Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Column Name</em>' attribute.
-	 * @see #getColumnName()
+	 * @param value the new value of the '<em>Target Feature</em>' reference.
+	 * @see #getTargetFeature()
 	 * @generated
 	 */
-	void setColumnName(String value);
+	void setTargetFeature(EntityAttribute value);
 
 } // AssociationKey

@@ -13,8 +13,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUser <em>User</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserKey <em>User Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}</li>
@@ -29,63 +27,11 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='authenticationKeyFromUser authenticationKeyRequiredAttribute captchaRequiresKeys'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL authenticationKeyFromUser='not user.oclIsUndefined() and not userKey.oclIsUndefined() implies\r\n\tuser.features->includes(userKey)' authenticationKeyRequiredAttribute='not userKey.oclIsUndefined() implies\r\n\tif userKey.oclIsTypeOf(EncapsulatedAttribute) then\r\n\t\tuserKey.oclAsType(EncapsulatedAttribute).cardinality = Cardinality::Required\r\n\telse\r\n\t\tuserKey.oclAsType(EntityAttribute).cardinality = Cardinality::Required\r\n\tendif' captchaRequiresKeys='useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='captchaRequiresKeys'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL captchaRequiresKeys='useCaptcha implies not authenticates.captchaSiteKey.oclIsUndefined() and not authenticates.captchaSecretKey.oclIsUndefined()'"
  * @generated
  */
 public interface LocalAuthenticationSystem extends Authentication {
-	/**
-	 * Returns the value of the '<em><b>User</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>User</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User</em>' reference.
-	 * @see #setUser(EntityOrView)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_User()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	EntityOrView getUser();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUser <em>User</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User</em>' reference.
-	 * @see #getUser()
-	 * @generated
-	 */
-	void setUser(EntityOrView value);
-
-	/**
-	 * Returns the value of the '<em><b>User Key</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>User Key</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Key</em>' reference.
-	 * @see #setUserKey(Attribute)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_UserKey()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	Attribute getUserKey();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getUserKey <em>User Key</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Key</em>' reference.
-	 * @see #getUserKey()
-	 * @generated
-	 */
-	void setUserKey(Attribute value);
-
 	/**
 	 * Returns the value of the '<em><b>Authentication</b></em>' reference.
 	 * <!-- begin-user-doc -->

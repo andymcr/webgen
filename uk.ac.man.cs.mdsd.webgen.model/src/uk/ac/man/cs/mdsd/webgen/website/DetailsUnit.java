@@ -23,7 +23,8 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDetailsUnit()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='selectionMustBeSingleton'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustBeSingleton='not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit = 1'"
  * @generated
  */
 public interface DetailsUnit extends DataUnit, Selectable {

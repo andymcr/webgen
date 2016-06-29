@@ -63,6 +63,7 @@ class WafModel {
 	String textEditorURL
 	String topNavigationId
 	refers Menu sideMenu
+	String siteTemplate
 	boolean staticUnitsEditable
 	refers API restApi
 }

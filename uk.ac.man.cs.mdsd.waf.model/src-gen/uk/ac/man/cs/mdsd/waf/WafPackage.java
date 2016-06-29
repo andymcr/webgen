@@ -253,13 +253,22 @@ public interface WafPackage extends EPackage {
 	int WAF_MODEL__SIDE_MENU = 19;
 
 	/**
+	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAF_MODEL__SITE_TEMPLATE = 20;
+
+	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__STATIC_UNITS_EDITABLE = 20;
+	int WAF_MODEL__STATIC_UNITS_EDITABLE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Rest Api</b></em>' reference.
@@ -268,7 +277,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__REST_API = 21;
+	int WAF_MODEL__REST_API = 22;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -277,7 +286,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL_FEATURE_COUNT = 22;
+	int WAF_MODEL_FEATURE_COUNT = 23;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -9232,6 +9241,17 @@ public interface WafPackage extends EPackage {
 	EReference getWafModel_SideMenu();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteTemplate <em>Site Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Site Template</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.WafModel#getSiteTemplate()
+	 * @see #getWafModel()
+	 * @generated
+	 */
+	EAttribute getWafModel_SiteTemplate();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#isStaticUnitsEditable <em>Static Units Editable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12189,6 +12209,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference WAF_MODEL__SIDE_MENU = eINSTANCE.getWafModel_SideMenu();
+
+		/**
+		 * The meta object literal for the '<em><b>Site Template</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WAF_MODEL__SITE_TEMPLATE = eINSTANCE.getWafModel_SiteTemplate();
 
 		/**
 		 * The meta object literal for the '<em><b>Static Units Editable</b></em>' attribute feature.

@@ -48,6 +48,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTextEditorURL <em>Text Editor URL</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSideMenu <em>Side Menu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSiteTemplate <em>Site Template</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
  * </ul>
  *
@@ -886,6 +887,32 @@ public interface WebsiteProperties extends EObject {
 	 * @generated
 	 */
 	void setSideMenu(Menu value);
+
+	/**
+	 * Returns the value of the '<em><b>Site Template</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Site Template</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Site Template</em>' attribute.
+	 * @see #setSiteTemplate(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_SiteTemplate()
+	 * @model
+	 * @generated
+	 */
+	String getSiteTemplate();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSiteTemplate <em>Site Template</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Site Template</em>' attribute.
+	 * @see #getSiteTemplate()
+	 * @generated
+	 */
+	void setSiteTemplate(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Static Units Editable</b></em>' attribute.

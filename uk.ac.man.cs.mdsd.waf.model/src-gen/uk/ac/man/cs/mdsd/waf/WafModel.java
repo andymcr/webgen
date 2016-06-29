@@ -39,6 +39,7 @@ import uk.ac.man.cs.mdsd.rest.API;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getTextEditorURL <em>Text Editor URL</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSideMenu <em>Side Menu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteTemplate <em>Site Template</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getRestApi <em>Rest Api</em>}</li>
  * </ul>
@@ -549,6 +550,32 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	void setSideMenu(Menu value);
+
+	/**
+	 * Returns the value of the '<em><b>Site Template</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Site Template</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Site Template</em>' attribute.
+	 * @see #setSiteTemplate(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_SiteTemplate()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getSiteTemplate();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteTemplate <em>Site Template</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Site Template</em>' attribute.
+	 * @see #getSiteTemplate()
+	 * @generated
+	 */
+	void setSiteTemplate(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Static Units Editable</b></em>' attribute.

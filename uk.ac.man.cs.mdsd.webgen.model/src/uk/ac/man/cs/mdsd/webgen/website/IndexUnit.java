@@ -34,7 +34,8 @@ import java.util.List;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='selectionMustNotBeSingleton'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustNotBeSingleton='not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit <> 1'"
  * @generated
  */
 public interface IndexUnit extends DataUnit, InlineActionContainer {

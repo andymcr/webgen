@@ -58,6 +58,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	protected Set<Label> getLabels(final EntityOrView entityOrView) {
 		final Set<Label> labels = new HashSet<Label>();
 		labels.addAll(entityOrView.getAttributes());
+		labels.addAll(entityOrView.getLabels());
 
 		return labels;
 	}

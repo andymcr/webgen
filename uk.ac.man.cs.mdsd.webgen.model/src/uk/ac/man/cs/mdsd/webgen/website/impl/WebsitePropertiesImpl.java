@@ -60,6 +60,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTextEditorURL <em>Text Editor URL</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getSideMenu <em>Side Menu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getSiteTemplate <em>Site Template</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
  * </ul>
  *
@@ -665,6 +666,26 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @ordered
 	 */
 	protected Menu sideMenu;
+
+	/**
+	 * The default value of the '{@link #getSiteTemplate() <em>Site Template</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSiteTemplate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SITE_TEMPLATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSiteTemplate() <em>Site Template</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSiteTemplate()
+	 * @generated
+	 * @ordered
+	 */
+	protected String siteTemplate = SITE_TEMPLATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isStaticUnitsEditable() <em>Static Units Editable</em>}' attribute.
@@ -1400,6 +1421,27 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSiteTemplate() {
+		return siteTemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSiteTemplate(String newSiteTemplate) {
+		String oldSiteTemplate = siteTemplate;
+		siteTemplate = newSiteTemplate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__SITE_TEMPLATE, oldSiteTemplate, siteTemplate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isStaticUnitsEditable() {
 		return staticUnitsEditable;
 	}
@@ -1517,6 +1559,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__SIDE_MENU:
 				if (resolve) return getSideMenu();
 				return basicGetSideMenu();
+			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TEMPLATE:
+				return getSiteTemplate();
 			case WebsitePackage.WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE:
 				return isStaticUnitsEditable();
 		}
@@ -1623,6 +1667,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__SIDE_MENU:
 				setSideMenu((Menu)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TEMPLATE:
+				setSiteTemplate((String)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE:
 				setStaticUnitsEditable((Boolean)newValue);
@@ -1732,6 +1779,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__SIDE_MENU:
 				setSideMenu((Menu)null);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TEMPLATE:
+				setSiteTemplate(SITE_TEMPLATE_EDEFAULT);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE:
 				setStaticUnitsEditable(STATIC_UNITS_EDITABLE_EDEFAULT);
 				return;
@@ -1809,6 +1859,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return TOP_NAVIGATION_ID_EDEFAULT == null ? topNavigationId != null : !TOP_NAVIGATION_ID_EDEFAULT.equals(topNavigationId);
 			case WebsitePackage.WEBSITE_PROPERTIES__SIDE_MENU:
 				return sideMenu != null;
+			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TEMPLATE:
+				return SITE_TEMPLATE_EDEFAULT == null ? siteTemplate != null : !SITE_TEMPLATE_EDEFAULT.equals(siteTemplate);
 			case WebsitePackage.WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE:
 				return staticUnitsEditable != STATIC_UNITS_EDITABLE_EDEFAULT;
 		}
@@ -1883,6 +1935,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(textEditorURL);
 		result.append(", topNavigationId: ");
 		result.append(topNavigationId);
+		result.append(", siteTemplate: ");
+		result.append(siteTemplate);
 		result.append(", staticUnitsEditable: ");
 		result.append(staticUnitsEditable);
 		result.append(')');

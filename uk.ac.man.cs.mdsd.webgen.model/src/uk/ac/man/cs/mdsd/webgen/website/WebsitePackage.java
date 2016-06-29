@@ -416,13 +416,22 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__SIDE_MENU = 30;
 
 	/**
+	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 31;
+
+	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 31;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 32;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -431,7 +440,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 32;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 33;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -12721,6 +12730,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getWebsiteProperties_SideMenu();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSiteTemplate <em>Site Template</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Site Template</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSiteTemplate()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_SiteTemplate();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isStaticUnitsEditable <em>Static Units Editable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17412,6 +17432,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference WEBSITE_PROPERTIES__SIDE_MENU = eINSTANCE.getWebsiteProperties_SideMenu();
+
+		/**
+		 * The meta object literal for the '<em><b>Site Template</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__SITE_TEMPLATE = eINSTANCE.getWebsiteProperties_SiteTemplate();
 
 		/**
 		 * The meta object literal for the '<em><b>Static Units Editable</b></em>' attribute feature.

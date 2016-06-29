@@ -60,6 +60,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getTextEditorURL <em>Text Editor URL</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSideMenu <em>Side Menu</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteTemplate <em>Site Template</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#isStaticUnitsEditable <em>Static Units Editable</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getRestApi <em>Rest Api</em>}</li>
  * </ul>
@@ -406,6 +407,26 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * @ordered
 	 */
 	protected Menu sideMenu;
+
+	/**
+	 * The default value of the '{@link #getSiteTemplate() <em>Site Template</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSiteTemplate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SITE_TEMPLATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSiteTemplate() <em>Site Template</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSiteTemplate()
+	 * @generated
+	 * @ordered
+	 */
+	protected String siteTemplate = SITE_TEMPLATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isStaticUnitsEditable() <em>Static Units Editable</em>}' attribute.
@@ -910,6 +931,27 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSiteTemplate() {
+		return siteTemplate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSiteTemplate(String newSiteTemplate) {
+		String oldSiteTemplate = siteTemplate;
+		siteTemplate = newSiteTemplate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__SITE_TEMPLATE, oldSiteTemplate, siteTemplate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isStaticUnitsEditable() {
 		return staticUnitsEditable;
 	}
@@ -1055,6 +1097,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__SIDE_MENU:
 				if (resolve) return getSideMenu();
 				return basicGetSideMenu();
+			case WafPackage.WAF_MODEL__SITE_TEMPLATE:
+				return getSiteTemplate();
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				return isStaticUnitsEditable();
 			case WafPackage.WAF_MODEL__REST_API:
@@ -1136,6 +1180,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__SIDE_MENU:
 				setSideMenu((Menu)newValue);
 				return;
+			case WafPackage.WAF_MODEL__SITE_TEMPLATE:
+				setSiteTemplate((String)newValue);
+				return;
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				setStaticUnitsEditable((Boolean)newValue);
 				return;
@@ -1214,6 +1261,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__SIDE_MENU:
 				setSideMenu((Menu)null);
 				return;
+			case WafPackage.WAF_MODEL__SITE_TEMPLATE:
+				setSiteTemplate(SITE_TEMPLATE_EDEFAULT);
+				return;
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				setStaticUnitsEditable(STATIC_UNITS_EDITABLE_EDEFAULT);
 				return;
@@ -1272,6 +1322,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return TOP_NAVIGATION_ID_EDEFAULT == null ? topNavigationId != null : !TOP_NAVIGATION_ID_EDEFAULT.equals(topNavigationId);
 			case WafPackage.WAF_MODEL__SIDE_MENU:
 				return sideMenu != null;
+			case WafPackage.WAF_MODEL__SITE_TEMPLATE:
+				return SITE_TEMPLATE_EDEFAULT == null ? siteTemplate != null : !SITE_TEMPLATE_EDEFAULT.equals(siteTemplate);
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				return staticUnitsEditable != STATIC_UNITS_EDITABLE_EDEFAULT;
 			case WafPackage.WAF_MODEL__REST_API:
@@ -1318,6 +1370,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 		result.append(textEditorURL);
 		result.append(", topNavigationId: ");
 		result.append(topNavigationId);
+		result.append(", siteTemplate: ");
+		result.append(siteTemplate);
 		result.append(", staticUnitsEditable: ");
 		result.append(staticUnitsEditable);
 		result.append(')');

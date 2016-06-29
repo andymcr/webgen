@@ -869,7 +869,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_StaticUnitsEditable() {
+	public EAttribute getWafModel_SiteTemplate() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(20);
 	}
 
@@ -878,8 +878,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWafModel_StaticUnitsEditable() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWafModel_RestApi() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(21);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -3235,6 +3244,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(wafModelEClass, WAF_MODEL__TEXT_EDITOR_URL);
 		createEAttribute(wafModelEClass, WAF_MODEL__TOP_NAVIGATION_ID);
 		createEReference(wafModelEClass, WAF_MODEL__SIDE_MENU);
+		createEAttribute(wafModelEClass, WAF_MODEL__SITE_TEMPLATE);
 		createEAttribute(wafModelEClass, WAF_MODEL__STATIC_UNITS_EDITABLE);
 		createEReference(wafModelEClass, WAF_MODEL__REST_API);
 
@@ -3691,6 +3701,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getWafModel_TextEditorURL(), theEcorePackage.getEString(), "textEditorURL", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_TopNavigationId(), theEcorePackage.getEString(), "topNavigationId", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_SideMenu(), this.getMenu(), null, "sideMenu", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWafModel_SiteTemplate(), theEcorePackage.getEString(), "siteTemplate", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_StaticUnitsEditable(), theEcorePackage.getEBoolean(), "staticUnitsEditable", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_RestApi(), theRestPackage.getAPI(), null, "restApi", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -106,6 +106,7 @@
         defaultValueLiteral="topnav"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sideMenu" ordered="false"
         eType="#//Menu"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="siteTemplate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="staticUnitsEditable" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
@@ -973,6 +974,12 @@
     <eLiterals name="LineDirection" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndexUnit" eSuperTypes="#//DataUnit #//InlineActionContainer">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="selectionMustNotBeSingleton"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="selectionMustNotBeSingleton" value="not defaultSelection.oclIsUndefined() implies&#xD;&#xA;&#x9;defaultSelection.limit &lt;> 1"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayOption" ordered="false"
         eType="#//IndexDisplayOption" defaultValueLiteral="Grid"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="omitColumnLabels" ordered="false"

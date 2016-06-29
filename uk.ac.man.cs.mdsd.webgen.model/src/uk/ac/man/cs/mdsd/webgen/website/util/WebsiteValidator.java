@@ -2337,7 +2337,38 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletons(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(indexUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIndexUnit_selectionMustNotBeSingleton(indexUnit, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the selectionMustNotBeSingleton constraint of '<em>Index Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String INDEX_UNIT__SELECTION_MUST_NOT_BE_SINGLETON__EEXPRESSION = "not defaultSelection.oclIsUndefined() implies\r\n" +
+		"\tdefaultSelection.limit <> 1";
+
+	/**
+	 * Validates the selectionMustNotBeSingleton constraint of '<em>Index Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIndexUnit_selectionMustNotBeSingleton(IndexUnit indexUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.INDEX_UNIT,
+				 indexUnit,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "selectionMustNotBeSingleton",
+				 INDEX_UNIT__SELECTION_MUST_NOT_BE_SINGLETON__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

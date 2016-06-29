@@ -299,6 +299,7 @@ rule WafModel {
 		textEditorURL <- website.websiteProperties.textEditorURL,
 		topNavigationId <- website.websiteProperties.topNavigationId,
 		sideMenu <- website.websiteProperties.sideMenu,
+		siteTemplate <- website.websiteProperties.siteTemplate,
 		staticUnitsEditable <- website.websiteProperties.staticUnitsEditable
 	)
 }

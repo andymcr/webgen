@@ -114,6 +114,7 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/topNavigationId"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebsiteProperties/sideMenu"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/siteTemplate"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/staticUnitsEditable"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//Authentication">

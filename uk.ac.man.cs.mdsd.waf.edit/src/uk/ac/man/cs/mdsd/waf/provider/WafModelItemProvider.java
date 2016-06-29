@@ -82,6 +82,7 @@ public class WafModelItemProvider
 			addTextEditorURLPropertyDescriptor(object);
 			addTopNavigationIdPropertyDescriptor(object);
 			addSideMenuPropertyDescriptor(object);
+			addSiteTemplatePropertyDescriptor(object);
 			addStaticUnitsEditablePropertyDescriptor(object);
 			addRestApiPropertyDescriptor(object);
 		}
@@ -456,6 +457,28 @@ public class WafModelItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Site Template feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSiteTemplatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_siteTemplate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_siteTemplate_feature", "_UI_WafModel_type"),
+				 WafPackage.Literals.WAF_MODEL__SITE_TEMPLATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Static Units Editable feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -589,6 +612,7 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__CAPTCHA_SECRET_KEY:
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
+			case WafPackage.WAF_MODEL__SITE_TEMPLATE:
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

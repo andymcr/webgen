@@ -1376,8 +1376,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_StaticUnitsEditable() {
+	public EAttribute getWebsiteProperties_SiteTemplate() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(31);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWebsiteProperties_StaticUnitsEditable() {
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(32);
 	}
 
 	/**
@@ -5101,6 +5110,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__TEXT_EDITOR_URL);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__TOP_NAVIGATION_ID);
 		createEReference(websitePropertiesEClass, WEBSITE_PROPERTIES__SIDE_MENU);
+		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__SITE_TEMPLATE);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE);
 
 		authenticationEClass = createEClass(AUTHENTICATION);
@@ -5797,6 +5807,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebsiteProperties_TextEditorURL(), ecorePackage.getEString(), "textEditorURL", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_TopNavigationId(), ecorePackage.getEString(), "topNavigationId", "topnav", 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getWebsiteProperties_SideMenu(), this.getMenu(), null, "sideMenu", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getWebsiteProperties_SiteTemplate(), ecorePackage.getEString(), "siteTemplate", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_StaticUnitsEditable(), ecorePackage.getEBoolean(), "staticUnitsEditable", "false", 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -6479,6 +6490,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 			 "constraints", "selectionMustBeSingleton"
 		   });	
 		addAnnotation
+		  (indexUnitEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "selectionMustNotBeSingleton"
+		   });	
+		addAnnotation
 		  (inlineActionContainerEClass, 
 		   source, 
 		   new String[] {
@@ -6736,6 +6753,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "selectionMustBeSingleton", "not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit = 1"
+		   });	
+		addAnnotation
+		  (indexUnitEClass, 
+		   source, 
+		   new String[] {
+			 "selectionMustNotBeSingleton", "not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit <> 1"
 		   });	
 		addAnnotation
 		  (inlineActionContainerEClass, 

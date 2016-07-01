@@ -19,6 +19,7 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getPivotTableName <em>Pivot Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getTargetFeatureName <em>Target Feature Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#isTargetPrimaryKey <em>Target Primary Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getTargetDisplayLabel <em>Target Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getTargetHeaderClass <em>Target Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getTargetInputClass <em>Target Input Class</em>}</li>
@@ -155,6 +156,32 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * @generated
 	 */
 	void setTargetFeatureName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Target Primary Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target Primary Key</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target Primary Key</em>' attribute.
+	 * @see #setTargetPrimaryKey(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityAssociation_TargetPrimaryKey()
+	 * @model
+	 * @generated
+	 */
+	boolean isTargetPrimaryKey();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#isTargetPrimaryKey <em>Target Primary Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target Primary Key</em>' attribute.
+	 * @see #isTargetPrimaryKey()
+	 * @generated
+	 */
+	void setTargetPrimaryKey(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Display Label</b></em>' attribute.

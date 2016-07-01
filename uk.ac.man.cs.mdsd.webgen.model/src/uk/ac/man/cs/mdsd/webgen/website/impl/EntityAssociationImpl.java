@@ -45,6 +45,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetFeatureName <em>Target Feature Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#isTargetPrimaryKey <em>Target Primary Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetDisplayLabel <em>Target Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetHeaderClass <em>Target Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetInputClass <em>Target Input Class</em>}</li>
@@ -214,6 +215,26 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * @ordered
 	 */
 	protected String targetFeatureName = TARGET_FEATURE_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isTargetPrimaryKey() <em>Target Primary Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTargetPrimaryKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean TARGET_PRIMARY_KEY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isTargetPrimaryKey() <em>Target Primary Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTargetPrimaryKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean targetPrimaryKey = TARGET_PRIMARY_KEY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTargetDisplayLabel() <em>Target Display Label</em>}' attribute.
@@ -607,6 +628,27 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isTargetPrimaryKey() {
+		return targetPrimaryKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTargetPrimaryKey(boolean newTargetPrimaryKey) {
+		boolean oldTargetPrimaryKey = targetPrimaryKey;
+		targetPrimaryKey = newTargetPrimaryKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY, oldTargetPrimaryKey, targetPrimaryKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTargetDisplayLabel() {
 		return targetDisplayLabel;
 	}
@@ -781,6 +823,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return getPivotTableName();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				return getTargetFeatureName();
+			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+				return isTargetPrimaryKey();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
 				return getTargetDisplayLabel();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
@@ -832,6 +876,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				setTargetFeatureName((String)newValue);
+				return;
+			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+				setTargetPrimaryKey((Boolean)newValue);
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
 				setTargetDisplayLabel((String)newValue);
@@ -887,6 +934,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				setTargetFeatureName(TARGET_FEATURE_NAME_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+				setTargetPrimaryKey(TARGET_PRIMARY_KEY_EDEFAULT);
+				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
 				setTargetDisplayLabel(TARGET_DISPLAY_LABEL_EDEFAULT);
 				return;
@@ -936,6 +986,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				return PIVOT_TABLE_NAME_EDEFAULT == null ? pivotTableName != null : !PIVOT_TABLE_NAME_EDEFAULT.equals(pivotTableName);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
 				return TARGET_FEATURE_NAME_EDEFAULT == null ? targetFeatureName != null : !TARGET_FEATURE_NAME_EDEFAULT.equals(targetFeatureName);
+			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
+				return targetPrimaryKey != TARGET_PRIMARY_KEY_EDEFAULT;
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
 				return TARGET_DISPLAY_LABEL_EDEFAULT == null ? targetDisplayLabel != null : !TARGET_DISPLAY_LABEL_EDEFAULT.equals(targetDisplayLabel);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
@@ -1012,6 +1064,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		result.append(pivotTableName);
 		result.append(", targetFeatureName: ");
 		result.append(targetFeatureName);
+		result.append(", targetPrimaryKey: ");
+		result.append(targetPrimaryKey);
 		result.append(", targetDisplayLabel: ");
 		result.append(targetDisplayLabel);
 		result.append(", targetHeaderClass: ");

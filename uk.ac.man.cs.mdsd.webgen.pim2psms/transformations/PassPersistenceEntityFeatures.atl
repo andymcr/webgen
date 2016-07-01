@@ -302,6 +302,7 @@ rule OneToOneAssociationWithoutContainment {
 		opposite <- orm,
 		owningEnd <- website.cardinality <> #Required and website.targetCardinality = #Required,
 		visible <- website.bidirectional,
+		primaryKey <- website.targetPrimaryKey,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
 				website.columnName
@@ -330,6 +331,7 @@ rule ManyToOneAssociationWithoutContainment {
 		opposite <- orm,
 		owningEnd <- false,
 		visible <- website.bidirectional,
+		primaryKey <- website.targetPrimaryKey,
 		pivotTableName <- website.createPivotTableName()
 	)
 }
@@ -351,6 +353,7 @@ rule OneToManyAssociationWithoutContainment {
 		opposite <- orm,
 		owningEnd <- true,
 		visible <- website.bidirectional,
+		primaryKey <- website.targetPrimaryKey,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
 				website.columnName
@@ -380,6 +383,7 @@ rule ManyToManyAssociationWithoutContainment {
 		owningEnd <- false,
 		pivotTableName <- website.createPivotTableName(),
 		visible <- website.bidirectional,
+		primaryKey <- website.targetPrimaryKey,
 		columnName <- website.targetFeatureName().createAssociationColumnName()
 	)
 }
@@ -403,6 +407,7 @@ rule OneToOneAssociationWithContainment {
 		owningEnd <- true,
 		container <- true,
 		visible <- website.bidirectional,
+		primaryKey <- website.targetPrimaryKey,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
 				website.columnName
@@ -432,6 +437,7 @@ rule OneToManyAssociationWithContainment {
 		owningEnd <- true,
 		container <- true,
 		visible <- website.bidirectional,
+		primaryKey <- website.targetPrimaryKey,
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
 				website.columnName

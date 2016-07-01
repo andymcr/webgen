@@ -55,6 +55,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			addBidirectionalPropertyDescriptor(object);
 			addPivotTableNamePropertyDescriptor(object);
 			addTargetFeatureNamePropertyDescriptor(object);
+			addTargetPrimaryKeyPropertyDescriptor(object);
 			addTargetDisplayLabelPropertyDescriptor(object);
 			addTargetHeaderClassPropertyDescriptor(object);
 			addTargetInputClassPropertyDescriptor(object);
@@ -215,6 +216,28 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Target Primary Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetPrimaryKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAssociation_targetPrimaryKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAssociation_targetPrimaryKey_feature", "_UI_EntityAssociation_type"),
+				 WebsitePackage.Literals.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
 				 null));
 	}
 
@@ -393,6 +416,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			case WebsitePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
 			case WebsitePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
+			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_PRIMARY_KEY:
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_DISPLAY_LABEL:
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_HEADER_CLASS:
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_INPUT_CLASS:

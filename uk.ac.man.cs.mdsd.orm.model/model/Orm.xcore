@@ -30,6 +30,7 @@ class OrmModel {
 	OrmTechnologies ormTechnology
 	boolean timestampCreation
 	boolean timestampUpdates
+	boolean hasCustomOrmTypes
 }
 
 enum Cardinality {

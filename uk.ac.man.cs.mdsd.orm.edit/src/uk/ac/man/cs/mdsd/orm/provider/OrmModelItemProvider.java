@@ -72,6 +72,7 @@ public class OrmModelItemProvider
 			addOrmTechnologyPropertyDescriptor(object);
 			addTimestampCreationPropertyDescriptor(object);
 			addTimestampUpdatesPropertyDescriptor(object);
+			addHasCustomOrmTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -297,6 +298,28 @@ public class OrmModelItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Has Custom Orm Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHasCustomOrmTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OrmModel_hasCustomOrmTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OrmModel_hasCustomOrmTypes_feature", "_UI_OrmModel_type"),
+				 OrmPackage.Literals.ORM_MODEL__HAS_CUSTOM_ORM_TYPES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -375,6 +398,7 @@ public class OrmModelItemProvider
 			case OrmPackage.ORM_MODEL__ORM_TECHNOLOGY:
 			case OrmPackage.ORM_MODEL__TIMESTAMP_CREATION:
 			case OrmPackage.ORM_MODEL__TIMESTAMP_UPDATES:
+			case OrmPackage.ORM_MODEL__HAS_CUSTOM_ORM_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case OrmPackage.ORM_MODEL__DATA_TYPES:

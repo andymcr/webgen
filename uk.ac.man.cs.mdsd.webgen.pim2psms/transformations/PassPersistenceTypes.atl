@@ -71,7 +71,14 @@ rule Website {
 		databasePassword <- website.websiteProperties.databasePassword,
 		ormTechnology <- website.websiteProperties.ormTechnology,
 		timestampCreation <- website.websiteProperties.timestampCreation,
-		timestampUpdates <- website.websiteProperties.timestampUpdates
+		timestampUpdates <- website.websiteProperties.timestampUpdates,
+		hasCustomOrmTypes <-
+			website.classifiers
+				->select(c | c.oclIsTypeOf(Website!Entity))
+				->collect(e | e.entityFeatures)->flatten()
+				->select(f | f.oclIsKindOf(Website!EntityAttribute))
+				->select(a | not a.ormType.oclIsUndefined())
+				->notEmpty()
 	)
 }
 

@@ -2794,13 +2794,40 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_ATTRIBUTE__PRIMARY_KEY = ENTITY_FEATURE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__PERSISTENT_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__ORM_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__INTERFACE_TYPE = ENTITY_FEATURE_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Entity Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 5;
+	int ENTITY_ATTRIBUTE_FEATURE_COUNT = ENTITY_FEATURE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2956,6 +2983,33 @@ public interface WebsitePackage extends EPackage {
 	int DATA_TYPE_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__PERSISTENT_TYPE = ENTITY_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__ORM_TYPE = ENTITY_ATTRIBUTE__ORM_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__INTERFACE_TYPE = ENTITY_ATTRIBUTE__INTERFACE_TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2965,40 +3019,13 @@ public interface WebsitePackage extends EPackage {
 	int DATA_TYPE_ATTRIBUTE__DATA_TYPE = ENTITY_ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__PERSISTENT_TYPE = ENTITY_ATTRIBUTE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__ORM_TYPE = ENTITY_ATTRIBUTE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__INTERFACE_TYPE = ENTITY_ATTRIBUTE_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Obfuscate Form Fields</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS = ENTITY_ATTRIBUTE_FEATURE_COUNT + 4;
+	int DATA_TYPE_ATTRIBUTE__OBFUSCATE_FORM_FIELDS = ENTITY_ATTRIBUTE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Case Insensitive</b></em>' attribute.
@@ -3007,7 +3034,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE = ENTITY_ATTRIBUTE_FEATURE_COUNT + 5;
+	int DATA_TYPE_ATTRIBUTE__CASE_INSENSITIVE = ENTITY_ATTRIBUTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Encrypt</b></em>' attribute.
@@ -3016,7 +3043,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_ATTRIBUTE__ENCRYPT = ENTITY_ATTRIBUTE_FEATURE_COUNT + 6;
+	int DATA_TYPE_ATTRIBUTE__ENCRYPT = ENTITY_ATTRIBUTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Data Type Attribute</em>' class.
@@ -3025,7 +3052,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = ENTITY_ATTRIBUTE_FEATURE_COUNT + 7;
+	int DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = ENTITY_ATTRIBUTE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3179,6 +3206,33 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATE_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__PERSISTENT_TYPE = ENTITY_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__ORM_TYPE = ENTITY_ATTRIBUTE__ORM_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__INTERFACE_TYPE = ENTITY_ATTRIBUTE__INTERFACE_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Details</b></em>' attribute.
@@ -3361,6 +3415,33 @@ public interface WebsitePackage extends EPackage {
 	int URL_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__PERSISTENT_TYPE = ENTITY_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__ORM_TYPE = ENTITY_ATTRIBUTE__ORM_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__INTERFACE_TYPE = ENTITY_ATTRIBUTE__INTERFACE_TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Display Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3530,6 +3611,33 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__PERSISTENT_TYPE = ENTITY_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__ORM_TYPE = ENTITY_ATTRIBUTE__ORM_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__INTERFACE_TYPE = ENTITY_ATTRIBUTE__INTERFACE_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
@@ -3784,6 +3892,33 @@ public interface WebsitePackage extends EPackage {
 	int FILE_ATTRIBUTE__PRIMARY_KEY = RESOURCE_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__PERSISTENT_TYPE = RESOURCE_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__ORM_TYPE = RESOURCE_ATTRIBUTE__ORM_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__INTERFACE_TYPE = RESOURCE_ATTRIBUTE__INTERFACE_TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3991,6 +4126,33 @@ public interface WebsitePackage extends EPackage {
 	int IMAGE_ATTRIBUTE__PRIMARY_KEY = RESOURCE_ATTRIBUTE__PRIMARY_KEY;
 
 	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__PERSISTENT_TYPE = RESOURCE_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__ORM_TYPE = RESOURCE_ATTRIBUTE__ORM_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__INTERFACE_TYPE = RESOURCE_ATTRIBUTE__INTERFACE_TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Upload Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4196,6 +4358,33 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int LOCATION_ATTRIBUTE__PRIMARY_KEY = ENTITY_ATTRIBUTE__PRIMARY_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__PERSISTENT_TYPE = ENTITY_ATTRIBUTE__PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Orm Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__ORM_TYPE = ENTITY_ATTRIBUTE__ORM_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__INTERFACE_TYPE = ENTITY_ATTRIBUTE__INTERFACE_TYPE;
 
 	/**
 	 * The number of structural features of the '<em>Location Attribute</em>' class.
@@ -13192,6 +13381,39 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getEntityAttribute_PrimaryKey();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#getPersistentType <em>Persistent Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Persistent Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#getPersistentType()
+	 * @see #getEntityAttribute()
+	 * @generated
+	 */
+	EAttribute getEntityAttribute_PersistentType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#getOrmType <em>Orm Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Orm Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#getOrmType()
+	 * @see #getEntityAttribute()
+	 * @generated
+	 */
+	EAttribute getEntityAttribute_OrmType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#getInterfaceType <em>Interface Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Interface Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#getInterfaceType()
+	 * @see #getEntityAttribute()
+	 * @generated
+	 */
+	EAttribute getEntityAttribute_InterfaceType();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.View <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13534,39 +13756,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDataTypeAttribute_DataType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute#getPersistentType <em>Persistent Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Persistent Type</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute#getPersistentType()
-	 * @see #getDataTypeAttribute()
-	 * @generated
-	 */
-	EAttribute getDataTypeAttribute_PersistentType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute#getOrmType <em>Orm Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Orm Type</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute#getOrmType()
-	 * @see #getDataTypeAttribute()
-	 * @generated
-	 */
-	EAttribute getDataTypeAttribute_OrmType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute#getInterfaceType <em>Interface Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Interface Type</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute#getInterfaceType()
-	 * @see #getDataTypeAttribute()
-	 * @generated
-	 */
-	EAttribute getDataTypeAttribute_InterfaceType();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.DataTypeAttribute#isObfuscateFormFields <em>Obfuscate Form Fields</em>}'.
@@ -17800,6 +17989,30 @@ public interface WebsitePackage extends EPackage {
 		EAttribute ENTITY_ATTRIBUTE__PRIMARY_KEY = eINSTANCE.getEntityAttribute_PrimaryKey();
 
 		/**
+		 * The meta object literal for the '<em><b>Persistent Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_ATTRIBUTE__PERSISTENT_TYPE = eINSTANCE.getEntityAttribute_PersistentType();
+
+		/**
+		 * The meta object literal for the '<em><b>Orm Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_ATTRIBUTE__ORM_TYPE = eINSTANCE.getEntityAttribute_OrmType();
+
+		/**
+		 * The meta object literal for the '<em><b>Interface Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_ATTRIBUTE__INTERFACE_TYPE = eINSTANCE.getEntityAttribute_InterfaceType();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewImpl <em>View</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -18070,30 +18283,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_TYPE_ATTRIBUTE__DATA_TYPE = eINSTANCE.getDataTypeAttribute_DataType();
-
-		/**
-		 * The meta object literal for the '<em><b>Persistent Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_TYPE_ATTRIBUTE__PERSISTENT_TYPE = eINSTANCE.getDataTypeAttribute_PersistentType();
-
-		/**
-		 * The meta object literal for the '<em><b>Orm Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_TYPE_ATTRIBUTE__ORM_TYPE = eINSTANCE.getDataTypeAttribute_OrmType();
-
-		/**
-		 * The meta object literal for the '<em><b>Interface Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_TYPE_ATTRIBUTE__INTERFACE_TYPE = eINSTANCE.getDataTypeAttribute_InterfaceType();
 
 		/**
 		 * The meta object literal for the '<em><b>Obfuscate Form Fields</b></em>' attribute feature.

@@ -54,6 +54,9 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			addValidationPatternPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addPrimaryKeyPropertyDescriptor(object);
+			addPersistentTypePropertyDescriptor(object);
+			addOrmTypePropertyDescriptor(object);
+			addInterfaceTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -147,6 +150,72 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Persistent Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPersistentTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAttribute_persistentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_persistentType_feature", "_UI_EntityAttribute_type"),
+				 WebsitePackage.Literals.ENTITY_ATTRIBUTE__PERSISTENT_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Orm Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOrmTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAttribute_ormType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_ormType_feature", "_UI_EntityAttribute_type"),
+				 WebsitePackage.Literals.ENTITY_ATTRIBUTE__ORM_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Interface Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInterfaceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAttribute_interfaceType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_interfaceType_feature", "_UI_EntityAttribute_type"),
+				 WebsitePackage.Literals.ENTITY_ATTRIBUTE__INTERFACE_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -207,6 +276,9 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			case WebsitePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
+			case WebsitePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
+			case WebsitePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
+			case WebsitePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.ENTITY_ATTRIBUTE__DEFAULT_VALUE:

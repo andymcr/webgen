@@ -238,13 +238,13 @@
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//EntityAttribute">
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityAttribute/primaryKey"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityAttribute/persistentType"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityAttribute/ormType"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//EntityAttribute/interfaceType"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//DataTypeAttribute">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertyDescription=""
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//DataTypeAttribute/dataType"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeAttribute/persistentType"/>
-      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeAttribute/ormType"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeAttribute/interfaceType"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeAttribute/obfuscateFormFields"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//DataTypeAttribute/caseInsensitive"/>
       <genFeatures createChild="false" propertyCategory="Model" propertyDescription=""

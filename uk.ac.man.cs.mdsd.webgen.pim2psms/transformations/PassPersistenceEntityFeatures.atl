@@ -137,21 +137,29 @@ abstract rule DateAttribute {
 	from website : Website!DateAttribute
 	to orm : ORM!DateAttribute (
 		persistentType <- 
-			if website.details = #DateOnly then
-				'date'
-			else if website.details = #TimeOnly then
-				'time'
+			if not website.persistentType.oclIsUndefined() and website.persistentType <> '' then
+				website.persistentType
 			else
-				'datetime'
-			endif endif,
+				if website.details = #DateOnly then
+					'date'
+				else if website.details = #TimeOnly then
+					'time'
+				else
+					'datetime'
+				endif endif
+			endif,
 		ormType <- 
-			if website.details = #DateOnly then
-				'date'
-			else if website.details = #TimeOnly then
-				'time'
-			else
-				'datetime'
-			endif endif,
+			if not website.ormType.oclIsUndefined() and website.ormType <> '' then
+				website.ormType
+			else 
+				if website.details = #DateOnly then
+					'date'
+				else if website.details = #TimeOnly then
+					'time'
+				else
+					'datetime'
+				endif endif
+			endif,
 		details <- website.details
 	)
 }
@@ -175,8 +183,18 @@ rule SingletonURL {
 	from website : Website!UrlAttribute (website.cardinality <> #Many)
 	to orm : ORM!SingletonURL (
 		displayValue <- website.displayValue,
-		persistentType <- thisModule.findWebsiteDataType('String').persistentType(),
-		ormType <- thisModule.findWebsiteDataType('String').ormType()
+		persistentType <-
+			if not website.persistentType.oclIsUndefined() and website.persistentType <> '' then
+				website.persistentType
+			else
+				thisModule.findWebsiteDataType('String').persistentType()
+			endif,
+		ormType <-
+			if not website.ormType.oclIsUndefined() and website.ormType <> '' then
+				website.ormType
+			else 
+				thisModule.findWebsiteDataType('String').ormType()
+			endif
 	)
 }
 
@@ -184,15 +202,18 @@ rule SingletonURL {
 abstract rule SingletonResource {
 	from website : Website!ResourceAttribute (website.cardinality <> #Many)
 	to orm : ORM!SingletonResource (
-		persistentType <- 'string',
+		persistentType <-
+			if not website.persistentType.oclIsUndefined() and website.persistentType <> '' then
+				website.persistentType
+			else
+				thisModule.findWebsiteDataType('String').persistentType()
+			endif,
 		ormType <-
-			let typeName : String = 'String'
-				in let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
-					in if properties.ormTechnology = #DoctrineORM then
-							typeName.toLowerCase()
-						else
-							typeName
-						endif,
+			if not website.ormType.oclIsUndefined() and website.ormType <> '' then
+				website.ormType
+			else 
+				thisModule.findWebsiteDataType('String').ormType()
+			endif,
 		maximumUploadSize <-
 			if website.maximumUploadSize > 0 then
 				website.maximumUploadSize

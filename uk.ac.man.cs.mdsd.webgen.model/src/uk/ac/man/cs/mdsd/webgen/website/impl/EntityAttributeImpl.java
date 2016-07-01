@@ -31,6 +31,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#isPrimaryKey <em>Primary Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getPersistentType <em>Persistent Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getOrmType <em>Orm Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getInterfaceType <em>Interface Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -125,6 +128,66 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * @ordered
 	 */
 	protected boolean primaryKey = PRIMARY_KEY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPersistentType() <em>Persistent Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPersistentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PERSISTENT_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPersistentType() <em>Persistent Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPersistentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String persistentType = PERSISTENT_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOrmType() <em>Orm Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrmType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ORM_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOrmType() <em>Orm Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOrmType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ormType = ORM_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTERFACE_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getInterfaceType() <em>Interface Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String interfaceType = INTERFACE_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -277,6 +340,69 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPersistentType() {
+		return persistentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPersistentType(String newPersistentType) {
+		String oldPersistentType = persistentType;
+		persistentType = newPersistentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE, oldPersistentType, persistentType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getOrmType() {
+		return ormType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOrmType(String newOrmType) {
+		String oldOrmType = ormType;
+		ormType = newOrmType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ATTRIBUTE__ORM_TYPE, oldOrmType, ormType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getInterfaceType() {
+		return interfaceType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInterfaceType(String newInterfaceType) {
+		String oldInterfaceType = interfaceType;
+		interfaceType = newInterfaceType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE, oldInterfaceType, interfaceType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -304,6 +430,12 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return getInputClass();
 			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				return isPrimaryKey();
+			case WebsitePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
+				return getPersistentType();
+			case WebsitePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
+				return getOrmType();
+			case WebsitePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
+				return getInterfaceType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -330,6 +462,15 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return;
 			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				setPrimaryKey((Boolean)newValue);
+				return;
+			case WebsitePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
+				setPersistentType((String)newValue);
+				return;
+			case WebsitePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
+				setOrmType((String)newValue);
+				return;
+			case WebsitePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
+				setInterfaceType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -358,6 +499,15 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				setPrimaryKey(PRIMARY_KEY_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
+				setPersistentType(PERSISTENT_TYPE_EDEFAULT);
+				return;
+			case WebsitePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
+				setOrmType(ORM_TYPE_EDEFAULT);
+				return;
+			case WebsitePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
+				setInterfaceType(INTERFACE_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -380,6 +530,12 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				return primaryKey != PRIMARY_KEY_EDEFAULT;
+			case WebsitePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
+				return PERSISTENT_TYPE_EDEFAULT == null ? persistentType != null : !PERSISTENT_TYPE_EDEFAULT.equals(persistentType);
+			case WebsitePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
+				return ORM_TYPE_EDEFAULT == null ? ormType != null : !ORM_TYPE_EDEFAULT.equals(ormType);
+			case WebsitePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:
+				return INTERFACE_TYPE_EDEFAULT == null ? interfaceType != null : !INTERFACE_TYPE_EDEFAULT.equals(interfaceType);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -460,6 +616,12 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		result.append(inputClass);
 		result.append(", primaryKey: ");
 		result.append(primaryKey);
+		result.append(", persistentType: ");
+		result.append(persistentType);
+		result.append(", ormType: ");
+		result.append(ormType);
+		result.append(", interfaceType: ");
+		result.append(interfaceType);
 		result.append(')');
 		return result.toString();
 	}

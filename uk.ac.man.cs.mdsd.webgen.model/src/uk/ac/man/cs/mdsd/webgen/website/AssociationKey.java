@@ -60,12 +60,12 @@ public interface AssociationKey extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Feature</em>' reference.
-	 * @see #setSourceFeature(EntityAttribute)
+	 * @see #setSourceFeature(EntityFeature)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationKey_SourceFeature()
 	 * @model required="true"
 	 * @generated
 	 */
-	EntityAttribute getSourceFeature();
+	EntityFeature getSourceFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getSourceFeature <em>Source Feature</em>}' reference.
@@ -75,7 +75,7 @@ public interface AssociationKey extends EObject {
 	 * @see #getSourceFeature()
 	 * @generated
 	 */
-	void setSourceFeature(EntityAttribute value);
+	void setSourceFeature(EntityFeature value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Feature</b></em>' reference.
@@ -86,12 +86,12 @@ public interface AssociationKey extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Feature</em>' reference.
-	 * @see #setTargetFeature(EntityAttribute)
+	 * @see #setTargetFeature(EntityFeature)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationKey_TargetFeature()
 	 * @model required="true"
 	 * @generated
 	 */
-	EntityAttribute getTargetFeature();
+	EntityFeature getTargetFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getTargetFeature <em>Target Feature</em>}' reference.
@@ -101,6 +101,6 @@ public interface AssociationKey extends EObject {
 	 * @see #getTargetFeature()
 	 * @generated
 	 */
-	void setTargetFeature(EntityAttribute value);
+	void setTargetFeature(EntityFeature value);
 
 } // AssociationKey

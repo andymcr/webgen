@@ -18,6 +18,7 @@ import uk.ac.man.cs.mdsd.webgen.website.AssociationKey;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -44,7 +45,7 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityAttribute sourceFeature;
+	protected EntityFeature sourceFeature;
 
 	/**
 	 * The cached value of the '{@link #getTargetFeature() <em>Target Feature</em>}' reference.
@@ -54,7 +55,7 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityAttribute targetFeature;
+	protected EntityFeature targetFeature;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,10 +122,10 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityAttribute getSourceFeature() {
+	public EntityFeature getSourceFeature() {
 		if (sourceFeature != null && sourceFeature.eIsProxy()) {
 			InternalEObject oldSourceFeature = (InternalEObject)sourceFeature;
-			sourceFeature = (EntityAttribute)eResolveProxy(oldSourceFeature);
+			sourceFeature = (EntityFeature)eResolveProxy(oldSourceFeature);
 			if (sourceFeature != oldSourceFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.ASSOCIATION_KEY__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
@@ -138,7 +139,7 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityAttribute basicGetSourceFeature() {
+	public EntityFeature basicGetSourceFeature() {
 		return sourceFeature;
 	}
 
@@ -147,8 +148,8 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSourceFeature(EntityAttribute newSourceFeature) {
-		EntityAttribute oldSourceFeature = sourceFeature;
+	public void setSourceFeature(EntityFeature newSourceFeature) {
+		EntityFeature oldSourceFeature = sourceFeature;
 		sourceFeature = newSourceFeature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ASSOCIATION_KEY__SOURCE_FEATURE, oldSourceFeature, sourceFeature));
@@ -159,10 +160,10 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityAttribute getTargetFeature() {
+	public EntityFeature getTargetFeature() {
 		if (targetFeature != null && targetFeature.eIsProxy()) {
 			InternalEObject oldTargetFeature = (InternalEObject)targetFeature;
-			targetFeature = (EntityAttribute)eResolveProxy(oldTargetFeature);
+			targetFeature = (EntityFeature)eResolveProxy(oldTargetFeature);
 			if (targetFeature != oldTargetFeature) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.ASSOCIATION_KEY__TARGET_FEATURE, oldTargetFeature, targetFeature));
@@ -176,7 +177,7 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityAttribute basicGetTargetFeature() {
+	public EntityFeature basicGetTargetFeature() {
 		return targetFeature;
 	}
 
@@ -185,8 +186,8 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTargetFeature(EntityAttribute newTargetFeature) {
-		EntityAttribute oldTargetFeature = targetFeature;
+	public void setTargetFeature(EntityFeature newTargetFeature) {
+		EntityFeature oldTargetFeature = targetFeature;
 		targetFeature = newTargetFeature;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ASSOCIATION_KEY__TARGET_FEATURE, oldTargetFeature, targetFeature));
@@ -268,10 +269,10 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 				setKeyFor((EntityAssociation)newValue);
 				return;
 			case WebsitePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
-				setSourceFeature((EntityAttribute)newValue);
+				setSourceFeature((EntityFeature)newValue);
 				return;
 			case WebsitePackage.ASSOCIATION_KEY__TARGET_FEATURE:
-				setTargetFeature((EntityAttribute)newValue);
+				setTargetFeature((EntityFeature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,10 +290,10 @@ public class AssociationKeyImpl extends EObjectImpl implements AssociationKey {
 				setKeyFor((EntityAssociation)null);
 				return;
 			case WebsitePackage.ASSOCIATION_KEY__SOURCE_FEATURE:
-				setSourceFeature((EntityAttribute)null);
+				setSourceFeature((EntityFeature)null);
 				return;
 			case WebsitePackage.ASSOCIATION_KEY__TARGET_FEATURE:
-				setTargetFeature((EntityAttribute)null);
+				setTargetFeature((EntityFeature)null);
 				return;
 		}
 		super.eUnset(featureID);

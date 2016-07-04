@@ -451,9 +451,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="keyFor" lowerBound="1"
         eType="#//EntityAssociation" eOpposite="#//EntityAssociation/keys"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceFeature" lowerBound="1"
-        eType="#//EntityAttribute"/>
+        eType="#//EntityFeature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetFeature" lowerBound="1"
-        eType="#//EntityAttribute"/>
+        eType="#//EntityFeature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="View" eSuperTypes="#//EntityOrView">
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" upperBound="-1"

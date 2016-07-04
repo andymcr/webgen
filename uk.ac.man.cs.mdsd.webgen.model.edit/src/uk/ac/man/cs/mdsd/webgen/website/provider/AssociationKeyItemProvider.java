@@ -84,7 +84,7 @@ public class AssociationKeyItemProvider
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof AssociationKey) {
 						final AssociationKey key = (AssociationKey) object;
-						return key.getKeyFor().getPartOf().getAttributes();
+						return key.getKeyFor().getPartOf().getAllFeatures();
 					}
 
 					return Collections.emptySet();
@@ -112,7 +112,7 @@ public class AssociationKeyItemProvider
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof AssociationKey) {
 						final AssociationKey key = (AssociationKey) object;
-						return key.getKeyFor().getTargetEntity().getAttributes();
+						return key.getKeyFor().getTargetEntity().getAllFeatures();
 					}
 
 					return Collections.emptySet();

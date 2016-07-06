@@ -38,6 +38,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getTableName <em>Table Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAutoKeyName <em>Auto Key Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getServedBy <em>Served By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getLabels <em>Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getFeatures <em>Features</em>}</li>
@@ -80,6 +81,26 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @ordered
 	 */
 	protected String tableName = TABLE_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAutoKeyName() <em>Auto Key Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAutoKeyName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String AUTO_KEY_NAME_EDEFAULT = "id";
+
+	/**
+	 * The cached value of the '{@link #getAutoKeyName() <em>Auto Key Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAutoKeyName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String autoKeyName = AUTO_KEY_NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getServedBy() <em>Served By</em>}' reference list.
@@ -209,6 +230,27 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		tableName = newTableName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME, oldTableName, tableName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAutoKeyName() {
+		return autoKeyName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAutoKeyName(String newAutoKeyName) {
+		String oldAutoKeyName = autoKeyName;
+		autoKeyName = newAutoKeyName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME, oldAutoKeyName, autoKeyName));
 	}
 
 	/**
@@ -363,6 +405,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return getKeys();
 			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
 				return getTableName();
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
+				return getAutoKeyName();
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				return getServedBy();
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
@@ -399,6 +443,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
 				setTableName((String)newValue);
 				return;
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
+				setAutoKeyName((String)newValue);
+				return;
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				getServedBy().clear();
 				getServedBy().addAll((Collection<? extends Service>)newValue);
@@ -428,6 +475,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
 				setTableName(TABLE_NAME_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
+				setAutoKeyName(AUTO_KEY_NAME_EDEFAULT);
+				return;
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				getServedBy().clear();
 				return;
@@ -453,6 +503,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return keys != null && !keys.isEmpty();
 			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
 				return TABLE_NAME_EDEFAULT == null ? tableName != null : !TABLE_NAME_EDEFAULT.equals(tableName);
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
+				return AUTO_KEY_NAME_EDEFAULT == null ? autoKeyName != null : !AUTO_KEY_NAME_EDEFAULT.equals(autoKeyName);
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				return servedBy != null && !servedBy.isEmpty();
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
@@ -485,6 +537,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (tableName: ");
 		result.append(tableName);
+		result.append(", autoKeyName: ");
+		result.append(autoKeyName);
 		result.append(", serializationExcludeAll: ");
 		result.append(serializationExcludeAll);
 		result.append(')');

@@ -166,6 +166,8 @@
     <genClasses image="false" ecoreClass="website.ecore#//EntityOrView">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/keys"/>
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/tableName"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" propertyDescription=""
+          ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/autoKeyName"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//EntityOrView/servedBy"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"

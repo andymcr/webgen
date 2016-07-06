@@ -1272,13 +1272,22 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_OR_VIEW__TABLE_NAME = CLASSIFIER_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Auto Key Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__AUTO_KEY_NAME = CLASSIFIER_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Served By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__SERVED_BY = CLASSIFIER_FEATURE_COUNT + 2;
+	int ENTITY_OR_VIEW__SERVED_BY = CLASSIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Labels</b></em>' containment reference list.
@@ -1287,7 +1296,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__LABELS = CLASSIFIER_FEATURE_COUNT + 3;
+	int ENTITY_OR_VIEW__LABELS = CLASSIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' reference list.
@@ -1296,7 +1305,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__FEATURES = CLASSIFIER_FEATURE_COUNT + 4;
+	int ENTITY_OR_VIEW__FEATURES = CLASSIFIER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>All Features</b></em>' reference list.
@@ -1305,7 +1314,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ALL_FEATURES = CLASSIFIER_FEATURE_COUNT + 5;
+	int ENTITY_OR_VIEW__ALL_FEATURES = CLASSIFIER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
@@ -1314,7 +1323,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ATTRIBUTES = CLASSIFIER_FEATURE_COUNT + 6;
+	int ENTITY_OR_VIEW__ATTRIBUTES = CLASSIFIER_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' reference list.
@@ -1323,7 +1332,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 7;
+	int ENTITY_OR_VIEW__ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>All Associations</b></em>' reference list.
@@ -1332,7 +1341,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ALL_ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 8;
+	int ENTITY_OR_VIEW__ALL_ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Exclude All</b></em>' attribute.
@@ -1341,7 +1350,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = CLASSIFIER_FEATURE_COUNT + 9;
+	int ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = CLASSIFIER_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Entity Or View</em>' class.
@@ -1350,7 +1359,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 10;
+	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 11;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature <em>Feature</em>}' class.
@@ -2423,6 +2432,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY__TABLE_NAME = ENTITY_OR_VIEW__TABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Auto Key Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__AUTO_KEY_NAME = ENTITY_OR_VIEW__AUTO_KEY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Served By</b></em>' reference list.
@@ -5303,6 +5321,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int VIEW__TABLE_NAME = ENTITY_OR_VIEW__TABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Auto Key Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__AUTO_KEY_NAME = ENTITY_OR_VIEW__AUTO_KEY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Served By</b></em>' reference list.
@@ -13137,6 +13164,17 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getEntityOrView_TableName();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyName <em>Auto Key Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Auto Key Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyName()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EAttribute getEntityOrView_AutoKeyName();
+
+	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy <em>Served By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17817,6 +17855,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY_OR_VIEW__TABLE_NAME = eINSTANCE.getEntityOrView_TableName();
+
+		/**
+		 * The meta object literal for the '<em><b>Auto Key Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_OR_VIEW__AUTO_KEY_NAME = eINSTANCE.getEntityOrView_AutoKeyName();
 
 		/**
 		 * The meta object literal for the '<em><b>Served By</b></em>' reference list feature.

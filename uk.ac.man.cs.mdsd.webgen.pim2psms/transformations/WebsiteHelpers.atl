@@ -201,6 +201,56 @@ helper def: findOrmCollection(name : String) : ORM!DataType
 		->any(c | c.elementType.name = name );
 
 
+helper context Website!Attribute def: dateFormat() : String
+	= if self.oclIsTypeOf(Website!EncapsulatedAttribute) then
+			self.attribute.dateFormat()
+		else if not self.oclIsTypeOf(Website!DateAttribute) then
+			OclUndefined
+		else if not self.format.oclIsUndefined() and self.format <> '' then
+			self.format
+		else
+			if self.details = #DateOnly then
+				thisModule.findWebsiteProperties().defaultDateFormat
+			else if self.details = #TimeOnly then
+				thisModule.findWebsiteProperties().defaultTimeFormat
+			else
+				thisModule.findWebsiteProperties().defaultDateTimeFormat
+			endif endif
+		endif endif endif;
+
+helper context Website!UnitField def: dateFormat() : String
+	= if not self.dateFormat.oclIsUndefined() and self.dateFormat <> '' then
+			self.dateFormat
+		else if self.oclIsTypeOf(Website!UnitElement) then
+			self.attribute.dateFormat()
+		else if self.oclIsTypeOf(Website!UnitAssociation) then
+			if not self.childFeature.oclIsUndefined() then
+				self.childFeature.dateFormat()
+			else
+				OclUndefined
+			endif
+		else if self.oclIsKindOf(Website!InterfaceField) then
+			if self.oclIsTypeOf(Website!DateField) then
+				self.format
+			else
+				OclUndefined
+			endif
+		else
+			OclUndefined
+		endif endif endif endif;
+
+helper context Website!ChildFeature def: dateFormat() : String
+	= if self.oclIsTypeOf(Website!ChildAttribute) then
+			self.attribute.dateFormat()
+		else
+			if self.childFeature.oclIsUndefined() then
+				OclUndefined
+			else
+				self.childFeature.dateFormat()
+			endif
+		endif;
+
+
 helper def: findWafService(name : String) : WAF!Service
 	= WAF!Service.allInstancesFrom('waf')->any(s | s.serves.name = name);
 

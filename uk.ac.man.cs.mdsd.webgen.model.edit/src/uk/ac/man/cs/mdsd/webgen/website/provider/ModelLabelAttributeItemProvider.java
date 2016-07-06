@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabel;
 import uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -49,6 +50,7 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 			super.getPropertyDescriptors(object);
 
 			addAttributePropertyDescriptor(object);
+			addDateFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,6 +84,28 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 	}
 
 	/**
+	 * This adds a property descriptor for the Date Format feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDateFormatPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelLabelAttribute_dateFormat_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelLabelAttribute_dateFormat_feature", "_UI_ModelLabelAttribute_type"),
+				 WebsitePackage.Literals.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This returns ModelLabelAttribute.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,7 +124,10 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ModelLabelAttribute_type");
+		String label = ((ModelLabelAttribute)object).getDateFormat();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ModelLabelAttribute_type") :
+			getString("_UI_ModelLabelAttribute_type") + " " + label;
 	}
 	
 
@@ -114,6 +141,12 @@ public class ModelLabelAttributeItemProvider extends ModelLabelFeatureItemProvid
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ModelLabelAttribute.class)) {
+			case WebsitePackage.MODEL_LABEL_ATTRIBUTE__DATE_FORMAT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

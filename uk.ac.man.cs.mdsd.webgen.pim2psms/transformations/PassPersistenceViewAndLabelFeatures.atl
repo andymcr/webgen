@@ -48,6 +48,12 @@ rule ModelLabelAttribute {
 				website.attribute.findOrmEntityOrView().getOrmFeature(website.attribute.name)
 			else
 				website.attribute
+			endif,
+		dateFormat <-
+			if not website.dateFormat.oclIsUndefined() and website.dateFormat.displayLabel <> '' then
+				website.dateFormat
+			else
+				website.attribute.dateFormat()
 			endif
 	)
 }

@@ -134,6 +134,7 @@ abstract class ModelLabelFeature {
 
 class ModelLabelAttribute extends ModelLabelFeature {
 	refers Attribute[1] attribute
+	String[1] dateFormat
 }
 
 class ModelLabelAssociation extends ModelLabelFeature {

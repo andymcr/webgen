@@ -13,6 +13,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute#getDateFormat <em>Date Format</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabelAttribute()
@@ -45,5 +46,31 @@ public interface ModelLabelAttribute extends ModelLabelFeature {
 	 * @generated
 	 */
 	void setAttribute(Attribute value);
+
+	/**
+	 * Returns the value of the '<em><b>Date Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Date Format</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Date Format</em>' attribute.
+	 * @see #setDateFormat(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getModelLabelAttribute_DateFormat()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getDateFormat();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ModelLabelAttribute#getDateFormat <em>Date Format</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Date Format</em>' attribute.
+	 * @see #getDateFormat()
+	 * @generated
+	 */
+	void setDateFormat(String value);
 
 } // ModelLabelAttribute

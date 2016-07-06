@@ -97,7 +97,7 @@ abstract rule EntityAttribute {
 	to orm : ORM!EntityAttribute (
 		columnName <-
 			if not website.columnName.oclIsUndefined() and website.columnName <> '' then
-				website.columnName
+				website.columnName.createAttributeColumnName()
 			else
 				website.name.createAttributeColumnName()
 			endif,

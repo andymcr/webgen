@@ -168,6 +168,9 @@
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/tableName"/>
       <genFeatures createChild="false" propertyCategory="Persistence" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/autoKeyName"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" propertyDescription=""
+          ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/autoKeyPersistentType"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/autoKeyGenerationStrategy"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//EntityOrView/servedBy"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"

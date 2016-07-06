@@ -156,13 +156,15 @@ lazy rule InverseCollectionType {
 abstract rule EntityOrView {
 	from website : Website!EntityOrView
 	to orm : ORM!EntityOrView (
-		autoKeyName <- website.autoKeyName,
 		tableName <- 
 			if not website.tableName.oclIsUndefined() and website.tableName <> '' then
 				website.tableName
 			else
 				website.name.createTableName()
 			endif,
+		autoKeyName <- website.autoKeyName.createAttributeColumnName(),
+		autoKeyPersistentType <- website.autoKeyPersistentType,
+		autoKeyGenerationStrategy <- website.autoKeyGenerationStrategy,
 		serializationExcludeAll <- website.serializationExcludeAll
 	)
 }

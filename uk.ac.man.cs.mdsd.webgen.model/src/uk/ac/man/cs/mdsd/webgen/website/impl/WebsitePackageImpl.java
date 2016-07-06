@@ -1547,25 +1547,25 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEntityOrView_AutoKeyPersistentType() {
+		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityOrView_AutoKeyGenerationStrategy() {
+		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getEntityOrView_ServedBy() {
-		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEntityOrView_Labels() {
-		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEntityOrView_Features() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1574,7 +1574,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityOrView_AllFeatures() {
+	public EReference getEntityOrView_Labels() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1583,7 +1583,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityOrView_Attributes() {
+	public EReference getEntityOrView_Features() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1592,7 +1592,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityOrView_Associations() {
+	public EReference getEntityOrView_AllFeatures() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1601,7 +1601,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityOrView_AllAssociations() {
+	public EReference getEntityOrView_Attributes() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -1610,8 +1610,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEntityOrView_Associations() {
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntityOrView_AllAssociations() {
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getEntityOrView_SerializationExcludeAll() {
-		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -5177,6 +5195,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__KEYS);
 		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__TABLE_NAME);
 		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__AUTO_KEY_NAME);
+		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE);
+		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY);
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__SERVED_BY);
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__LABELS);
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__FEATURES);
@@ -5876,6 +5896,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getEntityOrView_Keys(), this.getFeature(), null, "keys", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityOrView_TableName(), ecorePackage.getEString(), "tableName", null, 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityOrView_AutoKeyName(), ecorePackage.getEString(), "autoKeyName", "id", 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityOrView_AutoKeyPersistentType(), ecorePackage.getEString(), "autoKeyPersistentType", "integer", 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityOrView_AutoKeyGenerationStrategy(), ecorePackage.getEString(), "autoKeyGenerationStrategy", null, 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityOrView_ServedBy(), this.getService(), this.getService_Serves(), "servedBy", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityOrView_Labels(), this.getModelLabel(), this.getModelLabel_LabelFor(), "labels", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityOrView_Features(), this.getFeature(), null, "features", null, 0, -1, EntityOrView.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);

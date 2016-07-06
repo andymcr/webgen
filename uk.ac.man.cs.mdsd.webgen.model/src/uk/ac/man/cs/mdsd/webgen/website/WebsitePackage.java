@@ -1281,13 +1281,31 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_OR_VIEW__AUTO_KEY_NAME = CLASSIFIER_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Auto Key Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE = CLASSIFIER_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Auto Key Generation Strategy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY = CLASSIFIER_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Served By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__SERVED_BY = CLASSIFIER_FEATURE_COUNT + 3;
+	int ENTITY_OR_VIEW__SERVED_BY = CLASSIFIER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Labels</b></em>' containment reference list.
@@ -1296,7 +1314,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__LABELS = CLASSIFIER_FEATURE_COUNT + 4;
+	int ENTITY_OR_VIEW__LABELS = CLASSIFIER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' reference list.
@@ -1305,7 +1323,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__FEATURES = CLASSIFIER_FEATURE_COUNT + 5;
+	int ENTITY_OR_VIEW__FEATURES = CLASSIFIER_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>All Features</b></em>' reference list.
@@ -1314,7 +1332,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ALL_FEATURES = CLASSIFIER_FEATURE_COUNT + 6;
+	int ENTITY_OR_VIEW__ALL_FEATURES = CLASSIFIER_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
@@ -1323,7 +1341,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ATTRIBUTES = CLASSIFIER_FEATURE_COUNT + 7;
+	int ENTITY_OR_VIEW__ATTRIBUTES = CLASSIFIER_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' reference list.
@@ -1332,7 +1350,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 8;
+	int ENTITY_OR_VIEW__ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>All Associations</b></em>' reference list.
@@ -1341,7 +1359,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ALL_ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 9;
+	int ENTITY_OR_VIEW__ALL_ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Exclude All</b></em>' attribute.
@@ -1350,7 +1368,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = CLASSIFIER_FEATURE_COUNT + 10;
+	int ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = CLASSIFIER_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Entity Or View</em>' class.
@@ -1359,7 +1377,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 11;
+	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature <em>Feature</em>}' class.
@@ -2441,6 +2459,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY__AUTO_KEY_NAME = ENTITY_OR_VIEW__AUTO_KEY_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Auto Key Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__AUTO_KEY_PERSISTENT_TYPE = ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Auto Key Generation Strategy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__AUTO_KEY_GENERATION_STRATEGY = ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY;
 
 	/**
 	 * The feature id for the '<em><b>Served By</b></em>' reference list.
@@ -5330,6 +5366,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int VIEW__AUTO_KEY_NAME = ENTITY_OR_VIEW__AUTO_KEY_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Auto Key Persistent Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__AUTO_KEY_PERSISTENT_TYPE = ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Auto Key Generation Strategy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__AUTO_KEY_GENERATION_STRATEGY = ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY;
 
 	/**
 	 * The feature id for the '<em><b>Served By</b></em>' reference list.
@@ -13175,6 +13229,28 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getEntityOrView_AutoKeyName();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyPersistentType <em>Auto Key Persistent Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Auto Key Persistent Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyPersistentType()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EAttribute getEntityOrView_AutoKeyPersistentType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyGenerationStrategy <em>Auto Key Generation Strategy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Auto Key Generation Strategy</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyGenerationStrategy()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EAttribute getEntityOrView_AutoKeyGenerationStrategy();
+
+	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy <em>Served By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17863,6 +17939,22 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY_OR_VIEW__AUTO_KEY_NAME = eINSTANCE.getEntityOrView_AutoKeyName();
+
+		/**
+		 * The meta object literal for the '<em><b>Auto Key Persistent Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE = eINSTANCE.getEntityOrView_AutoKeyPersistentType();
+
+		/**
+		 * The meta object literal for the '<em><b>Auto Key Generation Strategy</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY = eINSTANCE.getEntityOrView_AutoKeyGenerationStrategy();
 
 		/**
 		 * The meta object literal for the '<em><b>Served By</b></em>' reference list feature.

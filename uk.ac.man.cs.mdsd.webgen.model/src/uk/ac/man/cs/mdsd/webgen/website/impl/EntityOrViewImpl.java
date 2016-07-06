@@ -39,6 +39,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getTableName <em>Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAutoKeyName <em>Auto Key Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAutoKeyPersistentType <em>Auto Key Persistent Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAutoKeyGenerationStrategy <em>Auto Key Generation Strategy</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getServedBy <em>Served By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getLabels <em>Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getFeatures <em>Features</em>}</li>
@@ -101,6 +103,46 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @ordered
 	 */
 	protected String autoKeyName = AUTO_KEY_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAutoKeyPersistentType() <em>Auto Key Persistent Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAutoKeyPersistentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String AUTO_KEY_PERSISTENT_TYPE_EDEFAULT = "integer";
+
+	/**
+	 * The cached value of the '{@link #getAutoKeyPersistentType() <em>Auto Key Persistent Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAutoKeyPersistentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String autoKeyPersistentType = AUTO_KEY_PERSISTENT_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAutoKeyGenerationStrategy() <em>Auto Key Generation Strategy</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAutoKeyGenerationStrategy()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String AUTO_KEY_GENERATION_STRATEGY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAutoKeyGenerationStrategy() <em>Auto Key Generation Strategy</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAutoKeyGenerationStrategy()
+	 * @generated
+	 * @ordered
+	 */
+	protected String autoKeyGenerationStrategy = AUTO_KEY_GENERATION_STRATEGY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getServedBy() <em>Served By</em>}' reference list.
@@ -258,6 +300,48 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getAutoKeyPersistentType() {
+		return autoKeyPersistentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAutoKeyPersistentType(String newAutoKeyPersistentType) {
+		String oldAutoKeyPersistentType = autoKeyPersistentType;
+		autoKeyPersistentType = newAutoKeyPersistentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE, oldAutoKeyPersistentType, autoKeyPersistentType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAutoKeyGenerationStrategy() {
+		return autoKeyGenerationStrategy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAutoKeyGenerationStrategy(String newAutoKeyGenerationStrategy) {
+		String oldAutoKeyGenerationStrategy = autoKeyGenerationStrategy;
+		autoKeyGenerationStrategy = newAutoKeyGenerationStrategy;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY, oldAutoKeyGenerationStrategy, autoKeyGenerationStrategy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<Service> getServedBy() {
 		if (servedBy == null) {
 			servedBy = new EObjectWithInverseResolvingEList<Service>(Service.class, this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY, WebsitePackage.SERVICE__SERVES);
@@ -407,6 +491,10 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return getTableName();
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 				return getAutoKeyName();
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
+				return getAutoKeyPersistentType();
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
+				return getAutoKeyGenerationStrategy();
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				return getServedBy();
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
@@ -446,6 +534,12 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 				setAutoKeyName((String)newValue);
 				return;
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
+				setAutoKeyPersistentType((String)newValue);
+				return;
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
+				setAutoKeyGenerationStrategy((String)newValue);
+				return;
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				getServedBy().clear();
 				getServedBy().addAll((Collection<? extends Service>)newValue);
@@ -478,6 +572,12 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 				setAutoKeyName(AUTO_KEY_NAME_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
+				setAutoKeyPersistentType(AUTO_KEY_PERSISTENT_TYPE_EDEFAULT);
+				return;
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
+				setAutoKeyGenerationStrategy(AUTO_KEY_GENERATION_STRATEGY_EDEFAULT);
+				return;
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				getServedBy().clear();
 				return;
@@ -505,6 +605,10 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return TABLE_NAME_EDEFAULT == null ? tableName != null : !TABLE_NAME_EDEFAULT.equals(tableName);
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 				return AUTO_KEY_NAME_EDEFAULT == null ? autoKeyName != null : !AUTO_KEY_NAME_EDEFAULT.equals(autoKeyName);
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
+				return AUTO_KEY_PERSISTENT_TYPE_EDEFAULT == null ? autoKeyPersistentType != null : !AUTO_KEY_PERSISTENT_TYPE_EDEFAULT.equals(autoKeyPersistentType);
+			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
+				return AUTO_KEY_GENERATION_STRATEGY_EDEFAULT == null ? autoKeyGenerationStrategy != null : !AUTO_KEY_GENERATION_STRATEGY_EDEFAULT.equals(autoKeyGenerationStrategy);
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				return servedBy != null && !servedBy.isEmpty();
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
@@ -539,6 +643,10 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		result.append(tableName);
 		result.append(", autoKeyName: ");
 		result.append(autoKeyName);
+		result.append(", autoKeyPersistentType: ");
+		result.append(autoKeyPersistentType);
+		result.append(", autoKeyGenerationStrategy: ");
+		result.append(autoKeyGenerationStrategy);
 		result.append(", serializationExcludeAll: ");
 		result.append(serializationExcludeAll);
 		result.append(')');

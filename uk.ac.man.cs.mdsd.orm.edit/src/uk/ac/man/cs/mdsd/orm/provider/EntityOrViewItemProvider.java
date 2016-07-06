@@ -50,8 +50,10 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 
 			addPartOfPropertyDescriptor(object);
 			addKeysPropertyDescriptor(object);
-			addAutoKeyNamePropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
+			addAutoKeyNamePropertyDescriptor(object);
+			addAutoKeyPersistentTypePropertyDescriptor(object);
+			addAutoKeyGenerationStrategyPropertyDescriptor(object);
 			addSerializationExcludeAllPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -115,6 +117,50 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 getString("_UI_EntityOrView_autoKeyName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_autoKeyName_feature", "_UI_EntityOrView_type"),
 				 OrmPackage.Literals.ENTITY_OR_VIEW__AUTO_KEY_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Auto Key Persistent Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutoKeyPersistentTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_autoKeyPersistentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_autoKeyPersistentType_feature", "_UI_EntityOrView_type"),
+				 OrmPackage.Literals.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Auto Key Generation Strategy feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAutoKeyGenerationStrategyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_autoKeyGenerationStrategy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_autoKeyGenerationStrategy_feature", "_UI_EntityOrView_type"),
+				 OrmPackage.Literals.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY,
 				 true,
 				 false,
 				 false,
@@ -225,8 +271,10 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityOrView.class)) {
-			case OrmPackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 			case OrmPackage.ENTITY_OR_VIEW__TABLE_NAME:
+			case OrmPackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
+			case OrmPackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
+			case OrmPackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 			case OrmPackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

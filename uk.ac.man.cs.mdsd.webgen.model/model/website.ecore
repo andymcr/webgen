@@ -211,6 +211,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoKeyName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="id"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoKeyPersistentType"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoKeyGenerationStrategy"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="servedBy" upperBound="-1"
         eType="#//Service" eOpposite="#//Service/serves"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"

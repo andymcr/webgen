@@ -96,8 +96,10 @@ abstract class EntityOrView extends Classifier {
 	container OrmModel[1] partOf opposite entitiesAndViews
 	contains Feature[] features opposite partOf
 	refers Feature[] ^keys
-	String autoKeyName
 	String tableName
+	String autoKeyName
+	String autoKeyPersistentType
+	String autoKeyGenerationStrategy
 	contains ModelLabel[] labels opposite labelFor
 	Boolean[1] serializationExcludeAll = "false"
 }

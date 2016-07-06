@@ -16,6 +16,8 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getTableName <em>Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyName <em>Auto Key Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyPersistentType <em>Auto Key Persistent Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyGenerationStrategy <em>Auto Key Generation Strategy</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getServedBy <em>Served By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getLabels <em>Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getFeatures <em>Features</em>}</li>
@@ -85,6 +87,59 @@ public interface EntityOrView extends Classifier, SelectionField {
 	 * @generated
 	 */
 	void setAutoKeyName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Auto Key Persistent Type</b></em>' attribute.
+	 * The default value is <code>"integer"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Auto Key Persistent Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Auto Key Persistent Type</em>' attribute.
+	 * @see #setAutoKeyPersistentType(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_AutoKeyPersistentType()
+	 * @model default="integer"
+	 * @generated
+	 */
+	String getAutoKeyPersistentType();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyPersistentType <em>Auto Key Persistent Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Auto Key Persistent Type</em>' attribute.
+	 * @see #getAutoKeyPersistentType()
+	 * @generated
+	 */
+	void setAutoKeyPersistentType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Auto Key Generation Strategy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Auto Key Generation Strategy</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Auto Key Generation Strategy</em>' attribute.
+	 * @see #setAutoKeyGenerationStrategy(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_AutoKeyGenerationStrategy()
+	 * @model
+	 * @generated
+	 */
+	String getAutoKeyGenerationStrategy();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyGenerationStrategy <em>Auto Key Generation Strategy</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Auto Key Generation Strategy</em>' attribute.
+	 * @see #getAutoKeyGenerationStrategy()
+	 * @generated
+	 */
+	void setAutoKeyGenerationStrategy(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Served By</b></em>' reference list.

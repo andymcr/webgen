@@ -18,7 +18,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#isHomeUnit <em>Home Unit</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getCaptionClass <em>Caption Class</em>}</li>
@@ -109,32 +108,6 @@ public interface ContentUnit extends NamedDisplayElement {
 	 * @generated
 	 */
 	void setUriElement(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Home Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Home Unit</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Home Unit</em>' attribute.
-	 * @see #setHomeUnit(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getContentUnit_HomeUnit()
-	 * @model
-	 * @generated
-	 */
-	boolean isHomeUnit();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#isHomeUnit <em>Home Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Home Unit</em>' attribute.
-	 * @see #isHomeUnit()
-	 * @generated
-	 */
-	void setHomeUnit(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Alternative</b></em>' attribute.

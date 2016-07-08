@@ -229,7 +229,6 @@ abstract class ContentUnit extends NamedDisplayElement {
 	container UnitContainer[1] displayedOn opposite units
 	String purposeSummary
 	String uriElement = ""
-	boolean homeUnit = "false"
 	String alternative
 	boolean omitCaption
 	String captionClass

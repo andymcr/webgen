@@ -48,7 +48,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#isHomeUnit <em>Home Unit</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
@@ -151,26 +150,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * @ordered
 	 */
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHomeUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HOME_UNIT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHomeUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean homeUnit = HOME_UNIT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAlternative() <em>Alternative</em>}' attribute.
@@ -641,27 +620,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isHomeUnit() {
-		return homeUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setHomeUnit(boolean newHomeUnit) {
-		boolean oldHomeUnit = homeUnit;
-		homeUnit = newHomeUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.REGISTRATION_UNIT__HOME_UNIT, oldHomeUnit, homeUnit));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getAlternative() {
 		return alternative;
 	}
@@ -1094,8 +1052,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return getPurposeSummary();
 			case WebsitePackage.REGISTRATION_UNIT__URI_ELEMENT:
 				return getUriElement();
-			case WebsitePackage.REGISTRATION_UNIT__HOME_UNIT:
-				return isHomeUnit();
 			case WebsitePackage.REGISTRATION_UNIT__ALTERNATIVE:
 				return getAlternative();
 			case WebsitePackage.REGISTRATION_UNIT__OMIT_CAPTION:
@@ -1160,9 +1116,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__URI_ELEMENT:
 				setUriElement((String)newValue);
-				return;
-			case WebsitePackage.REGISTRATION_UNIT__HOME_UNIT:
-				setHomeUnit((Boolean)newValue);
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__ALTERNATIVE:
 				setAlternative((String)newValue);
@@ -1248,9 +1201,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			case WebsitePackage.REGISTRATION_UNIT__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
-			case WebsitePackage.REGISTRATION_UNIT__HOME_UNIT:
-				setHomeUnit(HOME_UNIT_EDEFAULT);
-				return;
 			case WebsitePackage.REGISTRATION_UNIT__ALTERNATIVE:
 				setAlternative(ALTERNATIVE_EDEFAULT);
 				return;
@@ -1327,8 +1277,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.REGISTRATION_UNIT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
-			case WebsitePackage.REGISTRATION_UNIT__HOME_UNIT:
-				return homeUnit != HOME_UNIT_EDEFAULT;
 			case WebsitePackage.REGISTRATION_UNIT__ALTERNATIVE:
 				return ALTERNATIVE_EDEFAULT == null ? alternative != null : !ALTERNATIVE_EDEFAULT.equals(alternative);
 			case WebsitePackage.REGISTRATION_UNIT__OMIT_CAPTION:
@@ -1393,7 +1341,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				case WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__DISPLAYED_ON;
 				case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY: return WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.REGISTRATION_UNIT__URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__URI_ELEMENT;
-				case WebsitePackage.REGISTRATION_UNIT__HOME_UNIT: return WebsitePackage.CONTENT_UNIT__HOME_UNIT;
 				case WebsitePackage.REGISTRATION_UNIT__ALTERNATIVE: return WebsitePackage.CONTENT_UNIT__ALTERNATIVE;
 				case WebsitePackage.REGISTRATION_UNIT__OMIT_CAPTION: return WebsitePackage.CONTENT_UNIT__OMIT_CAPTION;
 				case WebsitePackage.REGISTRATION_UNIT__CAPTION_CLASS: return WebsitePackage.CONTENT_UNIT__CAPTION_CLASS;
@@ -1451,7 +1398,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON: return WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON;
 				case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.CONTENT_UNIT__URI_ELEMENT: return WebsitePackage.REGISTRATION_UNIT__URI_ELEMENT;
-				case WebsitePackage.CONTENT_UNIT__HOME_UNIT: return WebsitePackage.REGISTRATION_UNIT__HOME_UNIT;
 				case WebsitePackage.CONTENT_UNIT__ALTERNATIVE: return WebsitePackage.REGISTRATION_UNIT__ALTERNATIVE;
 				case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION: return WebsitePackage.REGISTRATION_UNIT__OMIT_CAPTION;
 				case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS: return WebsitePackage.REGISTRATION_UNIT__CAPTION_CLASS;
@@ -1503,8 +1449,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		result.append(purposeSummary);
 		result.append(", uriElement: ");
 		result.append(uriElement);
-		result.append(", homeUnit: ");
-		result.append(homeUnit);
 		result.append(", alternative: ");
 		result.append(alternative);
 		result.append(", omitCaption: ");

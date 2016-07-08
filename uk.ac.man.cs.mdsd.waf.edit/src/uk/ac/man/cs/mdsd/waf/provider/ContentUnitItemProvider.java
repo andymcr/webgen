@@ -52,7 +52,6 @@ public class ContentUnitItemProvider
 			addDisplayedOnPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
-			addHomeUnitPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
@@ -125,28 +124,6 @@ public class ContentUnitItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Home Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHomeUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_homeUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_homeUnit_feature", "_UI_ContentUnit_type"),
-				 WafPackage.Literals.CONTENT_UNIT__HOME_UNIT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -289,7 +266,6 @@ public class ContentUnitItemProvider
 		switch (notification.getFeatureID(ContentUnit.class)) {
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
-			case WafPackage.CONTENT_UNIT__HOME_UNIT:
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
 			case WafPackage.CONTENT_UNIT__CAPTION_CLASS:

@@ -48,7 +48,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#isHomeUnit <em>Home Unit</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
@@ -152,26 +151,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * @ordered
 	 */
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHomeUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HOME_UNIT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHomeUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean homeUnit = HOME_UNIT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAlternative() <em>Alternative</em>}' attribute.
@@ -662,27 +641,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isHomeUnit() {
-		return homeUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setHomeUnit(boolean newHomeUnit) {
-		boolean oldHomeUnit = homeUnit;
-		homeUnit = newHomeUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__HOME_UNIT, oldHomeUnit, homeUnit));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getAlternative() {
 		return alternative;
 	}
@@ -1136,8 +1094,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return getPurposeSummary();
 			case WebsitePackage.LOGIN_UNIT__URI_ELEMENT:
 				return getUriElement();
-			case WebsitePackage.LOGIN_UNIT__HOME_UNIT:
-				return isHomeUnit();
 			case WebsitePackage.LOGIN_UNIT__ALTERNATIVE:
 				return getAlternative();
 			case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION:
@@ -1204,9 +1160,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return;
 			case WebsitePackage.LOGIN_UNIT__URI_ELEMENT:
 				setUriElement((String)newValue);
-				return;
-			case WebsitePackage.LOGIN_UNIT__HOME_UNIT:
-				setHomeUnit((Boolean)newValue);
 				return;
 			case WebsitePackage.LOGIN_UNIT__ALTERNATIVE:
 				setAlternative((String)newValue);
@@ -1295,9 +1248,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
-			case WebsitePackage.LOGIN_UNIT__HOME_UNIT:
-				setHomeUnit(HOME_UNIT_EDEFAULT);
-				return;
 			case WebsitePackage.LOGIN_UNIT__ALTERNATIVE:
 				setAlternative(ALTERNATIVE_EDEFAULT);
 				return;
@@ -1377,8 +1327,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.LOGIN_UNIT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
-			case WebsitePackage.LOGIN_UNIT__HOME_UNIT:
-				return homeUnit != HOME_UNIT_EDEFAULT;
 			case WebsitePackage.LOGIN_UNIT__ALTERNATIVE:
 				return ALTERNATIVE_EDEFAULT == null ? alternative != null : !ALTERNATIVE_EDEFAULT.equals(alternative);
 			case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION:
@@ -1445,7 +1393,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.LOGIN_UNIT__DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__DISPLAYED_ON;
 				case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY: return WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.LOGIN_UNIT__URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__URI_ELEMENT;
-				case WebsitePackage.LOGIN_UNIT__HOME_UNIT: return WebsitePackage.CONTENT_UNIT__HOME_UNIT;
 				case WebsitePackage.LOGIN_UNIT__ALTERNATIVE: return WebsitePackage.CONTENT_UNIT__ALTERNATIVE;
 				case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION: return WebsitePackage.CONTENT_UNIT__OMIT_CAPTION;
 				case WebsitePackage.LOGIN_UNIT__CAPTION_CLASS: return WebsitePackage.CONTENT_UNIT__CAPTION_CLASS;
@@ -1503,7 +1450,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON: return WebsitePackage.LOGIN_UNIT__DISPLAYED_ON;
 				case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.CONTENT_UNIT__URI_ELEMENT: return WebsitePackage.LOGIN_UNIT__URI_ELEMENT;
-				case WebsitePackage.CONTENT_UNIT__HOME_UNIT: return WebsitePackage.LOGIN_UNIT__HOME_UNIT;
 				case WebsitePackage.CONTENT_UNIT__ALTERNATIVE: return WebsitePackage.LOGIN_UNIT__ALTERNATIVE;
 				case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION: return WebsitePackage.LOGIN_UNIT__OMIT_CAPTION;
 				case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS: return WebsitePackage.LOGIN_UNIT__CAPTION_CLASS;
@@ -1555,8 +1501,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		result.append(purposeSummary);
 		result.append(", uriElement: ");
 		result.append(uriElement);
-		result.append(", homeUnit: ");
-		result.append(homeUnit);
 		result.append(", alternative: ");
 		result.append(alternative);
 		result.append(", omitCaption: ");

@@ -514,7 +514,6 @@ abstract rule ContentUnit {
 	to waf : WAF!ContentUnit (
 		purposeSummary <- website.purposeSummary,
 		uriElement <- website.uriElement.trim(),
-		homeUnit <- website.homeUnit,
 		omitCaption <-
 			if not website.omitCaption.oclIsUndefined() then
 				website.omitCaption
@@ -874,9 +873,11 @@ rule DetailsUnit {
 		uriElement <-
 			if website.uriElement.trim() <> '' then
 				website.uriElement.trim()
-			else
+			else if website.createDefaultUriElement then
 				website.name.createName()
-			endif,
+			else
+				''
+			endif endif,
 		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
 		omitFieldLabels <- website.omitFieldLabels
 	)

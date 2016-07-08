@@ -66,7 +66,6 @@ public class ForgottenPasswordUnitItemProvider
 			addDisplayLabelPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
-			addHomeUnitPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
@@ -171,28 +170,6 @@ public class ForgottenPasswordUnitItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_NavigationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Home Unit feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHomeUnitPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContentUnit_homeUnit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_homeUnit_feature", "_UI_ContentUnit_type"),
-				 WebsitePackage.Literals.CONTENT_UNIT__HOME_UNIT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
@@ -621,7 +598,6 @@ public class ForgottenPasswordUnitItemProvider
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_LABEL:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HOME_UNIT:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS:

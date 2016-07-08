@@ -50,6 +50,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			addFooterClassPropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
 			addSerializationExposePropertyDescriptor(object);
+			addEncodeUriKeyPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
 			addOrderedPropertyDescriptor(object);
@@ -165,6 +166,28 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_SerializationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Encode Uri Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEncodeUriKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_encodeUriKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_encodeUriKey_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__ENCODE_URI_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -288,6 +311,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			case WebsitePackage.ENTITY_FEATURE__FOOTER_CLASS:
 			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
 			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
+			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 			case WebsitePackage.ENTITY_FEATURE__CARDINALITY:
 			case WebsitePackage.ENTITY_FEATURE__UNIQUE:
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:

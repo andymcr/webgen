@@ -23,7 +23,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationWithoutContainmentImpl#getTargetCardinality <em>Target Cardinality</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationWithoutContainmentImpl#getTargetUnique <em>Target Unique</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.AssociationWithoutContainmentImpl#isTargetUnique <em>Target Unique</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,23 +48,23 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 	 */
 	protected Cardinality targetCardinality = TARGET_CARDINALITY_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getTargetUnique() <em>Target Unique</em>}' attribute.
+	 * The default value of the '{@link #isTargetUnique() <em>Target Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetUnique()
+	 * @see #isTargetUnique()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Boolean TARGET_UNIQUE_EDEFAULT = Boolean.TRUE;
+	protected static final boolean TARGET_UNIQUE_EDEFAULT = true;
 	/**
-	 * The cached value of the '{@link #getTargetUnique() <em>Target Unique</em>}' attribute.
+	 * The cached value of the '{@link #isTargetUnique() <em>Target Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetUnique()
+	 * @see #isTargetUnique()
 	 * @generated
 	 * @ordered
 	 */
-	protected Boolean targetUnique = TARGET_UNIQUE_EDEFAULT;
+	protected boolean targetUnique = TARGET_UNIQUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,7 +111,7 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Boolean getTargetUnique() {
+	public boolean isTargetUnique() {
 		return targetUnique;
 	}
 
@@ -120,8 +120,8 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTargetUnique(Boolean newTargetUnique) {
-		Boolean oldTargetUnique = targetUnique;
+	public void setTargetUnique(boolean newTargetUnique) {
+		boolean oldTargetUnique = targetUnique;
 		targetUnique = newTargetUnique;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE, oldTargetUnique, targetUnique));
@@ -138,7 +138,7 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 			case WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
 				return getTargetCardinality();
 			case WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
-				return getTargetUnique();
+				return isTargetUnique();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,7 +190,7 @@ public class AssociationWithoutContainmentImpl extends EntityAssociationImpl imp
 			case WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_CARDINALITY:
 				return targetCardinality != TARGET_CARDINALITY_EDEFAULT;
 			case WebsitePackage.ASSOCIATION_WITHOUT_CONTAINMENT__TARGET_UNIQUE:
-				return TARGET_UNIQUE_EDEFAULT == null ? targetUnique != null : !TARGET_UNIQUE_EDEFAULT.equals(targetUnique);
+				return targetUnique != TARGET_UNIQUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

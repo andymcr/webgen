@@ -47,7 +47,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#isHomeUnit <em>Home Unit</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getAlternative <em>Alternative</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
@@ -150,24 +152,64 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * The default value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOmitCaption()
+	 * @see #isHomeUnit()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Boolean OMIT_CAPTION_EDEFAULT = null;
+	protected static final boolean HOME_UNIT_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * The cached value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOmitCaption()
+	 * @see #isHomeUnit()
 	 * @generated
 	 * @ordered
 	 */
-	protected Boolean omitCaption = OMIT_CAPTION_EDEFAULT;
+	protected boolean homeUnit = HOME_UNIT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAlternative() <em>Alternative</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlternative()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ALTERNATIVE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAlternative() <em>Alternative</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlternative()
+	 * @generated
+	 * @ordered
+	 */
+	protected String alternative = ALTERNATIVE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitCaption()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OMIT_CAPTION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitCaption()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean omitCaption = OMIT_CAPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCaptionClass() <em>Caption Class</em>}' attribute.
@@ -598,7 +640,49 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Boolean getOmitCaption() {
+	public boolean isHomeUnit() {
+		return homeUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHomeUnit(boolean newHomeUnit) {
+		boolean oldHomeUnit = homeUnit;
+		homeUnit = newHomeUnit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HOME_UNIT, oldHomeUnit, homeUnit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAlternative() {
+		return alternative;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAlternative(String newAlternative) {
+		String oldAlternative = alternative;
+		alternative = newAlternative;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE, oldAlternative, alternative));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOmitCaption() {
 		return omitCaption;
 	}
 
@@ -607,8 +691,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOmitCaption(Boolean newOmitCaption) {
-		Boolean oldOmitCaption = omitCaption;
+	public void setOmitCaption(boolean newOmitCaption) {
+		boolean oldOmitCaption = omitCaption;
 		omitCaption = newOmitCaption;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION, oldOmitCaption, omitCaption));
@@ -1009,8 +1093,12 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return getPurposeSummary();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
 				return getUriElement();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HOME_UNIT:
+				return isHomeUnit();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE:
+				return getAlternative();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION:
-				return getOmitCaption();
+				return isOmitCaption();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS:
 				return getCaptionClass();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES:
@@ -1071,6 +1159,12 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
 				setUriElement((String)newValue);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HOME_UNIT:
+				setHomeUnit((Boolean)newValue);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE:
+				setAlternative((String)newValue);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION:
 				setOmitCaption((Boolean)newValue);
@@ -1153,6 +1247,12 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HOME_UNIT:
+				setHomeUnit(HOME_UNIT_EDEFAULT);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE:
+				setAlternative(ALTERNATIVE_EDEFAULT);
+				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION:
 				setOmitCaption(OMIT_CAPTION_EDEFAULT);
 				return;
@@ -1226,8 +1326,12 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HOME_UNIT:
+				return homeUnit != HOME_UNIT_EDEFAULT;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE:
+				return ALTERNATIVE_EDEFAULT == null ? alternative != null : !ALTERNATIVE_EDEFAULT.equals(alternative);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION:
-				return OMIT_CAPTION_EDEFAULT == null ? omitCaption != null : !OMIT_CAPTION_EDEFAULT.equals(omitCaption);
+				return omitCaption != OMIT_CAPTION_EDEFAULT;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS:
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES:
@@ -1288,6 +1392,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__DISPLAYED_ON;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY: return WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__URI_ELEMENT;
+				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HOME_UNIT: return WebsitePackage.CONTENT_UNIT__HOME_UNIT;
+				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE: return WebsitePackage.CONTENT_UNIT__ALTERNATIVE;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION: return WebsitePackage.CONTENT_UNIT__OMIT_CAPTION;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS: return WebsitePackage.CONTENT_UNIT__CAPTION_CLASS;
 				default: return -1;
@@ -1344,6 +1450,8 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON;
 				case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.CONTENT_UNIT__URI_ELEMENT: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT;
+				case WebsitePackage.CONTENT_UNIT__HOME_UNIT: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HOME_UNIT;
+				case WebsitePackage.CONTENT_UNIT__ALTERNATIVE: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE;
 				case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION;
 				case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS;
 				default: return -1;
@@ -1394,6 +1502,10 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		result.append(purposeSummary);
 		result.append(", uriElement: ");
 		result.append(uriElement);
+		result.append(", homeUnit: ");
+		result.append(homeUnit);
+		result.append(", alternative: ");
+		result.append(alternative);
 		result.append(", omitCaption: ");
 		result.append(omitCaption);
 		result.append(", captionClass: ");

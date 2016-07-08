@@ -35,6 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getFooterClass <em>Footer Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isUnique <em>Unique</em>}</li>
@@ -134,6 +135,26 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * @ordered
 	 */
 	protected boolean serializationExpose = SERIALIZATION_EXPOSE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEncodeUriKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ENCODE_URI_KEY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEncodeUriKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean encodeUriKey = ENCODE_URI_KEY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
@@ -419,6 +440,27 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isEncodeUriKey() {
+		return encodeUriKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEncodeUriKey(boolean newEncodeUriKey) {
+		boolean oldEncodeUriKey = encodeUriKey;
+		encodeUriKey = newEncodeUriKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY, oldEncodeUriKey, encodeUriKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Entity getPartOf() {
 		if (eContainerFeatureID() != WebsitePackage.ENTITY_FEATURE__PART_OF) return null;
 		return (Entity)eInternalContainer();
@@ -517,6 +559,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return getSerializationGroups();
 			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
 				return isSerializationExpose();
+			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
+				return isEncodeUriKey();
 			case WebsitePackage.ENTITY_FEATURE__PART_OF:
 				return getPartOf();
 			case WebsitePackage.ENTITY_FEATURE__CARDINALITY:
@@ -555,6 +599,9 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return;
 			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
 				setSerializationExpose((Boolean)newValue);
+				return;
+			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
+				setEncodeUriKey((Boolean)newValue);
 				return;
 			case WebsitePackage.ENTITY_FEATURE__PART_OF:
 				setPartOf((Entity)newValue);
@@ -598,6 +645,9 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
 				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
+				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
+				return;
 			case WebsitePackage.ENTITY_FEATURE__PART_OF:
 				setPartOf((Entity)null);
 				return;
@@ -635,6 +685,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return serializationGroups != null && !serializationGroups.isEmpty();
 			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
 				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
+			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
+				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
 			case WebsitePackage.ENTITY_FEATURE__PART_OF:
 				return getPartOf() != null;
 			case WebsitePackage.ENTITY_FEATURE__CARDINALITY:
@@ -663,6 +715,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				case WebsitePackage.ENTITY_FEATURE__FOOTER_CLASS: return WebsitePackage.FEATURE__FOOTER_CLASS;
 				case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.FEATURE__SERIALIZATION_GROUPS;
 				case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.FEATURE__SERIALIZATION_EXPOSE;
+				case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY: return WebsitePackage.FEATURE__ENCODE_URI_KEY;
 				default: return -1;
 			}
 		}
@@ -683,6 +736,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				case WebsitePackage.FEATURE__FOOTER_CLASS: return WebsitePackage.ENTITY_FEATURE__FOOTER_CLASS;
 				case WebsitePackage.FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS;
 				case WebsitePackage.FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE;
+				case WebsitePackage.FEATURE__ENCODE_URI_KEY: return WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY;
 				default: return -1;
 			}
 		}
@@ -709,6 +763,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		result.append(serializationGroups);
 		result.append(", serializationExpose: ");
 		result.append(serializationExpose);
+		result.append(", encodeUriKey: ");
+		result.append(encodeUriKey);
 		result.append(", cardinality: ");
 		result.append(cardinality);
 		result.append(", unique: ");

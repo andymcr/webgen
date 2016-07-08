@@ -16,7 +16,7 @@ import java.util.List;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getTargetEntity <em>Target Entity</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getBidirectional <em>Bidirectional</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getPivotTableName <em>Pivot Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getTargetFeatureName <em>Target Feature Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#isTargetPrimaryKey <em>Target Primary Key</em>}</li>
@@ -88,22 +88,22 @@ public interface EntityAssociation extends EntityFeature, Association {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bidirectional</em>' attribute.
-	 * @see #setBidirectional(Boolean)
+	 * @see #setBidirectional(boolean)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityAssociation_Bidirectional()
 	 * @model default="false" required="true"
 	 * @generated
 	 */
-	Boolean getBidirectional();
+	boolean isBidirectional();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#getBidirectional <em>Bidirectional</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAssociation#isBidirectional <em>Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Bidirectional</em>' attribute.
-	 * @see #getBidirectional()
+	 * @see #isBidirectional()
 	 * @generated
 	 */
-	void setBidirectional(Boolean value);
+	void setBidirectional(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Pivot Table Name</b></em>' attribute.

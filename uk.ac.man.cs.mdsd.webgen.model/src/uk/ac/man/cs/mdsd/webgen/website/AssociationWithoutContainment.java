@@ -17,7 +17,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment#getTargetCardinality <em>Target Cardinality</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment#getTargetUnique <em>Target Unique</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment#isTargetUnique <em>Target Unique</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationWithoutContainment()
@@ -67,20 +67,20 @@ public interface AssociationWithoutContainment extends EntityAssociation {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Unique</em>' attribute.
-	 * @see #setTargetUnique(Boolean)
+	 * @see #setTargetUnique(boolean)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationWithoutContainment_TargetUnique()
 	 * @model default="true" required="true"
 	 * @generated
 	 */
-	Boolean getTargetUnique();
+	boolean isTargetUnique();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment#getTargetUnique <em>Target Unique</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationWithoutContainment#isTargetUnique <em>Target Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Target Unique</em>' attribute.
-	 * @see #getTargetUnique()
+	 * @see #isTargetUnique()
 	 * @generated
 	 */
-	void setTargetUnique(Boolean value);
+	void setTargetUnique(boolean value);
 } // AssociationWithoutContainment

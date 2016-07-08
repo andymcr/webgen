@@ -48,9 +48,32 @@ public class AssociationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addVirtualPropertyDescriptor(object);
 			addSerializationMaxDepthPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Virtual feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVirtualPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_virtual_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_virtual_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__VIRTUAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -101,6 +124,7 @@ public class AssociationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Association.class)) {
+			case OrmPackage.ASSOCIATION__VIRTUAL:
 			case OrmPackage.ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

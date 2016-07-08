@@ -33,6 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getFooterClass <em>Footer Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getPartOf <em>Part Of</em>}</li>
  * </ul>
  *
@@ -128,6 +129,26 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	 * @ordered
 	 */
 	protected boolean serializationExpose = SERIALIZATION_EXPOSE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEncodeUriKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ENCODE_URI_KEY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEncodeUriKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean encodeUriKey = ENCODE_URI_KEY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,6 +270,27 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isEncodeUriKey() {
+		return encodeUriKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEncodeUriKey(boolean newEncodeUriKey) {
+		boolean oldEncodeUriKey = encodeUriKey;
+		encodeUriKey = newEncodeUriKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY, oldEncodeUriKey, encodeUriKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public View getPartOf() {
 		if (eContainerFeatureID() != WebsitePackage.VIEW_FEATURE__PART_OF) return null;
 		return (View)eInternalContainer();
@@ -347,6 +389,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return getSerializationGroups();
 			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
 				return isSerializationExpose();
+			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
+				return isEncodeUriKey();
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				return getPartOf();
 		}
@@ -378,6 +422,9 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
 				setSerializationExpose((Boolean)newValue);
 				return;
+			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
+				setEncodeUriKey((Boolean)newValue);
+				return;
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				setPartOf((View)newValue);
 				return;
@@ -408,6 +455,9 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
 				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
 				return;
+			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
+				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
+				return;
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				setPartOf((View)null);
 				return;
@@ -433,6 +483,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return serializationGroups != null && !serializationGroups.isEmpty();
 			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
 				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
+			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
+				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				return getPartOf() != null;
 		}
@@ -459,6 +511,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 		result.append(serializationGroups);
 		result.append(", serializationExpose: ");
 		result.append(serializationExpose);
+		result.append(", encodeUriKey: ");
+		result.append(encodeUriKey);
 		result.append(')');
 		return result.toString();
 	}

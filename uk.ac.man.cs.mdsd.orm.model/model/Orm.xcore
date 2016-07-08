@@ -101,13 +101,14 @@ abstract class EntityOrView extends Classifier {
 	String autoKeyPersistentType
 	String autoKeyGenerationStrategy
 	contains ModelLabel[] labels opposite labelFor
-	Boolean[1] serializationExcludeAll = "false"
+	boolean[1] serializationExcludeAll = "false"
 }
 
 
 abstract class Feature extends NamedDisplayElement {
 	container EntityOrView[1] partOf opposite features
-	Boolean[1] serializationExpose = "true"
+	boolean[1] encodeUriKey = "false"
+	boolean[1] serializationExpose = "true"
 	String[] serializationGroups
 }
 
@@ -117,6 +118,7 @@ abstract class Attribute extends Feature, Label {
 }
 
 abstract class Association extends Feature {
+	boolean virtual
 	Integer[1] serializationMaxDepth = "1"
 }
 

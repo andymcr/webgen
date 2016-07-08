@@ -37,7 +37,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getNoRouteParameters <em>No Route Parameters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#isNoRouteParameters <em>No Route Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -80,24 +80,24 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	protected EList<UnitSupportAction> supportActions;
 
 	/**
-	 * The default value of the '{@link #getNoRouteParameters() <em>No Route Parameters</em>}' attribute.
+	 * The default value of the '{@link #isNoRouteParameters() <em>No Route Parameters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNoRouteParameters()
+	 * @see #isNoRouteParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Boolean NO_ROUTE_PARAMETERS_EDEFAULT = Boolean.FALSE;
+	protected static final boolean NO_ROUTE_PARAMETERS_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getNoRouteParameters() <em>No Route Parameters</em>}' attribute.
+	 * The cached value of the '{@link #isNoRouteParameters() <em>No Route Parameters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNoRouteParameters()
+	 * @see #isNoRouteParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected Boolean noRouteParameters = NO_ROUTE_PARAMETERS_EDEFAULT;
+	protected boolean noRouteParameters = NO_ROUTE_PARAMETERS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
@@ -279,7 +279,7 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Boolean getNoRouteParameters() {
+	public boolean isNoRouteParameters() {
 		return noRouteParameters;
 	}
 
@@ -288,8 +288,8 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNoRouteParameters(Boolean newNoRouteParameters) {
-		Boolean oldNoRouteParameters = noRouteParameters;
+	public void setNoRouteParameters(boolean newNoRouteParameters) {
+		boolean oldNoRouteParameters = noRouteParameters;
 		noRouteParameters = newNoRouteParameters;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS, oldNoRouteParameters, noRouteParameters));
@@ -467,7 +467,7 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
 			case WafPackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS:
-				return getNoRouteParameters();
+				return isNoRouteParameters();
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 				return getHeader();
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
@@ -587,7 +587,7 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS:
-				return NO_ROUTE_PARAMETERS_EDEFAULT == null ? noRouteParameters != null : !NO_ROUTE_PARAMETERS_EDEFAULT.equals(noRouteParameters);
+				return noRouteParameters != NO_ROUTE_PARAMETERS_EDEFAULT;
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case WafPackage.DYNAMIC_UNIT__FOOTER:

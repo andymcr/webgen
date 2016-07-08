@@ -18,6 +18,7 @@ import java.util.List;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#isVirtual <em>Virtual</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getInputClass <em>Input Class</em>}</li>
@@ -31,6 +32,33 @@ import java.util.List;
  * @generated
  */
 public interface Association extends Feature {
+
+	/**
+	 * Returns the value of the '<em><b>Virtual</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Virtual</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Virtual</em>' attribute.
+	 * @see #setVirtual(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation_Virtual()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isVirtual();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Association#isVirtual <em>Virtual</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Virtual</em>' attribute.
+	 * @see #isVirtual()
+	 * @generated
+	 */
+	void setVirtual(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Child Feature</b></em>' containment reference.

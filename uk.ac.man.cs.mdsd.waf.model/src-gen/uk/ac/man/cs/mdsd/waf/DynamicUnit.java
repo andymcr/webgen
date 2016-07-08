@@ -18,7 +18,7 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getNoRouteParameters <em>No Route Parameters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#isNoRouteParameters <em>No Route Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeaderClass <em>Header Class</em>}</li>
@@ -92,22 +92,22 @@ public interface DynamicUnit extends ContentUnit {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>No Route Parameters</em>' attribute.
-	 * @see #setNoRouteParameters(Boolean)
+	 * @see #setNoRouteParameters(boolean)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_NoRouteParameters()
 	 * @model default="false" unique="false"
 	 * @generated
 	 */
-	Boolean getNoRouteParameters();
+	boolean isNoRouteParameters();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getNoRouteParameters <em>No Route Parameters</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#isNoRouteParameters <em>No Route Parameters</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>No Route Parameters</em>' attribute.
-	 * @see #getNoRouteParameters()
+	 * @see #isNoRouteParameters()
 	 * @generated
 	 */
-	void setNoRouteParameters(Boolean value);
+	void setNoRouteParameters(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' attribute.

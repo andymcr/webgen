@@ -44,7 +44,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getFooterClass <em>Footer Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getPartOf <em>Part Of</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isVirtual <em>Virtual</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getInputClass <em>Input Class</em>}</li>
@@ -139,6 +141,42 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @ordered
 	 */
 	protected boolean serializationExpose = SERIALIZATION_EXPOSE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEncodeUriKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ENCODE_URI_KEY_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEncodeUriKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean encodeUriKey = ENCODE_URI_KEY_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isVirtual() <em>Virtual</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isVirtual()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean VIRTUAL_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isVirtual() <em>Virtual</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isVirtual()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean virtual = VIRTUAL_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -346,6 +384,27 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isEncodeUriKey() {
+		return encodeUriKey;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEncodeUriKey(boolean newEncodeUriKey) {
+		boolean oldEncodeUriKey = encodeUriKey;
+		encodeUriKey = newEncodeUriKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY, oldEncodeUriKey, encodeUriKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<String> getSerializationGroups() {
 		if (serializationGroups == null) {
 			serializationGroups = new EDataTypeUniqueEList<String>(String.class, this, WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS);
@@ -392,6 +451,27 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__PART_OF, newPartOf, newPartOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isVirtual() {
+		return virtual;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVirtual(boolean newVirtual) {
+		boolean oldVirtual = virtual;
+		virtual = newVirtual;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__VIRTUAL, oldVirtual, virtual));
 	}
 
 	/**
@@ -655,8 +735,12 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return getSerializationGroups();
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
 				return isSerializationExpose();
+			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+				return isEncodeUriKey();
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				return getPartOf();
+			case WebsitePackage.VIEW_ASSOCIATION__VIRTUAL:
+				return isVirtual();
 			case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE:
 				return getChildFeature();
 			case WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
@@ -705,8 +789,14 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
 				setSerializationExpose((Boolean)newValue);
 				return;
+			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+				setEncodeUriKey((Boolean)newValue);
+				return;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				setPartOf((View)newValue);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__VIRTUAL:
+				setVirtual((Boolean)newValue);
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ChildFeature)newValue);
@@ -754,8 +844,14 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
 				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
 				return;
+			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
+				return;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				setPartOf((View)null);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__VIRTUAL:
+				setVirtual(VIRTUAL_EDEFAULT);
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ChildFeature)null);
@@ -797,8 +893,12 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return serializationGroups != null && !serializationGroups.isEmpty();
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
 				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
+			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				return getPartOf() != null;
+			case WebsitePackage.VIEW_ASSOCIATION__VIRTUAL:
+				return virtual != VIRTUAL_EDEFAULT;
 			case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE:
 				return childFeature != null;
 			case WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
@@ -833,6 +933,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS: return WebsitePackage.FEATURE__FOOTER_CLASS;
 				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS: return WebsitePackage.FEATURE__SERIALIZATION_GROUPS;
 				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE: return WebsitePackage.FEATURE__SERIALIZATION_EXPOSE;
+				case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY: return WebsitePackage.FEATURE__ENCODE_URI_KEY;
 				default: return -1;
 			}
 		}
@@ -844,6 +945,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		}
 		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
+				case WebsitePackage.VIEW_ASSOCIATION__VIRTUAL: return WebsitePackage.ASSOCIATION__VIRTUAL;
 				case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
@@ -870,6 +972,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.FEATURE__FOOTER_CLASS: return WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS;
 				case WebsitePackage.FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS;
 				case WebsitePackage.FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE;
+				case WebsitePackage.FEATURE__ENCODE_URI_KEY: return WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY;
 				default: return -1;
 			}
 		}
@@ -881,6 +984,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		}
 		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
+				case WebsitePackage.ASSOCIATION__VIRTUAL: return WebsitePackage.VIEW_ASSOCIATION__VIRTUAL;
 				case WebsitePackage.ASSOCIATION__CHILD_FEATURE: return WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS;
@@ -913,6 +1017,10 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		result.append(serializationGroups);
 		result.append(", serializationExpose: ");
 		result.append(serializationExpose);
+		result.append(", encodeUriKey: ");
+		result.append(encodeUriKey);
+		result.append(", virtual: ");
+		result.append(virtual);
 		result.append(", inputClass: ");
 		result.append(inputClass);
 		result.append(", serializationMaxDepth: ");

@@ -54,6 +54,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addVirtualPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addSourceEntityXPropertyDescriptor(object);
 			addTargetEntityXPropertyDescriptor(object);
@@ -63,6 +64,28 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Virtual feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVirtualPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_virtual_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_virtual_feature", "_UI_Association_type"),
+				 WebsitePackage.Literals.ASSOCIATION__VIRTUAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -305,6 +328,7 @@ public class EncapsulatedAssociationItemProvider extends EncapsulatedFeatureItem
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EncapsulatedAssociation.class)) {
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__VIRTUAL:
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS:
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__NAME:

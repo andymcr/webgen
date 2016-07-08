@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getFooterClass <em>Footer Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isSerializationExpose <em>Serialization Expose</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature()
@@ -147,4 +148,31 @@ public interface Feature extends EObject {
 	 * @generated
 	 */
 	void setSerializationExpose(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Encode Uri Key</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Encode Uri Key</em>' attribute.
+	 * @see #setEncodeUriKey(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature_EncodeUriKey()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isEncodeUriKey();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isEncodeUriKey <em>Encode Uri Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Encode Uri Key</em>' attribute.
+	 * @see #isEncodeUriKey()
+	 * @generated
+	 */
+	void setEncodeUriKey(boolean value);
 } // Feature

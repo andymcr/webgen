@@ -53,6 +53,8 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 			addFooterClassPropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
 			addSerializationExposePropertyDescriptor(object);
+			addEncodeUriKeyPropertyDescriptor(object);
+			addVirtualPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addSourceEntityXPropertyDescriptor(object);
 			addTargetEntityXPropertyDescriptor(object);
@@ -147,6 +149,50 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_SerializationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Encode Uri Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEncodeUriKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_encodeUriKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_encodeUriKey_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__ENCODE_URI_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Virtual feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVirtualPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_virtual_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_virtual_feature", "_UI_Association_type"),
+				 WebsitePackage.Literals.ASSOCIATION__VIRTUAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
 				 null));
 	}
 
@@ -355,6 +401,8 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+			case WebsitePackage.VIEW_ASSOCIATION__VIRTUAL:
 			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 			case WebsitePackage.VIEW_ASSOCIATION__CARDINALITY:

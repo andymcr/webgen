@@ -49,6 +49,7 @@ public class FeatureItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
+			addEncodeUriKeyPropertyDescriptor(object);
 			addSerializationExposePropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
 		}
@@ -78,6 +79,28 @@ public class FeatureItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Encode Uri Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEncodeUriKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_encodeUriKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_encodeUriKey_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__ENCODE_URI_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Serialization Expose feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,7 +117,7 @@ public class FeatureItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -147,6 +170,7 @@ public class FeatureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Feature.class)) {
+			case OrmPackage.FEATURE__ENCODE_URI_KEY:
 			case OrmPackage.FEATURE__SERIALIZATION_EXPOSE:
 			case OrmPackage.FEATURE__SERIALIZATION_GROUPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

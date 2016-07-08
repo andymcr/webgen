@@ -190,6 +190,7 @@
       <genFeatures createChild="false" propertyCategory="Serialization" ecoreFeature="ecore:EAttribute website.ecore#//Feature/serializationGroups"/>
       <genFeatures createChild="false" propertyCategory="Serialization" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//Feature/serializationExpose"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Feature/encodeUriKey"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Attribute">
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
@@ -200,6 +201,8 @@
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Attribute/inputClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Association">
+      <genFeatures createChild="false" propertyCategory="Persistence" propertyDescription=""
+          ecoreFeature="ecore:EAttribute website.ecore#//Association/virtual"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           ecoreFeature="ecore:EReference website.ecore#//Association/childFeature"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
@@ -448,6 +451,8 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ContentUnit/displayedOn"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/purposeSummary"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/uriElement"/>
+      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/homeUnit"/>
+      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/alternative"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/omitCaption"/>
       <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""

@@ -1997,13 +1997,31 @@ public interface WafPackage extends EPackage {
 	int CONTENT_UNIT__URI_ELEMENT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT_UNIT__HOME_UNIT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT_UNIT__ALTERNATIVE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__OMIT_CAPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int CONTENT_UNIT__OMIT_CAPTION = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -2012,7 +2030,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__CAPTION_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int CONTENT_UNIT__CAPTION_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -2021,7 +2039,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int CONTENT_UNIT__STYLE_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -2030,7 +2048,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__CONTENT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int CONTENT_UNIT__CONTENT_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Content Unit</em>' class.
@@ -2039,7 +2057,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int CONTENT_UNIT_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Content Unit</em>' class.
@@ -2104,6 +2122,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_UNIT__URI_ELEMENT = CONTENT_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_UNIT__HOME_UNIT = CONTENT_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_UNIT__ALTERNATIVE = CONTENT_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -2231,6 +2267,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DYNAMIC_UNIT__URI_ELEMENT = CONTENT_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__HOME_UNIT = CONTENT_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__ALTERNATIVE = CONTENT_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -3848,6 +3902,24 @@ public interface WafPackage extends EPackage {
 	int EDIT_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__HOME_UNIT = DYNAMIC_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__ALTERNATIVE = DYNAMIC_UNIT__ALTERNATIVE;
+
+	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4092,6 +4164,24 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__HOME_UNIT = EDIT_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__ALTERNATIVE = EDIT_UNIT__ALTERNATIVE;
+
+	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4334,6 +4424,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__HOME_UNIT = EDIT_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__ALTERNATIVE = EDIT_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -4596,6 +4704,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__HOME_UNIT = EDIT_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__ALTERNATIVE = EDIT_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -4878,6 +5004,24 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__HOME_UNIT = EDIT_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__ALTERNATIVE = EDIT_UNIT__ALTERNATIVE;
+
+	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5122,6 +5266,24 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__HOME_UNIT = DYNAMIC_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__ALTERNATIVE = DYNAMIC_UNIT__ALTERNATIVE;
+
+	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5337,6 +5499,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DETAILS_UNIT__URI_ELEMENT = DATA_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__HOME_UNIT = DATA_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__ALTERNATIVE = DATA_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -5572,6 +5752,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__URI_ELEMENT = DATA_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__HOME_UNIT = DATA_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__ALTERNATIVE = DATA_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -5899,6 +6097,24 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__HOME_UNIT = INDEX_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__ALTERNATIVE = INDEX_UNIT__ALTERNATIVE;
+
+	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6222,6 +6438,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__HOME_UNIT = INDEX_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__ALTERNATIVE = INDEX_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -6549,6 +6783,24 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__HOME_UNIT = INDEX_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__ALTERNATIVE = INDEX_UNIT__ALTERNATIVE;
+
+	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6874,6 +7126,24 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__HOME_UNIT = DYNAMIC_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__ALTERNATIVE = DYNAMIC_UNIT__ALTERNATIVE;
+
+	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7098,6 +7368,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__HOME_UNIT = CONTROL_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__ALTERNATIVE = CONTROL_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -7333,6 +7621,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTION_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__HOME_UNIT = CONTROL_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__ALTERNATIVE = CONTROL_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -7589,6 +7895,24 @@ public interface WafPackage extends EPackage {
 	int REGISTRATION_UNIT__URI_ELEMENT = EDIT_UNIT__URI_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__HOME_UNIT = EDIT_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__ALTERNATIVE = EDIT_UNIT__ALTERNATIVE;
+
+	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7840,6 +8164,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__HOME_UNIT = CONTROL_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__ALTERNATIVE = CONTROL_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -8111,6 +8453,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT = CONTROL_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Home Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__HOME_UNIT = CONTROL_UNIT__HOME_UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE = CONTROL_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -10272,6 +10632,28 @@ public interface WafPackage extends EPackage {
 	EAttribute getContentUnit_UriElement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#isHomeUnit <em>Home Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Home Unit</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ContentUnit#isHomeUnit()
+	 * @see #getContentUnit()
+	 * @generated
+	 */
+	EAttribute getContentUnit_HomeUnit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getAlternative <em>Alternative</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Alternative</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ContentUnit#getAlternative()
+	 * @see #getContentUnit()
+	 * @generated
+	 */
+	EAttribute getContentUnit_Alternative();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#isOmitCaption <em>Omit Caption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10391,11 +10773,11 @@ public interface WafPackage extends EPackage {
 	EReference getDynamicUnit_SupportActions();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getNoRouteParameters <em>No Route Parameters</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#isNoRouteParameters <em>No Route Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>No Route Parameters</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getNoRouteParameters()
+	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#isNoRouteParameters()
 	 * @see #getDynamicUnit()
 	 * @generated
 	 */
@@ -13027,6 +13409,22 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTENT_UNIT__URI_ELEMENT = eINSTANCE.getContentUnit_UriElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Home Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTENT_UNIT__HOME_UNIT = eINSTANCE.getContentUnit_HomeUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Alternative</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTENT_UNIT__ALTERNATIVE = eINSTANCE.getContentUnit_Alternative();
 
 		/**
 		 * The meta object literal for the '<em><b>Omit Caption</b></em>' attribute feature.

@@ -229,6 +229,8 @@ abstract class ContentUnit extends NamedDisplayElement {
 	container UnitContainer[1] displayedOn opposite units
 	String purposeSummary
 	String uriElement = ""
+	boolean homeUnit = "false"
+	String alternative
 	boolean omitCaption
 	String captionClass
 	String styleClass
@@ -244,7 +246,7 @@ abstract class DynamicUnit extends ContentUnit {
 	refers EntityOrView[1..*] entities
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
-	Boolean noRouteParameters = "false"
+	boolean noRouteParameters = "false"
 	String header
 	String footer
 	String headerClass

@@ -64,6 +64,7 @@ public class ViewFeatureItemProvider
 			addFooterClassPropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
 			addSerializationExposePropertyDescriptor(object);
+			addEncodeUriKeyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -179,6 +180,28 @@ public class ViewFeatureItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Encode Uri Key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEncodeUriKeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_encodeUriKey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_encodeUriKey_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__ENCODE_URI_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -210,6 +233,7 @@ public class ViewFeatureItemProvider
 			case WebsitePackage.VIEW_FEATURE__FOOTER_CLASS:
 			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
 			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_EXPOSE:
+			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

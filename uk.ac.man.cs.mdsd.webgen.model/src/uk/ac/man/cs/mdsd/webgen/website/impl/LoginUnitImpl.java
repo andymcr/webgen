@@ -48,7 +48,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#isHomeUnit <em>Home Unit</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getAlternative <em>Alternative</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
@@ -152,24 +154,64 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * The default value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOmitCaption()
+	 * @see #isHomeUnit()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Boolean OMIT_CAPTION_EDEFAULT = null;
+	protected static final boolean HOME_UNIT_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * The cached value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOmitCaption()
+	 * @see #isHomeUnit()
 	 * @generated
 	 * @ordered
 	 */
-	protected Boolean omitCaption = OMIT_CAPTION_EDEFAULT;
+	protected boolean homeUnit = HOME_UNIT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAlternative() <em>Alternative</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlternative()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ALTERNATIVE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAlternative() <em>Alternative</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlternative()
+	 * @generated
+	 * @ordered
+	 */
+	protected String alternative = ALTERNATIVE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitCaption()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OMIT_CAPTION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitCaption()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean omitCaption = OMIT_CAPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCaptionClass() <em>Caption Class</em>}' attribute.
@@ -620,7 +662,49 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Boolean getOmitCaption() {
+	public boolean isHomeUnit() {
+		return homeUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHomeUnit(boolean newHomeUnit) {
+		boolean oldHomeUnit = homeUnit;
+		homeUnit = newHomeUnit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__HOME_UNIT, oldHomeUnit, homeUnit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAlternative() {
+		return alternative;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAlternative(String newAlternative) {
+		String oldAlternative = alternative;
+		alternative = newAlternative;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__ALTERNATIVE, oldAlternative, alternative));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOmitCaption() {
 		return omitCaption;
 	}
 
@@ -629,8 +713,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOmitCaption(Boolean newOmitCaption) {
-		Boolean oldOmitCaption = omitCaption;
+	public void setOmitCaption(boolean newOmitCaption) {
+		boolean oldOmitCaption = omitCaption;
 		omitCaption = newOmitCaption;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__OMIT_CAPTION, oldOmitCaption, omitCaption));
@@ -1052,8 +1136,12 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return getPurposeSummary();
 			case WebsitePackage.LOGIN_UNIT__URI_ELEMENT:
 				return getUriElement();
+			case WebsitePackage.LOGIN_UNIT__HOME_UNIT:
+				return isHomeUnit();
+			case WebsitePackage.LOGIN_UNIT__ALTERNATIVE:
+				return getAlternative();
 			case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION:
-				return getOmitCaption();
+				return isOmitCaption();
 			case WebsitePackage.LOGIN_UNIT__CAPTION_CLASS:
 				return getCaptionClass();
 			case WebsitePackage.LOGIN_UNIT__ENTITIES:
@@ -1116,6 +1204,12 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return;
 			case WebsitePackage.LOGIN_UNIT__URI_ELEMENT:
 				setUriElement((String)newValue);
+				return;
+			case WebsitePackage.LOGIN_UNIT__HOME_UNIT:
+				setHomeUnit((Boolean)newValue);
+				return;
+			case WebsitePackage.LOGIN_UNIT__ALTERNATIVE:
+				setAlternative((String)newValue);
 				return;
 			case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION:
 				setOmitCaption((Boolean)newValue);
@@ -1201,6 +1295,12 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
+			case WebsitePackage.LOGIN_UNIT__HOME_UNIT:
+				setHomeUnit(HOME_UNIT_EDEFAULT);
+				return;
+			case WebsitePackage.LOGIN_UNIT__ALTERNATIVE:
+				setAlternative(ALTERNATIVE_EDEFAULT);
+				return;
 			case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION:
 				setOmitCaption(OMIT_CAPTION_EDEFAULT);
 				return;
@@ -1277,8 +1377,12 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.LOGIN_UNIT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
+			case WebsitePackage.LOGIN_UNIT__HOME_UNIT:
+				return homeUnit != HOME_UNIT_EDEFAULT;
+			case WebsitePackage.LOGIN_UNIT__ALTERNATIVE:
+				return ALTERNATIVE_EDEFAULT == null ? alternative != null : !ALTERNATIVE_EDEFAULT.equals(alternative);
 			case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION:
-				return OMIT_CAPTION_EDEFAULT == null ? omitCaption != null : !OMIT_CAPTION_EDEFAULT.equals(omitCaption);
+				return omitCaption != OMIT_CAPTION_EDEFAULT;
 			case WebsitePackage.LOGIN_UNIT__CAPTION_CLASS:
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
 			case WebsitePackage.LOGIN_UNIT__ENTITIES:
@@ -1341,6 +1445,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.LOGIN_UNIT__DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__DISPLAYED_ON;
 				case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY: return WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.LOGIN_UNIT__URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__URI_ELEMENT;
+				case WebsitePackage.LOGIN_UNIT__HOME_UNIT: return WebsitePackage.CONTENT_UNIT__HOME_UNIT;
+				case WebsitePackage.LOGIN_UNIT__ALTERNATIVE: return WebsitePackage.CONTENT_UNIT__ALTERNATIVE;
 				case WebsitePackage.LOGIN_UNIT__OMIT_CAPTION: return WebsitePackage.CONTENT_UNIT__OMIT_CAPTION;
 				case WebsitePackage.LOGIN_UNIT__CAPTION_CLASS: return WebsitePackage.CONTENT_UNIT__CAPTION_CLASS;
 				default: return -1;
@@ -1397,6 +1503,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON: return WebsitePackage.LOGIN_UNIT__DISPLAYED_ON;
 				case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.CONTENT_UNIT__URI_ELEMENT: return WebsitePackage.LOGIN_UNIT__URI_ELEMENT;
+				case WebsitePackage.CONTENT_UNIT__HOME_UNIT: return WebsitePackage.LOGIN_UNIT__HOME_UNIT;
+				case WebsitePackage.CONTENT_UNIT__ALTERNATIVE: return WebsitePackage.LOGIN_UNIT__ALTERNATIVE;
 				case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION: return WebsitePackage.LOGIN_UNIT__OMIT_CAPTION;
 				case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS: return WebsitePackage.LOGIN_UNIT__CAPTION_CLASS;
 				default: return -1;
@@ -1447,6 +1555,10 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		result.append(purposeSummary);
 		result.append(", uriElement: ");
 		result.append(uriElement);
+		result.append(", homeUnit: ");
+		result.append(homeUnit);
+		result.append(", alternative: ");
+		result.append(alternative);
 		result.append(", omitCaption: ");
 		result.append(omitCaption);
 		result.append(", captionClass: ");

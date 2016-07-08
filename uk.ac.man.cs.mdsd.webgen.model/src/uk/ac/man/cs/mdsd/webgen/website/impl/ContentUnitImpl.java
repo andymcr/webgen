@@ -27,7 +27,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getUriElement <em>Uri Element</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getOmitCaption <em>Omit Caption</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#isHomeUnit <em>Home Unit</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getAlternative <em>Alternative</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  * </ul>
  *
@@ -75,24 +77,64 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * The default value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOmitCaption()
+	 * @see #isHomeUnit()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Boolean OMIT_CAPTION_EDEFAULT = null;
+	protected static final boolean HOME_UNIT_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * The cached value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOmitCaption()
+	 * @see #isHomeUnit()
 	 * @generated
 	 * @ordered
 	 */
-	protected Boolean omitCaption = OMIT_CAPTION_EDEFAULT;
+	protected boolean homeUnit = HOME_UNIT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAlternative() <em>Alternative</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlternative()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ALTERNATIVE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAlternative() <em>Alternative</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlternative()
+	 * @generated
+	 * @ordered
+	 */
+	protected String alternative = ALTERNATIVE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitCaption()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OMIT_CAPTION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOmitCaption() <em>Omit Caption</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitCaption()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean omitCaption = OMIT_CAPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCaptionClass() <em>Caption Class</em>}' attribute.
@@ -221,7 +263,49 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Boolean getOmitCaption() {
+	public boolean isHomeUnit() {
+		return homeUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHomeUnit(boolean newHomeUnit) {
+		boolean oldHomeUnit = homeUnit;
+		homeUnit = newHomeUnit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CONTENT_UNIT__HOME_UNIT, oldHomeUnit, homeUnit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAlternative() {
+		return alternative;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAlternative(String newAlternative) {
+		String oldAlternative = alternative;
+		alternative = newAlternative;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CONTENT_UNIT__ALTERNATIVE, oldAlternative, alternative));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOmitCaption() {
 		return omitCaption;
 	}
 
@@ -230,8 +314,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOmitCaption(Boolean newOmitCaption) {
-		Boolean oldOmitCaption = omitCaption;
+	public void setOmitCaption(boolean newOmitCaption) {
+		boolean oldOmitCaption = omitCaption;
 		omitCaption = newOmitCaption;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CONTENT_UNIT__OMIT_CAPTION, oldOmitCaption, omitCaption));
@@ -316,8 +400,12 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return getPurposeSummary();
 			case WebsitePackage.CONTENT_UNIT__URI_ELEMENT:
 				return getUriElement();
+			case WebsitePackage.CONTENT_UNIT__HOME_UNIT:
+				return isHomeUnit();
+			case WebsitePackage.CONTENT_UNIT__ALTERNATIVE:
+				return getAlternative();
 			case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION:
-				return getOmitCaption();
+				return isOmitCaption();
 			case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS:
 				return getCaptionClass();
 		}
@@ -340,6 +428,12 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return;
 			case WebsitePackage.CONTENT_UNIT__URI_ELEMENT:
 				setUriElement((String)newValue);
+				return;
+			case WebsitePackage.CONTENT_UNIT__HOME_UNIT:
+				setHomeUnit((Boolean)newValue);
+				return;
+			case WebsitePackage.CONTENT_UNIT__ALTERNATIVE:
+				setAlternative((String)newValue);
 				return;
 			case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION:
 				setOmitCaption((Boolean)newValue);
@@ -368,6 +462,12 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WebsitePackage.CONTENT_UNIT__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
+			case WebsitePackage.CONTENT_UNIT__HOME_UNIT:
+				setHomeUnit(HOME_UNIT_EDEFAULT);
+				return;
+			case WebsitePackage.CONTENT_UNIT__ALTERNATIVE:
+				setAlternative(ALTERNATIVE_EDEFAULT);
+				return;
 			case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION:
 				setOmitCaption(OMIT_CAPTION_EDEFAULT);
 				return;
@@ -392,8 +492,12 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.CONTENT_UNIT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
+			case WebsitePackage.CONTENT_UNIT__HOME_UNIT:
+				return homeUnit != HOME_UNIT_EDEFAULT;
+			case WebsitePackage.CONTENT_UNIT__ALTERNATIVE:
+				return ALTERNATIVE_EDEFAULT == null ? alternative != null : !ALTERNATIVE_EDEFAULT.equals(alternative);
 			case WebsitePackage.CONTENT_UNIT__OMIT_CAPTION:
-				return OMIT_CAPTION_EDEFAULT == null ? omitCaption != null : !OMIT_CAPTION_EDEFAULT.equals(omitCaption);
+				return omitCaption != OMIT_CAPTION_EDEFAULT;
 			case WebsitePackage.CONTENT_UNIT__CAPTION_CLASS:
 				return CAPTION_CLASS_EDEFAULT == null ? captionClass != null : !CAPTION_CLASS_EDEFAULT.equals(captionClass);
 		}
@@ -414,6 +518,10 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		result.append(purposeSummary);
 		result.append(", uriElement: ");
 		result.append(uriElement);
+		result.append(", homeUnit: ");
+		result.append(homeUnit);
+		result.append(", alternative: ");
+		result.append(alternative);
 		result.append(", omitCaption: ");
 		result.append(omitCaption);
 		result.append(", captionClass: ");

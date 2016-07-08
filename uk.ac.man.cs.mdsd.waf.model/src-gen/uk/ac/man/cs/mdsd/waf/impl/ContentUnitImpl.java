@@ -29,6 +29,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getUriElement <em>Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#isHomeUnit <em>Home Unit</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getStyleClass <em>Style Class</em>}</li>
@@ -77,6 +79,46 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * @ordered
 	 */
 	protected String uriElement = URI_ELEMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHomeUnit()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean HOME_UNIT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isHomeUnit() <em>Home Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isHomeUnit()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean homeUnit = HOME_UNIT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAlternative() <em>Alternative</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlternative()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ALTERNATIVE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAlternative() <em>Alternative</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlternative()
+	 * @generated
+	 * @ordered
+	 */
+	protected String alternative = ALTERNATIVE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOmitCaption() <em>Omit Caption</em>}' attribute.
@@ -275,6 +317,48 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isHomeUnit() {
+		return homeUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHomeUnit(boolean newHomeUnit) {
+		boolean oldHomeUnit = homeUnit;
+		homeUnit = newHomeUnit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CONTENT_UNIT__HOME_UNIT, oldHomeUnit, homeUnit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAlternative() {
+		return alternative;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAlternative(String newAlternative) {
+		String oldAlternative = alternative;
+		alternative = newAlternative;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CONTENT_UNIT__ALTERNATIVE, oldAlternative, alternative));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isOmitCaption() {
 		return omitCaption;
 	}
@@ -413,6 +497,10 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return getPurposeSummary();
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				return getUriElement();
+			case WafPackage.CONTENT_UNIT__HOME_UNIT:
+				return isHomeUnit();
+			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
+				return getAlternative();
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
 				return isOmitCaption();
 			case WafPackage.CONTENT_UNIT__CAPTION_CLASS:
@@ -441,6 +529,12 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return;
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				setUriElement((String)newValue);
+				return;
+			case WafPackage.CONTENT_UNIT__HOME_UNIT:
+				setHomeUnit((Boolean)newValue);
+				return;
+			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
+				setAlternative((String)newValue);
 				return;
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
 				setOmitCaption((Boolean)newValue);
@@ -475,6 +569,12 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
+			case WafPackage.CONTENT_UNIT__HOME_UNIT:
+				setHomeUnit(HOME_UNIT_EDEFAULT);
+				return;
+			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
+				setAlternative(ALTERNATIVE_EDEFAULT);
+				return;
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
 				setOmitCaption(OMIT_CAPTION_EDEFAULT);
 				return;
@@ -505,6 +605,10 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
+			case WafPackage.CONTENT_UNIT__HOME_UNIT:
+				return homeUnit != HOME_UNIT_EDEFAULT;
+			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
+				return ALTERNATIVE_EDEFAULT == null ? alternative != null : !ALTERNATIVE_EDEFAULT.equals(alternative);
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:
 				return omitCaption != OMIT_CAPTION_EDEFAULT;
 			case WafPackage.CONTENT_UNIT__CAPTION_CLASS:
@@ -531,6 +635,10 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		result.append(purposeSummary);
 		result.append(", uriElement: ");
 		result.append(uriElement);
+		result.append(", homeUnit: ");
+		result.append(homeUnit);
+		result.append(", alternative: ");
+		result.append(alternative);
 		result.append(", omitCaption: ");
 		result.append(omitCaption);
 		result.append(", captionClass: ");

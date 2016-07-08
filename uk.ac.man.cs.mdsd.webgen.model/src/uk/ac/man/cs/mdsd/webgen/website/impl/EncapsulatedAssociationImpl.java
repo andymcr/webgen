@@ -34,6 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#isVirtual <em>Virtual</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EncapsulatedAssociationImpl#getInputClass <em>Input Class</em>}</li>
@@ -52,6 +53,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl implements EncapsulatedAssociation {
+	/**
+	 * The default value of the '{@link #isVirtual() <em>Virtual</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isVirtual()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean VIRTUAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isVirtual() <em>Virtual</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isVirtual()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean virtual = VIRTUAL_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -219,6 +240,27 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.ENCAPSULATED_ASSOCIATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isVirtual() {
+		return virtual;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVirtual(boolean newVirtual) {
+		boolean oldVirtual = virtual;
+		virtual = newVirtual;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENCAPSULATED_ASSOCIATION__VIRTUAL, oldVirtual, virtual));
 	}
 
 	/**
@@ -569,6 +611,8 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__VIRTUAL:
+				return isVirtual();
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE:
 				return getChildFeature();
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
@@ -614,6 +658,9 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__VIRTUAL:
+				setVirtual((Boolean)newValue);
+				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ChildFeature)newValue);
 				return;
@@ -648,6 +695,9 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__VIRTUAL:
+				setVirtual(VIRTUAL_EDEFAULT);
+				return;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ChildFeature)null);
 				return;
@@ -681,6 +731,8 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENCAPSULATED_ASSOCIATION__VIRTUAL:
+				return virtual != VIRTUAL_EDEFAULT;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE:
 				return childFeature != null;
 			case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY:
@@ -720,6 +772,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
+				case WebsitePackage.ENCAPSULATED_ASSOCIATION__VIRTUAL: return WebsitePackage.ASSOCIATION__VIRTUAL;
 				case WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
@@ -741,6 +794,7 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
+				case WebsitePackage.ASSOCIATION__VIRTUAL: return WebsitePackage.ENCAPSULATED_ASSOCIATION__VIRTUAL;
 				case WebsitePackage.ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ENCAPSULATED_ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ENCAPSULATED_ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.ENCAPSULATED_ASSOCIATION__INPUT_CLASS;
@@ -763,7 +817,9 @@ public class EncapsulatedAssociationImpl extends EncapsulatedFeatureImpl impleme
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (inputClass: ");
+		result.append(" (virtual: ");
+		result.append(virtual);
+		result.append(", inputClass: ");
 		result.append(inputClass);
 		result.append(", serializationMaxDepth: ");
 		result.append(serializationMaxDepth);

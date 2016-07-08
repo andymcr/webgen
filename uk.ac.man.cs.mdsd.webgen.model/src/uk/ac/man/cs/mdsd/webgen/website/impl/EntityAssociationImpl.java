@@ -34,6 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#isVirtual <em>Virtual</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getInputClass <em>Input Class</em>}</li>
@@ -42,7 +43,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getSerializationMaxDepth <em>Serialization Max Depth</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getBidirectional <em>Bidirectional</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#isBidirectional <em>Bidirectional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getPivotTableName <em>Pivot Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getTargetFeatureName <em>Target Feature Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#isTargetPrimaryKey <em>Target Primary Key</em>}</li>
@@ -56,6 +57,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class EntityAssociationImpl extends EntityFeatureImpl implements EntityAssociation {
+	/**
+	 * The default value of the '{@link #isVirtual() <em>Virtual</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isVirtual()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean VIRTUAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isVirtual() <em>Virtual</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isVirtual()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean virtual = VIRTUAL_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -157,24 +178,24 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	protected Entity targetEntity;
 
 	/**
-	 * The default value of the '{@link #getBidirectional() <em>Bidirectional</em>}' attribute.
+	 * The default value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBidirectional()
+	 * @see #isBidirectional()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Boolean BIDIRECTIONAL_EDEFAULT = Boolean.FALSE;
+	protected static final boolean BIDIRECTIONAL_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getBidirectional() <em>Bidirectional</em>}' attribute.
+	 * The cached value of the '{@link #isBidirectional() <em>Bidirectional</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBidirectional()
+	 * @see #isBidirectional()
 	 * @generated
 	 * @ordered
 	 */
-	protected Boolean bidirectional = BIDIRECTIONAL_EDEFAULT;
+	protected boolean bidirectional = BIDIRECTIONAL_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPivotTableName() <em>Pivot Table Name</em>}' attribute.
@@ -360,6 +381,27 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isVirtual() {
+		return virtual;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVirtual(boolean newVirtual) {
+		boolean oldVirtual = virtual;
+		virtual = newVirtual;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL, oldVirtual, virtual));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<AssociationKey> getKeys() {
 		if (keys == null) {
 			keys = new EObjectContainmentWithInverseEList<AssociationKey>(AssociationKey.class, this, WebsitePackage.ENTITY_ASSOCIATION__KEYS, WebsitePackage.ASSOCIATION_KEY__KEY_FOR);
@@ -487,7 +529,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Boolean getBidirectional() {
+	public boolean isBidirectional() {
 		return bidirectional;
 	}
 
@@ -496,8 +538,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBidirectional(Boolean newBidirectional) {
-		Boolean oldBidirectional = bidirectional;
+	public void setBidirectional(boolean newBidirectional) {
+		boolean oldBidirectional = bidirectional;
 		bidirectional = newBidirectional;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL, oldBidirectional, bidirectional));
@@ -798,6 +840,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL:
+				return isVirtual();
 			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
 				return getChildFeature();
 			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
@@ -818,7 +862,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 				if (resolve) return getTargetEntity();
 				return basicGetTargetEntity();
 			case WebsitePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
-				return getBidirectional();
+				return isBidirectional();
 			case WebsitePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				return getPivotTableName();
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
@@ -848,6 +892,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL:
+				setVirtual((Boolean)newValue);
+				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ChildFeature)newValue);
 				return;
@@ -907,6 +954,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL:
+				setVirtual(VIRTUAL_EDEFAULT);
+				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ChildFeature)null);
 				return;
@@ -964,6 +1014,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL:
+				return virtual != VIRTUAL_EDEFAULT;
 			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
 				return childFeature != null;
 			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
@@ -981,7 +1033,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_ENTITY:
 				return targetEntity != null;
 			case WebsitePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:
-				return BIDIRECTIONAL_EDEFAULT == null ? bidirectional != null : !BIDIRECTIONAL_EDEFAULT.equals(bidirectional);
+				return bidirectional != BIDIRECTIONAL_EDEFAULT;
 			case WebsitePackage.ENTITY_ASSOCIATION__PIVOT_TABLE_NAME:
 				return PIVOT_TABLE_NAME_EDEFAULT == null ? pivotTableName != null : !PIVOT_TABLE_NAME_EDEFAULT.equals(pivotTableName);
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FEATURE_NAME:
@@ -1011,6 +1063,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
+				case WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL: return WebsitePackage.ASSOCIATION__VIRTUAL;
 				case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
@@ -1032,6 +1085,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
+				case WebsitePackage.ASSOCIATION__VIRTUAL: return WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL;
 				case WebsitePackage.ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS;
@@ -1054,7 +1108,9 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (inputClass: ");
+		result.append(" (virtual: ");
+		result.append(virtual);
+		result.append(", inputClass: ");
 		result.append(inputClass);
 		result.append(", serializationMaxDepth: ");
 		result.append(serializationMaxDepth);

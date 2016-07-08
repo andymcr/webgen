@@ -43,11 +43,34 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addVirtualPropertyDescriptor(object);
 			addSerializationMaxDepthPropertyDescriptor(object);
 			addOppositePropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Virtual feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVirtualPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Association_virtual_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_virtual_feature", "_UI_Association_type"),
+				 OrmPackage.Literals.ASSOCIATION__VIRTUAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -154,6 +177,7 @@ public class ViewAssociationItemProvider extends ViewFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ViewAssociation.class)) {
+			case OrmPackage.VIEW_ASSOCIATION__VIRTUAL:
 			case OrmPackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 			case OrmPackage.VIEW_ASSOCIATION__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

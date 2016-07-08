@@ -514,12 +514,14 @@ abstract rule ContentUnit {
 	to waf : WAF!ContentUnit (
 		purposeSummary <- website.purposeSummary,
 		uriElement <- website.uriElement.trim(),
+		homeUnit <- website.homeUnit,
 		omitCaption <-
 			if not website.omitCaption.oclIsUndefined() then
 				website.omitCaption
 			else
 				false
 			endif,
+		alternative <- website.alternative,
 		captionClass <- website.captionClass.replaceAll(',', ' '),
 		styleClass <- website.styleClass.replaceAll(',', ' '),
 		contentClass <- website.contentClass.replaceAll(',', ' ')

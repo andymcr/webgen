@@ -16,6 +16,8 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getUriElement <em>Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#isHomeUnit <em>Home Unit</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#isOmitCaption <em>Omit Caption</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getCaptionClass <em>Caption Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getStyleClass <em>Style Class</em>}</li>
@@ -107,6 +109,59 @@ public interface ContentUnit extends NamedDisplayElement {
 	 * @generated
 	 */
 	void setUriElement(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Home Unit</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Home Unit</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Home Unit</em>' attribute.
+	 * @see #setHomeUnit(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_HomeUnit()
+	 * @model default="false" unique="false"
+	 * @generated
+	 */
+	boolean isHomeUnit();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#isHomeUnit <em>Home Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Home Unit</em>' attribute.
+	 * @see #isHomeUnit()
+	 * @generated
+	 */
+	void setHomeUnit(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Alternative</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Alternative</em>' attribute.
+	 * @see #setAlternative(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getContentUnit_Alternative()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getAlternative();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ContentUnit#getAlternative <em>Alternative</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Alternative</em>' attribute.
+	 * @see #getAlternative()
+	 * @generated
+	 */
+	void setAlternative(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Omit Caption</b></em>' attribute.

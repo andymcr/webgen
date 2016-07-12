@@ -150,6 +150,7 @@ rule SingletonElement {
 rule CollectionElement {
 	from website : Website!DataTypeAttribute (website.cardinality = #Many)
 	to orm : ORM!CollectionElement (
+		ormType <- 'array'
 	)
 }
 

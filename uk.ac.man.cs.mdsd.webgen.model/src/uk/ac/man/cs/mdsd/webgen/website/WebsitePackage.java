@@ -1371,13 +1371,22 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = CLASSIFIER_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>Implements User Interface</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE = CLASSIFIER_FEATURE_COUNT + 13;
+
+	/**
 	 * The number of structural features of the '<em>Entity Or View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 13;
+	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 14;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature <em>Feature</em>}' class.
@@ -2594,6 +2603,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY__SERIALIZATION_EXCLUDE_ALL = ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL;
+
+	/**
+	 * The feature id for the '<em><b>Implements User Interface</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__IMPLEMENTS_USER_INTERFACE = ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE;
 
 	/**
 	 * The feature id for the '<em><b>Entity Features</b></em>' containment reference list.
@@ -5636,6 +5654,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int VIEW__SERIALIZATION_EXCLUDE_ALL = ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL;
+
+	/**
+	 * The feature id for the '<em><b>Implements User Interface</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__IMPLEMENTS_USER_INTERFACE = ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE;
 
 	/**
 	 * The feature id for the '<em><b>Encapsulates</b></em>' reference list.
@@ -13753,6 +13780,17 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getEntityOrView_SerializationExcludeAll();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#isImplementsUserInterface <em>Implements User Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Implements User Interface</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#isImplementsUserInterface()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EAttribute getEntityOrView_ImplementsUserInterface();
+
+	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getKeys <em>Keys</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -18488,6 +18526,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = eINSTANCE.getEntityOrView_SerializationExcludeAll();
+
+		/**
+		 * The meta object literal for the '<em><b>Implements User Interface</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE = eINSTANCE.getEntityOrView_ImplementsUserInterface();
 
 		/**
 		 * The meta object literal for the '<em><b>Keys</b></em>' reference list feature.

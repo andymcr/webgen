@@ -55,6 +55,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			addAutoKeyPersistentTypePropertyDescriptor(object);
 			addAutoKeyGenerationStrategyPropertyDescriptor(object);
 			addSerializationExcludeAllPropertyDescriptor(object);
+			addImplementsUserInterfacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -197,6 +198,28 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Implements User Interface feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImplementsUserInterfacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_implementsUserInterface_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_implementsUserInterface_feature", "_UI_EntityOrView_type"),
+				 WebsitePackage.Literals.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_SecurityPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -258,6 +281,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 			case WebsitePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
+			case WebsitePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:

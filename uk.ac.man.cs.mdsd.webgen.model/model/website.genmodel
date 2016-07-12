@@ -182,6 +182,7 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/associations"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/allAssociations"/>
       <genFeatures createChild="false" propertyCategory="Serialization" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/serializationExcludeAll"/>
+      <genFeatures createChild="false" propertyCategory="Security" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/implementsUserInterface"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//Feature">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Feature/headerClass"/>

@@ -26,6 +26,7 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAssociations <em>Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAllAssociations <em>All Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#isSerializationExcludeAll <em>Serialization Exclude All</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#isImplementsUserInterface <em>Implements User Interface</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView()
@@ -288,6 +289,33 @@ public interface EntityOrView extends Classifier, SelectionField {
 	 * @generated
 	 */
 	void setSerializationExcludeAll(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Implements User Interface</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Implements User Interface</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Implements User Interface</em>' attribute.
+	 * @see #setImplementsUserInterface(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_ImplementsUserInterface()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isImplementsUserInterface();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#isImplementsUserInterface <em>Implements User Interface</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Implements User Interface</em>' attribute.
+	 * @see #isImplementsUserInterface()
+	 * @generated
+	 */
+	void setImplementsUserInterface(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Keys</b></em>' reference list.

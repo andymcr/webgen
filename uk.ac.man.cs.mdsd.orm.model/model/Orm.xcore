@@ -102,6 +102,7 @@ abstract class EntityOrView extends Classifier {
 	String autoKeyGenerationStrategy
 	contains ModelLabel[] labels opposite labelFor
 	boolean[1] serializationExcludeAll = "false"
+	boolean implementsUserInterface = "false"
 }
 
 

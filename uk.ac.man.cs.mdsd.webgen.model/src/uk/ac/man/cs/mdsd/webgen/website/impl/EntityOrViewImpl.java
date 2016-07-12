@@ -49,6 +49,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAssociations <em>Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAllAssociations <em>All Associations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#isSerializationExcludeAll <em>Serialization Exclude All</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#isImplementsUserInterface <em>Implements User Interface</em>}</li>
  * </ul>
  *
  * @generated
@@ -233,6 +234,26 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @ordered
 	 */
 	protected boolean serializationExcludeAll = SERIALIZATION_EXCLUDE_ALL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isImplementsUserInterface() <em>Implements User Interface</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isImplementsUserInterface()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IMPLEMENTS_USER_INTERFACE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isImplementsUserInterface() <em>Implements User Interface</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isImplementsUserInterface()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean implementsUserInterface = IMPLEMENTS_USER_INTERFACE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -437,6 +458,27 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isImplementsUserInterface() {
+		return implementsUserInterface;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImplementsUserInterface(boolean newImplementsUserInterface) {
+		boolean oldImplementsUserInterface = implementsUserInterface;
+		implementsUserInterface = newImplementsUserInterface;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE, oldImplementsUserInterface, implementsUserInterface));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<Feature> getKeys() {
 		if (keys == null) {
 			keys = new EObjectResolvingEList<Feature>(Feature.class, this, WebsitePackage.ENTITY_OR_VIEW__KEYS);
@@ -511,6 +553,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return getAllAssociations();
 			case WebsitePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 				return isSerializationExcludeAll();
+			case WebsitePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+				return isImplementsUserInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -551,6 +595,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			case WebsitePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 				setSerializationExcludeAll((Boolean)newValue);
 				return;
+			case WebsitePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+				setImplementsUserInterface((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -586,6 +633,9 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return;
 			case WebsitePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 				setSerializationExcludeAll(SERIALIZATION_EXCLUDE_ALL_EDEFAULT);
+				return;
+			case WebsitePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+				setImplementsUserInterface(IMPLEMENTS_USER_INTERFACE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -625,6 +675,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return ALL_ASSOCIATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL:
 				return serializationExcludeAll != SERIALIZATION_EXCLUDE_ALL_EDEFAULT;
+			case WebsitePackage.ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE:
+				return implementsUserInterface != IMPLEMENTS_USER_INTERFACE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -649,6 +701,8 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		result.append(autoKeyGenerationStrategy);
 		result.append(", serializationExcludeAll: ");
 		result.append(serializationExcludeAll);
+		result.append(", implementsUserInterface: ");
+		result.append(implementsUserInterface);
 		result.append(')');
 		return result.toString();
 	}

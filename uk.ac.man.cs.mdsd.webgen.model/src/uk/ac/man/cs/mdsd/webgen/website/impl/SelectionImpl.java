@@ -39,6 +39,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#isDistinct <em>Distinct</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
@@ -50,6 +51,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class SelectionImpl extends NamedElementImpl implements Selection {
+	/**
+	 * The default value of the '{@link #isDistinct() <em>Distinct</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDistinct()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DISTINCT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDistinct() <em>Distinct</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDistinct()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean distinct = DISTINCT_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getFields() <em>Fields</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -178,6 +199,27 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SELECTION__USED_BY, newUsedBy, newUsedBy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isDistinct() {
+		return distinct;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDistinct(boolean newDistinct) {
+		boolean oldDistinct = distinct;
+		distinct = newDistinct;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SELECTION__DISTINCT, oldDistinct, distinct));
 	}
 
 	/**
@@ -352,6 +394,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		switch (featureID) {
 			case WebsitePackage.SELECTION__USED_BY:
 				return getUsedBy();
+			case WebsitePackage.SELECTION__DISTINCT:
+				return isDistinct();
 			case WebsitePackage.SELECTION__FIELDS:
 				return getFields();
 			case WebsitePackage.SELECTION__PARAMETERS:
@@ -379,6 +423,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		switch (featureID) {
 			case WebsitePackage.SELECTION__USED_BY:
 				setUsedBy((Service)newValue);
+				return;
+			case WebsitePackage.SELECTION__DISTINCT:
+				setDistinct((Boolean)newValue);
 				return;
 			case WebsitePackage.SELECTION__FIELDS:
 				getFields().clear();
@@ -417,6 +464,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WebsitePackage.SELECTION__USED_BY:
 				setUsedBy((Service)null);
 				return;
+			case WebsitePackage.SELECTION__DISTINCT:
+				setDistinct(DISTINCT_EDEFAULT);
+				return;
 			case WebsitePackage.SELECTION__FIELDS:
 				getFields().clear();
 				return;
@@ -449,6 +499,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		switch (featureID) {
 			case WebsitePackage.SELECTION__USED_BY:
 				return getUsedBy() != null;
+			case WebsitePackage.SELECTION__DISTINCT:
+				return distinct != DISTINCT_EDEFAULT;
 			case WebsitePackage.SELECTION__FIELDS:
 				return fields != null && !fields.isEmpty();
 			case WebsitePackage.SELECTION__PARAMETERS:
@@ -475,7 +527,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (limit: ");
+		result.append(" (distinct: ");
+		result.append(distinct);
+		result.append(", limit: ");
 		result.append(limit);
 		result.append(')');
 		return result.toString();

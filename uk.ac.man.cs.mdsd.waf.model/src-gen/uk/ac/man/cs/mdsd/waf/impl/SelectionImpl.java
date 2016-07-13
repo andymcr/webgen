@@ -41,6 +41,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getPartOf <em>Part Of</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#isDistinct <em>Distinct</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SelectionImpl#getJoins <em>Joins</em>}</li>
@@ -52,6 +53,26 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class SelectionImpl extends NamedElementImpl implements Selection {
+	/**
+	 * The default value of the '{@link #isDistinct() <em>Distinct</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDistinct()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean DISTINCT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isDistinct() <em>Distinct</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isDistinct()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean distinct = DISTINCT_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -190,6 +211,27 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SELECTION__PART_OF, newPartOf, newPartOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isDistinct() {
+		return distinct;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDistinct(boolean newDistinct) {
+		boolean oldDistinct = distinct;
+		distinct = newDistinct;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SELECTION__DISTINCT, oldDistinct, distinct));
 	}
 
 	/**
@@ -367,6 +409,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WafPackage.SELECTION__PART_OF:
 				if (resolve) return getPartOf();
 				return basicGetPartOf();
+			case WafPackage.SELECTION__DISTINCT:
+				return isDistinct();
 			case WafPackage.SELECTION__PARAMETERS:
 				return getParameters();
 			case WafPackage.SELECTION__FIELDS:
@@ -394,6 +438,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		switch (featureID) {
 			case WafPackage.SELECTION__PART_OF:
 				setPartOf((Service)newValue);
+				return;
+			case WafPackage.SELECTION__DISTINCT:
+				setDistinct((Boolean)newValue);
 				return;
 			case WafPackage.SELECTION__PARAMETERS:
 				getParameters().clear();
@@ -432,6 +479,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WafPackage.SELECTION__PART_OF:
 				setPartOf((Service)null);
 				return;
+			case WafPackage.SELECTION__DISTINCT:
+				setDistinct(DISTINCT_EDEFAULT);
+				return;
 			case WafPackage.SELECTION__PARAMETERS:
 				getParameters().clear();
 				return;
@@ -464,6 +514,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		switch (featureID) {
 			case WafPackage.SELECTION__PART_OF:
 				return basicGetPartOf() != null;
+			case WafPackage.SELECTION__DISTINCT:
+				return distinct != DISTINCT_EDEFAULT;
 			case WafPackage.SELECTION__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
 			case WafPackage.SELECTION__FIELDS:
@@ -490,7 +542,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (limit: ");
+		result.append(" (distinct: ");
+		result.append(distinct);
+		result.append(", limit: ");
 		result.append(limit);
 		result.append(')');
 		return result.toString();

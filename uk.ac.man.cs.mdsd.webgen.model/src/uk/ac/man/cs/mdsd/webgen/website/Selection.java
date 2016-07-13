@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#isDistinct <em>Distinct</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getFields <em>Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getJoins <em>Joins</em>}</li>
@@ -57,6 +58,32 @@ public interface Selection extends NamedElement {
 	 * @generated
 	 */
 	void setUsedBy(Service value);
+
+	/**
+	 * Returns the value of the '<em><b>Distinct</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Distinct</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Distinct</em>' attribute.
+	 * @see #setDistinct(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelection_Distinct()
+	 * @model
+	 * @generated
+	 */
+	boolean isDistinct();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#isDistinct <em>Distinct</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Distinct</em>' attribute.
+	 * @see #isDistinct()
+	 * @generated
+	 */
+	void setDistinct(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Fields</b></em>' reference list.

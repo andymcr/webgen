@@ -754,13 +754,22 @@ public interface WafPackage extends EPackage {
 	int SELECTION__PART_OF = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Distinct</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__DISTINCT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__PARAMETERS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SELECTION__PARAMETERS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -769,7 +778,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__FIELDS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SELECTION__FIELDS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Joins</b></em>' reference list.
@@ -778,7 +787,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__JOINS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int SELECTION__JOINS = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' containment reference.
@@ -787,7 +796,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__FILTER = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int SELECTION__FILTER = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Ordering</b></em>' containment reference list.
@@ -796,7 +805,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__ORDERING = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int SELECTION__ORDERING = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Limit</b></em>' attribute.
@@ -805,7 +814,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION__LIMIT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int SELECTION__LIMIT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Selection</em>' class.
@@ -814,7 +823,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int SELECTION_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Selection</em>' class.
@@ -9756,6 +9765,17 @@ public interface WafPackage extends EPackage {
 	EReference getSelection_PartOf();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.Selection#isDistinct <em>Distinct</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Distinct</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.Selection#isDistinct()
+	 * @see #getSelection()
+	 * @generated
+	 */
+	EAttribute getSelection_Distinct();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.Selection#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12660,6 +12680,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SELECTION__PART_OF = eINSTANCE.getSelection_PartOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Distinct</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SELECTION__DISTINCT = eINSTANCE.getSelection_Distinct();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.

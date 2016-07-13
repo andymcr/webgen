@@ -20,6 +20,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getPartOf <em>Part Of</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#isDistinct <em>Distinct</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getParameters <em>Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getFields <em>Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.Selection#getJoins <em>Joins</em>}</li>
@@ -60,6 +61,32 @@ public interface Selection extends NamedElement {
 	 * @generated
 	 */
 	void setPartOf(Service value);
+
+	/**
+	 * Returns the value of the '<em><b>Distinct</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Distinct</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Distinct</em>' attribute.
+	 * @see #setDistinct(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelection_Distinct()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isDistinct();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.Selection#isDistinct <em>Distinct</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Distinct</em>' attribute.
+	 * @see #isDistinct()
+	 * @generated
+	 */
+	void setDistinct(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.

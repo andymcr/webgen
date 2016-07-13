@@ -295,6 +295,7 @@ rule Service {
 rule Selection {
 	from website : Website!Selection
 	to waf : WAF!Selection (
+		"distinct" <- website."distinct",
 		fields <-
 			website.fields
 				->collect(f | if f.oclIsKindOf(Website!EntityOrView) then

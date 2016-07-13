@@ -114,6 +114,7 @@ class Service extends NamedElement {
 
 class Selection extends NamedElement {
 	container Service partOf opposite selections
+	boolean distinct
 	contains SelectionParameter[] parameters
 	contains SelectField[] fields
 	refers Association[] joins

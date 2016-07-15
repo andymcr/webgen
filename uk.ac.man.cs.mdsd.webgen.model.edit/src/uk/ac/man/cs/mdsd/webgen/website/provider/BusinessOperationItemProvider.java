@@ -45,9 +45,33 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addUsesPropertyDescriptor(object);
 			addResultTypePropertyDescriptor(object);
+			addResultMimeTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Uses feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessOperation_uses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_uses_feature", "_UI_BusinessOperation_type"),
+				 WebsitePackage.Literals.BUSINESS_OPERATION__USES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_BusinessPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -64,6 +88,28 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 				 getString("_UI_BusinessOperation_resultType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_resultType_feature", "_UI_BusinessOperation_type"),
 				 WebsitePackage.Literals.BUSINESS_OPERATION__RESULT_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_BusinessPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Result Mime Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResultMimeTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessOperation_resultMimeType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_resultMimeType_feature", "_UI_BusinessOperation_type"),
+				 WebsitePackage.Literals.BUSINESS_OPERATION__RESULT_MIME_TYPE,
 				 true,
 				 false,
 				 false,
@@ -111,6 +157,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(BusinessOperation.class)) {
 			case WebsitePackage.BUSINESS_OPERATION__RESULT_TYPE:
+			case WebsitePackage.BUSINESS_OPERATION__RESULT_MIME_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

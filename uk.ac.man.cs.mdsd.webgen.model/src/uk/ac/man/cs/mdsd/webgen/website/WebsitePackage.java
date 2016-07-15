@@ -1885,13 +1885,13 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION__ENCODE_URI_KEY = FEATURE__ENCODE_URI_KEY;
 
 	/**
-	 * The feature id for the '<em><b>Virtual</b></em>' attribute.
+	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__VIRTUAL = FEATURE_FEATURE_COUNT + 0;
+	int ASSOCIATION__PSEUDO = FEATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -4711,13 +4711,13 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_ASSOCIATION__COLUMN_NAME = ENTITY_FEATURE__COLUMN_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Virtual</b></em>' attribute.
+	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ASSOCIATION__VIRTUAL = ENTITY_FEATURE_FEATURE_COUNT + 0;
+	int ENTITY_ASSOCIATION__PSEUDO = ENTITY_FEATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -4999,13 +4999,13 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION_WITHOUT_CONTAINMENT__COLUMN_NAME = ENTITY_ASSOCIATION__COLUMN_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Virtual</b></em>' attribute.
+	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__VIRTUAL = ENTITY_ASSOCIATION__VIRTUAL;
+	int ASSOCIATION_WITHOUT_CONTAINMENT__PSEUDO = ENTITY_ASSOCIATION__PSEUDO;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -5305,13 +5305,13 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION_WITH_CONTAINMENT__COLUMN_NAME = ENTITY_ASSOCIATION__COLUMN_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Virtual</b></em>' attribute.
+	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_WITH_CONTAINMENT__VIRTUAL = ENTITY_ASSOCIATION__VIRTUAL;
+	int ASSOCIATION_WITH_CONTAINMENT__PSEUDO = ENTITY_ASSOCIATION__PSEUDO;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -6115,13 +6115,13 @@ public interface WebsitePackage extends EPackage {
 	int ENCAPSULATED_ASSOCIATION__COLUMN_NAME = ENCAPSULATED_FEATURE__COLUMN_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Virtual</b></em>' attribute.
+	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCAPSULATED_ASSOCIATION__VIRTUAL = ENCAPSULATED_FEATURE_FEATURE_COUNT + 0;
+	int ENCAPSULATED_ASSOCIATION__PSEUDO = ENCAPSULATED_FEATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -6331,13 +6331,13 @@ public interface WebsitePackage extends EPackage {
 	int VIEW_ASSOCIATION__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Virtual</b></em>' attribute.
+	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__VIRTUAL = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int VIEW_ASSOCIATION__PSEUDO = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -6621,13 +6621,31 @@ public interface WebsitePackage extends EPackage {
 	int BUSINESS_OPERATION__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Uses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_OPERATION__USES = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION__RESULT_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int BUSINESS_OPERATION__RESULT_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Result Mime Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_OPERATION__RESULT_MIME_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Business Operation</em>' class.
@@ -6636,7 +6654,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int BUSINESS_OPERATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -14745,15 +14763,15 @@ public interface WebsitePackage extends EPackage {
 	EClass getAssociation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Association#isVirtual <em>Virtual</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Association#isPseudo <em>Pseudo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Virtual</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Association#isVirtual()
+	 * @return the meta object for the attribute '<em>Pseudo</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Association#isPseudo()
 	 * @see #getAssociation()
 	 * @generated
 	 */
-	EAttribute getAssociation_Virtual();
+	EAttribute getAssociation_Pseudo();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.Association#getChildFeature <em>Child Feature</em>}'.
@@ -16183,6 +16201,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getBusinessOperation();
 
 	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.BusinessOperation#getUses <em>Uses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Uses</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.BusinessOperation#getUses()
+	 * @see #getBusinessOperation()
+	 * @generated
+	 */
+	EReference getBusinessOperation_Uses();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.BusinessOperation#getResultType <em>Result Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16192,6 +16221,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBusinessOperation_ResultType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.BusinessOperation#getResultMimeType <em>Result Mime Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Result Mime Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.BusinessOperation#getResultMimeType()
+	 * @see #getBusinessOperation()
+	 * @generated
+	 */
+	EAttribute getBusinessOperation_ResultMimeType();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit <em>Content Unit</em>}'.
@@ -19306,12 +19346,12 @@ public interface WebsitePackage extends EPackage {
 		EClass ASSOCIATION = eINSTANCE.getAssociation();
 
 		/**
-		 * The meta object literal for the '<em><b>Virtual</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Pseudo</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASSOCIATION__VIRTUAL = eINSTANCE.getAssociation_Virtual();
+		EAttribute ASSOCIATION__PSEUDO = eINSTANCE.getAssociation_Pseudo();
 
 		/**
 		 * The meta object literal for the '<em><b>Child Feature</b></em>' containment reference feature.
@@ -20450,12 +20490,28 @@ public interface WebsitePackage extends EPackage {
 		EClass BUSINESS_OPERATION = eINSTANCE.getBusinessOperation();
 
 		/**
+		 * The meta object literal for the '<em><b>Uses</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUSINESS_OPERATION__USES = eINSTANCE.getBusinessOperation_Uses();
+
+		/**
 		 * The meta object literal for the '<em><b>Result Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute BUSINESS_OPERATION__RESULT_TYPE = eINSTANCE.getBusinessOperation_ResultType();
+
+		/**
+		 * The meta object literal for the '<em><b>Result Mime Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BUSINESS_OPERATION__RESULT_MIME_TYPE = eINSTANCE.getBusinessOperation_ResultMimeType();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl <em>Content Unit</em>}' class.

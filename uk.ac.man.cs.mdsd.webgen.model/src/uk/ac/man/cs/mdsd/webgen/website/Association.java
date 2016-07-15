@@ -18,7 +18,7 @@ import java.util.List;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#isVirtual <em>Virtual</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#isPseudo <em>Pseudo</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getInputClass <em>Input Class</em>}</li>
@@ -34,31 +34,31 @@ import java.util.List;
 public interface Association extends Feature {
 
 	/**
-	 * Returns the value of the '<em><b>Virtual</b></em>' attribute.
+	 * Returns the value of the '<em><b>Pseudo</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Virtual</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Pseudo</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Virtual</em>' attribute.
-	 * @see #setVirtual(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation_Virtual()
+	 * @return the value of the '<em>Pseudo</em>' attribute.
+	 * @see #setPseudo(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation_Pseudo()
 	 * @model default="false"
 	 * @generated
 	 */
-	boolean isVirtual();
+	boolean isPseudo();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Association#isVirtual <em>Virtual</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Association#isPseudo <em>Pseudo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Virtual</em>' attribute.
-	 * @see #isVirtual()
+	 * @param value the new value of the '<em>Pseudo</em>' attribute.
+	 * @see #isPseudo()
 	 * @generated
 	 */
-	void setVirtual(boolean value);
+	void setPseudo(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Child Feature</b></em>' containment reference.

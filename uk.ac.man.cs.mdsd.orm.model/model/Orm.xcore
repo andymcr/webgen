@@ -119,7 +119,7 @@ abstract class Attribute extends Feature, Label {
 }
 
 abstract class Association extends Feature {
-	boolean virtual
+	boolean pseudo
 	Integer[1] serializationMaxDepth = "1"
 }
 

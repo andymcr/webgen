@@ -128,6 +128,11 @@ rule EnumerationLiteral {
 lazy rule CollectionType {
 	from website: Website!Feature
 	to orm : ORM!CollectionType (
+		name <- 'Collection'.concat(if website.oclIsKindOf(Website!Attribute) then
+				website.dataType.name
+			else
+				website.targetEntity.name
+			endif),
 		elementType <- if website.oclIsKindOf(Website!Attribute) then
 				website.dataType
 			else

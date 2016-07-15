@@ -50,6 +50,7 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
+			addUsesPropertyDescriptor(object);
 			addResultTypePropertyDescriptor(object);
 			addResultMimeTypePropertyDescriptor(object);
 		}
@@ -70,6 +71,28 @@ public class BusinessOperationItemProvider extends NamedElementItemProvider {
 				 getString("_UI_BusinessOperation_partOf_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_partOf_feature", "_UI_BusinessOperation_type"),
 				 WafPackage.Literals.BUSINESS_OPERATION__PART_OF,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Uses feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessOperation_uses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessOperation_uses_feature", "_UI_BusinessOperation_type"),
+				 WafPackage.Literals.BUSINESS_OPERATION__USES,
 				 true,
 				 false,
 				 true,

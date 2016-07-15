@@ -343,7 +343,9 @@ rule SelectionParameter {
 rule BusinessOperation {
 	from website : Website!BusinessOperation
 	to waf : WAF!BusinessOperation (
-		resultType <- website.resultType
+		uses <- website.uses,
+		resultType <- website.resultType,
+		resultMimeType <- website.resultMimeType
 	)
 }
 

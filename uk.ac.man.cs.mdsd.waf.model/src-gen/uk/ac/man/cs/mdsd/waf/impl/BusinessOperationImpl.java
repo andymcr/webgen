@@ -2,14 +2,19 @@
  */
 package uk.ac.man.cs.mdsd.waf.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
@@ -28,6 +33,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.BusinessOperationImpl#getPartOf <em>Part Of</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.BusinessOperationImpl#getUses <em>Uses</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.BusinessOperationImpl#getResultType <em>Result Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.BusinessOperationImpl#getResultMimeType <em>Result Mime Type</em>}</li>
  * </ul>
@@ -35,6 +41,16 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class BusinessOperationImpl extends NamedElementImpl implements BusinessOperation {
+	/**
+	 * The cached value of the '{@link #getUses() <em>Uses</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Service> uses;
+
 	/**
 	 * The default value of the '{@link #getResultType() <em>Result Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -150,6 +166,18 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Service> getUses() {
+		if (uses == null) {
+			uses = new EObjectResolvingEList<Service>(Service.class, this, WafPackage.BUSINESS_OPERATION__USES);
+		}
+		return uses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public OperationResultTypes getResultType() {
 		return resultType;
 	}
@@ -242,6 +270,8 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 			case WafPackage.BUSINESS_OPERATION__PART_OF:
 				if (resolve) return getPartOf();
 				return basicGetPartOf();
+			case WafPackage.BUSINESS_OPERATION__USES:
+				return getUses();
 			case WafPackage.BUSINESS_OPERATION__RESULT_TYPE:
 				return getResultType();
 			case WafPackage.BUSINESS_OPERATION__RESULT_MIME_TYPE:
@@ -255,11 +285,16 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WafPackage.BUSINESS_OPERATION__PART_OF:
 				setPartOf((Service)newValue);
+				return;
+			case WafPackage.BUSINESS_OPERATION__USES:
+				getUses().clear();
+				getUses().addAll((Collection<? extends Service>)newValue);
 				return;
 			case WafPackage.BUSINESS_OPERATION__RESULT_TYPE:
 				setResultType((OperationResultTypes)newValue);
@@ -282,6 +317,9 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 			case WafPackage.BUSINESS_OPERATION__PART_OF:
 				setPartOf((Service)null);
 				return;
+			case WafPackage.BUSINESS_OPERATION__USES:
+				getUses().clear();
+				return;
 			case WafPackage.BUSINESS_OPERATION__RESULT_TYPE:
 				setResultType(RESULT_TYPE_EDEFAULT);
 				return;
@@ -302,6 +340,8 @@ public class BusinessOperationImpl extends NamedElementImpl implements BusinessO
 		switch (featureID) {
 			case WafPackage.BUSINESS_OPERATION__PART_OF:
 				return basicGetPartOf() != null;
+			case WafPackage.BUSINESS_OPERATION__USES:
+				return uses != null && !uses.isEmpty();
 			case WafPackage.BUSINESS_OPERATION__RESULT_TYPE:
 				return resultType != RESULT_TYPE_EDEFAULT;
 			case WafPackage.BUSINESS_OPERATION__RESULT_MIME_TYPE:

@@ -34,7 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#isVirtual <em>Virtual</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#isPseudo <em>Pseudo</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getInputClass <em>Input Class</em>}</li>
@@ -58,24 +58,24 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  */
 public abstract class EntityAssociationImpl extends EntityFeatureImpl implements EntityAssociation {
 	/**
-	 * The default value of the '{@link #isVirtual() <em>Virtual</em>}' attribute.
+	 * The default value of the '{@link #isPseudo() <em>Pseudo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isVirtual()
+	 * @see #isPseudo()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean VIRTUAL_EDEFAULT = false;
+	protected static final boolean PSEUDO_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isVirtual() <em>Virtual</em>}' attribute.
+	 * The cached value of the '{@link #isPseudo() <em>Pseudo</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isVirtual()
+	 * @see #isPseudo()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean virtual = VIRTUAL_EDEFAULT;
+	protected boolean pseudo = PSEUDO_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
@@ -381,8 +381,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isVirtual() {
-		return virtual;
+	public boolean isPseudo() {
+		return pseudo;
 	}
 
 	/**
@@ -390,11 +390,11 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setVirtual(boolean newVirtual) {
-		boolean oldVirtual = virtual;
-		virtual = newVirtual;
+	public void setPseudo(boolean newPseudo) {
+		boolean oldPseudo = pseudo;
+		pseudo = newPseudo;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL, oldVirtual, virtual));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__PSEUDO, oldPseudo, pseudo));
 	}
 
 	/**
@@ -840,8 +840,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL:
-				return isVirtual();
+			case WebsitePackage.ENTITY_ASSOCIATION__PSEUDO:
+				return isPseudo();
 			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
 				return getChildFeature();
 			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
@@ -892,8 +892,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL:
-				setVirtual((Boolean)newValue);
+			case WebsitePackage.ENTITY_ASSOCIATION__PSEUDO:
+				setPseudo((Boolean)newValue);
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ChildFeature)newValue);
@@ -954,8 +954,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL:
-				setVirtual(VIRTUAL_EDEFAULT);
+			case WebsitePackage.ENTITY_ASSOCIATION__PSEUDO:
+				setPseudo(PSEUDO_EDEFAULT);
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
 				setChildFeature((ChildFeature)null);
@@ -1014,8 +1014,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL:
-				return virtual != VIRTUAL_EDEFAULT;
+			case WebsitePackage.ENTITY_ASSOCIATION__PSEUDO:
+				return pseudo != PSEUDO_EDEFAULT;
 			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
 				return childFeature != null;
 			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
@@ -1063,7 +1063,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL: return WebsitePackage.ASSOCIATION__VIRTUAL;
+				case WebsitePackage.ENTITY_ASSOCIATION__PSEUDO: return WebsitePackage.ASSOCIATION__PSEUDO;
 				case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
@@ -1085,7 +1085,7 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.ASSOCIATION__VIRTUAL: return WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL;
+				case WebsitePackage.ASSOCIATION__PSEUDO: return WebsitePackage.ENTITY_ASSOCIATION__PSEUDO;
 				case WebsitePackage.ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS;
@@ -1108,8 +1108,8 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (virtual: ");
-		result.append(virtual);
+		result.append(" (pseudo: ");
+		result.append(pseudo);
 		result.append(", inputClass: ");
 		result.append(inputClass);
 		result.append(", serializationMaxDepth: ");

@@ -140,6 +140,7 @@ class SelectionParameter extends NamedElement {
 
 class BusinessOperation extends NamedElement {
 	container Service[1] partOf opposite operations
+	refers Service[] uses
 	OperationResultTypes[1] resultType
 	String resultMimeType
 }

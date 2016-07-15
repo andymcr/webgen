@@ -202,8 +202,7 @@
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//Attribute/inputClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Association">
-      <genFeatures createChild="false" propertyCategory="Persistence" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//Association/virtual"/>
+      <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//Association/pseudo"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           ecoreFeature="ecore:EReference website.ecore#//Association/childFeature"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
@@ -379,7 +378,10 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//SelectionParameter/defaultValue"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//BusinessOperation">
+      <genFeatures notify="false" createChild="false" propertyCategory="Business"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//BusinessOperation/uses"/>
       <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute website.ecore#//BusinessOperation/resultType"/>
+      <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute website.ecore#//BusinessOperation/resultMimeType"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Page">
       <genFeatures property="None" notify="false" createChild="false" propertyCategory="Model"

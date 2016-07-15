@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
+import org.eclipse.emf.common.util.EList;
+
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
 /**
@@ -14,6 +16,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.BusinessOperation#getPartOf <em>Part Of</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.BusinessOperation#getUses <em>Uses</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.BusinessOperation#getResultType <em>Result Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.BusinessOperation#getResultMimeType <em>Result Mime Type</em>}</li>
  * </ul>
@@ -50,6 +53,22 @@ public interface BusinessOperation extends NamedElement {
 	 * @generated
 	 */
 	void setPartOf(Service value);
+
+	/**
+	 * Returns the value of the '<em><b>Uses</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.Service}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Uses</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uses</em>' reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getBusinessOperation_Uses()
+	 * @model
+	 * @generated
+	 */
+	EList<Service> getUses();
 
 	/**
 	 * Returns the value of the '<em><b>Result Type</b></em>' attribute.

@@ -2438,7 +2438,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssociation_Virtual() {
+	public EAttribute getAssociation_Pseudo() {
 		return (EAttribute)associationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -3644,8 +3644,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBusinessOperation_Uses() {
+		return (EReference)businessOperationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getBusinessOperation_ResultType() {
-		return (EAttribute)businessOperationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)businessOperationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBusinessOperation_ResultMimeType() {
+		return (EAttribute)businessOperationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5285,7 +5303,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(attributeEClass, ATTRIBUTE__INPUT_CLASS);
 
 		associationEClass = createEClass(ASSOCIATION);
-		createEAttribute(associationEClass, ASSOCIATION__VIRTUAL);
+		createEAttribute(associationEClass, ASSOCIATION__PSEUDO);
 		createEReference(associationEClass, ASSOCIATION__CHILD_FEATURE);
 		createEReference(associationEClass, ASSOCIATION__ENCAPSULATED_BY);
 		createEAttribute(associationEClass, ASSOCIATION__INPUT_CLASS);
@@ -5439,7 +5457,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__DEFAULT_VALUE);
 
 		businessOperationEClass = createEClass(BUSINESS_OPERATION);
+		createEReference(businessOperationEClass, BUSINESS_OPERATION__USES);
 		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_TYPE);
+		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_MIME_TYPE);
 
 		pageEClass = createEClass(PAGE);
 		createEReference(pageEClass, PAGE__PARENT_PAGE);
@@ -5993,7 +6013,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getAttribute_InputClass(), ecorePackage.getEString(), "inputClass", "input_attribute", 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(associationEClass, Association.class, "Association", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAssociation_Virtual(), ecorePackage.getEBoolean(), "virtual", "false", 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAssociation_Pseudo(), ecorePackage.getEBoolean(), "pseudo", "false", 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAssociation_ChildFeature(), this.getChildFeature(), null, "childFeature", null, 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAssociation_EncapsulatedBy(), this.getEncapsulatedAssociation(), this.getEncapsulatedAssociation_Association(), "encapsulatedBy", null, 0, -1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssociation_InputClass(), ecorePackage.getEString(), "inputClass", "input_association", 0, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6147,7 +6167,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getSelectionParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(businessOperationEClass, BusinessOperation.class, "BusinessOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBusinessOperation_Uses(), this.getService(), null, "uses", null, 0, -1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessOperation_ResultType(), this.getOperationResultTypes(), "resultType", null, 1, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBusinessOperation_ResultMimeType(), ecorePackage.getEString(), "resultMimeType", null, 0, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPage_ParentPage(), this.getPageLink(), null, "parentPage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

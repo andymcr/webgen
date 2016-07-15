@@ -1011,13 +1011,22 @@ public interface WafPackage extends EPackage {
 	int BUSINESS_OPERATION__PART_OF = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Uses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_OPERATION__USES = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION__RESULT_TYPE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int BUSINESS_OPERATION__RESULT_TYPE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Result Mime Type</b></em>' attribute.
@@ -1026,7 +1035,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION__RESULT_MIME_TYPE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int BUSINESS_OPERATION__RESULT_MIME_TYPE = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Business Operation</em>' class.
@@ -1035,7 +1044,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OPERATION_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int BUSINESS_OPERATION_FEATURE_COUNT = OrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Business Operation</em>' class.
@@ -9936,6 +9945,17 @@ public interface WafPackage extends EPackage {
 	EReference getBusinessOperation_PartOf();
 
 	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.waf.BusinessOperation#getUses <em>Uses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Uses</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.BusinessOperation#getUses()
+	 * @see #getBusinessOperation()
+	 * @generated
+	 */
+	EReference getBusinessOperation_Uses();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.BusinessOperation#getResultType <em>Result Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12818,6 +12838,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BUSINESS_OPERATION__PART_OF = eINSTANCE.getBusinessOperation_PartOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Uses</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUSINESS_OPERATION__USES = eINSTANCE.getBusinessOperation_Uses();
 
 		/**
 		 * The meta object literal for the '<em><b>Result Type</b></em>' attribute feature.

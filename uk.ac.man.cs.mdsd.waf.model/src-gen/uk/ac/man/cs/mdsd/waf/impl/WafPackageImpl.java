@@ -1292,8 +1292,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBusinessOperation_Uses() {
+		return (EReference)businessOperationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getBusinessOperation_ResultType() {
-		return (EAttribute)businessOperationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)businessOperationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1302,7 +1311,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getBusinessOperation_ResultMimeType() {
-		return (EAttribute)businessOperationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)businessOperationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3320,6 +3329,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		businessOperationEClass = createEClass(BUSINESS_OPERATION);
 		createEReference(businessOperationEClass, BUSINESS_OPERATION__PART_OF);
+		createEReference(businessOperationEClass, BUSINESS_OPERATION__USES);
 		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_TYPE);
 		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_MIME_TYPE);
 
@@ -3779,6 +3789,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(businessOperationEClass, BusinessOperation.class, "BusinessOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBusinessOperation_PartOf(), this.getService(), this.getService_Operations(), "partOf", null, 1, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessOperation_Uses(), this.getService(), null, "uses", null, 0, -1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessOperation_ResultType(), this.getOperationResultTypes(), "resultType", null, 1, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessOperation_ResultMimeType(), theEcorePackage.getEString(), "resultMimeType", null, 0, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

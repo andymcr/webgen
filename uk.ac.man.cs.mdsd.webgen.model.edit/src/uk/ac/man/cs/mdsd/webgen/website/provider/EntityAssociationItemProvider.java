@@ -48,7 +48,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addVirtualPropertyDescriptor(object);
+			addPseudoPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addSourceEntityXPropertyDescriptor(object);
 			addTargetEntityXPropertyDescriptor(object);
@@ -67,19 +67,19 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Virtual feature.
+	 * This adds a property descriptor for the Pseudo feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addVirtualPropertyDescriptor(Object object) {
+	protected void addPseudoPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Association_virtual_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Association_virtual_feature", "_UI_Association_type"),
-				 WebsitePackage.Literals.ASSOCIATION__VIRTUAL,
+				 getString("_UI_Association_pseudo_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Association_pseudo_feature", "_UI_Association_type"),
+				 WebsitePackage.Literals.ASSOCIATION__PSEUDO,
 				 true,
 				 false,
 				 false,
@@ -434,7 +434,7 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityAssociation.class)) {
-			case WebsitePackage.ENTITY_ASSOCIATION__VIRTUAL:
+			case WebsitePackage.ENTITY_ASSOCIATION__PSEUDO:
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
 			case WebsitePackage.ENTITY_ASSOCIATION__SERIALIZATION_MAX_DEPTH:
 			case WebsitePackage.ENTITY_ASSOCIATION__BIDIRECTIONAL:

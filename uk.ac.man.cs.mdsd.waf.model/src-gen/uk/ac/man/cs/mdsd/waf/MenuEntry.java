@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.MenuEntry#getPartOf <em>Part Of</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.MenuEntry#getRequiresRole <em>Requires Role</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getMenuEntry()
@@ -48,5 +49,31 @@ public interface MenuEntry extends EObject {
 	 * @generated
 	 */
 	void setPartOf(Menu value);
+
+	/**
+	 * Returns the value of the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Requires Role</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requires Role</em>' attribute.
+	 * @see #setRequiresRole(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getMenuEntry_RequiresRole()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getRequiresRole();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.MenuEntry#getRequiresRole <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Requires Role</em>' attribute.
+	 * @see #getRequiresRole()
+	 * @generated
+	 */
+	void setRequiresRole(String value);
 
 } // MenuEntry

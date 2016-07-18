@@ -170,6 +170,7 @@ class DynamicMenu extends Menu {
 
 abstract class MenuEntry {
 	container Menu[1] partOf opposite entries
+	String requiresRole
 }
 
 class ActionMenuEntry extends MenuEntry, NamedDisplayElement {

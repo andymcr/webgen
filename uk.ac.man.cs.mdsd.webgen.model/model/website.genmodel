@@ -411,6 +411,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//MenuEntry">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//MenuEntry/partOf"/>
+      <genFeatures createChild="false" propertyCategory="Security" ecoreFeature="ecore:EAttribute website.ecore#//MenuEntry/requiresRole"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//StaticMenu"/>
     <genClasses ecoreClass="website.ecore#//ActionMenuEntry">

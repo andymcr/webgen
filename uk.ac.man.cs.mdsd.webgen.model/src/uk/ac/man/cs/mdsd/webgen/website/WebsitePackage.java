@@ -6873,13 +6873,22 @@ public interface WebsitePackage extends EPackage {
 	int MENU_ENTRY__PART_OF = 0;
 
 	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_ENTRY__REQUIRES_ROLE = 1;
+
+	/**
 	 * The number of structural features of the '<em>Menu Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MENU_ENTRY_FEATURE_COUNT = 1;
+	int MENU_ENTRY_FEATURE_COUNT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6963,6 +6972,15 @@ public interface WebsitePackage extends EPackage {
 	int ACTION_MENU_ENTRY__PART_OF = MENU_ENTRY__PART_OF;
 
 	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_MENU_ENTRY__REQUIRES_ROLE = MENU_ENTRY__REQUIRES_ROLE;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7015,6 +7033,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int EDIT_STATIC_TEXT_MENU_ENTRY__PART_OF = MENU_ENTRY__PART_OF;
+
+	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_STATIC_TEXT_MENU_ENTRY__REQUIRES_ROLE = MENU_ENTRY__REQUIRES_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7160,6 +7187,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int MENU_FEATURE__PART_OF = MENU_ENTRY__PART_OF;
+
+	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MENU_FEATURE__REQUIRES_ROLE = MENU_ENTRY__REQUIRES_ROLE;
 
 	/**
 	 * The number of structural features of the '<em>Menu Feature</em>' class.
@@ -15281,6 +15317,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getMenuEntry_PartOf();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.MenuEntry#getRequiresRole <em>Requires Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Requires Role</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.MenuEntry#getRequiresRole()
+	 * @see #getMenuEntry()
+	 * @generated
+	 */
+	EAttribute getMenuEntry_RequiresRole();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Query <em>Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -19763,6 +19810,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MENU_ENTRY__PART_OF = eINSTANCE.getMenuEntry_PartOf();
+
+		/**
+		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MENU_ENTRY__REQUIRES_ROLE = eINSTANCE.getMenuEntry_RequiresRole();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.QueryImpl <em>Query</em>}' class.

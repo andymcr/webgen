@@ -1436,6 +1436,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMenuEntry_RequiresRole() {
+		return (EAttribute)menuEntryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getActionMenuEntry() {
 		return actionMenuEntryEClass;
 	}
@@ -3349,6 +3358,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		menuEntryEClass = createEClass(MENU_ENTRY);
 		createEReference(menuEntryEClass, MENU_ENTRY__PART_OF);
+		createEAttribute(menuEntryEClass, MENU_ENTRY__REQUIRES_ROLE);
 
 		actionMenuEntryEClass = createEClass(ACTION_MENU_ENTRY);
 		createEReference(actionMenuEntryEClass, ACTION_MENU_ENTRY__ACTION);
@@ -3809,6 +3819,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(menuEntryEClass, MenuEntry.class, "MenuEntry", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMenuEntry_PartOf(), this.getMenu(), this.getMenu_Entries(), "partOf", null, 1, 1, MenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMenuEntry_RequiresRole(), theEcorePackage.getEString(), "requiresRole", null, 0, 1, MenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionMenuEntryEClass, ActionMenuEntry.class, "ActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActionMenuEntry_Action(), this.getDynamicUnit(), null, "action", null, 1, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

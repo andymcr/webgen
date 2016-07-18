@@ -403,6 +403,7 @@ abstract rule Menu {
 abstract rule MenuEntry {
 	from website : Website!MenuEntry
 	to waf : WAF!MenuEntry (
+		requiresRole <- website.requiresRole
 	)
 }
 

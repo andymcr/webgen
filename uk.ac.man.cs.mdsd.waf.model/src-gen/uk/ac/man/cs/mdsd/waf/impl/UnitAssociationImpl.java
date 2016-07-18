@@ -24,7 +24,6 @@ import uk.ac.man.cs.mdsd.orm.Association;
 import uk.ac.man.cs.mdsd.orm.Label;
 
 import uk.ac.man.cs.mdsd.waf.ChildFeature;
-import uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
@@ -45,7 +44,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getValueDisplay <em>Value Display</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getDisplayOption <em>Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getFilters <em>Filters</em>}</li>
  * </ul>
  *
@@ -111,26 +109,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @ordered
 	 */
 	protected Label valueDisplay;
-
-	/**
-	 * The default value of the '{@link #getDisplayOption() <em>Display Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final CollectionDisplayOptions DISPLAY_OPTION_EDEFAULT = CollectionDisplayOptions.LINE_DIRECTION;
-
-	/**
-	 * The cached value of the '{@link #getDisplayOption() <em>Display Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected CollectionDisplayOptions displayOption = DISPLAY_OPTION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' reference list.
@@ -351,27 +329,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CollectionDisplayOptions getDisplayOption() {
-		return displayOption;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDisplayOption(CollectionDisplayOptions newDisplayOption) {
-		CollectionDisplayOptions oldDisplayOption = displayOption;
-		displayOption = newDisplayOption == null ? DISPLAY_OPTION_EDEFAULT : newDisplayOption;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__DISPLAY_OPTION, oldDisplayOption, displayOption));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Label> getFilters() {
 		if (filters == null) {
 			filters = new EObjectResolvingEList<Label>(Label.class, this, WafPackage.UNIT_ASSOCIATION__FILTERS);
@@ -433,8 +390,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WafPackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				if (resolve) return getValueDisplay();
 				return basicGetValueDisplay();
-			case WafPackage.UNIT_ASSOCIATION__DISPLAY_OPTION:
-				return getDisplayOption();
 			case WafPackage.UNIT_ASSOCIATION__FILTERS:
 				return getFilters();
 		}
@@ -465,9 +420,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return;
 			case WafPackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				setValueDisplay((Label)newValue);
-				return;
-			case WafPackage.UNIT_ASSOCIATION__DISPLAY_OPTION:
-				setDisplayOption((CollectionDisplayOptions)newValue);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__FILTERS:
 				getFilters().clear();
@@ -500,9 +452,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WafPackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				setValueDisplay((Label)null);
 				return;
-			case WafPackage.UNIT_ASSOCIATION__DISPLAY_OPTION:
-				setDisplayOption(DISPLAY_OPTION_EDEFAULT);
-				return;
 			case WafPackage.UNIT_ASSOCIATION__FILTERS:
 				getFilters().clear();
 				return;
@@ -530,8 +479,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return selection != null;
 			case WafPackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				return valueDisplay != null;
-			case WafPackage.UNIT_ASSOCIATION__DISPLAY_OPTION:
-				return displayOption != DISPLAY_OPTION_EDEFAULT;
 			case WafPackage.UNIT_ASSOCIATION__FILTERS:
 				return filters != null && !filters.isEmpty();
 		}
@@ -568,22 +515,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (displayOption: ");
-		result.append(displayOption);
-		result.append(')');
-		return result.toString();
 	}
 
 } //UnitAssociationImpl

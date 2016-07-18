@@ -15,7 +15,6 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#isRequired <em>Required</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getForcedValue <em>Forced Value</em>}</li>
@@ -60,36 +59,6 @@ public interface UnitFeature extends UnitField, InlineActionContainer {
 	 * @generated
 	 */
 	void setOnlyDisplayWhenNotEmpty(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Collection Display Option</b></em>' attribute.
-	 * The default value is <code>"LineDirection"</code>.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Collection Display Option</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Collection Display Option</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions
-	 * @see #setCollectionDisplayOption(CollectionDisplayOptions)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitFeature_CollectionDisplayOption()
-	 * @model default="LineDirection" ordered="false"
-	 * @generated
-	 */
-	CollectionDisplayOptions getCollectionDisplayOption();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getCollectionDisplayOption <em>Collection Display Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Collection Display Option</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions
-	 * @see #getCollectionDisplayOption()
-	 * @generated
-	 */
-	void setCollectionDisplayOption(CollectionDisplayOptions value);
 
 	/**
 	 * Returns the value of the '<em><b>Display Label</b></em>' attribute.

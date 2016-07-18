@@ -50,6 +50,7 @@ public class UnitFeatureItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDisplayedOnPropertyDescriptor(object);
+			addCollectionDisplayOptionPropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
@@ -202,6 +203,28 @@ public class UnitFeatureItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Collection Display Option feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionDisplayOptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_collectionDisplayOption_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_collectionDisplayOption_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__COLLECTION_DISPLAY_OPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Date Format feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -354,6 +377,7 @@ public class UnitFeatureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitFeature.class)) {
+			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
 			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:

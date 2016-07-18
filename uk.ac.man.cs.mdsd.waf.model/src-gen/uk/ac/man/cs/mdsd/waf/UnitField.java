@@ -13,6 +13,7 @@ package uk.ac.man.cs.mdsd.waf;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitField#getDateFormat <em>Date Format</em>}</li>
  * </ul>
@@ -49,6 +50,35 @@ public interface UnitField extends DisplayElement {
 	 * @generated
 	 */
 	void setDisplayedOn(DynamicUnit value);
+
+	/**
+	 * Returns the value of the '<em><b>Collection Display Option</b></em>' attribute.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection Display Option</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection Display Option</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions
+	 * @see #setCollectionDisplayOption(CollectionDisplayOptions)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitField_CollectionDisplayOption()
+	 * @model unique="false"
+	 * @generated
+	 */
+	CollectionDisplayOptions getCollectionDisplayOption();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitField#getCollectionDisplayOption <em>Collection Display Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection Display Option</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions
+	 * @see #getCollectionDisplayOption()
+	 * @generated
+	 */
+	void setCollectionDisplayOption(CollectionDisplayOptions value);
 
 	/**
 	 * Returns the value of the '<em><b>Maximum Display Size</b></em>' attribute.

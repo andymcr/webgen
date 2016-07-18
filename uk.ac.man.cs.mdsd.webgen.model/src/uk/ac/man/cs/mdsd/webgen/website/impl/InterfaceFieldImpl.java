@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.InterfaceField;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
@@ -26,6 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#isRequired <em>Required</em>}</li>
@@ -39,6 +41,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl implements InterfaceField {
+	/**
+	 * The default value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCollectionDisplayOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final CollectionDisplayOptions COLLECTION_DISPLAY_OPTION_EDEFAULT = CollectionDisplayOptions.LINE_DIRECTION;
+
+	/**
+	 * The cached value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCollectionDisplayOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected CollectionDisplayOptions collectionDisplayOption = COLLECTION_DISPLAY_OPTION_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -247,6 +269,27 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CollectionDisplayOptions getCollectionDisplayOption() {
+		return collectionDisplayOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionDisplayOption(CollectionDisplayOptions newCollectionDisplayOption) {
+		CollectionDisplayOptions oldCollectionDisplayOption = collectionDisplayOption;
+		collectionDisplayOption = newCollectionDisplayOption == null ? COLLECTION_DISPLAY_OPTION_EDEFAULT : newCollectionDisplayOption;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION, oldCollectionDisplayOption, collectionDisplayOption));
 	}
 
 	/**
@@ -488,6 +531,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		switch (featureID) {
 			case WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return getDisplayedOn();
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
+				return getCollectionDisplayOption();
 			case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return getMaximumDisplaySize();
 			case WebsitePackage.INTERFACE_FIELD__DATE_FORMAT:
@@ -519,6 +564,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		switch (featureID) {
 			case WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
+				return;
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
+				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
 				return;
 			case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize((Integer)newValue);
@@ -559,6 +607,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			case WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
 				return;
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
+				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
+				return;
 			case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
 				return;
@@ -597,6 +648,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		switch (featureID) {
 			case WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return getDisplayedOn() != null;
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
+				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
 			case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WebsitePackage.INTERFACE_FIELD__DATE_FORMAT:
@@ -627,6 +680,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		if (baseClass == UnitField.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON: return WebsitePackage.UNIT_FIELD__DISPLAYED_ON;
+				case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WebsitePackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WebsitePackage.INTERFACE_FIELD__DATE_FORMAT: return WebsitePackage.UNIT_FIELD__DATE_FORMAT;
 				default: return -1;
@@ -645,6 +699,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		if (baseClass == UnitField.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.UNIT_FIELD__DISPLAYED_ON: return WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON;
+				case WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WebsitePackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WebsitePackage.UNIT_FIELD__DATE_FORMAT: return WebsitePackage.INTERFACE_FIELD__DATE_FORMAT;
 				default: return -1;
@@ -663,7 +718,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (maximumDisplaySize: ");
+		result.append(" (collectionDisplayOption: ");
+		result.append(collectionDisplayOption);
+		result.append(", maximumDisplaySize: ");
 		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);

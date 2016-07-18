@@ -7828,13 +7828,22 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_FIELD__DISPLAYED_ON = 0;
 
 	/**
+	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FIELD__COLLECTION_DISPLAY_OPTION = 1;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = 1;
+	int UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -7843,7 +7852,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__DATE_FORMAT = 2;
+	int UNIT_FIELD__DATE_FORMAT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Unit Field</em>' class.
@@ -7852,7 +7861,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD_FEATURE_COUNT = 3;
+	int UNIT_FIELD_FEATURE_COUNT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -7862,6 +7871,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_FEATURE__DISPLAYED_ON = UNIT_FIELD__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__COLLECTION_DISPLAY_OPTION = UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -7900,22 +7918,13 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY = UNIT_FIELD_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_FEATURE__COLLECTION_DISPLAY_OPTION = UNIT_FIELD_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__DISPLAY_LABEL = UNIT_FIELD_FEATURE_COUNT + 3;
+	int UNIT_FEATURE__DISPLAY_LABEL = UNIT_FIELD_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -7924,7 +7933,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__REQUIRED = UNIT_FIELD_FEATURE_COUNT + 4;
+	int UNIT_FEATURE__REQUIRED = UNIT_FIELD_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Forced Value</b></em>' containment reference.
@@ -7933,7 +7942,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__FORCED_VALUE = UNIT_FIELD_FEATURE_COUNT + 5;
+	int UNIT_FEATURE__FORCED_VALUE = UNIT_FIELD_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -7942,7 +7951,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__FOOTER = UNIT_FIELD_FEATURE_COUNT + 6;
+	int UNIT_FEATURE__FOOTER = UNIT_FIELD_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -7951,7 +7960,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__AUTOFOCUS = UNIT_FIELD_FEATURE_COUNT + 7;
+	int UNIT_FEATURE__AUTOFOCUS = UNIT_FIELD_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -7960,7 +7969,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__HEADER_CLASS = UNIT_FIELD_FEATURE_COUNT + 8;
+	int UNIT_FEATURE__HEADER_CLASS = UNIT_FIELD_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -7969,7 +7978,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__INPUT_CLASS = UNIT_FIELD_FEATURE_COUNT + 9;
+	int UNIT_FEATURE__INPUT_CLASS = UNIT_FIELD_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -7978,7 +7987,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__DISPLAY_CLASS = UNIT_FIELD_FEATURE_COUNT + 10;
+	int UNIT_FEATURE__DISPLAY_CLASS = UNIT_FIELD_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -7987,7 +7996,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__FOOTER_CLASS = UNIT_FIELD_FEATURE_COUNT + 11;
+	int UNIT_FEATURE__FOOTER_CLASS = UNIT_FIELD_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Unit Feature</em>' class.
@@ -7996,7 +8005,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE_FEATURE_COUNT = UNIT_FIELD_FEATURE_COUNT + 12;
+	int UNIT_FEATURE_FEATURE_COUNT = UNIT_FIELD_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -8006,6 +8015,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ELEMENT__DISPLAYED_ON = UNIT_FEATURE__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__COLLECTION_DISPLAY_OPTION = UNIT_FEATURE__COLLECTION_DISPLAY_OPTION;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -8042,15 +8060,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ELEMENT__ONLY_DISPLAY_WHEN_NOT_EMPTY = UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY;
-
-	/**
-	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ELEMENT__COLLECTION_DISPLAY_OPTION = UNIT_FEATURE__COLLECTION_DISPLAY_OPTION;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -8270,6 +8279,15 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_ASSOCIATION__DISPLAYED_ON = UNIT_FEATURE__DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION = UNIT_FEATURE__COLLECTION_DISPLAY_OPTION;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8304,15 +8322,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ASSOCIATION__ONLY_DISPLAY_WHEN_NOT_EMPTY = UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY;
-
-	/**
-	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION = UNIT_FEATURE__COLLECTION_DISPLAY_OPTION;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -8678,13 +8687,22 @@ public interface WebsitePackage extends EPackage {
 	int INTERFACE_FIELD__DISPLAYED_ON = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -8693,7 +8711,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DATE_FORMAT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int INTERFACE_FIELD__DATE_FORMAT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -8702,7 +8720,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__REQUIRED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int INTERFACE_FIELD__REQUIRED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -8711,7 +8729,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DEFAULT_VALUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int INTERFACE_FIELD__DEFAULT_VALUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Must Match</b></em>' reference.
@@ -8720,7 +8738,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MUST_MATCH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int INTERFACE_FIELD__MUST_MATCH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -8729,7 +8747,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int INTERFACE_FIELD__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -8738,7 +8756,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__PLACEHOLDER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int INTERFACE_FIELD__PLACEHOLDER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -8747,7 +8765,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__VALIDATION_PATTERN = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int INTERFACE_FIELD__VALIDATION_PATTERN = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Interface Field</em>' class.
@@ -8756,7 +8774,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int INTERFACE_FIELD_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8784,6 +8802,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_FIELD__DISPLAYED_ON = INTERFACE_FIELD__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FIELD__COLLECTION_DISPLAY_OPTION = INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -8930,6 +8957,15 @@ public interface WebsitePackage extends EPackage {
 	int DATE_FIELD__DISPLAYED_ON = INTERFACE_FIELD__DISPLAYED_ON;
 
 	/**
+	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_FIELD__COLLECTION_DISPLAY_OPTION = INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9054,6 +9090,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CAPTCHA_FIELD__DISPLAYED_ON = INTERFACE_FIELD__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Collection Display Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTCHA_FIELD__COLLECTION_DISPLAY_OPTION = INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -15597,6 +15642,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getUnitField_DisplayedOn();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#getCollectionDisplayOption <em>Collection Display Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Collection Display Option</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitField#getCollectionDisplayOption()
+	 * @see #getUnitField()
+	 * @generated
+	 */
+	EAttribute getUnitField_CollectionDisplayOption();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15638,17 +15694,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUnitFeature_OnlyDisplayWhenNotEmpty();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getCollectionDisplayOption <em>Collection Display Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Collection Display Option</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getCollectionDisplayOption()
-	 * @see #getUnitFeature()
-	 * @generated
-	 */
-	EAttribute getUnitFeature_CollectionDisplayOption();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getDisplayLabel <em>Display Label</em>}'.
@@ -20018,6 +20063,14 @@ public interface WebsitePackage extends EPackage {
 		EReference UNIT_FIELD__DISPLAYED_ON = eINSTANCE.getUnitField_DisplayedOn();
 
 		/**
+		 * The meta object literal for the '<em><b>Collection Display Option</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FIELD__COLLECTION_DISPLAY_OPTION = eINSTANCE.getUnitField_CollectionDisplayOption();
+
+		/**
 		 * The meta object literal for the '<em><b>Maximum Display Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -20050,14 +20103,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY = eINSTANCE.getUnitFeature_OnlyDisplayWhenNotEmpty();
-
-		/**
-		 * The meta object literal for the '<em><b>Collection Display Option</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UNIT_FEATURE__COLLECTION_DISPLAY_OPTION = eINSTANCE.getUnitFeature_CollectionDisplayOption();
 
 		/**
 		 * The meta object literal for the '<em><b>Display Label</b></em>' attribute feature.

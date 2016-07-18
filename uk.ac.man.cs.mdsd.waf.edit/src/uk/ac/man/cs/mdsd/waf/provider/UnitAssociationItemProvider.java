@@ -52,7 +52,6 @@ public class UnitAssociationItemProvider
 			addNamePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addValueDisplayPropertyDescriptor(object);
-			addDisplayOptionPropertyDescriptor(object);
 			addFiltersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -143,28 +142,6 @@ public class UnitAssociationItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-		/**
-	 * This adds a property descriptor for the Display Option feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDisplayOptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_displayOption_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_displayOption_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.Literals.UNIT_ASSOCIATION__DISPLAY_OPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -265,7 +242,6 @@ public class UnitAssociationItemProvider
 
 		switch (notification.getFeatureID(UnitAssociation.class)) {
 			case WafPackage.UNIT_ASSOCIATION__NAME:
-			case WafPackage.UNIT_ASSOCIATION__DISPLAY_OPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.UNIT_ASSOCIATION__UNITS:

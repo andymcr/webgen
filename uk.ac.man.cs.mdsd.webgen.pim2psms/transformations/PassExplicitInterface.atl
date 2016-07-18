@@ -560,6 +560,7 @@ abstract rule DynamicUnit {
 abstract rule UnitField {
 	from website : Website!UnitField
 	to waf : WAF!UnitField (
+		collectionDisplayOption <- website.collectionDisplayOption,
 		maximumDisplaySize <- website.maximumDisplaySize,
 		dateFormat <- website.dateFormat()
 	)
@@ -648,7 +649,6 @@ rule UnitAssociation {
 			else
 				website.valueDisplay.findOrmLabel()
 			endif,
-		displayOption <- website.collectionDisplayOption,
 --		filters <- website.filters,
 		headerClass <-
 			if not website.headerClass.oclIsUndefined() and website.headerClass <> '' then

@@ -54,6 +54,11 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			addAutoKeyNamePropertyDescriptor(object);
 			addAutoKeyPersistentTypePropertyDescriptor(object);
 			addAutoKeyGenerationStrategyPropertyDescriptor(object);
+			addFeaturesPropertyDescriptor(object);
+			addAllFeaturesPropertyDescriptor(object);
+			addAttributesPropertyDescriptor(object);
+			addAssociationsPropertyDescriptor(object);
+			addAllAssociationsPropertyDescriptor(object);
 			addSerializationExcludeAllPropertyDescriptor(object);
 			addImplementsUserInterfacePropertyDescriptor(object);
 		}
@@ -172,6 +177,116 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Features feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFeaturesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_features_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_features_feature", "_UI_EntityOrView_type"),
+				 WebsitePackage.Literals.ENTITY_OR_VIEW__FEATURES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the All Features feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllFeaturesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_allFeatures_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_allFeatures_feature", "_UI_EntityOrView_type"),
+				 WebsitePackage.Literals.ENTITY_OR_VIEW__ALL_FEATURES,
+				 false,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Attributes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttributesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_attributes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_attributes_feature", "_UI_EntityOrView_type"),
+				 WebsitePackage.Literals.ENTITY_OR_VIEW__ATTRIBUTES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Associations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssociationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_associations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_associations_feature", "_UI_EntityOrView_type"),
+				 WebsitePackage.Literals.ENTITY_OR_VIEW__ASSOCIATIONS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the All Associations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllAssociationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_allAssociations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_allAssociations_feature", "_UI_EntityOrView_type"),
+				 WebsitePackage.Literals.ENTITY_OR_VIEW__ALL_ASSOCIATIONS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
 				 null));
 	}
 

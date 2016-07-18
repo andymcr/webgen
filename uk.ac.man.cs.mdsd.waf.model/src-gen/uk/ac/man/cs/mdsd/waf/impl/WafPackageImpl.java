@@ -1967,7 +1967,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitField_MaximumDisplaySize() {
+	public EAttribute getUnitField_CollectionDisplayOption() {
 		return (EAttribute)unitFieldEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1976,8 +1976,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitField_DateFormat() {
+	public EAttribute getUnitField_MaximumDisplaySize() {
 		return (EAttribute)unitFieldEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnitField_DateFormat() {
+		return (EAttribute)unitFieldEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2183,17 +2192,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitAssociation_DisplayOption() {
-		return (EAttribute)unitAssociationEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getUnitAssociation_Filters() {
-		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(6);
+		return (EReference)unitAssociationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3422,6 +3422,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		unitFieldEClass = createEClass(UNIT_FIELD);
 		createEReference(unitFieldEClass, UNIT_FIELD__DISPLAYED_ON);
+		createEAttribute(unitFieldEClass, UNIT_FIELD__COLLECTION_DISPLAY_OPTION);
 		createEAttribute(unitFieldEClass, UNIT_FIELD__MAXIMUM_DISPLAY_SIZE);
 		createEAttribute(unitFieldEClass, UNIT_FIELD__DATE_FORMAT);
 
@@ -3449,7 +3450,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__CHILD_FEATURE);
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__SELECTION);
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__VALUE_DISPLAY);
-		createEAttribute(unitAssociationEClass, UNIT_ASSOCIATION__DISPLAY_OPTION);
 		createEReference(unitAssociationEClass, UNIT_ASSOCIATION__FILTERS);
 
 		childFeatureEClass = createEClass(CHILD_FEATURE);
@@ -3882,6 +3882,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(unitFieldEClass, UnitField.class, "UnitField", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitField_DisplayedOn(), this.getDynamicUnit(), this.getDynamicUnit_DisplayFields(), "displayedOn", null, 1, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnitField_CollectionDisplayOption(), this.getCollectionDisplayOptions(), "collectionDisplayOption", null, 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnitField_MaximumDisplaySize(), theEcorePackage.getEInt(), "maximumDisplaySize", "-1", 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnitField_DateFormat(), theEcorePackage.getEString(), "dateFormat", null, 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3909,7 +3910,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getUnitAssociation_ChildFeature(), this.getChildFeature(), null, "childFeature", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_Selection(), this.getSelection(), null, "selection", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_ValueDisplay(), theOrmPackage.getLabel(), null, "valueDisplay", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUnitAssociation_DisplayOption(), this.getCollectionDisplayOptions(), "displayOption", null, 0, 1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnitAssociation_Filters(), theOrmPackage.getLabel(), null, "filters", null, 0, -1, UnitAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(childFeatureEClass, ChildFeature.class, "ChildFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

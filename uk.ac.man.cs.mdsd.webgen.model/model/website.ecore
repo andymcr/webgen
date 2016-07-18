@@ -751,17 +751,19 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="error"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CollectionDisplayOptions">
+    <eLiterals name="LineDirection"/>
+    <eLiterals name="PageDirection" value="1"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnitField" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayedOn" ordered="false"
         lowerBound="1" eType="#//DynamicUnit" eOpposite="#//DynamicUnit/displayFields"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionDisplayOption"
+        ordered="false" eType="#//CollectionDisplayOptions" defaultValueLiteral="LineDirection"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumDisplaySize" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateFormat" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="CollectionDisplayOptions">
-    <eLiterals name="LineDirection"/>
-    <eLiterals name="PageDirection" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnitFeature" abstract="true" eSuperTypes="#//UnitField #//InlineActionContainer">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -774,8 +776,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="onlyDisplayWhenNotEmpty"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionDisplayOption"
-        ordered="false" eType="#//CollectionDisplayOptions" defaultValueLiteral="LineDirection"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" ordered="false"
@@ -825,7 +825,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
         volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="not association.oclIsUndefined() implies&#xD;&#xA;&#x9;if self.oclIsKindOf(UnitAssociation) then&#xD;&#xA;&#x9;&#x9;self.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;let partOf : PathAssociationElement = self.oclAsType(ChildAssociation).partOf&#xD;&#xA;&#x9;&#x9;&#x9;in if partOf.isSourceAssociation then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;partOf.targetEntity.associations->includes(association)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;partOf.sourceEntity.associations->includes(association)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif"/>
+        <details key="derivation" value="not association.oclIsUndefined() implies&#xD;&#xA;&#x9;if self.oclIsKindOf(UnitAssociation) then&#xD;&#xA;&#x9;&#x9;self.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;let partOf : PathAssociationElement&#xD;&#xA;&#x9;&#x9;&#x9;= self.oclAsType(ChildAssociation).partOf&#xD;&#xA;&#x9;&#x9;&#x9;in partOf.sourceEntity.associations->includes(association)&#xD;&#xA;&#x9;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEntity" eType="#//EntityOrView"

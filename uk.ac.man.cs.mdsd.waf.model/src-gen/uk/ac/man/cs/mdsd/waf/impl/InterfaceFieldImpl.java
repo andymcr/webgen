@@ -16,6 +16,7 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
+import uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.waf.DisplayElement;
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.InterfaceField;
@@ -32,6 +33,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#isRequired <em>Required</em>}</li>
@@ -65,6 +67,26 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * @ordered
 	 */
 	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCollectionDisplayOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final CollectionDisplayOptions COLLECTION_DISPLAY_OPTION_EDEFAULT = CollectionDisplayOptions.LINE_DIRECTION;
+
+	/**
+	 * The cached value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCollectionDisplayOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected CollectionDisplayOptions collectionDisplayOption = COLLECTION_DISPLAY_OPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
@@ -315,6 +337,27 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CollectionDisplayOptions getCollectionDisplayOption() {
+		return collectionDisplayOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionDisplayOption(CollectionDisplayOptions newCollectionDisplayOption) {
+		CollectionDisplayOptions oldCollectionDisplayOption = collectionDisplayOption;
+		collectionDisplayOption = newCollectionDisplayOption == null ? COLLECTION_DISPLAY_OPTION_EDEFAULT : newCollectionDisplayOption;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION, oldCollectionDisplayOption, collectionDisplayOption));
 	}
 
 	/**
@@ -604,6 +647,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				if (resolve) return getDisplayedOn();
 				return basicGetDisplayedOn();
+			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
+				return getCollectionDisplayOption();
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return getMaximumDisplaySize();
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
@@ -640,6 +685,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return;
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
+				return;
+			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
+				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
 				return;
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize((Integer)newValue);
@@ -686,6 +734,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
 				return;
+			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
+				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
+				return;
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
 				return;
@@ -729,6 +780,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return basicGetDisplayedOn() != null;
+			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
+				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__DATE_FORMAT:
@@ -767,6 +820,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		if (baseClass == UnitField.class) {
 			switch (derivedFeatureID) {
 				case WafPackage.INTERFACE_FIELD__DISPLAYED_ON: return WafPackage.UNIT_FIELD__DISPLAYED_ON;
+				case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.INTERFACE_FIELD__DATE_FORMAT: return WafPackage.UNIT_FIELD__DATE_FORMAT;
 				default: return -1;
@@ -791,6 +845,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		if (baseClass == UnitField.class) {
 			switch (baseFeatureID) {
 				case WafPackage.UNIT_FIELD__DISPLAYED_ON: return WafPackage.INTERFACE_FIELD__DISPLAYED_ON;
+				case WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WafPackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WafPackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WafPackage.UNIT_FIELD__DATE_FORMAT: return WafPackage.INTERFACE_FIELD__DATE_FORMAT;
 				default: return -1;
@@ -811,6 +866,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (displayLabel: ");
 		result.append(displayLabel);
+		result.append(", collectionDisplayOption: ");
+		result.append(collectionDisplayOption);
 		result.append(", maximumDisplaySize: ");
 		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.criteria.Expression;
 
+import uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.InlineAction;
 import uk.ac.man.cs.mdsd.waf.InlineActionContainer;
@@ -35,6 +36,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getActions <em>Actions</em>}</li>
@@ -51,6 +53,26 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public abstract class UnitFeatureImpl extends DisplayElementImpl implements UnitFeature {
+	/**
+	 * The default value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCollectionDisplayOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final CollectionDisplayOptions COLLECTION_DISPLAY_OPTION_EDEFAULT = CollectionDisplayOptions.LINE_DIRECTION;
+
+	/**
+	 * The cached value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCollectionDisplayOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected CollectionDisplayOptions collectionDisplayOption = COLLECTION_DISPLAY_OPTION_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -319,6 +341,27 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CollectionDisplayOptions getCollectionDisplayOption() {
+		return collectionDisplayOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionDisplayOption(CollectionDisplayOptions newCollectionDisplayOption) {
+		CollectionDisplayOptions oldCollectionDisplayOption = collectionDisplayOption;
+		collectionDisplayOption = newCollectionDisplayOption == null ? COLLECTION_DISPLAY_OPTION_EDEFAULT : newCollectionDisplayOption;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION, oldCollectionDisplayOption, collectionDisplayOption));
 	}
 
 	/**
@@ -627,6 +670,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
 				if (resolve) return getDisplayedOn();
 				return basicGetDisplayedOn();
+			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
+				return getCollectionDisplayOption();
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 				return getMaximumDisplaySize();
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
@@ -664,6 +709,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		switch (featureID) {
 			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
+				return;
+			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
+				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
 				return;
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize((Integer)newValue);
@@ -714,6 +762,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
 				return;
+			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
+				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
+				return;
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
 				return;
@@ -761,6 +812,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		switch (featureID) {
 			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
 				return basicGetDisplayedOn() != null;
+			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
+				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
@@ -829,7 +882,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (maximumDisplaySize: ");
+		result.append(" (collectionDisplayOption: ");
+		result.append(collectionDisplayOption);
+		result.append(", maximumDisplaySize: ");
 		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);

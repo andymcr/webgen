@@ -3140,7 +3140,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitField_MaximumDisplaySize() {
+	public EAttribute getUnitField_CollectionDisplayOption() {
 		return (EAttribute)unitFieldEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3149,8 +3149,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitField_DateFormat() {
+	public EAttribute getUnitField_MaximumDisplaySize() {
 		return (EAttribute)unitFieldEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnitField_DateFormat() {
+		return (EAttribute)unitFieldEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3176,7 +3185,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitFeature_CollectionDisplayOption() {
+	public EAttribute getUnitFeature_DisplayLabel() {
 		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3185,7 +3194,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitFeature_DisplayLabel() {
+	public EAttribute getUnitFeature_Required() {
 		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3194,17 +3203,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitFeature_Required() {
-		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getUnitFeature_ForcedValue() {
-		return (EReference)unitFeatureEClass.getEStructuralFeatures().get(4);
+		return (EReference)unitFeatureEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3213,7 +3213,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getUnitFeature_Footer() {
-		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3222,7 +3222,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getUnitFeature_Autofocus() {
-		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3231,7 +3231,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getUnitFeature_HeaderClass() {
-		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3240,7 +3240,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getUnitFeature_InputClass() {
-		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3249,7 +3249,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getUnitFeature_DisplayClass() {
-		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -3258,7 +3258,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getUnitFeature_FooterClass() {
-		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)unitFeatureEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -5557,12 +5557,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		unitFieldEClass = createEClass(UNIT_FIELD);
 		createEReference(unitFieldEClass, UNIT_FIELD__DISPLAYED_ON);
+		createEAttribute(unitFieldEClass, UNIT_FIELD__COLLECTION_DISPLAY_OPTION);
 		createEAttribute(unitFieldEClass, UNIT_FIELD__MAXIMUM_DISPLAY_SIZE);
 		createEAttribute(unitFieldEClass, UNIT_FIELD__DATE_FORMAT);
 
 		unitFeatureEClass = createEClass(UNIT_FEATURE);
 		createEAttribute(unitFeatureEClass, UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY);
-		createEAttribute(unitFeatureEClass, UNIT_FEATURE__COLLECTION_DISPLAY_OPTION);
 		createEAttribute(unitFeatureEClass, UNIT_FEATURE__DISPLAY_LABEL);
 		createEAttribute(unitFeatureEClass, UNIT_FEATURE__REQUIRED);
 		createEReference(unitFeatureEClass, UNIT_FEATURE__FORCED_VALUE);
@@ -6267,12 +6267,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(unitFieldEClass, UnitField.class, "UnitField", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitField_DisplayedOn(), this.getDynamicUnit(), this.getDynamicUnit_DisplayFields(), "displayedOn", null, 1, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getUnitField_CollectionDisplayOption(), this.getCollectionDisplayOptions(), "collectionDisplayOption", "LineDirection", 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getUnitField_MaximumDisplaySize(), ecorePackage.getEInt(), "maximumDisplaySize", "-1", 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getUnitField_DateFormat(), ecorePackage.getEString(), "dateFormat", null, 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(unitFeatureEClass, UnitFeature.class, "UnitFeature", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnitFeature_OnlyDisplayWhenNotEmpty(), ecorePackage.getEBoolean(), "onlyDisplayWhenNotEmpty", "false", 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getUnitFeature_CollectionDisplayOption(), this.getCollectionDisplayOptions(), "collectionDisplayOption", "LineDirection", 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getUnitFeature_DisplayLabel(), ecorePackage.getEString(), "displayLabel", null, 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getUnitFeature_Required(), ecorePackage.getEBoolean(), "required", null, 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getUnitFeature_ForcedValue(), theCriteriaPackage.getExpression(), null, "forcedValue", null, 0, 1, UnitFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -6846,7 +6846,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getPathAssociationElement_IsSourceAssociation(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse\r\n\t\tlet partOf : PathAssociationElement = self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin if partOf.isSourceAssociation then\r\n\t\t\t\t\tpartOf.targetEntity.associations->includes(association)\r\n\t\t\t\telse\r\n\t\t\t\t\tpartOf.sourceEntity.associations->includes(association)\r\n\t\t\t\tendif\r\n\tendif"
+			 "derivation", "not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse\r\n\t\tlet partOf : PathAssociationElement\r\n\t\t\t= self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin partOf.sourceEntity.associations->includes(association)\r\n\tendif"
 		   });	
 		addAnnotation
 		  (getPathAssociationElement_SourceEntity(), 

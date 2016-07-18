@@ -18,6 +18,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 
+import uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.webgen.website.UnitFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -51,7 +52,6 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
-			addCollectionDisplayOptionPropertyDescriptor(object);
 			addDisplayLabelPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
 			addForcedValuePropertyDescriptor(object);
@@ -83,28 +83,6 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Collection Display Option feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCollectionDisplayOptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitFeature_collectionDisplayOption_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_collectionDisplayOption_feature", "_UI_UnitFeature_type"),
-				 WebsitePackage.Literals.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
@@ -346,8 +324,11 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		UnitFeature unitFeature = (UnitFeature)object;
-		return getString("_UI_UnitFeature_type") + " " + unitFeature.getMaximumDisplaySize();
+		CollectionDisplayOptions labelValue = ((UnitFeature)object).getCollectionDisplayOption();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_UnitFeature_type") :
+			getString("_UI_UnitFeature_type") + " " + label;
 	}
 	
 
@@ -364,7 +345,6 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 
 		switch (notification.getFeatureID(UnitFeature.class)) {
 			case WebsitePackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
-			case WebsitePackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
 			case WebsitePackage.UNIT_FEATURE__DISPLAY_LABEL:
 			case WebsitePackage.UNIT_FEATURE__REQUIRED:
 			case WebsitePackage.UNIT_FEATURE__FOOTER:

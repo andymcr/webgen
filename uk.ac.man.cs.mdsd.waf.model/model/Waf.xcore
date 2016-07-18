@@ -261,8 +261,14 @@ class UnitSupportAction extends NamedDisplayElement {
 	String confirmMessage
 }
 
+enum CollectionDisplayOptions {
+	LineDirection
+	PageDirection = 1
+}
+
 interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
+	CollectionDisplayOptions collectionDisplayOption
 	int maximumDisplaySize = "-1"
 	String dateFormat
 }
@@ -290,11 +296,6 @@ class UnitAttribute extends UnitFeature {
 	String validationPattern
 }
 
-enum CollectionDisplayOptions {
-	LineDirection
-	PageDirection = 1
-}
-
 class UnitAssociation extends UnitFeature, UnitContainer {
 	refers Association[1] association
 	derived String[1] name get {
@@ -304,7 +305,6 @@ class UnitAssociation extends UnitFeature, UnitContainer {
 	contains ChildFeature childFeature
 	refers Selection selection
 	refers Label valueDisplay
-	CollectionDisplayOptions displayOption
 	// for selecting inputs
 	refers Label[] filters
 }

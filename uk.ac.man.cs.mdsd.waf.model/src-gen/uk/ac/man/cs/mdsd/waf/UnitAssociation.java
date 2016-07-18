@@ -21,7 +21,6 @@ import uk.ac.man.cs.mdsd.orm.Label;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getValueDisplay <em>Value Display</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getDisplayOption <em>Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getFilters <em>Filters</em>}</li>
  * </ul>
  *
@@ -149,35 +148,6 @@ public interface UnitAssociation extends UnitFeature, UnitContainer {
 	 * @generated
 	 */
 	void setValueDisplay(Label value);
-
-	/**
-	 * Returns the value of the '<em><b>Display Option</b></em>' attribute.
-	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Display Option</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Display Option</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions
-	 * @see #setDisplayOption(CollectionDisplayOptions)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_DisplayOption()
-	 * @model unique="false"
-	 * @generated
-	 */
-	CollectionDisplayOptions getDisplayOption();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getDisplayOption <em>Display Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Display Option</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions
-	 * @see #getDisplayOption()
-	 * @generated
-	 */
-	void setDisplayOption(CollectionDisplayOptions value);
 
 	/**
 	 * Returns the value of the '<em><b>Filters</b></em>' reference list.

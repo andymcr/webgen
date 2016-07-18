@@ -34,7 +34,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#isRequired <em>Required</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#getForcedValue <em>Forced Value</em>}</li>
@@ -78,26 +77,6 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 	 * @ordered
 	 */
 	protected boolean onlyDisplayWhenNotEmpty = ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCollectionDisplayOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final CollectionDisplayOptions COLLECTION_DISPLAY_OPTION_EDEFAULT = CollectionDisplayOptions.LINE_DIRECTION;
-
-	/**
-	 * The cached value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCollectionDisplayOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected CollectionDisplayOptions collectionDisplayOption = COLLECTION_DISPLAY_OPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
@@ -319,27 +298,6 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 		onlyDisplayWhenNotEmpty = newOnlyDisplayWhenNotEmpty;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY, oldOnlyDisplayWhenNotEmpty, onlyDisplayWhenNotEmpty));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CollectionDisplayOptions getCollectionDisplayOption() {
-		return collectionDisplayOption;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCollectionDisplayOption(CollectionDisplayOptions newCollectionDisplayOption) {
-		CollectionDisplayOptions oldCollectionDisplayOption = collectionDisplayOption;
-		collectionDisplayOption = newCollectionDisplayOption == null ? COLLECTION_DISPLAY_OPTION_EDEFAULT : newCollectionDisplayOption;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION, oldCollectionDisplayOption, collectionDisplayOption));
 	}
 
 	/**
@@ -596,8 +554,6 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 				return getActions();
 			case WebsitePackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return isOnlyDisplayWhenNotEmpty();
-			case WebsitePackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
-				return getCollectionDisplayOption();
 			case WebsitePackage.UNIT_FEATURE__DISPLAY_LABEL:
 				return getDisplayLabel();
 			case WebsitePackage.UNIT_FEATURE__REQUIRED:
@@ -635,9 +591,6 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 				return;
 			case WebsitePackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
-				return;
-			case WebsitePackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
-				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
 				return;
 			case WebsitePackage.UNIT_FEATURE__DISPLAY_LABEL:
 				setDisplayLabel((String)newValue);
@@ -684,9 +637,6 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 			case WebsitePackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
 				return;
-			case WebsitePackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
-				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
-				return;
 			case WebsitePackage.UNIT_FEATURE__DISPLAY_LABEL:
 				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
 				return;
@@ -730,8 +680,6 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 				return actions != null && !actions.isEmpty();
 			case WebsitePackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
-			case WebsitePackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
-				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
 			case WebsitePackage.UNIT_FEATURE__DISPLAY_LABEL:
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WebsitePackage.UNIT_FEATURE__REQUIRED:
@@ -798,8 +746,6 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (onlyDisplayWhenNotEmpty: ");
 		result.append(onlyDisplayWhenNotEmpty);
-		result.append(", collectionDisplayOption: ");
-		result.append(collectionDisplayOption);
 		result.append(", displayLabel: ");
 		result.append(displayLabel);
 		result.append(", required: ");

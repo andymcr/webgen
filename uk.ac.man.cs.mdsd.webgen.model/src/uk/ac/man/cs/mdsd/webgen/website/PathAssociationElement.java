@@ -90,7 +90,7 @@ public interface PathAssociationElement extends EObject {
 	 * @return the value of the '<em>Is Source Association</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getPathAssociationElement_IsSourceAssociation()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse\r\n\t\tlet partOf : PathAssociationElement = self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin if partOf.isSourceAssociation then\r\n\t\t\t\t\tpartOf.targetEntity.associations->includes(association)\r\n\t\t\t\telse\r\n\t\t\t\t\tpartOf.sourceEntity.associations->includes(association)\r\n\t\t\t\tendif\r\n\tendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse\r\n\t\tlet partOf : PathAssociationElement\r\n\t\t\t= self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin partOf.sourceEntity.associations->includes(association)\r\n\tendif'"
 	 * @generated
 	 */
 	boolean isIsSourceAssociation();

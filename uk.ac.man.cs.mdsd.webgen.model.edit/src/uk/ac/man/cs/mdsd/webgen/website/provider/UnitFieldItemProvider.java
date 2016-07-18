@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -59,10 +60,33 @@ public class UnitFieldItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCollectionDisplayOptionPropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Display Option feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionDisplayOptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_collectionDisplayOption_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_collectionDisplayOption_feature", "_UI_UnitField_type"),
+				 WebsitePackage.Literals.UNIT_FIELD__COLLECTION_DISPLAY_OPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -117,8 +141,11 @@ public class UnitFieldItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		UnitField unitField = (UnitField)object;
-		return getString("_UI_UnitField_type") + " " + unitField.getMaximumDisplaySize();
+		CollectionDisplayOptions labelValue = ((UnitField)object).getCollectionDisplayOption();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_UnitField_type") :
+			getString("_UI_UnitField_type") + " " + label;
 	}
 	
 
@@ -134,6 +161,7 @@ public class UnitFieldItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitField.class)) {
+			case WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:
 			case WebsitePackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE:
 			case WebsitePackage.UNIT_FIELD__DATE_FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -918,6 +918,9 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EditUnit" abstract="true" eSuperTypes="#//DynamicUnit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
+        eType="#//Label"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="confirmDestination" ordered="false"
         eType="#//Page"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmLabel" ordered="false"

@@ -3923,7 +3923,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEditUnit_ConfirmDestination() {
+	public EReference getEditUnit_DefaultSelection() {
 		return (EReference)editUnitEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -3932,8 +3932,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEditUnit_ConfirmLabel() {
-		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(1);
+	public EReference getEditUnit_Title() {
+		return (EReference)editUnitEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3941,7 +3941,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEditUnit_CancelDestination() {
+	public EReference getEditUnit_ConfirmDestination() {
 		return (EReference)editUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3950,7 +3950,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEditUnit_CancelLabel() {
+	public EAttribute getEditUnit_ConfirmLabel() {
 		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -3959,8 +3959,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEditUnit_CancelDestination() {
+		return (EReference)editUnitEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEditUnit_CancelLabel() {
+		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getEditUnit_ContentClass() {
-		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3969,7 +3987,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getEditUnit_CustomiseValues() {
-		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -5639,6 +5657,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(unitSupportActionEClass, UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE);
 
 		editUnitEClass = createEClass(EDIT_UNIT);
+		createEReference(editUnitEClass, EDIT_UNIT__DEFAULT_SELECTION);
+		createEReference(editUnitEClass, EDIT_UNIT__TITLE);
 		createEReference(editUnitEClass, EDIT_UNIT__CONFIRM_DESTINATION);
 		createEAttribute(editUnitEClass, EDIT_UNIT__CONFIRM_LABEL);
 		createEReference(editUnitEClass, EDIT_UNIT__CANCEL_DESTINATION);
@@ -6350,6 +6370,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getUnitSupportAction_ConfirmMessage(), ecorePackage.getEString(), "confirmMessage", null, 0, 1, UnitSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(editUnitEClass, EditUnit.class, "EditUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEditUnit_DefaultSelection(), this.getSelection(), null, "defaultSelection", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEditUnit_Title(), this.getLabel(), null, "title", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEditUnit_ConfirmDestination(), this.getPage(), null, "confirmDestination", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEditUnit_ConfirmLabel(), ecorePackage.getEString(), "confirmLabel", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEditUnit_CancelDestination(), this.getPage(), null, "cancelDestination", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

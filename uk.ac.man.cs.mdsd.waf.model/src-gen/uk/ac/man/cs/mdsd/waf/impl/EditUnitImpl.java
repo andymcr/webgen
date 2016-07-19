@@ -9,8 +9,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.orm.Label;
+
 import uk.ac.man.cs.mdsd.waf.EditUnit;
 import uk.ac.man.cs.mdsd.waf.Page;
+import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -21,6 +24,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getConfirmDestination <em>Confirm Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getConfirmLabel <em>Confirm Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getCancelDestination <em>Cancel Destination</em>}</li>
@@ -31,6 +36,26 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
+	/**
+	 * The cached value of the '{@link #getDefaultSelection() <em>Default Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefaultSelection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection defaultSelection;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected Label title;
+
 	/**
 	 * The cached value of the '{@link #getConfirmDestination() <em>Confirm Destination</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -128,6 +153,82 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.EDIT_UNIT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection getDefaultSelection() {
+		if (defaultSelection != null && defaultSelection.eIsProxy()) {
+			InternalEObject oldDefaultSelection = (InternalEObject)defaultSelection;
+			defaultSelection = (Selection)eResolveProxy(oldDefaultSelection);
+			if (defaultSelection != oldDefaultSelection) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.EDIT_UNIT__DEFAULT_SELECTION, oldDefaultSelection, defaultSelection));
+			}
+		}
+		return defaultSelection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetDefaultSelection() {
+		return defaultSelection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefaultSelection(Selection newDefaultSelection) {
+		Selection oldDefaultSelection = defaultSelection;
+		defaultSelection = newDefaultSelection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__DEFAULT_SELECTION, oldDefaultSelection, defaultSelection));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Label getTitle() {
+		if (title != null && title.eIsProxy()) {
+			InternalEObject oldTitle = (InternalEObject)title;
+			title = (Label)eResolveProxy(oldTitle);
+			if (title != oldTitle) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.EDIT_UNIT__TITLE, oldTitle, title));
+			}
+		}
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Label basicGetTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(Label newTitle) {
+		Label oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -277,6 +378,12 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.EDIT_UNIT__DEFAULT_SELECTION:
+				if (resolve) return getDefaultSelection();
+				return basicGetDefaultSelection();
+			case WafPackage.EDIT_UNIT__TITLE:
+				if (resolve) return getTitle();
+				return basicGetTitle();
 			case WafPackage.EDIT_UNIT__CONFIRM_DESTINATION:
 				if (resolve) return getConfirmDestination();
 				return basicGetConfirmDestination();
@@ -301,6 +408,12 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.EDIT_UNIT__DEFAULT_SELECTION:
+				setDefaultSelection((Selection)newValue);
+				return;
+			case WafPackage.EDIT_UNIT__TITLE:
+				setTitle((Label)newValue);
+				return;
 			case WafPackage.EDIT_UNIT__CONFIRM_DESTINATION:
 				setConfirmDestination((Page)newValue);
 				return;
@@ -328,6 +441,12 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.EDIT_UNIT__DEFAULT_SELECTION:
+				setDefaultSelection((Selection)null);
+				return;
+			case WafPackage.EDIT_UNIT__TITLE:
+				setTitle((Label)null);
+				return;
 			case WafPackage.EDIT_UNIT__CONFIRM_DESTINATION:
 				setConfirmDestination((Page)null);
 				return;
@@ -355,6 +474,10 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.EDIT_UNIT__DEFAULT_SELECTION:
+				return defaultSelection != null;
+			case WafPackage.EDIT_UNIT__TITLE:
+				return title != null;
 			case WafPackage.EDIT_UNIT__CONFIRM_DESTINATION:
 				return confirmDestination != null;
 			case WafPackage.EDIT_UNIT__CONFIRM_LABEL:

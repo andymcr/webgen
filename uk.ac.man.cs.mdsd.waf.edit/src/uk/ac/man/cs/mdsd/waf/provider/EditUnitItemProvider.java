@@ -47,6 +47,8 @@ public class EditUnitItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDefaultSelectionPropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 			addConfirmDestinationPropertyDescriptor(object);
 			addConfirmLabelPropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
@@ -54,6 +56,50 @@ public class EditUnitItemProvider
 			addCustomiseValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Selection feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultSelectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_defaultSelection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_defaultSelection_feature", "_UI_EditUnit_type"),
+				 WafPackage.Literals.EDIT_UNIT__DEFAULT_SELECTION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EditUnit_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_title_feature", "_UI_EditUnit_type"),
+				 WafPackage.Literals.EDIT_UNIT__TITLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

@@ -9425,13 +9425,31 @@ public interface WebsitePackage extends EPackage {
 	int EDIT_UNIT__ERROR_CLASS = DYNAMIC_UNIT__ERROR_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__DEFAULT_SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CONFIRM_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 0;
+	int EDIT_UNIT__CONFIRM_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
@@ -9440,7 +9458,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CONFIRM_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+	int EDIT_UNIT__CONFIRM_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -9449,7 +9467,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CANCEL_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+	int EDIT_UNIT__CANCEL_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -9458,7 +9476,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CANCEL_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 3;
+	int EDIT_UNIT__CANCEL_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -9467,7 +9485,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CONTENT_CLASS = DYNAMIC_UNIT_FEATURE_COUNT + 4;
+	int EDIT_UNIT__CONTENT_CLASS = DYNAMIC_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Customise Values</b></em>' attribute.
@@ -9476,7 +9494,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CUSTOMISE_VALUES = DYNAMIC_UNIT_FEATURE_COUNT + 5;
+	int EDIT_UNIT__CUSTOMISE_VALUES = DYNAMIC_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Edit Unit</em>' class.
@@ -9485,7 +9503,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 6;
+	int EDIT_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9648,6 +9666,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT__ERROR_CLASS = EDIT_UNIT__ERROR_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__DEFAULT_SELECTION = EDIT_UNIT__DEFAULT_SELECTION;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__TITLE = EDIT_UNIT__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
@@ -9882,6 +9918,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__ERROR_CLASS = EDIT_UNIT__ERROR_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__DEFAULT_SELECTION = EDIT_UNIT__DEFAULT_SELECTION;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__TITLE = EDIT_UNIT__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
@@ -10136,6 +10190,24 @@ public interface WebsitePackage extends EPackage {
 	int UPDATE_UNIT__ERROR_CLASS = EDIT_UNIT__ERROR_CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__DEFAULT_SELECTION = EDIT_UNIT__DEFAULT_SELECTION;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__TITLE = EDIT_UNIT__TITLE;
+
+	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10368,6 +10440,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__ERROR_CLASS = EDIT_UNIT__ERROR_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__DEFAULT_SELECTION = EDIT_UNIT__DEFAULT_SELECTION;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__TITLE = EDIT_UNIT__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
@@ -16616,6 +16706,28 @@ public interface WebsitePackage extends EPackage {
 	EClass getEditUnit();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getDefaultSelection <em>Default Selection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Default Selection</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EditUnit#getDefaultSelection()
+	 * @see #getEditUnit()
+	 * @generated
+	 */
+	EReference getEditUnit_DefaultSelection();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Title</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EditUnit#getTitle()
+	 * @see #getEditUnit()
+	 * @generated
+	 */
+	EReference getEditUnit_Title();
+
+	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getConfirmDestination <em>Confirm Destination</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -20842,6 +20954,22 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass EDIT_UNIT = eINSTANCE.getEditUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Selection</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDIT_UNIT__DEFAULT_SELECTION = eINSTANCE.getEditUnit_DefaultSelection();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDIT_UNIT__TITLE = eINSTANCE.getEditUnit_Title();
 
 		/**
 		 * The meta object literal for the '<em><b>Confirm Destination</b></em>' reference feature.

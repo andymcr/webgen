@@ -573,6 +573,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//UnitSupportAction/confirmMessage"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//EditUnit">
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//EditUnit/defaultSelection"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//EditUnit/title"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
           propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//EditUnit/confirmDestination"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""

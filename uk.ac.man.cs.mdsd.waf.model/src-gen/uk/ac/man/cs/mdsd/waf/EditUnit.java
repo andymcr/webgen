@@ -2,6 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
+import uk.ac.man.cs.mdsd.orm.Label;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,6 +13,8 @@ package uk.ac.man.cs.mdsd.waf;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#getDefaultSelection <em>Default Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#getConfirmDestination <em>Confirm Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#getConfirmLabel <em>Confirm Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.EditUnit#getCancelDestination <em>Cancel Destination</em>}</li>
@@ -24,6 +27,58 @@ package uk.ac.man.cs.mdsd.waf;
  * @generated
  */
 public interface EditUnit extends DynamicUnit {
+	/**
+	 * Returns the value of the '<em><b>Default Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Default Selection</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Default Selection</em>' reference.
+	 * @see #setDefaultSelection(Selection)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getEditUnit_DefaultSelection()
+	 * @model
+	 * @generated
+	 */
+	Selection getDefaultSelection();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.EditUnit#getDefaultSelection <em>Default Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Default Selection</em>' reference.
+	 * @see #getDefaultSelection()
+	 * @generated
+	 */
+	void setDefaultSelection(Selection value);
+
+	/**
+	 * Returns the value of the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Title</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Title</em>' reference.
+	 * @see #setTitle(Label)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getEditUnit_Title()
+	 * @model
+	 * @generated
+	 */
+	Label getTitle();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.EditUnit#getTitle <em>Title</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Title</em>' reference.
+	 * @see #getTitle()
+	 * @generated
+	 */
+	void setTitle(Label value);
+
 	/**
 	 * Returns the value of the '<em><b>Confirm Destination</b></em>' reference.
 	 * <!-- begin-user-doc -->

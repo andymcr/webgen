@@ -772,6 +772,13 @@ rule UnitSupportAction {
 abstract rule EditUnit {
 	from website : Website!EditUnit
 	to waf : WAF!EditUnit (
+		defaultSelection <- website.defaultSelection,
+		title <-
+			if website.title.oclIsUndefined() then
+				website.title
+			else
+				website.title.findOrmLabel()
+			endif,
 		uriElement <-
 			if website.uriElement.trim() <> '' then
 				website.uriElement.trim()

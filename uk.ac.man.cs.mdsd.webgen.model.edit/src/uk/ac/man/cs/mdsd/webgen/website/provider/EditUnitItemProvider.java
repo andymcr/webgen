@@ -8,7 +8,10 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -19,6 +22,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.EditUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -49,6 +54,8 @@ public class EditUnitItemProvider extends DynamicUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDefaultSelectionPropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 			addConfirmDestinationPropertyDescriptor(object);
 			addConfirmLabelPropertyDescriptor(object);
 			addCancelDestinationPropertyDescriptor(object);
@@ -57,6 +64,64 @@ public class EditUnitItemProvider extends DynamicUnitItemProvider {
 			addCustomiseValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Selection feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addDefaultSelectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_EditUnit_defaultSelection_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_defaultSelection_feature", "_UI_EditUnit_type"),
+			WebsitePackage.Literals.EDIT_UNIT__DEFAULT_SELECTION,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof EditUnit) {
+						return getSelections((EditUnit) object);
+					}
+					return Collections.emptySet();
+				}
+		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_EditUnit_title_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_EditUnit_title_feature", "_UI_EditUnit_title_feature"),
+			WebsitePackage.Literals.EDIT_UNIT__TITLE,
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof EditUnit) {
+						final EditUnit unit = (EditUnit) object;
+						final Set<Label> labels = new HashSet<Label>();
+						for (EntityOrView entityOrView : unit.getEntities()) {
+							labels.addAll(getLabels(entityOrView));
+						}
+						return labels;
+					}
+
+					return Collections.emptySet();
+				}
+		});
 	}
 
 	/**

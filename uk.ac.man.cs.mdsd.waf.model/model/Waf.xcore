@@ -270,6 +270,8 @@ enum CollectionDisplayOptions {
 interface UnitField extends DisplayElement {
 	container DynamicUnit[1] displayedOn opposite displayFields
 	CollectionDisplayOptions collectionDisplayOption
+	boolean collectionAllowAdd
+	boolean collectionAllowRemove
 	int maximumDisplaySize = "-1"
 	String dateFormat
 }

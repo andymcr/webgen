@@ -312,6 +312,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateAuthenticationKeyTypes((AuthenticationKeyTypes)value, diagnostics, context);
 			case WebsitePackage.CARDINALITY:
 				return validateCardinality((Cardinality)value, diagnostics, context);
+			case WebsitePackage.IS_HAS_CHOICES:
+				return validateisHasChoices((isHasChoices)value, diagnostics, context);
 			case WebsitePackage.DATE_DETAILS:
 				return validateDateDetails((DateDetails)value, diagnostics, context);
 			case WebsitePackage.OPERATION_RESULT_TYPES:
@@ -2956,6 +2958,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCardinality(Cardinality cardinality, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateisHasChoices(isHasChoices isHasChoices, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

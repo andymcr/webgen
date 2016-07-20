@@ -157,6 +157,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
 			case WebsitePackage.CARDINALITY:
 				return createCardinalityFromString(eDataType, initialValue);
+			case WebsitePackage.IS_HAS_CHOICES:
+				return createisHasChoicesFromString(eDataType, initialValue);
 			case WebsitePackage.DATE_DETAILS:
 				return createDateDetailsFromString(eDataType, initialValue);
 			case WebsitePackage.OPERATION_RESULT_TYPES:
@@ -192,6 +194,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
 			case WebsitePackage.CARDINALITY:
 				return convertCardinalityToString(eDataType, instanceValue);
+			case WebsitePackage.IS_HAS_CHOICES:
+				return convertisHasChoicesToString(eDataType, instanceValue);
 			case WebsitePackage.DATE_DETAILS:
 				return convertDateDetailsToString(eDataType, instanceValue);
 			case WebsitePackage.OPERATION_RESULT_TYPES:
@@ -1034,6 +1038,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * @generated
 	 */
 	public String convertCardinalityToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public isHasChoices createisHasChoicesFromString(EDataType eDataType, String initialValue) {
+		isHasChoices result = isHasChoices.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertisHasChoicesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

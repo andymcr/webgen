@@ -198,7 +198,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -220,7 +220,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -242,7 +242,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -264,7 +264,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 
@@ -286,7 +286,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
+				 getString("_UI_DebugPropertyCategory"),
 				 null));
 	}
 

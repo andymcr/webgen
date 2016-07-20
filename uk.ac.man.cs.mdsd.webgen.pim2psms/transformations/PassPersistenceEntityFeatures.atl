@@ -62,25 +62,6 @@ abstract rule Association {
 rule Entity {
 	from partialOrm : ORM!Entity
 	to orm : ORM!Entity (
-		-- features via partOf in features
---		features <-
---			thisModule.findWebsiteEntityOrView(partialOrm.name).associationEnds
---				->select(a | a.targetPrimaryKey)
---				->collect(a | thisModule.x(a))
-	)
-}
-
-lazy rule x {
-	from website : Website!EntityAssociation
-	to orm : ORM!SingletonElement (
-		name <- website.targetFeatureName().concat('Id'),
-		displayLabel <- website.targetDisplayLabel(),
-		cardinality <- #Required,
-		dataType <- thisModule.findOrmDataType('String'),
-		ormType <- thisModule.findWebsiteDataType('String').ormType(), 
-		primaryKey <- true,
-		persistentType <- thisModule.findWebsiteDataType('String').persistentType(), 
-		columnName <- website.targetFeatureName().createAssociationColumnName()
 	)
 }
 
@@ -89,7 +70,10 @@ abstract rule EntityFeature {
 	from website : Website!EntityFeature
 	to orm : ORM!EntityFeature (
 		partOf <- thisModule.findOrmEntityOrView(website.partOf.name),
-		cardinality <- website.cardinality
+		cardinality <- website.cardinality,
+		booleanIsHasChoice <- website.booleanIsHasChoice,
+		collectionAllowAdd <- website.collectionAllowAdd,
+		collectionAllowRemove <- website.collectionAllowRemove
 	)
 }
 

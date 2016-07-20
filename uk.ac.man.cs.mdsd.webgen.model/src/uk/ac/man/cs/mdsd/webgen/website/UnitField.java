@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#getDateFormat <em>Date Format</em>}</li>
  * </ul>
@@ -81,6 +83,60 @@ public interface UnitField extends EObject {
 	 * @generated
 	 */
 	void setCollectionDisplayOption(CollectionDisplayOptions value);
+
+	/**
+	 * Returns the value of the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection Allow Add</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection Allow Add</em>' attribute.
+	 * @see #setCollectionAllowAdd(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitField_CollectionAllowAdd()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isCollectionAllowAdd();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#isCollectionAllowAdd <em>Collection Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection Allow Add</em>' attribute.
+	 * @see #isCollectionAllowAdd()
+	 * @generated
+	 */
+	void setCollectionAllowAdd(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection Allow Remove</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection Allow Remove</em>' attribute.
+	 * @see #setCollectionAllowRemove(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitField_CollectionAllowRemove()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isCollectionAllowRemove();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#isCollectionAllowRemove <em>Collection Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection Allow Remove</em>' attribute.
+	 * @see #isCollectionAllowRemove()
+	 * @generated
+	 */
+	void setCollectionAllowRemove(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Maximum Display Size</b></em>' attribute.

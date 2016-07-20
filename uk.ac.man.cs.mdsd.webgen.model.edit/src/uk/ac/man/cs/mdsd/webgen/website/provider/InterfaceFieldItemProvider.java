@@ -46,6 +46,8 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 			super.getPropertyDescriptors(object);
 
 			addCollectionDisplayOptionPropertyDescriptor(object);
+			addCollectionAllowAddPropertyDescriptor(object);
+			addCollectionAllowRemovePropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
@@ -77,6 +79,50 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Allow Add feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionAllowAddPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_collectionAllowAdd_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_collectionAllowAdd_feature", "_UI_UnitField_type"),
+				 WebsitePackage.Literals.UNIT_FIELD__COLLECTION_ALLOW_ADD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Allow Remove feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionAllowRemovePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_collectionAllowRemove_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_collectionAllowRemove_feature", "_UI_UnitField_type"),
+				 WebsitePackage.Literals.UNIT_FIELD__COLLECTION_ALLOW_REMOVE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -294,6 +340,8 @@ public class InterfaceFieldItemProvider extends NamedDisplayElementItemProvider 
 
 		switch (notification.getFeatureID(InterfaceField.class)) {
 			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
 			case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 			case WebsitePackage.INTERFACE_FIELD__DATE_FORMAT:
 			case WebsitePackage.INTERFACE_FIELD__REQUIRED:

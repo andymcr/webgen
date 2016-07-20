@@ -21,6 +21,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
+import uk.ac.man.cs.mdsd.webgen.website.isHasChoices;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,6 +41,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isOrdered <em>Ordered</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getColumnName <em>Column Name</em>}</li>
  * </ul>
  *
@@ -217,6 +221,66 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	protected boolean ordered = ORDERED_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getBooleanIsHasChoice() <em>Boolean Is Has Choice</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBooleanIsHasChoice()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final isHasChoices BOOLEAN_IS_HAS_CHOICE_EDEFAULT = isHasChoices.IS_A;
+
+	/**
+	 * The cached value of the '{@link #getBooleanIsHasChoice() <em>Boolean Is Has Choice</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBooleanIsHasChoice()
+	 * @generated
+	 * @ordered
+	 */
+	protected isHasChoices booleanIsHasChoice = BOOLEAN_IS_HAS_CHOICE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_ALLOW_ADD_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionAllowAdd = COLLECTION_ALLOW_ADD_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_ALLOW_REMOVE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -337,6 +401,69 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		ordered = newOrdered;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__ORDERED, oldOrdered, ordered));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public isHasChoices getBooleanIsHasChoice() {
+		return booleanIsHasChoice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBooleanIsHasChoice(isHasChoices newBooleanIsHasChoice) {
+		isHasChoices oldBooleanIsHasChoice = booleanIsHasChoice;
+		booleanIsHasChoice = newBooleanIsHasChoice == null ? BOOLEAN_IS_HAS_CHOICE_EDEFAULT : newBooleanIsHasChoice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE, oldBooleanIsHasChoice, booleanIsHasChoice));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCollectionAllowAdd() {
+		return collectionAllowAdd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionAllowAdd(boolean newCollectionAllowAdd) {
+		boolean oldCollectionAllowAdd = collectionAllowAdd;
+		collectionAllowAdd = newCollectionAllowAdd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCollectionAllowRemove() {
+		return collectionAllowRemove;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionAllowRemove(boolean newCollectionAllowRemove) {
+		boolean oldCollectionAllowRemove = collectionAllowRemove;
+		collectionAllowRemove = newCollectionAllowRemove;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
 	}
 
 	/**
@@ -569,6 +696,12 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return isUnique();
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:
 				return isOrdered();
+			case WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
+				return getBooleanIsHasChoice();
+			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
+				return isCollectionAllowAdd();
+			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
+				return isCollectionAllowRemove();
 			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 				return getColumnName();
 		}
@@ -615,6 +748,15 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:
 				setOrdered((Boolean)newValue);
 				return;
+			case WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
+				setBooleanIsHasChoice((isHasChoices)newValue);
+				return;
+			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
+				setCollectionAllowAdd((Boolean)newValue);
+				return;
+			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
+				setCollectionAllowRemove((Boolean)newValue);
+				return;
 			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 				setColumnName((String)newValue);
 				return;
@@ -660,6 +802,15 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:
 				setOrdered(ORDERED_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
+				setBooleanIsHasChoice(BOOLEAN_IS_HAS_CHOICE_EDEFAULT);
+				return;
+			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
+				setCollectionAllowAdd(COLLECTION_ALLOW_ADD_EDEFAULT);
+				return;
+			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
+				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
+				return;
 			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 				setColumnName(COLUMN_NAME_EDEFAULT);
 				return;
@@ -695,6 +846,12 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return unique != UNIQUE_EDEFAULT;
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:
 				return ordered != ORDERED_EDEFAULT;
+			case WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
+				return booleanIsHasChoice != BOOLEAN_IS_HAS_CHOICE_EDEFAULT;
+			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
+				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
+			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
+				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
 			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
 		}
@@ -771,6 +928,12 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		result.append(unique);
 		result.append(", ordered: ");
 		result.append(ordered);
+		result.append(", booleanIsHasChoice: ");
+		result.append(booleanIsHasChoice);
+		result.append(", collectionAllowAdd: ");
+		result.append(collectionAllowAdd);
+		result.append(", collectionAllowRemove: ");
+		result.append(collectionAllowRemove);
 		result.append(", columnName: ");
 		result.append(columnName);
 		result.append(')');

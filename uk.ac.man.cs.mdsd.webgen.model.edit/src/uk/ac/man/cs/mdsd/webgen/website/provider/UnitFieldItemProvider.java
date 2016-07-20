@@ -61,6 +61,8 @@ public class UnitFieldItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCollectionDisplayOptionPropertyDescriptor(object);
+			addCollectionAllowAddPropertyDescriptor(object);
+			addCollectionAllowRemovePropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
 		}
@@ -86,6 +88,50 @@ public class UnitFieldItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Allow Add feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionAllowAddPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_collectionAllowAdd_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_collectionAllowAdd_feature", "_UI_UnitField_type"),
+				 WebsitePackage.Literals.UNIT_FIELD__COLLECTION_ALLOW_ADD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Allow Remove feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionAllowRemovePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_collectionAllowRemove_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_collectionAllowRemove_feature", "_UI_UnitField_type"),
+				 WebsitePackage.Literals.UNIT_FIELD__COLLECTION_ALLOW_REMOVE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -162,6 +208,8 @@ public class UnitFieldItemProvider
 
 		switch (notification.getFeatureID(UnitField.class)) {
 			case WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:
+			case WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_ADD:
+			case WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE:
 			case WebsitePackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE:
 			case WebsitePackage.UNIT_FIELD__DATE_FORMAT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -135,6 +135,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
 
+import uk.ac.man.cs.mdsd.webgen.website.isHasChoices;
 import uk.ac.man.cs.mdsd.webgen.website.util.WebsiteValidator;
 
 /**
@@ -920,6 +921,13 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EEnum cardinalityEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum isHasChoicesEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1781,8 +1789,35 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityFeature_ColumnName() {
+	public EAttribute getEntityFeature_BooleanIsHasChoice() {
 		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityFeature_CollectionAllowAdd() {
+		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityFeature_CollectionAllowRemove() {
+		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityFeature_ColumnName() {
+		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3158,7 +3193,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitField_MaximumDisplaySize() {
+	public EAttribute getUnitField_CollectionAllowAdd() {
 		return (EAttribute)unitFieldEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3167,8 +3202,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUnitField_DateFormat() {
+	public EAttribute getUnitField_CollectionAllowRemove() {
 		return (EAttribute)unitFieldEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnitField_MaximumDisplaySize() {
+		return (EAttribute)unitFieldEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUnitField_DateFormat() {
+		return (EAttribute)unitFieldEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -5147,6 +5200,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getisHasChoices() {
+		return isHasChoicesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDateDetails() {
 		return dateDetailsEEnum;
 	}
@@ -5366,6 +5428,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__CARDINALITY);
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__UNIQUE);
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__ORDERED);
+		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE);
+		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__COLLECTION_ALLOW_ADD);
+		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE);
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__COLUMN_NAME);
 
 		entityAttributeEClass = createEClass(ENTITY_ATTRIBUTE);
@@ -5586,6 +5651,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		unitFieldEClass = createEClass(UNIT_FIELD);
 		createEReference(unitFieldEClass, UNIT_FIELD__DISPLAYED_ON);
 		createEAttribute(unitFieldEClass, UNIT_FIELD__COLLECTION_DISPLAY_OPTION);
+		createEAttribute(unitFieldEClass, UNIT_FIELD__COLLECTION_ALLOW_ADD);
+		createEAttribute(unitFieldEClass, UNIT_FIELD__COLLECTION_ALLOW_REMOVE);
 		createEAttribute(unitFieldEClass, UNIT_FIELD__MAXIMUM_DISPLAY_SIZE);
 		createEAttribute(unitFieldEClass, UNIT_FIELD__DATE_FORMAT);
 
@@ -5778,6 +5845,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		ajaxTechnologiesEEnum = createEEnum(AJAX_TECHNOLOGIES);
 		authenticationKeyTypesEEnum = createEEnum(AUTHENTICATION_KEY_TYPES);
 		cardinalityEEnum = createEEnum(CARDINALITY);
+		isHasChoicesEEnum = createEEnum(IS_HAS_CHOICES);
 		dateDetailsEEnum = createEEnum(DATE_DETAILS);
 		operationResultTypesEEnum = createEEnum(OPERATION_RESULT_TYPES);
 		pageTopMenuOptionsEEnum = createEEnum(PAGE_TOP_MENU_OPTIONS);
@@ -6079,6 +6147,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getEntityFeature_Cardinality(), this.getCardinality(), "cardinality", "Optional", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_Unique(), ecorePackage.getEBoolean(), "unique", "true", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_Ordered(), ecorePackage.getEBoolean(), "ordered", "false", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityFeature_BooleanIsHasChoice(), this.getisHasChoices(), "booleanIsHasChoice", null, 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityFeature_CollectionAllowAdd(), ecorePackage.getEBoolean(), "collectionAllowAdd", "false", 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityFeature_CollectionAllowRemove(), ecorePackage.getEBoolean(), "collectionAllowRemove", "false", 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_ColumnName(), ecorePackage.getEString(), "columnName", null, 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(entityAttributeEClass, EntityAttribute.class, "EntityAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -6299,6 +6370,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(unitFieldEClass, UnitField.class, "UnitField", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitField_DisplayedOn(), this.getDynamicUnit(), this.getDynamicUnit_DisplayFields(), "displayedOn", null, 1, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getUnitField_CollectionDisplayOption(), this.getCollectionDisplayOptions(), "collectionDisplayOption", "LineDirection", 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getUnitField_CollectionAllowAdd(), ecorePackage.getEBoolean(), "collectionAllowAdd", "false", 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnitField_CollectionAllowRemove(), ecorePackage.getEBoolean(), "collectionAllowRemove", "false", 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnitField_MaximumDisplaySize(), ecorePackage.getEInt(), "maximumDisplaySize", "-1", 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getUnitField_DateFormat(), ecorePackage.getEString(), "dateFormat", null, 0, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -6519,6 +6592,10 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		addEEnumLiteral(cardinalityEEnum, Cardinality.OPTIONAL);
 		addEEnumLiteral(cardinalityEEnum, Cardinality.REQUIRED);
 		addEEnumLiteral(cardinalityEEnum, Cardinality.MANY);
+
+		initEEnum(isHasChoicesEEnum, isHasChoices.class, "isHasChoices");
+		addEEnumLiteral(isHasChoicesEEnum, isHasChoices.IS_A);
+		addEEnumLiteral(isHasChoicesEEnum, isHasChoices.HAS_A);
 
 		initEEnum(dateDetailsEEnum, DateDetails.class, "DateDetails");
 		addEEnumLiteral(dateDetailsEEnum, DateDetails.DATE_ONLY);

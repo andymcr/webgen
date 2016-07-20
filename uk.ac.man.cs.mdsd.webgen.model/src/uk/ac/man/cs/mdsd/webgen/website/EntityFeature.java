@@ -15,6 +15,9 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isOrdered <em>Ordered</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getColumnName <em>Column Name</em>}</li>
  * </ul>
  *
@@ -134,6 +137,89 @@ public interface EntityFeature extends NamedDisplayElement, Feature {
 	 * @generated
 	 */
 	void setOrdered(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.webgen.website.isHasChoices}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Boolean Is Has Choice</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Boolean Is Has Choice</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.isHasChoices
+	 * @see #setBooleanIsHasChoice(isHasChoices)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityFeature_BooleanIsHasChoice()
+	 * @model
+	 * @generated
+	 */
+	isHasChoices getBooleanIsHasChoice();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Boolean Is Has Choice</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.isHasChoices
+	 * @see #getBooleanIsHasChoice()
+	 * @generated
+	 */
+	void setBooleanIsHasChoice(isHasChoices value);
+
+	/**
+	 * Returns the value of the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection Allow Add</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection Allow Add</em>' attribute.
+	 * @see #setCollectionAllowAdd(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityFeature_CollectionAllowAdd()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isCollectionAllowAdd();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowAdd <em>Collection Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection Allow Add</em>' attribute.
+	 * @see #isCollectionAllowAdd()
+	 * @generated
+	 */
+	void setCollectionAllowAdd(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection Allow Remove</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection Allow Remove</em>' attribute.
+	 * @see #setCollectionAllowRemove(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityFeature_CollectionAllowRemove()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isCollectionAllowRemove();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowRemove <em>Collection Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection Allow Remove</em>' attribute.
+	 * @see #isCollectionAllowRemove()
+	 * @generated
+	 */
+	void setCollectionAllowRemove(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Column Name</b></em>' attribute.

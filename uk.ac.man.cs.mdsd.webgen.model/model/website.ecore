@@ -354,6 +354,10 @@
     <eLiterals name="Required" literal="Required"/>
     <eLiterals name="Many" literal="Many"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="isHasChoices">
+    <eLiterals name="isA"/>
+    <eLiterals name="hasA"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntityFeature" abstract="true" eSuperTypes="#//NamedDisplayElement #//Feature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" lowerBound="1"
         eType="#//Entity" eOpposite="#//Entity/entityFeatures"/>
@@ -362,6 +366,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unique" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordered" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="booleanIsHasChoice" eType="#//isHasChoices"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionAllowAdd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionAllowRemove"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnName" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -761,6 +770,10 @@
         lowerBound="1" eType="#//DynamicUnit" eOpposite="#//DynamicUnit/displayFields"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionDisplayOption"
         ordered="false" eType="#//CollectionDisplayOptions" defaultValueLiteral="LineDirection"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionAllowAdd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionAllowRemove"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumDisplaySize" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateFormat" ordered="false"

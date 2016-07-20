@@ -28,6 +28,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getMaximumDisplaySize <em>Maximum Display Size</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#isRequired <em>Required</em>}</li>
@@ -60,6 +62,46 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 	 * @ordered
 	 */
 	protected CollectionDisplayOptions collectionDisplayOption = COLLECTION_DISPLAY_OPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_ALLOW_ADD_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionAllowAdd = COLLECTION_ALLOW_ADD_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_ALLOW_REMOVE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMaximumDisplaySize() <em>Maximum Display Size</em>}' attribute.
@@ -290,6 +332,48 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		collectionDisplayOption = newCollectionDisplayOption == null ? COLLECTION_DISPLAY_OPTION_EDEFAULT : newCollectionDisplayOption;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION, oldCollectionDisplayOption, collectionDisplayOption));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCollectionAllowAdd() {
+		return collectionAllowAdd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionAllowAdd(boolean newCollectionAllowAdd) {
+		boolean oldCollectionAllowAdd = collectionAllowAdd;
+		collectionAllowAdd = newCollectionAllowAdd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCollectionAllowRemove() {
+		return collectionAllowRemove;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionAllowRemove(boolean newCollectionAllowRemove) {
+		boolean oldCollectionAllowRemove = collectionAllowRemove;
+		collectionAllowRemove = newCollectionAllowRemove;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
 	}
 
 	/**
@@ -533,6 +617,10 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return getDisplayedOn();
 			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				return getCollectionDisplayOption();
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
+				return isCollectionAllowAdd();
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
+				return isCollectionAllowRemove();
 			case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return getMaximumDisplaySize();
 			case WebsitePackage.INTERFACE_FIELD__DATE_FORMAT:
@@ -567,6 +655,12 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return;
 			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
+				return;
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
+				setCollectionAllowAdd((Boolean)newValue);
+				return;
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
+				setCollectionAllowRemove((Boolean)newValue);
 				return;
 			case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize((Integer)newValue);
@@ -610,6 +704,12 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
 				return;
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
+				setCollectionAllowAdd(COLLECTION_ALLOW_ADD_EDEFAULT);
+				return;
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
+				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
+				return;
 			case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				setMaximumDisplaySize(MAXIMUM_DISPLAY_SIZE_EDEFAULT);
 				return;
@@ -650,6 +750,10 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 				return getDisplayedOn() != null;
 			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
+				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
+			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:
+				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
 			case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE:
 				return maximumDisplaySize != MAXIMUM_DISPLAY_SIZE_EDEFAULT;
 			case WebsitePackage.INTERFACE_FIELD__DATE_FORMAT:
@@ -681,6 +785,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			switch (derivedFeatureID) {
 				case WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON: return WebsitePackage.UNIT_FIELD__DISPLAYED_ON;
 				case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
+				case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD: return WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_ADD;
+				case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE: return WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE;
 				case WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE: return WebsitePackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WebsitePackage.INTERFACE_FIELD__DATE_FORMAT: return WebsitePackage.UNIT_FIELD__DATE_FORMAT;
 				default: return -1;
@@ -700,6 +806,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			switch (baseFeatureID) {
 				case WebsitePackage.UNIT_FIELD__DISPLAYED_ON: return WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON;
 				case WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
+				case WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_ADD: return WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD;
+				case WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE: return WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
 				case WebsitePackage.UNIT_FIELD__MAXIMUM_DISPLAY_SIZE: return WebsitePackage.INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE;
 				case WebsitePackage.UNIT_FIELD__DATE_FORMAT: return WebsitePackage.INTERFACE_FIELD__DATE_FORMAT;
 				default: return -1;
@@ -720,6 +828,10 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (collectionDisplayOption: ");
 		result.append(collectionDisplayOption);
+		result.append(", collectionAllowAdd: ");
+		result.append(collectionAllowAdd);
+		result.append(", collectionAllowRemove: ");
+		result.append(collectionAllowRemove);
 		result.append(", maximumDisplaySize: ");
 		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");

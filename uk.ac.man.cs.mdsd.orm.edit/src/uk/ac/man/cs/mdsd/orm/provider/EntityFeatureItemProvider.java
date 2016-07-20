@@ -46,6 +46,9 @@ public class EntityFeatureItemProvider
 
 			addPrimaryKeyPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
+			addBooleanIsHasChoicePropertyDescriptor(object);
+			addCollectionAllowAddPropertyDescriptor(object);
+			addCollectionAllowRemovePropertyDescriptor(object);
 			addColumnNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -91,6 +94,72 @@ public class EntityFeatureItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Boolean Is Has Choice feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBooleanIsHasChoicePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_booleanIsHasChoice_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_booleanIsHasChoice_feature", "_UI_EntityFeature_type"),
+				 OrmPackage.Literals.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Allow Add feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionAllowAddPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_collectionAllowAdd_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_collectionAllowAdd_feature", "_UI_EntityFeature_type"),
+				 OrmPackage.Literals.ENTITY_FEATURE__COLLECTION_ALLOW_ADD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Allow Remove feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionAllowRemovePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_collectionAllowRemove_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_collectionAllowRemove_feature", "_UI_EntityFeature_type"),
+				 OrmPackage.Literals.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -146,6 +215,9 @@ public class EntityFeatureItemProvider
 		switch (notification.getFeatureID(EntityFeature.class)) {
 			case OrmPackage.ENTITY_FEATURE__PRIMARY_KEY:
 			case OrmPackage.ENTITY_FEATURE__CARDINALITY:
+			case OrmPackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
+			case OrmPackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
+			case OrmPackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 			case OrmPackage.ENTITY_FEATURE__COLUMN_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

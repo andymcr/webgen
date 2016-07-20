@@ -2749,13 +2749,40 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_FEATURE__ORDERED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__COLLECTION_ALLOW_ADD = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+
+	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLUMN_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int ENTITY_FEATURE__COLUMN_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Entity Feature</em>' class.
@@ -2764,7 +2791,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int ENTITY_FEATURE_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2873,6 +2900,33 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ATTRIBUTE__ORDERED = ENTITY_FEATURE__ORDERED;
+
+	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -3071,6 +3125,33 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__ORDERED = ENTITY_ATTRIBUTE__ORDERED;
+
+	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -3307,6 +3388,33 @@ public interface WebsitePackage extends EPackage {
 	int DATE_ATTRIBUTE__ORDERED = ENTITY_ATTRIBUTE__ORDERED;
 
 	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3523,6 +3631,33 @@ public interface WebsitePackage extends EPackage {
 	int URL_ATTRIBUTE__ORDERED = ENTITY_ATTRIBUTE__ORDERED;
 
 	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3728,6 +3863,33 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__ORDERED = ENTITY_ATTRIBUTE__ORDERED;
+
+	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -4018,6 +4180,33 @@ public interface WebsitePackage extends EPackage {
 	int FILE_ATTRIBUTE__ORDERED = RESOURCE_ATTRIBUTE__ORDERED;
 
 	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = RESOURCE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__COLLECTION_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4259,6 +4448,33 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_ATTRIBUTE__ORDERED = RESOURCE_ATTRIBUTE__ORDERED;
+
+	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = RESOURCE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__COLLECTION_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -4504,6 +4720,33 @@ public interface WebsitePackage extends EPackage {
 	int LOCATION_ATTRIBUTE__ORDERED = ENTITY_ATTRIBUTE__ORDERED;
 
 	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4700,6 +4943,33 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ASSOCIATION__ORDERED = ENTITY_FEATURE__ORDERED;
+
+	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__BOOLEAN_IS_HAS_CHOICE = ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -4988,6 +5258,33 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITHOUT_CONTAINMENT__ORDERED = ENTITY_ASSOCIATION__ORDERED;
+
+	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__BOOLEAN_IS_HAS_CHOICE = ENTITY_ASSOCIATION__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -5294,6 +5591,33 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITH_CONTAINMENT__ORDERED = ENTITY_ASSOCIATION__ORDERED;
+
+	/**
+	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__BOOLEAN_IS_HAS_CHOICE = ENTITY_ASSOCIATION__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -7873,13 +8197,31 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_FIELD__COLLECTION_DISPLAY_OPTION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FIELD__COLLECTION_ALLOW_ADD = 2;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FIELD__COLLECTION_ALLOW_REMOVE = 3;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = 2;
+	int UNIT_FIELD__MAXIMUM_DISPLAY_SIZE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -7888,7 +8230,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD__DATE_FORMAT = 3;
+	int UNIT_FIELD__DATE_FORMAT = 5;
 
 	/**
 	 * The number of structural features of the '<em>Unit Field</em>' class.
@@ -7897,7 +8239,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FIELD_FEATURE_COUNT = 4;
+	int UNIT_FIELD_FEATURE_COUNT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -7916,6 +8258,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_FEATURE__COLLECTION_DISPLAY_OPTION = UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__COLLECTION_ALLOW_ADD = UNIT_FIELD__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__COLLECTION_ALLOW_REMOVE = UNIT_FIELD__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -8060,6 +8420,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ELEMENT__COLLECTION_DISPLAY_OPTION = UNIT_FEATURE__COLLECTION_DISPLAY_OPTION;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__COLLECTION_ALLOW_ADD = UNIT_FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__COLLECTION_ALLOW_REMOVE = UNIT_FEATURE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -8322,6 +8700,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ASSOCIATION__COLLECTION_DISPLAY_OPTION = UNIT_FEATURE__COLLECTION_DISPLAY_OPTION;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__COLLECTION_ALLOW_ADD = UNIT_FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__COLLECTION_ALLOW_REMOVE = UNIT_FEATURE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -8732,13 +9128,31 @@ public interface WebsitePackage extends EPackage {
 	int INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_FIELD__COLLECTION_ALLOW_ADD = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int INTERFACE_FIELD__MAXIMUM_DISPLAY_SIZE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Date Format</b></em>' attribute.
@@ -8747,7 +9161,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DATE_FORMAT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int INTERFACE_FIELD__DATE_FORMAT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -8756,7 +9170,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__REQUIRED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int INTERFACE_FIELD__REQUIRED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -8765,7 +9179,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__DEFAULT_VALUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int INTERFACE_FIELD__DEFAULT_VALUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Must Match</b></em>' reference.
@@ -8774,7 +9188,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__MUST_MATCH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int INTERFACE_FIELD__MUST_MATCH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -8783,7 +9197,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int INTERFACE_FIELD__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -8792,7 +9206,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__PLACEHOLDER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int INTERFACE_FIELD__PLACEHOLDER = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Validation Pattern</b></em>' attribute.
@@ -8801,7 +9215,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD__VALIDATION_PATTERN = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int INTERFACE_FIELD__VALIDATION_PATTERN = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Interface Field</em>' class.
@@ -8810,7 +9224,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FIELD_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int INTERFACE_FIELD_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8847,6 +9261,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_FIELD__COLLECTION_DISPLAY_OPTION = INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FIELD__COLLECTION_ALLOW_ADD = INTERFACE_FIELD__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_FIELD__COLLECTION_ALLOW_REMOVE = INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -9002,6 +9434,24 @@ public interface WebsitePackage extends EPackage {
 	int DATE_FIELD__COLLECTION_DISPLAY_OPTION = INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_FIELD__COLLECTION_ALLOW_ADD = INTERFACE_FIELD__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_FIELD__COLLECTION_ALLOW_REMOVE = INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
+
+	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9135,6 +9585,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CAPTCHA_FIELD__COLLECTION_DISPLAY_OPTION = INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTCHA_FIELD__COLLECTION_ALLOW_ADD = INTERFACE_FIELD__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPTCHA_FIELD__COLLECTION_ALLOW_REMOVE = INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Maximum Display Size</b></em>' attribute.
@@ -13198,6 +13666,16 @@ public interface WebsitePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.isHasChoices <em>is Has Choices</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.website.isHasChoices
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getisHasChoices()
+	 * @generated
+	 */
+	int IS_HAS_CHOICES = 111;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.DateDetails <em>Date Details</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13205,7 +13683,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 111;
+	int DATE_DETAILS = 112;
 
 
 	/**
@@ -13216,7 +13694,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 112;
+	int OPERATION_RESULT_TYPES = 113;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -13226,7 +13704,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 113;
+	int PAGE_TOP_MENU_OPTIONS = 114;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -13236,7 +13714,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 114;
+	int COLLECTION_DISPLAY_OPTIONS = 115;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -13246,7 +13724,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 115;
+	int INDEX_DISPLAY_OPTION = 116;
 
 
 	/**
@@ -14149,6 +14627,39 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEntityFeature_Ordered();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Boolean Is Has Choice</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getBooleanIsHasChoice()
+	 * @see #getEntityFeature()
+	 * @generated
+	 */
+	EAttribute getEntityFeature_BooleanIsHasChoice();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowAdd <em>Collection Allow Add</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Collection Allow Add</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowAdd()
+	 * @see #getEntityFeature()
+	 * @generated
+	 */
+	EAttribute getEntityFeature_CollectionAllowAdd();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowRemove <em>Collection Allow Remove</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Collection Allow Remove</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowRemove()
+	 * @see #getEntityFeature()
+	 * @generated
+	 */
+	EAttribute getEntityFeature_CollectionAllowRemove();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getColumnName <em>Column Name</em>}'.
@@ -15788,6 +16299,28 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUnitField_CollectionDisplayOption();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#isCollectionAllowAdd <em>Collection Allow Add</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Collection Allow Add</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitField#isCollectionAllowAdd()
+	 * @see #getUnitField()
+	 * @generated
+	 */
+	EAttribute getUnitField_CollectionAllowAdd();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#isCollectionAllowRemove <em>Collection Allow Remove</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Collection Allow Remove</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitField#isCollectionAllowRemove()
+	 * @see #getUnitField()
+	 * @generated
+	 */
+	EAttribute getUnitField_CollectionAllowRemove();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitField#getMaximumDisplaySize <em>Maximum Display Size</em>}'.
@@ -18166,6 +18699,16 @@ public interface WebsitePackage extends EPackage {
 	EEnum getCardinality();
 
 	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.website.isHasChoices <em>is Has Choices</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>is Has Choices</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.isHasChoices
+	 * @generated
+	 */
+	EEnum getisHasChoices();
+
+	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.website.DateDetails <em>Date Details</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -18924,6 +19467,30 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY_FEATURE__ORDERED = eINSTANCE.getEntityFeature_Ordered();
+
+		/**
+		 * The meta object literal for the '<em><b>Boolean Is Has Choice</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = eINSTANCE.getEntityFeature_BooleanIsHasChoice();
+
+		/**
+		 * The meta object literal for the '<em><b>Collection Allow Add</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_FEATURE__COLLECTION_ALLOW_ADD = eINSTANCE.getEntityFeature_CollectionAllowAdd();
+
+		/**
+		 * The meta object literal for the '<em><b>Collection Allow Remove</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE = eINSTANCE.getEntityFeature_CollectionAllowRemove();
 
 		/**
 		 * The meta object literal for the '<em><b>Column Name</b></em>' attribute feature.
@@ -20236,6 +20803,22 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNIT_FIELD__COLLECTION_DISPLAY_OPTION = eINSTANCE.getUnitField_CollectionDisplayOption();
+
+		/**
+		 * The meta object literal for the '<em><b>Collection Allow Add</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FIELD__COLLECTION_ALLOW_ADD = eINSTANCE.getUnitField_CollectionAllowAdd();
+
+		/**
+		 * The meta object literal for the '<em><b>Collection Allow Remove</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FIELD__COLLECTION_ALLOW_REMOVE = eINSTANCE.getUnitField_CollectionAllowRemove();
 
 		/**
 		 * The meta object literal for the '<em><b>Maximum Display Size</b></em>' attribute feature.
@@ -22114,6 +22697,16 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum CARDINALITY = eINSTANCE.getCardinality();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.isHasChoices <em>is Has Choices</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.website.isHasChoices
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getisHasChoices()
+		 * @generated
+		 */
+		EEnum IS_HAS_CHOICES = eINSTANCE.getisHasChoices();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.DateDetails <em>Date Details</em>}' enum.

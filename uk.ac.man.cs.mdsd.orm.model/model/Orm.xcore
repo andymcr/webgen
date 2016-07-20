@@ -44,6 +44,11 @@ enum DatabaseTechnologies {
 	Oracle = 1
 }
 
+enum IsHasChoices {
+	isA
+	hasA = 1
+}
+
 enum OrmTechnologies {
 	JPA
 	DataMapper = 1
@@ -152,6 +157,9 @@ class Entity extends EntityOrView {
 abstract class EntityFeature extends Feature {
 	boolean primaryKey
 	Cardinality cardinality
+	IsHasChoices booleanIsHasChoice
+	boolean collectionAllowAdd
+	boolean collectionAllowRemove
 	String[1] columnName
 }
 

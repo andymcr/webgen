@@ -78,6 +78,7 @@ rule Website {
 				->collect(e | e.entityFeatures)->flatten()
 				->select(f | f.oclIsKindOf(Website!EntityAttribute))
 				->select(a | not a.ormType.oclIsUndefined())
+				->select(a | a.ormType.trim() <> '')
 				->notEmpty()
 	)
 }

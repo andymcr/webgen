@@ -556,6 +556,11 @@ public class UnitFeatureItemProvider
 			(createChildParameter
 				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 }

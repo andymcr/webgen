@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.website.ParameterReference;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -115,7 +116,10 @@ public class ParameterReferenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ParameterReference_type");
+		String label = ((ParameterReference)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ParameterReference_type") :
+			getString("_UI_ParameterReference_type") + " " + label;
 	}
 	
 
@@ -129,6 +133,12 @@ public class ParameterReferenceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ParameterReference.class)) {
+			case WebsitePackage.PARAMETER_REFERENCE__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

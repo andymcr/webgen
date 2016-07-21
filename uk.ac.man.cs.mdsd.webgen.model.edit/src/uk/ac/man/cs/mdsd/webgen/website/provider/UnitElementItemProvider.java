@@ -328,6 +328,11 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 	/**

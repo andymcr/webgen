@@ -459,6 +459,8 @@ interface InlineActionContainer {
 abstract class InlineAction extends NamedDisplayElement {
 	container InlineActionContainer[1] usedBy opposite actions
 	boolean disable
+	contains Predicate disableWhen
+	contains Predicate removeWhen
 	String header
 	String footer
 	String headerClass

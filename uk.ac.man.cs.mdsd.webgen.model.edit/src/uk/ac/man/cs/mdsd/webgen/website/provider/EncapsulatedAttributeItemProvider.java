@@ -361,6 +361,11 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 			(createChildParameter
 				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 }

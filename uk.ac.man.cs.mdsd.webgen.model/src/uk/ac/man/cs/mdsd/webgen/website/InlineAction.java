@@ -2,6 +2,9 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import uk.ac.man.cs.mdsd.criteria.Predicate;
+import uk.ac.man.cs.mdsd.criteria.PredicateBooleanOperator;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +17,8 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#isDisable <em>Disable</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getDisableWhen <em>Disable When</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getRemoveWhen <em>Remove When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getHeaderClass <em>Header Class</em>}</li>
@@ -78,6 +83,58 @@ public interface InlineAction extends NamedDisplayElement {
 	 * @generated
 	 */
 	void setDisable(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Disable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Disable When</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Disable When</em>' containment reference.
+	 * @see #setDisableWhen(Predicate)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getInlineAction_DisableWhen()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Predicate getDisableWhen();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getDisableWhen <em>Disable When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Disable When</em>' containment reference.
+	 * @see #getDisableWhen()
+	 * @generated
+	 */
+	void setDisableWhen(Predicate value);
+
+	/**
+	 * Returns the value of the '<em><b>Remove When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Remove When</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Remove When</em>' containment reference.
+	 * @see #setRemoveWhen(Predicate)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getInlineAction_RemoveWhen()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Predicate getRemoveWhen();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getRemoveWhen <em>Remove When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Remove When</em>' containment reference.
+	 * @see #getRemoveWhen()
+	 * @generated
+	 */
+	void setRemoveWhen(Predicate value);
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' attribute.

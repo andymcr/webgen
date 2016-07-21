@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.View;
 import uk.ac.man.cs.mdsd.webgen.website.ViewFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -34,6 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getUriKeyValueFrom <em>Uri Key Value From</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getPartOf <em>Part Of</em>}</li>
  * </ul>
  *
@@ -149,6 +151,16 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	 * @ordered
 	 */
 	protected boolean encodeUriKey = ENCODE_URI_KEY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUriKeyValueFrom() <em>Uri Key Value From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriKeyValueFrom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Feature uriKeyValueFrom;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -291,6 +303,44 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Feature getUriKeyValueFrom() {
+		if (uriKeyValueFrom != null && uriKeyValueFrom.eIsProxy()) {
+			InternalEObject oldUriKeyValueFrom = (InternalEObject)uriKeyValueFrom;
+			uriKeyValueFrom = (Feature)eResolveProxy(oldUriKeyValueFrom);
+			if (uriKeyValueFrom != oldUriKeyValueFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.VIEW_FEATURE__URI_KEY_VALUE_FROM, oldUriKeyValueFrom, uriKeyValueFrom));
+			}
+		}
+		return uriKeyValueFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature basicGetUriKeyValueFrom() {
+		return uriKeyValueFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUriKeyValueFrom(Feature newUriKeyValueFrom) {
+		Feature oldUriKeyValueFrom = uriKeyValueFrom;
+		uriKeyValueFrom = newUriKeyValueFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__URI_KEY_VALUE_FROM, oldUriKeyValueFrom, uriKeyValueFrom));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public View getPartOf() {
 		if (eContainerFeatureID() != WebsitePackage.VIEW_FEATURE__PART_OF) return null;
 		return (View)eInternalContainer();
@@ -391,6 +441,9 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return isSerializationExpose();
 			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				return isEncodeUriKey();
+			case WebsitePackage.VIEW_FEATURE__URI_KEY_VALUE_FROM:
+				if (resolve) return getUriKeyValueFrom();
+				return basicGetUriKeyValueFrom();
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				return getPartOf();
 		}
@@ -425,6 +478,9 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey((Boolean)newValue);
 				return;
+			case WebsitePackage.VIEW_FEATURE__URI_KEY_VALUE_FROM:
+				setUriKeyValueFrom((Feature)newValue);
+				return;
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				setPartOf((View)newValue);
 				return;
@@ -458,6 +514,9 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
 				return;
+			case WebsitePackage.VIEW_FEATURE__URI_KEY_VALUE_FROM:
+				setUriKeyValueFrom((Feature)null);
+				return;
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				setPartOf((View)null);
 				return;
@@ -485,6 +544,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
 			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
+			case WebsitePackage.VIEW_FEATURE__URI_KEY_VALUE_FROM:
+				return uriKeyValueFrom != null;
 			case WebsitePackage.VIEW_FEATURE__PART_OF:
 				return getPartOf() != null;
 		}

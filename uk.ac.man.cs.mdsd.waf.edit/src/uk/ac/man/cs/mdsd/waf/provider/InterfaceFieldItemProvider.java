@@ -525,6 +525,11 @@ public class InterfaceFieldItemProvider
 			(createChildParameter
 				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 	/**

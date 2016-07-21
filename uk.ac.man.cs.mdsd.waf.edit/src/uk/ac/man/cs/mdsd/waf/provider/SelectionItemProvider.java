@@ -286,6 +286,11 @@ public class SelectionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(WafPackage.Literals.SELECTION__FILTER,
+				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(WafPackage.Literals.SELECTION__ORDERING,
 				 CriteriaFactory.eINSTANCE.createAsc()));
 

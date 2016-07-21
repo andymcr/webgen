@@ -264,6 +264,11 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			(createChildParameter
 				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 }

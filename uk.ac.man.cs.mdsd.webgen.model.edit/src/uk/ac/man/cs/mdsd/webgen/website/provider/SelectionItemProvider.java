@@ -306,6 +306,11 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(WebsitePackage.Literals.SELECTION__FILTER,
+				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(WebsitePackage.Literals.SELECTION__ORDERING,
 				 CriteriaFactory.eINSTANCE.createAsc()));
 

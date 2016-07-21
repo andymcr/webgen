@@ -5,6 +5,7 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -22,12 +23,22 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ParameterReferenceImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ParameterReferenceImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ParameterReferenceImpl extends EObjectImpl implements ParameterReference {
+	/**
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.PARAMETER_REFERENCE__NAME).getSettingDelegate();
 	/**
 	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -55,6 +66,15 @@ public class ParameterReferenceImpl extends EObjectImpl implements ParameterRefe
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.PARAMETER_REFERENCE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -103,6 +123,8 @@ public class ParameterReferenceImpl extends EObjectImpl implements ParameterRefe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.PARAMETER_REFERENCE__NAME:
+				return getName();
 			case WebsitePackage.PARAMETER_REFERENCE__PARAMETER:
 				if (resolve) return getParameter();
 				return basicGetParameter();
@@ -148,6 +170,8 @@ public class ParameterReferenceImpl extends EObjectImpl implements ParameterRefe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.PARAMETER_REFERENCE__NAME:
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.PARAMETER_REFERENCE__PARAMETER:
 				return parameter != null;
 		}

@@ -36,6 +36,7 @@ import uk.ac.man.cs.mdsd.criteria.Order;
 import uk.ac.man.cs.mdsd.criteria.PredicateComparisonOperator;
 import uk.ac.man.cs.mdsd.criteria.PredicateEqualityOperator;
 import uk.ac.man.cs.mdsd.criteria.PredicateIsEmpty;
+import uk.ac.man.cs.mdsd.criteria.PredicateIsNull;
 import uk.ac.man.cs.mdsd.criteria.PredicateIsOperator;
 import uk.ac.man.cs.mdsd.criteria.PredicateLikeOperator;
 
@@ -2168,6 +2169,35 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 				return null;
 			}
  
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePredicateIsNull(PredicateIsNull object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 WebsiteFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 WebsiteFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 WebsiteFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CriteriaPackage.Literals.PREDICATE_IS_NULL__FEATURE,
+						 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

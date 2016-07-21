@@ -1037,6 +1037,8 @@ abstract rule InlineAction {
 	from website : Website!InlineAction
 	to waf : WAF!InlineAction (
 		disable <- website.disable,
+		disableWhen <- website.disableWhen,
+		removeWhen <- website.removeWhen,
 		header <- website.header,
 		footer <- website.footer,
 		headerClass <- website.headerClass,
@@ -1104,11 +1106,13 @@ helper context Website!Expression def: isInterfaceContainer() : Boolean
 			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!Selection) then
 			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!InlineAction) then
+			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
 			self.refImmediateComposite().isInterfaceContainer()
 		else
 			false
-		endif endif endif endif;
+		endif endif endif endif endif;
 
 helper context Website!Order def: isInterfaceContainer() : Boolean
 	= if self.refImmediateComposite().oclIsUndefined() then

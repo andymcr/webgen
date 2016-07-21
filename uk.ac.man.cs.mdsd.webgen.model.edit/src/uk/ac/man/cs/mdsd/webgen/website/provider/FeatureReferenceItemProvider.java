@@ -22,9 +22,12 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.FeatureReference;
+import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
+import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -95,14 +98,13 @@ public class FeatureReferenceItemProvider
 							}
 							return features;
 						}
-//						final Service service = getCriteriaServiceContext(object);
-//						if (service != null) {
-//							for (ServiceFeature feature : service.getFeatures()) {
-//								if (feature instanceof ServiceFeature) {
-//									features.add((ServiceFeature) feature);
-//								}
-//							}
-//						}
+						final InlineActionContainer action = getCriteriaActionContext(object);
+						if (action != null) {
+							for (EntityOrView entityOrView : getEntitiesAndViews(action)) {
+								features.addAll(entityOrView.getAllFeatures());
+							}
+							return features;
+						}
 					}
 
 					return features;
@@ -129,7 +131,10 @@ public class FeatureReferenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_FeatureReference_type");
+		String label = ((FeatureReference)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_FeatureReference_type") :
+			getString("_UI_FeatureReference_type") + " " + label;
 	}
 
 	/**
@@ -142,6 +147,12 @@ public class FeatureReferenceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(FeatureReference.class)) {
+			case WebsitePackage.FEATURE_REFERENCE__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

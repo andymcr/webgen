@@ -8925,13 +8925,31 @@ public interface WafPackage extends EPackage {
 	int INLINE_ACTION__DISABLE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INLINE_ACTION__DISABLE_WHEN = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Remove When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INLINE_ACTION__REMOVE_WHEN = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__HEADER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int INLINE_ACTION__HEADER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -8940,7 +8958,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__FOOTER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int INLINE_ACTION__FOOTER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -8949,7 +8967,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__HEADER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int INLINE_ACTION__HEADER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -8958,7 +8976,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__FOOTER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int INLINE_ACTION__FOOTER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Inline Action</em>' class.
@@ -8967,7 +8985,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int INLINE_ACTION_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Inline Action</em>' class.
@@ -9023,6 +9041,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
+
+	/**
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECT_ACTION__DISABLE_WHEN = INLINE_ACTION__DISABLE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Remove When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECT_ACTION__REMOVE_WHEN = INLINE_ACTION__REMOVE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -9132,6 +9168,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELETE_ACTION__DISABLE = INLINE_ACTION__DISABLE;
+
+	/**
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE_ACTION__DISABLE_WHEN = INLINE_ACTION__DISABLE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Remove When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE_ACTION__REMOVE_WHEN = INLINE_ACTION__REMOVE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -9259,6 +9313,24 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_SUPPORT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
+
+	/**
+	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_SUPPORT_ACTION__DISABLE_WHEN = INLINE_ACTION__DISABLE_WHEN;
+
+	/**
+	 * The feature id for the '<em><b>Remove When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_SUPPORT_ACTION__REMOVE_WHEN = INLINE_ACTION__REMOVE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -12351,6 +12423,28 @@ public interface WafPackage extends EPackage {
 	EAttribute getInlineAction_Disable();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getDisableWhen <em>Disable When</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Disable When</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.InlineAction#getDisableWhen()
+	 * @see #getInlineAction()
+	 * @generated
+	 */
+	EReference getInlineAction_DisableWhen();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getRemoveWhen <em>Remove When</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Remove When</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.InlineAction#getRemoveWhen()
+	 * @see #getInlineAction()
+	 * @generated
+	 */
+	EReference getInlineAction_RemoveWhen();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getHeader <em>Header</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14867,6 +14961,22 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INLINE_ACTION__DISABLE = eINSTANCE.getInlineAction_Disable();
+
+		/**
+		 * The meta object literal for the '<em><b>Disable When</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INLINE_ACTION__DISABLE_WHEN = eINSTANCE.getInlineAction_DisableWhen();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove When</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INLINE_ACTION__REMOVE_WHEN = eINSTANCE.getInlineAction_RemoveWhen();
 
 		/**
 		 * The meta object literal for the '<em><b>Header</b></em>' attribute feature.

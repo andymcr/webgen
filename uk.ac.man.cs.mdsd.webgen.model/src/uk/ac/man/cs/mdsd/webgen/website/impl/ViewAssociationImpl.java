@@ -45,6 +45,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getUriKeyValueFrom <em>Uri Key Value From</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isPseudo <em>Pseudo</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
@@ -159,6 +160,15 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @ordered
 	 */
 	protected boolean encodeUriKey = ENCODE_URI_KEY_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getUriKeyValueFrom() <em>Uri Key Value From</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUriKeyValueFrom()
+	 * @generated
+	 * @ordered
+	 */
+	protected Feature uriKeyValueFrom;
 	/**
 	 * The default value of the '{@link #isPseudo() <em>Pseudo</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -398,6 +408,44 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		encodeUriKey = newEncodeUriKey;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY, oldEncodeUriKey, encodeUriKey));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature getUriKeyValueFrom() {
+		if (uriKeyValueFrom != null && uriKeyValueFrom.eIsProxy()) {
+			InternalEObject oldUriKeyValueFrom = (InternalEObject)uriKeyValueFrom;
+			uriKeyValueFrom = (Feature)eResolveProxy(oldUriKeyValueFrom);
+			if (uriKeyValueFrom != oldUriKeyValueFrom) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.VIEW_ASSOCIATION__URI_KEY_VALUE_FROM, oldUriKeyValueFrom, uriKeyValueFrom));
+			}
+		}
+		return uriKeyValueFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature basicGetUriKeyValueFrom() {
+		return uriKeyValueFrom;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUriKeyValueFrom(Feature newUriKeyValueFrom) {
+		Feature oldUriKeyValueFrom = uriKeyValueFrom;
+		uriKeyValueFrom = newUriKeyValueFrom;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__URI_KEY_VALUE_FROM, oldUriKeyValueFrom, uriKeyValueFrom));
 	}
 
 	/**
@@ -737,6 +785,9 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return isSerializationExpose();
 			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				return isEncodeUriKey();
+			case WebsitePackage.VIEW_ASSOCIATION__URI_KEY_VALUE_FROM:
+				if (resolve) return getUriKeyValueFrom();
+				return basicGetUriKeyValueFrom();
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				return getPartOf();
 			case WebsitePackage.VIEW_ASSOCIATION__PSEUDO:
@@ -791,6 +842,9 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				setEncodeUriKey((Boolean)newValue);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__URI_KEY_VALUE_FROM:
+				setUriKeyValueFrom((Feature)newValue);
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				setPartOf((View)newValue);
@@ -847,6 +901,9 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
 				return;
+			case WebsitePackage.VIEW_ASSOCIATION__URI_KEY_VALUE_FROM:
+				setUriKeyValueFrom((Feature)null);
+				return;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				setPartOf((View)null);
 				return;
@@ -895,6 +952,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
 			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
+			case WebsitePackage.VIEW_ASSOCIATION__URI_KEY_VALUE_FROM:
+				return uriKeyValueFrom != null;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				return getPartOf() != null;
 			case WebsitePackage.VIEW_ASSOCIATION__PSEUDO:
@@ -934,6 +993,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS: return WebsitePackage.FEATURE__SERIALIZATION_GROUPS;
 				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE: return WebsitePackage.FEATURE__SERIALIZATION_EXPOSE;
 				case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY: return WebsitePackage.FEATURE__ENCODE_URI_KEY;
+				case WebsitePackage.VIEW_ASSOCIATION__URI_KEY_VALUE_FROM: return WebsitePackage.FEATURE__URI_KEY_VALUE_FROM;
 				default: return -1;
 			}
 		}
@@ -973,6 +1033,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS;
 				case WebsitePackage.FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE;
 				case WebsitePackage.FEATURE__ENCODE_URI_KEY: return WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY;
+				case WebsitePackage.FEATURE__URI_KEY_VALUE_FROM: return WebsitePackage.VIEW_ASSOCIATION__URI_KEY_VALUE_FROM;
 				default: return -1;
 			}
 		}

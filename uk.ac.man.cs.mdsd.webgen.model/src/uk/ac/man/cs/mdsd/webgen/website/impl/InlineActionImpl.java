@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import uk.ac.man.cs.mdsd.criteria.Predicate;
+import uk.ac.man.cs.mdsd.criteria.PredicateBooleanOperator;
 import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -26,6 +28,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#isDisable <em>Disable</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getDisableWhen <em>Disable When</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getRemoveWhen <em>Remove When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -54,6 +58,26 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * @ordered
 	 */
 	protected boolean disable = DISABLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDisableWhen() <em>Disable When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDisableWhen()
+	 * @generated
+	 * @ordered
+	 */
+	protected Predicate disableWhen;
+
+	/**
+	 * The cached value of the '{@link #getRemoveWhen() <em>Remove When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemoveWhen()
+	 * @generated
+	 * @ordered
+	 */
+	protected Predicate removeWhen;
 
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
@@ -221,6 +245,92 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Predicate getDisableWhen() {
+		return disableWhen;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDisableWhen(Predicate newDisableWhen, NotificationChain msgs) {
+		Predicate oldDisableWhen = disableWhen;
+		disableWhen = newDisableWhen;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__DISABLE_WHEN, oldDisableWhen, newDisableWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDisableWhen(Predicate newDisableWhen) {
+		if (newDisableWhen != disableWhen) {
+			NotificationChain msgs = null;
+			if (disableWhen != null)
+				msgs = ((InternalEObject)disableWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__DISABLE_WHEN, null, msgs);
+			if (newDisableWhen != null)
+				msgs = ((InternalEObject)newDisableWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__DISABLE_WHEN, null, msgs);
+			msgs = basicSetDisableWhen(newDisableWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__DISABLE_WHEN, newDisableWhen, newDisableWhen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Predicate getRemoveWhen() {
+		return removeWhen;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRemoveWhen(Predicate newRemoveWhen, NotificationChain msgs) {
+		Predicate oldRemoveWhen = removeWhen;
+		removeWhen = newRemoveWhen;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__REMOVE_WHEN, oldRemoveWhen, newRemoveWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRemoveWhen(Predicate newRemoveWhen) {
+		if (newRemoveWhen != removeWhen) {
+			NotificationChain msgs = null;
+			if (removeWhen != null)
+				msgs = ((InternalEObject)removeWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__REMOVE_WHEN, null, msgs);
+			if (newRemoveWhen != null)
+				msgs = ((InternalEObject)newRemoveWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__REMOVE_WHEN, null, msgs);
+			msgs = basicSetRemoveWhen(newRemoveWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__REMOVE_WHEN, newRemoveWhen, newRemoveWhen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getHeader() {
 		return header;
 	}
@@ -326,6 +436,10 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		switch (featureID) {
 			case WebsitePackage.INLINE_ACTION__USED_BY:
 				return basicSetUsedBy(null, msgs);
+			case WebsitePackage.INLINE_ACTION__DISABLE_WHEN:
+				return basicSetDisableWhen(null, msgs);
+			case WebsitePackage.INLINE_ACTION__REMOVE_WHEN:
+				return basicSetRemoveWhen(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -356,6 +470,10 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 				return getUsedBy();
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				return isDisable();
+			case WebsitePackage.INLINE_ACTION__DISABLE_WHEN:
+				return getDisableWhen();
+			case WebsitePackage.INLINE_ACTION__REMOVE_WHEN:
+				return getRemoveWhen();
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				return getHeader();
 			case WebsitePackage.INLINE_ACTION__FOOTER:
@@ -381,6 +499,12 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 				return;
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				setDisable((Boolean)newValue);
+				return;
+			case WebsitePackage.INLINE_ACTION__DISABLE_WHEN:
+				setDisableWhen((Predicate)newValue);
+				return;
+			case WebsitePackage.INLINE_ACTION__REMOVE_WHEN:
+				setRemoveWhen((Predicate)newValue);
 				return;
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				setHeader((String)newValue);
@@ -412,6 +536,12 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				setDisable(DISABLE_EDEFAULT);
 				return;
+			case WebsitePackage.INLINE_ACTION__DISABLE_WHEN:
+				setDisableWhen((Predicate)null);
+				return;
+			case WebsitePackage.INLINE_ACTION__REMOVE_WHEN:
+				setRemoveWhen((Predicate)null);
+				return;
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				setHeader(HEADER_EDEFAULT);
 				return;
@@ -440,6 +570,10 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 				return getUsedBy() != null;
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				return disable != DISABLE_EDEFAULT;
+			case WebsitePackage.INLINE_ACTION__DISABLE_WHEN:
+				return disableWhen != null;
+			case WebsitePackage.INLINE_ACTION__REMOVE_WHEN:
+				return removeWhen != null;
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case WebsitePackage.INLINE_ACTION__FOOTER:

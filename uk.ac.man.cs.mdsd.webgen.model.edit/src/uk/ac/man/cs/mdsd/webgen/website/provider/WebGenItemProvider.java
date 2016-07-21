@@ -17,20 +17,38 @@ import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
+import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.UnitElement;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
 
 public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	public WebGenItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+	}
+
+	protected EntityOrView getUser(final Object object) {
+		return getModel(object).getWebsiteProperties().getAuthentication().getUser();
+	}
+
+	protected EntityOrView getParentType(final Attribute attribute) {
+		if (attribute instanceof EntityAttribute) {
+			return ((EntityAttribute) attribute).getPartOf();
+		} else {
+			return getParentType(
+				((EncapsulatedAttribute) attribute).getAttribute());
+		}
 	}
 
 	protected EntityOrView getSourceType(final Association association) {
@@ -91,6 +109,21 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 				}
 			}
 			joins.removeAll(handled);
+		}
+
+		return entitiesAndViews;
+	}
+
+	protected Set<EntityOrView> getEntitiesAndViews(final InlineActionContainer container) {
+		final Set<EntityOrView> entitiesAndViews = new HashSet<EntityOrView>();
+		if (container instanceof IndexUnit) {
+			entitiesAndViews.addAll(((IndexUnit) container).getEntities());
+		} else if (container instanceof UnitElement) {
+			entitiesAndViews.add(getParentType(
+				((UnitElement) container).getAttribute()));
+		} else if (container instanceof UnitAssociation) {
+			entitiesAndViews.add(getSourceType(
+				((UnitAssociation) container).getAssociation()));
 		}
 
 		return entitiesAndViews;
@@ -183,28 +216,35 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		}
 	}
 
-//	protected Service getCriteriaServiceContext(final Object object) {
-//		Object container = getCriteriaContext(object);
-//		while (container != null) {
-//			container = getCriteriaContext(container);
-//			if (container instanceof Service) {
-//				return (Service) container;
-//			} else if (container instanceof DynamicUnit) {
-//				final DynamicUnit containingUnit = (DynamicUnit) container;
-////				if (containingUnit.getSource() instanceof Service) {
-////					return (Service) containingUnit.getSource();
-////				}
-//			}
-//		}
-//
-//		return null;
-//	}
+	protected WebGenModel getModel(final Object object) {
+		Object container = getContext(object);
+		while (container != null) {
+			if (container instanceof WebGenModel) {
+				return (WebGenModel) container;
+			}
+			container = getContext(container);
+		}
+
+		return null;
+	}
 
 	protected Selection getCriteriaSelectionContext(final Object object) {
 		Object container = getContext(object);
 		while (container != null) {
 			if (container instanceof Selection) {
 				return (Selection) container;
+			}
+			container = getContext(container);
+		}
+
+		return null;
+	}
+
+	protected InlineActionContainer getCriteriaActionContext(final Object object) {
+		Object container = getContext(object);
+		while (container != null) {
+			if (container instanceof InlineActionContainer) {
+				return (InlineActionContainer) container;
 			}
 			container = getContext(container);
 		}

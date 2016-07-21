@@ -35,6 +35,7 @@ abstract rule Feature {
 	from website : Website!Feature
 	to orm : ORM!Feature (
 		encodeUriKey <- website.encodeUriKey,
+		uriKeyValueFrom <- website.uriKeyValueFrom,
 		serializationExpose <- website.serializationExpose,
 		serializationGroups <- website.serializationGroups
 	)

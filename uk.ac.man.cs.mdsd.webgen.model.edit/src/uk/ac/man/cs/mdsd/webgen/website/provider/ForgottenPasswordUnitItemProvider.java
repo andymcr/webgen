@@ -63,6 +63,8 @@ public class ForgottenPasswordUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addSingletonNamePropertyDescriptor(object);
+			addPluralisedNamePropertyDescriptor(object);
 			addDisplayLabelPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
@@ -105,6 +107,50 @@ public class ForgottenPasswordUnitItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Singleton Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSingletonNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_singletonName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_singletonName_feature", "_UI_NamedElement_type"),
+				 WebsitePackage.Literals.NAMED_ELEMENT__SINGLETON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_NamePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pluralised Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPluralisedNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_pluralisedName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_pluralisedName_feature", "_UI_NamedElement_type"),
+				 WebsitePackage.Literals.NAMED_ELEMENT__PLURALISED_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_NamePropertyCategory"),
 				 null));
 	}
 
@@ -595,6 +641,8 @@ public class ForgottenPasswordUnitItemProvider
 
 		switch (notification.getFeatureID(ForgottenPasswordUnit.class)) {
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__NAME:
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SINGLETON_NAME:
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PLURALISED_NAME:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_LABEL:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:

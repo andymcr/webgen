@@ -49,6 +49,8 @@ public class ActionMenuEntryItemProvider extends MenuEntryItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addSingletonNamePropertyDescriptor(object);
+			addPluralisedNamePropertyDescriptor(object);
 			addDisplayLabelPropertyDescriptor(object);
 			addDestinationPropertyDescriptor(object);
 		}
@@ -74,6 +76,50 @@ public class ActionMenuEntryItemProvider extends MenuEntryItemProvider {
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Singleton Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSingletonNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_singletonName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_singletonName_feature", "_UI_NamedElement_type"),
+				 WebsitePackage.Literals.NAMED_ELEMENT__SINGLETON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_NamePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pluralised Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPluralisedNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_pluralisedName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_pluralisedName_feature", "_UI_NamedElement_type"),
+				 WebsitePackage.Literals.NAMED_ELEMENT__PLURALISED_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_NamePropertyCategory"),
 				 null));
 	}
 
@@ -190,6 +236,8 @@ public class ActionMenuEntryItemProvider extends MenuEntryItemProvider {
 
 		switch (notification.getFeatureID(ActionMenuEntry.class)) {
 			case WebsitePackage.ACTION_MENU_ENTRY__NAME:
+			case WebsitePackage.ACTION_MENU_ENTRY__SINGLETON_NAME:
+			case WebsitePackage.ACTION_MENU_ENTRY__PLURALISED_NAME:
 			case WebsitePackage.ACTION_MENU_ENTRY__DISPLAY_LABEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

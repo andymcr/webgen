@@ -135,6 +135,7 @@ class SelectAttribute extends SelectField {
 }
 
 class SelectionParameter extends NamedElement {
+	boolean optional
 	String defaultValue
 }
 

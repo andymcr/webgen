@@ -49,9 +49,32 @@ public class SelectionParameterItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOptionalPropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Optional feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOptionalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SelectionParameter_optional_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SelectionParameter_optional_feature", "_UI_SelectionParameter_type"),
+				 WafPackage.Literals.SELECTION_PARAMETER__OPTIONAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -114,6 +137,7 @@ public class SelectionParameterItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SelectionParameter.class)) {
+			case WafPackage.SELECTION_PARAMETER__OPTIONAL:
 			case WafPackage.SELECTION_PARAMETER__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

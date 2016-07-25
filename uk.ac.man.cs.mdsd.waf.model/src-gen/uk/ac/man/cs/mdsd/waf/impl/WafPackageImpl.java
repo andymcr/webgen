@@ -1265,8 +1265,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSelectionParameter_DefaultValue() {
+	public EAttribute getSelectionParameter_Optional() {
 		return (EAttribute)selectionParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSelectionParameter_DefaultValue() {
+		return (EAttribute)selectionParameterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3388,6 +3397,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(selectAttributeEClass, SELECT_ATTRIBUTE__ATTRIBUTE);
 
 		selectionParameterEClass = createEClass(SELECTION_PARAMETER);
+		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__OPTIONAL);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__DEFAULT_VALUE);
 
 		businessOperationEClass = createEClass(BUSINESS_OPERATION);
@@ -3855,6 +3865,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getSelectAttribute_Attribute(), theOrmPackage.getAttribute(), null, "attribute", null, 0, 1, SelectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionParameterEClass, SelectionParameter.class, "SelectionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSelectionParameter_Optional(), theEcorePackage.getEBoolean(), "optional", null, 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelectionParameter_DefaultValue(), theEcorePackage.getEString(), "defaultValue", null, 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(businessOperationEClass, BusinessOperation.class, "BusinessOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

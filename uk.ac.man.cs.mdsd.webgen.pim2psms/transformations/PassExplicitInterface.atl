@@ -335,6 +335,7 @@ lazy rule SelectAttribute {
 rule SelectionParameter {
 	from website : Website!SelectionParameter
 	to waf : WAF!SelectionParameter (
+		optional <- website.optional,
 		defaultValue <- website.defaultValue
 	)
 }

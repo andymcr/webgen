@@ -151,6 +151,8 @@
     <genClasses image="false" ecoreClass="website.ecore#//NamedElement">
       <genFeatures createChild="false" propertyCategory="Model" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//NamedElement/name"/>
+      <genFeatures createChild="false" propertyCategory="Name" ecoreFeature="ecore:EAttribute website.ecore#//NamedElement/singletonName"/>
+      <genFeatures createChild="false" propertyCategory="Name" ecoreFeature="ecore:EAttribute website.ecore#//NamedElement/pluralisedName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//NamedDisplayElement">
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//NamedDisplayElement/displayLabel"/>
@@ -388,6 +390,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//SelectionField"/>
     <genClasses ecoreClass="website.ecore#//SelectionParameter">
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//SelectionParameter/optional"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//SelectionParameter/defaultValue"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//BusinessOperation">

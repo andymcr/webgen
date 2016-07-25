@@ -13,6 +13,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.SelectionParameter#isOptional <em>Optional</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.SelectionParameter#getDefaultValue <em>Default Value</em>}</li>
  * </ul>
  *
@@ -21,6 +22,32 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * @generated
  */
 public interface SelectionParameter extends NamedElement {
+	/**
+	 * Returns the value of the '<em><b>Optional</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Optional</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Optional</em>' attribute.
+	 * @see #setOptional(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelectionParameter_Optional()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isOptional();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.SelectionParameter#isOptional <em>Optional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Optional</em>' attribute.
+	 * @see #isOptional()
+	 * @generated
+	 */
+	void setOptional(boolean value);
+
 	/**
 	 * Returns the value of the '<em><b>Default Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->

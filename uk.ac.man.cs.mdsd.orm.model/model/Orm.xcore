@@ -61,6 +61,8 @@ enum OrmTechnologies {
 abstract class NamedElement {
 	@GenModel(property="None")
 	String[1] name
+	String[1] singletonName
+	String[1] pluralisedName
 }
 
 abstract class NamedDisplayElement extends NamedElement {

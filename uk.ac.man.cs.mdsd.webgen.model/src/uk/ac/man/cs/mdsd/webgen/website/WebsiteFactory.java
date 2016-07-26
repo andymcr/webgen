@@ -386,6 +386,24 @@ public interface WebsiteFactory extends EFactory {
 	UnitSupportAction createUnitSupportAction();
 
 	/**
+	 * Returns a new object of class '<em>Key Actual</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Key Actual</em>'.
+	 * @generated
+	 */
+	KeyActual createKeyActual();
+
+	/**
+	 * Returns a new object of class '<em>Child Path Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child Path Reference</em>'.
+	 * @generated
+	 */
+	ChildPathReference createChildPathReference();
+
+	/**
 	 * Returns a new object of class '<em>Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -645,6 +663,15 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	FeatureReference createFeatureReference();
+
+	/**
+	 * Returns a new object of class '<em>Route Parameter Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Route Parameter Reference</em>'.
+	 * @generated
+	 */
+	RouteParameterReference createRouteParameterReference();
 
 	/**
 	 * Returns a new object of class '<em>Parameter Reference</em>'.

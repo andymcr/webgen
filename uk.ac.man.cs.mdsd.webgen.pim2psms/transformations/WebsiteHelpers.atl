@@ -196,6 +196,25 @@ helper context Website!Feature def: findOrmEntityOrView() : ORM!EntityOrView
 helper context ORM!EntityOrView def: getOrmFeature(featureName : String) : ORM!Feature
 	= self.features->any(f | f.name = featureName);
 
+helper context Website!Feature def: findOrmFeature() : ORM!Feature
+	= if self.oclIsKindOf(Website!Attribute) then
+			self.findOrmAttribute()
+		else
+			self.findOrmAssociation()
+		endif;
+
+helper context Website!Attribute def: findOrmAttribute() : ORM!Attribute
+	= self.findOrmEntityOrView().getOrmFeature(self.name);
+
+helper context Website!Association def: findOrmAssociation(entityOrView : Website!EntityOrView) : ORM!Association
+	= let name : String
+		= if entityOrView.features->includes(self) then
+				self.name
+			else
+				self.targetFeatureName()
+			endif
+		in self.findOrmEntityOrView(entityOrView).getOrmFeature(name);
+
 helper context ORM!EntityOrView def: getOrmLabel(labelName : String) : ORM!ModelLabel
 	= self.labels->any(l | l.name = labelName);
 

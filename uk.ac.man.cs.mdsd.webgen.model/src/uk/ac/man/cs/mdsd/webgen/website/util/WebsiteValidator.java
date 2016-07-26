@@ -252,6 +252,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateCaptchaField((CaptchaField)value, diagnostics, context);
 			case WebsitePackage.UNIT_SUPPORT_ACTION:
 				return validateUnitSupportAction((UnitSupportAction)value, diagnostics, context);
+			case WebsitePackage.PATH_REFERENCE_ELEMENT:
+				return validatePathReferenceElement((PathReferenceElement)value, diagnostics, context);
+			case WebsitePackage.KEY_ACTUAL:
+				return validateKeyActual((KeyActual)value, diagnostics, context);
+			case WebsitePackage.CHILD_PATH_REFERENCE:
+				return validateChildPathReference((ChildPathReference)value, diagnostics, context);
 			case WebsitePackage.EDIT_UNIT:
 				return validateEditUnit((EditUnit)value, diagnostics, context);
 			case WebsitePackage.CREATE_UNIT:
@@ -296,6 +302,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateModelReference((ModelReference)value, diagnostics, context);
 			case WebsitePackage.FEATURE_REFERENCE:
 				return validateFeatureReference((FeatureReference)value, diagnostics, context);
+			case WebsitePackage.ROUTE_PARAMETER_REFERENCE:
+				return validateRouteParameterReference((RouteParameterReference)value, diagnostics, context);
 			case WebsitePackage.PARAMETER_REFERENCE:
 				return validateParameterReference((ParameterReference)value, diagnostics, context);
 			case WebsitePackage.CURRENT_USER_REFERENCE:
@@ -2012,6 +2020,33 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validatePathReferenceElement(PathReferenceElement pathReferenceElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(pathReferenceElement, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKeyActual(KeyActual keyActual, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(keyActual, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChildPathReference(ChildPathReference childPathReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(childPathReference, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateEditUnit(EditUnit editUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(editUnit, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(editUnit, diagnostics, context);
@@ -2733,6 +2768,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 */
 	public boolean validateFeatureReference(FeatureReference featureReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(featureReference, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRouteParameterReference(RouteParameterReference routeParameterReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(routeParameterReference, diagnostics, context);
 	}
 
 	/**

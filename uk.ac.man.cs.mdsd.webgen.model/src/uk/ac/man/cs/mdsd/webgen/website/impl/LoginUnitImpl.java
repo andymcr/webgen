@@ -26,6 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.KeyActual;
 import uk.ac.man.cs.mdsd.webgen.website.LoginUnit;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
@@ -56,6 +57,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getSupportActions <em>Support Actions</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getKeyActuals <em>Key Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#isNoRouteParameters <em>No Route Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getFooter <em>Footer</em>}</li>
@@ -283,6 +285,16 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * @ordered
 	 */
 	protected EList<UnitSupportAction> supportActions;
+
+	/**
+	 * The cached value of the '{@link #getKeyActuals() <em>Key Actuals</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeyActuals()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<KeyActual> keyActuals;
 
 	/**
 	 * The default value of the '{@link #isNoRouteParameters() <em>No Route Parameters</em>}' attribute.
@@ -824,6 +836,18 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<KeyActual> getKeyActuals() {
+		if (keyActuals == null) {
+			keyActuals = new EObjectContainmentWithInverseEList<KeyActual>(KeyActual.class, this, WebsitePackage.LOGIN_UNIT__KEY_ACTUALS, WebsitePackage.KEY_ACTUAL__CONTAINER);
+		}
+		return keyActuals;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isNoRouteParameters() {
 		return noRouteParameters;
 	}
@@ -1124,6 +1148,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return basicSetDisplayedOn((UnitContainer)otherEnd, msgs);
 			case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDisplayFields()).basicAdd(otherEnd, msgs);
+			case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getKeyActuals()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -1142,6 +1168,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				return ((InternalEList<?>)getSupportActions()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS:
+				return ((InternalEList<?>)getKeyActuals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1194,6 +1222,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return getDisplayFields();
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
+			case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS:
+				return getKeyActuals();
 			case WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS:
 				return isNoRouteParameters();
 			case WebsitePackage.LOGIN_UNIT__HEADER:
@@ -1275,6 +1305,10 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				getSupportActions().addAll((Collection<? extends UnitSupportAction>)newValue);
+				return;
+			case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS:
+				getKeyActuals().clear();
+				getKeyActuals().addAll((Collection<? extends KeyActual>)newValue);
 				return;
 			case WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS:
 				setNoRouteParameters((Boolean)newValue);
@@ -1366,6 +1400,9 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				return;
+			case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS:
+				getKeyActuals().clear();
+				return;
 			case WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS:
 				setNoRouteParameters(NO_ROUTE_PARAMETERS_EDEFAULT);
 				return;
@@ -1443,6 +1480,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return displayFields != null && !displayFields.isEmpty();
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
+			case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS:
+				return keyActuals != null && !keyActuals.isEmpty();
 			case WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS:
 				return noRouteParameters != NO_ROUTE_PARAMETERS_EDEFAULT;
 			case WebsitePackage.LOGIN_UNIT__HEADER:
@@ -1510,6 +1549,7 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.LOGIN_UNIT__ENTITIES: return WebsitePackage.DYNAMIC_UNIT__ENTITIES;
 				case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS: return WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS: return WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
+				case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS: return WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS;
 				case WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS: return WebsitePackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS;
 				case WebsitePackage.LOGIN_UNIT__HEADER: return WebsitePackage.DYNAMIC_UNIT__HEADER;
 				case WebsitePackage.LOGIN_UNIT__FOOTER: return WebsitePackage.DYNAMIC_UNIT__FOOTER;
@@ -1569,6 +1609,7 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.DYNAMIC_UNIT__ENTITIES: return WebsitePackage.LOGIN_UNIT__ENTITIES;
 				case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS;
+				case WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS: return WebsitePackage.LOGIN_UNIT__KEY_ACTUALS;
 				case WebsitePackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS: return WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER: return WebsitePackage.LOGIN_UNIT__HEADER;
 				case WebsitePackage.DYNAMIC_UNIT__FOOTER: return WebsitePackage.LOGIN_UNIT__FOOTER;

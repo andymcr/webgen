@@ -116,7 +116,6 @@ abstract class EntityOrView extends Classifier {
 abstract class Feature extends NamedDisplayElement {
 	container EntityOrView[1] partOf opposite features
 	boolean[1] encodeUriKey = "false"
-	refers Feature uriKeyValueFrom
 	boolean[1] serializationExpose = "true"
 	String[] serializationGroups
 }

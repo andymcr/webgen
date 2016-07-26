@@ -257,6 +257,11 @@ public class UnitElementItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
+				 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_ELEMENT__DEFAULT_VALUE,
 				 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add

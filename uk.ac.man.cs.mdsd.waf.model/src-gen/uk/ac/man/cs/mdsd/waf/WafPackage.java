@@ -2683,13 +2683,22 @@ public interface WafPackage extends EPackage {
 	int DYNAMIC_UNIT__SUPPORT_ACTIONS = CONTENT_UNIT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__KEY_ACTUALS = CONTENT_UNIT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__NO_ROUTE_PARAMETERS = CONTENT_UNIT_FEATURE_COUNT + 3;
+	int DYNAMIC_UNIT__NO_ROUTE_PARAMETERS = CONTENT_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -2698,7 +2707,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 4;
+	int DYNAMIC_UNIT__HEADER = CONTENT_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -2707,7 +2716,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 5;
+	int DYNAMIC_UNIT__FOOTER = CONTENT_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2716,7 +2725,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 6;
+	int DYNAMIC_UNIT__HEADER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -2725,7 +2734,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 7;
+	int DYNAMIC_UNIT__CONTROL_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -2734,7 +2743,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 8;
+	int DYNAMIC_UNIT__FOOTER_CLASS = CONTENT_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -2743,7 +2752,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 9;
+	int DYNAMIC_UNIT__ERROR_CLASS = CONTENT_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Dynamic Unit</em>' class.
@@ -2752,7 +2761,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 10;
+	int DYNAMIC_UNIT_FEATURE_COUNT = CONTENT_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Unit</em>' class.
@@ -2846,6 +2855,171 @@ public interface WafPackage extends EPackage {
 	int UNIT_SUPPORT_ACTION_OPERATION_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PathReferenceElement <em>Path Reference Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.PathReferenceElement
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPathReferenceElement()
+	 * @generated
+	 */
+	int PATH_REFERENCE_ELEMENT = 29;
+
+	/**
+	 * The feature id for the '<em><b>Actual</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_REFERENCE_ELEMENT__ACTUAL = 0;
+
+	/**
+	 * The feature id for the '<em><b>Child Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_REFERENCE_ELEMENT__CHILD_REFERENCE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Path Reference Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_REFERENCE_ELEMENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Path Reference Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_REFERENCE_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.KeyActualImpl <em>Key Actual</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.KeyActualImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getKeyActual()
+	 * @generated
+	 */
+	int KEY_ACTUAL = 30;
+
+	/**
+	 * The feature id for the '<em><b>Actual</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_ACTUAL__ACTUAL = PATH_REFERENCE_ELEMENT__ACTUAL;
+
+	/**
+	 * The feature id for the '<em><b>Child Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_ACTUAL__CHILD_REFERENCE = PATH_REFERENCE_ELEMENT__CHILD_REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_ACTUAL__CONTAINER = PATH_REFERENCE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_ACTUAL__KEY = PATH_REFERENCE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Key Actual</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_ACTUAL_FEATURE_COUNT = PATH_REFERENCE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Key Actual</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_ACTUAL_OPERATION_COUNT = PATH_REFERENCE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathReferenceImpl <em>Child Path Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathReference()
+	 * @generated
+	 */
+	int CHILD_PATH_REFERENCE = 31;
+
+	/**
+	 * The feature id for the '<em><b>Actual</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_REFERENCE__ACTUAL = PATH_REFERENCE_ELEMENT__ACTUAL;
+
+	/**
+	 * The feature id for the '<em><b>Child Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_REFERENCE__CHILD_REFERENCE = PATH_REFERENCE_ELEMENT__CHILD_REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_REFERENCE__PARENT = PATH_REFERENCE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Child Path Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_REFERENCE_FEATURE_COUNT = PATH_REFERENCE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Child Path Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_REFERENCE_OPERATION_COUNT = PATH_REFERENCE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.UnitField <em>Unit Field</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2853,7 +3027,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitField()
 	 * @generated
 	 */
-	int UNIT_FIELD = 29;
+	int UNIT_FIELD = 32;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2944,7 +3118,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitFeature()
 	 * @generated
 	 */
-	int UNIT_FEATURE = 30;
+	int UNIT_FEATURE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3116,7 +3290,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitAttribute()
 	 * @generated
 	 */
-	int UNIT_ATTRIBUTE = 31;
+	int UNIT_ATTRIBUTE = 34;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3342,7 +3516,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUnitAssociation()
 	 * @generated
 	 */
-	int UNIT_ASSOCIATION = 32;
+	int UNIT_ASSOCIATION = 35;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3577,7 +3751,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildFeature()
 	 * @generated
 	 */
-	int CHILD_FEATURE = 33;
+	int CHILD_FEATURE = 36;
 
 	/**
 	 * The number of structural features of the '<em>Child Feature</em>' class.
@@ -3605,7 +3779,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildAttribute()
 	 * @generated
 	 */
-	int CHILD_ATTRIBUTE = 34;
+	int CHILD_ATTRIBUTE = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3651,7 +3825,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildAssociation()
 	 * @generated
 	 */
-	int CHILD_ASSOCIATION = 35;
+	int CHILD_ASSOCIATION = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3706,7 +3880,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInterfaceField()
 	 * @generated
 	 */
-	int INTERFACE_FIELD = 36;
+	int INTERFACE_FIELD = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3887,7 +4061,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataTypeField()
 	 * @generated
 	 */
-	int DATA_TYPE_FIELD = 37;
+	int DATA_TYPE_FIELD = 40;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4104,7 +4278,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDateField()
 	 * @generated
 	 */
-	int DATE_FIELD = 38;
+	int DATE_FIELD = 41;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4303,7 +4477,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCaptchaField()
 	 * @generated
 	 */
-	int CAPTCHA_FIELD = 39;
+	int CAPTCHA_FIELD = 42;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4484,7 +4658,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getEditUnit()
 	 * @generated
 	 */
-	int EDIT_UNIT = 40;
+	int EDIT_UNIT = 43;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4620,6 +4794,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDIT_UNIT__SUPPORT_ACTIONS = DYNAMIC_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__KEY_ACTUALS = DYNAMIC_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
@@ -4773,7 +4956,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUnit()
 	 * @generated
 	 */
-	int CREATE_UNIT = 41;
+	int CREATE_UNIT = 44;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4909,6 +5092,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT__SUPPORT_ACTIONS = EDIT_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__KEY_ACTUALS = EDIT_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
@@ -5062,7 +5254,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCreateUpdateUnit()
 	 * @generated
 	 */
-	int CREATE_UPDATE_UNIT = 42;
+	int CREATE_UPDATE_UNIT = 45;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5198,6 +5390,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__SUPPORT_ACTIONS = EDIT_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__KEY_ACTUALS = EDIT_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
@@ -5369,7 +5570,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getMapUnit()
 	 * @generated
 	 */
-	int MAP_UNIT = 43;
+	int MAP_UNIT = 46;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5505,6 +5706,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__SUPPORT_ACTIONS = EDIT_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__KEY_ACTUALS = EDIT_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
@@ -5694,7 +5904,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getUpdateUnit()
 	 * @generated
 	 */
-	int UPDATE_UNIT = 44;
+	int UPDATE_UNIT = 47;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5830,6 +6040,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UPDATE_UNIT__SUPPORT_ACTIONS = EDIT_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__KEY_ACTUALS = EDIT_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
@@ -5983,7 +6202,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDataUnit()
 	 * @generated
 	 */
-	int DATA_UNIT = 45;
+	int DATA_UNIT = 48;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6121,6 +6340,15 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__SUPPORT_ACTIONS = DYNAMIC_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__KEY_ACTUALS = DYNAMIC_UNIT__KEY_ACTUALS;
+
+	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6227,7 +6455,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDetailsUnit()
 	 * @generated
 	 */
-	int DETAILS_UNIT = 46;
+	int DETAILS_UNIT = 49;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6365,6 +6593,15 @@ public interface WafPackage extends EPackage {
 	int DETAILS_UNIT__SUPPORT_ACTIONS = DATA_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__KEY_ACTUALS = DATA_UNIT__KEY_ACTUALS;
+
+	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6489,7 +6726,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexUnit()
 	 * @generated
 	 */
-	int INDEX_UNIT = 47;
+	int INDEX_UNIT = 50;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6625,6 +6862,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__SUPPORT_ACTIONS = DATA_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__KEY_ACTUALS = DATA_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
@@ -6841,7 +7087,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexGridUnit()
 	 * @generated
 	 */
-	int INDEX_GRID_UNIT = 48;
+	int INDEX_GRID_UNIT = 51;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6977,6 +7223,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_GRID_UNIT__SUPPORT_ACTIONS = INDEX_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__KEY_ACTUALS = INDEX_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
@@ -7193,7 +7448,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexPageDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_PAGE_DIRECTION_UNIT = 49;
+	int INDEX_PAGE_DIRECTION_UNIT = 52;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7329,6 +7584,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__SUPPORT_ACTIONS = INDEX_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__KEY_ACTUALS = INDEX_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
@@ -7545,7 +7809,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexLineDirectionUnit()
 	 * @generated
 	 */
-	int INDEX_LINE_DIRECTION_UNIT = 50;
+	int INDEX_LINE_DIRECTION_UNIT = 53;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7681,6 +7945,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_LINE_DIRECTION_UNIT__SUPPORT_ACTIONS = INDEX_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__KEY_ACTUALS = INDEX_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
@@ -7897,7 +8170,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 51;
+	int CONTROL_UNIT = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8035,6 +8308,15 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__SUPPORT_ACTIONS = DYNAMIC_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__KEY_ACTUALS = DYNAMIC_UNIT__KEY_ACTUALS;
+
+	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8150,7 +8432,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 52;
+	int SEARCH_UNIT = 55;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8288,6 +8570,15 @@ public interface WafPackage extends EPackage {
 	int SEARCH_UNIT__SUPPORT_ACTIONS = CONTROL_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__KEY_ACTUALS = CONTROL_UNIT__KEY_ACTUALS;
+
+	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8412,7 +8703,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getActionUnit()
 	 * @generated
 	 */
-	int ACTION_UNIT = 53;
+	int ACTION_UNIT = 56;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8550,6 +8841,15 @@ public interface WafPackage extends EPackage {
 	int ACTION_UNIT__SUPPORT_ACTIONS = CONTROL_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__KEY_ACTUALS = CONTROL_UNIT__KEY_ACTUALS;
+
+	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8665,7 +8965,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 54;
+	int AUTHENTICATION_UNIT = 57;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -8693,7 +8993,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 55;
+	int REGISTRATION_UNIT = 58;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8829,6 +9129,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int REGISTRATION_UNIT__SUPPORT_ACTIONS = EDIT_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__KEY_ACTUALS = EDIT_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
@@ -8991,7 +9300,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 56;
+	int LOGIN_UNIT = 59;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9127,6 +9436,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN_UNIT__SUPPORT_ACTIONS = CONTROL_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__KEY_ACTUALS = CONTROL_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
@@ -9289,7 +9607,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 57;
+	int FORGOTTEN_PASSWORD_UNIT = 60;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9427,6 +9745,15 @@ public interface WafPackage extends EPackage {
 	int FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS = CONTROL_UNIT__SUPPORT_ACTIONS;
 
 	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS = CONTROL_UNIT__KEY_ACTUALS;
+
+	/**
 	 * The feature id for the '<em><b>No Route Parameters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9560,7 +9887,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 58;
+	int INLINE_ACTION_CONTAINER = 61;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -9597,7 +9924,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 59;
+	int INLINE_ACTION = 62;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9733,7 +10060,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 60;
+	int SELECT_ACTION = 63;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9878,7 +10205,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 61;
+	int DELETE_ACTION = 64;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10041,7 +10368,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 62;
+	int FEATURE_SUPPORT_ACTION = 65;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10213,7 +10540,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelReference()
 	 * @generated
 	 */
-	int MODEL_REFERENCE = 63;
+	int MODEL_REFERENCE = 66;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' reference.
@@ -10250,7 +10577,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 64;
+	int FEATURE_REFERENCE = 67;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -10287,7 +10614,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getParameterReference()
 	 * @generated
 	 */
-	int PARAMETER_REFERENCE = 65;
+	int PARAMETER_REFERENCE = 68;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -10317,6 +10644,43 @@ public interface WafPackage extends EPackage {
 	int PARAMETER_REFERENCE_OPERATION_COUNT = CriteriaPackage.PATH_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.RouteParameterReferenceImpl <em>Route Parameter Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.RouteParameterReferenceImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRouteParameterReference()
+	 * @generated
+	 */
+	int ROUTE_PARAMETER_REFERENCE = 69;
+
+	/**
+	 * The feature id for the '<em><b>Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE_PARAMETER_REFERENCE__PARAMETER = CriteriaPackage.PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Route Parameter Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE_PARAMETER_REFERENCE_FEATURE_COUNT = CriteriaPackage.PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Route Parameter Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROUTE_PARAMETER_REFERENCE_OPERATION_COUNT = CriteriaPackage.PATH_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.CurrentUserReferenceImpl <em>Current User Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10324,7 +10688,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCurrentUserReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 66;
+	int CURRENT_USER_REFERENCE = 70;
 
 	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
@@ -10352,7 +10716,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 67;
+	int FRAMEWORK_TECHNOLOGIES = 71;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -10362,7 +10726,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 68;
+	int AJAX_TECHNOLOGIES = 72;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -10372,7 +10736,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 69;
+	int AUTHENTICATION_KEY_TYPES = 73;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.OperationResultTypes <em>Operation Result Types</em>}' enum.
@@ -10382,7 +10746,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 70;
+	int OPERATION_RESULT_TYPES = 74;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -10392,7 +10756,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 71;
+	int PAGE_TOP_MENU_OPTIONS = 75;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -10402,7 +10766,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 72;
+	int COLLECTION_DISPLAY_OPTIONS = 76;
 
 
 	/**
@@ -11841,6 +12205,17 @@ public interface WafPackage extends EPackage {
 	EReference getDynamicUnit_SupportActions();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getKeyActuals <em>Key Actuals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Key Actuals</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.DynamicUnit#getKeyActuals()
+	 * @see #getDynamicUnit()
+	 * @generated
+	 */
+	EReference getDynamicUnit_KeyActuals();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#isNoRouteParameters <em>No Route Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11948,6 +12323,91 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUnitSupportAction_ConfirmMessage();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.PathReferenceElement <em>Path Reference Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Path Reference Element</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.PathReferenceElement
+	 * @generated
+	 */
+	EClass getPathReferenceElement();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.PathReferenceElement#getActual <em>Actual</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Actual</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.PathReferenceElement#getActual()
+	 * @see #getPathReferenceElement()
+	 * @generated
+	 */
+	EReference getPathReferenceElement_Actual();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.PathReferenceElement#getChildReference <em>Child Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Child Reference</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.PathReferenceElement#getChildReference()
+	 * @see #getPathReferenceElement()
+	 * @generated
+	 */
+	EReference getPathReferenceElement_ChildReference();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.KeyActual <em>Key Actual</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Key Actual</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.KeyActual
+	 * @generated
+	 */
+	EClass getKeyActual();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.waf.KeyActual#getContainer <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Container</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.KeyActual#getContainer()
+	 * @see #getKeyActual()
+	 * @generated
+	 */
+	EReference getKeyActual_Container();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.KeyActual#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Key</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.KeyActual#getKey()
+	 * @see #getKeyActual()
+	 * @generated
+	 */
+	EReference getKeyActual_Key();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ChildPathReference <em>Child Path Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Child Path Reference</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPathReference
+	 * @generated
+	 */
+	EClass getChildPathReference();
+
+	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.waf.ChildPathReference#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPathReference#getParent()
+	 * @see #getChildPathReference()
+	 * @generated
+	 */
+	EReference getChildPathReference_Parent();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.UnitField <em>Unit Field</em>}'.
@@ -13464,6 +13924,27 @@ public interface WafPackage extends EPackage {
 	EReference getParameterReference_Parameter();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.RouteParameterReference <em>Route Parameter Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Route Parameter Reference</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.RouteParameterReference
+	 * @generated
+	 */
+	EClass getRouteParameterReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.RouteParameterReference#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parameter</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.RouteParameterReference#getParameter()
+	 * @see #getRouteParameterReference()
+	 * @generated
+	 */
+	EReference getRouteParameterReference_Parameter();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.CurrentUserReference <em>Current User Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14677,6 +15158,14 @@ public interface WafPackage extends EPackage {
 		EReference DYNAMIC_UNIT__SUPPORT_ACTIONS = eINSTANCE.getDynamicUnit_SupportActions();
 
 		/**
+		 * The meta object literal for the '<em><b>Key Actuals</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DYNAMIC_UNIT__KEY_ACTUALS = eINSTANCE.getDynamicUnit_KeyActuals();
+
+		/**
 		 * The meta object literal for the '<em><b>No Route Parameters</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -14757,6 +15246,76 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE = eINSTANCE.getUnitSupportAction_ConfirmMessage();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.PathReferenceElement <em>Path Reference Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.PathReferenceElement
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPathReferenceElement()
+		 * @generated
+		 */
+		EClass PATH_REFERENCE_ELEMENT = eINSTANCE.getPathReferenceElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Actual</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATH_REFERENCE_ELEMENT__ACTUAL = eINSTANCE.getPathReferenceElement_Actual();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Reference</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATH_REFERENCE_ELEMENT__CHILD_REFERENCE = eINSTANCE.getPathReferenceElement_ChildReference();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.KeyActualImpl <em>Key Actual</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.KeyActualImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getKeyActual()
+		 * @generated
+		 */
+		EClass KEY_ACTUAL = eINSTANCE.getKeyActual();
+
+		/**
+		 * The meta object literal for the '<em><b>Container</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference KEY_ACTUAL__CONTAINER = eINSTANCE.getKeyActual_Container();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference KEY_ACTUAL__KEY = eINSTANCE.getKeyActual_Key();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathReferenceImpl <em>Child Path Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ChildPathReferenceImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildPathReference()
+		 * @generated
+		 */
+		EClass CHILD_PATH_REFERENCE = eINSTANCE.getChildPathReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHILD_PATH_REFERENCE__PARENT = eINSTANCE.getChildPathReference_Parent();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.UnitField <em>Unit Field</em>}' class.
@@ -15959,6 +16518,24 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARAMETER_REFERENCE__PARAMETER = eINSTANCE.getParameterReference_Parameter();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.RouteParameterReferenceImpl <em>Route Parameter Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.RouteParameterReferenceImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRouteParameterReference()
+		 * @generated
+		 */
+		EClass ROUTE_PARAMETER_REFERENCE = eINSTANCE.getRouteParameterReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROUTE_PARAMETER_REFERENCE__PARAMETER = eINSTANCE.getRouteParameterReference_Parameter();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.CurrentUserReferenceImpl <em>Current User Reference</em>}' class.

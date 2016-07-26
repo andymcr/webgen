@@ -4,7 +4,6 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -16,7 +15,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.EntityFeature;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -53,7 +51,6 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			addSerializationGroupsPropertyDescriptor(object);
 			addSerializationExposePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
-			addUriKeyValueFromPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
 			addOrderedPropertyDescriptor(object);
@@ -195,36 +192,6 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Uri Key Value From feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addUriKeyValueFromPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_Feature_uriKeyValueFrom_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Feature_uriKeyValueFrom_feature", "_UI_Feature_type"),
-			WebsitePackage.Literals.FEATURE__URI_KEY_VALUE_FROM,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof EntityFeature) {
-						final EntityOrView user = getUser(object);
-						if (user != null) {
-							return user.getAllFeatures();
-						}
-					}
-
-					return Collections.emptyList();
-				}
-			});
 	}
 
 	/**

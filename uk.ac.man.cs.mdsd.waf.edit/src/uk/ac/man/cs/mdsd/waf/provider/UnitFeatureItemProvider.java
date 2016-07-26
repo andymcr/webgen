@@ -490,6 +490,11 @@ public class UnitFeatureItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 WafFactory.eINSTANCE.createRouteParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add

@@ -17,8 +17,7 @@ abstract rule EntityOrView {
 				= thisModule.findWebsiteEntityOrView(partialOrm.name)
 				in entityOrView.keys->collect(k |
 					if entityOrView.features->includes(k) then
-						thisModule.findOrmEntityOrView(partialOrm.name)
-							.getOrmFeature(k.name)
+						k.findOrmFeature()
 					else
 						thisModule.findOrmEntityOrView(k.targetEntity.name)
 							.getOrmFeature(k.targetFeatureName)

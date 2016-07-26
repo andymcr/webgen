@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.waf.CasAuthentication;
 import uk.ac.man.cs.mdsd.waf.ChildAssociation;
 import uk.ac.man.cs.mdsd.waf.ChildAttribute;
 import uk.ac.man.cs.mdsd.waf.ChildFeature;
+import uk.ac.man.cs.mdsd.waf.ChildPathReference;
 import uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
 import uk.ac.man.cs.mdsd.waf.ControlUnit;
@@ -58,6 +59,7 @@ import uk.ac.man.cs.mdsd.waf.IndexUnit;
 import uk.ac.man.cs.mdsd.waf.InlineAction;
 import uk.ac.man.cs.mdsd.waf.InlineActionContainer;
 import uk.ac.man.cs.mdsd.waf.InterfaceField;
+import uk.ac.man.cs.mdsd.waf.KeyActual;
 import uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem;
 import uk.ac.man.cs.mdsd.waf.LoginUnit;
 import uk.ac.man.cs.mdsd.waf.MapUnit;
@@ -68,9 +70,11 @@ import uk.ac.man.cs.mdsd.waf.OperationResultTypes;
 import uk.ac.man.cs.mdsd.waf.Page;
 import uk.ac.man.cs.mdsd.waf.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.waf.ParameterReference;
+import uk.ac.man.cs.mdsd.waf.PathReferenceElement;
 import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.QueryParameter;
 import uk.ac.man.cs.mdsd.waf.RegistrationUnit;
+import uk.ac.man.cs.mdsd.waf.RouteParameterReference;
 import uk.ac.man.cs.mdsd.waf.SearchUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.SelectAttribute;
@@ -302,6 +306,27 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass unitSupportActionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pathReferenceElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass keyActualEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass childPathReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -561,6 +586,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass parameterReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass routeParameterReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1877,8 +1909,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_NoRouteParameters() {
-		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(3);
+	public EReference getDynamicUnit_KeyActuals() {
+		return (EReference)dynamicUnitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1886,7 +1918,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_Header() {
+	public EAttribute getDynamicUnit_NoRouteParameters() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1895,7 +1927,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_Footer() {
+	public EAttribute getDynamicUnit_Header() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1904,7 +1936,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_HeaderClass() {
+	public EAttribute getDynamicUnit_Footer() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1913,7 +1945,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_ControlClass() {
+	public EAttribute getDynamicUnit_HeaderClass() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1922,7 +1954,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_FooterClass() {
+	public EAttribute getDynamicUnit_ControlClass() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1931,8 +1963,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDynamicUnit_ErrorClass() {
+	public EAttribute getDynamicUnit_FooterClass() {
 		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDynamicUnit_ErrorClass() {
+		return (EAttribute)dynamicUnitEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1960,6 +2001,78 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EAttribute getUnitSupportAction_ConfirmMessage() {
 		return (EAttribute)unitSupportActionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPathReferenceElement() {
+		return pathReferenceElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPathReferenceElement_Actual() {
+		return (EReference)pathReferenceElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPathReferenceElement_ChildReference() {
+		return (EReference)pathReferenceElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getKeyActual() {
+		return keyActualEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getKeyActual_Container() {
+		return (EReference)keyActualEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getKeyActual_Key() {
+		return (EReference)keyActualEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getChildPathReference() {
+		return childPathReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChildPathReference_Parent() {
+		return (EReference)childPathReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -3236,6 +3349,24 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRouteParameterReference() {
+		return routeParameterReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRouteParameterReference_Parameter() {
+		return (EReference)routeParameterReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCurrentUserReference() {
 		return currentUserReferenceEClass;
 	}
@@ -3482,6 +3613,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__ENTITIES);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__DISPLAY_FIELDS);
 		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__SUPPORT_ACTIONS);
+		createEReference(dynamicUnitEClass, DYNAMIC_UNIT__KEY_ACTUALS);
 		createEAttribute(dynamicUnitEClass, DYNAMIC_UNIT__NO_ROUTE_PARAMETERS);
 		createEAttribute(dynamicUnitEClass, DYNAMIC_UNIT__HEADER);
 		createEAttribute(dynamicUnitEClass, DYNAMIC_UNIT__FOOTER);
@@ -3493,6 +3625,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		unitSupportActionEClass = createEClass(UNIT_SUPPORT_ACTION);
 		createEAttribute(unitSupportActionEClass, UNIT_SUPPORT_ACTION__DISABLE);
 		createEAttribute(unitSupportActionEClass, UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE);
+
+		pathReferenceElementEClass = createEClass(PATH_REFERENCE_ELEMENT);
+		createEReference(pathReferenceElementEClass, PATH_REFERENCE_ELEMENT__ACTUAL);
+		createEReference(pathReferenceElementEClass, PATH_REFERENCE_ELEMENT__CHILD_REFERENCE);
+
+		keyActualEClass = createEClass(KEY_ACTUAL);
+		createEReference(keyActualEClass, KEY_ACTUAL__CONTAINER);
+		createEReference(keyActualEClass, KEY_ACTUAL__KEY);
+
+		childPathReferenceEClass = createEClass(CHILD_PATH_REFERENCE);
+		createEReference(childPathReferenceEClass, CHILD_PATH_REFERENCE__PARENT);
 
 		unitFieldEClass = createEClass(UNIT_FIELD);
 		createEReference(unitFieldEClass, UNIT_FIELD__DISPLAYED_ON);
@@ -3672,6 +3815,9 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		parameterReferenceEClass = createEClass(PARAMETER_REFERENCE);
 		createEReference(parameterReferenceEClass, PARAMETER_REFERENCE__PARAMETER);
 
+		routeParameterReferenceEClass = createEClass(ROUTE_PARAMETER_REFERENCE);
+		createEReference(routeParameterReferenceEClass, ROUTE_PARAMETER_REFERENCE__PARAMETER);
+
 		currentUserReferenceEClass = createEClass(CURRENT_USER_REFERENCE);
 
 		// Create enums
@@ -3742,6 +3888,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		staticUnitEClass.getESuperTypes().add(this.getContentUnit());
 		dynamicUnitEClass.getESuperTypes().add(this.getContentUnit());
 		unitSupportActionEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
+		keyActualEClass.getESuperTypes().add(this.getPathReferenceElement());
+		childPathReferenceEClass.getESuperTypes().add(this.getPathReferenceElement());
 		unitFieldEClass.getESuperTypes().add(this.getDisplayElement());
 		unitFeatureEClass.getESuperTypes().add(this.getUnitField());
 		unitFeatureEClass.getESuperTypes().add(this.getInlineActionContainer());
@@ -3787,6 +3935,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		modelReferenceEClass.getESuperTypes().add(theCriteriaPackage.getPath());
 		featureReferenceEClass.getESuperTypes().add(theCriteriaPackage.getPath());
 		parameterReferenceEClass.getESuperTypes().add(theCriteriaPackage.getPath());
+		routeParameterReferenceEClass.getESuperTypes().add(theCriteriaPackage.getPath());
 		currentUserReferenceEClass.getESuperTypes().add(theCriteriaPackage.getPath());
 
 		// Initialize classes, features, and operations; add parameters
@@ -3950,6 +4099,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getDynamicUnit_Entities(), theOrmPackage.getEntityOrView(), null, "entities", null, 1, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_DisplayFields(), this.getUnitField(), this.getUnitField_DisplayedOn(), "displayFields", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDynamicUnit_SupportActions(), this.getUnitSupportAction(), null, "supportActions", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDynamicUnit_KeyActuals(), this.getKeyActual(), this.getKeyActual_Container(), "keyActuals", null, 0, -1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicUnit_NoRouteParameters(), theEcorePackage.getEBoolean(), "noRouteParameters", "false", 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicUnit_Header(), theEcorePackage.getEString(), "header", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDynamicUnit_Footer(), theEcorePackage.getEString(), "footer", null, 0, 1, DynamicUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3961,6 +4111,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(unitSupportActionEClass, UnitSupportAction.class, "UnitSupportAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnitSupportAction_Disable(), theEcorePackage.getEBoolean(), "disable", null, 0, 1, UnitSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnitSupportAction_ConfirmMessage(), theEcorePackage.getEString(), "confirmMessage", null, 0, 1, UnitSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pathReferenceElementEClass, PathReferenceElement.class, "PathReferenceElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPathReferenceElement_Actual(), theCriteriaPackage.getPath(), null, "actual", null, 1, 1, PathReferenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPathReferenceElement_ChildReference(), this.getChildPathReference(), this.getChildPathReference_Parent(), "childReference", null, 0, 1, PathReferenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(keyActualEClass, KeyActual.class, "KeyActual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getKeyActual_Container(), this.getDynamicUnit(), this.getDynamicUnit_KeyActuals(), "container", null, 1, 1, KeyActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getKeyActual_Key(), theOrmPackage.getFeature(), null, "key", null, 1, 1, KeyActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(childPathReferenceEClass, ChildPathReference.class, "ChildPathReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChildPathReference_Parent(), this.getPathReferenceElement(), this.getPathReferenceElement_ChildReference(), "parent", null, 1, 1, ChildPathReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitFieldEClass, UnitField.class, "UnitField", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitField_DisplayedOn(), this.getDynamicUnit(), this.getDynamicUnit_DisplayFields(), "displayedOn", null, 1, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4139,6 +4300,9 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(parameterReferenceEClass, ParameterReference.class, "ParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameterReference_Parameter(), this.getSelectionParameter(), null, "parameter", null, 1, 1, ParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(routeParameterReferenceEClass, RouteParameterReference.class, "RouteParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRouteParameterReference_Parameter(), theOrmPackage.getAttribute(), null, "parameter", null, 1, 1, RouteParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(currentUserReferenceEClass, CurrentUserReference.class, "CurrentUserReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

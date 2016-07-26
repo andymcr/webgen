@@ -586,6 +586,7 @@ public class ForgottenPasswordUnitItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
+			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__KEY_ACTUALS);
 		}
 		return childrenFeatures;
 	}
@@ -664,6 +665,7 @@ public class ForgottenPasswordUnitItemProvider
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -710,6 +712,11 @@ public class ForgottenPasswordUnitItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS,
 				 WebsiteFactory.eINSTANCE.createUnitSupportAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.DYNAMIC_UNIT__KEY_ACTUALS,
+				 WebsiteFactory.eINSTANCE.createKeyActual()));
 	}
 
 	/**

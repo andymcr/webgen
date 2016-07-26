@@ -312,6 +312,11 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add

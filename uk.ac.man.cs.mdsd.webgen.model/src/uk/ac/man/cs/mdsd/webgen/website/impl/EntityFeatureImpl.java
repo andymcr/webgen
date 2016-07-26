@@ -37,7 +37,6 @@ import uk.ac.man.cs.mdsd.webgen.website.isHasChoices;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getUriKeyValueFrom <em>Uri Key Value From</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isUnique <em>Unique</em>}</li>
@@ -160,16 +159,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * @ordered
 	 */
 	protected boolean encodeUriKey = ENCODE_URI_KEY_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getUriKeyValueFrom() <em>Uri Key Value From</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUriKeyValueFrom()
-	 * @generated
-	 * @ordered
-	 */
-	protected Feature uriKeyValueFrom;
 
 	/**
 	 * The default value of the '{@link #getCardinality() <em>Cardinality</em>}' attribute.
@@ -599,44 +588,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature getUriKeyValueFrom() {
-		if (uriKeyValueFrom != null && uriKeyValueFrom.eIsProxy()) {
-			InternalEObject oldUriKeyValueFrom = (InternalEObject)uriKeyValueFrom;
-			uriKeyValueFrom = (Feature)eResolveProxy(oldUriKeyValueFrom);
-			if (uriKeyValueFrom != oldUriKeyValueFrom) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.ENTITY_FEATURE__URI_KEY_VALUE_FROM, oldUriKeyValueFrom, uriKeyValueFrom));
-			}
-		}
-		return uriKeyValueFrom;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Feature basicGetUriKeyValueFrom() {
-		return uriKeyValueFrom;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setUriKeyValueFrom(Feature newUriKeyValueFrom) {
-		Feature oldUriKeyValueFrom = uriKeyValueFrom;
-		uriKeyValueFrom = newUriKeyValueFrom;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__URI_KEY_VALUE_FROM, oldUriKeyValueFrom, uriKeyValueFrom));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Entity getPartOf() {
 		if (eContainerFeatureID() != WebsitePackage.ENTITY_FEATURE__PART_OF) return null;
 		return (Entity)eInternalContainer();
@@ -737,9 +688,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return isSerializationExpose();
 			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				return isEncodeUriKey();
-			case WebsitePackage.ENTITY_FEATURE__URI_KEY_VALUE_FROM:
-				if (resolve) return getUriKeyValueFrom();
-				return basicGetUriKeyValueFrom();
 			case WebsitePackage.ENTITY_FEATURE__PART_OF:
 				return getPartOf();
 			case WebsitePackage.ENTITY_FEATURE__CARDINALITY:
@@ -787,9 +735,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return;
 			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey((Boolean)newValue);
-				return;
-			case WebsitePackage.ENTITY_FEATURE__URI_KEY_VALUE_FROM:
-				setUriKeyValueFrom((Feature)newValue);
 				return;
 			case WebsitePackage.ENTITY_FEATURE__PART_OF:
 				setPartOf((Entity)newValue);
@@ -845,9 +790,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
 				return;
-			case WebsitePackage.ENTITY_FEATURE__URI_KEY_VALUE_FROM:
-				setUriKeyValueFrom((Feature)null);
-				return;
 			case WebsitePackage.ENTITY_FEATURE__PART_OF:
 				setPartOf((Entity)null);
 				return;
@@ -896,8 +838,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
 			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
-			case WebsitePackage.ENTITY_FEATURE__URI_KEY_VALUE_FROM:
-				return uriKeyValueFrom != null;
 			case WebsitePackage.ENTITY_FEATURE__PART_OF:
 				return getPartOf() != null;
 			case WebsitePackage.ENTITY_FEATURE__CARDINALITY:
@@ -933,7 +873,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.FEATURE__SERIALIZATION_GROUPS;
 				case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.FEATURE__SERIALIZATION_EXPOSE;
 				case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY: return WebsitePackage.FEATURE__ENCODE_URI_KEY;
-				case WebsitePackage.ENTITY_FEATURE__URI_KEY_VALUE_FROM: return WebsitePackage.FEATURE__URI_KEY_VALUE_FROM;
 				default: return -1;
 			}
 		}
@@ -955,7 +894,6 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				case WebsitePackage.FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS;
 				case WebsitePackage.FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE;
 				case WebsitePackage.FEATURE__ENCODE_URI_KEY: return WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY;
-				case WebsitePackage.FEATURE__URI_KEY_VALUE_FROM: return WebsitePackage.ENTITY_FEATURE__URI_KEY_VALUE_FROM;
 				default: return -1;
 			}
 		}

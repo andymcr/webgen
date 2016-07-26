@@ -114,6 +114,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.DATE_FIELD: return createDateField();
 			case WebsitePackage.CAPTCHA_FIELD: return createCaptchaField();
 			case WebsitePackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
+			case WebsitePackage.KEY_ACTUAL: return createKeyActual();
+			case WebsitePackage.CHILD_PATH_REFERENCE: return createChildPathReference();
 			case WebsitePackage.CREATE_UNIT: return createCreateUnit();
 			case WebsitePackage.CREATE_UPDATE_UNIT: return createCreateUpdateUnit();
 			case WebsitePackage.UPDATE_UNIT: return createUpdateUnit();
@@ -130,6 +132,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.FEATURE_SUPPORT_ACTION: return createFeatureSupportAction();
 			case WebsitePackage.MODEL_REFERENCE: return createModelReference();
 			case WebsitePackage.FEATURE_REFERENCE: return createFeatureReference();
+			case WebsitePackage.ROUTE_PARAMETER_REFERENCE: return createRouteParameterReference();
 			case WebsitePackage.PARAMETER_REFERENCE: return createParameterReference();
 			case WebsitePackage.CURRENT_USER_REFERENCE: return createCurrentUserReference();
 			default:
@@ -616,6 +619,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public KeyActual createKeyActual() {
+		KeyActualImpl keyActual = new KeyActualImpl();
+		return keyActual;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildPathReference createChildPathReference() {
+		ChildPathReferenceImpl childPathReference = new ChildPathReferenceImpl();
+		return childPathReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Service createService() {
 		ServiceImpl service = new ServiceImpl();
 		return service;
@@ -899,6 +922,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public FeatureReference createFeatureReference() {
 		FeatureReferenceImpl featureReference = new FeatureReferenceImpl();
 		return featureReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RouteParameterReference createRouteParameterReference() {
+		RouteParameterReferenceImpl routeParameterReference = new RouteParameterReferenceImpl();
+		return routeParameterReference;
 	}
 
 	/**

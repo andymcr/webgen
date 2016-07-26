@@ -268,7 +268,6 @@
         defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="encodeUriKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uriKeyValueFrom" eType="#//Feature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true" interface="true"
       eSuperTypes="#//Feature #//Label #//SelectionField">
@@ -753,6 +752,8 @@
         eType="#//UnitField" containment="true" eOpposite="#//UnitField/displayedOn"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="supportActions" upperBound="-1"
         eType="#//UnitSupportAction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyActuals" upperBound="-1"
+        eType="#//KeyActual" containment="true" eOpposite="#//KeyActual/container"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="noRouteParameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -934,6 +935,23 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="disable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmMessage" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PathReferenceElement" abstract="true"
+      interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actual" lowerBound="1"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childReference" eType="#//ChildPathReference"
+        containment="true" eOpposite="#//ChildPathReference/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KeyActual" eSuperTypes="#//PathReferenceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1"
+        eType="#//DynamicUnit" eOpposite="#//DynamicUnit/keyActuals"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChildPathReference" eSuperTypes="#//PathReferenceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+        eType="#//PathReferenceElement" eOpposite="#//PathReferenceElement/childReference"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EditUnit" abstract="true" eSuperTypes="#//DynamicUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>
@@ -1146,6 +1164,16 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
         eType="#//Feature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RouteParameterReference" eSuperTypes="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if parameter.oclIsUndefined() then&#xD;&#xA;&#x9;''&#xD;&#xA;else if parameter.oclIsKindOf(EntityAttribute) then&#xD;&#xA;&#x9;parameter.oclAsType(EntityAttribute).name&#xD;&#xA;else&#xD;&#xA;&#x9;parameter.oclAsType(EncapsulatedAttribute).name&#xD;&#xA;endif endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+        eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterReference" eSuperTypes="../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

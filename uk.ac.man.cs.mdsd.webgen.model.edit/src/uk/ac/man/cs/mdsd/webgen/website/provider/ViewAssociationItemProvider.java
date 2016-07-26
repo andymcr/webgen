@@ -54,7 +54,6 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 			addSerializationGroupsPropertyDescriptor(object);
 			addSerializationExposePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
-			addUriKeyValueFromPropertyDescriptor(object);
 			addPseudoPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addSerializationMaxDepthPropertyDescriptor(object);
@@ -170,28 +169,6 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Uri Key Value From feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUriKeyValueFromPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Feature_uriKeyValueFrom_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_uriKeyValueFrom_feature", "_UI_Feature_type"),
-				 WebsitePackage.Literals.FEATURE__URI_KEY_VALUE_FROM,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

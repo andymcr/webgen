@@ -763,6 +763,26 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.PATH_REFERENCE_ELEMENT: {
+				PathReferenceElement pathReferenceElement = (PathReferenceElement)theEObject;
+				T result = casePathReferenceElement(pathReferenceElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.KEY_ACTUAL: {
+				KeyActual keyActual = (KeyActual)theEObject;
+				T result = caseKeyActual(keyActual);
+				if (result == null) result = casePathReferenceElement(keyActual);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.CHILD_PATH_REFERENCE: {
+				ChildPathReference childPathReference = (ChildPathReference)theEObject;
+				T result = caseChildPathReference(childPathReference);
+				if (result == null) result = casePathReferenceElement(childPathReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.EDIT_UNIT: {
 				EditUnit editUnit = (EditUnit)theEObject;
 				T result = caseEditUnit(editUnit);
@@ -982,6 +1002,14 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				T result = caseFeatureReference(featureReference);
 				if (result == null) result = casePath(featureReference);
 				if (result == null) result = caseExpression(featureReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.ROUTE_PARAMETER_REFERENCE: {
+				RouteParameterReference routeParameterReference = (RouteParameterReference)theEObject;
+				T result = caseRouteParameterReference(routeParameterReference);
+				if (result == null) result = casePath(routeParameterReference);
+				if (result == null) result = caseExpression(routeParameterReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2161,6 +2189,51 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Path Reference Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Path Reference Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePathReferenceElement(PathReferenceElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Key Actual</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Key Actual</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseKeyActual(KeyActual object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Child Path Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Child Path Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChildPathReference(ChildPathReference object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Edit Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -2547,6 +2620,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFeatureReference(FeatureReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Route Parameter Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Route Parameter Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRouteParameterReference(RouteParameterReference object) {
 		return null;
 	}
 

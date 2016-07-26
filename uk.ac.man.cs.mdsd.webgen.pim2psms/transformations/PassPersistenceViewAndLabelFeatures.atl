@@ -45,7 +45,7 @@ rule ModelLabelAttribute {
 	to orm : ORM!ModelLabelAttribute (
 		attribute <-
 			if website.attribute.oclIsKindOf(Website!EntityAttribute) then
-				website.attribute.findOrmEntityOrView().getOrmFeature(website.attribute.name)
+				website.attribute.findOrmFeature()
 			else
 				website.attribute
 			endif,

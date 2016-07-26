@@ -202,6 +202,24 @@ public interface WafFactory extends EFactory {
 	UnitSupportAction createUnitSupportAction();
 
 	/**
+	 * Returns a new object of class '<em>Key Actual</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Key Actual</em>'.
+	 * @generated
+	 */
+	KeyActual createKeyActual();
+
+	/**
+	 * Returns a new object of class '<em>Child Path Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child Path Reference</em>'.
+	 * @generated
+	 */
+	ChildPathReference createChildPathReference();
+
+	/**
 	 * Returns a new object of class '<em>Unit Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -434,6 +452,15 @@ public interface WafFactory extends EFactory {
 	 * @generated
 	 */
 	ParameterReference createParameterReference();
+
+	/**
+	 * Returns a new object of class '<em>Route Parameter Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Route Parameter Reference</em>'.
+	 * @generated
+	 */
+	RouteParameterReference createRouteParameterReference();
 
 	/**
 	 * Returns a new object of class '<em>Current User Reference</em>'.

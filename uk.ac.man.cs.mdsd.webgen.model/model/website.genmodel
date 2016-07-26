@@ -202,8 +202,6 @@
       <genFeatures createChild="false" propertyCategory="Serialization" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//Feature/serializationExpose"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//Feature/encodeUriKey"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//Feature/uriKeyValueFrom"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Attribute">
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
@@ -495,6 +493,8 @@
           ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/entities"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/displayFields"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/supportActions"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference website.ecore#//DynamicUnit/keyActuals"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//DynamicUnit/noRouteParameters"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//DynamicUnit/header"/>
@@ -589,6 +589,20 @@
     <genClasses ecoreClass="website.ecore#//UnitSupportAction">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//UnitSupportAction/disable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//UnitSupportAction/confirmMessage"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="website.ecore#//PathReferenceElement">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference website.ecore#//PathReferenceElement/actual"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          ecoreFeature="ecore:EReference website.ecore#//PathReferenceElement/childReference"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//KeyActual">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//KeyActual/container"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//KeyActual/key"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//ChildPathReference">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ChildPathReference/parent"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//EditUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
@@ -729,6 +743,11 @@
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//FeatureReference/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//FeatureReference/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//RouteParameterReference">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//RouteParameterReference/name"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//RouteParameterReference/parameter"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//ParameterReference">
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ParameterReference/name"/>

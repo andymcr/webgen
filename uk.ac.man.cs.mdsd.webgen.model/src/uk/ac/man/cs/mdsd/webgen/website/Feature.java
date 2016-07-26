@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isSerializationExpose <em>Serialization Expose</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isEncodeUriKey <em>Encode Uri Key</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getUriKeyValueFrom <em>Uri Key Value From</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature()
@@ -176,30 +175,4 @@ public interface Feature extends EObject {
 	 * @generated
 	 */
 	void setEncodeUriKey(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Uri Key Value From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Uri Key Value From</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uri Key Value From</em>' reference.
-	 * @see #setUriKeyValueFrom(Feature)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature_UriKeyValueFrom()
-	 * @model
-	 * @generated
-	 */
-	Feature getUriKeyValueFrom();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getUriKeyValueFrom <em>Uri Key Value From</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uri Key Value From</em>' reference.
-	 * @see #getUriKeyValueFrom()
-	 * @generated
-	 */
-	void setUriKeyValueFrom(Feature value);
 } // Feature

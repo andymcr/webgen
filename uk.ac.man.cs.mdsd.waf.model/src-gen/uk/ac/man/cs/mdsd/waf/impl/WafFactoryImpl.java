@@ -77,6 +77,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.QUERY_PARAMETER: return createQueryParameter();
 			case WafPackage.STATIC_UNIT: return createStaticUnit();
 			case WafPackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
+			case WafPackage.KEY_ACTUAL: return createKeyActual();
+			case WafPackage.CHILD_PATH_REFERENCE: return createChildPathReference();
 			case WafPackage.UNIT_ATTRIBUTE: return createUnitAttribute();
 			case WafPackage.UNIT_ASSOCIATION: return createUnitAssociation();
 			case WafPackage.CHILD_ATTRIBUTE: return createChildAttribute();
@@ -103,6 +105,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.MODEL_REFERENCE: return createModelReference();
 			case WafPackage.FEATURE_REFERENCE: return createFeatureReference();
 			case WafPackage.PARAMETER_REFERENCE: return createParameterReference();
+			case WafPackage.ROUTE_PARAMETER_REFERENCE: return createRouteParameterReference();
 			case WafPackage.CURRENT_USER_REFERENCE: return createCurrentUserReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -364,6 +367,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public KeyActual createKeyActual() {
+		KeyActualImpl keyActual = new KeyActualImpl();
+		return keyActual;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildPathReference createChildPathReference() {
+		ChildPathReferenceImpl childPathReference = new ChildPathReferenceImpl();
+		return childPathReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public UnitAttribute createUnitAttribute() {
 		UnitAttributeImpl unitAttribute = new UnitAttributeImpl();
 		return unitAttribute;
@@ -617,6 +640,16 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public ParameterReference createParameterReference() {
 		ParameterReferenceImpl parameterReference = new ParameterReferenceImpl();
 		return parameterReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RouteParameterReference createRouteParameterReference() {
+		RouteParameterReferenceImpl routeParameterReference = new RouteParameterReferenceImpl();
+		return routeParameterReference;
 	}
 
 	/**

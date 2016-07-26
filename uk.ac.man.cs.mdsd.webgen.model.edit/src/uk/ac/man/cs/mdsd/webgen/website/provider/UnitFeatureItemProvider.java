@@ -402,6 +402,11 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
+				 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_FEATURE__FORCED_VALUE,
 				 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add

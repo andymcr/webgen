@@ -290,6 +290,11 @@ public class EncapsulatedAttributeItemProvider extends EncapsulatedFeatureItemPr
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+				 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
 				 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add

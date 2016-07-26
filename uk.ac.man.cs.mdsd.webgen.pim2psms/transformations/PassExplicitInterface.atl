@@ -144,19 +144,6 @@ helper context Website!Association def: findOrmEntityOrView(entityOrView : Websi
 			thisModule.findOrmEntityOrView(self.partOf.name) -- TODO fix
 		endif endif;
 
-helper context Website!Attribute def: findOrmAttribute() : ORM!Attribute
-	= thisModule.findOrmEntityOrView(self.partOf.name)
-		.getOrmFeature(self.name);
-
-helper context Website!Association def: findOrmAssociation(entityOrView : Website!EntityOrView) : ORM!Association
-	= let name : String
-		= if entityOrView.features->includes(self) then
-				self.name
-			else
-				self.targetFeatureName()
-			endif
-		in self.findOrmEntityOrView(entityOrView).getOrmFeature(name);
-
 helper context Website!Association def: findOrmSourceAssociation() : ORM!Association
 	= self.findOrmAssociation(self.partOf);
 
@@ -327,7 +314,7 @@ lazy rule SelectEntityOrView {
 lazy rule SelectAttribute {
 	from website : Website!Attribute
 	to waf : WAF!SelectAttribute (
-		attribute <- website.findOrmEntityOrView().getOrmFeature(website.name)
+		attribute <- website.findOrmFeature()
 	)
 }
 
@@ -549,6 +536,7 @@ abstract rule DynamicUnit {
 			->collect(e | thisModule.findOrmEntityOrView(e.name)),
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
+		keyActuals <- website.keyActuals,
 		noRouteParameters <- website.noRouteParameters,
 		header <- website.header,
 		footer <- website.footer,
@@ -770,6 +758,28 @@ rule UnitSupportAction {
 	)
 }
 
+abstract rule PathReferenceElement {
+	from website : Website!PathReferenceElement
+	to waf : WAF!PathReferenceElement (
+		actual <- website.actual,
+		childReference <- website.childReference
+	)
+}
+
+-- @extends PathReferenceElement
+rule KeyActual {
+	from website : Website!KeyActual
+	to waf : WAF!KeyActual (
+		key <- website.key.findOrmFeature()
+	)
+}
+
+-- @extends PathReferenceElement
+rule ChildPathReference {
+	from website :  Website!ChildPathReference
+	to waf : WAF!ChildPathReference (
+	)
+}
 
 -- @extends DynamicUnit
 abstract rule EditUnit {
@@ -1266,6 +1276,14 @@ rule PredicateLikeOperator {
 	to waf : WAF!PredicateLikeOperator (
 		left <- website.left,
 		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsNullOperator {
+	from website : Website!PredicateIsNull (website.isInterfaceContainer())
+	to waf : WAF!PredicateIsNull (
+		feature <- website.feature
 	)
 }
 

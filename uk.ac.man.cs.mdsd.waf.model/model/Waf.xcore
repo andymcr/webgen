@@ -249,6 +249,7 @@ abstract class DynamicUnit extends ContentUnit {
 	refers EntityOrView[1..*] entities
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
+	contains KeyActual[] keyActuals opposite ^container
 	boolean noRouteParameters = "false"
 	String header
 	String footer
@@ -261,6 +262,20 @@ abstract class DynamicUnit extends ContentUnit {
 class UnitSupportAction extends NamedDisplayElement {
 	boolean disable
 	String confirmMessage
+}
+
+interface PathReferenceElement {
+	contains Path[1] actual
+	contains ChildPathReference childReference opposite parent
+}
+
+class KeyActual extends PathReferenceElement {
+	container DynamicUnit[1] ^container opposite keyActuals
+	refers Feature[1] key
+}
+
+class ChildPathReference extends PathReferenceElement {
+	container PathReferenceElement[1] parent opposite childReference
 }
 
 enum CollectionDisplayOptions {
@@ -496,6 +511,10 @@ class FeatureReference extends Path {
 
 class ParameterReference extends Path {
 	refers SelectionParameter[1] parameter
+}
+
+class RouteParameterReference extends Path {
+	refers Attribute[1] parameter
 }
 
 class CurrentUserReference extends Path {

@@ -609,6 +609,7 @@ public class LoginUnitItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
+			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__KEY_ACTUALS);
 		}
 		return childrenFeatures;
 	}
@@ -688,6 +689,7 @@ public class LoginUnitItemProvider
 				return;
 			case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS:
 			case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS:
+			case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -734,6 +736,11 @@ public class LoginUnitItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS,
 				 WebsiteFactory.eINSTANCE.createUnitSupportAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.DYNAMIC_UNIT__KEY_ACTUALS,
+				 WebsiteFactory.eINSTANCE.createKeyActual()));
 	}
 
 	/**

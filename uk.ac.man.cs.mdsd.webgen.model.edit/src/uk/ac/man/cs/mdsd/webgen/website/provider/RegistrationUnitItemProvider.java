@@ -72,7 +72,6 @@ public class RegistrationUnitItemProvider
 			addOmitCaptionPropertyDescriptor(object);
 			addCaptionClassPropertyDescriptor(object);
 			addEntitiesPropertyDescriptor(object);
-			addNoRouteParametersPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -305,28 +304,6 @@ public class RegistrationUnitItemProvider
 				 true,
 				 null,
 				 getString("_UI_ModelPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the No Route Parameters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNoRouteParametersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_noRouteParameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_noRouteParameters_feature", "_UI_DynamicUnit_type"),
-				 WebsitePackage.Literals.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 
@@ -650,7 +627,6 @@ public class RegistrationUnitItemProvider
 			case WebsitePackage.REGISTRATION_UNIT__ALTERNATIVE:
 			case WebsitePackage.REGISTRATION_UNIT__OMIT_CAPTION:
 			case WebsitePackage.REGISTRATION_UNIT__CAPTION_CLASS:
-			case WebsitePackage.REGISTRATION_UNIT__NO_ROUTE_PARAMETERS:
 			case WebsitePackage.REGISTRATION_UNIT__HEADER:
 			case WebsitePackage.REGISTRATION_UNIT__FOOTER:
 			case WebsitePackage.REGISTRATION_UNIT__HEADER_CLASS:

@@ -17,7 +17,6 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getKeyActuals <em>Key Actuals</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#isNoRouteParameters <em>No Route Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getHeaderClass <em>Header Class</em>}</li>
@@ -100,33 +99,6 @@ public interface DynamicUnit extends ContentUnit {
 	 * @generated
 	 */
 	List<KeyActual> getKeyActuals();
-
-	/**
-	 * Returns the value of the '<em><b>No Route Parameters</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>No Route Parameters</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>No Route Parameters</em>' attribute.
-	 * @see #setNoRouteParameters(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDynamicUnit_NoRouteParameters()
-	 * @model default="false"
-	 * @generated
-	 */
-	boolean isNoRouteParameters();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#isNoRouteParameters <em>No Route Parameters</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>No Route Parameters</em>' attribute.
-	 * @see #isNoRouteParameters()
-	 * @generated
-	 */
-	void setNoRouteParameters(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' attribute.

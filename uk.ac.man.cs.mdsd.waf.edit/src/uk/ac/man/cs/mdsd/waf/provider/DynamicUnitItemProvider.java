@@ -46,7 +46,6 @@ public class DynamicUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addEntitiesPropertyDescriptor(object);
-			addNoRouteParametersPropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -75,28 +74,6 @@ public class DynamicUnitItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the No Route Parameters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNoRouteParametersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DynamicUnit_noRouteParameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DynamicUnit_noRouteParameters_feature", "_UI_DynamicUnit_type"),
-				 WafPackage.Literals.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -291,7 +268,6 @@ public class DynamicUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DynamicUnit.class)) {
-			case WafPackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS:
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
 			case WafPackage.DYNAMIC_UNIT__HEADER_CLASS:

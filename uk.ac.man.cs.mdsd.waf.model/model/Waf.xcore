@@ -250,7 +250,6 @@ abstract class DynamicUnit extends ContentUnit {
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
 	contains KeyActual[] keyActuals opposite ^container
-	boolean noRouteParameters = "false"
 	String header
 	String footer
 	String headerClass

@@ -39,7 +39,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getKeyActuals <em>Key Actuals</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#isNoRouteParameters <em>No Route Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -90,26 +89,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected EList<KeyActual> keyActuals;
-
-	/**
-	 * The default value of the '{@link #isNoRouteParameters() <em>No Route Parameters</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNoRouteParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean NO_ROUTE_PARAMETERS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isNoRouteParameters() <em>No Route Parameters</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNoRouteParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean noRouteParameters = NO_ROUTE_PARAMETERS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
@@ -303,27 +282,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isNoRouteParameters() {
-		return noRouteParameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNoRouteParameters(boolean newNoRouteParameters) {
-		boolean oldNoRouteParameters = noRouteParameters;
-		noRouteParameters = newNoRouteParameters;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS, oldNoRouteParameters, noRouteParameters));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getHeader() {
 		return header;
 	}
@@ -496,8 +454,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return getSupportActions();
 			case WafPackage.DYNAMIC_UNIT__KEY_ACTUALS:
 				return getKeyActuals();
-			case WafPackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS:
-				return isNoRouteParameters();
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 				return getHeader();
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
@@ -538,9 +494,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__KEY_ACTUALS:
 				getKeyActuals().clear();
 				getKeyActuals().addAll((Collection<? extends KeyActual>)newValue);
-				return;
-			case WafPackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS:
-				setNoRouteParameters((Boolean)newValue);
 				return;
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 				setHeader((String)newValue);
@@ -584,9 +537,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__KEY_ACTUALS:
 				getKeyActuals().clear();
 				return;
-			case WafPackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS:
-				setNoRouteParameters(NO_ROUTE_PARAMETERS_EDEFAULT);
-				return;
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 				setHeader(HEADER_EDEFAULT);
 				return;
@@ -625,8 +575,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return supportActions != null && !supportActions.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__KEY_ACTUALS:
 				return keyActuals != null && !keyActuals.isEmpty();
-			case WafPackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS:
-				return noRouteParameters != NO_ROUTE_PARAMETERS_EDEFAULT;
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
@@ -653,9 +601,7 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (noRouteParameters: ");
-		result.append(noRouteParameters);
-		result.append(", header: ");
+		result.append(" (header: ");
 		result.append(header);
 		result.append(", footer: ");
 		result.append(footer);

@@ -58,7 +58,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getKeyActuals <em>Key Actuals</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#isNoRouteParameters <em>No Route Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -295,26 +294,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * @ordered
 	 */
 	protected EList<KeyActual> keyActuals;
-
-	/**
-	 * The default value of the '{@link #isNoRouteParameters() <em>No Route Parameters</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNoRouteParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean NO_ROUTE_PARAMETERS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isNoRouteParameters() <em>No Route Parameters</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNoRouteParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean noRouteParameters = NO_ROUTE_PARAMETERS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
@@ -848,27 +827,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isNoRouteParameters() {
-		return noRouteParameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNoRouteParameters(boolean newNoRouteParameters) {
-		boolean oldNoRouteParameters = noRouteParameters;
-		noRouteParameters = newNoRouteParameters;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS, oldNoRouteParameters, noRouteParameters));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getHeader() {
 		return header;
 	}
@@ -1224,8 +1182,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return getSupportActions();
 			case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS:
 				return getKeyActuals();
-			case WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS:
-				return isNoRouteParameters();
 			case WebsitePackage.LOGIN_UNIT__HEADER:
 				return getHeader();
 			case WebsitePackage.LOGIN_UNIT__FOOTER:
@@ -1309,9 +1265,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS:
 				getKeyActuals().clear();
 				getKeyActuals().addAll((Collection<? extends KeyActual>)newValue);
-				return;
-			case WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS:
-				setNoRouteParameters((Boolean)newValue);
 				return;
 			case WebsitePackage.LOGIN_UNIT__HEADER:
 				setHeader((String)newValue);
@@ -1403,9 +1356,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS:
 				getKeyActuals().clear();
 				return;
-			case WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS:
-				setNoRouteParameters(NO_ROUTE_PARAMETERS_EDEFAULT);
-				return;
 			case WebsitePackage.LOGIN_UNIT__HEADER:
 				setHeader(HEADER_EDEFAULT);
 				return;
@@ -1482,8 +1432,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return supportActions != null && !supportActions.isEmpty();
 			case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS:
 				return keyActuals != null && !keyActuals.isEmpty();
-			case WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS:
-				return noRouteParameters != NO_ROUTE_PARAMETERS_EDEFAULT;
 			case WebsitePackage.LOGIN_UNIT__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case WebsitePackage.LOGIN_UNIT__FOOTER:
@@ -1550,7 +1498,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS: return WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS: return WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.LOGIN_UNIT__KEY_ACTUALS: return WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS;
-				case WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS: return WebsitePackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS;
 				case WebsitePackage.LOGIN_UNIT__HEADER: return WebsitePackage.DYNAMIC_UNIT__HEADER;
 				case WebsitePackage.LOGIN_UNIT__FOOTER: return WebsitePackage.DYNAMIC_UNIT__FOOTER;
 				case WebsitePackage.LOGIN_UNIT__HEADER_CLASS: return WebsitePackage.DYNAMIC_UNIT__HEADER_CLASS;
@@ -1610,7 +1557,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebsitePackage.LOGIN_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebsitePackage.LOGIN_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS: return WebsitePackage.LOGIN_UNIT__KEY_ACTUALS;
-				case WebsitePackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS: return WebsitePackage.LOGIN_UNIT__NO_ROUTE_PARAMETERS;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER: return WebsitePackage.LOGIN_UNIT__HEADER;
 				case WebsitePackage.DYNAMIC_UNIT__FOOTER: return WebsitePackage.LOGIN_UNIT__FOOTER;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER_CLASS: return WebsitePackage.LOGIN_UNIT__HEADER_CLASS;
@@ -1660,8 +1606,6 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		result.append(omitCaption);
 		result.append(", captionClass: ");
 		result.append(captionClass);
-		result.append(", noRouteParameters: ");
-		result.append(noRouteParameters);
 		result.append(", header: ");
 		result.append(header);
 		result.append(", footer: ");

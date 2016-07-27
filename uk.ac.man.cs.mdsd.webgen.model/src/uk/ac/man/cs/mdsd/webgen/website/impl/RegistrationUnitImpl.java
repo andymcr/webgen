@@ -58,7 +58,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getSupportActions <em>Support Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getKeyActuals <em>Key Actuals</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#isNoRouteParameters <em>No Route Parameters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -294,26 +293,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * @ordered
 	 */
 	protected EList<KeyActual> keyActuals;
-
-	/**
-	 * The default value of the '{@link #isNoRouteParameters() <em>No Route Parameters</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNoRouteParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean NO_ROUTE_PARAMETERS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isNoRouteParameters() <em>No Route Parameters</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isNoRouteParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean noRouteParameters = NO_ROUTE_PARAMETERS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
@@ -827,27 +806,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isNoRouteParameters() {
-		return noRouteParameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNoRouteParameters(boolean newNoRouteParameters) {
-		boolean oldNoRouteParameters = noRouteParameters;
-		noRouteParameters = newNoRouteParameters;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.REGISTRATION_UNIT__NO_ROUTE_PARAMETERS, oldNoRouteParameters, noRouteParameters));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getHeader() {
 		return header;
 	}
@@ -1182,8 +1140,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return getSupportActions();
 			case WebsitePackage.REGISTRATION_UNIT__KEY_ACTUALS:
 				return getKeyActuals();
-			case WebsitePackage.REGISTRATION_UNIT__NO_ROUTE_PARAMETERS:
-				return isNoRouteParameters();
 			case WebsitePackage.REGISTRATION_UNIT__HEADER:
 				return getHeader();
 			case WebsitePackage.REGISTRATION_UNIT__FOOTER:
@@ -1265,9 +1221,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			case WebsitePackage.REGISTRATION_UNIT__KEY_ACTUALS:
 				getKeyActuals().clear();
 				getKeyActuals().addAll((Collection<? extends KeyActual>)newValue);
-				return;
-			case WebsitePackage.REGISTRATION_UNIT__NO_ROUTE_PARAMETERS:
-				setNoRouteParameters((Boolean)newValue);
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__HEADER:
 				setHeader((String)newValue);
@@ -1356,9 +1309,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			case WebsitePackage.REGISTRATION_UNIT__KEY_ACTUALS:
 				getKeyActuals().clear();
 				return;
-			case WebsitePackage.REGISTRATION_UNIT__NO_ROUTE_PARAMETERS:
-				setNoRouteParameters(NO_ROUTE_PARAMETERS_EDEFAULT);
-				return;
 			case WebsitePackage.REGISTRATION_UNIT__HEADER:
 				setHeader(HEADER_EDEFAULT);
 				return;
@@ -1432,8 +1382,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return supportActions != null && !supportActions.isEmpty();
 			case WebsitePackage.REGISTRATION_UNIT__KEY_ACTUALS:
 				return keyActuals != null && !keyActuals.isEmpty();
-			case WebsitePackage.REGISTRATION_UNIT__NO_ROUTE_PARAMETERS:
-				return noRouteParameters != NO_ROUTE_PARAMETERS_EDEFAULT;
 			case WebsitePackage.REGISTRATION_UNIT__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case WebsitePackage.REGISTRATION_UNIT__FOOTER:
@@ -1498,7 +1446,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				case WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS: return WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.REGISTRATION_UNIT__SUPPORT_ACTIONS: return WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.REGISTRATION_UNIT__KEY_ACTUALS: return WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS;
-				case WebsitePackage.REGISTRATION_UNIT__NO_ROUTE_PARAMETERS: return WebsitePackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS;
 				case WebsitePackage.REGISTRATION_UNIT__HEADER: return WebsitePackage.DYNAMIC_UNIT__HEADER;
 				case WebsitePackage.REGISTRATION_UNIT__FOOTER: return WebsitePackage.DYNAMIC_UNIT__FOOTER;
 				case WebsitePackage.REGISTRATION_UNIT__HEADER_CLASS: return WebsitePackage.DYNAMIC_UNIT__HEADER_CLASS;
@@ -1558,7 +1505,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebsitePackage.REGISTRATION_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebsitePackage.REGISTRATION_UNIT__SUPPORT_ACTIONS;
 				case WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS: return WebsitePackage.REGISTRATION_UNIT__KEY_ACTUALS;
-				case WebsitePackage.DYNAMIC_UNIT__NO_ROUTE_PARAMETERS: return WebsitePackage.REGISTRATION_UNIT__NO_ROUTE_PARAMETERS;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER: return WebsitePackage.REGISTRATION_UNIT__HEADER;
 				case WebsitePackage.DYNAMIC_UNIT__FOOTER: return WebsitePackage.REGISTRATION_UNIT__FOOTER;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER_CLASS: return WebsitePackage.REGISTRATION_UNIT__HEADER_CLASS;
@@ -1608,8 +1554,6 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		result.append(omitCaption);
 		result.append(", captionClass: ");
 		result.append(captionClass);
-		result.append(", noRouteParameters: ");
-		result.append(noRouteParameters);
 		result.append(", header: ");
 		result.append(header);
 		result.append(", footer: ");

@@ -216,6 +216,20 @@ helper context Website!Label def: findOrmLabel() : ORM!Label
 		self.title
 	endif endif;
 
+helper context Website!DynamicUnit def: defaultSelection() : Website!Selection
+	= if self.oclIsKindOf(Website!DataUnit) or self.oclIsKindOf(Website!EditUnit) then
+			self.defaultSelection
+		else
+			OclUndefined
+		endif;
+
+helper context Website!DynamicUnit def: uriPathKeys() : Sequence(Website!Feature)
+	= if self.entities->isEmpty() then
+			Sequence{}
+		else
+			self.entities->first().keys
+		endif;
+
 
 rule WafModel {
 	from website : Website!WebGenModel, orm : ORM!OrmModel
@@ -544,14 +558,26 @@ abstract rule DynamicUnit {
 			->collect(e | thisModule.findOrmEntityOrView(e.name)),
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
-		keyActuals <- website.keyActuals,
-		noRouteParameters <- website.noRouteParameters,
+		keyActuals <-
+			website.keyActuals
+				->union(if website.defaultSelection().oclIsUndefined() then
+							Sequence{}
+						else
+							website.uriPathKeys()->collect(k | thisModule.implicitKeyActual(k))
+						endif),
 		header <- website.header,
 		footer <- website.footer,
 		headerClass <- website.headerClass,
 		controlClass <- website.controlClass,
 		footerClass <- website.footerClass,
 		errorClass <- website.errorClass
+	)
+}
+
+lazy rule implicitKeyActual {
+	from website : Website!Feature
+	to waf : WAF!KeyActual (
+		key <- website.findOrmFeature()
 	)
 }
 

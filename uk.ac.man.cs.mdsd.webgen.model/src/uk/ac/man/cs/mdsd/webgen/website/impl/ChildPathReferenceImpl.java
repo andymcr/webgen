@@ -6,6 +6,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.criteria.Path;
 
 import uk.ac.man.cs.mdsd.webgen.website.ChildPathReference;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.PathReferenceElement;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -28,6 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildPathReferenceImpl#getActual <em>Actual</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildPathReferenceImpl#getChildReference <em>Child Reference</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildPathReferenceImpl#getEntityType <em>Entity Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildPathReferenceImpl#getParent <em>Parent</em>}</li>
  * </ul>
  *
@@ -53,6 +56,16 @@ public class ChildPathReferenceImpl extends EObjectImpl implements ChildPathRefe
 	 * @ordered
 	 */
 	protected ChildPathReference childReference;
+
+	/**
+	 * The cached setting delegate for the '{@link #getEntityType() <em>Entity Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntityType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ENTITY_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ENTITY_TYPE).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,6 +177,33 @@ public class ChildPathReferenceImpl extends EObjectImpl implements ChildPathRefe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EntityOrView getEntityType() {
+		return (EntityOrView)ENTITY_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetEntityType() {
+		return (EntityOrView)ENTITY_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetEntityType() {
+		return ENTITY_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PathReferenceElement getParent() {
 		if (eContainerFeatureID() != WebsitePackage.CHILD_PATH_REFERENCE__PARENT) return null;
 		return (PathReferenceElement)eInternalContainer();
@@ -264,6 +304,9 @@ public class ChildPathReferenceImpl extends EObjectImpl implements ChildPathRefe
 				return getActual();
 			case WebsitePackage.CHILD_PATH_REFERENCE__CHILD_REFERENCE:
 				return getChildReference();
+			case WebsitePackage.CHILD_PATH_REFERENCE__ENTITY_TYPE:
+				if (resolve) return getEntityType();
+				return basicGetEntityType();
 			case WebsitePackage.CHILD_PATH_REFERENCE__PARENT:
 				return getParent();
 		}
@@ -324,6 +367,8 @@ public class ChildPathReferenceImpl extends EObjectImpl implements ChildPathRefe
 				return actual != null;
 			case WebsitePackage.CHILD_PATH_REFERENCE__CHILD_REFERENCE:
 				return childReference != null;
+			case WebsitePackage.CHILD_PATH_REFERENCE__ENTITY_TYPE:
+				return isSetEntityType();
 			case WebsitePackage.CHILD_PATH_REFERENCE__PARENT:
 				return getParent() != null;
 		}

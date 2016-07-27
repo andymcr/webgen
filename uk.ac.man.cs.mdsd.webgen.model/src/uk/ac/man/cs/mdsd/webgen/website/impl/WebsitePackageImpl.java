@@ -4053,6 +4053,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPathReferenceElement_EntityType() {
+		return (EReference)pathReferenceElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getKeyActual() {
 		return keyActualEClass;
 	}
@@ -5178,6 +5187,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCurrentUserReference_UserModel() {
+		return (EReference)currentUserReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDatabaseTechnologies() {
 		return databaseTechnologiesEEnum;
 	}
@@ -5933,6 +5951,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		pathReferenceElementEClass = createEClass(PATH_REFERENCE_ELEMENT);
 		createEReference(pathReferenceElementEClass, PATH_REFERENCE_ELEMENT__ACTUAL);
 		createEReference(pathReferenceElementEClass, PATH_REFERENCE_ELEMENT__CHILD_REFERENCE);
+		createEReference(pathReferenceElementEClass, PATH_REFERENCE_ELEMENT__ENTITY_TYPE);
 
 		keyActualEClass = createEClass(KEY_ACTUAL);
 		createEReference(keyActualEClass, KEY_ACTUAL__CONTAINER);
@@ -6063,6 +6082,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(parameterReferenceEClass, PARAMETER_REFERENCE__PARAMETER);
 
 		currentUserReferenceEClass = createEClass(CURRENT_USER_REFERENCE);
+		createEReference(currentUserReferenceEClass, CURRENT_USER_REFERENCE__USER_MODEL);
 
 		// Create enums
 		databaseTechnologiesEEnum = createEEnum(DATABASE_TECHNOLOGIES);
@@ -6678,6 +6698,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(pathReferenceElementEClass, PathReferenceElement.class, "PathReferenceElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPathReferenceElement_Actual(), theCriteriaPackage.getPath(), null, "actual", null, 1, 1, PathReferenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPathReferenceElement_ChildReference(), this.getChildPathReference(), this.getChildPathReference_Parent(), "childReference", null, 0, 1, PathReferenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPathReferenceElement_EntityType(), this.getEntityOrView(), null, "entityType", null, 0, 1, PathReferenceElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(keyActualEClass, KeyActual.class, "KeyActual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getKeyActual_Container(), this.getDynamicUnit(), this.getDynamicUnit_KeyActuals(), "container", null, 1, 1, KeyActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6808,6 +6829,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getParameterReference_Parameter(), this.getSelectionParameter(), null, "parameter", null, 1, 1, ParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(currentUserReferenceEClass, CurrentUserReference.class, "CurrentUserReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCurrentUserReference_UserModel(), this.getEntityOrView(), null, "userModel", null, 1, 1, CurrentUserReference.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(databaseTechnologiesEEnum, DatabaseTechnologies.class, "DatabaseTechnologies");
@@ -7245,6 +7267,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "derivation", "if association.oclIsUndefined() then\r\n\t\'\'\r\nelse if association.oclIsKindOf(EntityAssociation) then\r\n\tassociation.oclAsType(EntityAssociation).name\r\nelse if association.oclIsTypeOf(EncapsulatedAssociation) then\r\n\tassociation.oclAsType(EncapsulatedAssociation).name\r\nelse\r\n\tassociation.oclAsType(ViewAssociation).name \r\nendif endif endif\r\n"
+		   });	
+		addAnnotation
+		  (getPathReferenceElement_EntityType(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if actual.oclIsUndefined() then\r\n\tnull\r\nelse if actual.oclIsKindOf(CurrentUserReference) then\r\n\tactual.oclAsType(CurrentUserReference).userModel\r\nelse if actual.oclIsTypeOf(FeatureReference) then\r\n\tlet ref : FeatureReference = actual.oclAsType(FeatureReference)\r\n\t\tin if ref.feature.oclIsUndefined() or ref.feature.oclIsKindOf(Attribute) then\r\n\t\t\t\tnull\r\n\t\t\telse\r\n\t\t\t\tlet parent : PathReferenceElement\r\n\t\t\t\t\t= self.oclAsType((ChildPathReference) ).parent\r\n\t\t\t\t\tin if parent.entityType.oclIsUndefined() then\r\n\t\t\t\t\t\t\tnull\r\n\t\t\t\t\t\telse if parent.entityType.features->includes(ref.feature) then\r\n\t\t\t\t\t\t\tref.feature.oclAsType(Association).targetEntityX\r\n\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\tref.feature.oclAsType(Association).sourceEntityX\r\n\t\t\t\t\t\tendif endif\r\n\t\t\tendif\r\nelse\r\n\tnull\r\nendif endif endif\r\n"
 		   });	
 		addAnnotation
 		  (dataUnitEClass, 

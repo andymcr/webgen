@@ -6,6 +6,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -18,7 +19,7 @@ import uk.ac.man.cs.mdsd.criteria.Path;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.ChildPathReference;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.KeyActual;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -32,6 +33,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.KeyActualImpl#getActual <em>Actual</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.KeyActualImpl#getChildReference <em>Child Reference</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.KeyActualImpl#getEntityType <em>Entity Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.KeyActualImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.KeyActualImpl#getKey <em>Key</em>}</li>
  * </ul>
@@ -58,6 +60,16 @@ public class KeyActualImpl extends EObjectImpl implements KeyActual {
 	 * @ordered
 	 */
 	protected ChildPathReference childReference;
+
+	/**
+	 * The cached setting delegate for the '{@link #getEntityType() <em>Entity Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntityType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ENTITY_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ENTITY_TYPE).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getKey() <em>Key</em>}' reference.
@@ -258,6 +270,33 @@ public class KeyActualImpl extends EObjectImpl implements KeyActual {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EntityOrView getEntityType() {
+		return (EntityOrView)ENTITY_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetEntityType() {
+		return (EntityOrView)ENTITY_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetEntityType() {
+		return ENTITY_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -317,6 +356,9 @@ public class KeyActualImpl extends EObjectImpl implements KeyActual {
 				return getActual();
 			case WebsitePackage.KEY_ACTUAL__CHILD_REFERENCE:
 				return getChildReference();
+			case WebsitePackage.KEY_ACTUAL__ENTITY_TYPE:
+				if (resolve) return getEntityType();
+				return basicGetEntityType();
 			case WebsitePackage.KEY_ACTUAL__CONTAINER:
 				return getContainer();
 			case WebsitePackage.KEY_ACTUAL__KEY:
@@ -386,6 +428,8 @@ public class KeyActualImpl extends EObjectImpl implements KeyActual {
 				return actual != null;
 			case WebsitePackage.KEY_ACTUAL__CHILD_REFERENCE:
 				return childReference != null;
+			case WebsitePackage.KEY_ACTUAL__ENTITY_TYPE:
+				return isSetEntityType();
 			case WebsitePackage.KEY_ACTUAL__CONTAINER:
 				return getContainer() != null;
 			case WebsitePackage.KEY_ACTUAL__KEY:

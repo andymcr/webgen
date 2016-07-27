@@ -4,9 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -21,25 +19,18 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.ChildPathReference;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.Feature;
-import uk.ac.man.cs.mdsd.webgen.website.FeatureReference;
-import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
-import uk.ac.man.cs.mdsd.webgen.website.PathReferenceElement;
-import uk.ac.man.cs.mdsd.webgen.website.Selection;
+import uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FeatureReference} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FeatureReferenceItemProvider 
+public class RouteParameterReferenceItemProvider 
 	extends WebGenItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -53,7 +44,7 @@ public class FeatureReferenceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureReferenceItemProvider(AdapterFactory adapterFactory) {
+	public RouteParameterReferenceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -68,70 +59,65 @@ public class FeatureReferenceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFeaturePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addParameterPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Feature feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	protected void addFeaturePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_FeatureReference_feature_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_FeatureReference_feature_feature", "_UI_FeatureReference_type"),
-			WebsitePackage.Literals.FEATURE_REFERENCE__FEATURE,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					final Set<Feature> features = new HashSet<Feature>();
-					if (object instanceof FeatureReference) {
-						final Selection selection = getCriteriaSelectionContext(object);
-						if (selection != null) {
-							for (EntityOrView entityOrView : getEntitiesAndViews(selection)) {
-								features.addAll(entityOrView.getAllFeatures());
-							}
-							return features;
-						}
-						final InlineActionContainer action = getCriteriaActionContext(object);
-						if (action != null) {
-							for (EntityOrView entityOrView : getEntitiesAndViews(action)) {
-								features.addAll(entityOrView.getAllFeatures());
-							}
-							return features;
-						}
-						final PathReferenceElement path = getCriteriaPathReferenceContext(object); 
-						if (path != null) {
-							if (path instanceof ChildPathReference) {
-								final ChildPathReference child = (ChildPathReference) path;
-								if (child.getParent().getEntityType() != null) {
-									return child.getParent().getEntityType().getAllFeatures();
-								}
-							}
-						}
-					}
-
-					return features;
-				}
-		});
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RouteParameterReference_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RouteParameterReference_name_feature", "_UI_RouteParameterReference_type"),
+				 WebsitePackage.Literals.ROUTE_PARAMETER_REFERENCE__NAME,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns FeatureReference.gif.
+	 * This adds a property descriptor for the Parameter feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParameterPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RouteParameterReference_parameter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RouteParameterReference_parameter_feature", "_UI_RouteParameterReference_type"),
+				 WebsitePackage.Literals.ROUTE_PARAMETER_REFERENCE__PARAMETER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This returns RouteParameterReference.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/FeatureReference"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RouteParameterReference"));
 	}
 
 	/**
@@ -142,11 +128,12 @@ public class FeatureReferenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FeatureReference)object).getName();
+		String label = ((RouteParameterReference)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_FeatureReference_type") :
-			getString("_UI_FeatureReference_type") + " " + label;
+			getString("_UI_RouteParameterReference_type") :
+			getString("_UI_RouteParameterReference_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -159,8 +146,8 @@ public class FeatureReferenceItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(FeatureReference.class)) {
-			case WebsitePackage.FEATURE_REFERENCE__NAME:
+		switch (notification.getFeatureID(RouteParameterReference.class)) {
+			case WebsitePackage.ROUTE_PARAMETER_REFERENCE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

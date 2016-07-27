@@ -61,8 +61,31 @@ public class ChildPathReferenceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEntityTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Entity Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntityTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PathReferenceElement_entityType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PathReferenceElement_entityType_feature", "_UI_PathReferenceElement_type"),
+				 WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ENTITY_TYPE,
+				 false,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

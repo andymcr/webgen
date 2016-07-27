@@ -173,9 +173,17 @@ helper context Website!Feature def: findOrmFeature(reference : Website!FeatureRe
 			self.findOrmAttribute()
 		else if not reference.findContainingSelection().oclIsUndefined() then
 			self.findOrmAssociation(reference.findContainingSelection().usedBy.serves)
+		else if reference.refImmediateComposite().oclIsKindOf(Website!PathReferenceElement) then
+			if reference.refImmediateComposite().entityType.oclIsUndefined() then
+				OclUndefined
+			else if reference.refImmediateComposite().entityType.features->includes(self) then
+				self.findOrmAssociation(self.targetEntityX)
+			else
+				self.findOrmAssociation(self.sourceEntityX)
+			endif endif
 		else
 			OclUndefined
-		endif endif;
+		endif endif endif;
 
 helper context Website!UnitAssociation def: findOrmAssociation() : ORM!Association
 	= if self.association.oclIsUndefined() then

@@ -26,6 +26,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
+import uk.ac.man.cs.mdsd.webgen.website.PathReferenceElement;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
@@ -247,6 +248,15 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 				return (InlineActionContainer) container;
 			}
 			container = getContext(container);
+		}
+
+		return null;
+	}
+
+	protected PathReferenceElement getCriteriaPathReferenceContext(final Object object) {
+		Object container = getContext(object);
+		if (container instanceof PathReferenceElement) {
+			return (PathReferenceElement) container;
 		}
 
 		return null;

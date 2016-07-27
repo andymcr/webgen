@@ -10569,13 +10569,22 @@ public interface WebsitePackage extends EPackage {
 	int PATH_REFERENCE_ELEMENT__CHILD_REFERENCE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Entity Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATH_REFERENCE_ELEMENT__ENTITY_TYPE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Path Reference Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATH_REFERENCE_ELEMENT_FEATURE_COUNT = 2;
+	int PATH_REFERENCE_ELEMENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.KeyActualImpl <em>Key Actual</em>}' class.
@@ -10604,6 +10613,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int KEY_ACTUAL__CHILD_REFERENCE = PATH_REFERENCE_ELEMENT__CHILD_REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Entity Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_ACTUAL__ENTITY_TYPE = PATH_REFERENCE_ELEMENT__ENTITY_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -10659,6 +10677,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CHILD_PATH_REFERENCE__CHILD_REFERENCE = PATH_REFERENCE_ELEMENT__CHILD_REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Entity Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_PATH_REFERENCE__ENTITY_TYPE = PATH_REFERENCE_ELEMENT__ENTITY_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -15121,13 +15148,22 @@ public interface WebsitePackage extends EPackage {
 	int CURRENT_USER_REFERENCE = 108;
 
 	/**
+	 * The feature id for the '<em><b>User Model</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CURRENT_USER_REFERENCE__USER_MODEL = CriteriaPackage.PATH_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CURRENT_USER_REFERENCE_FEATURE_COUNT = CriteriaPackage.PATH_FEATURE_COUNT + 0;
+	int CURRENT_USER_REFERENCE_FEATURE_COUNT = CriteriaPackage.PATH_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies <em>Database Technologies</em>}' enum.
@@ -18819,6 +18855,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getPathReferenceElement_ChildReference();
 
 	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.PathReferenceElement#getEntityType <em>Entity Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity Type</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.PathReferenceElement#getEntityType()
+	 * @see #getPathReferenceElement()
+	 * @generated
+	 */
+	EReference getPathReferenceElement_EntityType();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.KeyActual <em>Key Actual</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -20161,6 +20208,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCurrentUserReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.CurrentUserReference#getUserModel <em>User Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>User Model</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.CurrentUserReference#getUserModel()
+	 * @see #getCurrentUserReference()
+	 * @generated
+	 */
+	EReference getCurrentUserReference_UserModel();
 
 	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies <em>Database Technologies</em>}'.
@@ -23309,6 +23367,14 @@ public interface WebsitePackage extends EPackage {
 		EReference PATH_REFERENCE_ELEMENT__CHILD_REFERENCE = eINSTANCE.getPathReferenceElement_ChildReference();
 
 		/**
+		 * The meta object literal for the '<em><b>Entity Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PATH_REFERENCE_ELEMENT__ENTITY_TYPE = eINSTANCE.getPathReferenceElement_EntityType();
+
+		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.KeyActualImpl <em>Key Actual</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -24369,6 +24435,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CURRENT_USER_REFERENCE = eINSTANCE.getCurrentUserReference();
+
+		/**
+		 * The meta object literal for the '<em><b>User Model</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CURRENT_USER_REFERENCE__USER_MODEL = eINSTANCE.getCurrentUserReference_UserModel();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies <em>Database Technologies</em>}' enum.

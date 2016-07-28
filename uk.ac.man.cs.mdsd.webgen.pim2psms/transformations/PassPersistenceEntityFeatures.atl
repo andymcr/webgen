@@ -329,7 +329,8 @@ rule OneToOneAssociationWithoutContainment {
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
 		required <- website.targetCardinality = #Required,
-		pivotTableName <- website.createPivotTableName()
+		pivotTableName <- website.createPivotTableName(),
+		keys <- website.keys->collect(k | thisModule.OppositeAssociationKey(k))
 	)
 }
 
@@ -352,7 +353,8 @@ rule ManyToOneAssociationWithoutContainment {
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
 		primaryKey <- website.targetPrimaryKey,
-		pivotTableName <- website.createPivotTableName()
+		pivotTableName <- website.createPivotTableName(),
+		keys <- website.keys->collect(k | thisModule.OppositeAssociationKey(k))
 	)
 }
 
@@ -382,7 +384,8 @@ rule OneToManyAssociationWithoutContainment {
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
 		required <- website.targetCardinality = #Required,
-		pivotTableName <- website.createPivotTableName()
+		pivotTableName <- website.createPivotTableName(),
+		keys <- website.keys->collect(k | thisModule.OppositeAssociationKey(k))
 	)
 }
 
@@ -403,6 +406,7 @@ rule ManyToManyAssociationWithoutContainment {
 		opposite <- orm,
 		owningEnd <- false,
 		pivotTableName <- website.createPivotTableName(),
+		keys <- website.keys->collect(k | thisModule.OppositeAssociationKey(k)),
 		pseudo <- website.pseudo,
 		visible <- website.bidirectional,
 		primaryKey <- website.targetPrimaryKey,
@@ -438,7 +442,8 @@ rule OneToOneAssociationWithContainment {
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
 		required <- true,
-		pivotTableName <- website.createPivotTableName()
+		pivotTableName <- website.createPivotTableName(),
+		keys <- website.keys->collect(k | thisModule.OppositeAssociationKey(k))
 	)
 }
 
@@ -469,7 +474,8 @@ rule OneToManyAssociationWithContainment {
 				website.targetFeatureName().createAssociationColumnName()
 			endif,
 		required <- true,
-		pivotTableName <- website.createPivotTableName()
+		pivotTableName <- website.createPivotTableName(),
+		keys <- website.keys->collect(k | thisModule.OppositeAssociationKey(k))
 	)
 }
 
@@ -487,5 +493,22 @@ rule AssocationKey {
 					website.targetFeature
 				endif
 			endif
+	)
+}
+
+lazy rule OppositeAssociationKey {
+	from website : Website!AssociationKey
+	to orm : ORM!AssociationKey (
+		sourceFeature <-
+			if website.targetFeature.oclIsKindOf(Website!EntityAttribute) then
+				website.targetFeature
+			else
+				if website.keyFor.targetEntityX = website.keyFor.targetEntity then
+					OclUndefined
+				else
+					website.targetFeature
+				endif
+			endif,
+		targetFeature <- website.sourceFeature
 	)
 }

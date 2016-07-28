@@ -22,6 +22,12 @@ helper context String def: createLabel() : String
 			self.replaceAll('([A-Z])', ' $1').trim().uppercaseFirst()
 		endif;
 
+helper context String def: cleanString() : String
+	= if self.trim = '' then
+			OclUndefined
+		else
+			self.trim
+		endif;
 
 helper def: findWebGenModel() : Website!WebGenModel
 	= Website!WebGenModel.allInstancesFrom('website')->first();

@@ -48,18 +48,64 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCollectionAllowAddPropertyDescriptor(object);
+			addCollectionAllowRemovePropertyDescriptor(object);
+			addEncodeUriKeyPropertyDescriptor(object);
+			addSerializationGroupsPropertyDescriptor(object);
+			addSerializationExposePropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
-			addSerializationGroupsPropertyDescriptor(object);
-			addSerializationExposePropertyDescriptor(object);
-			addEncodeUriKeyPropertyDescriptor(object);
 			addPseudoPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addSerializationMaxDepthPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Allow Add feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionAllowAddPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_collectionAllowAdd_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowAdd_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__COLLECTION_ALLOW_ADD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Allow Remove feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionAllowRemovePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_collectionAllowRemove_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowRemove_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__COLLECTION_ALLOW_REMOVE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -350,12 +396,14 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ViewAssociation.class)) {
+			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
+			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
+			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
 			case WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS:
 			case WebsitePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
 			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
-			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
-			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
-			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 			case WebsitePackage.VIEW_ASSOCIATION__PSEUDO:
 			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH:

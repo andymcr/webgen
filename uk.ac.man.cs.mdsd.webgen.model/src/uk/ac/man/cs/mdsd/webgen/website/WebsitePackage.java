@@ -1525,31 +1525,31 @@ public interface WebsitePackage extends EPackage {
 	int FEATURE = 12;
 
 	/**
-	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__HEADER_CLASS = 0;
+	int FEATURE__COLLECTION_ALLOW_ADD = 0;
 
 	/**
-	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DISPLAY_CLASS = 1;
+	int FEATURE__COLLECTION_ALLOW_REMOVE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__FOOTER_CLASS = 2;
+	int FEATURE__ENCODE_URI_KEY = 2;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
@@ -1570,13 +1570,31 @@ public interface WebsitePackage extends EPackage {
 	int FEATURE__SERIALIZATION_EXPOSE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__ENCODE_URI_KEY = 5;
+	int FEATURE__HEADER_CLASS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__DISPLAY_CLASS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__FOOTER_CLASS = 7;
 
 	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
@@ -1585,7 +1603,52 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = 6;
+	int FEATURE_FEATURE_COUNT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__COLLECTION_ALLOW_ADD = FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__ENCODE_URI_KEY = FEATURE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -1613,33 +1676,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE__FOOTER_CLASS = FEATURE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__ENCODE_URI_KEY = FEATURE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' containment reference.
@@ -1957,6 +1993,51 @@ public interface WebsitePackage extends EPackage {
 	int ATTRIBUTE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__COLLECTION_ALLOW_ADD = FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__ENCODE_URI_KEY = FEATURE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1982,33 +2063,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION__FOOTER_CLASS = FEATURE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION__ENCODE_URI_KEY = FEATURE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
@@ -2839,31 +2893,31 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_FEATURE__DISPLAY_LABEL = NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+	int ENTITY_FEATURE__COLLECTION_ALLOW_ADD = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int ENTITY_FEATURE__ENCODE_URI_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
@@ -2884,13 +2938,31 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_FEATURE__SERIALIZATION_EXPOSE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ENCODE_URI_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int ENTITY_FEATURE__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -2899,7 +2971,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int ENTITY_FEATURE__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -2908,7 +2980,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int ENTITY_FEATURE__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
@@ -2917,7 +2989,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__UNIQUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int ENTITY_FEATURE__UNIQUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
@@ -2926,7 +2998,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ORDERED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int ENTITY_FEATURE__ORDERED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
@@ -2935,25 +3007,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_FEATURE__COLLECTION_ALLOW_ADD = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -3010,6 +3064,51 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_ATTRIBUTE__DISPLAY_LABEL = ENTITY_FEATURE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_FEATURE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_FEATURE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3035,33 +3134,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ATTRIBUTE__FOOTER_CLASS = ENTITY_FEATURE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_FEATURE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_FEATURE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -3107,24 +3179,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -3253,6 +3307,51 @@ public interface WebsitePackage extends EPackage {
 	int DATA_TYPE_ATTRIBUTE__DISPLAY_LABEL = ENTITY_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3278,33 +3377,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__FOOTER_CLASS = ENTITY_ATTRIBUTE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -3350,24 +3422,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -3532,6 +3586,51 @@ public interface WebsitePackage extends EPackage {
 	int DATE_ATTRIBUTE__DISPLAY_LABEL = ENTITY_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3557,33 +3656,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATE_ATTRIBUTE__FOOTER_CLASS = ENTITY_ATTRIBUTE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -3629,24 +3701,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -3793,6 +3847,51 @@ public interface WebsitePackage extends EPackage {
 	int URL_ATTRIBUTE__DISPLAY_LABEL = ENTITY_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3818,33 +3917,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int URL_ATTRIBUTE__FOOTER_CLASS = ENTITY_ATTRIBUTE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int URL_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int URL_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int URL_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -3890,24 +3962,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int URL_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int URL_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int URL_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -4045,6 +4099,51 @@ public interface WebsitePackage extends EPackage {
 	int RESOURCE_ATTRIBUTE__DISPLAY_LABEL = ENTITY_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4070,33 +4169,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__FOOTER_CLASS = ENTITY_ATTRIBUTE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -4142,24 +4214,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -4378,6 +4432,51 @@ public interface WebsitePackage extends EPackage {
 	int FILE_ATTRIBUTE__DISPLAY_LABEL = RESOURCE_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__COLLECTION_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__ENCODE_URI_KEY = RESOURCE_ATTRIBUTE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__SERIALIZATION_GROUPS = RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__SERIALIZATION_EXPOSE = RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4403,33 +4502,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int FILE_ATTRIBUTE__FOOTER_CLASS = RESOURCE_ATTRIBUTE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_ATTRIBUTE__SERIALIZATION_GROUPS = RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_ATTRIBUTE__SERIALIZATION_EXPOSE = RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_ATTRIBUTE__ENCODE_URI_KEY = RESOURCE_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -4475,24 +4547,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int FILE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = RESOURCE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_ATTRIBUTE__COLLECTION_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -4666,6 +4720,51 @@ public interface WebsitePackage extends EPackage {
 	int IMAGE_ATTRIBUTE__DISPLAY_LABEL = RESOURCE_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__COLLECTION_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__ENCODE_URI_KEY = RESOURCE_ATTRIBUTE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__SERIALIZATION_GROUPS = RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__SERIALIZATION_EXPOSE = RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4691,33 +4790,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_ATTRIBUTE__FOOTER_CLASS = RESOURCE_ATTRIBUTE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_ATTRIBUTE__SERIALIZATION_GROUPS = RESOURCE_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_ATTRIBUTE__SERIALIZATION_EXPOSE = RESOURCE_ATTRIBUTE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_ATTRIBUTE__ENCODE_URI_KEY = RESOURCE_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -4763,24 +4835,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = RESOURCE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_ATTRIBUTE__COLLECTION_ALLOW_ADD = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -4954,6 +5008,51 @@ public interface WebsitePackage extends EPackage {
 	int LOCATION_ATTRIBUTE__DISPLAY_LABEL = ENTITY_ATTRIBUTE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4979,33 +5078,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int LOCATION_ATTRIBUTE__FOOTER_CLASS = ENTITY_ATTRIBUTE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCATION_ATTRIBUTE__SERIALIZATION_GROUPS = ENTITY_ATTRIBUTE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCATION_ATTRIBUTE__SERIALIZATION_EXPOSE = ENTITY_ATTRIBUTE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCATION_ATTRIBUTE__ENCODE_URI_KEY = ENTITY_ATTRIBUTE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -5051,24 +5123,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int LOCATION_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCATION_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCATION_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -5197,6 +5251,51 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_ASSOCIATION__DISPLAY_LABEL = ENTITY_FEATURE__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__ENCODE_URI_KEY = ENTITY_FEATURE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__SERIALIZATION_GROUPS = ENTITY_FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE = ENTITY_FEATURE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5222,33 +5321,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ASSOCIATION__FOOTER_CLASS = ENTITY_FEATURE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ASSOCIATION__SERIALIZATION_GROUPS = ENTITY_FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE = ENTITY_FEATURE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ASSOCIATION__ENCODE_URI_KEY = ENTITY_FEATURE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -5294,24 +5366,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ASSOCIATION__BOOLEAN_IS_HAS_CHOICE = ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD = ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -5530,6 +5584,51 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION_WITHOUT_CONTAINMENT__DISPLAY_LABEL = ENTITY_ASSOCIATION__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__ENCODE_URI_KEY = ENTITY_ASSOCIATION__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__SERIALIZATION_GROUPS = ENTITY_ASSOCIATION__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__SERIALIZATION_EXPOSE = ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5555,33 +5654,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITHOUT_CONTAINMENT__FOOTER_CLASS = ENTITY_ASSOCIATION__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__SERIALIZATION_GROUPS = ENTITY_ASSOCIATION__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__SERIALIZATION_EXPOSE = ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__ENCODE_URI_KEY = ENTITY_ASSOCIATION__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -5627,24 +5699,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITHOUT_CONTAINMENT__BOOLEAN_IS_HAS_CHOICE = ENTITY_ASSOCIATION__BOOLEAN_IS_HAS_CHOICE;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -5881,6 +5935,51 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION_WITH_CONTAINMENT__DISPLAY_LABEL = ENTITY_ASSOCIATION__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__ENCODE_URI_KEY = ENTITY_ASSOCIATION__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__SERIALIZATION_GROUPS = ENTITY_ASSOCIATION__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__SERIALIZATION_EXPOSE = ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5906,33 +6005,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITH_CONTAINMENT__FOOTER_CLASS = ENTITY_ASSOCIATION__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITH_CONTAINMENT__SERIALIZATION_GROUPS = ENTITY_ASSOCIATION__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITH_CONTAINMENT__SERIALIZATION_EXPOSE = ENTITY_ASSOCIATION__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITH_CONTAINMENT__ENCODE_URI_KEY = ENTITY_ASSOCIATION__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -5978,24 +6050,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITH_CONTAINMENT__BOOLEAN_IS_HAS_CHOICE = ENTITY_ASSOCIATION__BOOLEAN_IS_HAS_CHOICE;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ALLOW_ADD = ENTITY_ASSOCIATION__COLLECTION_ALLOW_ADD;
-
-	/**
-	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -6412,6 +6466,51 @@ public interface WebsitePackage extends EPackage {
 	int VIEW_FEATURE_COUNT = ENTITY_OR_VIEW_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE__COLLECTION_ALLOW_ADD = FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE__ENCODE_URI_KEY = FEATURE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6439,33 +6538,6 @@ public interface WebsitePackage extends EPackage {
 	int VIEW_FEATURE__FOOTER_CLASS = FEATURE__FOOTER_CLASS;
 
 	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_FEATURE__SERIALIZATION_GROUPS = FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_FEATURE__SERIALIZATION_EXPOSE = FEATURE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_FEATURE__ENCODE_URI_KEY = FEATURE__ENCODE_URI_KEY;
-
-	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6482,6 +6554,51 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int VIEW_FEATURE_FEATURE_COUNT = FEATURE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_FEATURE__COLLECTION_ALLOW_ADD = VIEW_FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE = VIEW_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_FEATURE__ENCODE_URI_KEY = VIEW_FEATURE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS = VIEW_FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE = VIEW_FEATURE__SERIALIZATION_EXPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -6509,33 +6626,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENCAPSULATED_FEATURE__FOOTER_CLASS = VIEW_FEATURE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS = VIEW_FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE = VIEW_FEATURE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_FEATURE__ENCODE_URI_KEY = VIEW_FEATURE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -6583,6 +6673,51 @@ public interface WebsitePackage extends EPackage {
 	int ENCAPSULATED_FEATURE_FEATURE_COUNT = VIEW_FEATURE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ATTRIBUTE__COLLECTION_ALLOW_ADD = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ATTRIBUTE__ENCODE_URI_KEY = ENCAPSULATED_FEATURE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ATTRIBUTE__SERIALIZATION_GROUPS = ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ATTRIBUTE__SERIALIZATION_EXPOSE = ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6608,33 +6743,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENCAPSULATED_ATTRIBUTE__FOOTER_CLASS = ENCAPSULATED_FEATURE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_ATTRIBUTE__SERIALIZATION_GROUPS = ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_ATTRIBUTE__SERIALIZATION_EXPOSE = ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_ATTRIBUTE__ENCODE_URI_KEY = ENCAPSULATED_FEATURE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -6745,6 +6853,51 @@ public interface WebsitePackage extends EPackage {
 	int ENCAPSULATED_ATTRIBUTE_FEATURE_COUNT = ENCAPSULATED_FEATURE_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__COLLECTION_ALLOW_ADD = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_ADD;
+
+	/**
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__COLLECTION_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__ENCODE_URI_KEY = ENCAPSULATED_FEATURE__ENCODE_URI_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__SERIALIZATION_GROUPS = ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__SERIALIZATION_EXPOSE = ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE;
+
+	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6770,33 +6923,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENCAPSULATED_ASSOCIATION__FOOTER_CLASS = ENCAPSULATED_FEATURE__FOOTER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_ASSOCIATION__SERIALIZATION_GROUPS = ENCAPSULATED_FEATURE__SERIALIZATION_GROUPS;
-
-	/**
-	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_ASSOCIATION__SERIALIZATION_EXPOSE = ENCAPSULATED_FEATURE__SERIALIZATION_EXPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENCAPSULATED_ASSOCIATION__ENCODE_URI_KEY = ENCAPSULATED_FEATURE__ENCODE_URI_KEY;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7006,31 +7132,31 @@ public interface WebsitePackage extends EPackage {
 	int VIEW_ASSOCIATION__DISPLAY_LABEL = NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL;
 
 	/**
-	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Allow Add</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
+	int VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Collection Allow Remove</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int VIEW_ASSOCIATION__ENCODE_URI_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
@@ -7051,13 +7177,31 @@ public interface WebsitePackage extends EPackage {
 	int VIEW_ASSOCIATION__SERIALIZATION_EXPOSE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCODE_URI_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int VIEW_ASSOCIATION__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_ASSOCIATION__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_ASSOCIATION__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7066,7 +7210,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int VIEW_ASSOCIATION__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
@@ -7075,7 +7219,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PSEUDO = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int VIEW_ASSOCIATION__PSEUDO = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -7084,7 +7228,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__CHILD_FEATURE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int VIEW_ASSOCIATION__CHILD_FEATURE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Encapsulated By</b></em>' reference list.
@@ -7093,7 +7237,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCAPSULATED_BY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int VIEW_ASSOCIATION__ENCAPSULATED_BY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -7102,7 +7246,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int VIEW_ASSOCIATION__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity X</b></em>' reference.
@@ -7111,7 +7255,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity X</b></em>' reference.
@@ -7120,7 +7264,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__TARGET_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int VIEW_ASSOCIATION__TARGET_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
@@ -7129,7 +7273,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Opposite</b></em>' reference.
@@ -7138,7 +7282,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__OPPOSITE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int VIEW_ASSOCIATION__OPPOSITE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -7147,7 +7291,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int VIEW_ASSOCIATION__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>View Association</em>' class.
@@ -7156,7 +7300,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -15936,6 +16080,28 @@ public interface WebsitePackage extends EPackage {
 	EClass getFeature();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isCollectionAllowAdd <em>Collection Allow Add</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Collection Allow Add</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Feature#isCollectionAllowAdd()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_CollectionAllowAdd();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isCollectionAllowRemove <em>Collection Allow Remove</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Collection Allow Remove</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Feature#isCollectionAllowRemove()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_CollectionAllowRemove();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getHeaderClass <em>Header Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -16086,28 +16252,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEntityFeature_BooleanIsHasChoice();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowAdd <em>Collection Allow Add</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Collection Allow Add</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowAdd()
-	 * @see #getEntityFeature()
-	 * @generated
-	 */
-	EAttribute getEntityFeature_CollectionAllowAdd();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowRemove <em>Collection Allow Remove</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Collection Allow Remove</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityFeature#isCollectionAllowRemove()
-	 * @see #getEntityFeature()
-	 * @generated
-	 */
-	EAttribute getEntityFeature_CollectionAllowRemove();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getColumnName <em>Column Name</em>}'.
@@ -21019,6 +21163,22 @@ public interface WebsitePackage extends EPackage {
 		EClass FEATURE = eINSTANCE.getFeature();
 
 		/**
+		 * The meta object literal for the '<em><b>Collection Allow Add</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__COLLECTION_ALLOW_ADD = eINSTANCE.getFeature_CollectionAllowAdd();
+
+		/**
+		 * The meta object literal for the '<em><b>Collection Allow Remove</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__COLLECTION_ALLOW_REMOVE = eINSTANCE.getFeature_CollectionAllowRemove();
+
+		/**
 		 * The meta object literal for the '<em><b>Header Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -21133,22 +21293,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = eINSTANCE.getEntityFeature_BooleanIsHasChoice();
-
-		/**
-		 * The meta object literal for the '<em><b>Collection Allow Add</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTITY_FEATURE__COLLECTION_ALLOW_ADD = eINSTANCE.getEntityFeature_CollectionAllowAdd();
-
-		/**
-		 * The meta object literal for the '<em><b>Collection Allow Remove</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE = eINSTANCE.getEntityFeature_CollectionAllowRemove();
 
 		/**
 		 * The meta object literal for the '<em><b>Column Name</b></em>' attribute feature.

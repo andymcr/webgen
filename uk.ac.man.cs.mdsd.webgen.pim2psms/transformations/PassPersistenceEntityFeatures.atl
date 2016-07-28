@@ -46,6 +46,8 @@ abstract rule NamedDisplayElement {
 abstract rule Feature {
 	from website : Website!Feature
 	to orm : ORM!Feature (
+		collectionAllowAdd <- website.collectionAllowAdd,
+		collectionAllowRemove <- website.collectionAllowRemove,
 		encodeUriKey <- website.encodeUriKey,
 		serializationExpose <- website.serializationExpose,
 		serializationGroups <- website.serializationGroups
@@ -83,9 +85,7 @@ abstract rule EntityFeature {
 	to orm : ORM!EntityFeature (
 		partOf <- thisModule.findOrmEntityOrView(website.partOf.name),
 		cardinality <- website.cardinality,
-		booleanIsHasChoice <- website.booleanIsHasChoice,
-		collectionAllowAdd <- website.collectionAllowAdd,
-		collectionAllowRemove <- website.collectionAllowRemove
+		booleanIsHasChoice <- website.booleanIsHasChoice
 	)
 }
 

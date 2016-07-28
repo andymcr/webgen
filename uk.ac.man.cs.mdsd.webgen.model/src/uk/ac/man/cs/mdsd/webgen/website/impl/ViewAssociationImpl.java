@@ -37,12 +37,14 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getFooterClass <em>Footer Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isPseudo <em>Pseudo</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
@@ -58,6 +60,87 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class ViewAssociationImpl extends NamedDisplayElementImpl implements ViewAssociation {
+	/**
+	 * The default value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_ALLOW_ADD_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowAdd()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionAllowAdd = COLLECTION_ALLOW_ADD_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COLLECTION_ALLOW_REMOVE_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isCollectionAllowRemove() <em>Collection Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCollectionAllowRemove()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEncodeUriKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ENCODE_URI_KEY_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEncodeUriKey()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean encodeUriKey = ENCODE_URI_KEY_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getSerializationGroups() <em>Serialization Groups</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSerializationGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> serializationGroups;
+	/**
+	 * The default value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSerializationExpose()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SERIALIZATION_EXPOSE_EDEFAULT = true;
+	/**
+	 * The cached value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSerializationExpose()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean serializationExpose = SERIALIZATION_EXPOSE_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getHeaderClass() <em>Header Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,51 +195,6 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @ordered
 	 */
 	protected String footerClass = FOOTER_CLASS_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getSerializationGroups() <em>Serialization Groups</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSerializationGroups()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> serializationGroups;
-	/**
-	 * The default value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSerializationExpose()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean SERIALIZATION_EXPOSE_EDEFAULT = true;
-	/**
-	 * The cached value of the '{@link #isSerializationExpose() <em>Serialization Expose</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSerializationExpose()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean serializationExpose = SERIALIZATION_EXPOSE_EDEFAULT;
-	/**
-	 * The default value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isEncodeUriKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ENCODE_URI_KEY_EDEFAULT = false;
-	/**
-	 * The cached value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isEncodeUriKey()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean encodeUriKey = ENCODE_URI_KEY_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isPseudo() <em>Pseudo</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -291,6 +329,48 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.VIEW_ASSOCIATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCollectionAllowAdd() {
+		return collectionAllowAdd;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionAllowAdd(boolean newCollectionAllowAdd) {
+		boolean oldCollectionAllowAdd = collectionAllowAdd;
+		collectionAllowAdd = newCollectionAllowAdd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD, oldCollectionAllowAdd, collectionAllowAdd));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCollectionAllowRemove() {
+		return collectionAllowRemove;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCollectionAllowRemove(boolean newCollectionAllowRemove) {
+		boolean oldCollectionAllowRemove = collectionAllowRemove;
+		collectionAllowRemove = newCollectionAllowRemove;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
 	}
 
 	/**
@@ -723,18 +803,22 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
+				return isCollectionAllowAdd();
+			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
+				return isCollectionAllowRemove();
+			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+				return isEncodeUriKey();
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+				return getSerializationGroups();
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+				return isSerializationExpose();
 			case WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS:
 				return getHeaderClass();
 			case WebsitePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
 				return getDisplayClass();
 			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 				return getFooterClass();
-			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
-				return getSerializationGroups();
-			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
-				return isSerializationExpose();
-			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
-				return isEncodeUriKey();
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				return getPartOf();
 			case WebsitePackage.VIEW_ASSOCIATION__PSEUDO:
@@ -771,14 +855,14 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS:
-				setHeaderClass((String)newValue);
+			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
+				setCollectionAllowAdd((Boolean)newValue);
 				return;
-			case WebsitePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
-				setDisplayClass((String)newValue);
+			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
+				setCollectionAllowRemove((Boolean)newValue);
 				return;
-			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
-				setFooterClass((String)newValue);
+			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+				setEncodeUriKey((Boolean)newValue);
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
 				getSerializationGroups().clear();
@@ -787,8 +871,14 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
 				setSerializationExpose((Boolean)newValue);
 				return;
-			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
-				setEncodeUriKey((Boolean)newValue);
+			case WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS:
+				setHeaderClass((String)newValue);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
+				setDisplayClass((String)newValue);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
+				setFooterClass((String)newValue);
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				setPartOf((View)newValue);
@@ -827,6 +917,21 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
+				setCollectionAllowAdd(COLLECTION_ALLOW_ADD_EDEFAULT);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
+				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+				getSerializationGroups().clear();
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
+				return;
 			case WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS:
 				setHeaderClass(HEADER_CLASS_EDEFAULT);
 				return;
@@ -835,15 +940,6 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 				setFooterClass(FOOTER_CLASS_EDEFAULT);
-				return;
-			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
-				getSerializationGroups().clear();
-				return;
-			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
-				setSerializationExpose(SERIALIZATION_EXPOSE_EDEFAULT);
-				return;
-			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
-				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				setPartOf((View)null);
@@ -881,18 +977,22 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
+				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
+			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
+				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
+			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
+				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
+				return serializationGroups != null && !serializationGroups.isEmpty();
+			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
+				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
 			case WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS:
 				return HEADER_CLASS_EDEFAULT == null ? headerClass != null : !HEADER_CLASS_EDEFAULT.equals(headerClass);
 			case WebsitePackage.VIEW_ASSOCIATION__DISPLAY_CLASS:
 				return DISPLAY_CLASS_EDEFAULT == null ? displayClass != null : !DISPLAY_CLASS_EDEFAULT.equals(displayClass);
 			case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS:
 				return FOOTER_CLASS_EDEFAULT == null ? footerClass != null : !FOOTER_CLASS_EDEFAULT.equals(footerClass);
-			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
-				return serializationGroups != null && !serializationGroups.isEmpty();
-			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:
-				return serializationExpose != SERIALIZATION_EXPOSE_EDEFAULT;
-			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
-				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				return getPartOf() != null;
 			case WebsitePackage.VIEW_ASSOCIATION__PSEUDO:
@@ -926,12 +1026,14 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Feature.class) {
 			switch (derivedFeatureID) {
+				case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD: return WebsitePackage.FEATURE__COLLECTION_ALLOW_ADD;
+				case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE: return WebsitePackage.FEATURE__COLLECTION_ALLOW_REMOVE;
+				case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY: return WebsitePackage.FEATURE__ENCODE_URI_KEY;
+				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS: return WebsitePackage.FEATURE__SERIALIZATION_GROUPS;
+				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE: return WebsitePackage.FEATURE__SERIALIZATION_EXPOSE;
 				case WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS: return WebsitePackage.FEATURE__HEADER_CLASS;
 				case WebsitePackage.VIEW_ASSOCIATION__DISPLAY_CLASS: return WebsitePackage.FEATURE__DISPLAY_CLASS;
 				case WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS: return WebsitePackage.FEATURE__FOOTER_CLASS;
-				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS: return WebsitePackage.FEATURE__SERIALIZATION_GROUPS;
-				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE: return WebsitePackage.FEATURE__SERIALIZATION_EXPOSE;
-				case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY: return WebsitePackage.FEATURE__ENCODE_URI_KEY;
 				default: return -1;
 			}
 		}
@@ -965,12 +1067,14 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Feature.class) {
 			switch (baseFeatureID) {
+				case WebsitePackage.FEATURE__COLLECTION_ALLOW_ADD: return WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD;
+				case WebsitePackage.FEATURE__COLLECTION_ALLOW_REMOVE: return WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+				case WebsitePackage.FEATURE__ENCODE_URI_KEY: return WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY;
+				case WebsitePackage.FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS;
+				case WebsitePackage.FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE;
 				case WebsitePackage.FEATURE__HEADER_CLASS: return WebsitePackage.VIEW_ASSOCIATION__HEADER_CLASS;
 				case WebsitePackage.FEATURE__DISPLAY_CLASS: return WebsitePackage.VIEW_ASSOCIATION__DISPLAY_CLASS;
 				case WebsitePackage.FEATURE__FOOTER_CLASS: return WebsitePackage.VIEW_ASSOCIATION__FOOTER_CLASS;
-				case WebsitePackage.FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS;
-				case WebsitePackage.FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE;
-				case WebsitePackage.FEATURE__ENCODE_URI_KEY: return WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY;
 				default: return -1;
 			}
 		}
@@ -1005,18 +1109,22 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (headerClass: ");
+		result.append(" (collectionAllowAdd: ");
+		result.append(collectionAllowAdd);
+		result.append(", collectionAllowRemove: ");
+		result.append(collectionAllowRemove);
+		result.append(", encodeUriKey: ");
+		result.append(encodeUriKey);
+		result.append(", serializationGroups: ");
+		result.append(serializationGroups);
+		result.append(", serializationExpose: ");
+		result.append(serializationExpose);
+		result.append(", headerClass: ");
 		result.append(headerClass);
 		result.append(", displayClass: ");
 		result.append(displayClass);
 		result.append(", footerClass: ");
 		result.append(footerClass);
-		result.append(", serializationGroups: ");
-		result.append(serializationGroups);
-		result.append(", serializationExpose: ");
-		result.append(serializationExpose);
-		result.append(", encodeUriKey: ");
-		result.append(encodeUriKey);
 		result.append(", pseudo: ");
 		result.append(pseudo);
 		result.append(", inputClass: ");

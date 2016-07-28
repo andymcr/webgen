@@ -115,6 +115,8 @@ abstract class EntityOrView extends Classifier {
 
 abstract class Feature extends NamedDisplayElement {
 	container EntityOrView[1] partOf opposite features
+	boolean collectionAllowAdd = "false"
+	boolean collectionAllowRemove = "false"
 	boolean[1] encodeUriKey = "false"
 	boolean[1] serializationExpose = "true"
 	String[] serializationGroups
@@ -160,8 +162,6 @@ abstract class EntityFeature extends Feature {
 	boolean primaryKey
 	Cardinality cardinality
 	IsHasChoices booleanIsHasChoice
-	boolean collectionAllowAdd
-	boolean collectionAllowRemove
 	String[1] columnName
 }
 

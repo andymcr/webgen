@@ -14,12 +14,14 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isEncodeUriKey <em>Encode Uri Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getSerializationGroups <em>Serialization Groups</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isSerializationExpose <em>Serialization Expose</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getHeaderClass <em>Header Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getDisplayClass <em>Display Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getFooterClass <em>Footer Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getSerializationGroups <em>Serialization Groups</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isSerializationExpose <em>Serialization Expose</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature()
@@ -27,6 +29,60 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Feature extends EObject {
+
+	/**
+	 * Returns the value of the '<em><b>Collection Allow Add</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection Allow Add</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection Allow Add</em>' attribute.
+	 * @see #setCollectionAllowAdd(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature_CollectionAllowAdd()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isCollectionAllowAdd();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isCollectionAllowAdd <em>Collection Allow Add</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection Allow Add</em>' attribute.
+	 * @see #isCollectionAllowAdd()
+	 * @generated
+	 */
+	void setCollectionAllowAdd(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Collection Allow Remove</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Collection Allow Remove</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Collection Allow Remove</em>' attribute.
+	 * @see #setCollectionAllowRemove(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature_CollectionAllowRemove()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isCollectionAllowRemove();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isCollectionAllowRemove <em>Collection Allow Remove</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Collection Allow Remove</em>' attribute.
+	 * @see #isCollectionAllowRemove()
+	 * @generated
+	 */
+	void setCollectionAllowRemove(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Header Class</b></em>' attribute.

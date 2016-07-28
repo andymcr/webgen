@@ -45,18 +45,18 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCollectionAllowAddPropertyDescriptor(object);
+			addCollectionAllowRemovePropertyDescriptor(object);
+			addEncodeUriKeyPropertyDescriptor(object);
+			addSerializationGroupsPropertyDescriptor(object);
+			addSerializationExposePropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
 			addDisplayClassPropertyDescriptor(object);
 			addFooterClassPropertyDescriptor(object);
-			addSerializationGroupsPropertyDescriptor(object);
-			addSerializationExposePropertyDescriptor(object);
-			addEncodeUriKeyPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
 			addOrderedPropertyDescriptor(object);
 			addBooleanIsHasChoicePropertyDescriptor(object);
-			addCollectionAllowAddPropertyDescriptor(object);
-			addCollectionAllowRemovePropertyDescriptor(object);
 			addColumnNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -293,14 +293,14 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntityFeature_collectionAllowAdd_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_collectionAllowAdd_feature", "_UI_EntityFeature_type"),
-				 WebsitePackage.Literals.ENTITY_FEATURE__COLLECTION_ALLOW_ADD,
+				 getString("_UI_Feature_collectionAllowAdd_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowAdd_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__COLLECTION_ALLOW_ADD,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
+				 getString("_UI_PersistencePropertyCategory"),
 				 null));
 	}
 
@@ -315,14 +315,14 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntityFeature_collectionAllowRemove_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_collectionAllowRemove_feature", "_UI_EntityFeature_type"),
-				 WebsitePackage.Literals.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE,
+				 getString("_UI_Feature_collectionAllowRemove_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowRemove_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__COLLECTION_ALLOW_REMOVE,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
+				 getString("_UI_PersistencePropertyCategory"),
 				 null));
 	}
 
@@ -375,18 +375,18 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityFeature.class)) {
+			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
+			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
+			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
+			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
 			case WebsitePackage.ENTITY_FEATURE__HEADER_CLASS:
 			case WebsitePackage.ENTITY_FEATURE__DISPLAY_CLASS:
 			case WebsitePackage.ENTITY_FEATURE__FOOTER_CLASS:
-			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
-			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:
-			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 			case WebsitePackage.ENTITY_FEATURE__CARDINALITY:
 			case WebsitePackage.ENTITY_FEATURE__UNIQUE:
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:
 			case WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
-			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
-			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

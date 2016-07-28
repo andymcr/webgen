@@ -49,6 +49,8 @@ public class FeatureItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
+			addCollectionAllowAddPropertyDescriptor(object);
+			addCollectionAllowRemovePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
 			addSerializationExposePropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
@@ -74,6 +76,50 @@ public class FeatureItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Allow Add feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionAllowAddPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_collectionAllowAdd_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowAdd_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__COLLECTION_ALLOW_ADD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Collection Allow Remove feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCollectionAllowRemovePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_collectionAllowRemove_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_collectionAllowRemove_feature", "_UI_Feature_type"),
+				 OrmPackage.Literals.FEATURE__COLLECTION_ALLOW_REMOVE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -170,6 +216,8 @@ public class FeatureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Feature.class)) {
+			case OrmPackage.FEATURE__COLLECTION_ALLOW_ADD:
+			case OrmPackage.FEATURE__COLLECTION_ALLOW_REMOVE:
 			case OrmPackage.FEATURE__ENCODE_URI_KEY:
 			case OrmPackage.FEATURE__SERIALIZATION_EXPOSE:
 			case OrmPackage.FEATURE__SERIALIZATION_GROUPS:

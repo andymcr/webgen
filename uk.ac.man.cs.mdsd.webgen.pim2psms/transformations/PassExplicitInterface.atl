@@ -255,7 +255,12 @@ rule WafModel {
 		ajaxTechnology <- website.websiteProperties.ajaxTechnology,
 		captchaSiteKey <- website.websiteProperties.captchaSiteKey,
 		captchaSecretKey <- website.websiteProperties.captchaSecretKey,
-		textEditorURL <- website.websiteProperties.textEditorURL,
+		textEditorURL <-
+			if website.websiteProperties.textEditorURL.oclIsUndefined() then
+				OclUndefined
+			else
+				website.websiteProperties.textEditorURL.cleanString()
+			endif,
 		topNavigationId <- website.websiteProperties.topNavigationId,
 		sideMenu <- website.websiteProperties.sideMenu,
 		siteTemplate <- website.websiteProperties.siteTemplate,

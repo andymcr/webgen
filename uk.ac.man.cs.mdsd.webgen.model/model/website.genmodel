@@ -610,6 +610,8 @@
           ecoreFeature="ecore:EReference website.ecore#//EditUnit/defaultSelection"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//EditUnit/title"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"
+          ecoreFeature="ecore:EReference website.ecore#//EditUnit/enableWhen"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Navigation"
           propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//EditUnit/confirmDestination"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
@@ -711,9 +713,9 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//InlineAction/usedBy"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/disable"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"
-          ecoreFeature="ecore:EReference website.ecore#//InlineAction/disableWhen"/>
+          ecoreFeature="ecore:EReference website.ecore#//InlineAction/enableWhen"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"
-          ecoreFeature="ecore:EReference website.ecore#//InlineAction/removeWhen"/>
+          ecoreFeature="ecore:EReference website.ecore#//InlineAction/displayWhen"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/header"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/footer"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/headerClass"/>

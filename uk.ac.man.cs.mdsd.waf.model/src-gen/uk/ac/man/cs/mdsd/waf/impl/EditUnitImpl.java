@@ -3,11 +3,14 @@
 package uk.ac.man.cs.mdsd.waf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import uk.ac.man.cs.mdsd.criteria.Predicate;
 
 import uk.ac.man.cs.mdsd.orm.Label;
 
@@ -26,6 +29,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getEnableWhen <em>Enable When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getConfirmDestination <em>Confirm Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getConfirmLabel <em>Confirm Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getCancelDestination <em>Cancel Destination</em>}</li>
@@ -55,6 +59,16 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * @ordered
 	 */
 	protected Label title;
+
+	/**
+	 * The cached value of the '{@link #getEnableWhen() <em>Enable When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnableWhen()
+	 * @generated
+	 * @ordered
+	 */
+	protected Predicate enableWhen;
 
 	/**
 	 * The cached value of the '{@link #getConfirmDestination() <em>Confirm Destination</em>}' reference.
@@ -236,6 +250,49 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Predicate getEnableWhen() {
+		return enableWhen;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEnableWhen(Predicate newEnableWhen, NotificationChain msgs) {
+		Predicate oldEnableWhen = enableWhen;
+		enableWhen = newEnableWhen;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__ENABLE_WHEN, oldEnableWhen, newEnableWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEnableWhen(Predicate newEnableWhen) {
+		if (newEnableWhen != enableWhen) {
+			NotificationChain msgs = null;
+			if (enableWhen != null)
+				msgs = ((InternalEObject)enableWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.EDIT_UNIT__ENABLE_WHEN, null, msgs);
+			if (newEnableWhen != null)
+				msgs = ((InternalEObject)newEnableWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.EDIT_UNIT__ENABLE_WHEN, null, msgs);
+			msgs = basicSetEnableWhen(newEnableWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__ENABLE_WHEN, newEnableWhen, newEnableWhen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Page getConfirmDestination() {
 		if (confirmDestination != null && confirmDestination.eIsProxy()) {
 			InternalEObject oldConfirmDestination = (InternalEObject)confirmDestination;
@@ -376,6 +433,20 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WafPackage.EDIT_UNIT__ENABLE_WHEN:
+				return basicSetEnableWhen(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case WafPackage.EDIT_UNIT__DEFAULT_SELECTION:
@@ -384,6 +455,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 			case WafPackage.EDIT_UNIT__TITLE:
 				if (resolve) return getTitle();
 				return basicGetTitle();
+			case WafPackage.EDIT_UNIT__ENABLE_WHEN:
+				return getEnableWhen();
 			case WafPackage.EDIT_UNIT__CONFIRM_DESTINATION:
 				if (resolve) return getConfirmDestination();
 				return basicGetConfirmDestination();
@@ -413,6 +486,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 				return;
 			case WafPackage.EDIT_UNIT__TITLE:
 				setTitle((Label)newValue);
+				return;
+			case WafPackage.EDIT_UNIT__ENABLE_WHEN:
+				setEnableWhen((Predicate)newValue);
 				return;
 			case WafPackage.EDIT_UNIT__CONFIRM_DESTINATION:
 				setConfirmDestination((Page)newValue);
@@ -447,6 +523,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 			case WafPackage.EDIT_UNIT__TITLE:
 				setTitle((Label)null);
 				return;
+			case WafPackage.EDIT_UNIT__ENABLE_WHEN:
+				setEnableWhen((Predicate)null);
+				return;
 			case WafPackage.EDIT_UNIT__CONFIRM_DESTINATION:
 				setConfirmDestination((Page)null);
 				return;
@@ -478,6 +557,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 				return defaultSelection != null;
 			case WafPackage.EDIT_UNIT__TITLE:
 				return title != null;
+			case WafPackage.EDIT_UNIT__ENABLE_WHEN:
+				return enableWhen != null;
 			case WafPackage.EDIT_UNIT__CONFIRM_DESTINATION:
 				return confirmDestination != null;
 			case WafPackage.EDIT_UNIT__CONFIRM_LABEL:

@@ -189,8 +189,8 @@ public class DeleteActionItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.INLINE_ACTION__DISABLE_WHEN ||
-			childFeature == WafPackage.Literals.INLINE_ACTION__REMOVE_WHEN;
+			childFeature == WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN ||
+			childFeature == WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN;
 
 		if (qualify) {
 			return getString

@@ -27,8 +27,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#isDisable <em>Disable</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getDisableWhen <em>Disable When</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getRemoveWhen <em>Remove When</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getEnableWhen <em>Enable When</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getDisplayWhen <em>Display When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -59,24 +59,24 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	protected boolean disable = DISABLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDisableWhen() <em>Disable When</em>}' containment reference.
+	 * The cached value of the '{@link #getEnableWhen() <em>Enable When</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDisableWhen()
+	 * @see #getEnableWhen()
 	 * @generated
 	 * @ordered
 	 */
-	protected Predicate disableWhen;
+	protected Predicate enableWhen;
 
 	/**
-	 * The cached value of the '{@link #getRemoveWhen() <em>Remove When</em>}' containment reference.
+	 * The cached value of the '{@link #getDisplayWhen() <em>Display When</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRemoveWhen()
+	 * @see #getDisplayWhen()
 	 * @generated
 	 * @ordered
 	 */
-	protected Predicate removeWhen;
+	protected Predicate displayWhen;
 
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
@@ -244,8 +244,8 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Predicate getDisableWhen() {
-		return disableWhen;
+	public Predicate getEnableWhen() {
+		return enableWhen;
 	}
 
 	/**
@@ -253,11 +253,11 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDisableWhen(Predicate newDisableWhen, NotificationChain msgs) {
-		Predicate oldDisableWhen = disableWhen;
-		disableWhen = newDisableWhen;
+	public NotificationChain basicSetEnableWhen(Predicate newEnableWhen, NotificationChain msgs) {
+		Predicate oldEnableWhen = enableWhen;
+		enableWhen = newEnableWhen;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__DISABLE_WHEN, oldDisableWhen, newDisableWhen);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__ENABLE_WHEN, oldEnableWhen, newEnableWhen);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -268,18 +268,18 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDisableWhen(Predicate newDisableWhen) {
-		if (newDisableWhen != disableWhen) {
+	public void setEnableWhen(Predicate newEnableWhen) {
+		if (newEnableWhen != enableWhen) {
 			NotificationChain msgs = null;
-			if (disableWhen != null)
-				msgs = ((InternalEObject)disableWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__DISABLE_WHEN, null, msgs);
-			if (newDisableWhen != null)
-				msgs = ((InternalEObject)newDisableWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__DISABLE_WHEN, null, msgs);
-			msgs = basicSetDisableWhen(newDisableWhen, msgs);
+			if (enableWhen != null)
+				msgs = ((InternalEObject)enableWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__ENABLE_WHEN, null, msgs);
+			if (newEnableWhen != null)
+				msgs = ((InternalEObject)newEnableWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__ENABLE_WHEN, null, msgs);
+			msgs = basicSetEnableWhen(newEnableWhen, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__DISABLE_WHEN, newDisableWhen, newDisableWhen));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__ENABLE_WHEN, newEnableWhen, newEnableWhen));
 	}
 
 	/**
@@ -287,8 +287,8 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Predicate getRemoveWhen() {
-		return removeWhen;
+	public Predicate getDisplayWhen() {
+		return displayWhen;
 	}
 
 	/**
@@ -296,11 +296,11 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRemoveWhen(Predicate newRemoveWhen, NotificationChain msgs) {
-		Predicate oldRemoveWhen = removeWhen;
-		removeWhen = newRemoveWhen;
+	public NotificationChain basicSetDisplayWhen(Predicate newDisplayWhen, NotificationChain msgs) {
+		Predicate oldDisplayWhen = displayWhen;
+		displayWhen = newDisplayWhen;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__REMOVE_WHEN, oldRemoveWhen, newRemoveWhen);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__DISPLAY_WHEN, oldDisplayWhen, newDisplayWhen);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -311,18 +311,18 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRemoveWhen(Predicate newRemoveWhen) {
-		if (newRemoveWhen != removeWhen) {
+	public void setDisplayWhen(Predicate newDisplayWhen) {
+		if (newDisplayWhen != displayWhen) {
 			NotificationChain msgs = null;
-			if (removeWhen != null)
-				msgs = ((InternalEObject)removeWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__REMOVE_WHEN, null, msgs);
-			if (newRemoveWhen != null)
-				msgs = ((InternalEObject)newRemoveWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__REMOVE_WHEN, null, msgs);
-			msgs = basicSetRemoveWhen(newRemoveWhen, msgs);
+			if (displayWhen != null)
+				msgs = ((InternalEObject)displayWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__DISPLAY_WHEN, null, msgs);
+			if (newDisplayWhen != null)
+				msgs = ((InternalEObject)newDisplayWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.INLINE_ACTION__DISPLAY_WHEN, null, msgs);
+			msgs = basicSetDisplayWhen(newDisplayWhen, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__REMOVE_WHEN, newRemoveWhen, newRemoveWhen));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__DISPLAY_WHEN, newDisplayWhen, newDisplayWhen));
 	}
 
 	/**
@@ -435,10 +435,10 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		switch (featureID) {
 			case WebsitePackage.INLINE_ACTION__USED_BY:
 				return basicSetUsedBy(null, msgs);
-			case WebsitePackage.INLINE_ACTION__DISABLE_WHEN:
-				return basicSetDisableWhen(null, msgs);
-			case WebsitePackage.INLINE_ACTION__REMOVE_WHEN:
-				return basicSetRemoveWhen(null, msgs);
+			case WebsitePackage.INLINE_ACTION__ENABLE_WHEN:
+				return basicSetEnableWhen(null, msgs);
+			case WebsitePackage.INLINE_ACTION__DISPLAY_WHEN:
+				return basicSetDisplayWhen(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -469,10 +469,10 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 				return getUsedBy();
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				return isDisable();
-			case WebsitePackage.INLINE_ACTION__DISABLE_WHEN:
-				return getDisableWhen();
-			case WebsitePackage.INLINE_ACTION__REMOVE_WHEN:
-				return getRemoveWhen();
+			case WebsitePackage.INLINE_ACTION__ENABLE_WHEN:
+				return getEnableWhen();
+			case WebsitePackage.INLINE_ACTION__DISPLAY_WHEN:
+				return getDisplayWhen();
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				return getHeader();
 			case WebsitePackage.INLINE_ACTION__FOOTER:
@@ -499,11 +499,11 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				setDisable((Boolean)newValue);
 				return;
-			case WebsitePackage.INLINE_ACTION__DISABLE_WHEN:
-				setDisableWhen((Predicate)newValue);
+			case WebsitePackage.INLINE_ACTION__ENABLE_WHEN:
+				setEnableWhen((Predicate)newValue);
 				return;
-			case WebsitePackage.INLINE_ACTION__REMOVE_WHEN:
-				setRemoveWhen((Predicate)newValue);
+			case WebsitePackage.INLINE_ACTION__DISPLAY_WHEN:
+				setDisplayWhen((Predicate)newValue);
 				return;
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				setHeader((String)newValue);
@@ -535,11 +535,11 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				setDisable(DISABLE_EDEFAULT);
 				return;
-			case WebsitePackage.INLINE_ACTION__DISABLE_WHEN:
-				setDisableWhen((Predicate)null);
+			case WebsitePackage.INLINE_ACTION__ENABLE_WHEN:
+				setEnableWhen((Predicate)null);
 				return;
-			case WebsitePackage.INLINE_ACTION__REMOVE_WHEN:
-				setRemoveWhen((Predicate)null);
+			case WebsitePackage.INLINE_ACTION__DISPLAY_WHEN:
+				setDisplayWhen((Predicate)null);
 				return;
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				setHeader(HEADER_EDEFAULT);
@@ -569,10 +569,10 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 				return getUsedBy() != null;
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				return disable != DISABLE_EDEFAULT;
-			case WebsitePackage.INLINE_ACTION__DISABLE_WHEN:
-				return disableWhen != null;
-			case WebsitePackage.INLINE_ACTION__REMOVE_WHEN:
-				return removeWhen != null;
+			case WebsitePackage.INLINE_ACTION__ENABLE_WHEN:
+				return enableWhen != null;
+			case WebsitePackage.INLINE_ACTION__DISPLAY_WHEN:
+				return displayWhen != null;
 			case WebsitePackage.INLINE_ACTION__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case WebsitePackage.INLINE_ACTION__FOOTER:

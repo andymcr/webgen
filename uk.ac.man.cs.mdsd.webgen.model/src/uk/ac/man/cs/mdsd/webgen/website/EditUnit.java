@@ -6,6 +6,8 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import uk.ac.man.cs.mdsd.criteria.Predicate;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +20,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getTitle <em>Title</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getEnableWhen <em>Enable When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getConfirmDestination <em>Confirm Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getConfirmLabel <em>Confirm Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getCancelDestination <em>Cancel Destination</em>}</li>
@@ -82,6 +85,32 @@ public interface EditUnit extends DynamicUnit {
 	 * @generated
 	 */
 	void setTitle(Label value);
+
+	/**
+	 * Returns the value of the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Enable When</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Enable When</em>' containment reference.
+	 * @see #setEnableWhen(Predicate)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEditUnit_EnableWhen()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Predicate getEnableWhen();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getEnableWhen <em>Enable When</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Enable When</em>' containment reference.
+	 * @see #getEnableWhen()
+	 * @generated
+	 */
+	void setEnableWhen(Predicate value);
 
 	/**
 	 * Returns the value of the '<em><b>Confirm Destination</b></em>' reference.

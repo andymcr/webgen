@@ -831,6 +831,7 @@ abstract rule EditUnit {
 			else
 				website.title.findOrmLabel()
 			endif,
+		enableWhen <- website.enableWhen,
 		uriElement <-
 			if website.uriElement.trim() <> '' then
 				website.uriElement.trim()
@@ -1087,8 +1088,8 @@ abstract rule InlineAction {
 	from website : Website!InlineAction
 	to waf : WAF!InlineAction (
 		disable <- website.disable,
-		disableWhen <- website.disableWhen,
-		removeWhen <- website.removeWhen,
+		enableWhen <- website.enableWhen,
+		displayWhen <- website.displayWhen,
 		header <- website.header,
 		footer <- website.footer,
 		headerClass <- website.headerClass,

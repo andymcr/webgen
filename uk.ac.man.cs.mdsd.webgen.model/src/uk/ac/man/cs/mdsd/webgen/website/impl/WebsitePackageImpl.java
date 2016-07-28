@@ -4134,7 +4134,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEditUnit_ConfirmDestination() {
+	public EReference getEditUnit_EnableWhen() {
 		return (EReference)editUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -4143,8 +4143,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEditUnit_ConfirmDestination() {
+		return (EReference)editUnitEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getEditUnit_ConfirmLabel() {
-		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -4153,7 +4162,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getEditUnit_CancelDestination() {
-		return (EReference)editUnitEClass.getEStructuralFeatures().get(4);
+		return (EReference)editUnitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -4162,15 +4171,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getEditUnit_CancelLabel() {
-		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEditUnit_ContentClass() {
 		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -4179,8 +4179,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEditUnit_CustomiseValues() {
+	public EAttribute getEditUnit_ContentClass() {
 		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEditUnit_CustomiseValues() {
+		return (EAttribute)editUnitEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -4845,7 +4854,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInlineAction_DisableWhen() {
+	public EReference getInlineAction_EnableWhen() {
 		return (EReference)inlineActionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -4854,7 +4863,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInlineAction_RemoveWhen() {
+	public EReference getInlineAction_DisplayWhen() {
 		return (EReference)inlineActionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -5953,6 +5962,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		editUnitEClass = createEClass(EDIT_UNIT);
 		createEReference(editUnitEClass, EDIT_UNIT__DEFAULT_SELECTION);
 		createEReference(editUnitEClass, EDIT_UNIT__TITLE);
+		createEReference(editUnitEClass, EDIT_UNIT__ENABLE_WHEN);
 		createEReference(editUnitEClass, EDIT_UNIT__CONFIRM_DESTINATION);
 		createEAttribute(editUnitEClass, EDIT_UNIT__CONFIRM_LABEL);
 		createEReference(editUnitEClass, EDIT_UNIT__CANCEL_DESTINATION);
@@ -6035,8 +6045,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		inlineActionEClass = createEClass(INLINE_ACTION);
 		createEReference(inlineActionEClass, INLINE_ACTION__USED_BY);
 		createEAttribute(inlineActionEClass, INLINE_ACTION__DISABLE);
-		createEReference(inlineActionEClass, INLINE_ACTION__DISABLE_WHEN);
-		createEReference(inlineActionEClass, INLINE_ACTION__REMOVE_WHEN);
+		createEReference(inlineActionEClass, INLINE_ACTION__ENABLE_WHEN);
+		createEReference(inlineActionEClass, INLINE_ACTION__DISPLAY_WHEN);
 		createEAttribute(inlineActionEClass, INLINE_ACTION__HEADER);
 		createEAttribute(inlineActionEClass, INLINE_ACTION__FOOTER);
 		createEAttribute(inlineActionEClass, INLINE_ACTION__HEADER_CLASS);
@@ -6699,6 +6709,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(editUnitEClass, EditUnit.class, "EditUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEditUnit_DefaultSelection(), this.getSelection(), null, "defaultSelection", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEditUnit_Title(), this.getLabel(), null, "title", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEditUnit_EnableWhen(), theCriteriaPackage.getPredicate(), null, "enableWhen", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEditUnit_ConfirmDestination(), this.getPage(), null, "confirmDestination", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEditUnit_ConfirmLabel(), ecorePackage.getEString(), "confirmLabel", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEditUnit_CancelDestination(), this.getPage(), null, "cancelDestination", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -6781,8 +6792,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(inlineActionEClass, InlineAction.class, "InlineAction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInlineAction_UsedBy(), this.getInlineActionContainer(), this.getInlineActionContainer_Actions(), "usedBy", null, 1, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInlineAction_Disable(), ecorePackage.getEBoolean(), "disable", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInlineAction_DisableWhen(), theCriteriaPackage.getPredicate(), null, "disableWhen", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInlineAction_RemoveWhen(), theCriteriaPackage.getPredicate(), null, "removeWhen", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInlineAction_EnableWhen(), theCriteriaPackage.getPredicate(), null, "enableWhen", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInlineAction_DisplayWhen(), theCriteriaPackage.getPredicate(), null, "displayWhen", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInlineAction_Header(), ecorePackage.getEString(), "header", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInlineAction_Footer(), ecorePackage.getEString(), "footer", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInlineAction_HeaderClass(), ecorePackage.getEString(), "headerClass", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

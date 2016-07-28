@@ -206,8 +206,8 @@ public class InlineActionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION__DISABLE_WHEN);
-			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION__REMOVE_WHEN);
+			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN);
+			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN);
 		}
 		return childrenFeatures;
 	}
@@ -258,8 +258,8 @@ public class InlineActionItemProvider
 			case WafPackage.INLINE_ACTION__FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.INLINE_ACTION__DISABLE_WHEN:
-			case WafPackage.INLINE_ACTION__REMOVE_WHEN:
+			case WafPackage.INLINE_ACTION__ENABLE_WHEN:
+			case WafPackage.INLINE_ACTION__DISPLAY_WHEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -279,72 +279,72 @@ public class InlineActionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__DISABLE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__DISABLE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__DISABLE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__DISABLE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__DISABLE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__DISABLE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__DISABLE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__REMOVE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__REMOVE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__REMOVE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__REMOVE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__REMOVE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__REMOVE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.INLINE_ACTION__REMOVE_WHEN,
+				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
 				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
@@ -360,8 +360,8 @@ public class InlineActionItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WafPackage.Literals.INLINE_ACTION__DISABLE_WHEN ||
-			childFeature == WafPackage.Literals.INLINE_ACTION__REMOVE_WHEN;
+			childFeature == WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN ||
+			childFeature == WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN;
 
 		if (qualify) {
 			return getString

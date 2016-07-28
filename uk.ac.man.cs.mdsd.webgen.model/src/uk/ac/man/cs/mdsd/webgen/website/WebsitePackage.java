@@ -11039,13 +11039,22 @@ public interface WebsitePackage extends EPackage {
 	int EDIT_UNIT__TITLE = DYNAMIC_UNIT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__ENABLE_WHEN = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CONFIRM_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+	int EDIT_UNIT__CONFIRM_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Label</b></em>' attribute.
@@ -11054,7 +11063,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CONFIRM_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 3;
+	int EDIT_UNIT__CONFIRM_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -11063,7 +11072,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CANCEL_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 4;
+	int EDIT_UNIT__CANCEL_DESTINATION = DYNAMIC_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -11072,7 +11081,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CANCEL_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 5;
+	int EDIT_UNIT__CANCEL_LABEL = DYNAMIC_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -11081,7 +11090,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CONTENT_CLASS = DYNAMIC_UNIT_FEATURE_COUNT + 6;
+	int EDIT_UNIT__CONTENT_CLASS = DYNAMIC_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Customise Values</b></em>' attribute.
@@ -11090,7 +11099,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT__CUSTOMISE_VALUES = DYNAMIC_UNIT_FEATURE_COUNT + 7;
+	int EDIT_UNIT__CUSTOMISE_VALUES = DYNAMIC_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Edit Unit</em>' class.
@@ -11099,7 +11108,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 8;
+	int EDIT_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11298,6 +11307,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT__TITLE = EDIT_UNIT__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
@@ -11568,6 +11586,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__TITLE = EDIT_UNIT__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
@@ -11858,6 +11885,15 @@ public interface WebsitePackage extends EPackage {
 	int UPDATE_UNIT__TITLE = EDIT_UNIT__TITLE;
 
 	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
+
+	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12126,6 +12162,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__TITLE = EDIT_UNIT__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__ENABLE_WHEN = EDIT_UNIT__ENABLE_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Confirm Destination</b></em>' reference.
@@ -14532,22 +14577,22 @@ public interface WebsitePackage extends EPackage {
 	int INLINE_ACTION__DISABLE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__DISABLE_WHEN = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int INLINE_ACTION__ENABLE_WHEN = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Remove When</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__REMOVE_WHEN = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int INLINE_ACTION__DISPLAY_WHEN = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -14649,22 +14694,22 @@ public interface WebsitePackage extends EPackage {
 	int SELECT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
 
 	/**
-	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECT_ACTION__DISABLE_WHEN = INLINE_ACTION__DISABLE_WHEN;
+	int SELECT_ACTION__ENABLE_WHEN = INLINE_ACTION__ENABLE_WHEN;
 
 	/**
-	 * The feature id for the '<em><b>Remove When</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECT_ACTION__REMOVE_WHEN = INLINE_ACTION__REMOVE_WHEN;
+	int SELECT_ACTION__DISPLAY_WHEN = INLINE_ACTION__DISPLAY_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -14775,22 +14820,22 @@ public interface WebsitePackage extends EPackage {
 	int DELETE_ACTION__DISABLE = INLINE_ACTION__DISABLE;
 
 	/**
-	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE_ACTION__DISABLE_WHEN = INLINE_ACTION__DISABLE_WHEN;
+	int DELETE_ACTION__ENABLE_WHEN = INLINE_ACTION__ENABLE_WHEN;
 
 	/**
-	 * The feature id for the '<em><b>Remove When</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELETE_ACTION__REMOVE_WHEN = INLINE_ACTION__REMOVE_WHEN;
+	int DELETE_ACTION__DISPLAY_WHEN = INLINE_ACTION__DISPLAY_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -14919,22 +14964,22 @@ public interface WebsitePackage extends EPackage {
 	int FEATURE_SUPPORT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
 
 	/**
-	 * The feature id for the '<em><b>Disable When</b></em>' containment reference.
+	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_SUPPORT_ACTION__DISABLE_WHEN = INLINE_ACTION__DISABLE_WHEN;
+	int FEATURE_SUPPORT_ACTION__ENABLE_WHEN = INLINE_ACTION__ENABLE_WHEN;
 
 	/**
-	 * The feature id for the '<em><b>Remove When</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_SUPPORT_ACTION__REMOVE_WHEN = INLINE_ACTION__REMOVE_WHEN;
+	int FEATURE_SUPPORT_ACTION__DISPLAY_WHEN = INLINE_ACTION__DISPLAY_WHEN;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -18960,6 +19005,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getEditUnit_Title();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getEnableWhen <em>Enable When</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Enable When</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EditUnit#getEnableWhen()
+	 * @see #getEditUnit()
+	 * @generated
+	 */
+	EReference getEditUnit_EnableWhen();
+
+	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit#getConfirmDestination <em>Confirm Destination</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -19811,26 +19867,26 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getInlineAction_Disable();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getDisableWhen <em>Disable When</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getEnableWhen <em>Enable When</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Disable When</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.InlineAction#getDisableWhen()
+	 * @return the meta object for the containment reference '<em>Enable When</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.InlineAction#getEnableWhen()
 	 * @see #getInlineAction()
 	 * @generated
 	 */
-	EReference getInlineAction_DisableWhen();
+	EReference getInlineAction_EnableWhen();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getRemoveWhen <em>Remove When</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getDisplayWhen <em>Display When</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Remove When</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.InlineAction#getRemoveWhen()
+	 * @return the meta object for the containment reference '<em>Display When</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.InlineAction#getDisplayWhen()
 	 * @see #getInlineAction()
 	 * @generated
 	 */
-	EReference getInlineAction_RemoveWhen();
+	EReference getInlineAction_DisplayWhen();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.InlineAction#getHeader <em>Header</em>}'.
@@ -23443,6 +23499,14 @@ public interface WebsitePackage extends EPackage {
 		EReference EDIT_UNIT__TITLE = eINSTANCE.getEditUnit_Title();
 
 		/**
+		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDIT_UNIT__ENABLE_WHEN = eINSTANCE.getEditUnit_EnableWhen();
+
+		/**
 		 * The meta object literal for the '<em><b>Confirm Destination</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -24111,20 +24175,20 @@ public interface WebsitePackage extends EPackage {
 		EAttribute INLINE_ACTION__DISABLE = eINSTANCE.getInlineAction_Disable();
 
 		/**
-		 * The meta object literal for the '<em><b>Disable When</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INLINE_ACTION__DISABLE_WHEN = eINSTANCE.getInlineAction_DisableWhen();
+		EReference INLINE_ACTION__ENABLE_WHEN = eINSTANCE.getInlineAction_EnableWhen();
 
 		/**
-		 * The meta object literal for the '<em><b>Remove When</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Display When</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INLINE_ACTION__REMOVE_WHEN = eINSTANCE.getInlineAction_RemoveWhen();
+		EReference INLINE_ACTION__DISPLAY_WHEN = eINSTANCE.getInlineAction_DisplayWhen();
 
 		/**
 		 * The meta object literal for the '<em><b>Header</b></em>' attribute feature.

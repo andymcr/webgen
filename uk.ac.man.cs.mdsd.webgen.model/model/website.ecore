@@ -961,6 +961,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
         eType="#//Label"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="confirmDestination" ordered="false"
         eType="#//Page"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmLabel" ordered="false"
@@ -1122,9 +1124,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="usedBy" ordered="false"
         lowerBound="1" eType="#//InlineActionContainer" eOpposite="#//InlineActionContainer/actions"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="disable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="disableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="removeWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="displayWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="footer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

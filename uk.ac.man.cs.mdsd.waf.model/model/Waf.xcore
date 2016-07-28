@@ -375,6 +375,7 @@ class CaptchaField extends InterfaceField {
 abstract class EditUnit extends DynamicUnit {
 	refers Selection defaultSelection
 	refers Label title
+	contains Predicate enableWhen
 	refers Page confirmDestination
 	String[1] confirmLabel
 	refers Page cancelDestination
@@ -474,8 +475,8 @@ interface InlineActionContainer {
 abstract class InlineAction extends NamedDisplayElement {
 	container InlineActionContainer[1] usedBy opposite actions
 	boolean disable
-	contains Predicate disableWhen
-	contains Predicate removeWhen
+	contains Predicate enableWhen
+	contains Predicate displayWhen
 	String header
 	String footer
 	String headerClass

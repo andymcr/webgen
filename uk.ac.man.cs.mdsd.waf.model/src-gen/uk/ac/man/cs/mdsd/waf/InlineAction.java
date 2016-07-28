@@ -17,8 +17,8 @@ import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.InlineAction#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.InlineAction#isDisable <em>Disable</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.InlineAction#getDisableWhen <em>Disable When</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.InlineAction#getRemoveWhen <em>Remove When</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.InlineAction#getEnableWhen <em>Enable When</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.InlineAction#getDisplayWhen <em>Display When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.InlineAction#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.InlineAction#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.InlineAction#getHeaderClass <em>Header Class</em>}</li>
@@ -85,56 +85,56 @@ public interface InlineAction extends NamedDisplayElement {
 	void setDisable(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Disable When</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Enable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Disable When</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Enable When</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Disable When</em>' containment reference.
-	 * @see #setDisableWhen(Predicate)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getInlineAction_DisableWhen()
+	 * @return the value of the '<em>Enable When</em>' containment reference.
+	 * @see #setEnableWhen(Predicate)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getInlineAction_EnableWhen()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Predicate getDisableWhen();
+	Predicate getEnableWhen();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getDisableWhen <em>Disable When</em>}' containment reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getEnableWhen <em>Enable When</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Disable When</em>' containment reference.
-	 * @see #getDisableWhen()
+	 * @param value the new value of the '<em>Enable When</em>' containment reference.
+	 * @see #getEnableWhen()
 	 * @generated
 	 */
-	void setDisableWhen(Predicate value);
+	void setEnableWhen(Predicate value);
 
 	/**
-	 * Returns the value of the '<em><b>Remove When</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Display When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Remove When</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Display When</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Remove When</em>' containment reference.
-	 * @see #setRemoveWhen(Predicate)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getInlineAction_RemoveWhen()
+	 * @return the value of the '<em>Display When</em>' containment reference.
+	 * @see #setDisplayWhen(Predicate)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getInlineAction_DisplayWhen()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Predicate getRemoveWhen();
+	Predicate getDisplayWhen();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getRemoveWhen <em>Remove When</em>}' containment reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getDisplayWhen <em>Display When</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Remove When</em>' containment reference.
-	 * @see #getRemoveWhen()
+	 * @param value the new value of the '<em>Display When</em>' containment reference.
+	 * @see #getDisplayWhen()
 	 * @generated
 	 */
-	void setRemoveWhen(Predicate value);
+	void setDisplayWhen(Predicate value);
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' attribute.

@@ -21,9 +21,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.Classifier;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Menu;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
@@ -44,6 +46,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getServices <em>Services</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getMenus <em>Menus</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebGenModelImpl#getAllowTypeCustomisation <em>Allow Type Customisation</em>}</li>
  * </ul>
  *
  * @generated
@@ -98,6 +101,16 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * @ordered
 	 */
 	protected EList<Menu> menus;
+
+	/**
+	 * The cached value of the '{@link #getAllowTypeCustomisation() <em>Allow Type Customisation</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllowTypeCustomisation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EntityOrView> allowTypeCustomisation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,6 +227,18 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<EntityOrView> getAllowTypeCustomisation() {
+		if (allowTypeCustomisation == null) {
+			allowTypeCustomisation = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION);
+		}
+		return allowTypeCustomisation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -249,6 +274,8 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				return getPages();
 			case WebsitePackage.WEB_GEN_MODEL__MENUS:
 				return getMenus();
+			case WebsitePackage.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION:
+				return getAllowTypeCustomisation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,6 +308,10 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				getMenus().clear();
 				getMenus().addAll((Collection<? extends Menu>)newValue);
 				return;
+			case WebsitePackage.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION:
+				getAllowTypeCustomisation().clear();
+				getAllowTypeCustomisation().addAll((Collection<? extends EntityOrView>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -308,6 +339,9 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 			case WebsitePackage.WEB_GEN_MODEL__MENUS:
 				getMenus().clear();
 				return;
+			case WebsitePackage.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION:
+				getAllowTypeCustomisation().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -330,6 +364,8 @@ public class WebGenModelImpl extends EObjectImpl implements WebGenModel {
 				return pages != null && !pages.isEmpty();
 			case WebsitePackage.WEB_GEN_MODEL__MENUS:
 				return menus != null && !menus.isEmpty();
+			case WebsitePackage.WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION:
+				return allowTypeCustomisation != null && !allowTypeCustomisation.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

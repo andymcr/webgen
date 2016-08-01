@@ -65,6 +65,7 @@ class WafModel {
 	refers Menu sideMenu
 	String siteTemplate
 	boolean staticUnitsEditable
+	refers EntityOrView[] allowTypeCustomisation
 	refers API restApi
 }
 

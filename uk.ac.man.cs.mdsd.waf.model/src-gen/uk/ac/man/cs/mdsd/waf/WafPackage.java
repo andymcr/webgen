@@ -271,13 +271,22 @@ public interface WafPackage extends EPackage {
 	int WAF_MODEL__STATIC_UNITS_EDITABLE = 21;
 
 	/**
+	 * The feature id for the '<em><b>Allow Type Customisation</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAF_MODEL__ALLOW_TYPE_CUSTOMISATION = 22;
+
+	/**
 	 * The feature id for the '<em><b>Rest Api</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__REST_API = 22;
+	int WAF_MODEL__REST_API = 23;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -286,7 +295,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL_FEATURE_COUNT = 23;
+	int WAF_MODEL_FEATURE_COUNT = 24;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -10914,6 +10923,17 @@ public interface WafPackage extends EPackage {
 	EAttribute getWafModel_StaticUnitsEditable();
 
 	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.waf.WafModel#getAllowTypeCustomisation <em>Allow Type Customisation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Allow Type Customisation</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.WafModel#getAllowTypeCustomisation()
+	 * @see #getWafModel()
+	 * @generated
+	 */
+	EReference getWafModel_AllowTypeCustomisation();
+
+	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.WafModel#getRestApi <em>Rest Api</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14114,6 +14134,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WAF_MODEL__STATIC_UNITS_EDITABLE = eINSTANCE.getWafModel_StaticUnitsEditable();
+
+		/**
+		 * The meta object literal for the '<em><b>Allow Type Customisation</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WAF_MODEL__ALLOW_TYPE_CUSTOMISATION = eINSTANCE.getWafModel_AllowTypeCustomisation();
 
 		/**
 		 * The meta object literal for the '<em><b>Rest Api</b></em>' reference feature.

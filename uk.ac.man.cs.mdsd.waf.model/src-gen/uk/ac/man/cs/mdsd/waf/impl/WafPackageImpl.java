@@ -919,8 +919,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWafModel_RestApi() {
+	public EReference getWafModel_AllowTypeCustomisation() {
 		return (EReference)wafModelEClass.getEStructuralFeatures().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWafModel_RestApi() {
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -3476,6 +3485,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(wafModelEClass, WAF_MODEL__SIDE_MENU);
 		createEAttribute(wafModelEClass, WAF_MODEL__SITE_TEMPLATE);
 		createEAttribute(wafModelEClass, WAF_MODEL__STATIC_UNITS_EDITABLE);
+		createEReference(wafModelEClass, WAF_MODEL__ALLOW_TYPE_CUSTOMISATION);
 		createEReference(wafModelEClass, WAF_MODEL__REST_API);
 
 		authenticationEClass = createEClass(AUTHENTICATION);
@@ -3962,6 +3972,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getWafModel_SideMenu(), this.getMenu(), null, "sideMenu", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_SiteTemplate(), theEcorePackage.getEString(), "siteTemplate", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_StaticUnitsEditable(), theEcorePackage.getEBoolean(), "staticUnitsEditable", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWafModel_AllowTypeCustomisation(), theOrmPackage.getEntityOrView(), null, "allowTypeCustomisation", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_RestApi(), theRestPackage.getAPI(), null, "restApi", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationEClass, Authentication.class, "Authentication", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

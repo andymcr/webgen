@@ -118,13 +118,22 @@ public interface WebsitePackage extends EPackage {
 	int WEB_GEN_MODEL__MENUS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Allow Type Customisation</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION = 5;
+
+	/**
 	 * The number of structural features of the '<em>Web Gen Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_GEN_MODEL_FEATURE_COUNT = 5;
+	int WEB_GEN_MODEL_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl <em>Properties</em>}' class.
@@ -15408,6 +15417,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getWebGenModel_Menus();
 
 	/**
+	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getAllowTypeCustomisation <em>Allow Type Customisation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Allow Type Customisation</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebGenModel#getAllowTypeCustomisation()
+	 * @see #getWebGenModel()
+	 * @generated
+	 */
+	EReference getWebGenModel_AllowTypeCustomisation();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -20671,6 +20691,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference WEB_GEN_MODEL__MENUS = eINSTANCE.getWebGenModel_Menus();
+
+		/**
+		 * The meta object literal for the '<em><b>Allow Type Customisation</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WEB_GEN_MODEL__ALLOW_TYPE_CUSTOMISATION = eINSTANCE.getWebGenModel_AllowTypeCustomisation();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl <em>Properties</em>}' class.

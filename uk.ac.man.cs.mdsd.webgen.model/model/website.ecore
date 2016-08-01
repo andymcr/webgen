@@ -25,6 +25,8 @@
         eType="#//Page" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="menus" upperBound="-1"
         eType="#//Menu" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allowTypeCustomisation"
+        upperBound="-1" eType="#//EntityOrView"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DatabaseTechnologies">
     <eLiterals name="MySql"/>

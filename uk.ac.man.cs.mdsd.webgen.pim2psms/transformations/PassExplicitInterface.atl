@@ -264,7 +264,10 @@ rule WafModel {
 		topNavigationId <- website.websiteProperties.topNavigationId,
 		sideMenu <- website.websiteProperties.sideMenu,
 		siteTemplate <- website.websiteProperties.siteTemplate,
-		staticUnitsEditable <- website.websiteProperties.staticUnitsEditable
+		staticUnitsEditable <- website.websiteProperties.staticUnitsEditable,
+		allowTypeCustomisation <-
+			website.allowTypeCustomisation
+				->collect(t | thisModule.findOrmEntityOrView(t.name))
 	)
 }
 

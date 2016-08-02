@@ -49,6 +49,8 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPartOfPropertyDescriptor(object);
+			addSingletonNamePropertyDescriptor(object);
+			addPluralisedNamePropertyDescriptor(object);
 			addKeysPropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
 			addAutoKeyNamePropertyDescriptor(object);
@@ -78,6 +80,50 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Singleton Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSingletonNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_singletonName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_singletonName_feature", "_UI_EntityOrView_type"),
+				 OrmPackage.Literals.ENTITY_OR_VIEW__SINGLETON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pluralised Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPluralisedNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_pluralisedName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_pluralisedName_feature", "_UI_EntityOrView_type"),
+				 OrmPackage.Literals.ENTITY_OR_VIEW__PLURALISED_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -294,6 +340,8 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityOrView.class)) {
+			case OrmPackage.ENTITY_OR_VIEW__SINGLETON_NAME:
+			case OrmPackage.ENTITY_OR_VIEW__PLURALISED_NAME:
 			case OrmPackage.ENTITY_OR_VIEW__TABLE_NAME:
 			case OrmPackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 			case OrmPackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:

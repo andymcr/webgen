@@ -61,8 +61,6 @@ enum OrmTechnologies {
 abstract class NamedElement {
 	@GenModel(property="None")
 	String[1] name
-	String[1] singletonName
-	String[1] pluralisedName
 }
 
 abstract class NamedDisplayElement extends NamedElement {
@@ -101,6 +99,8 @@ class EnumerationLiteral extends NamedDisplayElement {
 
 abstract class EntityOrView extends Classifier {
 	container OrmModel[1] partOf opposite entitiesAndViews
+	String[1] singletonName
+	String[1] pluralisedName
 	contains Feature[] features opposite partOf
 	refers Feature[] ^keys
 	String tableName
@@ -159,6 +159,8 @@ class Entity extends EntityOrView {
 }
 
 abstract class EntityFeature extends Feature {
+	String[1] singletonName
+	String[1] pluralisedName
 	boolean primaryKey
 	Cardinality cardinality
 	IsHasChoices booleanIsHasChoice

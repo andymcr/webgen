@@ -44,12 +44,58 @@ public class EntityFeatureItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSingletonNamePropertyDescriptor(object);
+			addPluralisedNamePropertyDescriptor(object);
 			addPrimaryKeyPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addBooleanIsHasChoicePropertyDescriptor(object);
 			addColumnNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Singleton Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSingletonNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_singletonName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_singletonName_feature", "_UI_EntityFeature_type"),
+				 OrmPackage.Literals.ENTITY_FEATURE__SINGLETON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pluralised Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPluralisedNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_pluralisedName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_pluralisedName_feature", "_UI_EntityFeature_type"),
+				 OrmPackage.Literals.ENTITY_FEATURE__PLURALISED_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -167,6 +213,8 @@ public class EntityFeatureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityFeature.class)) {
+			case OrmPackage.ENTITY_FEATURE__SINGLETON_NAME:
+			case OrmPackage.ENTITY_FEATURE__PLURALISED_NAME:
 			case OrmPackage.ENTITY_FEATURE__PRIMARY_KEY:
 			case OrmPackage.ENTITY_FEATURE__CARDINALITY:
 			case OrmPackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:

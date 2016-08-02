@@ -13,19 +13,7 @@ uses PersistenceExpression;
 abstract rule NamedElement {
 	from website : Website!NamedElement
 	to orm : ORM!NamedElement (
-		name <- website.name,
-		singletonName <-
-			if website.singletonName.oclIsUndefined() or website.singletonName = '' then
-				website.name
-			else
-				website.singletonName
-			endif,
-		pluralisedName <-
-			if website.pluralisedName.oclIsUndefined() or website.pluralisedName = '' then
-				website.name
-			else
-				website.pluralisedName
-			endif
+		name <- website.name
 	)
 }
 
@@ -84,6 +72,18 @@ abstract rule EntityFeature {
 	from website : Website!EntityFeature
 	to orm : ORM!EntityFeature (
 		partOf <- thisModule.findOrmEntityOrView(website.partOf.name),
+		singletonName <-
+			if website.singletonName.oclIsUndefined() or website.singletonName = '' then
+				website.name
+			else
+				website.singletonName
+			endif,
+		pluralisedName <-
+			if website.pluralisedName.oclIsUndefined() or website.pluralisedName = '' then
+				website.name
+			else
+				website.pluralisedName
+			endif,
 		cardinality <- website.cardinality,
 		booleanIsHasChoice <- website.booleanIsHasChoice
 	)

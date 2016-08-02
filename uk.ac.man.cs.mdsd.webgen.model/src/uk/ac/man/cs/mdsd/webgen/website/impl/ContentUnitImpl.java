@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#isCreateDefaultUriElement <em>Create Default Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ContentUnitImpl#getAlternative <em>Alternative</em>}</li>
@@ -35,6 +36,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements ContentUnit {
+	/**
+	 * The default value of the '{@link #isCreateDefaultUriElement() <em>Create Default Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCreateDefaultUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CREATE_DEFAULT_URI_ELEMENT_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isCreateDefaultUriElement() <em>Create Default Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCreateDefaultUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean createDefaultUriElement = CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -200,6 +221,27 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isCreateDefaultUriElement() {
+		return createDefaultUriElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCreateDefaultUriElement(boolean newCreateDefaultUriElement) {
+		boolean oldCreateDefaultUriElement = createDefaultUriElement;
+		createDefaultUriElement = newCreateDefaultUriElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT, oldCreateDefaultUriElement, createDefaultUriElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPurposeSummary() {
 		return purposeSummary;
 	}
@@ -354,6 +396,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				return getDisplayedOn();
+			case WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT:
+				return isCreateDefaultUriElement();
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
 			case WebsitePackage.CONTENT_UNIT__URI_ELEMENT:
@@ -378,6 +422,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)newValue);
+				return;
+			case WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT:
+				setCreateDefaultUriElement((Boolean)newValue);
 				return;
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
@@ -409,6 +456,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)null);
 				return;
+			case WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT:
+				setCreateDefaultUriElement(CREATE_DEFAULT_URI_ELEMENT_EDEFAULT);
+				return;
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
 				return;
@@ -438,6 +488,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		switch (featureID) {
 			case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON:
 				return getDisplayedOn() != null;
+			case WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT:
+				return createDefaultUriElement != CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.CONTENT_UNIT__URI_ELEMENT:
@@ -462,7 +514,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (purposeSummary: ");
+		result.append(" (createDefaultUriElement: ");
+		result.append(createDefaultUriElement);
+		result.append(", purposeSummary: ");
 		result.append(purposeSummary);
 		result.append(", uriElement: ");
 		result.append(uriElement);

@@ -44,6 +44,8 @@ import uk.ac.man.cs.mdsd.webgen.website.isHasChoices;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isUnique <em>Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isOrdered <em>Ordered</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getBooleanIsHasChoice <em>Boolean Is Has Choice</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getSingletonName <em>Singleton Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getPluralisedName <em>Pluralised Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getColumnName <em>Column Name</em>}</li>
  * </ul>
  *
@@ -281,6 +283,46 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	protected isHasChoices booleanIsHasChoice = BOOLEAN_IS_HAS_CHOICE_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getSingletonName() <em>Singleton Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSingletonName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SINGLETON_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSingletonName() <em>Singleton Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSingletonName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String singletonName = SINGLETON_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPluralisedName() <em>Pluralised Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPluralisedName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLURALISED_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPluralisedName() <em>Pluralised Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPluralisedName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String pluralisedName = PLURALISED_NAME_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getColumnName() <em>Column Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -422,6 +464,48 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		booleanIsHasChoice = newBooleanIsHasChoice == null ? BOOLEAN_IS_HAS_CHOICE_EDEFAULT : newBooleanIsHasChoice;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE, oldBooleanIsHasChoice, booleanIsHasChoice));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getSingletonName() {
+		return singletonName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSingletonName(String newSingletonName) {
+		String oldSingletonName = singletonName;
+		singletonName = newSingletonName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__SINGLETON_NAME, oldSingletonName, singletonName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPluralisedName() {
+		return pluralisedName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPluralisedName(String newPluralisedName) {
+		String oldPluralisedName = pluralisedName;
+		pluralisedName = newPluralisedName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__PLURALISED_NAME, oldPluralisedName, pluralisedName));
 	}
 
 	/**
@@ -702,6 +786,10 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return isOrdered();
 			case WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				return getBooleanIsHasChoice();
+			case WebsitePackage.ENTITY_FEATURE__SINGLETON_NAME:
+				return getSingletonName();
+			case WebsitePackage.ENTITY_FEATURE__PLURALISED_NAME:
+				return getPluralisedName();
 			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 				return getColumnName();
 		}
@@ -757,6 +845,12 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				setBooleanIsHasChoice((isHasChoices)newValue);
 				return;
+			case WebsitePackage.ENTITY_FEATURE__SINGLETON_NAME:
+				setSingletonName((String)newValue);
+				return;
+			case WebsitePackage.ENTITY_FEATURE__PLURALISED_NAME:
+				setPluralisedName((String)newValue);
+				return;
 			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 				setColumnName((String)newValue);
 				return;
@@ -811,6 +905,12 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				setBooleanIsHasChoice(BOOLEAN_IS_HAS_CHOICE_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_FEATURE__SINGLETON_NAME:
+				setSingletonName(SINGLETON_NAME_EDEFAULT);
+				return;
+			case WebsitePackage.ENTITY_FEATURE__PLURALISED_NAME:
+				setPluralisedName(PLURALISED_NAME_EDEFAULT);
+				return;
 			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 				setColumnName(COLUMN_NAME_EDEFAULT);
 				return;
@@ -852,6 +952,10 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return ordered != ORDERED_EDEFAULT;
 			case WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
 				return booleanIsHasChoice != BOOLEAN_IS_HAS_CHOICE_EDEFAULT;
+			case WebsitePackage.ENTITY_FEATURE__SINGLETON_NAME:
+				return SINGLETON_NAME_EDEFAULT == null ? singletonName != null : !SINGLETON_NAME_EDEFAULT.equals(singletonName);
+			case WebsitePackage.ENTITY_FEATURE__PLURALISED_NAME:
+				return PLURALISED_NAME_EDEFAULT == null ? pluralisedName != null : !PLURALISED_NAME_EDEFAULT.equals(pluralisedName);
 			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 				return COLUMN_NAME_EDEFAULT == null ? columnName != null : !COLUMN_NAME_EDEFAULT.equals(columnName);
 		}
@@ -938,6 +1042,10 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		result.append(ordered);
 		result.append(", booleanIsHasChoice: ");
 		result.append(booleanIsHasChoice);
+		result.append(", singletonName: ");
+		result.append(singletonName);
+		result.append(", pluralisedName: ");
+		result.append(pluralisedName);
 		result.append(", columnName: ");
 		result.append(columnName);
 		result.append(')');

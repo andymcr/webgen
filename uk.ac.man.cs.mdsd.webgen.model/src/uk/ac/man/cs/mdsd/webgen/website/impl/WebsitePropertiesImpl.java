@@ -58,6 +58,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTextEditorURL <em>Text Editor URL</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isResponsiveTopMenu <em>Responsive Top Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getSiteTemplate <em>Site Template</em>}</li>
@@ -636,6 +637,26 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @ordered
 	 */
 	protected String textEditorURL = TEXT_EDITOR_URL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isResponsiveTopMenu() <em>Responsive Top Menu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isResponsiveTopMenu()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean RESPONSIVE_TOP_MENU_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isResponsiveTopMenu() <em>Responsive Top Menu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isResponsiveTopMenu()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean responsiveTopMenu = RESPONSIVE_TOP_MENU_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTopNavigationId() <em>Top Navigation Id</em>}' attribute.
@@ -1362,6 +1383,27 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isResponsiveTopMenu() {
+		return responsiveTopMenu;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResponsiveTopMenu(boolean newResponsiveTopMenu) {
+		boolean oldResponsiveTopMenu = responsiveTopMenu;
+		responsiveTopMenu = newResponsiveTopMenu;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU, oldResponsiveTopMenu, responsiveTopMenu));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTopNavigationId() {
 		return topNavigationId;
 	}
@@ -1554,6 +1596,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return getCaptchaSecretKey();
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				return getTextEditorURL();
+			case WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU:
+				return isResponsiveTopMenu();
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				return getTopNavigationId();
 			case WebsitePackage.WEBSITE_PROPERTIES__SIDE_MENU:
@@ -1661,6 +1705,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				setTextEditorURL((String)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU:
+				setResponsiveTopMenu((Boolean)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				setTopNavigationId((String)newValue);
@@ -1773,6 +1820,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				setTextEditorURL(TEXT_EDITOR_URL_EDEFAULT);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU:
+				setResponsiveTopMenu(RESPONSIVE_TOP_MENU_EDEFAULT);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				setTopNavigationId(TOP_NAVIGATION_ID_EDEFAULT);
 				return;
@@ -1855,6 +1905,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return CAPTCHA_SECRET_KEY_EDEFAULT == null ? captchaSecretKey != null : !CAPTCHA_SECRET_KEY_EDEFAULT.equals(captchaSecretKey);
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
 				return TEXT_EDITOR_URL_EDEFAULT == null ? textEditorURL != null : !TEXT_EDITOR_URL_EDEFAULT.equals(textEditorURL);
+			case WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU:
+				return responsiveTopMenu != RESPONSIVE_TOP_MENU_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 				return TOP_NAVIGATION_ID_EDEFAULT == null ? topNavigationId != null : !TOP_NAVIGATION_ID_EDEFAULT.equals(topNavigationId);
 			case WebsitePackage.WEBSITE_PROPERTIES__SIDE_MENU:
@@ -1933,6 +1985,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(captchaSecretKey);
 		result.append(", textEditorURL: ");
 		result.append(textEditorURL);
+		result.append(", responsiveTopMenu: ");
+		result.append(responsiveTopMenu);
 		result.append(", topNavigationId: ");
 		result.append(topNavigationId);
 		result.append(", siteTemplate: ");

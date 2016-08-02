@@ -235,13 +235,22 @@ public interface WafPackage extends EPackage {
 	int WAF_MODEL__TEXT_EDITOR_URL = 17;
 
 	/**
+	 * The feature id for the '<em><b>Responsive Top Menu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAF_MODEL__RESPONSIVE_TOP_MENU = 18;
+
+	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__TOP_NAVIGATION_ID = 18;
+	int WAF_MODEL__TOP_NAVIGATION_ID = 19;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -250,7 +259,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SIDE_MENU = 19;
+	int WAF_MODEL__SIDE_MENU = 20;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -259,7 +268,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SITE_TEMPLATE = 20;
+	int WAF_MODEL__SITE_TEMPLATE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -268,7 +277,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__STATIC_UNITS_EDITABLE = 21;
+	int WAF_MODEL__STATIC_UNITS_EDITABLE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Allow Type Customisation</b></em>' reference list.
@@ -277,7 +286,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__ALLOW_TYPE_CUSTOMISATION = 22;
+	int WAF_MODEL__ALLOW_TYPE_CUSTOMISATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Rest Api</b></em>' reference.
@@ -286,7 +295,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__REST_API = 23;
+	int WAF_MODEL__REST_API = 24;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -295,7 +304,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL_FEATURE_COUNT = 24;
+	int WAF_MODEL_FEATURE_COUNT = 25;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -681,24 +690,6 @@ public interface WafPackage extends EPackage {
 	int SERVICE__NAME = OrmPackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE__SINGLETON_NAME = OrmPackage.NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE__PLURALISED_NAME = OrmPackage.NAMED_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -770,24 +761,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECTION__NAME = OrmPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__SINGLETON_NAME = OrmPackage.NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__PLURALISED_NAME = OrmPackage.NAMED_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1001,24 +974,6 @@ public interface WafPackage extends EPackage {
 	int SELECTION_PARAMETER__NAME = OrmPackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER__SINGLETON_NAME = OrmPackage.NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER__PLURALISED_NAME = OrmPackage.NAMED_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1072,24 +1027,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int BUSINESS_OPERATION__NAME = OrmPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_OPERATION__SINGLETON_NAME = OrmPackage.NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_OPERATION__PLURALISED_NAME = OrmPackage.NAMED_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -1163,24 +1100,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int MENU__NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU__SINGLETON_NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU__PLURALISED_NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -1274,24 +1193,6 @@ public interface WafPackage extends EPackage {
 	int STATIC_MENU__NAME = MENU__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU__SINGLETON_NAME = MENU__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU__PLURALISED_NAME = MENU__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1381,24 +1282,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DYNAMIC_MENU__NAME = MENU__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__SINGLETON_NAME = MENU__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__PLURALISED_NAME = MENU__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -1583,31 +1466,13 @@ public interface WafPackage extends EPackage {
 	int ACTION_MENU_ENTRY__NAME = MENU_ENTRY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY__SINGLETON_NAME = MENU_ENTRY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY__PLURALISED_NAME = MENU_ENTRY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 3;
+	int ACTION_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' reference.
@@ -1616,7 +1481,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_MENU_ENTRY__ACTION = MENU_ENTRY_FEATURE_COUNT + 4;
+	int ACTION_MENU_ENTRY__ACTION = MENU_ENTRY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Query</b></em>' containment reference.
@@ -1625,7 +1490,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_MENU_ENTRY__QUERY = MENU_ENTRY_FEATURE_COUNT + 5;
+	int ACTION_MENU_ENTRY__QUERY = MENU_ENTRY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Action Menu Entry</em>' class.
@@ -1634,7 +1499,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 6;
+	int ACTION_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Action Menu Entry</em>' class.
@@ -1683,31 +1548,13 @@ public interface WafPackage extends EPackage {
 	int EDIT_STATIC_TEXT_MENU_ENTRY__NAME = MENU_ENTRY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY__SINGLETON_NAME = MENU_ENTRY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY__PLURALISED_NAME = MENU_ENTRY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 3;
+	int EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Edit Static Text Menu Entry</em>' class.
@@ -1716,7 +1563,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 4;
+	int EDIT_STATIC_TEXT_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Edit Static Text Menu Entry</em>' class.
@@ -1745,24 +1592,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAGE__NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__SINGLETON_NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__PLURALISED_NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -1910,24 +1739,6 @@ public interface WafPackage extends EPackage {
 	int FILTER__NAME = OrmPackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__SINGLETON_NAME = OrmPackage.NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__PLURALISED_NAME = OrmPackage.NAMED_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1981,24 +1792,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FILTER_PARAMETER__NAME = OrmPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__SINGLETON_NAME = OrmPackage.NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__PLURALISED_NAME = OrmPackage.NAMED_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Formal</b></em>' reference.
@@ -2065,24 +1858,6 @@ public interface WafPackage extends EPackage {
 	int QUERY__NAME = OrmPackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUERY__SINGLETON_NAME = OrmPackage.NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUERY__PLURALISED_NAME = OrmPackage.NAMED_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2136,24 +1911,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int QUERY_PARAMETER__NAME = OrmPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUERY_PARAMETER__SINGLETON_NAME = OrmPackage.NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUERY_PARAMETER__PLURALISED_NAME = OrmPackage.NAMED_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Formal</b></em>' reference.
@@ -2276,24 +2033,6 @@ public interface WafPackage extends EPackage {
 	int CONTENT_UNIT__NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTENT_UNIT__SINGLETON_NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTENT_UNIT__PLURALISED_NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2410,24 +2149,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_UNIT__NAME = CONTENT_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_UNIT__SINGLETON_NAME = CONTENT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_UNIT__PLURALISED_NAME = CONTENT_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2564,24 +2285,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DYNAMIC_UNIT__NAME = CONTENT_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_UNIT__SINGLETON_NAME = CONTENT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_UNIT__PLURALISED_NAME = CONTENT_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -2790,24 +2493,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_SUPPORT_ACTION__NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_SUPPORT_ACTION__SINGLETON_NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_SUPPORT_ACTION__PLURALISED_NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3892,24 +3577,6 @@ public interface WafPackage extends EPackage {
 	int INTERFACE_FIELD__NAME = OrmPackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERFACE_FIELD__SINGLETON_NAME = OrmPackage.NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERFACE_FIELD__PLURALISED_NAME = OrmPackage.NAMED_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4071,24 +3738,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_FIELD__NAME = INTERFACE_FIELD__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_FIELD__SINGLETON_NAME = INTERFACE_FIELD__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_FIELD__PLURALISED_NAME = INTERFACE_FIELD__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -4290,24 +3939,6 @@ public interface WafPackage extends EPackage {
 	int DATE_FIELD__NAME = INTERFACE_FIELD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_FIELD__SINGLETON_NAME = INTERFACE_FIELD__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_FIELD__PLURALISED_NAME = INTERFACE_FIELD__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4489,24 +4120,6 @@ public interface WafPackage extends EPackage {
 	int CAPTCHA_FIELD__NAME = INTERFACE_FIELD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAPTCHA_FIELD__SINGLETON_NAME = INTERFACE_FIELD__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAPTCHA_FIELD__PLURALISED_NAME = INTERFACE_FIELD__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4668,24 +4281,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int EDIT_UNIT__NAME = DYNAMIC_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_UNIT__SINGLETON_NAME = DYNAMIC_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_UNIT__PLURALISED_NAME = DYNAMIC_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -4968,24 +4563,6 @@ public interface WafPackage extends EPackage {
 	int CREATE_UNIT__NAME = EDIT_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UNIT__SINGLETON_NAME = EDIT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UNIT__PLURALISED_NAME = EDIT_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5264,24 +4841,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__NAME = EDIT_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UPDATE_UNIT__SINGLETON_NAME = EDIT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UPDATE_UNIT__PLURALISED_NAME = EDIT_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -5580,24 +5139,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__NAME = EDIT_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__SINGLETON_NAME = EDIT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__PLURALISED_NAME = EDIT_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -5916,24 +5457,6 @@ public interface WafPackage extends EPackage {
 	int UPDATE_UNIT__NAME = EDIT_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE_UNIT__SINGLETON_NAME = EDIT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE_UNIT__PLURALISED_NAME = EDIT_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6214,24 +5737,6 @@ public interface WafPackage extends EPackage {
 	int DATA_UNIT__NAME = DYNAMIC_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__SINGLETON_NAME = DYNAMIC_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__PLURALISED_NAME = DYNAMIC_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6456,24 +5961,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DETAILS_UNIT__NAME = DATA_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__SINGLETON_NAME = DATA_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__PLURALISED_NAME = DATA_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -6718,24 +6205,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__NAME = DATA_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__SINGLETON_NAME = DATA_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__PLURALISED_NAME = DATA_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -7072,24 +6541,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__NAME = INDEX_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_GRID_UNIT__SINGLETON_NAME = INDEX_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_GRID_UNIT__PLURALISED_NAME = INDEX_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7422,24 +6873,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__NAME = INDEX_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_PAGE_DIRECTION_UNIT__SINGLETON_NAME = INDEX_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_PAGE_DIRECTION_UNIT__PLURALISED_NAME = INDEX_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -7776,24 +7209,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__NAME = INDEX_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_LINE_DIRECTION_UNIT__SINGLETON_NAME = INDEX_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_LINE_DIRECTION_UNIT__PLURALISED_NAME = INDEX_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8128,24 +7543,6 @@ public interface WafPackage extends EPackage {
 	int CONTROL_UNIT__NAME = DYNAMIC_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_UNIT__SINGLETON_NAME = DYNAMIC_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_UNIT__PLURALISED_NAME = DYNAMIC_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8379,24 +7776,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__NAME = CONTROL_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_UNIT__SINGLETON_NAME = CONTROL_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_UNIT__PLURALISED_NAME = CONTROL_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -8643,24 +8022,6 @@ public interface WafPackage extends EPackage {
 	int ACTION_UNIT__NAME = CONTROL_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_UNIT__SINGLETON_NAME = CONTROL_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_UNIT__PLURALISED_NAME = CONTROL_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8877,6 +8238,440 @@ public interface WafPackage extends EPackage {
 	int ACTION_UNIT_OPERATION_COUNT = CONTROL_UNIT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl <em>Image Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getImageUnit()
+	 * @generated
+	 */
+	int IMAGE_UNIT = 57;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__NAME = DYNAMIC_UNIT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__DISPLAY_LABEL = DYNAMIC_UNIT__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__PURPOSE_SUMMARY = DYNAMIC_UNIT__PURPOSE_SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__ALTERNATIVE = DYNAMIC_UNIT__ALTERNATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__OMIT_CAPTION = DYNAMIC_UNIT__OMIT_CAPTION;
+
+	/**
+	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__CAPTION_CLASS = DYNAMIC_UNIT__CAPTION_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__STYLE_CLASS = DYNAMIC_UNIT__STYLE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__CONTENT_CLASS = DYNAMIC_UNIT__CONTENT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Entities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__ENTITIES = DYNAMIC_UNIT__ENTITIES;
+
+	/**
+	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__SUPPORT_ACTIONS = DYNAMIC_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__KEY_ACTUALS = DYNAMIC_UNIT__KEY_ACTUALS;
+
+	/**
+	 * The feature id for the '<em><b>Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__HEADER = DYNAMIC_UNIT__HEADER;
+
+	/**
+	 * The feature id for the '<em><b>Footer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__FOOTER = DYNAMIC_UNIT__FOOTER;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__HEADER_CLASS = DYNAMIC_UNIT__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__CONTROL_CLASS = DYNAMIC_UNIT__CONTROL_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__FOOTER_CLASS = DYNAMIC_UNIT__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__ERROR_CLASS = DYNAMIC_UNIT__ERROR_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__DEFAULT_SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Image Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Image Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT_OPERATION_COUNT = DYNAMIC_UNIT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.SliderUnitImpl <em>Slider Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.SliderUnitImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSliderUnit()
+	 * @generated
+	 */
+	int SLIDER_UNIT = 58;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__NAME = IMAGE_UNIT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__DISPLAY_LABEL = IMAGE_UNIT__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__DISPLAYED_ON = IMAGE_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__PURPOSE_SUMMARY = IMAGE_UNIT__PURPOSE_SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__URI_ELEMENT = IMAGE_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__ALTERNATIVE = IMAGE_UNIT__ALTERNATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__OMIT_CAPTION = IMAGE_UNIT__OMIT_CAPTION;
+
+	/**
+	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__CAPTION_CLASS = IMAGE_UNIT__CAPTION_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__STYLE_CLASS = IMAGE_UNIT__STYLE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__CONTENT_CLASS = IMAGE_UNIT__CONTENT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Entities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__ENTITIES = IMAGE_UNIT__ENTITIES;
+
+	/**
+	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__SUPPORT_ACTIONS = IMAGE_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__KEY_ACTUALS = IMAGE_UNIT__KEY_ACTUALS;
+
+	/**
+	 * The feature id for the '<em><b>Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__HEADER = IMAGE_UNIT__HEADER;
+
+	/**
+	 * The feature id for the '<em><b>Footer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__FOOTER = IMAGE_UNIT__FOOTER;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__HEADER_CLASS = IMAGE_UNIT__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__CONTROL_CLASS = IMAGE_UNIT__CONTROL_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__FOOTER_CLASS = IMAGE_UNIT__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__ERROR_CLASS = IMAGE_UNIT__ERROR_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__DEFAULT_SELECTION = IMAGE_UNIT__DEFAULT_SELECTION;
+
+	/**
+	 * The number of structural features of the '<em>Slider Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Slider Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT_OPERATION_COUNT = IMAGE_UNIT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationUnit <em>Authentication Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8884,7 +8679,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 57;
+	int AUTHENTICATION_UNIT = 59;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -8912,7 +8707,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 58;
+	int REGISTRATION_UNIT = 60;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8922,24 +8717,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int REGISTRATION_UNIT__NAME = EDIT_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION_UNIT__SINGLETON_NAME = EDIT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION_UNIT__PLURALISED_NAME = EDIT_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -9219,7 +8996,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 59;
+	int LOGIN_UNIT = 61;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9229,24 +9006,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOGIN_UNIT__NAME = CONTROL_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN_UNIT__SINGLETON_NAME = CONTROL_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN_UNIT__PLURALISED_NAME = CONTROL_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -9517,7 +9276,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 60;
+	int FORGOTTEN_PASSWORD_UNIT = 62;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9527,24 +9286,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORGOTTEN_PASSWORD_UNIT__NAME = CONTROL_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORGOTTEN_PASSWORD_UNIT__SINGLETON_NAME = CONTROL_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORGOTTEN_PASSWORD_UNIT__PLURALISED_NAME = CONTROL_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -9788,7 +9529,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 61;
+	int INLINE_ACTION_CONTAINER = 63;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -9825,7 +9566,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 62;
+	int INLINE_ACTION = 64;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9835,24 +9576,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INLINE_ACTION__NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INLINE_ACTION__SINGLETON_NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INLINE_ACTION__PLURALISED_NAME = OrmPackage.NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -9961,7 +9684,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 63;
+	int SELECT_ACTION = 65;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9971,24 +9694,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECT_ACTION__NAME = INLINE_ACTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECT_ACTION__SINGLETON_NAME = INLINE_ACTION__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECT_ACTION__PLURALISED_NAME = INLINE_ACTION__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -10106,7 +9811,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 64;
+	int DELETE_ACTION = 66;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10116,24 +9821,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELETE_ACTION__NAME = INLINE_ACTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELETE_ACTION__SINGLETON_NAME = INLINE_ACTION__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELETE_ACTION__PLURALISED_NAME = INLINE_ACTION__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -10269,7 +9956,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 65;
+	int FEATURE_SUPPORT_ACTION = 67;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10279,24 +9966,6 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_SUPPORT_ACTION__NAME = INLINE_ACTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_SUPPORT_ACTION__SINGLETON_NAME = INLINE_ACTION__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_SUPPORT_ACTION__PLURALISED_NAME = INLINE_ACTION__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -10441,7 +10110,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelReference()
 	 * @generated
 	 */
-	int MODEL_REFERENCE = 66;
+	int MODEL_REFERENCE = 68;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' reference.
@@ -10478,7 +10147,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 67;
+	int FEATURE_REFERENCE = 69;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -10515,7 +10184,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getParameterReference()
 	 * @generated
 	 */
-	int PARAMETER_REFERENCE = 68;
+	int PARAMETER_REFERENCE = 70;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -10552,7 +10221,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRouteParameterReference()
 	 * @generated
 	 */
-	int ROUTE_PARAMETER_REFERENCE = 69;
+	int ROUTE_PARAMETER_REFERENCE = 71;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -10589,7 +10258,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCurrentUserReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 70;
+	int CURRENT_USER_REFERENCE = 72;
 
 	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
@@ -10617,7 +10286,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 71;
+	int FRAMEWORK_TECHNOLOGIES = 73;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -10627,7 +10296,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 72;
+	int AJAX_TECHNOLOGIES = 74;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -10637,7 +10306,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 73;
+	int AUTHENTICATION_KEY_TYPES = 75;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.OperationResultTypes <em>Operation Result Types</em>}' enum.
@@ -10647,7 +10316,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 74;
+	int OPERATION_RESULT_TYPES = 76;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -10657,7 +10326,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 75;
+	int PAGE_TOP_MENU_OPTIONS = 77;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -10667,7 +10336,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 76;
+	int COLLECTION_DISPLAY_OPTIONS = 78;
 
 
 	/**
@@ -10877,6 +10546,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWafModel_TextEditorURL();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#isResponsiveTopMenu <em>Responsive Top Menu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Responsive Top Menu</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.WafModel#isResponsiveTopMenu()
+	 * @see #getWafModel()
+	 * @generated
+	 */
+	EAttribute getWafModel_ResponsiveTopMenu();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#getTopNavigationId <em>Top Navigation Id</em>}'.
@@ -13408,6 +13088,37 @@ public interface WafPackage extends EPackage {
 	EClass getActionUnit();
 
 	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ImageUnit <em>Image Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Image Unit</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit
+	 * @generated
+	 */
+	EClass getImageUnit();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getDefaultSelection <em>Default Selection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Default Selection</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getDefaultSelection()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EReference getImageUnit_DefaultSelection();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.SliderUnit <em>Slider Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Slider Unit</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.SliderUnit
+	 * @generated
+	 */
+	EClass getSliderUnit();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.AuthenticationUnit <em>Authentication Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14102,6 +13813,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WAF_MODEL__TEXT_EDITOR_URL = eINSTANCE.getWafModel_TextEditorURL();
+
+		/**
+		 * The meta object literal for the '<em><b>Responsive Top Menu</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WAF_MODEL__RESPONSIVE_TOP_MENU = eINSTANCE.getWafModel_ResponsiveTopMenu();
 
 		/**
 		 * The meta object literal for the '<em><b>Top Navigation Id</b></em>' attribute feature.
@@ -16094,6 +15813,34 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ACTION_UNIT = eINSTANCE.getActionUnit();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl <em>Image Unit</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getImageUnit()
+		 * @generated
+		 */
+		EClass IMAGE_UNIT = eINSTANCE.getImageUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Selection</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMAGE_UNIT__DEFAULT_SELECTION = eINSTANCE.getImageUnit_DefaultSelection();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.SliderUnitImpl <em>Slider Unit</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.SliderUnitImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSliderUnit()
+		 * @generated
+		 */
+		EClass SLIDER_UNIT = eINSTANCE.getSliderUnit();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationUnit <em>Authentication Unit</em>}' class.

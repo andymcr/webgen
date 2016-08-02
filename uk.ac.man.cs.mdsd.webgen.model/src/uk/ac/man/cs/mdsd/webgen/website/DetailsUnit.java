@@ -18,7 +18,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#isCreateDefaultUriElement <em>Create Default Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#getContentClass <em>Content Class</em>}</li>
  * </ul>
@@ -82,33 +81,6 @@ public interface DetailsUnit extends DataUnit, Selectable {
 	 * @generated
 	 */
 	void setOmitFieldLabels(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Create Default Uri Element</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Create Default Uri Element</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Create Default Uri Element</em>' attribute.
-	 * @see #setCreateDefaultUriElement(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDetailsUnit_CreateDefaultUriElement()
-	 * @model default="true"
-	 * @generated
-	 */
-	boolean isCreateDefaultUriElement();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#isCreateDefaultUriElement <em>Create Default Uri Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Create Default Uri Element</em>' attribute.
-	 * @see #isCreateDefaultUriElement()
-	 * @generated
-	 */
-	void setCreateDefaultUriElement(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.

@@ -46,6 +46,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTextEditorURL <em>Text Editor URL</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isResponsiveTopMenu <em>Responsive Top Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getSiteTemplate <em>Site Template</em>}</li>
@@ -834,6 +835,32 @@ public interface WebsiteProperties extends EObject {
 	 * @generated
 	 */
 	void setTextEditorURL(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Responsive Top Menu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Responsive Top Menu</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Responsive Top Menu</em>' attribute.
+	 * @see #setResponsiveTopMenu(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getWebsiteProperties_ResponsiveTopMenu()
+	 * @model
+	 * @generated
+	 */
+	boolean isResponsiveTopMenu();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isResponsiveTopMenu <em>Responsive Top Menu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Responsive Top Menu</em>' attribute.
+	 * @see #isResponsiveTopMenu()
+	 * @generated
+	 */
+	void setResponsiveTopMenu(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Top Navigation Id</b></em>' attribute.

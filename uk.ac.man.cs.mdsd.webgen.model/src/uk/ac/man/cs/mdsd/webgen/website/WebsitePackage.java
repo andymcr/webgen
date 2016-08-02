@@ -407,13 +407,22 @@ public interface WebsitePackage extends EPackage {
 	int WEBSITE_PROPERTIES__TEXT_EDITOR_URL = 28;
 
 	/**
+	 * The feature id for the '<em><b>Responsive Top Menu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU = 29;
+
+	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 29;
+	int WEBSITE_PROPERTIES__TOP_NAVIGATION_ID = 30;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -422,7 +431,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SIDE_MENU = 30;
+	int WEBSITE_PROPERTIES__SIDE_MENU = 31;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -431,7 +440,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 31;
+	int WEBSITE_PROPERTIES__SITE_TEMPLATE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -440,7 +449,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 32;
+	int WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE = 33;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -449,7 +458,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WEBSITE_PROPERTIES_FEATURE_COUNT = 33;
+	int WEBSITE_PROPERTIES_FEATURE_COUNT = 34;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -659,7 +668,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 101;
+	int SELECT_ACTION = 103;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DeleteActionImpl <em>Delete Action</em>}' class.
@@ -669,7 +678,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 102;
+	int DELETE_ACTION = 104;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl <em>Authentication</em>}' class.
@@ -972,31 +981,13 @@ public interface WebsitePackage extends EPackage {
 	int NAMED_ELEMENT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__SINGLETON_NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__PLURALISED_NAME = 2;
-
-	/**
 	 * The number of structural features of the '<em>Named Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT_FEATURE_COUNT = 3;
+	int NAMED_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1006,24 +997,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int NAMED_DISPLAY_ELEMENT__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_DISPLAY_ELEMENT__SINGLETON_NAME = NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_DISPLAY_ELEMENT__PLURALISED_NAME = NAMED_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -1053,24 +1026,6 @@ public interface WebsitePackage extends EPackage {
 	int CLASSIFIER__NAME = NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFIER__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFIER__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1096,24 +1051,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE__NAME = CLASSIFIER__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__SINGLETON_NAME = CLASSIFIER__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE__PLURALISED_NAME = CLASSIFIER__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -1196,24 +1133,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENUMERATION_TYPE__NAME = DATA_TYPE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENUMERATION_TYPE__SINGLETON_NAME = DATA_TYPE__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENUMERATION_TYPE__PLURALISED_NAME = DATA_TYPE__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -1307,24 +1226,6 @@ public interface WebsitePackage extends EPackage {
 	int ENUMERATION_LITERAL__NAME = NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENUMERATION_LITERAL__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENUMERATION_LITERAL__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1362,24 +1263,6 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_OR_VIEW__NAME = CLASSIFIER__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_OR_VIEW__SINGLETON_NAME = CLASSIFIER__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_OR_VIEW__PLURALISED_NAME = CLASSIFIER__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1389,13 +1272,31 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_OR_VIEW__DISPLAY_LABEL = CLASSIFIER__DISPLAY_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__SINGLETON_NAME = CLASSIFIER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_OR_VIEW__PLURALISED_NAME = CLASSIFIER_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Keys</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__KEYS = CLASSIFIER_FEATURE_COUNT + 0;
+	int ENTITY_OR_VIEW__KEYS = CLASSIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Table Name</b></em>' attribute.
@@ -1404,7 +1305,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__TABLE_NAME = CLASSIFIER_FEATURE_COUNT + 1;
+	int ENTITY_OR_VIEW__TABLE_NAME = CLASSIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Auto Key Name</b></em>' attribute.
@@ -1413,7 +1314,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__AUTO_KEY_NAME = CLASSIFIER_FEATURE_COUNT + 2;
+	int ENTITY_OR_VIEW__AUTO_KEY_NAME = CLASSIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Auto Key Persistent Type</b></em>' attribute.
@@ -1422,7 +1323,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE = CLASSIFIER_FEATURE_COUNT + 3;
+	int ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE = CLASSIFIER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Auto Key Generation Strategy</b></em>' attribute.
@@ -1431,7 +1332,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY = CLASSIFIER_FEATURE_COUNT + 4;
+	int ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY = CLASSIFIER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Served By</b></em>' reference list.
@@ -1440,7 +1341,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__SERVED_BY = CLASSIFIER_FEATURE_COUNT + 5;
+	int ENTITY_OR_VIEW__SERVED_BY = CLASSIFIER_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Labels</b></em>' containment reference list.
@@ -1449,7 +1350,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__LABELS = CLASSIFIER_FEATURE_COUNT + 6;
+	int ENTITY_OR_VIEW__LABELS = CLASSIFIER_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' reference list.
@@ -1458,7 +1359,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__FEATURES = CLASSIFIER_FEATURE_COUNT + 7;
+	int ENTITY_OR_VIEW__FEATURES = CLASSIFIER_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>All Features</b></em>' reference list.
@@ -1467,7 +1368,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ALL_FEATURES = CLASSIFIER_FEATURE_COUNT + 8;
+	int ENTITY_OR_VIEW__ALL_FEATURES = CLASSIFIER_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
@@ -1476,7 +1377,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ATTRIBUTES = CLASSIFIER_FEATURE_COUNT + 9;
+	int ENTITY_OR_VIEW__ATTRIBUTES = CLASSIFIER_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' reference list.
@@ -1485,7 +1386,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 10;
+	int ENTITY_OR_VIEW__ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>All Associations</b></em>' reference list.
@@ -1494,7 +1395,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__ALL_ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 11;
+	int ENTITY_OR_VIEW__ALL_ASSOCIATIONS = CLASSIFIER_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Exclude All</b></em>' attribute.
@@ -1503,7 +1404,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = CLASSIFIER_FEATURE_COUNT + 12;
+	int ENTITY_OR_VIEW__SERIALIZATION_EXCLUDE_ALL = CLASSIFIER_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Implements User Interface</b></em>' attribute.
@@ -1512,7 +1413,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE = CLASSIFIER_FEATURE_COUNT + 13;
+	int ENTITY_OR_VIEW__IMPLEMENTS_USER_INTERFACE = CLASSIFIER_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Entity Or View</em>' class.
@@ -1521,7 +1422,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 14;
+	int ENTITY_OR_VIEW_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 16;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature <em>Feature</em>}' class.
@@ -2433,7 +2334,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 95;
+	int AUTHENTICATION_UNIT = 97;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl <em>Registration Unit</em>}' class.
@@ -2443,7 +2344,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 96;
+	int REGISTRATION_UNIT = 98;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl <em>Login Unit</em>}' class.
@@ -2453,7 +2354,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 97;
+	int LOGIN_UNIT = 99;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl <em>Forgotten Password Unit</em>}' class.
@@ -2463,7 +2364,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 98;
+	int FORGOTTEN_PASSWORD_UNIT = 100;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer <em>Inline Action Container</em>}' class.
@@ -2473,7 +2374,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 99;
+	int INLINE_ACTION_CONTAINER = 101;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl <em>Inline Action</em>}' class.
@@ -2483,7 +2384,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 100;
+	int INLINE_ACTION = 102;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureSupportActionImpl <em>Feature Support Action</em>}' class.
@@ -2493,7 +2394,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 103;
+	int FEATURE_SUPPORT_ACTION = 105;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelReferenceImpl <em>Model Reference</em>}' class.
@@ -2503,7 +2404,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getModelReference()
 	 * @generated
 	 */
-	int MODEL_REFERENCE = 104;
+	int MODEL_REFERENCE = 106;
 
 	/**
 	 * The number of structural features of the '<em>Label</em>' class.
@@ -2522,24 +2423,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int MODEL_LABEL__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_LABEL__SINGLETON_NAME = NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_LABEL__PLURALISED_NAME = NAMED_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Label For</b></em>' container reference.
@@ -2686,6 +2569,15 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY__NAME = ENTITY_OR_VIEW__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__DISPLAY_LABEL = ENTITY_OR_VIEW__DISPLAY_LABEL;
+
+	/**
 	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2702,15 +2594,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY__PLURALISED_NAME = ENTITY_OR_VIEW__PLURALISED_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__DISPLAY_LABEL = ENTITY_OR_VIEW__DISPLAY_LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Keys</b></em>' reference list.
@@ -2875,24 +2758,6 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_FEATURE__NAME = NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_FEATURE__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_FEATURE__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3019,13 +2884,31 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+
+	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLUMN_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int ENTITY_FEATURE__COLUMN_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Entity Feature</em>' class.
@@ -3034,7 +2917,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int ENTITY_FEATURE_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3044,24 +2927,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ATTRIBUTE__NAME = ENTITY_FEATURE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ATTRIBUTE__SINGLETON_NAME = ENTITY_FEATURE__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ATTRIBUTE__PLURALISED_NAME = ENTITY_FEATURE__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3190,6 +3055,24 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE;
 
 	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__SINGLETON_NAME = ENTITY_FEATURE__SINGLETON_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__PLURALISED_NAME = ENTITY_FEATURE__PLURALISED_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3287,24 +3170,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__NAME = ENTITY_ATTRIBUTE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__SINGLETON_NAME = ENTITY_ATTRIBUTE__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_ATTRIBUTE__PLURALISED_NAME = ENTITY_ATTRIBUTE__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3431,6 +3296,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__SINGLETON_NAME = ENTITY_ATTRIBUTE__SINGLETON_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__PLURALISED_NAME = ENTITY_ATTRIBUTE__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -3568,24 +3451,6 @@ public interface WebsitePackage extends EPackage {
 	int DATE_ATTRIBUTE__NAME = ENTITY_ATTRIBUTE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_ATTRIBUTE__SINGLETON_NAME = ENTITY_ATTRIBUTE__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_ATTRIBUTE__PLURALISED_NAME = ENTITY_ATTRIBUTE__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3712,6 +3577,24 @@ public interface WebsitePackage extends EPackage {
 	int DATE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
 
 	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__SINGLETON_NAME = ENTITY_ATTRIBUTE__SINGLETON_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__PLURALISED_NAME = ENTITY_ATTRIBUTE__PLURALISED_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3827,24 +3710,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int URL_ATTRIBUTE__NAME = ENTITY_ATTRIBUTE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int URL_ATTRIBUTE__SINGLETON_NAME = ENTITY_ATTRIBUTE__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int URL_ATTRIBUTE__PLURALISED_NAME = ENTITY_ATTRIBUTE__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -3973,6 +3838,24 @@ public interface WebsitePackage extends EPackage {
 	int URL_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
 
 	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__SINGLETON_NAME = ENTITY_ATTRIBUTE__SINGLETON_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__PLURALISED_NAME = ENTITY_ATTRIBUTE__PLURALISED_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4079,24 +3962,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__NAME = ENTITY_ATTRIBUTE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_ATTRIBUTE__SINGLETON_NAME = ENTITY_ATTRIBUTE__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_ATTRIBUTE__PLURALISED_NAME = ENTITY_ATTRIBUTE__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -4223,6 +4088,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__SINGLETON_NAME = ENTITY_ATTRIBUTE__SINGLETON_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__PLURALISED_NAME = ENTITY_ATTRIBUTE__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -4414,24 +4297,6 @@ public interface WebsitePackage extends EPackage {
 	int FILE_ATTRIBUTE__NAME = RESOURCE_ATTRIBUTE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_ATTRIBUTE__SINGLETON_NAME = RESOURCE_ATTRIBUTE__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_ATTRIBUTE__PLURALISED_NAME = RESOURCE_ATTRIBUTE__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4556,6 +4421,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int FILE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = RESOURCE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__SINGLETON_NAME = RESOURCE_ATTRIBUTE__SINGLETON_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__PLURALISED_NAME = RESOURCE_ATTRIBUTE__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -4702,24 +4585,6 @@ public interface WebsitePackage extends EPackage {
 	int IMAGE_ATTRIBUTE__NAME = RESOURCE_ATTRIBUTE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_ATTRIBUTE__SINGLETON_NAME = RESOURCE_ATTRIBUTE__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_ATTRIBUTE__PLURALISED_NAME = RESOURCE_ATTRIBUTE__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4844,6 +4709,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = RESOURCE_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__SINGLETON_NAME = RESOURCE_ATTRIBUTE__SINGLETON_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__PLURALISED_NAME = RESOURCE_ATTRIBUTE__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -4990,24 +4873,6 @@ public interface WebsitePackage extends EPackage {
 	int LOCATION_ATTRIBUTE__NAME = ENTITY_ATTRIBUTE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCATION_ATTRIBUTE__SINGLETON_NAME = ENTITY_ATTRIBUTE__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCATION_ATTRIBUTE__PLURALISED_NAME = ENTITY_ATTRIBUTE__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5134,6 +4999,24 @@ public interface WebsitePackage extends EPackage {
 	int LOCATION_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE = ENTITY_ATTRIBUTE__BOOLEAN_IS_HAS_CHOICE;
 
 	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__SINGLETON_NAME = ENTITY_ATTRIBUTE__SINGLETON_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__PLURALISED_NAME = ENTITY_ATTRIBUTE__PLURALISED_NAME;
+
+	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5231,24 +5114,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ASSOCIATION__NAME = ENTITY_FEATURE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ASSOCIATION__SINGLETON_NAME = ENTITY_FEATURE__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_ASSOCIATION__PLURALISED_NAME = ENTITY_FEATURE__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -5375,6 +5240,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ASSOCIATION__BOOLEAN_IS_HAS_CHOICE = ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__SINGLETON_NAME = ENTITY_FEATURE__SINGLETON_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__PLURALISED_NAME = ENTITY_FEATURE__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -5566,24 +5449,6 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION_WITHOUT_CONTAINMENT__NAME = ENTITY_ASSOCIATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__SINGLETON_NAME = ENTITY_ASSOCIATION__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITHOUT_CONTAINMENT__PLURALISED_NAME = ENTITY_ASSOCIATION__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5708,6 +5573,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITHOUT_CONTAINMENT__BOOLEAN_IS_HAS_CHOICE = ENTITY_ASSOCIATION__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__SINGLETON_NAME = ENTITY_ASSOCIATION__SINGLETON_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__PLURALISED_NAME = ENTITY_ASSOCIATION__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -5917,24 +5800,6 @@ public interface WebsitePackage extends EPackage {
 	int ASSOCIATION_WITH_CONTAINMENT__NAME = ENTITY_ASSOCIATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITH_CONTAINMENT__SINGLETON_NAME = ENTITY_ASSOCIATION__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION_WITH_CONTAINMENT__PLURALISED_NAME = ENTITY_ASSOCIATION__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6059,6 +5924,24 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITH_CONTAINMENT__BOOLEAN_IS_HAS_CHOICE = ENTITY_ASSOCIATION__BOOLEAN_IS_HAS_CHOICE;
+
+	/**
+	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__SINGLETON_NAME = ENTITY_ASSOCIATION__SINGLETON_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__PLURALISED_NAME = ENTITY_ASSOCIATION__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -6295,6 +6178,15 @@ public interface WebsitePackage extends EPackage {
 	int VIEW__NAME = ENTITY_OR_VIEW__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__DISPLAY_LABEL = ENTITY_OR_VIEW__DISPLAY_LABEL;
+
+	/**
 	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6311,15 +6203,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int VIEW__PLURALISED_NAME = ENTITY_OR_VIEW__PLURALISED_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW__DISPLAY_LABEL = ENTITY_OR_VIEW__DISPLAY_LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Keys</b></em>' reference list.
@@ -7114,24 +6997,6 @@ public interface WebsitePackage extends EPackage {
 	int VIEW_ASSOCIATION__NAME = NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_ASSOCIATION__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VIEW_ASSOCIATION__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7321,24 +7186,6 @@ public interface WebsitePackage extends EPackage {
 	int SERVICE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE__SINGLETON_NAME = NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE__PLURALISED_NAME = NAMED_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Serves</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7382,24 +7229,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECTION__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__SINGLETON_NAME = NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION__PLURALISED_NAME = NAMED_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Used By</b></em>' container reference.
@@ -7511,24 +7340,6 @@ public interface WebsitePackage extends EPackage {
 	int SELECTION_PARAMETER__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER__SINGLETON_NAME = NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECTION_PARAMETER__PLURALISED_NAME = NAMED_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7575,24 +7386,6 @@ public interface WebsitePackage extends EPackage {
 	int BUSINESS_OPERATION__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_OPERATION__SINGLETON_NAME = NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_OPERATION__PLURALISED_NAME = NAMED_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Uses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7636,24 +7429,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int PAGE__NAME = NAMED_DISPLAY_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -7791,24 +7566,6 @@ public interface WebsitePackage extends EPackage {
 	int MENU__NAME = NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MENU__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7908,24 +7665,6 @@ public interface WebsitePackage extends EPackage {
 	int STATIC_MENU__NAME = MENU__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU__SINGLETON_NAME = MENU__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MENU__PLURALISED_NAME = MENU__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8016,31 +7755,13 @@ public interface WebsitePackage extends EPackage {
 	int ACTION_MENU_ENTRY__NAME = MENU_ENTRY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY__SINGLETON_NAME = MENU_ENTRY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_MENU_ENTRY__PLURALISED_NAME = MENU_ENTRY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 3;
+	int ACTION_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Destination</b></em>' reference.
@@ -8049,7 +7770,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_MENU_ENTRY__DESTINATION = MENU_ENTRY_FEATURE_COUNT + 4;
+	int ACTION_MENU_ENTRY__DESTINATION = MENU_ENTRY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Query</b></em>' containment reference.
@@ -8058,7 +7779,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_MENU_ENTRY__QUERY = MENU_ENTRY_FEATURE_COUNT + 5;
+	int ACTION_MENU_ENTRY__QUERY = MENU_ENTRY_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Action Menu Entry</em>' class.
@@ -8067,7 +7788,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 6;
+	int ACTION_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -8097,31 +7818,13 @@ public interface WebsitePackage extends EPackage {
 	int EDIT_STATIC_TEXT_MENU_ENTRY__NAME = MENU_ENTRY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY__SINGLETON_NAME = MENU_ENTRY_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY__PLURALISED_NAME = MENU_ENTRY_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 3;
+	int EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL = MENU_ENTRY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Edit Static Text Menu Entry</em>' class.
@@ -8130,7 +7833,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDIT_STATIC_TEXT_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 4;
+	int EDIT_STATIC_TEXT_MENU_ENTRY_FEATURE_COUNT = MENU_ENTRY_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8140,24 +7843,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DYNAMIC_MENU__NAME = MENU__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__SINGLETON_NAME = MENU__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MENU__PLURALISED_NAME = MENU__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -8296,24 +7981,6 @@ public interface WebsitePackage extends EPackage {
 	int FILTER__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__SINGLETON_NAME = NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER__PLURALISED_NAME = NAMED_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8348,24 +8015,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int FILTER_PARAMETER__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__SINGLETON_NAME = NAMED_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILTER_PARAMETER__PLURALISED_NAME = NAMED_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Formal</b></em>' reference.
@@ -8494,24 +8143,6 @@ public interface WebsitePackage extends EPackage {
 	int CONTENT_UNIT__NAME = NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTENT_UNIT__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTENT_UNIT__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8530,13 +8161,22 @@ public interface WebsitePackage extends EPackage {
 	int CONTENT_UNIT__DISPLAYED_ON = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__PURPOSE_SUMMARY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
+	int CONTENT_UNIT__PURPOSE_SUMMARY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
@@ -8545,7 +8185,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__URI_ELEMENT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int CONTENT_UNIT__URI_ELEMENT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -8554,7 +8194,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__ALTERNATIVE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int CONTENT_UNIT__ALTERNATIVE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -8563,7 +8203,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__OMIT_CAPTION = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int CONTENT_UNIT__OMIT_CAPTION = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -8572,7 +8212,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT__CAPTION_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int CONTENT_UNIT__CAPTION_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Content Unit</em>' class.
@@ -8581,7 +8221,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_UNIT_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int CONTENT_UNIT_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8591,24 +8231,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_UNIT__NAME = CONTENT_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_UNIT__SINGLETON_NAME = CONTENT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_UNIT__PLURALISED_NAME = CONTENT_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -8627,6 +8249,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_UNIT__DISPLAYED_ON = CONTENT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_UNIT__CREATE_DEFAULT_URI_ELEMENT = CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -8728,24 +8359,6 @@ public interface WebsitePackage extends EPackage {
 	int CREATE_SITEMAP_UNIT__NAME = CONTENT_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_SITEMAP_UNIT__SINGLETON_NAME = CONTENT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_SITEMAP_UNIT__PLURALISED_NAME = CONTENT_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8762,6 +8375,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_SITEMAP_UNIT__DISPLAYED_ON = CONTENT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_SITEMAP_UNIT__CREATE_DEFAULT_URI_ELEMENT = CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -8863,24 +8485,6 @@ public interface WebsitePackage extends EPackage {
 	int DYNAMIC_UNIT__NAME = CONTENT_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_UNIT__SINGLETON_NAME = CONTENT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_UNIT__PLURALISED_NAME = CONTENT_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8897,6 +8501,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DYNAMIC_UNIT__DISPLAYED_ON = CONTENT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_UNIT__CREATE_DEFAULT_URI_ELEMENT = CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -9965,24 +9578,6 @@ public interface WebsitePackage extends EPackage {
 	int INTERFACE_FIELD__NAME = NAMED_DISPLAY_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERFACE_FIELD__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERFACE_FIELD__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10116,24 +9711,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_FIELD__NAME = INTERFACE_FIELD__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_FIELD__SINGLETON_NAME = INTERFACE_FIELD__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_TYPE_FIELD__PLURALISED_NAME = INTERFACE_FIELD__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -10307,24 +9884,6 @@ public interface WebsitePackage extends EPackage {
 	int DATE_FIELD__NAME = INTERFACE_FIELD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_FIELD__SINGLETON_NAME = INTERFACE_FIELD__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_FIELD__PLURALISED_NAME = INTERFACE_FIELD__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10478,24 +10037,6 @@ public interface WebsitePackage extends EPackage {
 	int CAPTCHA_FIELD__NAME = INTERFACE_FIELD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAPTCHA_FIELD__SINGLETON_NAME = INTERFACE_FIELD__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAPTCHA_FIELD__PLURALISED_NAME = INTERFACE_FIELD__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10629,24 +10170,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_SUPPORT_ACTION__NAME = NAMED_DISPLAY_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_SUPPORT_ACTION__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_SUPPORT_ACTION__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -10859,24 +10382,6 @@ public interface WebsitePackage extends EPackage {
 	int EDIT_UNIT__NAME = DYNAMIC_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_UNIT__SINGLETON_NAME = DYNAMIC_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDIT_UNIT__PLURALISED_NAME = DYNAMIC_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10893,6 +10398,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int EDIT_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDIT_UNIT__CREATE_DEFAULT_URI_ELEMENT = DYNAMIC_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -11129,24 +10643,6 @@ public interface WebsitePackage extends EPackage {
 	int CREATE_UNIT__NAME = EDIT_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UNIT__SINGLETON_NAME = EDIT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UNIT__PLURALISED_NAME = EDIT_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11163,6 +10659,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UNIT__CREATE_DEFAULT_URI_ELEMENT = EDIT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -11408,24 +10913,6 @@ public interface WebsitePackage extends EPackage {
 	int CREATE_UPDATE_UNIT__NAME = EDIT_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UPDATE_UNIT__SINGLETON_NAME = EDIT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CREATE_UPDATE_UNIT__PLURALISED_NAME = EDIT_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11442,6 +10929,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CREATE_UPDATE_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CREATE_UPDATE_UNIT__CREATE_DEFAULT_URI_ELEMENT = EDIT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -11705,24 +11201,6 @@ public interface WebsitePackage extends EPackage {
 	int UPDATE_UNIT__NAME = EDIT_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE_UNIT__SINGLETON_NAME = EDIT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UPDATE_UNIT__PLURALISED_NAME = EDIT_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -11739,6 +11217,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UPDATE_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UPDATE_UNIT__CREATE_DEFAULT_URI_ELEMENT = EDIT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -11984,24 +11471,6 @@ public interface WebsitePackage extends EPackage {
 	int MAP_UNIT__NAME = EDIT_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__SINGLETON_NAME = EDIT_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_UNIT__PLURALISED_NAME = EDIT_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12018,6 +11487,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int MAP_UNIT__DISPLAYED_ON = EDIT_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAP_UNIT__CREATE_DEFAULT_URI_ELEMENT = EDIT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -12299,24 +11777,6 @@ public interface WebsitePackage extends EPackage {
 	int DATA_UNIT__NAME = DYNAMIC_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__SINGLETON_NAME = DYNAMIC_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_UNIT__PLURALISED_NAME = DYNAMIC_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12333,6 +11793,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_UNIT__CREATE_DEFAULT_URI_ELEMENT = DYNAMIC_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -12506,24 +11975,6 @@ public interface WebsitePackage extends EPackage {
 	int DETAILS_UNIT__NAME = DATA_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__SINGLETON_NAME = DATA_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__PLURALISED_NAME = DATA_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -12540,6 +11991,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DETAILS_UNIT__DISPLAYED_ON = DATA_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT = DATA_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -12713,22 +12173,13 @@ public interface WebsitePackage extends EPackage {
 	int DETAILS_UNIT__OMIT_FIELD_LABELS = DATA_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT = DATA_UNIT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__STYLE_CLASS = DATA_UNIT_FEATURE_COUNT + 3;
+	int DETAILS_UNIT__STYLE_CLASS = DATA_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -12737,7 +12188,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT__CONTENT_CLASS = DATA_UNIT_FEATURE_COUNT + 4;
+	int DETAILS_UNIT__CONTENT_CLASS = DATA_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Details Unit</em>' class.
@@ -12746,7 +12197,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 5;
+	int DETAILS_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -12756,24 +12207,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__NAME = DATA_UNIT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__SINGLETON_NAME = DATA_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__PLURALISED_NAME = DATA_UNIT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -12792,6 +12225,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_UNIT__DISPLAYED_ON = DATA_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__CREATE_DEFAULT_URI_ELEMENT = DATA_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -13091,24 +12533,6 @@ public interface WebsitePackage extends EPackage {
 	int CONTROL_UNIT__NAME = DYNAMIC_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_UNIT__SINGLETON_NAME = DYNAMIC_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_UNIT__PLURALISED_NAME = DYNAMIC_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13125,6 +12549,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_UNIT__CREATE_DEFAULT_URI_ELEMENT = DYNAMIC_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -13316,24 +12749,6 @@ public interface WebsitePackage extends EPackage {
 	int SEARCH_UNIT__NAME = CONTROL_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_UNIT__SINGLETON_NAME = CONTROL_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEARCH_UNIT__PLURALISED_NAME = CONTROL_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13350,6 +12765,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int SEARCH_UNIT__DISPLAYED_ON = CONTROL_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_UNIT__CREATE_DEFAULT_URI_ELEMENT = CONTROL_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -13569,24 +12993,6 @@ public interface WebsitePackage extends EPackage {
 	int ACTION_UNIT__NAME = CONTROL_UNIT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_UNIT__SINGLETON_NAME = CONTROL_UNIT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION_UNIT__PLURALISED_NAME = CONTROL_UNIT__PLURALISED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13603,6 +13009,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTION_UNIT__DISPLAYED_ON = CONTROL_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_UNIT__CREATE_DEFAULT_URI_ELEMENT = CONTROL_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -13794,6 +13209,404 @@ public interface WebsitePackage extends EPackage {
 	int ACTION_UNIT_FEATURE_COUNT = CONTROL_UNIT_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl <em>Image Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getImageUnit()
+	 * @generated
+	 */
+	int IMAGE_UNIT = 95;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__NAME = DYNAMIC_UNIT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__DISPLAY_LABEL = DYNAMIC_UNIT__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__DISPLAYED_ON = DYNAMIC_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__CREATE_DEFAULT_URI_ELEMENT = DYNAMIC_UNIT__CREATE_DEFAULT_URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__PURPOSE_SUMMARY = DYNAMIC_UNIT__PURPOSE_SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__URI_ELEMENT = DYNAMIC_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__ALTERNATIVE = DYNAMIC_UNIT__ALTERNATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__OMIT_CAPTION = DYNAMIC_UNIT__OMIT_CAPTION;
+
+	/**
+	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__CAPTION_CLASS = DYNAMIC_UNIT__CAPTION_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Entities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__ENTITIES = DYNAMIC_UNIT__ENTITIES;
+
+	/**
+	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__DISPLAY_FIELDS = DYNAMIC_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__SUPPORT_ACTIONS = DYNAMIC_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__KEY_ACTUALS = DYNAMIC_UNIT__KEY_ACTUALS;
+
+	/**
+	 * The feature id for the '<em><b>Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__HEADER = DYNAMIC_UNIT__HEADER;
+
+	/**
+	 * The feature id for the '<em><b>Footer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__FOOTER = DYNAMIC_UNIT__FOOTER;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__HEADER_CLASS = DYNAMIC_UNIT__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__CONTROL_CLASS = DYNAMIC_UNIT__CONTROL_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__FOOTER_CLASS = DYNAMIC_UNIT__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__ERROR_CLASS = DYNAMIC_UNIT__ERROR_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__DEFAULT_SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Image Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SliderUnitImpl <em>Slider Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.SliderUnitImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSliderUnit()
+	 * @generated
+	 */
+	int SLIDER_UNIT = 96;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__NAME = IMAGE_UNIT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__DISPLAY_LABEL = IMAGE_UNIT__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__DISPLAYED_ON = IMAGE_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__CREATE_DEFAULT_URI_ELEMENT = IMAGE_UNIT__CREATE_DEFAULT_URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__PURPOSE_SUMMARY = IMAGE_UNIT__PURPOSE_SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__URI_ELEMENT = IMAGE_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__ALTERNATIVE = IMAGE_UNIT__ALTERNATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__OMIT_CAPTION = IMAGE_UNIT__OMIT_CAPTION;
+
+	/**
+	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__CAPTION_CLASS = IMAGE_UNIT__CAPTION_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Entities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__ENTITIES = IMAGE_UNIT__ENTITIES;
+
+	/**
+	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__SUPPORT_ACTIONS = IMAGE_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__KEY_ACTUALS = IMAGE_UNIT__KEY_ACTUALS;
+
+	/**
+	 * The feature id for the '<em><b>Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__HEADER = IMAGE_UNIT__HEADER;
+
+	/**
+	 * The feature id for the '<em><b>Footer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__FOOTER = IMAGE_UNIT__FOOTER;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__HEADER_CLASS = IMAGE_UNIT__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__CONTROL_CLASS = IMAGE_UNIT__CONTROL_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__FOOTER_CLASS = IMAGE_UNIT__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__ERROR_CLASS = IMAGE_UNIT__ERROR_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__DEFAULT_SELECTION = IMAGE_UNIT__DEFAULT_SELECTION;
+
+	/**
+	 * The number of structural features of the '<em>Slider Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13812,31 +13625,13 @@ public interface WebsitePackage extends EPackage {
 	int REGISTRATION_UNIT__NAME = AUTHENTICATION_UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION_UNIT__SINGLETON_NAME = AUTHENTICATION_UNIT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGISTRATION_UNIT__PLURALISED_NAME = AUTHENTICATION_UNIT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__DISPLAY_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 3;
+	int REGISTRATION_UNIT__DISPLAY_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -13845,7 +13640,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__DISPLAYED_ON = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
+	int REGISTRATION_UNIT__DISPLAYED_ON = AUTHENTICATION_UNIT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -13854,7 +13658,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__PURPOSE_SUMMARY = AUTHENTICATION_UNIT_FEATURE_COUNT + 5;
+	int REGISTRATION_UNIT__PURPOSE_SUMMARY = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
@@ -13863,7 +13667,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 6;
+	int REGISTRATION_UNIT__URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -13872,7 +13676,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__ALTERNATIVE = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
+	int REGISTRATION_UNIT__ALTERNATIVE = AUTHENTICATION_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -13881,7 +13685,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__OMIT_CAPTION = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
+	int REGISTRATION_UNIT__OMIT_CAPTION = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -13890,7 +13694,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CAPTION_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
+	int REGISTRATION_UNIT__CAPTION_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
@@ -13899,7 +13703,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
+	int REGISTRATION_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -13908,7 +13712,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
+	int REGISTRATION_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -13917,7 +13721,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+	int REGISTRATION_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
@@ -13926,7 +13730,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__KEY_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int REGISTRATION_UNIT__KEY_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -13935,7 +13739,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int REGISTRATION_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -13944,7 +13748,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int REGISTRATION_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -13953,7 +13757,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int REGISTRATION_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -13962,7 +13766,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int REGISTRATION_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -13971,7 +13775,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int REGISTRATION_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -13980,7 +13784,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int REGISTRATION_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -13989,7 +13793,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int REGISTRATION_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -13998,7 +13802,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int REGISTRATION_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -14007,7 +13811,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int REGISTRATION_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -14016,7 +13820,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
+	int REGISTRATION_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -14025,7 +13829,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
+	int REGISTRATION_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The number of structural features of the '<em>Registration Unit</em>' class.
@@ -14034,7 +13838,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGISTRATION_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
+	int REGISTRATION_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -14046,31 +13850,13 @@ public interface WebsitePackage extends EPackage {
 	int LOGIN_UNIT__NAME = AUTHENTICATION_UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN_UNIT__SINGLETON_NAME = AUTHENTICATION_UNIT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGIN_UNIT__PLURALISED_NAME = AUTHENTICATION_UNIT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__DISPLAY_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 3;
+	int LOGIN_UNIT__DISPLAY_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -14079,7 +13865,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__DISPLAYED_ON = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
+	int LOGIN_UNIT__DISPLAYED_ON = AUTHENTICATION_UNIT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -14088,7 +13883,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__PURPOSE_SUMMARY = AUTHENTICATION_UNIT_FEATURE_COUNT + 5;
+	int LOGIN_UNIT__PURPOSE_SUMMARY = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
@@ -14097,7 +13892,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 6;
+	int LOGIN_UNIT__URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -14106,7 +13901,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__ALTERNATIVE = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
+	int LOGIN_UNIT__ALTERNATIVE = AUTHENTICATION_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -14115,7 +13910,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__OMIT_CAPTION = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
+	int LOGIN_UNIT__OMIT_CAPTION = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -14124,7 +13919,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CAPTION_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
+	int LOGIN_UNIT__CAPTION_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
@@ -14133,7 +13928,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
+	int LOGIN_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -14142,7 +13937,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
+	int LOGIN_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -14151,7 +13946,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+	int LOGIN_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
@@ -14160,7 +13955,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__KEY_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int LOGIN_UNIT__KEY_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -14169,7 +13964,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int LOGIN_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -14178,7 +13973,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int LOGIN_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -14187,7 +13982,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int LOGIN_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -14196,7 +13991,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int LOGIN_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -14205,7 +14000,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int LOGIN_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -14214,7 +14009,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int LOGIN_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -14223,7 +14018,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int LOGIN_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -14232,7 +14027,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int LOGIN_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -14241,7 +14036,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int LOGIN_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -14250,7 +14045,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
+	int LOGIN_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Logout Uri Element</b></em>' attribute.
@@ -14259,7 +14054,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__LOGOUT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
+	int LOGIN_UNIT__LOGOUT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -14268,7 +14063,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
+	int LOGIN_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The number of structural features of the '<em>Login Unit</em>' class.
@@ -14277,7 +14072,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOGIN_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 26;
+	int LOGIN_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -14289,31 +14084,13 @@ public interface WebsitePackage extends EPackage {
 	int FORGOTTEN_PASSWORD_UNIT__NAME = AUTHENTICATION_UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORGOTTEN_PASSWORD_UNIT__SINGLETON_NAME = AUTHENTICATION_UNIT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORGOTTEN_PASSWORD_UNIT__PLURALISED_NAME = AUTHENTICATION_UNIT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 3;
+	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -14322,7 +14099,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
+	int FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON = AUTHENTICATION_UNIT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Create Default Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -14331,7 +14117,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY = AUTHENTICATION_UNIT_FEATURE_COUNT + 5;
+	int FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY = AUTHENTICATION_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
@@ -14340,7 +14126,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 6;
+	int FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT = AUTHENTICATION_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -14349,7 +14135,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
+	int FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE = AUTHENTICATION_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -14358,7 +14144,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
+	int FORGOTTEN_PASSWORD_UNIT__OMIT_CAPTION = AUTHENTICATION_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -14367,7 +14153,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
+	int FORGOTTEN_PASSWORD_UNIT__CAPTION_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
@@ -14376,7 +14162,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
+	int FORGOTTEN_PASSWORD_UNIT__ENTITIES = AUTHENTICATION_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -14385,7 +14171,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
+	int FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS = AUTHENTICATION_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -14394,7 +14180,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
+	int FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS = AUTHENTICATION_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
@@ -14403,7 +14189,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
+	int FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS = AUTHENTICATION_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -14412,7 +14198,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
+	int FORGOTTEN_PASSWORD_UNIT__HEADER = AUTHENTICATION_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -14421,7 +14207,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
+	int FORGOTTEN_PASSWORD_UNIT__FOOTER = AUTHENTICATION_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -14430,7 +14216,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
+	int FORGOTTEN_PASSWORD_UNIT__HEADER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -14439,7 +14225,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
+	int FORGOTTEN_PASSWORD_UNIT__CONTROL_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -14448,7 +14234,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
+	int FORGOTTEN_PASSWORD_UNIT__FOOTER_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -14457,7 +14243,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
+	int FORGOTTEN_PASSWORD_UNIT__ERROR_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Submit Label</b></em>' attribute.
@@ -14466,7 +14252,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
+	int FORGOTTEN_PASSWORD_UNIT__SUBMIT_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Destination</b></em>' reference.
@@ -14475,7 +14261,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
+	int FORGOTTEN_PASSWORD_UNIT__CANCEL_DESTINATION = AUTHENTICATION_UNIT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Cancel Label</b></em>' attribute.
@@ -14484,7 +14270,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
+	int FORGOTTEN_PASSWORD_UNIT__CANCEL_LABEL = AUTHENTICATION_UNIT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -14493,7 +14279,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
+	int FORGOTTEN_PASSWORD_UNIT__CONTENT_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -14502,7 +14288,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
+	int FORGOTTEN_PASSWORD_UNIT__STYLE_CLASS = AUTHENTICATION_UNIT_FEATURE_COUNT + 23;
 
 	/**
 	 * The number of structural features of the '<em>Forgotten Password Unit</em>' class.
@@ -14511,7 +14297,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORGOTTEN_PASSWORD_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 25;
+	int FORGOTTEN_PASSWORD_UNIT_FEATURE_COUNT = AUTHENTICATION_UNIT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -14539,24 +14325,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int INLINE_ACTION__NAME = NAMED_DISPLAY_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INLINE_ACTION__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INLINE_ACTION__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -14656,24 +14424,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECT_ACTION__NAME = INLINE_ACTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECT_ACTION__SINGLETON_NAME = INLINE_ACTION__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SELECT_ACTION__PLURALISED_NAME = INLINE_ACTION__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -14782,24 +14532,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DELETE_ACTION__NAME = INLINE_ACTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELETE_ACTION__SINGLETON_NAME = INLINE_ACTION__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELETE_ACTION__PLURALISED_NAME = INLINE_ACTION__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -14926,24 +14658,6 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_SUPPORT_ACTION__NAME = INLINE_ACTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_SUPPORT_ACTION__SINGLETON_NAME = INLINE_ACTION__SINGLETON_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FEATURE_SUPPORT_ACTION__PLURALISED_NAME = INLINE_ACTION__PLURALISED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -15097,7 +14811,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 105;
+	int FEATURE_REFERENCE = 107;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -15134,7 +14848,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getRouteParameterReference()
 	 * @generated
 	 */
-	int ROUTE_PARAMETER_REFERENCE = 106;
+	int ROUTE_PARAMETER_REFERENCE = 108;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -15171,7 +14885,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getParameterReference()
 	 * @generated
 	 */
-	int PARAMETER_REFERENCE = 107;
+	int PARAMETER_REFERENCE = 109;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -15208,7 +14922,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCurrentUserReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 108;
+	int CURRENT_USER_REFERENCE = 110;
 
 	/**
 	 * The feature id for the '<em><b>User Model</b></em>' reference.
@@ -15236,7 +14950,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDatabaseTechnologies()
 	 * @generated
 	 */
-	int DATABASE_TECHNOLOGIES = 109;
+	int DATABASE_TECHNOLOGIES = 111;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies <em>Orm Technologies</em>}' enum.
@@ -15246,7 +14960,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getOrmTechnologies()
 	 * @generated
 	 */
-	int ORM_TECHNOLOGIES = 110;
+	int ORM_TECHNOLOGIES = 112;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
@@ -15256,7 +14970,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 111;
+	int FRAMEWORK_TECHNOLOGIES = 113;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -15266,7 +14980,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 112;
+	int AJAX_TECHNOLOGIES = 114;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -15276,7 +14990,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 113;
+	int AUTHENTICATION_KEY_TYPES = 115;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Cardinality <em>Cardinality</em>}' enum.
@@ -15286,7 +15000,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 114;
+	int CARDINALITY = 116;
 
 
 	/**
@@ -15297,7 +15011,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getisHasChoices()
 	 * @generated
 	 */
-	int IS_HAS_CHOICES = 115;
+	int IS_HAS_CHOICES = 117;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.DateDetails <em>Date Details</em>}' enum.
@@ -15307,7 +15021,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 116;
+	int DATE_DETAILS = 118;
 
 
 	/**
@@ -15318,7 +15032,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 117;
+	int OPERATION_RESULT_TYPES = 119;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -15328,7 +15042,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 118;
+	int PAGE_TOP_MENU_OPTIONS = 120;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -15338,7 +15052,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 119;
+	int COLLECTION_DISPLAY_OPTIONS = 121;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -15348,7 +15062,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 120;
+	int INDEX_DISPLAY_OPTION = 122;
 
 
 	/**
@@ -15757,6 +15471,17 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getWebsiteProperties_TextEditorURL();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isResponsiveTopMenu <em>Responsive Top Menu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Responsive Top Menu</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#isResponsiveTopMenu()
+	 * @see #getWebsiteProperties()
+	 * @generated
+	 */
+	EAttribute getWebsiteProperties_ResponsiveTopMenu();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties#getTopNavigationId <em>Top Navigation Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15820,28 +15545,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNamedElement_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.NamedElement#getSingletonName <em>Singleton Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Singleton Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.NamedElement#getSingletonName()
-	 * @see #getNamedElement()
-	 * @generated
-	 */
-	EAttribute getNamedElement_SingletonName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.NamedElement#getPluralisedName <em>Pluralised Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Pluralised Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.NamedElement#getPluralisedName()
-	 * @see #getNamedElement()
-	 * @generated
-	 */
-	EAttribute getNamedElement_PluralisedName();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement <em>Named Display Element</em>}'.
@@ -15979,6 +15682,28 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEntityOrView();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getSingletonName <em>Singleton Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Singleton Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getSingletonName()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EAttribute getEntityOrView_SingletonName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getPluralisedName <em>Pluralised Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pluralised Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getPluralisedName()
+	 * @see #getEntityOrView()
+	 * @generated
+	 */
+	EAttribute getEntityOrView_PluralisedName();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getTableName <em>Table Name</em>}'.
@@ -16317,6 +16042,28 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEntityFeature_BooleanIsHasChoice();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getSingletonName <em>Singleton Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Singleton Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getSingletonName()
+	 * @see #getEntityFeature()
+	 * @generated
+	 */
+	EAttribute getEntityFeature_SingletonName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getPluralisedName <em>Pluralised Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pluralised Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getPluralisedName()
+	 * @see #getEntityFeature()
+	 * @generated
+	 */
+	EAttribute getEntityFeature_PluralisedName();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.EntityFeature#getColumnName <em>Column Name</em>}'.
@@ -18638,6 +18385,17 @@ public interface WebsitePackage extends EPackage {
 	EReference getContentUnit_DisplayedOn();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#isCreateDefaultUriElement <em>Create Default Uri Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Create Default Uri Element</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ContentUnit#isCreateDefaultUriElement()
+	 * @see #getContentUnit()
+	 * @generated
+	 */
+	EAttribute getContentUnit_CreateDefaultUriElement();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ContentUnit#getPurposeSummary <em>Purpose Summary</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -19457,17 +19215,6 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getDetailsUnit_OmitFieldLabels();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#isCreateDefaultUriElement <em>Create Default Uri Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Create Default Uri Element</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#isCreateDefaultUriElement()
-	 * @see #getDetailsUnit()
-	 * @generated
-	 */
-	EAttribute getDetailsUnit_CreateDefaultUriElement();
-
-	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.DetailsUnit#getStyleClass <em>Style Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -19748,6 +19495,37 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getActionUnit_StyleClass();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit <em>Image Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Image Unit</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit
+	 * @generated
+	 */
+	EClass getImageUnit();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getDefaultSelection <em>Default Selection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Default Selection</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getDefaultSelection()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EReference getImageUnit_DefaultSelection();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.SliderUnit <em>Slider Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Slider Unit</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.SliderUnit
+	 * @generated
+	 */
+	EClass getSliderUnit();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationUnit <em>Authentication Unit</em>}'.
@@ -20943,6 +20721,14 @@ public interface WebsitePackage extends EPackage {
 		EAttribute WEBSITE_PROPERTIES__TEXT_EDITOR_URL = eINSTANCE.getWebsiteProperties_TextEditorURL();
 
 		/**
+		 * The meta object literal for the '<em><b>Responsive Top Menu</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU = eINSTANCE.getWebsiteProperties_ResponsiveTopMenu();
+
+		/**
 		 * The meta object literal for the '<em><b>Top Navigation Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -20991,22 +20777,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Singleton Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAMED_ELEMENT__SINGLETON_NAME = eINSTANCE.getNamedElement_SingletonName();
-
-		/**
-		 * The meta object literal for the '<em><b>Pluralised Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAMED_ELEMENT__PLURALISED_NAME = eINSTANCE.getNamedElement_PluralisedName();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.NamedDisplayElementImpl <em>Named Display Element</em>}' class.
@@ -21123,6 +20893,22 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENTITY_OR_VIEW = eINSTANCE.getEntityOrView();
+
+		/**
+		 * The meta object literal for the '<em><b>Singleton Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_OR_VIEW__SINGLETON_NAME = eINSTANCE.getEntityOrView_SingletonName();
+
+		/**
+		 * The meta object literal for the '<em><b>Pluralised Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_OR_VIEW__PLURALISED_NAME = eINSTANCE.getEntityOrView_PluralisedName();
 
 		/**
 		 * The meta object literal for the '<em><b>Table Name</b></em>' attribute feature.
@@ -21377,6 +21163,22 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = eINSTANCE.getEntityFeature_BooleanIsHasChoice();
+
+		/**
+		 * The meta object literal for the '<em><b>Singleton Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_FEATURE__SINGLETON_NAME = eINSTANCE.getEntityFeature_SingletonName();
+
+		/**
+		 * The meta object literal for the '<em><b>Pluralised Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY_FEATURE__PLURALISED_NAME = eINSTANCE.getEntityFeature_PluralisedName();
 
 		/**
 		 * The meta object literal for the '<em><b>Column Name</b></em>' attribute feature.
@@ -23221,6 +23023,14 @@ public interface WebsitePackage extends EPackage {
 		EReference CONTENT_UNIT__DISPLAYED_ON = eINSTANCE.getContentUnit_DisplayedOn();
 
 		/**
+		 * The meta object literal for the '<em><b>Create Default Uri Element</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT = eINSTANCE.getContentUnit_CreateDefaultUriElement();
+
+		/**
 		 * The meta object literal for the '<em><b>Purpose Summary</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -23863,14 +23673,6 @@ public interface WebsitePackage extends EPackage {
 		EAttribute DETAILS_UNIT__OMIT_FIELD_LABELS = eINSTANCE.getDetailsUnit_OmitFieldLabels();
 
 		/**
-		 * The meta object literal for the '<em><b>Create Default Uri Element</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT = eINSTANCE.getDetailsUnit_CreateDefaultUriElement();
-
-		/**
 		 * The meta object literal for the '<em><b>Style Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -24085,6 +23887,34 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACTION_UNIT__STYLE_CLASS = eINSTANCE.getActionUnit_StyleClass();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl <em>Image Unit</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getImageUnit()
+		 * @generated
+		 */
+		EClass IMAGE_UNIT = eINSTANCE.getImageUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Default Selection</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMAGE_UNIT__DEFAULT_SELECTION = eINSTANCE.getImageUnit_DefaultSelection();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SliderUnitImpl <em>Slider Unit</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.SliderUnitImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSliderUnit()
+		 * @generated
+		 */
+		EClass SLIDER_UNIT = eINSTANCE.getSliderUnit();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationUnit <em>Authentication Unit</em>}' class.

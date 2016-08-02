@@ -80,6 +80,7 @@ public class WafModelItemProvider
 			addCaptchaSiteKeyPropertyDescriptor(object);
 			addCaptchaSecretKeyPropertyDescriptor(object);
 			addTextEditorURLPropertyDescriptor(object);
+			addResponsiveTopMenuPropertyDescriptor(object);
 			addTopNavigationIdPropertyDescriptor(object);
 			addSideMenuPropertyDescriptor(object);
 			addSiteTemplatePropertyDescriptor(object);
@@ -413,6 +414,28 @@ public class WafModelItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Responsive Top Menu feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResponsiveTopMenuPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_responsiveTopMenu_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_responsiveTopMenu_feature", "_UI_WafModel_type"),
+				 WafPackage.Literals.WAF_MODEL__RESPONSIVE_TOP_MENU,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Top Navigation Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -634,6 +657,7 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__CAPTCHA_SITE_KEY:
 			case WafPackage.WAF_MODEL__CAPTCHA_SECRET_KEY:
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
+			case WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU:
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 			case WafPackage.WAF_MODEL__SITE_TEMPLATE:
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:

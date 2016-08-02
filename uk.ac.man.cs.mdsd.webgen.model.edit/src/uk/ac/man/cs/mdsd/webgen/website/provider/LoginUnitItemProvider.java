@@ -63,9 +63,8 @@ public class LoginUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addSingletonNamePropertyDescriptor(object);
-			addPluralisedNamePropertyDescriptor(object);
 			addDisplayLabelPropertyDescriptor(object);
+			addCreateDefaultUriElementPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
@@ -111,50 +110,6 @@ public class LoginUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Singleton Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSingletonNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_NamedElement_singletonName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_singletonName_feature", "_UI_NamedElement_type"),
-				 WebsitePackage.Literals.NAMED_ELEMENT__SINGLETON_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_NamePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Pluralised Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPluralisedNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_NamedElement_pluralisedName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_pluralisedName_feature", "_UI_NamedElement_type"),
-				 WebsitePackage.Literals.NAMED_ELEMENT__PLURALISED_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_NamePropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Display Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,6 +128,28 @@ public class LoginUnitItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Create Default Uri Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCreateDefaultUriElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_createDefaultUriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_createDefaultUriElement_feature", "_UI_ContentUnit_type"),
+				 WebsitePackage.Literals.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 
@@ -642,9 +619,8 @@ public class LoginUnitItemProvider
 
 		switch (notification.getFeatureID(LoginUnit.class)) {
 			case WebsitePackage.LOGIN_UNIT__NAME:
-			case WebsitePackage.LOGIN_UNIT__SINGLETON_NAME:
-			case WebsitePackage.LOGIN_UNIT__PLURALISED_NAME:
 			case WebsitePackage.LOGIN_UNIT__DISPLAY_LABEL:
+			case WebsitePackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 			case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY:
 			case WebsitePackage.LOGIN_UNIT__URI_ELEMENT:
 			case WebsitePackage.LOGIN_UNIT__ALTERNATIVE:

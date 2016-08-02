@@ -60,6 +60,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getTextEditorURL <em>Text Editor URL</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#isResponsiveTopMenu <em>Responsive Top Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteTemplate <em>Site Template</em>}</li>
@@ -380,6 +381,26 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * @ordered
 	 */
 	protected String textEditorURL = TEXT_EDITOR_URL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isResponsiveTopMenu() <em>Responsive Top Menu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isResponsiveTopMenu()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean RESPONSIVE_TOP_MENU_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isResponsiveTopMenu() <em>Responsive Top Menu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isResponsiveTopMenu()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean responsiveTopMenu = RESPONSIVE_TOP_MENU_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTopNavigationId() <em>Top Navigation Id</em>}' attribute.
@@ -885,6 +906,27 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isResponsiveTopMenu() {
+		return responsiveTopMenu;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResponsiveTopMenu(boolean newResponsiveTopMenu) {
+		boolean oldResponsiveTopMenu = responsiveTopMenu;
+		responsiveTopMenu = newResponsiveTopMenu;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU, oldResponsiveTopMenu, responsiveTopMenu));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTopNavigationId() {
 		return topNavigationId;
 	}
@@ -1117,6 +1159,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return getCaptchaSecretKey();
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
 				return getTextEditorURL();
+			case WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU:
+				return isResponsiveTopMenu();
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 				return getTopNavigationId();
 			case WafPackage.WAF_MODEL__SIDE_MENU:
@@ -1200,6 +1244,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return;
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
 				setTextEditorURL((String)newValue);
+				return;
+			case WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU:
+				setResponsiveTopMenu((Boolean)newValue);
 				return;
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 				setTopNavigationId((String)newValue);
@@ -1286,6 +1333,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
 				setTextEditorURL(TEXT_EDITOR_URL_EDEFAULT);
 				return;
+			case WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU:
+				setResponsiveTopMenu(RESPONSIVE_TOP_MENU_EDEFAULT);
+				return;
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 				setTopNavigationId(TOP_NAVIGATION_ID_EDEFAULT);
 				return;
@@ -1352,6 +1402,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return CAPTCHA_SECRET_KEY_EDEFAULT == null ? captchaSecretKey != null : !CAPTCHA_SECRET_KEY_EDEFAULT.equals(captchaSecretKey);
 			case WafPackage.WAF_MODEL__TEXT_EDITOR_URL:
 				return TEXT_EDITOR_URL_EDEFAULT == null ? textEditorURL != null : !TEXT_EDITOR_URL_EDEFAULT.equals(textEditorURL);
+			case WafPackage.WAF_MODEL__RESPONSIVE_TOP_MENU:
+				return responsiveTopMenu != RESPONSIVE_TOP_MENU_EDEFAULT;
 			case WafPackage.WAF_MODEL__TOP_NAVIGATION_ID:
 				return TOP_NAVIGATION_ID_EDEFAULT == null ? topNavigationId != null : !TOP_NAVIGATION_ID_EDEFAULT.equals(topNavigationId);
 			case WafPackage.WAF_MODEL__SIDE_MENU:
@@ -1404,6 +1456,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 		result.append(captchaSecretKey);
 		result.append(", textEditorURL: ");
 		result.append(textEditorURL);
+		result.append(", responsiveTopMenu: ");
+		result.append(responsiveTopMenu);
 		result.append(", topNavigationId: ");
 		result.append(topNavigationId);
 		result.append(", siteTemplate: ");

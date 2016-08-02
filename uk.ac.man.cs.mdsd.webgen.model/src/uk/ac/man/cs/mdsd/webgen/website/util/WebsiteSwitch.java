@@ -906,6 +906,27 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.IMAGE_UNIT: {
+				ImageUnit imageUnit = (ImageUnit)theEObject;
+				T result = caseImageUnit(imageUnit);
+				if (result == null) result = caseDynamicUnit(imageUnit);
+				if (result == null) result = caseContentUnit(imageUnit);
+				if (result == null) result = caseNamedDisplayElement(imageUnit);
+				if (result == null) result = caseNamedElement(imageUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.SLIDER_UNIT: {
+				SliderUnit sliderUnit = (SliderUnit)theEObject;
+				T result = caseSliderUnit(sliderUnit);
+				if (result == null) result = caseImageUnit(sliderUnit);
+				if (result == null) result = caseDynamicUnit(sliderUnit);
+				if (result == null) result = caseContentUnit(sliderUnit);
+				if (result == null) result = caseNamedDisplayElement(sliderUnit);
+				if (result == null) result = caseNamedElement(sliderUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.AUTHENTICATION_UNIT: {
 				AuthenticationUnit authenticationUnit = (AuthenticationUnit)theEObject;
 				T result = caseAuthenticationUnit(authenticationUnit);
@@ -2425,6 +2446,36 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseActionUnit(ActionUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Image Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Image Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImageUnit(ImageUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Slider Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Slider Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSliderUnit(SliderUnit object) {
 		return null;
 	}
 

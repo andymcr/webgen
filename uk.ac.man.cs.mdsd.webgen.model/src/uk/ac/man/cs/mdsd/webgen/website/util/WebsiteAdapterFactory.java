@@ -454,6 +454,14 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createActionUnitAdapter();
 			}
 			@Override
+			public Adapter caseImageUnit(ImageUnit object) {
+				return createImageUnitAdapter();
+			}
+			@Override
+			public Adapter caseSliderUnit(SliderUnit object) {
+				return createSliderUnitAdapter();
+			}
+			@Override
 			public Adapter caseAuthenticationUnit(AuthenticationUnit object) {
 				return createAuthenticationUnitAdapter();
 			}
@@ -1836,6 +1844,34 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActionUnitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit <em>Image Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit
+	 * @generated
+	 */
+	public Adapter createImageUnitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.SliderUnit <em>Slider Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.SliderUnit
+	 * @generated
+	 */
+	public Adapter createSliderUnitAdapter() {
 		return null;
 	}
 

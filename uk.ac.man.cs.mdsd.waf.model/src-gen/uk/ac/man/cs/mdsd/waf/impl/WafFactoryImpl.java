@@ -96,6 +96,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.INDEX_LINE_DIRECTION_UNIT: return createIndexLineDirectionUnit();
 			case WafPackage.SEARCH_UNIT: return createSearchUnit();
 			case WafPackage.ACTION_UNIT: return createActionUnit();
+			case WafPackage.SLIDER_UNIT: return createSliderUnit();
 			case WafPackage.REGISTRATION_UNIT: return createRegistrationUnit();
 			case WafPackage.LOGIN_UNIT: return createLoginUnit();
 			case WafPackage.FORGOTTEN_PASSWORD_UNIT: return createForgottenPasswordUnit();
@@ -550,6 +551,16 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public ActionUnit createActionUnit() {
 		ActionUnitImpl actionUnit = new ActionUnitImpl();
 		return actionUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SliderUnit createSliderUnit() {
+		SliderUnitImpl sliderUnit = new SliderUnitImpl();
+		return sliderUnit;
 	}
 
 	/**

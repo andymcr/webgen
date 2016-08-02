@@ -57,6 +57,8 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			addUniquePropertyDescriptor(object);
 			addOrderedPropertyDescriptor(object);
 			addBooleanIsHasChoicePropertyDescriptor(object);
+			addSingletonNamePropertyDescriptor(object);
+			addPluralisedNamePropertyDescriptor(object);
 			addColumnNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -283,6 +285,50 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Singleton Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSingletonNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_singletonName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_singletonName_feature", "_UI_EntityFeature_type"),
+				 WebsitePackage.Literals.ENTITY_FEATURE__SINGLETON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pluralised Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPluralisedNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityFeature_pluralisedName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityFeature_pluralisedName_feature", "_UI_EntityFeature_type"),
+				 WebsitePackage.Literals.ENTITY_FEATURE__PLURALISED_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Collection Allow Add feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -387,6 +433,8 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			case WebsitePackage.ENTITY_FEATURE__UNIQUE:
 			case WebsitePackage.ENTITY_FEATURE__ORDERED:
 			case WebsitePackage.ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE:
+			case WebsitePackage.ENTITY_FEATURE__SINGLETON_NAME:
+			case WebsitePackage.ENTITY_FEATURE__PLURALISED_NAME:
 			case WebsitePackage.ENTITY_FEATURE__COLUMN_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

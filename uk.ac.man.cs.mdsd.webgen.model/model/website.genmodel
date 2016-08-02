@@ -116,6 +116,7 @@
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSiteKey"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSecretKey"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/textEditorURL"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/responsiveTopMenu"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/topNavigationId"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Interface"
           propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebsiteProperties/sideMenu"/>
@@ -152,8 +153,6 @@
     <genClasses image="false" ecoreClass="website.ecore#//NamedElement">
       <genFeatures createChild="false" propertyCategory="Model" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//NamedElement/name"/>
-      <genFeatures createChild="false" propertyCategory="Name" ecoreFeature="ecore:EAttribute website.ecore#//NamedElement/singletonName"/>
-      <genFeatures createChild="false" propertyCategory="Name" ecoreFeature="ecore:EAttribute website.ecore#//NamedElement/pluralisedName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//NamedDisplayElement">
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//NamedDisplayElement/displayLabel"/>
@@ -171,6 +170,8 @@
     </genClasses>
     <genClasses ecoreClass="website.ecore#//EnumerationLiteral"/>
     <genClasses image="false" ecoreClass="website.ecore#//EntityOrView">
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/singletonName"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/pluralisedName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//EntityOrView/keys"/>
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityOrView/tableName"/>
       <genFeatures createChild="false" propertyCategory="Persistence" propertyDescription=""
@@ -257,6 +258,8 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/unique"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/ordered"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/booleanIsHasChoice"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/singletonName"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/pluralisedName"/>
       <genFeatures createChild="false" propertyCategory="Persistence" ecoreFeature="ecore:EAttribute website.ecore#//EntityFeature/columnName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//EntityAttribute">
@@ -469,6 +472,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//ContentUnit">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ContentUnit/displayedOn"/>
+      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/createDefaultUriElement"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/purposeSummary"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/uriElement"/>
       <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/alternative"/>
@@ -654,7 +658,6 @@
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//DetailsUnit/onlyDisplayWhenNotEmpty"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//DetailsUnit/omitFieldLabels"/>
-      <genFeatures createChild="false" propertyCategory="Navigation" ecoreFeature="ecore:EAttribute website.ecore#//DetailsUnit/createDefaultUriElement"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//DetailsUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//DetailsUnit/contentClass"/>
     </genClasses>
@@ -695,6 +698,11 @@
     <genClasses ecoreClass="website.ecore#//ActionUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//ActionUnit/styleClass"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="website.ecore#//ImageUnit">
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//ImageUnit/defaultSelection"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//SliderUnit"/>
     <genClasses image="false" ecoreClass="website.ecore#//AuthenticationUnit"/>
     <genClasses ecoreClass="website.ecore#//RegistrationUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//RegistrationUnit/styleClass"/>

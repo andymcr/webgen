@@ -49,6 +49,8 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSingletonNamePropertyDescriptor(object);
+			addPluralisedNamePropertyDescriptor(object);
 			addKeysPropertyDescriptor(object);
 			addTableNamePropertyDescriptor(object);
 			addAutoKeyNamePropertyDescriptor(object);
@@ -63,6 +65,50 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			addImplementsUserInterfacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Singleton Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSingletonNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_singletonName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_singletonName_feature", "_UI_EntityOrView_type"),
+				 WebsitePackage.Literals.ENTITY_OR_VIEW__SINGLETON_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pluralised Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPluralisedNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityOrView_pluralisedName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_pluralisedName_feature", "_UI_EntityOrView_type"),
+				 WebsitePackage.Literals.ENTITY_OR_VIEW__PLURALISED_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -391,6 +437,8 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityOrView.class)) {
+			case WebsitePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
+			case WebsitePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
 			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_NAME:
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_PERSISTENT_TYPE:

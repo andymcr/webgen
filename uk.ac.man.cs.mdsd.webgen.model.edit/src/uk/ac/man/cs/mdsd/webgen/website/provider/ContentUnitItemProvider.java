@@ -49,6 +49,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCreateDefaultUriElementPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
@@ -56,6 +57,28 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 			addCaptionClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Create Default Uri Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCreateDefaultUriElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_createDefaultUriElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_createDefaultUriElement_feature", "_UI_ContentUnit_type"),
+				 WebsitePackage.Literals.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_NavigationPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -194,6 +217,7 @@ public class ContentUnitItemProvider extends NamedDisplayElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ContentUnit.class)) {
+			case WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 			case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 			case WebsitePackage.CONTENT_UNIT__URI_ELEMENT:
 			case WebsitePackage.CONTENT_UNIT__ALTERNATIVE:

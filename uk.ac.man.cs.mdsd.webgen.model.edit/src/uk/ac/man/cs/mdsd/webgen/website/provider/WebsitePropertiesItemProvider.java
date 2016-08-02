@@ -88,6 +88,7 @@ public class WebsitePropertiesItemProvider
 			addCaptchaSiteKeyPropertyDescriptor(object);
 			addCaptchaSecretKeyPropertyDescriptor(object);
 			addTextEditorURLPropertyDescriptor(object);
+			addResponsiveTopMenuPropertyDescriptor(object);
 			addTopNavigationIdPropertyDescriptor(object);
 			addSideMenuPropertyDescriptor(object);
 			addSiteTemplatePropertyDescriptor(object);
@@ -735,6 +736,28 @@ public class WebsitePropertiesItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Responsive Top Menu feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResponsiveTopMenuPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_responsiveTopMenu_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_responsiveTopMenu_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Top Navigation Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -888,6 +911,7 @@ public class WebsitePropertiesItemProvider
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:
 			case WebsitePackage.WEBSITE_PROPERTIES__TEXT_EDITOR_URL:
+			case WebsitePackage.WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU:
 			case WebsitePackage.WEBSITE_PROPERTIES__TOP_NAVIGATION_ID:
 			case WebsitePackage.WEBSITE_PROPERTIES__SITE_TEMPLATE:
 			case WebsitePackage.WEBSITE_PROPERTIES__STATIC_UNITS_EDITABLE:

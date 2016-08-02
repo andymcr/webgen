@@ -44,10 +44,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getSingletonName <em>Singleton Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getPluralisedName <em>Pluralised Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#isCreateDefaultUriElement <em>Create Default Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getAlternative <em>Alternative</em>}</li>
@@ -94,46 +93,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSingletonName() <em>Singleton Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSingletonName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SINGLETON_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSingletonName() <em>Singleton Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSingletonName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String singletonName = SINGLETON_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPluralisedName() <em>Pluralised Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPluralisedName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PLURALISED_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPluralisedName() <em>Pluralised Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPluralisedName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String pluralisedName = PLURALISED_NAME_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,6 +111,26 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * @ordered
 	 */
 	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCreateDefaultUriElement() <em>Create Default Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCreateDefaultUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CREATE_DEFAULT_URI_ELEMENT_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isCreateDefaultUriElement() <em>Create Default Uri Element</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCreateDefaultUriElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean createDefaultUriElement = CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
@@ -548,48 +527,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSingletonName() {
-		return singletonName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSingletonName(String newSingletonName) {
-		String oldSingletonName = singletonName;
-		singletonName = newSingletonName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SINGLETON_NAME, oldSingletonName, singletonName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPluralisedName() {
-		return pluralisedName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPluralisedName(String newPluralisedName) {
-		String oldPluralisedName = pluralisedName;
-		pluralisedName = newPluralisedName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PLURALISED_NAME, oldPluralisedName, pluralisedName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getDisplayLabel() {
 		return displayLabel;
 	}
@@ -645,6 +582,27 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isCreateDefaultUriElement() {
+		return createDefaultUriElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCreateDefaultUriElement(boolean newCreateDefaultUriElement) {
+		boolean oldCreateDefaultUriElement = createDefaultUriElement;
+		createDefaultUriElement = newCreateDefaultUriElement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT, oldCreateDefaultUriElement, createDefaultUriElement));
 	}
 
 	/**
@@ -1113,14 +1071,12 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		switch (featureID) {
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__NAME:
 				return getName();
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SINGLETON_NAME:
-				return getSingletonName();
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PLURALISED_NAME:
-				return getPluralisedName();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_LABEL:
 				return getDisplayLabel();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON:
 				return getDisplayedOn();
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT:
+				return isCreateDefaultUriElement();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
@@ -1178,17 +1134,14 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__NAME:
 				setName((String)newValue);
 				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SINGLETON_NAME:
-				setSingletonName((String)newValue);
-				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PLURALISED_NAME:
-				setPluralisedName((String)newValue);
-				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_LABEL:
 				setDisplayLabel((String)newValue);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)newValue);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT:
+				setCreateDefaultUriElement((Boolean)newValue);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
@@ -1269,17 +1222,14 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SINGLETON_NAME:
-				setSingletonName(SINGLETON_NAME_EDEFAULT);
-				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PLURALISED_NAME:
-				setPluralisedName(PLURALISED_NAME_EDEFAULT);
-				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_LABEL:
 				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON:
 				setDisplayedOn((UnitContainer)null);
+				return;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT:
+				setCreateDefaultUriElement(CREATE_DEFAULT_URI_ELEMENT_EDEFAULT);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
@@ -1355,14 +1305,12 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		switch (featureID) {
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SINGLETON_NAME:
-				return SINGLETON_NAME_EDEFAULT == null ? singletonName != null : !SINGLETON_NAME_EDEFAULT.equals(singletonName);
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PLURALISED_NAME:
-				return PLURALISED_NAME_EDEFAULT == null ? pluralisedName != null : !PLURALISED_NAME_EDEFAULT.equals(pluralisedName);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_LABEL:
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON:
 				return getDisplayedOn() != null;
+			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT:
+				return createDefaultUriElement != CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT:
@@ -1417,8 +1365,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__NAME: return WebsitePackage.NAMED_ELEMENT__NAME;
-				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SINGLETON_NAME: return WebsitePackage.NAMED_ELEMENT__SINGLETON_NAME;
-				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PLURALISED_NAME: return WebsitePackage.NAMED_ELEMENT__PLURALISED_NAME;
 				default: return -1;
 			}
 		}
@@ -1431,6 +1377,7 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		if (baseClass == ContentUnit.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__DISPLAYED_ON;
+				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY: return WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__URI_ELEMENT;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE: return WebsitePackage.CONTENT_UNIT__ALTERNATIVE;
@@ -1476,8 +1423,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.NAMED_ELEMENT__NAME: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__NAME;
-				case WebsitePackage.NAMED_ELEMENT__SINGLETON_NAME: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SINGLETON_NAME;
-				case WebsitePackage.NAMED_ELEMENT__PLURALISED_NAME: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PLURALISED_NAME;
 				default: return -1;
 			}
 		}
@@ -1490,6 +1435,7 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		if (baseClass == ContentUnit.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAYED_ON;
+				case WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__CREATE_DEFAULT_URI_ELEMENT;
 				case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.CONTENT_UNIT__URI_ELEMENT: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__URI_ELEMENT;
 				case WebsitePackage.CONTENT_UNIT__ALTERNATIVE: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ALTERNATIVE;
@@ -1537,12 +1483,10 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", singletonName: ");
-		result.append(singletonName);
-		result.append(", pluralisedName: ");
-		result.append(pluralisedName);
 		result.append(", displayLabel: ");
 		result.append(displayLabel);
+		result.append(", createDefaultUriElement: ");
+		result.append(createDefaultUriElement);
 		result.append(", purposeSummary: ");
 		result.append(purposeSummary);
 		result.append(", uriElement: ");

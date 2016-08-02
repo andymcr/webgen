@@ -373,6 +373,15 @@ public interface WafFactory extends EFactory {
 	ActionUnit createActionUnit();
 
 	/**
+	 * Returns a new object of class '<em>Slider Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Slider Unit</em>'.
+	 * @generated
+	 */
+	SliderUnit createSliderUnit();
+
+	/**
 	 * Returns a new object of class '<em>Registration Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

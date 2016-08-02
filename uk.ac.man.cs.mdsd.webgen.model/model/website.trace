@@ -902,6 +902,13 @@
         visualID="5268"
         queryText="true"/>
   </childNodeTraces>
+  <childNodeTraces
+      visualID="3261"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'SliderUnit') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'UnitContainer') and _containmentMF_.name = 'units')">
+    <nodeLabelTraces
+        visualID="5269"
+        queryText="true"/>
+  </childNodeTraces>
   <linkTraces
       visualID="4001"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'AssociationWithoutContainment')">

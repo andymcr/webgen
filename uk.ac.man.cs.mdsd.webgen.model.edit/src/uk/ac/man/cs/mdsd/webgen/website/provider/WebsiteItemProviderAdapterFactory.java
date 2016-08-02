@@ -1544,6 +1544,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.SliderUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SliderUnitItemProvider sliderUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.SliderUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSliderUnitAdapter() {
+		if (sliderUnitItemProvider == null) {
+			sliderUnitItemProvider = new SliderUnitItemProvider(this);
+		}
+
+		return sliderUnitItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1958,6 +1981,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (indexUnitItemProvider != null) indexUnitItemProvider.dispose();
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
 		if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
+		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();
 		if (loginUnitItemProvider != null) loginUnitItemProvider.dispose();
 		if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();

@@ -26,8 +26,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ActionMenuEntryImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ActionMenuEntryImpl#getSingletonName <em>Singleton Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ActionMenuEntryImpl#getPluralisedName <em>Pluralised Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ActionMenuEntryImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ActionMenuEntryImpl#getDestination <em>Destination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ActionMenuEntryImpl#getQuery <em>Query</em>}</li>
@@ -55,46 +53,6 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSingletonName() <em>Singleton Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSingletonName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SINGLETON_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSingletonName() <em>Singleton Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSingletonName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String singletonName = SINGLETON_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPluralisedName() <em>Pluralised Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPluralisedName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PLURALISED_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPluralisedName() <em>Pluralised Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPluralisedName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String pluralisedName = PLURALISED_NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
@@ -174,48 +132,6 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ACTION_MENU_ENTRY__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getSingletonName() {
-		return singletonName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSingletonName(String newSingletonName) {
-		String oldSingletonName = singletonName;
-		singletonName = newSingletonName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ACTION_MENU_ENTRY__SINGLETON_NAME, oldSingletonName, singletonName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPluralisedName() {
-		return pluralisedName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPluralisedName(String newPluralisedName) {
-		String oldPluralisedName = pluralisedName;
-		pluralisedName = newPluralisedName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ACTION_MENU_ENTRY__PLURALISED_NAME, oldPluralisedName, pluralisedName));
 	}
 
 	/**
@@ -344,10 +260,6 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 		switch (featureID) {
 			case WebsitePackage.ACTION_MENU_ENTRY__NAME:
 				return getName();
-			case WebsitePackage.ACTION_MENU_ENTRY__SINGLETON_NAME:
-				return getSingletonName();
-			case WebsitePackage.ACTION_MENU_ENTRY__PLURALISED_NAME:
-				return getPluralisedName();
 			case WebsitePackage.ACTION_MENU_ENTRY__DISPLAY_LABEL:
 				return getDisplayLabel();
 			case WebsitePackage.ACTION_MENU_ENTRY__DESTINATION:
@@ -369,12 +281,6 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 		switch (featureID) {
 			case WebsitePackage.ACTION_MENU_ENTRY__NAME:
 				setName((String)newValue);
-				return;
-			case WebsitePackage.ACTION_MENU_ENTRY__SINGLETON_NAME:
-				setSingletonName((String)newValue);
-				return;
-			case WebsitePackage.ACTION_MENU_ENTRY__PLURALISED_NAME:
-				setPluralisedName((String)newValue);
 				return;
 			case WebsitePackage.ACTION_MENU_ENTRY__DISPLAY_LABEL:
 				setDisplayLabel((String)newValue);
@@ -400,12 +306,6 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 			case WebsitePackage.ACTION_MENU_ENTRY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case WebsitePackage.ACTION_MENU_ENTRY__SINGLETON_NAME:
-				setSingletonName(SINGLETON_NAME_EDEFAULT);
-				return;
-			case WebsitePackage.ACTION_MENU_ENTRY__PLURALISED_NAME:
-				setPluralisedName(PLURALISED_NAME_EDEFAULT);
-				return;
 			case WebsitePackage.ACTION_MENU_ENTRY__DISPLAY_LABEL:
 				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
 				return;
@@ -429,10 +329,6 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 		switch (featureID) {
 			case WebsitePackage.ACTION_MENU_ENTRY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case WebsitePackage.ACTION_MENU_ENTRY__SINGLETON_NAME:
-				return SINGLETON_NAME_EDEFAULT == null ? singletonName != null : !SINGLETON_NAME_EDEFAULT.equals(singletonName);
-			case WebsitePackage.ACTION_MENU_ENTRY__PLURALISED_NAME:
-				return PLURALISED_NAME_EDEFAULT == null ? pluralisedName != null : !PLURALISED_NAME_EDEFAULT.equals(pluralisedName);
 			case WebsitePackage.ACTION_MENU_ENTRY__DISPLAY_LABEL:
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WebsitePackage.ACTION_MENU_ENTRY__DESTINATION:
@@ -453,8 +349,6 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.ACTION_MENU_ENTRY__NAME: return WebsitePackage.NAMED_ELEMENT__NAME;
-				case WebsitePackage.ACTION_MENU_ENTRY__SINGLETON_NAME: return WebsitePackage.NAMED_ELEMENT__SINGLETON_NAME;
-				case WebsitePackage.ACTION_MENU_ENTRY__PLURALISED_NAME: return WebsitePackage.NAMED_ELEMENT__PLURALISED_NAME;
 				default: return -1;
 			}
 		}
@@ -477,8 +371,6 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.NAMED_ELEMENT__NAME: return WebsitePackage.ACTION_MENU_ENTRY__NAME;
-				case WebsitePackage.NAMED_ELEMENT__SINGLETON_NAME: return WebsitePackage.ACTION_MENU_ENTRY__SINGLETON_NAME;
-				case WebsitePackage.NAMED_ELEMENT__PLURALISED_NAME: return WebsitePackage.ACTION_MENU_ENTRY__PLURALISED_NAME;
 				default: return -1;
 			}
 		}
@@ -503,10 +395,6 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", singletonName: ");
-		result.append(singletonName);
-		result.append(", pluralisedName: ");
-		result.append(pluralisedName);
 		result.append(", displayLabel: ");
 		result.append(displayLabel);
 		result.append(')');

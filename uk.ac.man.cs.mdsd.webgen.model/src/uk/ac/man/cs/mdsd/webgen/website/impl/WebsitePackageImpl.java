@@ -77,6 +77,7 @@ import uk.ac.man.cs.mdsd.webgen.website.FilterParameter;
 import uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.ImageAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.ImageUnit;
 import uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
@@ -119,6 +120,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.SelectionField;
 import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.SliderUnit;
 import uk.ac.man.cs.mdsd.webgen.website.StaticMenu;
 import uk.ac.man.cs.mdsd.webgen.website.StaticPathElement;
 import uk.ac.man.cs.mdsd.webgen.website.StaticUnit;
@@ -805,6 +807,20 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass imageUnitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sliderUnitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass authenticationUnitEClass = null;
 
 	/**
@@ -1407,7 +1423,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWebsiteProperties_TopNavigationId() {
+	public EAttribute getWebsiteProperties_ResponsiveTopMenu() {
 		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(29);
 	}
 
@@ -1416,8 +1432,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWebsiteProperties_TopNavigationId() {
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(30);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWebsiteProperties_SideMenu() {
-		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(30);
+		return (EReference)websitePropertiesEClass.getEStructuralFeatures().get(31);
 	}
 
 	/**
@@ -1426,7 +1451,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getWebsiteProperties_SiteTemplate() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(31);
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(32);
 	}
 
 	/**
@@ -1435,7 +1460,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getWebsiteProperties_StaticUnitsEditable() {
-		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(32);
+		return (EAttribute)websitePropertiesEClass.getEStructuralFeatures().get(33);
 	}
 
 	/**
@@ -1454,24 +1479,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EAttribute getNamedElement_Name() {
 		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNamedElement_SingletonName() {
-		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNamedElement_PluralisedName() {
-		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1596,7 +1603,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityOrView_TableName() {
+	public EAttribute getEntityOrView_SingletonName() {
+		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityOrView_PluralisedName() {
 		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1605,16 +1621,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityOrView_AutoKeyName() {
-		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEntityOrView_AutoKeyPersistentType() {
+	public EAttribute getEntityOrView_TableName() {
 		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1623,7 +1630,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityOrView_AutoKeyGenerationStrategy() {
+	public EAttribute getEntityOrView_AutoKeyName() {
 		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1632,25 +1639,25 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEntityOrView_AutoKeyPersistentType() {
+		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityOrView_AutoKeyGenerationStrategy() {
+		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getEntityOrView_ServedBy() {
-		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEntityOrView_Labels() {
-		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEntityOrView_Features() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1659,7 +1666,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityOrView_AllFeatures() {
+	public EReference getEntityOrView_Labels() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1668,7 +1675,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityOrView_Attributes() {
+	public EReference getEntityOrView_Features() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -1677,7 +1684,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityOrView_Associations() {
+	public EReference getEntityOrView_AllFeatures() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -1686,7 +1693,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntityOrView_AllAssociations() {
+	public EReference getEntityOrView_Attributes() {
 		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -1695,8 +1702,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEntityOrView_Associations() {
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEntityOrView_AllAssociations() {
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getEntityOrView_SerializationExcludeAll() {
-		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -1705,7 +1730,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getEntityOrView_ImplementsUserInterface() {
-		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(13);
+		return (EAttribute)entityOrViewEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1714,7 +1739,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EReference getEntityOrView_Keys() {
-		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(0);
+		return (EReference)entityOrViewEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1875,8 +1900,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntityFeature_ColumnName() {
+	public EAttribute getEntityFeature_SingletonName() {
 		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityFeature_PluralisedName() {
+		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEntityFeature_ColumnName() {
+		return (EAttribute)entityFeatureEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3819,7 +3862,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_PurposeSummary() {
+	public EAttribute getContentUnit_CreateDefaultUriElement() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3828,7 +3871,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_UriElement() {
+	public EAttribute getContentUnit_PurposeSummary() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -3837,7 +3880,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_Alternative() {
+	public EAttribute getContentUnit_UriElement() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -3846,7 +3889,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_OmitCaption() {
+	public EAttribute getContentUnit_Alternative() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -3855,8 +3898,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContentUnit_CaptionClass() {
+	public EAttribute getContentUnit_OmitCaption() {
 		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContentUnit_CaptionClass() {
+		return (EAttribute)contentUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -4503,7 +4555,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDetailsUnit_CreateDefaultUriElement() {
+	public EAttribute getDetailsUnit_StyleClass() {
 		return (EAttribute)detailsUnitEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -4512,17 +4564,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDetailsUnit_StyleClass() {
-		return (EAttribute)detailsUnitEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getDetailsUnit_ContentClass() {
-		return (EAttribute)detailsUnitEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)detailsUnitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -4739,6 +4782,33 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EAttribute getActionUnit_StyleClass() {
 		return (EAttribute)actionUnitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getImageUnit() {
+		return imageUnitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getImageUnit_DefaultSelection() {
+		return (EReference)imageUnitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSliderUnit() {
+		return sliderUnitEClass;
 	}
 
 	/**
@@ -5545,6 +5615,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__TEXT_EDITOR_URL);
+		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__RESPONSIVE_TOP_MENU);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__TOP_NAVIGATION_ID);
 		createEReference(websitePropertiesEClass, WEBSITE_PROPERTIES__SIDE_MENU);
 		createEAttribute(websitePropertiesEClass, WEBSITE_PROPERTIES__SITE_TEMPLATE);
@@ -5574,8 +5645,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
-		createEAttribute(namedElementEClass, NAMED_ELEMENT__SINGLETON_NAME);
-		createEAttribute(namedElementEClass, NAMED_ELEMENT__PLURALISED_NAME);
 
 		namedDisplayElementEClass = createEClass(NAMED_DISPLAY_ELEMENT);
 		createEAttribute(namedDisplayElementEClass, NAMED_DISPLAY_ELEMENT__DISPLAY_LABEL);
@@ -5595,6 +5664,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		enumerationLiteralEClass = createEClass(ENUMERATION_LITERAL);
 
 		entityOrViewEClass = createEClass(ENTITY_OR_VIEW);
+		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__SINGLETON_NAME);
+		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__PLURALISED_NAME);
 		createEReference(entityOrViewEClass, ENTITY_OR_VIEW__KEYS);
 		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__TABLE_NAME);
 		createEAttribute(entityOrViewEClass, ENTITY_OR_VIEW__AUTO_KEY_NAME);
@@ -5664,6 +5735,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__UNIQUE);
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__ORDERED);
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE);
+		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__SINGLETON_NAME);
+		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__PLURALISED_NAME);
 		createEAttribute(entityFeatureEClass, ENTITY_FEATURE__COLUMN_NAME);
 
 		entityAttributeEClass = createEClass(ENTITY_ATTRIBUTE);
@@ -5851,6 +5924,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		contentUnitEClass = createEClass(CONTENT_UNIT);
 		createEReference(contentUnitEClass, CONTENT_UNIT__DISPLAYED_ON);
+		createEAttribute(contentUnitEClass, CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__PURPOSE_SUMMARY);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__URI_ELEMENT);
 		createEAttribute(contentUnitEClass, CONTENT_UNIT__ALTERNATIVE);
@@ -6005,7 +6079,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		detailsUnitEClass = createEClass(DETAILS_UNIT);
 		createEAttribute(detailsUnitEClass, DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY);
 		createEAttribute(detailsUnitEClass, DETAILS_UNIT__OMIT_FIELD_LABELS);
-		createEAttribute(detailsUnitEClass, DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT);
 		createEAttribute(detailsUnitEClass, DETAILS_UNIT__STYLE_CLASS);
 		createEAttribute(detailsUnitEClass, DETAILS_UNIT__CONTENT_CLASS);
 
@@ -6036,6 +6109,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		actionUnitEClass = createEClass(ACTION_UNIT);
 		createEAttribute(actionUnitEClass, ACTION_UNIT__STYLE_CLASS);
+
+		imageUnitEClass = createEClass(IMAGE_UNIT);
+		createEReference(imageUnitEClass, IMAGE_UNIT__DEFAULT_SELECTION);
+
+		sliderUnitEClass = createEClass(SLIDER_UNIT);
 
 		authenticationUnitEClass = createEClass(AUTHENTICATION_UNIT);
 
@@ -6238,6 +6316,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		controlUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		searchUnitEClass.getESuperTypes().add(this.getControlUnit());
 		actionUnitEClass.getESuperTypes().add(this.getControlUnit());
+		imageUnitEClass.getESuperTypes().add(this.getDynamicUnit());
+		sliderUnitEClass.getESuperTypes().add(this.getImageUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getControlUnit());
 		loginUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());
@@ -6293,6 +6373,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getWebsiteProperties_CaptchaSiteKey(), ecorePackage.getEString(), "captchaSiteKey", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_CaptchaSecretKey(), ecorePackage.getEString(), "captchaSecretKey", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_TextEditorURL(), ecorePackage.getEString(), "textEditorURL", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWebsiteProperties_ResponsiveTopMenu(), ecorePackage.getEBoolean(), "responsiveTopMenu", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWebsiteProperties_TopNavigationId(), ecorePackage.getEString(), "topNavigationId", "topnav", 1, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getWebsiteProperties_SideMenu(), this.getMenu(), null, "sideMenu", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWebsiteProperties_SiteTemplate(), ecorePackage.getEString(), "siteTemplate", null, 0, 1, WebsiteProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6322,8 +6403,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getNamedElement_SingletonName(), ecorePackage.getEString(), "singletonName", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNamedElement_PluralisedName(), ecorePackage.getEString(), "pluralisedName", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedDisplayElementEClass, NamedDisplayElement.class, "NamedDisplayElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedDisplayElement_DisplayLabel(), ecorePackage.getEString(), "displayLabel", null, 0, 1, NamedDisplayElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6343,6 +6422,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(enumerationLiteralEClass, EnumerationLiteral.class, "EnumerationLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entityOrViewEClass, EntityOrView.class, "EntityOrView", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEntityOrView_SingletonName(), ecorePackage.getEString(), "singletonName", null, 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityOrView_PluralisedName(), ecorePackage.getEString(), "pluralisedName", null, 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityOrView_Keys(), this.getFeature(), null, "keys", null, 0, -1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityOrView_TableName(), ecorePackage.getEString(), "tableName", null, 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityOrView_AutoKeyName(), ecorePackage.getEString(), "autoKeyName", "id", 0, 1, EntityOrView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6412,6 +6493,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getEntityFeature_Unique(), ecorePackage.getEBoolean(), "unique", "true", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_Ordered(), ecorePackage.getEBoolean(), "ordered", "false", 1, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_BooleanIsHasChoice(), this.getisHasChoices(), "booleanIsHasChoice", null, 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityFeature_SingletonName(), ecorePackage.getEString(), "singletonName", null, 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEntityFeature_PluralisedName(), ecorePackage.getEString(), "pluralisedName", null, 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityFeature_ColumnName(), ecorePackage.getEString(), "columnName", null, 0, 1, EntityFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(entityAttributeEClass, EntityAttribute.class, "EntityAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -6599,6 +6682,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(contentUnitEClass, ContentUnit.class, "ContentUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContentUnit_DisplayedOn(), this.getUnitContainer(), this.getUnitContainer_Units(), "displayedOn", null, 1, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getContentUnit_CreateDefaultUriElement(), ecorePackage.getEBoolean(), "createDefaultUriElement", "true", 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_PurposeSummary(), ecorePackage.getEString(), "purposeSummary", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_UriElement(), ecorePackage.getEString(), "uriElement", "", 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContentUnit_Alternative(), ecorePackage.getEString(), "alternative", null, 0, 1, ContentUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -6753,7 +6837,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(detailsUnitEClass, DetailsUnit.class, "DetailsUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDetailsUnit_OnlyDisplayWhenNotEmpty(), ecorePackage.getEBoolean(), "onlyDisplayWhenNotEmpty", "false", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDetailsUnit_OmitFieldLabels(), ecorePackage.getEBoolean(), "omitFieldLabels", "false", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getDetailsUnit_CreateDefaultUriElement(), ecorePackage.getEBoolean(), "createDefaultUriElement", "true", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDetailsUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,details_unit", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getDetailsUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "details_content", 0, 1, DetailsUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -6784,6 +6867,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(actionUnitEClass, ActionUnit.class, "ActionUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActionUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,action_unit", 0, 1, ActionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(imageUnitEClass, ImageUnit.class, "ImageUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getImageUnit_DefaultSelection(), this.getSelection(), null, "defaultSelection", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sliderUnitEClass, SliderUnit.class, "SliderUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(authenticationUnitEClass, AuthenticationUnit.class, "AuthenticationUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -22,8 +22,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditStaticTextMenuEntryImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditStaticTextMenuEntryImpl#getSingletonName <em>Singleton Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditStaticTextMenuEntryImpl#getPluralisedName <em>Pluralised Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditStaticTextMenuEntryImpl#getDisplayLabel <em>Display Label</em>}</li>
  * </ul>
  *
@@ -49,46 +47,6 @@ public class EditStaticTextMenuEntryImpl extends MenuEntryImpl implements EditSt
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSingletonName() <em>Singleton Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSingletonName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String SINGLETON_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getSingletonName() <em>Singleton Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSingletonName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String singletonName = SINGLETON_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPluralisedName() <em>Pluralised Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPluralisedName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PLURALISED_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPluralisedName() <em>Pluralised Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPluralisedName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String pluralisedName = PLURALISED_NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDisplayLabel() <em>Display Label</em>}' attribute.
@@ -155,48 +113,6 @@ public class EditStaticTextMenuEntryImpl extends MenuEntryImpl implements EditSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getSingletonName() {
-		return singletonName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSingletonName(String newSingletonName) {
-		String oldSingletonName = singletonName;
-		singletonName = newSingletonName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__SINGLETON_NAME, oldSingletonName, singletonName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPluralisedName() {
-		return pluralisedName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPluralisedName(String newPluralisedName) {
-		String oldPluralisedName = pluralisedName;
-		pluralisedName = newPluralisedName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__PLURALISED_NAME, oldPluralisedName, pluralisedName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getDisplayLabel() {
 		return displayLabel;
 	}
@@ -223,10 +139,6 @@ public class EditStaticTextMenuEntryImpl extends MenuEntryImpl implements EditSt
 		switch (featureID) {
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__NAME:
 				return getName();
-			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__SINGLETON_NAME:
-				return getSingletonName();
-			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__PLURALISED_NAME:
-				return getPluralisedName();
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL:
 				return getDisplayLabel();
 		}
@@ -243,12 +155,6 @@ public class EditStaticTextMenuEntryImpl extends MenuEntryImpl implements EditSt
 		switch (featureID) {
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__NAME:
 				setName((String)newValue);
-				return;
-			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__SINGLETON_NAME:
-				setSingletonName((String)newValue);
-				return;
-			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__PLURALISED_NAME:
-				setPluralisedName((String)newValue);
 				return;
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL:
 				setDisplayLabel((String)newValue);
@@ -268,12 +174,6 @@ public class EditStaticTextMenuEntryImpl extends MenuEntryImpl implements EditSt
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__SINGLETON_NAME:
-				setSingletonName(SINGLETON_NAME_EDEFAULT);
-				return;
-			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__PLURALISED_NAME:
-				setPluralisedName(PLURALISED_NAME_EDEFAULT);
-				return;
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL:
 				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
 				return;
@@ -291,10 +191,6 @@ public class EditStaticTextMenuEntryImpl extends MenuEntryImpl implements EditSt
 		switch (featureID) {
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__SINGLETON_NAME:
-				return SINGLETON_NAME_EDEFAULT == null ? singletonName != null : !SINGLETON_NAME_EDEFAULT.equals(singletonName);
-			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__PLURALISED_NAME:
-				return PLURALISED_NAME_EDEFAULT == null ? pluralisedName != null : !PLURALISED_NAME_EDEFAULT.equals(pluralisedName);
 			case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__DISPLAY_LABEL:
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 		}
@@ -311,8 +207,6 @@ public class EditStaticTextMenuEntryImpl extends MenuEntryImpl implements EditSt
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__NAME: return WebsitePackage.NAMED_ELEMENT__NAME;
-				case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__SINGLETON_NAME: return WebsitePackage.NAMED_ELEMENT__SINGLETON_NAME;
-				case WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__PLURALISED_NAME: return WebsitePackage.NAMED_ELEMENT__PLURALISED_NAME;
 				default: return -1;
 			}
 		}
@@ -335,8 +229,6 @@ public class EditStaticTextMenuEntryImpl extends MenuEntryImpl implements EditSt
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.NAMED_ELEMENT__NAME: return WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__NAME;
-				case WebsitePackage.NAMED_ELEMENT__SINGLETON_NAME: return WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__SINGLETON_NAME;
-				case WebsitePackage.NAMED_ELEMENT__PLURALISED_NAME: return WebsitePackage.EDIT_STATIC_TEXT_MENU_ENTRY__PLURALISED_NAME;
 				default: return -1;
 			}
 		}
@@ -361,10 +253,6 @@ public class EditStaticTextMenuEntryImpl extends MenuEntryImpl implements EditSt
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", singletonName: ");
-		result.append(singletonName);
-		result.append(", pluralisedName: ");
-		result.append(pluralisedName);
 		result.append(", displayLabel: ");
 		result.append(displayLabel);
 		result.append(')');

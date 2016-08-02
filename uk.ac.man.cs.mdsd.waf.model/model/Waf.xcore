@@ -61,6 +61,7 @@ class WafModel {
 	String captchaSiteKey
 	String captchaSecretKey
 	String textEditorURL
+	boolean responsiveTopMenu = "false"
 	String topNavigationId
 	refers Menu sideMenu
 	String siteTemplate
@@ -446,6 +447,13 @@ class SearchUnit extends ControlUnit {
 }
 
 class ActionUnit extends ControlUnit {
+}
+
+abstract class ImageUnit extends DynamicUnit {
+	refers Selection defaultSelection
+}
+
+class SliderUnit extends ImageUnit {
 }
 
 interface AuthenticationUnit {

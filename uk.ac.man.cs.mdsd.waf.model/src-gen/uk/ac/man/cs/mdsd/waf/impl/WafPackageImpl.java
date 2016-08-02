@@ -52,6 +52,7 @@ import uk.ac.man.cs.mdsd.waf.Filter;
 import uk.ac.man.cs.mdsd.waf.FilterParameter;
 import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
+import uk.ac.man.cs.mdsd.waf.ImageUnit;
 import uk.ac.man.cs.mdsd.waf.IndexGridUnit;
 import uk.ac.man.cs.mdsd.waf.IndexLineDirectionUnit;
 import uk.ac.man.cs.mdsd.waf.IndexPageDirectionUnit;
@@ -84,6 +85,7 @@ import uk.ac.man.cs.mdsd.waf.Selectable;
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.SelectionParameter;
 import uk.ac.man.cs.mdsd.waf.Service;
+import uk.ac.man.cs.mdsd.waf.SliderUnit;
 import uk.ac.man.cs.mdsd.waf.StaticMenu;
 import uk.ac.man.cs.mdsd.waf.StaticUnit;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
@@ -508,6 +510,20 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass imageUnitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sliderUnitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass authenticationUnitEClass = null;
 
 	/**
@@ -883,7 +899,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_TopNavigationId() {
+	public EAttribute getWafModel_ResponsiveTopMenu() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(18);
 	}
 
@@ -892,8 +908,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWafModel_TopNavigationId() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(19);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWafModel_SideMenu() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(19);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -902,15 +927,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_SiteTemplate() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(20);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWafModel_StaticUnitsEditable() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(21);
 	}
 
@@ -919,8 +935,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWafModel_StaticUnitsEditable() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(22);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWafModel_AllowTypeCustomisation() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(22);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -929,7 +954,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getWafModel_RestApi() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(23);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -2998,6 +3023,33 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getImageUnit() {
+		return imageUnitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getImageUnit_DefaultSelection() {
+		return (EReference)imageUnitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSliderUnit() {
+		return sliderUnitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAuthenticationUnit() {
 		return authenticationUnitEClass;
 	}
@@ -3481,6 +3533,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(wafModelEClass, WAF_MODEL__CAPTCHA_SITE_KEY);
 		createEAttribute(wafModelEClass, WAF_MODEL__CAPTCHA_SECRET_KEY);
 		createEAttribute(wafModelEClass, WAF_MODEL__TEXT_EDITOR_URL);
+		createEAttribute(wafModelEClass, WAF_MODEL__RESPONSIVE_TOP_MENU);
 		createEAttribute(wafModelEClass, WAF_MODEL__TOP_NAVIGATION_ID);
 		createEReference(wafModelEClass, WAF_MODEL__SIDE_MENU);
 		createEAttribute(wafModelEClass, WAF_MODEL__SITE_TEMPLATE);
@@ -3773,6 +3826,11 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		actionUnitEClass = createEClass(ACTION_UNIT);
 
+		imageUnitEClass = createEClass(IMAGE_UNIT);
+		createEReference(imageUnitEClass, IMAGE_UNIT__DEFAULT_SELECTION);
+
+		sliderUnitEClass = createEClass(SLIDER_UNIT);
+
 		authenticationUnitEClass = createEClass(AUTHENTICATION_UNIT);
 
 		registrationUnitEClass = createEClass(REGISTRATION_UNIT);
@@ -3932,6 +3990,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		controlUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		searchUnitEClass.getESuperTypes().add(this.getControlUnit());
 		actionUnitEClass.getESuperTypes().add(this.getControlUnit());
+		imageUnitEClass.getESuperTypes().add(this.getDynamicUnit());
+		sliderUnitEClass.getESuperTypes().add(this.getImageUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getEditUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());
 		loginUnitEClass.getESuperTypes().add(this.getControlUnit());
@@ -3968,6 +4028,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getWafModel_CaptchaSiteKey(), theEcorePackage.getEString(), "captchaSiteKey", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_CaptchaSecretKey(), theEcorePackage.getEString(), "captchaSecretKey", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_TextEditorURL(), theEcorePackage.getEString(), "textEditorURL", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWafModel_ResponsiveTopMenu(), theEcorePackage.getEBoolean(), "responsiveTopMenu", "false", 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_TopNavigationId(), theEcorePackage.getEString(), "topNavigationId", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_SideMenu(), this.getMenu(), null, "sideMenu", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_SiteTemplate(), theEcorePackage.getEString(), "siteTemplate", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4259,6 +4320,11 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getSearchUnit_ResultsDestination(), this.getIndexUnit(), this.getIndexUnit_TargettingSearches(), "resultsDestination", null, 1, 1, SearchUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionUnitEClass, ActionUnit.class, "ActionUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(imageUnitEClass, ImageUnit.class, "ImageUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getImageUnit_DefaultSelection(), this.getSelection(), null, "defaultSelection", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sliderUnitEClass, SliderUnit.class, "SliderUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(authenticationUnitEClass, AuthenticationUnit.class, "AuthenticationUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

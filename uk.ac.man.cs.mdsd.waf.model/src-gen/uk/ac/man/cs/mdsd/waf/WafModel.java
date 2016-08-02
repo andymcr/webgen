@@ -38,6 +38,7 @@ import uk.ac.man.cs.mdsd.rest.API;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getTextEditorURL <em>Text Editor URL</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#isResponsiveTopMenu <em>Responsive Top Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getTopNavigationId <em>Top Navigation Id</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSideMenu <em>Side Menu</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteTemplate <em>Site Template</em>}</li>
@@ -500,6 +501,33 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	void setTextEditorURL(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Responsive Top Menu</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Responsive Top Menu</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Responsive Top Menu</em>' attribute.
+	 * @see #setResponsiveTopMenu(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_ResponsiveTopMenu()
+	 * @model default="false" unique="false"
+	 * @generated
+	 */
+	boolean isResponsiveTopMenu();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#isResponsiveTopMenu <em>Responsive Top Menu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Responsive Top Menu</em>' attribute.
+	 * @see #isResponsiveTopMenu()
+	 * @generated
+	 */
+	void setResponsiveTopMenu(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Top Navigation Id</b></em>' attribute.

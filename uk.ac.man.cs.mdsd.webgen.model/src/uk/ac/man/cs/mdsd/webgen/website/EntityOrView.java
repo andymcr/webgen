@@ -13,6 +13,8 @@ import java.util.List;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getSingletonName <em>Singleton Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getPluralisedName <em>Pluralised Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getTableName <em>Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getAutoKeyName <em>Auto Key Name</em>}</li>
@@ -36,6 +38,58 @@ import java.util.List;
  * @generated
  */
 public interface EntityOrView extends Classifier, SelectionField {
+	/**
+	 * Returns the value of the '<em><b>Singleton Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Singleton Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Singleton Name</em>' attribute.
+	 * @see #setSingletonName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_SingletonName()
+	 * @model
+	 * @generated
+	 */
+	String getSingletonName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getSingletonName <em>Singleton Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Singleton Name</em>' attribute.
+	 * @see #getSingletonName()
+	 * @generated
+	 */
+	void setSingletonName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Pluralised Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pluralised Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pluralised Name</em>' attribute.
+	 * @see #setPluralisedName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityOrView_PluralisedName()
+	 * @model
+	 * @generated
+	 */
+	String getPluralisedName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityOrView#getPluralisedName <em>Pluralised Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pluralised Name</em>' attribute.
+	 * @see #getPluralisedName()
+	 * @generated
+	 */
+	void setPluralisedName(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Table Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

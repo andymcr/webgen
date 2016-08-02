@@ -25,7 +25,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isCreateDefaultUriElement <em>Create Default Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getContentClass <em>Content Class</em>}</li>
  * </ul>
@@ -72,26 +71,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * @ordered
 	 */
 	protected boolean omitFieldLabels = OMIT_FIELD_LABELS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isCreateDefaultUriElement() <em>Create Default Uri Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCreateDefaultUriElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean CREATE_DEFAULT_URI_ELEMENT_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isCreateDefaultUriElement() <em>Create Default Uri Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isCreateDefaultUriElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean createDefaultUriElement = CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -199,27 +178,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isCreateDefaultUriElement() {
-		return createDefaultUriElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCreateDefaultUriElement(boolean newCreateDefaultUriElement) {
-		boolean oldCreateDefaultUriElement = createDefaultUriElement;
-		createDefaultUriElement = newCreateDefaultUriElement;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT, oldCreateDefaultUriElement, createDefaultUriElement));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getStyleClass() {
 		return styleClass;
 	}
@@ -269,8 +227,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				return isOnlyDisplayWhenNotEmpty();
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return isOmitFieldLabels();
-			case WebsitePackage.DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT:
-				return isCreateDefaultUriElement();
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
 				return getStyleClass();
 			case WebsitePackage.DETAILS_UNIT__CONTENT_CLASS:
@@ -292,9 +248,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				return;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels((Boolean)newValue);
-				return;
-			case WebsitePackage.DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT:
-				setCreateDefaultUriElement((Boolean)newValue);
 				return;
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -320,9 +273,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				setOmitFieldLabels(OMIT_FIELD_LABELS_EDEFAULT);
 				return;
-			case WebsitePackage.DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT:
-				setCreateDefaultUriElement(CREATE_DEFAULT_URI_ELEMENT_EDEFAULT);
-				return;
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
@@ -345,8 +295,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
 				return omitFieldLabels != OMIT_FIELD_LABELS_EDEFAULT;
-			case WebsitePackage.DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT:
-				return createDefaultUriElement != CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 			case WebsitePackage.DETAILS_UNIT__CONTENT_CLASS:
@@ -369,8 +317,6 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 		result.append(onlyDisplayWhenNotEmpty);
 		result.append(", omitFieldLabels: ");
 		result.append(omitFieldLabels);
-		result.append(", createDefaultUriElement: ");
-		result.append(createDefaultUriElement);
 		result.append(", styleClass: ");
 		result.append(styleClass);
 		result.append(", contentClass: ");

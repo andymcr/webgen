@@ -36,6 +36,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getSingletonName <em>Singleton Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getPluralisedName <em>Pluralised Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getKeys <em>Keys</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getTableName <em>Table Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAutoKeyName <em>Auto Key Name</em>}</li>
@@ -55,6 +57,46 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityOrView {
+	/**
+	 * The default value of the '{@link #getSingletonName() <em>Singleton Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSingletonName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SINGLETON_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSingletonName() <em>Singleton Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSingletonName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String singletonName = SINGLETON_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPluralisedName() <em>Pluralised Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPluralisedName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLURALISED_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPluralisedName() <em>Pluralised Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPluralisedName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String pluralisedName = PLURALISED_NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getKeys() <em>Keys</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -272,6 +314,48 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.ENTITY_OR_VIEW;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getSingletonName() {
+		return singletonName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSingletonName(String newSingletonName) {
+		String oldSingletonName = singletonName;
+		singletonName = newSingletonName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_OR_VIEW__SINGLETON_NAME, oldSingletonName, singletonName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPluralisedName() {
+		return pluralisedName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPluralisedName(String newPluralisedName) {
+		String oldPluralisedName = pluralisedName;
+		pluralisedName = newPluralisedName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_OR_VIEW__PLURALISED_NAME, oldPluralisedName, pluralisedName));
 	}
 
 	/**
@@ -527,6 +611,10 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
+				return getSingletonName();
+			case WebsitePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
+				return getPluralisedName();
 			case WebsitePackage.ENTITY_OR_VIEW__KEYS:
 				return getKeys();
 			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
@@ -568,6 +656,12 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
+				setSingletonName((String)newValue);
+				return;
+			case WebsitePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
+				setPluralisedName((String)newValue);
+				return;
 			case WebsitePackage.ENTITY_OR_VIEW__KEYS:
 				getKeys().clear();
 				getKeys().addAll((Collection<? extends Feature>)newValue);
@@ -610,6 +704,12 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
+				setSingletonName(SINGLETON_NAME_EDEFAULT);
+				return;
+			case WebsitePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
+				setPluralisedName(PLURALISED_NAME_EDEFAULT);
+				return;
 			case WebsitePackage.ENTITY_OR_VIEW__KEYS:
 				getKeys().clear();
 				return;
@@ -649,6 +749,10 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.ENTITY_OR_VIEW__SINGLETON_NAME:
+				return SINGLETON_NAME_EDEFAULT == null ? singletonName != null : !SINGLETON_NAME_EDEFAULT.equals(singletonName);
+			case WebsitePackage.ENTITY_OR_VIEW__PLURALISED_NAME:
+				return PLURALISED_NAME_EDEFAULT == null ? pluralisedName != null : !PLURALISED_NAME_EDEFAULT.equals(pluralisedName);
 			case WebsitePackage.ENTITY_OR_VIEW__KEYS:
 				return keys != null && !keys.isEmpty();
 			case WebsitePackage.ENTITY_OR_VIEW__TABLE_NAME:
@@ -691,7 +795,11 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (tableName: ");
+		result.append(" (singletonName: ");
+		result.append(singletonName);
+		result.append(", pluralisedName: ");
+		result.append(pluralisedName);
+		result.append(", tableName: ");
 		result.append(tableName);
 		result.append(", autoKeyName: ");
 		result.append(autoKeyName);

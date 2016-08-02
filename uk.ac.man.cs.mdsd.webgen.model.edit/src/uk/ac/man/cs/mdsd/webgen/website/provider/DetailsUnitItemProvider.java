@@ -51,7 +51,6 @@ public class DetailsUnitItemProvider extends DataUnitItemProvider {
 
 			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addOmitFieldLabelsPropertyDescriptor(object);
-			addCreateDefaultUriElementPropertyDescriptor(object);
 			addStyleClassPropertyDescriptor(object);
 			addContentClassPropertyDescriptor(object);
 		}
@@ -99,28 +98,6 @@ public class DetailsUnitItemProvider extends DataUnitItemProvider {
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Create Default Uri Element feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCreateDefaultUriElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DetailsUnit_createDefaultUriElement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DetailsUnit_createDefaultUriElement_feature", "_UI_DetailsUnit_type"),
-				 WebsitePackage.Literals.DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_NavigationPropertyCategory"),
 				 null));
 	}
 
@@ -207,7 +184,6 @@ public class DetailsUnitItemProvider extends DataUnitItemProvider {
 		switch (notification.getFeatureID(DetailsUnit.class)) {
 			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
-			case WebsitePackage.DETAILS_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 			case WebsitePackage.DETAILS_UNIT__STYLE_CLASS:
 			case WebsitePackage.DETAILS_UNIT__CONTENT_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

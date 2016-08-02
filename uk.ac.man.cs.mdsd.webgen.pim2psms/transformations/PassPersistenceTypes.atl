@@ -162,6 +162,18 @@ lazy rule InverseCollectionType {
 abstract rule EntityOrView {
 	from website : Website!EntityOrView
 	to orm : ORM!EntityOrView (
+		singletonName <-
+			if website.singletonName.oclIsUndefined() or website.singletonName = '' then
+				website.name
+			else
+				website.singletonName
+			endif,
+		pluralisedName <-
+			if website.pluralisedName.oclIsUndefined() or website.pluralisedName = '' then
+				website.name
+			else
+				website.pluralisedName
+			endif,
 		tableName <- 
 			if not website.tableName.oclIsUndefined() and website.tableName <> '' then
 				website.tableName

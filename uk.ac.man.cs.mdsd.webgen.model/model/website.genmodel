@@ -28,6 +28,10 @@
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//FrameworkTechnologies/Laravel"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//FrameworkTechnologies/Symfony"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//InputTechnologies">
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//InputTechnologies/Html"/>
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//InputTechnologies/jQueryUI"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="website.ecore#//AjaxTechnologies">
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/None"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//AjaxTechnologies/jQuery"/>
@@ -112,6 +116,7 @@
       <genFeatures createChild="false" propertyCategory="Persistence" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/timestampUpdates"/>
       <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/frameworkTechnology"/>
+      <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/inputTechnology"/>
       <genFeatures createChild="false" propertyCategory="Framework" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/ajaxTechnology"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSiteKey"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//WebsiteProperties/captchaSecretKey"/>
@@ -702,7 +707,11 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//ImageUnit/defaultSelection"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//SliderUnit"/>
+    <genClasses ecoreClass="website.ecore#//SliderUnit">
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//SliderUnit/styleClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""
+          ecoreFeature="ecore:EAttribute website.ecore#//SliderUnit/contentClass"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//AuthenticationUnit"/>
     <genClasses ecoreClass="website.ecore#//RegistrationUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//RegistrationUnit/styleClass"/>

@@ -76,6 +76,7 @@ public class WafModelItemProvider
 			addCopyrightTextPropertyDescriptor(object);
 			addMetaDescriptionPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
+			addInputTechnologyPropertyDescriptor(object);
 			addAjaxTechnologyPropertyDescriptor(object);
 			addCaptchaSiteKeyPropertyDescriptor(object);
 			addCaptchaSecretKeyPropertyDescriptor(object);
@@ -322,6 +323,28 @@ public class WafModelItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Input Technology feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputTechnologyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_inputTechnology_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_inputTechnology_feature", "_UI_WafModel_type"),
+				 WafPackage.Literals.WAF_MODEL__INPUT_TECHNOLOGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Ajax Technology feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -653,6 +676,7 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__COPYRIGHT_TEXT:
 			case WafPackage.WAF_MODEL__META_DESCRIPTION:
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
+			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
 			case WafPackage.WAF_MODEL__AJAX_TECHNOLOGY:
 			case WafPackage.WAF_MODEL__CAPTCHA_SITE_KEY:
 			case WafPackage.WAF_MODEL__CAPTCHA_SECRET_KEY:

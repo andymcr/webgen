@@ -84,6 +84,7 @@ public class WebsitePropertiesItemProvider
 			addTimestampCreationPropertyDescriptor(object);
 			addTimestampUpdatesPropertyDescriptor(object);
 			addFrameworkTechnologyPropertyDescriptor(object);
+			addInputTechnologyPropertyDescriptor(object);
 			addAjaxTechnologyPropertyDescriptor(object);
 			addCaptchaSiteKeyPropertyDescriptor(object);
 			addCaptchaSecretKeyPropertyDescriptor(object);
@@ -648,6 +649,28 @@ public class WebsitePropertiesItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Input Technology feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputTechnologyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WebsiteProperties_inputTechnology_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WebsiteProperties_inputTechnology_feature", "_UI_WebsiteProperties_type"),
+				 WebsitePackage.Literals.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_FrameworkPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Ajax Technology feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -907,6 +930,7 @@ public class WebsitePropertiesItemProvider
 			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_CREATION:
 			case WebsitePackage.WEBSITE_PROPERTIES__TIMESTAMP_UPDATES:
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
+			case WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SECRET_KEY:

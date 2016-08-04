@@ -33,6 +33,7 @@ import uk.ac.man.cs.mdsd.rest.API;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getCopyrightText <em>Copyright Text</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getMetaDescription <em>Meta Description</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getInputTechnology <em>Input Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
@@ -366,6 +367,35 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	void setFrameworkTechnology(FrameworkTechnologies value);
+
+	/**
+	 * Returns the value of the '<em><b>Input Technology</b></em>' attribute.
+	 * The literals are from the enumeration {@link uk.ac.man.cs.mdsd.waf.InputTechnologies}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Input Technology</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Input Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.waf.InputTechnologies
+	 * @see #setInputTechnology(InputTechnologies)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_InputTechnology()
+	 * @model unique="false"
+	 * @generated
+	 */
+	InputTechnologies getInputTechnology();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#getInputTechnology <em>Input Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Input Technology</em>' attribute.
+	 * @see uk.ac.man.cs.mdsd.waf.InputTechnologies
+	 * @see #getInputTechnology()
+	 * @generated
+	 */
+	void setInputTechnology(InputTechnologies value);
 
 	/**
 	 * Returns the value of the '<em><b>Ajax Technology</b></em>' attribute.

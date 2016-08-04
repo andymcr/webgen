@@ -59,6 +59,7 @@ import uk.ac.man.cs.mdsd.waf.IndexPageDirectionUnit;
 import uk.ac.man.cs.mdsd.waf.IndexUnit;
 import uk.ac.man.cs.mdsd.waf.InlineAction;
 import uk.ac.man.cs.mdsd.waf.InlineActionContainer;
+import uk.ac.man.cs.mdsd.waf.InputTechnologies;
 import uk.ac.man.cs.mdsd.waf.InterfaceField;
 import uk.ac.man.cs.mdsd.waf.KeyActual;
 import uk.ac.man.cs.mdsd.waf.LocalAuthenticationSystem;
@@ -629,6 +630,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EEnum inputTechnologiesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum ajaxTechnologiesEEnum = null;
 
 	/**
@@ -854,7 +862,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_AjaxTechnology() {
+	public EAttribute getWafModel_InputTechnology() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -863,8 +871,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWafModel_AjaxTechnology() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWafModel_Authentication() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(14);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -873,15 +890,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_CaptchaSiteKey() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWafModel_CaptchaSecretKey() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -890,7 +898,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_TextEditorURL() {
+	public EAttribute getWafModel_CaptchaSecretKey() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -899,7 +907,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_ResponsiveTopMenu() {
+	public EAttribute getWafModel_TextEditorURL() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(18);
 	}
 
@@ -908,7 +916,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_TopNavigationId() {
+	public EAttribute getWafModel_ResponsiveTopMenu() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(19);
 	}
 
@@ -917,8 +925,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWafModel_TopNavigationId() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(20);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWafModel_SideMenu() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(20);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -927,15 +944,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_SiteTemplate() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(21);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWafModel_StaticUnitsEditable() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(22);
 	}
 
@@ -944,8 +952,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWafModel_StaticUnitsEditable() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWafModel_AllowTypeCustomisation() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(23);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(24);
 	}
 
 	/**
@@ -954,7 +971,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getWafModel_RestApi() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(24);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(25);
 	}
 
 	/**
@@ -3446,6 +3463,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getInputTechnologies() {
+		return inputTechnologiesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getAjaxTechnologies() {
 		return ajaxTechnologiesEEnum;
 	}
@@ -3528,6 +3554,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(wafModelEClass, WAF_MODEL__COPYRIGHT_TEXT);
 		createEAttribute(wafModelEClass, WAF_MODEL__META_DESCRIPTION);
 		createEAttribute(wafModelEClass, WAF_MODEL__FRAMEWORK_TECHNOLOGY);
+		createEAttribute(wafModelEClass, WAF_MODEL__INPUT_TECHNOLOGY);
 		createEAttribute(wafModelEClass, WAF_MODEL__AJAX_TECHNOLOGY);
 		createEReference(wafModelEClass, WAF_MODEL__AUTHENTICATION);
 		createEAttribute(wafModelEClass, WAF_MODEL__CAPTCHA_SITE_KEY);
@@ -3890,6 +3917,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		// Create enums
 		frameworkTechnologiesEEnum = createEEnum(FRAMEWORK_TECHNOLOGIES);
+		inputTechnologiesEEnum = createEEnum(INPUT_TECHNOLOGIES);
 		ajaxTechnologiesEEnum = createEEnum(AJAX_TECHNOLOGIES);
 		authenticationKeyTypesEEnum = createEEnum(AUTHENTICATION_KEY_TYPES);
 		operationResultTypesEEnum = createEEnum(OPERATION_RESULT_TYPES);
@@ -4023,6 +4051,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getWafModel_CopyrightText(), theEcorePackage.getEString(), "copyrightText", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_MetaDescription(), theEcorePackage.getEString(), "metaDescription", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_FrameworkTechnology(), this.getFrameworkTechnologies(), "frameworkTechnology", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWafModel_InputTechnology(), this.getInputTechnologies(), "inputTechnology", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_AjaxTechnology(), this.getAjaxTechnologies(), "ajaxTechnology", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_Authentication(), this.getAuthentication(), this.getAuthentication_Authorises(), "authentication", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_CaptchaSiteKey(), theEcorePackage.getEString(), "captchaSiteKey", null, 0, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4391,6 +4420,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		addEEnumLiteral(frameworkTechnologiesEEnum, FrameworkTechnologies.KOHANA);
 		addEEnumLiteral(frameworkTechnologiesEEnum, FrameworkTechnologies.LARAVEL);
 		addEEnumLiteral(frameworkTechnologiesEEnum, FrameworkTechnologies.SYMFONY);
+
+		initEEnum(inputTechnologiesEEnum, InputTechnologies.class, "InputTechnologies");
+		addEEnumLiteral(inputTechnologiesEEnum, InputTechnologies.HTML);
+		addEEnumLiteral(inputTechnologiesEEnum, InputTechnologies.JQUERY_UI);
 
 		initEEnum(ajaxTechnologiesEEnum, AjaxTechnologies.class, "AjaxTechnologies");
 		addEEnumLiteral(ajaxTechnologiesEEnum, AjaxTechnologies.NONE);

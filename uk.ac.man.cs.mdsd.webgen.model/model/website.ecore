@@ -48,6 +48,10 @@
     <eLiterals name="Laravel" value="4"/>
     <eLiterals name="Symfony" value="5"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InputTechnologies">
+    <eLiterals name="Html"/>
+    <eLiterals name="jQueryUI" value="1"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AjaxTechnologies">
     <eLiterals name="None"/>
     <eLiterals name="jQuery" value="1"/>
@@ -96,6 +100,8 @@
         defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameworkTechnology" ordered="false"
         lowerBound="1" eType="#//FrameworkTechnologies" defaultValueLiteral="Kohana"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputTechnology" eType="#//InputTechnologies"
+        defaultValueLiteral="Html"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ajaxTechnology" eType="#//AjaxTechnologies"
         defaultValueLiteral="None"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="captchaSiteKey" ordered="false"
@@ -1101,7 +1107,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="ImageUnit" abstract="true" eSuperTypes="#//DynamicUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SliderUnit" eSuperTypes="#//ImageUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SliderUnit" eSuperTypes="#//ImageUnit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,slider_unit"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="slider_content"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AuthenticationUnit" abstract="true"
       interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="RegistrationUnit" eSuperTypes="#//AuthenticationUnit #//ControlUnit">

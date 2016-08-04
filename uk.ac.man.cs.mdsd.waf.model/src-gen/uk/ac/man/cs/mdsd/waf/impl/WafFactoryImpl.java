@@ -123,6 +123,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 		switch (eDataType.getClassifierID()) {
 			case WafPackage.FRAMEWORK_TECHNOLOGIES:
 				return createFrameworkTechnologiesFromString(eDataType, initialValue);
+			case WafPackage.INPUT_TECHNOLOGIES:
+				return createInputTechnologiesFromString(eDataType, initialValue);
 			case WafPackage.AJAX_TECHNOLOGIES:
 				return createAjaxTechnologiesFromString(eDataType, initialValue);
 			case WafPackage.AUTHENTICATION_KEY_TYPES:
@@ -148,6 +150,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 		switch (eDataType.getClassifierID()) {
 			case WafPackage.FRAMEWORK_TECHNOLOGIES:
 				return convertFrameworkTechnologiesToString(eDataType, instanceValue);
+			case WafPackage.INPUT_TECHNOLOGIES:
+				return convertInputTechnologiesToString(eDataType, instanceValue);
 			case WafPackage.AJAX_TECHNOLOGIES:
 				return convertAjaxTechnologiesToString(eDataType, instanceValue);
 			case WafPackage.AUTHENTICATION_KEY_TYPES:
@@ -690,6 +694,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * @generated
 	 */
 	public String convertFrameworkTechnologiesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InputTechnologies createInputTechnologiesFromString(EDataType eDataType, String initialValue) {
+		InputTechnologies result = InputTechnologies.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertInputTechnologiesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

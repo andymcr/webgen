@@ -190,13 +190,22 @@ public interface WafPackage extends EPackage {
 	int WAF_MODEL__FRAMEWORK_TECHNOLOGY = 12;
 
 	/**
+	 * The feature id for the '<em><b>Input Technology</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAF_MODEL__INPUT_TECHNOLOGY = 13;
+
+	/**
 	 * The feature id for the '<em><b>Ajax Technology</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__AJAX_TECHNOLOGY = 13;
+	int WAF_MODEL__AJAX_TECHNOLOGY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Authentication</b></em>' containment reference.
@@ -205,7 +214,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__AUTHENTICATION = 14;
+	int WAF_MODEL__AUTHENTICATION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Site Key</b></em>' attribute.
@@ -214,7 +223,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__CAPTCHA_SITE_KEY = 15;
+	int WAF_MODEL__CAPTCHA_SITE_KEY = 16;
 
 	/**
 	 * The feature id for the '<em><b>Captcha Secret Key</b></em>' attribute.
@@ -223,7 +232,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__CAPTCHA_SECRET_KEY = 16;
+	int WAF_MODEL__CAPTCHA_SECRET_KEY = 17;
 
 	/**
 	 * The feature id for the '<em><b>Text Editor URL</b></em>' attribute.
@@ -232,7 +241,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__TEXT_EDITOR_URL = 17;
+	int WAF_MODEL__TEXT_EDITOR_URL = 18;
 
 	/**
 	 * The feature id for the '<em><b>Responsive Top Menu</b></em>' attribute.
@@ -241,7 +250,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__RESPONSIVE_TOP_MENU = 18;
+	int WAF_MODEL__RESPONSIVE_TOP_MENU = 19;
 
 	/**
 	 * The feature id for the '<em><b>Top Navigation Id</b></em>' attribute.
@@ -250,7 +259,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__TOP_NAVIGATION_ID = 19;
+	int WAF_MODEL__TOP_NAVIGATION_ID = 20;
 
 	/**
 	 * The feature id for the '<em><b>Side Menu</b></em>' reference.
@@ -259,7 +268,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SIDE_MENU = 20;
+	int WAF_MODEL__SIDE_MENU = 21;
 
 	/**
 	 * The feature id for the '<em><b>Site Template</b></em>' attribute.
@@ -268,7 +277,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__SITE_TEMPLATE = 21;
+	int WAF_MODEL__SITE_TEMPLATE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Static Units Editable</b></em>' attribute.
@@ -277,7 +286,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__STATIC_UNITS_EDITABLE = 22;
+	int WAF_MODEL__STATIC_UNITS_EDITABLE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Allow Type Customisation</b></em>' reference list.
@@ -286,7 +295,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__ALLOW_TYPE_CUSTOMISATION = 23;
+	int WAF_MODEL__ALLOW_TYPE_CUSTOMISATION = 24;
 
 	/**
 	 * The feature id for the '<em><b>Rest Api</b></em>' reference.
@@ -295,7 +304,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL__REST_API = 24;
+	int WAF_MODEL__REST_API = 25;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -304,7 +313,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WAF_MODEL_FEATURE_COUNT = 25;
+	int WAF_MODEL_FEATURE_COUNT = 26;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -10289,6 +10298,16 @@ public interface WafPackage extends EPackage {
 	int FRAMEWORK_TECHNOLOGIES = 73;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.InputTechnologies <em>Input Technologies</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.InputTechnologies
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInputTechnologies()
+	 * @generated
+	 */
+	int INPUT_TECHNOLOGIES = 74;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10296,7 +10315,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 74;
+	int AJAX_TECHNOLOGIES = 75;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -10306,7 +10325,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 75;
+	int AUTHENTICATION_KEY_TYPES = 76;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.OperationResultTypes <em>Operation Result Types</em>}' enum.
@@ -10316,7 +10335,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 76;
+	int OPERATION_RESULT_TYPES = 77;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -10326,7 +10345,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 77;
+	int PAGE_TOP_MENU_OPTIONS = 78;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -10336,7 +10355,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 78;
+	int COLLECTION_DISPLAY_OPTIONS = 79;
 
 
 	/**
@@ -10491,6 +10510,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWafModel_FrameworkTechnology();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#getInputTechnology <em>Input Technology</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Input Technology</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.WafModel#getInputTechnology()
+	 * @see #getWafModel()
+	 * @generated
+	 */
+	EAttribute getWafModel_InputTechnology();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.WafModel#getAjaxTechnology <em>Ajax Technology</em>}'.
@@ -13588,6 +13618,16 @@ public interface WafPackage extends EPackage {
 	EEnum getFrameworkTechnologies();
 
 	/**
+	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.waf.InputTechnologies <em>Input Technologies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Input Technologies</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.InputTechnologies
+	 * @generated
+	 */
+	EEnum getInputTechnologies();
+
+	/**
 	 * Returns the meta object for enum '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -13773,6 +13813,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WAF_MODEL__FRAMEWORK_TECHNOLOGY = eINSTANCE.getWafModel_FrameworkTechnology();
+
+		/**
+		 * The meta object literal for the '<em><b>Input Technology</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WAF_MODEL__INPUT_TECHNOLOGY = eINSTANCE.getWafModel_InputTechnology();
 
 		/**
 		 * The meta object literal for the '<em><b>Ajax Technology</b></em>' attribute feature.
@@ -16223,6 +16271,16 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum FRAMEWORK_TECHNOLOGIES = eINSTANCE.getFrameworkTechnologies();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.InputTechnologies <em>Input Technologies</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.InputTechnologies
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInputTechnologies()
+		 * @generated
+		 */
+		EEnum INPUT_TECHNOLOGIES = eINSTANCE.getInputTechnologies();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}' enum.

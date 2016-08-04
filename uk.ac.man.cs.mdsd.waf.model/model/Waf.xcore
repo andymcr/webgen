@@ -36,6 +36,11 @@ enum FrameworkTechnologies {
 	Symfony = 5
 }
 
+enum InputTechnologies {
+	Html
+	jQueryUI = 1
+}
+
 enum AjaxTechnologies {
 	None
 	jQuery = 1
@@ -56,6 +61,7 @@ class WafModel {
 	String copyrightText
 	String metaDescription
 	FrameworkTechnologies frameworkTechnology
+	InputTechnologies inputTechnology
 	AjaxTechnologies ajaxTechnology
 	contains Authentication authentication opposite authorises
 	String captchaSiteKey

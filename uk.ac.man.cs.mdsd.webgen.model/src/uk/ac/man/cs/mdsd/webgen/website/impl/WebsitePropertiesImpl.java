@@ -16,6 +16,7 @@ import uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Authentication;
 import uk.ac.man.cs.mdsd.webgen.website.DatabaseTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
+import uk.ac.man.cs.mdsd.webgen.website.InputTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Menu;
 import uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -54,6 +55,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsiteProperties;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isTimestampCreation <em>Timestamp Creation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#isTimestampUpdates <em>Timestamp Updates</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getInputTechnology <em>Input Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePropertiesImpl#getCaptchaSecretKey <em>Captcha Secret Key</em>}</li>
@@ -557,6 +559,26 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * @ordered
 	 */
 	protected FrameworkTechnologies frameworkTechnology = FRAMEWORK_TECHNOLOGY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInputTechnology() <em>Input Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final InputTechnologies INPUT_TECHNOLOGY_EDEFAULT = InputTechnologies.HTML;
+
+	/**
+	 * The cached value of the '{@link #getInputTechnology() <em>Input Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected InputTechnologies inputTechnology = INPUT_TECHNOLOGY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAjaxTechnology() <em>Ajax Technology</em>}' attribute.
@@ -1299,6 +1321,27 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public InputTechnologies getInputTechnology() {
+		return inputTechnology;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInputTechnology(InputTechnologies newInputTechnology) {
+		InputTechnologies oldInputTechnology = inputTechnology;
+		inputTechnology = newInputTechnology == null ? INPUT_TECHNOLOGY_EDEFAULT : newInputTechnology;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY, oldInputTechnology, inputTechnology));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AjaxTechnologies getAjaxTechnology() {
 		return ajaxTechnology;
 	}
@@ -1588,6 +1631,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return isTimestampUpdates();
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
+			case WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY:
+				return getInputTechnology();
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
 				return getAjaxTechnology();
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
@@ -1693,6 +1738,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
+				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY:
+				setInputTechnology((InputTechnologies)newValue);
 				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
 				setAjaxTechnology((AjaxTechnologies)newValue);
@@ -1808,6 +1856,9 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
 				return;
+			case WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY:
+				setInputTechnology(INPUT_TECHNOLOGY_EDEFAULT);
+				return;
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
 				setAjaxTechnology(AJAX_TECHNOLOGY_EDEFAULT);
 				return;
@@ -1897,6 +1948,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 				return timestampUpdates != TIMESTAMP_UPDATES_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
+			case WebsitePackage.WEBSITE_PROPERTIES__INPUT_TECHNOLOGY:
+				return inputTechnology != INPUT_TECHNOLOGY_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__AJAX_TECHNOLOGY:
 				return ajaxTechnology != AJAX_TECHNOLOGY_EDEFAULT;
 			case WebsitePackage.WEBSITE_PROPERTIES__CAPTCHA_SITE_KEY:
@@ -1977,6 +2030,8 @@ public class WebsitePropertiesImpl extends EObjectImpl implements WebsitePropert
 		result.append(timestampUpdates);
 		result.append(", frameworkTechnology: ");
 		result.append(frameworkTechnology);
+		result.append(", inputTechnology: ");
+		result.append(inputTechnology);
 		result.append(", ajaxTechnology: ");
 		result.append(ajaxTechnology);
 		result.append(", captchaSiteKey: ");

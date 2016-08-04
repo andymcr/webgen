@@ -28,6 +28,7 @@ import uk.ac.man.cs.mdsd.rest.API;
 import uk.ac.man.cs.mdsd.waf.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.waf.Authentication;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
+import uk.ac.man.cs.mdsd.waf.InputTechnologies;
 import uk.ac.man.cs.mdsd.waf.Menu;
 import uk.ac.man.cs.mdsd.waf.Page;
 import uk.ac.man.cs.mdsd.waf.Service;
@@ -55,6 +56,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getCopyrightText <em>Copyright Text</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getMetaDescription <em>Meta Description</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getFrameworkTechnology <em>Framework Technology</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getInputTechnology <em>Input Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getAjaxTechnology <em>Ajax Technology</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getCaptchaSiteKey <em>Captcha Site Key</em>}</li>
@@ -291,6 +293,26 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * @ordered
 	 */
 	protected FrameworkTechnologies frameworkTechnology = FRAMEWORK_TECHNOLOGY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInputTechnology() <em>Input Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final InputTechnologies INPUT_TECHNOLOGY_EDEFAULT = InputTechnologies.HTML;
+
+	/**
+	 * The cached value of the '{@link #getInputTechnology() <em>Input Technology</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputTechnology()
+	 * @generated
+	 * @ordered
+	 */
+	protected InputTechnologies inputTechnology = INPUT_TECHNOLOGY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAjaxTechnology() <em>Ajax Technology</em>}' attribute.
@@ -779,6 +801,27 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public InputTechnologies getInputTechnology() {
+		return inputTechnology;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInputTechnology(InputTechnologies newInputTechnology) {
+		InputTechnologies oldInputTechnology = inputTechnology;
+		inputTechnology = newInputTechnology == null ? INPUT_TECHNOLOGY_EDEFAULT : newInputTechnology;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__INPUT_TECHNOLOGY, oldInputTechnology, inputTechnology));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public AjaxTechnologies getAjaxTechnology() {
 		return ajaxTechnology;
 	}
@@ -1149,6 +1192,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return getMetaDescription();
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				return getFrameworkTechnology();
+			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
+				return getInputTechnology();
 			case WafPackage.WAF_MODEL__AJAX_TECHNOLOGY:
 				return getAjaxTechnology();
 			case WafPackage.WAF_MODEL__AUTHENTICATION:
@@ -1229,6 +1274,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return;
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology((FrameworkTechnologies)newValue);
+				return;
+			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
+				setInputTechnology((InputTechnologies)newValue);
 				return;
 			case WafPackage.WAF_MODEL__AJAX_TECHNOLOGY:
 				setAjaxTechnology((AjaxTechnologies)newValue);
@@ -1318,6 +1366,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				setFrameworkTechnology(FRAMEWORK_TECHNOLOGY_EDEFAULT);
 				return;
+			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
+				setInputTechnology(INPUT_TECHNOLOGY_EDEFAULT);
+				return;
 			case WafPackage.WAF_MODEL__AJAX_TECHNOLOGY:
 				setAjaxTechnology(AJAX_TECHNOLOGY_EDEFAULT);
 				return;
@@ -1392,6 +1443,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return META_DESCRIPTION_EDEFAULT == null ? metaDescription != null : !META_DESCRIPTION_EDEFAULT.equals(metaDescription);
 			case WafPackage.WAF_MODEL__FRAMEWORK_TECHNOLOGY:
 				return frameworkTechnology != FRAMEWORK_TECHNOLOGY_EDEFAULT;
+			case WafPackage.WAF_MODEL__INPUT_TECHNOLOGY:
+				return inputTechnology != INPUT_TECHNOLOGY_EDEFAULT;
 			case WafPackage.WAF_MODEL__AJAX_TECHNOLOGY:
 				return ajaxTechnology != AJAX_TECHNOLOGY_EDEFAULT;
 			case WafPackage.WAF_MODEL__AUTHENTICATION:
@@ -1448,6 +1501,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 		result.append(metaDescription);
 		result.append(", frameworkTechnology: ");
 		result.append(frameworkTechnology);
+		result.append(", inputTechnology: ");
+		result.append(inputTechnology);
 		result.append(", ajaxTechnology: ");
 		result.append(ajaxTechnology);
 		result.append(", captchaSiteKey: ");

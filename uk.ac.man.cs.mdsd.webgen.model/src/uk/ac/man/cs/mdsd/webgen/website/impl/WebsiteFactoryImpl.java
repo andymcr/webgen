@@ -155,6 +155,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return createOrmTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return createFrameworkTechnologiesFromString(eDataType, initialValue);
+			case WebsitePackage.INPUT_TECHNOLOGIES:
+				return createInputTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.AJAX_TECHNOLOGIES:
 				return createAjaxTechnologiesFromString(eDataType, initialValue);
 			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
@@ -192,6 +194,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 				return convertOrmTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return convertFrameworkTechnologiesToString(eDataType, instanceValue);
+			case WebsitePackage.INPUT_TECHNOLOGIES:
+				return convertInputTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.AJAX_TECHNOLOGIES:
 				return convertAjaxTechnologiesToString(eDataType, instanceValue);
 			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
@@ -1022,6 +1026,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * @generated
 	 */
 	public String convertFrameworkTechnologiesToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InputTechnologies createInputTechnologiesFromString(EDataType eDataType, String initialValue) {
+		InputTechnologies result = InputTechnologies.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertInputTechnologiesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

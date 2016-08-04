@@ -318,6 +318,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateOrmTechnologies((OrmTechnologies)value, diagnostics, context);
 			case WebsitePackage.FRAMEWORK_TECHNOLOGIES:
 				return validateFrameworkTechnologies((FrameworkTechnologies)value, diagnostics, context);
+			case WebsitePackage.INPUT_TECHNOLOGIES:
+				return validateInputTechnologies((InputTechnologies)value, diagnostics, context);
 			case WebsitePackage.AJAX_TECHNOLOGIES:
 				return validateAjaxTechnologies((AjaxTechnologies)value, diagnostics, context);
 			case WebsitePackage.AUTHENTICATION_KEY_TYPES:
@@ -2865,6 +2867,15 @@ public class WebsiteValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateFrameworkTechnologies(FrameworkTechnologies frameworkTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInputTechnologies(InputTechnologies inputTechnologies, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

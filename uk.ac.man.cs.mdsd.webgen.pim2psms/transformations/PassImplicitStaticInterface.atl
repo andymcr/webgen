@@ -36,8 +36,13 @@ unique lazy rule implicitStaticTextPage {
 		topMenuRank <- 100,
 		navigationLabel <- 'Static Text',
 		sideMenu <-
-			thisModule.findWafMenu(
-				thisModule.findWebsiteProperties().sideMenu.name)
+			let sideMenu : Website!Menu
+				= thisModule.findWebsiteProperties().sideMenu
+				in if sideMenu.oclIsUndefined() then
+						OclUndefined
+					else
+						thisModule.findWafMenu(sideMenu.name)
+					endif
 	),
 	text : WAF!IndexGridUnit (
 		name <- 'Text',

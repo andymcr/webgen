@@ -217,7 +217,7 @@ helper context Website!Label def: findOrmLabel() : ORM!Label
 	endif endif;
 
 helper context Website!DynamicUnit def: defaultSelection() : Website!Selection
-	= if self.oclIsKindOf(Website!DataUnit) or self.oclIsKindOf(Website!EditUnit) then
+	= if self.oclIsKindOf(Website!DataUnit) or self.oclIsKindOf(Website!EditUnit) or self.oclIsKindOf(Website!ImageUnit) then
 			self.defaultSelection
 		else
 			OclUndefined
@@ -227,8 +227,26 @@ helper context Website!DynamicUnit def: uriPathKeys() : Sequence(Website!Feature
 	= if self.entities->isEmpty() then
 			Sequence{}
 		else
-			self.entities->first().keys
+			self.entities->first().uriPathKeys()
 		endif;
+
+helper context Website!EntityOrView def: uriPathKeys() : Sequence(Website!Feature)
+	= self.keys->union(
+			if self.container().oclIsUndefined() then
+				Sequence{}
+			else
+				self.container().uriPathKeys()
+			endif);
+
+helper context Website!EntityOrView def: container() : Website!EntityOrView
+	= let containingAssociation : Sequence(Website!AssociationWithContainment)
+		= self.allAssociations
+				->select(a | a.oclIsTypeOf(Website!AssociationWithContainment) and a.partOf <> self)
+			in if containingAssociation->isEmpty() then
+					OclUndefined
+				else
+					containingAssociation->first().partOf
+				endif;
 
 
 rule WafModel {
@@ -261,6 +279,7 @@ rule WafModel {
 			else
 				website.websiteProperties.textEditorURL.cleanString()
 			endif,
+		responsiveTopMenu <- website.websiteProperties.responsiveTopMenu,
 		topNavigationId <- website.websiteProperties.topNavigationId,
 		sideMenu <- website.websiteProperties.sideMenu,
 		siteTemplate <- website.websiteProperties.siteTemplate,
@@ -535,7 +554,14 @@ abstract rule ContentUnit {
 	from website : Website!ContentUnit
 	to waf : WAF!ContentUnit (
 		purposeSummary <- website.purposeSummary,
-		uriElement <- website.uriElement.trim(),
+		uriElement <-
+			if website.uriElement.trim() <> '' then
+				website.uriElement.trim()
+			else if website.createDefaultUriElement then
+				website.name.createName()
+			else
+				''
+			endif endif,
 		omitCaption <-
 			if not website.omitCaption.oclIsUndefined() then
 				website.omitCaption
@@ -838,10 +864,12 @@ abstract rule EditUnit {
 		uriElement <-
 			if website.uriElement.trim() <> '' then
 				website.uriElement.trim()
-			else
+			else if website.createDefaultUriElement then
 				'update'
-			endif,
-		confirmDestination <- website.confirmDestination,
+			else
+				''
+			endif endif,
+			confirmDestination <- website.confirmDestination,
 		confirmLabel <-
 			if not website.confirmLabel.oclIsUndefined() and website.confirmLabel <> '' then
 				website.confirmLabel
@@ -876,9 +904,11 @@ rule CreateUnit {
 		uriElement <-
 			if website.uriElement.trim() <> '' then
 				website.uriElement.trim()
-			else
+			else if website.createDefaultUriElement then
 				'create'
-			endif
+			else
+				''
+			endif endif
 	)
 }
 
@@ -937,14 +967,6 @@ abstract rule DataUnit {
 rule DetailsUnit {
 	from website : Website!DetailsUnit
 	to waf : WAF!DetailsUnit (
-		uriElement <-
-			if website.uriElement.trim() <> '' then
-				website.uriElement.trim()
-			else if website.createDefaultUriElement then
-				website.name.createName()
-			else
-				''
-			endif endif,
 		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
 		omitFieldLabels <- website.omitFieldLabels
 	)
@@ -1049,6 +1071,21 @@ rule SearchUnit {
 rule ActionUnit {
 	from website : Website!ActionUnit
 	to waf : WAF!ActionUnit (
+	)
+}
+
+-- @extends DynamicUnit
+abstract rule ImageUnit {
+	from website : Website!ImageUnit
+	to waf : WAF!ImageUnit (
+		defaultSelection <- website.defaultSelection
+	)
+}
+
+-- @extends ImageUnit
+rule SliderUnit {
+	from website : Website!SliderUnit
+	to waf : WAF!SliderUnit (
 	)
 }
 

@@ -66,12 +66,16 @@ unique lazy rule implicitStaticEntity {
 		displayLabel <- 'Static Text',
 		features <- Sequence{name, content},
 		tableName <- 'StaticText'.createTableName(),
-		autoKeyName <- 'id'
+		autoKeyName <- 'id',
+		autoKeyPersistentType <- 'integer',
+		keys <- Sequence{name},
+		labels <- Sequence{label}
 	),
 	name : ORM!SingletonElement (
 		name <- 'name',
 		displayLabel <- 'Name',
 		dataType <- website.getDataType('String'),
+		ormType <- 'string',
 		required <- true,
 		"unique" <- true,
 		columnName <- 'name'.createAttributeColumnName()
@@ -80,9 +84,18 @@ unique lazy rule implicitStaticEntity {
 		name <- 'content',
 		displayLabel <- 'Content',
 		dataType <- website.getDataType('TextBlock'),
+		ormType <- 'string',
 		required <- true,
 		"unique" <- false,
 		columnName <- 'content'.createAttributeColumnName()
+	),
+	label : ORM!ModelLabel (
+		name <- 'default',
+		format <- '%s',
+		features <- Sequence{feature}
+	),
+	feature : ORM!ModelLabelAttribute (
+		attribute <- name
 	)
 	do {
 		orm;

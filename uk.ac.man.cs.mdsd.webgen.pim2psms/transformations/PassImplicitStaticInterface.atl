@@ -55,17 +55,16 @@ unique lazy rule implicitStaticTextPage {
 		displayFields <-
 			let features : Sequence(WAF!EntityFeature)
 				= thisModule.findOrmEntityOrView('StaticText').features
-					->select(f | f.name = 'name')
 				in features
 					->collect(f | thisModule.implicitUnitAttribute(f)),
 		actions <- Sequence{editTextAction},
-		styleClass <- 'unit index_unit framed',
+		styleClass <- 'unit index_unit',
 		headerClass <- 'unit_header',
 		captionClass <- 'unit_caption',
 		controlClass <- 'unit_control',
 		footerClass <- 'unit_footer',
 		errorClass <- 'error',
-		contentClass <- 'index_layout',
+		contentClass <- 'index_layout framed',
 		rowClasses <- 'odd_row even_row'
 	),
 	editTextAction : WAF!SelectAction (
@@ -74,7 +73,7 @@ unique lazy rule implicitStaticTextPage {
 		target <- editText
 	),
 	editText : WAF!CreateUpdateUnit (
-		name <- 'AddEditText',
+		name <- 'Edit',
 		displayLabel <- 'Add/Edit Static Text',
 		entities <- Sequence{thisModule.findOrmEntityOrView('StaticText')},
 		omitCaption <- false,
@@ -83,13 +82,13 @@ unique lazy rule implicitStaticTextPage {
 		displayFields <-
 			thisModule.findOrmEntityOrView('StaticText').features
 				->collect(f | thisModule.implicitUnitAttribute(f)),
-		styleClass <- 'unit update_unit framed',
+		styleClass <- 'unit update_unit',
 		headerClass <- 'unit_header',
 		captionClass <- 'unit_caption',
 		controlClass <- 'unit_control',
 		footerClass <- 'unit_footer',
 		errorClass <- 'error',
-		contentClass <- 'input_form'
+		contentClass <- 'input_form framed'
 	)
 	do {
 		waf;
@@ -108,7 +107,8 @@ lazy abstract rule implicitUnitFeature {
 lazy rule implicitUnitAttribute {
 	from partialWaf : ORM!SingletonElement
 	to waf : WAF!UnitAttribute (
-		attribute <- partialWaf
+		attribute <- partialWaf,
+		maximumDisplaySize <- 40
 	)
 	do {
 		waf;

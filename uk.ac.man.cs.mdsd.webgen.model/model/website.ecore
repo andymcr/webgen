@@ -950,7 +950,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="PathReferenceElement" abstract="true"
       interface="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actual" lowerBound="1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Path"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="childReference" eType="#//ChildPathReference"
         containment="true" eOpposite="#//ChildPathReference/parent"/>

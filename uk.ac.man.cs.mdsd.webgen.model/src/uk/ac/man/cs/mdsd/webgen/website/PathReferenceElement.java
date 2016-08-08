@@ -4,7 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
 
 import org.eclipse.emf.ecore.EObject;
 
-import uk.ac.man.cs.mdsd.criteria.Path;
+import uk.ac.man.cs.mdsd.criteria.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,12 +34,12 @@ public interface PathReferenceElement extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Actual</em>' containment reference.
-	 * @see #setActual(Path)
+	 * @see #setActual(Expression)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getPathReferenceElement_Actual()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Path getActual();
+	Expression getActual();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.PathReferenceElement#getActual <em>Actual</em>}' containment reference.
@@ -49,7 +49,7 @@ public interface PathReferenceElement extends EObject {
 	 * @see #getActual()
 	 * @generated
 	 */
-	void setActual(Path value);
+	void setActual(Expression value);
 
 	/**
 	 * Returns the value of the '<em><b>Child Reference</b></em>' containment reference.

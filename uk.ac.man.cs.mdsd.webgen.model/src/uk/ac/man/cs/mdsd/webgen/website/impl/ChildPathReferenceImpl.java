@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import uk.ac.man.cs.mdsd.criteria.Path;
-
+import uk.ac.man.cs.mdsd.criteria.Expression;
 import uk.ac.man.cs.mdsd.webgen.website.ChildPathReference;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.PathReferenceElement;
@@ -45,7 +44,7 @@ public class ChildPathReferenceImpl extends EObjectImpl implements ChildPathRefe
 	 * @generated
 	 * @ordered
 	 */
-	protected Path actual;
+	protected Expression actual;
 
 	/**
 	 * The cached value of the '{@link #getChildReference() <em>Child Reference</em>}' containment reference.
@@ -91,7 +90,7 @@ public class ChildPathReferenceImpl extends EObjectImpl implements ChildPathRefe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Path getActual() {
+	public Expression getActual() {
 		return actual;
 	}
 
@@ -100,8 +99,8 @@ public class ChildPathReferenceImpl extends EObjectImpl implements ChildPathRefe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetActual(Path newActual, NotificationChain msgs) {
-		Path oldActual = actual;
+	public NotificationChain basicSetActual(Expression newActual, NotificationChain msgs) {
+		Expression oldActual = actual;
 		actual = newActual;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.CHILD_PATH_REFERENCE__ACTUAL, oldActual, newActual);
@@ -115,7 +114,7 @@ public class ChildPathReferenceImpl extends EObjectImpl implements ChildPathRefe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActual(Path newActual) {
+	public void setActual(Expression newActual) {
 		if (newActual != actual) {
 			NotificationChain msgs = null;
 			if (actual != null)
@@ -322,7 +321,7 @@ public class ChildPathReferenceImpl extends EObjectImpl implements ChildPathRefe
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.CHILD_PATH_REFERENCE__ACTUAL:
-				setActual((Path)newValue);
+				setActual((Expression)newValue);
 				return;
 			case WebsitePackage.CHILD_PATH_REFERENCE__CHILD_REFERENCE:
 				setChildReference((ChildPathReference)newValue);
@@ -343,7 +342,7 @@ public class ChildPathReferenceImpl extends EObjectImpl implements ChildPathRefe
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.CHILD_PATH_REFERENCE__ACTUAL:
-				setActual((Path)null);
+				setActual((Expression)null);
 				return;
 			case WebsitePackage.CHILD_PATH_REFERENCE__CHILD_REFERENCE:
 				setChildReference((ChildPathReference)null);

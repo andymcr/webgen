@@ -14,8 +14,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import uk.ac.man.cs.mdsd.criteria.Path;
-
+import uk.ac.man.cs.mdsd.criteria.Expression;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.ChildPathReference;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
@@ -49,7 +48,7 @@ public class KeyActualImpl extends EObjectImpl implements KeyActual {
 	 * @generated
 	 * @ordered
 	 */
-	protected Path actual;
+	protected Expression actual;
 
 	/**
 	 * The cached value of the '{@link #getChildReference() <em>Child Reference</em>}' containment reference.
@@ -184,7 +183,7 @@ public class KeyActualImpl extends EObjectImpl implements KeyActual {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Path getActual() {
+	public Expression getActual() {
 		return actual;
 	}
 
@@ -193,8 +192,8 @@ public class KeyActualImpl extends EObjectImpl implements KeyActual {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetActual(Path newActual, NotificationChain msgs) {
-		Path oldActual = actual;
+	public NotificationChain basicSetActual(Expression newActual, NotificationChain msgs) {
+		Expression oldActual = actual;
 		actual = newActual;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.KEY_ACTUAL__ACTUAL, oldActual, newActual);
@@ -208,7 +207,7 @@ public class KeyActualImpl extends EObjectImpl implements KeyActual {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActual(Path newActual) {
+	public void setActual(Expression newActual) {
 		if (newActual != actual) {
 			NotificationChain msgs = null;
 			if (actual != null)
@@ -377,7 +376,7 @@ public class KeyActualImpl extends EObjectImpl implements KeyActual {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.KEY_ACTUAL__ACTUAL:
-				setActual((Path)newValue);
+				setActual((Expression)newValue);
 				return;
 			case WebsitePackage.KEY_ACTUAL__CHILD_REFERENCE:
 				setChildReference((ChildPathReference)newValue);
@@ -401,7 +400,7 @@ public class KeyActualImpl extends EObjectImpl implements KeyActual {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.KEY_ACTUAL__ACTUAL:
-				setActual((Path)null);
+				setActual((Expression)null);
 				return;
 			case WebsitePackage.KEY_ACTUAL__CHILD_REFERENCE:
 				setChildReference((ChildPathReference)null);

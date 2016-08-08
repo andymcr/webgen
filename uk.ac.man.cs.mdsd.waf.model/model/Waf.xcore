@@ -272,7 +272,7 @@ class UnitSupportAction extends NamedDisplayElement {
 }
 
 interface PathReferenceElement {
-	contains Path[1] actual
+	contains Expression[1] actual
 	contains ChildPathReference childReference opposite parent
 }
 

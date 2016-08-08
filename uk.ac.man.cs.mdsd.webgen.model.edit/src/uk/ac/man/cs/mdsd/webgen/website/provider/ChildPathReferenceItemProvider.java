@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 import uk.ac.man.cs.mdsd.webgen.website.ChildPathReference;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -197,6 +198,76 @@ public class ChildPathReferenceItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
 				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createNullLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createBooleanLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createStringLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createTimeLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createCurrentTime()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createFunction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter

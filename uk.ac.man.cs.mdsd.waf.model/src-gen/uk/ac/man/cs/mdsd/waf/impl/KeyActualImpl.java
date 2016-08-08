@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import uk.ac.man.cs.mdsd.criteria.Path;
+import uk.ac.man.cs.mdsd.criteria.Expression;
 
 import uk.ac.man.cs.mdsd.orm.Feature;
 
@@ -47,7 +47,7 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	 * @generated
 	 * @ordered
 	 */
-	protected Path actual;
+	protected Expression actual;
 
 	/**
 	 * The cached value of the '{@link #getChildReference() <em>Child Reference</em>}' containment reference.
@@ -93,7 +93,7 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Path getActual() {
+	public Expression getActual() {
 		return actual;
 	}
 
@@ -102,8 +102,8 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetActual(Path newActual, NotificationChain msgs) {
-		Path oldActual = actual;
+	public NotificationChain basicSetActual(Expression newActual, NotificationChain msgs) {
+		Expression oldActual = actual;
 		actual = newActual;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.KEY_ACTUAL__ACTUAL, oldActual, newActual);
@@ -117,7 +117,7 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActual(Path newActual) {
+	public void setActual(Expression newActual) {
 		if (newActual != actual) {
 			NotificationChain msgs = null;
 			if (actual != null)
@@ -346,7 +346,7 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WafPackage.KEY_ACTUAL__ACTUAL:
-				setActual((Path)newValue);
+				setActual((Expression)newValue);
 				return;
 			case WafPackage.KEY_ACTUAL__CHILD_REFERENCE:
 				setChildReference((ChildPathReference)newValue);
@@ -370,7 +370,7 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WafPackage.KEY_ACTUAL__ACTUAL:
-				setActual((Path)null);
+				setActual((Expression)null);
 				return;
 			case WafPackage.KEY_ACTUAL__CHILD_REFERENCE:
 				setChildReference((ChildPathReference)null);

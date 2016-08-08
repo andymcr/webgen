@@ -1202,11 +1202,13 @@ helper context Website!Expression def: isInterfaceContainer() : Boolean
 			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!InlineAction) then
 			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!PathReferenceElement) then
+			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
 			self.refImmediateComposite().isInterfaceContainer()
 		else
 			false
-		endif endif endif endif endif endif;
+		endif endif endif endif endif endif endif;
 
 helper context Website!Order def: isInterfaceContainer() : Boolean
 	= if self.refImmediateComposite().oclIsUndefined() then

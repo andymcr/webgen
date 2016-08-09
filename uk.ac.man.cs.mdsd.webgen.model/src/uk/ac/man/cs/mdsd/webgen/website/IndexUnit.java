@@ -23,6 +23,8 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getNextNpages <em>Next Npages</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPreviousPageLabel <em>Previous Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
@@ -164,6 +166,60 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	 * @generated
 	 */
 	void setDefaultPaginationSize(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Next Npages</b></em>' attribute.
+	 * The default value is <code>"3"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Next Npages</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Next Npages</em>' attribute.
+	 * @see #setNextNpages(int)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_NextNpages()
+	 * @model default="3"
+	 * @generated
+	 */
+	int getNextNpages();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getNextNpages <em>Next Npages</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Next Npages</em>' attribute.
+	 * @see #getNextNpages()
+	 * @generated
+	 */
+	void setNextNpages(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Previous Npages</b></em>' attribute.
+	 * The default value is <code>"3"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Previous Npages</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Previous Npages</em>' attribute.
+	 * @see #setPreviousNpages(int)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_PreviousNpages()
+	 * @model default="3"
+	 * @generated
+	 */
+	int getPreviousNpages();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPreviousNpages <em>Previous Npages</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Previous Npages</em>' attribute.
+	 * @see #getPreviousNpages()
+	 * @generated
+	 */
+	void setPreviousNpages(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Next Page Label</b></em>' attribute.

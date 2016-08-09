@@ -31,12 +31,12 @@ public interface ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Action</em>' reference.
-	 * @see #setAction(DynamicUnit)
+	 * @see #setAction(ContentUnit)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getActionMenuEntry_Action()
 	 * @model required="true"
 	 * @generated
 	 */
-	DynamicUnit getAction();
+	ContentUnit getAction();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ActionMenuEntry#getAction <em>Action</em>}' reference.
@@ -46,7 +46,7 @@ public interface ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	 * @see #getAction()
 	 * @generated
 	 */
-	void setAction(DynamicUnit value);
+	void setAction(ContentUnit value);
 
 	/**
 	 * Returns the value of the '<em><b>Query</b></em>' containment reference.

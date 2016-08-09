@@ -30,12 +30,12 @@ public interface ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Destination</em>' reference.
-	 * @see #setDestination(DynamicUnit)
+	 * @see #setDestination(ContentUnit)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getActionMenuEntry_Destination()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	DynamicUnit getDestination();
+	ContentUnit getDestination();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry#getDestination <em>Destination</em>}' reference.
@@ -45,7 +45,7 @@ public interface ActionMenuEntry extends MenuEntry, NamedDisplayElement {
 	 * @see #getDestination()
 	 * @generated
 	 */
-	void setDestination(DynamicUnit value);
+	void setDestination(ContentUnit value);
 
 	/**
 	 * Returns the value of the '<em><b>Query</b></em>' containment reference.

@@ -668,7 +668,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionMenuEntry" eSuperTypes="#//MenuEntry #//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" ordered="false"
-        lowerBound="1" eType="#//DynamicUnit"/>
+        lowerBound="1" eType="#//ContentUnit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="query" eType="#//Query"
         containment="true"/>
   </eClassifiers>
@@ -1066,6 +1066,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultPaginationSize"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="10"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextNpages" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="3"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="previousNpages" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="3"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextPageLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=">"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="previousPageLabel" ordered="false"

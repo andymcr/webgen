@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
+import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
@@ -82,7 +83,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * @generated
 	 * @ordered
 	 */
-	protected DynamicUnit destination;
+	protected ContentUnit destination;
 
 	/**
 	 * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
@@ -160,10 +161,10 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DynamicUnit getDestination() {
+	public ContentUnit getDestination() {
 		if (destination != null && destination.eIsProxy()) {
 			InternalEObject oldDestination = (InternalEObject)destination;
-			destination = (DynamicUnit)eResolveProxy(oldDestination);
+			destination = (ContentUnit)eResolveProxy(oldDestination);
 			if (destination != oldDestination) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.ACTION_MENU_ENTRY__DESTINATION, oldDestination, destination));
@@ -177,7 +178,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DynamicUnit basicGetDestination() {
+	public ContentUnit basicGetDestination() {
 		return destination;
 	}
 
@@ -186,8 +187,8 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDestination(DynamicUnit newDestination) {
-		DynamicUnit oldDestination = destination;
+	public void setDestination(ContentUnit newDestination) {
+		ContentUnit oldDestination = destination;
 		destination = newDestination;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ACTION_MENU_ENTRY__DESTINATION, oldDestination, destination));
@@ -286,7 +287,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 				setDisplayLabel((String)newValue);
 				return;
 			case WebsitePackage.ACTION_MENU_ENTRY__DESTINATION:
-				setDestination((DynamicUnit)newValue);
+				setDestination((ContentUnit)newValue);
 				return;
 			case WebsitePackage.ACTION_MENU_ENTRY__QUERY:
 				setQuery((Query)newValue);
@@ -310,7 +311,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
 				return;
 			case WebsitePackage.ACTION_MENU_ENTRY__DESTINATION:
-				setDestination((DynamicUnit)null);
+				setDestination((ContentUnit)null);
 				return;
 			case WebsitePackage.ACTION_MENU_ENTRY__QUERY:
 				setQuery((Query)null);

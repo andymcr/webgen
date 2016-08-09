@@ -991,6 +991,8 @@ abstract rule IndexUnit {
 					website.pagination
 				endif,
 		defaultPaginationSize <- website.defaultPaginationSize,
+		nextNpages <- website.nextNpages,
+		previousNpages <- website.previousNpages,
 		nextPageLabel <- website.nextPageLabel,
 		previousPageLabel <- website.previousPageLabel,
 		useFirstLastPageLinks <- website.useFirstLastPageLinks,

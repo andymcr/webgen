@@ -38,6 +38,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getNextNpages <em>Next Npages</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPreviousPageLabel <em>Previous Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
@@ -119,6 +121,46 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected int defaultPaginationSize = DEFAULT_PAGINATION_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNextNpages() <em>Next Npages</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNextNpages()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NEXT_NPAGES_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNextNpages() <em>Next Npages</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNextNpages()
+	 * @generated
+	 * @ordered
+	 */
+	protected int nextNpages = NEXT_NPAGES_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPreviousNpages() <em>Previous Npages</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreviousNpages()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PREVIOUS_NPAGES_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getPreviousNpages() <em>Previous Npages</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreviousNpages()
+	 * @generated
+	 * @ordered
+	 */
+	protected int previousNpages = PREVIOUS_NPAGES_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNextPageLabel() <em>Next Page Label</em>}' attribute.
@@ -378,6 +420,48 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getNextNpages() {
+		return nextNpages;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNextNpages(int newNextNpages) {
+		int oldNextNpages = nextNpages;
+		nextNpages = newNextNpages;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__NEXT_NPAGES, oldNextNpages, nextNpages));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getPreviousNpages() {
+		return previousNpages;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPreviousNpages(int newPreviousNpages) {
+		int oldPreviousNpages = previousNpages;
+		previousNpages = newPreviousNpages;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__PREVIOUS_NPAGES, oldPreviousNpages, previousNpages));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getNextPageLabel() {
 		return nextPageLabel;
 	}
@@ -615,6 +699,10 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return basicGetPagination();
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return getDefaultPaginationSize();
+			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
+				return getNextNpages();
+			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
+				return getPreviousNpages();
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				return getNextPageLabel();
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
@@ -659,6 +747,12 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
+				setNextNpages((Integer)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
+				setPreviousNpages((Integer)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				setNextPageLabel((String)newValue);
@@ -708,6 +802,12 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);
 				return;
+			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
+				setNextNpages(NEXT_NPAGES_EDEFAULT);
+				return;
+			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
+				setPreviousNpages(PREVIOUS_NPAGES_EDEFAULT);
+				return;
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				setNextPageLabel(NEXT_PAGE_LABEL_EDEFAULT);
 				return;
@@ -751,6 +851,10 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return pagination != null;
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return defaultPaginationSize != DEFAULT_PAGINATION_SIZE_EDEFAULT;
+			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
+				return nextNpages != NEXT_NPAGES_EDEFAULT;
+			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
+				return previousNpages != PREVIOUS_NPAGES_EDEFAULT;
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 				return NEXT_PAGE_LABEL_EDEFAULT == null ? nextPageLabel != null : !NEXT_PAGE_LABEL_EDEFAULT.equals(nextPageLabel);
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
@@ -815,6 +919,10 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		result.append(omitColumnLabels);
 		result.append(", defaultPaginationSize: ");
 		result.append(defaultPaginationSize);
+		result.append(", nextNpages: ");
+		result.append(nextNpages);
+		result.append(", previousNpages: ");
+		result.append(previousNpages);
 		result.append(", nextPageLabel: ");
 		result.append(nextPageLabel);
 		result.append(", previousPageLabel: ");

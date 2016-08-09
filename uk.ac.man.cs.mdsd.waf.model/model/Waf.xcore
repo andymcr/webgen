@@ -183,7 +183,7 @@ abstract class MenuEntry {
 }
 
 class ActionMenuEntry extends MenuEntry, NamedDisplayElement {
-	refers DynamicUnit[1] action
+	refers ContentUnit[1] action
 	contains Query query
 }
 
@@ -424,6 +424,8 @@ abstract class IndexUnit extends DataUnit, InlineActionContainer {
 	contains Filter[] filters
 	refers Filter pagination
 	int defaultPaginationSize
+	int nextNpages
+	int previousNpages
 	String nextPageLabel = ">"
 	String previousPageLabel = "<"
 	boolean useFirstLastPageLinks

@@ -57,6 +57,8 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			addOmitColumnLabelsPropertyDescriptor(object);
 			addPaginationPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
+			addNextNpagesPropertyDescriptor(object);
+			addPreviousNpagesPropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
 			addPreviousPageLabelPropertyDescriptor(object);
 			addUseFirstLastPageLinksPropertyDescriptor(object);
@@ -153,6 +155,50 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 				 getString("_UI_IndexUnit_defaultPaginationSize_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_defaultPaginationSize_feature", "_UI_IndexUnit_type"),
 				 WebsitePackage.Literals.INDEX_UNIT__DEFAULT_PAGINATION_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Next Npages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNextNpagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_nextNpages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_nextNpages_feature", "_UI_IndexUnit_type"),
+				 WebsitePackage.Literals.INDEX_UNIT__NEXT_NPAGES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Previous Npages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPreviousNpagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_previousNpages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_previousNpages_feature", "_UI_IndexUnit_type"),
+				 WebsitePackage.Literals.INDEX_UNIT__PREVIOUS_NPAGES,
 				 true,
 				 false,
 				 false,
@@ -408,6 +454,8 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
+			case WebsitePackage.INDEX_UNIT__NEXT_NPAGES:
+			case WebsitePackage.INDEX_UNIT__PREVIOUS_NPAGES:
 			case WebsitePackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 			case WebsitePackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 			case WebsitePackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:

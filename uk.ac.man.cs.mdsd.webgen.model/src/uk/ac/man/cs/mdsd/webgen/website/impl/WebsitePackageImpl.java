@@ -4644,7 +4644,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_NextPageLabel() {
+	public EAttribute getIndexUnit_NextNpages() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -4653,7 +4653,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_PreviousPageLabel() {
+	public EAttribute getIndexUnit_PreviousNpages() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -4662,7 +4662,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_UseFirstLastPageLinks() {
+	public EAttribute getIndexUnit_NextPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -4671,7 +4671,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_FirstPageLabel() {
+	public EAttribute getIndexUnit_PreviousPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -4680,7 +4680,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_LastPageLabel() {
+	public EAttribute getIndexUnit_UseFirstLastPageLinks() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -4689,7 +4689,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_StyleClass() {
+	public EAttribute getIndexUnit_FirstPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -4698,7 +4698,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_ContentClass() {
+	public EAttribute getIndexUnit_LastPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -4707,8 +4707,26 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_RowClasses() {
+	public EAttribute getIndexUnit_StyleClass() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndexUnit_ContentClass() {
+		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndexUnit_RowClasses() {
+		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -6133,6 +6151,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(indexUnitEClass, INDEX_UNIT__FILTERS);
 		createEReference(indexUnitEClass, INDEX_UNIT__PAGINATION);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__DEFAULT_PAGINATION_SIZE);
+		createEAttribute(indexUnitEClass, INDEX_UNIT__NEXT_NPAGES);
+		createEAttribute(indexUnitEClass, INDEX_UNIT__PREVIOUS_NPAGES);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__NEXT_PAGE_LABEL);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__PREVIOUS_PAGE_LABEL);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS);
@@ -6695,7 +6715,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(staticMenuEClass, StaticMenu.class, "StaticMenu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(actionMenuEntryEClass, ActionMenuEntry.class, "ActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActionMenuEntry_Destination(), this.getDynamicUnit(), null, "destination", null, 1, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getActionMenuEntry_Destination(), this.getContentUnit(), null, "destination", null, 1, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getActionMenuEntry_Query(), this.getQuery(), null, "query", null, 0, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(editStaticTextMenuEntryEClass, EditStaticTextMenuEntry.class, "EditStaticTextMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -6895,6 +6915,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getIndexUnit_Filters(), this.getFilter(), null, "filters", null, 0, -1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIndexUnit_Pagination(), this.getFilter(), null, "pagination", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_DefaultPaginationSize(), ecorePackage.getEInt(), "defaultPaginationSize", "10", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getIndexUnit_NextNpages(), ecorePackage.getEInt(), "nextNpages", "3", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndexUnit_PreviousNpages(), ecorePackage.getEInt(), "previousNpages", "3", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_NextPageLabel(), ecorePackage.getEString(), "nextPageLabel", ">", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getIndexUnit_PreviousPageLabel(), ecorePackage.getEString(), "previousPageLabel", "<", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getIndexUnit_UseFirstLastPageLinks(), ecorePackage.getEBoolean(), "useFirstLastPageLinks", "false", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

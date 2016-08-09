@@ -85,9 +85,11 @@ helper context Website!DataType def: ormType() : String
 			let typeName : String
 				= if self.oclIsTypeOf(Website!EnumerationType) then
 						'Integer'
+					else if self.name = 'TextBlock' then
+						'String'
 					else
 						self.name
-					endif
+					endif endif
 			in let properties : Website!WebsiteProperties = thisModule.findWebsiteProperties()
 				in if properties.ormTechnology = #DoctrineORM then
 						typeName.toLowerCase()

@@ -2887,7 +2887,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_NextPageLabel() {
+	public EAttribute getIndexUnit_NextNpages() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -2896,7 +2896,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_PreviousPageLabel() {
+	public EAttribute getIndexUnit_PreviousNpages() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -2905,7 +2905,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_UseFirstLastPageLinks() {
+	public EAttribute getIndexUnit_NextPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -2914,7 +2914,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_FirstPageLabel() {
+	public EAttribute getIndexUnit_PreviousPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -2923,7 +2923,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_LastPageLabel() {
+	public EAttribute getIndexUnit_UseFirstLastPageLinks() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -2932,8 +2932,26 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getIndexUnit_FirstPageLabel() {
+		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIndexUnit_LastPageLabel() {
+		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getIndexUnit_TargettingSearches() {
-		return (EReference)indexUnitEClass.getEStructuralFeatures().get(9);
+		return (EReference)indexUnitEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -2942,7 +2960,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getIndexUnit_RowClasses() {
-		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -3829,6 +3847,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(indexUnitEClass, INDEX_UNIT__FILTERS);
 		createEReference(indexUnitEClass, INDEX_UNIT__PAGINATION);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__DEFAULT_PAGINATION_SIZE);
+		createEAttribute(indexUnitEClass, INDEX_UNIT__NEXT_NPAGES);
+		createEAttribute(indexUnitEClass, INDEX_UNIT__PREVIOUS_NPAGES);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__NEXT_PAGE_LABEL);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__PREVIOUS_PAGE_LABEL);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS);
@@ -4143,7 +4163,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getMenuEntry_RequiresRole(), theEcorePackage.getEString(), "requiresRole", null, 0, 1, MenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionMenuEntryEClass, ActionMenuEntry.class, "ActionMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActionMenuEntry_Action(), this.getDynamicUnit(), null, "action", null, 1, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActionMenuEntry_Action(), this.getContentUnit(), null, "action", null, 1, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActionMenuEntry_Query(), this.getQuery(), null, "query", null, 0, 1, ActionMenuEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(editStaticTextMenuEntryEClass, EditStaticTextMenuEntry.class, "EditStaticTextMenuEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4326,6 +4346,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getIndexUnit_Filters(), this.getFilter(), null, "filters", null, 0, -1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIndexUnit_Pagination(), this.getFilter(), null, "pagination", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_DefaultPaginationSize(), theEcorePackage.getEInt(), "defaultPaginationSize", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndexUnit_NextNpages(), theEcorePackage.getEInt(), "nextNpages", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndexUnit_PreviousNpages(), theEcorePackage.getEInt(), "previousNpages", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_NextPageLabel(), theEcorePackage.getEString(), "nextPageLabel", ">", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_PreviousPageLabel(), theEcorePackage.getEString(), "previousPageLabel", "<", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_UseFirstLastPageLinks(), theEcorePackage.getEBoolean(), "useFirstLastPageLinks", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

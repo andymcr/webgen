@@ -17,6 +17,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getNextNpages <em>Next Npages</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getPreviousPageLabel <em>Previous Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
@@ -124,6 +126,58 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	 * @generated
 	 */
 	void setDefaultPaginationSize(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Next Npages</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Next Npages</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Next Npages</em>' attribute.
+	 * @see #setNextNpages(int)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getIndexUnit_NextNpages()
+	 * @model unique="false"
+	 * @generated
+	 */
+	int getNextNpages();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getNextNpages <em>Next Npages</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Next Npages</em>' attribute.
+	 * @see #getNextNpages()
+	 * @generated
+	 */
+	void setNextNpages(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Previous Npages</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Previous Npages</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Previous Npages</em>' attribute.
+	 * @see #setPreviousNpages(int)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getIndexUnit_PreviousNpages()
+	 * @model unique="false"
+	 * @generated
+	 */
+	int getPreviousNpages();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getPreviousNpages <em>Previous Npages</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Previous Npages</em>' attribute.
+	 * @see #getPreviousNpages()
+	 * @generated
+	 */
+	void setPreviousNpages(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Next Page Label</b></em>' attribute.

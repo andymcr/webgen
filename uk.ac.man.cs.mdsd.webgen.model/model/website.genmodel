@@ -487,7 +487,7 @@
           ecoreFeature="ecore:EAttribute website.ecore#//ContentUnit/captionClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//StaticUnit">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//StaticUnit/content"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//StaticUnit/content"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//StaticUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//StaticUnit/contentClass"/>
     </genClasses>
@@ -674,6 +674,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//IndexUnit/pagination"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/defaultPaginationSize"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/nextNpages"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/previousNpages"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/nextPageLabel"/>
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""

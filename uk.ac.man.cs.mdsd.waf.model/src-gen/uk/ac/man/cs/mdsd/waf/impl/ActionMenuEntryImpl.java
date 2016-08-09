@@ -15,7 +15,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 
 import uk.ac.man.cs.mdsd.waf.ActionMenuEntry;
-import uk.ac.man.cs.mdsd.waf.DynamicUnit;
+import uk.ac.man.cs.mdsd.waf.ContentUnit;
 import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -84,7 +84,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * @generated
 	 * @ordered
 	 */
-	protected DynamicUnit action;
+	protected ContentUnit action;
 
 	/**
 	 * The cached value of the '{@link #getQuery() <em>Query</em>}' containment reference.
@@ -162,10 +162,10 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DynamicUnit getAction() {
+	public ContentUnit getAction() {
 		if (action != null && action.eIsProxy()) {
 			InternalEObject oldAction = (InternalEObject)action;
-			action = (DynamicUnit)eResolveProxy(oldAction);
+			action = (ContentUnit)eResolveProxy(oldAction);
 			if (action != oldAction) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.ACTION_MENU_ENTRY__ACTION, oldAction, action));
@@ -179,7 +179,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DynamicUnit basicGetAction() {
+	public ContentUnit basicGetAction() {
 		return action;
 	}
 
@@ -188,8 +188,8 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAction(DynamicUnit newAction) {
-		DynamicUnit oldAction = action;
+	public void setAction(ContentUnit newAction) {
+		ContentUnit oldAction = action;
 		action = newAction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.ACTION_MENU_ENTRY__ACTION, oldAction, action));
@@ -288,7 +288,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 				setDisplayLabel((String)newValue);
 				return;
 			case WafPackage.ACTION_MENU_ENTRY__ACTION:
-				setAction((DynamicUnit)newValue);
+				setAction((ContentUnit)newValue);
 				return;
 			case WafPackage.ACTION_MENU_ENTRY__QUERY:
 				setQuery((Query)newValue);
@@ -312,7 +312,7 @@ public class ActionMenuEntryImpl extends MenuEntryImpl implements ActionMenuEntr
 				setDisplayLabel(DISPLAY_LABEL_EDEFAULT);
 				return;
 			case WafPackage.ACTION_MENU_ENTRY__ACTION:
-				setAction((DynamicUnit)null);
+				setAction((ContentUnit)null);
 				return;
 			case WafPackage.ACTION_MENU_ENTRY__QUERY:
 				setQuery((Query)null);

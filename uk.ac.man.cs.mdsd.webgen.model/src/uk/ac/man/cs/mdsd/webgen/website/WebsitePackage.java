@@ -12452,13 +12452,31 @@ public interface WebsitePackage extends EPackage {
 	int INDEX_UNIT__DEFAULT_PAGINATION_SIZE = DATA_UNIT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__NEXT_NPAGES = DATA_UNIT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Previous Npages</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__PREVIOUS_NPAGES = DATA_UNIT_FEATURE_COUNT + 7;
+
+	/**
 	 * The feature id for the '<em><b>Next Page Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__NEXT_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 6;
+	int INDEX_UNIT__NEXT_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Previous Page Label</b></em>' attribute.
@@ -12467,7 +12485,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__PREVIOUS_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 7;
+	int INDEX_UNIT__PREVIOUS_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Use First Last Page Links</b></em>' attribute.
@@ -12476,7 +12494,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 8;
+	int INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>First Page Label</b></em>' attribute.
@@ -12485,7 +12503,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__FIRST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 9;
+	int INDEX_UNIT__FIRST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Last Page Label</b></em>' attribute.
@@ -12494,7 +12512,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__LAST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 10;
+	int INDEX_UNIT__LAST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -12503,7 +12521,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__STYLE_CLASS = DATA_UNIT_FEATURE_COUNT + 11;
+	int INDEX_UNIT__STYLE_CLASS = DATA_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -12512,7 +12530,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__CONTENT_CLASS = DATA_UNIT_FEATURE_COUNT + 12;
+	int INDEX_UNIT__CONTENT_CLASS = DATA_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Row Classes</b></em>' attribute.
@@ -12521,7 +12539,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__ROW_CLASSES = DATA_UNIT_FEATURE_COUNT + 13;
+	int INDEX_UNIT__ROW_CLASSES = DATA_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Index Unit</em>' class.
@@ -12530,7 +12548,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 14;
+	int INDEX_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -19350,6 +19368,28 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getIndexUnit_DefaultPaginationSize();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getNextNpages <em>Next Npages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Next Npages</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getNextNpages()
+	 * @see #getIndexUnit()
+	 * @generated
+	 */
+	EAttribute getIndexUnit_NextNpages();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPreviousNpages <em>Previous Npages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Previous Npages</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPreviousNpages()
+	 * @see #getIndexUnit()
+	 * @generated
+	 */
+	EAttribute getIndexUnit_PreviousNpages();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getNextPageLabel <em>Next Page Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -23825,6 +23865,22 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INDEX_UNIT__DEFAULT_PAGINATION_SIZE = eINSTANCE.getIndexUnit_DefaultPaginationSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Next Npages</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX_UNIT__NEXT_NPAGES = eINSTANCE.getIndexUnit_NextNpages();
+
+		/**
+		 * The meta object literal for the '<em><b>Previous Npages</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX_UNIT__PREVIOUS_NPAGES = eINSTANCE.getIndexUnit_PreviousNpages();
 
 		/**
 		 * The meta object literal for the '<em><b>Next Page Label</b></em>' attribute feature.

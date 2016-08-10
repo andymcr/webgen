@@ -42,6 +42,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPreviousPageLabel <em>Previous Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#isUseDisabledPageLinks <em>Use Disabled Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFirstPageLabel <em>First Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getLastPageLabel <em>Last Page Label</em>}</li>
@@ -201,6 +202,26 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected String previousPageLabel = PREVIOUS_PAGE_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isUseDisabledPageLinks() <em>Use Disabled Page Links</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseDisabledPageLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean USE_DISABLED_PAGE_LINKS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isUseDisabledPageLinks() <em>Use Disabled Page Links</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseDisabledPageLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean useDisabledPageLinks = USE_DISABLED_PAGE_LINKS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isUseFirstLastPageLinks() <em>Use First Last Page Links</em>}' attribute.
@@ -504,6 +525,27 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isUseDisabledPageLinks() {
+		return useDisabledPageLinks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUseDisabledPageLinks(boolean newUseDisabledPageLinks) {
+		boolean oldUseDisabledPageLinks = useDisabledPageLinks;
+		useDisabledPageLinks = newUseDisabledPageLinks;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS, oldUseDisabledPageLinks, useDisabledPageLinks));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isUseFirstLastPageLinks() {
 		return useFirstLastPageLinks;
 	}
@@ -707,6 +749,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return getNextPageLabel();
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				return getPreviousPageLabel();
+			case WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
+				return isUseDisabledPageLinks();
 			case WafPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				return isUseFirstLastPageLinks();
 			case WafPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
@@ -759,6 +803,9 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				setPreviousPageLabel((String)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
+				setUseDisabledPageLinks((Boolean)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				setUseFirstLastPageLinks((Boolean)newValue);
@@ -814,6 +861,9 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				setPreviousPageLabel(PREVIOUS_PAGE_LABEL_EDEFAULT);
 				return;
+			case WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
+				setUseDisabledPageLinks(USE_DISABLED_PAGE_LINKS_EDEFAULT);
+				return;
 			case WafPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				setUseFirstLastPageLinks(USE_FIRST_LAST_PAGE_LINKS_EDEFAULT);
 				return;
@@ -859,6 +909,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return NEXT_PAGE_LABEL_EDEFAULT == null ? nextPageLabel != null : !NEXT_PAGE_LABEL_EDEFAULT.equals(nextPageLabel);
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				return PREVIOUS_PAGE_LABEL_EDEFAULT == null ? previousPageLabel != null : !PREVIOUS_PAGE_LABEL_EDEFAULT.equals(previousPageLabel);
+			case WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
+				return useDisabledPageLinks != USE_DISABLED_PAGE_LINKS_EDEFAULT;
 			case WafPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				return useFirstLastPageLinks != USE_FIRST_LAST_PAGE_LINKS_EDEFAULT;
 			case WafPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
@@ -927,6 +979,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		result.append(nextPageLabel);
 		result.append(", previousPageLabel: ");
 		result.append(previousPageLabel);
+		result.append(", useDisabledPageLinks: ");
+		result.append(useDisabledPageLinks);
 		result.append(", useFirstLastPageLinks: ");
 		result.append(useFirstLastPageLinks);
 		result.append(", firstPageLabel: ");

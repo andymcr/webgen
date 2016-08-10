@@ -56,6 +56,7 @@ public class IndexUnitItemProvider
 			addPreviousNpagesPropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
 			addPreviousPageLabelPropertyDescriptor(object);
+			addUseDisabledPageLinksPropertyDescriptor(object);
 			addUseFirstLastPageLinksPropertyDescriptor(object);
 			addFirstPageLabelPropertyDescriptor(object);
 			addLastPageLabelPropertyDescriptor(object);
@@ -215,6 +216,28 @@ public class IndexUnitItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Use Disabled Page Links feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUseDisabledPageLinksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_useDisabledPageLinks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_useDisabledPageLinks_feature", "_UI_IndexUnit_type"),
+				 WafPackage.Literals.INDEX_UNIT__USE_DISABLED_PAGE_LINKS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -392,6 +415,7 @@ public class IndexUnitItemProvider
 			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
 			case WafPackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
+			case WafPackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
 			case WafPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 			case WafPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
 			case WafPackage.INDEX_UNIT__LAST_PAGE_LABEL:

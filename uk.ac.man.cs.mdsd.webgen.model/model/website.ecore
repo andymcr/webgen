@@ -1067,13 +1067,15 @@
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="10"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextNpages" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="3"/>
+        defaultValueLiteral="2"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="previousNpages" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="3"/>
+        defaultValueLiteral="2"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextPageLabel" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=">"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="&amp;gt;"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="previousPageLabel" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="&lt;"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="&amp;lt;"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useDisabledPageLinks" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="useFirstLastPageLinks"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>

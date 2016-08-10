@@ -2923,7 +2923,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_UseFirstLastPageLinks() {
+	public EAttribute getIndexUnit_UseDisabledPageLinks() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -2932,7 +2932,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_FirstPageLabel() {
+	public EAttribute getIndexUnit_UseFirstLastPageLinks() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -2941,7 +2941,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIndexUnit_LastPageLabel() {
+	public EAttribute getIndexUnit_FirstPageLabel() {
 		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -2950,8 +2950,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getIndexUnit_LastPageLabel() {
+		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getIndexUnit_TargettingSearches() {
-		return (EReference)indexUnitEClass.getEStructuralFeatures().get(11);
+		return (EReference)indexUnitEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -2960,7 +2969,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getIndexUnit_RowClasses() {
-		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)indexUnitEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -3851,6 +3860,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(indexUnitEClass, INDEX_UNIT__PREVIOUS_NPAGES);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__NEXT_PAGE_LABEL);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__PREVIOUS_PAGE_LABEL);
+		createEAttribute(indexUnitEClass, INDEX_UNIT__USE_DISABLED_PAGE_LINKS);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__FIRST_PAGE_LABEL);
 		createEAttribute(indexUnitEClass, INDEX_UNIT__LAST_PAGE_LABEL);
@@ -4350,6 +4360,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getIndexUnit_PreviousNpages(), theEcorePackage.getEInt(), "previousNpages", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_NextPageLabel(), theEcorePackage.getEString(), "nextPageLabel", ">", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_PreviousPageLabel(), theEcorePackage.getEString(), "previousPageLabel", "<", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIndexUnit_UseDisabledPageLinks(), theEcorePackage.getEBoolean(), "useDisabledPageLinks", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_UseFirstLastPageLinks(), theEcorePackage.getEBoolean(), "useFirstLastPageLinks", null, 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_FirstPageLabel(), theEcorePackage.getEString(), "firstPageLabel", "<<", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIndexUnit_LastPageLabel(), theEcorePackage.getEString(), "lastPageLabel", ">>", 0, 1, IndexUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

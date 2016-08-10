@@ -27,6 +27,7 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPreviousPageLabel <em>Previous Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#isUseDisabledPageLinks <em>Use Disabled Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getFirstPageLabel <em>First Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getLastPageLabel <em>Last Page Label</em>}</li>
@@ -169,7 +170,7 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Next Npages</b></em>' attribute.
-	 * The default value is <code>"3"</code>.
+	 * The default value is <code>"2"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Next Npages</em>' attribute isn't clear,
@@ -179,7 +180,7 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	 * @return the value of the '<em>Next Npages</em>' attribute.
 	 * @see #setNextNpages(int)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_NextNpages()
-	 * @model default="3"
+	 * @model default="2"
 	 * @generated
 	 */
 	int getNextNpages();
@@ -196,7 +197,7 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Previous Npages</b></em>' attribute.
-	 * The default value is <code>"3"</code>.
+	 * The default value is <code>"2"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Previous Npages</em>' attribute isn't clear,
@@ -206,7 +207,7 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	 * @return the value of the '<em>Previous Npages</em>' attribute.
 	 * @see #setPreviousNpages(int)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_PreviousNpages()
-	 * @model default="3"
+	 * @model default="2"
 	 * @generated
 	 */
 	int getPreviousNpages();
@@ -223,7 +224,7 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Next Page Label</b></em>' attribute.
-	 * The default value is <code>">"</code>.
+	 * The default value is <code>"&gt;"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Next Page Label</em>' attribute isn't clear,
@@ -233,7 +234,7 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	 * @return the value of the '<em>Next Page Label</em>' attribute.
 	 * @see #setNextPageLabel(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_NextPageLabel()
-	 * @model default=">" ordered="false"
+	 * @model default="&gt;" ordered="false"
 	 * @generated
 	 */
 	String getNextPageLabel();
@@ -250,7 +251,7 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Previous Page Label</b></em>' attribute.
-	 * The default value is <code>"<"</code>.
+	 * The default value is <code>"&lt;"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Previous Page Label</em>' attribute isn't clear,
@@ -260,7 +261,7 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	 * @return the value of the '<em>Previous Page Label</em>' attribute.
 	 * @see #setPreviousPageLabel(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_PreviousPageLabel()
-	 * @model default="<" ordered="false"
+	 * @model default="&lt;" ordered="false"
 	 * @generated
 	 */
 	String getPreviousPageLabel();
@@ -274,6 +275,33 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	 * @generated
 	 */
 	void setPreviousPageLabel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Disabled Page Links</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Use Disabled Page Links</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Use Disabled Page Links</em>' attribute.
+	 * @see #setUseDisabledPageLinks(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_UseDisabledPageLinks()
+	 * @model default="true"
+	 * @generated
+	 */
+	boolean isUseDisabledPageLinks();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#isUseDisabledPageLinks <em>Use Disabled Page Links</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Use Disabled Page Links</em>' attribute.
+	 * @see #isUseDisabledPageLinks()
+	 * @generated
+	 */
+	void setUseDisabledPageLinks(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Use First Last Page Links</b></em>' attribute.

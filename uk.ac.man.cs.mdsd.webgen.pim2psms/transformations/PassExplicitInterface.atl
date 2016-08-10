@@ -995,6 +995,7 @@ abstract rule IndexUnit {
 		previousNpages <- website.previousNpages,
 		nextPageLabel <- website.nextPageLabel,
 		previousPageLabel <- website.previousPageLabel,
+		useDisabledPageLinks <- website.useDisabledPageLinks,
 		useFirstLastPageLinks <- website.useFirstLastPageLinks,
 		firstPageLabel <- website.firstPageLabel,
 		lastPageLabel <- website.lastPageLabel,

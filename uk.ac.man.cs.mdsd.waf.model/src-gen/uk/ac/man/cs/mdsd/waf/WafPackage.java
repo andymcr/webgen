@@ -6486,13 +6486,22 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__PREVIOUS_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Use Disabled Page Links</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__USE_DISABLED_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 9;
+
+	/**
 	 * The feature id for the '<em><b>Use First Last Page Links</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 9;
+	int INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS = DATA_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>First Page Label</b></em>' attribute.
@@ -6501,7 +6510,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__FIRST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 10;
+	int INDEX_UNIT__FIRST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Last Page Label</b></em>' attribute.
@@ -6510,7 +6519,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__LAST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 11;
+	int INDEX_UNIT__LAST_PAGE_LABEL = DATA_UNIT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Targetting Searches</b></em>' reference.
@@ -6519,7 +6528,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__TARGETTING_SEARCHES = DATA_UNIT_FEATURE_COUNT + 12;
+	int INDEX_UNIT__TARGETTING_SEARCHES = DATA_UNIT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Row Classes</b></em>' attribute.
@@ -6528,7 +6537,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__ROW_CLASSES = DATA_UNIT_FEATURE_COUNT + 13;
+	int INDEX_UNIT__ROW_CLASSES = DATA_UNIT_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Index Unit</em>' class.
@@ -6537,7 +6546,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 14;
+	int INDEX_UNIT_FEATURE_COUNT = DATA_UNIT_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of operations of the '<em>Index Unit</em>' class.
@@ -6836,6 +6845,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_GRID_UNIT__PREVIOUS_PAGE_LABEL = INDEX_UNIT__PREVIOUS_PAGE_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Use Disabled Page Links</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__USE_DISABLED_PAGE_LINKS = INDEX_UNIT__USE_DISABLED_PAGE_LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Use First Last Page Links</b></em>' attribute.
@@ -7190,6 +7208,15 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__PREVIOUS_PAGE_LABEL = INDEX_UNIT__PREVIOUS_PAGE_LABEL;
 
 	/**
+	 * The feature id for the '<em><b>Use Disabled Page Links</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__USE_DISABLED_PAGE_LINKS = INDEX_UNIT__USE_DISABLED_PAGE_LINKS;
+
+	/**
 	 * The feature id for the '<em><b>Use First Last Page Links</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7540,6 +7567,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_LINE_DIRECTION_UNIT__PREVIOUS_PAGE_LABEL = INDEX_UNIT__PREVIOUS_PAGE_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Use Disabled Page Links</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__USE_DISABLED_PAGE_LINKS = INDEX_UNIT__USE_DISABLED_PAGE_LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Use First Last Page Links</b></em>' attribute.
@@ -13053,6 +13089,17 @@ public interface WafPackage extends EPackage {
 	EAttribute getIndexUnit_PreviousPageLabel();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.IndexUnit#isUseDisabledPageLinks <em>Use Disabled Page Links</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Use Disabled Page Links</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.IndexUnit#isUseDisabledPageLinks()
+	 * @see #getIndexUnit()
+	 * @generated
+	 */
+	EAttribute getIndexUnit_UseDisabledPageLinks();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.IndexUnit#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -15839,6 +15886,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INDEX_UNIT__PREVIOUS_PAGE_LABEL = eINSTANCE.getIndexUnit_PreviousPageLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>Use Disabled Page Links</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INDEX_UNIT__USE_DISABLED_PAGE_LINKS = eINSTANCE.getIndexUnit_UseDisabledPageLinks();
 
 		/**
 		 * The meta object literal for the '<em><b>Use First Last Page Links</b></em>' attribute feature.

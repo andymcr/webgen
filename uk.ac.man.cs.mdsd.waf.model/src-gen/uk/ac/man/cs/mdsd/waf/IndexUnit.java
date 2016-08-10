@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getPreviousPageLabel <em>Previous Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#isUseDisabledPageLinks <em>Use Disabled Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getFirstPageLabel <em>First Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.IndexUnit#getLastPageLabel <em>Last Page Label</em>}</li>
@@ -232,6 +233,32 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	 * @generated
 	 */
 	void setPreviousPageLabel(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Use Disabled Page Links</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Use Disabled Page Links</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Use Disabled Page Links</em>' attribute.
+	 * @see #setUseDisabledPageLinks(boolean)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getIndexUnit_UseDisabledPageLinks()
+	 * @model unique="false"
+	 * @generated
+	 */
+	boolean isUseDisabledPageLinks();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.IndexUnit#isUseDisabledPageLinks <em>Use Disabled Page Links</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Use Disabled Page Links</em>' attribute.
+	 * @see #isUseDisabledPageLinks()
+	 * @generated
+	 */
+	void setUseDisabledPageLinks(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Use First Last Page Links</b></em>' attribute.

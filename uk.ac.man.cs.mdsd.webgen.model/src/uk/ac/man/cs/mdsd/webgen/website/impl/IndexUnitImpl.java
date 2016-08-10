@@ -45,6 +45,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getPreviousPageLabel <em>Previous Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#isUseDisabledPageLinks <em>Use Disabled Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getFirstPageLabel <em>First Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getLastPageLabel <em>Last Page Label</em>}</li>
@@ -154,7 +155,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NEXT_NPAGES_EDEFAULT = 3;
+	protected static final int NEXT_NPAGES_EDEFAULT = 2;
 
 	/**
 	 * The cached value of the '{@link #getNextNpages() <em>Next Npages</em>}' attribute.
@@ -174,7 +175,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int PREVIOUS_NPAGES_EDEFAULT = 3;
+	protected static final int PREVIOUS_NPAGES_EDEFAULT = 2;
 
 	/**
 	 * The cached value of the '{@link #getPreviousNpages() <em>Previous Npages</em>}' attribute.
@@ -194,7 +195,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NEXT_PAGE_LABEL_EDEFAULT = ">";
+	protected static final String NEXT_PAGE_LABEL_EDEFAULT = "&gt;";
 
 	/**
 	 * The cached value of the '{@link #getNextPageLabel() <em>Next Page Label</em>}' attribute.
@@ -214,7 +215,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PREVIOUS_PAGE_LABEL_EDEFAULT = "<";
+	protected static final String PREVIOUS_PAGE_LABEL_EDEFAULT = "&lt;";
 
 	/**
 	 * The cached value of the '{@link #getPreviousPageLabel() <em>Previous Page Label</em>}' attribute.
@@ -225,6 +226,26 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected String previousPageLabel = PREVIOUS_PAGE_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isUseDisabledPageLinks() <em>Use Disabled Page Links</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseDisabledPageLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean USE_DISABLED_PAGE_LINKS_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isUseDisabledPageLinks() <em>Use Disabled Page Links</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUseDisabledPageLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean useDisabledPageLinks = USE_DISABLED_PAGE_LINKS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isUseFirstLastPageLinks() <em>Use First Last Page Links</em>}' attribute.
@@ -468,6 +489,27 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		previousPageLabel = newPreviousPageLabel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL, oldPreviousPageLabel, previousPageLabel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isUseDisabledPageLinks() {
+		return useDisabledPageLinks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUseDisabledPageLinks(boolean newUseDisabledPageLinks) {
+		boolean oldUseDisabledPageLinks = useDisabledPageLinks;
+		useDisabledPageLinks = newUseDisabledPageLinks;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS, oldUseDisabledPageLinks, useDisabledPageLinks));
 	}
 
 	/**
@@ -760,6 +802,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return getNextPageLabel();
 			case WebsitePackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				return getPreviousPageLabel();
+			case WebsitePackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
+				return isUseDisabledPageLinks();
 			case WebsitePackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				return isUseFirstLastPageLinks();
 			case WebsitePackage.INDEX_UNIT__FIRST_PAGE_LABEL:
@@ -816,6 +860,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WebsitePackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				setPreviousPageLabel((String)newValue);
+				return;
+			case WebsitePackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
+				setUseDisabledPageLinks((Boolean)newValue);
 				return;
 			case WebsitePackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				setUseFirstLastPageLinks((Boolean)newValue);
@@ -877,6 +924,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				setPreviousPageLabel(PREVIOUS_PAGE_LABEL_EDEFAULT);
 				return;
+			case WebsitePackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
+				setUseDisabledPageLinks(USE_DISABLED_PAGE_LINKS_EDEFAULT);
+				return;
 			case WebsitePackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				setUseFirstLastPageLinks(USE_FIRST_LAST_PAGE_LINKS_EDEFAULT);
 				return;
@@ -927,6 +977,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return NEXT_PAGE_LABEL_EDEFAULT == null ? nextPageLabel != null : !NEXT_PAGE_LABEL_EDEFAULT.equals(nextPageLabel);
 			case WebsitePackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL:
 				return PREVIOUS_PAGE_LABEL_EDEFAULT == null ? previousPageLabel != null : !PREVIOUS_PAGE_LABEL_EDEFAULT.equals(previousPageLabel);
+			case WebsitePackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS:
+				return useDisabledPageLinks != USE_DISABLED_PAGE_LINKS_EDEFAULT;
 			case WebsitePackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 				return useFirstLastPageLinks != USE_FIRST_LAST_PAGE_LINKS_EDEFAULT;
 			case WebsitePackage.INDEX_UNIT__FIRST_PAGE_LABEL:
@@ -999,6 +1051,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		result.append(nextPageLabel);
 		result.append(", previousPageLabel: ");
 		result.append(previousPageLabel);
+		result.append(", useDisabledPageLinks: ");
+		result.append(useDisabledPageLinks);
 		result.append(", useFirstLastPageLinks: ");
 		result.append(useFirstLastPageLinks);
 		result.append(", firstPageLabel: ");

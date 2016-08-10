@@ -428,6 +428,7 @@ abstract class IndexUnit extends DataUnit, InlineActionContainer {
 	int previousNpages
 	String nextPageLabel = ">"
 	String previousPageLabel = "<"
+	boolean useDisabledPageLinks
 	boolean useFirstLastPageLinks
 	String firstPageLabel = "<<"
 	String lastPageLabel = ">>"

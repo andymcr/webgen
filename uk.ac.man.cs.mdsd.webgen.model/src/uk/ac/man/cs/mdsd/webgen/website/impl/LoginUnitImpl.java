@@ -48,6 +48,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#isCreateDefaultUriElement <em>Create Default Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl#getAlternative <em>Alternative</em>}</li>
@@ -133,6 +134,26 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * @ordered
 	 */
 	protected boolean createDefaultUriElement = CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRES_ROLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
@@ -632,6 +653,27 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRequiresRole() {
+		return requiresRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiresRole(String newRequiresRole) {
+		String oldRequiresRole = requiresRole;
+		requiresRole = newRequiresRole;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOGIN_UNIT__REQUIRES_ROLE, oldRequiresRole, requiresRole));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPurposeSummary() {
 		return purposeSummary;
 	}
@@ -1120,6 +1162,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return getDisplayedOn();
 			case WebsitePackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return isCreateDefaultUriElement();
+			case WebsitePackage.LOGIN_UNIT__REQUIRES_ROLE:
+				return getRequiresRole();
 			case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
 			case WebsitePackage.LOGIN_UNIT__URI_ELEMENT:
@@ -1187,6 +1231,9 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return;
 			case WebsitePackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement((Boolean)newValue);
+				return;
+			case WebsitePackage.LOGIN_UNIT__REQUIRES_ROLE:
+				setRequiresRole((String)newValue);
 				return;
 			case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
@@ -1279,6 +1326,9 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			case WebsitePackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement(CREATE_DEFAULT_URI_ELEMENT_EDEFAULT);
 				return;
+			case WebsitePackage.LOGIN_UNIT__REQUIRES_ROLE:
+				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
+				return;
 			case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
 				return;
@@ -1362,6 +1412,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 				return getDisplayedOn() != null;
 			case WebsitePackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return createDefaultUriElement != CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
+			case WebsitePackage.LOGIN_UNIT__REQUIRES_ROLE:
+				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.LOGIN_UNIT__URI_ELEMENT:
@@ -1431,6 +1483,7 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			switch (derivedFeatureID) {
 				case WebsitePackage.LOGIN_UNIT__DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__DISPLAYED_ON;
 				case WebsitePackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
+				case WebsitePackage.LOGIN_UNIT__REQUIRES_ROLE: return WebsitePackage.CONTENT_UNIT__REQUIRES_ROLE;
 				case WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY: return WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.LOGIN_UNIT__URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__URI_ELEMENT;
 				case WebsitePackage.LOGIN_UNIT__ALTERNATIVE: return WebsitePackage.CONTENT_UNIT__ALTERNATIVE;
@@ -1489,6 +1542,7 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 			switch (baseFeatureID) {
 				case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON: return WebsitePackage.LOGIN_UNIT__DISPLAYED_ON;
 				case WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebsitePackage.LOGIN_UNIT__CREATE_DEFAULT_URI_ELEMENT;
+				case WebsitePackage.CONTENT_UNIT__REQUIRES_ROLE: return WebsitePackage.LOGIN_UNIT__REQUIRES_ROLE;
 				case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebsitePackage.LOGIN_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.CONTENT_UNIT__URI_ELEMENT: return WebsitePackage.LOGIN_UNIT__URI_ELEMENT;
 				case WebsitePackage.CONTENT_UNIT__ALTERNATIVE: return WebsitePackage.LOGIN_UNIT__ALTERNATIVE;
@@ -1540,6 +1594,8 @@ public class LoginUnitImpl extends EObjectImpl implements LoginUnit {
 		result.append(displayLabel);
 		result.append(", createDefaultUriElement: ");
 		result.append(createDefaultUriElement);
+		result.append(", requiresRole: ");
+		result.append(requiresRole);
 		result.append(", purposeSummary: ");
 		result.append(purposeSummary);
 		result.append(", uriElement: ");

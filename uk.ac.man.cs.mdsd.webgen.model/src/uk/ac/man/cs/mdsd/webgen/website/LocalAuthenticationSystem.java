@@ -16,9 +16,9 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getAuthenticationKey <em>Authentication Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseCaptcha <em>Use Captcha</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isAllowRememberMe <em>Allow Remember Me</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isTrackLoginAttempts <em>Track Login Attempts</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isAllowAutoLogin <em>Allow Auto Login</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isUseEmailActivation <em>Use Email Activation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isSendWelcomeEmail <em>Send Welcome Email</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#getRegistrationUnit <em>Registration Unit</em>}</li>
@@ -115,6 +115,33 @@ public interface LocalAuthenticationSystem extends Authentication {
 	void setUseCaptcha(boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Allow Remember Me</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Allow Remember Me</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Allow Remember Me</em>' attribute.
+	 * @see #setAllowRememberMe(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_AllowRememberMe()
+	 * @model default="false" required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isAllowRememberMe();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isAllowRememberMe <em>Allow Remember Me</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Allow Remember Me</em>' attribute.
+	 * @see #isAllowRememberMe()
+	 * @generated
+	 */
+	void setAllowRememberMe(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Allow Self Registration</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
@@ -167,33 +194,6 @@ public interface LocalAuthenticationSystem extends Authentication {
 	 * @generated
 	 */
 	void setTrackLoginAttempts(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Allow Auto Login</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Allow Auto Login</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Allow Auto Login</em>' attribute.
-	 * @see #setAllowAutoLogin(boolean)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getLocalAuthenticationSystem_AllowAutoLogin()
-	 * @model default="false" required="true" ordered="false"
-	 * @generated
-	 */
-	boolean isAllowAutoLogin();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.LocalAuthenticationSystem#isAllowAutoLogin <em>Allow Auto Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Allow Auto Login</em>' attribute.
-	 * @see #isAllowAutoLogin()
-	 * @generated
-	 */
-	void setAllowAutoLogin(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Use Email Activation</b></em>' attribute.

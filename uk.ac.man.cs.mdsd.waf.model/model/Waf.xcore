@@ -96,6 +96,7 @@ class LocalAuthenticationSystem extends Authentication {
 	refers EntityOrView loginAttempt
 	refers EntityOrView autoLogin
 	boolean useCaptcha
+	boolean allowRememberMe
 	boolean allowSelfRegistration
 	boolean useEmailActivation = "true"
 	boolean sendWelcomeEmail = "true"
@@ -240,6 +241,7 @@ interface UnitContainer {
 abstract class ContentUnit extends NamedDisplayElement {
 	container UnitContainer[1] displayedOn opposite units
 	String purposeSummary
+	String requiresRole
 	String uriElement = ""
 	String alternative
 	boolean omitCaption

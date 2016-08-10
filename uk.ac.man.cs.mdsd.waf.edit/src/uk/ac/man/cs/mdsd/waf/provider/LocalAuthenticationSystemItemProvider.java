@@ -48,6 +48,7 @@ public class LocalAuthenticationSystemItemProvider
 			addLoginAttemptPropertyDescriptor(object);
 			addAutoLoginPropertyDescriptor(object);
 			addUseCaptchaPropertyDescriptor(object);
+			addAllowRememberMePropertyDescriptor(object);
 			addAllowSelfRegistrationPropertyDescriptor(object);
 			addUseEmailActivationPropertyDescriptor(object);
 			addSendWelcomeEmailPropertyDescriptor(object);
@@ -160,6 +161,28 @@ public class LocalAuthenticationSystemItemProvider
 				 getString("_UI_LocalAuthenticationSystem_useCaptcha_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_useCaptcha_feature", "_UI_LocalAuthenticationSystem_type"),
 				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Allow Remember Me feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllowRememberMePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_allowRememberMe_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_allowRememberMe_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WafPackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME,
 				 true,
 				 false,
 				 false,
@@ -339,6 +362,7 @@ public class LocalAuthenticationSystemItemProvider
 		switch (notification.getFeatureID(LocalAuthenticationSystem.class)) {
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:

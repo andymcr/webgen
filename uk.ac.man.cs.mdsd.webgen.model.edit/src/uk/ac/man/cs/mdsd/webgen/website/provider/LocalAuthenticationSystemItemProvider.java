@@ -48,9 +48,9 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 			addAuthenticationPropertyDescriptor(object);
 			addAuthenticationKeyPropertyDescriptor(object);
 			addUseCaptchaPropertyDescriptor(object);
+			addAllowRememberMePropertyDescriptor(object);
 			addAllowSelfRegistrationPropertyDescriptor(object);
 			addTrackLoginAttemptsPropertyDescriptor(object);
-			addAllowAutoLoginPropertyDescriptor(object);
 			addUseEmailActivationPropertyDescriptor(object);
 			addSendWelcomeEmailPropertyDescriptor(object);
 			addRegistrationUnitPropertyDescriptor(object);
@@ -127,6 +127,28 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 	}
 
 	/**
+	 * This adds a property descriptor for the Allow Remember Me feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllowRememberMePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalAuthenticationSystem_allowRememberMe_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_allowRememberMe_feature", "_UI_LocalAuthenticationSystem_type"),
+				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_AuthenticationPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Allow Self Registration feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -162,28 +184,6 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 				 getString("_UI_LocalAuthenticationSystem_trackLoginAttempts_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_trackLoginAttempts_feature", "_UI_LocalAuthenticationSystem_type"),
 				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_AuthenticationPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Allow Auto Login feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAllowAutoLoginPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalAuthenticationSystem_allowAutoLogin_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalAuthenticationSystem_allowAutoLogin_feature", "_UI_LocalAuthenticationSystem_type"),
-				 WebsitePackage.Literals.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN,
 				 true,
 				 false,
 				 false,
@@ -341,9 +341,9 @@ public class LocalAuthenticationSystemItemProvider extends AuthenticationItemPro
 		switch (notification.getFeatureID(LocalAuthenticationSystem.class)) {
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__AUTHENTICATION_KEY:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS:
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

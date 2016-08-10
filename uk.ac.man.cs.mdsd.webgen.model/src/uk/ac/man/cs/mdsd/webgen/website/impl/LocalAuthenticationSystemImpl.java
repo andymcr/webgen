@@ -28,9 +28,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getAuthenticationKey <em>Authentication Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isUseCaptcha <em>Use Captcha</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isAllowRememberMe <em>Allow Remember Me</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isTrackLoginAttempts <em>Track Login Attempts</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isAllowAutoLogin <em>Allow Auto Login</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isUseEmailActivation <em>Use Email Activation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#isSendWelcomeEmail <em>Send Welcome Email</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.LocalAuthenticationSystemImpl#getRegistrationUnit <em>Registration Unit</em>}</li>
@@ -92,6 +92,26 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	protected boolean useCaptcha = USE_CAPTCHA_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isAllowRememberMe() <em>Allow Remember Me</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAllowRememberMe()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ALLOW_REMEMBER_ME_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isAllowRememberMe() <em>Allow Remember Me</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAllowRememberMe()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean allowRememberMe = ALLOW_REMEMBER_ME_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #isAllowSelfRegistration() <em>Allow Self Registration</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,26 +150,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @ordered
 	 */
 	protected boolean trackLoginAttempts = TRACK_LOGIN_ATTEMPTS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isAllowAutoLogin() <em>Allow Auto Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAllowAutoLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean ALLOW_AUTO_LOGIN_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isAllowAutoLogin() <em>Allow Auto Login</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isAllowAutoLogin()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean allowAutoLogin = ALLOW_AUTO_LOGIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isUseEmailActivation() <em>Use Email Activation</em>}' attribute.
@@ -325,6 +325,27 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isAllowRememberMe() {
+		return allowRememberMe;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAllowRememberMe(boolean newAllowRememberMe) {
+		boolean oldAllowRememberMe = allowRememberMe;
+		allowRememberMe = newAllowRememberMe;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME, oldAllowRememberMe, allowRememberMe));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isAllowSelfRegistration() {
 		return allowSelfRegistration;
 	}
@@ -360,27 +381,6 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		trackLoginAttempts = newTrackLoginAttempts;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS, oldTrackLoginAttempts, trackLoginAttempts));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isAllowAutoLogin() {
-		return allowAutoLogin;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAllowAutoLogin(boolean newAllowAutoLogin) {
-		boolean oldAllowAutoLogin = allowAutoLogin;
-		allowAutoLogin = newAllowAutoLogin;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN, oldAllowAutoLogin, allowAutoLogin));
 	}
 
 	/**
@@ -554,12 +554,12 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return getAuthenticationKey();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				return isUseCaptcha();
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
+				return isAllowRememberMe();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				return isAllowSelfRegistration();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS:
 				return isTrackLoginAttempts();
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN:
-				return isAllowAutoLogin();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
 				return isUseEmailActivation();
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
@@ -594,14 +594,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				setUseCaptcha((Boolean)newValue);
 				return;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
+				setAllowRememberMe((Boolean)newValue);
+				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				setAllowSelfRegistration((Boolean)newValue);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS:
 				setTrackLoginAttempts((Boolean)newValue);
-				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN:
-				setAllowAutoLogin((Boolean)newValue);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
 				setUseEmailActivation((Boolean)newValue);
@@ -639,14 +639,14 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				setUseCaptcha(USE_CAPTCHA_EDEFAULT);
 				return;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
+				setAllowRememberMe(ALLOW_REMEMBER_ME_EDEFAULT);
+				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				setAllowSelfRegistration(ALLOW_SELF_REGISTRATION_EDEFAULT);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS:
 				setTrackLoginAttempts(TRACK_LOGIN_ATTEMPTS_EDEFAULT);
-				return;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN:
-				setAllowAutoLogin(ALLOW_AUTO_LOGIN_EDEFAULT);
 				return;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
 				setUseEmailActivation(USE_EMAIL_ACTIVATION_EDEFAULT);
@@ -681,12 +681,12 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return authenticationKey != AUTHENTICATION_KEY_EDEFAULT;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				return useCaptcha != USE_CAPTCHA_EDEFAULT;
+			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
+				return allowRememberMe != ALLOW_REMEMBER_ME_EDEFAULT;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				return allowSelfRegistration != ALLOW_SELF_REGISTRATION_EDEFAULT;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__TRACK_LOGIN_ATTEMPTS:
 				return trackLoginAttempts != TRACK_LOGIN_ATTEMPTS_EDEFAULT;
-			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_AUTO_LOGIN:
-				return allowAutoLogin != ALLOW_AUTO_LOGIN_EDEFAULT;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
 				return useEmailActivation != USE_EMAIL_ACTIVATION_EDEFAULT;
 			case WebsitePackage.LOCAL_AUTHENTICATION_SYSTEM__SEND_WELCOME_EMAIL:
@@ -715,12 +715,12 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		result.append(authenticationKey);
 		result.append(", useCaptcha: ");
 		result.append(useCaptcha);
+		result.append(", allowRememberMe: ");
+		result.append(allowRememberMe);
 		result.append(", allowSelfRegistration: ");
 		result.append(allowSelfRegistration);
 		result.append(", trackLoginAttempts: ");
 		result.append(trackLoginAttempts);
-		result.append(", allowAutoLogin: ");
-		result.append(allowAutoLogin);
 		result.append(", useEmailActivation: ");
 		result.append(useEmailActivation);
 		result.append(", sendWelcomeEmail: ");

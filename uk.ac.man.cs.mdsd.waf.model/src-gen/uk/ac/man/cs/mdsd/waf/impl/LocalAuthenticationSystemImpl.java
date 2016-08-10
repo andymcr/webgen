@@ -32,6 +32,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getLoginAttempt <em>Login Attempt</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#getAutoLogin <em>Auto Login</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#isUseCaptcha <em>Use Captcha</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#isAllowRememberMe <em>Allow Remember Me</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#isAllowSelfRegistration <em>Allow Self Registration</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#isUseEmailActivation <em>Use Email Activation</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.LocalAuthenticationSystemImpl#isSendWelcomeEmail <em>Send Welcome Email</em>}</li>
@@ -112,6 +113,26 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 	 * @ordered
 	 */
 	protected boolean useCaptcha = USE_CAPTCHA_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isAllowRememberMe() <em>Allow Remember Me</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAllowRememberMe()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ALLOW_REMEMBER_ME_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isAllowRememberMe() <em>Allow Remember Me</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isAllowRememberMe()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean allowRememberMe = ALLOW_REMEMBER_ME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isAllowSelfRegistration() <em>Allow Self Registration</em>}' attribute.
@@ -376,6 +397,27 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		useCaptcha = newUseCaptcha;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA, oldUseCaptcha, useCaptcha));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isAllowRememberMe() {
+		return allowRememberMe;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAllowRememberMe(boolean newAllowRememberMe) {
+		boolean oldAllowRememberMe = allowRememberMe;
+		allowRememberMe = newAllowRememberMe;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME, oldAllowRememberMe, allowRememberMe));
 	}
 
 	/**
@@ -684,6 +726,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return basicGetAutoLogin();
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				return isUseCaptcha();
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
+				return isAllowRememberMe();
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				return isAllowSelfRegistration();
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
@@ -725,6 +769,9 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				setUseCaptcha((Boolean)newValue);
+				return;
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
+				setAllowRememberMe((Boolean)newValue);
 				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				setAllowSelfRegistration((Boolean)newValue);
@@ -771,6 +818,9 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				setUseCaptcha(USE_CAPTCHA_EDEFAULT);
 				return;
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
+				setAllowRememberMe(ALLOW_REMEMBER_ME_EDEFAULT);
+				return;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				setAllowSelfRegistration(ALLOW_SELF_REGISTRATION_EDEFAULT);
 				return;
@@ -811,6 +861,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 				return autoLogin != null;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_CAPTCHA:
 				return useCaptcha != USE_CAPTCHA_EDEFAULT;
+			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_REMEMBER_ME:
+				return allowRememberMe != ALLOW_REMEMBER_ME_EDEFAULT;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__ALLOW_SELF_REGISTRATION:
 				return allowSelfRegistration != ALLOW_SELF_REGISTRATION_EDEFAULT;
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM__USE_EMAIL_ACTIVATION:
@@ -841,6 +893,8 @@ public class LocalAuthenticationSystemImpl extends AuthenticationImpl implements
 		result.append(authenticationKey);
 		result.append(", useCaptcha: ");
 		result.append(useCaptcha);
+		result.append(", allowRememberMe: ");
+		result.append(allowRememberMe);
 		result.append(", allowSelfRegistration: ");
 		result.append(allowSelfRegistration);
 		result.append(", useEmailActivation: ");

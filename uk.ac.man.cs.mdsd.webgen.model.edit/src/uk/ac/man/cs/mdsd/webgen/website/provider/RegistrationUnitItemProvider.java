@@ -65,6 +65,7 @@ public class RegistrationUnitItemProvider
 			addNamePropertyDescriptor(object);
 			addDisplayLabelPropertyDescriptor(object);
 			addCreateDefaultUriElementPropertyDescriptor(object);
+			addRequiresRolePropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
@@ -149,6 +150,28 @@ public class RegistrationUnitItemProvider
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_NavigationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requires Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiresRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_requiresRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_requiresRole_feature", "_UI_ContentUnit_type"),
+				 WebsitePackage.Literals.CONTENT_UNIT__REQUIRES_ROLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 
@@ -598,6 +621,7 @@ public class RegistrationUnitItemProvider
 			case WebsitePackage.REGISTRATION_UNIT__NAME:
 			case WebsitePackage.REGISTRATION_UNIT__DISPLAY_LABEL:
 			case WebsitePackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT:
+			case WebsitePackage.REGISTRATION_UNIT__REQUIRES_ROLE:
 			case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
 			case WebsitePackage.REGISTRATION_UNIT__URI_ELEMENT:
 			case WebsitePackage.REGISTRATION_UNIT__ALTERNATIVE:

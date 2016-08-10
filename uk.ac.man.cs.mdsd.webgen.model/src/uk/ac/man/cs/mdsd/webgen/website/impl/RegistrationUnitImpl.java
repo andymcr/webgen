@@ -48,6 +48,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#isCreateDefaultUriElement <em>Create Default Uri Element</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl#getAlternative <em>Alternative</em>}</li>
@@ -132,6 +133,26 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * @ordered
 	 */
 	protected boolean createDefaultUriElement = CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRES_ROLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPurposeSummary() <em>Purpose Summary</em>}' attribute.
@@ -611,6 +632,27 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRequiresRole() {
+		return requiresRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiresRole(String newRequiresRole) {
+		String oldRequiresRole = requiresRole;
+		requiresRole = newRequiresRole;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.REGISTRATION_UNIT__REQUIRES_ROLE, oldRequiresRole, requiresRole));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPurposeSummary() {
 		return purposeSummary;
 	}
@@ -1078,6 +1120,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return getDisplayedOn();
 			case WebsitePackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return isCreateDefaultUriElement();
+			case WebsitePackage.REGISTRATION_UNIT__REQUIRES_ROLE:
+				return getRequiresRole();
 			case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
 			case WebsitePackage.REGISTRATION_UNIT__URI_ELEMENT:
@@ -1143,6 +1187,9 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement((Boolean)newValue);
+				return;
+			case WebsitePackage.REGISTRATION_UNIT__REQUIRES_ROLE:
+				setRequiresRole((String)newValue);
 				return;
 			case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
@@ -1232,6 +1279,9 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			case WebsitePackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				setCreateDefaultUriElement(CREATE_DEFAULT_URI_ELEMENT_EDEFAULT);
 				return;
+			case WebsitePackage.REGISTRATION_UNIT__REQUIRES_ROLE:
+				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
+				return;
 			case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
 				return;
@@ -1312,6 +1362,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 				return getDisplayedOn() != null;
 			case WebsitePackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT:
 				return createDefaultUriElement != CREATE_DEFAULT_URI_ELEMENT_EDEFAULT;
+			case WebsitePackage.REGISTRATION_UNIT__REQUIRES_ROLE:
+				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
 			case WebsitePackage.REGISTRATION_UNIT__URI_ELEMENT:
@@ -1379,6 +1431,7 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			switch (derivedFeatureID) {
 				case WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON: return WebsitePackage.CONTENT_UNIT__DISPLAYED_ON;
 				case WebsitePackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT;
+				case WebsitePackage.REGISTRATION_UNIT__REQUIRES_ROLE: return WebsitePackage.CONTENT_UNIT__REQUIRES_ROLE;
 				case WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY: return WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.REGISTRATION_UNIT__URI_ELEMENT: return WebsitePackage.CONTENT_UNIT__URI_ELEMENT;
 				case WebsitePackage.REGISTRATION_UNIT__ALTERNATIVE: return WebsitePackage.CONTENT_UNIT__ALTERNATIVE;
@@ -1437,6 +1490,7 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 			switch (baseFeatureID) {
 				case WebsitePackage.CONTENT_UNIT__DISPLAYED_ON: return WebsitePackage.REGISTRATION_UNIT__DISPLAYED_ON;
 				case WebsitePackage.CONTENT_UNIT__CREATE_DEFAULT_URI_ELEMENT: return WebsitePackage.REGISTRATION_UNIT__CREATE_DEFAULT_URI_ELEMENT;
+				case WebsitePackage.CONTENT_UNIT__REQUIRES_ROLE: return WebsitePackage.REGISTRATION_UNIT__REQUIRES_ROLE;
 				case WebsitePackage.CONTENT_UNIT__PURPOSE_SUMMARY: return WebsitePackage.REGISTRATION_UNIT__PURPOSE_SUMMARY;
 				case WebsitePackage.CONTENT_UNIT__URI_ELEMENT: return WebsitePackage.REGISTRATION_UNIT__URI_ELEMENT;
 				case WebsitePackage.CONTENT_UNIT__ALTERNATIVE: return WebsitePackage.REGISTRATION_UNIT__ALTERNATIVE;
@@ -1488,6 +1542,8 @@ public class RegistrationUnitImpl extends EObjectImpl implements RegistrationUni
 		result.append(displayLabel);
 		result.append(", createDefaultUriElement: ");
 		result.append(createDefaultUriElement);
+		result.append(", requiresRole: ");
+		result.append(requiresRole);
 		result.append(", purposeSummary: ");
 		result.append(purposeSummary);
 		result.append(", uriElement: ");

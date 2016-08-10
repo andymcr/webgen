@@ -51,6 +51,7 @@ public class ContentUnitItemProvider
 
 			addDisplayedOnPropertyDescriptor(object);
 			addPurposeSummaryPropertyDescriptor(object);
+			addRequiresRolePropertyDescriptor(object);
 			addUriElementPropertyDescriptor(object);
 			addAlternativePropertyDescriptor(object);
 			addOmitCaptionPropertyDescriptor(object);
@@ -98,6 +99,28 @@ public class ContentUnitItemProvider
 				 getString("_UI_ContentUnit_purposeSummary_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_purposeSummary_feature", "_UI_ContentUnit_type"),
 				 WafPackage.Literals.CONTENT_UNIT__PURPOSE_SUMMARY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requires Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiresRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContentUnit_requiresRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContentUnit_requiresRole_feature", "_UI_ContentUnit_type"),
+				 WafPackage.Literals.CONTENT_UNIT__REQUIRES_ROLE,
 				 true,
 				 false,
 				 false,
@@ -265,6 +288,7 @@ public class ContentUnitItemProvider
 
 		switch (notification.getFeatureID(ContentUnit.class)) {
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
+			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
 			case WafPackage.CONTENT_UNIT__OMIT_CAPTION:

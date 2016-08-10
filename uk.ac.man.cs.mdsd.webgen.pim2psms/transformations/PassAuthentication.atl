@@ -101,9 +101,10 @@ rule LocalAuthenticationSystem {
 				thisModule.findOrmEntityOrView('LoginAttempt')
 			endif,
 		useCaptcha <- website.useCaptcha,
+		allowRememberMe <- website.allowRememberMe,
 		allowSelfRegistration <- website.allowSelfRegistration,
 		autoLogin <-
-			if not website.allowAutoLogin
+			if not website.allowRememberMe
 					or thisModule.findWebsiteProperties().frameworkTechnology = #Symfony then
 				OclUndefined
 			else
@@ -230,7 +231,7 @@ unique lazy rule implicitLoginUnit {
 					->collect(f | thisModule.implicitUnitAttribute(f))
 				->union(features->select(f | f.name = 'password')
 					->collect(f | thisModule.implicitUnitAttribute(f)))
-				->union(if website.allowAutoLogin then
+				->union(if website.allowRememberMe then
 						Sequence{thisModule.implicitRememberMeField(website)}
 					else
 						Sequence{}

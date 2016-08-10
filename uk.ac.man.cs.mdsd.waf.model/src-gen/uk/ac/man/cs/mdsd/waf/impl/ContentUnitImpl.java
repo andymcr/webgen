@@ -28,6 +28,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getDisplayedOn <em>Displayed On</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getPurposeSummary <em>Purpose Summary</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getUriElement <em>Uri Element</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#getAlternative <em>Alternative</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ContentUnitImpl#isOmitCaption <em>Omit Caption</em>}</li>
@@ -58,6 +59,26 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * @ordered
 	 */
 	protected String purposeSummary = PURPOSE_SUMMARY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRES_ROLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getUriElement() <em>Uri Element</em>}' attribute.
@@ -275,6 +296,27 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRequiresRole() {
+		return requiresRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiresRole(String newRequiresRole) {
+		String oldRequiresRole = requiresRole;
+		requiresRole = newRequiresRole;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CONTENT_UNIT__REQUIRES_ROLE, oldRequiresRole, requiresRole));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getUriElement() {
 		return uriElement;
 	}
@@ -453,6 +495,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return basicGetDisplayedOn();
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return getPurposeSummary();
+			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
+				return getRequiresRole();
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				return getUriElement();
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
@@ -482,6 +526,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return;
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary((String)newValue);
+				return;
+			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
+				setRequiresRole((String)newValue);
 				return;
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				setUriElement((String)newValue);
@@ -519,6 +566,9 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				setPurposeSummary(PURPOSE_SUMMARY_EDEFAULT);
 				return;
+			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
+				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
+				return;
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				setUriElement(URI_ELEMENT_EDEFAULT);
 				return;
@@ -553,6 +603,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 				return basicGetDisplayedOn() != null;
 			case WafPackage.CONTENT_UNIT__PURPOSE_SUMMARY:
 				return PURPOSE_SUMMARY_EDEFAULT == null ? purposeSummary != null : !PURPOSE_SUMMARY_EDEFAULT.equals(purposeSummary);
+			case WafPackage.CONTENT_UNIT__REQUIRES_ROLE:
+				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WafPackage.CONTENT_UNIT__URI_ELEMENT:
 				return URI_ELEMENT_EDEFAULT == null ? uriElement != null : !URI_ELEMENT_EDEFAULT.equals(uriElement);
 			case WafPackage.CONTENT_UNIT__ALTERNATIVE:
@@ -581,6 +633,8 @@ public abstract class ContentUnitImpl extends NamedDisplayElementImpl implements
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (purposeSummary: ");
 		result.append(purposeSummary);
+		result.append(", requiresRole: ");
+		result.append(requiresRole);
 		result.append(", uriElement: ");
 		result.append(uriElement);
 		result.append(", alternative: ");

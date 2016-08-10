@@ -103,7 +103,7 @@ rule OrmModel {
 							or website.websiteProperties.frameworkTechnology = #Symfony then
 							Sequence{}
 						else if authentication.oclIsTypeOf(Website!LocalAuthenticationSystem)
-								and authentication.allowAutoLogin then
+								and authentication.allowRememberMe then
 							Sequence{thisModule.implicitAutoLoginEntity(authentication)}
 						else
 							Sequence{}
@@ -158,7 +158,7 @@ unique lazy rule implicitAuthenticationSystemEntity {
 				passwordRequestedAt, passwordChangedAt, credentialsExpired,
 				credentialsExpireAt, roles, lastLogin, lastIp}
 			->union(
-				if website.allowAutoLogin then
+				if website.allowRememberMe then
 					Sequence{thisModule.implicitAutoLoginOpposite(website)}
 				else
 					Sequence{}

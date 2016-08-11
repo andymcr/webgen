@@ -106,7 +106,6 @@ public interface Association extends Feature {
 
 	/**
 	 * Returns the value of the '<em><b>Input Class</b></em>' attribute.
-	 * The default value is <code>"input_association"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Input Class</em>' attribute isn't clear,
@@ -116,7 +115,7 @@ public interface Association extends Feature {
 	 * @return the value of the '<em>Input Class</em>' attribute.
 	 * @see #setInputClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation_InputClass()
-	 * @model default="input_association"
+	 * @model
 	 * @generated
 	 */
 	String getInputClass();

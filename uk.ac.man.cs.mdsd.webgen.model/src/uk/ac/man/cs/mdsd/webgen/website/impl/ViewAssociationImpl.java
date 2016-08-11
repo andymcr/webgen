@@ -239,7 +239,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INPUT_CLASS_EDEFAULT = "input_association";
+	protected static final String INPUT_CLASS_EDEFAULT = null;
 	/**
 	 * The cached value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -502,6 +502,12 @@ rule DynamicMenu {
 rule Filter {
 	from website : Website!Filter
 	to waf : WAF!Filter (
+		displayLabel <-
+			if not website.displayLabel.oclIsUndefined() and website.displayLabel <> '' then
+				website.displayLabel
+			else
+				'Filter'
+			endif,
 		parameters <-
 			if website.parameters->notEmpty() then
 				website.parameters

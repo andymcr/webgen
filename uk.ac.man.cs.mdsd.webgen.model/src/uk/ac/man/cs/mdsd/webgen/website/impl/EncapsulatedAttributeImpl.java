@@ -98,7 +98,7 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INPUT_CLASS_EDEFAULT = "input_attribute";
+	protected static final String INPUT_CLASS_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.

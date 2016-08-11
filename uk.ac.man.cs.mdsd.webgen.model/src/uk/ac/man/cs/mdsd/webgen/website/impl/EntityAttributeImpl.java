@@ -97,7 +97,7 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INPUT_CLASS_EDEFAULT = "input_attribute";
+	protected static final String INPUT_CLASS_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getInputClass() <em>Input Class</em>}' attribute.

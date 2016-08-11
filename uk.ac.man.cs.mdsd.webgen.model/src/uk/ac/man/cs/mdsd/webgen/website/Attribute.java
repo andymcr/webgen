@@ -110,7 +110,6 @@ public interface Attribute extends Feature, Label, SelectionField {
 
 	/**
 	 * Returns the value of the '<em><b>Input Class</b></em>' attribute.
-	 * The default value is <code>"input_attribute"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Input Class</em>' attribute isn't clear,
@@ -120,7 +119,7 @@ public interface Attribute extends Feature, Label, SelectionField {
 	 * @return the value of the '<em>Input Class</em>' attribute.
 	 * @see #setInputClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAttribute_InputClass()
-	 * @model default="input_attribute" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getInputClass();

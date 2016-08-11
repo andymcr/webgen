@@ -23,7 +23,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
 public interface SelectionParameter extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Optional</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Optional</em>' attribute isn't clear,
@@ -33,7 +33,7 @@ public interface SelectionParameter extends NamedElement {
 	 * @return the value of the '<em>Optional</em>' attribute.
 	 * @see #setOptional(boolean)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelectionParameter_Optional()
-	 * @model default="true"
+	 * @model default="false"
 	 * @generated
 	 */
 	boolean isOptional();

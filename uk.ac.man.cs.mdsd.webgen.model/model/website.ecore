@@ -593,7 +593,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SelectionField" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="SelectionParameter" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
+        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessOperation" eSuperTypes="#//NamedElement">

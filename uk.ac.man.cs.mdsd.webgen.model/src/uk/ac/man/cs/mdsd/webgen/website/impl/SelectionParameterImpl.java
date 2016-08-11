@@ -34,7 +34,7 @@ public class SelectionParameterImpl extends NamedElementImpl implements Selectio
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean OPTIONAL_EDEFAULT = true;
+	protected static final boolean OPTIONAL_EDEFAULT = false;
 
 	/**
 	 * The cached value of the '{@link #isOptional() <em>Optional</em>}' attribute.

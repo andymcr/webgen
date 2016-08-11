@@ -141,7 +141,7 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTENT_CLASS_EDEFAULT = "input_form,framed";
+	protected static final String CONTENT_CLASS_EDEFAULT = "edit_content,framed";
 
 	/**
 	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.

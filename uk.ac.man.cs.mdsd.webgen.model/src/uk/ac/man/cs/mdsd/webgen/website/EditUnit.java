@@ -218,7 +218,7 @@ public interface EditUnit extends DynamicUnit {
 
 	/**
 	 * Returns the value of the '<em><b>Content Class</b></em>' attribute.
-	 * The default value is <code>"input_form,framed"</code>.
+	 * The default value is <code>"edit_content,framed"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content Class</em>' attribute isn't clear,
@@ -228,7 +228,7 @@ public interface EditUnit extends DynamicUnit {
 	 * @return the value of the '<em>Content Class</em>' attribute.
 	 * @see #setContentClass(String)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEditUnit_ContentClass()
-	 * @model default="input_form,framed" ordered="false"
+	 * @model default="edit_content,framed" ordered="false"
 	 * @generated
 	 */
 	String getContentClass();

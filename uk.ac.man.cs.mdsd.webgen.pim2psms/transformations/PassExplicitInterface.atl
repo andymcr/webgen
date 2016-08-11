@@ -102,25 +102,35 @@ helper context Website!DataTypeField def: interfaceType() : String
 			self.dataType.interfaceType
 		endif;
 
-helper context Website!Attribute def: placeholder() : String
+helper context Website!UnitElement def: placeholder() : String
 	= if not self.placeholder.oclIsUndefined() and self.placeholder <> '' then
 			self.placeholder
+		else if not self.attribute.placeholder.oclIsUndefined() and self.attribute.placeholder <> '' then
+			self.attribute.placeholder
 		else
-			if self.oclIsTypeOf(Website!DataTypeAttribute) then
-				self.dataType.placeholder
+			if self.attribute.oclIsTypeOf(Website!DataTypeAttribute) then
+				if not self.attribute.dataType.placeholder.oclIsUndefined() then
+					self.attribute.dataType.placeholder
+				else
+					self.name.createLabel()
+				endif
 			else
-				OclUndefined
+				self.name.createLabel()
 			endif
-		endif;
+		endif endif;
 
 helper context Website!InterfaceField def: placeholder() : String
 	= if not self.placeholder.oclIsUndefined() and self.placeholder <> '' then
 			self.placeholder
 		else
 			if self.oclIsTypeOf(Website!DataTypeField) then
-				self.dataType.placeholder
+				if not self.dataType.placeholder.oclIsUndefined() and self.dataType.placeholder <> '' then
+					self.dataType.placeholder
+				else
+					self.name.createLabel()
+				endif
 			else
-				OclUndefined
+				self.name.createLabel()
 			endif
 		endif;
 
@@ -653,12 +663,7 @@ rule UnitAttribute {
 		displayLabel <- website.attributeLabel(),
 		defaultValue <- website.defaultValue,
 		obfuscateFormFields <- website.obfuscateFormFields,
-		placeholder <-
-			if not website.placeholder.oclIsUndefined() and website.placeholder <> '' then
-				website.placeholder
-			else
-				website.attribute.placeholder()
-			endif,
+		placeholder <- website.placeholder(),
 		validationPattern <- website.validationPattern,
 		headerClass <-
 			if not website.headerClass.oclIsUndefined() and website.headerClass <> '' then

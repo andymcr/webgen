@@ -986,7 +986,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cancelLabel" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="input_form,framed"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="edit_content,framed"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customiseValues" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CreateUnit" eSuperTypes="#//EditUnit">

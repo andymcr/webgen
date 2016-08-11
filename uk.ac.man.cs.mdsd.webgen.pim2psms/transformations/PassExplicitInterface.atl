@@ -488,7 +488,7 @@ rule DynamicMenu {
 	)
 }
 
--- @extends NamedElement
+-- @extends NamedDisplayElement
 rule Filter {
 	from website : Website!Filter
 	to waf : WAF!Filter (
@@ -508,7 +508,13 @@ rule FilterParameter {
 	to waf : WAF!FilterParameter (
 		formal <- website.formal,
 		dataType <- website.dataType,
-		defaultValue <- website.defaultValue
+		defaultValue <- website.defaultValue,
+		placeholder <-
+			if not website.placeholder.oclIsUndefined() then
+				website.placeholder
+			else
+				website.name.createLabel()
+			endif
 	)
 }
 
@@ -992,6 +998,7 @@ abstract rule IndexUnit {
 					website.pagination
 				endif,
 		defaultPaginationSize <- website.defaultPaginationSize,
+		emptyMessage <- website.emptyMessage,
 		nextNpages <- website.nextNpages,
 		previousNpages <- website.previousNpages,
 		nextPageLabel <- website.nextPageLabel,

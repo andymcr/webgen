@@ -210,7 +210,7 @@ class Page extends NamedDisplayElement, UnitContainer {
 	String styleClass
 }
 
-class Filter extends NamedElement {
+class Filter extends NamedDisplayElement {
 	contains FilterParameter[] parameters
 	refers Selection selection
 }
@@ -219,6 +219,7 @@ class FilterParameter extends NamedElement {
 	refers SelectionParameter formal
 	refers DataType dataType
 	String defaultValue = ''
+	String placeholder
 }
 
 class Query extends NamedElement {
@@ -426,6 +427,7 @@ abstract class IndexUnit extends DataUnit, InlineActionContainer {
 	contains Filter[] filters
 	refers Filter pagination
 	int defaultPaginationSize
+	String emptyMessage
 	int nextNpages
 	int previousNpages
 	String nextPageLabel = ">"

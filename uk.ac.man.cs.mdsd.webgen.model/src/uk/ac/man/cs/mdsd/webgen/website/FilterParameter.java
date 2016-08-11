@@ -15,6 +15,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getFormal <em>Formal</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getPlaceholder <em>Placeholder</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFilterParameter()
@@ -100,5 +101,31 @@ public interface FilterParameter extends NamedElement {
 	 * @generated
 	 */
 	void setDefaultValue(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Placeholder</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Placeholder</em>' attribute.
+	 * @see #setPlaceholder(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFilterParameter_Placeholder()
+	 * @model
+	 * @generated
+	 */
+	String getPlaceholder();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getPlaceholder <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Placeholder</em>' attribute.
+	 * @see #getPlaceholder()
+	 * @generated
+	 */
+	void setPlaceholder(String value);
 
 } // FilterParameter

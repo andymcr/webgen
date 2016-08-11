@@ -17,6 +17,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.FilterParameter#getFormal <em>Formal</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.FilterParameter#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.FilterParameter#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.FilterParameter#getPlaceholder <em>Placeholder</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFilterParameter()
@@ -102,5 +103,31 @@ public interface FilterParameter extends NamedElement {
 	 * @generated
 	 */
 	void setDefaultValue(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Placeholder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Placeholder</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Placeholder</em>' attribute.
+	 * @see #setPlaceholder(String)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getFilterParameter_Placeholder()
+	 * @model unique="false"
+	 * @generated
+	 */
+	String getPlaceholder();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.FilterParameter#getPlaceholder <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Placeholder</em>' attribute.
+	 * @see #getPlaceholder()
+	 * @generated
+	 */
+	void setPlaceholder(String value);
 
 } // FilterParameter

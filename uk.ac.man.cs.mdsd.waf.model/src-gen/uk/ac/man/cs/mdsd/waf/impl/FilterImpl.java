@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
+import uk.ac.man.cs.mdsd.orm.impl.NamedDisplayElementImpl;
 
 import uk.ac.man.cs.mdsd.waf.Filter;
 import uk.ac.man.cs.mdsd.waf.FilterParameter;
@@ -38,7 +38,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *
  * @generated
  */
-public class FilterImpl extends NamedElementImpl implements Filter {
+public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

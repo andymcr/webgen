@@ -28,6 +28,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FilterParameterImpl#getFormal <em>Formal</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FilterParameterImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FilterParameterImpl#getDefaultValue <em>Default Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FilterParameterImpl#getPlaceholder <em>Placeholder</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,6 +73,26 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * @ordered
 	 */
 	protected String defaultValue = DEFAULT_VALUE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PLACEHOLDER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPlaceholder() <em>Placeholder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlaceholder()
+	 * @generated
+	 * @ordered
+	 */
+	protected String placeholder = PLACEHOLDER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -194,6 +215,27 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPlaceholder() {
+		return placeholder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPlaceholder(String newPlaceholder) {
+		String oldPlaceholder = placeholder;
+		placeholder = newPlaceholder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.FILTER_PARAMETER__PLACEHOLDER, oldPlaceholder, placeholder));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -205,6 +247,8 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 				return basicGetDataType();
 			case WafPackage.FILTER_PARAMETER__DEFAULT_VALUE:
 				return getDefaultValue();
+			case WafPackage.FILTER_PARAMETER__PLACEHOLDER:
+				return getPlaceholder();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -225,6 +269,9 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 				return;
 			case WafPackage.FILTER_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue((String)newValue);
+				return;
+			case WafPackage.FILTER_PARAMETER__PLACEHOLDER:
+				setPlaceholder((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -247,6 +294,9 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 			case WafPackage.FILTER_PARAMETER__DEFAULT_VALUE:
 				setDefaultValue(DEFAULT_VALUE_EDEFAULT);
 				return;
+			case WafPackage.FILTER_PARAMETER__PLACEHOLDER:
+				setPlaceholder(PLACEHOLDER_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -265,6 +315,8 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 				return dataType != null;
 			case WafPackage.FILTER_PARAMETER__DEFAULT_VALUE:
 				return DEFAULT_VALUE_EDEFAULT == null ? defaultValue != null : !DEFAULT_VALUE_EDEFAULT.equals(defaultValue);
+			case WafPackage.FILTER_PARAMETER__PLACEHOLDER:
+				return PLACEHOLDER_EDEFAULT == null ? placeholder != null : !PLACEHOLDER_EDEFAULT.equals(placeholder);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -281,6 +333,8 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (defaultValue: ");
 		result.append(defaultValue);
+		result.append(", placeholder: ");
+		result.append(placeholder);
 		result.append(')');
 		return result.toString();
 	}

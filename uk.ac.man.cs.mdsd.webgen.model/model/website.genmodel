@@ -461,6 +461,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//FilterParameter/formal"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//FilterParameter/dataType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//FilterParameter/defaultValue"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//FilterParameter/placeholder"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Query">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Query/filter"/>
@@ -675,6 +676,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//IndexUnit/pagination"/>
       <genFeatures createChild="false" propertyCategory="Pagination" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/defaultPaginationSize"/>
+      <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
+          ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/emptyMessage"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/nextNpages"/>
       <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/previousNpages"/>
       <genFeatures createChild="false" propertyCategory="Pagination" propertyDescription=""

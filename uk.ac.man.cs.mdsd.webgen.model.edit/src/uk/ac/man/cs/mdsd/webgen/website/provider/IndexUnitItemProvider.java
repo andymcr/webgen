@@ -57,6 +57,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			addOmitColumnLabelsPropertyDescriptor(object);
 			addPaginationPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
+			addEmptyMessagePropertyDescriptor(object);
 			addNextNpagesPropertyDescriptor(object);
 			addPreviousNpagesPropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
@@ -161,6 +162,28 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Empty Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEmptyMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_emptyMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_emptyMessage_feature", "_UI_IndexUnit_type"),
+				 WebsitePackage.Literals.INDEX_UNIT__EMPTY_MESSAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -477,6 +500,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
 			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
+			case WebsitePackage.INDEX_UNIT__EMPTY_MESSAGE:
 			case WebsitePackage.INDEX_UNIT__NEXT_NPAGES:
 			case WebsitePackage.INDEX_UNIT__PREVIOUS_NPAGES:
 			case WebsitePackage.INDEX_UNIT__NEXT_PAGE_LABEL:

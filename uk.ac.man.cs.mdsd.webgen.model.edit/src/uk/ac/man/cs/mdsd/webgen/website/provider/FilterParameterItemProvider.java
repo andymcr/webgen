@@ -48,6 +48,7 @@ public class FilterParameterItemProvider extends NamedElementItemProvider {
 			addFormalPropertyDescriptor(object);
 			addDataTypePropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
+			addPlaceholderPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -119,6 +120,28 @@ public class FilterParameterItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Placeholder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPlaceholderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FilterParameter_placeholder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FilterParameter_placeholder_feature", "_UI_FilterParameter_type"),
+				 WebsitePackage.Literals.FILTER_PARAMETER__PLACEHOLDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This returns FilterParameter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -157,6 +180,7 @@ public class FilterParameterItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(FilterParameter.class)) {
 			case WebsitePackage.FILTER_PARAMETER__DEFAULT_VALUE:
+			case WebsitePackage.FILTER_PARAMETER__PLACEHOLDER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

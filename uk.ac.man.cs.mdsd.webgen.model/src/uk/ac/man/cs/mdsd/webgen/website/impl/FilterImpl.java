@@ -37,7 +37,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *
  * @generated
  */
-public class FilterImpl extends NamedElementImpl implements Filter {
+public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

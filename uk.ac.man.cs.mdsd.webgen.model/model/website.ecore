@@ -692,7 +692,7 @@
         eType="#//Label"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MenuFeature" eSuperTypes="#//MenuEntry"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Filter" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Filter" eSuperTypes="#//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//FilterParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
@@ -702,6 +702,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Query">
     <eStructuralFeatures xsi:type="ecore:EReference" name="filter" lowerBound="1"
@@ -1067,6 +1068,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultPaginationSize"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="10"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emptyMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextNpages" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="2"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="previousNpages" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"

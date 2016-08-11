@@ -23,6 +23,7 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getNextNpages <em>Next Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getNextPageLabel <em>Next Page Label</em>}</li>
@@ -167,6 +168,32 @@ public interface IndexUnit extends DataUnit, InlineActionContainer {
 	 * @generated
 	 */
 	void setDefaultPaginationSize(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Empty Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Empty Message</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Empty Message</em>' attribute.
+	 * @see #setEmptyMessage(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getIndexUnit_EmptyMessage()
+	 * @model
+	 * @generated
+	 */
+	String getEmptyMessage();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexUnit#getEmptyMessage <em>Empty Message</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Empty Message</em>' attribute.
+	 * @see #getEmptyMessage()
+	 * @generated
+	 */
+	void setEmptyMessage(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Next Npages</b></em>' attribute.

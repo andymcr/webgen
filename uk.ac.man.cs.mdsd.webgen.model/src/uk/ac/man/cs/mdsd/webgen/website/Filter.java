@@ -21,7 +21,7 @@ import java.util.List;
  * @model
  * @generated
  */
-public interface Filter extends NamedElement {
+public interface Filter extends NamedDisplayElement {
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter}.

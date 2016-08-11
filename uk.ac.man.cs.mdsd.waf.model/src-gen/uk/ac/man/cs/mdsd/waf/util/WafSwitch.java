@@ -214,6 +214,7 @@ public class WafSwitch<T> extends Switch<T> {
 			case WafPackage.FILTER: {
 				Filter filter = (Filter)theEObject;
 				T result = caseFilter(filter);
+				if (result == null) result = caseNamedDisplayElement(filter);
 				if (result == null) result = caseNamedElement(filter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

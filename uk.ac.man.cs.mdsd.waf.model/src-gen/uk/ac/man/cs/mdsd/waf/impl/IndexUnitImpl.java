@@ -38,6 +38,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFilters <em>Filters</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getNextNpages <em>Next Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
@@ -122,6 +123,26 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected int defaultPaginationSize = DEFAULT_PAGINATION_SIZE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmptyMessage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EMPTY_MESSAGE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmptyMessage()
+	 * @generated
+	 * @ordered
+	 */
+	protected String emptyMessage = EMPTY_MESSAGE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNextNpages() <em>Next Npages</em>}' attribute.
@@ -441,6 +462,27 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getEmptyMessage() {
+		return emptyMessage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEmptyMessage(String newEmptyMessage) {
+		String oldEmptyMessage = emptyMessage;
+		emptyMessage = newEmptyMessage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__EMPTY_MESSAGE, oldEmptyMessage, emptyMessage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public int getNextNpages() {
 		return nextNpages;
 	}
@@ -741,6 +783,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return basicGetPagination();
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return getDefaultPaginationSize();
+			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
+				return getEmptyMessage();
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 				return getNextNpages();
 			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
@@ -791,6 +835,9 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
+				setEmptyMessage((String)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 				setNextNpages((Integer)newValue);
@@ -849,6 +896,9 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);
 				return;
+			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
+				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
+				return;
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 				setNextNpages(NEXT_NPAGES_EDEFAULT);
 				return;
@@ -901,6 +951,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return pagination != null;
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return defaultPaginationSize != DEFAULT_PAGINATION_SIZE_EDEFAULT;
+			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
+				return EMPTY_MESSAGE_EDEFAULT == null ? emptyMessage != null : !EMPTY_MESSAGE_EDEFAULT.equals(emptyMessage);
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 				return nextNpages != NEXT_NPAGES_EDEFAULT;
 			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
@@ -971,6 +1023,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		result.append(omitColumnLabels);
 		result.append(", defaultPaginationSize: ");
 		result.append(defaultPaginationSize);
+		result.append(", emptyMessage: ");
+		result.append(emptyMessage);
 		result.append(", nextNpages: ");
 		result.append(nextNpages);
 		result.append(", previousNpages: ");

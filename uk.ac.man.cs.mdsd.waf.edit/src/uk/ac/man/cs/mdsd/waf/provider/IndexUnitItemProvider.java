@@ -52,6 +52,7 @@ public class IndexUnitItemProvider
 			addOmitColumnLabelsPropertyDescriptor(object);
 			addPaginationPropertyDescriptor(object);
 			addDefaultPaginationSizePropertyDescriptor(object);
+			addEmptyMessagePropertyDescriptor(object);
 			addNextNpagesPropertyDescriptor(object);
 			addPreviousNpagesPropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
@@ -128,6 +129,28 @@ public class IndexUnitItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Empty Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEmptyMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IndexUnit_emptyMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_emptyMessage_feature", "_UI_IndexUnit_type"),
+				 WafPackage.Literals.INDEX_UNIT__EMPTY_MESSAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -411,6 +434,7 @@ public class IndexUnitItemProvider
 		switch (notification.getFeatureID(IndexUnit.class)) {
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
+			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:

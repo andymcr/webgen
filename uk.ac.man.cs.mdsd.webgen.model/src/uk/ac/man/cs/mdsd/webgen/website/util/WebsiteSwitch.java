@@ -579,6 +579,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 			case WebsitePackage.FILTER: {
 				Filter filter = (Filter)theEObject;
 				T result = caseFilter(filter);
+				if (result == null) result = caseNamedDisplayElement(filter);
 				if (result == null) result = caseNamedElement(filter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

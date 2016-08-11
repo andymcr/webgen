@@ -4,7 +4,7 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.common.util.EList;
 
-import uk.ac.man.cs.mdsd.orm.NamedElement;
+import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +23,7 @@ import uk.ac.man.cs.mdsd.orm.NamedElement;
  * @model
  * @generated
  */
-public interface Filter extends NamedElement {
+public interface Filter extends NamedDisplayElement {
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.FilterParameter}.

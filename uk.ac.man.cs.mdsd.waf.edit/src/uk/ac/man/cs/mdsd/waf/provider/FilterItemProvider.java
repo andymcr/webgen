@@ -17,8 +17,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
-
+import uk.ac.man.cs.mdsd.orm.provider.NamedDisplayElementItemProvider;
 import uk.ac.man.cs.mdsd.waf.Filter;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -29,7 +28,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FilterItemProvider extends NamedElementItemProvider {
+public class FilterItemProvider extends NamedDisplayElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

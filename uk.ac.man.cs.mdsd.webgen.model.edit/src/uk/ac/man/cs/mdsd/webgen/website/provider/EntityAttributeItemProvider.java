@@ -54,6 +54,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			addValidationPatternPropertyDescriptor(object);
 			addInputClassPropertyDescriptor(object);
 			addPrimaryKeyPropertyDescriptor(object);
+			addContainerUniquePropertyDescriptor(object);
 			addPersistentTypePropertyDescriptor(object);
 			addOrmTypePropertyDescriptor(object);
 			addInterfaceTypePropertyDescriptor(object);
@@ -146,6 +147,28 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Container Unique feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainerUniquePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EntityAttribute_containerUnique_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityAttribute_containerUnique_feature", "_UI_EntityAttribute_type"),
+				 WebsitePackage.Literals.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -276,6 +299,7 @@ public class EntityAttributeItemProvider extends EntityFeatureItemProvider {
 			case WebsitePackage.ENTITY_ATTRIBUTE__VALIDATION_PATTERN:
 			case WebsitePackage.ENTITY_ATTRIBUTE__INPUT_CLASS:
 			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
+			case WebsitePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
 			case WebsitePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 			case WebsitePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
 			case WebsitePackage.ENTITY_ATTRIBUTE__INTERFACE_TYPE:

@@ -36,6 +36,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
@@ -55,6 +56,26 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public abstract class UnitFeatureImpl extends DisplayElementImpl implements UnitFeature {
+	/**
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String title = TITLE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -383,6 +404,27 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(String newTitle) {
+		String oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -754,6 +796,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
 				if (resolve) return getDisplayedOn();
 				return basicGetDisplayedOn();
+			case WafPackage.UNIT_FEATURE__TITLE:
+				return getTitle();
 			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
 				return getCollectionDisplayOption();
 			case WafPackage.UNIT_FEATURE__COLLECTION_ALLOW_ADD:
@@ -797,6 +841,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		switch (featureID) {
 			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
+				return;
+			case WafPackage.UNIT_FEATURE__TITLE:
+				setTitle((String)newValue);
 				return;
 			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
@@ -856,6 +903,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
 				return;
+			case WafPackage.UNIT_FEATURE__TITLE:
+				setTitle(TITLE_EDEFAULT);
+				return;
 			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
 				return;
@@ -912,6 +962,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		switch (featureID) {
 			case WafPackage.UNIT_FEATURE__DISPLAYED_ON:
 				return basicGetDisplayedOn() != null;
+			case WafPackage.UNIT_FEATURE__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WafPackage.UNIT_FEATURE__COLLECTION_DISPLAY_OPTION:
 				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
 			case WafPackage.UNIT_FEATURE__COLLECTION_ALLOW_ADD:
@@ -986,7 +1038,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (collectionDisplayOption: ");
+		result.append(" (title: ");
+		result.append(title);
+		result.append(", collectionDisplayOption: ");
 		result.append(collectionDisplayOption);
 		result.append(", collectionAllowAdd: ");
 		result.append(collectionAllowAdd);

@@ -27,6 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InterfaceFieldImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
@@ -43,6 +44,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl implements InterfaceField {
+	/**
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String title = TITLE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -311,6 +332,27 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(String newTitle) {
+		String oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INTERFACE_FIELD__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -615,6 +657,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		switch (featureID) {
 			case WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return getDisplayedOn();
+			case WebsitePackage.INTERFACE_FIELD__TITLE:
+				return getTitle();
 			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				return getCollectionDisplayOption();
 			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
@@ -652,6 +696,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		switch (featureID) {
 			case WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
+				return;
+			case WebsitePackage.INTERFACE_FIELD__TITLE:
+				setTitle((String)newValue);
 				return;
 			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
@@ -701,6 +748,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 			case WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
 				return;
+			case WebsitePackage.INTERFACE_FIELD__TITLE:
+				setTitle(TITLE_EDEFAULT);
+				return;
 			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
 				return;
@@ -748,6 +798,8 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		switch (featureID) {
 			case WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return getDisplayedOn() != null;
+			case WebsitePackage.INTERFACE_FIELD__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
 			case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
@@ -784,6 +836,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		if (baseClass == UnitField.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON: return WebsitePackage.UNIT_FIELD__DISPLAYED_ON;
+				case WebsitePackage.INTERFACE_FIELD__TITLE: return WebsitePackage.UNIT_FIELD__TITLE;
 				case WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD: return WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_ADD;
 				case WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE: return WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE;
@@ -805,6 +858,7 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		if (baseClass == UnitField.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.UNIT_FIELD__DISPLAYED_ON: return WebsitePackage.INTERFACE_FIELD__DISPLAYED_ON;
+				case WebsitePackage.UNIT_FIELD__TITLE: return WebsitePackage.INTERFACE_FIELD__TITLE;
 				case WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WebsitePackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_ADD: return WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD;
 				case WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE: return WebsitePackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
@@ -826,7 +880,9 @@ public abstract class InterfaceFieldImpl extends NamedDisplayElementImpl impleme
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (collectionDisplayOption: ");
+		result.append(" (title: ");
+		result.append(title);
+		result.append(", collectionDisplayOption: ");
 		result.append(collectionDisplayOption);
 		result.append(", collectionAllowAdd: ");
 		result.append(collectionAllowAdd);

@@ -31,6 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getValidationPattern <em>Validation Pattern</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#isPrimaryKey <em>Primary Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#isContainerUnique <em>Container Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getPersistentType <em>Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getOrmType <em>Orm Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAttributeImpl#getInterfaceType <em>Interface Type</em>}</li>
@@ -128,6 +129,26 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * @ordered
 	 */
 	protected boolean primaryKey = PRIMARY_KEY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isContainerUnique() <em>Container Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isContainerUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CONTAINER_UNIQUE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isContainerUnique() <em>Container Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isContainerUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean containerUnique = CONTAINER_UNIQUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPersistentType() <em>Persistent Type</em>}' attribute.
@@ -340,6 +361,27 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isContainerUnique() {
+		return containerUnique;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainerUnique(boolean newContainerUnique) {
+		boolean oldContainerUnique = containerUnique;
+		containerUnique = newContainerUnique;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE, oldContainerUnique, containerUnique));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPersistentType() {
 		return persistentType;
 	}
@@ -430,6 +472,8 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return getInputClass();
 			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				return isPrimaryKey();
+			case WebsitePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
+				return isContainerUnique();
 			case WebsitePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 				return getPersistentType();
 			case WebsitePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
@@ -462,6 +506,9 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return;
 			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				setPrimaryKey((Boolean)newValue);
+				return;
+			case WebsitePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
+				setContainerUnique((Boolean)newValue);
 				return;
 			case WebsitePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 				setPersistentType((String)newValue);
@@ -499,6 +546,9 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				setPrimaryKey(PRIMARY_KEY_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
+				setContainerUnique(CONTAINER_UNIQUE_EDEFAULT);
+				return;
 			case WebsitePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 				setPersistentType(PERSISTENT_TYPE_EDEFAULT);
 				return;
@@ -530,6 +580,8 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 				return INPUT_CLASS_EDEFAULT == null ? inputClass != null : !INPUT_CLASS_EDEFAULT.equals(inputClass);
 			case WebsitePackage.ENTITY_ATTRIBUTE__PRIMARY_KEY:
 				return primaryKey != PRIMARY_KEY_EDEFAULT;
+			case WebsitePackage.ENTITY_ATTRIBUTE__CONTAINER_UNIQUE:
+				return containerUnique != CONTAINER_UNIQUE_EDEFAULT;
 			case WebsitePackage.ENTITY_ATTRIBUTE__PERSISTENT_TYPE:
 				return PERSISTENT_TYPE_EDEFAULT == null ? persistentType != null : !PERSISTENT_TYPE_EDEFAULT.equals(persistentType);
 			case WebsitePackage.ENTITY_ATTRIBUTE__ORM_TYPE:
@@ -616,6 +668,8 @@ public abstract class EntityAttributeImpl extends EntityFeatureImpl implements E
 		result.append(inputClass);
 		result.append(", primaryKey: ");
 		result.append(primaryKey);
+		result.append(", containerUnique: ");
+		result.append(containerUnique);
 		result.append(", persistentType: ");
 		result.append(persistentType);
 		result.append(", ormType: ");

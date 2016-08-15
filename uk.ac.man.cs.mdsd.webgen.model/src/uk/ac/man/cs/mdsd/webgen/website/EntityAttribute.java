@@ -12,6 +12,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#isPrimaryKey <em>Primary Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#isContainerUnique <em>Container Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#getPersistentType <em>Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#getOrmType <em>Orm Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#getInterfaceType <em>Interface Type</em>}</li>
@@ -50,6 +51,32 @@ public interface EntityAttribute extends EntityFeature, Attribute {
 	 * @generated
 	 */
 	void setPrimaryKey(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Container Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Container Unique</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Container Unique</em>' attribute.
+	 * @see #setContainerUnique(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getEntityAttribute_ContainerUnique()
+	 * @model
+	 * @generated
+	 */
+	boolean isContainerUnique();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.EntityAttribute#isContainerUnique <em>Container Unique</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Container Unique</em>' attribute.
+	 * @see #isContainerUnique()
+	 * @generated
+	 */
+	void setContainerUnique(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Persistent Type</b></em>' attribute.

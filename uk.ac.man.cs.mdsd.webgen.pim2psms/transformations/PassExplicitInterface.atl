@@ -70,6 +70,27 @@ helper context Website!UnitAssociation def: associationLabel() : String
 		endif endif;
 
 
+helper context Website!UnitField def: title() : String
+	= if not self.title.oclIsUndefined() and self.title <> '' then
+			self.title
+		else
+			if self.oclIsTypeOf(Website!UnitElement) then
+				if not self.attribute.title.oclIsUndefined() and self.attribute.title <> '' then
+					self.attribute.title
+				else
+					self.name.createLabel()
+				endif
+			else if self.oclIsTypeOf(Website!UnitAssociation) then
+				if not self.association.title.oclIsUndefined() and self.association.title <> '' then
+					self.association.title
+				else
+					self.name.createLabel()
+				endif
+			else
+				self.name.createLabel()
+			endif endif
+		endif;
+
 helper context Website!Attribute def: interfaceType() : String
 	= if self.oclIsTypeOf(Website!DataTypeAttribute) then
 			if not self.interfaceType.oclIsUndefined() and self.interfaceType <> '' then
@@ -642,6 +663,7 @@ lazy rule implicitKeyActual {
 abstract rule UnitField {
 	from website : Website!UnitField
 	to waf : WAF!UnitField (
+		title <- website.title(),
 		collectionDisplayOption <- website.collectionDisplayOption,
 		collectionAllowAdd <- website.collectionAllowAdd,
 		collectionAllowRemove <- website.collectionAllowRemove,

@@ -48,6 +48,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTitlePropertyDescriptor(object);
 			addCollectionAllowAddPropertyDescriptor(object);
 			addCollectionAllowRemovePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
@@ -62,6 +63,28 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_title_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -396,6 +419,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ViewAssociation.class)) {
+			case WebsitePackage.VIEW_ASSOCIATION__TITLE:
 			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
 			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:

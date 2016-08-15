@@ -45,6 +45,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTitlePropertyDescriptor(object);
 			addCollectionAllowAddPropertyDescriptor(object);
 			addCollectionAllowRemovePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
@@ -62,6 +63,28 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			addColumnNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_title_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -421,6 +444,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EntityFeature.class)) {
+			case WebsitePackage.ENTITY_FEATURE__TITLE:
 			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
 			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:

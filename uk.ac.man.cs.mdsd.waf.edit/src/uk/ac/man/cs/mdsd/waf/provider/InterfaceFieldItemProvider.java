@@ -50,6 +50,7 @@ public class InterfaceFieldItemProvider
 
 			addDisplayLabelPropertyDescriptor(object);
 			addDisplayedOnPropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addCollectionAllowAddPropertyDescriptor(object);
 			addCollectionAllowRemovePropertyDescriptor(object);
@@ -111,6 +112,28 @@ public class InterfaceFieldItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_title_feature", "_UI_UnitField_type"),
+				 WafPackage.Literals.UNIT_FIELD__TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Collection Display Option feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -411,6 +434,7 @@ public class InterfaceFieldItemProvider
 
 		switch (notification.getFeatureID(InterfaceField.class)) {
 			case WafPackage.INTERFACE_FIELD__DISPLAY_LABEL:
+			case WafPackage.INTERFACE_FIELD__TITLE:
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
 			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE:

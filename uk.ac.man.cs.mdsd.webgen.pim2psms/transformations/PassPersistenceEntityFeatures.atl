@@ -108,7 +108,8 @@ abstract rule SingletonAttribute {
 	from website : Website!Attribute (website.cardinality <> #Many)
 	to orm : ORM!SingletonAttribute (
 		required <- website.cardinality = #Required,
-		"unique" <- website."unique"
+		"unique" <- website."unique",
+		containerUnique <- website.containerUnique
 	)
 }
 

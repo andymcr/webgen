@@ -175,6 +175,7 @@ abstract class EntityAttribute extends EntityFeature, Attribute {
 abstract class SingletonAttribute extends EntityAttribute {
 	boolean required
 	boolean ^unique
+	boolean containerUnique
 }
 
 abstract class CollectionAttribute extends EntityAttribute {

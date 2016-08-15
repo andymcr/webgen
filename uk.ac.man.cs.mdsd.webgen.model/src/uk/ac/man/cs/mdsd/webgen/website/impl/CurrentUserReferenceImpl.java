@@ -74,12 +74,18 @@ public class CurrentUserReferenceImpl extends EObjectImpl implements CurrentUser
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isSetUserModel() {
 		// TODO: implement this method to return whether the 'User Model' reference is set
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+//		throw new UnsupportedOperationException();
+		final WebGenModel model = getModel(this);
+		if (model.getWebsiteProperties().getAuthentication() != null) {
+			return model.getWebsiteProperties().getAuthentication().getUser() != null;
+		}
+
+		return false;
 	}
 
 	/*

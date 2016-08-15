@@ -27,6 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFieldImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFieldImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
@@ -37,6 +38,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class UnitFieldImpl extends EObjectImpl implements UnitField {
+	/**
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String title = TITLE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -202,6 +223,27 @@ public abstract class UnitFieldImpl extends EObjectImpl implements UnitField {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(String newTitle) {
+		String oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_FIELD__TITLE, oldTitle, title));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CollectionDisplayOptions getCollectionDisplayOption() {
 		return collectionDisplayOption;
 	}
@@ -356,6 +398,8 @@ public abstract class UnitFieldImpl extends EObjectImpl implements UnitField {
 		switch (featureID) {
 			case WebsitePackage.UNIT_FIELD__DISPLAYED_ON:
 				return getDisplayedOn();
+			case WebsitePackage.UNIT_FIELD__TITLE:
+				return getTitle();
 			case WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:
 				return getCollectionDisplayOption();
 			case WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_ADD:
@@ -380,6 +424,9 @@ public abstract class UnitFieldImpl extends EObjectImpl implements UnitField {
 		switch (featureID) {
 			case WebsitePackage.UNIT_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
+				return;
+			case WebsitePackage.UNIT_FIELD__TITLE:
+				setTitle((String)newValue);
 				return;
 			case WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
@@ -411,6 +458,9 @@ public abstract class UnitFieldImpl extends EObjectImpl implements UnitField {
 			case WebsitePackage.UNIT_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
 				return;
+			case WebsitePackage.UNIT_FIELD__TITLE:
+				setTitle(TITLE_EDEFAULT);
+				return;
 			case WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
 				return;
@@ -440,6 +490,8 @@ public abstract class UnitFieldImpl extends EObjectImpl implements UnitField {
 		switch (featureID) {
 			case WebsitePackage.UNIT_FIELD__DISPLAYED_ON:
 				return getDisplayedOn() != null;
+			case WebsitePackage.UNIT_FIELD__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:
 				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
 			case WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_ADD:
@@ -464,7 +516,9 @@ public abstract class UnitFieldImpl extends EObjectImpl implements UnitField {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (collectionDisplayOption: ");
+		result.append(" (title: ");
+		result.append(title);
+		result.append(", collectionDisplayOption: ");
 		result.append(collectionDisplayOption);
 		result.append(", collectionAllowAdd: ");
 		result.append(collectionAllowAdd);

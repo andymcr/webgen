@@ -46,6 +46,7 @@ public class SingletonAttributeItemProvider
 
 			addRequiredPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
+			addContainerUniquePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -95,6 +96,28 @@ public class SingletonAttributeItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Container Unique feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainerUniquePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SingletonAttribute_containerUnique_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonAttribute_containerUnique_feature", "_UI_SingletonAttribute_type"),
+				 OrmPackage.Literals.SINGLETON_ATTRIBUTE__CONTAINER_UNIQUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,6 +145,7 @@ public class SingletonAttributeItemProvider
 		switch (notification.getFeatureID(SingletonAttribute.class)) {
 			case OrmPackage.SINGLETON_ATTRIBUTE__REQUIRED:
 			case OrmPackage.SINGLETON_ATTRIBUTE__UNIQUE:
+			case OrmPackage.SINGLETON_ATTRIBUTE__CONTAINER_UNIQUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

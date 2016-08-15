@@ -324,8 +324,7 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		CollectionDisplayOptions labelValue = ((UnitFeature)object).getCollectionDisplayOption();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((UnitFeature)object).getTitle();
 		return label == null || label.length() == 0 ?
 			getString("_UI_UnitFeature_type") :
 			getString("_UI_UnitFeature_type") + " " + label;

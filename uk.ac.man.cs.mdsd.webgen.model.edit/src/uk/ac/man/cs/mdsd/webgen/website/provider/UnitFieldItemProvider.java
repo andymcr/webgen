@@ -60,6 +60,7 @@ public class UnitFieldItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTitlePropertyDescriptor(object);
 			addCollectionDisplayOptionPropertyDescriptor(object);
 			addCollectionAllowAddPropertyDescriptor(object);
 			addCollectionAllowRemovePropertyDescriptor(object);
@@ -67,6 +68,28 @@ public class UnitFieldItemProvider
 			addDateFormatPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitField_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitField_title_feature", "_UI_UnitField_type"),
+				 WebsitePackage.Literals.UNIT_FIELD__TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -187,8 +210,7 @@ public class UnitFieldItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		CollectionDisplayOptions labelValue = ((UnitField)object).getCollectionDisplayOption();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((UnitField)object).getTitle();
 		return label == null || label.length() == 0 ?
 			getString("_UI_UnitField_type") :
 			getString("_UI_UnitField_type") + " " + label;
@@ -207,6 +229,7 @@ public class UnitFieldItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UnitField.class)) {
+			case WebsitePackage.UNIT_FIELD__TITLE:
 			case WebsitePackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION:
 			case WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_ADD:
 			case WebsitePackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE:

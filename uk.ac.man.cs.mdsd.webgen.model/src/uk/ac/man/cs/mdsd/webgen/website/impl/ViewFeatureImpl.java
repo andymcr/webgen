@@ -28,6 +28,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
@@ -42,6 +43,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature {
+	/**
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String title = TITLE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #isCollectionAllowAdd() <em>Collection Allow Add</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -209,6 +230,27 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.VIEW_FEATURE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(String newTitle) {
+		String oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -463,6 +505,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_FEATURE__TITLE:
+				return getTitle();
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
 				return isCollectionAllowAdd();
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
@@ -494,6 +538,9 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_FEATURE__TITLE:
+				setTitle((String)newValue);
+				return;
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
 				setCollectionAllowAdd((Boolean)newValue);
 				return;
@@ -534,6 +581,9 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_FEATURE__TITLE:
+				setTitle(TITLE_EDEFAULT);
+				return;
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
 				setCollectionAllowAdd(COLLECTION_ALLOW_ADD_EDEFAULT);
 				return;
@@ -573,6 +623,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.VIEW_FEATURE__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
 				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
@@ -605,7 +657,9 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (collectionAllowAdd: ");
+		result.append(" (title: ");
+		result.append(title);
+		result.append(", collectionAllowAdd: ");
 		result.append(collectionAllowAdd);
 		result.append(", collectionAllowRemove: ");
 		result.append(collectionAllowRemove);

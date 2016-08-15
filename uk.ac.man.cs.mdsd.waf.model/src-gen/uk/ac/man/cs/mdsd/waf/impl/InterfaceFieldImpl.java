@@ -33,6 +33,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getDisplayedOn <em>Displayed On</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#getCollectionDisplayOption <em>Collection Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.InterfaceFieldImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
@@ -69,6 +70,26 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 	 * @ordered
 	 */
 	protected String displayLabel = DISPLAY_LABEL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String title = TITLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCollectionDisplayOption() <em>Collection Display Option</em>}' attribute.
@@ -379,6 +400,27 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__DISPLAYED_ON, newDisplayedOn, newDisplayedOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(String newTitle) {
+		String oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INTERFACE_FIELD__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -731,6 +773,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				if (resolve) return getDisplayedOn();
 				return basicGetDisplayedOn();
+			case WafPackage.INTERFACE_FIELD__TITLE:
+				return getTitle();
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				return getCollectionDisplayOption();
 			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
@@ -773,6 +817,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return;
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)newValue);
+				return;
+			case WafPackage.INTERFACE_FIELD__TITLE:
+				setTitle((String)newValue);
 				return;
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption((CollectionDisplayOptions)newValue);
@@ -828,6 +875,9 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				setDisplayedOn((DynamicUnit)null);
 				return;
+			case WafPackage.INTERFACE_FIELD__TITLE:
+				setTitle(TITLE_EDEFAULT);
+				return;
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				setCollectionDisplayOption(COLLECTION_DISPLAY_OPTION_EDEFAULT);
 				return;
@@ -880,6 +930,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 				return DISPLAY_LABEL_EDEFAULT == null ? displayLabel != null : !DISPLAY_LABEL_EDEFAULT.equals(displayLabel);
 			case WafPackage.INTERFACE_FIELD__DISPLAYED_ON:
 				return basicGetDisplayedOn() != null;
+			case WafPackage.INTERFACE_FIELD__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION:
 				return collectionDisplayOption != COLLECTION_DISPLAY_OPTION_EDEFAULT;
 			case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD:
@@ -924,6 +976,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		if (baseClass == UnitField.class) {
 			switch (derivedFeatureID) {
 				case WafPackage.INTERFACE_FIELD__DISPLAYED_ON: return WafPackage.UNIT_FIELD__DISPLAYED_ON;
+				case WafPackage.INTERFACE_FIELD__TITLE: return WafPackage.UNIT_FIELD__TITLE;
 				case WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD: return WafPackage.UNIT_FIELD__COLLECTION_ALLOW_ADD;
 				case WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE: return WafPackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE;
@@ -951,6 +1004,7 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		if (baseClass == UnitField.class) {
 			switch (baseFeatureID) {
 				case WafPackage.UNIT_FIELD__DISPLAYED_ON: return WafPackage.INTERFACE_FIELD__DISPLAYED_ON;
+				case WafPackage.UNIT_FIELD__TITLE: return WafPackage.INTERFACE_FIELD__TITLE;
 				case WafPackage.UNIT_FIELD__COLLECTION_DISPLAY_OPTION: return WafPackage.INTERFACE_FIELD__COLLECTION_DISPLAY_OPTION;
 				case WafPackage.UNIT_FIELD__COLLECTION_ALLOW_ADD: return WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_ADD;
 				case WafPackage.UNIT_FIELD__COLLECTION_ALLOW_REMOVE: return WafPackage.INTERFACE_FIELD__COLLECTION_ALLOW_REMOVE;
@@ -974,6 +1028,8 @@ public abstract class InterfaceFieldImpl extends NamedElementImpl implements Int
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (displayLabel: ");
 		result.append(displayLabel);
+		result.append(", title: ");
+		result.append(title);
 		result.append(", collectionDisplayOption: ");
 		result.append(collectionDisplayOption);
 		result.append(", collectionAllowAdd: ");

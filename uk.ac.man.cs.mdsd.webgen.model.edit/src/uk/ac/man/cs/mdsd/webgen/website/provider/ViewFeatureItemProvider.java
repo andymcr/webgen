@@ -59,6 +59,7 @@ public class ViewFeatureItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTitlePropertyDescriptor(object);
 			addCollectionAllowAddPropertyDescriptor(object);
 			addCollectionAllowRemovePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
@@ -69,6 +70,28 @@ public class ViewFeatureItemProvider
 			addFooterClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_title_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__TITLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -255,8 +278,10 @@ public class ViewFeatureItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		ViewFeature viewFeature = (ViewFeature)object;
-		return getString("_UI_ViewFeature_type") + " " + viewFeature.isCollectionAllowAdd();
+		String label = ((ViewFeature)object).getTitle();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ViewFeature_type") :
+			getString("_UI_ViewFeature_type") + " " + label;
 	}
 	
 
@@ -272,6 +297,7 @@ public class ViewFeatureItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ViewFeature.class)) {
+			case WebsitePackage.VIEW_FEATURE__TITLE:
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_ADD:
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:

@@ -23,6 +23,7 @@ import uk.ac.man.cs.mdsd.orm.Label
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
+import uk.ac.man.cs.mdsd.orm.SingletonImage
 import uk.ac.man.cs.mdsd.orm.SingletonLocation
 import uk.ac.man.cs.mdsd.rest.API
 
@@ -465,9 +466,13 @@ class ActionUnit extends ControlUnit {
 
 abstract class ImageUnit extends DynamicUnit {
 	refers Selection defaultSelection
+	refers SingletonImage[1] imageProperty
 }
 
 class SliderUnit extends ImageUnit {
+}
+
+class GridUnit extends ImageUnit {
 }
 
 interface AuthenticationUnit {

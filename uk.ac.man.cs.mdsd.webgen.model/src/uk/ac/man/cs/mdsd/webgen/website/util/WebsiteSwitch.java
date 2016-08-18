@@ -928,6 +928,17 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.GRID_UNIT: {
+				GridUnit gridUnit = (GridUnit)theEObject;
+				T result = caseGridUnit(gridUnit);
+				if (result == null) result = caseImageUnit(gridUnit);
+				if (result == null) result = caseDynamicUnit(gridUnit);
+				if (result == null) result = caseContentUnit(gridUnit);
+				if (result == null) result = caseNamedDisplayElement(gridUnit);
+				if (result == null) result = caseNamedElement(gridUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.AUTHENTICATION_UNIT: {
 				AuthenticationUnit authenticationUnit = (AuthenticationUnit)theEObject;
 				T result = caseAuthenticationUnit(authenticationUnit);
@@ -2477,6 +2488,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSliderUnit(SliderUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Grid Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Grid Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGridUnit(GridUnit object) {
 		return null;
 	}
 

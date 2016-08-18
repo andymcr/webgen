@@ -602,6 +602,15 @@ public interface WebsiteFactory extends EFactory {
 	SliderUnit createSliderUnit();
 
 	/**
+	 * Returns a new object of class '<em>Grid Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Grid Unit</em>'.
+	 * @generated
+	 */
+	GridUnit createGridUnit();
+
+	/**
 	 * Returns a new object of class '<em>Registration Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

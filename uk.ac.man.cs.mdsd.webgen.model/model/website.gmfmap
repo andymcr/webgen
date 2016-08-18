@@ -2426,8 +2426,29 @@
               href="website.gmfgraph#InterfaceUnit"/>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.6/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="website.ecore#//UnitContainer/units"/>
+        <ownedChild>
+          <domainMetaElement
+              href="website.ecore#//GridUnit"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="website.gmfgraph#InterfaceUnitNameLabel"/>
+            <features
+                href="website.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="website.gmftool#//@palette/@tools.2/@tools.9"/>
+          <diagramNode
+              href="website.gmfgraph#InterfaceUnit"/>
+        </ownedChild>
+      </children>
       <compartments
-          children="//@nodes.6/@ownedChild/@children.4 //@nodes.6/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.3 //@nodes.6/@ownedChild/@children.8 //@nodes.6/@ownedChild/@children.6 //@nodes.6/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.7 //@nodes.6/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.5 //@nodes.6/@ownedChild/@children.9">
+          children="//@nodes.6/@ownedChild/@children.4 //@nodes.6/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.3 //@nodes.6/@ownedChild/@children.8 //@nodes.6/@ownedChild/@children.6 //@nodes.6/@ownedChild/@children.1 //@nodes.6/@ownedChild/@children.7 //@nodes.6/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.5 //@nodes.6/@ownedChild/@children.9 //@nodes.6/@ownedChild/@children.10">
         <compartment
             href="website.gmfgraph#InterfaceUnitsCompartment"/>
       </compartments>

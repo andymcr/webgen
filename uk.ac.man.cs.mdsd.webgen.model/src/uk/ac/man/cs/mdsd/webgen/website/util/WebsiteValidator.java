@@ -284,6 +284,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateImageUnit((ImageUnit)value, diagnostics, context);
 			case WebsitePackage.SLIDER_UNIT:
 				return validateSliderUnit((SliderUnit)value, diagnostics, context);
+			case WebsitePackage.GRID_UNIT:
+				return validateGridUnit((GridUnit)value, diagnostics, context);
 			case WebsitePackage.AUTHENTICATION_UNIT:
 				return validateAuthenticationUnit((AuthenticationUnit)value, diagnostics, context);
 			case WebsitePackage.REGISTRATION_UNIT:
@@ -2511,6 +2513,26 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sliderUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(sliderUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(sliderUnit, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGridUnit(GridUnit gridUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(gridUnit, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(gridUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(gridUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(gridUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(gridUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(gridUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(gridUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(gridUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(gridUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(gridUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(gridUnit, diagnostics, context);
 		return result;
 	}
 

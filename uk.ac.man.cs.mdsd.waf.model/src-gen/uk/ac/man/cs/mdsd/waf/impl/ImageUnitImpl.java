@@ -9,6 +9,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.orm.SingletonImage;
+
 import uk.ac.man.cs.mdsd.waf.ImageUnit;
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -22,6 +24,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getImageProperty <em>Image Property</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,6 +39,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected Selection defaultSelection;
+
+	/**
+	 * The cached value of the '{@link #getImageProperty() <em>Image Property</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImageProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected SingletonImage imageProperty;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,12 +112,53 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SingletonImage getImageProperty() {
+		if (imageProperty != null && imageProperty.eIsProxy()) {
+			InternalEObject oldImageProperty = (InternalEObject)imageProperty;
+			imageProperty = (SingletonImage)eResolveProxy(oldImageProperty);
+			if (imageProperty != oldImageProperty) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.IMAGE_UNIT__IMAGE_PROPERTY, oldImageProperty, imageProperty));
+			}
+		}
+		return imageProperty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SingletonImage basicGetImageProperty() {
+		return imageProperty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImageProperty(SingletonImage newImageProperty) {
+		SingletonImage oldImageProperty = imageProperty;
+		imageProperty = newImageProperty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__IMAGE_PROPERTY, oldImageProperty, imageProperty));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case WafPackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				if (resolve) return getDefaultSelection();
 				return basicGetDefaultSelection();
+			case WafPackage.IMAGE_UNIT__IMAGE_PROPERTY:
+				if (resolve) return getImageProperty();
+				return basicGetImageProperty();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,6 +173,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		switch (featureID) {
 			case WafPackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)newValue);
+				return;
+			case WafPackage.IMAGE_UNIT__IMAGE_PROPERTY:
+				setImageProperty((SingletonImage)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,6 +192,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)null);
 				return;
+			case WafPackage.IMAGE_UNIT__IMAGE_PROPERTY:
+				setImageProperty((SingletonImage)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,6 +209,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		switch (featureID) {
 			case WafPackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				return defaultSelection != null;
+			case WafPackage.IMAGE_UNIT__IMAGE_PROPERTY:
+				return imageProperty != null;
 		}
 		return super.eIsSet(featureID);
 	}

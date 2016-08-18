@@ -2,6 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
+import uk.ac.man.cs.mdsd.orm.SingletonImage;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,7 @@ package uk.ac.man.cs.mdsd.waf;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getDefaultSelection <em>Default Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageProperty <em>Image Property</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit()
@@ -45,5 +47,31 @@ public interface ImageUnit extends DynamicUnit {
 	 * @generated
 	 */
 	void setDefaultSelection(Selection value);
+
+	/**
+	 * Returns the value of the '<em><b>Image Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Image Property</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Image Property</em>' reference.
+	 * @see #setImageProperty(SingletonImage)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getImageUnit_ImageProperty()
+	 * @model required="true"
+	 * @generated
+	 */
+	SingletonImage getImageProperty();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageProperty <em>Image Property</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Image Property</em>' reference.
+	 * @see #getImageProperty()
+	 * @generated
+	 */
+	void setImageProperty(SingletonImage value);
 
 } // ImageUnit

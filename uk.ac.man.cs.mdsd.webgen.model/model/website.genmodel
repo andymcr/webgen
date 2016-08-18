@@ -726,7 +726,10 @@
       <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//SliderUnit/contentClass"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//GridUnit"/>
+    <genClasses ecoreClass="website.ecore#//GridUnit">
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//GridUnit/styleClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//GridUnit/contentClass"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//AuthenticationUnit"/>
     <genClasses ecoreClass="website.ecore#//RegistrationUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//RegistrationUnit/styleClass"/>

@@ -4976,6 +4976,24 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getGridUnit_StyleClass() {
+		return (EAttribute)gridUnitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGridUnit_ContentClass() {
+		return (EAttribute)gridUnitEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAuthenticationUnit() {
 		return authenticationUnitEClass;
 	}
@@ -6300,6 +6318,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(sliderUnitEClass, SLIDER_UNIT__CONTENT_CLASS);
 
 		gridUnitEClass = createEClass(GRID_UNIT);
+		createEAttribute(gridUnitEClass, GRID_UNIT__STYLE_CLASS);
+		createEAttribute(gridUnitEClass, GRID_UNIT__CONTENT_CLASS);
 
 		authenticationUnitEClass = createEClass(AUTHENTICATION_UNIT);
 
@@ -7077,6 +7097,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getSliderUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "slider_content", 0, 1, SliderUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(gridUnitEClass, GridUnit.class, "GridUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGridUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,gallery_unit", 0, 1, GridUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getGridUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "gallery_content", 0, 1, GridUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(authenticationUnitEClass, AuthenticationUnit.class, "AuthenticationUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

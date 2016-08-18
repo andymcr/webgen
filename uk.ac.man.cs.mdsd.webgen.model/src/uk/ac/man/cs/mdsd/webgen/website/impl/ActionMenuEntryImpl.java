@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
-import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.website.Query;

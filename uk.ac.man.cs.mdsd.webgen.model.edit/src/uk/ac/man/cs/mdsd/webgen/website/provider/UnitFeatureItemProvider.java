@@ -18,7 +18,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 
-import uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.webgen.website.UnitFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;

@@ -7,11 +7,9 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.ImageAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ImageUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.UnitFeature;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**

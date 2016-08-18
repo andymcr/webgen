@@ -14445,13 +14445,31 @@ public interface WebsitePackage extends EPackage {
 	int GRID_UNIT__TRANSITION_TIME = IMAGE_UNIT__TRANSITION_TIME;
 
 	/**
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRID_UNIT__STYLE_CLASS = IMAGE_UNIT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRID_UNIT__CONTENT_CLASS = IMAGE_UNIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Grid Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 0;
+	int GRID_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -20587,6 +20605,28 @@ public interface WebsitePackage extends EPackage {
 	EClass getGridUnit();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.GridUnit#getStyleClass <em>Style Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Style Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.GridUnit#getStyleClass()
+	 * @see #getGridUnit()
+	 * @generated
+	 */
+	EAttribute getGridUnit_StyleClass();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.GridUnit#getContentClass <em>Content Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content Class</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.GridUnit#getContentClass()
+	 * @see #getGridUnit()
+	 * @generated
+	 */
+	EAttribute getGridUnit_ContentClass();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationUnit <em>Authentication Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -25114,6 +25154,22 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass GRID_UNIT = eINSTANCE.getGridUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Style Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GRID_UNIT__STYLE_CLASS = eINSTANCE.getGridUnit_StyleClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Content Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GRID_UNIT__CONTENT_CLASS = eINSTANCE.getGridUnit_ContentClass();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationUnit <em>Authentication Unit</em>}' class.

@@ -1123,7 +1123,13 @@ rule ActionUnit {
 abstract rule ImageUnit {
 	from website : Website!ImageUnit
 	to waf : WAF!ImageUnit (
-		defaultSelection <- website.defaultSelection
+		defaultSelection <- website.defaultSelection,
+		imageProperty <-
+			if website.imageProperty.oclIsUndefined() then
+				website.imageProperty
+			else
+				website.imageProperty.findOrmFeature()
+			endif
 	)
 }
 
@@ -1131,6 +1137,13 @@ abstract rule ImageUnit {
 rule SliderUnit {
 	from website : Website!SliderUnit
 	to waf : WAF!SliderUnit (
+	)
+}
+
+-- @extends ImageUnit
+rule GridUnit {
+	from website : Website!GridUnit
+	to waf : WAF!GridUnit (
 	)
 }
 

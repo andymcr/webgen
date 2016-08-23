@@ -54,6 +54,7 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			addDisplayLabelPropertyDescriptor(object);
 			addRequiredPropertyDescriptor(object);
 			addForcedValuePropertyDescriptor(object);
+			addNullDisplayValuePropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -149,6 +150,28 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 				 false,
 				 null,
 				 getString("_UI_BusinessPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Null Display Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNullDisplayValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_nullDisplayValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_nullDisplayValue_feature", "_UI_UnitFeature_type"),
+				 WebsitePackage.Literals.UNIT_FEATURE__NULL_DISPLAY_VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -345,6 +368,7 @@ public class UnitFeatureItemProvider extends UnitFieldItemProvider {
 			case WebsitePackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WebsitePackage.UNIT_FEATURE__DISPLAY_LABEL:
 			case WebsitePackage.UNIT_FEATURE__REQUIRED:
+			case WebsitePackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 			case WebsitePackage.UNIT_FEATURE__FOOTER:
 			case WebsitePackage.UNIT_FEATURE__AUTOFOCUS:
 			case WebsitePackage.UNIT_FEATURE__HEADER_CLASS:

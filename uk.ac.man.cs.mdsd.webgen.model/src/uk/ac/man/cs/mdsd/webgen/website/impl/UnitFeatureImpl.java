@@ -36,6 +36,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#isRequired <em>Required</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#getForcedValue <em>Forced Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#isAutofocus <em>Autofocus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitFeatureImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -126,6 +127,26 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 	 * @ordered
 	 */
 	protected Expression forcedValue;
+
+	/**
+	 * The default value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NULL_DISPLAY_VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nullDisplayValue = NULL_DISPLAY_VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFooter() <em>Footer</em>}' attribute.
@@ -389,6 +410,27 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getNullDisplayValue() {
+		return nullDisplayValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNullDisplayValue(String newNullDisplayValue) {
+		String oldNullDisplayValue = nullDisplayValue;
+		nullDisplayValue = newNullDisplayValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_FEATURE__NULL_DISPLAY_VALUE, oldNullDisplayValue, nullDisplayValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getFooter() {
 		return footer;
 	}
@@ -559,6 +601,8 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 				return isRequired();
 			case WebsitePackage.UNIT_FEATURE__FORCED_VALUE:
 				return getForcedValue();
+			case WebsitePackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
+				return getNullDisplayValue();
 			case WebsitePackage.UNIT_FEATURE__FOOTER:
 				return getFooter();
 			case WebsitePackage.UNIT_FEATURE__AUTOFOCUS:
@@ -599,6 +643,9 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 				return;
 			case WebsitePackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)newValue);
+				return;
+			case WebsitePackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
+				setNullDisplayValue((String)newValue);
 				return;
 			case WebsitePackage.UNIT_FEATURE__FOOTER:
 				setFooter((String)newValue);
@@ -645,6 +692,9 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 			case WebsitePackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)null);
 				return;
+			case WebsitePackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
+				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
+				return;
 			case WebsitePackage.UNIT_FEATURE__FOOTER:
 				setFooter(FOOTER_EDEFAULT);
 				return;
@@ -685,6 +735,8 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 				return required != REQUIRED_EDEFAULT;
 			case WebsitePackage.UNIT_FEATURE__FORCED_VALUE:
 				return forcedValue != null;
+			case WebsitePackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
+				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
 			case WebsitePackage.UNIT_FEATURE__FOOTER:
 				return FOOTER_EDEFAULT == null ? footer != null : !FOOTER_EDEFAULT.equals(footer);
 			case WebsitePackage.UNIT_FEATURE__AUTOFOCUS:
@@ -749,6 +801,8 @@ public abstract class UnitFeatureImpl extends UnitFieldImpl implements UnitFeatu
 		result.append(displayLabel);
 		result.append(", required: ");
 		result.append(required);
+		result.append(", nullDisplayValue: ");
+		result.append(nullDisplayValue);
 		result.append(", footer: ");
 		result.append(footer);
 		result.append(", autofocus: ");

@@ -31,6 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewFeatureImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
@@ -102,6 +103,26 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 	 * @ordered
 	 */
 	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NULL_DISPLAY_VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nullDisplayValue = NULL_DISPLAY_VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
@@ -293,6 +314,27 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 		collectionAllowRemove = newCollectionAllowRemove;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getNullDisplayValue() {
+		return nullDisplayValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNullDisplayValue(String newNullDisplayValue) {
+		String oldNullDisplayValue = nullDisplayValue;
+		nullDisplayValue = newNullDisplayValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE, oldNullDisplayValue, nullDisplayValue));
 	}
 
 	/**
@@ -511,6 +553,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return isCollectionAllowAdd();
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return isCollectionAllowRemove();
+			case WebsitePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
+				return getNullDisplayValue();
 			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				return isEncodeUriKey();
 			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
@@ -546,6 +590,9 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return;
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove((Boolean)newValue);
+				return;
+			case WebsitePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
+				setNullDisplayValue((String)newValue);
 				return;
 			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey((Boolean)newValue);
@@ -590,6 +637,9 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
 				return;
+			case WebsitePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
+				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
+				return;
 			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
 				return;
@@ -629,6 +679,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
 			case WebsitePackage.VIEW_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
+			case WebsitePackage.VIEW_FEATURE__NULL_DISPLAY_VALUE:
+				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
 			case WebsitePackage.VIEW_FEATURE__ENCODE_URI_KEY:
 				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
 			case WebsitePackage.VIEW_FEATURE__SERIALIZATION_GROUPS:
@@ -663,6 +715,8 @@ public abstract class ViewFeatureImpl extends EObjectImpl implements ViewFeature
 		result.append(collectionAllowAdd);
 		result.append(", collectionAllowRemove: ");
 		result.append(collectionAllowRemove);
+		result.append(", nullDisplayValue: ");
+		result.append(nullDisplayValue);
 		result.append(", encodeUriKey: ");
 		result.append(encodeUriKey);
 		result.append(", serializationGroups: ");

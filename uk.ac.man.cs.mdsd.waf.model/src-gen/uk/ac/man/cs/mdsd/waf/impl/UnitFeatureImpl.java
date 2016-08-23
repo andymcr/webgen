@@ -44,6 +44,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getDateFormat <em>Date Format</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getForcedValue <em>Forced Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#isAutofocus <em>Autofocus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitFeatureImpl#getFooter <em>Footer</em>}</li>
@@ -195,6 +196,26 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 	 * @ordered
 	 */
 	protected Expression forcedValue;
+
+	/**
+	 * The default value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NULL_DISPLAY_VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nullDisplayValue = NULL_DISPLAY_VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
@@ -592,6 +613,27 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getNullDisplayValue() {
+		return nullDisplayValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNullDisplayValue(String newNullDisplayValue) {
+		String oldNullDisplayValue = nullDisplayValue;
+		nullDisplayValue = newNullDisplayValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE, oldNullDisplayValue, nullDisplayValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isOnlyDisplayWhenNotEmpty() {
 		return onlyDisplayWhenNotEmpty;
 	}
@@ -812,6 +854,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return getActions();
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				return getForcedValue();
+			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
+				return getNullDisplayValue();
 			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return isOnlyDisplayWhenNotEmpty();
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
@@ -866,6 +910,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return;
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)newValue);
+				return;
+			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
+				setNullDisplayValue((String)newValue);
 				return;
 			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
@@ -927,6 +974,9 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				setForcedValue((Expression)null);
 				return;
+			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
+				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
+				return;
 			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
 				return;
@@ -978,6 +1028,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 				return actions != null && !actions.isEmpty();
 			case WafPackage.UNIT_FEATURE__FORCED_VALUE:
 				return forcedValue != null;
+			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
+				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
 			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
@@ -1050,6 +1102,8 @@ public abstract class UnitFeatureImpl extends DisplayElementImpl implements Unit
 		result.append(maximumDisplaySize);
 		result.append(", dateFormat: ");
 		result.append(dateFormat);
+		result.append(", nullDisplayValue: ");
+		result.append(nullDisplayValue);
 		result.append(", onlyDisplayWhenNotEmpty: ");
 		result.append(onlyDisplayWhenNotEmpty);
 		result.append(", autofocus: ");

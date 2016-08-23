@@ -1471,13 +1471,22 @@ public interface WebsitePackage extends EPackage {
 	int FEATURE__COLLECTION_ALLOW_REMOVE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__NULL_DISPLAY_VALUE = 3;
+
+	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__ENCODE_URI_KEY = 3;
+	int FEATURE__ENCODE_URI_KEY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
@@ -1486,7 +1495,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__SERIALIZATION_GROUPS = 4;
+	int FEATURE__SERIALIZATION_GROUPS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
@@ -1495,7 +1504,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__SERIALIZATION_EXPOSE = 5;
+	int FEATURE__SERIALIZATION_EXPOSE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -1504,7 +1513,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__HEADER_CLASS = 6;
+	int FEATURE__HEADER_CLASS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -1513,7 +1522,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DISPLAY_CLASS = 7;
+	int FEATURE__DISPLAY_CLASS = 8;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -1522,7 +1531,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__FOOTER_CLASS = 8;
+	int FEATURE__FOOTER_CLASS = 9;
 
 	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
@@ -1531,7 +1540,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = 9;
+	int FEATURE_FEATURE_COUNT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1559,6 +1568,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__NULL_DISPLAY_VALUE = FEATURE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -1955,6 +1973,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__NULL_DISPLAY_VALUE = FEATURE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -2830,13 +2857,22 @@ public interface WebsitePackage extends EPackage {
 	int ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_FEATURE__NULL_DISPLAY_VALUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ENCODE_URI_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int ENTITY_FEATURE__ENCODE_URI_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
@@ -2845,7 +2881,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SERIALIZATION_GROUPS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int ENTITY_FEATURE__SERIALIZATION_GROUPS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
@@ -2854,7 +2890,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SERIALIZATION_EXPOSE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int ENTITY_FEATURE__SERIALIZATION_EXPOSE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -2863,7 +2899,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int ENTITY_FEATURE__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -2872,7 +2908,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int ENTITY_FEATURE__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -2881,7 +2917,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int ENTITY_FEATURE__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -2890,7 +2926,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int ENTITY_FEATURE__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -2899,7 +2935,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int ENTITY_FEATURE__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Unique</b></em>' attribute.
@@ -2908,7 +2944,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__UNIQUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int ENTITY_FEATURE__UNIQUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
@@ -2917,7 +2953,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__ORDERED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int ENTITY_FEATURE__ORDERED = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Boolean Is Has Choice</b></em>' attribute.
@@ -2926,7 +2962,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int ENTITY_FEATURE__BOOLEAN_IS_HAS_CHOICE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Singleton Name</b></em>' attribute.
@@ -2935,7 +2971,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int ENTITY_FEATURE__SINGLETON_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Pluralised Name</b></em>' attribute.
@@ -2944,7 +2980,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int ENTITY_FEATURE__PLURALISED_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Column Name</b></em>' attribute.
@@ -2953,7 +2989,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE__COLUMN_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int ENTITY_FEATURE__COLUMN_NAME = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The number of structural features of the '<em>Entity Feature</em>' class.
@@ -2962,7 +2998,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
+	int ENTITY_FEATURE_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3008,6 +3044,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ATTRIBUTE__NULL_DISPLAY_VALUE = ENTITY_FEATURE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -3269,6 +3314,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_TYPE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TYPE_ATTRIBUTE__NULL_DISPLAY_VALUE = ENTITY_ATTRIBUTE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -3568,6 +3622,15 @@ public interface WebsitePackage extends EPackage {
 	int DATE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ATTRIBUTE__NULL_DISPLAY_VALUE = ENTITY_ATTRIBUTE__NULL_DISPLAY_VALUE;
+
+	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3847,6 +3910,15 @@ public interface WebsitePackage extends EPackage {
 	int URL_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_ATTRIBUTE__NULL_DISPLAY_VALUE = ENTITY_ATTRIBUTE__NULL_DISPLAY_VALUE;
+
+	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4115,6 +4187,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ATTRIBUTE__NULL_DISPLAY_VALUE = ENTITY_ATTRIBUTE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -4468,6 +4549,15 @@ public interface WebsitePackage extends EPackage {
 	int FILE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_ATTRIBUTE__NULL_DISPLAY_VALUE = RESOURCE_ATTRIBUTE__NULL_DISPLAY_VALUE;
+
+	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4772,6 +4862,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = RESOURCE_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_ATTRIBUTE__NULL_DISPLAY_VALUE = RESOURCE_ATTRIBUTE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -5080,6 +5179,15 @@ public interface WebsitePackage extends EPackage {
 	int LOCATION_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENTITY_ATTRIBUTE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION_ATTRIBUTE__NULL_DISPLAY_VALUE = ENTITY_ATTRIBUTE__NULL_DISPLAY_VALUE;
+
+	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5339,6 +5447,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE = ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_ASSOCIATION__NULL_DISPLAY_VALUE = ENTITY_FEATURE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -5681,6 +5798,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITHOUT_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITHOUT_CONTAINMENT__NULL_DISPLAY_VALUE = ENTITY_ASSOCIATION__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -6041,6 +6167,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_WITH_CONTAINMENT__COLLECTION_ALLOW_REMOVE = ENTITY_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_WITH_CONTAINMENT__NULL_DISPLAY_VALUE = ENTITY_ASSOCIATION__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -6601,6 +6736,15 @@ public interface WebsitePackage extends EPackage {
 	int VIEW_FEATURE__COLLECTION_ALLOW_REMOVE = FEATURE__COLLECTION_ALLOW_REMOVE;
 
 	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_FEATURE__NULL_DISPLAY_VALUE = FEATURE__NULL_DISPLAY_VALUE;
+
+	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6698,6 +6842,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE = VIEW_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_FEATURE__NULL_DISPLAY_VALUE = VIEW_FEATURE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -6824,6 +6977,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENCAPSULATED_ATTRIBUTE__COLLECTION_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ATTRIBUTE__NULL_DISPLAY_VALUE = ENCAPSULATED_FEATURE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -7013,6 +7175,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int ENCAPSULATED_ASSOCIATION__COLLECTION_ALLOW_REMOVE = ENCAPSULATED_FEATURE__COLLECTION_ALLOW_REMOVE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCAPSULATED_ASSOCIATION__NULL_DISPLAY_VALUE = ENCAPSULATED_FEATURE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
@@ -7285,13 +7456,22 @@ public interface WebsitePackage extends EPackage {
 	int VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_ASSOCIATION__NULL_DISPLAY_VALUE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Encode Uri Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCODE_URI_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int VIEW_ASSOCIATION__ENCODE_URI_KEY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Groups</b></em>' attribute list.
@@ -7300,7 +7480,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_GROUPS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int VIEW_ASSOCIATION__SERIALIZATION_GROUPS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Expose</b></em>' attribute.
@@ -7309,7 +7489,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_EXPOSE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int VIEW_ASSOCIATION__SERIALIZATION_EXPOSE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -7318,7 +7498,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int VIEW_ASSOCIATION__HEADER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -7327,7 +7507,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int VIEW_ASSOCIATION__DISPLAY_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -7336,7 +7516,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int VIEW_ASSOCIATION__FOOTER_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -7345,7 +7525,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
+	int VIEW_ASSOCIATION__PART_OF = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
@@ -7354,7 +7534,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__PSEUDO = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 10;
+	int VIEW_ASSOCIATION__PSEUDO = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -7363,7 +7543,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__CHILD_FEATURE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 11;
+	int VIEW_ASSOCIATION__CHILD_FEATURE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Encapsulated By</b></em>' reference list.
@@ -7372,7 +7552,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__ENCAPSULATED_BY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 12;
+	int VIEW_ASSOCIATION__ENCAPSULATED_BY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -7381,7 +7561,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 13;
+	int VIEW_ASSOCIATION__INPUT_CLASS = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity X</b></em>' reference.
@@ -7390,7 +7570,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 14;
+	int VIEW_ASSOCIATION__SOURCE_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity X</b></em>' reference.
@@ -7399,7 +7579,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__TARGET_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 15;
+	int VIEW_ASSOCIATION__TARGET_ENTITY_X = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Serialization Max Depth</b></em>' attribute.
@@ -7408,7 +7588,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 16;
+	int VIEW_ASSOCIATION__SERIALIZATION_MAX_DEPTH = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Opposite</b></em>' reference.
@@ -7417,7 +7597,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__OPPOSITE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 17;
+	int VIEW_ASSOCIATION__OPPOSITE = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' attribute.
@@ -7426,7 +7606,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 18;
+	int VIEW_ASSOCIATION__CARDINALITY = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The number of structural features of the '<em>View Association</em>' class.
@@ -7435,7 +7615,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 19;
+	int VIEW_ASSOCIATION_FEATURE_COUNT = NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9151,13 +9331,22 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_FEATURE__FORCED_VALUE = UNIT_FIELD_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_FEATURE__NULL_DISPLAY_VALUE = UNIT_FIELD_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__FOOTER = UNIT_FIELD_FEATURE_COUNT + 5;
+	int UNIT_FEATURE__FOOTER = UNIT_FIELD_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Autofocus</b></em>' attribute.
@@ -9166,7 +9355,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__AUTOFOCUS = UNIT_FIELD_FEATURE_COUNT + 6;
+	int UNIT_FEATURE__AUTOFOCUS = UNIT_FIELD_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -9175,7 +9364,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__HEADER_CLASS = UNIT_FIELD_FEATURE_COUNT + 7;
+	int UNIT_FEATURE__HEADER_CLASS = UNIT_FIELD_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Input Class</b></em>' attribute.
@@ -9184,7 +9373,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__INPUT_CLASS = UNIT_FIELD_FEATURE_COUNT + 8;
+	int UNIT_FEATURE__INPUT_CLASS = UNIT_FIELD_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Display Class</b></em>' attribute.
@@ -9193,7 +9382,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__DISPLAY_CLASS = UNIT_FIELD_FEATURE_COUNT + 9;
+	int UNIT_FEATURE__DISPLAY_CLASS = UNIT_FIELD_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -9202,7 +9391,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE__FOOTER_CLASS = UNIT_FIELD_FEATURE_COUNT + 10;
+	int UNIT_FEATURE__FOOTER_CLASS = UNIT_FIELD_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Unit Feature</em>' class.
@@ -9211,7 +9400,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_FEATURE_FEATURE_COUNT = UNIT_FIELD_FEATURE_COUNT + 11;
+	int UNIT_FEATURE_FEATURE_COUNT = UNIT_FIELD_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -9320,6 +9509,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ELEMENT__FORCED_VALUE = UNIT_FEATURE__FORCED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ELEMENT__NULL_DISPLAY_VALUE = UNIT_FEATURE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -9609,6 +9807,15 @@ public interface WebsitePackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIT_ASSOCIATION__FORCED_VALUE = UNIT_FEATURE__FORCED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__NULL_DISPLAY_VALUE = UNIT_FEATURE__NULL_DISPLAY_VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -16816,6 +17023,17 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getFeature_CollectionAllowRemove();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getNullDisplayValue <em>Null Display Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Null Display Value</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Feature#getNullDisplayValue()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_NullDisplayValue();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getHeaderClass <em>Header Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -18758,6 +18976,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getUnitFeature_ForcedValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getNullDisplayValue <em>Null Display Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Null Display Value</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getNullDisplayValue()
+	 * @see #getUnitFeature()
+	 * @generated
+	 */
+	EAttribute getUnitFeature_NullDisplayValue();
 
 	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getFooter <em>Footer</em>}'.
@@ -22174,6 +22403,14 @@ public interface WebsitePackage extends EPackage {
 		EAttribute FEATURE__COLLECTION_ALLOW_REMOVE = eINSTANCE.getFeature_CollectionAllowRemove();
 
 		/**
+		 * The meta object literal for the '<em><b>Null Display Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__NULL_DISPLAY_VALUE = eINSTANCE.getFeature_NullDisplayValue();
+
+		/**
 		 * The meta object literal for the '<em><b>Header Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -23714,6 +23951,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EReference UNIT_FEATURE__FORCED_VALUE = eINSTANCE.getUnitFeature_ForcedValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Null Display Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIT_FEATURE__NULL_DISPLAY_VALUE = eINSTANCE.getUnitFeature_NullDisplayValue();
 
 		/**
 		 * The meta object literal for the '<em><b>Footer</b></em>' attribute feature.

@@ -56,6 +56,7 @@ public class UnitFeatureItemProvider
 			addCollectionAllowRemovePropertyDescriptor(object);
 			addMaximumDisplaySizePropertyDescriptor(object);
 			addDateFormatPropertyDescriptor(object);
+			addNullDisplayValuePropertyDescriptor(object);
 			addOnlyDisplayWhenNotEmptyPropertyDescriptor(object);
 			addAutofocusPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
@@ -317,6 +318,28 @@ public class UnitFeatureItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Null Display Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNullDisplayValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UnitFeature_nullDisplayValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitFeature_nullDisplayValue_feature", "_UI_UnitFeature_type"),
+				 WafPackage.Literals.UNIT_FEATURE__NULL_DISPLAY_VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Only Display When Not Empty feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -452,6 +475,7 @@ public class UnitFeatureItemProvider
 			case WafPackage.UNIT_FEATURE__COLLECTION_ALLOW_REMOVE:
 			case WafPackage.UNIT_FEATURE__MAXIMUM_DISPLAY_SIZE:
 			case WafPackage.UNIT_FEATURE__DATE_FORMAT:
+			case WafPackage.UNIT_FEATURE__NULL_DISPLAY_VALUE:
 			case WafPackage.UNIT_FEATURE__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 			case WafPackage.UNIT_FEATURE__AUTOFOCUS:
 			case WafPackage.UNIT_FEATURE__FOOTER:

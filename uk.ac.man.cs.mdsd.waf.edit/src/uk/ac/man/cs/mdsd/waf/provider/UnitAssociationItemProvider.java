@@ -327,6 +327,11 @@ public class UnitAssociationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				 WafFactory.eINSTANCE.createGridUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
 				 WafFactory.eINSTANCE.createRegistrationUnit()));
 
 		newChildDescriptors.add

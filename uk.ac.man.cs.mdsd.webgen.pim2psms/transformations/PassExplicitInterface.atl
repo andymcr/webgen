@@ -166,6 +166,25 @@ helper context Website!InterfaceField def: validationPattern() : String
 			endif
 		endif;
 
+helper context Website!UnitFeature def: nullDisplayValue() : String
+	= if not self.nullDisplayValue.oclIsUndefined() and self.nullDisplayValue <> '' then
+			self.nullDisplayValue
+		else
+			if self.oclIsTypeOf(Website!UnitElement) then
+				if not self.attribute.nullDisplayValue.oclIsUndefined() and self.attribute.nullDisplayValue <> '' then
+					self.attribute.nullDisplayValue
+				else
+					self.nullDisplayValue
+				endif
+			else
+				if not self.association.nullDisplayValue.oclIsUndefined() and self.association.nullDisplayValue <> '' then
+					self.association.nullDisplayValue
+				else
+					self.nullDisplayValue
+				endif
+			endif
+		endif;
+
 helper context Website!Association def: findOrmEntityOrView(entityOrView : Website!EntityOrView) : ORM!EntityOrView
 	= if entityOrView.features->includes(self) then
 			thisModule.findOrmEntityOrView(entityOrView.name)
@@ -677,6 +696,7 @@ abstract rule UnitFeature {
 	from website : Website!UnitFeature
 	to waf : WAF!UnitFeature (
 		forcedValue <- website.forcedValue,
+		nullDisplayValue <- website.nullDisplayValue(),
 		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
 		autofocus <- website.autofocus,
 		footer <- website.footer

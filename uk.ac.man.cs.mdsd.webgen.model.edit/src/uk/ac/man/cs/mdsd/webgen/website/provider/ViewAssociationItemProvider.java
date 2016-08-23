@@ -51,6 +51,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 			addTitlePropertyDescriptor(object);
 			addCollectionAllowAddPropertyDescriptor(object);
 			addCollectionAllowRemovePropertyDescriptor(object);
+			addNullDisplayValuePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
 			addSerializationExposePropertyDescriptor(object);
@@ -128,6 +129,28 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Null Display Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNullDisplayValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_nullDisplayValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_nullDisplayValue_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__NULL_DISPLAY_VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -422,6 +445,7 @@ public class ViewAssociationItemProvider extends NamedDisplayElementItemProvider
 			case WebsitePackage.VIEW_ASSOCIATION__TITLE:
 			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD:
 			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
+			case WebsitePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
 			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE:

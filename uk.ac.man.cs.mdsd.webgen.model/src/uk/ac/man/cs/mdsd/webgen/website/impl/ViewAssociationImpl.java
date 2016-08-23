@@ -40,6 +40,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
@@ -115,6 +116,24 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @ordered
 	 */
 	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NULL_DISPLAY_VALUE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nullDisplayValue = NULL_DISPLAY_VALUE_EDEFAULT;
 	/**
 	 * The default value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -411,6 +430,27 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		collectionAllowRemove = newCollectionAllowRemove;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE, oldCollectionAllowRemove, collectionAllowRemove));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getNullDisplayValue() {
+		return nullDisplayValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNullDisplayValue(String newNullDisplayValue) {
+		String oldNullDisplayValue = nullDisplayValue;
+		nullDisplayValue = newNullDisplayValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE, oldNullDisplayValue, nullDisplayValue));
 	}
 
 	/**
@@ -849,6 +889,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return isCollectionAllowAdd();
 			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				return isCollectionAllowRemove();
+			case WebsitePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
+				return getNullDisplayValue();
 			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				return isEncodeUriKey();
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
@@ -905,6 +947,9 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove((Boolean)newValue);
+				return;
+			case WebsitePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
+				setNullDisplayValue((String)newValue);
 				return;
 			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				setEncodeUriKey((Boolean)newValue);
@@ -971,6 +1016,9 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
 				return;
+			case WebsitePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
+				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
+				return;
 			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
 				return;
@@ -1031,6 +1079,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
 			case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE:
 				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
+			case WebsitePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE:
+				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
 			case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY:
 				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
 			case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS:
@@ -1079,6 +1129,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.VIEW_ASSOCIATION__TITLE: return WebsitePackage.FEATURE__TITLE;
 				case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD: return WebsitePackage.FEATURE__COLLECTION_ALLOW_ADD;
 				case WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE: return WebsitePackage.FEATURE__COLLECTION_ALLOW_REMOVE;
+				case WebsitePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE: return WebsitePackage.FEATURE__NULL_DISPLAY_VALUE;
 				case WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY: return WebsitePackage.FEATURE__ENCODE_URI_KEY;
 				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS: return WebsitePackage.FEATURE__SERIALIZATION_GROUPS;
 				case WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE: return WebsitePackage.FEATURE__SERIALIZATION_EXPOSE;
@@ -1121,6 +1172,7 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				case WebsitePackage.FEATURE__TITLE: return WebsitePackage.VIEW_ASSOCIATION__TITLE;
 				case WebsitePackage.FEATURE__COLLECTION_ALLOW_ADD: return WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_ADD;
 				case WebsitePackage.FEATURE__COLLECTION_ALLOW_REMOVE: return WebsitePackage.VIEW_ASSOCIATION__COLLECTION_ALLOW_REMOVE;
+				case WebsitePackage.FEATURE__NULL_DISPLAY_VALUE: return WebsitePackage.VIEW_ASSOCIATION__NULL_DISPLAY_VALUE;
 				case WebsitePackage.FEATURE__ENCODE_URI_KEY: return WebsitePackage.VIEW_ASSOCIATION__ENCODE_URI_KEY;
 				case WebsitePackage.FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_GROUPS;
 				case WebsitePackage.FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.VIEW_ASSOCIATION__SERIALIZATION_EXPOSE;
@@ -1167,6 +1219,8 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		result.append(collectionAllowAdd);
 		result.append(", collectionAllowRemove: ");
 		result.append(collectionAllowRemove);
+		result.append(", nullDisplayValue: ");
+		result.append(nullDisplayValue);
 		result.append(", encodeUriKey: ");
 		result.append(encodeUriKey);
 		result.append(", serializationGroups: ");

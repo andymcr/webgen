@@ -9,26 +9,24 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import uk.ac.man.cs.mdsd.waf.ImageUnit;
-import uk.ac.man.cs.mdsd.waf.WafPackage;
+import uk.ac.man.cs.mdsd.waf.GridUnit;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ImageUnit} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.GridUnit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ImageUnitItemProvider extends DynamicUnitItemProvider {
+public class GridUnitItemProvider extends ImageUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImageUnitItemProvider(AdapterFactory adapterFactory) {
+	public GridUnitItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -43,54 +41,19 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDefaultSelectionPropertyDescriptor(object);
-			addImagePropertyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Default Selection feature.
+	 * This returns GridUnit.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDefaultSelectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageUnit_defaultSelection_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_defaultSelection_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__DEFAULT_SELECTION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Image Property feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImagePropertyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageUnit_imageProperty_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageProperty_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__IMAGE_PROPERTY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/GridUnit"));
 	}
 
 	/**
@@ -101,10 +64,10 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ImageUnit)object).getName();
+		String label = ((GridUnit)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ImageUnit_type") :
-			getString("_UI_ImageUnit_type") + " " + label;
+			getString("_UI_GridUnit_type") :
+			getString("_UI_GridUnit_type") + " " + label;
 	}
 	
 

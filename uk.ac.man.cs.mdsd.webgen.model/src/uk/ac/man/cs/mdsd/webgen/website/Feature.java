@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Feature#isSerializationExpose <em>Serialization Expose</em>}</li>
@@ -110,6 +111,32 @@ public interface Feature extends EObject {
 	 * @generated
 	 */
 	void setCollectionAllowRemove(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Null Display Value</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Null Display Value</em>' attribute.
+	 * @see #setNullDisplayValue(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeature_NullDisplayValue()
+	 * @model
+	 * @generated
+	 */
+	String getNullDisplayValue();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Feature#getNullDisplayValue <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Null Display Value</em>' attribute.
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 */
+	void setNullDisplayValue(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Header Class</b></em>' attribute.

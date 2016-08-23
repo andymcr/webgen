@@ -306,6 +306,7 @@ interface UnitField extends DisplayElement {
 
 abstract class UnitFeature extends UnitField, InlineActionContainer {
 	contains Expression forcedValue
+	String nullDisplayValue
 	boolean onlyDisplayWhenNotEmpty = "false"
 	boolean autofocus
 	String footer

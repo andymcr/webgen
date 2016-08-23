@@ -18,6 +18,7 @@ import uk.ac.man.cs.mdsd.criteria.Expression;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getDisplayLabel <em>Display Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#isRequired <em>Required</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getForcedValue <em>Forced Value</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#isAutofocus <em>Autofocus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getHeaderClass <em>Header Class</em>}</li>
@@ -137,6 +138,32 @@ public interface UnitFeature extends UnitField, InlineActionContainer {
 	 * @generated
 	 */
 	void setForcedValue(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>Null Display Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Null Display Value</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Null Display Value</em>' attribute.
+	 * @see #setNullDisplayValue(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitFeature_NullDisplayValue()
+	 * @model
+	 * @generated
+	 */
+	String getNullDisplayValue();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitFeature#getNullDisplayValue <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Null Display Value</em>' attribute.
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 */
+	void setNullDisplayValue(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Footer</b></em>' attribute.

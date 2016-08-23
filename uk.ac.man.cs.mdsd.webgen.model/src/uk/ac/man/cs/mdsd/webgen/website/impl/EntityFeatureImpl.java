@@ -34,6 +34,7 @@ import uk.ac.man.cs.mdsd.webgen.website.isHasChoices;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isCollectionAllowAdd <em>Collection Allow Add</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isCollectionAllowRemove <em>Collection Allow Remove</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getNullDisplayValue <em>Null Display Value</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isEncodeUriKey <em>Encode Uri Key</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#getSerializationGroups <em>Serialization Groups</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityFeatureImpl#isSerializationExpose <em>Serialization Expose</em>}</li>
@@ -112,6 +113,26 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * @ordered
 	 */
 	protected boolean collectionAllowRemove = COLLECTION_ALLOW_REMOVE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NULL_DISPLAY_VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNullDisplayValue() <em>Null Display Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNullDisplayValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nullDisplayValue = NULL_DISPLAY_VALUE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isEncodeUriKey() <em>Encode Uri Key</em>}' attribute.
@@ -597,6 +618,27 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getNullDisplayValue() {
+		return nullDisplayValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNullDisplayValue(String newNullDisplayValue) {
+		String oldNullDisplayValue = nullDisplayValue;
+		nullDisplayValue = newNullDisplayValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE, oldNullDisplayValue, nullDisplayValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getHeaderClass() {
 		return headerClass;
 	}
@@ -808,6 +850,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return isCollectionAllowAdd();
 			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return isCollectionAllowRemove();
+			case WebsitePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
+				return getNullDisplayValue();
 			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				return isEncodeUriKey();
 			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
@@ -857,6 +901,9 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return;
 			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove((Boolean)newValue);
+				return;
+			case WebsitePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
+				setNullDisplayValue((String)newValue);
 				return;
 			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey((Boolean)newValue);
@@ -922,6 +969,9 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				setCollectionAllowRemove(COLLECTION_ALLOW_REMOVE_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
+				setNullDisplayValue(NULL_DISPLAY_VALUE_EDEFAULT);
+				return;
 			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				setEncodeUriKey(ENCODE_URI_KEY_EDEFAULT);
 				return;
@@ -982,6 +1032,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				return collectionAllowAdd != COLLECTION_ALLOW_ADD_EDEFAULT;
 			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
 				return collectionAllowRemove != COLLECTION_ALLOW_REMOVE_EDEFAULT;
+			case WebsitePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
+				return NULL_DISPLAY_VALUE_EDEFAULT == null ? nullDisplayValue != null : !NULL_DISPLAY_VALUE_EDEFAULT.equals(nullDisplayValue);
 			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 				return encodeUriKey != ENCODE_URI_KEY_EDEFAULT;
 			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
@@ -1026,6 +1078,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				case WebsitePackage.ENTITY_FEATURE__TITLE: return WebsitePackage.FEATURE__TITLE;
 				case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD: return WebsitePackage.FEATURE__COLLECTION_ALLOW_ADD;
 				case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE: return WebsitePackage.FEATURE__COLLECTION_ALLOW_REMOVE;
+				case WebsitePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE: return WebsitePackage.FEATURE__NULL_DISPLAY_VALUE;
 				case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY: return WebsitePackage.FEATURE__ENCODE_URI_KEY;
 				case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.FEATURE__SERIALIZATION_GROUPS;
 				case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.FEATURE__SERIALIZATION_EXPOSE;
@@ -1050,6 +1103,7 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 				case WebsitePackage.FEATURE__TITLE: return WebsitePackage.ENTITY_FEATURE__TITLE;
 				case WebsitePackage.FEATURE__COLLECTION_ALLOW_ADD: return WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD;
 				case WebsitePackage.FEATURE__COLLECTION_ALLOW_REMOVE: return WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE;
+				case WebsitePackage.FEATURE__NULL_DISPLAY_VALUE: return WebsitePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE;
 				case WebsitePackage.FEATURE__ENCODE_URI_KEY: return WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY;
 				case WebsitePackage.FEATURE__SERIALIZATION_GROUPS: return WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS;
 				case WebsitePackage.FEATURE__SERIALIZATION_EXPOSE: return WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE;
@@ -1078,6 +1132,8 @@ public abstract class EntityFeatureImpl extends NamedDisplayElementImpl implemen
 		result.append(collectionAllowAdd);
 		result.append(", collectionAllowRemove: ");
 		result.append(collectionAllowRemove);
+		result.append(", nullDisplayValue: ");
+		result.append(nullDisplayValue);
 		result.append(", encodeUriKey: ");
 		result.append(encodeUriKey);
 		result.append(", serializationGroups: ");

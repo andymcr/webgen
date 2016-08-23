@@ -48,6 +48,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			addTitlePropertyDescriptor(object);
 			addCollectionAllowAddPropertyDescriptor(object);
 			addCollectionAllowRemovePropertyDescriptor(object);
+			addNullDisplayValuePropertyDescriptor(object);
 			addEncodeUriKeyPropertyDescriptor(object);
 			addSerializationGroupsPropertyDescriptor(object);
 			addSerializationExposePropertyDescriptor(object);
@@ -396,6 +397,28 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Null Display Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNullDisplayValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Feature_nullDisplayValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Feature_nullDisplayValue_feature", "_UI_Feature_type"),
+				 WebsitePackage.Literals.FEATURE__NULL_DISPLAY_VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Column Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -447,6 +470,7 @@ public class EntityFeatureItemProvider extends NamedDisplayElementItemProvider {
 			case WebsitePackage.ENTITY_FEATURE__TITLE:
 			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_ADD:
 			case WebsitePackage.ENTITY_FEATURE__COLLECTION_ALLOW_REMOVE:
+			case WebsitePackage.ENTITY_FEATURE__NULL_DISPLAY_VALUE:
 			case WebsitePackage.ENTITY_FEATURE__ENCODE_URI_KEY:
 			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_GROUPS:
 			case WebsitePackage.ENTITY_FEATURE__SERIALIZATION_EXPOSE:

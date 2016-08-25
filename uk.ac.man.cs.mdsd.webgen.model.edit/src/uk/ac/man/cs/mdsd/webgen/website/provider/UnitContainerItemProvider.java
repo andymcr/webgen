@@ -193,7 +193,7 @@ public class UnitContainerItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_CONTAINER__UNITS,
-				 WebsiteFactory.eINSTANCE.createGridUnit()));
+				 WebsiteFactory.eINSTANCE.createGalleryUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter

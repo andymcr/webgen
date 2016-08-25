@@ -48,6 +48,7 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addDisablePropertyDescriptor(object);
+			addRequiresRolePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -75,6 +76,28 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Requires Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiresRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InlineAction_requiresRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InlineAction_requiresRole_feature", "_UI_InlineAction_type"),
+				 WebsitePackage.Literals.INLINE_ACTION__REQUIRES_ROLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_SecurityPropertyCategory"),
 				 null));
 	}
 
@@ -224,6 +247,7 @@ public class InlineActionItemProvider extends NamedDisplayElementItemProvider {
 
 		switch (notification.getFeatureID(InlineAction.class)) {
 			case WebsitePackage.INLINE_ACTION__DISABLE:
+			case WebsitePackage.INLINE_ACTION__REQUIRES_ROLE:
 			case WebsitePackage.INLINE_ACTION__HEADER:
 			case WebsitePackage.INLINE_ACTION__FOOTER:
 			case WebsitePackage.INLINE_ACTION__HEADER_CLASS:

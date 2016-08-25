@@ -2432,7 +2432,7 @@
             href="website.ecore#//UnitContainer/units"/>
         <ownedChild>
           <domainMetaElement
-              href="website.ecore#//GridUnit"/>
+              href="website.ecore#//GalleryUnit"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel

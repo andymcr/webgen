@@ -4,23 +4,23 @@ package uk.ac.man.cs.mdsd.waf.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import uk.ac.man.cs.mdsd.waf.GridUnit;
+import uk.ac.man.cs.mdsd.waf.GalleryUnit;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Grid Unit</b></em>'.
+ * An implementation of the model object '<em><b>Gallery Unit</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
+public class GalleryUnitImpl extends ImageUnitImpl implements GalleryUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GridUnitImpl() {
+	protected GalleryUnitImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WafPackage.Literals.GRID_UNIT;
+		return WafPackage.Literals.GALLERY_UNIT;
 	}
 
-} //GridUnitImpl
+} //GalleryUnitImpl

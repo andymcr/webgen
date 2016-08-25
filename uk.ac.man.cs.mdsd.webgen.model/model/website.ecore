@@ -1130,7 +1130,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="slider_content"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GridUnit" eSuperTypes="#//ImageUnit">
+  <eClassifiers xsi:type="ecore:EClass" name="GalleryUnit" eSuperTypes="#//ImageUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,gallery_unit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
@@ -1167,6 +1167,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="usedBy" ordered="false"
         lowerBound="1" eType="#//InlineActionContainer" eOpposite="#//InlineActionContainer/actions"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="disable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requiresRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enableWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayWhen" eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Predicate"

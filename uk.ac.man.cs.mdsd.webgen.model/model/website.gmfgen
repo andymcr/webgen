@@ -5360,18 +5360,18 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3262"
-        editPartClassName="GridUnitEditPart"
-        itemSemanticEditPolicyClassName="GridUnitItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="GridUnitCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="GridUnitGraphicalNodeEditPolicy"
-        createCommandClassName="GridUnitCreateCommand"
+        visualID="3263"
+        editPartClassName="GalleryUnitEditPart"
+        itemSemanticEditPolicyClassName="GalleryUnitItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="GalleryUnitCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="GalleryUnitGraphicalNodeEditPolicy"
+        createCommandClassName="GalleryUnitCreateCommand"
         containers="//@diagram/@compartments.7">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="GridUnitEditHelper"/>
+          editHelperClassName="GalleryUnitEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
@@ -5387,16 +5387,16 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="website.genmodel#//website/GridUnit"/>
+            href="website.genmodel#//website/GalleryUnit"/>
         <containmentMetaFeature
             href="website.genmodel#//website/UnitContainer/units"/>
         <childMetaFeature
             href="website.genmodel#//website/UnitContainer/units"/>
       </modelFacet>
       <labels
-          visualID="5270"
-          editPartClassName="GridUnitNameEditPart"
-          itemSemanticEditPolicyClassName="GridUnitNameItemSemanticEditPolicy"
+          visualID="5271"
+          editPartClassName="GalleryUnitNameEditPart"
+          itemSemanticEditPolicyClassName="GalleryUnitNameItemSemanticEditPolicy"
           elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>

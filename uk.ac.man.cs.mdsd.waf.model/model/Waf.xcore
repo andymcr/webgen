@@ -473,7 +473,7 @@ abstract class ImageUnit extends DynamicUnit {
 class SliderUnit extends ImageUnit {
 }
 
-class GridUnit extends ImageUnit {
+class GalleryUnit extends ImageUnit {
 }
 
 interface AuthenticationUnit {
@@ -504,6 +504,7 @@ interface InlineActionContainer {
 abstract class InlineAction extends NamedDisplayElement {
 	container InlineActionContainer[1] usedBy opposite actions
 	boolean disable
+	String requiresRole
 	contains Predicate enableWhen
 	contains Predicate displayWhen
 	String header

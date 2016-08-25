@@ -310,8 +310,8 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createSliderUnitAdapter();
 			}
 			@Override
-			public Adapter caseGridUnit(GridUnit object) {
-				return createGridUnitAdapter();
+			public Adapter caseGalleryUnit(GalleryUnit object) {
+				return createGalleryUnitAdapter();
 			}
 			@Override
 			public Adapter caseAuthenticationUnit(AuthenticationUnit object) {
@@ -1232,16 +1232,16 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.GridUnit <em>Grid Unit</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.GalleryUnit <em>Gallery Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.GridUnit
+	 * @see uk.ac.man.cs.mdsd.waf.GalleryUnit
 	 * @generated
 	 */
-	public Adapter createGridUnitAdapter() {
+	public Adapter createGalleryUnitAdapter() {
 		return null;
 	}
 

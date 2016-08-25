@@ -125,7 +125,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.SEARCH_UNIT: return createSearchUnit();
 			case WebsitePackage.ACTION_UNIT: return createActionUnit();
 			case WebsitePackage.SLIDER_UNIT: return createSliderUnit();
-			case WebsitePackage.GRID_UNIT: return createGridUnit();
+			case WebsitePackage.GALLERY_UNIT: return createGalleryUnit();
 			case WebsitePackage.REGISTRATION_UNIT: return createRegistrationUnit();
 			case WebsitePackage.LOGIN_UNIT: return createLoginUnit();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT: return createForgottenPasswordUnit();
@@ -865,9 +865,9 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GridUnit createGridUnit() {
-		GridUnitImpl gridUnit = new GridUnitImpl();
-		return gridUnit;
+	public GalleryUnit createGalleryUnit() {
+		GalleryUnitImpl galleryUnit = new GalleryUnitImpl();
+		return galleryUnit;
 	}
 
 	/**

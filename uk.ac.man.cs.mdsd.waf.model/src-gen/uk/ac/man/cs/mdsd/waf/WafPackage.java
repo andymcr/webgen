@@ -9140,14 +9140,14 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT_OPERATION_COUNT = IMAGE_UNIT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.GridUnitImpl <em>Grid Unit</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.GalleryUnitImpl <em>Gallery Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.impl.GridUnitImpl
-	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getGridUnit()
+	 * @see uk.ac.man.cs.mdsd.waf.impl.GalleryUnitImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getGalleryUnit()
 	 * @generated
 	 */
-	int GRID_UNIT = 59;
+	int GALLERY_UNIT = 59;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9156,7 +9156,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__NAME = IMAGE_UNIT__NAME;
+	int GALLERY_UNIT__NAME = IMAGE_UNIT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
@@ -9165,7 +9165,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__DISPLAY_LABEL = IMAGE_UNIT__DISPLAY_LABEL;
+	int GALLERY_UNIT__DISPLAY_LABEL = IMAGE_UNIT__DISPLAY_LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
@@ -9174,7 +9174,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__DISPLAYED_ON = IMAGE_UNIT__DISPLAYED_ON;
+	int GALLERY_UNIT__DISPLAYED_ON = IMAGE_UNIT__DISPLAYED_ON;
 
 	/**
 	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
@@ -9183,7 +9183,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__PURPOSE_SUMMARY = IMAGE_UNIT__PURPOSE_SUMMARY;
+	int GALLERY_UNIT__PURPOSE_SUMMARY = IMAGE_UNIT__PURPOSE_SUMMARY;
 
 	/**
 	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
@@ -9192,7 +9192,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__REQUIRES_ROLE = IMAGE_UNIT__REQUIRES_ROLE;
+	int GALLERY_UNIT__REQUIRES_ROLE = IMAGE_UNIT__REQUIRES_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
@@ -9201,7 +9201,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__URI_ELEMENT = IMAGE_UNIT__URI_ELEMENT;
+	int GALLERY_UNIT__URI_ELEMENT = IMAGE_UNIT__URI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
@@ -9210,7 +9210,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__ALTERNATIVE = IMAGE_UNIT__ALTERNATIVE;
+	int GALLERY_UNIT__ALTERNATIVE = IMAGE_UNIT__ALTERNATIVE;
 
 	/**
 	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
@@ -9219,7 +9219,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__OMIT_CAPTION = IMAGE_UNIT__OMIT_CAPTION;
+	int GALLERY_UNIT__OMIT_CAPTION = IMAGE_UNIT__OMIT_CAPTION;
 
 	/**
 	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
@@ -9228,7 +9228,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__CAPTION_CLASS = IMAGE_UNIT__CAPTION_CLASS;
+	int GALLERY_UNIT__CAPTION_CLASS = IMAGE_UNIT__CAPTION_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -9237,7 +9237,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__STYLE_CLASS = IMAGE_UNIT__STYLE_CLASS;
+	int GALLERY_UNIT__STYLE_CLASS = IMAGE_UNIT__STYLE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -9246,7 +9246,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__CONTENT_CLASS = IMAGE_UNIT__CONTENT_CLASS;
+	int GALLERY_UNIT__CONTENT_CLASS = IMAGE_UNIT__CONTENT_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Entities</b></em>' reference list.
@@ -9255,7 +9255,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__ENTITIES = IMAGE_UNIT__ENTITIES;
+	int GALLERY_UNIT__ENTITIES = IMAGE_UNIT__ENTITIES;
 
 	/**
 	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
@@ -9264,7 +9264,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
+	int GALLERY_UNIT__DISPLAY_FIELDS = IMAGE_UNIT__DISPLAY_FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
@@ -9273,7 +9273,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__SUPPORT_ACTIONS = IMAGE_UNIT__SUPPORT_ACTIONS;
+	int GALLERY_UNIT__SUPPORT_ACTIONS = IMAGE_UNIT__SUPPORT_ACTIONS;
 
 	/**
 	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
@@ -9282,7 +9282,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__KEY_ACTUALS = IMAGE_UNIT__KEY_ACTUALS;
+	int GALLERY_UNIT__KEY_ACTUALS = IMAGE_UNIT__KEY_ACTUALS;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -9291,7 +9291,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__HEADER = IMAGE_UNIT__HEADER;
+	int GALLERY_UNIT__HEADER = IMAGE_UNIT__HEADER;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -9300,7 +9300,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__FOOTER = IMAGE_UNIT__FOOTER;
+	int GALLERY_UNIT__FOOTER = IMAGE_UNIT__FOOTER;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -9309,7 +9309,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__HEADER_CLASS = IMAGE_UNIT__HEADER_CLASS;
+	int GALLERY_UNIT__HEADER_CLASS = IMAGE_UNIT__HEADER_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
@@ -9318,7 +9318,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__CONTROL_CLASS = IMAGE_UNIT__CONTROL_CLASS;
+	int GALLERY_UNIT__CONTROL_CLASS = IMAGE_UNIT__CONTROL_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -9327,7 +9327,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__FOOTER_CLASS = IMAGE_UNIT__FOOTER_CLASS;
+	int GALLERY_UNIT__FOOTER_CLASS = IMAGE_UNIT__FOOTER_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
@@ -9336,7 +9336,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__ERROR_CLASS = IMAGE_UNIT__ERROR_CLASS;
+	int GALLERY_UNIT__ERROR_CLASS = IMAGE_UNIT__ERROR_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
@@ -9345,7 +9345,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__DEFAULT_SELECTION = IMAGE_UNIT__DEFAULT_SELECTION;
+	int GALLERY_UNIT__DEFAULT_SELECTION = IMAGE_UNIT__DEFAULT_SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Image Property</b></em>' reference.
@@ -9354,25 +9354,25 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT__IMAGE_PROPERTY = IMAGE_UNIT__IMAGE_PROPERTY;
+	int GALLERY_UNIT__IMAGE_PROPERTY = IMAGE_UNIT__IMAGE_PROPERTY;
 
 	/**
-	 * The number of structural features of the '<em>Grid Unit</em>' class.
+	 * The number of structural features of the '<em>Gallery Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 0;
+	int GALLERY_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Grid Unit</em>' class.
+	 * The number of operations of the '<em>Gallery Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRID_UNIT_OPERATION_COUNT = IMAGE_UNIT_OPERATION_COUNT + 0;
+	int GALLERY_UNIT_OPERATION_COUNT = IMAGE_UNIT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationUnit <em>Authentication Unit</em>}' class.
@@ -10335,13 +10335,22 @@ public interface WafPackage extends EPackage {
 	int INLINE_ACTION__DISABLE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INLINE_ACTION__REQUIRES_ROLE = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__ENABLE_WHEN = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 2;
+	int INLINE_ACTION__ENABLE_WHEN = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Display When</b></em>' containment reference.
@@ -10350,7 +10359,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__DISPLAY_WHEN = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 3;
+	int INLINE_ACTION__DISPLAY_WHEN = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Header</b></em>' attribute.
@@ -10359,7 +10368,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__HEADER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 4;
+	int INLINE_ACTION__HEADER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Footer</b></em>' attribute.
@@ -10368,7 +10377,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__FOOTER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 5;
+	int INLINE_ACTION__FOOTER = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
@@ -10377,7 +10386,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__HEADER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 6;
+	int INLINE_ACTION__HEADER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
@@ -10386,7 +10395,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION__FOOTER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 7;
+	int INLINE_ACTION__FOOTER_CLASS = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Inline Action</em>' class.
@@ -10395,7 +10404,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INLINE_ACTION_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 8;
+	int INLINE_ACTION_FEATURE_COUNT = OrmPackage.NAMED_DISPLAY_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Inline Action</em>' class.
@@ -10451,6 +10460,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SELECT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
+
+	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECT_ACTION__REQUIRES_ROLE = INLINE_ACTION__REQUIRES_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
@@ -10578,6 +10596,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELETE_ACTION__DISABLE = INLINE_ACTION__DISABLE;
+
+	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELETE_ACTION__REQUIRES_ROLE = INLINE_ACTION__REQUIRES_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
@@ -10723,6 +10750,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_SUPPORT_ACTION__DISABLE = INLINE_ACTION__DISABLE;
+
+	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_SUPPORT_ACTION__REQUIRES_ROLE = INLINE_ACTION__REQUIRES_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Enable When</b></em>' containment reference.
@@ -13980,14 +14016,14 @@ public interface WafPackage extends EPackage {
 	EClass getSliderUnit();
 
 	/**
-	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.GridUnit <em>Grid Unit</em>}'.
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.GalleryUnit <em>Gallery Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Grid Unit</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.GridUnit
+	 * @return the meta object for class '<em>Gallery Unit</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.GalleryUnit
 	 * @generated
 	 */
-	EClass getGridUnit();
+	EClass getGalleryUnit();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.AuthenticationUnit <em>Authentication Unit</em>}'.
@@ -14169,6 +14205,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getInlineAction_Disable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getRequiresRole <em>Requires Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Requires Role</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.InlineAction#getRequiresRole()
+	 * @see #getInlineAction()
+	 * @generated
+	 */
+	EAttribute getInlineAction_RequiresRole();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.InlineAction#getEnableWhen <em>Enable When</em>}'.
@@ -16812,14 +16859,14 @@ public interface WafPackage extends EPackage {
 		EClass SLIDER_UNIT = eINSTANCE.getSliderUnit();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.GridUnitImpl <em>Grid Unit</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.GalleryUnitImpl <em>Gallery Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.impl.GridUnitImpl
-		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getGridUnit()
+		 * @see uk.ac.man.cs.mdsd.waf.impl.GalleryUnitImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getGalleryUnit()
 		 * @generated
 		 */
-		EClass GRID_UNIT = eINSTANCE.getGridUnit();
+		EClass GALLERY_UNIT = eINSTANCE.getGalleryUnit();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationUnit <em>Authentication Unit</em>}' class.
@@ -16968,6 +17015,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INLINE_ACTION__DISABLE = eINSTANCE.getInlineAction_Disable();
+
+		/**
+		 * The meta object literal for the '<em><b>Requires Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INLINE_ACTION__REQUIRES_ROLE = eINSTANCE.getInlineAction_RequiresRole();
 
 		/**
 		 * The meta object literal for the '<em><b>Enable When</b></em>' containment reference feature.

@@ -11,26 +11,26 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import uk.ac.man.cs.mdsd.webgen.website.GridUnit;
+
+import uk.ac.man.cs.mdsd.webgen.website.GalleryUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.GridUnit} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.GalleryUnit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class GridUnitItemProvider extends ImageUnitItemProvider {
+public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GridUnitItemProvider(AdapterFactory adapterFactory) {
+	public GalleryUnitItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,9 +62,9 @@ public class GridUnitItemProvider extends ImageUnitItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_GridUnit_styleClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GridUnit_styleClass_feature", "_UI_GridUnit_type"),
-				 WebsitePackage.Literals.GRID_UNIT__STYLE_CLASS,
+				 getString("_UI_GalleryUnit_styleClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_styleClass_feature", "_UI_GalleryUnit_type"),
+				 WebsitePackage.Literals.GALLERY_UNIT__STYLE_CLASS,
 				 true,
 				 false,
 				 false,
@@ -84,9 +84,9 @@ public class GridUnitItemProvider extends ImageUnitItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_GridUnit_contentClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GridUnit_contentClass_feature", "_UI_GridUnit_type"),
-				 WebsitePackage.Literals.GRID_UNIT__CONTENT_CLASS,
+				 getString("_UI_GalleryUnit_contentClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GalleryUnit_contentClass_feature", "_UI_GalleryUnit_type"),
+				 WebsitePackage.Literals.GALLERY_UNIT__CONTENT_CLASS,
 				 true,
 				 false,
 				 false,
@@ -96,14 +96,14 @@ public class GridUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
-	 * This returns GridUnit.gif.
+	 * This returns GalleryUnit.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/GridUnit"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/GalleryUnit"));
 	}
 
 	/**
@@ -114,10 +114,10 @@ public class GridUnitItemProvider extends ImageUnitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((GridUnit)object).getName();
+		String label = ((GalleryUnit)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_GridUnit_type") :
-			getString("_UI_GridUnit_type") + " " + label;
+			getString("_UI_GalleryUnit_type") :
+			getString("_UI_GalleryUnit_type") + " " + label;
 	}
 	
 
@@ -132,9 +132,9 @@ public class GridUnitItemProvider extends ImageUnitItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(GridUnit.class)) {
-			case WebsitePackage.GRID_UNIT__STYLE_CLASS:
-			case WebsitePackage.GRID_UNIT__CONTENT_CLASS:
+		switch (notification.getFeatureID(GalleryUnit.class)) {
+			case WebsitePackage.GALLERY_UNIT__STYLE_CLASS:
+			case WebsitePackage.GALLERY_UNIT__CONTENT_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -585,14 +585,14 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.GRID_UNIT: {
-				GridUnit gridUnit = (GridUnit)theEObject;
-				T result = caseGridUnit(gridUnit);
-				if (result == null) result = caseImageUnit(gridUnit);
-				if (result == null) result = caseDynamicUnit(gridUnit);
-				if (result == null) result = caseContentUnit(gridUnit);
-				if (result == null) result = caseNamedDisplayElement(gridUnit);
-				if (result == null) result = caseNamedElement(gridUnit);
+			case WafPackage.GALLERY_UNIT: {
+				GalleryUnit galleryUnit = (GalleryUnit)theEObject;
+				T result = caseGalleryUnit(galleryUnit);
+				if (result == null) result = caseImageUnit(galleryUnit);
+				if (result == null) result = caseDynamicUnit(galleryUnit);
+				if (result == null) result = caseContentUnit(galleryUnit);
+				if (result == null) result = caseNamedDisplayElement(galleryUnit);
+				if (result == null) result = caseNamedElement(galleryUnit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1609,17 +1609,17 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Grid Unit</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Gallery Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Grid Unit</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Gallery Unit</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGridUnit(GridUnit object) {
+	public T caseGalleryUnit(GalleryUnit object) {
 		return null;
 	}
 

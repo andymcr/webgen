@@ -3,27 +3,29 @@
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import uk.ac.man.cs.mdsd.webgen.website.GridUnit;
+
+import uk.ac.man.cs.mdsd.webgen.website.GalleryUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Grid Unit</b></em>'.
+ * An implementation of the model object '<em><b>Gallery Unit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.GridUnitImpl#getStyleClass <em>Style Class</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.GridUnitImpl#getContentClass <em>Content Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.GalleryUnitImpl#getStyleClass <em>Style Class</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.GalleryUnitImpl#getContentClass <em>Content Class</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
+public class GalleryUnitImpl extends ImageUnitImpl implements GalleryUnit {
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -33,6 +35,7 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 	 * @ordered
 	 */
 	protected static final String STYLE_CLASS_EDEFAULT = "unit,gallery_unit";
+
 	/**
 	 * The cached value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -42,6 +45,7 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 	 * @ordered
 	 */
 	protected String styleClass = STYLE_CLASS_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,6 +55,7 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 	 * @ordered
 	 */
 	protected static final String CONTENT_CLASS_EDEFAULT = "gallery_content";
+
 	/**
 	 * The cached value of the '{@link #getContentClass() <em>Content Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,7 +71,7 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GridUnitImpl() {
+	protected GalleryUnitImpl() {
 		super();
 	}
 
@@ -77,7 +82,7 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WebsitePackage.Literals.GRID_UNIT;
+		return WebsitePackage.Literals.GALLERY_UNIT;
 	}
 
 	/**
@@ -98,7 +103,7 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 		String oldStyleClass = styleClass;
 		styleClass = newStyleClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.GRID_UNIT__STYLE_CLASS, oldStyleClass, styleClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.GALLERY_UNIT__STYLE_CLASS, oldStyleClass, styleClass));
 	}
 
 	/**
@@ -119,7 +124,7 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 		String oldContentClass = contentClass;
 		contentClass = newContentClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.GRID_UNIT__CONTENT_CLASS, oldContentClass, contentClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.GALLERY_UNIT__CONTENT_CLASS, oldContentClass, contentClass));
 	}
 
 	/**
@@ -130,9 +135,9 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.GRID_UNIT__STYLE_CLASS:
+			case WebsitePackage.GALLERY_UNIT__STYLE_CLASS:
 				return getStyleClass();
-			case WebsitePackage.GRID_UNIT__CONTENT_CLASS:
+			case WebsitePackage.GALLERY_UNIT__CONTENT_CLASS:
 				return getContentClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -146,10 +151,10 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.GRID_UNIT__STYLE_CLASS:
+			case WebsitePackage.GALLERY_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
 				return;
-			case WebsitePackage.GRID_UNIT__CONTENT_CLASS:
+			case WebsitePackage.GALLERY_UNIT__CONTENT_CLASS:
 				setContentClass((String)newValue);
 				return;
 		}
@@ -164,10 +169,10 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.GRID_UNIT__STYLE_CLASS:
+			case WebsitePackage.GALLERY_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
-			case WebsitePackage.GRID_UNIT__CONTENT_CLASS:
+			case WebsitePackage.GALLERY_UNIT__CONTENT_CLASS:
 				setContentClass(CONTENT_CLASS_EDEFAULT);
 				return;
 		}
@@ -182,9 +187,9 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.GRID_UNIT__STYLE_CLASS:
+			case WebsitePackage.GALLERY_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
-			case WebsitePackage.GRID_UNIT__CONTENT_CLASS:
+			case WebsitePackage.GALLERY_UNIT__CONTENT_CLASS:
 				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
 		}
 		return super.eIsSet(featureID);
@@ -208,4 +213,4 @@ public class GridUnitImpl extends ImageUnitImpl implements GridUnit {
 		return result.toString();
 	}
 
-} //GridUnitImpl
+} //GalleryUnitImpl

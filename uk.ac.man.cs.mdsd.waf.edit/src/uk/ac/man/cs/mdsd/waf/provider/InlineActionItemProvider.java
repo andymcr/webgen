@@ -53,6 +53,7 @@ public class InlineActionItemProvider
 
 			addUsedByPropertyDescriptor(object);
 			addDisablePropertyDescriptor(object);
+			addRequiresRolePropertyDescriptor(object);
 			addHeaderPropertyDescriptor(object);
 			addFooterPropertyDescriptor(object);
 			addHeaderClassPropertyDescriptor(object);
@@ -102,6 +103,28 @@ public class InlineActionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
+	 * This adds a property descriptor for the Requires Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiresRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InlineAction_requiresRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InlineAction_requiresRole_feature", "_UI_InlineAction_type"),
+				 WafPackage.Literals.INLINE_ACTION__REQUIRES_ROLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -252,6 +275,7 @@ public class InlineActionItemProvider
 
 		switch (notification.getFeatureID(InlineAction.class)) {
 			case WafPackage.INLINE_ACTION__DISABLE:
+			case WafPackage.INLINE_ACTION__REQUIRES_ROLE:
 			case WafPackage.INLINE_ACTION__HEADER:
 			case WafPackage.INLINE_ACTION__FOOTER:
 			case WafPackage.INLINE_ACTION__HEADER_CLASS:

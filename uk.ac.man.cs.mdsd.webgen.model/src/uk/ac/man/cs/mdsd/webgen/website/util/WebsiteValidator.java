@@ -284,8 +284,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateImageUnit((ImageUnit)value, diagnostics, context);
 			case WebsitePackage.SLIDER_UNIT:
 				return validateSliderUnit((SliderUnit)value, diagnostics, context);
-			case WebsitePackage.GRID_UNIT:
-				return validateGridUnit((GridUnit)value, diagnostics, context);
+			case WebsitePackage.GALLERY_UNIT:
+				return validateGalleryUnit((GalleryUnit)value, diagnostics, context);
 			case WebsitePackage.AUTHENTICATION_UNIT:
 				return validateAuthenticationUnit((AuthenticationUnit)value, diagnostics, context);
 			case WebsitePackage.REGISTRATION_UNIT:
@@ -2521,18 +2521,18 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateGridUnit(GridUnit gridUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(gridUnit, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(gridUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(gridUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(gridUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(gridUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(gridUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(gridUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(gridUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(gridUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(gridUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(gridUnit, diagnostics, context);
+	public boolean validateGalleryUnit(GalleryUnit galleryUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(galleryUnit, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(galleryUnit, diagnostics, context);
 		return result;
 	}
 

@@ -11,22 +11,22 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import uk.ac.man.cs.mdsd.waf.GridUnit;
+import uk.ac.man.cs.mdsd.waf.GalleryUnit;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.GridUnit} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.GalleryUnit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class GridUnitItemProvider extends ImageUnitItemProvider {
+public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GridUnitItemProvider(AdapterFactory adapterFactory) {
+	public GalleryUnitItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,14 +46,14 @@ public class GridUnitItemProvider extends ImageUnitItemProvider {
 	}
 
 	/**
-	 * This returns GridUnit.gif.
+	 * This returns GalleryUnit.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/GridUnit"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/GalleryUnit"));
 	}
 
 	/**
@@ -64,10 +64,10 @@ public class GridUnitItemProvider extends ImageUnitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((GridUnit)object).getName();
+		String label = ((GalleryUnit)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_GridUnit_type") :
-			getString("_UI_GridUnit_type") + " " + label;
+			getString("_UI_GalleryUnit_type") :
+			getString("_UI_GalleryUnit_type") + " " + label;
 	}
 	
 

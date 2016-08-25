@@ -52,7 +52,7 @@ import uk.ac.man.cs.mdsd.waf.Filter;
 import uk.ac.man.cs.mdsd.waf.FilterParameter;
 import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
-import uk.ac.man.cs.mdsd.waf.GridUnit;
+import uk.ac.man.cs.mdsd.waf.GalleryUnit;
 import uk.ac.man.cs.mdsd.waf.ImageUnit;
 import uk.ac.man.cs.mdsd.waf.IndexGridUnit;
 import uk.ac.man.cs.mdsd.waf.IndexLineDirectionUnit;
@@ -526,7 +526,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass gridUnitEClass = null;
+	private EClass galleryUnitEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3165,8 +3165,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getGridUnit() {
-		return gridUnitEClass;
+	public EClass getGalleryUnit() {
+		return galleryUnitEClass;
 	}
 
 	/**
@@ -3327,8 +3327,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInlineAction_EnableWhen() {
-		return (EReference)inlineActionEClass.getEStructuralFeatures().get(2);
+	public EAttribute getInlineAction_RequiresRole() {
+		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -3336,7 +3336,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInlineAction_DisplayWhen() {
+	public EReference getInlineAction_EnableWhen() {
 		return (EReference)inlineActionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -3345,8 +3345,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInlineAction_Header() {
-		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(4);
+	public EReference getInlineAction_DisplayWhen() {
+		return (EReference)inlineActionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3354,7 +3354,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInlineAction_Footer() {
+	public EAttribute getInlineAction_Header() {
 		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -3363,7 +3363,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInlineAction_HeaderClass() {
+	public EAttribute getInlineAction_Footer() {
 		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -3372,8 +3372,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInlineAction_FooterClass() {
+	public EAttribute getInlineAction_HeaderClass() {
 		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInlineAction_FooterClass() {
+		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -3975,7 +3984,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		sliderUnitEClass = createEClass(SLIDER_UNIT);
 
-		gridUnitEClass = createEClass(GRID_UNIT);
+		galleryUnitEClass = createEClass(GALLERY_UNIT);
 
 		authenticationUnitEClass = createEClass(AUTHENTICATION_UNIT);
 
@@ -3999,6 +4008,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		inlineActionEClass = createEClass(INLINE_ACTION);
 		createEReference(inlineActionEClass, INLINE_ACTION__USED_BY);
 		createEAttribute(inlineActionEClass, INLINE_ACTION__DISABLE);
+		createEAttribute(inlineActionEClass, INLINE_ACTION__REQUIRES_ROLE);
 		createEReference(inlineActionEClass, INLINE_ACTION__ENABLE_WHEN);
 		createEReference(inlineActionEClass, INLINE_ACTION__DISPLAY_WHEN);
 		createEAttribute(inlineActionEClass, INLINE_ACTION__HEADER);
@@ -4139,7 +4149,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		actionUnitEClass.getESuperTypes().add(this.getControlUnit());
 		imageUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		sliderUnitEClass.getESuperTypes().add(this.getImageUnit());
-		gridUnitEClass.getESuperTypes().add(this.getImageUnit());
+		galleryUnitEClass.getESuperTypes().add(this.getImageUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getEditUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());
 		loginUnitEClass.getESuperTypes().add(this.getControlUnit());
@@ -4485,7 +4495,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(sliderUnitEClass, SliderUnit.class, "SliderUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(gridUnitEClass, GridUnit.class, "GridUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(galleryUnitEClass, GalleryUnit.class, "GalleryUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(authenticationUnitEClass, AuthenticationUnit.class, "AuthenticationUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -4509,6 +4519,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(inlineActionEClass, InlineAction.class, "InlineAction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInlineAction_UsedBy(), this.getInlineActionContainer(), this.getInlineActionContainer_Actions(), "usedBy", null, 1, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInlineAction_Disable(), theEcorePackage.getEBoolean(), "disable", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInlineAction_RequiresRole(), theEcorePackage.getEString(), "requiresRole", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInlineAction_EnableWhen(), theCriteriaPackage.getPredicate(), null, "enableWhen", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInlineAction_DisplayWhen(), theCriteriaPackage.getPredicate(), null, "displayWhen", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInlineAction_Header(), theEcorePackage.getEString(), "header", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

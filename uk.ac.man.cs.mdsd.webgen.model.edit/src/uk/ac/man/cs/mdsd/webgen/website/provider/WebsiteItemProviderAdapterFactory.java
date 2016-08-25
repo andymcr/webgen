@@ -1567,26 +1567,26 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.GridUnit} instances.
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.GalleryUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GridUnitItemProvider gridUnitItemProvider;
+	protected GalleryUnitItemProvider galleryUnitItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.GridUnit}.
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.GalleryUnit}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createGridUnitAdapter() {
-		if (gridUnitItemProvider == null) {
-			gridUnitItemProvider = new GridUnitItemProvider(this);
+	public Adapter createGalleryUnitAdapter() {
+		if (galleryUnitItemProvider == null) {
+			galleryUnitItemProvider = new GalleryUnitItemProvider(this);
 		}
 
-		return gridUnitItemProvider;
+		return galleryUnitItemProvider;
 	}
 
 	/**
@@ -2005,7 +2005,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
 		if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
-		if (gridUnitItemProvider != null) gridUnitItemProvider.dispose();
+		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
 		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();
 		if (loginUnitItemProvider != null) loginUnitItemProvider.dispose();
 		if (forgottenPasswordUnitItemProvider != null) forgottenPasswordUnitItemProvider.dispose();

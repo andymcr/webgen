@@ -1161,9 +1161,9 @@ rule SliderUnit {
 }
 
 -- @extends ImageUnit
-rule GridUnit {
-	from website : Website!GridUnit
-	to waf : WAF!GridUnit (
+rule GalleryUnit {
+	from website : Website!GalleryUnit
+	to waf : WAF!GalleryUnit (
 	)
 }
 
@@ -1206,6 +1206,7 @@ abstract rule InlineAction {
 	from website : Website!InlineAction
 	to waf : WAF!InlineAction (
 		disable <- website.disable,
+		requiresRole <- website.requiresRole,
 		enableWhen <- website.enableWhen,
 		displayWhen <- website.displayWhen,
 		header <- website.header,

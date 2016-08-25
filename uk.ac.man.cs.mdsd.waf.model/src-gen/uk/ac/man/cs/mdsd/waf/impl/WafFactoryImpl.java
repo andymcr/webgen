@@ -97,7 +97,7 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.SEARCH_UNIT: return createSearchUnit();
 			case WafPackage.ACTION_UNIT: return createActionUnit();
 			case WafPackage.SLIDER_UNIT: return createSliderUnit();
-			case WafPackage.GRID_UNIT: return createGridUnit();
+			case WafPackage.GALLERY_UNIT: return createGalleryUnit();
 			case WafPackage.REGISTRATION_UNIT: return createRegistrationUnit();
 			case WafPackage.LOGIN_UNIT: return createLoginUnit();
 			case WafPackage.FORGOTTEN_PASSWORD_UNIT: return createForgottenPasswordUnit();
@@ -573,9 +573,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GridUnit createGridUnit() {
-		GridUnitImpl gridUnit = new GridUnitImpl();
-		return gridUnit;
+	public GalleryUnit createGalleryUnit() {
+		GalleryUnitImpl galleryUnit = new GalleryUnitImpl();
+		return galleryUnit;
 	}
 
 	/**

@@ -442,7 +442,7 @@ public class PageItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
-				 WafFactory.eINSTANCE.createGridUnit()));
+				 WafFactory.eINSTANCE.createGalleryUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter

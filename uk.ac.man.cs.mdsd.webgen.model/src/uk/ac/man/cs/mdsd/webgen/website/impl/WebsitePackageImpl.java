@@ -76,7 +76,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.FilterParameter;
 import uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies;
-import uk.ac.man.cs.mdsd.webgen.website.GridUnit;
+import uk.ac.man.cs.mdsd.webgen.website.GalleryUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ImageAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ImageUnit;
 import uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption;
@@ -823,7 +823,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass gridUnitEClass = null;
+	private EClass galleryUnitEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -4985,8 +4985,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getGridUnit() {
-		return gridUnitEClass;
+	public EClass getGalleryUnit() {
+		return galleryUnitEClass;
 	}
 
 	/**
@@ -4994,8 +4994,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGridUnit_StyleClass() {
-		return (EAttribute)gridUnitEClass.getEStructuralFeatures().get(0);
+	public EAttribute getGalleryUnit_StyleClass() {
+		return (EAttribute)galleryUnitEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5003,8 +5003,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGridUnit_ContentClass() {
-		return (EAttribute)gridUnitEClass.getEStructuralFeatures().get(1);
+	public EAttribute getGalleryUnit_ContentClass() {
+		return (EAttribute)galleryUnitEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5129,8 +5129,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInlineAction_EnableWhen() {
-		return (EReference)inlineActionEClass.getEStructuralFeatures().get(2);
+	public EAttribute getInlineAction_RequiresRole() {
+		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5138,7 +5138,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInlineAction_DisplayWhen() {
+	public EReference getInlineAction_EnableWhen() {
 		return (EReference)inlineActionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -5147,8 +5147,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInlineAction_Header() {
-		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(4);
+	public EReference getInlineAction_DisplayWhen() {
+		return (EReference)inlineActionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -5156,7 +5156,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInlineAction_Footer() {
+	public EAttribute getInlineAction_Header() {
 		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -5165,7 +5165,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInlineAction_HeaderClass() {
+	public EAttribute getInlineAction_Footer() {
 		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -5174,8 +5174,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInlineAction_FooterClass() {
+	public EAttribute getInlineAction_HeaderClass() {
 		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInlineAction_FooterClass() {
+		return (EAttribute)inlineActionEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -6337,9 +6346,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(sliderUnitEClass, SLIDER_UNIT__STYLE_CLASS);
 		createEAttribute(sliderUnitEClass, SLIDER_UNIT__CONTENT_CLASS);
 
-		gridUnitEClass = createEClass(GRID_UNIT);
-		createEAttribute(gridUnitEClass, GRID_UNIT__STYLE_CLASS);
-		createEAttribute(gridUnitEClass, GRID_UNIT__CONTENT_CLASS);
+		galleryUnitEClass = createEClass(GALLERY_UNIT);
+		createEAttribute(galleryUnitEClass, GALLERY_UNIT__STYLE_CLASS);
+		createEAttribute(galleryUnitEClass, GALLERY_UNIT__CONTENT_CLASS);
 
 		authenticationUnitEClass = createEClass(AUTHENTICATION_UNIT);
 
@@ -6359,6 +6368,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		inlineActionEClass = createEClass(INLINE_ACTION);
 		createEReference(inlineActionEClass, INLINE_ACTION__USED_BY);
 		createEAttribute(inlineActionEClass, INLINE_ACTION__DISABLE);
+		createEAttribute(inlineActionEClass, INLINE_ACTION__REQUIRES_ROLE);
 		createEReference(inlineActionEClass, INLINE_ACTION__ENABLE_WHEN);
 		createEReference(inlineActionEClass, INLINE_ACTION__DISPLAY_WHEN);
 		createEAttribute(inlineActionEClass, INLINE_ACTION__HEADER);
@@ -6545,7 +6555,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		actionUnitEClass.getESuperTypes().add(this.getControlUnit());
 		imageUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		sliderUnitEClass.getESuperTypes().add(this.getImageUnit());
-		gridUnitEClass.getESuperTypes().add(this.getImageUnit());
+		galleryUnitEClass.getESuperTypes().add(this.getImageUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getControlUnit());
 		loginUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());
@@ -7118,9 +7128,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getSliderUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,slider_unit", 0, 1, SliderUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSliderUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "slider_content", 0, 1, SliderUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(gridUnitEClass, GridUnit.class, "GridUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGridUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,gallery_unit", 0, 1, GridUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getGridUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "gallery_content", 0, 1, GridUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(galleryUnitEClass, GalleryUnit.class, "GalleryUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGalleryUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,gallery_unit", 0, 1, GalleryUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getGalleryUnit_ContentClass(), ecorePackage.getEString(), "contentClass", "gallery_content", 0, 1, GalleryUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(authenticationUnitEClass, AuthenticationUnit.class, "AuthenticationUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -7140,6 +7150,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(inlineActionEClass, InlineAction.class, "InlineAction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInlineAction_UsedBy(), this.getInlineActionContainer(), this.getInlineActionContainer_Actions(), "usedBy", null, 1, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInlineAction_Disable(), ecorePackage.getEBoolean(), "disable", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInlineAction_RequiresRole(), ecorePackage.getEString(), "requiresRole", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInlineAction_EnableWhen(), theCriteriaPackage.getPredicate(), null, "enableWhen", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInlineAction_DisplayWhen(), theCriteriaPackage.getPredicate(), null, "displayWhen", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInlineAction_Header(), ecorePackage.getEString(), "header", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

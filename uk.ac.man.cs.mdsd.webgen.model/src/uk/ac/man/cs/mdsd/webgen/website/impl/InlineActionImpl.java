@@ -27,6 +27,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getUsedBy <em>Used By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#isDisable <em>Disable</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getRequiresRole <em>Requires Role</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getEnableWhen <em>Enable When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getDisplayWhen <em>Display When</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl#getHeader <em>Header</em>}</li>
@@ -57,6 +58,26 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 	 * @ordered
 	 */
 	protected boolean disable = DISABLE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REQUIRES_ROLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRequiresRole() <em>Requires Role</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiresRole()
+	 * @generated
+	 * @ordered
+	 */
+	protected String requiresRole = REQUIRES_ROLE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getEnableWhen() <em>Enable When</em>}' containment reference.
@@ -237,6 +258,27 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		disable = newDisable;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__DISABLE, oldDisable, disable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRequiresRole() {
+		return requiresRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiresRole(String newRequiresRole) {
+		String oldRequiresRole = requiresRole;
+		requiresRole = newRequiresRole;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INLINE_ACTION__REQUIRES_ROLE, oldRequiresRole, requiresRole));
 	}
 
 	/**
@@ -469,6 +511,8 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 				return getUsedBy();
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				return isDisable();
+			case WebsitePackage.INLINE_ACTION__REQUIRES_ROLE:
+				return getRequiresRole();
 			case WebsitePackage.INLINE_ACTION__ENABLE_WHEN:
 				return getEnableWhen();
 			case WebsitePackage.INLINE_ACTION__DISPLAY_WHEN:
@@ -498,6 +542,9 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 				return;
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				setDisable((Boolean)newValue);
+				return;
+			case WebsitePackage.INLINE_ACTION__REQUIRES_ROLE:
+				setRequiresRole((String)newValue);
 				return;
 			case WebsitePackage.INLINE_ACTION__ENABLE_WHEN:
 				setEnableWhen((Predicate)newValue);
@@ -535,6 +582,9 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				setDisable(DISABLE_EDEFAULT);
 				return;
+			case WebsitePackage.INLINE_ACTION__REQUIRES_ROLE:
+				setRequiresRole(REQUIRES_ROLE_EDEFAULT);
+				return;
 			case WebsitePackage.INLINE_ACTION__ENABLE_WHEN:
 				setEnableWhen((Predicate)null);
 				return;
@@ -569,6 +619,8 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 				return getUsedBy() != null;
 			case WebsitePackage.INLINE_ACTION__DISABLE:
 				return disable != DISABLE_EDEFAULT;
+			case WebsitePackage.INLINE_ACTION__REQUIRES_ROLE:
+				return REQUIRES_ROLE_EDEFAULT == null ? requiresRole != null : !REQUIRES_ROLE_EDEFAULT.equals(requiresRole);
 			case WebsitePackage.INLINE_ACTION__ENABLE_WHEN:
 				return enableWhen != null;
 			case WebsitePackage.INLINE_ACTION__DISPLAY_WHEN:
@@ -597,6 +649,8 @@ public abstract class InlineActionImpl extends NamedDisplayElementImpl implement
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (disable: ");
 		result.append(disable);
+		result.append(", requiresRole: ");
+		result.append(requiresRole);
 		result.append(", header: ");
 		result.append(header);
 		result.append(", footer: ");

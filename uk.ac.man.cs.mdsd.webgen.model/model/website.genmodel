@@ -728,9 +728,9 @@
       <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//SliderUnit/contentClass"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//GridUnit">
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//GridUnit/styleClass"/>
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//GridUnit/contentClass"/>
+    <genClasses ecoreClass="website.ecore#//GalleryUnit">
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//GalleryUnit/styleClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//GalleryUnit/contentClass"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//AuthenticationUnit"/>
     <genClasses ecoreClass="website.ecore#//RegistrationUnit">
@@ -750,6 +750,7 @@
     <genClasses image="false" ecoreClass="website.ecore#//InlineAction">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//InlineAction/usedBy"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/disable"/>
+      <genFeatures createChild="false" propertyCategory="Security" ecoreFeature="ecore:EAttribute website.ecore#//InlineAction/requiresRole"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"
           ecoreFeature="ecore:EReference website.ecore#//InlineAction/enableWhen"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Interface"

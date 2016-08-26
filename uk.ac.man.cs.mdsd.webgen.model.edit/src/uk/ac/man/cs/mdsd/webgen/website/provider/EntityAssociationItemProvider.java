@@ -340,7 +340,6 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.ASSOCIATION__CHILD_FEATURE);
 			childrenFeatures.add(WebsitePackage.Literals.ENTITY_ASSOCIATION__KEYS);
 		}
 		return childrenFeatures;
@@ -402,7 +401,6 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 			case WebsitePackage.ENTITY_ASSOCIATION__TARGET_FOOTER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
 			case WebsitePackage.ENTITY_ASSOCIATION__KEYS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -420,16 +418,6 @@ public class EntityAssociationItemProvider extends EntityFeatureItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.ASSOCIATION__CHILD_FEATURE,
-				 WebsiteFactory.eINSTANCE.createChildAttribute()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.ASSOCIATION__CHILD_FEATURE,
-				 WebsiteFactory.eINSTANCE.createChildAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter

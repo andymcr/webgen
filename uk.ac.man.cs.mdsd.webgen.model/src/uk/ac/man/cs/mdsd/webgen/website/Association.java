@@ -19,7 +19,6 @@ import java.util.List;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#isPseudo <em>Pseudo</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Association#getSourceEntityX <em>Source Entity X</em>}</li>
@@ -59,32 +58,6 @@ public interface Association extends Feature {
 	 * @generated
 	 */
 	void setPseudo(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Child Feature</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Child Feature</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Child Feature</em>' containment reference.
-	 * @see #setChildFeature(ChildFeature)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociation_ChildFeature()
-	 * @model containment="true"
-	 * @generated
-	 */
-	ChildFeature getChildFeature();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Association#getChildFeature <em>Child Feature</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Child Feature</em>' containment reference.
-	 * @see #getChildFeature()
-	 * @generated
-	 */
-	void setChildFeature(ChildFeature value);
 
 	/**
 	 * Returns the value of the '<em><b>Encapsulated By</b></em>' reference list.

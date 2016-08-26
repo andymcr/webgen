@@ -43,6 +43,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAutoKeyName <em>Auto Key Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAutoKeyPersistentType <em>Auto Key Persistent Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getAutoKeyGenerationStrategy <em>Auto Key Generation Strategy</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getUnique <em>Unique</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getContainerUnique <em>Container Unique</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getServedBy <em>Served By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getLabels <em>Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityOrViewImpl#getFeatures <em>Features</em>}</li>
@@ -186,6 +188,26 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * @ordered
 	 */
 	protected String autoKeyGenerationStrategy = AUTO_KEY_GENERATION_STRATEGY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUnique() <em>Unique</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Feature> unique;
+
+	/**
+	 * The cached value of the '{@link #getContainerUnique() <em>Container Unique</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainerUnique()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Feature> containerUnique;
 
 	/**
 	 * The cached value of the '{@link #getServedBy() <em>Served By</em>}' reference list.
@@ -447,6 +469,30 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public List<Feature> getUnique() {
+		if (unique == null) {
+			unique = new EObjectResolvingEList<Feature>(Feature.class, this, WebsitePackage.ENTITY_OR_VIEW__UNIQUE);
+		}
+		return unique;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<Feature> getContainerUnique() {
+		if (containerUnique == null) {
+			containerUnique = new EObjectResolvingEList<Feature>(Feature.class, this, WebsitePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE);
+		}
+		return containerUnique;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public List<Service> getServedBy() {
 		if (servedBy == null) {
 			servedBy = new EObjectWithInverseResolvingEList<Service>(Service.class, this, WebsitePackage.ENTITY_OR_VIEW__SERVED_BY, WebsitePackage.SERVICE__SERVES);
@@ -625,6 +671,10 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return getAutoKeyPersistentType();
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 				return getAutoKeyGenerationStrategy();
+			case WebsitePackage.ENTITY_OR_VIEW__UNIQUE:
+				return getUnique();
+			case WebsitePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
+				return getContainerUnique();
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				return getServedBy();
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:
@@ -678,6 +728,14 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 				setAutoKeyGenerationStrategy((String)newValue);
 				return;
+			case WebsitePackage.ENTITY_OR_VIEW__UNIQUE:
+				getUnique().clear();
+				getUnique().addAll((Collection<? extends Feature>)newValue);
+				return;
+			case WebsitePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
+				getContainerUnique().clear();
+				getContainerUnique().addAll((Collection<? extends Feature>)newValue);
+				return;
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				getServedBy().clear();
 				getServedBy().addAll((Collection<? extends Service>)newValue);
@@ -725,6 +783,12 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 				setAutoKeyGenerationStrategy(AUTO_KEY_GENERATION_STRATEGY_EDEFAULT);
 				return;
+			case WebsitePackage.ENTITY_OR_VIEW__UNIQUE:
+				getUnique().clear();
+				return;
+			case WebsitePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
+				getContainerUnique().clear();
+				return;
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				getServedBy().clear();
 				return;
@@ -763,6 +827,10 @@ public abstract class EntityOrViewImpl extends ClassifierImpl implements EntityO
 				return AUTO_KEY_PERSISTENT_TYPE_EDEFAULT == null ? autoKeyPersistentType != null : !AUTO_KEY_PERSISTENT_TYPE_EDEFAULT.equals(autoKeyPersistentType);
 			case WebsitePackage.ENTITY_OR_VIEW__AUTO_KEY_GENERATION_STRATEGY:
 				return AUTO_KEY_GENERATION_STRATEGY_EDEFAULT == null ? autoKeyGenerationStrategy != null : !AUTO_KEY_GENERATION_STRATEGY_EDEFAULT.equals(autoKeyGenerationStrategy);
+			case WebsitePackage.ENTITY_OR_VIEW__UNIQUE:
+				return unique != null && !unique.isEmpty();
+			case WebsitePackage.ENTITY_OR_VIEW__CONTAINER_UNIQUE:
+				return containerUnique != null && !containerUnique.isEmpty();
 			case WebsitePackage.ENTITY_OR_VIEW__SERVED_BY:
 				return servedBy != null && !servedBy.isEmpty();
 			case WebsitePackage.ENTITY_OR_VIEW__LABELS:

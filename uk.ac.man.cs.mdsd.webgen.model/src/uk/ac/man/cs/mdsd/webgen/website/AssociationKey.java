@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getKeyFor <em>Key For</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getSourceFeature <em>Source Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getTargetFeature <em>Target Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getTargetColumnName <em>Target Column Name</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationKey()
@@ -88,7 +89,7 @@ public interface AssociationKey extends EObject {
 	 * @return the value of the '<em>Target Feature</em>' reference.
 	 * @see #setTargetFeature(EntityFeature)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationKey_TargetFeature()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EntityFeature getTargetFeature();
@@ -102,5 +103,31 @@ public interface AssociationKey extends EObject {
 	 * @generated
 	 */
 	void setTargetFeature(EntityFeature value);
+
+	/**
+	 * Returns the value of the '<em><b>Target Column Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target Column Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target Column Name</em>' attribute.
+	 * @see #setTargetColumnName(String)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationKey_TargetColumnName()
+	 * @model
+	 * @generated
+	 */
+	String getTargetColumnName();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationKey#getTargetColumnName <em>Target Column Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target Column Name</em>' attribute.
+	 * @see #getTargetColumnName()
+	 * @generated
+	 */
+	void setTargetColumnName(String value);
 
 } // AssociationKey

@@ -226,6 +226,10 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoKeyGenerationStrategy"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unique" upperBound="-1"
+        eType="#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerUnique" upperBound="-1"
+        eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="servedBy" upperBound="-1"
         eType="#//Service" eOpposite="#//Service/serves"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
@@ -300,8 +304,6 @@
       eSuperTypes="#//Feature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pseudo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="childFeature" eType="#//ChildFeature"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulatedBy" upperBound="-1"
         eType="#//EncapsulatedAssociation" eOpposite="#//EncapsulatedAssociation/association"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -488,8 +490,8 @@
         eType="#//EntityAssociation" eOpposite="#//EntityAssociation/keys"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceFeature" lowerBound="1"
         eType="#//EntityFeature"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetFeature" lowerBound="1"
-        eType="#//EntityFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetFeature" eType="#//EntityFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetColumnName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="View" eSuperTypes="#//EntityOrView">
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" upperBound="-1"

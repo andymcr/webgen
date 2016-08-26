@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
-import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
@@ -49,7 +48,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getFooterClass <em>Footer Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#isPseudo <em>Pseudo</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ViewAssociationImpl#getSourceEntityX <em>Source Entity X</em>}</li>
@@ -251,15 +249,6 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * @ordered
 	 */
 	protected boolean pseudo = PSEUDO_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChildFeature()
-	 * @generated
-	 * @ordered
-	 */
-	protected ChildFeature childFeature;
 	/**
 	 * The cached value of the '{@link #getEncapsulatedBy() <em>Encapsulated By</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -637,49 +626,6 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildFeature getChildFeature() {
-		return childFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetChildFeature(ChildFeature newChildFeature, NotificationChain msgs) {
-		ChildFeature oldChildFeature = childFeature;
-		childFeature = newChildFeature;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setChildFeature(ChildFeature newChildFeature) {
-		if (newChildFeature != childFeature) {
-			NotificationChain msgs = null;
-			if (childFeature != null)
-				msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE, null, msgs);
-			if (newChildFeature != null)
-				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE, null, msgs);
-			msgs = basicSetChildFeature(newChildFeature, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE, newChildFeature, newChildFeature));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public List<EncapsulatedAssociation> getEncapsulatedBy() {
 		if (encapsulatedBy == null) {
 			encapsulatedBy = new EObjectWithInverseResolvingEList<EncapsulatedAssociation>(EncapsulatedAssociation.class, this, WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY, WebsitePackage.ENCAPSULATED_ASSOCIATION__ASSOCIATION);
@@ -853,8 +799,6 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		switch (featureID) {
 			case WebsitePackage.VIEW_ASSOCIATION__PART_OF:
 				return basicSetPartOf(null, msgs);
-			case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE:
-				return basicSetChildFeature(null, msgs);
 			case WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
 				return ((InternalEList<?>)getEncapsulatedBy()).basicRemove(otherEnd, msgs);
 		}
@@ -907,8 +851,6 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return getPartOf();
 			case WebsitePackage.VIEW_ASSOCIATION__PSEUDO:
 				return isPseudo();
-			case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE:
-				return getChildFeature();
 			case WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
 				return getEncapsulatedBy();
 			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
@@ -976,9 +918,6 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case WebsitePackage.VIEW_ASSOCIATION__PSEUDO:
 				setPseudo((Boolean)newValue);
 				return;
-			case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)newValue);
-				return;
 			case WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
 				getEncapsulatedBy().addAll((Collection<? extends EncapsulatedAssociation>)newValue);
@@ -1043,9 +982,6 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 			case WebsitePackage.VIEW_ASSOCIATION__PSEUDO:
 				setPseudo(PSEUDO_EDEFAULT);
 				return;
-			case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)null);
-				return;
 			case WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
 				return;
@@ -1097,8 +1033,6 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 				return getPartOf() != null;
 			case WebsitePackage.VIEW_ASSOCIATION__PSEUDO:
 				return pseudo != PSEUDO_EDEFAULT;
-			case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE:
-				return childFeature != null;
 			case WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY:
 				return encapsulatedBy != null && !encapsulatedBy.isEmpty();
 			case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS:
@@ -1148,7 +1082,6 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.VIEW_ASSOCIATION__PSEUDO: return WebsitePackage.ASSOCIATION__PSEUDO;
-				case WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
 				case WebsitePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X;
@@ -1191,7 +1124,6 @@ public class ViewAssociationImpl extends NamedDisplayElementImpl implements View
 		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.ASSOCIATION__PSEUDO: return WebsitePackage.VIEW_ASSOCIATION__PSEUDO;
-				case WebsitePackage.ASSOCIATION__CHILD_FEATURE: return WebsitePackage.VIEW_ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.VIEW_ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.VIEW_ASSOCIATION__INPUT_CLASS;
 				case WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.VIEW_ASSOCIATION__SOURCE_ENTITY_X;

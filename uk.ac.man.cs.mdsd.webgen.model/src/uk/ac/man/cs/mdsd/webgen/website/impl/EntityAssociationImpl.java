@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationKey;
-import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Entity;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
@@ -35,7 +34,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#isPseudo <em>Pseudo</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getEncapsulatedBy <em>Encapsulated By</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getInputClass <em>Input Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EntityAssociationImpl#getSourceEntityX <em>Source Entity X</em>}</li>
@@ -76,16 +74,6 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	 * @ordered
 	 */
 	protected boolean pseudo = PSEUDO_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChildFeature()
-	 * @generated
-	 * @ordered
-	 */
-	protected ChildFeature childFeature;
 
 	/**
 	 * The cached value of the '{@link #getEncapsulatedBy() <em>Encapsulated By</em>}' reference list.
@@ -407,49 +395,6 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 			keys = new EObjectContainmentWithInverseEList<AssociationKey>(AssociationKey.class, this, WebsitePackage.ENTITY_ASSOCIATION__KEYS, WebsitePackage.ASSOCIATION_KEY__KEY_FOR);
 		}
 		return keys;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChildFeature getChildFeature() {
-		return childFeature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetChildFeature(ChildFeature newChildFeature, NotificationChain msgs) {
-		ChildFeature oldChildFeature = childFeature;
-		childFeature = newChildFeature;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setChildFeature(ChildFeature newChildFeature) {
-		if (newChildFeature != childFeature) {
-			NotificationChain msgs = null;
-			if (childFeature != null)
-				msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE, null, msgs);
-			if (newChildFeature != null)
-				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE, null, msgs);
-			msgs = basicSetChildFeature(newChildFeature, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE, newChildFeature, newChildFeature));
 	}
 
 	/**
@@ -820,8 +765,6 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
-				return basicSetChildFeature(null, msgs);
 			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				return ((InternalEList<?>)getEncapsulatedBy()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.ENTITY_ASSOCIATION__KEYS:
@@ -842,8 +785,6 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		switch (featureID) {
 			case WebsitePackage.ENTITY_ASSOCIATION__PSEUDO:
 				return isPseudo();
-			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
-				return getChildFeature();
 			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				return getEncapsulatedBy();
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
@@ -894,9 +835,6 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		switch (featureID) {
 			case WebsitePackage.ENTITY_ASSOCIATION__PSEUDO:
 				setPseudo((Boolean)newValue);
-				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)newValue);
 				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
@@ -957,9 +895,6 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 			case WebsitePackage.ENTITY_ASSOCIATION__PSEUDO:
 				setPseudo(PSEUDO_EDEFAULT);
 				return;
-			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)null);
-				return;
 			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				getEncapsulatedBy().clear();
 				return;
@@ -1016,8 +951,6 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		switch (featureID) {
 			case WebsitePackage.ENTITY_ASSOCIATION__PSEUDO:
 				return pseudo != PSEUDO_EDEFAULT;
-			case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE:
-				return childFeature != null;
 			case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY:
 				return encapsulatedBy != null && !encapsulatedBy.isEmpty();
 			case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS:
@@ -1064,7 +997,6 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		if (baseClass == Association.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.ENTITY_ASSOCIATION__PSEUDO: return WebsitePackage.ASSOCIATION__PSEUDO;
-				case WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS: return WebsitePackage.ASSOCIATION__INPUT_CLASS;
 				case WebsitePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X;
@@ -1086,7 +1018,6 @@ public abstract class EntityAssociationImpl extends EntityFeatureImpl implements
 		if (baseClass == Association.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.ASSOCIATION__PSEUDO: return WebsitePackage.ENTITY_ASSOCIATION__PSEUDO;
-				case WebsitePackage.ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ENTITY_ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.ASSOCIATION__ENCAPSULATED_BY: return WebsitePackage.ENTITY_ASSOCIATION__ENCAPSULATED_BY;
 				case WebsitePackage.ASSOCIATION__INPUT_CLASS: return WebsitePackage.ENTITY_ASSOCIATION__INPUT_CLASS;
 				case WebsitePackage.ASSOCIATION__SOURCE_ENTITY_X: return WebsitePackage.ENTITY_ASSOCIATION__SOURCE_ENTITY_X;

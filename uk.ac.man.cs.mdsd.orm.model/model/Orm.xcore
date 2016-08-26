@@ -107,6 +107,8 @@ abstract class EntityOrView extends Classifier {
 	String autoKeyName
 	String autoKeyPersistentType
 	String autoKeyGenerationStrategy
+	refers Feature[] ^unique
+	refers Feature[] containerUnqiue
 	contains ModelLabel[] labels opposite labelFor
 	boolean[1] serializationExcludeAll = "false"
 	boolean implementsUserInterface = "false"
@@ -277,7 +279,8 @@ class CollectionAssociation extends EntityAssociation {
 class AssociationKey {
 	container EntityAssociation[1] keyFor opposite ^keys
 	refers EntityFeature[1] sourceFeature
-	refers EntityFeature[1] targetFeature
+	refers EntityFeature targetFeature
+	String sourceColumnName
 }
 
 

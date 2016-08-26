@@ -510,6 +510,12 @@ lazy rule OppositeAssociationKey {
 					website.targetFeature
 				endif
 			endif,
-		targetFeature <- website.sourceFeature
+		targetFeature <- website.sourceFeature,
+		targetColumnName <-
+			if website.targetFeature.oclIsUndefined() then
+				website.targetColumnName
+			else
+				website.targetFeature.columnName
+			endif
 	)
 }

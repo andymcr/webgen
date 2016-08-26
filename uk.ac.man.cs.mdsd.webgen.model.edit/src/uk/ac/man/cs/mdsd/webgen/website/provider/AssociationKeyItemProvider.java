@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationKey;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -60,6 +61,7 @@ public class AssociationKeyItemProvider
 
 			addSourceFeaturePropertyDescriptor(object);
 			addTargetFeaturePropertyDescriptor(object);
+			addTargetColumnNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -121,6 +123,28 @@ public class AssociationKeyItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Target Column Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetColumnNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationKey_targetColumnName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationKey_targetColumnName_feature", "_UI_AssociationKey_type"),
+				 WebsitePackage.Literals.ASSOCIATION_KEY__TARGET_COLUMN_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PersistencePropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This returns AssociationKey.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,7 +163,10 @@ public class AssociationKeyItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_AssociationKey_type");
+		String label = ((AssociationKey)object).getTargetColumnName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_AssociationKey_type") :
+			getString("_UI_AssociationKey_type") + " " + label;
 	}
 	
 
@@ -153,6 +180,12 @@ public class AssociationKeyItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(AssociationKey.class)) {
+			case WebsitePackage.ASSOCIATION_KEY__TARGET_COLUMN_NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

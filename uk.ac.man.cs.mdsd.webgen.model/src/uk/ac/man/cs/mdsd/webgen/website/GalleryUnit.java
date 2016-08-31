@@ -20,7 +20,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface GalleryUnit extends ImageUnit {
+public interface GalleryUnit extends ImageUnit, InlineActionContainer {
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.
 	 * The default value is <code>"unit,gallery_unit"</code>.

@@ -499,7 +499,6 @@
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//StaticUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//StaticUnit/contentClass"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//UserCommand"/>
     <genClasses ecoreClass="website.ecore#//CreateSitemapUnit">
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//CreateSitemapUnit/deployedURL"/>
       <genFeatures createChild="false" propertyCategory="Site" ecoreFeature="ecore:EAttribute website.ecore#//CreateSitemapUnit/filename"/>

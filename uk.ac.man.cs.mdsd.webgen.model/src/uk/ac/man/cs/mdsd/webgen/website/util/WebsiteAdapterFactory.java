@@ -334,10 +334,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createStaticUnitAdapter();
 			}
 			@Override
-			public Adapter caseUserCommand(UserCommand object) {
-				return createUserCommandAdapter();
-			}
-			@Override
 			public Adapter caseCreateSitemapUnit(CreateSitemapUnit object) {
 				return createCreateSitemapUnitAdapter();
 			}
@@ -1736,20 +1732,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStaticUnitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.UserCommand <em>User Command</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UserCommand
-	 * @generated
-	 */
-	public Adapter createUserCommandAdapter() {
 		return null;
 	}
 

@@ -632,12 +632,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.USER_COMMAND: {
-				UserCommand userCommand = (UserCommand)theEObject;
-				T result = caseUserCommand(userCommand);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebsitePackage.CREATE_SITEMAP_UNIT: {
 				CreateSitemapUnit createSitemapUnit = (CreateSitemapUnit)theEObject;
 				T result = caseCreateSitemapUnit(createSitemapUnit);
@@ -932,6 +926,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				GalleryUnit galleryUnit = (GalleryUnit)theEObject;
 				T result = caseGalleryUnit(galleryUnit);
 				if (result == null) result = caseImageUnit(galleryUnit);
+				if (result == null) result = caseInlineActionContainer(galleryUnit);
 				if (result == null) result = caseDynamicUnit(galleryUnit);
 				if (result == null) result = caseContentUnit(galleryUnit);
 				if (result == null) result = caseNamedDisplayElement(galleryUnit);
@@ -2338,21 +2333,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStaticUnit(StaticUnit object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>User Command</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>User Command</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUserCommand(UserCommand object) {
 		return null;
 	}
 

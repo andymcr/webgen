@@ -220,8 +220,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateContentUnit((ContentUnit)value, diagnostics, context);
 			case WebsitePackage.STATIC_UNIT:
 				return validateStaticUnit((StaticUnit)value, diagnostics, context);
-			case WebsitePackage.USER_COMMAND:
-				return validateUserCommand((UserCommand)value, diagnostics, context);
 			case WebsitePackage.CREATE_SITEMAP_UNIT:
 				return validateCreateSitemapUnit((CreateSitemapUnit)value, diagnostics, context);
 			case WebsitePackage.DYNAMIC_UNIT:
@@ -2222,15 +2220,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateUserCommand(UserCommand userCommand, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(userCommand, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateCreateSitemapUnit(CreateSitemapUnit createSitemapUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(createSitemapUnit, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(createSitemapUnit, diagnostics, context);
@@ -2533,6 +2522,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(galleryUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(galleryUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(galleryUnit, diagnostics, context);
 		return result;
 	}
 

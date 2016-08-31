@@ -485,15 +485,6 @@ public interface WebsiteFactory extends EFactory {
 	StaticUnit createStaticUnit();
 
 	/**
-	 * Returns a new object of class '<em>User Command</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>User Command</em>'.
-	 * @generated
-	 */
-	UserCommand createUserCommand();
-
-	/**
 	 * Returns a new object of class '<em>Create Sitemap Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

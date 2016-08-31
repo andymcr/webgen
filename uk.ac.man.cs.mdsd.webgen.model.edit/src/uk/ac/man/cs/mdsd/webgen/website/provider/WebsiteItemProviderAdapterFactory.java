@@ -1084,29 +1084,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.UserCommand} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected UserCommandItemProvider userCommandItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.UserCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createUserCommandAdapter() {
-		if (userCommandItemProvider == null) {
-			userCommandItemProvider = new UserCommandItemProvider(this);
-		}
-
-		return userCommandItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateSitemapUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1984,7 +1961,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (queryItemProvider != null) queryItemProvider.dispose();
 		if (queryParameterItemProvider != null) queryParameterItemProvider.dispose();
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
-		if (userCommandItemProvider != null) userCommandItemProvider.dispose();
 		if (createSitemapUnitItemProvider != null) createSitemapUnitItemProvider.dispose();
 		if (unitElementItemProvider != null) unitElementItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();

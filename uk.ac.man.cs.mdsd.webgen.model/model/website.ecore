@@ -746,7 +746,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="static_content"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UserCommand"/>
   <eClassifiers xsi:type="ecore:EClass" name="CreateSitemapUnit" eSuperTypes="#//ContentUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deployedURL" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1132,7 +1131,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="slider_content"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GalleryUnit" eSuperTypes="#//ImageUnit">
+  <eClassifiers xsi:type="ecore:EClass" name="GalleryUnit" eSuperTypes="#//ImageUnit #//InlineActionContainer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,gallery_unit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"

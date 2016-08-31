@@ -104,7 +104,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.QUERY: return createQuery();
 			case WebsitePackage.QUERY_PARAMETER: return createQueryParameter();
 			case WebsitePackage.STATIC_UNIT: return createStaticUnit();
-			case WebsitePackage.USER_COMMAND: return createUserCommand();
 			case WebsitePackage.CREATE_SITEMAP_UNIT: return createCreateSitemapUnit();
 			case WebsitePackage.UNIT_ELEMENT: return createUnitElement();
 			case WebsitePackage.UNIT_ASSOCIATION: return createUnitAssociation();
@@ -728,16 +727,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public StaticUnit createStaticUnit() {
 		StaticUnitImpl staticUnit = new StaticUnitImpl();
 		return staticUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UserCommand createUserCommand() {
-		UserCommandImpl userCommand = new UserCommandImpl();
-		return userCommand;
 	}
 
 	/**

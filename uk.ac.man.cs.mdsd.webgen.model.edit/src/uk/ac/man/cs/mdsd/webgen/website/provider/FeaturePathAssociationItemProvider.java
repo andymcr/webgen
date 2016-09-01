@@ -17,24 +17,25 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.ChildAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
+import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ChildAssociation} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
+public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildAssociationItemProvider(AdapterFactory adapterFactory) {
+	public FeaturePathAssociationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -75,13 +76,16 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof ChildAssociation) {
-						return getAssociations((ChildAssociation) object);
+					if (object instanceof FeaturePathAssociation) {
+						final FeaturePathAssociation path = (FeaturePathAssociation) object;
+						if (path.eContainer() instanceof DynamicUnit) {
+							return getAssociations((DynamicUnit) path.eContainer());
+						}
 					}
 
-					return Collections.emptyList();
+					return Collections.emptySet();
 				}
-			});
+		});
 	}
 
 	/**
@@ -181,14 +185,14 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 	}
 
 	/**
-	 * This returns ChildAssociation.gif.
+	 * This returns FeaturePathAssociation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChildAssociation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/FeaturePathAssociation"));
 	}
 
 	/**
@@ -199,10 +203,8 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ChildAssociation)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ChildAssociation_type") :
-			getString("_UI_ChildAssociation_type") + " " + label;
+		FeaturePathAssociation featurePathAssociation = (FeaturePathAssociation)object;
+		return getString("_UI_FeaturePathAssociation_type") + " " + featurePathAssociation.isIsSourceAssociation();
 	}
 	
 
@@ -217,12 +219,11 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ChildAssociation.class)) {
-			case WebsitePackage.CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION:
-			case WebsitePackage.CHILD_ASSOCIATION__NAME:
+		switch (notification.getFeatureID(FeaturePathAssociation.class)) {
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE:
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

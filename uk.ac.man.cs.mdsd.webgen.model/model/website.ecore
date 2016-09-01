@@ -863,7 +863,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
         volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="not association.oclIsUndefined() implies&#xD;&#xA;&#x9;if self.oclIsKindOf(UnitAssociation) then&#xD;&#xA;&#x9;&#x9;self.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;let partOf : PathAssociationElement&#xD;&#xA;&#x9;&#x9;&#x9;= self.oclAsType(ChildAssociation).partOf&#xD;&#xA;&#x9;&#x9;&#x9;in partOf.targetEntity.associations->includes(association)&#xD;&#xA;&#x9;endif"/>
+        <details key="derivation" value="not association.oclIsUndefined() implies&#xD;&#xA;&#x9;if self.oclIsKindOf(UnitAssociation) then&#xD;&#xA;&#x9;&#x9;self.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)&#xD;&#xA;&#x9;else if self.oclIsKindOf(FeaturePathAssociation) then&#xD;&#xA;&#x9;&#x9;self.oclAsType(FeaturePathAssociation).eContainer().oclAsType(DynamicUnit).entities->collect(eov | eov.associations)->includes(association)&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;let partOf : PathAssociationElement&#xD;&#xA;&#x9;&#x9;&#x9;= self.oclAsType(ChildAssociation).partOf&#xD;&#xA;&#x9;&#x9;&#x9;in partOf.targetEntity.associations->includes(association)&#xD;&#xA;&#x9;endif endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEntity" eType="#//EntityOrView"
@@ -1120,11 +1120,26 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImageUnit" abstract="true" eSuperTypes="#//DynamicUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imageProperty" lowerBound="1"
-        eType="#//ImageAttribute"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="showTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imagePathFeature" lowerBound="1"
+        eType="#//FeaturePath" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="titleFeature" lowerBound="1"
+        eType="#//FeaturePath" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="thumbWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="thumbHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imageWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imageHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="showTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeaturePath" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeaturePathAttribute" eSuperTypes="#//FeaturePath">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeaturePathAssociation" eSuperTypes="#//FeaturePath #//PathAssociationElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SliderUnit" eSuperTypes="#//ImageUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,slider_unit"/>

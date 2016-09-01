@@ -280,6 +280,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateActionUnit((ActionUnit)value, diagnostics, context);
 			case WebsitePackage.IMAGE_UNIT:
 				return validateImageUnit((ImageUnit)value, diagnostics, context);
+			case WebsitePackage.FEATURE_PATH:
+				return validateFeaturePath((FeaturePath)value, diagnostics, context);
+			case WebsitePackage.FEATURE_PATH_ATTRIBUTE:
+				return validateFeaturePathAttribute((FeaturePathAttribute)value, diagnostics, context);
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION:
+				return validateFeaturePathAssociation((FeaturePathAssociation)value, diagnostics, context);
 			case WebsitePackage.SLIDER_UNIT:
 				return validateSliderUnit((SliderUnit)value, diagnostics, context);
 			case WebsitePackage.GALLERY_UNIT:
@@ -2483,6 +2489,33 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(imageUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(imageUnit, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFeaturePath(FeaturePath featurePath, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(featurePath, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFeaturePathAttribute(FeaturePathAttribute featurePathAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(featurePathAttribute, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFeaturePathAssociation(FeaturePathAssociation featurePathAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(featurePathAssociation, diagnostics, context);
 	}
 
 	/**

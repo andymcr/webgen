@@ -69,6 +69,9 @@ import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.EnumerationLiteral;
 import uk.ac.man.cs.mdsd.webgen.website.EnumerationType;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.FeaturePath;
+import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.website.FeatureSupportAction;
 import uk.ac.man.cs.mdsd.webgen.website.FileAttribute;
@@ -802,6 +805,27 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass imageUnitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass featurePathEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass featurePathAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass featurePathAssociationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -4932,7 +4956,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImageUnit_ImageProperty() {
+	public EReference getImageUnit_ImagePathFeature() {
 		return (EReference)imageUnitEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -4941,8 +4965,53 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getImageUnit_TitleFeature() {
+		return (EReference)imageUnitEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImageUnit_ThumbWidth() {
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImageUnit_ThumbHeight() {
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImageUnit_ImageWidth() {
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImageUnit_ImageHeight() {
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getImageUnit_ShowTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -4951,7 +5020,43 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getImageUnit_TransitionTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFeaturePath() {
+		return featurePathEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFeaturePathAttribute() {
+		return featurePathAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeaturePathAttribute_Attribute() {
+		return (EReference)featurePathAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFeaturePathAssociation() {
+		return featurePathAssociationEClass;
 	}
 
 	/**
@@ -6339,9 +6444,21 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		imageUnitEClass = createEClass(IMAGE_UNIT);
 		createEReference(imageUnitEClass, IMAGE_UNIT__DEFAULT_SELECTION);
-		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_PROPERTY);
+		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_PATH_FEATURE);
+		createEReference(imageUnitEClass, IMAGE_UNIT__TITLE_FEATURE);
+		createEAttribute(imageUnitEClass, IMAGE_UNIT__THUMB_WIDTH);
+		createEAttribute(imageUnitEClass, IMAGE_UNIT__THUMB_HEIGHT);
+		createEAttribute(imageUnitEClass, IMAGE_UNIT__IMAGE_WIDTH);
+		createEAttribute(imageUnitEClass, IMAGE_UNIT__IMAGE_HEIGHT);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__SHOW_TIME);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__TRANSITION_TIME);
+
+		featurePathEClass = createEClass(FEATURE_PATH);
+
+		featurePathAttributeEClass = createEClass(FEATURE_PATH_ATTRIBUTE);
+		createEReference(featurePathAttributeEClass, FEATURE_PATH_ATTRIBUTE__ATTRIBUTE);
+
+		featurePathAssociationEClass = createEClass(FEATURE_PATH_ASSOCIATION);
 
 		sliderUnitEClass = createEClass(SLIDER_UNIT);
 		createEAttribute(sliderUnitEClass, SLIDER_UNIT__STYLE_CLASS);
@@ -6555,6 +6672,9 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		searchUnitEClass.getESuperTypes().add(this.getControlUnit());
 		actionUnitEClass.getESuperTypes().add(this.getControlUnit());
 		imageUnitEClass.getESuperTypes().add(this.getDynamicUnit());
+		featurePathAttributeEClass.getESuperTypes().add(this.getFeaturePath());
+		featurePathAssociationEClass.getESuperTypes().add(this.getFeaturePath());
+		featurePathAssociationEClass.getESuperTypes().add(this.getPathAssociationElement());
 		sliderUnitEClass.getESuperTypes().add(this.getImageUnit());
 		galleryUnitEClass.getESuperTypes().add(this.getImageUnit());
 		galleryUnitEClass.getESuperTypes().add(this.getInlineActionContainer());
@@ -7122,9 +7242,21 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 
 		initEClass(imageUnitEClass, ImageUnit.class, "ImageUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getImageUnit_DefaultSelection(), this.getSelection(), null, "defaultSelection", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getImageUnit_ImageProperty(), this.getImageAttribute(), null, "imageProperty", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageUnit_ShowTime(), ecorePackage.getEBoolean(), "showTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageUnit_TransitionTime(), ecorePackage.getEBoolean(), "transitionTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImageUnit_ImagePathFeature(), this.getFeaturePath(), null, "imagePathFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImageUnit_TitleFeature(), this.getFeaturePath(), null, "titleFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageUnit_ThumbWidth(), ecorePackage.getEInt(), "thumbWidth", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageUnit_ThumbHeight(), ecorePackage.getEInt(), "thumbHeight", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageUnit_ImageWidth(), ecorePackage.getEInt(), "imageWidth", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageUnit_ImageHeight(), ecorePackage.getEInt(), "imageHeight", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageUnit_ShowTime(), ecorePackage.getEInt(), "showTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageUnit_TransitionTime(), ecorePackage.getEInt(), "transitionTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(featurePathEClass, FeaturePath.class, "FeaturePath", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(featurePathAttributeEClass, FeaturePathAttribute.class, "FeaturePathAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFeaturePathAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, FeaturePathAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(featurePathAssociationEClass, FeaturePathAssociation.class, "FeaturePathAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(sliderUnitEClass, SliderUnit.class, "SliderUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSliderUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,slider_unit", 0, 1, SliderUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -7595,7 +7727,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getPathAssociationElement_IsSourceAssociation(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse\r\n\t\tlet partOf : PathAssociationElement\r\n\t\t\t= self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin partOf.targetEntity.associations->includes(association)\r\n\tendif"
+			 "derivation", "not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse if self.oclIsKindOf(FeaturePathAssociation) then\r\n\t\tself.oclAsType(FeaturePathAssociation).eContainer().oclAsType(DynamicUnit).entities->collect(eov | eov.associations)->includes(association)\r\n\telse\r\n\t\tlet partOf : PathAssociationElement\r\n\t\t\t= self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin partOf.targetEntity.associations->includes(association)\r\n\tendif endif"
 		   });	
 		addAnnotation
 		  (getPathAssociationElement_SourceEntity(), 

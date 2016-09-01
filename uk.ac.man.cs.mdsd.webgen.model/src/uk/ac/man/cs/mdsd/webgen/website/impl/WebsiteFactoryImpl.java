@@ -123,6 +123,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.INDEX_UNIT: return createIndexUnit();
 			case WebsitePackage.SEARCH_UNIT: return createSearchUnit();
 			case WebsitePackage.ACTION_UNIT: return createActionUnit();
+			case WebsitePackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
 			case WebsitePackage.SLIDER_UNIT: return createSliderUnit();
 			case WebsitePackage.GALLERY_UNIT: return createGalleryUnit();
 			case WebsitePackage.REGISTRATION_UNIT: return createRegistrationUnit();
@@ -837,6 +839,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public ActionUnit createActionUnit() {
 		ActionUnitImpl actionUnit = new ActionUnitImpl();
 		return actionUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeaturePathAttribute createFeaturePathAttribute() {
+		FeaturePathAttributeImpl featurePathAttribute = new FeaturePathAttributeImpl();
+		return featurePathAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeaturePathAssociation createFeaturePathAssociation() {
+		FeaturePathAssociationImpl featurePathAssociation = new FeaturePathAssociationImpl();
+		return featurePathAssociation;
 	}
 
 	/**

@@ -22,6 +22,7 @@ import uk.ac.man.cs.mdsd.webgen.website.EntityAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.EntityAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
+import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
@@ -154,6 +155,11 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 			if (parent.getAssociation() != null) {
 				return parent.getTargetEntity().getAttributes();
 			}
+		} else if (attribute.eContainer() instanceof FeaturePathAssociation) {
+				final FeaturePathAssociation parent = ((FeaturePathAssociation) attribute.eContainer());
+				if (parent.getAssociation() != null) {
+					return parent.getTargetEntity().getAttributes();
+				}
 		} else {
 			final ChildAssociation parent = (ChildAssociation) attribute.eContainer();
 			if (parent.getAssociation() != null) {

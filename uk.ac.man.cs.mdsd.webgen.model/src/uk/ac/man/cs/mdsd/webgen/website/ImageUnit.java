@@ -12,9 +12,14 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getDefaultSelection <em>Default Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageProperty <em>Image Property</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#isShowTime <em>Show Time</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#isTransitionTime <em>Transition Time</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTitleFeature <em>Title Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbWidth <em>Thumb Width</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbHeight <em>Thumb Height</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageWidth <em>Image Width</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageHeight <em>Image Height</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getShowTime <em>Show Time</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTransitionTime <em>Transition Time</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit()
@@ -50,30 +55,164 @@ public interface ImageUnit extends DynamicUnit {
 	void setDefaultSelection(Selection value);
 
 	/**
-	 * Returns the value of the '<em><b>Image Property</b></em>' reference.
+	 * Returns the value of the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Image Property</em>' reference isn't clear,
+	 * If the meaning of the '<em>Image Path Feature</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Image Property</em>' reference.
-	 * @see #setImageProperty(ImageAttribute)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ImageProperty()
-	 * @model required="true"
+	 * @return the value of the '<em>Image Path Feature</em>' containment reference.
+	 * @see #setImagePathFeature(FeaturePath)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ImagePathFeature()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	ImageAttribute getImageProperty();
+	FeaturePath getImagePathFeature();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageProperty <em>Image Property</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Image Property</em>' reference.
-	 * @see #getImageProperty()
+	 * @param value the new value of the '<em>Image Path Feature</em>' containment reference.
+	 * @see #getImagePathFeature()
 	 * @generated
 	 */
-	void setImageProperty(ImageAttribute value);
+	void setImagePathFeature(FeaturePath value);
+
+	/**
+	 * Returns the value of the '<em><b>Title Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Title Feature</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Title Feature</em>' containment reference.
+	 * @see #setTitleFeature(FeaturePath)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_TitleFeature()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	FeaturePath getTitleFeature();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTitleFeature <em>Title Feature</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Title Feature</em>' containment reference.
+	 * @see #getTitleFeature()
+	 * @generated
+	 */
+	void setTitleFeature(FeaturePath value);
+
+	/**
+	 * Returns the value of the '<em><b>Thumb Width</b></em>' attribute.
+	 * The default value is <code>"-1"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Thumb Width</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Thumb Width</em>' attribute.
+	 * @see #setThumbWidth(int)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ThumbWidth()
+	 * @model default="-1"
+	 * @generated
+	 */
+	int getThumbWidth();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbWidth <em>Thumb Width</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Thumb Width</em>' attribute.
+	 * @see #getThumbWidth()
+	 * @generated
+	 */
+	void setThumbWidth(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Thumb Height</b></em>' attribute.
+	 * The default value is <code>"-1"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Thumb Height</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Thumb Height</em>' attribute.
+	 * @see #setThumbHeight(int)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ThumbHeight()
+	 * @model default="-1"
+	 * @generated
+	 */
+	int getThumbHeight();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbHeight <em>Thumb Height</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Thumb Height</em>' attribute.
+	 * @see #getThumbHeight()
+	 * @generated
+	 */
+	void setThumbHeight(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Image Width</b></em>' attribute.
+	 * The default value is <code>"-1"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Image Width</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Image Width</em>' attribute.
+	 * @see #setImageWidth(int)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ImageWidth()
+	 * @model default="-1"
+	 * @generated
+	 */
+	int getImageWidth();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageWidth <em>Image Width</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Image Width</em>' attribute.
+	 * @see #getImageWidth()
+	 * @generated
+	 */
+	void setImageWidth(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Image Height</b></em>' attribute.
+	 * The default value is <code>"-1"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Image Height</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Image Height</em>' attribute.
+	 * @see #setImageHeight(int)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ImageHeight()
+	 * @model default="-1"
+	 * @generated
+	 */
+	int getImageHeight();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageHeight <em>Image Height</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Image Height</em>' attribute.
+	 * @see #getImageHeight()
+	 * @generated
+	 */
+	void setImageHeight(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Show Time</b></em>' attribute.
@@ -84,22 +223,22 @@ public interface ImageUnit extends DynamicUnit {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Show Time</em>' attribute.
-	 * @see #setShowTime(boolean)
+	 * @see #setShowTime(int)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ShowTime()
 	 * @model
 	 * @generated
 	 */
-	boolean isShowTime();
+	int getShowTime();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#isShowTime <em>Show Time</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getShowTime <em>Show Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Show Time</em>' attribute.
-	 * @see #isShowTime()
+	 * @see #getShowTime()
 	 * @generated
 	 */
-	void setShowTime(boolean value);
+	void setShowTime(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Transition Time</b></em>' attribute.
@@ -110,20 +249,20 @@ public interface ImageUnit extends DynamicUnit {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Transition Time</em>' attribute.
-	 * @see #setTransitionTime(boolean)
+	 * @see #setTransitionTime(int)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_TransitionTime()
 	 * @model
 	 * @generated
 	 */
-	boolean isTransitionTime();
+	int getTransitionTime();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#isTransitionTime <em>Transition Time</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTransitionTime <em>Transition Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Transition Time</em>' attribute.
-	 * @see #isTransitionTime()
+	 * @see #getTransitionTime()
 	 * @generated
 	 */
-	void setTransitionTime(boolean value);
+	void setTransitionTime(int value);
 } // ImageUnit

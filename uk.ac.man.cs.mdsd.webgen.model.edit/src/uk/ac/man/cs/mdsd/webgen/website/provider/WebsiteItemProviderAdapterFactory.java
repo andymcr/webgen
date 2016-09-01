@@ -1521,6 +1521,52 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FeaturePathAttributeItemProvider featurePathAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFeaturePathAttributeAdapter() {
+		if (featurePathAttributeItemProvider == null) {
+			featurePathAttributeItemProvider = new FeaturePathAttributeItemProvider(this);
+		}
+
+		return featurePathAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FeaturePathAssociationItemProvider featurePathAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFeaturePathAssociationAdapter() {
+		if (featurePathAssociationItemProvider == null) {
+			featurePathAssociationItemProvider = new FeaturePathAssociationItemProvider(this);
+		}
+
+		return featurePathAssociationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.SliderUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1980,6 +2026,8 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (indexUnitItemProvider != null) indexUnitItemProvider.dispose();
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
 		if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
+		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
+		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
 		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();

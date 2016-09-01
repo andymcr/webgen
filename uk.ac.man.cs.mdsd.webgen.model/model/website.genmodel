@@ -720,11 +720,23 @@
     <genClasses image="false" ecoreClass="website.ecore#//ImageUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//ImageUnit/defaultSelection"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//ImageUnit/imageProperty"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/showTime"/>
-      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/transitionTime"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ImageUnit/imagePathFeature"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ImageUnit/titleFeature"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/thumbWidth"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/thumbHeight"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/imageWidth"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/imageHeight"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/showTime"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/transitionTime"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="website.ecore#//FeaturePath"/>
+    <genClasses ecoreClass="website.ecore#//FeaturePathAttribute">
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//FeaturePathAttribute/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//FeaturePathAssociation"/>
     <genClasses ecoreClass="website.ecore#//SliderUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//SliderUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""

@@ -584,6 +584,24 @@ public interface WebsiteFactory extends EFactory {
 	ActionUnit createActionUnit();
 
 	/**
+	 * Returns a new object of class '<em>Feature Path Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature Path Attribute</em>'.
+	 * @generated
+	 */
+	FeaturePathAttribute createFeaturePathAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Feature Path Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature Path Association</em>'.
+	 * @generated
+	 */
+	FeaturePathAssociation createFeaturePathAssociation();
+
+	/**
 	 * Returns a new object of class '<em>Slider Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

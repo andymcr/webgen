@@ -677,7 +677,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 103;
+	int SELECT_ACTION = 106;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.DeleteActionImpl <em>Delete Action</em>}' class.
@@ -687,7 +687,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 104;
+	int DELETE_ACTION = 107;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.AuthenticationImpl <em>Authentication</em>}' class.
@@ -2396,7 +2396,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 97;
+	int AUTHENTICATION_UNIT = 100;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.RegistrationUnitImpl <em>Registration Unit</em>}' class.
@@ -2406,7 +2406,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 98;
+	int REGISTRATION_UNIT = 101;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.LoginUnitImpl <em>Login Unit</em>}' class.
@@ -2416,7 +2416,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 99;
+	int LOGIN_UNIT = 102;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl <em>Forgotten Password Unit</em>}' class.
@@ -2426,7 +2426,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 100;
+	int FORGOTTEN_PASSWORD_UNIT = 103;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer <em>Inline Action Container</em>}' class.
@@ -2436,7 +2436,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 101;
+	int INLINE_ACTION_CONTAINER = 104;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.InlineActionImpl <em>Inline Action</em>}' class.
@@ -2446,7 +2446,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 102;
+	int INLINE_ACTION = 105;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeatureSupportActionImpl <em>Feature Support Action</em>}' class.
@@ -2456,7 +2456,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 105;
+	int FEATURE_SUPPORT_ACTION = 108;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ModelReferenceImpl <em>Model Reference</em>}' class.
@@ -2466,7 +2466,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getModelReference()
 	 * @generated
 	 */
-	int MODEL_REFERENCE = 106;
+	int MODEL_REFERENCE = 109;
 
 	/**
 	 * The number of structural features of the '<em>Label</em>' class.
@@ -14127,13 +14127,58 @@ public interface WebsitePackage extends EPackage {
 	int IMAGE_UNIT__DEFAULT_SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Image Property</b></em>' reference.
+	 * The feature id for the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__IMAGE_PROPERTY = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+	int IMAGE_UNIT__IMAGE_PATH_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__TITLE_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__THUMB_WIDTH = DYNAMIC_UNIT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__THUMB_HEIGHT = DYNAMIC_UNIT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Image Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__IMAGE_WIDTH = DYNAMIC_UNIT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Image Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__IMAGE_HEIGHT = DYNAMIC_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
@@ -14142,7 +14187,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__SHOW_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+	int IMAGE_UNIT__SHOW_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
@@ -14151,7 +14196,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__TRANSITION_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 3;
+	int IMAGE_UNIT__TRANSITION_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Image Unit</em>' class.
@@ -14160,7 +14205,118 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 4;
+	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 9;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathImpl <em>Feature Path</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeaturePath()
+	 * @generated
+	 */
+	int FEATURE_PATH = 95;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAttributeImpl <em>Feature Path Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAttributeImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeaturePathAttribute()
+	 * @generated
+	 */
+	int FEATURE_PATH_ATTRIBUTE = 96;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = FEATURE_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl
+	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeaturePathAssociation()
+	 * @generated
+	 */
+	int FEATURE_PATH_ASSOCIATION = 97;
+
+	/**
+	 * The feature id for the '<em><b>Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__CHILD_FEATURE = FEATURE_PATH_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY = FEATURE_PATH_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__TARGET_ENTITY = FEATURE_PATH_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path Association</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SliderUnitImpl <em>Slider Unit</em>}' class.
@@ -14170,7 +14326,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getSliderUnit()
 	 * @generated
 	 */
-	int SLIDER_UNIT = 95;
+	int SLIDER_UNIT = 98;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -14362,13 +14518,58 @@ public interface WebsitePackage extends EPackage {
 	int SLIDER_UNIT__DEFAULT_SELECTION = IMAGE_UNIT__DEFAULT_SELECTION;
 
 	/**
-	 * The feature id for the '<em><b>Image Property</b></em>' reference.
+	 * The feature id for the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__IMAGE_PROPERTY = IMAGE_UNIT__IMAGE_PROPERTY;
+	int SLIDER_UNIT__IMAGE_PATH_FEATURE = IMAGE_UNIT__IMAGE_PATH_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__THUMB_WIDTH = IMAGE_UNIT__THUMB_WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__THUMB_HEIGHT = IMAGE_UNIT__THUMB_HEIGHT;
+
+	/**
+	 * The feature id for the '<em><b>Image Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__IMAGE_WIDTH = IMAGE_UNIT__IMAGE_WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Image Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__IMAGE_HEIGHT = IMAGE_UNIT__IMAGE_HEIGHT;
 
 	/**
 	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
@@ -14423,7 +14624,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getGalleryUnit()
 	 * @generated
 	 */
-	int GALLERY_UNIT = 96;
+	int GALLERY_UNIT = 99;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -14615,13 +14816,58 @@ public interface WebsitePackage extends EPackage {
 	int GALLERY_UNIT__DEFAULT_SELECTION = IMAGE_UNIT__DEFAULT_SELECTION;
 
 	/**
-	 * The feature id for the '<em><b>Image Property</b></em>' reference.
+	 * The feature id for the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__IMAGE_PROPERTY = IMAGE_UNIT__IMAGE_PROPERTY;
+	int GALLERY_UNIT__IMAGE_PATH_FEATURE = IMAGE_UNIT__IMAGE_PATH_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__THUMB_WIDTH = IMAGE_UNIT__THUMB_WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__THUMB_HEIGHT = IMAGE_UNIT__THUMB_HEIGHT;
+
+	/**
+	 * The feature id for the '<em><b>Image Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__IMAGE_WIDTH = IMAGE_UNIT__IMAGE_WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Image Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__IMAGE_HEIGHT = IMAGE_UNIT__IMAGE_HEIGHT;
 
 	/**
 	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
@@ -15945,7 +16191,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 107;
+	int FEATURE_REFERENCE = 110;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -15982,7 +16228,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getRouteParameterReference()
 	 * @generated
 	 */
-	int ROUTE_PARAMETER_REFERENCE = 108;
+	int ROUTE_PARAMETER_REFERENCE = 111;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -16019,7 +16265,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getParameterReference()
 	 * @generated
 	 */
-	int PARAMETER_REFERENCE = 109;
+	int PARAMETER_REFERENCE = 112;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -16056,7 +16302,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCurrentUserReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 110;
+	int CURRENT_USER_REFERENCE = 113;
 
 	/**
 	 * The feature id for the '<em><b>User Model</b></em>' reference.
@@ -16084,7 +16330,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDatabaseTechnologies()
 	 * @generated
 	 */
-	int DATABASE_TECHNOLOGIES = 111;
+	int DATABASE_TECHNOLOGIES = 114;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.OrmTechnologies <em>Orm Technologies</em>}' enum.
@@ -16094,7 +16340,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getOrmTechnologies()
 	 * @generated
 	 */
-	int ORM_TECHNOLOGIES = 112;
+	int ORM_TECHNOLOGIES = 115;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.FrameworkTechnologies <em>Framework Technologies</em>}' enum.
@@ -16104,7 +16350,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 113;
+	int FRAMEWORK_TECHNOLOGIES = 116;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.InputTechnologies <em>Input Technologies</em>}' enum.
@@ -16114,7 +16360,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getInputTechnologies()
 	 * @generated
 	 */
-	int INPUT_TECHNOLOGIES = 114;
+	int INPUT_TECHNOLOGIES = 117;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -16124,7 +16370,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 115;
+	int AJAX_TECHNOLOGIES = 118;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -16134,7 +16380,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 116;
+	int AUTHENTICATION_KEY_TYPES = 119;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.Cardinality <em>Cardinality</em>}' enum.
@@ -16144,7 +16390,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 117;
+	int CARDINALITY = 120;
 
 
 	/**
@@ -16155,7 +16401,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getisHasChoices()
 	 * @generated
 	 */
-	int IS_HAS_CHOICES = 118;
+	int IS_HAS_CHOICES = 121;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.DateDetails <em>Date Details</em>}' enum.
@@ -16165,7 +16411,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getDateDetails()
 	 * @generated
 	 */
-	int DATE_DETAILS = 119;
+	int DATE_DETAILS = 122;
 
 
 	/**
@@ -16176,7 +16422,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 120;
+	int OPERATION_RESULT_TYPES = 123;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -16186,7 +16432,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 121;
+	int PAGE_TOP_MENU_OPTIONS = 124;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -16196,7 +16442,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 122;
+	int COLLECTION_DISPLAY_OPTIONS = 125;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption <em>Index Display Option</em>}' enum.
@@ -16206,7 +16452,7 @@ public interface WebsitePackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getIndexDisplayOption()
 	 * @generated
 	 */
-	int INDEX_DISPLAY_OPTION = 123;
+	int INDEX_DISPLAY_OPTION = 126;
 
 
 	/**
@@ -20806,37 +21052,133 @@ public interface WebsitePackage extends EPackage {
 	EReference getImageUnit_DefaultSelection();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageProperty <em>Image Property</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Image Property</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageProperty()
+	 * @return the meta object for the containment reference '<em>Image Path Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImagePathFeature()
 	 * @see #getImageUnit()
 	 * @generated
 	 */
-	EReference getImageUnit_ImageProperty();
+	EReference getImageUnit_ImagePathFeature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#isShowTime <em>Show Time</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTitleFeature <em>Title Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Title Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTitleFeature()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EReference getImageUnit_TitleFeature();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbWidth <em>Thumb Width</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thumb Width</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbWidth()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_ThumbWidth();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbHeight <em>Thumb Height</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thumb Height</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbHeight()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_ThumbHeight();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageWidth <em>Image Width</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Image Width</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageWidth()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_ImageWidth();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageHeight <em>Image Height</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Image Height</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageHeight()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_ImageHeight();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getShowTime <em>Show Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Show Time</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#isShowTime()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getShowTime()
 	 * @see #getImageUnit()
 	 * @generated
 	 */
 	EAttribute getImageUnit_ShowTime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#isTransitionTime <em>Transition Time</em>}'.
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTransitionTime <em>Transition Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Transition Time</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#isTransitionTime()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTransitionTime()
 	 * @see #getImageUnit()
 	 * @generated
 	 */
 	EAttribute getImageUnit_TransitionTime();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.FeaturePath <em>Feature Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Path</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FeaturePath
+	 * @generated
+	 */
+	EClass getFeaturePath();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute <em>Feature Path Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Path Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute
+	 * @generated
+	 */
+	EClass getFeaturePathAttribute();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute#getAttribute()
+	 * @see #getFeaturePathAttribute()
+	 * @generated
+	 */
+	EReference getFeaturePathAttribute_Attribute();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation <em>Feature Path Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Path Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation
+	 * @generated
+	 */
+	EClass getFeaturePathAssociation();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.SliderUnit <em>Slider Unit</em>}'.
@@ -25405,12 +25747,52 @@ public interface WebsitePackage extends EPackage {
 		EReference IMAGE_UNIT__DEFAULT_SELECTION = eINSTANCE.getImageUnit_DefaultSelection();
 
 		/**
-		 * The meta object literal for the '<em><b>Image Property</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Image Path Feature</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IMAGE_UNIT__IMAGE_PROPERTY = eINSTANCE.getImageUnit_ImageProperty();
+		EReference IMAGE_UNIT__IMAGE_PATH_FEATURE = eINSTANCE.getImageUnit_ImagePathFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Title Feature</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMAGE_UNIT__TITLE_FEATURE = eINSTANCE.getImageUnit_TitleFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Thumb Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__THUMB_WIDTH = eINSTANCE.getImageUnit_ThumbWidth();
+
+		/**
+		 * The meta object literal for the '<em><b>Thumb Height</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__THUMB_HEIGHT = eINSTANCE.getImageUnit_ThumbHeight();
+
+		/**
+		 * The meta object literal for the '<em><b>Image Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__IMAGE_WIDTH = eINSTANCE.getImageUnit_ImageWidth();
+
+		/**
+		 * The meta object literal for the '<em><b>Image Height</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__IMAGE_HEIGHT = eINSTANCE.getImageUnit_ImageHeight();
 
 		/**
 		 * The meta object literal for the '<em><b>Show Time</b></em>' attribute feature.
@@ -25427,6 +25809,44 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute IMAGE_UNIT__TRANSITION_TIME = eINSTANCE.getImageUnit_TransitionTime();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathImpl <em>Feature Path</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeaturePath()
+		 * @generated
+		 */
+		EClass FEATURE_PATH = eINSTANCE.getFeaturePath();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAttributeImpl <em>Feature Path Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAttributeImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeaturePathAttribute()
+		 * @generated
+		 */
+		EClass FEATURE_PATH_ATTRIBUTE = eINSTANCE.getFeaturePathAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = eINSTANCE.getFeaturePathAttribute_Attribute();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl
+		 * @see uk.ac.man.cs.mdsd.webgen.website.impl.WebsitePackageImpl#getFeaturePathAssociation()
+		 * @generated
+		 */
+		EClass FEATURE_PATH_ASSOCIATION = eINSTANCE.getFeaturePathAssociation();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SliderUnitImpl <em>Slider Unit</em>}' class.

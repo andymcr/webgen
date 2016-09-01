@@ -5,22 +5,19 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
-import uk.ac.man.cs.mdsd.webgen.website.ImageAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ImageUnit;
+import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -53,7 +50,10 @@ public class ImageUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDefaultSelectionPropertyDescriptor(object);
-			addImagePropertyPropertyDescriptor(object);
+			addThumbWidthPropertyDescriptor(object);
+			addThumbHeightPropertyDescriptor(object);
+			addImageWidthPropertyDescriptor(object);
+			addImageHeightPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
 			addTransitionTimePropertyDescriptor(object);
 		}
@@ -87,38 +87,91 @@ public class ImageUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Image Property feature.
+	 * This adds a property descriptor for the Thumb Width feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	protected void addImagePropertyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_ImageUnit_imageProperty_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageProperty_feature", "_UI_ImageUnit_type"),
-			WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PROPERTY,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					final Set<ImageAttribute> attributes = new HashSet<ImageAttribute>();
-					if (object instanceof ImageUnit) {
-						final ImageUnit unit = (ImageUnit) object;
-						if (unit.getEntities().size() > 0) {
-							for (Attribute attribute : unit.getEntities().get(0).getAttributes()) {
-								if (attribute instanceof ImageAttribute) {
-									attributes.add((ImageAttribute) attribute);
-								}
-							}
-						}
-					}
+	protected void addThumbWidthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_thumbWidth_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_thumbWidth_feature", "_UI_ImageUnit_type"),
+				 WebsitePackage.Literals.IMAGE_UNIT__THUMB_WIDTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
 
-					return attributes;
-				}
-		});
+	/**
+	 * This adds a property descriptor for the Thumb Height feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addThumbHeightPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_thumbHeight_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_thumbHeight_feature", "_UI_ImageUnit_type"),
+				 WebsitePackage.Literals.IMAGE_UNIT__THUMB_HEIGHT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Image Width feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImageWidthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_imageWidth_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageWidth_feature", "_UI_ImageUnit_type"),
+				 WebsitePackage.Literals.IMAGE_UNIT__IMAGE_WIDTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Image Height feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImageHeightPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_imageHeight_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageHeight_feature", "_UI_ImageUnit_type"),
+				 WebsitePackage.Literals.IMAGE_UNIT__IMAGE_HEIGHT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -138,8 +191,8 @@ public class ImageUnitItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 
@@ -160,9 +213,40 @@ public class ImageUnitItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE);
+			childrenFeatures.add(WebsitePackage.Literals.IMAGE_UNIT__TITLE_FEATURE);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -192,9 +276,17 @@ public class ImageUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImageUnit.class)) {
+			case WebsitePackage.IMAGE_UNIT__THUMB_WIDTH:
+			case WebsitePackage.IMAGE_UNIT__THUMB_HEIGHT:
+			case WebsitePackage.IMAGE_UNIT__IMAGE_WIDTH:
+			case WebsitePackage.IMAGE_UNIT__IMAGE_HEIGHT:
 			case WebsitePackage.IMAGE_UNIT__SHOW_TIME:
 			case WebsitePackage.IMAGE_UNIT__TRANSITION_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case WebsitePackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
+			case WebsitePackage.IMAGE_UNIT__TITLE_FEATURE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -210,6 +302,49 @@ public class ImageUnitItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
+				 WebsiteFactory.eINSTANCE.createFeaturePathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
+				 WebsiteFactory.eINSTANCE.createFeaturePathAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
+				 WebsiteFactory.eINSTANCE.createFeaturePathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
+				 WebsiteFactory.eINSTANCE.createFeaturePathAssociation()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE ||
+			childFeature == WebsitePackage.Literals.IMAGE_UNIT__TITLE_FEATURE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

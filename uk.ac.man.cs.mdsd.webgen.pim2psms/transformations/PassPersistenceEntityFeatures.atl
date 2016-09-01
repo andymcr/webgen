@@ -64,6 +64,8 @@ abstract rule Association {
 rule Entity {
 	from partialOrm : ORM!Entity
 	to orm : ORM!Entity (
+		"unique" <- thisModule.findWebsiteEntityOrView(partialOrm.name)."unique",
+		containerUnique <- thisModule.findWebsiteEntityOrView(partialOrm.name).containerUnique
 	)
 }
 
@@ -511,7 +513,7 @@ lazy rule OppositeAssociationKey {
 				endif
 			endif,
 		targetFeature <- website.sourceFeature,
-		targetColumnName <-
+		sourceColumnName <-
 			if website.targetFeature.oclIsUndefined() then
 				website.targetColumnName
 			else

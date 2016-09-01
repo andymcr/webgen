@@ -1144,12 +1144,33 @@ abstract rule ImageUnit {
 	from website : Website!ImageUnit
 	to waf : WAF!ImageUnit (
 		defaultSelection <- website.defaultSelection,
-		imageProperty <-
-			if website.imageProperty.oclIsUndefined() then
-				website.imageProperty
-			else
-				website.imageProperty.findOrmFeature()
-			endif
+		imagePathFeature <- website.imagePathFeature,
+		titleFeature <- website.titleFeature,
+		thumbWidth <- website.thumbWidth,
+		thumbHeight <- website.thumbHeight,
+		imageWidth <- website.imageWidth,
+		imageHeight <- website.imageHeight
+	)
+}
+
+abstract rule FeaturePath {
+	from website : Website!FeaturePath
+	to waf : WAF!FeaturePath (
+	)
+}
+
+-- @extends FeaturePath
+rule FeaturePathAttribute {
+	from website : Website!FeaturePathAttribute
+	to waf : WAF!FeaturePathAttribute (
+		attribute <- website.attribute.findOrmFeature()
+	)
+}
+
+-- @extends FeaturePath, PathReferenceElement
+rule FeaturePathAssociation {
+	from website : Website!FeaturePathAssociation
+	to waf : WAF!FeaturePathAssociation (
 	)
 }
 

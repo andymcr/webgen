@@ -9,9 +9,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.waf.ImageUnit;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -44,7 +47,12 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addDefaultSelectionPropertyDescriptor(object);
-			addImagePropertyPropertyDescriptor(object);
+			addThumbWidthPropertyDescriptor(object);
+			addThumbHeightPropertyDescriptor(object);
+			addImageWidthPropertyDescriptor(object);
+			addImageHeightPropertyDescriptor(object);
+			addShowTimePropertyDescriptor(object);
+			addTransitionTimePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -72,25 +80,166 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Image Property feature.
+	 * This adds a property descriptor for the Thumb Width feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addImagePropertyPropertyDescriptor(Object object) {
+	protected void addThumbWidthPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ImageUnit_imageProperty_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageProperty_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__IMAGE_PROPERTY,
+				 getString("_UI_ImageUnit_thumbWidth_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_thumbWidth_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__THUMB_WIDTH,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Thumb Height feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addThumbHeightPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_thumbHeight_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_thumbHeight_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__THUMB_HEIGHT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Image Width feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImageWidthPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_imageWidth_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageWidth_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__IMAGE_WIDTH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Image Height feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImageHeightPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_imageHeight_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageHeight_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__IMAGE_HEIGHT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Show Time feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addShowTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_showTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_showTime_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__SHOW_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Transition Time feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTransitionTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_transitionTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_transitionTime_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__TRANSITION_TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE);
+			childrenFeatures.add(WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -118,6 +267,21 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ImageUnit.class)) {
+			case WafPackage.IMAGE_UNIT__THUMB_WIDTH:
+			case WafPackage.IMAGE_UNIT__THUMB_HEIGHT:
+			case WafPackage.IMAGE_UNIT__IMAGE_WIDTH:
+			case WafPackage.IMAGE_UNIT__IMAGE_HEIGHT:
+			case WafPackage.IMAGE_UNIT__SHOW_TIME:
+			case WafPackage.IMAGE_UNIT__TRANSITION_TIME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case WafPackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
+			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

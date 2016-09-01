@@ -13,5 +13,5 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface GalleryUnit extends ImageUnit {
+public interface GalleryUnit extends ImageUnit, InlineActionContainer {
 } // GalleryUnit

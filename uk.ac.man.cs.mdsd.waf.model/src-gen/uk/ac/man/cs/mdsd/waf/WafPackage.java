@@ -8878,13 +8878,76 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT__DEFAULT_SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Image Property</b></em>' reference.
+	 * The feature id for the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__IMAGE_PROPERTY = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+	int IMAGE_UNIT__IMAGE_PATH_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__TITLE_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__THUMB_WIDTH = DYNAMIC_UNIT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__THUMB_HEIGHT = DYNAMIC_UNIT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Image Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__IMAGE_WIDTH = DYNAMIC_UNIT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Image Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__IMAGE_HEIGHT = DYNAMIC_UNIT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__SHOW_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__TRANSITION_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Image Unit</em>' class.
@@ -8893,7 +8956,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Image Unit</em>' class.
@@ -8905,6 +8968,117 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT_OPERATION_COUNT = DYNAMIC_UNIT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl <em>Feature Path</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePath()
+	 * @generated
+	 */
+	int FEATURE_PATH = 58;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Feature Path</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl <em>Feature Path Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAttribute()
+	 * @generated
+	 */
+	int FEATURE_PATH_ATTRIBUTE = 59;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Feature Path Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAssociation()
+	 * @generated
+	 */
+	int FEATURE_PATH_ASSOCIATION = 60;
+
+	/**
+	 * The feature id for the '<em><b>Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__ASSOCIATION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__CHILD_FEATURE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Feature Path Association</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Feature Path Association</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.SliderUnitImpl <em>Slider Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8912,7 +9086,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSliderUnit()
 	 * @generated
 	 */
-	int SLIDER_UNIT = 58;
+	int SLIDER_UNIT = 61;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9113,13 +9287,76 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT__DEFAULT_SELECTION = IMAGE_UNIT__DEFAULT_SELECTION;
 
 	/**
-	 * The feature id for the '<em><b>Image Property</b></em>' reference.
+	 * The feature id for the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDER_UNIT__IMAGE_PROPERTY = IMAGE_UNIT__IMAGE_PROPERTY;
+	int SLIDER_UNIT__IMAGE_PATH_FEATURE = IMAGE_UNIT__IMAGE_PATH_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__THUMB_WIDTH = IMAGE_UNIT__THUMB_WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__THUMB_HEIGHT = IMAGE_UNIT__THUMB_HEIGHT;
+
+	/**
+	 * The feature id for the '<em><b>Image Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__IMAGE_WIDTH = IMAGE_UNIT__IMAGE_WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Image Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__IMAGE_HEIGHT = IMAGE_UNIT__IMAGE_HEIGHT;
+
+	/**
+	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__SHOW_TIME = IMAGE_UNIT__SHOW_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__TRANSITION_TIME = IMAGE_UNIT__TRANSITION_TIME;
 
 	/**
 	 * The number of structural features of the '<em>Slider Unit</em>' class.
@@ -9147,7 +9384,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getGalleryUnit()
 	 * @generated
 	 */
-	int GALLERY_UNIT = 59;
+	int GALLERY_UNIT = 62;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9348,13 +9585,85 @@ public interface WafPackage extends EPackage {
 	int GALLERY_UNIT__DEFAULT_SELECTION = IMAGE_UNIT__DEFAULT_SELECTION;
 
 	/**
-	 * The feature id for the '<em><b>Image Property</b></em>' reference.
+	 * The feature id for the '<em><b>Image Path Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__IMAGE_PROPERTY = IMAGE_UNIT__IMAGE_PROPERTY;
+	int GALLERY_UNIT__IMAGE_PATH_FEATURE = IMAGE_UNIT__IMAGE_PATH_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Title Feature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__THUMB_WIDTH = IMAGE_UNIT__THUMB_WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Thumb Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__THUMB_HEIGHT = IMAGE_UNIT__THUMB_HEIGHT;
+
+	/**
+	 * The feature id for the '<em><b>Image Width</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__IMAGE_WIDTH = IMAGE_UNIT__IMAGE_WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Image Height</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__IMAGE_HEIGHT = IMAGE_UNIT__IMAGE_HEIGHT;
+
+	/**
+	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__SHOW_TIME = IMAGE_UNIT__SHOW_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__TRANSITION_TIME = IMAGE_UNIT__TRANSITION_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__ACTIONS = IMAGE_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Gallery Unit</em>' class.
@@ -9363,7 +9672,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 0;
+	int GALLERY_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Gallery Unit</em>' class.
@@ -9382,7 +9691,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 60;
+	int AUTHENTICATION_UNIT = 63;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -9410,7 +9719,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 61;
+	int REGISTRATION_UNIT = 64;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9708,7 +10017,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 62;
+	int LOGIN_UNIT = 65;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9997,7 +10306,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 63;
+	int FORGOTTEN_PASSWORD_UNIT = 66;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10259,7 +10568,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 64;
+	int INLINE_ACTION_CONTAINER = 67;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -10296,7 +10605,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 65;
+	int INLINE_ACTION = 68;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10423,7 +10732,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 66;
+	int SELECT_ACTION = 69;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10559,7 +10868,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 67;
+	int DELETE_ACTION = 70;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10713,7 +11022,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 68;
+	int FEATURE_SUPPORT_ACTION = 71;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10876,7 +11185,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelReference()
 	 * @generated
 	 */
-	int MODEL_REFERENCE = 69;
+	int MODEL_REFERENCE = 72;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' reference.
@@ -10913,7 +11222,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 70;
+	int FEATURE_REFERENCE = 73;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -10950,7 +11259,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getParameterReference()
 	 * @generated
 	 */
-	int PARAMETER_REFERENCE = 71;
+	int PARAMETER_REFERENCE = 74;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -10987,7 +11296,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRouteParameterReference()
 	 * @generated
 	 */
-	int ROUTE_PARAMETER_REFERENCE = 72;
+	int ROUTE_PARAMETER_REFERENCE = 75;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -11024,7 +11333,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCurrentUserReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 73;
+	int CURRENT_USER_REFERENCE = 76;
 
 	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
@@ -11052,7 +11361,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 74;
+	int FRAMEWORK_TECHNOLOGIES = 77;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.InputTechnologies <em>Input Technologies</em>}' enum.
@@ -11062,7 +11371,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInputTechnologies()
 	 * @generated
 	 */
-	int INPUT_TECHNOLOGIES = 75;
+	int INPUT_TECHNOLOGIES = 78;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -11072,7 +11381,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 76;
+	int AJAX_TECHNOLOGIES = 79;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -11082,7 +11391,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 77;
+	int AUTHENTICATION_KEY_TYPES = 80;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.OperationResultTypes <em>Operation Result Types</em>}' enum.
@@ -11092,7 +11401,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 78;
+	int OPERATION_RESULT_TYPES = 81;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -11102,7 +11411,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 79;
+	int PAGE_TOP_MENU_OPTIONS = 82;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -11112,7 +11421,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 80;
+	int COLLECTION_DISPLAY_OPTIONS = 83;
 
 
 	/**
@@ -13995,15 +14304,155 @@ public interface WafPackage extends EPackage {
 	EReference getImageUnit_DefaultSelection();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageProperty <em>Image Property</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Image Property</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getImageProperty()
+	 * @return the meta object for the containment reference '<em>Image Path Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getImagePathFeature()
 	 * @see #getImageUnit()
 	 * @generated
 	 */
-	EReference getImageUnit_ImageProperty();
+	EReference getImageUnit_ImagePathFeature();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTitleFeature <em>Title Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Title Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getTitleFeature()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EReference getImageUnit_TitleFeature();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getThumbWidth <em>Thumb Width</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thumb Width</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getThumbWidth()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_ThumbWidth();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getThumbHeight <em>Thumb Height</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Thumb Height</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getThumbHeight()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_ThumbHeight();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageWidth <em>Image Width</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Image Width</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getImageWidth()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_ImageWidth();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getImageHeight <em>Image Height</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Image Height</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getImageHeight()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_ImageHeight();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getShowTime <em>Show Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Show Time</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getShowTime()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_ShowTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getTransitionTime <em>Transition Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Transition Time</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getTransitionTime()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_TransitionTime();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.FeaturePath <em>Feature Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Path</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePath
+	 * @generated
+	 */
+	EClass getFeaturePath();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAttribute <em>Feature Path Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Path Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAttribute
+	 * @generated
+	 */
+	EClass getFeaturePathAttribute();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAttribute#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAttribute#getAttribute()
+	 * @see #getFeaturePathAttribute()
+	 * @generated
+	 */
+	EReference getFeaturePathAttribute_Attribute();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAssociation <em>Feature Path Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Path Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAssociation
+	 * @generated
+	 */
+	EClass getFeaturePathAssociation();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAssociation#getAssociation <em>Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAssociation#getAssociation()
+	 * @see #getFeaturePathAssociation()
+	 * @generated
+	 */
+	EReference getFeaturePathAssociation_Association();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.FeaturePathAssociation#getChildFeature <em>Child Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Child Feature</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.FeaturePathAssociation#getChildFeature()
+	 * @see #getFeaturePathAssociation()
+	 * @generated
+	 */
+	EReference getFeaturePathAssociation_ChildFeature();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.SliderUnit <em>Slider Unit</em>}'.
@@ -16841,12 +17290,122 @@ public interface WafPackage extends EPackage {
 		EReference IMAGE_UNIT__DEFAULT_SELECTION = eINSTANCE.getImageUnit_DefaultSelection();
 
 		/**
-		 * The meta object literal for the '<em><b>Image Property</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Image Path Feature</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IMAGE_UNIT__IMAGE_PROPERTY = eINSTANCE.getImageUnit_ImageProperty();
+		EReference IMAGE_UNIT__IMAGE_PATH_FEATURE = eINSTANCE.getImageUnit_ImagePathFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Title Feature</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IMAGE_UNIT__TITLE_FEATURE = eINSTANCE.getImageUnit_TitleFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Thumb Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__THUMB_WIDTH = eINSTANCE.getImageUnit_ThumbWidth();
+
+		/**
+		 * The meta object literal for the '<em><b>Thumb Height</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__THUMB_HEIGHT = eINSTANCE.getImageUnit_ThumbHeight();
+
+		/**
+		 * The meta object literal for the '<em><b>Image Width</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__IMAGE_WIDTH = eINSTANCE.getImageUnit_ImageWidth();
+
+		/**
+		 * The meta object literal for the '<em><b>Image Height</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__IMAGE_HEIGHT = eINSTANCE.getImageUnit_ImageHeight();
+
+		/**
+		 * The meta object literal for the '<em><b>Show Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__SHOW_TIME = eINSTANCE.getImageUnit_ShowTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Transition Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__TRANSITION_TIME = eINSTANCE.getImageUnit_TransitionTime();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl <em>Feature Path</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePath()
+		 * @generated
+		 */
+		EClass FEATURE_PATH = eINSTANCE.getFeaturePath();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl <em>Feature Path Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAttribute()
+		 * @generated
+		 */
+		EClass FEATURE_PATH_ATTRIBUTE = eINSTANCE.getFeaturePathAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = eINSTANCE.getFeaturePathAttribute_Attribute();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAssociation()
+		 * @generated
+		 */
+		EClass FEATURE_PATH_ASSOCIATION = eINSTANCE.getFeaturePathAssociation();
+
+		/**
+		 * The meta object literal for the '<em><b>Association</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_PATH_ASSOCIATION__ASSOCIATION = eINSTANCE.getFeaturePathAssociation_Association();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Feature</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE_PATH_ASSOCIATION__CHILD_FEATURE = eINSTANCE.getFeaturePathAssociation_ChildFeature();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.SliderUnitImpl <em>Slider Unit</em>}' class.

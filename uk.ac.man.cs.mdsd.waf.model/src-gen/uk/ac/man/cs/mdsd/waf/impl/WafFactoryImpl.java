@@ -96,6 +96,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.INDEX_LINE_DIRECTION_UNIT: return createIndexLineDirectionUnit();
 			case WafPackage.SEARCH_UNIT: return createSearchUnit();
 			case WafPackage.ACTION_UNIT: return createActionUnit();
+			case WafPackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
+			case WafPackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
 			case WafPackage.SLIDER_UNIT: return createSliderUnit();
 			case WafPackage.GALLERY_UNIT: return createGalleryUnit();
 			case WafPackage.REGISTRATION_UNIT: return createRegistrationUnit();
@@ -556,6 +558,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public ActionUnit createActionUnit() {
 		ActionUnitImpl actionUnit = new ActionUnitImpl();
 		return actionUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeaturePathAttribute createFeaturePathAttribute() {
+		FeaturePathAttributeImpl featurePathAttribute = new FeaturePathAttributeImpl();
+		return featurePathAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeaturePathAssociation createFeaturePathAssociation() {
+		FeaturePathAssociationImpl featurePathAssociation = new FeaturePathAssociationImpl();
+		return featurePathAssociation;
 	}
 
 	/**

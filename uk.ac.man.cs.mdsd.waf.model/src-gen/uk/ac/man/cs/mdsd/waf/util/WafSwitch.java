@@ -574,6 +574,24 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.FEATURE_PATH: {
+				FeaturePath featurePath = (FeaturePath)theEObject;
+				T result = caseFeaturePath(featurePath);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.FEATURE_PATH_ATTRIBUTE: {
+				FeaturePathAttribute featurePathAttribute = (FeaturePathAttribute)theEObject;
+				T result = caseFeaturePathAttribute(featurePathAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.FEATURE_PATH_ASSOCIATION: {
+				FeaturePathAssociation featurePathAssociation = (FeaturePathAssociation)theEObject;
+				T result = caseFeaturePathAssociation(featurePathAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.SLIDER_UNIT: {
 				SliderUnit sliderUnit = (SliderUnit)theEObject;
 				T result = caseSliderUnit(sliderUnit);
@@ -589,6 +607,7 @@ public class WafSwitch<T> extends Switch<T> {
 				GalleryUnit galleryUnit = (GalleryUnit)theEObject;
 				T result = caseGalleryUnit(galleryUnit);
 				if (result == null) result = caseImageUnit(galleryUnit);
+				if (result == null) result = caseInlineActionContainer(galleryUnit);
 				if (result == null) result = caseDynamicUnit(galleryUnit);
 				if (result == null) result = caseContentUnit(galleryUnit);
 				if (result == null) result = caseNamedDisplayElement(galleryUnit);
@@ -1590,6 +1609,51 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseImageUnit(ImageUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Path</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Path</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFeaturePath(FeaturePath object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Path Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Path Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFeaturePathAttribute(FeaturePathAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature Path Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature Path Association</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFeaturePathAssociation(FeaturePathAssociation object) {
 		return null;
 	}
 

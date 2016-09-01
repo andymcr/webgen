@@ -467,13 +467,32 @@ class ActionUnit extends ControlUnit {
 
 abstract class ImageUnit extends DynamicUnit {
 	refers Selection defaultSelection
-	refers SingletonImage[1] imageProperty
+	contains FeaturePath[1] imagePathFeature
+	contains FeaturePath[1] titleFeature
+	int thumbWidth = "-1"
+	int thumbHeight = "-1"
+	int imageWidth = "-1"
+	int imageHeight = "-1"
+	int showTime
+	int transitionTime
+}
+
+abstract class FeaturePath {
+}
+
+class FeaturePathAttribute {
+	refers Attribute[1] attribute
+}
+
+class FeaturePathAssociation {
+	refers Association[1] association
+	contains ChildFeature childFeature
 }
 
 class SliderUnit extends ImageUnit {
 }
 
-class GalleryUnit extends ImageUnit {
+class GalleryUnit extends ImageUnit, InlineActionContainer {
 }
 
 interface AuthenticationUnit {

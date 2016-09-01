@@ -57,7 +57,7 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 			addAutoKeyPersistentTypePropertyDescriptor(object);
 			addAutoKeyGenerationStrategyPropertyDescriptor(object);
 			addUniquePropertyDescriptor(object);
-			addContainerUnqiuePropertyDescriptor(object);
+			addContainerUniquePropertyDescriptor(object);
 			addSerializationExcludeAllPropertyDescriptor(object);
 			addImplementsUserInterfacePropertyDescriptor(object);
 		}
@@ -241,19 +241,19 @@ public class EntityOrViewItemProvider extends ClassifierItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Container Unqiue feature.
+	 * This adds a property descriptor for the Container Unique feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContainerUnqiuePropertyDescriptor(Object object) {
+	protected void addContainerUniquePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EntityOrView_containerUnqiue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_containerUnqiue_feature", "_UI_EntityOrView_type"),
-				 OrmPackage.Literals.ENTITY_OR_VIEW__CONTAINER_UNQIUE,
+				 getString("_UI_EntityOrView_containerUnique_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EntityOrView_containerUnique_feature", "_UI_EntityOrView_type"),
+				 OrmPackage.Literals.ENTITY_OR_VIEW__CONTAINER_UNIQUE,
 				 true,
 				 false,
 				 true,

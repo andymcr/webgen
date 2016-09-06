@@ -26,6 +26,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getTitleFeature <em>Title Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getMissingImagePath <em>Missing Image Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getThumbWidth <em>Thumb Width</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getThumbHeight <em>Thumb Height</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getImageWidth <em>Image Width</em>}</li>
@@ -66,6 +67,26 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected FeaturePath titleFeature;
+
+	/**
+	 * The default value of the '{@link #getMissingImagePath() <em>Missing Image Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMissingImagePath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MISSING_IMAGE_PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMissingImagePath() <em>Missing Image Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMissingImagePath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String missingImagePath = MISSING_IMAGE_PATH_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getThumbWidth() <em>Thumb Width</em>}' attribute.
@@ -335,6 +356,27 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getMissingImagePath() {
+		return missingImagePath;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMissingImagePath(String newMissingImagePath) {
+		String oldMissingImagePath = missingImagePath;
+		missingImagePath = newMissingImagePath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH, oldMissingImagePath, missingImagePath));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public int getThumbWidth() {
 		return thumbWidth;
 	}
@@ -487,6 +529,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return getImagePathFeature();
 			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
 				return getTitleFeature();
+			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
+				return getMissingImagePath();
 			case WafPackage.IMAGE_UNIT__THUMB_WIDTH:
 				return getThumbWidth();
 			case WafPackage.IMAGE_UNIT__THUMB_HEIGHT:
@@ -519,6 +563,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return;
 			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
 				setTitleFeature((FeaturePath)newValue);
+				return;
+			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
+				setMissingImagePath((String)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__THUMB_WIDTH:
 				setThumbWidth((Integer)newValue);
@@ -559,6 +606,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
 				setTitleFeature((FeaturePath)null);
 				return;
+			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
+				setMissingImagePath(MISSING_IMAGE_PATH_EDEFAULT);
+				return;
 			case WafPackage.IMAGE_UNIT__THUMB_WIDTH:
 				setThumbWidth(THUMB_WIDTH_EDEFAULT);
 				return;
@@ -595,6 +645,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return imagePathFeature != null;
 			case WafPackage.IMAGE_UNIT__TITLE_FEATURE:
 				return titleFeature != null;
+			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
+				return MISSING_IMAGE_PATH_EDEFAULT == null ? missingImagePath != null : !MISSING_IMAGE_PATH_EDEFAULT.equals(missingImagePath);
 			case WafPackage.IMAGE_UNIT__THUMB_WIDTH:
 				return thumbWidth != THUMB_WIDTH_EDEFAULT;
 			case WafPackage.IMAGE_UNIT__THUMB_HEIGHT:
@@ -621,7 +673,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (thumbWidth: ");
+		result.append(" (missingImagePath: ");
+		result.append(missingImagePath);
+		result.append(", thumbWidth: ");
 		result.append(thumbWidth);
 		result.append(", thumbHeight: ");
 		result.append(thumbHeight);

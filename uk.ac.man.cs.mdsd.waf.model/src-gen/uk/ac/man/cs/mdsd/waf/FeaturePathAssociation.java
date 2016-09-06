@@ -2,8 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import org.eclipse.emf.ecore.EObject;
-
 import uk.ac.man.cs.mdsd.orm.Association;
 
 /**
@@ -23,7 +21,7 @@ import uk.ac.man.cs.mdsd.orm.Association;
  * @model
  * @generated
  */
-public interface FeaturePathAssociation extends EObject {
+public interface FeaturePathAssociation extends FeaturePath {
 	/**
 	 * Returns the value of the '<em><b>Association</b></em>' reference.
 	 * <!-- begin-user-doc -->

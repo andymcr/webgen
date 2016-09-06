@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.man.cs.mdsd.orm.Attribute;
 
@@ -28,7 +27,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *
  * @generated
  */
-public class FeaturePathAttributeImpl extends MinimalEObjectImpl.Container implements FeaturePathAttribute {
+public class FeaturePathAttributeImpl extends FeaturePathImpl implements FeaturePathAttribute {
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
 	 * <!-- begin-user-doc -->

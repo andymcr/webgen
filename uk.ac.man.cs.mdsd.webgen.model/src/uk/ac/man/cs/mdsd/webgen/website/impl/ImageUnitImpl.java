@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getTitleFeature <em>Title Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getMissingImagePath <em>Missing Image Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getThumbWidth <em>Thumb Width</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getThumbHeight <em>Thumb Height</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getImageWidth <em>Image Width</em>}</li>
@@ -64,6 +65,26 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected FeaturePath titleFeature;
+
+	/**
+	 * The default value of the '{@link #getMissingImagePath() <em>Missing Image Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMissingImagePath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MISSING_IMAGE_PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMissingImagePath() <em>Missing Image Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMissingImagePath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String missingImagePath = MISSING_IMAGE_PATH_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getThumbWidth() <em>Thumb Width</em>}' attribute.
@@ -153,7 +174,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int SHOW_TIME_EDEFAULT = 0;
+	protected static final int SHOW_TIME_EDEFAULT = -1;
 	/**
 	 * The cached value of the '{@link #getShowTime() <em>Show Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -171,7 +192,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int TRANSITION_TIME_EDEFAULT = 0;
+	protected static final int TRANSITION_TIME_EDEFAULT = -1;
 	/**
 	 * The cached value of the '{@link #getTransitionTime() <em>Transition Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -323,6 +344,27 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__TITLE_FEATURE, newTitleFeature, newTitleFeature));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getMissingImagePath() {
+		return missingImagePath;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMissingImagePath(String newMissingImagePath) {
+		String oldMissingImagePath = missingImagePath;
+		missingImagePath = newMissingImagePath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH, oldMissingImagePath, missingImagePath));
 	}
 
 	/**
@@ -482,6 +524,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return getImagePathFeature();
 			case WebsitePackage.IMAGE_UNIT__TITLE_FEATURE:
 				return getTitleFeature();
+			case WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
+				return getMissingImagePath();
 			case WebsitePackage.IMAGE_UNIT__THUMB_WIDTH:
 				return getThumbWidth();
 			case WebsitePackage.IMAGE_UNIT__THUMB_HEIGHT:
@@ -514,6 +558,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return;
 			case WebsitePackage.IMAGE_UNIT__TITLE_FEATURE:
 				setTitleFeature((FeaturePath)newValue);
+				return;
+			case WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
+				setMissingImagePath((String)newValue);
 				return;
 			case WebsitePackage.IMAGE_UNIT__THUMB_WIDTH:
 				setThumbWidth((Integer)newValue);
@@ -554,6 +601,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebsitePackage.IMAGE_UNIT__TITLE_FEATURE:
 				setTitleFeature((FeaturePath)null);
 				return;
+			case WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
+				setMissingImagePath(MISSING_IMAGE_PATH_EDEFAULT);
+				return;
 			case WebsitePackage.IMAGE_UNIT__THUMB_WIDTH:
 				setThumbWidth(THUMB_WIDTH_EDEFAULT);
 				return;
@@ -590,6 +640,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return imagePathFeature != null;
 			case WebsitePackage.IMAGE_UNIT__TITLE_FEATURE:
 				return titleFeature != null;
+			case WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
+				return MISSING_IMAGE_PATH_EDEFAULT == null ? missingImagePath != null : !MISSING_IMAGE_PATH_EDEFAULT.equals(missingImagePath);
 			case WebsitePackage.IMAGE_UNIT__THUMB_WIDTH:
 				return thumbWidth != THUMB_WIDTH_EDEFAULT;
 			case WebsitePackage.IMAGE_UNIT__THUMB_HEIGHT:
@@ -616,7 +668,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (thumbWidth: ");
+		result.append(" (missingImagePath: ");
+		result.append(missingImagePath);
+		result.append(", thumbWidth: ");
 		result.append(thumbWidth);
 		result.append(", thumbHeight: ");
 		result.append(thumbHeight);

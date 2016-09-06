@@ -724,6 +724,7 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ImageUnit/imagePathFeature"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ImageUnit/titleFeature"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/missingImagePath"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/thumbWidth"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/thumbHeight"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/imageWidth"/>

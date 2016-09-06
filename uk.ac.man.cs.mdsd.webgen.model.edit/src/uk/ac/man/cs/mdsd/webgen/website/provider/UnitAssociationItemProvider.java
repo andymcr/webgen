@@ -53,9 +53,6 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addAssociationPropertyDescriptor(object);
-			addIsSourceAssociationPropertyDescriptor(object);
-			addSourceEntityPropertyDescriptor(object);
-			addTargetEntityPropertyDescriptor(object);
 			addValueDisplayPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addFiltersPropertyDescriptor(object);
@@ -89,72 +86,6 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 					return Collections.emptySet();
 				}
 		});
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Source Association feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsSourceAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PathAssociationElement_isSourceAssociation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PathAssociationElement_isSourceAssociation_feature", "_UI_PathAssociationElement_type"),
-				 WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__IS_SOURCE_ASSOCIATION,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Source Entity feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSourceEntityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PathAssociationElement_sourceEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PathAssociationElement_sourceEntity_feature", "_UI_PathAssociationElement_type"),
-				 WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__SOURCE_ENTITY,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Target Entity feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetEntityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PathAssociationElement_targetEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PathAssociationElement_targetEntity_feature", "_UI_PathAssociationElement_type"),
-				 WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__TARGET_ENTITY,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

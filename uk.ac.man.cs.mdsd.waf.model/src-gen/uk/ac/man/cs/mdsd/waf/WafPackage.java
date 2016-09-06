@@ -8896,13 +8896,22 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT__TITLE_FEATURE = DYNAMIC_UNIT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__MISSING_IMAGE_PATH = DYNAMIC_UNIT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Thumb Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__THUMB_WIDTH = DYNAMIC_UNIT_FEATURE_COUNT + 3;
+	int IMAGE_UNIT__THUMB_WIDTH = DYNAMIC_UNIT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Thumb Height</b></em>' attribute.
@@ -8911,7 +8920,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__THUMB_HEIGHT = DYNAMIC_UNIT_FEATURE_COUNT + 4;
+	int IMAGE_UNIT__THUMB_HEIGHT = DYNAMIC_UNIT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Image Width</b></em>' attribute.
@@ -8920,7 +8929,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__IMAGE_WIDTH = DYNAMIC_UNIT_FEATURE_COUNT + 5;
+	int IMAGE_UNIT__IMAGE_WIDTH = DYNAMIC_UNIT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Image Height</b></em>' attribute.
@@ -8929,7 +8938,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__IMAGE_HEIGHT = DYNAMIC_UNIT_FEATURE_COUNT + 6;
+	int IMAGE_UNIT__IMAGE_HEIGHT = DYNAMIC_UNIT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Show Time</b></em>' attribute.
@@ -8938,7 +8947,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__SHOW_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 7;
+	int IMAGE_UNIT__SHOW_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Transition Time</b></em>' attribute.
@@ -8947,7 +8956,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__TRANSITION_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 8;
+	int IMAGE_UNIT__TRANSITION_TIME = DYNAMIC_UNIT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Image Unit</em>' class.
@@ -8956,7 +8965,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 9;
+	int IMAGE_UNIT_FEATURE_COUNT = DYNAMIC_UNIT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Image Unit</em>' class.
@@ -9012,7 +9021,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = 0;
+	int FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = FEATURE_PATH_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Feature Path Attribute</em>' class.
@@ -9021,7 +9030,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ATTRIBUTE_FEATURE_COUNT = 1;
+	int FEATURE_PATH_ATTRIBUTE_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Feature Path Attribute</em>' class.
@@ -9030,7 +9039,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ATTRIBUTE_OPERATION_COUNT = 0;
+	int FEATURE_PATH_ATTRIBUTE_OPERATION_COUNT = FEATURE_PATH_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
@@ -9049,7 +9058,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ASSOCIATION__ASSOCIATION = 0;
+	int FEATURE_PATH_ASSOCIATION__ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -9058,7 +9067,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ASSOCIATION__CHILD_FEATURE = 1;
+	int FEATURE_PATH_ASSOCIATION__CHILD_FEATURE = FEATURE_PATH_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Feature Path Association</em>' class.
@@ -9067,7 +9076,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ASSOCIATION_FEATURE_COUNT = 2;
+	int FEATURE_PATH_ASSOCIATION_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Feature Path Association</em>' class.
@@ -9076,7 +9085,7 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ASSOCIATION_OPERATION_COUNT = 0;
+	int FEATURE_PATH_ASSOCIATION_OPERATION_COUNT = FEATURE_PATH_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.SliderUnitImpl <em>Slider Unit</em>}' class.
@@ -9303,6 +9312,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SLIDER_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__MISSING_IMAGE_PATH = IMAGE_UNIT__MISSING_IMAGE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Thumb Width</b></em>' attribute.
@@ -9601,6 +9619,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int GALLERY_UNIT__TITLE_FEATURE = IMAGE_UNIT__TITLE_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Missing Image Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__MISSING_IMAGE_PATH = IMAGE_UNIT__MISSING_IMAGE_PATH;
 
 	/**
 	 * The feature id for the '<em><b>Thumb Width</b></em>' attribute.
@@ -14326,6 +14353,17 @@ public interface WafPackage extends EPackage {
 	EReference getImageUnit_TitleFeature();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Missing Image Path</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageUnit#getMissingImagePath()
+	 * @see #getImageUnit()
+	 * @generated
+	 */
+	EAttribute getImageUnit_MissingImagePath();
+
+	/**
 	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.waf.ImageUnit#getThumbWidth <em>Thumb Width</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -17304,6 +17342,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IMAGE_UNIT__TITLE_FEATURE = eINSTANCE.getImageUnit_TitleFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Missing Image Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE_UNIT__MISSING_IMAGE_PATH = eINSTANCE.getImageUnit_MissingImagePath();
 
 		/**
 		 * The meta object literal for the '<em><b>Thumb Width</b></em>' attribute feature.

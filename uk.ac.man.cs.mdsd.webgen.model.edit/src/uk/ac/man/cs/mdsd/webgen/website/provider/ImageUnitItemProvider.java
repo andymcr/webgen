@@ -50,6 +50,7 @@ public class ImageUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDefaultSelectionPropertyDescriptor(object);
+			addMissingImagePathPropertyDescriptor(object);
 			addThumbWidthPropertyDescriptor(object);
 			addThumbHeightPropertyDescriptor(object);
 			addImageWidthPropertyDescriptor(object);
@@ -84,6 +85,28 @@ public class ImageUnitItemProvider
 					return Collections.emptySet();
 				}
 		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Missing Image Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMissingImagePathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_missingImagePath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_missingImagePath_feature", "_UI_ImageUnit_type"),
+				 WebsitePackage.Literals.IMAGE_UNIT__MISSING_IMAGE_PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -276,6 +299,7 @@ public class ImageUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImageUnit.class)) {
+			case WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 			case WebsitePackage.IMAGE_UNIT__THUMB_WIDTH:
 			case WebsitePackage.IMAGE_UNIT__THUMB_HEIGHT:
 			case WebsitePackage.IMAGE_UNIT__IMAGE_WIDTH:

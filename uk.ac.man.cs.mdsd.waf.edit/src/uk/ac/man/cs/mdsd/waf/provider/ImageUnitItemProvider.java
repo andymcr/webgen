@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.waf.ImageUnit;
+import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -47,6 +48,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addDefaultSelectionPropertyDescriptor(object);
+			addMissingImagePathPropertyDescriptor(object);
 			addThumbWidthPropertyDescriptor(object);
 			addThumbHeightPropertyDescriptor(object);
 			addImageWidthPropertyDescriptor(object);
@@ -75,6 +77,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Missing Image Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMissingImagePathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ImageUnit_missingImagePath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_missingImagePath_feature", "_UI_ImageUnit_type"),
+				 WafPackage.Literals.IMAGE_UNIT__MISSING_IMAGE_PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -269,6 +293,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImageUnit.class)) {
+			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 			case WafPackage.IMAGE_UNIT__THUMB_WIDTH:
 			case WafPackage.IMAGE_UNIT__THUMB_HEIGHT:
 			case WafPackage.IMAGE_UNIT__IMAGE_WIDTH:
@@ -295,6 +320,49 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
+				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
+				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
+				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
+				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE ||
+			childFeature == WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

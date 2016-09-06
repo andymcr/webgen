@@ -469,6 +469,7 @@ abstract class ImageUnit extends DynamicUnit {
 	refers Selection defaultSelection
 	contains FeaturePath[1] imagePathFeature
 	contains FeaturePath[1] titleFeature
+	String missingImagePath
 	int thumbWidth = "-1"
 	int thumbHeight = "-1"
 	int imageWidth = "-1"
@@ -480,11 +481,11 @@ abstract class ImageUnit extends DynamicUnit {
 abstract class FeaturePath {
 }
 
-class FeaturePathAttribute {
+class FeaturePathAttribute extends FeaturePath {
 	refers Attribute[1] attribute
 }
 
-class FeaturePathAssociation {
+class FeaturePathAssociation extends FeaturePath {
 	refers Association[1] association
 	contains ChildFeature childFeature
 }

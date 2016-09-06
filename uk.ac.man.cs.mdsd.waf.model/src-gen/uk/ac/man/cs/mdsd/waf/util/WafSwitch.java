@@ -583,12 +583,14 @@ public class WafSwitch<T> extends Switch<T> {
 			case WafPackage.FEATURE_PATH_ATTRIBUTE: {
 				FeaturePathAttribute featurePathAttribute = (FeaturePathAttribute)theEObject;
 				T result = caseFeaturePathAttribute(featurePathAttribute);
+				if (result == null) result = caseFeaturePath(featurePathAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case WafPackage.FEATURE_PATH_ASSOCIATION: {
 				FeaturePathAssociation featurePathAssociation = (FeaturePathAssociation)theEObject;
 				T result = caseFeaturePathAssociation(featurePathAssociation);
+				if (result == null) result = caseFeaturePath(featurePathAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

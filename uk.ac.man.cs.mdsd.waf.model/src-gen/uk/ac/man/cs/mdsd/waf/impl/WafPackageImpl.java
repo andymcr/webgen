@@ -3189,7 +3189,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_ThumbWidth() {
+	public EAttribute getImageUnit_MissingImagePath() {
 		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -3198,7 +3198,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_ThumbHeight() {
+	public EAttribute getImageUnit_ThumbWidth() {
 		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -3207,7 +3207,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_ImageWidth() {
+	public EAttribute getImageUnit_ThumbHeight() {
 		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -3216,7 +3216,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_ImageHeight() {
+	public EAttribute getImageUnit_ImageWidth() {
 		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -3225,7 +3225,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_ShowTime() {
+	public EAttribute getImageUnit_ImageHeight() {
 		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -3234,8 +3234,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_TransitionTime() {
+	public EAttribute getImageUnit_ShowTime() {
 		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImageUnit_TransitionTime() {
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -4123,6 +4132,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(imageUnitEClass, IMAGE_UNIT__DEFAULT_SELECTION);
 		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_PATH_FEATURE);
 		createEReference(imageUnitEClass, IMAGE_UNIT__TITLE_FEATURE);
+		createEAttribute(imageUnitEClass, IMAGE_UNIT__MISSING_IMAGE_PATH);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__THUMB_WIDTH);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__THUMB_HEIGHT);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__IMAGE_WIDTH);
@@ -4305,6 +4315,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		searchUnitEClass.getESuperTypes().add(this.getControlUnit());
 		actionUnitEClass.getESuperTypes().add(this.getControlUnit());
 		imageUnitEClass.getESuperTypes().add(this.getDynamicUnit());
+		featurePathAttributeEClass.getESuperTypes().add(this.getFeaturePath());
+		featurePathAssociationEClass.getESuperTypes().add(this.getFeaturePath());
 		sliderUnitEClass.getESuperTypes().add(this.getImageUnit());
 		galleryUnitEClass.getESuperTypes().add(this.getImageUnit());
 		galleryUnitEClass.getESuperTypes().add(this.getInlineActionContainer());
@@ -4651,6 +4663,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getImageUnit_DefaultSelection(), this.getSelection(), null, "defaultSelection", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImageUnit_ImagePathFeature(), this.getFeaturePath(), null, "imagePathFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImageUnit_TitleFeature(), this.getFeaturePath(), null, "titleFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImageUnit_MissingImagePath(), theEcorePackage.getEString(), "missingImagePath", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_ThumbWidth(), theEcorePackage.getEInt(), "thumbWidth", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_ThumbHeight(), theEcorePackage.getEInt(), "thumbHeight", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_ImageWidth(), theEcorePackage.getEInt(), "imageWidth", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

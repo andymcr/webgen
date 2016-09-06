@@ -2,8 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import org.eclipse.emf.ecore.EObject;
-
 import uk.ac.man.cs.mdsd.orm.Attribute;
 
 /**
@@ -22,7 +20,7 @@ import uk.ac.man.cs.mdsd.orm.Attribute;
  * @model
  * @generated
  */
-public interface FeaturePathAttribute extends EObject {
+public interface FeaturePathAttribute extends FeaturePath {
 	/**
 	 * Returns the value of the '<em><b>Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->

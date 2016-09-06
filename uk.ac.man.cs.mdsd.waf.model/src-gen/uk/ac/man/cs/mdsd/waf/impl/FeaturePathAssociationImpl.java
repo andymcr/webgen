@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.man.cs.mdsd.orm.Association;
 
@@ -31,7 +30,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *
  * @generated
  */
-public class FeaturePathAssociationImpl extends MinimalEObjectImpl.Container implements FeaturePathAssociation {
+public class FeaturePathAssociationImpl extends FeaturePathImpl implements FeaturePathAssociation {
 	/**
 	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' reference.
 	 * <!-- begin-user-doc -->

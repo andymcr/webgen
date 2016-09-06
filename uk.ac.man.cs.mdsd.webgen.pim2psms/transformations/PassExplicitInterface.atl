@@ -235,7 +235,7 @@ helper context Website!Feature def: findOrmFeature(reference : Website!FeatureRe
 			OclUndefined
 		endif endif endif;
 
-helper context Website!UnitAssociation def: findOrmAssociation() : ORM!Association
+helper context Website!PathAssociationElement def: findOrmAssociation() : ORM!Association
 	= if self.association.oclIsUndefined() then
 			OclUndefined
 		else if self.isSourceAssociation then
@@ -256,6 +256,17 @@ helper context Website!ChildAssociation def: findOrmAssociation() : ORM!Associat
 				self.association.findOrmTargetAssociation()
 			endif
 		endif;
+
+helper context Website!FeaturePathAssociation def: findOrmAssociation() : ORM!Association
+	= if self.association.oclIsUndefined() then
+			OclUndefined
+		else if self.isSourceAssociation then
+			self.association.findOrmSourceAssociation()
+		else if self.displayedOn.entities->notEmpty() then
+			self.association.findOrmTargetAssociation()
+		else
+			OclUndefined
+		endif endif endif;
 
 helper context Website!Label def: findOrmLabel() : ORM!Label
 	= if self.oclIsKindOf(Website!Attribute) then
@@ -1146,6 +1157,7 @@ abstract rule ImageUnit {
 		defaultSelection <- website.defaultSelection,
 		imagePathFeature <- website.imagePathFeature,
 		titleFeature <- website.titleFeature,
+		missingImagePath <- website.missingImagePath,
 		thumbWidth <- website.thumbWidth,
 		thumbHeight <- website.thumbHeight,
 		imageWidth <- website.imageWidth,
@@ -1167,10 +1179,12 @@ rule FeaturePathAttribute {
 	)
 }
 
--- @extends FeaturePath, PathReferenceElement
+-- @extends FeaturePath
 rule FeaturePathAssociation {
 	from website : Website!FeaturePathAssociation
 	to waf : WAF!FeaturePathAssociation (
+		association <- website.findOrmAssociation(),
+		childFeature <- website.childFeature
 	)
 }
 

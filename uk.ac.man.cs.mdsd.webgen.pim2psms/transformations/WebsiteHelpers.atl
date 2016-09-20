@@ -23,10 +23,10 @@ helper context String def: createLabel() : String
 		endif;
 
 helper context String def: cleanString() : String
-	= if self.trim = '' then
+	= if self.trim() = '' then
 			OclUndefined
 		else
-			self.trim
+			self.trim()
 		endif;
 
 helper def: findWebGenModel() : Website!WebGenModel

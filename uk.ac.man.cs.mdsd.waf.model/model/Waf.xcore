@@ -23,7 +23,6 @@ import uk.ac.man.cs.mdsd.orm.Label
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement
 import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
-import uk.ac.man.cs.mdsd.orm.SingletonImage
 import uk.ac.man.cs.mdsd.orm.SingletonLocation
 import uk.ac.man.cs.mdsd.rest.API
 
@@ -51,6 +50,7 @@ enum AjaxTechnologies {
 class WafModel {
 	refers OrmModel[1] persistence
 	contains Service[] services opposite partOf
+	contains ImageManipulation[] imageManipulations
 	contains Page[] pages opposite partOf
 	contains Menu[] menus
 	String[1] siteName
@@ -159,6 +159,20 @@ class BusinessOperation extends NamedElement {
 enum OperationResultTypes {
 	None
 	File = 1
+}
+
+
+class ImageManipulation extends NamedElement {
+	int jpegQuality = "-1"
+	contains ImageFilter[] filters
+}
+
+abstract class ImageFilter {
+}
+
+class ThumbnailFilter extends ImageFilter {
+	int width
+	int height
 }
 
 
@@ -470,10 +484,8 @@ abstract class ImageUnit extends DynamicUnit {
 	contains FeaturePath[1] imagePathFeature
 	contains FeaturePath[1] titleFeature
 	String missingImagePath
-	int thumbWidth = "-1"
-	int thumbHeight = "-1"
-	int imageWidth = "-1"
-	int imageHeight = "-1"
+	refers ImageManipulation[1] thumbnailFilter
+	refers ImageManipulation imageFilter
 	int showTime
 	int transitionTime
 }

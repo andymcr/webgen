@@ -808,6 +808,52 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ImageManipulation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageManipulationItemProvider imageManipulationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ImageManipulation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageManipulationAdapter() {
+		if (imageManipulationItemProvider == null) {
+			imageManipulationItemProvider = new ImageManipulationItemProvider(this);
+		}
+
+		return imageManipulationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ThumbnailFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ThumbnailFilterItemProvider thumbnailFilterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ThumbnailFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createThumbnailFilterAdapter() {
+		if (thumbnailFilterItemProvider == null) {
+			thumbnailFilterItemProvider = new ThumbnailFilterItemProvider(this);
+		}
+
+		return thumbnailFilterItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.Page} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1995,6 +2041,8 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
 		if (businessOperationItemProvider != null) businessOperationItemProvider.dispose();
+		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
+		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
 		if (pageItemProvider != null) pageItemProvider.dispose();
 		if (pageLinkItemProvider != null) pageLinkItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();

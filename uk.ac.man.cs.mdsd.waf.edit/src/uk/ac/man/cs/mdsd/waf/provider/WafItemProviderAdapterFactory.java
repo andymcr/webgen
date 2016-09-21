@@ -304,6 +304,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ImageManipulation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageManipulationItemProvider imageManipulationItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ImageManipulation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageManipulationAdapter() {
+		if (imageManipulationItemProvider == null) {
+			imageManipulationItemProvider = new ImageManipulationItemProvider(this);
+		}
+
+		return imageManipulationItemProvider;
+	}
+
+		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ThumbnailFilter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ThumbnailFilterItemProvider thumbnailFilterItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ThumbnailFilter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createThumbnailFilterAdapter() {
+		if (thumbnailFilterItemProvider == null) {
+			thumbnailFilterItemProvider = new ThumbnailFilterItemProvider(this);
+		}
+
+		return thumbnailFilterItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.StaticMenu} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1483,6 +1529,8 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (selectAttributeItemProvider != null) selectAttributeItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
 		if (businessOperationItemProvider != null) businessOperationItemProvider.dispose();
+		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
+		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
 		if (dynamicMenuItemProvider != null) dynamicMenuItemProvider.dispose();
 		if (actionMenuEntryItemProvider != null) actionMenuEntryItemProvider.dispose();

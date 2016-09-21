@@ -440,6 +440,24 @@ public interface WebsiteFactory extends EFactory {
 	BusinessOperation createBusinessOperation();
 
 	/**
+	 * Returns a new object of class '<em>Image Manipulation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Image Manipulation</em>'.
+	 * @generated
+	 */
+	ImageManipulation createImageManipulation();
+
+	/**
+	 * Returns a new object of class '<em>Thumbnail Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Thumbnail Filter</em>'.
+	 * @generated
+	 */
+	ThumbnailFilter createThumbnailFilter();
+
+	/**
 	 * Returns a new object of class '<em>Create Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

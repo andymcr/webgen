@@ -81,6 +81,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/pages"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/menus"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/allowTypeCustomisation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/imageManipulations"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//WebsiteProperties">
       <genFeatures createChild="false" propertyCategory="Site" propertyDescription=""
@@ -412,6 +413,16 @@
       <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute website.ecore#//BusinessOperation/resultType"/>
       <genFeatures createChild="false" propertyCategory="Business" ecoreFeature="ecore:EAttribute website.ecore#//BusinessOperation/resultMimeType"/>
     </genClasses>
+    <genClasses ecoreClass="website.ecore#//ImageManipulation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ImageManipulation/jpegQuality"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ImageManipulation/filters"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="website.ecore#//ImageFilter"/>
+    <genClasses ecoreClass="website.ecore#//ThumbnailFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ThumbnailFilter/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ThumbnailFilter/height"/>
+    </genClasses>
     <genClasses ecoreClass="website.ecore#//Page">
       <genFeatures property="None" notify="false" createChild="false" propertyCategory="Model"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Page/parentPage"/>
@@ -724,11 +735,11 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ImageUnit/imagePathFeature"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ImageUnit/titleFeature"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/missingImagePath"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/thumbWidth"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/thumbHeight"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/imageWidth"/>
-      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/imageHeight"/>
+      <genFeatures createChild="false" propertyCategory="Image" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/missingImagePath"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Image" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//ImageUnit/thumbnailFilter"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Image" propertyDescription=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//ImageUnit/imageFilter"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/showTime"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//ImageUnit/transitionTime"/>
     </genClasses>

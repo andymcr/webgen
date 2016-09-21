@@ -152,6 +152,26 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.IMAGE_MANIPULATION: {
+				ImageManipulation imageManipulation = (ImageManipulation)theEObject;
+				T result = caseImageManipulation(imageManipulation);
+				if (result == null) result = caseNamedElement(imageManipulation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.IMAGE_FILTER: {
+				ImageFilter imageFilter = (ImageFilter)theEObject;
+				T result = caseImageFilter(imageFilter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.THUMBNAIL_FILTER: {
+				ThumbnailFilter thumbnailFilter = (ThumbnailFilter)theEObject;
+				T result = caseThumbnailFilter(thumbnailFilter);
+				if (result == null) result = caseImageFilter(thumbnailFilter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.MENU: {
 				Menu menu = (Menu)theEObject;
 				T result = caseMenu(menu);
@@ -921,6 +941,51 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBusinessOperation(BusinessOperation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Image Manipulation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Image Manipulation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImageManipulation(ImageManipulation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Image Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Image Filter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImageFilter(ImageFilter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Thumbnail Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Thumbnail Filter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThumbnailFilter(ThumbnailFilter object) {
 		return null;
 	}
 

@@ -186,6 +186,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateSelectionParameter((SelectionParameter)value, diagnostics, context);
 			case WebsitePackage.BUSINESS_OPERATION:
 				return validateBusinessOperation((BusinessOperation)value, diagnostics, context);
+			case WebsitePackage.IMAGE_MANIPULATION:
+				return validateImageManipulation((ImageManipulation)value, diagnostics, context);
+			case WebsitePackage.IMAGE_FILTER:
+				return validateImageFilter((ImageFilter)value, diagnostics, context);
+			case WebsitePackage.THUMBNAIL_FILTER:
+				return validateThumbnailFilter((ThumbnailFilter)value, diagnostics, context);
 			case WebsitePackage.PAGE:
 				return validatePage((Page)value, diagnostics, context);
 			case WebsitePackage.PAGE_LINK:
@@ -1911,6 +1917,43 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(businessOperation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(businessOperation, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateImageManipulation(ImageManipulation imageManipulation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(imageManipulation, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(imageManipulation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(imageManipulation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(imageManipulation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(imageManipulation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(imageManipulation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(imageManipulation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(imageManipulation, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(imageManipulation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(imageManipulation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateImageFilter(ImageFilter imageFilter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(imageFilter, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateThumbnailFilter(ThumbnailFilter thumbnailFilter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(thumbnailFilter, diagnostics, context);
 	}
 
 	/**

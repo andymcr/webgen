@@ -92,6 +92,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.SELECTION: return createSelection();
 			case WebsitePackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WebsitePackage.BUSINESS_OPERATION: return createBusinessOperation();
+			case WebsitePackage.IMAGE_MANIPULATION: return createImageManipulation();
+			case WebsitePackage.THUMBNAIL_FILTER: return createThumbnailFilter();
 			case WebsitePackage.PAGE: return createPage();
 			case WebsitePackage.PAGE_LINK: return createPageLink();
 			case WebsitePackage.STATIC_MENU: return createStaticMenu();
@@ -679,6 +681,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public BusinessOperation createBusinessOperation() {
 		BusinessOperationImpl businessOperation = new BusinessOperationImpl();
 		return businessOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageManipulation createImageManipulation() {
+		ImageManipulationImpl imageManipulation = new ImageManipulationImpl();
+		return imageManipulation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ThumbnailFilter createThumbnailFilter() {
+		ThumbnailFilterImpl thumbnailFilter = new ThumbnailFilterImpl();
+		return thumbnailFilter;
 	}
 
 	/**

@@ -315,6 +315,7 @@ rule WafModel {
 	to waf : WAF!WafModel (
 		persistence <- orm,
 		services <- website.services,
+		imageManipulations <- website.imageManipulations,
 		pages <- website.pages,
 		menus <- website.menus,
 		siteName <- website.websiteProperties.projectName,
@@ -445,6 +446,30 @@ rule BusinessOperation {
 		uses <- website.uses,
 		resultType <- website.resultType,
 		resultMimeType <- website.resultMimeType
+	)
+}
+
+-- @extends NamedElement
+rule ImageManipulation {
+	from website : Website!ImageManipulation
+	to waf : WAF!ImageManipulation (
+		jpegQuality <- website.jpegQuality,
+		filters <- website.filters
+	)
+}
+
+abstract rule ImageFilter {
+	from website : Website!ImageFilter
+	to waf : WAF!ImageFilter (
+	)
+}
+
+-- @extends ImageFilter
+rule ThumbnailFilter {
+	from website : Website!ThumbnailFilter
+	to waf : WAF!ThumbnailFilter (
+		width <- website.width,
+		height <- website.height
 	)
 }
 
@@ -1158,10 +1183,10 @@ abstract rule ImageUnit {
 		imagePathFeature <- website.imagePathFeature,
 		titleFeature <- website.titleFeature,
 		missingImagePath <- website.missingImagePath,
-		thumbWidth <- website.thumbWidth,
-		thumbHeight <- website.thumbHeight,
-		imageWidth <- website.imageWidth,
-		imageHeight <- website.imageHeight
+		thumbnailFilter <- website.thumbnailFilter,
+		imageFilter <- website.imageFilter,
+		showTime <- website.showTime,
+		transitionTime <- website.transitionTime
 	)
 }
 

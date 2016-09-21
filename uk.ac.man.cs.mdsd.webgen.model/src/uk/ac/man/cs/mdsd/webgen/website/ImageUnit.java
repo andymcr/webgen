@@ -15,10 +15,8 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTitleFeature <em>Title Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbWidth <em>Thumb Width</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbHeight <em>Thumb Height</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageWidth <em>Image Width</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageHeight <em>Image Height</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbnailFilter <em>Thumbnail Filter</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageFilter <em>Image Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getShowTime <em>Show Time</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTransitionTime <em>Transition Time</em>}</li>
  * </ul>
@@ -134,112 +132,56 @@ public interface ImageUnit extends DynamicUnit {
 	void setMissingImagePath(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Thumb Width</b></em>' attribute.
-	 * The default value is <code>"-1"</code>.
+	 * Returns the value of the '<em><b>Thumbnail Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Thumb Width</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Thumbnail Filter</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Thumb Width</em>' attribute.
-	 * @see #setThumbWidth(int)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ThumbWidth()
-	 * @model default="-1"
+	 * @return the value of the '<em>Thumbnail Filter</em>' reference.
+	 * @see #setThumbnailFilter(ImageManipulation)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ThumbnailFilter()
+	 * @model required="true"
 	 * @generated
 	 */
-	int getThumbWidth();
+	ImageManipulation getThumbnailFilter();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbWidth <em>Thumb Width</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbnailFilter <em>Thumbnail Filter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Thumb Width</em>' attribute.
-	 * @see #getThumbWidth()
+	 * @param value the new value of the '<em>Thumbnail Filter</em>' reference.
+	 * @see #getThumbnailFilter()
 	 * @generated
 	 */
-	void setThumbWidth(int value);
+	void setThumbnailFilter(ImageManipulation value);
 
 	/**
-	 * Returns the value of the '<em><b>Thumb Height</b></em>' attribute.
-	 * The default value is <code>"-1"</code>.
+	 * Returns the value of the '<em><b>Image Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Thumb Height</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Image Filter</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Thumb Height</em>' attribute.
-	 * @see #setThumbHeight(int)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ThumbHeight()
-	 * @model default="-1"
+	 * @return the value of the '<em>Image Filter</em>' reference.
+	 * @see #setImageFilter(ImageManipulation)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ImageFilter()
+	 * @model
 	 * @generated
 	 */
-	int getThumbHeight();
+	ImageManipulation getImageFilter();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbHeight <em>Thumb Height</em>}' attribute.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageFilter <em>Image Filter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Thumb Height</em>' attribute.
-	 * @see #getThumbHeight()
+	 * @param value the new value of the '<em>Image Filter</em>' reference.
+	 * @see #getImageFilter()
 	 * @generated
 	 */
-	void setThumbHeight(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Image Width</b></em>' attribute.
-	 * The default value is <code>"-1"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Image Width</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Image Width</em>' attribute.
-	 * @see #setImageWidth(int)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ImageWidth()
-	 * @model default="-1"
-	 * @generated
-	 */
-	int getImageWidth();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageWidth <em>Image Width</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Image Width</em>' attribute.
-	 * @see #getImageWidth()
-	 * @generated
-	 */
-	void setImageWidth(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Image Height</b></em>' attribute.
-	 * The default value is <code>"-1"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Image Height</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Image Height</em>' attribute.
-	 * @see #setImageHeight(int)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ImageHeight()
-	 * @model default="-1"
-	 * @generated
-	 */
-	int getImageHeight();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageHeight <em>Image Height</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Image Height</em>' attribute.
-	 * @see #getImageHeight()
-	 * @generated
-	 */
-	void setImageHeight(int value);
+	void setImageFilter(ImageManipulation value);
 
 	/**
 	 * Returns the value of the '<em><b>Show Time</b></em>' attribute.

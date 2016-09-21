@@ -27,6 +27,8 @@
         eType="#//Menu" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="allowTypeCustomisation"
         upperBound="-1" eType="#//EntityOrView"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imageManipulations" upperBound="-1"
+        eType="#//ImageManipulation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DatabaseTechnologies">
     <eLiterals name="MySql"/>
@@ -611,6 +613,19 @@
     <eLiterals name="None" literal="None"/>
     <eLiterals name="File" value="1" literal="File"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageManipulation" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jpegQuality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
+        eType="#//ImageFilter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageFilter" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ThumbnailFilter" eSuperTypes="#//ImageFilter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PageTopMenuOptions">
     <eLiterals name="NeverInclude"/>
     <eLiterals name="AlwaysInclude"/>
@@ -1125,14 +1140,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="titleFeature" lowerBound="1"
         eType="#//FeaturePath" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="missingImagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="thumbWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="thumbHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imageWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="-1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imageHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="thumbnailFilter" lowerBound="1"
+        eType="#//ImageManipulation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imageFilter" eType="#//ImageManipulation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="showTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="-1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"

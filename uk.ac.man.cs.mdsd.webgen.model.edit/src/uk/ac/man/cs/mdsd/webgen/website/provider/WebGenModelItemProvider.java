@@ -105,6 +105,7 @@ public class WebGenModelItemProvider
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__SERVICES);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__PAGES);
 			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS);
+			childrenFeatures.add(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGE_MANIPULATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -161,6 +162,7 @@ public class WebGenModelItemProvider
 			case WebsitePackage.WEB_GEN_MODEL__SERVICES:
 			case WebsitePackage.WEB_GEN_MODEL__PAGES:
 			case WebsitePackage.WEB_GEN_MODEL__MENUS:
+			case WebsitePackage.WEB_GEN_MODEL__IMAGE_MANIPULATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -222,6 +224,11 @@ public class WebGenModelItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.WEB_GEN_MODEL__MENUS,
 				 WebsiteFactory.eINSTANCE.createDynamicMenu()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.WEB_GEN_MODEL__IMAGE_MANIPULATIONS,
+				 WebsiteFactory.eINSTANCE.createImageManipulation()));
 	}
 
 	/**

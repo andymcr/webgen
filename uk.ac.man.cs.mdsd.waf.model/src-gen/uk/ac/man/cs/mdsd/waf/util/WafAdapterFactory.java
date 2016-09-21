@@ -122,6 +122,18 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createBusinessOperationAdapter();
 			}
 			@Override
+			public Adapter caseImageManipulation(ImageManipulation object) {
+				return createImageManipulationAdapter();
+			}
+			@Override
+			public Adapter caseImageFilter(ImageFilter object) {
+				return createImageFilterAdapter();
+			}
+			@Override
+			public Adapter caseThumbnailFilter(ThumbnailFilter object) {
+				return createThumbnailFilterAdapter();
+			}
+			@Override
 			public Adapter caseMenu(Menu object) {
 				return createMenuAdapter();
 			}
@@ -582,6 +594,48 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBusinessOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ImageManipulation <em>Image Manipulation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageManipulation
+	 * @generated
+	 */
+	public Adapter createImageManipulationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ImageFilter <em>Image Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageFilter
+	 * @generated
+	 */
+	public Adapter createImageFilterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ThumbnailFilter <em>Thumbnail Filter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ThumbnailFilter
+	 * @generated
+	 */
+	public Adapter createThumbnailFilterAdapter() {
 		return null;
 	}
 

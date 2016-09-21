@@ -915,6 +915,30 @@
     <nodeLabelTraces
         visualID="5271"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7134"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3264"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'SelectAction') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'InlineActionContainer') and _containmentMF_.name = 'actions')">
+    <nodeLabelTraces
+        visualID="5272"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3265"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'DeleteAction') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'InlineActionContainer') and _containmentMF_.name = 'actions')">
+    <nodeLabelTraces
+        visualID="5273"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3266"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'FeatureSupportAction') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.cs.man.ac.uk/mdsd/2010/Website' and _eClass_.name = 'InlineActionContainer') and _containmentMF_.name = 'actions')">
+    <nodeLabelTraces
+        visualID="5274"
+        queryText="true"/>
   </childNodeTraces>
   <linkTraces
       visualID="4001"

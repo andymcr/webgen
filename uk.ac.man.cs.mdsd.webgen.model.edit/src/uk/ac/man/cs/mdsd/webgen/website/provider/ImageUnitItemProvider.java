@@ -51,10 +51,8 @@ public class ImageUnitItemProvider
 
 			addDefaultSelectionPropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
-			addThumbWidthPropertyDescriptor(object);
-			addThumbHeightPropertyDescriptor(object);
-			addImageWidthPropertyDescriptor(object);
-			addImageHeightPropertyDescriptor(object);
+			addThumbnailFilterPropertyDescriptor(object);
+			addImageFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
 			addTransitionTimePropertyDescriptor(object);
 		}
@@ -110,90 +108,46 @@ public class ImageUnitItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Thumb Width feature.
+	 * This adds a property descriptor for the Thumbnail Filter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addThumbWidthPropertyDescriptor(Object object) {
+	protected void addThumbnailFilterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ImageUnit_thumbWidth_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_thumbWidth_feature", "_UI_ImageUnit_type"),
-				 WebsitePackage.Literals.IMAGE_UNIT__THUMB_WIDTH,
+				 getString("_UI_ImageUnit_thumbnailFilter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_thumbnailFilter_feature", "_UI_ImageUnit_type"),
+				 WebsitePackage.Literals.IMAGE_UNIT__THUMBNAIL_FILTER,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 true,
+				 null,
+				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Thumb Height feature.
+	 * This adds a property descriptor for the Image Filter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addThumbHeightPropertyDescriptor(Object object) {
+	protected void addImageFilterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ImageUnit_thumbHeight_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_thumbHeight_feature", "_UI_ImageUnit_type"),
-				 WebsitePackage.Literals.IMAGE_UNIT__THUMB_HEIGHT,
+				 getString("_UI_ImageUnit_imageFilter_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageFilter_feature", "_UI_ImageUnit_type"),
+				 WebsitePackage.Literals.IMAGE_UNIT__IMAGE_FILTER,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Image Width feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImageWidthPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageUnit_imageWidth_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageWidth_feature", "_UI_ImageUnit_type"),
-				 WebsitePackage.Literals.IMAGE_UNIT__IMAGE_WIDTH,
 				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Image Height feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImageHeightPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageUnit_imageHeight_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_imageHeight_feature", "_UI_ImageUnit_type"),
-				 WebsitePackage.Literals.IMAGE_UNIT__IMAGE_HEIGHT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_InterfacePropertyCategory"),
+				 null,
+				 null,
 				 null));
 	}
 
@@ -300,10 +254,6 @@ public class ImageUnitItemProvider
 
 		switch (notification.getFeatureID(ImageUnit.class)) {
 			case WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
-			case WebsitePackage.IMAGE_UNIT__THUMB_WIDTH:
-			case WebsitePackage.IMAGE_UNIT__THUMB_HEIGHT:
-			case WebsitePackage.IMAGE_UNIT__IMAGE_WIDTH:
-			case WebsitePackage.IMAGE_UNIT__IMAGE_HEIGHT:
 			case WebsitePackage.IMAGE_UNIT__SHOW_TIME:
 			case WebsitePackage.IMAGE_UNIT__TRANSITION_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

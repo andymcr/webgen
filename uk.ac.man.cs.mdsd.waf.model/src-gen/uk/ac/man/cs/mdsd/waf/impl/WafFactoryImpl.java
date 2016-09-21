@@ -66,6 +66,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.SELECT_ATTRIBUTE: return createSelectAttribute();
 			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WafPackage.BUSINESS_OPERATION: return createBusinessOperation();
+			case WafPackage.IMAGE_MANIPULATION: return createImageManipulation();
+			case WafPackage.THUMBNAIL_FILTER: return createThumbnailFilter();
 			case WafPackage.STATIC_MENU: return createStaticMenu();
 			case WafPackage.DYNAMIC_MENU: return createDynamicMenu();
 			case WafPackage.ACTION_MENU_ENTRY: return createActionMenuEntry();
@@ -258,6 +260,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public BusinessOperation createBusinessOperation() {
 		BusinessOperationImpl businessOperation = new BusinessOperationImpl();
 		return businessOperation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageManipulation createImageManipulation() {
+		ImageManipulationImpl imageManipulation = new ImageManipulationImpl();
+		return imageManipulation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ThumbnailFilter createThumbnailFilter() {
+		ThumbnailFilterImpl thumbnailFilter = new ThumbnailFilterImpl();
+		return thumbnailFilter;
 	}
 
 	/**

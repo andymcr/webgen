@@ -56,6 +56,8 @@ import uk.ac.man.cs.mdsd.waf.FilterParameter;
 import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.waf.GalleryUnit;
+import uk.ac.man.cs.mdsd.waf.ImageFilter;
+import uk.ac.man.cs.mdsd.waf.ImageManipulation;
 import uk.ac.man.cs.mdsd.waf.ImageUnit;
 import uk.ac.man.cs.mdsd.waf.IndexGridUnit;
 import uk.ac.man.cs.mdsd.waf.IndexLineDirectionUnit;
@@ -93,6 +95,7 @@ import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.SliderUnit;
 import uk.ac.man.cs.mdsd.waf.StaticMenu;
 import uk.ac.man.cs.mdsd.waf.StaticUnit;
+import uk.ac.man.cs.mdsd.waf.ThumbnailFilter;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
 import uk.ac.man.cs.mdsd.waf.UnitAttribute;
 import uk.ac.man.cs.mdsd.waf.UnitContainer;
@@ -194,6 +197,27 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass businessOperationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass imageManipulationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass imageFilterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass thumbnailFilterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -795,7 +819,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWafModel_Pages() {
+	public EReference getWafModel_ImageManipulations() {
 		return (EReference)wafModelEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -804,7 +828,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWafModel_Menus() {
+	public EReference getWafModel_Pages() {
 		return (EReference)wafModelEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -813,8 +837,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_SiteName() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(4);
+	public EReference getWafModel_Menus() {
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -822,7 +846,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_SiteTitle() {
+	public EAttribute getWafModel_SiteName() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -831,7 +855,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_DevelopmentVersion() {
+	public EAttribute getWafModel_SiteTitle() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -840,7 +864,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_BaseURL() {
+	public EAttribute getWafModel_DevelopmentVersion() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -849,7 +873,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_RewriteURLs() {
+	public EAttribute getWafModel_BaseURL() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -858,7 +882,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_WebmasterEmail() {
+	public EAttribute getWafModel_RewriteURLs() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -867,7 +891,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_CopyrightText() {
+	public EAttribute getWafModel_WebmasterEmail() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -876,7 +900,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_MetaDescription() {
+	public EAttribute getWafModel_CopyrightText() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -885,7 +909,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_FrameworkTechnology() {
+	public EAttribute getWafModel_MetaDescription() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -894,7 +918,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_InputTechnology() {
+	public EAttribute getWafModel_FrameworkTechnology() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -903,7 +927,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_AjaxTechnology() {
+	public EAttribute getWafModel_InputTechnology() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -912,8 +936,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWafModel_AjaxTechnology() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWafModel_Authentication() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(15);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -922,15 +955,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_CaptchaSiteKey() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWafModel_CaptchaSecretKey() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -939,7 +963,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_TextEditorURL() {
+	public EAttribute getWafModel_CaptchaSecretKey() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(18);
 	}
 
@@ -948,7 +972,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_ResponsiveTopMenu() {
+	public EAttribute getWafModel_TextEditorURL() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(19);
 	}
 
@@ -957,7 +981,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWafModel_TopNavigationId() {
+	public EAttribute getWafModel_ResponsiveTopMenu() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(20);
 	}
 
@@ -966,8 +990,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWafModel_TopNavigationId() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWafModel_SideMenu() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(21);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -976,15 +1009,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getWafModel_SiteTemplate() {
-		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(22);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWafModel_StaticUnitsEditable() {
 		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(23);
 	}
 
@@ -993,8 +1017,17 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWafModel_StaticUnitsEditable() {
+		return (EAttribute)wafModelEClass.getEStructuralFeatures().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getWafModel_AllowTypeCustomisation() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(24);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(25);
 	}
 
 	/**
@@ -1003,7 +1036,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EReference getWafModel_RestApi() {
-		return (EReference)wafModelEClass.getEStructuralFeatures().get(25);
+		return (EReference)wafModelEClass.getEStructuralFeatures().get(26);
 	}
 
 	/**
@@ -1445,6 +1478,69 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EAttribute getBusinessOperation_ResultMimeType() {
 		return (EAttribute)businessOperationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getImageManipulation() {
+		return imageManipulationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImageManipulation_JpegQuality() {
+		return (EAttribute)imageManipulationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getImageManipulation_Filters() {
+		return (EReference)imageManipulationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getImageFilter() {
+		return imageFilterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getThumbnailFilter() {
+		return thumbnailFilterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getThumbnailFilter_Width() {
+		return (EAttribute)thumbnailFilterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getThumbnailFilter_Height() {
+		return (EAttribute)thumbnailFilterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3198,8 +3294,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_ThumbWidth() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(4);
+	public EReference getImageUnit_ThumbnailFilter() {
+		return (EReference)imageUnitEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -3207,26 +3303,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImageUnit_ThumbHeight() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getImageUnit_ImageWidth() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getImageUnit_ImageHeight() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(7);
+	public EReference getImageUnit_ImageFilter() {
+		return (EReference)imageUnitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3235,7 +3313,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getImageUnit_ShowTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3244,7 +3322,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getImageUnit_TransitionTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -3809,6 +3887,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		wafModelEClass = createEClass(WAF_MODEL);
 		createEReference(wafModelEClass, WAF_MODEL__PERSISTENCE);
 		createEReference(wafModelEClass, WAF_MODEL__SERVICES);
+		createEReference(wafModelEClass, WAF_MODEL__IMAGE_MANIPULATIONS);
 		createEReference(wafModelEClass, WAF_MODEL__PAGES);
 		createEReference(wafModelEClass, WAF_MODEL__MENUS);
 		createEAttribute(wafModelEClass, WAF_MODEL__SITE_NAME);
@@ -3893,6 +3972,16 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(businessOperationEClass, BUSINESS_OPERATION__USES);
 		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_TYPE);
 		createEAttribute(businessOperationEClass, BUSINESS_OPERATION__RESULT_MIME_TYPE);
+
+		imageManipulationEClass = createEClass(IMAGE_MANIPULATION);
+		createEAttribute(imageManipulationEClass, IMAGE_MANIPULATION__JPEG_QUALITY);
+		createEReference(imageManipulationEClass, IMAGE_MANIPULATION__FILTERS);
+
+		imageFilterEClass = createEClass(IMAGE_FILTER);
+
+		thumbnailFilterEClass = createEClass(THUMBNAIL_FILTER);
+		createEAttribute(thumbnailFilterEClass, THUMBNAIL_FILTER__WIDTH);
+		createEAttribute(thumbnailFilterEClass, THUMBNAIL_FILTER__HEIGHT);
 
 		menuEClass = createEClass(MENU);
 		createEReference(menuEClass, MENU__ENTRIES);
@@ -4133,10 +4222,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_PATH_FEATURE);
 		createEReference(imageUnitEClass, IMAGE_UNIT__TITLE_FEATURE);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__MISSING_IMAGE_PATH);
-		createEAttribute(imageUnitEClass, IMAGE_UNIT__THUMB_WIDTH);
-		createEAttribute(imageUnitEClass, IMAGE_UNIT__THUMB_HEIGHT);
-		createEAttribute(imageUnitEClass, IMAGE_UNIT__IMAGE_WIDTH);
-		createEAttribute(imageUnitEClass, IMAGE_UNIT__IMAGE_HEIGHT);
+		createEReference(imageUnitEClass, IMAGE_UNIT__THUMBNAIL_FILTER);
+		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_FILTER);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__SHOW_TIME);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__TRANSITION_TIME);
 
@@ -4263,6 +4350,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		selectAttributeEClass.getESuperTypes().add(this.getSelectField());
 		selectionParameterEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
 		businessOperationEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
+		imageManipulationEClass.getESuperTypes().add(theOrmPackage.getNamedElement());
+		thumbnailFilterEClass.getESuperTypes().add(this.getImageFilter());
 		menuEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
 		staticMenuEClass.getESuperTypes().add(this.getMenu());
 		dynamicMenuEClass.getESuperTypes().add(this.getMenu());
@@ -4340,6 +4429,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(wafModelEClass, WafModel.class, "WafModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWafModel_Persistence(), theOrmPackage.getOrmModel(), null, "persistence", null, 1, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_Services(), this.getService(), this.getService_PartOf(), "services", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWafModel_ImageManipulations(), this.getImageManipulation(), null, "imageManipulations", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_Pages(), this.getPage(), this.getPage_PartOf(), "pages", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWafModel_Menus(), this.getMenu(), null, "menus", null, 0, -1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWafModel_SiteName(), theEcorePackage.getEString(), "siteName", null, 1, 1, WafModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4424,6 +4514,16 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getBusinessOperation_Uses(), this.getService(), null, "uses", null, 0, -1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessOperation_ResultType(), this.getOperationResultTypes(), "resultType", null, 1, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBusinessOperation_ResultMimeType(), theEcorePackage.getEString(), "resultMimeType", null, 0, 1, BusinessOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(imageManipulationEClass, ImageManipulation.class, "ImageManipulation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getImageManipulation_JpegQuality(), theEcorePackage.getEInt(), "jpegQuality", "-1", 0, 1, ImageManipulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImageManipulation_Filters(), this.getImageFilter(), null, "filters", null, 0, -1, ImageManipulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(imageFilterEClass, ImageFilter.class, "ImageFilter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(thumbnailFilterEClass, ThumbnailFilter.class, "ThumbnailFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getThumbnailFilter_Width(), theEcorePackage.getEInt(), "width", null, 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThumbnailFilter_Height(), theEcorePackage.getEInt(), "height", null, 0, 1, ThumbnailFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(menuEClass, Menu.class, "Menu", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMenu_Entries(), this.getMenuEntry(), this.getMenuEntry_PartOf(), "entries", null, 0, -1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4664,10 +4764,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getImageUnit_ImagePathFeature(), this.getFeaturePath(), null, "imagePathFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImageUnit_TitleFeature(), this.getFeaturePath(), null, "titleFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_MissingImagePath(), theEcorePackage.getEString(), "missingImagePath", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageUnit_ThumbWidth(), theEcorePackage.getEInt(), "thumbWidth", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageUnit_ThumbHeight(), theEcorePackage.getEInt(), "thumbHeight", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageUnit_ImageWidth(), theEcorePackage.getEInt(), "imageWidth", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImageUnit_ImageHeight(), theEcorePackage.getEInt(), "imageHeight", "-1", 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImageUnit_ThumbnailFilter(), this.getImageManipulation(), null, "thumbnailFilter", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImageUnit_ImageFilter(), this.getImageManipulation(), null, "imageFilter", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_ShowTime(), theEcorePackage.getEInt(), "showTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_TransitionTime(), theEcorePackage.getEInt(), "transitionTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

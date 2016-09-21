@@ -2445,6 +2445,74 @@
               href="website.gmftool#//@palette/@tools.2/@tools.9"/>
           <diagramNode
               href="website.gmfgraph#InterfaceUnit"/>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="website.ecore#//InlineActionContainer/actions"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//SelectAction"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="website.gmfgraph#ActionNameLabel"/>
+                <features
+                    href="website.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.3/@tools.0"/>
+              <diagramNode
+                  href="website.gmfgraph#Action"/>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="website.ecore#//InlineActionContainer/actions"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//DeleteAction"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="website.gmfgraph#ActionNameLabel"/>
+                <features
+                    href="website.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.3/@tools.1"/>
+              <diagramNode
+                  href="website.gmfgraph#Action"/>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.6/@ownedChild/@children.10/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="website.ecore#//InlineActionContainer/actions"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="website.ecore#//FeatureSupportAction"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="website.gmfgraph#ActionNameLabel"/>
+                <features
+                    href="website.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="website.gmftool#//@palette/@tools.3/@tools.2"/>
+              <diagramNode
+                  href="website.gmfgraph#Action"/>
+            </ownedChild>
+          </children>
+          <compartments
+              children="//@nodes.6/@ownedChild/@children.10/@ownedChild/@children.0 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.2 //@nodes.6/@ownedChild/@children.10/@ownedChild/@children.1">
+            <compartment
+                href="website.gmfgraph#ActionCompartment"/>
+          </compartments>
         </ownedChild>
       </children>
       <compartments

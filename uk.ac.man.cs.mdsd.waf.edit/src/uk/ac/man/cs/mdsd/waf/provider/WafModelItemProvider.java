@@ -606,6 +606,7 @@ public class WafModelItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__SERVICES);
+			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__IMAGE_MANIPULATIONS);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__PAGES);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__MENUS);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__AUTHENTICATION);
@@ -688,6 +689,7 @@ public class WafModelItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.WAF_MODEL__SERVICES:
+			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 			case WafPackage.WAF_MODEL__PAGES:
 			case WafPackage.WAF_MODEL__MENUS:
 			case WafPackage.WAF_MODEL__AUTHENTICATION:
@@ -713,6 +715,11 @@ public class WafModelItemProvider
 			(createChildParameter
 				(WafPackage.Literals.WAF_MODEL__SERVICES,
 				 WafFactory.eINSTANCE.createService()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.WAF_MODEL__IMAGE_MANIPULATIONS,
+				 WafFactory.eINSTANCE.createImageManipulation()));
 
 		newChildDescriptors.add
 			(createChildParameter

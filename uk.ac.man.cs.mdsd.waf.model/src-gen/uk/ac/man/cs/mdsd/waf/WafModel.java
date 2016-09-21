@@ -22,6 +22,7 @@ import uk.ac.man.cs.mdsd.rest.API;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getPersistence <em>Persistence</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getServices <em>Services</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getImageManipulations <em>Image Manipulations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getMenus <em>Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getSiteName <em>Site Name</em>}</li>
@@ -96,6 +97,22 @@ public interface WafModel extends EObject {
 	 * @generated
 	 */
 	EList<Service> getServices();
+
+	/**
+	 * Returns the value of the '<em><b>Image Manipulations</b></em>' containment reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.ImageManipulation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Image Manipulations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Image Manipulations</em>' containment reference list.
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_ImageManipulations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ImageManipulation> getImageManipulations();
 
 	/**
 	 * Returns the value of the '<em><b>Pages</b></em>' containment reference list.

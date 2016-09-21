@@ -5364,6 +5364,7 @@
         editPartClassName="GalleryUnitEditPart"
         itemSemanticEditPolicyClassName="GalleryUnitItemSemanticEditPolicy"
         canonicalEditPolicyClassName="GalleryUnitCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.44"
         graphicalNodeEditPolicyClassName="GalleryUnitGraphicalNodeEditPolicy"
         createCommandClassName="GalleryUnitCreateCommand"
         containers="//@diagram/@compartments.7">
@@ -5413,13 +5414,169 @@
       </labels>
     </childNodes>
     <childNodes
+        visualID="3264"
+        editPartClassName="SelectAction8EditPart"
+        itemSemanticEditPolicyClassName="SelectAction8ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="SelectAction8CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="SelectAction8GraphicalNodeEditPolicy"
+        createCommandClassName="SelectAction8CreateCommand"
+        containers="//@diagram/@compartments.44">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.28/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ActionFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureActionNameLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureActionNameLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureActionNameLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureActionNameLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureActionNameLabelFigure() {&#xA;&#x9;&#x9;return fFigureActionNameLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 255, 228, 181);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="80"
+            height="20"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="website.genmodel#//website/SelectAction"/>
+        <containmentMetaFeature
+            href="website.genmodel#//website/InlineActionContainer/actions"/>
+        <childMetaFeature
+            href="website.genmodel#//website/InlineActionContainer/actions"/>
+      </modelFacet>
+      <labels
+          visualID="5272"
+          editPartClassName="SelectActionName8EditPart"
+          itemSemanticEditPolicyClassName="SelectActionName8ItemSemanticEditPolicy"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureActionNameLabelFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="website.genmodel#//website/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
+        visualID="3265"
+        editPartClassName="DeleteAction4EditPart"
+        itemSemanticEditPolicyClassName="DeleteAction4ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="DeleteAction4CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="DeleteAction4GraphicalNodeEditPolicy"
+        createCommandClassName="DeleteAction4CreateCommand"
+        containers="//@diagram/@compartments.44">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.59/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ActionFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureActionNameLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureActionNameLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureActionNameLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureActionNameLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureActionNameLabelFigure() {&#xA;&#x9;&#x9;return fFigureActionNameLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 255, 228, 181);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="80"
+            height="20"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="website.genmodel#//website/DeleteAction"/>
+        <containmentMetaFeature
+            href="website.genmodel#//website/InlineActionContainer/actions"/>
+        <childMetaFeature
+            href="website.genmodel#//website/InlineActionContainer/actions"/>
+      </modelFacet>
+      <labels
+          visualID="5273"
+          editPartClassName="DeleteActionName4EditPart"
+          itemSemanticEditPolicyClassName="DeleteActionName4ItemSemanticEditPolicy"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureActionNameLabelFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="website.genmodel#//website/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
+        visualID="3266"
+        editPartClassName="FeatureSupportAction2EditPart"
+        itemSemanticEditPolicyClassName="FeatureSupportAction2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="FeatureSupportAction2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="FeatureSupportAction2GraphicalNodeEditPolicy"
+        createCommandClassName="FeatureSupportAction2CreateCommand"
+        containers="//@diagram/@compartments.44">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.79/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ActionFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureActionNameLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureActionNameLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureActionNameLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureActionNameLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureActionNameLabelFigure() {&#xA;&#x9;&#x9;return fFigureActionNameLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 255, 228, 181);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="80"
+            height="20"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="website.genmodel#//website/FeatureSupportAction"/>
+        <containmentMetaFeature
+            href="website.genmodel#//website/InlineActionContainer/actions"/>
+        <childMetaFeature
+            href="website.genmodel#//website/InlineActionContainer/actions"/>
+      </modelFacet>
+      <labels
+          visualID="5274"
+          editPartClassName="FeatureSupportActionName2EditPart"
+          itemSemanticEditPolicyClassName="FeatureSupportActionName2ItemSemanticEditPolicy"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureActionNameLabelFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="website.genmodel#//website/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
         visualID="3236"
         editPartClassName="ActionMenuEntryEditPart"
         itemSemanticEditPolicyClassName="ActionMenuEntryItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ActionMenuEntryCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ActionMenuEntryGraphicalNodeEditPolicy"
         createCommandClassName="ActionMenuEntryCreateCommand"
-        containers="//@diagram/@compartments.44">
+        containers="//@diagram/@compartments.45">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -5474,7 +5631,7 @@
         canonicalEditPolicyClassName="EditStaticTextMenuEntryCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EditStaticTextMenuEntryGraphicalNodeEditPolicy"
         createCommandClassName="EditStaticTextMenuEntryCreateCommand"
-        containers="//@diagram/@compartments.44">
+        containers="//@diagram/@compartments.45">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -5530,7 +5687,7 @@
         canonicalEditPolicyClassName="SelectionCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="SelectionGraphicalNodeEditPolicy"
         createCommandClassName="SelectionCreateCommand"
-        containers="//@diagram/@compartments.45">
+        containers="//@diagram/@compartments.46">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -5583,7 +5740,7 @@
         canonicalEditPolicyClassName="BusinessOperationCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="BusinessOperationGraphicalNodeEditPolicy"
         createCommandClassName="BusinessOperationCreateCommand"
-        containers="//@diagram/@compartments.46">
+        containers="//@diagram/@compartments.47">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -6024,7 +6181,7 @@
         itemSemanticEditPolicyClassName="StaticMenuItemSemanticEditPolicy"
         notationViewFactoryClassName="StaticMenuViewFactory"
         canonicalEditPolicyClassName="StaticMenuCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.44"
+        compartments="//@diagram/@compartments.45"
         graphicalNodeEditPolicyClassName="StaticMenuGraphicalNodeEditPolicy"
         createCommandClassName="StaticMenuCreateCommand">
       <diagramRunTimeClass
@@ -6080,7 +6237,7 @@
         itemSemanticEditPolicyClassName="ServiceItemSemanticEditPolicy"
         notationViewFactoryClassName="ServiceViewFactory"
         canonicalEditPolicyClassName="ServiceCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.45 //@diagram/@compartments.46"
+        compartments="//@diagram/@compartments.46 //@diagram/@compartments.47"
         graphicalNodeEditPolicyClassName="ServiceGraphicalNodeEditPolicy"
         createCommandClassName="ServiceCreateCommand">
       <diagramRunTimeClass
@@ -7184,12 +7341,33 @@
       </viewmap>
     </compartments>
     <compartments
+        visualID="7134"
+        editPartClassName="GalleryUnitActionCompartmentEditPart"
+        itemSemanticEditPolicyClassName="GalleryUnitActionCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="GalleryUnitActionCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.99 //@diagram/@childNodes.100 //@diagram/@childNodes.101"
+        title="ActionCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@childNodes.98">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ActionFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ActionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureActionNameLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ActionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureActionNameLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureActionNameLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureActionNameLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureActionNameLabelFigure() {&#xA;&#x9;&#x9;return fFigureActionNameLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 255, 228, 181);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+      </viewmap>
+    </compartments>
+    <compartments
         visualID="7084"
         editPartClassName="StaticMenuIncludedFeaturesCompartmentEditPart"
         itemSemanticEditPolicyClassName="StaticMenuIncludedFeaturesCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="StaticMenuIncludedFeaturesCompartmentViewFactory"
         canonicalEditPolicyClassName="StaticMenuIncludedFeaturesCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.99 //@diagram/@childNodes.100"
+        childNodes="//@diagram/@childNodes.102 //@diagram/@childNodes.103"
         title="MenuEntriesCompartment"
         canCollapse="false"
         hideIfEmpty="false"
@@ -7213,7 +7391,7 @@
         itemSemanticEditPolicyClassName="ServiceFeaturesCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ServiceIncludedFeaturesCompartmentViewFactory"
         canonicalEditPolicyClassName="ServiceFeaturesCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.101"
+        childNodes="//@diagram/@childNodes.104"
         title="SelectionsCompartment"
         canCollapse="false"
         hideIfEmpty="false"
@@ -7230,7 +7408,7 @@
         editPartClassName="ServiceOperationsCompartmentEditPart"
         itemSemanticEditPolicyClassName="ServiceOperationsCompartmentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ServiceOperationsCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.102"
+        childNodes="//@diagram/@childNodes.105"
         title="OperationsCompartment"
         canCollapse="false"
         hideIfEmpty="false"
@@ -7301,7 +7479,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Fixed Page Entry"
             description="Add a new fixed page entry to a menu"
-            genNodes="//@diagram/@childNodes.99"/>
+            genNodes="//@diagram/@childNodes.102"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Fixed Action Entry"
@@ -7314,7 +7492,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Edit Static Text"
             description="Add an entry for editing static text to a menu"
-            genNodes="//@diagram/@childNodes.100"/>
+            genNodes="//@diagram/@childNodes.103"/>
       </groups>
       <groups
           title="Unit"
@@ -7379,17 +7557,17 @@
             xsi:type="gmfgen:ToolEntry"
             title="Select Action"
             description="Add a new select action to an interface unit"
-            genNodes="//@diagram/@childNodes.28 //@diagram/@childNodes.58 //@diagram/@childNodes.60 //@diagram/@childNodes.66 //@diagram/@childNodes.74 //@diagram/@childNodes.77 //@diagram/@childNodes.93"/>
+            genNodes="//@diagram/@childNodes.28 //@diagram/@childNodes.58 //@diagram/@childNodes.60 //@diagram/@childNodes.66 //@diagram/@childNodes.74 //@diagram/@childNodes.77 //@diagram/@childNodes.93 //@diagram/@childNodes.99"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Delete Action"
             description="Add a new delete action to an interface unit"
-            genNodes="//@diagram/@childNodes.59 //@diagram/@childNodes.78 //@diagram/@childNodes.94"/>
+            genNodes="//@diagram/@childNodes.59 //@diagram/@childNodes.78 //@diagram/@childNodes.94 //@diagram/@childNodes.100"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Support Action"
             description="Add a new support action to an included feature"
-            genNodes="//@diagram/@childNodes.63 //@diagram/@childNodes.79"/>
+            genNodes="//@diagram/@childNodes.63 //@diagram/@childNodes.79 //@diagram/@childNodes.101"/>
       </groups>
       <groups
           title="Business Logic"
@@ -7409,12 +7587,12 @@
             xsi:type="gmfgen:ToolEntry"
             title="Selection"
             description="Add selection to a service"
-            genNodes="//@diagram/@childNodes.101"/>
+            genNodes="//@diagram/@childNodes.104"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Operation"
             description="Add an operation to a service"
-            genNodes="//@diagram/@childNodes.102"/>
+            genNodes="//@diagram/@childNodes.105"/>
       </groups>
       <groups
           title="Authentication"
@@ -7864,6 +8042,15 @@
         parent="//@diagram/@topLevelNodes.6"
         child="//@diagram/@childNodes.97"/>
     <childReferences
+        parent="//@diagram/@childNodes.98"
+        child="//@diagram/@childNodes.99"/>
+    <childReferences
+        parent="//@diagram/@childNodes.98"
+        child="//@diagram/@childNodes.100"/>
+    <childReferences
+        parent="//@diagram/@childNodes.98"
+        child="//@diagram/@childNodes.101"/>
+    <childReferences
         parent="//@diagram/@topLevelNodes.6"
         child="//@diagram/@childNodes.98"/>
     <childReferences
@@ -7871,19 +8058,19 @@
         child="//@diagram/@topLevelNodes.6"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.7"
-        child="//@diagram/@childNodes.99"/>
+        child="//@diagram/@childNodes.102"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.7"
-        child="//@diagram/@childNodes.100"/>
+        child="//@diagram/@childNodes.103"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.7"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.8"
-        child="//@diagram/@childNodes.101"/>
+        child="//@diagram/@childNodes.104"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.8"
-        child="//@diagram/@childNodes.102"/>
+        child="//@diagram/@childNodes.105"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.8"/>
@@ -8038,7 +8225,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.10/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.16/@labels.0/@modelFacet //@diagram/@childNodes.17/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet //@diagram/@childNodes.22/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.23/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.28/@labels.0/@modelFacet //@diagram/@childNodes.27/@labels.0/@modelFacet //@diagram/@childNodes.31/@labels.0/@modelFacet //@diagram/@childNodes.34/@labels.0/@modelFacet //@diagram/@childNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.36/@labels.0/@modelFacet //@diagram/@childNodes.35/@labels.0/@modelFacet //@diagram/@childNodes.32/@labels.0/@modelFacet //@diagram/@childNodes.30/@labels.0/@modelFacet //@diagram/@childNodes.38/@labels.0/@modelFacet //@diagram/@childNodes.41/@labels.0/@modelFacet //@diagram/@childNodes.44/@labels.0/@modelFacet //@diagram/@childNodes.45/@labels.0/@modelFacet //@diagram/@childNodes.43/@labels.0/@modelFacet //@diagram/@childNodes.47/@labels.0/@modelFacet //@diagram/@childNodes.48/@labels.0/@modelFacet //@diagram/@childNodes.46/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet //@diagram/@childNodes.40/@labels.0/@modelFacet //@diagram/@childNodes.50/@labels.0/@modelFacet //@diagram/@childNodes.53/@labels.0/@modelFacet //@diagram/@childNodes.54/@labels.0/@modelFacet //@diagram/@childNodes.52/@labels.0/@modelFacet //@diagram/@childNodes.56/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet //@diagram/@childNodes.55/@labels.0/@modelFacet //@diagram/@childNodes.51/@labels.0/@modelFacet //@diagram/@childNodes.49/@labels.0/@modelFacet //@diagram/@childNodes.39/@labels.0/@modelFacet //@diagram/@childNodes.58/@labels.0/@modelFacet //@diagram/@childNodes.59/@labels.0/@modelFacet //@diagram/@childNodes.37/@labels.0/@modelFacet //@diagram/@childNodes.60/@labels.0/@modelFacet //@diagram/@childNodes.29/@labels.0/@modelFacet //@diagram/@childNodes.61/@labels.0/@modelFacet //@diagram/@childNodes.62/@labels.0/@modelFacet //@diagram/@childNodes.63/@labels.0/@modelFacet //@diagram/@childNodes.26/@labels.0/@modelFacet //@diagram/@childNodes.66/@labels.0/@modelFacet //@diagram/@childNodes.65/@labels.0/@modelFacet //@diagram/@childNodes.69/@labels.0/@modelFacet //@diagram/@childNodes.70/@labels.0/@modelFacet //@diagram/@childNodes.68/@labels.0/@modelFacet //@diagram/@childNodes.72/@labels.0/@modelFacet //@diagram/@childNodes.73/@labels.0/@modelFacet //@diagram/@childNodes.71/@labels.0/@modelFacet //@diagram/@childNodes.74/@labels.0/@modelFacet //@diagram/@childNodes.67/@labels.0/@modelFacet //@diagram/@childNodes.75/@labels.0/@modelFacet //@diagram/@childNodes.76/@labels.0/@modelFacet //@diagram/@childNodes.77/@labels.0/@modelFacet //@diagram/@childNodes.78/@labels.0/@modelFacet //@diagram/@childNodes.79/@labels.0/@modelFacet //@diagram/@childNodes.64/@labels.0/@modelFacet //@diagram/@childNodes.80/@labels.0/@modelFacet //@diagram/@childNodes.82/@labels.0/@modelFacet //@diagram/@childNodes.83/@labels.0/@modelFacet //@diagram/@childNodes.84/@labels.0/@modelFacet //@diagram/@childNodes.85/@labels.0/@modelFacet //@diagram/@childNodes.81/@labels.0/@modelFacet //@diagram/@childNodes.86/@labels.0/@modelFacet //@diagram/@childNodes.88/@labels.0/@modelFacet //@diagram/@childNodes.91/@labels.0/@modelFacet //@diagram/@childNodes.92/@labels.0/@modelFacet //@diagram/@childNodes.93/@labels.0/@modelFacet //@diagram/@childNodes.94/@labels.0/@modelFacet //@diagram/@childNodes.90/@labels.0/@modelFacet //@diagram/@childNodes.89/@labels.0/@modelFacet //@diagram/@childNodes.95/@labels.0/@modelFacet //@diagram/@childNodes.96/@labels.0/@modelFacet //@diagram/@childNodes.87/@labels.0/@modelFacet //@diagram/@childNodes.97/@labels.0/@modelFacet //@diagram/@childNodes.98/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.99/@labels.0/@modelFacet //@diagram/@childNodes.100/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.101/@labels.0/@modelFacet //@diagram/@childNodes.102/@labels.0/@modelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.10/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.16/@labels.0/@modelFacet //@diagram/@childNodes.17/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet //@diagram/@childNodes.22/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.23/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.28/@labels.0/@modelFacet //@diagram/@childNodes.27/@labels.0/@modelFacet //@diagram/@childNodes.31/@labels.0/@modelFacet //@diagram/@childNodes.34/@labels.0/@modelFacet //@diagram/@childNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.36/@labels.0/@modelFacet //@diagram/@childNodes.35/@labels.0/@modelFacet //@diagram/@childNodes.32/@labels.0/@modelFacet //@diagram/@childNodes.30/@labels.0/@modelFacet //@diagram/@childNodes.38/@labels.0/@modelFacet //@diagram/@childNodes.41/@labels.0/@modelFacet //@diagram/@childNodes.44/@labels.0/@modelFacet //@diagram/@childNodes.45/@labels.0/@modelFacet //@diagram/@childNodes.43/@labels.0/@modelFacet //@diagram/@childNodes.47/@labels.0/@modelFacet //@diagram/@childNodes.48/@labels.0/@modelFacet //@diagram/@childNodes.46/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet //@diagram/@childNodes.40/@labels.0/@modelFacet //@diagram/@childNodes.50/@labels.0/@modelFacet //@diagram/@childNodes.53/@labels.0/@modelFacet //@diagram/@childNodes.54/@labels.0/@modelFacet //@diagram/@childNodes.52/@labels.0/@modelFacet //@diagram/@childNodes.56/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet //@diagram/@childNodes.55/@labels.0/@modelFacet //@diagram/@childNodes.51/@labels.0/@modelFacet //@diagram/@childNodes.49/@labels.0/@modelFacet //@diagram/@childNodes.39/@labels.0/@modelFacet //@diagram/@childNodes.58/@labels.0/@modelFacet //@diagram/@childNodes.59/@labels.0/@modelFacet //@diagram/@childNodes.37/@labels.0/@modelFacet //@diagram/@childNodes.60/@labels.0/@modelFacet //@diagram/@childNodes.29/@labels.0/@modelFacet //@diagram/@childNodes.61/@labels.0/@modelFacet //@diagram/@childNodes.62/@labels.0/@modelFacet //@diagram/@childNodes.63/@labels.0/@modelFacet //@diagram/@childNodes.26/@labels.0/@modelFacet //@diagram/@childNodes.66/@labels.0/@modelFacet //@diagram/@childNodes.65/@labels.0/@modelFacet //@diagram/@childNodes.69/@labels.0/@modelFacet //@diagram/@childNodes.70/@labels.0/@modelFacet //@diagram/@childNodes.68/@labels.0/@modelFacet //@diagram/@childNodes.72/@labels.0/@modelFacet //@diagram/@childNodes.73/@labels.0/@modelFacet //@diagram/@childNodes.71/@labels.0/@modelFacet //@diagram/@childNodes.74/@labels.0/@modelFacet //@diagram/@childNodes.67/@labels.0/@modelFacet //@diagram/@childNodes.75/@labels.0/@modelFacet //@diagram/@childNodes.76/@labels.0/@modelFacet //@diagram/@childNodes.77/@labels.0/@modelFacet //@diagram/@childNodes.78/@labels.0/@modelFacet //@diagram/@childNodes.79/@labels.0/@modelFacet //@diagram/@childNodes.64/@labels.0/@modelFacet //@diagram/@childNodes.80/@labels.0/@modelFacet //@diagram/@childNodes.82/@labels.0/@modelFacet //@diagram/@childNodes.83/@labels.0/@modelFacet //@diagram/@childNodes.84/@labels.0/@modelFacet //@diagram/@childNodes.85/@labels.0/@modelFacet //@diagram/@childNodes.81/@labels.0/@modelFacet //@diagram/@childNodes.86/@labels.0/@modelFacet //@diagram/@childNodes.88/@labels.0/@modelFacet //@diagram/@childNodes.91/@labels.0/@modelFacet //@diagram/@childNodes.92/@labels.0/@modelFacet //@diagram/@childNodes.93/@labels.0/@modelFacet //@diagram/@childNodes.94/@labels.0/@modelFacet //@diagram/@childNodes.90/@labels.0/@modelFacet //@diagram/@childNodes.89/@labels.0/@modelFacet //@diagram/@childNodes.95/@labels.0/@modelFacet //@diagram/@childNodes.96/@labels.0/@modelFacet //@diagram/@childNodes.87/@labels.0/@modelFacet //@diagram/@childNodes.97/@labels.0/@modelFacet //@diagram/@childNodes.99/@labels.0/@modelFacet //@diagram/@childNodes.100/@labels.0/@modelFacet //@diagram/@childNodes.101/@labels.0/@modelFacet //@diagram/@childNodes.98/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.102/@labels.0/@modelFacet //@diagram/@childNodes.103/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.104/@labels.0/@modelFacet //@diagram/@childNodes.105/@labels.0/@modelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:PredefinedEnumParser"
         uses="//@diagram/@links.1/@labels.1/@modelFacet"/>

@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uk.ac.man.cs.mdsd.webgen.website.FeaturePath;
+import uk.ac.man.cs.mdsd.webgen.website.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.website.ImageUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -25,10 +26,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getTitleFeature <em>Title Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getMissingImagePath <em>Missing Image Path</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getThumbWidth <em>Thumb Width</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getThumbHeight <em>Thumb Height</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getImageWidth <em>Image Width</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getImageHeight <em>Image Height</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getThumbnailFilter <em>Thumbnail Filter</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getImageFilter <em>Image Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getShowTime <em>Show Time</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getTransitionTime <em>Transition Time</em>}</li>
  * </ul>
@@ -87,84 +86,24 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	protected String missingImagePath = MISSING_IMAGE_PATH_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getThumbWidth() <em>Thumb Width</em>}' attribute.
+	 * The cached value of the '{@link #getThumbnailFilter() <em>Thumbnail Filter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getThumbWidth()
+	 * @see #getThumbnailFilter()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int THUMB_WIDTH_EDEFAULT = -1;
+	protected ImageManipulation thumbnailFilter;
 
 	/**
-	 * The cached value of the '{@link #getThumbWidth() <em>Thumb Width</em>}' attribute.
+	 * The cached value of the '{@link #getImageFilter() <em>Image Filter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getThumbWidth()
+	 * @see #getImageFilter()
 	 * @generated
 	 * @ordered
 	 */
-	protected int thumbWidth = THUMB_WIDTH_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getThumbHeight() <em>Thumb Height</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThumbHeight()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int THUMB_HEIGHT_EDEFAULT = -1;
-
-	/**
-	 * The cached value of the '{@link #getThumbHeight() <em>Thumb Height</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThumbHeight()
-	 * @generated
-	 * @ordered
-	 */
-	protected int thumbHeight = THUMB_HEIGHT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getImageWidth() <em>Image Width</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImageWidth()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int IMAGE_WIDTH_EDEFAULT = -1;
-
-	/**
-	 * The cached value of the '{@link #getImageWidth() <em>Image Width</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImageWidth()
-	 * @generated
-	 * @ordered
-	 */
-	protected int imageWidth = IMAGE_WIDTH_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getImageHeight() <em>Image Height</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImageHeight()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int IMAGE_HEIGHT_EDEFAULT = -1;
-
-	/**
-	 * The cached value of the '{@link #getImageHeight() <em>Image Height</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImageHeight()
-	 * @generated
-	 * @ordered
-	 */
-	protected int imageHeight = IMAGE_HEIGHT_EDEFAULT;
+	protected ImageManipulation imageFilter;
 
 	/**
 	 * The default value of the '{@link #getShowTime() <em>Show Time</em>}' attribute.
@@ -372,8 +311,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getThumbWidth() {
-		return thumbWidth;
+	public ImageManipulation getThumbnailFilter() {
+		if (thumbnailFilter != null && thumbnailFilter.eIsProxy()) {
+			InternalEObject oldThumbnailFilter = (InternalEObject)thumbnailFilter;
+			thumbnailFilter = (ImageManipulation)eResolveProxy(oldThumbnailFilter);
+			if (thumbnailFilter != oldThumbnailFilter) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.IMAGE_UNIT__THUMBNAIL_FILTER, oldThumbnailFilter, thumbnailFilter));
+			}
+		}
+		return thumbnailFilter;
 	}
 
 	/**
@@ -381,11 +328,20 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setThumbWidth(int newThumbWidth) {
-		int oldThumbWidth = thumbWidth;
-		thumbWidth = newThumbWidth;
+	public ImageManipulation basicGetThumbnailFilter() {
+		return thumbnailFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setThumbnailFilter(ImageManipulation newThumbnailFilter) {
+		ImageManipulation oldThumbnailFilter = thumbnailFilter;
+		thumbnailFilter = newThumbnailFilter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__THUMB_WIDTH, oldThumbWidth, thumbWidth));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__THUMBNAIL_FILTER, oldThumbnailFilter, thumbnailFilter));
 	}
 
 	/**
@@ -393,8 +349,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getThumbHeight() {
-		return thumbHeight;
+	public ImageManipulation getImageFilter() {
+		if (imageFilter != null && imageFilter.eIsProxy()) {
+			InternalEObject oldImageFilter = (InternalEObject)imageFilter;
+			imageFilter = (ImageManipulation)eResolveProxy(oldImageFilter);
+			if (imageFilter != oldImageFilter) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.IMAGE_UNIT__IMAGE_FILTER, oldImageFilter, imageFilter));
+			}
+		}
+		return imageFilter;
 	}
 
 	/**
@@ -402,53 +366,20 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setThumbHeight(int newThumbHeight) {
-		int oldThumbHeight = thumbHeight;
-		thumbHeight = newThumbHeight;
+	public ImageManipulation basicGetImageFilter() {
+		return imageFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImageFilter(ImageManipulation newImageFilter) {
+		ImageManipulation oldImageFilter = imageFilter;
+		imageFilter = newImageFilter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__THUMB_HEIGHT, oldThumbHeight, thumbHeight));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getImageWidth() {
-		return imageWidth;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setImageWidth(int newImageWidth) {
-		int oldImageWidth = imageWidth;
-		imageWidth = newImageWidth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__IMAGE_WIDTH, oldImageWidth, imageWidth));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getImageHeight() {
-		return imageHeight;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setImageHeight(int newImageHeight) {
-		int oldImageHeight = imageHeight;
-		imageHeight = newImageHeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__IMAGE_HEIGHT, oldImageHeight, imageHeight));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__IMAGE_FILTER, oldImageFilter, imageFilter));
 	}
 
 	/**
@@ -526,14 +457,12 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return getTitleFeature();
 			case WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				return getMissingImagePath();
-			case WebsitePackage.IMAGE_UNIT__THUMB_WIDTH:
-				return getThumbWidth();
-			case WebsitePackage.IMAGE_UNIT__THUMB_HEIGHT:
-				return getThumbHeight();
-			case WebsitePackage.IMAGE_UNIT__IMAGE_WIDTH:
-				return getImageWidth();
-			case WebsitePackage.IMAGE_UNIT__IMAGE_HEIGHT:
-				return getImageHeight();
+			case WebsitePackage.IMAGE_UNIT__THUMBNAIL_FILTER:
+				if (resolve) return getThumbnailFilter();
+				return basicGetThumbnailFilter();
+			case WebsitePackage.IMAGE_UNIT__IMAGE_FILTER:
+				if (resolve) return getImageFilter();
+				return basicGetImageFilter();
 			case WebsitePackage.IMAGE_UNIT__SHOW_TIME:
 				return getShowTime();
 			case WebsitePackage.IMAGE_UNIT__TRANSITION_TIME:
@@ -562,17 +491,11 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				setMissingImagePath((String)newValue);
 				return;
-			case WebsitePackage.IMAGE_UNIT__THUMB_WIDTH:
-				setThumbWidth((Integer)newValue);
+			case WebsitePackage.IMAGE_UNIT__THUMBNAIL_FILTER:
+				setThumbnailFilter((ImageManipulation)newValue);
 				return;
-			case WebsitePackage.IMAGE_UNIT__THUMB_HEIGHT:
-				setThumbHeight((Integer)newValue);
-				return;
-			case WebsitePackage.IMAGE_UNIT__IMAGE_WIDTH:
-				setImageWidth((Integer)newValue);
-				return;
-			case WebsitePackage.IMAGE_UNIT__IMAGE_HEIGHT:
-				setImageHeight((Integer)newValue);
+			case WebsitePackage.IMAGE_UNIT__IMAGE_FILTER:
+				setImageFilter((ImageManipulation)newValue);
 				return;
 			case WebsitePackage.IMAGE_UNIT__SHOW_TIME:
 				setShowTime((Integer)newValue);
@@ -604,17 +527,11 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				setMissingImagePath(MISSING_IMAGE_PATH_EDEFAULT);
 				return;
-			case WebsitePackage.IMAGE_UNIT__THUMB_WIDTH:
-				setThumbWidth(THUMB_WIDTH_EDEFAULT);
+			case WebsitePackage.IMAGE_UNIT__THUMBNAIL_FILTER:
+				setThumbnailFilter((ImageManipulation)null);
 				return;
-			case WebsitePackage.IMAGE_UNIT__THUMB_HEIGHT:
-				setThumbHeight(THUMB_HEIGHT_EDEFAULT);
-				return;
-			case WebsitePackage.IMAGE_UNIT__IMAGE_WIDTH:
-				setImageWidth(IMAGE_WIDTH_EDEFAULT);
-				return;
-			case WebsitePackage.IMAGE_UNIT__IMAGE_HEIGHT:
-				setImageHeight(IMAGE_HEIGHT_EDEFAULT);
+			case WebsitePackage.IMAGE_UNIT__IMAGE_FILTER:
+				setImageFilter((ImageManipulation)null);
 				return;
 			case WebsitePackage.IMAGE_UNIT__SHOW_TIME:
 				setShowTime(SHOW_TIME_EDEFAULT);
@@ -642,14 +559,10 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return titleFeature != null;
 			case WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				return MISSING_IMAGE_PATH_EDEFAULT == null ? missingImagePath != null : !MISSING_IMAGE_PATH_EDEFAULT.equals(missingImagePath);
-			case WebsitePackage.IMAGE_UNIT__THUMB_WIDTH:
-				return thumbWidth != THUMB_WIDTH_EDEFAULT;
-			case WebsitePackage.IMAGE_UNIT__THUMB_HEIGHT:
-				return thumbHeight != THUMB_HEIGHT_EDEFAULT;
-			case WebsitePackage.IMAGE_UNIT__IMAGE_WIDTH:
-				return imageWidth != IMAGE_WIDTH_EDEFAULT;
-			case WebsitePackage.IMAGE_UNIT__IMAGE_HEIGHT:
-				return imageHeight != IMAGE_HEIGHT_EDEFAULT;
+			case WebsitePackage.IMAGE_UNIT__THUMBNAIL_FILTER:
+				return thumbnailFilter != null;
+			case WebsitePackage.IMAGE_UNIT__IMAGE_FILTER:
+				return imageFilter != null;
 			case WebsitePackage.IMAGE_UNIT__SHOW_TIME:
 				return showTime != SHOW_TIME_EDEFAULT;
 			case WebsitePackage.IMAGE_UNIT__TRANSITION_TIME:
@@ -670,14 +583,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (missingImagePath: ");
 		result.append(missingImagePath);
-		result.append(", thumbWidth: ");
-		result.append(thumbWidth);
-		result.append(", thumbHeight: ");
-		result.append(thumbHeight);
-		result.append(", imageWidth: ");
-		result.append(imageWidth);
-		result.append(", imageHeight: ");
-		result.append(imageHeight);
 		result.append(", showTime: ");
 		result.append(showTime);
 		result.append(", transitionTime: ");

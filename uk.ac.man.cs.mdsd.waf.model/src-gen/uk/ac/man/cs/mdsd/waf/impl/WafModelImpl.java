@@ -28,6 +28,7 @@ import uk.ac.man.cs.mdsd.rest.API;
 import uk.ac.man.cs.mdsd.waf.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.waf.Authentication;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
+import uk.ac.man.cs.mdsd.waf.ImageManipulation;
 import uk.ac.man.cs.mdsd.waf.InputTechnologies;
 import uk.ac.man.cs.mdsd.waf.Menu;
 import uk.ac.man.cs.mdsd.waf.Page;
@@ -45,6 +46,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getPersistence <em>Persistence</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getImageManipulations <em>Image Manipulations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getMenus <em>Menus</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getSiteName <em>Site Name</em>}</li>
@@ -93,6 +95,16 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * @ordered
 	 */
 	protected EList<Service> services;
+
+	/**
+	 * The cached value of the '{@link #getImageManipulations() <em>Image Manipulations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImageManipulations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ImageManipulation> imageManipulations;
 
 	/**
 	 * The cached value of the '{@link #getPages() <em>Pages</em>}' containment reference list.
@@ -581,6 +593,18 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			services = new EObjectContainmentWithInverseEList<Service>(Service.class, this, WafPackage.WAF_MODEL__SERVICES, WafPackage.SERVICE__PART_OF);
 		}
 		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ImageManipulation> getImageManipulations() {
+		if (imageManipulations == null) {
+			imageManipulations = new EObjectContainmentEList<ImageManipulation>(ImageManipulation.class, this, WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS);
+		}
+		return imageManipulations;
 	}
 
 	/**
@@ -1147,6 +1171,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 		switch (featureID) {
 			case WafPackage.WAF_MODEL__SERVICES:
 				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
+			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
+				return ((InternalEList<?>)getImageManipulations()).basicRemove(otherEnd, msgs);
 			case WafPackage.WAF_MODEL__PAGES:
 				return ((InternalEList<?>)getPages()).basicRemove(otherEnd, msgs);
 			case WafPackage.WAF_MODEL__MENUS:
@@ -1170,6 +1196,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return basicGetPersistence();
 			case WafPackage.WAF_MODEL__SERVICES:
 				return getServices();
+			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
+				return getImageManipulations();
 			case WafPackage.WAF_MODEL__PAGES:
 				return getPages();
 			case WafPackage.WAF_MODEL__MENUS:
@@ -1239,6 +1267,10 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__SERVICES:
 				getServices().clear();
 				getServices().addAll((Collection<? extends Service>)newValue);
+				return;
+			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
+				getImageManipulations().clear();
+				getImageManipulations().addAll((Collection<? extends ImageManipulation>)newValue);
 				return;
 			case WafPackage.WAF_MODEL__PAGES:
 				getPages().clear();
@@ -1333,6 +1365,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__SERVICES:
 				getServices().clear();
 				return;
+			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
+				getImageManipulations().clear();
+				return;
 			case WafPackage.WAF_MODEL__PAGES:
 				getPages().clear();
 				return;
@@ -1421,6 +1456,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 				return persistence != null;
 			case WafPackage.WAF_MODEL__SERVICES:
 				return services != null && !services.isEmpty();
+			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
+				return imageManipulations != null && !imageManipulations.isEmpty();
 			case WafPackage.WAF_MODEL__PAGES:
 				return pages != null && !pages.isEmpty();
 			case WafPackage.WAF_MODEL__MENUS:

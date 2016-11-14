@@ -24,7 +24,7 @@ public interface ChildFeature extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Part Of</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.PathAssociationElement#getChildFeature <em>Child Feature</em>}'.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation#getChildFeature <em>Child Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Part Of</em>' container reference isn't clear,
@@ -32,13 +32,13 @@ public interface ChildFeature extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Part Of</em>' container reference.
-	 * @see #setPartOf(PathAssociationElement)
+	 * @see #setPartOf(FeaturePathAssociation)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getChildFeature_PartOf()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.PathAssociationElement#getChildFeature
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation#getChildFeature
 	 * @model opposite="childFeature" transient="false"
 	 * @generated
 	 */
-	PathAssociationElement getPartOf();
+	FeaturePathAssociation getPartOf();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ChildFeature#getPartOf <em>Part Of</em>}' container reference.
@@ -48,5 +48,5 @@ public interface ChildFeature extends EObject {
 	 * @see #getPartOf()
 	 * @generated
 	 */
-	void setPartOf(PathAssociationElement value);
+	void setPartOf(FeaturePathAssociation value);
 } // ChildFeature

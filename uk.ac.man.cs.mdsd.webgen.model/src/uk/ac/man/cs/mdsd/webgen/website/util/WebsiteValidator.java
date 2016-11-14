@@ -236,16 +236,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateUnitFeature((UnitFeature)value, diagnostics, context);
 			case WebsitePackage.UNIT_ELEMENT:
 				return validateUnitElement((UnitElement)value, diagnostics, context);
-			case WebsitePackage.PATH_ASSOCIATION_ELEMENT:
-				return validatePathAssociationElement((PathAssociationElement)value, diagnostics, context);
 			case WebsitePackage.UNIT_ASSOCIATION:
 				return validateUnitAssociation((UnitAssociation)value, diagnostics, context);
-			case WebsitePackage.CHILD_FEATURE:
-				return validateChildFeature((ChildFeature)value, diagnostics, context);
-			case WebsitePackage.CHILD_ATTRIBUTE:
-				return validateChildAttribute((ChildAttribute)value, diagnostics, context);
-			case WebsitePackage.CHILD_ASSOCIATION:
-				return validateChildAssociation((ChildAssociation)value, diagnostics, context);
 			case WebsitePackage.INTERFACE_FIELD:
 				return validateInterfaceField((InterfaceField)value, diagnostics, context);
 			case WebsitePackage.DATA_TYPE_FIELD:
@@ -292,6 +284,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateFeaturePathAttribute((FeaturePathAttribute)value, diagnostics, context);
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION:
 				return validateFeaturePathAssociation((FeaturePathAssociation)value, diagnostics, context);
+			case WebsitePackage.CHILD_FEATURE:
+				return validateChildFeature((ChildFeature)value, diagnostics, context);
+			case WebsitePackage.CHILD_ATTRIBUTE:
+				return validateChildAttribute((ChildAttribute)value, diagnostics, context);
+			case WebsitePackage.CHILD_ASSOCIATION:
+				return validateChildAssociation((ChildAssociation)value, diagnostics, context);
 			case WebsitePackage.SLIDER_UNIT:
 				return validateSliderUnit((SliderUnit)value, diagnostics, context);
 			case WebsitePackage.GALLERY_UNIT:
@@ -1744,15 +1742,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateUnitFeature_atMostOneSelectAction(unitElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateUnitFeature_noDeleteActions(unitElement, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePathAssociationElement(PathAssociationElement pathAssociationElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(pathAssociationElement, diagnostics, context);
 	}
 
 	/**

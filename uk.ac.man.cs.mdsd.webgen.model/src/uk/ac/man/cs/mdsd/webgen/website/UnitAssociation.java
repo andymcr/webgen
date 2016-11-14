@@ -25,7 +25,7 @@ import java.util.List;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionValidChoice='not selection.oclIsUndefined() implies\r\n\ttargetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)'"
  * @generated
  */
-public interface UnitAssociation extends UnitFeature, UnitContainer, PathAssociationElement {
+public interface UnitAssociation extends UnitFeature, UnitContainer, FeaturePathAssociation {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

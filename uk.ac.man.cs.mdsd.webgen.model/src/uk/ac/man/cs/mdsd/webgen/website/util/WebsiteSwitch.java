@@ -693,41 +693,15 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebsitePackage.PATH_ASSOCIATION_ELEMENT: {
-				PathAssociationElement pathAssociationElement = (PathAssociationElement)theEObject;
-				T result = casePathAssociationElement(pathAssociationElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebsitePackage.UNIT_ASSOCIATION: {
 				UnitAssociation unitAssociation = (UnitAssociation)theEObject;
 				T result = caseUnitAssociation(unitAssociation);
 				if (result == null) result = caseUnitFeature(unitAssociation);
 				if (result == null) result = caseUnitContainer(unitAssociation);
-				if (result == null) result = casePathAssociationElement(unitAssociation);
+				if (result == null) result = caseFeaturePathAssociation(unitAssociation);
 				if (result == null) result = caseUnitField(unitAssociation);
 				if (result == null) result = caseInlineActionContainer(unitAssociation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.CHILD_FEATURE: {
-				ChildFeature childFeature = (ChildFeature)theEObject;
-				T result = caseChildFeature(childFeature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.CHILD_ATTRIBUTE: {
-				ChildAttribute childAttribute = (ChildAttribute)theEObject;
-				T result = caseChildAttribute(childAttribute);
-				if (result == null) result = caseChildFeature(childAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.CHILD_ASSOCIATION: {
-				ChildAssociation childAssociation = (ChildAssociation)theEObject;
-				T result = caseChildAssociation(childAssociation);
-				if (result == null) result = caseChildFeature(childAssociation);
-				if (result == null) result = casePathAssociationElement(childAssociation);
+				if (result == null) result = caseFeaturePath(unitAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -948,7 +922,28 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				FeaturePathAssociation featurePathAssociation = (FeaturePathAssociation)theEObject;
 				T result = caseFeaturePathAssociation(featurePathAssociation);
 				if (result == null) result = caseFeaturePath(featurePathAssociation);
-				if (result == null) result = casePathAssociationElement(featurePathAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.CHILD_FEATURE: {
+				ChildFeature childFeature = (ChildFeature)theEObject;
+				T result = caseChildFeature(childFeature);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.CHILD_ATTRIBUTE: {
+				ChildAttribute childAttribute = (ChildAttribute)theEObject;
+				T result = caseChildAttribute(childAttribute);
+				if (result == null) result = caseChildFeature(childAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebsitePackage.CHILD_ASSOCIATION: {
+				ChildAssociation childAssociation = (ChildAssociation)theEObject;
+				T result = caseChildAssociation(childAssociation);
+				if (result == null) result = caseChildFeature(childAssociation);
+				if (result == null) result = caseFeaturePathAssociation(childAssociation);
+				if (result == null) result = caseFeaturePath(childAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2014,21 +2009,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUnitElement(UnitElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Path Association Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Path Association Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePathAssociationElement(PathAssociationElement object) {
 		return null;
 	}
 

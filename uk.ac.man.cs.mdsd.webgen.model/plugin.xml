@@ -14,7 +14,7 @@
       <package
             uri="http://www.cs.man.ac.uk/mdsd/2010/Website"
             class="uk.ac.man.cs.mdsd.webgen.website.WebsitePackage"
-            genModel="model/webgen.genmodel"/>
+            genModel="model/website.genmodel"/>
    </extension>
 
 </plugin>

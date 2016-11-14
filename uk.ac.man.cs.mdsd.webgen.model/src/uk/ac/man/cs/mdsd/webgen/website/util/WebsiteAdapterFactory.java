@@ -366,24 +366,8 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createUnitElementAdapter();
 			}
 			@Override
-			public Adapter casePathAssociationElement(PathAssociationElement object) {
-				return createPathAssociationElementAdapter();
-			}
-			@Override
 			public Adapter caseUnitAssociation(UnitAssociation object) {
 				return createUnitAssociationAdapter();
-			}
-			@Override
-			public Adapter caseChildFeature(ChildFeature object) {
-				return createChildFeatureAdapter();
-			}
-			@Override
-			public Adapter caseChildAttribute(ChildAttribute object) {
-				return createChildAttributeAdapter();
-			}
-			@Override
-			public Adapter caseChildAssociation(ChildAssociation object) {
-				return createChildAssociationAdapter();
 			}
 			@Override
 			public Adapter caseInterfaceField(InterfaceField object) {
@@ -476,6 +460,18 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseFeaturePathAssociation(FeaturePathAssociation object) {
 				return createFeaturePathAssociationAdapter();
+			}
+			@Override
+			public Adapter caseChildFeature(ChildFeature object) {
+				return createChildFeatureAdapter();
+			}
+			@Override
+			public Adapter caseChildAttribute(ChildAttribute object) {
+				return createChildAttributeAdapter();
+			}
+			@Override
+			public Adapter caseChildAssociation(ChildAssociation object) {
+				return createChildAssociationAdapter();
 			}
 			@Override
 			public Adapter caseSliderUnit(SliderUnit object) {
@@ -1420,20 +1416,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUnitElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.PathAssociationElement <em>Path Association Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.PathAssociationElement
-	 * @generated
-	 */
-	public Adapter createPathAssociationElementAdapter() {
 		return null;
 	}
 

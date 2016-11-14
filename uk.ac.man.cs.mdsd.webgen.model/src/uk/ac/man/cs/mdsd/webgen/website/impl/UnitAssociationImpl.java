@@ -20,8 +20,9 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.FeaturePath;
+import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
-import uk.ac.man.cs.mdsd.webgen.website.PathAssociationElement;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.UnitContainer;
@@ -88,7 +89,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__IS_SOURCE_ASSOCIATION).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getSourceEntity() <em>Source Entity</em>}' reference.
@@ -98,7 +99,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__SOURCE_ENTITY).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
@@ -108,7 +109,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__TARGET_ENTITY).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__TARGET_ENTITY).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
@@ -584,13 +585,18 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				default: return -1;
 			}
 		}
-		if (baseClass == PathAssociationElement.class) {
+		if (baseClass == FeaturePath.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION: return WebsitePackage.PATH_ASSOCIATION_ELEMENT__ASSOCIATION;
-				case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE;
-				case WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION: return WebsitePackage.PATH_ASSOCIATION_ELEMENT__IS_SOURCE_ASSOCIATION;
-				case WebsitePackage.UNIT_ASSOCIATION__SOURCE_ENTITY: return WebsitePackage.PATH_ASSOCIATION_ELEMENT__SOURCE_ENTITY;
-				case WebsitePackage.UNIT_ASSOCIATION__TARGET_ENTITY: return WebsitePackage.PATH_ASSOCIATION_ELEMENT__TARGET_ENTITY;
+				default: return -1;
+			}
+		}
+		if (baseClass == FeaturePathAssociation.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION: return WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION;
+				case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE;
+				case WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION: return WebsitePackage.FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION;
+				case WebsitePackage.UNIT_ASSOCIATION__SOURCE_ENTITY: return WebsitePackage.FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY;
+				case WebsitePackage.UNIT_ASSOCIATION__TARGET_ENTITY: return WebsitePackage.FEATURE_PATH_ASSOCIATION__TARGET_ENTITY;
 				default: return -1;
 			}
 		}
@@ -610,13 +616,18 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				default: return -1;
 			}
 		}
-		if (baseClass == PathAssociationElement.class) {
+		if (baseClass == FeaturePath.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.PATH_ASSOCIATION_ELEMENT__ASSOCIATION: return WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION;
-				case WebsitePackage.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE: return WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE;
-				case WebsitePackage.PATH_ASSOCIATION_ELEMENT__IS_SOURCE_ASSOCIATION: return WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION;
-				case WebsitePackage.PATH_ASSOCIATION_ELEMENT__SOURCE_ENTITY: return WebsitePackage.UNIT_ASSOCIATION__SOURCE_ENTITY;
-				case WebsitePackage.PATH_ASSOCIATION_ELEMENT__TARGET_ENTITY: return WebsitePackage.UNIT_ASSOCIATION__TARGET_ENTITY;
+				default: return -1;
+			}
+		}
+		if (baseClass == FeaturePathAssociation.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION: return WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION;
+				case WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE;
+				case WebsitePackage.FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION: return WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION;
+				case WebsitePackage.FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY: return WebsitePackage.UNIT_ASSOCIATION__SOURCE_ENTITY;
+				case WebsitePackage.FEATURE_PATH_ASSOCIATION__TARGET_ENTITY: return WebsitePackage.UNIT_ASSOCIATION__TARGET_ENTITY;
 				default: return -1;
 			}
 		}

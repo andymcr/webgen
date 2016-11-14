@@ -164,6 +164,7 @@ public class SliderUnitItemProvider extends ImageUnitItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == WebsitePackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS ||
 			childFeature == WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE ||
 			childFeature == WebsitePackage.Literals.IMAGE_UNIT__TITLE_FEATURE;
 

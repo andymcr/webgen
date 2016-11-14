@@ -53,6 +53,9 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addAssociationPropertyDescriptor(object);
+			addIsSourceAssociationPropertyDescriptor(object);
+			addSourceEntityPropertyDescriptor(object);
+			addTargetEntityPropertyDescriptor(object);
 			addValueDisplayPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addFiltersPropertyDescriptor(object);
@@ -72,7 +75,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			getResourceLocator(),
 			getString("_UI_PathAssociationElement_association_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_PathAssociationElement_association_feature", "_UI_PathAssociationElement_type"),
-			WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__ASSOCIATION,
+			WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__ASSOCIATION,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
@@ -86,6 +89,72 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 					return Collections.emptySet();
 				}
 		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Source Association feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsSourceAssociationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeaturePathAssociation_isSourceAssociation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_isSourceAssociation_feature", "_UI_FeaturePathAssociation_type"),
+				 WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Source Entity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourceEntityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeaturePathAssociation_sourceEntity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_sourceEntity_feature", "_UI_FeaturePathAssociation_type"),
+				 WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Target Entity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetEntityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeaturePathAssociation_targetEntity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_targetEntity_feature", "_UI_FeaturePathAssociation_type"),
+				 WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__TARGET_ENTITY,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -194,7 +263,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.UNIT_CONTAINER__UNITS);
-			childrenFeatures.add(WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE);
+			childrenFeatures.add(WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -349,12 +418,12 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE,
+				(WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE,
+				(WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAssociation()));
 	}
 

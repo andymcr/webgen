@@ -109,8 +109,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.CREATE_SITEMAP_UNIT: return createCreateSitemapUnit();
 			case WebsitePackage.UNIT_ELEMENT: return createUnitElement();
 			case WebsitePackage.UNIT_ASSOCIATION: return createUnitAssociation();
-			case WebsitePackage.CHILD_ATTRIBUTE: return createChildAttribute();
-			case WebsitePackage.CHILD_ASSOCIATION: return createChildAssociation();
 			case WebsitePackage.DATA_TYPE_FIELD: return createDataTypeField();
 			case WebsitePackage.DATE_FIELD: return createDateField();
 			case WebsitePackage.CAPTCHA_FIELD: return createCaptchaField();
@@ -127,6 +125,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.ACTION_UNIT: return createActionUnit();
 			case WebsitePackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
+			case WebsitePackage.CHILD_ATTRIBUTE: return createChildAttribute();
+			case WebsitePackage.CHILD_ASSOCIATION: return createChildAssociation();
 			case WebsitePackage.SLIDER_UNIT: return createSliderUnit();
 			case WebsitePackage.GALLERY_UNIT: return createGalleryUnit();
 			case WebsitePackage.REGISTRATION_UNIT: return createRegistrationUnit();

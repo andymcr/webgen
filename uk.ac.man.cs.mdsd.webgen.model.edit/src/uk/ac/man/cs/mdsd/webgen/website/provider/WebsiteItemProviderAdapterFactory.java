@@ -2058,8 +2058,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (createSitemapUnitItemProvider != null) createSitemapUnitItemProvider.dispose();
 		if (unitElementItemProvider != null) unitElementItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
-		if (childAttributeItemProvider != null) childAttributeItemProvider.dispose();
-		if (childAssociationItemProvider != null) childAssociationItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
 		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();
@@ -2076,6 +2074,8 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
 		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
 		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
+		if (childAttributeItemProvider != null) childAttributeItemProvider.dispose();
+		if (childAssociationItemProvider != null) childAssociationItemProvider.dispose();
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
 		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();

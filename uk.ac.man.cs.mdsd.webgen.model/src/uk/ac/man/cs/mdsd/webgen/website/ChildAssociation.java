@@ -19,7 +19,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface ChildAssociation extends ChildFeature, PathAssociationElement {
+public interface ChildAssociation extends ChildFeature, FeaturePathAssociation {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

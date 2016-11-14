@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
-import uk.ac.man.cs.mdsd.webgen.website.PathAssociationElement;
+import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -53,9 +53,9 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PathAssociationElement getPartOf() {
+	public FeaturePathAssociation getPartOf() {
 		if (eContainerFeatureID() != WebsitePackage.CHILD_FEATURE__PART_OF) return null;
-		return (PathAssociationElement)eInternalContainer();
+		return (FeaturePathAssociation)eInternalContainer();
 	}
 
 	/**
@@ -63,7 +63,7 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPartOf(PathAssociationElement newPartOf, NotificationChain msgs) {
+	public NotificationChain basicSetPartOf(FeaturePathAssociation newPartOf, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newPartOf, WebsitePackage.CHILD_FEATURE__PART_OF, msgs);
 		return msgs;
 	}
@@ -73,7 +73,7 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPartOf(PathAssociationElement newPartOf) {
+	public void setPartOf(FeaturePathAssociation newPartOf) {
 		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.CHILD_FEATURE__PART_OF && newPartOf != null)) {
 			if (EcoreUtil.isAncestor(this, newPartOf))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -81,7 +81,7 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newPartOf != null)
-				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE, PathAssociationElement.class, msgs);
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE, FeaturePathAssociation.class, msgs);
 			msgs = basicSetPartOf(newPartOf, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -100,7 +100,7 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 			case WebsitePackage.CHILD_FEATURE__PART_OF:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetPartOf((PathAssociationElement)otherEnd, msgs);
+				return basicSetPartOf((FeaturePathAssociation)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -128,7 +128,7 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case WebsitePackage.CHILD_FEATURE__PART_OF:
-				return eInternalContainer().eInverseRemove(this, WebsitePackage.PATH_ASSOCIATION_ELEMENT__CHILD_FEATURE, PathAssociationElement.class, msgs);
+				return eInternalContainer().eInverseRemove(this, WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE, FeaturePathAssociation.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -156,7 +156,7 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WebsitePackage.CHILD_FEATURE__PART_OF:
-				setPartOf((PathAssociationElement)newValue);
+				setPartOf((FeaturePathAssociation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -171,7 +171,7 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.CHILD_FEATURE__PART_OF:
-				setPartOf((PathAssociationElement)null);
+				setPartOf((FeaturePathAssociation)null);
 				return;
 		}
 		super.eUnset(featureID);

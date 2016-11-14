@@ -9,7 +9,7 @@ package uk.ac.man.cs.mdsd.orm.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-import uk.ac.man.cs.mdsd.criteria.provider.CriteriaEditPlugin;
+import uk.ac.man.cs.mdsd.expression.provider.ExpressionEditPlugin;
 
 /**
  * This is the central singleton for the Orm edit plugin.
@@ -43,7 +43,7 @@ public final class OrmEditPlugin extends EMFPlugin {
 	public OrmEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     CriteriaEditPlugin.INSTANCE,
+		     ExpressionEditPlugin.INSTANCE,
 		   });
 	}
 

@@ -12,7 +12,7 @@
 	complianceLevel="6.0")
 package uk.ac.man.cs.mdsd.orm
 
-import uk.ac.man.cs.mdsd.criteria.Expression
+import uk.ac.man.cs.mdsd.expression.Expression
 
 annotation "http://www.eclipse.org/emf/2002/Ecore/OCL" as OCL
 

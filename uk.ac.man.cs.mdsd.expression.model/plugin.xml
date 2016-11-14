@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Expression -->
+      <package
+            uri="http://www.cs.man.ac.uk/mdsd/2016/Expression"
+            class="uk.ac.man.cs.mdsd.expression.ExpressionPackage"
+            genModel="model/Expression.xcore"/>
+   </extension>
+
+</plugin>

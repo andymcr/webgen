@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.man.cs.mdsd.criteria.Expression;
+import uk.ac.man.cs.mdsd.expression.Expression;
 
 import uk.ac.man.cs.mdsd.orm.Attribute;
 

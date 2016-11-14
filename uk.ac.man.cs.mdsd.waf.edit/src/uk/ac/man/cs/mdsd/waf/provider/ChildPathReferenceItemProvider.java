@@ -21,8 +21,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
+import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.waf.ChildPathReference;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -202,72 +201,72 @@ public class ChildPathReferenceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createNullLiteral()));
+				 ExpressionFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createBooleanLiteral()));
+				 ExpressionFactory.eINSTANCE.createBooleanLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
+				 ExpressionFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createStringLiteral()));
+				 ExpressionFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createTimeLiteral()));
+				 ExpressionFactory.eINSTANCE.createTimeLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createCurrentTime()));
+				 ExpressionFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createFunction()));
+				 ExpressionFactory.eINSTANCE.createFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
-				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter

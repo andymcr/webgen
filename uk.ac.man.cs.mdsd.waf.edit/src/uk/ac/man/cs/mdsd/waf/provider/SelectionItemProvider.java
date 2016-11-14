@@ -13,7 +13,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
+import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 import uk.ac.man.cs.mdsd.waf.Selection;
@@ -257,47 +257,47 @@ public class SelectionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SELECTION__FILTER,
-				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SELECTION__ORDERING,
-				 CriteriaFactory.eINSTANCE.createAsc()));
+				 ExpressionFactory.eINSTANCE.createAsc()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.SELECTION__ORDERING,
-				 CriteriaFactory.eINSTANCE.createDesc()));
+				 ExpressionFactory.eINSTANCE.createDesc()));
 	}
 
 	/**

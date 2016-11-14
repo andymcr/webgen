@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import uk.ac.man.cs.mdsd.criteria.Expression;
+import uk.ac.man.cs.mdsd.expression.Expression;
 
 import uk.ac.man.cs.mdsd.waf.ChildPathReference;
 import uk.ac.man.cs.mdsd.waf.PathReferenceElement;

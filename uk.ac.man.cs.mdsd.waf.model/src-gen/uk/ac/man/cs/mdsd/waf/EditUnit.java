@@ -2,7 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import uk.ac.man.cs.mdsd.criteria.Predicate;
+import uk.ac.man.cs.mdsd.expression.Predicate;
 
 import uk.ac.man.cs.mdsd.orm.Label;
 

@@ -4,8 +4,8 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.common.util.EList;
 
-import uk.ac.man.cs.mdsd.criteria.Order;
-import uk.ac.man.cs.mdsd.criteria.Predicate;
+import uk.ac.man.cs.mdsd.expression.Order;
+import uk.ac.man.cs.mdsd.expression.Predicate;
 
 import uk.ac.man.cs.mdsd.orm.Association;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
@@ -164,7 +164,7 @@ public interface Selection extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Ordering</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.criteria.Order}.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.expression.Order}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ordering</em>' containment reference list isn't clear,

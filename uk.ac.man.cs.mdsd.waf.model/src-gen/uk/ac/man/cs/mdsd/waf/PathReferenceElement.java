@@ -4,7 +4,7 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.ecore.EObject;
 
-import uk.ac.man.cs.mdsd.criteria.Expression;
+import uk.ac.man.cs.mdsd.expression.Expression;
 
 /**
  * <!-- begin-user-doc -->

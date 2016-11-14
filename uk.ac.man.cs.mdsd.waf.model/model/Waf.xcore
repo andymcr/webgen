@@ -6,13 +6,14 @@
 	editDirectory="/uk.ac.man.cs.mdsd.waf.edit/src",
 	editPluginID="uk.ac.man.cs.mdsd.waf.edit",
 	childCreationExtenders="true",
-	complianceLevel="6.0", editorDirectory="/uk.ac.man.cs.mdsd.waf.editor/src")
+	complianceLevel="6.0",
+	editorDirectory="/uk.ac.man.cs.mdsd.waf.editor/src")
 package uk.ac.man.cs.mdsd.waf
 
-import uk.ac.man.cs.mdsd.criteria.Expression
-import uk.ac.man.cs.mdsd.criteria.Order
-import uk.ac.man.cs.mdsd.criteria.Path
-import uk.ac.man.cs.mdsd.criteria.Predicate
+import uk.ac.man.cs.mdsd.expression.Expression
+import uk.ac.man.cs.mdsd.expression.Order
+import uk.ac.man.cs.mdsd.expression.Path
+import uk.ac.man.cs.mdsd.expression.Predicate
 import uk.ac.man.cs.mdsd.orm.Association
 import uk.ac.man.cs.mdsd.orm.Attribute
 import uk.ac.man.cs.mdsd.orm.DataType

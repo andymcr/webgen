@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.criteria.Order;
-import uk.ac.man.cs.mdsd.criteria.Predicate;
+import uk.ac.man.cs.mdsd.expression.Order;
+import uk.ac.man.cs.mdsd.expression.Predicate;
 
 import uk.ac.man.cs.mdsd.orm.Association;
 

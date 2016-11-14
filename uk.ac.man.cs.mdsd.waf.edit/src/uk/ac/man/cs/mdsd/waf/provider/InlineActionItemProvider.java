@@ -17,7 +17,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
+import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.orm.provider.NamedDisplayElementItemProvider;
 import uk.ac.man.cs.mdsd.waf.InlineAction;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -304,72 +304,72 @@ public class InlineActionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__ENABLE_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
+				 ExpressionFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION__DISPLAY_WHEN,
-				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
+				 ExpressionFactory.eINSTANCE.createPredicateIsNull()));
 	}
 
 	/**

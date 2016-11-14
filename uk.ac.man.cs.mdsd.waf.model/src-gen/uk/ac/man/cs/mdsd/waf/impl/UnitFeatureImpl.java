@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.criteria.Expression;
+import uk.ac.man.cs.mdsd.expression.Expression;
 
 import uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;

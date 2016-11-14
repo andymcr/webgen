@@ -2,7 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import uk.ac.man.cs.mdsd.criteria.Expression;
+import uk.ac.man.cs.mdsd.expression.Expression;
 
 /**
  * <!-- begin-user-doc -->

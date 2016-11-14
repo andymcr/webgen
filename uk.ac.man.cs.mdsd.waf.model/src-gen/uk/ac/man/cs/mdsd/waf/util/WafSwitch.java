@@ -7,8 +7,8 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import uk.ac.man.cs.mdsd.criteria.Expression;
-import uk.ac.man.cs.mdsd.criteria.Path;
+import uk.ac.man.cs.mdsd.expression.Expression;
+import uk.ac.man.cs.mdsd.expression.Path;
 
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.orm.NamedElement;

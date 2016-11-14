@@ -10,6 +10,7 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 import uk.ac.man.cs.mdsd.criteria.provider.CriteriaEditPlugin;
+import uk.ac.man.cs.mdsd.expression.provider.ExpressionEditPlugin;
 import uk.ac.man.cs.mdsd.orm.provider.OrmEditPlugin;
 
 /**
@@ -45,6 +46,7 @@ public final class WafEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     OrmEditPlugin.INSTANCE,
+		     ExpressionEditPlugin.INSTANCE,
 		     CriteriaEditPlugin.INSTANCE,
 		   });
 	}

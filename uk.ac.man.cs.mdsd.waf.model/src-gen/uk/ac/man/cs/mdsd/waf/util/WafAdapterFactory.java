@@ -9,8 +9,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import uk.ac.man.cs.mdsd.criteria.Expression;
-import uk.ac.man.cs.mdsd.criteria.Path;
+import uk.ac.man.cs.mdsd.expression.Expression;
+import uk.ac.man.cs.mdsd.expression.Path;
 
 import uk.ac.man.cs.mdsd.orm.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
@@ -1578,13 +1578,13 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.criteria.Expression <em>Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.expression.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.criteria.Expression
+	 * @see uk.ac.man.cs.mdsd.expression.Expression
 	 * @generated
 	 */
 	public Adapter createExpressionAdapter() {
@@ -1592,13 +1592,13 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.criteria.Path <em>Path</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.expression.Path <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.criteria.Path
+	 * @see uk.ac.man.cs.mdsd.expression.Path
 	 * @generated
 	 */
 	public Adapter createPathAdapter() {

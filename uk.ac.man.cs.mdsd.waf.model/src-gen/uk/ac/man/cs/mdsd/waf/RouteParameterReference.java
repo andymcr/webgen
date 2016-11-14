@@ -2,7 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
-import uk.ac.man.cs.mdsd.criteria.Path;
+import uk.ac.man.cs.mdsd.expression.Path;
 
 import uk.ac.man.cs.mdsd.orm.Attribute;
 

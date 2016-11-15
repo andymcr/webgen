@@ -48,7 +48,6 @@ public class UnitAssociationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAssociationPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addValueDisplayPropertyDescriptor(object);
@@ -58,28 +57,6 @@ public class UnitAssociationItemProvider
 	}
 
   /**
-	 * This adds a property descriptor for the Association feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAssociationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_association_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_association_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.Literals.UNIT_ASSOCIATION__ASSOCIATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-		/**
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,7 +159,7 @@ public class UnitAssociationItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.UNIT_CONTAINER__UNITS);
-			childrenFeatures.add(WafPackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE);
+			childrenFeatures.add(WafPackage.Literals.UNIT_ASSOCIATION__ASSOCIATION);
 		}
 		return childrenFeatures;
 	}
@@ -245,7 +222,7 @@ public class UnitAssociationItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
-			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
+			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -346,12 +323,12 @@ public class UnitAssociationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
-				 WafFactory.eINSTANCE.createChildAttribute()));
+				(WafPackage.Literals.UNIT_ASSOCIATION__ASSOCIATION,
+				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ASSOCIATION__CHILD_FEATURE,
+				(WafPackage.Literals.UNIT_ASSOCIATION__ASSOCIATION,
 				 WafFactory.eINSTANCE.createChildAssociation()));
 	}
 

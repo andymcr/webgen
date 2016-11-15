@@ -20,11 +20,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.man.cs.mdsd.orm.Association;
 import uk.ac.man.cs.mdsd.orm.Label;
 
-import uk.ac.man.cs.mdsd.waf.ChildFeature;
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
+import uk.ac.man.cs.mdsd.waf.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
 import uk.ac.man.cs.mdsd.waf.UnitContainer;
@@ -39,9 +38,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getUnits <em>Units</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getFilters <em>Filters</em>}</li>
@@ -61,16 +59,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	protected EList<ContentUnit> units;
 
 	/**
-	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAssociation()
-	 * @generated
-	 * @ordered
-	 */
-	protected Association association;
-
-	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -81,14 +69,14 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
+	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getChildFeature()
+	 * @see #getAssociation()
 	 * @generated
 	 * @ordered
 	 */
-	protected ChildFeature childFeature;
+	protected FeaturePathAssociation association;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -156,50 +144,12 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association getAssociation() {
-		if (association != null && association.eIsProxy()) {
-			InternalEObject oldAssociation = (InternalEObject)association;
-			association = (Association)eResolveProxy(oldAssociation);
-			if (association != oldAssociation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.UNIT_ASSOCIATION__ASSOCIATION, oldAssociation, association));
-			}
-		}
-		return association;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Association basicGetAssociation() {
-		return association;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAssociation(Association newAssociation) {
-		Association oldAssociation = association;
-		association = newAssociation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__ASSOCIATION, oldAssociation, association));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getName() {
 		String _xifexpression = null;
-		Association _association = this.getAssociation();
+		FeaturePathAssociation _association = this.getAssociation();
 		boolean _notEquals = (!Objects.equal(_association, null));
 		if (_notEquals) {
-			Association _association_1 = this.getAssociation();
+			FeaturePathAssociation _association_1 = this.getAssociation();
 			_xifexpression = _association_1.getName();
 		}
 		return _xifexpression;
@@ -210,8 +160,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildFeature getChildFeature() {
-		return childFeature;
+	public FeaturePathAssociation getAssociation() {
+		return association;
 	}
 
 	/**
@@ -219,11 +169,11 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetChildFeature(ChildFeature newChildFeature, NotificationChain msgs) {
-		ChildFeature oldChildFeature = childFeature;
-		childFeature = newChildFeature;
+	public NotificationChain basicSetAssociation(FeaturePathAssociation newAssociation, NotificationChain msgs) {
+		FeaturePathAssociation oldAssociation = association;
+		association = newAssociation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__ASSOCIATION, oldAssociation, newAssociation);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -234,18 +184,18 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setChildFeature(ChildFeature newChildFeature) {
-		if (newChildFeature != childFeature) {
+	public void setAssociation(FeaturePathAssociation newAssociation) {
+		if (newAssociation != association) {
 			NotificationChain msgs = null;
-			if (childFeature != null)
-				msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE, null, msgs);
-			if (newChildFeature != null)
-				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE, null, msgs);
-			msgs = basicSetChildFeature(newChildFeature, msgs);
+			if (association != null)
+				msgs = ((InternalEObject)association).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.UNIT_ASSOCIATION__ASSOCIATION, null, msgs);
+			if (newAssociation != null)
+				msgs = ((InternalEObject)newAssociation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.UNIT_ASSOCIATION__ASSOCIATION, null, msgs);
+			msgs = basicSetAssociation(newAssociation, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE, newChildFeature, newChildFeature));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__ASSOCIATION, newAssociation, newAssociation));
 	}
 
 	/**
@@ -361,8 +311,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 		switch (featureID) {
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
 				return ((InternalEList<?>)getUnits()).basicRemove(otherEnd, msgs);
-			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
-				return basicSetChildFeature(null, msgs);
+			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
+				return basicSetAssociation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -377,13 +327,10 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 		switch (featureID) {
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
 				return getUnits();
-			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
-				if (resolve) return getAssociation();
-				return basicGetAssociation();
 			case WafPackage.UNIT_ASSOCIATION__NAME:
 				return getName();
-			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
-				return getChildFeature();
+			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
+				return getAssociation();
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -410,10 +357,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				getUnits().addAll((Collection<? extends ContentUnit>)newValue);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
-				setAssociation((Association)newValue);
-				return;
-			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)newValue);
+				setAssociation((FeaturePathAssociation)newValue);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)newValue);
@@ -441,10 +385,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				getUnits().clear();
 				return;
 			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
-				setAssociation((Association)null);
-				return;
-			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)null);
+				setAssociation((FeaturePathAssociation)null);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)null);
@@ -469,12 +410,10 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 		switch (featureID) {
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
 				return units != null && !units.isEmpty();
-			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
-				return association != null;
 			case WafPackage.UNIT_ASSOCIATION__NAME:
 				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
-			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
-				return childFeature != null;
+			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
+				return association != null;
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				return selection != null;
 			case WafPackage.UNIT_ASSOCIATION__VALUE_DISPLAY:

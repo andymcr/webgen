@@ -4,7 +4,6 @@ package uk.ac.man.cs.mdsd.waf;
 
 import org.eclipse.emf.common.util.EList;
 
-import uk.ac.man.cs.mdsd.orm.Association;
 import uk.ac.man.cs.mdsd.orm.Label;
 
 /**
@@ -16,9 +15,8 @@ import uk.ac.man.cs.mdsd.orm.Label;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getChildFeature <em>Child Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getFilters <em>Filters</em>}</li>
@@ -30,32 +28,6 @@ import uk.ac.man.cs.mdsd.orm.Label;
  */
 public interface UnitAssociation extends UnitFeature, UnitContainer {
 	/**
-	 * Returns the value of the '<em><b>Association</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Association</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Association</em>' reference.
-	 * @see #setAssociation(Association)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_Association()
-	 * @model required="true"
-	 * @generated
-	 */
-	Association getAssociation();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getAssociation <em>Association</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Association</em>' reference.
-	 * @see #getAssociation()
-	 * @generated
-	 */
-	void setAssociation(Association value);
-
-	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -66,36 +38,36 @@ public interface UnitAssociation extends UnitFeature, UnitContainer {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_Name()
 	 * @model unique="false" required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='<%java.lang.String%> _xifexpression = null;\n<%uk.ac.man.cs.mdsd.orm.Association%> _association = this.getAssociation();\nboolean _notEquals = (!<%com.google.common.base.Objects%>.equal(_association, null));\nif (_notEquals)\n{\n\t<%uk.ac.man.cs.mdsd.orm.Association%> _association_1 = this.getAssociation();\n\t_xifexpression = _association_1.getName();\n}\nreturn _xifexpression;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='<%java.lang.String%> _xifexpression = null;\n<%uk.ac.man.cs.mdsd.waf.FeaturePathAssociation%> _association = this.getAssociation();\nboolean _notEquals = (!<%com.google.common.base.Objects%>.equal(_association, null));\nif (_notEquals)\n{\n\t<%uk.ac.man.cs.mdsd.waf.FeaturePathAssociation%> _association_1 = this.getAssociation();\n\t_xifexpression = _association_1.getName();\n}\nreturn _xifexpression;'"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Returns the value of the '<em><b>Child Feature</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Association</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Child Feature</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Association</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Child Feature</em>' containment reference.
-	 * @see #setChildFeature(ChildFeature)
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_ChildFeature()
-	 * @model containment="true"
+	 * @return the value of the '<em>Association</em>' containment reference.
+	 * @see #setAssociation(FeaturePathAssociation)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getUnitAssociation_Association()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	ChildFeature getChildFeature();
+	FeaturePathAssociation getAssociation();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getChildFeature <em>Child Feature</em>}' containment reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getAssociation <em>Association</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Child Feature</em>' containment reference.
-	 * @see #getChildFeature()
+	 * @param value the new value of the '<em>Association</em>' containment reference.
+	 * @see #getAssociation()
 	 * @generated
 	 */
-	void setChildFeature(ChildFeature value);
+	void setAssociation(FeaturePathAssociation value);
 
 	/**
 	 * Returns the value of the '<em><b>Selection</b></em>' reference.

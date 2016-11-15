@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.waf.impl;
 
+import com.google.common.base.Objects;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -24,6 +26,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  * </ul>
@@ -31,6 +34,16 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public class FeaturePathAssociationImpl extends FeaturePathImpl implements FeaturePathAssociation {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -68,6 +81,22 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.FEATURE_PATH_ASSOCIATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		String _xifexpression = null;
+		Association _association = this.getAssociation();
+		boolean _notEquals = (!Objects.equal(_association, null));
+		if (_notEquals) {
+			Association _association_1 = this.getAssociation();
+			_xifexpression = _association_1.getName();
+		}
+		return _xifexpression;
 	}
 
 	/**
@@ -173,6 +202,8 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.FEATURE_PATH_ASSOCIATION__NAME:
+				return getName();
 			case WafPackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION:
 				if (resolve) return getAssociation();
 				return basicGetAssociation();
@@ -226,6 +257,8 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.FEATURE_PATH_ASSOCIATION__NAME:
+				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
 			case WafPackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION:
 				return association != null;
 			case WafPackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE:

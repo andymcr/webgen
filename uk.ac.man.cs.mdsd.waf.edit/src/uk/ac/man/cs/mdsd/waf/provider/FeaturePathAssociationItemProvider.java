@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.waf.FeaturePathAssociation;
@@ -47,9 +48,32 @@ public class FeaturePathAssociationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeaturePathAssociation_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_name_feature", "_UI_FeaturePathAssociation_type"),
+				 WafPackage.Literals.FEATURE_PATH_ASSOCIATION__NAME,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -123,7 +147,10 @@ public class FeaturePathAssociationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_FeaturePathAssociation_type");
+		String label = ((FeaturePathAssociation)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_FeaturePathAssociation_type") :
+			getString("_UI_FeaturePathAssociation_type") + " " + label;
 	}
 	
 
@@ -139,6 +166,9 @@ public class FeaturePathAssociationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FeaturePathAssociation.class)) {
+			case WafPackage.FEATURE_PATH_ASSOCIATION__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case WafPackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

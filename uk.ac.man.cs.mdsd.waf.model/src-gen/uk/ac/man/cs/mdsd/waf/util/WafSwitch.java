@@ -363,26 +363,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.CHILD_FEATURE: {
-				ChildFeature childFeature = (ChildFeature)theEObject;
-				T result = caseChildFeature(childFeature);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.CHILD_ATTRIBUTE: {
-				ChildAttribute childAttribute = (ChildAttribute)theEObject;
-				T result = caseChildAttribute(childAttribute);
-				if (result == null) result = caseChildFeature(childAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.CHILD_ASSOCIATION: {
-				ChildAssociation childAssociation = (ChildAssociation)theEObject;
-				T result = caseChildAssociation(childAssociation);
-				if (result == null) result = caseChildFeature(childAssociation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.INTERFACE_FIELD: {
 				InterfaceField interfaceField = (InterfaceField)theEObject;
 				T result = caseInterfaceField(interfaceField);
@@ -611,6 +591,28 @@ public class WafSwitch<T> extends Switch<T> {
 				FeaturePathAssociation featurePathAssociation = (FeaturePathAssociation)theEObject;
 				T result = caseFeaturePathAssociation(featurePathAssociation);
 				if (result == null) result = caseFeaturePath(featurePathAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.CHILD_FEATURE: {
+				ChildFeature childFeature = (ChildFeature)theEObject;
+				T result = caseChildFeature(childFeature);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.CHILD_ATTRIBUTE: {
+				ChildAttribute childAttribute = (ChildAttribute)theEObject;
+				T result = caseChildAttribute(childAttribute);
+				if (result == null) result = caseChildFeature(childAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.CHILD_ASSOCIATION: {
+				ChildAssociation childAssociation = (ChildAssociation)theEObject;
+				T result = caseChildAssociation(childAssociation);
+				if (result == null) result = caseChildFeature(childAssociation);
+				if (result == null) result = caseFeaturePathAssociation(childAssociation);
+				if (result == null) result = caseFeaturePath(childAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1350,51 +1352,6 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Child Feature</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Child Feature</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseChildFeature(ChildFeature object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Child Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Child Attribute</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseChildAttribute(ChildAttribute object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Child Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Child Association</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseChildAssociation(ChildAssociation object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Interface Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1721,6 +1678,51 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFeaturePathAssociation(FeaturePathAssociation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Child Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Child Feature</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChildFeature(ChildFeature object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Child Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Child Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChildAttribute(ChildAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Child Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Child Association</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChildAssociation(ChildAssociation object) {
 		return null;
 	}
 

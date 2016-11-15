@@ -344,36 +344,15 @@ class UnitAttribute extends UnitFeature {
 }
 
 class UnitAssociation extends UnitFeature, UnitContainer {
-	refers Association[1] association
 	derived String[1] name get {
 		if (association != null)
 			association.name
 	}
-	contains ChildFeature childFeature
+	contains FeaturePathAssociation[1] association
 	refers Selection selection
 	refers Label valueDisplay
 	// for selecting inputs
 	refers Label[] filters
-}
-
-abstract class ChildFeature {
-}
-
-class ChildAttribute extends ChildFeature {
-	derived String name get {
-		if (attribute != null)
-			attribute.name
-	}
-	refers Attribute[1] attribute
-}
-
-class ChildAssociation extends ChildFeature {
-	derived String name get {
-		if (association != null)
-			association.name
-	}
-	refers Association[1] association
-	contains ChildFeature childFeature
 }
 
 abstract class InterfaceField extends NamedElement, UnitField {
@@ -495,13 +474,36 @@ abstract class FeaturePath {
 }
 
 class FeaturePathAttribute extends FeaturePath {
+	derived String name get {
+		if (attribute != null)
+			attribute.name
+	}
 	refers Attribute[1] attribute
 }
 
 class FeaturePathAssociation extends FeaturePath {
+	derived String name get {
+		if (association != null)
+			association.name
+	}
 	refers Association[1] association
 	contains ChildFeature childFeature
 }
+
+abstract class ChildFeature {
+}
+
+class ChildAttribute extends ChildFeature {
+	derived String name get {
+		if (attribute != null)
+			attribute.name
+	}
+	refers Attribute[1] attribute
+}
+
+class ChildAssociation extends ChildFeature, FeaturePathAssociation {
+}
+
 
 class SliderUnit extends ImageUnit {
 }

@@ -2,6 +2,8 @@
  */
 package uk.ac.man.cs.mdsd.waf.impl;
 
+import com.google.common.base.Objects;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,12 +24,23 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.FeaturePathAttributeImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FeaturePathAttributeImpl extends FeaturePathImpl implements FeaturePathAttribute {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -55,6 +68,22 @@ public class FeaturePathAttributeImpl extends FeaturePathImpl implements Feature
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.FEATURE_PATH_ATTRIBUTE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		String _xifexpression = null;
+		Attribute _attribute = this.getAttribute();
+		boolean _notEquals = (!Objects.equal(_attribute, null));
+		if (_notEquals) {
+			Attribute _attribute_1 = this.getAttribute();
+			_xifexpression = _attribute_1.getName();
+		}
+		return _xifexpression;
 	}
 
 	/**
@@ -103,6 +132,8 @@ public class FeaturePathAttributeImpl extends FeaturePathImpl implements Feature
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.FEATURE_PATH_ATTRIBUTE__NAME:
+				return getName();
 			case WafPackage.FEATURE_PATH_ATTRIBUTE__ATTRIBUTE:
 				if (resolve) return getAttribute();
 				return basicGetAttribute();
@@ -148,6 +179,8 @@ public class FeaturePathAttributeImpl extends FeaturePathImpl implements Feature
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.FEATURE_PATH_ATTRIBUTE__NAME:
+				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
 			case WafPackage.FEATURE_PATH_ATTRIBUTE__ATTRIBUTE:
 				return attribute != null;
 		}

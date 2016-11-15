@@ -16,6 +16,8 @@ import uk.ac.man.cs.mdsd.orm.Association;
 
 import uk.ac.man.cs.mdsd.waf.ChildAssociation;
 import uk.ac.man.cs.mdsd.waf.ChildFeature;
+import uk.ac.man.cs.mdsd.waf.FeaturePath;
+import uk.ac.man.cs.mdsd.waf.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -265,6 +267,52 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 				return childFeature != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == FeaturePath.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == FeaturePathAssociation.class) {
+			switch (derivedFeatureID) {
+				case WafPackage.CHILD_ASSOCIATION__NAME: return WafPackage.FEATURE_PATH_ASSOCIATION__NAME;
+				case WafPackage.CHILD_ASSOCIATION__ASSOCIATION: return WafPackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION;
+				case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE: return WafPackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == FeaturePath.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == FeaturePathAssociation.class) {
+			switch (baseFeatureID) {
+				case WafPackage.FEATURE_PATH_ASSOCIATION__NAME: return WafPackage.CHILD_ASSOCIATION__NAME;
+				case WafPackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION: return WafPackage.CHILD_ASSOCIATION__ASSOCIATION;
+				case WafPackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE: return WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ChildAssociationImpl

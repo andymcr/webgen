@@ -35,6 +35,9 @@ import uk.ac.man.cs.mdsd.expression.PredicateIsNull;
 import uk.ac.man.cs.mdsd.expression.PredicateIsOperator;
 import uk.ac.man.cs.mdsd.expression.PredicateLikeOperator;
 import uk.ac.man.cs.mdsd.expression.util.ExpressionSwitch;
+import uk.ac.man.cs.mdsd.orm.Attribute;
+import uk.ac.man.cs.mdsd.orm.OrmPackage;
+import uk.ac.man.cs.mdsd.orm.util.OrmSwitch;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.util.WafAdapterFactory;
 
@@ -1543,8 +1546,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (childPathReferenceItemProvider != null) childPathReferenceItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
-		if (childAttributeItemProvider != null) childAttributeItemProvider.dispose();
-		if (childAssociationItemProvider != null) childAssociationItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();
 		if (dateFieldItemProvider != null) dateFieldItemProvider.dispose();
 		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();
@@ -1560,6 +1561,8 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
 		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
 		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
+		if (childAttributeItemProvider != null) childAttributeItemProvider.dispose();
+		if (childAssociationItemProvider != null) childAssociationItemProvider.dispose();
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
 		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();
@@ -1573,6 +1576,113 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (parameterReferenceItemProvider != null) parameterReferenceItemProvider.dispose();
 		if (routeParameterReferenceItemProvider != null) routeParameterReferenceItemProvider.dispose();
 		if (currentUserReferenceItemProvider != null) currentUserReferenceItemProvider.dispose();
+	}
+
+		/**
+	 * A child creation extender for the {@link OrmPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class OrmChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends OrmSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseAttribute(Attribute object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+						 WafFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+						 WafFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OrmPackage.Literals.ATTRIBUTE__DEFAULT_VALUE,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return WafEditPlugin.INSTANCE;
+		}
 	}
 
 		/**

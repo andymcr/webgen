@@ -83,8 +83,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.CHILD_PATH_REFERENCE: return createChildPathReference();
 			case WafPackage.UNIT_ATTRIBUTE: return createUnitAttribute();
 			case WafPackage.UNIT_ASSOCIATION: return createUnitAssociation();
-			case WafPackage.CHILD_ATTRIBUTE: return createChildAttribute();
-			case WafPackage.CHILD_ASSOCIATION: return createChildAssociation();
 			case WafPackage.DATA_TYPE_FIELD: return createDataTypeField();
 			case WafPackage.DATE_FIELD: return createDateField();
 			case WafPackage.CAPTCHA_FIELD: return createCaptchaField();
@@ -100,6 +98,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.ACTION_UNIT: return createActionUnit();
 			case WafPackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
 			case WafPackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
+			case WafPackage.CHILD_ATTRIBUTE: return createChildAttribute();
+			case WafPackage.CHILD_ASSOCIATION: return createChildAssociation();
 			case WafPackage.SLIDER_UNIT: return createSliderUnit();
 			case WafPackage.GALLERY_UNIT: return createGalleryUnit();
 			case WafPackage.REGISTRATION_UNIT: return createRegistrationUnit();
@@ -437,26 +437,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildAttribute createChildAttribute() {
-		ChildAttributeImpl childAttribute = new ChildAttributeImpl();
-		return childAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChildAssociation createChildAssociation() {
-		ChildAssociationImpl childAssociation = new ChildAssociationImpl();
-		return childAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public DataTypeField createDataTypeField() {
 		DataTypeFieldImpl dataTypeField = new DataTypeFieldImpl();
 		return dataTypeField;
@@ -600,6 +580,26 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public FeaturePathAssociation createFeaturePathAssociation() {
 		FeaturePathAssociationImpl featurePathAssociation = new FeaturePathAssociationImpl();
 		return featurePathAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildAttribute createChildAttribute() {
+		ChildAttributeImpl childAttribute = new ChildAttributeImpl();
+		return childAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildAssociation createChildAssociation() {
+		ChildAssociationImpl childAssociation = new ChildAssociationImpl();
+		return childAssociation;
 	}
 
 	/**

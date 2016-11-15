@@ -9918,13 +9918,22 @@ public interface WebsitePackage extends EPackage {
 	int UNIT_ASSOCIATION__UNITS = UNIT_FEATURE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIT_ASSOCIATION__NAME = UNIT_FEATURE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__ASSOCIATION = UNIT_FEATURE_FEATURE_COUNT + 1;
+	int UNIT_ASSOCIATION__ASSOCIATION = UNIT_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -9933,7 +9942,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__CHILD_FEATURE = UNIT_FEATURE_FEATURE_COUNT + 2;
+	int UNIT_ASSOCIATION__CHILD_FEATURE = UNIT_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
@@ -9942,7 +9951,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION = UNIT_FEATURE_FEATURE_COUNT + 3;
+	int UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION = UNIT_FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
@@ -9951,7 +9960,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__SOURCE_ENTITY = UNIT_FEATURE_FEATURE_COUNT + 4;
+	int UNIT_ASSOCIATION__SOURCE_ENTITY = UNIT_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
@@ -9960,16 +9969,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__TARGET_ENTITY = UNIT_FEATURE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIT_ASSOCIATION__NAME = UNIT_FEATURE_FEATURE_COUNT + 6;
+	int UNIT_ASSOCIATION__TARGET_ENTITY = UNIT_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Value Display</b></em>' reference.
@@ -14149,13 +14149,22 @@ public interface WebsitePackage extends EPackage {
 	int FEATURE_PATH_ATTRIBUTE = 95;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ATTRIBUTE__NAME = FEATURE_PATH_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = FEATURE_PATH_FEATURE_COUNT + 0;
+	int FEATURE_PATH_ATTRIBUTE__ATTRIBUTE = FEATURE_PATH_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Feature Path Attribute</em>' class.
@@ -14164,7 +14173,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ATTRIBUTE_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 1;
+	int FEATURE_PATH_ATTRIBUTE_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl <em>Feature Path Association</em>}' class.
@@ -14177,13 +14186,22 @@ public interface WebsitePackage extends EPackage {
 	int FEATURE_PATH_ASSOCIATION = 96;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_PATH_ASSOCIATION__NAME = FEATURE_PATH_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Association</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ASSOCIATION__ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 0;
+	int FEATURE_PATH_ASSOCIATION__ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -14192,7 +14210,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ASSOCIATION__CHILD_FEATURE = FEATURE_PATH_FEATURE_COUNT + 1;
+	int FEATURE_PATH_ASSOCIATION__CHILD_FEATURE = FEATURE_PATH_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
@@ -14201,7 +14219,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 2;
+	int FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION = FEATURE_PATH_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
@@ -14210,7 +14228,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY = FEATURE_PATH_FEATURE_COUNT + 3;
+	int FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY = FEATURE_PATH_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
@@ -14219,7 +14237,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ASSOCIATION__TARGET_ENTITY = FEATURE_PATH_FEATURE_COUNT + 4;
+	int FEATURE_PATH_ASSOCIATION__TARGET_ENTITY = FEATURE_PATH_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Feature Path Association</em>' class.
@@ -14228,7 +14246,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_PATH_ASSOCIATION_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 5;
+	int FEATURE_PATH_ASSOCIATION_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
@@ -14285,13 +14303,13 @@ public interface WebsitePackage extends EPackage {
 	int CHILD_ATTRIBUTE_FEATURE_COUNT = CHILD_FEATURE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__PART_OF = CHILD_FEATURE__PART_OF;
+	int CHILD_ASSOCIATION__NAME = FEATURE_PATH_ASSOCIATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Association</b></em>' reference.
@@ -14300,7 +14318,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__ASSOCIATION = CHILD_FEATURE_FEATURE_COUNT + 0;
+	int CHILD_ASSOCIATION__ASSOCIATION = FEATURE_PATH_ASSOCIATION__ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -14309,7 +14327,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__CHILD_FEATURE = CHILD_FEATURE_FEATURE_COUNT + 1;
+	int CHILD_ASSOCIATION__CHILD_FEATURE = FEATURE_PATH_ASSOCIATION__CHILD_FEATURE;
 
 	/**
 	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
@@ -14318,7 +14336,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION = CHILD_FEATURE_FEATURE_COUNT + 2;
+	int CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION = FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
@@ -14327,7 +14345,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__SOURCE_ENTITY = CHILD_FEATURE_FEATURE_COUNT + 3;
+	int CHILD_ASSOCIATION__SOURCE_ENTITY = FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
@@ -14336,16 +14354,16 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__TARGET_ENTITY = CHILD_FEATURE_FEATURE_COUNT + 4;
+	int CHILD_ASSOCIATION__TARGET_ENTITY = FEATURE_PATH_ASSOCIATION__TARGET_ENTITY;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__NAME = CHILD_FEATURE_FEATURE_COUNT + 5;
+	int CHILD_ASSOCIATION__PART_OF = FEATURE_PATH_ASSOCIATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Child Association</em>' class.
@@ -14354,7 +14372,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION_FEATURE_COUNT = CHILD_FEATURE_FEATURE_COUNT + 6;
+	int CHILD_ASSOCIATION_FEATURE_COUNT = FEATURE_PATH_ASSOCIATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SliderUnitImpl <em>Slider Unit</em>}' class.
@@ -19475,17 +19493,6 @@ public interface WebsitePackage extends EPackage {
 	EClass getUnitAssociation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getName()
-	 * @see #getUnitAssociation()
-	 * @generated
-	 */
-	EAttribute getUnitAssociation_Name();
-
-	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getValueDisplay <em>Value Display</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -19580,17 +19587,6 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getChildAssociation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ChildAssociation#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildAssociation#getName()
-	 * @see #getChildAssociation()
-	 * @generated
-	 */
-	EAttribute getChildAssociation_Name();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.Service <em>Service</em>}'.
@@ -21189,6 +21185,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getFeaturePathAttribute();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute#getName()
+	 * @see #getFeaturePathAttribute()
+	 * @generated
+	 */
+	EAttribute getFeaturePathAttribute_Name();
+
+	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute#getAttribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -21208,6 +21215,17 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFeaturePathAssociation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation#getName()
+	 * @see #getFeaturePathAssociation()
+	 * @generated
+	 */
+	EAttribute getFeaturePathAssociation_Name();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation#getAssociation <em>Association</em>}'.
@@ -24585,14 +24603,6 @@ public interface WebsitePackage extends EPackage {
 		EClass UNIT_ASSOCIATION = eINSTANCE.getUnitAssociation();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UNIT_ASSOCIATION__NAME = eINSTANCE.getUnitAssociation_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Value Display</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -24669,14 +24679,6 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CHILD_ASSOCIATION = eINSTANCE.getChildAssociation();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CHILD_ASSOCIATION__NAME = eINSTANCE.getChildAssociation_Name();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ServiceImpl <em>Service</em>}' class.
@@ -25927,6 +25929,14 @@ public interface WebsitePackage extends EPackage {
 		EClass FEATURE_PATH_ATTRIBUTE = eINSTANCE.getFeaturePathAttribute();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE_PATH_ATTRIBUTE__NAME = eINSTANCE.getFeaturePathAttribute_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -25943,6 +25953,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass FEATURE_PATH_ASSOCIATION = eINSTANCE.getFeaturePathAssociation();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE_PATH_ASSOCIATION__NAME = eINSTANCE.getFeaturePathAssociation_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Association</b></em>' reference feature.

@@ -25,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl#isIsSourceAssociation <em>Is Source Association</em>}</li>
@@ -35,6 +36,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class FeaturePathAssociationImpl extends FeaturePathImpl implements FeaturePathAssociation {
+	/**
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__NAME).getSettingDelegate();
+
 	/**
 	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -102,6 +113,15 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -268,6 +288,8 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION__NAME:
+				return getName();
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION:
 				if (resolve) return getAssociation();
 				return basicGetAssociation();
@@ -329,6 +351,8 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION__NAME:
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION:
 				return association != null;
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE:

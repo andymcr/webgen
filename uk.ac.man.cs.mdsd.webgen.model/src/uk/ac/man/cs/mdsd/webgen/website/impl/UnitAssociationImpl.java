@@ -37,12 +37,12 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getUnits <em>Units</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#isIsSourceAssociation <em>Is Source Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getSourceEntity <em>Source Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getFilters <em>Filters</em>}</li>
@@ -60,6 +60,16 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @ordered
 	 */
 	protected EList<ContentUnit> units;
+
+	/**
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__NAME).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' reference.
@@ -110,16 +120,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__TARGET_ENTITY).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.UNIT_ASSOCIATION__NAME).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getValueDisplay() <em>Value Display</em>}' reference.
@@ -450,6 +450,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 		switch (featureID) {
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
 				return getUnits();
+			case WebsitePackage.UNIT_ASSOCIATION__NAME:
+				return getName();
 			case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION:
 				if (resolve) return getAssociation();
 				return basicGetAssociation();
@@ -463,8 +465,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebsitePackage.UNIT_ASSOCIATION__TARGET_ENTITY:
 				if (resolve) return getTargetEntity();
 				return basicGetTargetEntity();
-			case WebsitePackage.UNIT_ASSOCIATION__NAME:
-				return getName();
 			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				if (resolve) return getValueDisplay();
 				return basicGetValueDisplay();
@@ -550,6 +550,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 		switch (featureID) {
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
 				return units != null && !units.isEmpty();
+			case WebsitePackage.UNIT_ASSOCIATION__NAME:
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION:
 				return association != null;
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
@@ -560,8 +562,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return SOURCE_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.UNIT_ASSOCIATION__TARGET_ENTITY:
 				return TARGET_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case WebsitePackage.UNIT_ASSOCIATION__NAME:
-				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				return valueDisplay != null;
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
@@ -592,6 +592,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 		}
 		if (baseClass == FeaturePathAssociation.class) {
 			switch (derivedFeatureID) {
+				case WebsitePackage.UNIT_ASSOCIATION__NAME: return WebsitePackage.FEATURE_PATH_ASSOCIATION__NAME;
 				case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION: return WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION;
 				case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION: return WebsitePackage.FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION;
@@ -623,6 +624,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 		}
 		if (baseClass == FeaturePathAssociation.class) {
 			switch (baseFeatureID) {
+				case WebsitePackage.FEATURE_PATH_ASSOCIATION__NAME: return WebsitePackage.UNIT_ASSOCIATION__NAME;
 				case WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION: return WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION;
 				case WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE;
 				case WebsitePackage.FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION: return WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION;

@@ -50,12 +50,35 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
 			addIsSourceAssociationPropertyDescriptor(object);
 			addSourceEntityPropertyDescriptor(object);
 			addTargetEntityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FeaturePathAssociation_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_name_feature", "_UI_FeaturePathAssociation_type"),
+				 WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__NAME,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -203,8 +226,10 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 	 */
 	@Override
 	public String getText(Object object) {
-		FeaturePathAssociation featurePathAssociation = (FeaturePathAssociation)object;
-		return getString("_UI_FeaturePathAssociation_type") + " " + featurePathAssociation.isIsSourceAssociation();
+		String label = ((FeaturePathAssociation)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_FeaturePathAssociation_type") :
+			getString("_UI_FeaturePathAssociation_type") + " " + label;
 	}
 	
 
@@ -220,6 +245,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FeaturePathAssociation.class)) {
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION__NAME:
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

@@ -58,8 +58,8 @@ public class ChildAssociationItemProvider extends FeaturePathAssociationItemProv
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_PathAssociationElement_association_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_PathAssociationElement_association_feature", "_UI_PathAssociationElement_type"),
+			getString("_UI_FeaturePathAssociation_association_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_association_feature", "_UI_FeaturePathAssociation_type"),
 			WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__ASSOCIATION,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),

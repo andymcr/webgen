@@ -3630,13 +3630,13 @@ public interface WafPackage extends EPackage {
 	int UNIT_ASSOCIATION__NAME = UNIT_FEATURE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Association</b></em>' containment reference.
+	 * The feature id for the '<em><b>Path</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIT_ASSOCIATION__ASSOCIATION = UNIT_FEATURE_FEATURE_COUNT + 2;
+	int UNIT_ASSOCIATION__PATH = UNIT_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Selection</b></em>' reference.
@@ -13618,15 +13618,15 @@ public interface WafPackage extends EPackage {
 	EAttribute getUnitAssociation_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getAssociation <em>Association</em>}'.
+	 * Returns the meta object for the containment reference '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getPath <em>Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Association</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.UnitAssociation#getAssociation()
+	 * @return the meta object for the containment reference '<em>Path</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.UnitAssociation#getPath()
 	 * @see #getUnitAssociation()
 	 * @generated
 	 */
-	EReference getUnitAssociation_Association();
+	EReference getUnitAssociation_Path();
 
 	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.UnitAssociation#getSelection <em>Selection</em>}'.
@@ -16824,12 +16824,12 @@ public interface WafPackage extends EPackage {
 		EAttribute UNIT_ASSOCIATION__NAME = eINSTANCE.getUnitAssociation_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Association</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Path</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNIT_ASSOCIATION__ASSOCIATION = eINSTANCE.getUnitAssociation_Association();
+		EReference UNIT_ASSOCIATION__PATH = eINSTANCE.getUnitAssociation_Path();
 
 		/**
 		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.

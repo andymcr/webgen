@@ -39,7 +39,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getUnits <em>Units</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getAssociation <em>Association</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getPath <em>Path</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.UnitAssociationImpl#getFilters <em>Filters</em>}</li>
@@ -69,14 +69,14 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' containment reference.
+	 * The cached value of the '{@link #getPath() <em>Path</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssociation()
+	 * @see #getPath()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeaturePathAssociation association;
+	protected FeaturePathAssociation path;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -146,11 +146,11 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 */
 	public String getName() {
 		String _xifexpression = null;
-		FeaturePathAssociation _association = this.getAssociation();
-		boolean _notEquals = (!Objects.equal(_association, null));
+		FeaturePathAssociation _path = this.getPath();
+		boolean _notEquals = (!Objects.equal(_path, null));
 		if (_notEquals) {
-			FeaturePathAssociation _association_1 = this.getAssociation();
-			_xifexpression = _association_1.getName();
+			FeaturePathAssociation _path_1 = this.getPath();
+			_xifexpression = _path_1.getName();
 		}
 		return _xifexpression;
 	}
@@ -160,8 +160,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeaturePathAssociation getAssociation() {
-		return association;
+	public FeaturePathAssociation getPath() {
+		return path;
 	}
 
 	/**
@@ -169,11 +169,11 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAssociation(FeaturePathAssociation newAssociation, NotificationChain msgs) {
-		FeaturePathAssociation oldAssociation = association;
-		association = newAssociation;
+	public NotificationChain basicSetPath(FeaturePathAssociation newPath, NotificationChain msgs) {
+		FeaturePathAssociation oldPath = path;
+		path = newPath;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__ASSOCIATION, oldAssociation, newAssociation);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__PATH, oldPath, newPath);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -184,18 +184,18 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAssociation(FeaturePathAssociation newAssociation) {
-		if (newAssociation != association) {
+	public void setPath(FeaturePathAssociation newPath) {
+		if (newPath != path) {
 			NotificationChain msgs = null;
-			if (association != null)
-				msgs = ((InternalEObject)association).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.UNIT_ASSOCIATION__ASSOCIATION, null, msgs);
-			if (newAssociation != null)
-				msgs = ((InternalEObject)newAssociation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.UNIT_ASSOCIATION__ASSOCIATION, null, msgs);
-			msgs = basicSetAssociation(newAssociation, msgs);
+			if (path != null)
+				msgs = ((InternalEObject)path).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.UNIT_ASSOCIATION__PATH, null, msgs);
+			if (newPath != null)
+				msgs = ((InternalEObject)newPath).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.UNIT_ASSOCIATION__PATH, null, msgs);
+			msgs = basicSetPath(newPath, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__ASSOCIATION, newAssociation, newAssociation));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.UNIT_ASSOCIATION__PATH, newPath, newPath));
 	}
 
 	/**
@@ -311,8 +311,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 		switch (featureID) {
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
 				return ((InternalEList<?>)getUnits()).basicRemove(otherEnd, msgs);
-			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
-				return basicSetAssociation(null, msgs);
+			case WafPackage.UNIT_ASSOCIATION__PATH:
+				return basicSetPath(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -329,8 +329,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return getUnits();
 			case WafPackage.UNIT_ASSOCIATION__NAME:
 				return getName();
-			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
-				return getAssociation();
+			case WafPackage.UNIT_ASSOCIATION__PATH:
+				return getPath();
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -356,8 +356,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				getUnits().clear();
 				getUnits().addAll((Collection<? extends ContentUnit>)newValue);
 				return;
-			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
-				setAssociation((FeaturePathAssociation)newValue);
+			case WafPackage.UNIT_ASSOCIATION__PATH:
+				setPath((FeaturePathAssociation)newValue);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)newValue);
@@ -384,8 +384,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
 				getUnits().clear();
 				return;
-			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
-				setAssociation((FeaturePathAssociation)null);
+			case WafPackage.UNIT_ASSOCIATION__PATH:
+				setPath((FeaturePathAssociation)null);
 				return;
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)null);
@@ -412,8 +412,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return units != null && !units.isEmpty();
 			case WafPackage.UNIT_ASSOCIATION__NAME:
 				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
-			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
-				return association != null;
+			case WafPackage.UNIT_ASSOCIATION__PATH:
+				return path != null;
 			case WafPackage.UNIT_ASSOCIATION__SELECTION:
 				return selection != null;
 			case WafPackage.UNIT_ASSOCIATION__VALUE_DISPLAY:

@@ -345,10 +345,10 @@ class UnitAttribute extends UnitFeature {
 
 class UnitAssociation extends UnitFeature, UnitContainer {
 	derived String[1] name get {
-		if (association != null)
-			association.name
+		if (path != null)
+			path.name
 	}
-	contains FeaturePathAssociation[1] association
+	contains FeaturePathAssociation[1] path
 	refers Selection selection
 	refers Label valueDisplay
 	// for selecting inputs

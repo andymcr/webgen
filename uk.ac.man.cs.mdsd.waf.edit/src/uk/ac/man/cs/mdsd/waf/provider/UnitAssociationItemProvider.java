@@ -159,7 +159,7 @@ public class UnitAssociationItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.UNIT_CONTAINER__UNITS);
-			childrenFeatures.add(WafPackage.Literals.UNIT_ASSOCIATION__ASSOCIATION);
+			childrenFeatures.add(WafPackage.Literals.UNIT_ASSOCIATION__PATH);
 		}
 		return childrenFeatures;
 	}
@@ -222,7 +222,7 @@ public class UnitAssociationItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
-			case WafPackage.UNIT_ASSOCIATION__ASSOCIATION:
+			case WafPackage.UNIT_ASSOCIATION__PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -323,12 +323,12 @@ public class UnitAssociationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ASSOCIATION__ASSOCIATION,
+				(WafPackage.Literals.UNIT_ASSOCIATION__PATH,
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ASSOCIATION__ASSOCIATION,
+				(WafPackage.Literals.UNIT_ASSOCIATION__PATH,
 				 WafFactory.eINSTANCE.createChildAssociation()));
 	}
 

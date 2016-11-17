@@ -121,6 +121,9 @@ lazy rule implicitUnitAttribute {
 lazy rule implicitUnitAssociation {
 	from partialWaf : WAF!Association
 	to waf : WAF!UnitAssociation (
+		path <- associationPath
+	), 
+	associationPath : WAF!FeaturePathAssociation (
 		association <- partialWaf
 	)
 	do {

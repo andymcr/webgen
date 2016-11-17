@@ -235,17 +235,6 @@ helper context Website!Feature def: findOrmFeature(reference : Website!FeatureRe
 			OclUndefined
 		endif endif endif;
 
-helper context Website!PathAssociationElement def: findOrmAssociation() : ORM!Association
-	= if self.association.oclIsUndefined() then
-			OclUndefined
-		else if self.isSourceAssociation then
-			self.association.findOrmSourceAssociation()
-		else if self.displayedOn.entities->notEmpty() then
-			self.association.findOrmTargetAssociation()
-		else
-			OclUndefined
-		endif endif endif;
-
 helper context Website!ChildAssociation def: findOrmAssociation() : ORM!Association
 	= if self.association.oclIsUndefined() or self.refImmediateComposite().association.oclIsUndefined() then
 			OclUndefined
@@ -262,11 +251,11 @@ helper context Website!FeaturePathAssociation def: findOrmAssociation() : ORM!As
 			OclUndefined
 		else if self.isSourceAssociation then
 			self.association.findOrmSourceAssociation()
-		else if self.displayedOn.entities->notEmpty() then
+		else -- if self.displayedOn.entities->notEmpty() then
 			self.association.findOrmTargetAssociation()
-		else
-			OclUndefined
-		endif endif endif;
+-- 		else
+--			OclUndefined
+		endif endif ; -- endif;
 
 helper context Website!Label def: findOrmLabel() : ORM!Label
 	= if self.oclIsKindOf(Website!Attribute) then
@@ -796,9 +785,8 @@ rule UnitAttribute {
 rule UnitAssociation {
 	from website : Website!UnitAssociation
 	to waf : WAF!UnitAssociation (
-		association <- website.findOrmAssociation(),
+		path <- associationPath,
 		displayLabel <- website.associationLabel(),
-		childFeature <- website.childFeature,
 		selection <- website.selection,
 		valueDisplay <-
 			if website.valueDisplay.oclIsUndefined() then
@@ -847,27 +835,8 @@ rule UnitAssociation {
 					OclUndefined
 				endif
 			endif
-	)
-}
-
-abstract rule ChildFeature {
-	from website : Website!ChildFeature
-	to waf : WAF!ChildFeature (
-	)
-}
-
--- @extends ChildFeature
-rule ChildAttribute {
-	from website : Website!ChildAttribute
-	to waf : WAF!ChildAttribute (
-		attribute <- website.attribute.findOrmAttribute()
-	)
-}
-
--- @extends ChildFeature
-rule ChildAssociation {
-	from website : Website!ChildAssociation
-	to waf : WAF!ChildAssociation (
+	), 
+	associationPath : WAF!FeaturePathAssociation (
 		association <- website.findOrmAssociation(),
 		childFeature <- website.childFeature
 	)
@@ -1206,7 +1175,7 @@ rule FeaturePathAttribute {
 
 -- @extends FeaturePath
 rule FeaturePathAssociation {
-	from website : Website!FeaturePathAssociation
+	from website : Website!FeaturePathAssociation (not website.oclIsTypeOf(Website!UnitAssociation))
 	to waf : WAF!FeaturePathAssociation (
 		association <- website.findOrmAssociation(),
 		childFeature <- website.childFeature
@@ -1220,7 +1189,28 @@ rule SliderUnit {
 	)
 }
 
--- @extends ImageUnit
+abstract rule ChildFeature {
+	from website : Website!ChildFeature
+	to waf : WAF!ChildFeature (
+	)
+}
+
+-- @extends ChildFeature
+rule ChildAttribute {
+	from website : Website!ChildAttribute
+	to waf : WAF!ChildAttribute (
+		attribute <- website.attribute.findOrmAttribute()
+	)
+}
+
+-- @extends FeaturePathAssociation, ChildFeature
+rule ChildAssociation {
+	from website : Website!ChildAssociation
+	to waf : WAF!ChildAssociation (
+	)
+}
+
+-- @extends ImageUnit, InlineActionContainer
 rule GalleryUnit {
 	from website : Website!GalleryUnit
 	to waf : WAF!GalleryUnit (

@@ -7857,7 +7857,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (getFeaturePathAssociation_IsSourceAssociation(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse let partOf : FeaturePathAssociation\r\n\t\t\t= self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin partOf.targetEntity.associations->includes(association)\r\n\tendif"
+			 "derivation", "not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse if self.oclIsTypeOf(ChildAssociation) then\r\n\t\tlet partOf : FeaturePathAssociation\r\n\t\t\t= self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin partOf.targetEntity.associations->includes(association)\r\n\telse\r\n\t\tlet unit : DynamicUnit\r\n\t\t\t= self.eContainer().oclAsType(DynamicUnit)\r\n\t\t\tin unit.entities->collect(eov | eov.associations)->includes(association)\r\n\tendif endif"
 		   });	
 		addAnnotation
 		  (getFeaturePathAssociation_SourceEntity(), 

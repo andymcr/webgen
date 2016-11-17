@@ -107,7 +107,7 @@ public interface FeaturePathAssociation extends FeaturePath {
 	 * @return the value of the '<em>Is Source Association</em>' attribute.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFeaturePathAssociation_IsSourceAssociation()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse let partOf : FeaturePathAssociation\r\n\t\t\t= self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin partOf.targetEntity.associations->includes(association)\r\n\tendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not association.oclIsUndefined() implies\r\n\tif self.oclIsKindOf(UnitAssociation) then\r\n\t\tself.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)\r\n\telse if self.oclIsTypeOf(ChildAssociation) then\r\n\t\tlet partOf : FeaturePathAssociation\r\n\t\t\t= self.oclAsType(ChildAssociation).partOf\r\n\t\t\tin partOf.targetEntity.associations->includes(association)\r\n\telse\r\n\t\tlet unit : DynamicUnit\r\n\t\t\t= self.eContainer().oclAsType(DynamicUnit)\r\n\t\t\tin unit.entities->collect(eov | eov.associations)->includes(association)\r\n\tendif endif'"
 	 * @generated
 	 */
 	boolean isIsSourceAssociation();

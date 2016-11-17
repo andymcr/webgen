@@ -1119,7 +1119,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" changeable="false"
         volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="not association.oclIsUndefined() implies&#xD;&#xA;&#x9;if self.oclIsKindOf(UnitAssociation) then&#xD;&#xA;&#x9;&#x9;self.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)&#xD;&#xA;&#x9;else let partOf : FeaturePathAssociation&#xD;&#xA;&#x9;&#x9;&#x9;= self.oclAsType(ChildAssociation).partOf&#xD;&#xA;&#x9;&#x9;&#x9;in partOf.targetEntity.associations->includes(association)&#xD;&#xA;&#x9;endif"/>
+        <details key="derivation" value="not association.oclIsUndefined() implies&#xD;&#xA;&#x9;if self.oclIsKindOf(UnitAssociation) then&#xD;&#xA;&#x9;&#x9;self.oclAsType(UnitAssociation).displayedOn.entities->collect(eov | eov.associations)->includes(association)&#xD;&#xA;&#x9;else if self.oclIsTypeOf(ChildAssociation) then&#xD;&#xA;&#x9;&#x9;let partOf : FeaturePathAssociation&#xD;&#xA;&#x9;&#x9;&#x9;= self.oclAsType(ChildAssociation).partOf&#xD;&#xA;&#x9;&#x9;&#x9;in partOf.targetEntity.associations->includes(association)&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;let unit : DynamicUnit&#xD;&#xA;&#x9;&#x9;&#x9;= self.eContainer().oclAsType(DynamicUnit)&#xD;&#xA;&#x9;&#x9;&#x9;in unit.entities->collect(eov | eov.associations)->includes(association)&#xD;&#xA;&#x9;endif endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceEntity" eType="#//EntityOrView"

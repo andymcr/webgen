@@ -289,6 +289,11 @@ public class UnitAssociationItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
+				 WafFactory.eINSTANCE.createIndexImageGridUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.UNIT_CONTAINER__UNITS,
 				 WafFactory.eINSTANCE.createSearchUnit()));
 
 		newChildDescriptors.add

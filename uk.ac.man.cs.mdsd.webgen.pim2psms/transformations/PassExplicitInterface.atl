@@ -1104,6 +1104,13 @@ rule IndexLineDirectionUnit {
 	)
 }
 
+-- @extends IndexUnit
+rule IndexImageGridUnit {
+	from website : Website!IndexUnit (website.displayOption = #ImageGrid)
+	to waf : WAF!IndexImageGridUnit (
+	)
+}
+
 -- @extends DynamicUnit
 abstract rule ControlUnit {
 	from website : Website!ControlUnit

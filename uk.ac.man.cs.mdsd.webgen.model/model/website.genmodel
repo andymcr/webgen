@@ -73,6 +73,7 @@
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//IndexDisplayOption/Grid"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//IndexDisplayOption/PageDirection"/>
       <genEnumLiterals ecoreEnumLiteral="website.ecore#//IndexDisplayOption/LineDirection"/>
+      <genEnumLiterals ecoreEnumLiteral="website.ecore#//IndexDisplayOption/ImageGrid"/>
     </genEnums>
     <genClasses ecoreClass="website.ecore#//WebGenModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//WebGenModel/websiteProperties"/>

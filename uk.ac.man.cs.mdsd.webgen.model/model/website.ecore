@@ -1016,6 +1016,7 @@
     <eLiterals name="Grid"/>
     <eLiterals name="PageDirection" value="1"/>
     <eLiterals name="LineDirection" value="2"/>
+    <eLiterals name="ImageGrid" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndexUnit" eSuperTypes="#//DataUnit #//InlineActionContainer">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

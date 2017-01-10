@@ -1012,6 +1012,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.IndexImageGridUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IndexImageGridUnitItemProvider indexImageGridUnitItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.IndexImageGridUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIndexImageGridUnitAdapter() {
+		if (indexImageGridUnitItemProvider == null) {
+			indexImageGridUnitItemProvider = new IndexImageGridUnitItemProvider(this);
+		}
+
+		return indexImageGridUnitItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SearchUnit} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1557,6 +1580,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (indexGridUnitItemProvider != null) indexGridUnitItemProvider.dispose();
 		if (indexPageDirectionUnitItemProvider != null) indexPageDirectionUnitItemProvider.dispose();
 		if (indexLineDirectionUnitItemProvider != null) indexLineDirectionUnitItemProvider.dispose();
+		if (indexImageGridUnitItemProvider != null) indexImageGridUnitItemProvider.dispose();
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
 		if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
 		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();

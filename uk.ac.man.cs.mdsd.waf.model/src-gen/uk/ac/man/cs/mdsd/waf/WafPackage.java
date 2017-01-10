@@ -7929,6 +7929,385 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT_OPERATION_COUNT = INDEX_UNIT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.IndexImageGridUnitImpl <em>Index Image Grid Unit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see uk.ac.man.cs.mdsd.waf.impl.IndexImageGridUnitImpl
+	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexImageGridUnit()
+	 * @generated
+	 */
+	int INDEX_IMAGE_GRID_UNIT = 54;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__NAME = INDEX_UNIT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__DISPLAY_LABEL = INDEX_UNIT__DISPLAY_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Displayed On</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__DISPLAYED_ON = INDEX_UNIT__DISPLAYED_ON;
+
+	/**
+	 * The feature id for the '<em><b>Purpose Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__PURPOSE_SUMMARY = INDEX_UNIT__PURPOSE_SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Requires Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__REQUIRES_ROLE = INDEX_UNIT__REQUIRES_ROLE;
+
+	/**
+	 * The feature id for the '<em><b>Uri Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__URI_ELEMENT = INDEX_UNIT__URI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Alternative</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__ALTERNATIVE = INDEX_UNIT__ALTERNATIVE;
+
+	/**
+	 * The feature id for the '<em><b>Omit Caption</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__OMIT_CAPTION = INDEX_UNIT__OMIT_CAPTION;
+
+	/**
+	 * The feature id for the '<em><b>Caption Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__CAPTION_CLASS = INDEX_UNIT__CAPTION_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__STYLE_CLASS = INDEX_UNIT__STYLE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__CONTENT_CLASS = INDEX_UNIT__CONTENT_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Entities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__ENTITIES = INDEX_UNIT__ENTITIES;
+
+	/**
+	 * The feature id for the '<em><b>Display Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__DISPLAY_FIELDS = INDEX_UNIT__DISPLAY_FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Support Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__SUPPORT_ACTIONS = INDEX_UNIT__SUPPORT_ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Key Actuals</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__KEY_ACTUALS = INDEX_UNIT__KEY_ACTUALS;
+
+	/**
+	 * The feature id for the '<em><b>Header</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__HEADER = INDEX_UNIT__HEADER;
+
+	/**
+	 * The feature id for the '<em><b>Footer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__FOOTER = INDEX_UNIT__FOOTER;
+
+	/**
+	 * The feature id for the '<em><b>Header Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__HEADER_CLASS = INDEX_UNIT__HEADER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Control Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__CONTROL_CLASS = INDEX_UNIT__CONTROL_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Footer Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__FOOTER_CLASS = INDEX_UNIT__FOOTER_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Error Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__ERROR_CLASS = INDEX_UNIT__ERROR_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__DEFAULT_SELECTION = INDEX_UNIT__DEFAULT_SELECTION;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__TITLE = INDEX_UNIT__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__ACTIONS = INDEX_UNIT__ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Omit Column Labels</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__OMIT_COLUMN_LABELS = INDEX_UNIT__OMIT_COLUMN_LABELS;
+
+	/**
+	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__FILTERS = INDEX_UNIT__FILTERS;
+
+	/**
+	 * The feature id for the '<em><b>Pagination</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__PAGINATION = INDEX_UNIT__PAGINATION;
+
+	/**
+	 * The feature id for the '<em><b>Default Pagination Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__DEFAULT_PAGINATION_SIZE = INDEX_UNIT__DEFAULT_PAGINATION_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Empty Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__EMPTY_MESSAGE = INDEX_UNIT__EMPTY_MESSAGE;
+
+	/**
+	 * The feature id for the '<em><b>Next Npages</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__NEXT_NPAGES = INDEX_UNIT__NEXT_NPAGES;
+
+	/**
+	 * The feature id for the '<em><b>Previous Npages</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__PREVIOUS_NPAGES = INDEX_UNIT__PREVIOUS_NPAGES;
+
+	/**
+	 * The feature id for the '<em><b>Next Page Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__NEXT_PAGE_LABEL = INDEX_UNIT__NEXT_PAGE_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Previous Page Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__PREVIOUS_PAGE_LABEL = INDEX_UNIT__PREVIOUS_PAGE_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Use Disabled Page Links</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__USE_DISABLED_PAGE_LINKS = INDEX_UNIT__USE_DISABLED_PAGE_LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Use First Last Page Links</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__USE_FIRST_LAST_PAGE_LINKS = INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS;
+
+	/**
+	 * The feature id for the '<em><b>First Page Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__FIRST_PAGE_LABEL = INDEX_UNIT__FIRST_PAGE_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Last Page Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__LAST_PAGE_LABEL = INDEX_UNIT__LAST_PAGE_LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Targetting Searches</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__TARGETTING_SEARCHES = INDEX_UNIT__TARGETTING_SEARCHES;
+
+	/**
+	 * The feature id for the '<em><b>Row Classes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT__ROW_CLASSES = INDEX_UNIT__ROW_CLASSES;
+
+	/**
+	 * The number of structural features of the '<em>Index Image Grid Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT_FEATURE_COUNT = INDEX_UNIT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Index Image Grid Unit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_IMAGE_GRID_UNIT_OPERATION_COUNT = INDEX_UNIT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.ControlUnitImpl <em>Control Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7936,7 +8315,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getControlUnit()
 	 * @generated
 	 */
-	int CONTROL_UNIT = 54;
+	int CONTROL_UNIT = 55;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8180,7 +8559,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSearchUnit()
 	 * @generated
 	 */
-	int SEARCH_UNIT = 55;
+	int SEARCH_UNIT = 56;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8433,7 +8812,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getActionUnit()
 	 * @generated
 	 */
-	int ACTION_UNIT = 56;
+	int ACTION_UNIT = 57;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8677,7 +9056,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getImageUnit()
 	 * @generated
 	 */
-	int IMAGE_UNIT = 57;
+	int IMAGE_UNIT = 58;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8966,7 +9345,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePath()
 	 * @generated
 	 */
-	int FEATURE_PATH = 58;
+	int FEATURE_PATH = 59;
 
 	/**
 	 * The number of structural features of the '<em>Feature Path</em>' class.
@@ -8994,7 +9373,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAttribute()
 	 * @generated
 	 */
-	int FEATURE_PATH_ATTRIBUTE = 59;
+	int FEATURE_PATH_ATTRIBUTE = 60;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9040,7 +9419,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeaturePathAssociation()
 	 * @generated
 	 */
-	int FEATURE_PATH_ASSOCIATION = 60;
+	int FEATURE_PATH_ASSOCIATION = 61;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9095,7 +9474,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildFeature()
 	 * @generated
 	 */
-	int CHILD_FEATURE = 61;
+	int CHILD_FEATURE = 62;
 
 	/**
 	 * The number of structural features of the '<em>Child Feature</em>' class.
@@ -9123,7 +9502,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildAttribute()
 	 * @generated
 	 */
-	int CHILD_ATTRIBUTE = 62;
+	int CHILD_ATTRIBUTE = 63;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9169,7 +9548,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getChildAssociation()
 	 * @generated
 	 */
-	int CHILD_ASSOCIATION = 63;
+	int CHILD_ASSOCIATION = 64;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9224,7 +9603,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSliderUnit()
 	 * @generated
 	 */
-	int SLIDER_UNIT = 64;
+	int SLIDER_UNIT = 65;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9513,7 +9892,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getGalleryUnit()
 	 * @generated
 	 */
-	int GALLERY_UNIT = 65;
+	int GALLERY_UNIT = 66;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9811,7 +10190,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationUnit()
 	 * @generated
 	 */
-	int AUTHENTICATION_UNIT = 66;
+	int AUTHENTICATION_UNIT = 67;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.
@@ -9839,7 +10218,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRegistrationUnit()
 	 * @generated
 	 */
-	int REGISTRATION_UNIT = 67;
+	int REGISTRATION_UNIT = 68;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10137,7 +10516,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getLoginUnit()
 	 * @generated
 	 */
-	int LOGIN_UNIT = 68;
+	int LOGIN_UNIT = 69;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10426,7 +10805,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getForgottenPasswordUnit()
 	 * @generated
 	 */
-	int FORGOTTEN_PASSWORD_UNIT = 69;
+	int FORGOTTEN_PASSWORD_UNIT = 70;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10688,7 +11067,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineActionContainer()
 	 * @generated
 	 */
-	int INLINE_ACTION_CONTAINER = 70;
+	int INLINE_ACTION_CONTAINER = 71;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -10725,7 +11104,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInlineAction()
 	 * @generated
 	 */
-	int INLINE_ACTION = 71;
+	int INLINE_ACTION = 72;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10852,7 +11231,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectAction()
 	 * @generated
 	 */
-	int SELECT_ACTION = 72;
+	int SELECT_ACTION = 73;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10988,7 +11367,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getDeleteAction()
 	 * @generated
 	 */
-	int DELETE_ACTION = 73;
+	int DELETE_ACTION = 74;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11142,7 +11521,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureSupportAction()
 	 * @generated
 	 */
-	int FEATURE_SUPPORT_ACTION = 74;
+	int FEATURE_SUPPORT_ACTION = 75;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11305,7 +11684,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getModelReference()
 	 * @generated
 	 */
-	int MODEL_REFERENCE = 75;
+	int MODEL_REFERENCE = 76;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' reference.
@@ -11342,7 +11721,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFeatureReference()
 	 * @generated
 	 */
-	int FEATURE_REFERENCE = 76;
+	int FEATURE_REFERENCE = 77;
 
 	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
@@ -11379,7 +11758,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getParameterReference()
 	 * @generated
 	 */
-	int PARAMETER_REFERENCE = 77;
+	int PARAMETER_REFERENCE = 78;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -11416,7 +11795,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getRouteParameterReference()
 	 * @generated
 	 */
-	int ROUTE_PARAMETER_REFERENCE = 78;
+	int ROUTE_PARAMETER_REFERENCE = 79;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -11453,7 +11832,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCurrentUserReference()
 	 * @generated
 	 */
-	int CURRENT_USER_REFERENCE = 79;
+	int CURRENT_USER_REFERENCE = 80;
 
 	/**
 	 * The number of structural features of the '<em>Current User Reference</em>' class.
@@ -11481,7 +11860,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getFrameworkTechnologies()
 	 * @generated
 	 */
-	int FRAMEWORK_TECHNOLOGIES = 80;
+	int FRAMEWORK_TECHNOLOGIES = 81;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.InputTechnologies <em>Input Technologies</em>}' enum.
@@ -11491,7 +11870,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getInputTechnologies()
 	 * @generated
 	 */
-	int INPUT_TECHNOLOGIES = 81;
+	int INPUT_TECHNOLOGIES = 82;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AjaxTechnologies <em>Ajax Technologies</em>}' enum.
@@ -11501,7 +11880,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAjaxTechnologies()
 	 * @generated
 	 */
-	int AJAX_TECHNOLOGIES = 82;
+	int AJAX_TECHNOLOGIES = 83;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.AuthenticationKeyTypes <em>Authentication Key Types</em>}' enum.
@@ -11511,7 +11890,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getAuthenticationKeyTypes()
 	 * @generated
 	 */
-	int AUTHENTICATION_KEY_TYPES = 83;
+	int AUTHENTICATION_KEY_TYPES = 84;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.OperationResultTypes <em>Operation Result Types</em>}' enum.
@@ -11521,7 +11900,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getOperationResultTypes()
 	 * @generated
 	 */
-	int OPERATION_RESULT_TYPES = 84;
+	int OPERATION_RESULT_TYPES = 85;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.PageTopMenuOptions <em>Page Top Menu Options</em>}' enum.
@@ -11531,7 +11910,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getPageTopMenuOptions()
 	 * @generated
 	 */
-	int PAGE_TOP_MENU_OPTIONS = 85;
+	int PAGE_TOP_MENU_OPTIONS = 86;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions <em>Collection Display Options</em>}' enum.
@@ -11541,7 +11920,7 @@ public interface WafPackage extends EPackage {
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionDisplayOptions()
 	 * @generated
 	 */
-	int COLLECTION_DISPLAY_OPTIONS = 86;
+	int COLLECTION_DISPLAY_OPTIONS = 87;
 
 
 	/**
@@ -14316,6 +14695,16 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIndexLineDirectionUnit();
+
+	/**
+	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.IndexImageGridUnit <em>Index Image Grid Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Index Image Grid Unit</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.IndexImageGridUnit
+	 * @generated
+	 */
+	EClass getIndexImageGridUnit();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.ControlUnit <em>Control Unit</em>}'.
@@ -17372,6 +17761,16 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INDEX_LINE_DIRECTION_UNIT = eINSTANCE.getIndexLineDirectionUnit();
+
+		/**
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.IndexImageGridUnitImpl <em>Index Image Grid Unit</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see uk.ac.man.cs.mdsd.waf.impl.IndexImageGridUnitImpl
+		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getIndexImageGridUnit()
+		 * @generated
+		 */
+		EClass INDEX_IMAGE_GRID_UNIT = eINSTANCE.getIndexImageGridUnit();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.ControlUnitImpl <em>Control Unit</em>}' class.

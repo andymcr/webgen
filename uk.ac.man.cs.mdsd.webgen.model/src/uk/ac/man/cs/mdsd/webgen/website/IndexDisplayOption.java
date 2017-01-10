@@ -44,7 +44,15 @@ public enum IndexDisplayOption implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LINE_DIRECTION(2, "LineDirection", "LineDirection");
+	LINE_DIRECTION(2, "LineDirection", "LineDirection"), /**
+	 * The '<em><b>Image Grid</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #IMAGE_GRID_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	IMAGE_GRID(3, "ImageGrid", "ImageGrid");
 
 	/**
 	 * The '<em><b>Grid</b></em>' literal value.
@@ -92,6 +100,21 @@ public enum IndexDisplayOption implements Enumerator {
 	public static final int LINE_DIRECTION_VALUE = 2;
 
 	/**
+	 * The '<em><b>Image Grid</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Image Grid</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #IMAGE_GRID
+	 * @model name="ImageGrid"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int IMAGE_GRID_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Index Display Option</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,6 +125,7 @@ public enum IndexDisplayOption implements Enumerator {
 			GRID,
 			PAGE_DIRECTION,
 			LINE_DIRECTION,
+			IMAGE_GRID,
 		};
 
 	/**
@@ -161,6 +185,7 @@ public enum IndexDisplayOption implements Enumerator {
 			case GRID_VALUE: return GRID;
 			case PAGE_DIRECTION_VALUE: return PAGE_DIRECTION;
 			case LINE_DIRECTION_VALUE: return LINE_DIRECTION;
+			case IMAGE_GRID_VALUE: return IMAGE_GRID;
 		}
 		return null;
 	}

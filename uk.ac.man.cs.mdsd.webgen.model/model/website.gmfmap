@@ -490,7 +490,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//UnitAssociation/name"/>
+                    href="website.ecore#//FeaturePathAssociation/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -602,7 +602,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//UnitAssociation/name"/>
+                    href="website.ecore#//FeaturePathAssociation/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -805,7 +805,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//UnitAssociation/name"/>
+                    href="website.ecore#//FeaturePathAssociation/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -866,7 +866,7 @@
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
-                            href="website.ecore#//UnitAssociation/name"/>
+                            href="website.ecore#//FeaturePathAssociation/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -1037,7 +1037,7 @@
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
-                            href="website.ecore#//UnitAssociation/name"/>
+                            href="website.ecore#//FeaturePathAssociation/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -1098,7 +1098,7 @@
                                 <diagramLabel
                                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                 <features
-                                    href="website.ecore#//UnitAssociation/name"/>
+                                    href="website.ecore#//FeaturePathAssociation/name"/>
                               </labelMappings>
                               <tool
                                   xsi:type="gmftool:CreationTool"
@@ -1159,7 +1159,7 @@
                                         <diagramLabel
                                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                         <features
-                                            href="website.ecore#//UnitAssociation/name"/>
+                                            href="website.ecore#//FeaturePathAssociation/name"/>
                                       </labelMappings>
                                       <tool
                                           xsi:type="gmftool:CreationTool"
@@ -1229,7 +1229,7 @@
                                         <diagramLabel
                                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                         <features
-                                            href="website.ecore#//UnitAssociation/name"/>
+                                            href="website.ecore#//FeaturePathAssociation/name"/>
                                       </labelMappings>
                                       <tool
                                           xsi:type="gmftool:CreationTool"
@@ -1313,7 +1313,7 @@
                                 <diagramLabel
                                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                 <features
-                                    href="website.ecore#//UnitAssociation/name"/>
+                                    href="website.ecore#//FeaturePathAssociation/name"/>
                               </labelMappings>
                               <tool
                                   xsi:type="gmftool:CreationTool"
@@ -1374,7 +1374,7 @@
                                         <diagramLabel
                                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                         <features
-                                            href="website.ecore#//UnitAssociation/name"/>
+                                            href="website.ecore#//FeaturePathAssociation/name"/>
                                       </labelMappings>
                                       <tool
                                           xsi:type="gmftool:CreationTool"
@@ -1444,7 +1444,7 @@
                                         <diagramLabel
                                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                                         <features
-                                            href="website.ecore#//UnitAssociation/name"/>
+                                            href="website.ecore#//FeaturePathAssociation/name"/>
                                       </labelMappings>
                                       <tool
                                           xsi:type="gmftool:CreationTool"
@@ -1723,7 +1723,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//UnitAssociation/name"/>
+                    href="website.ecore#//FeaturePathAssociation/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -1783,7 +1783,7 @@
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
-                            href="website.ecore#//UnitAssociation/name"/>
+                            href="website.ecore#//FeaturePathAssociation/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -1851,7 +1851,7 @@
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
-                            href="website.ecore#//UnitAssociation/name"/>
+                            href="website.ecore#//FeaturePathAssociation/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
@@ -2092,7 +2092,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//UnitAssociation/name"/>
+                    href="website.ecore#//FeaturePathAssociation/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2225,7 +2225,7 @@
                 <diagramLabel
                     href="website.gmfgraph#InterfaceFieldNameLabel"/>
                 <features
-                    href="website.ecore#//UnitAssociation/name"/>
+                    href="website.ecore#//FeaturePathAssociation/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -2286,7 +2286,7 @@
                         <diagramLabel
                             href="website.gmfgraph#InterfaceFieldNameLabel"/>
                         <features
-                            href="website.ecore#//UnitAssociation/name"/>
+                            href="website.ecore#//FeaturePathAssociation/name"/>
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"

@@ -532,6 +532,19 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.INDEX_IMAGE_GRID_UNIT: {
+				IndexImageGridUnit indexImageGridUnit = (IndexImageGridUnit)theEObject;
+				T result = caseIndexImageGridUnit(indexImageGridUnit);
+				if (result == null) result = caseIndexUnit(indexImageGridUnit);
+				if (result == null) result = caseDataUnit(indexImageGridUnit);
+				if (result == null) result = caseInlineActionContainer(indexImageGridUnit);
+				if (result == null) result = caseDynamicUnit(indexImageGridUnit);
+				if (result == null) result = caseContentUnit(indexImageGridUnit);
+				if (result == null) result = caseNamedDisplayElement(indexImageGridUnit);
+				if (result == null) result = caseNamedElement(indexImageGridUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.CONTROL_UNIT: {
 				ControlUnit controlUnit = (ControlUnit)theEObject;
 				T result = caseControlUnit(controlUnit);
@@ -1573,6 +1586,21 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIndexLineDirectionUnit(IndexLineDirectionUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Index Image Grid Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Index Image Grid Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIndexImageGridUnit(IndexImageGridUnit object) {
 		return null;
 	}
 

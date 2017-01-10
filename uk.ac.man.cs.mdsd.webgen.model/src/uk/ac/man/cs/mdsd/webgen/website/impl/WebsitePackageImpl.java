@@ -7477,6 +7477,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		addEEnumLiteral(indexDisplayOptionEEnum, IndexDisplayOption.GRID);
 		addEEnumLiteral(indexDisplayOptionEEnum, IndexDisplayOption.PAGE_DIRECTION);
 		addEEnumLiteral(indexDisplayOptionEEnum, IndexDisplayOption.LINE_DIRECTION);
+		addEEnumLiteral(indexDisplayOptionEEnum, IndexDisplayOption.IMAGE_GRID);
 
 		// Create resource
 		createResource(eNS_URI);

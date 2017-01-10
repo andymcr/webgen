@@ -60,6 +60,7 @@ import uk.ac.man.cs.mdsd.waf.ImageFilter;
 import uk.ac.man.cs.mdsd.waf.ImageManipulation;
 import uk.ac.man.cs.mdsd.waf.ImageUnit;
 import uk.ac.man.cs.mdsd.waf.IndexGridUnit;
+import uk.ac.man.cs.mdsd.waf.IndexImageGridUnit;
 import uk.ac.man.cs.mdsd.waf.IndexLineDirectionUnit;
 import uk.ac.man.cs.mdsd.waf.IndexPageDirectionUnit;
 import uk.ac.man.cs.mdsd.waf.IndexUnit;
@@ -491,6 +492,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass indexLineDirectionUnitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass indexImageGridUnitEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3105,6 +3113,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getIndexImageGridUnit() {
+		return indexImageGridUnitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getControlUnit() {
 		return controlUnitEClass;
 	}
@@ -4177,6 +4194,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		indexLineDirectionUnitEClass = createEClass(INDEX_LINE_DIRECTION_UNIT);
 
+		indexImageGridUnitEClass = createEClass(INDEX_IMAGE_GRID_UNIT);
+
 		controlUnitEClass = createEClass(CONTROL_UNIT);
 		createEAttribute(controlUnitEClass, CONTROL_UNIT__SUBMIT_LABEL);
 		createEReference(controlUnitEClass, CONTROL_UNIT__CANCEL_DESTINATION);
@@ -4378,6 +4397,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		indexGridUnitEClass.getESuperTypes().add(this.getIndexUnit());
 		indexPageDirectionUnitEClass.getESuperTypes().add(this.getIndexUnit());
 		indexLineDirectionUnitEClass.getESuperTypes().add(this.getIndexUnit());
+		indexImageGridUnitEClass.getESuperTypes().add(this.getIndexUnit());
 		controlUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		searchUnitEClass.getESuperTypes().add(this.getControlUnit());
 		actionUnitEClass.getESuperTypes().add(this.getControlUnit());
@@ -4717,6 +4737,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(indexPageDirectionUnitEClass, IndexPageDirectionUnit.class, "IndexPageDirectionUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(indexLineDirectionUnitEClass, IndexLineDirectionUnit.class, "IndexLineDirectionUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(indexImageGridUnitEClass, IndexImageGridUnit.class, "IndexImageGridUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(controlUnitEClass, ControlUnit.class, "ControlUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getControlUnit_SubmitLabel(), theEcorePackage.getEString(), "submitLabel", null, 1, 1, ControlUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

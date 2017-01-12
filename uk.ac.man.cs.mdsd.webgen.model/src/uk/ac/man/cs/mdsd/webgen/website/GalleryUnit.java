@@ -12,6 +12,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.GalleryUnit#getFullSizeFilter <em>Full Size Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.GalleryUnit#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.GalleryUnit#getContentClass <em>Content Class</em>}</li>
  * </ul>
@@ -21,6 +22,32 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @generated
  */
 public interface GalleryUnit extends ImageUnit, InlineActionContainer {
+	/**
+	 * Returns the value of the '<em><b>Full Size Filter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Full Size Filter</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Full Size Filter</em>' reference.
+	 * @see #setFullSizeFilter(ImageManipulation)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getGalleryUnit_FullSizeFilter()
+	 * @model
+	 * @generated
+	 */
+	ImageManipulation getFullSizeFilter();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.GalleryUnit#getFullSizeFilter <em>Full Size Filter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Full Size Filter</em>' reference.
+	 * @see #getFullSizeFilter()
+	 * @generated
+	 */
+	void setFullSizeFilter(ImageManipulation value);
+
 	/**
 	 * Returns the value of the '<em><b>Style Class</b></em>' attribute.
 	 * The default value is <code>"unit,gallery_unit"</code>.

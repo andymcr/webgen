@@ -57,10 +57,10 @@ import uk.ac.man.cs.mdsd.waf.ForgottenPasswordUnit;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
 import uk.ac.man.cs.mdsd.waf.GalleryUnit;
 import uk.ac.man.cs.mdsd.waf.ImageFilter;
+import uk.ac.man.cs.mdsd.waf.ImageIndexUnit;
 import uk.ac.man.cs.mdsd.waf.ImageManipulation;
 import uk.ac.man.cs.mdsd.waf.ImageUnit;
 import uk.ac.man.cs.mdsd.waf.IndexGridUnit;
-import uk.ac.man.cs.mdsd.waf.IndexImageGridUnit;
 import uk.ac.man.cs.mdsd.waf.IndexLineDirectionUnit;
 import uk.ac.man.cs.mdsd.waf.IndexPageDirectionUnit;
 import uk.ac.man.cs.mdsd.waf.IndexUnit;
@@ -498,13 +498,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass indexImageGridUnitEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass controlUnitEClass = null;
 
 	/**
@@ -569,6 +562,13 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	private EClass childAssociationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass imageIndexUnitEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3113,15 +3113,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIndexImageGridUnit() {
-		return indexImageGridUnitEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getControlUnit() {
 		return controlUnitEClass;
 	}
@@ -3230,7 +3221,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImageUnit_ThumbnailFilter() {
+	public EReference getImageUnit_ImageFilter() {
 		return (EReference)imageUnitEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -3239,17 +3230,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getImageUnit_ImageFilter() {
-		return (EReference)imageUnitEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getImageUnit_ShowTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -3258,7 +3240,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * @generated
 	 */
 	public EAttribute getImageUnit_TransitionTime() {
-		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)imageUnitEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -3383,6 +3365,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getImageIndexUnit() {
+		return imageIndexUnitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSliderUnit() {
 		return sliderUnitEClass;
 	}
@@ -3394,6 +3385,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EClass getGalleryUnit() {
 		return galleryUnitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGalleryUnit_FullSizeFilter() {
+		return (EReference)galleryUnitEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -4194,8 +4194,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		indexLineDirectionUnitEClass = createEClass(INDEX_LINE_DIRECTION_UNIT);
 
-		indexImageGridUnitEClass = createEClass(INDEX_IMAGE_GRID_UNIT);
-
 		controlUnitEClass = createEClass(CONTROL_UNIT);
 		createEAttribute(controlUnitEClass, CONTROL_UNIT__SUBMIT_LABEL);
 		createEReference(controlUnitEClass, CONTROL_UNIT__CANCEL_DESTINATION);
@@ -4211,7 +4209,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_PATH_FEATURE);
 		createEReference(imageUnitEClass, IMAGE_UNIT__TITLE_FEATURE);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__MISSING_IMAGE_PATH);
-		createEReference(imageUnitEClass, IMAGE_UNIT__THUMBNAIL_FILTER);
 		createEReference(imageUnitEClass, IMAGE_UNIT__IMAGE_FILTER);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__SHOW_TIME);
 		createEAttribute(imageUnitEClass, IMAGE_UNIT__TRANSITION_TIME);
@@ -4235,9 +4232,12 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		childAssociationEClass = createEClass(CHILD_ASSOCIATION);
 
+		imageIndexUnitEClass = createEClass(IMAGE_INDEX_UNIT);
+
 		sliderUnitEClass = createEClass(SLIDER_UNIT);
 
 		galleryUnitEClass = createEClass(GALLERY_UNIT);
+		createEReference(galleryUnitEClass, GALLERY_UNIT__FULL_SIZE_FILTER);
 
 		authenticationUnitEClass = createEClass(AUTHENTICATION_UNIT);
 
@@ -4397,7 +4397,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		indexGridUnitEClass.getESuperTypes().add(this.getIndexUnit());
 		indexPageDirectionUnitEClass.getESuperTypes().add(this.getIndexUnit());
 		indexLineDirectionUnitEClass.getESuperTypes().add(this.getIndexUnit());
-		indexImageGridUnitEClass.getESuperTypes().add(this.getIndexUnit());
 		controlUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		searchUnitEClass.getESuperTypes().add(this.getControlUnit());
 		actionUnitEClass.getESuperTypes().add(this.getControlUnit());
@@ -4407,9 +4406,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		childAttributeEClass.getESuperTypes().add(this.getChildFeature());
 		childAssociationEClass.getESuperTypes().add(this.getChildFeature());
 		childAssociationEClass.getESuperTypes().add(this.getFeaturePathAssociation());
+		imageIndexUnitEClass.getESuperTypes().add(this.getImageUnit());
+		imageIndexUnitEClass.getESuperTypes().add(this.getInlineActionContainer());
 		sliderUnitEClass.getESuperTypes().add(this.getImageUnit());
 		galleryUnitEClass.getESuperTypes().add(this.getImageUnit());
-		galleryUnitEClass.getESuperTypes().add(this.getInlineActionContainer());
 		registrationUnitEClass.getESuperTypes().add(this.getEditUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());
 		loginUnitEClass.getESuperTypes().add(this.getControlUnit());
@@ -4738,8 +4738,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(indexLineDirectionUnitEClass, IndexLineDirectionUnit.class, "IndexLineDirectionUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(indexImageGridUnitEClass, IndexImageGridUnit.class, "IndexImageGridUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(controlUnitEClass, ControlUnit.class, "ControlUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getControlUnit_SubmitLabel(), theEcorePackage.getEString(), "submitLabel", null, 1, 1, ControlUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControlUnit_CancelDestination(), this.getPage(), null, "cancelDestination", null, 0, 1, ControlUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -4755,8 +4753,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getImageUnit_ImagePathFeature(), this.getFeaturePath(), null, "imagePathFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getImageUnit_TitleFeature(), this.getFeaturePath(), null, "titleFeature", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_MissingImagePath(), theEcorePackage.getEString(), "missingImagePath", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getImageUnit_ThumbnailFilter(), this.getImageManipulation(), null, "thumbnailFilter", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getImageUnit_ImageFilter(), this.getImageManipulation(), null, "imageFilter", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getImageUnit_ImageFilter(), this.getImageManipulation(), null, "imageFilter", null, 1, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_ShowTime(), theEcorePackage.getEInt(), "showTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getImageUnit_TransitionTime(), theEcorePackage.getEInt(), "transitionTime", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -4779,9 +4776,12 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 
 		initEClass(childAssociationEClass, ChildAssociation.class, "ChildAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(imageIndexUnitEClass, ImageIndexUnit.class, "ImageIndexUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(sliderUnitEClass, SliderUnit.class, "SliderUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(galleryUnitEClass, GalleryUnit.class, "GalleryUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGalleryUnit_FullSizeFilter(), this.getImageManipulation(), null, "fullSizeFilter", null, 0, 1, GalleryUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(authenticationUnitEClass, AuthenticationUnit.class, "AuthenticationUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

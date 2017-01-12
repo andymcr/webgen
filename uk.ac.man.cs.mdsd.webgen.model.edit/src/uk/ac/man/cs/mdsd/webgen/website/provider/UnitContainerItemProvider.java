@@ -188,6 +188,11 @@ public class UnitContainerItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_CONTAINER__UNITS,
+				 WebsiteFactory.eINSTANCE.createImageIndexUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.UNIT_CONTAINER__UNITS,
 				 WebsiteFactory.eINSTANCE.createSliderUnit()));
 
 		newChildDescriptors.add

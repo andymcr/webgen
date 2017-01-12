@@ -57,7 +57,7 @@ public class FeatureSupportActionNameEditPart extends CompartmentEditPart implem
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5241;
+	public static final int VISUAL_ID = 5281;
 
 	/**
 	 * @generated
@@ -292,7 +292,7 @@ public class FeatureSupportActionNameEditPart extends CompartmentEditPart implem
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = WebsiteParserProvider.getParser(WebsiteElementTypes.FeatureSupportAction_3234, getParserElement(),
+			parser = WebsiteParserProvider.getParser(WebsiteElementTypes.FeatureSupportAction_3274, getParserElement(),
 					WebsiteVisualIDRegistry.getType(
 							uk.ac.man.cs.mdsd.webgen.website.diagram.edit.parts.FeatureSupportActionNameEditPart.VISUAL_ID));
 		}

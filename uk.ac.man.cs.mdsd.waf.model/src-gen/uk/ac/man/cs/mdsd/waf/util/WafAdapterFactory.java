@@ -290,10 +290,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createIndexLineDirectionUnitAdapter();
 			}
 			@Override
-			public Adapter caseIndexImageGridUnit(IndexImageGridUnit object) {
-				return createIndexImageGridUnitAdapter();
-			}
-			@Override
 			public Adapter caseControlUnit(ControlUnit object) {
 				return createControlUnitAdapter();
 			}
@@ -332,6 +328,10 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseChildAssociation(ChildAssociation object) {
 				return createChildAssociationAdapter();
+			}
+			@Override
+			public Adapter caseImageIndexUnit(ImageIndexUnit object) {
+				return createImageIndexUnitAdapter();
 			}
 			@Override
 			public Adapter caseSliderUnit(SliderUnit object) {
@@ -1190,20 +1190,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.IndexImageGridUnit <em>Index Image Grid Unit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.IndexImageGridUnit
-	 * @generated
-	 */
-	public Adapter createIndexImageGridUnitAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ControlUnit <em>Control Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1340,6 +1326,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createChildAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit <em>Image Index Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.ImageIndexUnit
+	 * @generated
+	 */
+	public Adapter createImageIndexUnitAdapter() {
 		return null;
 	}
 

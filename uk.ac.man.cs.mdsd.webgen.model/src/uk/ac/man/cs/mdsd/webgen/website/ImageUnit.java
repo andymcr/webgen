@@ -15,7 +15,6 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTitleFeature <em>Title Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getMissingImagePath <em>Missing Image Path</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbnailFilter <em>Thumbnail Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getImageFilter <em>Image Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getShowTime <em>Show Time</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getTransitionTime <em>Transition Time</em>}</li>
@@ -132,32 +131,6 @@ public interface ImageUnit extends DynamicUnit {
 	void setMissingImagePath(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Thumbnail Filter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Thumbnail Filter</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Thumbnail Filter</em>' reference.
-	 * @see #setThumbnailFilter(ImageManipulation)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ThumbnailFilter()
-	 * @model required="true"
-	 * @generated
-	 */
-	ImageManipulation getThumbnailFilter();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ImageUnit#getThumbnailFilter <em>Thumbnail Filter</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Thumbnail Filter</em>' reference.
-	 * @see #getThumbnailFilter()
-	 * @generated
-	 */
-	void setThumbnailFilter(ImageManipulation value);
-
-	/**
 	 * Returns the value of the '<em><b>Image Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -168,7 +141,7 @@ public interface ImageUnit extends DynamicUnit {
 	 * @return the value of the '<em>Image Filter</em>' reference.
 	 * @see #setImageFilter(ImageManipulation)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getImageUnit_ImageFilter()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	ImageManipulation getImageFilter();

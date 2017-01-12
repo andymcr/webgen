@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.GalleryUnit;
+import uk.ac.man.cs.mdsd.webgen.website.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -29,6 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.GalleryUnitImpl#getActions <em>Actions</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.GalleryUnitImpl#getFullSizeFilter <em>Full Size Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.GalleryUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.GalleryUnitImpl#getContentClass <em>Content Class</em>}</li>
  * </ul>
@@ -45,6 +47,16 @@ public class GalleryUnitImpl extends ImageUnitImpl implements GalleryUnit {
 	 * @ordered
 	 */
 	protected EList<InlineAction> actions;
+
+	/**
+	 * The cached value of the '{@link #getFullSizeFilter() <em>Full Size Filter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFullSizeFilter()
+	 * @generated
+	 * @ordered
+	 */
+	protected ImageManipulation fullSizeFilter;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -115,6 +127,44 @@ public class GalleryUnitImpl extends ImageUnitImpl implements GalleryUnit {
 			actions = new EObjectContainmentWithInverseEList<InlineAction>(InlineAction.class, this, WebsitePackage.GALLERY_UNIT__ACTIONS, WebsitePackage.INLINE_ACTION__USED_BY);
 		}
 		return actions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageManipulation getFullSizeFilter() {
+		if (fullSizeFilter != null && fullSizeFilter.eIsProxy()) {
+			InternalEObject oldFullSizeFilter = (InternalEObject)fullSizeFilter;
+			fullSizeFilter = (ImageManipulation)eResolveProxy(oldFullSizeFilter);
+			if (fullSizeFilter != oldFullSizeFilter) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.GALLERY_UNIT__FULL_SIZE_FILTER, oldFullSizeFilter, fullSizeFilter));
+			}
+		}
+		return fullSizeFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageManipulation basicGetFullSizeFilter() {
+		return fullSizeFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFullSizeFilter(ImageManipulation newFullSizeFilter) {
+		ImageManipulation oldFullSizeFilter = fullSizeFilter;
+		fullSizeFilter = newFullSizeFilter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.GALLERY_UNIT__FULL_SIZE_FILTER, oldFullSizeFilter, fullSizeFilter));
 	}
 
 	/**
@@ -198,6 +248,9 @@ public class GalleryUnitImpl extends ImageUnitImpl implements GalleryUnit {
 		switch (featureID) {
 			case WebsitePackage.GALLERY_UNIT__ACTIONS:
 				return getActions();
+			case WebsitePackage.GALLERY_UNIT__FULL_SIZE_FILTER:
+				if (resolve) return getFullSizeFilter();
+				return basicGetFullSizeFilter();
 			case WebsitePackage.GALLERY_UNIT__STYLE_CLASS:
 				return getStyleClass();
 			case WebsitePackage.GALLERY_UNIT__CONTENT_CLASS:
@@ -218,6 +271,9 @@ public class GalleryUnitImpl extends ImageUnitImpl implements GalleryUnit {
 			case WebsitePackage.GALLERY_UNIT__ACTIONS:
 				getActions().clear();
 				getActions().addAll((Collection<? extends InlineAction>)newValue);
+				return;
+			case WebsitePackage.GALLERY_UNIT__FULL_SIZE_FILTER:
+				setFullSizeFilter((ImageManipulation)newValue);
 				return;
 			case WebsitePackage.GALLERY_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -240,6 +296,9 @@ public class GalleryUnitImpl extends ImageUnitImpl implements GalleryUnit {
 			case WebsitePackage.GALLERY_UNIT__ACTIONS:
 				getActions().clear();
 				return;
+			case WebsitePackage.GALLERY_UNIT__FULL_SIZE_FILTER:
+				setFullSizeFilter((ImageManipulation)null);
+				return;
 			case WebsitePackage.GALLERY_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
 				return;
@@ -260,6 +319,8 @@ public class GalleryUnitImpl extends ImageUnitImpl implements GalleryUnit {
 		switch (featureID) {
 			case WebsitePackage.GALLERY_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
+			case WebsitePackage.GALLERY_UNIT__FULL_SIZE_FILTER:
+				return fullSizeFilter != null;
 			case WebsitePackage.GALLERY_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 			case WebsitePackage.GALLERY_UNIT__CONTENT_CLASS:

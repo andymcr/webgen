@@ -355,15 +355,6 @@ public interface WafFactory extends EFactory {
 	IndexLineDirectionUnit createIndexLineDirectionUnit();
 
 	/**
-	 * Returns a new object of class '<em>Index Image Grid Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Index Image Grid Unit</em>'.
-	 * @generated
-	 */
-	IndexImageGridUnit createIndexImageGridUnit();
-
-	/**
 	 * Returns a new object of class '<em>Search Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -416,6 +407,15 @@ public interface WafFactory extends EFactory {
 	 * @generated
 	 */
 	ChildAssociation createChildAssociation();
+
+	/**
+	 * Returns a new object of class '<em>Image Index Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Image Index Unit</em>'.
+	 * @generated
+	 */
+	ImageIndexUnit createImageIndexUnit();
 
 	/**
 	 * Returns a new object of class '<em>Slider Unit</em>'.

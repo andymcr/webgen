@@ -748,6 +748,29 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageIndexUnitItemProvider imageIndexUnitItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageIndexUnitAdapter() {
+		if (imageIndexUnitItemProvider == null) {
+			imageIndexUnitItemProvider = new ImageIndexUnitItemProvider(this);
+		}
+
+		return imageIndexUnitItemProvider;
+	}
+
+		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.DataTypeField} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1012,29 +1035,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.IndexImageGridUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IndexImageGridUnitItemProvider indexImageGridUnitItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.IndexImageGridUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createIndexImageGridUnitAdapter() {
-		if (indexImageGridUnitItemProvider == null) {
-			indexImageGridUnitItemProvider = new IndexImageGridUnitItemProvider(this);
-		}
-
-		return indexImageGridUnitItemProvider;
-	}
-
-		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SearchUnit} instances.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1580,13 +1580,13 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (indexGridUnitItemProvider != null) indexGridUnitItemProvider.dispose();
 		if (indexPageDirectionUnitItemProvider != null) indexPageDirectionUnitItemProvider.dispose();
 		if (indexLineDirectionUnitItemProvider != null) indexLineDirectionUnitItemProvider.dispose();
-		if (indexImageGridUnitItemProvider != null) indexImageGridUnitItemProvider.dispose();
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
 		if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
 		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
 		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
 		if (childAttributeItemProvider != null) childAttributeItemProvider.dispose();
 		if (childAssociationItemProvider != null) childAssociationItemProvider.dispose();
+		if (imageIndexUnitItemProvider != null) imageIndexUnitItemProvider.dispose();
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
 		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();

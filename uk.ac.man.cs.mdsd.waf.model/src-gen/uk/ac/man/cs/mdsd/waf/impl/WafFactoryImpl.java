@@ -94,13 +94,13 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.INDEX_GRID_UNIT: return createIndexGridUnit();
 			case WafPackage.INDEX_PAGE_DIRECTION_UNIT: return createIndexPageDirectionUnit();
 			case WafPackage.INDEX_LINE_DIRECTION_UNIT: return createIndexLineDirectionUnit();
-			case WafPackage.INDEX_IMAGE_GRID_UNIT: return createIndexImageGridUnit();
 			case WafPackage.SEARCH_UNIT: return createSearchUnit();
 			case WafPackage.ACTION_UNIT: return createActionUnit();
 			case WafPackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
 			case WafPackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
 			case WafPackage.CHILD_ATTRIBUTE: return createChildAttribute();
 			case WafPackage.CHILD_ASSOCIATION: return createChildAssociation();
+			case WafPackage.IMAGE_INDEX_UNIT: return createImageIndexUnit();
 			case WafPackage.SLIDER_UNIT: return createSliderUnit();
 			case WafPackage.GALLERY_UNIT: return createGalleryUnit();
 			case WafPackage.REGISTRATION_UNIT: return createRegistrationUnit();
@@ -548,16 +548,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IndexImageGridUnit createIndexImageGridUnit() {
-		IndexImageGridUnitImpl indexImageGridUnit = new IndexImageGridUnitImpl();
-		return indexImageGridUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public SearchUnit createSearchUnit() {
 		SearchUnitImpl searchUnit = new SearchUnitImpl();
 		return searchUnit;
@@ -611,6 +601,16 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public ChildAssociation createChildAssociation() {
 		ChildAssociationImpl childAssociation = new ChildAssociationImpl();
 		return childAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageIndexUnit createImageIndexUnit() {
+		ImageIndexUnitImpl imageIndexUnit = new ImageIndexUnitImpl();
+		return imageIndexUnit;
 	}
 
 	/**

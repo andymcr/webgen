@@ -127,6 +127,7 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
 			case WebsitePackage.CHILD_ATTRIBUTE: return createChildAttribute();
 			case WebsitePackage.CHILD_ASSOCIATION: return createChildAssociation();
+			case WebsitePackage.IMAGE_INDEX_UNIT: return createImageIndexUnit();
 			case WebsitePackage.SLIDER_UNIT: return createSliderUnit();
 			case WebsitePackage.GALLERY_UNIT: return createGalleryUnit();
 			case WebsitePackage.REGISTRATION_UNIT: return createRegistrationUnit();
@@ -801,6 +802,16 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public ChildAssociation createChildAssociation() {
 		ChildAssociationImpl childAssociation = new ChildAssociationImpl();
 		return childAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ImageIndexUnit createImageIndexUnit() {
+		ImageIndexUnitImpl imageIndexUnit = new ImageIndexUnitImpl();
+		return imageIndexUnit;
 	}
 
 	/**

@@ -28,7 +28,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getTitleFeature <em>Title Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getMissingImagePath <em>Missing Image Path</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getThumbnailFilter <em>Thumbnail Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getImageFilter <em>Image Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getShowTime <em>Show Time</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getTransitionTime <em>Transition Time</em>}</li>
@@ -86,16 +85,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected String missingImagePath = MISSING_IMAGE_PATH_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getThumbnailFilter() <em>Thumbnail Filter</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getThumbnailFilter()
-	 * @generated
-	 * @ordered
-	 */
-	protected ImageManipulation thumbnailFilter;
 
 	/**
 	 * The cached value of the '{@link #getImageFilter() <em>Image Filter</em>}' reference.
@@ -316,44 +305,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImageManipulation getThumbnailFilter() {
-		if (thumbnailFilter != null && thumbnailFilter.eIsProxy()) {
-			InternalEObject oldThumbnailFilter = (InternalEObject)thumbnailFilter;
-			thumbnailFilter = (ImageManipulation)eResolveProxy(oldThumbnailFilter);
-			if (thumbnailFilter != oldThumbnailFilter) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.IMAGE_UNIT__THUMBNAIL_FILTER, oldThumbnailFilter, thumbnailFilter));
-			}
-		}
-		return thumbnailFilter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ImageManipulation basicGetThumbnailFilter() {
-		return thumbnailFilter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setThumbnailFilter(ImageManipulation newThumbnailFilter) {
-		ImageManipulation oldThumbnailFilter = thumbnailFilter;
-		thumbnailFilter = newThumbnailFilter;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__THUMBNAIL_FILTER, oldThumbnailFilter, thumbnailFilter));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ImageManipulation getImageFilter() {
 		if (imageFilter != null && imageFilter.eIsProxy()) {
 			InternalEObject oldImageFilter = (InternalEObject)imageFilter;
@@ -462,9 +413,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return getTitleFeature();
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				return getMissingImagePath();
-			case WafPackage.IMAGE_UNIT__THUMBNAIL_FILTER:
-				if (resolve) return getThumbnailFilter();
-				return basicGetThumbnailFilter();
 			case WafPackage.IMAGE_UNIT__IMAGE_FILTER:
 				if (resolve) return getImageFilter();
 				return basicGetImageFilter();
@@ -495,9 +443,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return;
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				setMissingImagePath((String)newValue);
-				return;
-			case WafPackage.IMAGE_UNIT__THUMBNAIL_FILTER:
-				setThumbnailFilter((ImageManipulation)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__IMAGE_FILTER:
 				setImageFilter((ImageManipulation)newValue);
@@ -532,9 +477,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				setMissingImagePath(MISSING_IMAGE_PATH_EDEFAULT);
 				return;
-			case WafPackage.IMAGE_UNIT__THUMBNAIL_FILTER:
-				setThumbnailFilter((ImageManipulation)null);
-				return;
 			case WafPackage.IMAGE_UNIT__IMAGE_FILTER:
 				setImageFilter((ImageManipulation)null);
 				return;
@@ -564,8 +506,6 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return titleFeature != null;
 			case WafPackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 				return MISSING_IMAGE_PATH_EDEFAULT == null ? missingImagePath != null : !MISSING_IMAGE_PATH_EDEFAULT.equals(missingImagePath);
-			case WafPackage.IMAGE_UNIT__THUMBNAIL_FILTER:
-				return thumbnailFilter != null;
 			case WafPackage.IMAGE_UNIT__IMAGE_FILTER:
 				return imageFilter != null;
 			case WafPackage.IMAGE_UNIT__SHOW_TIME:

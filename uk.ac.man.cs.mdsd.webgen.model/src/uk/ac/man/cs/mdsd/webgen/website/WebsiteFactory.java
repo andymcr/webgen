@@ -548,6 +548,15 @@ public interface WebsiteFactory extends EFactory {
 	ChildAssociation createChildAssociation();
 
 	/**
+	 * Returns a new object of class '<em>Image Index Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Image Index Unit</em>'.
+	 * @generated
+	 */
+	ImageIndexUnit createImageIndexUnit();
+
+	/**
 	 * Returns a new object of class '<em>Data Type Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

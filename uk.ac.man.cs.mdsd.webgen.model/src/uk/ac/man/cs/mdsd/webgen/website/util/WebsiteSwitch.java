@@ -947,6 +947,18 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WebsitePackage.IMAGE_INDEX_UNIT: {
+				ImageIndexUnit imageIndexUnit = (ImageIndexUnit)theEObject;
+				T result = caseImageIndexUnit(imageIndexUnit);
+				if (result == null) result = caseImageUnit(imageIndexUnit);
+				if (result == null) result = caseInlineActionContainer(imageIndexUnit);
+				if (result == null) result = caseDynamicUnit(imageIndexUnit);
+				if (result == null) result = caseContentUnit(imageIndexUnit);
+				if (result == null) result = caseNamedDisplayElement(imageIndexUnit);
+				if (result == null) result = caseNamedElement(imageIndexUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WebsitePackage.SLIDER_UNIT: {
 				SliderUnit sliderUnit = (SliderUnit)theEObject;
 				T result = caseSliderUnit(sliderUnit);
@@ -2069,6 +2081,21 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseChildAssociation(ChildAssociation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Image Index Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Image Index Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImageIndexUnit(ImageIndexUnit object) {
 		return null;
 	}
 

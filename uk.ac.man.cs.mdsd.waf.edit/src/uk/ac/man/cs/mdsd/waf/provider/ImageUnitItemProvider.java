@@ -49,7 +49,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 
 			addDefaultSelectionPropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
-			addThumbnailFilterPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
 			addShowTimePropertyDescriptor(object);
 			addTransitionTimePropertyDescriptor(object);
@@ -97,28 +96,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Thumbnail Filter feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addThumbnailFilterPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImageUnit_thumbnailFilter_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImageUnit_thumbnailFilter_feature", "_UI_ImageUnit_type"),
-				 WafPackage.Literals.IMAGE_UNIT__THUMBNAIL_FILTER,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

@@ -532,19 +532,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.INDEX_IMAGE_GRID_UNIT: {
-				IndexImageGridUnit indexImageGridUnit = (IndexImageGridUnit)theEObject;
-				T result = caseIndexImageGridUnit(indexImageGridUnit);
-				if (result == null) result = caseIndexUnit(indexImageGridUnit);
-				if (result == null) result = caseDataUnit(indexImageGridUnit);
-				if (result == null) result = caseInlineActionContainer(indexImageGridUnit);
-				if (result == null) result = caseDynamicUnit(indexImageGridUnit);
-				if (result == null) result = caseContentUnit(indexImageGridUnit);
-				if (result == null) result = caseNamedDisplayElement(indexImageGridUnit);
-				if (result == null) result = caseNamedElement(indexImageGridUnit);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.CONTROL_UNIT: {
 				ControlUnit controlUnit = (ControlUnit)theEObject;
 				T result = caseControlUnit(controlUnit);
@@ -629,6 +616,18 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.IMAGE_INDEX_UNIT: {
+				ImageIndexUnit imageIndexUnit = (ImageIndexUnit)theEObject;
+				T result = caseImageIndexUnit(imageIndexUnit);
+				if (result == null) result = caseImageUnit(imageIndexUnit);
+				if (result == null) result = caseInlineActionContainer(imageIndexUnit);
+				if (result == null) result = caseDynamicUnit(imageIndexUnit);
+				if (result == null) result = caseContentUnit(imageIndexUnit);
+				if (result == null) result = caseNamedDisplayElement(imageIndexUnit);
+				if (result == null) result = caseNamedElement(imageIndexUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.SLIDER_UNIT: {
 				SliderUnit sliderUnit = (SliderUnit)theEObject;
 				T result = caseSliderUnit(sliderUnit);
@@ -644,7 +643,6 @@ public class WafSwitch<T> extends Switch<T> {
 				GalleryUnit galleryUnit = (GalleryUnit)theEObject;
 				T result = caseGalleryUnit(galleryUnit);
 				if (result == null) result = caseImageUnit(galleryUnit);
-				if (result == null) result = caseInlineActionContainer(galleryUnit);
 				if (result == null) result = caseDynamicUnit(galleryUnit);
 				if (result == null) result = caseContentUnit(galleryUnit);
 				if (result == null) result = caseNamedDisplayElement(galleryUnit);
@@ -1590,21 +1588,6 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Index Image Grid Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Index Image Grid Unit</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIndexImageGridUnit(IndexImageGridUnit object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Control Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1751,6 +1734,21 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseChildAssociation(ChildAssociation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Image Index Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Image Index Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImageIndexUnit(ImageIndexUnit object) {
 		return null;
 	}
 

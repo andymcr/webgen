@@ -211,7 +211,21 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Grid Unit"
-          description="Add a new grid unit to a page"/>
+          description="Add a new grid unit to a page">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Image Grid Unit"
+          description="Add a new image index to a page">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

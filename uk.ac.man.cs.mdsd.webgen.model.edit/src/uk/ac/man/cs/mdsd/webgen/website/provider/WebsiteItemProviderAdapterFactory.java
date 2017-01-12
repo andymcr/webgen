@@ -1245,6 +1245,29 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ImageIndexUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageIndexUnitItemProvider imageIndexUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ImageIndexUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageIndexUnitAdapter() {
+		if (imageIndexUnitItemProvider == null) {
+			imageIndexUnitItemProvider = new ImageIndexUnitItemProvider(this);
+		}
+
+		return imageIndexUnitItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.DataTypeField} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2076,6 +2099,7 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
 		if (childAttributeItemProvider != null) childAttributeItemProvider.dispose();
 		if (childAssociationItemProvider != null) childAssociationItemProvider.dispose();
+		if (imageIndexUnitItemProvider != null) imageIndexUnitItemProvider.dispose();
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();
 		if (registrationUnitItemProvider != null) registrationUnitItemProvider.dispose();

@@ -446,9 +446,6 @@ class IndexPageDirectionUnit extends IndexUnit {
 class IndexLineDirectionUnit extends IndexUnit {
 }
 
-class IndexImageGridUnit extends IndexUnit {
-}
-
 abstract class ControlUnit extends DynamicUnit {
 	String[1] submitLabel
 	refers Page cancelDestination
@@ -467,8 +464,7 @@ abstract class ImageUnit extends DynamicUnit {
 	contains FeaturePath[1] imagePathFeature
 	contains FeaturePath[1] titleFeature
 	String missingImagePath
-	refers ImageManipulation[1] thumbnailFilter
-	refers ImageManipulation imageFilter
+	refers ImageManipulation[1] imageFilter
 	int showTime
 	int transitionTime
 }
@@ -508,10 +504,14 @@ class ChildAssociation extends ChildFeature, FeaturePathAssociation {
 }
 
 
+class ImageIndexUnit extends ImageUnit, InlineActionContainer {
+}
+
 class SliderUnit extends ImageUnit {
 }
 
-class GalleryUnit extends ImageUnit, InlineActionContainer {
+class GalleryUnit extends ImageUnit {
+	refers ImageManipulation fullSizeFilter
 }
 
 interface AuthenticationUnit {

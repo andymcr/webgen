@@ -1104,13 +1104,6 @@ rule IndexLineDirectionUnit {
 	)
 }
 
--- @extends IndexUnit
-rule IndexImageGridUnit {
-	from website : Website!IndexUnit (website.displayOption = #ImageGrid)
-	to waf : WAF!IndexImageGridUnit (
-	)
-}
-
 -- @extends DynamicUnit
 abstract rule ControlUnit {
 	from website : Website!ControlUnit
@@ -1159,7 +1152,6 @@ abstract rule ImageUnit {
 		imagePathFeature <- website.imagePathFeature,
 		titleFeature <- website.titleFeature,
 		missingImagePath <- website.missingImagePath,
-		thumbnailFilter <- website.thumbnailFilter,
 		imageFilter <- website.imageFilter,
 		showTime <- website.showTime,
 		transitionTime <- website.transitionTime
@@ -1186,6 +1178,13 @@ rule FeaturePathAssociation {
 	to waf : WAF!FeaturePathAssociation (
 		association <- website.findOrmAssociation(),
 		childFeature <- website.childFeature
+	)
+}
+
+-- @extends ImageUnit, InlineActionContainer
+rule ImageIndexUnit {
+	from website : Website!ImageIndexUnit
+	to waf : WAF!ImageIndexUnit (
 	)
 }
 
@@ -1217,10 +1216,11 @@ rule ChildAssociation {
 	)
 }
 
--- @extends ImageUnit, InlineActionContainer
+-- @extends ImageUnit
 rule GalleryUnit {
 	from website : Website!GalleryUnit
 	to waf : WAF!GalleryUnit (
+		fullSizeFilter <- website.fullSizeFilter
 	)
 }
 

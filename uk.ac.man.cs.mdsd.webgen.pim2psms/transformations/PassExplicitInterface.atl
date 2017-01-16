@@ -1216,7 +1216,7 @@ rule ChildAssociation {
 	)
 }
 
--- @extends ImageUnit
+-- @extends ImageUnit, Selectable
 rule GalleryUnit {
 	from website : Website!GalleryUnit
 	to waf : WAF!GalleryUnit (

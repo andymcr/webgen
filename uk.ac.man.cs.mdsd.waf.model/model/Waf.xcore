@@ -510,7 +510,7 @@ class ImageIndexUnit extends ImageUnit, InlineActionContainer {
 class SliderUnit extends ImageUnit {
 }
 
-class GalleryUnit extends ImageUnit {
+class GalleryUnit extends ImageUnit, Selectable {
 	refers ImageManipulation fullSizeFilter
 }
 

@@ -2610,7 +2610,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(galleryUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(galleryUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(galleryUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(galleryUnit, diagnostics, context);
 		return result;
 	}
 

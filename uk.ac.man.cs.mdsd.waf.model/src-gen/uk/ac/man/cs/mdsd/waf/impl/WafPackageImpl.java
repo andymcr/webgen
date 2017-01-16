@@ -4410,6 +4410,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		imageIndexUnitEClass.getESuperTypes().add(this.getInlineActionContainer());
 		sliderUnitEClass.getESuperTypes().add(this.getImageUnit());
 		galleryUnitEClass.getESuperTypes().add(this.getImageUnit());
+		galleryUnitEClass.getESuperTypes().add(this.getSelectable());
 		registrationUnitEClass.getESuperTypes().add(this.getEditUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());
 		loginUnitEClass.getESuperTypes().add(this.getControlUnit());

@@ -643,6 +643,7 @@ public class WafSwitch<T> extends Switch<T> {
 				GalleryUnit galleryUnit = (GalleryUnit)theEObject;
 				T result = caseGalleryUnit(galleryUnit);
 				if (result == null) result = caseImageUnit(galleryUnit);
+				if (result == null) result = caseSelectable(galleryUnit);
 				if (result == null) result = caseDynamicUnit(galleryUnit);
 				if (result == null) result = caseContentUnit(galleryUnit);
 				if (result == null) result = caseNamedDisplayElement(galleryUnit);

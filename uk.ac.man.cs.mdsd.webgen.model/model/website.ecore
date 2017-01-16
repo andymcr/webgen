@@ -1161,7 +1161,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="slider_content"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GalleryUnit" eSuperTypes="#//ImageUnit #//InlineActionContainer">
+  <eClassifiers xsi:type="ecore:EClass" name="GalleryUnit" eSuperTypes="#//ImageUnit #//Selectable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fullSizeFilter" eType="#//ImageManipulation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,gallery_unit"/>

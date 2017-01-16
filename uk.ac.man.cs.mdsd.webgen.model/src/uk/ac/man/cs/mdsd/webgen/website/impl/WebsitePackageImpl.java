@@ -6797,7 +6797,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		imageIndexUnitEClass.getESuperTypes().add(this.getInlineActionContainer());
 		sliderUnitEClass.getESuperTypes().add(this.getImageUnit());
 		galleryUnitEClass.getESuperTypes().add(this.getImageUnit());
-		galleryUnitEClass.getESuperTypes().add(this.getInlineActionContainer());
+		galleryUnitEClass.getESuperTypes().add(this.getSelectable());
 		registrationUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getControlUnit());
 		loginUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());

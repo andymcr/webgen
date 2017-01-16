@@ -15188,22 +15188,13 @@ public interface WebsitePackage extends EPackage {
 	int GALLERY_UNIT__TRANSITION_TIME = IMAGE_UNIT__TRANSITION_TIME;
 
 	/**
-	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GALLERY_UNIT__ACTIONS = IMAGE_UNIT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Full Size Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__FULL_SIZE_FILTER = IMAGE_UNIT_FEATURE_COUNT + 1;
+	int GALLERY_UNIT__FULL_SIZE_FILTER = IMAGE_UNIT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Style Class</b></em>' attribute.
@@ -15212,7 +15203,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__STYLE_CLASS = IMAGE_UNIT_FEATURE_COUNT + 2;
+	int GALLERY_UNIT__STYLE_CLASS = IMAGE_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Content Class</b></em>' attribute.
@@ -15221,7 +15212,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT__CONTENT_CLASS = IMAGE_UNIT_FEATURE_COUNT + 3;
+	int GALLERY_UNIT__CONTENT_CLASS = IMAGE_UNIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Gallery Unit</em>' class.
@@ -15230,7 +15221,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GALLERY_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 4;
+	int GALLERY_UNIT_FEATURE_COUNT = IMAGE_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Authentication Unit</em>' class.

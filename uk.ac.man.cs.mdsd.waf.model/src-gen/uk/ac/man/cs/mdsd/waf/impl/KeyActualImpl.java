@@ -17,7 +17,6 @@ import uk.ac.man.cs.mdsd.expression.Expression;
 
 import uk.ac.man.cs.mdsd.orm.Feature;
 
-import uk.ac.man.cs.mdsd.waf.ChildPathReference;
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
 import uk.ac.man.cs.mdsd.waf.KeyActual;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -30,35 +29,14 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.KeyActualImpl#getActual <em>Actual</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.KeyActualImpl#getChildReference <em>Child Reference</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.KeyActualImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.KeyActualImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.KeyActualImpl#getActual <em>Actual</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyActual {
-	/**
-	 * The cached value of the '{@link #getActual() <em>Actual</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActual()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression actual;
-
-	/**
-	 * The cached value of the '{@link #getChildReference() <em>Child Reference</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChildReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected ChildPathReference childReference;
-
 	/**
 	 * The cached value of the '{@link #getKey() <em>Key</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -68,6 +46,16 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	 * @ordered
 	 */
 	protected Feature key;
+
+	/**
+	 * The cached value of the '{@link #getActual() <em>Actual</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActual()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expression actual;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,92 +74,6 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.KEY_ACTUAL;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression getActual() {
-		return actual;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetActual(Expression newActual, NotificationChain msgs) {
-		Expression oldActual = actual;
-		actual = newActual;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.KEY_ACTUAL__ACTUAL, oldActual, newActual);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setActual(Expression newActual) {
-		if (newActual != actual) {
-			NotificationChain msgs = null;
-			if (actual != null)
-				msgs = ((InternalEObject)actual).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.KEY_ACTUAL__ACTUAL, null, msgs);
-			if (newActual != null)
-				msgs = ((InternalEObject)newActual).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.KEY_ACTUAL__ACTUAL, null, msgs);
-			msgs = basicSetActual(newActual, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.KEY_ACTUAL__ACTUAL, newActual, newActual));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChildPathReference getChildReference() {
-		return childReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetChildReference(ChildPathReference newChildReference, NotificationChain msgs) {
-		ChildPathReference oldChildReference = childReference;
-		childReference = newChildReference;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.KEY_ACTUAL__CHILD_REFERENCE, oldChildReference, newChildReference);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setChildReference(ChildPathReference newChildReference) {
-		if (newChildReference != childReference) {
-			NotificationChain msgs = null;
-			if (childReference != null)
-				msgs = ((InternalEObject)childReference).eInverseRemove(this, WafPackage.CHILD_PATH_REFERENCE__PARENT, ChildPathReference.class, msgs);
-			if (newChildReference != null)
-				msgs = ((InternalEObject)newChildReference).eInverseAdd(this, WafPackage.CHILD_PATH_REFERENCE__PARENT, ChildPathReference.class, msgs);
-			msgs = basicSetChildReference(newChildReference, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.KEY_ACTUAL__CHILD_REFERENCE, newChildReference, newChildReference));
 	}
 
 	/**
@@ -268,13 +170,52 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Expression getActual() {
+		return actual;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetActual(Expression newActual, NotificationChain msgs) {
+		Expression oldActual = actual;
+		actual = newActual;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.KEY_ACTUAL__ACTUAL, oldActual, newActual);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActual(Expression newActual) {
+		if (newActual != actual) {
+			NotificationChain msgs = null;
+			if (actual != null)
+				msgs = ((InternalEObject)actual).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.KEY_ACTUAL__ACTUAL, null, msgs);
+			if (newActual != null)
+				msgs = ((InternalEObject)newActual).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.KEY_ACTUAL__ACTUAL, null, msgs);
+			msgs = basicSetActual(newActual, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.KEY_ACTUAL__ACTUAL, newActual, newActual));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.KEY_ACTUAL__CHILD_REFERENCE:
-				if (childReference != null)
-					msgs = ((InternalEObject)childReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.KEY_ACTUAL__CHILD_REFERENCE, null, msgs);
-				return basicSetChildReference((ChildPathReference)otherEnd, msgs);
 			case WafPackage.KEY_ACTUAL__CONTAINER:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -291,12 +232,10 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.KEY_ACTUAL__ACTUAL:
-				return basicSetActual(null, msgs);
-			case WafPackage.KEY_ACTUAL__CHILD_REFERENCE:
-				return basicSetChildReference(null, msgs);
 			case WafPackage.KEY_ACTUAL__CONTAINER:
 				return basicSetContainer(null, msgs);
+			case WafPackage.KEY_ACTUAL__ACTUAL:
+				return basicSetActual(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -323,16 +262,14 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.KEY_ACTUAL__ACTUAL:
-				return getActual();
-			case WafPackage.KEY_ACTUAL__CHILD_REFERENCE:
-				return getChildReference();
 			case WafPackage.KEY_ACTUAL__CONTAINER:
 				if (resolve) return getContainer();
 				return basicGetContainer();
 			case WafPackage.KEY_ACTUAL__KEY:
 				if (resolve) return getKey();
 				return basicGetKey();
+			case WafPackage.KEY_ACTUAL__ACTUAL:
+				return getActual();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -345,17 +282,14 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.KEY_ACTUAL__ACTUAL:
-				setActual((Expression)newValue);
-				return;
-			case WafPackage.KEY_ACTUAL__CHILD_REFERENCE:
-				setChildReference((ChildPathReference)newValue);
-				return;
 			case WafPackage.KEY_ACTUAL__CONTAINER:
 				setContainer((DynamicUnit)newValue);
 				return;
 			case WafPackage.KEY_ACTUAL__KEY:
 				setKey((Feature)newValue);
+				return;
+			case WafPackage.KEY_ACTUAL__ACTUAL:
+				setActual((Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -369,17 +303,14 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.KEY_ACTUAL__ACTUAL:
-				setActual((Expression)null);
-				return;
-			case WafPackage.KEY_ACTUAL__CHILD_REFERENCE:
-				setChildReference((ChildPathReference)null);
-				return;
 			case WafPackage.KEY_ACTUAL__CONTAINER:
 				setContainer((DynamicUnit)null);
 				return;
 			case WafPackage.KEY_ACTUAL__KEY:
 				setKey((Feature)null);
+				return;
+			case WafPackage.KEY_ACTUAL__ACTUAL:
+				setActual((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -393,14 +324,12 @@ public class KeyActualImpl extends MinimalEObjectImpl.Container implements KeyAc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.KEY_ACTUAL__ACTUAL:
-				return actual != null;
-			case WafPackage.KEY_ACTUAL__CHILD_REFERENCE:
-				return childReference != null;
 			case WafPackage.KEY_ACTUAL__CONTAINER:
 				return basicGetContainer() != null;
 			case WafPackage.KEY_ACTUAL__KEY:
 				return key != null;
+			case WafPackage.KEY_ACTUAL__ACTUAL:
+				return actual != null;
 		}
 		return super.eIsSet(featureID);
 	}

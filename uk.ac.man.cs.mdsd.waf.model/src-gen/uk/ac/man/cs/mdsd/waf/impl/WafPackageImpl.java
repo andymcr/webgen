@@ -29,7 +29,6 @@ import uk.ac.man.cs.mdsd.waf.CasAuthentication;
 import uk.ac.man.cs.mdsd.waf.ChildAssociation;
 import uk.ac.man.cs.mdsd.waf.ChildAttribute;
 import uk.ac.man.cs.mdsd.waf.ChildFeature;
-import uk.ac.man.cs.mdsd.waf.ChildPathReference;
 import uk.ac.man.cs.mdsd.waf.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
 import uk.ac.man.cs.mdsd.waf.ControlUnit;
@@ -79,7 +78,6 @@ import uk.ac.man.cs.mdsd.waf.OperationResultTypes;
 import uk.ac.man.cs.mdsd.waf.Page;
 import uk.ac.man.cs.mdsd.waf.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.waf.ParameterReference;
-import uk.ac.man.cs.mdsd.waf.PathReferenceElement;
 import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.QueryParameter;
 import uk.ac.man.cs.mdsd.waf.RegistrationUnit;
@@ -344,21 +342,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pathReferenceElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass keyActualEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass childPathReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2213,33 +2197,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPathReferenceElement() {
-		return pathReferenceElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPathReferenceElement_Actual() {
-		return (EReference)pathReferenceElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPathReferenceElement_ChildReference() {
-		return (EReference)pathReferenceElementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getKeyActual() {
 		return keyActualEClass;
 	}
@@ -2267,17 +2224,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getChildPathReference() {
-		return childPathReferenceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getChildPathReference_Parent() {
-		return (EReference)childPathReferenceEClass.getEStructuralFeatures().get(0);
+	public EReference getKeyActual_Actual() {
+		return (EReference)keyActualEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -4072,16 +4020,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEAttribute(unitSupportActionEClass, UNIT_SUPPORT_ACTION__DISABLE);
 		createEAttribute(unitSupportActionEClass, UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE);
 
-		pathReferenceElementEClass = createEClass(PATH_REFERENCE_ELEMENT);
-		createEReference(pathReferenceElementEClass, PATH_REFERENCE_ELEMENT__ACTUAL);
-		createEReference(pathReferenceElementEClass, PATH_REFERENCE_ELEMENT__CHILD_REFERENCE);
-
 		keyActualEClass = createEClass(KEY_ACTUAL);
 		createEReference(keyActualEClass, KEY_ACTUAL__CONTAINER);
 		createEReference(keyActualEClass, KEY_ACTUAL__KEY);
-
-		childPathReferenceEClass = createEClass(CHILD_PATH_REFERENCE);
-		createEReference(childPathReferenceEClass, CHILD_PATH_REFERENCE__PARENT);
+		createEReference(keyActualEClass, KEY_ACTUAL__ACTUAL);
 
 		unitFieldEClass = createEClass(UNIT_FIELD);
 		createEReference(unitFieldEClass, UNIT_FIELD__DISPLAYED_ON);
@@ -4368,8 +4310,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		staticUnitEClass.getESuperTypes().add(this.getContentUnit());
 		dynamicUnitEClass.getESuperTypes().add(this.getContentUnit());
 		unitSupportActionEClass.getESuperTypes().add(theOrmPackage.getNamedDisplayElement());
-		keyActualEClass.getESuperTypes().add(this.getPathReferenceElement());
-		childPathReferenceEClass.getESuperTypes().add(this.getPathReferenceElement());
 		unitFieldEClass.getESuperTypes().add(this.getDisplayElement());
 		unitFeatureEClass.getESuperTypes().add(this.getUnitField());
 		unitFeatureEClass.getESuperTypes().add(this.getInlineActionContainer());
@@ -4617,16 +4557,10 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEAttribute(getUnitSupportAction_Disable(), theEcorePackage.getEBoolean(), "disable", null, 0, 1, UnitSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnitSupportAction_ConfirmMessage(), theEcorePackage.getEString(), "confirmMessage", null, 0, 1, UnitSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(pathReferenceElementEClass, PathReferenceElement.class, "PathReferenceElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPathReferenceElement_Actual(), theExpressionPackage.getExpression(), null, "actual", null, 1, 1, PathReferenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPathReferenceElement_ChildReference(), this.getChildPathReference(), this.getChildPathReference_Parent(), "childReference", null, 0, 1, PathReferenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(keyActualEClass, KeyActual.class, "KeyActual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getKeyActual_Container(), this.getDynamicUnit(), this.getDynamicUnit_KeyActuals(), "container", null, 1, 1, KeyActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getKeyActual_Key(), theOrmPackage.getFeature(), null, "key", null, 1, 1, KeyActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(childPathReferenceEClass, ChildPathReference.class, "ChildPathReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getChildPathReference_Parent(), this.getPathReferenceElement(), this.getPathReferenceElement_ChildReference(), "parent", null, 1, 1, ChildPathReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getKeyActual_Actual(), theExpressionPackage.getExpression(), null, "actual", null, 1, 1, KeyActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitFieldEClass, UnitField.class, "UnitField", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitField_DisplayedOn(), this.getDynamicUnit(), this.getDynamicUnit_DisplayFields(), "displayedOn", null, 1, 1, UnitField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

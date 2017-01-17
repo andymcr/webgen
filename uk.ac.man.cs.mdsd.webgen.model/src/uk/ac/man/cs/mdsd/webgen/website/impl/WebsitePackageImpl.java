@@ -34,7 +34,6 @@ import uk.ac.man.cs.mdsd.webgen.website.CasAuthentication;
 import uk.ac.man.cs.mdsd.webgen.website.ChildAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
-import uk.ac.man.cs.mdsd.webgen.website.ChildPathReference;
 import uk.ac.man.cs.mdsd.webgen.website.Classifier;
 import uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
@@ -114,7 +113,6 @@ import uk.ac.man.cs.mdsd.webgen.website.PageLink;
 import uk.ac.man.cs.mdsd.webgen.website.PageTopMenuOptions;
 import uk.ac.man.cs.mdsd.webgen.website.ParameterReference;
 import uk.ac.man.cs.mdsd.webgen.website.PathElement;
-import uk.ac.man.cs.mdsd.webgen.website.PathReferenceElement;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.QueryParameter;
 import uk.ac.man.cs.mdsd.webgen.website.RegistrationUnit;
@@ -723,21 +721,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pathReferenceElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass keyActualEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass childPathReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -4260,42 +4244,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPathReferenceElement() {
-		return pathReferenceElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPathReferenceElement_Actual() {
-		return (EReference)pathReferenceElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPathReferenceElement_ChildReference() {
-		return (EReference)pathReferenceElementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPathReferenceElement_EntityType() {
-		return (EReference)pathReferenceElementEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getKeyActual() {
 		return keyActualEClass;
 	}
@@ -4323,17 +4271,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getChildPathReference() {
-		return childPathReferenceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getChildPathReference_Parent() {
-		return (EReference)childPathReferenceEClass.getEStructuralFeatures().get(0);
+	public EReference getKeyActual_Actual() {
+		return (EReference)keyActualEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -6457,17 +6396,10 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(unitSupportActionEClass, UNIT_SUPPORT_ACTION__DISABLE);
 		createEAttribute(unitSupportActionEClass, UNIT_SUPPORT_ACTION__CONFIRM_MESSAGE);
 
-		pathReferenceElementEClass = createEClass(PATH_REFERENCE_ELEMENT);
-		createEReference(pathReferenceElementEClass, PATH_REFERENCE_ELEMENT__ACTUAL);
-		createEReference(pathReferenceElementEClass, PATH_REFERENCE_ELEMENT__CHILD_REFERENCE);
-		createEReference(pathReferenceElementEClass, PATH_REFERENCE_ELEMENT__ENTITY_TYPE);
-
 		keyActualEClass = createEClass(KEY_ACTUAL);
 		createEReference(keyActualEClass, KEY_ACTUAL__CONTAINER);
 		createEReference(keyActualEClass, KEY_ACTUAL__KEY);
-
-		childPathReferenceEClass = createEClass(CHILD_PATH_REFERENCE);
-		createEReference(childPathReferenceEClass, CHILD_PATH_REFERENCE__PARENT);
+		createEReference(keyActualEClass, KEY_ACTUAL__ACTUAL);
 
 		editUnitEClass = createEClass(EDIT_UNIT);
 		createEReference(editUnitEClass, EDIT_UNIT__DEFAULT_SELECTION);
@@ -6769,8 +6701,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		dateFieldEClass.getESuperTypes().add(this.getInterfaceField());
 		captchaFieldEClass.getESuperTypes().add(this.getInterfaceField());
 		unitSupportActionEClass.getESuperTypes().add(this.getNamedDisplayElement());
-		keyActualEClass.getESuperTypes().add(this.getPathReferenceElement());
-		childPathReferenceEClass.getESuperTypes().add(this.getPathReferenceElement());
 		editUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		createUnitEClass.getESuperTypes().add(this.getEditUnit());
 		createUpdateUnitEClass.getESuperTypes().add(this.getEditUnit());
@@ -7270,17 +7200,10 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getUnitSupportAction_Disable(), ecorePackage.getEBoolean(), "disable", null, 0, 1, UnitSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUnitSupportAction_ConfirmMessage(), ecorePackage.getEString(), "confirmMessage", null, 0, 1, UnitSupportAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(pathReferenceElementEClass, PathReferenceElement.class, "PathReferenceElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPathReferenceElement_Actual(), theCriteriaPackage.getExpression(), null, "actual", null, 1, 1, PathReferenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPathReferenceElement_ChildReference(), this.getChildPathReference(), this.getChildPathReference_Parent(), "childReference", null, 0, 1, PathReferenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPathReferenceElement_EntityType(), this.getEntityOrView(), null, "entityType", null, 0, 1, PathReferenceElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-
 		initEClass(keyActualEClass, KeyActual.class, "KeyActual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getKeyActual_Container(), this.getDynamicUnit(), this.getDynamicUnit_KeyActuals(), "container", null, 1, 1, KeyActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getKeyActual_Key(), this.getAttribute(), null, "key", null, 0, 1, KeyActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(childPathReferenceEClass, ChildPathReference.class, "ChildPathReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getChildPathReference_Parent(), this.getPathReferenceElement(), this.getPathReferenceElement_ChildReference(), "parent", null, 1, 1, ChildPathReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getKeyActual_Actual(), theCriteriaPackage.getExpression(), null, "actual", null, 1, 1, KeyActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(editUnitEClass, EditUnit.class, "EditUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEditUnit_DefaultSelection(), this.getSelection(), null, "defaultSelection", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -7860,12 +7783,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		   source, 
 		   new String[] {
 			 "selectionValidChoice", "not selection.oclIsUndefined() implies\r\n\ttargetEntity->collect(eov | eov.servedBy)->collect(s | s.selections)->includes(selection)"
-		   });	
-		addAnnotation
-		  (getPathReferenceElement_EntityType(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if actual.oclIsUndefined() then\r\n\tnull\r\nelse if actual.oclIsKindOf(CurrentUserReference) then\r\n\tactual.oclAsType(CurrentUserReference).userModel\r\nelse if actual.oclIsTypeOf(FeatureReference) then\r\n\tlet ref : FeatureReference = actual.oclAsType(FeatureReference)\r\n\t\tin if ref.feature.oclIsUndefined() or ref.feature.oclIsKindOf(Attribute) then\r\n\t\t\t\tnull\r\n\t\t\telse\r\n\t\t\t\tlet parent : PathReferenceElement\r\n\t\t\t\t\t= self.oclAsType((ChildPathReference) ).parent\r\n\t\t\t\t\tin if parent.entityType.oclIsUndefined() then\r\n\t\t\t\t\t\t\tnull\r\n\t\t\t\t\t\telse if parent.entityType.features->includes(ref.feature) then\r\n\t\t\t\t\t\t\tref.feature.oclAsType(Association).targetEntityX\r\n\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\tref.feature.oclAsType(Association).sourceEntityX\r\n\t\t\t\t\t\tendif endif\r\n\t\t\tendif\r\nelse\r\n\tnull\r\nendif endif endif\r\n"
 		   });	
 		addAnnotation
 		  (dataUnitEClass, 

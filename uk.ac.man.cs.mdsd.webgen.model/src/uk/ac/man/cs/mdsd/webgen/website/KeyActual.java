@@ -2,6 +2,9 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
+import org.eclipse.emf.ecore.EObject;
+import uk.ac.man.cs.mdsd.criteria.Expression;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Key Actual</b></em>'.
@@ -13,13 +16,14 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.KeyActual#getContainer <em>Container</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.KeyActual#getKey <em>Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.KeyActual#getActual <em>Actual</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getKeyActual()
  * @model
  * @generated
  */
-public interface KeyActual extends PathReferenceElement {
+public interface KeyActual extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Container</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.DynamicUnit#getKeyActuals <em>Key Actuals</em>}'.
@@ -73,5 +77,31 @@ public interface KeyActual extends PathReferenceElement {
 	 * @generated
 	 */
 	void setKey(Attribute value);
+
+	/**
+	 * Returns the value of the '<em><b>Actual</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Actual</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Actual</em>' containment reference.
+	 * @see #setActual(Expression)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getKeyActual_Actual()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Expression getActual();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.KeyActual#getActual <em>Actual</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Actual</em>' containment reference.
+	 * @see #getActual()
+	 * @generated
+	 */
+	void setActual(Expression value);
 
 } // KeyActual

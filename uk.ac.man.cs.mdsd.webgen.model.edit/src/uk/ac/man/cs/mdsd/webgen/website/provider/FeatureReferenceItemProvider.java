@@ -24,12 +24,10 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.ChildPathReference;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.FeatureReference;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
-import uk.ac.man.cs.mdsd.webgen.website.PathReferenceElement;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -106,15 +104,6 @@ public class FeatureReferenceItemProvider
 								features.addAll(entityOrView.getAllFeatures());
 							}
 							return features;
-						}
-						final PathReferenceElement path = getCriteriaPathReferenceContext(object); 
-						if (path != null) {
-							if (path instanceof ChildPathReference) {
-								final ChildPathReference child = (ChildPathReference) path;
-								if (child.getParent().getEntityType() != null) {
-									return child.getParent().getEntityType().getAllFeatures();
-								}
-							}
 						}
 					}
 

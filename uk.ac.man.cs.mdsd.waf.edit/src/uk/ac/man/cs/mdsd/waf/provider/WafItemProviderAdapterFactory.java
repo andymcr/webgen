@@ -632,29 +632,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
 		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ChildPathReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildPathReferenceItemProvider childPathReferenceItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ChildPathReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChildPathReferenceAdapter() {
-		if (childPathReferenceItemProvider == null) {
-			childPathReferenceItemProvider = new ChildPathReferenceItemProvider(this);
-		}
-
-		return childPathReferenceItemProvider;
-	}
-
-		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.UnitAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1566,7 +1543,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (staticUnitItemProvider != null) staticUnitItemProvider.dispose();
 		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();
 		if (keyActualItemProvider != null) keyActualItemProvider.dispose();
-		if (childPathReferenceItemProvider != null) childPathReferenceItemProvider.dispose();
 		if (unitAttributeItemProvider != null) unitAttributeItemProvider.dispose();
 		if (unitAssociationItemProvider != null) unitAssociationItemProvider.dispose();
 		if (dataTypeFieldItemProvider != null) dataTypeFieldItemProvider.dispose();

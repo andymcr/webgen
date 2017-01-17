@@ -80,7 +80,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.STATIC_UNIT: return createStaticUnit();
 			case WafPackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
 			case WafPackage.KEY_ACTUAL: return createKeyActual();
-			case WafPackage.CHILD_PATH_REFERENCE: return createChildPathReference();
 			case WafPackage.UNIT_ATTRIBUTE: return createUnitAttribute();
 			case WafPackage.UNIT_ASSOCIATION: return createUnitAssociation();
 			case WafPackage.DATA_TYPE_FIELD: return createDataTypeField();
@@ -401,16 +400,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public KeyActual createKeyActual() {
 		KeyActualImpl keyActual = new KeyActualImpl();
 		return keyActual;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChildPathReference createChildPathReference() {
-		ChildPathReferenceImpl childPathReference = new ChildPathReferenceImpl();
-		return childPathReference;
 	}
 
 	/**

@@ -1383,29 +1383,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ChildPathReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildPathReferenceItemProvider childPathReferenceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ChildPathReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChildPathReferenceAdapter() {
-		if (childPathReferenceItemProvider == null) {
-			childPathReferenceItemProvider = new ChildPathReferenceItemProvider(this);
-		}
-
-		return childPathReferenceItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2086,7 +2063,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();
 		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();
 		if (keyActualItemProvider != null) keyActualItemProvider.dispose();
-		if (childPathReferenceItemProvider != null) childPathReferenceItemProvider.dispose();
 		if (createUnitItemProvider != null) createUnitItemProvider.dispose();
 		if (createUpdateUnitItemProvider != null) createUpdateUnitItemProvider.dispose();
 		if (updateUnitItemProvider != null) updateUnitItemProvider.dispose();

@@ -66,32 +66,9 @@ public class KeyActualItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEntityTypePropertyDescriptor(object);
 			addKeyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Entity Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEntityTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PathReferenceElement_entityType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PathReferenceElement_entityType_feature", "_UI_PathReferenceElement_type"),
-				 WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ENTITY_TYPE,
-				 false,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -137,8 +114,7 @@ public class KeyActualItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL);
-			childrenFeatures.add(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__CHILD_REFERENCE);
+			childrenFeatures.add(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL);
 		}
 		return childrenFeatures;
 	}
@@ -192,7 +168,6 @@ public class KeyActualItemProvider
 
 		switch (notification.getFeatureID(KeyActual.class)) {
 			case WebsitePackage.KEY_ACTUAL__ACTUAL:
-			case WebsitePackage.KEY_ACTUAL__CHILD_REFERENCE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -212,103 +187,98 @@ public class KeyActualItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 WebsiteFactory.eINSTANCE.createModelReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 WebsiteFactory.eINSTANCE.createFeatureReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 WebsiteFactory.eINSTANCE.createRouteParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 WebsiteFactory.eINSTANCE.createParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 WebsiteFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createNullLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createBooleanLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createIntegerLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createStringLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createTimeLiteral()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createCurrentTime()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createFunction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createPredicateBooleanOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createPredicateEqualityOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createPredicateComparisonOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createPredicateIsOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createPredicateLikeOperator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createPredicateIsEmpty()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__ACTUAL,
+				(WebsitePackage.Literals.KEY_ACTUAL__ACTUAL,
 				 CriteriaFactory.eINSTANCE.createPredicateIsNull()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.PATH_REFERENCE_ELEMENT__CHILD_REFERENCE,
-				 WebsiteFactory.eINSTANCE.createChildPathReference()));
 	}
 
 	/**

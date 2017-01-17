@@ -248,12 +248,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateCaptchaField((CaptchaField)value, diagnostics, context);
 			case WebsitePackage.UNIT_SUPPORT_ACTION:
 				return validateUnitSupportAction((UnitSupportAction)value, diagnostics, context);
-			case WebsitePackage.PATH_REFERENCE_ELEMENT:
-				return validatePathReferenceElement((PathReferenceElement)value, diagnostics, context);
 			case WebsitePackage.KEY_ACTUAL:
 				return validateKeyActual((KeyActual)value, diagnostics, context);
-			case WebsitePackage.CHILD_PATH_REFERENCE:
-				return validateChildPathReference((ChildPathReference)value, diagnostics, context);
 			case WebsitePackage.EDIT_UNIT:
 				return validateEditUnit((EditUnit)value, diagnostics, context);
 			case WebsitePackage.CREATE_UNIT:
@@ -2087,26 +2083,8 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePathReferenceElement(PathReferenceElement pathReferenceElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(pathReferenceElement, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateKeyActual(KeyActual keyActual, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(keyActual, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateChildPathReference(ChildPathReference childPathReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(childPathReference, diagnostics, context);
 	}
 
 	/**

@@ -915,28 +915,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmMessage" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PathReferenceElement" abstract="true"
-      interface="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actual" lowerBound="1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Expression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="childReference" eType="#//ChildPathReference"
-        containment="true" eOpposite="#//ChildPathReference/parent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entityType" eType="#//EntityOrView"
-        changeable="false" volatile="true" transient="true" unsettable="true" derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="if actual.oclIsUndefined() then&#xD;&#xA;&#x9;null&#xD;&#xA;else if actual.oclIsKindOf(CurrentUserReference) then&#xD;&#xA;&#x9;actual.oclAsType(CurrentUserReference).userModel&#xD;&#xA;else if actual.oclIsTypeOf(FeatureReference) then&#xD;&#xA;&#x9;let ref : FeatureReference = actual.oclAsType(FeatureReference)&#xD;&#xA;&#x9;&#x9;in if ref.feature.oclIsUndefined() or ref.feature.oclIsKindOf(Attribute) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;let parent : PathReferenceElement&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;= self.oclAsType((ChildPathReference) ).parent&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;in if parent.entityType.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else if parent.entityType.features->includes(ref.feature) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ref.feature.oclAsType(Association).targetEntityX&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ref.feature.oclAsType(Association).sourceEntityX&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif endif&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif endif endif&#xD;&#xA;"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="KeyActual" eSuperTypes="#//PathReferenceElement">
+  <eClassifiers xsi:type="ecore:EClass" name="KeyActual">
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1"
         eType="#//DynamicUnit" eOpposite="#//DynamicUnit/keyActuals"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//Attribute"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ChildPathReference" eSuperTypes="#//PathReferenceElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
-        eType="#//PathReferenceElement" eOpposite="#//PathReferenceElement/childReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actual" lowerBound="1"
+        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EditUnit" abstract="true" eSuperTypes="#//DynamicUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>

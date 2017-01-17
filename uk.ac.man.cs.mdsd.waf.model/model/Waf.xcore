@@ -290,18 +290,10 @@ class UnitSupportAction extends NamedDisplayElement {
 	String confirmMessage
 }
 
-interface PathReferenceElement {
-	contains Expression[1] actual
-	contains ChildPathReference childReference opposite parent
-}
-
-class KeyActual extends PathReferenceElement {
+class KeyActual {
 	container DynamicUnit[1] ^container opposite keyActuals
 	refers Feature[1] key
-}
-
-class ChildPathReference extends PathReferenceElement {
-	container PathReferenceElement[1] parent opposite childReference
+	contains Expression[1] actual
 }
 
 enum CollectionDisplayOptions {

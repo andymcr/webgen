@@ -2,6 +2,10 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
+import org.eclipse.emf.ecore.EObject;
+
+import uk.ac.man.cs.mdsd.expression.Expression;
+
 import uk.ac.man.cs.mdsd.orm.Feature;
 
 /**
@@ -15,13 +19,14 @@ import uk.ac.man.cs.mdsd.orm.Feature;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.KeyActual#getContainer <em>Container</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.KeyActual#getKey <em>Key</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.KeyActual#getActual <em>Actual</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getKeyActual()
  * @model
  * @generated
  */
-public interface KeyActual extends PathReferenceElement {
+public interface KeyActual extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Container</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getKeyActuals <em>Key Actuals</em>}'.
@@ -75,5 +80,31 @@ public interface KeyActual extends PathReferenceElement {
 	 * @generated
 	 */
 	void setKey(Feature value);
+
+	/**
+	 * Returns the value of the '<em><b>Actual</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Actual</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Actual</em>' containment reference.
+	 * @see #setActual(Expression)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getKeyActual_Actual()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Expression getActual();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.KeyActual#getActual <em>Actual</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Actual</em>' containment reference.
+	 * @see #getActual()
+	 * @generated
+	 */
+	void setActual(Expression value);
 
 } // KeyActual

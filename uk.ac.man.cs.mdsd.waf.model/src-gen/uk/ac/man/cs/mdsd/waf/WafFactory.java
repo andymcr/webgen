@@ -229,15 +229,6 @@ public interface WafFactory extends EFactory {
 	KeyActual createKeyActual();
 
 	/**
-	 * Returns a new object of class '<em>Child Path Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Child Path Reference</em>'.
-	 * @generated
-	 */
-	ChildPathReference createChildPathReference();
-
-	/**
 	 * Returns a new object of class '<em>Unit Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

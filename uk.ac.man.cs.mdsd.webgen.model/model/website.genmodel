@@ -598,21 +598,11 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//UnitSupportAction/disable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//UnitSupportAction/confirmMessage"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="website.ecore#//PathReferenceElement">
-      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
-          ecoreFeature="ecore:EReference website.ecore#//PathReferenceElement/actual"/>
-      <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
-          ecoreFeature="ecore:EReference website.ecore#//PathReferenceElement/childReference"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//PathReferenceElement/entityType"/>
-    </genClasses>
     <genClasses ecoreClass="website.ecore#//KeyActual">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//KeyActual/container"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//KeyActual/key"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//ChildPathReference">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ChildPathReference/parent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//KeyActual/actual"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//EditUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

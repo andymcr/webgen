@@ -218,8 +218,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateQuery((Query)value, diagnostics, context);
 			case WebsitePackage.QUERY_PARAMETER:
 				return validateQueryParameter((QueryParameter)value, diagnostics, context);
-			case WebsitePackage.SELECTABLE:
-				return validateSelectable((Selectable)value, diagnostics, context);
 			case WebsitePackage.UNIT_CONTAINER:
 				return validateUnitContainer((UnitContainer)value, diagnostics, context);
 			case WebsitePackage.CONTENT_UNIT:
@@ -250,6 +248,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateUnitSupportAction((UnitSupportAction)value, diagnostics, context);
 			case WebsitePackage.KEY_ACTUAL:
 				return validateKeyActual((KeyActual)value, diagnostics, context);
+			case WebsitePackage.SELECTABLE_UNIT:
+				return validateSelectableUnit((SelectableUnit)value, diagnostics, context);
+			case WebsitePackage.SINGLETON_UNIT:
+				return validateSingletonUnit((SingletonUnit)value, diagnostics, context);
+			case WebsitePackage.COLLECTION_UNIT:
+				return validateCollectionUnit((CollectionUnit)value, diagnostics, context);
 			case WebsitePackage.EDIT_UNIT:
 				return validateEditUnit((EditUnit)value, diagnostics, context);
 			case WebsitePackage.CREATE_UNIT:
@@ -270,8 +274,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateControlUnit((ControlUnit)value, diagnostics, context);
 			case WebsitePackage.SEARCH_UNIT:
 				return validateSearchUnit((SearchUnit)value, diagnostics, context);
-			case WebsitePackage.ACTION_UNIT:
-				return validateActionUnit((ActionUnit)value, diagnostics, context);
 			case WebsitePackage.IMAGE_UNIT:
 				return validateImageUnit((ImageUnit)value, diagnostics, context);
 			case WebsitePackage.FEATURE_PATH:
@@ -1298,15 +1300,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSelectable(Selectable selectable, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(selectable, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateStaticMenu(StaticMenu staticMenu, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(staticMenu, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(staticMenu, diagnostics, context);
@@ -2092,6 +2085,33 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateSelectableUnit(SelectableUnit selectableUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(selectableUnit, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSingletonUnit(SingletonUnit singletonUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(singletonUnit, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCollectionUnit(CollectionUnit collectionUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(collectionUnit, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateEditUnit(EditUnit editUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(editUnit, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(editUnit, diagnostics, context);
@@ -2481,26 +2501,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(searchUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(searchUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(searchUnit, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateActionUnit(ActionUnit actionUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(actionUnit, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(actionUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(actionUnit, diagnostics, context);
 		return result;
 	}
 

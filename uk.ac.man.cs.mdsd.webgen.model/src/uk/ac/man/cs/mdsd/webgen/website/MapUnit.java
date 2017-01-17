@@ -23,7 +23,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface MapUnit extends EditUnit, Selectable {
+public interface MapUnit extends EditUnit, SelectableUnit {
 	/**
 	 * Returns the value of the '<em><b>Read Only</b></em>' attribute.
 	 * The default value is <code>"true"</code>.

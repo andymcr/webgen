@@ -489,7 +489,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//QueryParameter/formal"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//QueryParameter/value"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="website.ecore#//Selectable"/>
     <genClasses image="false" ecoreClass="website.ecore#//UnitContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//UnitContainer/units"/>
     </genClasses>
@@ -604,6 +603,15 @@
           ecoreFeature="ecore:EReference website.ecore#//KeyActual/key"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//KeyActual/actual"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="website.ecore#//SelectableUnit">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//SelectableUnit/selectionType"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//SingletonUnit">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//SingletonUnit/contentType"/>
+    </genClasses>
+    <genClasses ecoreClass="website.ecore#//CollectionUnit">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//CollectionUnit/contentType"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//EditUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//EditUnit/defaultSelection"/>
@@ -693,9 +701,6 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//SearchUnit/resultsDestination"/>
       <genFeatures createChild="false" propertyCategory="Style" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//SearchUnit/styleClass"/>
-    </genClasses>
-    <genClasses ecoreClass="website.ecore#//ActionUnit">
-      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//ActionUnit/styleClass"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//ImageUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"

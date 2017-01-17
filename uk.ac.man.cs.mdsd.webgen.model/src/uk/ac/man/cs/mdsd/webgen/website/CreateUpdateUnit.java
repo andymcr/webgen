@@ -21,7 +21,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface CreateUpdateUnit extends EditUnit, Selectable {
+public interface CreateUpdateUnit extends EditUnit, SelectableUnit {
 	/**
 	 * Returns the value of the '<em><b>Create Uri Element</b></em>' attribute.
 	 * The default value is <code>""</code>.

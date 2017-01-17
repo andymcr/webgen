@@ -354,11 +354,6 @@ public class PageItemProvider extends NamedDisplayElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.UNIT_CONTAINER__UNITS,
-				 WebsiteFactory.eINSTANCE.createActionUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.UNIT_CONTAINER__UNITS,
 				 WebsiteFactory.eINSTANCE.createImageIndexUnit()));
 
 		newChildDescriptors.add

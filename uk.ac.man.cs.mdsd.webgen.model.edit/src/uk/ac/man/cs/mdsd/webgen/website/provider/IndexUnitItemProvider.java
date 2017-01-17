@@ -53,6 +53,8 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSelectionTypePropertyDescriptor(object);
+			addContentTypePropertyDescriptor(object);
 			addDisplayOptionPropertyDescriptor(object);
 			addOmitColumnLabelsPropertyDescriptor(object);
 			addPaginationPropertyDescriptor(object);
@@ -71,6 +73,50 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			addRowClassesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Selection Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectionTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SelectableUnit_selectionType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectionType_feature", "_UI_SelectableUnit_type"),
+				 WebsitePackage.Literals.SELECTABLE_UNIT__SELECTION_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Content Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_contentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_contentType_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__CONTENT_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

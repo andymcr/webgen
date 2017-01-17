@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.man.cs.mdsd.criteria.CriteriaPackage;
 import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
-import uk.ac.man.cs.mdsd.webgen.website.ActionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationKey;
@@ -36,6 +35,7 @@ import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.Classifier;
 import uk.ac.man.cs.mdsd.webgen.website.CollectionDisplayOptions;
+import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.website.CreateSitemapUnit;
@@ -120,11 +120,12 @@ import uk.ac.man.cs.mdsd.webgen.website.ResourceAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.RouteParameterReference;
 import uk.ac.man.cs.mdsd.webgen.website.SearchUnit;
 import uk.ac.man.cs.mdsd.webgen.website.SelectAction;
-import uk.ac.man.cs.mdsd.webgen.website.Selectable;
+import uk.ac.man.cs.mdsd.webgen.website.SelectableUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.SelectionField;
 import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.website.SliderUnit;
 import uk.ac.man.cs.mdsd.webgen.website.StaticMenu;
 import uk.ac.man.cs.mdsd.webgen.website.StaticPathElement;
@@ -497,13 +498,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass selectableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass staticMenuEClass = null;
 
 	/**
@@ -728,6 +722,27 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass selectableUnitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass singletonUnitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass collectionUnitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass editUnitEClass = null;
 
 	/**
@@ -799,13 +814,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass searchUnitEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass actionUnitEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3137,15 +3145,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSelectable() {
-		return selectableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getStaticMenu() {
 		return staticMenuEClass;
 	}
@@ -4280,6 +4279,60 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSelectableUnit() {
+		return selectableUnitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSelectableUnit_SelectionType() {
+		return (EReference)selectableUnitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSingletonUnit() {
+		return singletonUnitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSingletonUnit_ContentType() {
+		return (EReference)singletonUnitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCollectionUnit() {
+		return collectionUnitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCollectionUnit_ContentType() {
+		return (EReference)collectionUnitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEditUnit() {
 		return editUnitEClass;
 	}
@@ -4903,24 +4956,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 */
 	public EAttribute getSearchUnit_StyleClass() {
 		return (EAttribute)searchUnitEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getActionUnit() {
-		return actionUnitEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getActionUnit_StyleClass() {
-		return (EAttribute)actionUnitEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -6299,8 +6334,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(queryParameterEClass, QUERY_PARAMETER__FORMAL);
 		createEAttribute(queryParameterEClass, QUERY_PARAMETER__VALUE);
 
-		selectableEClass = createEClass(SELECTABLE);
-
 		unitContainerEClass = createEClass(UNIT_CONTAINER);
 		createEReference(unitContainerEClass, UNIT_CONTAINER__UNITS);
 
@@ -6401,6 +6434,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(keyActualEClass, KEY_ACTUAL__KEY);
 		createEReference(keyActualEClass, KEY_ACTUAL__ACTUAL);
 
+		selectableUnitEClass = createEClass(SELECTABLE_UNIT);
+		createEReference(selectableUnitEClass, SELECTABLE_UNIT__SELECTION_TYPE);
+
+		singletonUnitEClass = createEClass(SINGLETON_UNIT);
+		createEReference(singletonUnitEClass, SINGLETON_UNIT__CONTENT_TYPE);
+
+		collectionUnitEClass = createEClass(COLLECTION_UNIT);
+		createEReference(collectionUnitEClass, COLLECTION_UNIT__CONTENT_TYPE);
+
 		editUnitEClass = createEClass(EDIT_UNIT);
 		createEReference(editUnitEClass, EDIT_UNIT__DEFAULT_SELECTION);
 		createEReference(editUnitEClass, EDIT_UNIT__TITLE);
@@ -6468,9 +6510,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		searchUnitEClass = createEClass(SEARCH_UNIT);
 		createEReference(searchUnitEClass, SEARCH_UNIT__RESULTS_DESTINATION);
 		createEAttribute(searchUnitEClass, SEARCH_UNIT__STYLE_CLASS);
-
-		actionUnitEClass = createEClass(ACTION_UNIT);
-		createEAttribute(actionUnitEClass, ACTION_UNIT__STYLE_CLASS);
 
 		imageUnitEClass = createEClass(IMAGE_UNIT);
 		createEReference(imageUnitEClass, IMAGE_UNIT__DEFAULT_SELECTION);
@@ -6701,23 +6740,27 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		dateFieldEClass.getESuperTypes().add(this.getInterfaceField());
 		captchaFieldEClass.getESuperTypes().add(this.getInterfaceField());
 		unitSupportActionEClass.getESuperTypes().add(this.getNamedDisplayElement());
+		collectionUnitEClass.getESuperTypes().add(this.getSelectableUnit());
 		editUnitEClass.getESuperTypes().add(this.getDynamicUnit());
+		editUnitEClass.getESuperTypes().add(this.getSingletonUnit());
 		createUnitEClass.getESuperTypes().add(this.getEditUnit());
 		createUpdateUnitEClass.getESuperTypes().add(this.getEditUnit());
-		createUpdateUnitEClass.getESuperTypes().add(this.getSelectable());
+		createUpdateUnitEClass.getESuperTypes().add(this.getSelectableUnit());
 		updateUnitEClass.getESuperTypes().add(this.getEditUnit());
-		updateUnitEClass.getESuperTypes().add(this.getSelectable());
+		updateUnitEClass.getESuperTypes().add(this.getSelectableUnit());
 		mapUnitEClass.getESuperTypes().add(this.getEditUnit());
-		mapUnitEClass.getESuperTypes().add(this.getSelectable());
+		mapUnitEClass.getESuperTypes().add(this.getSelectableUnit());
 		dataUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		detailsUnitEClass.getESuperTypes().add(this.getDataUnit());
-		detailsUnitEClass.getESuperTypes().add(this.getSelectable());
+		detailsUnitEClass.getESuperTypes().add(this.getSingletonUnit());
+		detailsUnitEClass.getESuperTypes().add(this.getSelectableUnit());
 		indexUnitEClass.getESuperTypes().add(this.getDataUnit());
+		indexUnitEClass.getESuperTypes().add(this.getCollectionUnit());
 		indexUnitEClass.getESuperTypes().add(this.getInlineActionContainer());
 		controlUnitEClass.getESuperTypes().add(this.getDynamicUnit());
 		searchUnitEClass.getESuperTypes().add(this.getControlUnit());
-		actionUnitEClass.getESuperTypes().add(this.getControlUnit());
 		imageUnitEClass.getESuperTypes().add(this.getDynamicUnit());
+		imageUnitEClass.getESuperTypes().add(this.getCollectionUnit());
 		featurePathAttributeEClass.getESuperTypes().add(this.getFeaturePath());
 		featurePathAssociationEClass.getESuperTypes().add(this.getFeaturePath());
 		childAttributeEClass.getESuperTypes().add(this.getChildFeature());
@@ -6727,7 +6770,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		imageIndexUnitEClass.getESuperTypes().add(this.getInlineActionContainer());
 		sliderUnitEClass.getESuperTypes().add(this.getImageUnit());
 		galleryUnitEClass.getESuperTypes().add(this.getImageUnit());
-		galleryUnitEClass.getESuperTypes().add(this.getSelectable());
 		registrationUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());
 		registrationUnitEClass.getESuperTypes().add(this.getControlUnit());
 		loginUnitEClass.getESuperTypes().add(this.getAuthenticationUnit());
@@ -7103,8 +7145,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getQueryParameter_Formal(), this.getFilterParameter(), null, "formal", null, 1, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQueryParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, QueryParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(selectableEClass, Selectable.class, "Selectable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(unitContainerEClass, UnitContainer.class, "UnitContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnitContainer_Units(), this.getContentUnit(), this.getContentUnit_DisplayedOn(), "units", null, 0, -1, UnitContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -7205,6 +7245,15 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getKeyActual_Key(), this.getAttribute(), null, "key", null, 0, 1, KeyActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getKeyActual_Actual(), theCriteriaPackage.getExpression(), null, "actual", null, 1, 1, KeyActual.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(selectableUnitEClass, SelectableUnit.class, "SelectableUnit", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSelectableUnit_SelectionType(), this.getEntityOrView(), null, "selectionType", null, 0, 1, SelectableUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(singletonUnitEClass, SingletonUnit.class, "SingletonUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSingletonUnit_ContentType(), this.getEntityOrView(), null, "contentType", null, 1, 1, SingletonUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(collectionUnitEClass, CollectionUnit.class, "CollectionUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCollectionUnit_ContentType(), this.getEntityOrView(), null, "contentType", null, 1, -1, CollectionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(editUnitEClass, EditUnit.class, "EditUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEditUnit_DefaultSelection(), this.getSelection(), null, "defaultSelection", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEditUnit_Title(), this.getLabel(), null, "title", null, 0, 1, EditUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -7272,9 +7321,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(searchUnitEClass, SearchUnit.class, "SearchUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSearchUnit_ResultsDestination(), this.getIndexUnit(), null, "resultsDestination", null, 1, 1, SearchUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSearchUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,search_unit", 0, 1, SearchUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(actionUnitEClass, ActionUnit.class, "ActionUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getActionUnit_StyleClass(), ecorePackage.getEString(), "styleClass", "unit,action_unit", 0, 1, ActionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(imageUnitEClass, ImageUnit.class, "ImageUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getImageUnit_DefaultSelection(), this.getSelection(), null, "defaultSelection", null, 0, 1, ImageUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -7348,7 +7394,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getInlineAction_FooterClass(), ecorePackage.getEString(), "footerClass", null, 0, 1, InlineAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectActionEClass, SelectAction.class, "SelectAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSelectAction_Target(), this.getSelectable(), null, "target", null, 1, 1, SelectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSelectAction_Target(), this.getSelectableUnit(), null, "target", null, 1, 1, SelectAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deleteActionEClass, DeleteAction.class, "DeleteAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDeleteAction_Destination(), this.getPage(), null, "destination", null, 0, 1, DeleteAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

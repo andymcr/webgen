@@ -20,7 +20,7 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface DetailsUnit extends DataUnit, Selectable {
+public interface DetailsUnit extends DataUnit, SingletonUnit, SelectableUnit {
 	/**
 	 * Returns the value of the '<em><b>Only Display When Not Empty</b></em>' attribute.
 	 * <!-- begin-user-doc -->

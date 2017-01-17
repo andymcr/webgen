@@ -19,12 +19,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
+import uk.ac.man.cs.mdsd.webgen.website.SelectableUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -35,6 +39,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getSelectionType <em>Selection Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getDisplayOption <em>Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
@@ -58,6 +64,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
+	/**
+	 * The cached value of the '{@link #getSelectionType() <em>Selection Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelectionType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityOrView selectionType;
+
+	/**
+	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EntityOrView> contentType;
+
 	/**
 	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -405,6 +431,56 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.INDEX_UNIT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getSelectionType() {
+		if (selectionType != null && selectionType.eIsProxy()) {
+			InternalEObject oldSelectionType = (InternalEObject)selectionType;
+			selectionType = (EntityOrView)eResolveProxy(oldSelectionType);
+			if (selectionType != oldSelectionType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.INDEX_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
+			}
+		}
+		return selectionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetSelectionType() {
+		return selectionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectionType(EntityOrView newSelectionType) {
+		EntityOrView oldSelectionType = selectionType;
+		selectionType = newSelectionType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INDEX_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<EntityOrView> getContentType() {
+		if (contentType == null) {
+			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.INDEX_UNIT__CONTENT_TYPE);
+		}
+		return contentType;
 	}
 
 	/**
@@ -823,6 +899,11 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.INDEX_UNIT__SELECTION_TYPE:
+				if (resolve) return getSelectionType();
+				return basicGetSelectionType();
+			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
+				return getContentType();
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				return getActions();
 			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
@@ -873,6 +954,13 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.INDEX_UNIT__SELECTION_TYPE:
+				setSelectionType((EntityOrView)newValue);
+				return;
+			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
+				getContentType().clear();
+				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
+				return;
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
 				getActions().addAll((Collection<? extends InlineAction>)newValue);
@@ -941,6 +1029,12 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.INDEX_UNIT__SELECTION_TYPE:
+				setSelectionType((EntityOrView)null);
+				return;
+			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
+				getContentType().clear();
+				return;
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
 				return;
@@ -1007,6 +1101,10 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.INDEX_UNIT__SELECTION_TYPE:
+				return selectionType != null;
+			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
+				return contentType != null && !contentType.isEmpty();
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
 			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
@@ -1054,6 +1152,18 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == SelectableUnit.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.INDEX_UNIT__SELECTION_TYPE: return WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE;
+				default: return -1;
+			}
+		}
+		if (baseClass == CollectionUnit.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.INDEX_UNIT__CONTENT_TYPE: return WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE;
+				default: return -1;
+			}
+		}
 		if (baseClass == InlineActionContainer.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.INDEX_UNIT__ACTIONS: return WebsitePackage.INLINE_ACTION_CONTAINER__ACTIONS;
@@ -1070,6 +1180,18 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == SelectableUnit.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE: return WebsitePackage.INDEX_UNIT__SELECTION_TYPE;
+				default: return -1;
+			}
+		}
+		if (baseClass == CollectionUnit.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE: return WebsitePackage.INDEX_UNIT__CONTENT_TYPE;
+				default: return -1;
+			}
+		}
 		if (baseClass == InlineActionContainer.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.INLINE_ACTION_CONTAINER__ACTIONS: return WebsitePackage.INDEX_UNIT__ACTIONS;

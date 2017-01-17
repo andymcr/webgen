@@ -16,9 +16,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.criteria.Predicate;
 import uk.ac.man.cs.mdsd.webgen.website.EditUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
+import uk.ac.man.cs.mdsd.webgen.website.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -29,6 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.EditUnitImpl#getEnableWhen <em>Enable When</em>}</li>
@@ -43,6 +46,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
+	/**
+	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityOrView contentType;
+
 	/**
 	 * The cached value of the '{@link #getDefaultSelection() <em>Default Selection</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -190,6 +203,44 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.EDIT_UNIT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getContentType() {
+		if (contentType != null && contentType.eIsProxy()) {
+			InternalEObject oldContentType = (InternalEObject)contentType;
+			contentType = (EntityOrView)eResolveProxy(oldContentType);
+			if (contentType != oldContentType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.EDIT_UNIT__CONTENT_TYPE, oldContentType, contentType));
+			}
+		}
+		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetContentType() {
+		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContentType(EntityOrView newContentType) {
+		EntityOrView oldContentType = contentType;
+		contentType = newContentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.EDIT_UNIT__CONTENT_TYPE, oldContentType, contentType));
 	}
 
 	/**
@@ -493,6 +544,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.EDIT_UNIT__CONTENT_TYPE:
+				if (resolve) return getContentType();
+				return basicGetContentType();
 			case WebsitePackage.EDIT_UNIT__DEFAULT_SELECTION:
 				if (resolve) return getDefaultSelection();
 				return basicGetDefaultSelection();
@@ -527,6 +581,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.EDIT_UNIT__CONTENT_TYPE:
+				setContentType((EntityOrView)newValue);
+				return;
 			case WebsitePackage.EDIT_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)newValue);
 				return;
@@ -566,6 +623,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.EDIT_UNIT__CONTENT_TYPE:
+				setContentType((EntityOrView)null);
+				return;
 			case WebsitePackage.EDIT_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)null);
 				return;
@@ -605,6 +665,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.EDIT_UNIT__CONTENT_TYPE:
+				return contentType != null;
 			case WebsitePackage.EDIT_UNIT__DEFAULT_SELECTION:
 				return defaultSelection != null;
 			case WebsitePackage.EDIT_UNIT__TITLE:
@@ -625,6 +687,38 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 				return customiseValues != CUSTOMISE_VALUES_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == SingletonUnit.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.EDIT_UNIT__CONTENT_TYPE: return WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == SingletonUnit.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE: return WebsitePackage.EDIT_UNIT__CONTENT_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

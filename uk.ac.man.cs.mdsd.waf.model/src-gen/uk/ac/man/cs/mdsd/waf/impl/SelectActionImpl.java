@@ -3,6 +3,7 @@
 package uk.ac.man.cs.mdsd.waf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -10,7 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.waf.SelectAction;
-import uk.ac.man.cs.mdsd.waf.Selectable;
+import uk.ac.man.cs.mdsd.waf.SelectableUnit;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -35,7 +36,7 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	 * @generated
 	 * @ordered
 	 */
-	protected Selectable target;
+	protected SelectableUnit target;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,10 +62,10 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Selectable getTarget() {
+	public SelectableUnit getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject)target;
-			target = (Selectable)eResolveProxy(oldTarget);
+			target = (SelectableUnit)eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.SELECT_ACTION__TARGET, oldTarget, target));
@@ -78,7 +79,7 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Selectable basicGetTarget() {
+	public SelectableUnit basicGetTarget() {
 		return target;
 	}
 
@@ -87,11 +88,63 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTarget(Selectable newTarget) {
-		Selectable oldTarget = target;
+	public NotificationChain basicSetTarget(SelectableUnit newTarget, NotificationChain msgs) {
+		SelectableUnit oldTarget = target;
 		target = newTarget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SELECT_ACTION__TARGET, oldTarget, target));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.SELECT_ACTION__TARGET, oldTarget, newTarget);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTarget(SelectableUnit newTarget) {
+		if (newTarget != target) {
+			NotificationChain msgs = null;
+			if (target != null)
+				msgs = ((InternalEObject)target).eInverseRemove(this, WafPackage.SELECTABLE_UNIT__SELECTORS, SelectableUnit.class, msgs);
+			if (newTarget != null)
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, WafPackage.SELECTABLE_UNIT__SELECTORS, SelectableUnit.class, msgs);
+			msgs = basicSetTarget(newTarget, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SELECT_ACTION__TARGET, newTarget, newTarget));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WafPackage.SELECT_ACTION__TARGET:
+				if (target != null)
+					msgs = ((InternalEObject)target).eInverseRemove(this, WafPackage.SELECTABLE_UNIT__SELECTORS, SelectableUnit.class, msgs);
+				return basicSetTarget((SelectableUnit)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WafPackage.SELECT_ACTION__TARGET:
+				return basicSetTarget(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -118,7 +171,7 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case WafPackage.SELECT_ACTION__TARGET:
-				setTarget((Selectable)newValue);
+				setTarget((SelectableUnit)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,7 +186,7 @@ public class SelectActionImpl extends InlineActionImpl implements SelectAction {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case WafPackage.SELECT_ACTION__TARGET:
-				setTarget((Selectable)null);
+				setTarget((SelectableUnit)null);
 				return;
 		}
 		super.eUnset(featureID);

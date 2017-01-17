@@ -2,15 +2,22 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
+import java.util.Collection;
+import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.FeaturePath;
 import uk.ac.man.cs.mdsd.webgen.website.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.website.ImageUnit;
+import uk.ac.man.cs.mdsd.webgen.website.SelectableUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -22,6 +29,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getSelectionType <em>Selection Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getTitleFeature <em>Title Feature</em>}</li>
@@ -34,6 +43,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit {
+	/**
+	 * The cached value of the '{@link #getSelectionType() <em>Selection Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelectionType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityOrView selectionType;
+
+	/**
+	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EntityOrView> contentType;
+
 	/**
 	 * The cached value of the '{@link #getDefaultSelection() <em>Default Selection</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -148,6 +177,56 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.IMAGE_UNIT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getSelectionType() {
+		if (selectionType != null && selectionType.eIsProxy()) {
+			InternalEObject oldSelectionType = (InternalEObject)selectionType;
+			selectionType = (EntityOrView)eResolveProxy(oldSelectionType);
+			if (selectionType != oldSelectionType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.IMAGE_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
+			}
+		}
+		return selectionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetSelectionType() {
+		return selectionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectionType(EntityOrView newSelectionType) {
+		EntityOrView oldSelectionType = selectionType;
+		selectionType = newSelectionType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public List<EntityOrView> getContentType() {
+		if (contentType == null) {
+			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.IMAGE_UNIT__CONTENT_TYPE);
+		}
+		return contentType;
 	}
 
 	/**
@@ -399,6 +478,11 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.IMAGE_UNIT__SELECTION_TYPE:
+				if (resolve) return getSelectionType();
+				return basicGetSelectionType();
+			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
+				return getContentType();
 			case WebsitePackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				if (resolve) return getDefaultSelection();
 				return basicGetDefaultSelection();
@@ -424,9 +508,17 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.IMAGE_UNIT__SELECTION_TYPE:
+				setSelectionType((EntityOrView)newValue);
+				return;
+			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
+				getContentType().clear();
+				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
+				return;
 			case WebsitePackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)newValue);
 				return;
@@ -460,6 +552,12 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.IMAGE_UNIT__SELECTION_TYPE:
+				setSelectionType((EntityOrView)null);
+				return;
+			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
+				getContentType().clear();
+				return;
 			case WebsitePackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)null);
 				return;
@@ -493,6 +591,10 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.IMAGE_UNIT__SELECTION_TYPE:
+				return selectionType != null;
+			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
+				return contentType != null && !contentType.isEmpty();
 			case WebsitePackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				return defaultSelection != null;
 			case WebsitePackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
@@ -509,6 +611,50 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return transitionTime != TRANSITION_TIME_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == SelectableUnit.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.IMAGE_UNIT__SELECTION_TYPE: return WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE;
+				default: return -1;
+			}
+		}
+		if (baseClass == CollectionUnit.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE: return WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == SelectableUnit.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE: return WebsitePackage.IMAGE_UNIT__SELECTION_TYPE;
+				default: return -1;
+			}
+		}
+		if (baseClass == CollectionUnit.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE: return WebsitePackage.IMAGE_UNIT__CONTENT_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

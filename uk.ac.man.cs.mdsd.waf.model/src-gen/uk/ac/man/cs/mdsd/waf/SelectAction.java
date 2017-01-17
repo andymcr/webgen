@@ -22,6 +22,7 @@ package uk.ac.man.cs.mdsd.waf;
 public interface SelectAction extends InlineAction {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.SelectableUnit#getSelectors <em>Selectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Target</em>' reference isn't clear,
@@ -29,12 +30,13 @@ public interface SelectAction extends InlineAction {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
-	 * @see #setTarget(Selectable)
+	 * @see #setTarget(SelectableUnit)
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelectAction_Target()
-	 * @model required="true"
+	 * @see uk.ac.man.cs.mdsd.waf.SelectableUnit#getSelectors
+	 * @model opposite="selectors" required="true"
 	 * @generated
 	 */
-	Selectable getTarget();
+	SelectableUnit getTarget();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.SelectAction#getTarget <em>Target</em>}' reference.
@@ -44,6 +46,6 @@ public interface SelectAction extends InlineAction {
 	 * @see #getTarget()
 	 * @generated
 	 */
-	void setTarget(Selectable value);
+	void setTarget(SelectableUnit value);
 
 } // SelectAction

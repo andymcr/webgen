@@ -19,7 +19,7 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface GalleryUnit extends ImageUnit, Selectable {
+public interface GalleryUnit extends ImageUnit {
 	/**
 	 * Returns the value of the '<em><b>Full Size Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->

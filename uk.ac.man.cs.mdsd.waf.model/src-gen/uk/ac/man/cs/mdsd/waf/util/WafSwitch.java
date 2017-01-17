@@ -260,12 +260,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.SELECTABLE: {
-				Selectable selectable = (Selectable)theEObject;
-				T result = caseSelectable(selectable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.UNIT_CONTAINER: {
 				UnitContainer unitContainer = (UnitContainer)theEObject;
 				T result = caseUnitContainer(unitContainer);
@@ -388,10 +382,30 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WafPackage.SELECTABLE_UNIT: {
+				SelectableUnit selectableUnit = (SelectableUnit)theEObject;
+				T result = caseSelectableUnit(selectableUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.SINGLETON_UNIT: {
+				SingletonUnit singletonUnit = (SingletonUnit)theEObject;
+				T result = caseSingletonUnit(singletonUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WafPackage.COLLECTION_UNIT: {
+				CollectionUnit collectionUnit = (CollectionUnit)theEObject;
+				T result = caseCollectionUnit(collectionUnit);
+				if (result == null) result = caseSelectableUnit(collectionUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WafPackage.EDIT_UNIT: {
 				EditUnit editUnit = (EditUnit)theEObject;
 				T result = caseEditUnit(editUnit);
 				if (result == null) result = caseDynamicUnit(editUnit);
+				if (result == null) result = caseSingletonUnit(editUnit);
 				if (result == null) result = caseContentUnit(editUnit);
 				if (result == null) result = caseNamedDisplayElement(editUnit);
 				if (result == null) result = caseNamedElement(editUnit);
@@ -403,6 +417,7 @@ public class WafSwitch<T> extends Switch<T> {
 				T result = caseCreateUnit(createUnit);
 				if (result == null) result = caseEditUnit(createUnit);
 				if (result == null) result = caseDynamicUnit(createUnit);
+				if (result == null) result = caseSingletonUnit(createUnit);
 				if (result == null) result = caseContentUnit(createUnit);
 				if (result == null) result = caseNamedDisplayElement(createUnit);
 				if (result == null) result = caseNamedElement(createUnit);
@@ -413,8 +428,9 @@ public class WafSwitch<T> extends Switch<T> {
 				CreateUpdateUnit createUpdateUnit = (CreateUpdateUnit)theEObject;
 				T result = caseCreateUpdateUnit(createUpdateUnit);
 				if (result == null) result = caseEditUnit(createUpdateUnit);
-				if (result == null) result = caseSelectable(createUpdateUnit);
+				if (result == null) result = caseSelectableUnit(createUpdateUnit);
 				if (result == null) result = caseDynamicUnit(createUpdateUnit);
+				if (result == null) result = caseSingletonUnit(createUpdateUnit);
 				if (result == null) result = caseContentUnit(createUpdateUnit);
 				if (result == null) result = caseNamedDisplayElement(createUpdateUnit);
 				if (result == null) result = caseNamedElement(createUpdateUnit);
@@ -425,8 +441,9 @@ public class WafSwitch<T> extends Switch<T> {
 				MapUnit mapUnit = (MapUnit)theEObject;
 				T result = caseMapUnit(mapUnit);
 				if (result == null) result = caseEditUnit(mapUnit);
-				if (result == null) result = caseSelectable(mapUnit);
+				if (result == null) result = caseSelectableUnit(mapUnit);
 				if (result == null) result = caseDynamicUnit(mapUnit);
+				if (result == null) result = caseSingletonUnit(mapUnit);
 				if (result == null) result = caseContentUnit(mapUnit);
 				if (result == null) result = caseNamedDisplayElement(mapUnit);
 				if (result == null) result = caseNamedElement(mapUnit);
@@ -437,8 +454,9 @@ public class WafSwitch<T> extends Switch<T> {
 				UpdateUnit updateUnit = (UpdateUnit)theEObject;
 				T result = caseUpdateUnit(updateUnit);
 				if (result == null) result = caseEditUnit(updateUnit);
-				if (result == null) result = caseSelectable(updateUnit);
+				if (result == null) result = caseSelectableUnit(updateUnit);
 				if (result == null) result = caseDynamicUnit(updateUnit);
+				if (result == null) result = caseSingletonUnit(updateUnit);
 				if (result == null) result = caseContentUnit(updateUnit);
 				if (result == null) result = caseNamedDisplayElement(updateUnit);
 				if (result == null) result = caseNamedElement(updateUnit);
@@ -459,7 +477,8 @@ public class WafSwitch<T> extends Switch<T> {
 				DetailsUnit detailsUnit = (DetailsUnit)theEObject;
 				T result = caseDetailsUnit(detailsUnit);
 				if (result == null) result = caseDataUnit(detailsUnit);
-				if (result == null) result = caseSelectable(detailsUnit);
+				if (result == null) result = caseSingletonUnit(detailsUnit);
+				if (result == null) result = caseSelectableUnit(detailsUnit);
 				if (result == null) result = caseDynamicUnit(detailsUnit);
 				if (result == null) result = caseContentUnit(detailsUnit);
 				if (result == null) result = caseNamedDisplayElement(detailsUnit);
@@ -471,8 +490,10 @@ public class WafSwitch<T> extends Switch<T> {
 				IndexUnit indexUnit = (IndexUnit)theEObject;
 				T result = caseIndexUnit(indexUnit);
 				if (result == null) result = caseDataUnit(indexUnit);
+				if (result == null) result = caseCollectionUnit(indexUnit);
 				if (result == null) result = caseInlineActionContainer(indexUnit);
 				if (result == null) result = caseDynamicUnit(indexUnit);
+				if (result == null) result = caseSelectableUnit(indexUnit);
 				if (result == null) result = caseContentUnit(indexUnit);
 				if (result == null) result = caseNamedDisplayElement(indexUnit);
 				if (result == null) result = caseNamedElement(indexUnit);
@@ -484,8 +505,10 @@ public class WafSwitch<T> extends Switch<T> {
 				T result = caseIndexGridUnit(indexGridUnit);
 				if (result == null) result = caseIndexUnit(indexGridUnit);
 				if (result == null) result = caseDataUnit(indexGridUnit);
+				if (result == null) result = caseCollectionUnit(indexGridUnit);
 				if (result == null) result = caseInlineActionContainer(indexGridUnit);
 				if (result == null) result = caseDynamicUnit(indexGridUnit);
+				if (result == null) result = caseSelectableUnit(indexGridUnit);
 				if (result == null) result = caseContentUnit(indexGridUnit);
 				if (result == null) result = caseNamedDisplayElement(indexGridUnit);
 				if (result == null) result = caseNamedElement(indexGridUnit);
@@ -497,8 +520,10 @@ public class WafSwitch<T> extends Switch<T> {
 				T result = caseIndexPageDirectionUnit(indexPageDirectionUnit);
 				if (result == null) result = caseIndexUnit(indexPageDirectionUnit);
 				if (result == null) result = caseDataUnit(indexPageDirectionUnit);
+				if (result == null) result = caseCollectionUnit(indexPageDirectionUnit);
 				if (result == null) result = caseInlineActionContainer(indexPageDirectionUnit);
 				if (result == null) result = caseDynamicUnit(indexPageDirectionUnit);
+				if (result == null) result = caseSelectableUnit(indexPageDirectionUnit);
 				if (result == null) result = caseContentUnit(indexPageDirectionUnit);
 				if (result == null) result = caseNamedDisplayElement(indexPageDirectionUnit);
 				if (result == null) result = caseNamedElement(indexPageDirectionUnit);
@@ -510,8 +535,10 @@ public class WafSwitch<T> extends Switch<T> {
 				T result = caseIndexLineDirectionUnit(indexLineDirectionUnit);
 				if (result == null) result = caseIndexUnit(indexLineDirectionUnit);
 				if (result == null) result = caseDataUnit(indexLineDirectionUnit);
+				if (result == null) result = caseCollectionUnit(indexLineDirectionUnit);
 				if (result == null) result = caseInlineActionContainer(indexLineDirectionUnit);
 				if (result == null) result = caseDynamicUnit(indexLineDirectionUnit);
+				if (result == null) result = caseSelectableUnit(indexLineDirectionUnit);
 				if (result == null) result = caseContentUnit(indexLineDirectionUnit);
 				if (result == null) result = caseNamedDisplayElement(indexLineDirectionUnit);
 				if (result == null) result = caseNamedElement(indexLineDirectionUnit);
@@ -539,22 +566,13 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.ACTION_UNIT: {
-				ActionUnit actionUnit = (ActionUnit)theEObject;
-				T result = caseActionUnit(actionUnit);
-				if (result == null) result = caseControlUnit(actionUnit);
-				if (result == null) result = caseDynamicUnit(actionUnit);
-				if (result == null) result = caseContentUnit(actionUnit);
-				if (result == null) result = caseNamedDisplayElement(actionUnit);
-				if (result == null) result = caseNamedElement(actionUnit);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.IMAGE_UNIT: {
 				ImageUnit imageUnit = (ImageUnit)theEObject;
 				T result = caseImageUnit(imageUnit);
 				if (result == null) result = caseDynamicUnit(imageUnit);
+				if (result == null) result = caseCollectionUnit(imageUnit);
 				if (result == null) result = caseContentUnit(imageUnit);
+				if (result == null) result = caseSelectableUnit(imageUnit);
 				if (result == null) result = caseNamedDisplayElement(imageUnit);
 				if (result == null) result = caseNamedElement(imageUnit);
 				if (result == null) result = defaultCase(theEObject);
@@ -608,7 +626,9 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = caseImageUnit(imageIndexUnit);
 				if (result == null) result = caseInlineActionContainer(imageIndexUnit);
 				if (result == null) result = caseDynamicUnit(imageIndexUnit);
+				if (result == null) result = caseCollectionUnit(imageIndexUnit);
 				if (result == null) result = caseContentUnit(imageIndexUnit);
+				if (result == null) result = caseSelectableUnit(imageIndexUnit);
 				if (result == null) result = caseNamedDisplayElement(imageIndexUnit);
 				if (result == null) result = caseNamedElement(imageIndexUnit);
 				if (result == null) result = defaultCase(theEObject);
@@ -619,7 +639,9 @@ public class WafSwitch<T> extends Switch<T> {
 				T result = caseSliderUnit(sliderUnit);
 				if (result == null) result = caseImageUnit(sliderUnit);
 				if (result == null) result = caseDynamicUnit(sliderUnit);
+				if (result == null) result = caseCollectionUnit(sliderUnit);
 				if (result == null) result = caseContentUnit(sliderUnit);
+				if (result == null) result = caseSelectableUnit(sliderUnit);
 				if (result == null) result = caseNamedDisplayElement(sliderUnit);
 				if (result == null) result = caseNamedElement(sliderUnit);
 				if (result == null) result = defaultCase(theEObject);
@@ -629,9 +651,10 @@ public class WafSwitch<T> extends Switch<T> {
 				GalleryUnit galleryUnit = (GalleryUnit)theEObject;
 				T result = caseGalleryUnit(galleryUnit);
 				if (result == null) result = caseImageUnit(galleryUnit);
-				if (result == null) result = caseSelectable(galleryUnit);
 				if (result == null) result = caseDynamicUnit(galleryUnit);
+				if (result == null) result = caseCollectionUnit(galleryUnit);
 				if (result == null) result = caseContentUnit(galleryUnit);
+				if (result == null) result = caseSelectableUnit(galleryUnit);
 				if (result == null) result = caseNamedDisplayElement(galleryUnit);
 				if (result == null) result = caseNamedElement(galleryUnit);
 				if (result == null) result = defaultCase(theEObject);
@@ -649,6 +672,7 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = caseEditUnit(registrationUnit);
 				if (result == null) result = caseAuthenticationUnit(registrationUnit);
 				if (result == null) result = caseDynamicUnit(registrationUnit);
+				if (result == null) result = caseSingletonUnit(registrationUnit);
 				if (result == null) result = caseContentUnit(registrationUnit);
 				if (result == null) result = caseNamedDisplayElement(registrationUnit);
 				if (result == null) result = caseNamedElement(registrationUnit);
@@ -1155,21 +1179,6 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Selectable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Selectable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSelectable(Selectable object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Unit Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1380,6 +1389,51 @@ public class WafSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Selectable Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Selectable Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSelectableUnit(SelectableUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Singleton Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Singleton Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSingletonUnit(SingletonUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Collection Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Collection Unit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCollectionUnit(CollectionUnit object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Edit Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1571,21 +1625,6 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSearchUnit(SearchUnit object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Action Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Action Unit</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseActionUnit(ActionUnit object) {
 		return null;
 	}
 

@@ -21,7 +21,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @model
  * @generated
  */
-public interface GalleryUnit extends ImageUnit, Selectable {
+public interface GalleryUnit extends ImageUnit {
 	/**
 	 * Returns the value of the '<em><b>Full Size Filter</b></em>' reference.
 	 * <!-- begin-user-doc -->

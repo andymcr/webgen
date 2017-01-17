@@ -734,7 +734,6 @@
         eType="#//FilterParameter"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Selectable" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnitContainer" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="units" upperBound="-1"
         eType="#//ContentUnit" containment="true" eOpposite="#//ContentUnit/displayedOn"/>
@@ -923,7 +922,18 @@
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EditUnit" abstract="true" eSuperTypes="#//DynamicUnit">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectableUnit" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectionType" eType="#//EntityOrView"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingletonUnit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contentType" lowerBound="1"
+        eType="#//EntityOrView"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CollectionUnit" eSuperTypes="#//SelectableUnit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contentType" lowerBound="1"
+        upperBound="-1" eType="#//EntityOrView"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EditUnit" abstract="true" eSuperTypes="#//DynamicUnit #//SingletonUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
         eType="#//Label"/>
@@ -945,7 +955,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,create_unit"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CreateUpdateUnit" eSuperTypes="#//EditUnit #//Selectable">
+  <eClassifiers xsi:type="ecore:EClass" name="CreateUpdateUnit" eSuperTypes="#//EditUnit #//SelectableUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="createUriElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clearLabel" ordered="false"
@@ -953,11 +963,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,create_unit,update_unit"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UpdateUnit" eSuperTypes="#//EditUnit #//Selectable">
+  <eClassifiers xsi:type="ecore:EClass" name="UpdateUnit" eSuperTypes="#//EditUnit #//SelectableUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,update_unit"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MapUnit" eSuperTypes="#//EditUnit #//Selectable">
+  <eClassifiers xsi:type="ecore:EClass" name="MapUnit" eSuperTypes="#//EditUnit #//SelectableUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="readOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultZoomLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -980,7 +990,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" ordered="false"
         eType="#//Label"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DetailsUnit" eSuperTypes="#//DataUnit #//Selectable">
+  <eClassifiers xsi:type="ecore:EClass" name="DetailsUnit" eSuperTypes="#//DataUnit #//SingletonUnit #//SelectableUnit">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="selectionMustBeSingleton"/>
     </eAnnotations>
@@ -1002,7 +1012,7 @@
     <eLiterals name="PageDirection" value="1"/>
     <eLiterals name="LineDirection" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IndexUnit" eSuperTypes="#//DataUnit #//InlineActionContainer">
+  <eClassifiers xsi:type="ecore:EClass" name="IndexUnit" eSuperTypes="#//DataUnit #//CollectionUnit #//InlineActionContainer">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="selectionMustNotBeSingleton"/>
     </eAnnotations>
@@ -1060,11 +1070,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,search_unit"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionUnit" eSuperTypes="#//ControlUnit">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,action_unit"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ImageUnit" abstract="true" eSuperTypes="#//DynamicUnit">
+  <eClassifiers xsi:type="ecore:EClass" name="ImageUnit" abstract="true" eSuperTypes="#//DynamicUnit #//CollectionUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imagePathFeature" lowerBound="1"
         eType="#//FeaturePath" containment="true"/>
@@ -1146,7 +1152,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="slider_content"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GalleryUnit" eSuperTypes="#//ImageUnit #//Selectable">
+  <eClassifiers xsi:type="ecore:EClass" name="GalleryUnit" eSuperTypes="#//ImageUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fullSizeFilter" eType="#//ImageManipulation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleClass" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="unit,gallery_unit"/>
@@ -1196,7 +1202,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelectAction" eSuperTypes="#//InlineAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="#//Selectable"/>
+        eType="#//SelectableUnit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DeleteAction" eSuperTypes="#//InlineAction">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

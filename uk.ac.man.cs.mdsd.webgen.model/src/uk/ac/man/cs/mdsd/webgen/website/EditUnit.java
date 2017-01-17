@@ -33,7 +33,7 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  * @model abstract="true"
  * @generated
  */
-public interface EditUnit extends DynamicUnit {
+public interface EditUnit extends DynamicUnit, SingletonUnit {
 	/**
 	 * Returns the value of the '<em><b>Default Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->

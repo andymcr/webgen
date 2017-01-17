@@ -13,5 +13,5 @@ package uk.ac.man.cs.mdsd.waf;
  * @model
  * @generated
  */
-public interface UpdateUnit extends EditUnit, Selectable {
+public interface UpdateUnit extends EditUnit, SelectableUnit {
 } // UpdateUnit

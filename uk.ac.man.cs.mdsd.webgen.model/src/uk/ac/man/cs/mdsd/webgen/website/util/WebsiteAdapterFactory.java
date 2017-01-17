@@ -330,10 +330,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createQueryParameterAdapter();
 			}
 			@Override
-			public Adapter caseSelectable(Selectable object) {
-				return createSelectableAdapter();
-			}
-			@Override
 			public Adapter caseUnitContainer(UnitContainer object) {
 				return createUnitContainerAdapter();
 			}
@@ -394,6 +390,18 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createKeyActualAdapter();
 			}
 			@Override
+			public Adapter caseSelectableUnit(SelectableUnit object) {
+				return createSelectableUnitAdapter();
+			}
+			@Override
+			public Adapter caseSingletonUnit(SingletonUnit object) {
+				return createSingletonUnitAdapter();
+			}
+			@Override
+			public Adapter caseCollectionUnit(CollectionUnit object) {
+				return createCollectionUnitAdapter();
+			}
+			@Override
 			public Adapter caseEditUnit(EditUnit object) {
 				return createEditUnitAdapter();
 			}
@@ -432,10 +440,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSearchUnit(SearchUnit object) {
 				return createSearchUnitAdapter();
-			}
-			@Override
-			public Adapter caseActionUnit(ActionUnit object) {
-				return createActionUnitAdapter();
 			}
 			@Override
 			public Adapter caseImageUnit(ImageUnit object) {
@@ -1234,20 +1238,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.Selectable <em>Selectable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.Selectable
-	 * @generated
-	 */
-	public Adapter createSelectableAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.StaticMenu <em>Static Menu</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1696,6 +1686,48 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.SelectableUnit <em>Selectable Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.SelectableUnit
+	 * @generated
+	 */
+	public Adapter createSelectableUnitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.SingletonUnit <em>Singleton Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.SingletonUnit
+	 * @generated
+	 */
+	public Adapter createSingletonUnitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.CollectionUnit <em>Collection Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.CollectionUnit
+	 * @generated
+	 */
+	public Adapter createCollectionUnitAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.EditUnit <em>Edit Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1846,20 +1878,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSearchUnitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ActionUnit <em>Action Unit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ActionUnit
-	 * @generated
-	 */
-	public Adapter createActionUnitAdapter() {
 		return null;
 	}
 

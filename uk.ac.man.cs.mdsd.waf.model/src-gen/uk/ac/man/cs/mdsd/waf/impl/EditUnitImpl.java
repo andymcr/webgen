@@ -12,11 +12,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.expression.Predicate;
 
+import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.orm.Label;
 
 import uk.ac.man.cs.mdsd.waf.EditUnit;
 import uk.ac.man.cs.mdsd.waf.Page;
 import uk.ac.man.cs.mdsd.waf.Selection;
+import uk.ac.man.cs.mdsd.waf.SingletonUnit;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -27,6 +29,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl#getEnableWhen <em>Enable When</em>}</li>
@@ -40,6 +43,16 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
+	/**
+	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityOrView contentType;
+
 	/**
 	 * The cached value of the '{@link #getDefaultSelection() <em>Default Selection</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -167,6 +180,44 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.EDIT_UNIT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getContentType() {
+		if (contentType != null && contentType.eIsProxy()) {
+			InternalEObject oldContentType = (InternalEObject)contentType;
+			contentType = (EntityOrView)eResolveProxy(oldContentType);
+			if (contentType != oldContentType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.EDIT_UNIT__CONTENT_TYPE, oldContentType, contentType));
+			}
+		}
+		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetContentType() {
+		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContentType(EntityOrView newContentType) {
+		EntityOrView oldContentType = contentType;
+		contentType = newContentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.EDIT_UNIT__CONTENT_TYPE, oldContentType, contentType));
 	}
 
 	/**
@@ -449,6 +500,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.EDIT_UNIT__CONTENT_TYPE:
+				if (resolve) return getContentType();
+				return basicGetContentType();
 			case WafPackage.EDIT_UNIT__DEFAULT_SELECTION:
 				if (resolve) return getDefaultSelection();
 				return basicGetDefaultSelection();
@@ -481,6 +535,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.EDIT_UNIT__CONTENT_TYPE:
+				setContentType((EntityOrView)newValue);
+				return;
 			case WafPackage.EDIT_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)newValue);
 				return;
@@ -517,6 +574,9 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.EDIT_UNIT__CONTENT_TYPE:
+				setContentType((EntityOrView)null);
+				return;
 			case WafPackage.EDIT_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)null);
 				return;
@@ -553,6 +613,8 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.EDIT_UNIT__CONTENT_TYPE:
+				return contentType != null;
 			case WafPackage.EDIT_UNIT__DEFAULT_SELECTION:
 				return defaultSelection != null;
 			case WafPackage.EDIT_UNIT__TITLE:
@@ -571,6 +633,38 @@ public abstract class EditUnitImpl extends DynamicUnitImpl implements EditUnit {
 				return customiseValues != CUSTOMISE_VALUES_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == SingletonUnit.class) {
+			switch (derivedFeatureID) {
+				case WafPackage.EDIT_UNIT__CONTENT_TYPE: return WafPackage.SINGLETON_UNIT__CONTENT_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == SingletonUnit.class) {
+			switch (baseFeatureID) {
+				case WafPackage.SINGLETON_UNIT__CONTENT_TYPE: return WafPackage.EDIT_UNIT__CONTENT_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

@@ -114,6 +114,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.CAPTCHA_FIELD: return createCaptchaField();
 			case WebsitePackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
 			case WebsitePackage.KEY_ACTUAL: return createKeyActual();
+			case WebsitePackage.SINGLETON_UNIT: return createSingletonUnit();
+			case WebsitePackage.COLLECTION_UNIT: return createCollectionUnit();
 			case WebsitePackage.CREATE_UNIT: return createCreateUnit();
 			case WebsitePackage.CREATE_UPDATE_UNIT: return createCreateUpdateUnit();
 			case WebsitePackage.UPDATE_UNIT: return createUpdateUnit();
@@ -121,7 +123,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.DETAILS_UNIT: return createDetailsUnit();
 			case WebsitePackage.INDEX_UNIT: return createIndexUnit();
 			case WebsitePackage.SEARCH_UNIT: return createSearchUnit();
-			case WebsitePackage.ACTION_UNIT: return createActionUnit();
 			case WebsitePackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
 			case WebsitePackage.CHILD_ATTRIBUTE: return createChildAttribute();
@@ -638,6 +639,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SingletonUnit createSingletonUnit() {
+		SingletonUnitImpl singletonUnit = new SingletonUnitImpl();
+		return singletonUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CollectionUnit createCollectionUnit() {
+		CollectionUnitImpl collectionUnit = new CollectionUnitImpl();
+		return collectionUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Service createService() {
 		ServiceImpl service = new ServiceImpl();
 		return service;
@@ -851,16 +872,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public SearchUnit createSearchUnit() {
 		SearchUnitImpl searchUnit = new SearchUnitImpl();
 		return searchUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ActionUnit createActionUnit() {
-		ActionUnitImpl actionUnit = new ActionUnitImpl();
-		return actionUnit;
 	}
 
 	/**

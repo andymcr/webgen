@@ -248,9 +248,6 @@ class QueryParameter extends NamedElement {
 	String value
 }
 
-interface Selectable {
-}
-
 interface UnitContainer {
 	contains ContentUnit[] units opposite displayedOn
 }
@@ -372,7 +369,21 @@ class DateField extends InterfaceField {
 class CaptchaField extends InterfaceField {
 }
 
-abstract class EditUnit extends DynamicUnit {
+interface SelectableUnit {
+	refers EntityOrView selectionType
+	refers SelectAction[] selectors opposite target
+}
+
+interface SingletonUnit {
+	refers EntityOrView[1] contentType
+}
+
+interface CollectionUnit extends SelectableUnit {
+	refers Feature x
+	refers EntityOrView[1..*] contentType
+}
+
+abstract class EditUnit extends DynamicUnit, SingletonUnit {
 	refers Selection defaultSelection
 	refers Label title
 	contains Predicate enableWhen
@@ -386,19 +397,19 @@ abstract class EditUnit extends DynamicUnit {
 class CreateUnit extends EditUnit {
 }
 
-class CreateUpdateUnit extends EditUnit, Selectable {
+class CreateUpdateUnit extends EditUnit, SelectableUnit {
 	String createUriElement = ""
 	String clearLabel
 }
 
-class MapUnit extends EditUnit, Selectable {
+class MapUnit extends EditUnit, SelectableUnit {
 	boolean readOnly
 	int defaultZoomLevel
 	refers SingletonLocation[1] location
 	refers Attribute placeName
 }
 
-class UpdateUnit extends EditUnit, Selectable {
+class UpdateUnit extends EditUnit, SelectableUnit {
 }
 
 abstract class DataUnit extends DynamicUnit {
@@ -406,12 +417,12 @@ abstract class DataUnit extends DynamicUnit {
 	refers Label title
 }
 
-class DetailsUnit extends DataUnit, Selectable {
+class DetailsUnit extends DataUnit, SingletonUnit, SelectableUnit {
 	boolean onlyDisplayWhenNotEmpty
 	boolean omitFieldLabels
 }
 
-abstract class IndexUnit extends DataUnit, InlineActionContainer {
+abstract class IndexUnit extends DataUnit, CollectionUnit, InlineActionContainer {
 	boolean omitColumnLabels
 	contains Filter[] filters
 	refers Filter pagination
@@ -448,10 +459,7 @@ class SearchUnit extends ControlUnit {
 	refers IndexUnit[1] resultsDestination opposite targettingSearches
 }
 
-class ActionUnit extends ControlUnit {
-}
-
-abstract class ImageUnit extends DynamicUnit {
+abstract class ImageUnit extends DynamicUnit, CollectionUnit {
 	refers Selection defaultSelection
 	contains FeaturePath[1] imagePathFeature
 	contains FeaturePath[1] titleFeature
@@ -502,7 +510,7 @@ class ImageIndexUnit extends ImageUnit, InlineActionContainer {
 class SliderUnit extends ImageUnit {
 }
 
-class GalleryUnit extends ImageUnit, Selectable {
+class GalleryUnit extends ImageUnit {
 	refers ImageManipulation fullSizeFilter
 }
 
@@ -544,7 +552,7 @@ abstract class InlineAction extends NamedDisplayElement {
 }
 
 class SelectAction extends InlineAction {
-	refers Selectable[1] target
+	refers SelectableUnit[1] target opposite selectors
 }
 
 class DeleteAction extends InlineAction {

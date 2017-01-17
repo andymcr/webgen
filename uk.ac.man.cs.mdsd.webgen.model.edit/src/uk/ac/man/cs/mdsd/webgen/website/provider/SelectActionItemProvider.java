@@ -130,6 +130,11 @@ public class SelectActionItemProvider extends InlineActionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SELECT_ACTION__TARGET,
+				 WebsiteFactory.eINSTANCE.createCollectionUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.SELECT_ACTION__TARGET,
 				 WebsiteFactory.eINSTANCE.createCreateUpdateUnit()));
 
 		newChildDescriptors.add
@@ -146,6 +151,21 @@ public class SelectActionItemProvider extends InlineActionItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.SELECT_ACTION__TARGET,
 				 WebsiteFactory.eINSTANCE.createDetailsUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.SELECT_ACTION__TARGET,
+				 WebsiteFactory.eINSTANCE.createIndexUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.SELECT_ACTION__TARGET,
+				 WebsiteFactory.eINSTANCE.createImageIndexUnit()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.SELECT_ACTION__TARGET,
+				 WebsiteFactory.eINSTANCE.createSliderUnit()));
 
 		newChildDescriptors.add
 			(createChildParameter

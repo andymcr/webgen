@@ -1383,6 +1383,52 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.SingletonUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SingletonUnitItemProvider singletonUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.SingletonUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSingletonUnitAdapter() {
+		if (singletonUnitItemProvider == null) {
+			singletonUnitItemProvider = new SingletonUnitItemProvider(this);
+		}
+
+		return singletonUnitItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CollectionUnit} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CollectionUnitItemProvider collectionUnitItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CollectionUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCollectionUnitAdapter() {
+		if (collectionUnitItemProvider == null) {
+			collectionUnitItemProvider = new CollectionUnitItemProvider(this);
+		}
+
+		return collectionUnitItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.CreateUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1541,29 +1587,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		}
 
 		return searchUnitItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.webgen.website.ActionUnit} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActionUnitItemProvider actionUnitItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ActionUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActionUnitAdapter() {
-		if (actionUnitItemProvider == null) {
-			actionUnitItemProvider = new ActionUnitItemProvider(this);
-		}
-
-		return actionUnitItemProvider;
 	}
 
 	/**
@@ -2063,6 +2086,8 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (captchaFieldItemProvider != null) captchaFieldItemProvider.dispose();
 		if (unitSupportActionItemProvider != null) unitSupportActionItemProvider.dispose();
 		if (keyActualItemProvider != null) keyActualItemProvider.dispose();
+		if (singletonUnitItemProvider != null) singletonUnitItemProvider.dispose();
+		if (collectionUnitItemProvider != null) collectionUnitItemProvider.dispose();
 		if (createUnitItemProvider != null) createUnitItemProvider.dispose();
 		if (createUpdateUnitItemProvider != null) createUpdateUnitItemProvider.dispose();
 		if (updateUnitItemProvider != null) updateUnitItemProvider.dispose();
@@ -2070,7 +2095,6 @@ public class WebsiteItemProviderAdapterFactory extends WebsiteAdapterFactory imp
 		if (detailsUnitItemProvider != null) detailsUnitItemProvider.dispose();
 		if (indexUnitItemProvider != null) indexUnitItemProvider.dispose();
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
-		if (actionUnitItemProvider != null) actionUnitItemProvider.dispose();
 		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
 		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
 		if (childAttributeItemProvider != null) childAttributeItemProvider.dispose();

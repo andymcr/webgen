@@ -56,6 +56,7 @@ public class EditUnitItemProvider extends DynamicUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addContentTypePropertyDescriptor(object);
 			addDefaultSelectionPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addConfirmDestinationPropertyDescriptor(object);
@@ -66,6 +67,28 @@ public class EditUnitItemProvider extends DynamicUnitItemProvider {
 			addCustomiseValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Content Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContentTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SingletonUnit_contentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonUnit_contentType_feature", "_UI_SingletonUnit_type"),
+				 WebsitePackage.Literals.SINGLETON_UNIT__CONTENT_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

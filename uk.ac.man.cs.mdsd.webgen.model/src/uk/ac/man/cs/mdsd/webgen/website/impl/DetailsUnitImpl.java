@@ -10,9 +10,13 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.website.DetailsUnit;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.SelectableUnit;
+import uk.ac.man.cs.mdsd.webgen.website.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -23,6 +27,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOnlyDisplayWhenNotEmpty <em>Only Display When Not Empty</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#isOmitFieldLabels <em>Omit Field Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DetailsUnitImpl#getStyleClass <em>Style Class</em>}</li>
@@ -32,6 +38,26 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
+	/**
+	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityOrView contentType;
+
+	/**
+	 * The cached value of the '{@link #getSelectionType() <em>Selection Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelectionType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityOrView selectionType;
+
 	/**
 	 * The default value of the '{@link #isOnlyDisplayWhenNotEmpty() <em>Only Display When Not Empty</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -136,6 +162,82 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EntityOrView getContentType() {
+		if (contentType != null && contentType.eIsProxy()) {
+			InternalEObject oldContentType = (InternalEObject)contentType;
+			contentType = (EntityOrView)eResolveProxy(oldContentType);
+			if (contentType != oldContentType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.DETAILS_UNIT__CONTENT_TYPE, oldContentType, contentType));
+			}
+		}
+		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetContentType() {
+		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContentType(EntityOrView newContentType) {
+		EntityOrView oldContentType = contentType;
+		contentType = newContentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DETAILS_UNIT__CONTENT_TYPE, oldContentType, contentType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getSelectionType() {
+		if (selectionType != null && selectionType.eIsProxy()) {
+			InternalEObject oldSelectionType = (InternalEObject)selectionType;
+			selectionType = (EntityOrView)eResolveProxy(oldSelectionType);
+			if (selectionType != oldSelectionType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.DETAILS_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
+			}
+		}
+		return selectionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetSelectionType() {
+		return selectionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelectionType(EntityOrView newSelectionType) {
+		EntityOrView oldSelectionType = selectionType;
+		selectionType = newSelectionType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.DETAILS_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isOnlyDisplayWhenNotEmpty() {
 		return onlyDisplayWhenNotEmpty;
 	}
@@ -223,6 +325,12 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.DETAILS_UNIT__CONTENT_TYPE:
+				if (resolve) return getContentType();
+				return basicGetContentType();
+			case WebsitePackage.DETAILS_UNIT__SELECTION_TYPE:
+				if (resolve) return getSelectionType();
+				return basicGetSelectionType();
 			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return isOnlyDisplayWhenNotEmpty();
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
@@ -243,6 +351,12 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.DETAILS_UNIT__CONTENT_TYPE:
+				setContentType((EntityOrView)newValue);
+				return;
+			case WebsitePackage.DETAILS_UNIT__SELECTION_TYPE:
+				setSelectionType((EntityOrView)newValue);
+				return;
 			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty((Boolean)newValue);
 				return;
@@ -267,6 +381,12 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.DETAILS_UNIT__CONTENT_TYPE:
+				setContentType((EntityOrView)null);
+				return;
+			case WebsitePackage.DETAILS_UNIT__SELECTION_TYPE:
+				setSelectionType((EntityOrView)null);
+				return;
 			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				setOnlyDisplayWhenNotEmpty(ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT);
 				return;
@@ -291,6 +411,10 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.DETAILS_UNIT__CONTENT_TYPE:
+				return contentType != null;
+			case WebsitePackage.DETAILS_UNIT__SELECTION_TYPE:
+				return selectionType != null;
 			case WebsitePackage.DETAILS_UNIT__ONLY_DISPLAY_WHEN_NOT_EMPTY:
 				return onlyDisplayWhenNotEmpty != ONLY_DISPLAY_WHEN_NOT_EMPTY_EDEFAULT;
 			case WebsitePackage.DETAILS_UNIT__OMIT_FIELD_LABELS:
@@ -301,6 +425,50 @@ public class DetailsUnitImpl extends DataUnitImpl implements DetailsUnit {
 				return CONTENT_CLASS_EDEFAULT == null ? contentClass != null : !CONTENT_CLASS_EDEFAULT.equals(contentClass);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == SingletonUnit.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.DETAILS_UNIT__CONTENT_TYPE: return WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE;
+				default: return -1;
+			}
+		}
+		if (baseClass == SelectableUnit.class) {
+			switch (derivedFeatureID) {
+				case WebsitePackage.DETAILS_UNIT__SELECTION_TYPE: return WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == SingletonUnit.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE: return WebsitePackage.DETAILS_UNIT__CONTENT_TYPE;
+				default: return -1;
+			}
+		}
+		if (baseClass == SelectableUnit.class) {
+			switch (baseFeatureID) {
+				case WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE: return WebsitePackage.DETAILS_UNIT__SELECTION_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

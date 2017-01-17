@@ -25,7 +25,7 @@ package uk.ac.man.cs.mdsd.waf;
  * @model abstract="true"
  * @generated
  */
-public interface ImageUnit extends DynamicUnit {
+public interface ImageUnit extends DynamicUnit, CollectionUnit {
 	/**
 	 * Returns the value of the '<em><b>Default Selection</b></em>' reference.
 	 * <!-- begin-user-doc -->

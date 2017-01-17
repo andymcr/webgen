@@ -395,6 +395,24 @@ public interface WebsiteFactory extends EFactory {
 	KeyActual createKeyActual();
 
 	/**
+	 * Returns a new object of class '<em>Singleton Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Singleton Unit</em>'.
+	 * @generated
+	 */
+	SingletonUnit createSingletonUnit();
+
+	/**
+	 * Returns a new object of class '<em>Collection Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Collection Unit</em>'.
+	 * @generated
+	 */
+	CollectionUnit createCollectionUnit();
+
+	/**
 	 * Returns a new object of class '<em>Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -591,15 +609,6 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	SearchUnit createSearchUnit();
-
-	/**
-	 * Returns a new object of class '<em>Action Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action Unit</em>'.
-	 * @generated
-	 */
-	ActionUnit createActionUnit();
 
 	/**
 	 * Returns a new object of class '<em>Feature Path Attribute</em>'.

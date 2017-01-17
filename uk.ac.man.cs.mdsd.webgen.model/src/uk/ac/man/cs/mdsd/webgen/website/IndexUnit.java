@@ -42,7 +42,7 @@ import java.util.List;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustNotBeSingleton='not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit <> 1'"
  * @generated
  */
-public interface IndexUnit extends DataUnit, InlineActionContainer {
+public interface IndexUnit extends DataUnit, CollectionUnit, InlineActionContainer {
 	/**
 	 * Returns the value of the '<em><b>Display Option</b></em>' attribute.
 	 * The default value is <code>"Grid"</code>.

@@ -27,7 +27,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL selectionMustBeSingleton='not defaultSelection.oclIsUndefined() implies\r\n\tdefaultSelection.limit = 1'"
  * @generated
  */
-public interface DetailsUnit extends DataUnit, Selectable {
+public interface DetailsUnit extends DataUnit, SingletonUnit, SelectableUnit {
 	/**
 	 * Returns the value of the '<em><b>Only Display When Not Empty</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

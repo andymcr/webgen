@@ -31,6 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getImagePathFeature <em>Image Path Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getTitleFeature <em>Title Feature</em>}</li>
@@ -62,6 +63,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected EList<EntityOrView> contentType;
+
+	/**
+	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection selection;
 
 	/**
 	 * The cached value of the '{@link #getDefaultSelection() <em>Default Selection</em>}' reference.
@@ -227,6 +238,44 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.IMAGE_UNIT__CONTENT_TYPE);
 		}
 		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection getSelection() {
+		if (selection != null && selection.eIsProxy()) {
+			InternalEObject oldSelection = (InternalEObject)selection;
+			selection = (Selection)eResolveProxy(oldSelection);
+			if (selection != oldSelection) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.IMAGE_UNIT__SELECTION, oldSelection, selection));
+			}
+		}
+		return selection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetSelection() {
+		return selection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelection(Selection newSelection) {
+		Selection oldSelection = selection;
+		selection = newSelection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__SELECTION, oldSelection, selection));
 	}
 
 	/**
@@ -483,6 +532,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return basicGetSelectionType();
 			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
 				return getContentType();
+			case WebsitePackage.IMAGE_UNIT__SELECTION:
+				if (resolve) return getSelection();
+				return basicGetSelection();
 			case WebsitePackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				if (resolve) return getDefaultSelection();
 				return basicGetDefaultSelection();
@@ -518,6 +570,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
+				return;
+			case WebsitePackage.IMAGE_UNIT__SELECTION:
+				setSelection((Selection)newValue);
 				return;
 			case WebsitePackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)newValue);
@@ -558,6 +613,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				return;
+			case WebsitePackage.IMAGE_UNIT__SELECTION:
+				setSelection((Selection)null);
+				return;
 			case WebsitePackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				setDefaultSelection((Selection)null);
 				return;
@@ -595,6 +653,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return selectionType != null;
 			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
+			case WebsitePackage.IMAGE_UNIT__SELECTION:
+				return selection != null;
 			case WebsitePackage.IMAGE_UNIT__DEFAULT_SELECTION:
 				return defaultSelection != null;
 			case WebsitePackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
@@ -629,6 +689,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		if (baseClass == CollectionUnit.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE: return WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE;
+				case WebsitePackage.IMAGE_UNIT__SELECTION: return WebsitePackage.COLLECTION_UNIT__SELECTION;
 				default: return -1;
 			}
 		}
@@ -651,6 +712,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		if (baseClass == CollectionUnit.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE: return WebsitePackage.IMAGE_UNIT__CONTENT_TYPE;
+				case WebsitePackage.COLLECTION_UNIT__SELECTION: return WebsitePackage.IMAGE_UNIT__SELECTION;
 				default: return -1;
 			}
 		}

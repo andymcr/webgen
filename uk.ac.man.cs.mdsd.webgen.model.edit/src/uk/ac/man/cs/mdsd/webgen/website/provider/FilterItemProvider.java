@@ -17,8 +17,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
-import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -75,7 +75,7 @@ public class FilterItemProvider extends NamedDisplayElementItemProvider {
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof Filter) {
 						return getSelections(
-							(IndexUnit) ((Filter) object).eContainer());
+							(DataUnit) ((Filter) object).eContainer());
 					}
 					return Collections.emptySet();
 				}

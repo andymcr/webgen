@@ -922,16 +922,17 @@
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Expression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectableUnit" abstract="true" interface="true">
+  <eClassifiers xsi:type="ecore:EClass" name="SelectableUnit" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selectionType" eType="#//EntityOrView"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SingletonUnit">
+  <eClassifiers xsi:type="ecore:EClass" name="SingletonUnit" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contentType" lowerBound="1"
         eType="#//EntityOrView"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CollectionUnit" eSuperTypes="#//SelectableUnit">
+  <eClassifiers xsi:type="ecore:EClass" name="CollectionUnit" abstract="true" eSuperTypes="#//SelectableUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contentType" lowerBound="1"
         upperBound="-1" eType="#//EntityOrView"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EditUnit" abstract="true" eSuperTypes="#//DynamicUnit #//SingletonUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultSelection" eType="#//Selection"/>

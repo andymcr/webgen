@@ -4288,10 +4288,10 @@ public interface WafPackage extends EPackage {
 	int CAPTCHA_FIELD_OPERATION_COUNT = INTERFACE_FIELD_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.SelectableUnit <em>Selectable Unit</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.SelectableUnitImpl <em>Selectable Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.SelectableUnit
+	 * @see uk.ac.man.cs.mdsd.waf.impl.SelectableUnitImpl
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectableUnit()
 	 * @generated
 	 */
@@ -4334,10 +4334,10 @@ public interface WafPackage extends EPackage {
 	int SELECTABLE_UNIT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.SingletonUnit <em>Singleton Unit</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.SingletonUnitImpl <em>Singleton Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.SingletonUnit
+	 * @see uk.ac.man.cs.mdsd.waf.impl.SingletonUnitImpl
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSingletonUnit()
 	 * @generated
 	 */
@@ -4371,10 +4371,10 @@ public interface WafPackage extends EPackage {
 	int SINGLETON_UNIT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit <em>Collection Unit</em>}' class.
+	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.waf.impl.CollectionUnitImpl <em>Collection Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see uk.ac.man.cs.mdsd.waf.CollectionUnit
+	 * @see uk.ac.man.cs.mdsd.waf.impl.CollectionUnitImpl
 	 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionUnit()
 	 * @generated
 	 */
@@ -4399,22 +4399,22 @@ public interface WafPackage extends EPackage {
 	int COLLECTION_UNIT__SELECTORS = SELECTABLE_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION_UNIT__X = SELECTABLE_UNIT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_UNIT__CONTENT_TYPE = SELECTABLE_UNIT_FEATURE_COUNT + 1;
+	int COLLECTION_UNIT__CONTENT_TYPE = SELECTABLE_UNIT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION_UNIT__SELECTION = SELECTABLE_UNIT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Collection Unit</em>' class.
@@ -6783,22 +6783,22 @@ public interface WafPackage extends EPackage {
 	int INDEX_UNIT__SELECTORS = DATA_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_UNIT__X = DATA_UNIT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_UNIT__CONTENT_TYPE = DATA_UNIT_FEATURE_COUNT + 3;
+	int INDEX_UNIT__CONTENT_TYPE = DATA_UNIT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_UNIT__SELECTION = DATA_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -7198,15 +7198,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_GRID_UNIT__SELECTORS = INDEX_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_GRID_UNIT__X = INDEX_UNIT__X;
-
-	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7214,6 +7205,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_GRID_UNIT__CONTENT_TYPE = INDEX_UNIT__CONTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_GRID_UNIT__SELECTION = INDEX_UNIT__SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -7613,15 +7613,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_PAGE_DIRECTION_UNIT__SELECTORS = INDEX_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_PAGE_DIRECTION_UNIT__X = INDEX_UNIT__X;
-
-	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7629,6 +7620,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_PAGE_DIRECTION_UNIT__CONTENT_TYPE = INDEX_UNIT__CONTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_PAGE_DIRECTION_UNIT__SELECTION = INDEX_UNIT__SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -8028,15 +8028,6 @@ public interface WafPackage extends EPackage {
 	int INDEX_LINE_DIRECTION_UNIT__SELECTORS = INDEX_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_LINE_DIRECTION_UNIT__X = INDEX_UNIT__X;
-
-	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8044,6 +8035,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int INDEX_LINE_DIRECTION_UNIT__CONTENT_TYPE = INDEX_UNIT__CONTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INDEX_LINE_DIRECTION_UNIT__SELECTION = INDEX_UNIT__SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -8922,22 +8922,22 @@ public interface WafPackage extends EPackage {
 	int IMAGE_UNIT__SELECTORS = DYNAMIC_UNIT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_UNIT__X = DYNAMIC_UNIT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_UNIT__CONTENT_TYPE = DYNAMIC_UNIT_FEATURE_COUNT + 3;
+	int IMAGE_UNIT__CONTENT_TYPE = DYNAMIC_UNIT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_UNIT__SELECTION = DYNAMIC_UNIT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
@@ -9496,15 +9496,6 @@ public interface WafPackage extends EPackage {
 	int IMAGE_INDEX_UNIT__SELECTORS = IMAGE_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IMAGE_INDEX_UNIT__X = IMAGE_UNIT__X;
-
-	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9512,6 +9503,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int IMAGE_INDEX_UNIT__CONTENT_TYPE = IMAGE_UNIT__CONTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_INDEX_UNIT__SELECTION = IMAGE_UNIT__SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
@@ -9821,15 +9821,6 @@ public interface WafPackage extends EPackage {
 	int SLIDER_UNIT__SELECTORS = IMAGE_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SLIDER_UNIT__X = IMAGE_UNIT__X;
-
-	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9837,6 +9828,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int SLIDER_UNIT__CONTENT_TYPE = IMAGE_UNIT__CONTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDER_UNIT__SELECTION = IMAGE_UNIT__SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
@@ -10137,15 +10137,6 @@ public interface WafPackage extends EPackage {
 	int GALLERY_UNIT__SELECTORS = IMAGE_UNIT__SELECTORS;
 
 	/**
-	 * The feature id for the '<em><b>X</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GALLERY_UNIT__X = IMAGE_UNIT__X;
-
-	/**
 	 * The feature id for the '<em><b>Content Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10153,6 +10144,15 @@ public interface WafPackage extends EPackage {
 	 * @ordered
 	 */
 	int GALLERY_UNIT__CONTENT_TYPE = IMAGE_UNIT__CONTENT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Selection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GALLERY_UNIT__SELECTION = IMAGE_UNIT__SELECTION;
 
 	/**
 	 * The feature id for the '<em><b>Default Selection</b></em>' reference.
@@ -14306,17 +14306,6 @@ public interface WafPackage extends EPackage {
 	EClass getCollectionUnit();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getX <em>X</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>X</em>'.
-	 * @see uk.ac.man.cs.mdsd.waf.CollectionUnit#getX()
-	 * @see #getCollectionUnit()
-	 * @generated
-	 */
-	EReference getCollectionUnit_X();
-
-	/**
 	 * Returns the meta object for the reference list '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getContentType <em>Content Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -14326,6 +14315,17 @@ public interface WafPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCollectionUnit_ContentType();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit#getSelection <em>Selection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Selection</em>'.
+	 * @see uk.ac.man.cs.mdsd.waf.CollectionUnit#getSelection()
+	 * @see #getCollectionUnit()
+	 * @generated
+	 */
+	EReference getCollectionUnit_Selection();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.waf.EditUnit <em>Edit Unit</em>}'.
@@ -17437,10 +17437,10 @@ public interface WafPackage extends EPackage {
 		EClass CAPTCHA_FIELD = eINSTANCE.getCaptchaField();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.SelectableUnit <em>Selectable Unit</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.SelectableUnitImpl <em>Selectable Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.SelectableUnit
+		 * @see uk.ac.man.cs.mdsd.waf.impl.SelectableUnitImpl
 		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSelectableUnit()
 		 * @generated
 		 */
@@ -17463,10 +17463,10 @@ public interface WafPackage extends EPackage {
 		EReference SELECTABLE_UNIT__SELECTORS = eINSTANCE.getSelectableUnit_Selectors();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.SingletonUnit <em>Singleton Unit</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.SingletonUnitImpl <em>Singleton Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.SingletonUnit
+		 * @see uk.ac.man.cs.mdsd.waf.impl.SingletonUnitImpl
 		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getSingletonUnit()
 		 * @generated
 		 */
@@ -17481,22 +17481,14 @@ public interface WafPackage extends EPackage {
 		EReference SINGLETON_UNIT__CONTENT_TYPE = eINSTANCE.getSingletonUnit_ContentType();
 
 		/**
-		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.CollectionUnit <em>Collection Unit</em>}' class.
+		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.CollectionUnitImpl <em>Collection Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see uk.ac.man.cs.mdsd.waf.CollectionUnit
+		 * @see uk.ac.man.cs.mdsd.waf.impl.CollectionUnitImpl
 		 * @see uk.ac.man.cs.mdsd.waf.impl.WafPackageImpl#getCollectionUnit()
 		 * @generated
 		 */
 		EClass COLLECTION_UNIT = eINSTANCE.getCollectionUnit();
-
-		/**
-		 * The meta object literal for the '<em><b>X</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COLLECTION_UNIT__X = eINSTANCE.getCollectionUnit_X();
 
 		/**
 		 * The meta object literal for the '<em><b>Content Type</b></em>' reference list feature.
@@ -17505,6 +17497,14 @@ public interface WafPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COLLECTION_UNIT__CONTENT_TYPE = eINSTANCE.getCollectionUnit_ContentType();
+
+		/**
+		 * The meta object literal for the '<em><b>Selection</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COLLECTION_UNIT__SELECTION = eINSTANCE.getCollectionUnit_Selection();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.waf.impl.EditUnitImpl <em>Edit Unit</em>}' class.

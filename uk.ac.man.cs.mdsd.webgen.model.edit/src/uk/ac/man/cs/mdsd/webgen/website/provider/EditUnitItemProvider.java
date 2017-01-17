@@ -87,7 +87,7 @@ public class EditUnitItemProvider extends DynamicUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

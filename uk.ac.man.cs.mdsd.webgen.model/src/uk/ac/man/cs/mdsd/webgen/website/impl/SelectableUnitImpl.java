@@ -11,39 +11,39 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.SingletonUnit;
+import uk.ac.man.cs.mdsd.webgen.website.SelectableUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Singleton Unit</b></em>'.
+ * An implementation of the model object '<em><b>Selectable Unit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SingletonUnitImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectableUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class SingletonUnitImpl extends EObjectImpl implements SingletonUnit {
+public abstract class SelectableUnitImpl extends EObjectImpl implements SelectableUnit {
 	/**
-	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference.
+	 * The cached value of the '{@link #getSelectionType() <em>Selection Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContentType()
+	 * @see #getSelectionType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EntityOrView contentType;
+	protected EntityOrView selectionType;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SingletonUnitImpl() {
+	protected SelectableUnitImpl() {
 		super();
 	}
 
@@ -54,7 +54,7 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WebsitePackage.Literals.SINGLETON_UNIT;
+		return WebsitePackage.Literals.SELECTABLE_UNIT;
 	}
 
 	/**
@@ -62,16 +62,16 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView getContentType() {
-		if (contentType != null && contentType.eIsProxy()) {
-			InternalEObject oldContentType = (InternalEObject)contentType;
-			contentType = (EntityOrView)eResolveProxy(oldContentType);
-			if (contentType != oldContentType) {
+	public EntityOrView getSelectionType() {
+		if (selectionType != null && selectionType.eIsProxy()) {
+			InternalEObject oldSelectionType = (InternalEObject)selectionType;
+			selectionType = (EntityOrView)eResolveProxy(oldSelectionType);
+			if (selectionType != oldSelectionType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE, oldContentType, contentType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
 			}
 		}
-		return contentType;
+		return selectionType;
 	}
 
 	/**
@@ -79,8 +79,8 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityOrView basicGetContentType() {
-		return contentType;
+	public EntityOrView basicGetSelectionType() {
+		return selectionType;
 	}
 
 	/**
@@ -88,11 +88,11 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContentType(EntityOrView newContentType) {
-		EntityOrView oldContentType = contentType;
-		contentType = newContentType;
+	public void setSelectionType(EntityOrView newSelectionType) {
+		EntityOrView oldSelectionType = selectionType;
+		selectionType = newSelectionType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE, oldContentType, contentType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE, oldSelectionType, selectionType));
 	}
 
 	/**
@@ -103,9 +103,9 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE:
-				if (resolve) return getContentType();
-				return basicGetContentType();
+			case WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE:
+				if (resolve) return getSelectionType();
+				return basicGetSelectionType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,8 +118,8 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE:
-				setContentType((EntityOrView)newValue);
+			case WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE:
+				setSelectionType((EntityOrView)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,8 +133,8 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE:
-				setContentType((EntityOrView)null);
+			case WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE:
+				setSelectionType((EntityOrView)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -148,10 +148,10 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE:
-				return contentType != null;
+			case WebsitePackage.SELECTABLE_UNIT__SELECTION_TYPE:
+				return selectionType != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //SingletonUnitImpl
+} //SelectableUnitImpl

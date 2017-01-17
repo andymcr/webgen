@@ -130,11 +130,6 @@ public class SelectActionItemProvider extends InlineActionItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.SELECT_ACTION__TARGET,
-				 WebsiteFactory.eINSTANCE.createCollectionUnit()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.SELECT_ACTION__TARGET,
 				 WebsiteFactory.eINSTANCE.createCreateUpdateUnit()));
 
 		newChildDescriptors.add

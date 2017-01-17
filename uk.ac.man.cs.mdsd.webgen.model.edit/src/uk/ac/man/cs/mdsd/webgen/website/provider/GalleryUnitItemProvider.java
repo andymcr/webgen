@@ -70,7 +70,7 @@ public class GalleryUnitItemProvider extends ImageUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ImagePropertyCategory"),
 				 null));
 	}
 

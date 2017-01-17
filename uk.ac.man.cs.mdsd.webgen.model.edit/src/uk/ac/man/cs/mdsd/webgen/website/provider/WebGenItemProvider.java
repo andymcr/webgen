@@ -14,6 +14,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.ChildAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAssociation;
@@ -209,6 +210,15 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		final Set<Selection> selections = new HashSet<Selection>();
 		for (EntityOrView entityOrView : unit.getEntities()) {
 			selections.addAll(getSelections(entityOrView));
+		}
+
+		return selections;
+	}
+
+	protected Set<Selection> getSelections(final CollectionUnit unit) {
+		final Set<Selection> selections = new HashSet<Selection>();
+		if (unit.getContentType().size() > 0) {
+			selections.addAll(getSelections(unit.getContentType().get(0)));
 		}
 
 		return selections;

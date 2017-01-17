@@ -1,6 +1,6 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.website.impl;
+package uk.ac.man.cs.mdsd.waf.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -8,11 +8,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.SingletonUnit;
-import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
+import uk.ac.man.cs.mdsd.orm.EntityOrView;
+
+import uk.ac.man.cs.mdsd.waf.SingletonUnit;
+import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,12 +23,12 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SingletonUnitImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.SingletonUnitImpl#getContentType <em>Content Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class SingletonUnitImpl extends EObjectImpl implements SingletonUnit {
+public abstract class SingletonUnitImpl extends MinimalEObjectImpl.Container implements SingletonUnit {
 	/**
 	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -54,7 +55,7 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WebsitePackage.Literals.SINGLETON_UNIT;
+		return WafPackage.Literals.SINGLETON_UNIT;
 	}
 
 	/**
@@ -68,7 +69,7 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 			contentType = (EntityOrView)eResolveProxy(oldContentType);
 			if (contentType != oldContentType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE, oldContentType, contentType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.SINGLETON_UNIT__CONTENT_TYPE, oldContentType, contentType));
 			}
 		}
 		return contentType;
@@ -92,7 +93,7 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 		EntityOrView oldContentType = contentType;
 		contentType = newContentType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE, oldContentType, contentType));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.SINGLETON_UNIT__CONTENT_TYPE, oldContentType, contentType));
 	}
 
 	/**
@@ -103,7 +104,7 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE:
+			case WafPackage.SINGLETON_UNIT__CONTENT_TYPE:
 				if (resolve) return getContentType();
 				return basicGetContentType();
 		}
@@ -118,7 +119,7 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE:
+			case WafPackage.SINGLETON_UNIT__CONTENT_TYPE:
 				setContentType((EntityOrView)newValue);
 				return;
 		}
@@ -133,7 +134,7 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE:
+			case WafPackage.SINGLETON_UNIT__CONTENT_TYPE:
 				setContentType((EntityOrView)null);
 				return;
 		}
@@ -148,7 +149,7 @@ public abstract class SingletonUnitImpl extends EObjectImpl implements Singleton
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.SINGLETON_UNIT__CONTENT_TYPE:
+			case WafPackage.SINGLETON_UNIT__CONTENT_TYPE:
 				return contentType != null;
 		}
 		return super.eIsSet(featureID);

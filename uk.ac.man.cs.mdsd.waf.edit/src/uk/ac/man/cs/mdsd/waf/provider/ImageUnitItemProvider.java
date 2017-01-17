@@ -49,8 +49,8 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 
 			addSelectionTypePropertyDescriptor(object);
 			addSelectorsPropertyDescriptor(object);
-			addXPropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
+			addSelectionPropertyDescriptor(object);
 			addDefaultSelectionPropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
@@ -105,28 +105,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the X feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addXPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_x_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_x_feature", "_UI_CollectionUnit_type"),
-				 WafPackage.Literals.COLLECTION_UNIT__X,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Content Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,6 +118,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 getString("_UI_CollectionUnit_contentType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_contentType_feature", "_UI_CollectionUnit_type"),
 				 WafPackage.Literals.COLLECTION_UNIT__CONTENT_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Selection feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_selection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__SELECTION,
 				 true,
 				 false,
 				 true,

@@ -78,7 +78,7 @@ public class MapUnitItemProvider extends EditUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

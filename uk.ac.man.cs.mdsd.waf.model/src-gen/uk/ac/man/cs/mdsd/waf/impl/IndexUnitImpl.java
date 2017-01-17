@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
-import uk.ac.man.cs.mdsd.orm.Feature;
 
 import uk.ac.man.cs.mdsd.waf.CollectionUnit;
 import uk.ac.man.cs.mdsd.waf.Filter;
@@ -31,6 +30,7 @@ import uk.ac.man.cs.mdsd.waf.InlineActionContainer;
 import uk.ac.man.cs.mdsd.waf.SearchUnit;
 import uk.ac.man.cs.mdsd.waf.SelectAction;
 import uk.ac.man.cs.mdsd.waf.SelectableUnit;
+import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
@@ -43,8 +43,8 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelectors <em>Selectors</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getX <em>X</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.IndexUnitImpl#getFilters <em>Filters</em>}</li>
@@ -87,16 +87,6 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected EList<SelectAction> selectors;
 
 	/**
-	 * The cached value of the '{@link #getX() <em>X</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getX()
-	 * @generated
-	 * @ordered
-	 */
-	protected Feature x;
-
-	/**
 	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,6 +95,16 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected EList<EntityOrView> contentType;
+
+	/**
+	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection selection;
 
 	/**
 	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
@@ -460,49 +460,49 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature getX() {
-		if (x != null && x.eIsProxy()) {
-			InternalEObject oldX = (InternalEObject)x;
-			x = (Feature)eResolveProxy(oldX);
-			if (x != oldX) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.INDEX_UNIT__X, oldX, x));
-			}
-		}
-		return x;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Feature basicGetX() {
-		return x;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setX(Feature newX) {
-		Feature oldX = x;
-		x = newX;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__X, oldX, x));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<EntityOrView> getContentType() {
 		if (contentType == null) {
 			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.INDEX_UNIT__CONTENT_TYPE);
 		}
 		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection getSelection() {
+		if (selection != null && selection.eIsProxy()) {
+			InternalEObject oldSelection = (InternalEObject)selection;
+			selection = (Selection)eResolveProxy(oldSelection);
+			if (selection != oldSelection) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.INDEX_UNIT__SELECTION, oldSelection, selection));
+			}
+		}
+		return selection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetSelection() {
+		return selection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelection(Selection newSelection) {
+		Selection oldSelection = selection;
+		selection = newSelection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.INDEX_UNIT__SELECTION, oldSelection, selection));
 	}
 
 	/**
@@ -933,11 +933,11 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return basicGetSelectionType();
 			case WafPackage.INDEX_UNIT__SELECTORS:
 				return getSelectors();
-			case WafPackage.INDEX_UNIT__X:
-				if (resolve) return getX();
-				return basicGetX();
 			case WafPackage.INDEX_UNIT__CONTENT_TYPE:
 				return getContentType();
+			case WafPackage.INDEX_UNIT__SELECTION:
+				if (resolve) return getSelection();
+				return basicGetSelection();
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				return getActions();
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
@@ -992,12 +992,12 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				getSelectors().clear();
 				getSelectors().addAll((Collection<? extends SelectAction>)newValue);
 				return;
-			case WafPackage.INDEX_UNIT__X:
-				setX((Feature)newValue);
-				return;
 			case WafPackage.INDEX_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
+				return;
+			case WafPackage.INDEX_UNIT__SELECTION:
+				setSelection((Selection)newValue);
 				return;
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
@@ -1067,11 +1067,11 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WafPackage.INDEX_UNIT__SELECTORS:
 				getSelectors().clear();
 				return;
-			case WafPackage.INDEX_UNIT__X:
-				setX((Feature)null);
-				return;
 			case WafPackage.INDEX_UNIT__CONTENT_TYPE:
 				getContentType().clear();
+				return;
+			case WafPackage.INDEX_UNIT__SELECTION:
+				setSelection((Selection)null);
 				return;
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
@@ -1137,10 +1137,10 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return selectionType != null;
 			case WafPackage.INDEX_UNIT__SELECTORS:
 				return selectors != null && !selectors.isEmpty();
-			case WafPackage.INDEX_UNIT__X:
-				return x != null;
 			case WafPackage.INDEX_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
+			case WafPackage.INDEX_UNIT__SELECTION:
+				return selection != null;
 			case WafPackage.INDEX_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
 			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
@@ -1193,8 +1193,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		}
 		if (baseClass == CollectionUnit.class) {
 			switch (derivedFeatureID) {
-				case WafPackage.INDEX_UNIT__X: return WafPackage.COLLECTION_UNIT__X;
 				case WafPackage.INDEX_UNIT__CONTENT_TYPE: return WafPackage.COLLECTION_UNIT__CONTENT_TYPE;
+				case WafPackage.INDEX_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
 				default: return -1;
 			}
 		}
@@ -1223,8 +1223,8 @@ public abstract class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		}
 		if (baseClass == CollectionUnit.class) {
 			switch (baseFeatureID) {
-				case WafPackage.COLLECTION_UNIT__X: return WafPackage.INDEX_UNIT__X;
 				case WafPackage.COLLECTION_UNIT__CONTENT_TYPE: return WafPackage.INDEX_UNIT__CONTENT_TYPE;
+				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.INDEX_UNIT__SELECTION;
 				default: return -1;
 			}
 		}

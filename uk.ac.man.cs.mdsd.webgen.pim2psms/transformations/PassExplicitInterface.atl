@@ -223,7 +223,7 @@ helper context Website!Feature def: findOrmFeature(reference : Website!FeatureRe
 			self.findOrmAttribute()
 		else if not reference.findContainingSelection().oclIsUndefined() then
 			self.findOrmAssociation(reference.findContainingSelection().usedBy.serves)
-		else if reference.refImmediateComposite().oclIsKindOf(Website!PathReferenceElement) then
+		else if reference.refImmediateComposite().oclIsTypeOf(Website!KeyActual) then
 			if reference.refImmediateComposite().entityType.oclIsUndefined() then
 				OclUndefined
 			else if reference.refImmediateComposite().entityType.features->includes(self) then
@@ -622,13 +622,6 @@ rule QueryParameter {
 	)
 }
 
-abstract rule Selectable {
-	from website : Website!Selectable
-	to waf : WAF!Selectable (
-	)
-}
-
-
 abstract rule UnitContainer {
 	from website : Website!UnitContainer
 	to waf : WAF!UnitContainer (
@@ -892,30 +885,47 @@ rule UnitSupportAction {
 	)
 }
 
-abstract rule PathReferenceElement {
-	from website : Website!PathReferenceElement
-	to waf : WAF!PathReferenceElement (
-		actual <- website.actual,
-		childReference <- website.childReference
-	)
-}
-
--- @extends PathReferenceElement
 rule KeyActual {
 	from website : Website!KeyActual
 	to waf : WAF!KeyActual (
-		key <- website.key.findOrmFeature()
+		key <- website.key.findOrmFeature(),
+		actual <- website.actual
 	)
 }
 
--- @extends PathReferenceElement
-rule ChildPathReference {
-	from website :  Website!ChildPathReference
-	to waf : WAF!ChildPathReference (
+abstract rule SelectableUnit {
+	from website : Website!SelectableUnit
+	to waf : WAF!SelectableUnit (
+		selectionType <-
+			if website.selectionType.oclIsUndefined() then
+				website.selectionType
+			else
+				thisModule.findOrmEntityOrView(website.selectionType.name)
+			endif
 	)
 }
 
--- @extends DynamicUnit
+
+abstract rule SingletonUnit {
+	from website : Website!SingletonUnit
+	to waf : WAF!SingletonUnit (
+		contentType <- thisModule.findOrmEntityOrView(website.contentType.name)
+	)
+}
+
+
+-- @extends SelectableUnit
+abstract rule CollectionUnit {
+	from website : Website!CollectionUnit
+	to waf : WAF!CollectionUnit (
+		contentType <- website.contentType
+			->collect(eov | thisModule.findOrmEntityOrView(eov.name)),
+		selection <- website.selection
+	)
+}
+
+
+-- @extends DynamicUnit, SingletonUnit
 abstract rule EditUnit {
 	from website : Website!EditUnit
 	to waf : WAF!EditUnit (
@@ -978,7 +988,7 @@ rule CreateUnit {
 	)
 }
 
--- @extends EditUnit, Selectable
+-- @extends EditUnit, SelectableUnit
 rule CreateUpdateUnit {
 	from website : Website!CreateUpdateUnit
 	to waf : WAF!CreateUpdateUnit (
@@ -989,10 +999,11 @@ rule CreateUpdateUnit {
 				'update'
 			endif,
 		clearLabel <- website.clearLabel
+, selectionType <- thisModule.findOrmEntityOrView(website.contentType.name)
 	)
 }
 
--- @extends EditUnit, Selectable
+-- @extends EditUnit, SelectableUnit
 rule MapUnit {
 	from website : Website!MapUnit
 	to waf : WAF!MapUnit (
@@ -1005,13 +1016,15 @@ rule MapUnit {
 			else
 				website.placeName.findOrmAttribute()
 			endif
+, selectionType <- thisModule.findOrmEntityOrView(website.contentType.name)
 	)
 }
 
--- @extends EditUnit, Selectable
+-- @extends EditUnit, SelectableUnit
 rule UpdateUnit {
 	from website : Website!UpdateUnit
 	to waf : WAF!UpdateUnit (
+selectionType <- thisModule.findOrmEntityOrView(website.contentType.name)
 	)
 }
 
@@ -1029,16 +1042,17 @@ abstract rule DataUnit {
 	)
 }
 
--- @extends DataUnit, Selectable
+-- @extends DataUnit, SingletonUnit, SelectableUnit
 rule DetailsUnit {
 	from website : Website!DetailsUnit
 	to waf : WAF!DetailsUnit (
 		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
 		omitFieldLabels <- website.omitFieldLabels
+, selectionType <- thisModule.findOrmEntityOrView(website.contentType.name)
 	)
 }
 
--- @extends DataUnit, InlineActionContainer
+-- @extends DataUnit, CollectionUnit, InlineActionContainer
 abstract rule IndexUnit {
 	from website : Website!IndexUnit
 	to waf : WAF!IndexUnit (
@@ -1137,14 +1151,7 @@ rule SearchUnit {
 	)
 }
 
--- @extends ControlUnit
-rule ActionUnit {
-	from website : Website!ActionUnit
-	to waf : WAF!ActionUnit (
-	)
-}
-
--- @extends DynamicUnit
+-- @extends DynamicUnit, CollectionUnit
 abstract rule ImageUnit {
 	from website : Website!ImageUnit
 	to waf : WAF!ImageUnit (
@@ -1216,7 +1223,7 @@ rule ChildAssociation {
 	)
 }
 
--- @extends ImageUnit, Selectable
+-- @extends ImageUnit
 rule GalleryUnit {
 	from website : Website!GalleryUnit
 	to waf : WAF!GalleryUnit (
@@ -1337,7 +1344,7 @@ helper context Website!Expression def: isInterfaceContainer() : Boolean
 			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!InlineAction) then
 			true
-		else if self.refImmediateComposite().oclIsKindOf(Website!PathReferenceElement) then
+		else if self.refImmediateComposite().oclIsTypeOf(Website!KeyActual) then
 			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
 			self.refImmediateComposite().isInterfaceContainer()

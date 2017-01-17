@@ -77,7 +77,7 @@ public class DetailsUnitItemProvider extends DataUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -99,7 +99,7 @@ public class DetailsUnitItemProvider extends DataUnitItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 

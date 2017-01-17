@@ -29,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.InlineAction;
 import uk.ac.man.cs.mdsd.webgen.website.InlineActionContainer;
 import uk.ac.man.cs.mdsd.webgen.website.SelectableUnit;
+import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -41,6 +42,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getDisplayOption <em>Display Option</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
@@ -83,6 +85,16 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected EList<EntityOrView> contentType;
+
+	/**
+	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSelection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Selection selection;
 
 	/**
 	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
@@ -481,6 +493,44 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.INDEX_UNIT__CONTENT_TYPE);
 		}
 		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection getSelection() {
+		if (selection != null && selection.eIsProxy()) {
+			InternalEObject oldSelection = (InternalEObject)selection;
+			selection = (Selection)eResolveProxy(oldSelection);
+			if (selection != oldSelection) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.INDEX_UNIT__SELECTION, oldSelection, selection));
+			}
+		}
+		return selection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Selection basicGetSelection() {
+		return selection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelection(Selection newSelection) {
+		Selection oldSelection = selection;
+		selection = newSelection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INDEX_UNIT__SELECTION, oldSelection, selection));
 	}
 
 	/**
@@ -904,6 +954,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return basicGetSelectionType();
 			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
 				return getContentType();
+			case WebsitePackage.INDEX_UNIT__SELECTION:
+				if (resolve) return getSelection();
+				return basicGetSelection();
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				return getActions();
 			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
@@ -960,6 +1013,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
+				return;
+			case WebsitePackage.INDEX_UNIT__SELECTION:
+				setSelection((Selection)newValue);
 				return;
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
@@ -1035,6 +1091,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				return;
+			case WebsitePackage.INDEX_UNIT__SELECTION:
+				setSelection((Selection)null);
+				return;
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				getActions().clear();
 				return;
@@ -1105,6 +1164,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return selectionType != null;
 			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
+			case WebsitePackage.INDEX_UNIT__SELECTION:
+				return selection != null;
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
 				return actions != null && !actions.isEmpty();
 			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
@@ -1161,6 +1222,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		if (baseClass == CollectionUnit.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.INDEX_UNIT__CONTENT_TYPE: return WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE;
+				case WebsitePackage.INDEX_UNIT__SELECTION: return WebsitePackage.COLLECTION_UNIT__SELECTION;
 				default: return -1;
 			}
 		}
@@ -1189,6 +1251,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		if (baseClass == CollectionUnit.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE: return WebsitePackage.INDEX_UNIT__CONTENT_TYPE;
+				case WebsitePackage.COLLECTION_UNIT__SELECTION: return WebsitePackage.INDEX_UNIT__SELECTION;
 				default: return -1;
 			}
 		}

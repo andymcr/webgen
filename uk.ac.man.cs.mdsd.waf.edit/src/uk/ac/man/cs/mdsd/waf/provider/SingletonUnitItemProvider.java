@@ -1,37 +1,48 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.website.provider;
+package uk.ac.man.cs.mdsd.waf.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.common.util.ResourceLocator;
 
-import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
-import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+
+import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CollectionUnit} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.SingletonUnit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CollectionUnitItemProvider 
-	extends SelectableUnitItemProvider {
+public class SingletonUnitItemProvider 
+	extends ItemProviderAdapter
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CollectionUnitItemProvider(AdapterFactory adapterFactory) {
+	public SingletonUnitItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,7 +58,6 @@ public class CollectionUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addContentTypePropertyDescriptor(object);
-			addSelectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -63,52 +73,15 @@ public class CollectionUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_contentType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_contentType_feature", "_UI_CollectionUnit_type"),
-				 WebsitePackage.Literals.COLLECTION_UNIT__CONTENT_TYPE,
+				 getString("_UI_SingletonUnit_contentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SingletonUnit_contentType_feature", "_UI_SingletonUnit_type"),
+				 WafPackage.Literals.SINGLETON_UNIT__CONTENT_TYPE,
 				 true,
 				 false,
 				 true,
 				 null,
-				 getString("_UI_ModelPropertyCategory"),
+				 null,
 				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Selection feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addSelectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_CollectionUnit_selection_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
-			WebsitePackage.Literals.COLLECTION_UNIT__SELECTION,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof CollectionUnit) {
-						return getSelections((CollectionUnit) object);
-					}
-					return Collections.emptySet();
-				}
-		});
-	}
-
-	/**
-	 * This returns CollectionUnit.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CollectionUnit"));
 	}
 
 	/**
@@ -119,7 +92,7 @@ public class CollectionUnitItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_CollectionUnit_type");
+		return getString("_UI_SingletonUnit_type");
 	}
 	
 
@@ -146,6 +119,17 @@ public class CollectionUnitItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return WafEditPlugin.INSTANCE;
 	}
 
 }

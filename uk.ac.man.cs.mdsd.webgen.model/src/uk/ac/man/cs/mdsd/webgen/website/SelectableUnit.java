@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelectableUnit()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
 public interface SelectableUnit extends EObject {

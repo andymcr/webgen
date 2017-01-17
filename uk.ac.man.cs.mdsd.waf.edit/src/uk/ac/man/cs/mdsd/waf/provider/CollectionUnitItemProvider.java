@@ -1,10 +1,9 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.website.provider;
+package uk.ac.man.cs.mdsd.waf.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -12,19 +11,16 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
-import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
-import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
+import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.CollectionUnit} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.CollectionUnit} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CollectionUnitItemProvider 
-	extends SelectableUnitItemProvider {
+public class CollectionUnitItemProvider extends SelectableUnitItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -65,12 +61,12 @@ public class CollectionUnitItemProvider
 				 getResourceLocator(),
 				 getString("_UI_CollectionUnit_contentType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_contentType_feature", "_UI_CollectionUnit_type"),
-				 WebsitePackage.Literals.COLLECTION_UNIT__CONTENT_TYPE,
+				 WafPackage.Literals.COLLECTION_UNIT__CONTENT_TYPE,
 				 true,
 				 false,
 				 true,
 				 null,
-				 getString("_UI_ModelPropertyCategory"),
+				 null,
 				 null));
 	}
 
@@ -78,37 +74,22 @@ public class CollectionUnitItemProvider
 	 * This adds a property descriptor for the Selection feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addSelectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_CollectionUnit_selection_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
-			WebsitePackage.Literals.COLLECTION_UNIT__SELECTION,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof CollectionUnit) {
-						return getSelections((CollectionUnit) object);
-					}
-					return Collections.emptySet();
-				}
-		});
-	}
-
-	/**
-	 * This returns CollectionUnit.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CollectionUnit"));
+	protected void addSelectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_selection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__SELECTION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

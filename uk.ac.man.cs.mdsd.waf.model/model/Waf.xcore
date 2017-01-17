@@ -369,18 +369,19 @@ class DateField extends InterfaceField {
 class CaptchaField extends InterfaceField {
 }
 
-interface SelectableUnit {
+abstract class SelectableUnit {
 	refers EntityOrView selectionType
 	refers SelectAction[] selectors opposite target
 }
 
-interface SingletonUnit {
+abstract class SingletonUnit {
 	refers EntityOrView[1] contentType
 }
 
-interface CollectionUnit extends SelectableUnit {
-	refers Feature x
+abstract class CollectionUnit extends SelectableUnit {
+//	refers Feature x
 	refers EntityOrView[1..*] contentType
+	refers Selection selection
 }
 
 abstract class EditUnit extends DynamicUnit, SingletonUnit {

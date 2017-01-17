@@ -22,7 +22,7 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelectableUnit()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
 public interface SelectableUnit extends EObject {

@@ -604,13 +604,18 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//KeyActual/actual"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//SelectableUnit">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//SelectableUnit/selectionType"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//SelectableUnit/selectionType"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//SingletonUnit">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//SingletonUnit/contentType"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//SingletonUnit/contentType"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//CollectionUnit">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//CollectionUnit/contentType"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//CollectionUnit/contentType"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//CollectionUnit/selection"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//EditUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
@@ -739,8 +744,8 @@
     </genClasses>
     <genClasses ecoreClass="website.ecore#//ChildAssociation"/>
     <genClasses ecoreClass="website.ecore#//ImageIndexUnit">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ImageIndexUnit/styleClass"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//ImageIndexUnit/contentClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//ImageIndexUnit/styleClass"/>
+      <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//ImageIndexUnit/contentClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//SliderUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//SliderUnit/styleClass"/>
@@ -748,7 +753,8 @@
           ecoreFeature="ecore:EAttribute website.ecore#//SliderUnit/contentClass"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//GalleryUnit">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//GalleryUnit/fullSizeFilter"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Image" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//GalleryUnit/fullSizeFilter"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//GalleryUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//GalleryUnit/contentClass"/>
     </genClasses>

@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ImageUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -51,6 +52,7 @@ public class ImageUnitItemProvider
 
 			addSelectionTypePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
+			addSelectionPropertyDescriptor(object);
 			addDefaultSelectionPropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
@@ -78,7 +80,7 @@ public class ImageUnitItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -100,7 +102,29 @@ public class ImageUnitItemProvider
 				 false,
 				 true,
 				 null,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Selection feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_selection_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__SELECTION,
+				 true,
+				 false,
+				 true,
 				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -123,7 +147,7 @@ public class ImageUnitItemProvider
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
 					if (object instanceof ImageUnit) {
-						return getSelections((ImageUnit) object);
+						return getSelections((DynamicUnit) object);
 					}
 					return Collections.emptySet();
 				}

@@ -1,9 +1,8 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.website.impl;
+package uk.ac.man.cs.mdsd.waf.impl;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,12 +12,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
-import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
+import uk.ac.man.cs.mdsd.orm.EntityOrView;
+
+import uk.ac.man.cs.mdsd.waf.CollectionUnit;
+import uk.ac.man.cs.mdsd.waf.Selection;
+import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,8 +29,8 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CollectionUnitImpl#getContentType <em>Content Type</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CollectionUnitImpl#getSelection <em>Selection</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CollectionUnitImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CollectionUnitImpl#getSelection <em>Selection</em>}</li>
  * </ul>
  *
  * @generated
@@ -71,7 +72,7 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WebsitePackage.Literals.COLLECTION_UNIT;
+		return WafPackage.Literals.COLLECTION_UNIT;
 	}
 
 	/**
@@ -79,9 +80,9 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<EntityOrView> getContentType() {
+	public EList<EntityOrView> getContentType() {
 		if (contentType == null) {
-			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE);
+			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WafPackage.COLLECTION_UNIT__CONTENT_TYPE);
 		}
 		return contentType;
 	}
@@ -97,7 +98,7 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 			selection = (Selection)eResolveProxy(oldSelection);
 			if (selection != oldSelection) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.COLLECTION_UNIT__SELECTION, oldSelection, selection));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.COLLECTION_UNIT__SELECTION, oldSelection, selection));
 			}
 		}
 		return selection;
@@ -121,7 +122,7 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 		Selection oldSelection = selection;
 		selection = newSelection;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.COLLECTION_UNIT__SELECTION, oldSelection, selection));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.COLLECTION_UNIT__SELECTION, oldSelection, selection));
 	}
 
 	/**
@@ -132,9 +133,9 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE:
+			case WafPackage.COLLECTION_UNIT__CONTENT_TYPE:
 				return getContentType();
-			case WebsitePackage.COLLECTION_UNIT__SELECTION:
+			case WafPackage.COLLECTION_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
 		}
@@ -150,11 +151,11 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE:
+			case WafPackage.COLLECTION_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
-			case WebsitePackage.COLLECTION_UNIT__SELECTION:
+			case WafPackage.COLLECTION_UNIT__SELECTION:
 				setSelection((Selection)newValue);
 				return;
 		}
@@ -169,10 +170,10 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE:
+			case WafPackage.COLLECTION_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				return;
-			case WebsitePackage.COLLECTION_UNIT__SELECTION:
+			case WafPackage.COLLECTION_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
 		}
@@ -187,9 +188,9 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE:
+			case WafPackage.COLLECTION_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
-			case WebsitePackage.COLLECTION_UNIT__SELECTION:
+			case WafPackage.COLLECTION_UNIT__SELECTION:
 				return selection != null;
 		}
 		return super.eIsSet(featureID);

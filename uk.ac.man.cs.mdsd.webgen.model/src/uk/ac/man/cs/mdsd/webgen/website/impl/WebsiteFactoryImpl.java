@@ -113,7 +113,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.DATE_FIELD: return createDateField();
 			case WebsitePackage.CAPTCHA_FIELD: return createCaptchaField();
 			case WebsitePackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
-			case WebsitePackage.KEY_ACTUAL: return createKeyActual();
 			case WebsitePackage.CREATE_UNIT: return createCreateUnit();
 			case WebsitePackage.CREATE_UPDATE_UNIT: return createCreateUpdateUnit();
 			case WebsitePackage.UPDATE_UNIT: return createUpdateUnit();
@@ -620,16 +619,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public UnitSupportAction createUnitSupportAction() {
 		UnitSupportActionImpl unitSupportAction = new UnitSupportActionImpl();
 		return unitSupportAction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public KeyActual createKeyActual() {
-		KeyActualImpl keyActual = new KeyActualImpl();
-		return keyActual;
 	}
 
 	/**

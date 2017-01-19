@@ -79,7 +79,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.QUERY_PARAMETER: return createQueryParameter();
 			case WafPackage.STATIC_UNIT: return createStaticUnit();
 			case WafPackage.UNIT_SUPPORT_ACTION: return createUnitSupportAction();
-			case WafPackage.KEY_ACTUAL: return createKeyActual();
 			case WafPackage.UNIT_ATTRIBUTE: return createUnitAttribute();
 			case WafPackage.UNIT_ASSOCIATION: return createUnitAssociation();
 			case WafPackage.DATA_TYPE_FIELD: return createDataTypeField();
@@ -389,16 +388,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public UnitSupportAction createUnitSupportAction() {
 		UnitSupportActionImpl unitSupportAction = new UnitSupportActionImpl();
 		return unitSupportAction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public KeyActual createKeyActual() {
-		KeyActualImpl keyActual = new KeyActualImpl();
-		return keyActual;
 	}
 
 	/**

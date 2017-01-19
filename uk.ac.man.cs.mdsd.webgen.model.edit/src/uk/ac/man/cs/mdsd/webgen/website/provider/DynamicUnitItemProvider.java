@@ -227,7 +227,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS);
 			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS);
-			childrenFeatures.add(WebsitePackage.Literals.DYNAMIC_UNIT__KEY_ACTUALS);
 		}
 		return childrenFeatures;
 	}
@@ -281,7 +280,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 				return;
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
-			case WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -328,11 +326,6 @@ public class DynamicUnitItemProvider extends ContentUnitItemProvider {
 			(createChildParameter
 				(WebsitePackage.Literals.DYNAMIC_UNIT__SUPPORT_ACTIONS,
 				 WebsiteFactory.eINSTANCE.createUnitSupportAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.DYNAMIC_UNIT__KEY_ACTUALS,
-				 WebsiteFactory.eINSTANCE.createKeyActual()));
 	}
 
 }

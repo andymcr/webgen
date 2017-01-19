@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
-import uk.ac.man.cs.mdsd.webgen.website.KeyActual;
 import uk.ac.man.cs.mdsd.webgen.website.UnitField;
 import uk.ac.man.cs.mdsd.webgen.website.UnitSupportAction;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -38,7 +37,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getKeyActuals <em>Key Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.DynamicUnitImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -79,16 +77,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected EList<UnitSupportAction> supportActions;
-
-	/**
-	 * The cached value of the '{@link #getKeyActuals() <em>Key Actuals</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKeyActuals()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<KeyActual> keyActuals;
 
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
@@ -270,18 +258,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<KeyActual> getKeyActuals() {
-		if (keyActuals == null) {
-			keyActuals = new EObjectContainmentWithInverseEList<KeyActual>(KeyActual.class, this, WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS, WebsitePackage.KEY_ACTUAL__CONTAINER);
-		}
-		return keyActuals;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getHeader() {
 		return header;
 	}
@@ -414,8 +390,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDisplayFields()).basicAdd(otherEnd, msgs);
-			case WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getKeyActuals()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -432,8 +406,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return ((InternalEList<?>)getSupportActions()).basicRemove(otherEnd, msgs);
-			case WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				return ((InternalEList<?>)getKeyActuals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -452,8 +424,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return getDisplayFields();
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
-			case WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				return getKeyActuals();
 			case WebsitePackage.DYNAMIC_UNIT__HEADER:
 				return getHeader();
 			case WebsitePackage.DYNAMIC_UNIT__FOOTER:
@@ -490,10 +460,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				getSupportActions().addAll((Collection<? extends UnitSupportAction>)newValue);
-				return;
-			case WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				getKeyActuals().clear();
-				getKeyActuals().addAll((Collection<? extends KeyActual>)newValue);
 				return;
 			case WebsitePackage.DYNAMIC_UNIT__HEADER:
 				setHeader((String)newValue);
@@ -534,9 +500,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				return;
-			case WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				getKeyActuals().clear();
-				return;
 			case WebsitePackage.DYNAMIC_UNIT__HEADER:
 				setHeader(HEADER_EDEFAULT);
 				return;
@@ -573,8 +536,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return displayFields != null && !displayFields.isEmpty();
 			case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
-			case WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				return keyActuals != null && !keyActuals.isEmpty();
 			case WebsitePackage.DYNAMIC_UNIT__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case WebsitePackage.DYNAMIC_UNIT__FOOTER:

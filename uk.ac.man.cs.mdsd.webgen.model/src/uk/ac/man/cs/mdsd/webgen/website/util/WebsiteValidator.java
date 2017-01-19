@@ -246,8 +246,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateCaptchaField((CaptchaField)value, diagnostics, context);
 			case WebsitePackage.UNIT_SUPPORT_ACTION:
 				return validateUnitSupportAction((UnitSupportAction)value, diagnostics, context);
-			case WebsitePackage.KEY_ACTUAL:
-				return validateKeyActual((KeyActual)value, diagnostics, context);
 			case WebsitePackage.SELECTABLE_UNIT:
 				return validateSelectableUnit((SelectableUnit)value, diagnostics, context);
 			case WebsitePackage.SINGLETON_UNIT:
@@ -2069,15 +2067,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(unitSupportAction, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(unitSupportAction, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateKeyActual(KeyActual keyActual, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(keyActual, diagnostics, context);
 	}
 
 	/**

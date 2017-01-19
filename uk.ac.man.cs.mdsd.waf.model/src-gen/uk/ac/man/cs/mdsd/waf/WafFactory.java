@@ -220,15 +220,6 @@ public interface WafFactory extends EFactory {
 	UnitSupportAction createUnitSupportAction();
 
 	/**
-	 * Returns a new object of class '<em>Key Actual</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Key Actual</em>'.
-	 * @generated
-	 */
-	KeyActual createKeyActual();
-
-	/**
 	 * Returns a new object of class '<em>Unit Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

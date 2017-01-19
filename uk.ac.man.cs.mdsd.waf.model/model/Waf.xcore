@@ -273,7 +273,6 @@ abstract class DynamicUnit extends ContentUnit {
 	refers EntityOrView[1..*] entities
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
-	contains KeyActual[] keyActuals opposite ^container
 	String header
 	String footer
 	String headerClass
@@ -285,12 +284,6 @@ abstract class DynamicUnit extends ContentUnit {
 class UnitSupportAction extends NamedDisplayElement {
 	boolean disable
 	String confirmMessage
-}
-
-class KeyActual {
-	container DynamicUnit[1] ^container opposite keyActuals
-	refers Feature[1] key
-	contains Expression[1] actual
 }
 
 enum CollectionDisplayOptions {

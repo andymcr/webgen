@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 
 import uk.ac.man.cs.mdsd.waf.DynamicUnit;
-import uk.ac.man.cs.mdsd.waf.KeyActual;
 import uk.ac.man.cs.mdsd.waf.UnitField;
 import uk.ac.man.cs.mdsd.waf.UnitSupportAction;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -38,7 +37,6 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getSupportActions <em>Support Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getKeyActuals <em>Key Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.DynamicUnitImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -79,16 +77,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * @ordered
 	 */
 	protected EList<UnitSupportAction> supportActions;
-
-	/**
-	 * The cached value of the '{@link #getKeyActuals() <em>Key Actuals</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKeyActuals()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<KeyActual> keyActuals;
 
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
@@ -270,18 +258,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<KeyActual> getKeyActuals() {
-		if (keyActuals == null) {
-			keyActuals = new EObjectContainmentWithInverseEList<KeyActual>(KeyActual.class, this, WafPackage.DYNAMIC_UNIT__KEY_ACTUALS, WafPackage.KEY_ACTUAL__CONTAINER);
-		}
-		return keyActuals;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getHeader() {
 		return header;
 	}
@@ -414,8 +390,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 		switch (featureID) {
 			case WafPackage.DYNAMIC_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDisplayFields()).basicAdd(otherEnd, msgs);
-			case WafPackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getKeyActuals()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -432,8 +406,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return ((InternalEList<?>)getSupportActions()).basicRemove(otherEnd, msgs);
-			case WafPackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				return ((InternalEList<?>)getKeyActuals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -452,8 +424,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return getDisplayFields();
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
-			case WafPackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				return getKeyActuals();
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 				return getHeader();
 			case WafPackage.DYNAMIC_UNIT__FOOTER:
@@ -490,10 +460,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				getSupportActions().addAll((Collection<? extends UnitSupportAction>)newValue);
-				return;
-			case WafPackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				getKeyActuals().clear();
-				getKeyActuals().addAll((Collection<? extends KeyActual>)newValue);
 				return;
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 				setHeader((String)newValue);
@@ -534,9 +500,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				return;
-			case WafPackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				getKeyActuals().clear();
-				return;
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 				setHeader(HEADER_EDEFAULT);
 				return;
@@ -573,8 +536,6 @@ public abstract class DynamicUnitImpl extends ContentUnitImpl implements Dynamic
 				return displayFields != null && !displayFields.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
-			case WafPackage.DYNAMIC_UNIT__KEY_ACTUALS:
-				return keyActuals != null && !keyActuals.isEmpty();
 			case WafPackage.DYNAMIC_UNIT__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case WafPackage.DYNAMIC_UNIT__FOOTER:

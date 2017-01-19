@@ -386,10 +386,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createUnitSupportActionAdapter();
 			}
 			@Override
-			public Adapter caseKeyActual(KeyActual object) {
-				return createKeyActualAdapter();
-			}
-			@Override
 			public Adapter caseSelectableUnit(SelectableUnit object) {
 				return createSelectableUnitAdapter();
 			}
@@ -1668,20 +1664,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUnitSupportActionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.KeyActual <em>Key Actual</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.KeyActual
-	 * @generated
-	 */
-	public Adapter createKeyActualAdapter() {
 		return null;
 	}
 

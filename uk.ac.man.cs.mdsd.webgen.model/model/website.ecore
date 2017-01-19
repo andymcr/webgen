@@ -784,8 +784,6 @@
         eType="#//UnitField" containment="true" eOpposite="#//UnitField/displayedOn"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="supportActions" upperBound="-1"
         eType="#//UnitSupportAction" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="keyActuals" upperBound="-1"
-        eType="#//KeyActual" containment="true" eOpposite="#//KeyActual/container"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="footer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -913,14 +911,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="disable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirmMessage" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="KeyActual">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1"
-        eType="#//DynamicUnit" eOpposite="#//DynamicUnit/keyActuals"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//Attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actual" lowerBound="1"
-        eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Expression"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelectableUnit" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selectionType" eType="#//EntityOrView"/>

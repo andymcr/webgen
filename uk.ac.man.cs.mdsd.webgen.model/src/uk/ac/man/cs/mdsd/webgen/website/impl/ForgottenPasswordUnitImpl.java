@@ -26,7 +26,6 @@ import uk.ac.man.cs.mdsd.webgen.website.ControlUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.ForgottenPasswordUnit;
-import uk.ac.man.cs.mdsd.webgen.website.KeyActual;
 import uk.ac.man.cs.mdsd.webgen.website.NamedDisplayElement;
 import uk.ac.man.cs.mdsd.webgen.website.NamedElement;
 import uk.ac.man.cs.mdsd.webgen.website.Page;
@@ -56,7 +55,6 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getSupportActions <em>Support Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getKeyActuals <em>Key Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ForgottenPasswordUnitImpl#getHeaderClass <em>Header Class</em>}</li>
@@ -282,16 +280,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * @ordered
 	 */
 	protected EList<UnitSupportAction> supportActions;
-
-	/**
-	 * The cached value of the '{@link #getKeyActuals() <em>Key Actuals</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKeyActuals()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<KeyActual> keyActuals;
 
 	/**
 	 * The default value of the '{@link #getHeader() <em>Header</em>}' attribute.
@@ -793,18 +781,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<KeyActual> getKeyActuals() {
-		if (keyActuals == null) {
-			keyActuals = new EObjectContainmentWithInverseEList<KeyActual>(KeyActual.class, this, WebsitePackage.FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS, WebsitePackage.KEY_ACTUAL__CONTAINER);
-		}
-		return keyActuals;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getHeader() {
 		return header;
 	}
@@ -1063,8 +1039,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return basicSetDisplayedOn((UnitContainer)otherEnd, msgs);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDisplayFields()).basicAdd(otherEnd, msgs);
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getKeyActuals()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -1083,8 +1057,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return ((InternalEList<?>)getDisplayFields()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				return ((InternalEList<?>)getSupportActions()).basicRemove(otherEnd, msgs);
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS:
-				return ((InternalEList<?>)getKeyActuals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1137,8 +1109,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return getDisplayFields();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				return getSupportActions();
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS:
-				return getKeyActuals();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER:
 				return getHeader();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__FOOTER:
@@ -1216,10 +1186,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				getSupportActions().addAll((Collection<? extends UnitSupportAction>)newValue);
-				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS:
-				getKeyActuals().clear();
-				getKeyActuals().addAll((Collection<? extends KeyActual>)newValue);
 				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER:
 				setHeader((String)newValue);
@@ -1305,9 +1271,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				getSupportActions().clear();
 				return;
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS:
-				getKeyActuals().clear();
-				return;
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER:
 				setHeader(HEADER_EDEFAULT);
 				return;
@@ -1379,8 +1342,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				return displayFields != null && !displayFields.isEmpty();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS:
 				return supportActions != null && !supportActions.isEmpty();
-			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS:
-				return keyActuals != null && !keyActuals.isEmpty();
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER:
 				return HEADER_EDEFAULT == null ? header != null : !HEADER_EDEFAULT.equals(header);
 			case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__FOOTER:
@@ -1444,7 +1405,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES: return WebsitePackage.DYNAMIC_UNIT__ENTITIES;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS: return WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS: return WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS;
-				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS: return WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER: return WebsitePackage.DYNAMIC_UNIT__HEADER;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__FOOTER: return WebsitePackage.DYNAMIC_UNIT__FOOTER;
 				case WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER_CLASS: return WebsitePackage.DYNAMIC_UNIT__HEADER_CLASS;
@@ -1503,7 +1463,6 @@ public class ForgottenPasswordUnitImpl extends EObjectImpl implements ForgottenP
 				case WebsitePackage.DYNAMIC_UNIT__ENTITIES: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__ENTITIES;
 				case WebsitePackage.DYNAMIC_UNIT__DISPLAY_FIELDS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__DISPLAY_FIELDS;
 				case WebsitePackage.DYNAMIC_UNIT__SUPPORT_ACTIONS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__SUPPORT_ACTIONS;
-				case WebsitePackage.DYNAMIC_UNIT__KEY_ACTUALS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__KEY_ACTUALS;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER;
 				case WebsitePackage.DYNAMIC_UNIT__FOOTER: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__FOOTER;
 				case WebsitePackage.DYNAMIC_UNIT__HEADER_CLASS: return WebsitePackage.FORGOTTEN_PASSWORD_UNIT__HEADER_CLASS;

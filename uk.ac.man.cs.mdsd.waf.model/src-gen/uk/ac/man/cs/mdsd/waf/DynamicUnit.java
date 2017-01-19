@@ -18,7 +18,6 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getEntities <em>Entities</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getDisplayFields <em>Display Fields</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getSupportActions <em>Support Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getKeyActuals <em>Key Actuals</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeader <em>Header</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getFooter <em>Footer</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.DynamicUnit#getHeaderClass <em>Header Class</em>}</li>
@@ -81,24 +80,6 @@ public interface DynamicUnit extends ContentUnit {
 	 * @generated
 	 */
 	EList<UnitSupportAction> getSupportActions();
-
-	/**
-	 * Returns the value of the '<em><b>Key Actuals</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.KeyActual}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.KeyActual#getContainer <em>Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Key Actuals</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Key Actuals</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getDynamicUnit_KeyActuals()
-	 * @see uk.ac.man.cs.mdsd.waf.KeyActual#getContainer
-	 * @model opposite="container" containment="true"
-	 * @generated
-	 */
-	EList<KeyActual> getKeyActuals();
 
 	/**
 	 * Returns the value of the '<em><b>Header</b></em>' attribute.

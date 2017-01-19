@@ -300,12 +300,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.KEY_ACTUAL: {
-				KeyActual keyActual = (KeyActual)theEObject;
-				T result = caseKeyActual(keyActual);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.UNIT_FIELD: {
 				UnitField unitField = (UnitField)theEObject;
 				T result = caseUnitField(unitField);
@@ -1250,21 +1244,6 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUnitSupportAction(UnitSupportAction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Key Actual</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Key Actual</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseKeyActual(KeyActual object) {
 		return null;
 	}
 

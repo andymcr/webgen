@@ -223,17 +223,9 @@ helper context Website!Feature def: findOrmFeature(reference : Website!FeatureRe
 			self.findOrmAttribute()
 		else if not reference.findContainingSelection().oclIsUndefined() then
 			self.findOrmAssociation(reference.findContainingSelection().usedBy.serves)
-		else if reference.refImmediateComposite().oclIsTypeOf(Website!KeyActual) then
-			if reference.refImmediateComposite().entityType.oclIsUndefined() then
-				OclUndefined
-			else if reference.refImmediateComposite().entityType.features->includes(self) then
-				self.findOrmAssociation(self.targetEntityX)
-			else
-				self.findOrmAssociation(self.sourceEntityX)
-			endif endif
 		else
 			OclUndefined
-		endif endif endif;
+		endif endif;
 
 helper context Website!ChildAssociation def: findOrmAssociation() : ORM!Association
 	= if self.association.oclIsUndefined() or self.refImmediateComposite().association.oclIsUndefined() then
@@ -674,26 +666,12 @@ abstract rule DynamicUnit {
 			->collect(e | thisModule.findOrmEntityOrView(e.name)),
 		displayFields <- website.displayFields,
 		supportActions <- website.supportActions,
-		keyActuals <-
-			website.keyActuals
-				->union(if website.defaultSelection().oclIsUndefined() then
-							Sequence{}
-						else
-							website.uriPathKeys()->collect(k | thisModule.implicitKeyActual(k))
-						endif),
 		header <- website.header,
 		footer <- website.footer,
 		headerClass <- website.headerClass,
 		controlClass <- website.controlClass,
 		footerClass <- website.footerClass,
 		errorClass <- website.errorClass
-	)
-}
-
-lazy rule implicitKeyActual {
-	from website : Website!Feature
-	to waf : WAF!KeyActual (
-		key <- website.findOrmFeature()
 	)
 }
 
@@ -885,14 +863,6 @@ rule UnitSupportAction {
 	)
 }
 
-rule KeyActual {
-	from website : Website!KeyActual
-	to waf : WAF!KeyActual (
-		key <- website.key.findOrmFeature(),
-		actual <- website.actual
-	)
-}
-
 abstract rule SelectableUnit {
 	from website : Website!SelectableUnit
 	to waf : WAF!SelectableUnit (
@@ -1047,8 +1017,13 @@ rule DetailsUnit {
 	from website : Website!DetailsUnit
 	to waf : WAF!DetailsUnit (
 		onlyDisplayWhenNotEmpty <- website.onlyDisplayWhenNotEmpty,
-		omitFieldLabels <- website.omitFieldLabels
-, selectionType <- thisModule.findOrmEntityOrView(website.contentType.name)
+		omitFieldLabels <- website.omitFieldLabels,
+		selectionType <-
+			if website.defaultSelection.oclIsUndefined() then
+				thisModule.findOrmEntityOrView(website.contentType.name)
+			else
+				OclUndefined
+			endif
 	)
 }
 
@@ -1344,13 +1319,11 @@ helper context Website!Expression def: isInterfaceContainer() : Boolean
 			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!InlineAction) then
 			true
-		else if self.refImmediateComposite().oclIsTypeOf(Website!KeyActual) then
-			true
 		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
 			self.refImmediateComposite().isInterfaceContainer()
 		else
 			false
-		endif endif endif endif endif endif endif;
+		endif endif endif endif endif endif;
 
 helper context Website!Order def: isInterfaceContainer() : Boolean
 	= if self.refImmediateComposite().oclIsUndefined() then

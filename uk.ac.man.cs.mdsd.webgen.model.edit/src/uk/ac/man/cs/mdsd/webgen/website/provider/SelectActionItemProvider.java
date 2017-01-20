@@ -4,16 +4,22 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
+import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.SelectAction;
+import uk.ac.man.cs.mdsd.webgen.website.SelectableUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -54,22 +60,31 @@ public class SelectActionItemProvider extends InlineActionItemProvider {
 	 * This adds a property descriptor for the Target feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SelectAction_target_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SelectAction_target_feature", "_UI_SelectAction_type"),
-				 WebsitePackage.Literals.SELECT_ACTION__TARGET,
-				 true,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_NavigationPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_SelectAction_target_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SelectAction_target_feature", "_UI_SelectAction_type"),
+			WebsitePackage.Literals.SELECT_ACTION__TARGET,
+			true, false, true, null,
+			getString("_UI_NavigationPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					final Set<SelectableUnit> targets = new HashSet<SelectableUnit>();
+					for (Page page : getModel(object).getPages()) {
+						for (ContentUnit unit : page.getUnits()) {
+							if (unit instanceof SelectableUnit) {
+								targets.add((SelectableUnit) unit);
+							}
+						}
+					}
+					return targets;
+				}
+		});
 	}
 
 	/**

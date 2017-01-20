@@ -31,6 +31,7 @@ import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.Query;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
+import uk.ac.man.cs.mdsd.webgen.website.SingletonUnit;
 import uk.ac.man.cs.mdsd.webgen.website.UnitElement;
 import uk.ac.man.cs.mdsd.webgen.website.UnitAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebGenModel;
@@ -133,19 +134,55 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 
 	protected Set<Attribute> getAttributes(final DynamicUnit unit) {
 		final Set<Attribute> attributes = new HashSet<Attribute>();
+
+		if (unit instanceof SingletonUnit) {
+			final SingletonUnit singleton = (SingletonUnit) unit;
+			if (singleton.getContentType() != null) {
+				attributes.addAll(singleton.getContentType().getAttributes());
+				return attributes;
+			}
+		}
+
+		if (unit instanceof CollectionUnit) {
+			final CollectionUnit collection = (CollectionUnit) unit;
+			if (collection.getContentType().size() > 0) {
+				for (EntityOrView entityOrView : collection.getContentType()) {
+					attributes.addAll(entityOrView.getAttributes());
+				}
+				return attributes;
+			}
+		}
+
 		for (EntityOrView entityOrView : unit.getEntities()) {
 			attributes.addAll(entityOrView.getAttributes());
 		}
-
 		return attributes;
 	}
 
 	protected Set<Association> getAssociations(final DynamicUnit unit) {
 		final Set<Association> associations = new HashSet<Association>();
+
+		if (unit instanceof SingletonUnit) {
+			final SingletonUnit singleton = (SingletonUnit) unit;
+			if (singleton.getContentType() != null) {
+				associations.addAll(singleton.getContentType().getAllAssociations());
+				return associations;
+			}
+		}
+
+		if (unit instanceof CollectionUnit) {
+			final CollectionUnit collection = (CollectionUnit) unit;
+			if (collection.getContentType().size() > 0) {
+				for (EntityOrView entityOrView : collection.getContentType()) {
+					associations.addAll(entityOrView.getAllAssociations());
+				}
+				return associations;
+			}
+		}
+
 		for (EntityOrView entityOrView : unit.getEntities()) {
 			associations.addAll(entityOrView.getAllAssociations());
 		}
-
 		return associations;
 	}
 

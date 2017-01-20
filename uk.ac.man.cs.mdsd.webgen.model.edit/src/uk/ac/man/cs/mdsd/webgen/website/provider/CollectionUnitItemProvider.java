@@ -47,6 +47,7 @@ public class CollectionUnitItemProvider
 			super.getPropertyDescriptors(object);
 
 			addContentTypePropertyDescriptor(object);
+			addContainingFeaturePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -72,6 +73,36 @@ public class CollectionUnitItemProvider
 				 null,
 				 getString("_UI_ModelPropertyCategory"),
 				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Containing Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addContainingFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_CollectionUnit_containingFeature_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containingFeature_feature", "_UI_CollectionUnit_type"),
+			WebsitePackage.Literals.COLLECTION_UNIT__CONTAINING_FEATURE,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof CollectionUnit) {
+						final CollectionUnit unit = (CollectionUnit) object;
+						if (unit.getSelectionType() != null) {
+							return unit.getSelectionType().getAssociations();
+						}
+						return getSelections((CollectionUnit) object);
+					}
+					return Collections.emptySet();
+				}
+		});
 	}
 
 	/**

@@ -10,12 +10,12 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.CreateUpdateUnit;
-import uk.ac.man.cs.mdsd.webgen.website.Page;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -164,18 +164,10 @@ public class CreateUpdateUnitItemProvider extends EditUnitItemProvider {
 		final CreateUpdateUnit unit = (CreateUpdateUnit) object;
 		final Object displayedOn = unit.getDisplayedOn();
 		String parentLabel = "";
-		if (unit.getDisplayedOn() instanceof Page) {
-			final PageItemProvider provider
-				= (PageItemProvider) adapterFactory.adapt(displayedOn, Page.class);
-			if (provider != null) {
-				parentLabel = provider.getText(displayedOn);
-			}
-		} else {
-			UnitAssociationItemProvider provider
-				= (UnitAssociationItemProvider) adapterFactory.adapt(displayedOn, UnitAssociationItemProvider.class);
-			if (provider != null) {
-				parentLabel = provider.getText(displayedOn);
-			}
+		final IItemLabelProvider provider
+			= (IItemLabelProvider) adapterFactory.adapt(displayedOn, IItemLabelProvider.class);
+		if (provider != null) {
+			parentLabel = provider.getText(displayedOn);
 		}
 		final String label = unit.getName();
 		return parentLabel + ": "

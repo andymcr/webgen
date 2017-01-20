@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -91,14 +92,23 @@ public class CreateUnitItemProvider extends EditUnitItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CreateUnit)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_CreateUnit_type") :
-			getString("_UI_CreateUnit_type") + " " + label;
+		final CreateUnit unit = (CreateUnit) object;
+		final Object displayedOn = unit.getDisplayedOn();
+		String parentLabel = "";
+		final IItemLabelProvider provider
+			= (IItemLabelProvider) adapterFactory.adapt(displayedOn, IItemLabelProvider.class);
+		if (provider != null) {
+			parentLabel = provider.getText(displayedOn);
+		}
+		final String label = unit.getName();
+		return parentLabel + ": "
+			+ (label == null || label.length() == 0
+				? getString("_UI_CreateUnit_type")
+				: getString("_UI_CreateUnit_type") + " " + label);
 	}
 
 	/**

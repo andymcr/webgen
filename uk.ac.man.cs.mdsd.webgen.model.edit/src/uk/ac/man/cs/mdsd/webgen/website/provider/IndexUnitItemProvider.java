@@ -17,10 +17,12 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -55,6 +57,7 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 
 			addSelectionTypePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
+			addContainingFeaturePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addDisplayOptionPropertyDescriptor(object);
 			addOmitColumnLabelsPropertyDescriptor(object);
@@ -121,25 +124,59 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Containing Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addContainingFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_CollectionUnit_containingFeature_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containingFeature_feature", "_UI_CollectionUnit_type"),
+			WebsitePackage.Literals.COLLECTION_UNIT__CONTAINING_FEATURE,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof CollectionUnit) {
+						final CollectionUnit unit = (CollectionUnit) object;
+						if (unit.getSelectionType() != null) {
+							return unit.getSelectionType().getAssociations();
+						}
+						return getSelections((CollectionUnit) object);
+					}
+					return Collections.emptySet();
+				}
+		});
+	}
+
+	/**
 	 * This adds a property descriptor for the Selection feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addSelectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_selection_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
-				 WebsitePackage.Literals.COLLECTION_UNIT__SELECTION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_CollectionUnit_selection_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
+			WebsitePackage.Literals.COLLECTION_UNIT__SELECTION,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof CollectionUnit) {
+						return getSelections((CollectionUnit) object);
+					}
+					return Collections.emptySet();
+				}
+		});
 	}
 
 	/**
@@ -544,14 +581,23 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((IndexUnit)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_IndexUnit_type") :
-			getString("_UI_IndexUnit_type") + " " + label;
+		final IndexUnit unit = (IndexUnit) object;
+		final Object displayedOn = unit.getDisplayedOn();
+		String parentLabel = "";
+		final IItemLabelProvider provider
+			= (IItemLabelProvider) adapterFactory.adapt(displayedOn, IItemLabelProvider.class);
+		if (provider != null) {
+			parentLabel = provider.getText(displayedOn);
+		}
+		final String label = unit.getName();
+		return parentLabel + ": "
+			+ (label == null || label.length() == 0
+				? getString("_UI_IndexUnit_type")
+				: getString("_UI_IndexUnit_type") + " " + label);
 	}
 
 	/**

@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
 import uk.ac.man.cs.mdsd.webgen.website.ImageUnit;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
@@ -52,6 +53,7 @@ public class ImageUnitItemProvider
 
 			addSelectionTypePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
+			addContainingFeaturePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addDefaultSelectionPropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
@@ -107,25 +109,59 @@ public class ImageUnitItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Containing Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addContainingFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_CollectionUnit_containingFeature_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containingFeature_feature", "_UI_CollectionUnit_type"),
+			WebsitePackage.Literals.COLLECTION_UNIT__CONTAINING_FEATURE,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof CollectionUnit) {
+						final CollectionUnit unit = (CollectionUnit) object;
+						if (unit.getSelectionType() != null) {
+							return unit.getSelectionType().getAssociations();
+						}
+						return getSelections((CollectionUnit) object);
+					}
+					return Collections.emptySet();
+				}
+		});
+	}
+
+	/**
 	 * This adds a property descriptor for the Selection feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addSelectionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CollectionUnit_selection_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
-				 WebsitePackage.Literals.COLLECTION_UNIT__SELECTION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_CollectionUnit_selection_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_selection_feature", "_UI_CollectionUnit_type"),
+			WebsitePackage.Literals.COLLECTION_UNIT__SELECTION,
+			true, false, true, null,
+			getString("_UI_ModelPropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof CollectionUnit) {
+						return getSelections((CollectionUnit) object);
+					}
+					return Collections.emptySet();
+				}
+		});
 	}
 
 	/**

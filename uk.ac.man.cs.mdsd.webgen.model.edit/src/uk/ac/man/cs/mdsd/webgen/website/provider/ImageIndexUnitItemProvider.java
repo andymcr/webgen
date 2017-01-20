@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -142,14 +143,23 @@ public class ImageIndexUnitItemProvider extends ImageUnitItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ImageIndexUnit)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ImageIndexUnit_type") :
-			getString("_UI_ImageIndexUnit_type") + " " + label;
+		final ImageIndexUnit unit = (ImageIndexUnit) object;
+		final Object displayedOn = unit.getDisplayedOn();
+		String parentLabel = "";
+		final IItemLabelProvider provider
+			= (IItemLabelProvider) adapterFactory.adapt(displayedOn, IItemLabelProvider.class);
+		if (provider != null) {
+			parentLabel = provider.getText(displayedOn);
+		}
+		final String label = unit.getName();
+		return parentLabel + ": "
+			+ (label == null || label.length() == 0
+				? getString("_UI_ImageIndexUnit_type")
+				: getString("_UI_ImageIndexUnit_type") + " " + label);
 	}
 	
 

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.FeaturePath;
 import uk.ac.man.cs.mdsd.webgen.website.ImageManipulation;
 import uk.ac.man.cs.mdsd.webgen.website.ImageUnit;
@@ -31,6 +32,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageUnitImpl#getImagePathFeature <em>Image Path Feature</em>}</li>
@@ -63,6 +65,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected EList<EntityOrView> contentType;
+
+	/**
+	 * The cached value of the '{@link #getContainingFeature() <em>Containing Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainingFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Feature containingFeature;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -238,6 +250,44 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.IMAGE_UNIT__CONTENT_TYPE);
 		}
 		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature getContainingFeature() {
+		if (containingFeature != null && containingFeature.eIsProxy()) {
+			InternalEObject oldContainingFeature = (InternalEObject)containingFeature;
+			containingFeature = (Feature)eResolveProxy(oldContainingFeature);
+			if (containingFeature != oldContainingFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.IMAGE_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
+			}
+		}
+		return containingFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature basicGetContainingFeature() {
+		return containingFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainingFeature(Feature newContainingFeature) {
+		Feature oldContainingFeature = containingFeature;
+		containingFeature = newContainingFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.IMAGE_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
 	}
 
 	/**
@@ -532,6 +582,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return basicGetSelectionType();
 			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
 				return getContentType();
+			case WebsitePackage.IMAGE_UNIT__CONTAINING_FEATURE:
+				if (resolve) return getContainingFeature();
+				return basicGetContainingFeature();
 			case WebsitePackage.IMAGE_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -570,6 +623,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
+				return;
+			case WebsitePackage.IMAGE_UNIT__CONTAINING_FEATURE:
+				setContainingFeature((Feature)newValue);
 				return;
 			case WebsitePackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)newValue);
@@ -613,6 +669,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				return;
+			case WebsitePackage.IMAGE_UNIT__CONTAINING_FEATURE:
+				setContainingFeature((Feature)null);
+				return;
 			case WebsitePackage.IMAGE_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
@@ -653,6 +712,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return selectionType != null;
 			case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
+			case WebsitePackage.IMAGE_UNIT__CONTAINING_FEATURE:
+				return containingFeature != null;
 			case WebsitePackage.IMAGE_UNIT__SELECTION:
 				return selection != null;
 			case WebsitePackage.IMAGE_UNIT__DEFAULT_SELECTION:
@@ -689,6 +750,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		if (baseClass == CollectionUnit.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.IMAGE_UNIT__CONTENT_TYPE: return WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE;
+				case WebsitePackage.IMAGE_UNIT__CONTAINING_FEATURE: return WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WebsitePackage.IMAGE_UNIT__SELECTION: return WebsitePackage.COLLECTION_UNIT__SELECTION;
 				default: return -1;
 			}
@@ -712,6 +774,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		if (baseClass == CollectionUnit.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE: return WebsitePackage.IMAGE_UNIT__CONTENT_TYPE;
+				case WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WebsitePackage.IMAGE_UNIT__CONTAINING_FEATURE;
 				case WebsitePackage.COLLECTION_UNIT__SELECTION: return WebsitePackage.IMAGE_UNIT__SELECTION;
 				default: return -1;
 			}

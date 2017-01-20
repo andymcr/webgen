@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Feature;
 
 import uk.ac.man.cs.mdsd.waf.CollectionUnit;
 import uk.ac.man.cs.mdsd.waf.Selection;
@@ -29,6 +30,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CollectionUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CollectionUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.CollectionUnitImpl#getSelection <em>Selection</em>}</li>
  * </ul>
@@ -36,6 +38,16 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * @generated
  */
 public abstract class CollectionUnitImpl extends SelectableUnitImpl implements CollectionUnit {
+	/**
+	 * The cached value of the '{@link #getContainingFeature() <em>Containing Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainingFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Feature containingFeature;
+
 	/**
 	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -73,6 +85,44 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	@Override
 	protected EClass eStaticClass() {
 		return WafPackage.Literals.COLLECTION_UNIT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature getContainingFeature() {
+		if (containingFeature != null && containingFeature.eIsProxy()) {
+			InternalEObject oldContainingFeature = (InternalEObject)containingFeature;
+			containingFeature = (Feature)eResolveProxy(oldContainingFeature);
+			if (containingFeature != oldContainingFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
+			}
+		}
+		return containingFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature basicGetContainingFeature() {
+		return containingFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainingFeature(Feature newContainingFeature) {
+		Feature oldContainingFeature = containingFeature;
+		containingFeature = newContainingFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
 	}
 
 	/**
@@ -133,6 +183,9 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE:
+				if (resolve) return getContainingFeature();
+				return basicGetContainingFeature();
 			case WafPackage.COLLECTION_UNIT__CONTENT_TYPE:
 				return getContentType();
 			case WafPackage.COLLECTION_UNIT__SELECTION:
@@ -151,6 +204,9 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE:
+				setContainingFeature((Feature)newValue);
+				return;
 			case WafPackage.COLLECTION_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
@@ -170,6 +226,9 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE:
+				setContainingFeature((Feature)null);
+				return;
 			case WafPackage.COLLECTION_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				return;
@@ -188,6 +247,8 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE:
+				return containingFeature != null;
 			case WafPackage.COLLECTION_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
 			case WafPackage.COLLECTION_UNIT__SELECTION:

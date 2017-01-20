@@ -372,7 +372,7 @@ abstract class SingletonUnit {
 }
 
 abstract class CollectionUnit extends SelectableUnit {
-//	refers Feature x
+	refers Feature containingFeature
 	refers EntityOrView[1..*] contentType
 	refers Selection selection
 }

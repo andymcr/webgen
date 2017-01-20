@@ -607,6 +607,8 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//CollectionUnit/contentType"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//CollectionUnit/containingFeature"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//CollectionUnit/selection"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//EditUnit">

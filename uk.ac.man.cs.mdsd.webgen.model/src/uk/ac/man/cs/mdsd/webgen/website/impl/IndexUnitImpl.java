@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.IndexDisplayOption;
 import uk.ac.man.cs.mdsd.webgen.website.IndexUnit;
@@ -42,6 +43,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getDisplayOption <em>Display Option</em>}</li>
@@ -85,6 +87,16 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected EList<EntityOrView> contentType;
+
+	/**
+	 * The cached value of the '{@link #getContainingFeature() <em>Containing Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainingFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Feature containingFeature;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -493,6 +505,44 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.INDEX_UNIT__CONTENT_TYPE);
 		}
 		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature getContainingFeature() {
+		if (containingFeature != null && containingFeature.eIsProxy()) {
+			InternalEObject oldContainingFeature = (InternalEObject)containingFeature;
+			containingFeature = (Feature)eResolveProxy(oldContainingFeature);
+			if (containingFeature != oldContainingFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.INDEX_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
+			}
+		}
+		return containingFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature basicGetContainingFeature() {
+		return containingFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainingFeature(Feature newContainingFeature) {
+		Feature oldContainingFeature = containingFeature;
+		containingFeature = newContainingFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.INDEX_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
 	}
 
 	/**
@@ -954,6 +1004,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return basicGetSelectionType();
 			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
 				return getContentType();
+			case WebsitePackage.INDEX_UNIT__CONTAINING_FEATURE:
+				if (resolve) return getContainingFeature();
+				return basicGetContainingFeature();
 			case WebsitePackage.INDEX_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -1013,6 +1066,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
+				return;
+			case WebsitePackage.INDEX_UNIT__CONTAINING_FEATURE:
+				setContainingFeature((Feature)newValue);
 				return;
 			case WebsitePackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)newValue);
@@ -1091,6 +1147,9 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				return;
+			case WebsitePackage.INDEX_UNIT__CONTAINING_FEATURE:
+				setContainingFeature((Feature)null);
+				return;
 			case WebsitePackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
@@ -1164,6 +1223,8 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return selectionType != null;
 			case WebsitePackage.INDEX_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
+			case WebsitePackage.INDEX_UNIT__CONTAINING_FEATURE:
+				return containingFeature != null;
 			case WebsitePackage.INDEX_UNIT__SELECTION:
 				return selection != null;
 			case WebsitePackage.INDEX_UNIT__ACTIONS:
@@ -1222,6 +1283,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		if (baseClass == CollectionUnit.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.INDEX_UNIT__CONTENT_TYPE: return WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE;
+				case WebsitePackage.INDEX_UNIT__CONTAINING_FEATURE: return WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WebsitePackage.INDEX_UNIT__SELECTION: return WebsitePackage.COLLECTION_UNIT__SELECTION;
 				default: return -1;
 			}
@@ -1251,6 +1313,7 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		if (baseClass == CollectionUnit.class) {
 			switch (baseFeatureID) {
 				case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE: return WebsitePackage.INDEX_UNIT__CONTENT_TYPE;
+				case WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WebsitePackage.INDEX_UNIT__CONTAINING_FEATURE;
 				case WebsitePackage.COLLECTION_UNIT__SELECTION: return WebsitePackage.INDEX_UNIT__SELECTION;
 				default: return -1;
 			}

@@ -42,10 +42,33 @@ public class CollectionUnitItemProvider extends SelectableUnitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addContainingFeaturePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Containing Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainingFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_containingFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containingFeature_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__CONTAINING_FEATURE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

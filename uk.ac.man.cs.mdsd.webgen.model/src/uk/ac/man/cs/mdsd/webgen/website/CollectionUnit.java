@@ -14,6 +14,7 @@ import java.util.List;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CollectionUnit#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CollectionUnit#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.CollectionUnit#getSelection <em>Selection</em>}</li>
  * </ul>
  *
@@ -37,6 +38,32 @@ public interface CollectionUnit extends SelectableUnit {
 	 * @generated
 	 */
 	List<EntityOrView> getContentType();
+
+	/**
+	 * Returns the value of the '<em><b>Containing Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Containing Feature</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Containing Feature</em>' reference.
+	 * @see #setContainingFeature(Feature)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getCollectionUnit_ContainingFeature()
+	 * @model
+	 * @generated
+	 */
+	Feature getContainingFeature();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.CollectionUnit#getContainingFeature <em>Containing Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Containing Feature</em>' reference.
+	 * @see #getContainingFeature()
+	 * @generated
+	 */
+	void setContainingFeature(Feature value);
 
 	/**
 	 * Returns the value of the '<em><b>Selection</b></em>' reference.

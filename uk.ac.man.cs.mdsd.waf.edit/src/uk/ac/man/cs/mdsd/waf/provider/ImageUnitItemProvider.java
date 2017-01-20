@@ -49,6 +49,7 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 
 			addSelectionTypePropertyDescriptor(object);
 			addSelectorsPropertyDescriptor(object);
+			addContainingFeaturePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 			addDefaultSelectionPropertyDescriptor(object);
@@ -96,6 +97,28 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 				 getString("_UI_SelectableUnit_selectors_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SelectableUnit_selectors_feature", "_UI_SelectableUnit_type"),
 				 WafPackage.Literals.SELECTABLE_UNIT__SELECTORS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Containing Feature feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainingFeaturePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_containingFeature_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_containingFeature_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__CONTAINING_FEATURE,
 				 true,
 				 false,
 				 true,

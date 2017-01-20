@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
+import uk.ac.man.cs.mdsd.orm.Feature;
 
 import uk.ac.man.cs.mdsd.waf.CollectionUnit;
 import uk.ac.man.cs.mdsd.waf.FeaturePath;
@@ -39,6 +40,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSelectionType <em>Selection Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSelectors <em>Selectors</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getSelection <em>Selection</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ImageUnitImpl#getDefaultSelection <em>Default Selection</em>}</li>
@@ -72,6 +74,16 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 	 * @ordered
 	 */
 	protected EList<SelectAction> selectors;
+
+	/**
+	 * The cached value of the '{@link #getContainingFeature() <em>Containing Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainingFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Feature containingFeature;
 
 	/**
 	 * The cached value of the '{@link #getContentType() <em>Content Type</em>}' reference list.
@@ -260,6 +272,44 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			selectors = new EObjectWithInverseResolvingEList<SelectAction>(SelectAction.class, this, WafPackage.IMAGE_UNIT__SELECTORS, WafPackage.SELECT_ACTION__TARGET);
 		}
 		return selectors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature getContainingFeature() {
+		if (containingFeature != null && containingFeature.eIsProxy()) {
+			InternalEObject oldContainingFeature = (InternalEObject)containingFeature;
+			containingFeature = (Feature)eResolveProxy(oldContainingFeature);
+			if (containingFeature != oldContainingFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.IMAGE_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
+			}
+		}
+		return containingFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature basicGetContainingFeature() {
+		return containingFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainingFeature(Feature newContainingFeature) {
+		Feature oldContainingFeature = containingFeature;
+		containingFeature = newContainingFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.IMAGE_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
 	}
 
 	/**
@@ -583,6 +633,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return basicGetSelectionType();
 			case WafPackage.IMAGE_UNIT__SELECTORS:
 				return getSelectors();
+			case WafPackage.IMAGE_UNIT__CONTAINING_FEATURE:
+				if (resolve) return getContainingFeature();
+				return basicGetContainingFeature();
 			case WafPackage.IMAGE_UNIT__CONTENT_TYPE:
 				return getContentType();
 			case WafPackage.IMAGE_UNIT__SELECTION:
@@ -623,6 +676,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__SELECTORS:
 				getSelectors().clear();
 				getSelectors().addAll((Collection<? extends SelectAction>)newValue);
+				return;
+			case WafPackage.IMAGE_UNIT__CONTAINING_FEATURE:
+				setContainingFeature((Feature)newValue);
 				return;
 			case WafPackage.IMAGE_UNIT__CONTENT_TYPE:
 				getContentType().clear();
@@ -670,6 +726,9 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 			case WafPackage.IMAGE_UNIT__SELECTORS:
 				getSelectors().clear();
 				return;
+			case WafPackage.IMAGE_UNIT__CONTAINING_FEATURE:
+				setContainingFeature((Feature)null);
+				return;
 			case WafPackage.IMAGE_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				return;
@@ -713,6 +772,8 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 				return selectionType != null;
 			case WafPackage.IMAGE_UNIT__SELECTORS:
 				return selectors != null && !selectors.isEmpty();
+			case WafPackage.IMAGE_UNIT__CONTAINING_FEATURE:
+				return containingFeature != null;
 			case WafPackage.IMAGE_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
 			case WafPackage.IMAGE_UNIT__SELECTION:
@@ -751,6 +812,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		}
 		if (baseClass == CollectionUnit.class) {
 			switch (derivedFeatureID) {
+				case WafPackage.IMAGE_UNIT__CONTAINING_FEATURE: return WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WafPackage.IMAGE_UNIT__CONTENT_TYPE: return WafPackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WafPackage.IMAGE_UNIT__SELECTION: return WafPackage.COLLECTION_UNIT__SELECTION;
 				default: return -1;
@@ -775,6 +837,7 @@ public abstract class ImageUnitImpl extends DynamicUnitImpl implements ImageUnit
 		}
 		if (baseClass == CollectionUnit.class) {
 			switch (baseFeatureID) {
+				case WafPackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WafPackage.IMAGE_UNIT__CONTAINING_FEATURE;
 				case WafPackage.COLLECTION_UNIT__CONTENT_TYPE: return WafPackage.IMAGE_UNIT__CONTENT_TYPE;
 				case WafPackage.COLLECTION_UNIT__SELECTION: return WafPackage.IMAGE_UNIT__SELECTION;
 				default: return -1;

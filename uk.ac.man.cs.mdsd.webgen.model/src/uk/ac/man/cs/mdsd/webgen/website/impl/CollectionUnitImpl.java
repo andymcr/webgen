@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -29,6 +30,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CollectionUnitImpl#getContentType <em>Content Type</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CollectionUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.CollectionUnitImpl#getSelection <em>Selection</em>}</li>
  * </ul>
  *
@@ -44,6 +46,16 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 	 * @ordered
 	 */
 	protected EList<EntityOrView> contentType;
+
+	/**
+	 * The cached value of the '{@link #getContainingFeature() <em>Containing Feature</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainingFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Feature containingFeature;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -84,6 +96,44 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 			contentType = new EObjectResolvingEList<EntityOrView>(EntityOrView.class, this, WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE);
 		}
 		return contentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature getContainingFeature() {
+		if (containingFeature != null && containingFeature.eIsProxy()) {
+			InternalEObject oldContainingFeature = (InternalEObject)containingFeature;
+			containingFeature = (Feature)eResolveProxy(oldContainingFeature);
+			if (containingFeature != oldContainingFeature) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
+			}
+		}
+		return containingFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature basicGetContainingFeature() {
+		return containingFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainingFeature(Feature newContainingFeature) {
+		Feature oldContainingFeature = containingFeature;
+		containingFeature = newContainingFeature;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE, oldContainingFeature, containingFeature));
 	}
 
 	/**
@@ -134,6 +184,9 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 		switch (featureID) {
 			case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE:
 				return getContentType();
+			case WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE:
+				if (resolve) return getContainingFeature();
+				return basicGetContainingFeature();
 			case WebsitePackage.COLLECTION_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -154,6 +207,9 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 				getContentType().clear();
 				getContentType().addAll((Collection<? extends EntityOrView>)newValue);
 				return;
+			case WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE:
+				setContainingFeature((Feature)newValue);
+				return;
 			case WebsitePackage.COLLECTION_UNIT__SELECTION:
 				setSelection((Selection)newValue);
 				return;
@@ -172,6 +228,9 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 			case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE:
 				getContentType().clear();
 				return;
+			case WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE:
+				setContainingFeature((Feature)null);
+				return;
 			case WebsitePackage.COLLECTION_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
@@ -189,6 +248,8 @@ public abstract class CollectionUnitImpl extends SelectableUnitImpl implements C
 		switch (featureID) {
 			case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE:
 				return contentType != null && !contentType.isEmpty();
+			case WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE:
+				return containingFeature != null;
 			case WebsitePackage.COLLECTION_UNIT__SELECTION:
 				return selection != null;
 		}

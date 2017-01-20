@@ -42,7 +42,7 @@ public interface DynamicUnit extends ContentUnit {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entities</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getDynamicUnit_Entities()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	List<EntityOrView> getEntities();

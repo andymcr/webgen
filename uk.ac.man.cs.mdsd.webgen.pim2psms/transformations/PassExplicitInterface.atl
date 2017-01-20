@@ -890,6 +890,12 @@ abstract rule CollectionUnit {
 	to waf : WAF!CollectionUnit (
 		contentType <- website.contentType
 			->collect(eov | thisModule.findOrmEntityOrView(eov.name)),
+		containingFeature <-
+			if not website.containingFeature.oclIsUndefined() then
+				website.containingFeature.findOrmFeature()
+			else
+				website.containingFeature
+			endif,
 		selection <- website.selection
 	)
 }

@@ -2303,47 +2303,31 @@ public class WebsiteValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the featuresMustBeFromEntities constraint of '<em>Dynamic Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_ENTITIES__EEXPRESSION = "let eovFeatures : Collection(Feature)\r\n" +
-		"\t= self.entities->collect(eov | eov.allFeatures)\r\n" +
-		"\tin displayFields\r\n" +
-		"\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
-		"\t\t->select(f | \r\n" +
-		"\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
-		"\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n" +
-		"\t\t\tendif)\r\n" +
-		"\t\t->forAll(f | \r\n" +
-		"\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
-		"\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n" +
-		"\t\t\telse\r\n" +
-		"\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n" +
-		"\t\t\tendif)";
-
-	/**
 	 * Validates the featuresMustBeFromEntities constraint of '<em>Dynamic Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateDynamicUnit_featuresMustBeFromEntities(DynamicUnit dynamicUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(WebsitePackage.Literals.DYNAMIC_UNIT,
-				 dynamicUnit,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "featuresMustBeFromEntities",
-				 DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_ENTITIES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "featuresMustBeFromEntities", getObjectLabel(dynamicUnit, context) },
+						 new Object[] { dynamicUnit },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**

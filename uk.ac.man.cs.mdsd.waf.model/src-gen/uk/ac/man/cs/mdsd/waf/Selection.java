@@ -8,6 +8,7 @@ import uk.ac.man.cs.mdsd.expression.Order;
 import uk.ac.man.cs.mdsd.expression.Predicate;
 
 import uk.ac.man.cs.mdsd.orm.Association;
+import uk.ac.man.cs.mdsd.orm.Feature;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
 /**
@@ -105,20 +106,20 @@ public interface Selection extends NamedElement {
 	EList<SelectionParameter> getParameters();
 
 	/**
-	 * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.SelectField}.
+	 * Returns the value of the '<em><b>Fields</b></em>' reference list.
+	 * The list contents are of type {@link uk.ac.man.cs.mdsd.orm.Feature}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Fields</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Fields</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fields</em>' containment reference list.
+	 * @return the value of the '<em>Fields</em>' reference list.
 	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSelection_Fields()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	EList<SelectField> getFields();
+	EList<Feature> getFields();
 
 	/**
 	 * Returns the value of the '<em><b>Joins</b></em>' reference list.

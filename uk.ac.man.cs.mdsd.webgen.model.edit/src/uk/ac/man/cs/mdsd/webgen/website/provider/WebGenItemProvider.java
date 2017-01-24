@@ -253,9 +253,20 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 	}
 
 	protected Set<Selection> getSelections(final CollectionUnit unit) {
+		if (unit.getContentType().size() > 0) {
+			return getSelections(unit.getContentType().get(0));
+		}
+
+		return Collections.emptySet();
+	}
+
+	protected Set<Selection> getSelections(final IndexUnit unit) {
 		final Set<Selection> selections = new HashSet<Selection>();
 		if (unit.getContentType().size() > 0) {
 			selections.addAll(getSelections(unit.getContentType().get(0)));
+		}
+		if (unit.getSelectionType() != null) {
+			selections.addAll(getSelections(unit.getSelectionType()));
 		}
 
 		return selections;

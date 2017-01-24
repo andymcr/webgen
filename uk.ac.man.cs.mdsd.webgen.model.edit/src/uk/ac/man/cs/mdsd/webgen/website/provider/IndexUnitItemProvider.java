@@ -171,8 +171,8 @@ public class IndexUnitItemProvider extends DataUnitItemProvider {
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof CollectionUnit) {
-						return getSelections((CollectionUnit) object);
+					if (object instanceof IndexUnit) {
+						return getSelections((IndexUnit) object);
 					}
 					return Collections.emptySet();
 				}

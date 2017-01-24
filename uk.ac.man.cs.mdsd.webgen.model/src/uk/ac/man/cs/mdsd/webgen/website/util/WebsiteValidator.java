@@ -180,8 +180,6 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateService((Service)value, diagnostics, context);
 			case WebsitePackage.SELECTION:
 				return validateSelection((Selection)value, diagnostics, context);
-			case WebsitePackage.SELECTION_FIELD:
-				return validateSelectionField((SelectionField)value, diagnostics, context);
 			case WebsitePackage.SELECTION_PARAMETER:
 				return validateSelectionParameter((SelectionParameter)value, diagnostics, context);
 			case WebsitePackage.BUSINESS_OPERATION:
@@ -1828,7 +1826,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(imageIndexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(imageIndexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(imageIndexUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(imageIndexUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(imageIndexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(imageIndexUnit, diagnostics, context);
 		return result;
 	}
@@ -1869,15 +1867,6 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(selection, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(selection, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSelectionField(SelectionField selectionField, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(selectionField, diagnostics, context);
 	}
 
 	/**
@@ -2112,7 +2101,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(editUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(editUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(editUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(editUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(editUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2132,7 +2121,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(createUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(createUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(createUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(createUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(createUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2152,7 +2141,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(createUpdateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(createUpdateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(createUpdateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(createUpdateUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(createUpdateUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2172,7 +2161,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dataUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(dataUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletons(dataUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(dataUnit, diagnostics, context);
 		return result;
@@ -2298,36 +2287,60 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dynamicUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dynamicUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(dynamicUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(dynamicUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(dynamicUnit, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the featuresMustBeFromEntities constraint of '<em>Dynamic Unit</em>'.
+	 * The cached validation expression for the featuresMustBeFromContentType constraint of '<em>Dynamic Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDynamicUnit_featuresMustBeFromEntities(DynamicUnit dynamicUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "featuresMustBeFromEntities", getObjectLabel(dynamicUnit, context) },
-						 new Object[] { dynamicUnit },
-						 context));
-			}
-			return false;
-		}
-		return true;
+	protected static final String DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_CONTENT_TYPE__EEXPRESSION = "let entities : Sequence(EntityOrView)\r\n" +
+		"\t= if self.oclIsKindOf(SingletonUnit) then\r\n" +
+		"\t\t\tSequence{self.oclAsType(SingletonUnit).contentType}\r\n" +
+		"\t\telse if self.oclIsKindOf(CollectionUnit) then\r\n" +
+		"\t\t\tself.oclAsType(CollectionUnit).contentType\r\n" +
+		"\t\telse\r\n" +
+		"\t\t\tself.entities\r\n" +
+		"\t\tendif endif\r\n" +
+		"\tin let eovFeatures : Collection(Feature)\r\n" +
+		"\t\t= entities->collect(eov | eov.allFeatures)\r\n" +
+		"\t\tin displayFields\r\n" +
+		"\t\t\t->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)\r\n" +
+		"\t\t\t->select(f | \r\n" +
+		"\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
+		"\t\t\t\t\tnot f.oclAsType(UnitElement).attribute.oclIsUndefined()\r\n" +
+		"\t\t\t\telse\r\n" +
+		"\t\t\t\t\tnot f.oclAsType(UnitAssociation).association.oclIsUndefined()\r\n" +
+		"\t\t\t\tendif)\r\n" +
+		"\t\t\t->forAll(f | \r\n" +
+		"\t\t\t\tif f.oclIsTypeOf(UnitElement) then\r\n" +
+		"\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitElement).attribute)\r\n" +
+		"\t\t\t\telse\r\n" +
+		"\t\t\t\t\teovFeatures->includes(f.oclAsType(UnitAssociation).association)\r\n" +
+		"\t\t\t\tendif)";
+
+	/**
+	 * Validates the featuresMustBeFromContentType constraint of '<em>Dynamic Unit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDynamicUnit_featuresMustBeFromContentType(DynamicUnit dynamicUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebsitePackage.Literals.DYNAMIC_UNIT,
+				 dynamicUnit,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "featuresMustBeFromContentType",
+				 DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_CONTENT_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -2346,7 +2359,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(detailsUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(detailsUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletons(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(detailsUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDetailsUnit_selectionMustBeSingleton(detailsUnit, diagnostics, context);
@@ -2399,7 +2412,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(indexUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(indexUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_canOnlyTitleWithSingletons(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDataUnit_selectionValidChoice(indexUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInlineActionContainer_atMostOneDeleteAction(indexUnit, diagnostics, context);
@@ -2453,7 +2466,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(controlUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(controlUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(controlUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(controlUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(controlUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2473,7 +2486,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(searchUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(searchUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(searchUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(searchUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(searchUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2493,7 +2506,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(imageUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(imageUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(imageUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(imageUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(imageUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2540,7 +2553,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(sliderUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sliderUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(sliderUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(sliderUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(sliderUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2560,7 +2573,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(galleryUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(galleryUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(galleryUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(galleryUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(galleryUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2589,7 +2602,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(registrationUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(registrationUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(registrationUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(registrationUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(registrationUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2609,7 +2622,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(loginUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(loginUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(loginUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(loginUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(loginUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2629,7 +2642,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(forgottenPasswordUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(forgottenPasswordUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(forgottenPasswordUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(forgottenPasswordUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(forgottenPasswordUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2716,7 +2729,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(updateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(updateUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(updateUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(updateUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(updateUnit, diagnostics, context);
 		return result;
 	}
 
@@ -2736,7 +2749,7 @@ public class WebsiteValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(mapUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(mapUnit, diagnostics, context);
 		if (result || diagnostics != null) result &= validateNamedElement_nameNeedsAtLeastOneCharacter(mapUnit, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromEntities(mapUnit, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDynamicUnit_featuresMustBeFromContentType(mapUnit, diagnostics, context);
 		return result;
 	}
 

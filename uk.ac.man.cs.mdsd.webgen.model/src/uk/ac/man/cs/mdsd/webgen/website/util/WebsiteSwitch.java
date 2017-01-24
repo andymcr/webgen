@@ -155,7 +155,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				EntityOrView entityOrView = (EntityOrView)theEObject;
 				T result = caseEntityOrView(entityOrView);
 				if (result == null) result = caseClassifier(entityOrView);
-				if (result == null) result = caseSelectionField(entityOrView);
 				if (result == null) result = caseNamedDisplayElement(entityOrView);
 				if (result == null) result = caseNamedElement(entityOrView);
 				if (result == null) result = defaultCase(theEObject);
@@ -172,7 +171,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				T result = caseAttribute(attribute);
 				if (result == null) result = caseFeature(attribute);
 				if (result == null) result = caseLabel(attribute);
-				if (result == null) result = caseSelectionField(attribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -222,7 +220,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				T result = caseEntity(entity);
 				if (result == null) result = caseEntityOrView(entity);
 				if (result == null) result = caseClassifier(entity);
-				if (result == null) result = caseSelectionField(entity);
 				if (result == null) result = caseNamedDisplayElement(entity);
 				if (result == null) result = caseNamedElement(entity);
 				if (result == null) result = defaultCase(theEObject);
@@ -245,7 +242,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedDisplayElement(entityAttribute);
 				if (result == null) result = caseFeature(entityAttribute);
 				if (result == null) result = caseLabel(entityAttribute);
-				if (result == null) result = caseSelectionField(entityAttribute);
 				if (result == null) result = caseNamedElement(entityAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -259,7 +255,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedDisplayElement(dataTypeAttribute);
 				if (result == null) result = caseFeature(dataTypeAttribute);
 				if (result == null) result = caseLabel(dataTypeAttribute);
-				if (result == null) result = caseSelectionField(dataTypeAttribute);
 				if (result == null) result = caseNamedElement(dataTypeAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -273,7 +268,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedDisplayElement(dateAttribute);
 				if (result == null) result = caseFeature(dateAttribute);
 				if (result == null) result = caseLabel(dateAttribute);
-				if (result == null) result = caseSelectionField(dateAttribute);
 				if (result == null) result = caseNamedElement(dateAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -287,7 +281,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedDisplayElement(urlAttribute);
 				if (result == null) result = caseFeature(urlAttribute);
 				if (result == null) result = caseLabel(urlAttribute);
-				if (result == null) result = caseSelectionField(urlAttribute);
 				if (result == null) result = caseNamedElement(urlAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -301,7 +294,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedDisplayElement(resourceAttribute);
 				if (result == null) result = caseFeature(resourceAttribute);
 				if (result == null) result = caseLabel(resourceAttribute);
-				if (result == null) result = caseSelectionField(resourceAttribute);
 				if (result == null) result = caseNamedElement(resourceAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -336,7 +328,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedDisplayElement(fileAttribute);
 				if (result == null) result = caseFeature(fileAttribute);
 				if (result == null) result = caseLabel(fileAttribute);
-				if (result == null) result = caseSelectionField(fileAttribute);
 				if (result == null) result = caseNamedElement(fileAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -351,7 +342,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedDisplayElement(imageAttribute);
 				if (result == null) result = caseFeature(imageAttribute);
 				if (result == null) result = caseLabel(imageAttribute);
-				if (result == null) result = caseSelectionField(imageAttribute);
 				if (result == null) result = caseNamedElement(imageAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -365,7 +355,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedDisplayElement(locationAttribute);
 				if (result == null) result = caseFeature(locationAttribute);
 				if (result == null) result = caseLabel(locationAttribute);
-				if (result == null) result = caseSelectionField(locationAttribute);
 				if (result == null) result = caseNamedElement(locationAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -416,7 +405,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				T result = caseView(view);
 				if (result == null) result = caseEntityOrView(view);
 				if (result == null) result = caseClassifier(view);
-				if (result == null) result = caseSelectionField(view);
 				if (result == null) result = caseNamedDisplayElement(view);
 				if (result == null) result = caseNamedElement(view);
 				if (result == null) result = defaultCase(theEObject);
@@ -444,7 +432,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAttribute(encapsulatedAttribute);
 				if (result == null) result = caseViewFeature(encapsulatedAttribute);
 				if (result == null) result = caseLabel(encapsulatedAttribute);
-				if (result == null) result = caseSelectionField(encapsulatedAttribute);
 				if (result == null) result = caseFeature(encapsulatedAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -481,12 +468,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 				Selection selection = (Selection)theEObject;
 				T result = caseSelection(selection);
 				if (result == null) result = caseNamedElement(selection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WebsitePackage.SELECTION_FIELD: {
-				SelectionField selectionField = (SelectionField)theEObject;
-				T result = caseSelectionField(selectionField);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -2108,21 +2089,6 @@ public class WebsiteSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSelection(Selection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Selection Field</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Selection Field</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSelectionField(SelectionField object) {
 		return null;
 	}
 

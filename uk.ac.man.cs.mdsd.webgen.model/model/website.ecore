@@ -211,7 +211,7 @@
         eType="#//EnumerationLiteral" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral" eSuperTypes="#//NamedDisplayElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EntityOrView" abstract="true" eSuperTypes="#//Classifier #//SelectionField">
+  <eClassifiers xsi:type="ecore:EClass" name="EntityOrView" abstract="true" eSuperTypes="#//Classifier">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="keysFromLocalFeatures"/>
     </eAnnotations>
@@ -291,7 +291,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="footerClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true" interface="true"
-      eSuperTypes="#//Feature #//Label #//SelectionField">
+      eSuperTypes="#//Feature #//Label">
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultValue" ordered="false"
         eType="ecore:EClass ../../uk.ac.man.cs.mdsd.criteria.model/model/Criteria.ecore#//Expression"
         containment="true"/>
@@ -583,7 +583,7 @@
         eType="#//Service" eOpposite="#//Service/selections"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="distinct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
-        eType="#//SelectionField"/>
+        eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//SelectionParameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="joins" upperBound="-1"
@@ -597,7 +597,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="limit" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelectionField" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="SelectionParameter" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
@@ -773,7 +772,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DynamicUnit" abstract="true" eSuperTypes="#//ContentUnit">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="featuresMustBeFromEntities"/>
+      <details key="constraints" value="featuresMustBeFromContentType"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="featuresMustBeFromContentType" value="let entities : Sequence(EntityOrView)&#xD;&#xA;&#x9;= if self.oclIsKindOf(SingletonUnit) then&#xD;&#xA;&#x9;&#x9;&#x9;Sequence{self.oclAsType(SingletonUnit).contentType}&#xD;&#xA;&#x9;&#x9;else if self.oclIsKindOf(CollectionUnit) then&#xD;&#xA;&#x9;&#x9;&#x9;self.oclAsType(CollectionUnit).contentType&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;self.entities&#xD;&#xA;&#x9;&#x9;endif endif&#xD;&#xA;&#x9;in let eovFeatures : Collection(Feature)&#xD;&#xA;&#x9;&#x9;= entities->collect(eov | eov.allFeatures)&#xD;&#xA;&#x9;&#x9;in displayFields&#xD;&#xA;&#x9;&#x9;&#x9;->select(f | f.oclIsKindOf(UnitFeature)).oclAsType(UnitFeature)&#xD;&#xA;&#x9;&#x9;&#x9;->select(f | &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;not f.oclAsType(UnitElement).attribute.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;not f.oclAsType(UnitAssociation).association.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif)&#xD;&#xA;&#x9;&#x9;&#x9;->forAll(f | &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if f.oclIsTypeOf(UnitElement) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eovFeatures->includes(f.oclAsType(UnitElement).attribute)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;eovFeatures->includes(f.oclAsType(UnitAssociation).association)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;endif)"/>

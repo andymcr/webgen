@@ -50,6 +50,7 @@ public class SelectionItemProvider
 
 			addPartOfPropertyDescriptor(object);
 			addDistinctPropertyDescriptor(object);
+			addFieldsPropertyDescriptor(object);
 			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
 		}
@@ -96,6 +97,28 @@ public class SelectionItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Fields feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFieldsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Selection_fields_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_fields_feature", "_UI_Selection_type"),
+				 WafPackage.Literals.SELECTION__FIELDS,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -157,7 +180,6 @@ public class SelectionItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.SELECTION__PARAMETERS);
-			childrenFeatures.add(WafPackage.Literals.SELECTION__FIELDS);
 			childrenFeatures.add(WafPackage.Literals.SELECTION__FILTER);
 			childrenFeatures.add(WafPackage.Literals.SELECTION__ORDERING);
 		}
@@ -219,7 +241,6 @@ public class SelectionItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.SELECTION__PARAMETERS:
-			case WafPackage.SELECTION__FIELDS:
 			case WafPackage.SELECTION__FILTER:
 			case WafPackage.SELECTION__ORDERING:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -243,16 +264,6 @@ public class SelectionItemProvider
 			(createChildParameter
 				(WafPackage.Literals.SELECTION__PARAMETERS,
 				 WafFactory.eINSTANCE.createSelectionParameter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.SELECTION__FIELDS,
-				 WafFactory.eINSTANCE.createSelectEntityOrView()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.SELECTION__FIELDS,
-				 WafFactory.eINSTANCE.createSelectAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

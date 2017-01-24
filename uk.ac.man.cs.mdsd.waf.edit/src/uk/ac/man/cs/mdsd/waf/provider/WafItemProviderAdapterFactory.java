@@ -212,52 +212,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SelectEntityOrView} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SelectEntityOrViewItemProvider selectEntityOrViewItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.SelectEntityOrView}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSelectEntityOrViewAdapter() {
-		if (selectEntityOrViewItemProvider == null) {
-			selectEntityOrViewItemProvider = new SelectEntityOrViewItemProvider(this);
-		}
-
-		return selectEntityOrViewItemProvider;
-	}
-
-		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SelectAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SelectAttributeItemProvider selectAttributeItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.SelectAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSelectAttributeAdapter() {
-		if (selectAttributeItemProvider == null) {
-			selectAttributeItemProvider = new SelectAttributeItemProvider(this);
-		}
-
-		return selectAttributeItemProvider;
-	}
-
-		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SelectionParameter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1479,8 +1433,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
 		if (serviceItemProvider != null) serviceItemProvider.dispose();
 		if (selectionItemProvider != null) selectionItemProvider.dispose();
-		if (selectEntityOrViewItemProvider != null) selectEntityOrViewItemProvider.dispose();
-		if (selectAttributeItemProvider != null) selectAttributeItemProvider.dispose();
 		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
 		if (businessOperationItemProvider != null) businessOperationItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();

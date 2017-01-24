@@ -376,13 +376,8 @@ rule Selection {
 	from website : Website!Selection
 	to waf : WAF!Selection (
 		"distinct" <- website."distinct",
-		fields <-
-			website.fields
-				->collect(f | if f.oclIsKindOf(Website!EntityOrView) then
-						thisModule.SelectEntityOrView(f)
-					else
-						thisModule.SelectAttribute(f)
-					endif),
+		fields <- website.fields
+			->collect(f | f.findOrmFeature()),
 		parameters <- website.parameters,
 		joins <-
 			if website.usedBy.oclIsUndefined() then
@@ -394,20 +389,6 @@ rule Selection {
 		filter <- website.filter,
 		ordering <- website.ordering,
 		limit <- website.limit
-	)
-}
-
-lazy rule SelectEntityOrView {
-	from website : Website!EntityOrView
-	to waf : WAF!SelectEntityOrView (
-		entityOrView <- website.findOrmEntityOrView()
-	)
-}
-
-lazy rule SelectAttribute {
-	from website : Website!Attribute
-	to waf : WAF!SelectAttribute (
-		attribute <- website.findOrmFeature()
 	)
 }
 

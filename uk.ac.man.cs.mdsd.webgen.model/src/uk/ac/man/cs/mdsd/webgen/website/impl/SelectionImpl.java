@@ -24,8 +24,8 @@ import uk.ac.man.cs.mdsd.criteria.Order;
 import uk.ac.man.cs.mdsd.criteria.Predicate;
 
 import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.SelectionField;
 import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -79,7 +79,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SelectionField> fields;
+	protected EList<Feature> fields;
 
 	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
@@ -227,9 +227,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public List<SelectionField> getFields() {
+	public List<Feature> getFields() {
 		if (fields == null) {
-			fields = new EObjectResolvingEList<SelectionField>(SelectionField.class, this, WebsitePackage.SELECTION__FIELDS);
+			fields = new EObjectResolvingEList<Feature>(Feature.class, this, WebsitePackage.SELECTION__FIELDS);
 		}
 		return fields;
 	}
@@ -429,7 +429,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return;
 			case WebsitePackage.SELECTION__FIELDS:
 				getFields().clear();
-				getFields().addAll((Collection<? extends SelectionField>)newValue);
+				getFields().addAll((Collection<? extends Feature>)newValue);
 				return;
 			case WebsitePackage.SELECTION__PARAMETERS:
 				getParameters().clear();

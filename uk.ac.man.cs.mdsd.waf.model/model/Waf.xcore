@@ -127,22 +127,11 @@ class Selection extends NamedElement {
 	container Service partOf opposite selections
 	boolean distinct
 	contains SelectionParameter[] parameters
-	contains SelectField[] fields
+	refers Feature[] fields
 	refers Association[] joins
 	contains Predicate filter
 	contains Order[] ordering
 	int limit = "0"
-}
-
-abstract class SelectField {
-}
-
-class SelectEntityOrView extends SelectField {
-	refers EntityOrView entityOrView
-}
-
-class SelectAttribute extends SelectField {
-	refers Attribute attribute
 }
 
 class SelectionParameter extends NamedElement {

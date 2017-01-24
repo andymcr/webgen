@@ -22,8 +22,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.criteria.CriteriaFactory;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
+import uk.ac.man.cs.mdsd.webgen.website.Feature;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.SelectionField;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -106,10 +106,9 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 				if (object instanceof Selection) {
 					final Set<EntityOrView> entitiesAndViews
 						= getEntitiesAndViews((Selection) object);
-					final Set<SelectionField> fields = new HashSet<SelectionField>();
+					final Set<Feature> fields = new HashSet<Feature>();
 					for (EntityOrView entityOrView : entitiesAndViews) {
-						fields.add(entityOrView);
-						fields.addAll(entityOrView.getAttributes());
+						fields.addAll(entityOrView.getFeatures());
 					}
 
 					return fields;

@@ -62,8 +62,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.CAS_AUTHENTICATION: return createCasAuthentication();
 			case WafPackage.SERVICE: return createService();
 			case WafPackage.SELECTION: return createSelection();
-			case WafPackage.SELECT_ENTITY_OR_VIEW: return createSelectEntityOrView();
-			case WafPackage.SELECT_ATTRIBUTE: return createSelectAttribute();
 			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
 			case WafPackage.BUSINESS_OPERATION: return createBusinessOperation();
 			case WafPackage.IMAGE_MANIPULATION: return createImageManipulation();
@@ -218,26 +216,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public Selection createSelection() {
 		SelectionImpl selection = new SelectionImpl();
 		return selection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SelectEntityOrView createSelectEntityOrView() {
-		SelectEntityOrViewImpl selectEntityOrView = new SelectEntityOrViewImpl();
-		return selectEntityOrView;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SelectAttribute createSelectAttribute() {
-		SelectAttributeImpl selectAttribute = new SelectAttributeImpl();
-		return selectAttribute;
 	}
 
 	/**

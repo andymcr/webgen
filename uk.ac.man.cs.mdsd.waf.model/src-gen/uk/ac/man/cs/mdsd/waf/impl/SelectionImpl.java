@@ -23,10 +23,10 @@ import uk.ac.man.cs.mdsd.expression.Order;
 import uk.ac.man.cs.mdsd.expression.Predicate;
 
 import uk.ac.man.cs.mdsd.orm.Association;
+import uk.ac.man.cs.mdsd.orm.Feature;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
-import uk.ac.man.cs.mdsd.waf.SelectField;
 import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.SelectionParameter;
 import uk.ac.man.cs.mdsd.waf.Service;
@@ -84,14 +84,14 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	protected EList<SelectionParameter> parameters;
 
 	/**
-	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SelectField> fields;
+	protected EList<Feature> fields;
 
 	/**
 	 * The cached value of the '{@link #getJoins() <em>Joins</em>}' reference list.
@@ -251,9 +251,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SelectField> getFields() {
+	public EList<Feature> getFields() {
 		if (fields == null) {
-			fields = new EObjectContainmentEList<SelectField>(SelectField.class, this, WafPackage.SELECTION__FIELDS);
+			fields = new EObjectResolvingEList<Feature>(Feature.class, this, WafPackage.SELECTION__FIELDS);
 		}
 		return fields;
 	}
@@ -374,8 +374,6 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return basicSetPartOf(null, msgs);
 			case WafPackage.SELECTION__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-			case WafPackage.SELECTION__FIELDS:
-				return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
 			case WafPackage.SELECTION__FILTER:
 				return basicSetFilter(null, msgs);
 			case WafPackage.SELECTION__ORDERING:
@@ -448,7 +446,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return;
 			case WafPackage.SELECTION__FIELDS:
 				getFields().clear();
-				getFields().addAll((Collection<? extends SelectField>)newValue);
+				getFields().addAll((Collection<? extends Feature>)newValue);
 				return;
 			case WafPackage.SELECTION__JOINS:
 				getJoins().clear();

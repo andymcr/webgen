@@ -121,7 +121,6 @@ import uk.ac.man.cs.mdsd.webgen.website.SearchUnit;
 import uk.ac.man.cs.mdsd.webgen.website.SelectAction;
 import uk.ac.man.cs.mdsd.webgen.website.SelectableUnit;
 import uk.ac.man.cs.mdsd.webgen.website.Selection;
-import uk.ac.man.cs.mdsd.webgen.website.SelectionField;
 import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.Service;
 import uk.ac.man.cs.mdsd.webgen.website.SingletonUnit;
@@ -624,13 +623,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	private EClass selectionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass selectionFieldEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3848,15 +3840,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSelectionField() {
-		return selectionFieldEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSelectionParameter() {
 		return selectionParameterEClass;
 	}
@@ -6220,8 +6203,6 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(selectionEClass, SELECTION__ORDERING);
 		createEAttribute(selectionEClass, SELECTION__LIMIT);
 
-		selectionFieldEClass = createEClass(SELECTION_FIELD);
-
 		selectionParameterEClass = createEClass(SELECTION_PARAMETER);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__OPTIONAL);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__DEFAULT_VALUE);
@@ -6630,10 +6611,8 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		enumerationTypeEClass.getESuperTypes().add(this.getDataType());
 		enumerationLiteralEClass.getESuperTypes().add(this.getNamedDisplayElement());
 		entityOrViewEClass.getESuperTypes().add(this.getClassifier());
-		entityOrViewEClass.getESuperTypes().add(this.getSelectionField());
 		attributeEClass.getESuperTypes().add(this.getFeature());
 		attributeEClass.getESuperTypes().add(this.getLabel());
-		attributeEClass.getESuperTypes().add(this.getSelectionField());
 		associationEClass.getESuperTypes().add(this.getFeature());
 		modelLabelEClass.getESuperTypes().add(this.getNamedElement());
 		modelLabelEClass.getESuperTypes().add(this.getLabel());
@@ -7020,14 +6999,12 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(selectionEClass, Selection.class, "Selection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSelection_UsedBy(), this.getService(), this.getService_Selections(), "usedBy", null, 1, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelection_Distinct(), ecorePackage.getEBoolean(), "distinct", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSelection_Fields(), this.getSelectionField(), null, "fields", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSelection_Fields(), this.getFeature(), null, "fields", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Parameters(), this.getSelectionParameter(), null, "parameters", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Joins(), this.getAssociation(), null, "joins", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Filter(), theCriteriaPackage.getPredicate(), null, "filter", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSelection_Ordering(), theCriteriaPackage.getOrder(), null, "ordering", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelection_Limit(), ecorePackage.getEInt(), "limit", "0", 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(selectionFieldEClass, SelectionField.class, "SelectionField", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(selectionParameterEClass, SelectionParameter.class, "SelectionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSelectionParameter_Optional(), ecorePackage.getEBoolean(), "optional", "false", 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -7545,7 +7522,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		  (dynamicUnitEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "featuresMustBeFromEntities"
+			 "constraints", "featuresMustBeFromContentType"
 		   });	
 		addAnnotation
 		  (unitFeatureEClass, 

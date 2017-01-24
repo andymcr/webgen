@@ -17,7 +17,6 @@ import uk.ac.man.cs.mdsd.webgen.website.Attribute;
 import uk.ac.man.cs.mdsd.webgen.website.Cardinality;
 import uk.ac.man.cs.mdsd.webgen.website.EncapsulatedAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
-import uk.ac.man.cs.mdsd.webgen.website.SelectionField;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -469,11 +468,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 				default: return -1;
 			}
 		}
-		if (baseClass == SelectionField.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == Attribute.class) {
 			switch (derivedFeatureID) {
 				case WebsitePackage.ENCAPSULATED_ATTRIBUTE__DEFAULT_VALUE: return WebsitePackage.ATTRIBUTE__DEFAULT_VALUE;
@@ -494,11 +488,6 @@ public class EncapsulatedAttributeImpl extends EncapsulatedFeatureImpl implement
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Label.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == SelectionField.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}

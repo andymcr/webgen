@@ -55,6 +55,17 @@ public class ImageUnitItemProvider
 			addContentTypePropertyDescriptor(object);
 			addContainingFeaturePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
+			addEmptyMessagePropertyDescriptor(object);
+			addPaginationPropertyDescriptor(object);
+			addDefaultPaginationSizePropertyDescriptor(object);
+			addNextNpagesPropertyDescriptor(object);
+			addPreviousNpagesPropertyDescriptor(object);
+			addNextPageLabelPropertyDescriptor(object);
+			addPreviousPageLabelPropertyDescriptor(object);
+			addUseDisabledPageLinksPropertyDescriptor(object);
+			addUseFirstLastPageLinksPropertyDescriptor(object);
+			addFirstPageLabelPropertyDescriptor(object);
+			addLastPageLabelPropertyDescriptor(object);
 			addDefaultSelectionPropertyDescriptor(object);
 			addMissingImagePathPropertyDescriptor(object);
 			addImageFilterPropertyDescriptor(object);
@@ -162,6 +173,248 @@ public class ImageUnitItemProvider
 					return Collections.emptySet();
 				}
 		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Empty Message feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEmptyMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_emptyMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_emptyMessage_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__EMPTY_MESSAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pagination feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPaginationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_pagination_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_pagination_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__PAGINATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Default Pagination Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDefaultPaginationSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_defaultPaginationSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_defaultPaginationSize_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Next Npages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNextNpagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_nextNpages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_nextNpages_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__NEXT_NPAGES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Previous Npages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPreviousNpagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_previousNpages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_previousNpages_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__PREVIOUS_NPAGES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Next Page Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNextPageLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_nextPageLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_nextPageLabel_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__NEXT_PAGE_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Previous Page Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPreviousPageLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_previousPageLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_previousPageLabel_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__PREVIOUS_PAGE_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Use Disabled Page Links feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUseDisabledPageLinksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_useDisabledPageLinks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_useDisabledPageLinks_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Use First Last Page Links feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUseFirstLastPageLinksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_useFirstLastPageLinks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_useFirstLastPageLinks_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the First Page Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFirstPageLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_firstPageLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_firstPageLabel_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__FIRST_PAGE_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Last Page Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLastPageLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CollectionUnit_lastPageLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_lastPageLabel_feature", "_UI_CollectionUnit_type"),
+				 WebsitePackage.Literals.COLLECTION_UNIT__LAST_PAGE_LABEL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 getString("_UI_PaginationPropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -290,6 +543,7 @@ public class ImageUnitItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WebsitePackage.Literals.COLLECTION_UNIT__FILTERS);
 			childrenFeatures.add(WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE);
 			childrenFeatures.add(WebsitePackage.Literals.IMAGE_UNIT__TITLE_FEATURE);
 		}
@@ -336,11 +590,22 @@ public class ImageUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ImageUnit.class)) {
+			case WebsitePackage.IMAGE_UNIT__EMPTY_MESSAGE:
+			case WebsitePackage.IMAGE_UNIT__DEFAULT_PAGINATION_SIZE:
+			case WebsitePackage.IMAGE_UNIT__NEXT_NPAGES:
+			case WebsitePackage.IMAGE_UNIT__PREVIOUS_NPAGES:
+			case WebsitePackage.IMAGE_UNIT__NEXT_PAGE_LABEL:
+			case WebsitePackage.IMAGE_UNIT__PREVIOUS_PAGE_LABEL:
+			case WebsitePackage.IMAGE_UNIT__USE_DISABLED_PAGE_LINKS:
+			case WebsitePackage.IMAGE_UNIT__USE_FIRST_LAST_PAGE_LINKS:
+			case WebsitePackage.IMAGE_UNIT__FIRST_PAGE_LABEL:
+			case WebsitePackage.IMAGE_UNIT__LAST_PAGE_LABEL:
 			case WebsitePackage.IMAGE_UNIT__MISSING_IMAGE_PATH:
 			case WebsitePackage.IMAGE_UNIT__SHOW_TIME:
 			case WebsitePackage.IMAGE_UNIT__TRANSITION_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case WebsitePackage.IMAGE_UNIT__FILTERS:
 			case WebsitePackage.IMAGE_UNIT__IMAGE_PATH_FEATURE:
 			case WebsitePackage.IMAGE_UNIT__TITLE_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -359,6 +624,11 @@ public class ImageUnitItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebsitePackage.Literals.COLLECTION_UNIT__FILTERS,
+				 WebsiteFactory.eINSTANCE.createFilter()));
 
 		newChildDescriptors.add
 			(createChildParameter

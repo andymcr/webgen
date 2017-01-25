@@ -45,13 +45,10 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getContentType <em>Content Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getContainingFeature <em>Containing Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getSelection <em>Selection</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getDisplayOption <em>Display Option</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getFilters <em>Filters</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getPagination <em>Pagination</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getDefaultPaginationSize <em>Default Pagination Size</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getEmptyMessage <em>Empty Message</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getNextNpages <em>Next Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getPreviousNpages <em>Previous Npages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getNextPageLabel <em>Next Page Label</em>}</li>
@@ -60,6 +57,9 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#isUseFirstLastPageLinks <em>Use First Last Page Links</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getFirstPageLabel <em>First Page Label</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getLastPageLabel <em>Last Page Label</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getActions <em>Actions</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getDisplayOption <em>Display Option</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#isOmitColumnLabels <em>Omit Column Labels</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getStyleClass <em>Style Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getContentClass <em>Content Class</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.IndexUnitImpl#getRowClasses <em>Row Classes</em>}</li>
@@ -109,56 +109,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	protected Selection selection;
 
 	/**
-	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<InlineAction> actions;
-
-	/**
-	 * The default value of the '{@link #getDisplayOption() <em>Display Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final IndexDisplayOption DISPLAY_OPTION_EDEFAULT = IndexDisplayOption.GRID;
-
-	/**
-	 * The cached value of the '{@link #getDisplayOption() <em>Display Option</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDisplayOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected IndexDisplayOption displayOption = DISPLAY_OPTION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isOmitColumnLabels() <em>Omit Column Labels</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOmitColumnLabels()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean OMIT_COLUMN_LABELS_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isOmitColumnLabels() <em>Omit Column Labels</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isOmitColumnLabels()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean omitColumnLabels = OMIT_COLUMN_LABELS_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getFilters() <em>Filters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -167,6 +117,26 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected EList<Filter> filters;
+
+	/**
+	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmptyMessage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EMPTY_MESSAGE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmptyMessage()
+	 * @generated
+	 * @ordered
+	 */
+	protected String emptyMessage = EMPTY_MESSAGE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getPagination() <em>Pagination</em>}' reference.
@@ -197,26 +167,6 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected int defaultPaginationSize = DEFAULT_PAGINATION_SIZE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmptyMessage()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String EMPTY_MESSAGE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEmptyMessage() <em>Empty Message</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEmptyMessage()
-	 * @generated
-	 * @ordered
-	 */
-	protected String emptyMessage = EMPTY_MESSAGE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNextNpages() <em>Next Npages</em>}' attribute.
@@ -377,6 +327,56 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	 * @ordered
 	 */
 	protected String lastPageLabel = LAST_PAGE_LABEL_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<InlineAction> actions;
+
+	/**
+	 * The default value of the '{@link #getDisplayOption() <em>Display Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDisplayOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final IndexDisplayOption DISPLAY_OPTION_EDEFAULT = IndexDisplayOption.GRID;
+
+	/**
+	 * The cached value of the '{@link #getDisplayOption() <em>Display Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDisplayOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected IndexDisplayOption displayOption = DISPLAY_OPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOmitColumnLabels() <em>Omit Column Labels</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitColumnLabels()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OMIT_COLUMN_LABELS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOmitColumnLabels() <em>Omit Column Labels</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOmitColumnLabels()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean omitColumnLabels = OMIT_COLUMN_LABELS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getStyleClass() <em>Style Class</em>}' attribute.
@@ -983,10 +983,10 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebsitePackage.INDEX_UNIT__ACTIONS:
-				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 			case WebsitePackage.INDEX_UNIT__FILTERS:
 				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
+			case WebsitePackage.INDEX_UNIT__ACTIONS:
+				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1010,21 +1010,15 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
-			case WebsitePackage.INDEX_UNIT__ACTIONS:
-				return getActions();
-			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
-				return getDisplayOption();
-			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
-				return isOmitColumnLabels();
 			case WebsitePackage.INDEX_UNIT__FILTERS:
 				return getFilters();
+			case WebsitePackage.INDEX_UNIT__EMPTY_MESSAGE:
+				return getEmptyMessage();
 			case WebsitePackage.INDEX_UNIT__PAGINATION:
 				if (resolve) return getPagination();
 				return basicGetPagination();
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return getDefaultPaginationSize();
-			case WebsitePackage.INDEX_UNIT__EMPTY_MESSAGE:
-				return getEmptyMessage();
 			case WebsitePackage.INDEX_UNIT__NEXT_NPAGES:
 				return getNextNpages();
 			case WebsitePackage.INDEX_UNIT__PREVIOUS_NPAGES:
@@ -1041,6 +1035,12 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return getFirstPageLabel();
 			case WebsitePackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				return getLastPageLabel();
+			case WebsitePackage.INDEX_UNIT__ACTIONS:
+				return getActions();
+			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
+				return getDisplayOption();
+			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
+				return isOmitColumnLabels();
 			case WebsitePackage.INDEX_UNIT__STYLE_CLASS:
 				return getStyleClass();
 			case WebsitePackage.INDEX_UNIT__CONTENT_CLASS:
@@ -1073,28 +1073,18 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)newValue);
 				return;
-			case WebsitePackage.INDEX_UNIT__ACTIONS:
-				getActions().clear();
-				getActions().addAll((Collection<? extends InlineAction>)newValue);
-				return;
-			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
-				setDisplayOption((IndexDisplayOption)newValue);
-				return;
-			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
-				setOmitColumnLabels((Boolean)newValue);
-				return;
 			case WebsitePackage.INDEX_UNIT__FILTERS:
 				getFilters().clear();
 				getFilters().addAll((Collection<? extends Filter>)newValue);
+				return;
+			case WebsitePackage.INDEX_UNIT__EMPTY_MESSAGE:
+				setEmptyMessage((String)newValue);
 				return;
 			case WebsitePackage.INDEX_UNIT__PAGINATION:
 				setPagination((Filter)newValue);
 				return;
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize((Integer)newValue);
-				return;
-			case WebsitePackage.INDEX_UNIT__EMPTY_MESSAGE:
-				setEmptyMessage((String)newValue);
 				return;
 			case WebsitePackage.INDEX_UNIT__NEXT_NPAGES:
 				setNextNpages((Integer)newValue);
@@ -1119,6 +1109,16 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WebsitePackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				setLastPageLabel((String)newValue);
+				return;
+			case WebsitePackage.INDEX_UNIT__ACTIONS:
+				getActions().clear();
+				getActions().addAll((Collection<? extends InlineAction>)newValue);
+				return;
+			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
+				setDisplayOption((IndexDisplayOption)newValue);
+				return;
+			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
+				setOmitColumnLabels((Boolean)newValue);
 				return;
 			case WebsitePackage.INDEX_UNIT__STYLE_CLASS:
 				setStyleClass((String)newValue);
@@ -1153,26 +1153,17 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 			case WebsitePackage.INDEX_UNIT__SELECTION:
 				setSelection((Selection)null);
 				return;
-			case WebsitePackage.INDEX_UNIT__ACTIONS:
-				getActions().clear();
-				return;
-			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
-				setDisplayOption(DISPLAY_OPTION_EDEFAULT);
-				return;
-			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
-				setOmitColumnLabels(OMIT_COLUMN_LABELS_EDEFAULT);
-				return;
 			case WebsitePackage.INDEX_UNIT__FILTERS:
 				getFilters().clear();
+				return;
+			case WebsitePackage.INDEX_UNIT__EMPTY_MESSAGE:
+				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
 			case WebsitePackage.INDEX_UNIT__PAGINATION:
 				setPagination((Filter)null);
 				return;
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				setDefaultPaginationSize(DEFAULT_PAGINATION_SIZE_EDEFAULT);
-				return;
-			case WebsitePackage.INDEX_UNIT__EMPTY_MESSAGE:
-				setEmptyMessage(EMPTY_MESSAGE_EDEFAULT);
 				return;
 			case WebsitePackage.INDEX_UNIT__NEXT_NPAGES:
 				setNextNpages(NEXT_NPAGES_EDEFAULT);
@@ -1197,6 +1188,15 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return;
 			case WebsitePackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				setLastPageLabel(LAST_PAGE_LABEL_EDEFAULT);
+				return;
+			case WebsitePackage.INDEX_UNIT__ACTIONS:
+				getActions().clear();
+				return;
+			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
+				setDisplayOption(DISPLAY_OPTION_EDEFAULT);
+				return;
+			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
+				setOmitColumnLabels(OMIT_COLUMN_LABELS_EDEFAULT);
 				return;
 			case WebsitePackage.INDEX_UNIT__STYLE_CLASS:
 				setStyleClass(STYLE_CLASS_EDEFAULT);
@@ -1227,20 +1227,14 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return containingFeature != null;
 			case WebsitePackage.INDEX_UNIT__SELECTION:
 				return selection != null;
-			case WebsitePackage.INDEX_UNIT__ACTIONS:
-				return actions != null && !actions.isEmpty();
-			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
-				return displayOption != DISPLAY_OPTION_EDEFAULT;
-			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
-				return omitColumnLabels != OMIT_COLUMN_LABELS_EDEFAULT;
 			case WebsitePackage.INDEX_UNIT__FILTERS:
 				return filters != null && !filters.isEmpty();
+			case WebsitePackage.INDEX_UNIT__EMPTY_MESSAGE:
+				return EMPTY_MESSAGE_EDEFAULT == null ? emptyMessage != null : !EMPTY_MESSAGE_EDEFAULT.equals(emptyMessage);
 			case WebsitePackage.INDEX_UNIT__PAGINATION:
 				return pagination != null;
 			case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 				return defaultPaginationSize != DEFAULT_PAGINATION_SIZE_EDEFAULT;
-			case WebsitePackage.INDEX_UNIT__EMPTY_MESSAGE:
-				return EMPTY_MESSAGE_EDEFAULT == null ? emptyMessage != null : !EMPTY_MESSAGE_EDEFAULT.equals(emptyMessage);
 			case WebsitePackage.INDEX_UNIT__NEXT_NPAGES:
 				return nextNpages != NEXT_NPAGES_EDEFAULT;
 			case WebsitePackage.INDEX_UNIT__PREVIOUS_NPAGES:
@@ -1257,6 +1251,12 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				return FIRST_PAGE_LABEL_EDEFAULT == null ? firstPageLabel != null : !FIRST_PAGE_LABEL_EDEFAULT.equals(firstPageLabel);
 			case WebsitePackage.INDEX_UNIT__LAST_PAGE_LABEL:
 				return LAST_PAGE_LABEL_EDEFAULT == null ? lastPageLabel != null : !LAST_PAGE_LABEL_EDEFAULT.equals(lastPageLabel);
+			case WebsitePackage.INDEX_UNIT__ACTIONS:
+				return actions != null && !actions.isEmpty();
+			case WebsitePackage.INDEX_UNIT__DISPLAY_OPTION:
+				return displayOption != DISPLAY_OPTION_EDEFAULT;
+			case WebsitePackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
+				return omitColumnLabels != OMIT_COLUMN_LABELS_EDEFAULT;
 			case WebsitePackage.INDEX_UNIT__STYLE_CLASS:
 				return STYLE_CLASS_EDEFAULT == null ? styleClass != null : !STYLE_CLASS_EDEFAULT.equals(styleClass);
 			case WebsitePackage.INDEX_UNIT__CONTENT_CLASS:
@@ -1285,6 +1285,18 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebsitePackage.INDEX_UNIT__CONTENT_TYPE: return WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE;
 				case WebsitePackage.INDEX_UNIT__CONTAINING_FEATURE: return WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE;
 				case WebsitePackage.INDEX_UNIT__SELECTION: return WebsitePackage.COLLECTION_UNIT__SELECTION;
+				case WebsitePackage.INDEX_UNIT__FILTERS: return WebsitePackage.COLLECTION_UNIT__FILTERS;
+				case WebsitePackage.INDEX_UNIT__EMPTY_MESSAGE: return WebsitePackage.COLLECTION_UNIT__EMPTY_MESSAGE;
+				case WebsitePackage.INDEX_UNIT__PAGINATION: return WebsitePackage.COLLECTION_UNIT__PAGINATION;
+				case WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE: return WebsitePackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE;
+				case WebsitePackage.INDEX_UNIT__NEXT_NPAGES: return WebsitePackage.COLLECTION_UNIT__NEXT_NPAGES;
+				case WebsitePackage.INDEX_UNIT__PREVIOUS_NPAGES: return WebsitePackage.COLLECTION_UNIT__PREVIOUS_NPAGES;
+				case WebsitePackage.INDEX_UNIT__NEXT_PAGE_LABEL: return WebsitePackage.COLLECTION_UNIT__NEXT_PAGE_LABEL;
+				case WebsitePackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL: return WebsitePackage.COLLECTION_UNIT__PREVIOUS_PAGE_LABEL;
+				case WebsitePackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS: return WebsitePackage.COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS;
+				case WebsitePackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS: return WebsitePackage.COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS;
+				case WebsitePackage.INDEX_UNIT__FIRST_PAGE_LABEL: return WebsitePackage.COLLECTION_UNIT__FIRST_PAGE_LABEL;
+				case WebsitePackage.INDEX_UNIT__LAST_PAGE_LABEL: return WebsitePackage.COLLECTION_UNIT__LAST_PAGE_LABEL;
 				default: return -1;
 			}
 		}
@@ -1315,6 +1327,18 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 				case WebsitePackage.COLLECTION_UNIT__CONTENT_TYPE: return WebsitePackage.INDEX_UNIT__CONTENT_TYPE;
 				case WebsitePackage.COLLECTION_UNIT__CONTAINING_FEATURE: return WebsitePackage.INDEX_UNIT__CONTAINING_FEATURE;
 				case WebsitePackage.COLLECTION_UNIT__SELECTION: return WebsitePackage.INDEX_UNIT__SELECTION;
+				case WebsitePackage.COLLECTION_UNIT__FILTERS: return WebsitePackage.INDEX_UNIT__FILTERS;
+				case WebsitePackage.COLLECTION_UNIT__EMPTY_MESSAGE: return WebsitePackage.INDEX_UNIT__EMPTY_MESSAGE;
+				case WebsitePackage.COLLECTION_UNIT__PAGINATION: return WebsitePackage.INDEX_UNIT__PAGINATION;
+				case WebsitePackage.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE: return WebsitePackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE;
+				case WebsitePackage.COLLECTION_UNIT__NEXT_NPAGES: return WebsitePackage.INDEX_UNIT__NEXT_NPAGES;
+				case WebsitePackage.COLLECTION_UNIT__PREVIOUS_NPAGES: return WebsitePackage.INDEX_UNIT__PREVIOUS_NPAGES;
+				case WebsitePackage.COLLECTION_UNIT__NEXT_PAGE_LABEL: return WebsitePackage.INDEX_UNIT__NEXT_PAGE_LABEL;
+				case WebsitePackage.COLLECTION_UNIT__PREVIOUS_PAGE_LABEL: return WebsitePackage.INDEX_UNIT__PREVIOUS_PAGE_LABEL;
+				case WebsitePackage.COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS: return WebsitePackage.INDEX_UNIT__USE_DISABLED_PAGE_LINKS;
+				case WebsitePackage.COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS: return WebsitePackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS;
+				case WebsitePackage.COLLECTION_UNIT__FIRST_PAGE_LABEL: return WebsitePackage.INDEX_UNIT__FIRST_PAGE_LABEL;
+				case WebsitePackage.COLLECTION_UNIT__LAST_PAGE_LABEL: return WebsitePackage.INDEX_UNIT__LAST_PAGE_LABEL;
 				default: return -1;
 			}
 		}
@@ -1337,14 +1361,10 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (displayOption: ");
-		result.append(displayOption);
-		result.append(", omitColumnLabels: ");
-		result.append(omitColumnLabels);
+		result.append(" (emptyMessage: ");
+		result.append(emptyMessage);
 		result.append(", defaultPaginationSize: ");
 		result.append(defaultPaginationSize);
-		result.append(", emptyMessage: ");
-		result.append(emptyMessage);
 		result.append(", nextNpages: ");
 		result.append(nextNpages);
 		result.append(", previousNpages: ");
@@ -1361,6 +1381,10 @@ public class IndexUnitImpl extends DataUnitImpl implements IndexUnit {
 		result.append(firstPageLabel);
 		result.append(", lastPageLabel: ");
 		result.append(lastPageLabel);
+		result.append(", displayOption: ");
+		result.append(displayOption);
+		result.append(", omitColumnLabels: ");
+		result.append(omitColumnLabels);
 		result.append(", styleClass: ");
 		result.append(styleClass);
 		result.append(", contentClass: ");

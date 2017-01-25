@@ -877,8 +877,44 @@ abstract rule CollectionUnit {
 			else
 				website.containingFeature
 			endif,
-		selection <- website.selection
+		selection <- website.selection,
+		filters <- website.filters
+			->union(if website.pagination.oclIsUndefined() and website.defaultPaginationSize > 0 then
+					Sequence{thisModule.PaginationFilter(website)}
+				else
+					Sequence{}
+				endif),
+		pagination <-
+			if website.pagination.oclIsUndefined() and website.defaultPaginationSize > 0 then
+					thisModule.PaginationFilter(website)
+				else
+					website.pagination
+				endif,
+		defaultPaginationSize <- website.defaultPaginationSize,
+		emptyMessage <- website.emptyMessage,
+		nextNpages <- website.nextNpages,
+		previousNpages <- website.previousNpages,
+		nextPageLabel <- website.nextPageLabel,
+		previousPageLabel <- website.previousPageLabel,
+		useDisabledPageLinks <- website.useDisabledPageLinks,
+		useFirstLastPageLinks <- website.useFirstLastPageLinks,
+		firstPageLabel <- website.firstPageLabel,
+		lastPageLabel <- website.lastPageLabel
 	)
+}
+
+unique lazy rule PaginationFilter {
+	from website : Website!CollectionUnit
+	to waf : WAF!Filter (
+		name <- 'Pagination',
+		parameters <- Sequence{pageParameter}
+	),
+	pageParameter : WAF!FilterParameter (
+		name <- 'page'
+	)
+	do {
+		waf;
+	}
 }
 
 
@@ -1019,44 +1055,8 @@ abstract rule IndexUnit {
 	from website : Website!IndexUnit
 	to waf : WAF!IndexUnit (
 		omitColumnLabels <- website.omitColumnLabels,
-		filters <- website.filters
-			->union(if website.pagination.oclIsUndefined() and website.defaultPaginationSize > 0 then
-					Sequence{thisModule.PaginationFilter(website)}
-				else
-					Sequence{}
-				endif),
-		pagination <-
-			if website.pagination.oclIsUndefined() and website.defaultPaginationSize > 0 then
-					thisModule.PaginationFilter(website)
-				else
-					website.pagination
-				endif,
-		defaultPaginationSize <- website.defaultPaginationSize,
-		emptyMessage <- website.emptyMessage,
-		nextNpages <- website.nextNpages,
-		previousNpages <- website.previousNpages,
-		nextPageLabel <- website.nextPageLabel,
-		previousPageLabel <- website.previousPageLabel,
-		useDisabledPageLinks <- website.useDisabledPageLinks,
-		useFirstLastPageLinks <- website.useFirstLastPageLinks,
-		firstPageLabel <- website.firstPageLabel,
-		lastPageLabel <- website.lastPageLabel,
 		rowClasses <- website.rowClasses.replaceAll(',', ' ')
 	)
-}
-
-unique lazy rule PaginationFilter {
-	from website : Website!IndexUnit
-	to waf : WAF!Filter (
-		name <- 'Pagination',
-		parameters <- Sequence{pageParameter}
-	),
-	pageParameter : WAF!FilterParameter (
-		name <- 'page'
-	)
-	do {
-		waf;
-	}
 }
 
 -- @extends IndexUnit

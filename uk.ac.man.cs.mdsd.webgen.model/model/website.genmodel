@@ -609,6 +609,19 @@
           ecoreFeature="ecore:EReference website.ecore#//CollectionUnit/containingFeature"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//CollectionUnit/selection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//CollectionUnit/filters"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//CollectionUnit/emptyMessage"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Pagination"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//CollectionUnit/pagination"/>
+      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//CollectionUnit/defaultPaginationSize"/>
+      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//CollectionUnit/nextNpages"/>
+      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//CollectionUnit/previousNpages"/>
+      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//CollectionUnit/nextPageLabel"/>
+      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//CollectionUnit/previousPageLabel"/>
+      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//CollectionUnit/useDisabledPageLinks"/>
+      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//CollectionUnit/useFirstLastPageLinks"/>
+      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//CollectionUnit/firstPageLabel"/>
+      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//CollectionUnit/lastPageLabel"/>
     </genClasses>
     <genClasses image="false" ecoreClass="website.ecore#//EditUnit">
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
@@ -665,23 +678,6 @@
       <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
           ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/displayOption"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/omitColumnLabels"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference website.ecore#//IndexUnit/filters"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//IndexUnit/pagination"/>
-      <genFeatures createChild="false" propertyCategory="Pagination" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/defaultPaginationSize"/>
-      <genFeatures createChild="false" propertyCategory="Interface" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/emptyMessage"/>
-      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/nextNpages"/>
-      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/previousNpages"/>
-      <genFeatures createChild="false" propertyCategory="Pagination" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/nextPageLabel"/>
-      <genFeatures createChild="false" propertyCategory="Pagination" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/previousPageLabel"/>
-      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/useDisabledPageLinks"/>
-      <genFeatures createChild="false" propertyCategory="Pagination" propertyDescription=""
-          ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/useFirstLastPageLinks"/>
-      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/firstPageLabel"/>
-      <genFeatures createChild="false" propertyCategory="Pagination" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/lastPageLabel"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/contentClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//IndexUnit/rowClasses"/>

@@ -364,6 +364,18 @@ abstract class CollectionUnit extends SelectableUnit {
 	refers Feature containingFeature
 	refers EntityOrView[1..*] contentType
 	refers Selection selection
+	contains Filter[] filters
+	refers Filter pagination
+	String emptyMessage
+	int defaultPaginationSize
+	int nextNpages
+	int previousNpages
+	String nextPageLabel = ">"
+	String previousPageLabel = "<"
+	boolean useDisabledPageLinks
+	boolean useFirstLastPageLinks
+	String firstPageLabel = "<<"
+	String lastPageLabel = ">>"
 }
 
 abstract class EditUnit extends DynamicUnit, SingletonUnit {
@@ -407,18 +419,6 @@ class DetailsUnit extends DataUnit, SingletonUnit, SelectableUnit {
 
 abstract class IndexUnit extends DataUnit, CollectionUnit, InlineActionContainer {
 	boolean omitColumnLabels
-	contains Filter[] filters
-	refers Filter pagination
-	int defaultPaginationSize
-	String emptyMessage
-	int nextNpages
-	int previousNpages
-	String nextPageLabel = ">"
-	String previousPageLabel = "<"
-	boolean useDisabledPageLinks
-	boolean useFirstLastPageLinks
-	String firstPageLabel = "<<"
-	String lastPageLabel = ">>"
 	refers SearchUnit targettingSearches opposite resultsDestination
 	String rowClasses
 }

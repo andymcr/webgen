@@ -54,10 +54,9 @@ public class IndexUnitItemProvider
 			addContainingFeaturePropertyDescriptor(object);
 			addContentTypePropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
-			addOmitColumnLabelsPropertyDescriptor(object);
 			addPaginationPropertyDescriptor(object);
-			addDefaultPaginationSizePropertyDescriptor(object);
 			addEmptyMessagePropertyDescriptor(object);
+			addDefaultPaginationSizePropertyDescriptor(object);
 			addNextNpagesPropertyDescriptor(object);
 			addPreviousNpagesPropertyDescriptor(object);
 			addNextPageLabelPropertyDescriptor(object);
@@ -66,6 +65,7 @@ public class IndexUnitItemProvider
 			addUseFirstLastPageLinksPropertyDescriptor(object);
 			addFirstPageLabelPropertyDescriptor(object);
 			addLastPageLabelPropertyDescriptor(object);
+			addOmitColumnLabelsPropertyDescriptor(object);
 			addTargettingSearchesPropertyDescriptor(object);
 			addRowClassesPropertyDescriptor(object);
 		}
@@ -215,9 +215,9 @@ public class IndexUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_pagination_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_pagination_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__PAGINATION,
+				 getString("_UI_CollectionUnit_pagination_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_pagination_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__PAGINATION,
 				 true,
 				 false,
 				 true,
@@ -237,9 +237,9 @@ public class IndexUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_defaultPaginationSize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_defaultPaginationSize_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__DEFAULT_PAGINATION_SIZE,
+				 getString("_UI_CollectionUnit_defaultPaginationSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_defaultPaginationSize_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__DEFAULT_PAGINATION_SIZE,
 				 true,
 				 false,
 				 false,
@@ -259,9 +259,9 @@ public class IndexUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_emptyMessage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_emptyMessage_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__EMPTY_MESSAGE,
+				 getString("_UI_CollectionUnit_emptyMessage_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_emptyMessage_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__EMPTY_MESSAGE,
 				 true,
 				 false,
 				 false,
@@ -281,9 +281,9 @@ public class IndexUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_nextNpages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_nextNpages_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__NEXT_NPAGES,
+				 getString("_UI_CollectionUnit_nextNpages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_nextNpages_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__NEXT_NPAGES,
 				 true,
 				 false,
 				 false,
@@ -303,9 +303,9 @@ public class IndexUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_previousNpages_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_previousNpages_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__PREVIOUS_NPAGES,
+				 getString("_UI_CollectionUnit_previousNpages_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_previousNpages_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__PREVIOUS_NPAGES,
 				 true,
 				 false,
 				 false,
@@ -325,9 +325,9 @@ public class IndexUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_nextPageLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_nextPageLabel_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__NEXT_PAGE_LABEL,
+				 getString("_UI_CollectionUnit_nextPageLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_nextPageLabel_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__NEXT_PAGE_LABEL,
 				 true,
 				 false,
 				 false,
@@ -347,9 +347,9 @@ public class IndexUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_previousPageLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_previousPageLabel_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__PREVIOUS_PAGE_LABEL,
+				 getString("_UI_CollectionUnit_previousPageLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_previousPageLabel_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__PREVIOUS_PAGE_LABEL,
 				 true,
 				 false,
 				 false,
@@ -369,9 +369,9 @@ public class IndexUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_useDisabledPageLinks_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_useDisabledPageLinks_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__USE_DISABLED_PAGE_LINKS,
+				 getString("_UI_CollectionUnit_useDisabledPageLinks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_useDisabledPageLinks_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__USE_DISABLED_PAGE_LINKS,
 				 true,
 				 false,
 				 false,
@@ -391,9 +391,9 @@ public class IndexUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_useFirstLastPageLinks_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_useFirstLastPageLinks_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS,
+				 getString("_UI_CollectionUnit_useFirstLastPageLinks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_useFirstLastPageLinks_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__USE_FIRST_LAST_PAGE_LINKS,
 				 true,
 				 false,
 				 false,
@@ -413,9 +413,9 @@ public class IndexUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_firstPageLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_firstPageLabel_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__FIRST_PAGE_LABEL,
+				 getString("_UI_CollectionUnit_firstPageLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_firstPageLabel_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__FIRST_PAGE_LABEL,
 				 true,
 				 false,
 				 false,
@@ -435,9 +435,9 @@ public class IndexUnitItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IndexUnit_lastPageLabel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IndexUnit_lastPageLabel_feature", "_UI_IndexUnit_type"),
-				 WafPackage.Literals.INDEX_UNIT__LAST_PAGE_LABEL,
+				 getString("_UI_CollectionUnit_lastPageLabel_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CollectionUnit_lastPageLabel_feature", "_UI_CollectionUnit_type"),
+				 WafPackage.Literals.COLLECTION_UNIT__LAST_PAGE_LABEL,
 				 true,
 				 false,
 				 false,
@@ -502,8 +502,8 @@ public class IndexUnitItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(WafPackage.Literals.COLLECTION_UNIT__FILTERS);
 			childrenFeatures.add(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS);
-			childrenFeatures.add(WafPackage.Literals.INDEX_UNIT__FILTERS);
 		}
 		return childrenFeatures;
 	}
@@ -547,9 +547,8 @@ public class IndexUnitItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(IndexUnit.class)) {
-			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
-			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 			case WafPackage.INDEX_UNIT__EMPTY_MESSAGE:
+			case WafPackage.INDEX_UNIT__DEFAULT_PAGINATION_SIZE:
 			case WafPackage.INDEX_UNIT__NEXT_NPAGES:
 			case WafPackage.INDEX_UNIT__PREVIOUS_NPAGES:
 			case WafPackage.INDEX_UNIT__NEXT_PAGE_LABEL:
@@ -558,11 +557,12 @@ public class IndexUnitItemProvider
 			case WafPackage.INDEX_UNIT__USE_FIRST_LAST_PAGE_LINKS:
 			case WafPackage.INDEX_UNIT__FIRST_PAGE_LABEL:
 			case WafPackage.INDEX_UNIT__LAST_PAGE_LABEL:
+			case WafPackage.INDEX_UNIT__OMIT_COLUMN_LABELS:
 			case WafPackage.INDEX_UNIT__ROW_CLASSES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.INDEX_UNIT__ACTIONS:
 			case WafPackage.INDEX_UNIT__FILTERS:
+			case WafPackage.INDEX_UNIT__ACTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -582,6 +582,11 @@ public class IndexUnitItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(WafPackage.Literals.COLLECTION_UNIT__FILTERS,
+				 WafFactory.eINSTANCE.createFilter()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
 				 WafFactory.eINSTANCE.createSelectAction()));
 
@@ -594,11 +599,6 @@ public class IndexUnitItemProvider
 			(createChildParameter
 				(WafPackage.Literals.INLINE_ACTION_CONTAINER__ACTIONS,
 				 WafFactory.eINSTANCE.createFeatureSupportAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INDEX_UNIT__FILTERS,
-				 WafFactory.eINSTANCE.createFilter()));
 	}
 
 }

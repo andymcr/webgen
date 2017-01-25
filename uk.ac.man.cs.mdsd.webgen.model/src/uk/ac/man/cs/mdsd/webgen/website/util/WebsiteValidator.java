@@ -2297,9 +2297,9 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_CONTENT_TYPE__EEXPRESSION = "let entities : Sequence(EntityOrView)\r\n" +
+	protected static final String DYNAMIC_UNIT__FEATURES_MUST_BE_FROM_CONTENT_TYPE__EEXPRESSION = "let entities : OrderedSet(EntityOrView)\r\n" +
 		"\t= if self.oclIsKindOf(SingletonUnit) then\r\n" +
-		"\t\t\tSequence{self.oclAsType(SingletonUnit).contentType}\r\n" +
+		"\t\t\tOrderedSet{self.oclAsType(SingletonUnit).contentType}\r\n" +
 		"\t\telse if self.oclIsKindOf(CollectionUnit) then\r\n" +
 		"\t\t\tself.oclAsType(CollectionUnit).contentType\r\n" +
 		"\t\telse\r\n" +

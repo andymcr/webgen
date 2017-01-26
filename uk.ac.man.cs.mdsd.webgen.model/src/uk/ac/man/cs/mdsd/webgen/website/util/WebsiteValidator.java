@@ -2817,7 +2817,7 @@ public class WebsiteValidator extends EObjectValidator {
 		"\t\t\t\tfalse -- association.oclAsType(ViewAssociation)\r\n" +
 		"\t\t\tendif endif\r\n" +
 		"else\r\n" +
-		"\tusedBy.oclIsTypeOf(IndexUnit)\r\n" +
+		"\tusedBy.oclIsKindOf(CollectionUnit)\r\n" +
 		"endif endif\r\n" +
 		"";
 

@@ -401,6 +401,7 @@
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           ecoreFeature="ecore:EReference website.ecore#//Selection/ordering"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//Selection/limit"/>
+      <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//Selection/selected"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//SelectionParameter">
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//SelectionParameter/optional"/>

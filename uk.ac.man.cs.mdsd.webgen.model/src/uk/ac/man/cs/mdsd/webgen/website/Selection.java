@@ -24,6 +24,7 @@ import uk.ac.man.cs.mdsd.criteria.Predicate;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#getLimit <em>Limit</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.Selection#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelection()
@@ -201,5 +202,31 @@ public interface Selection extends NamedElement {
 	 * @generated
 	 */
 	void setLimit(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selected</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selected</em>' attribute.
+	 * @see #setSelected(boolean)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelection_Selected()
+	 * @model
+	 * @generated
+	 */
+	boolean isSelected();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#isSelected <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Selected</em>' attribute.
+	 * @see #isSelected()
+	 * @generated
+	 */
+	void setSelected(boolean value);
 
 } // Selection

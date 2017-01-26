@@ -7742,13 +7742,22 @@ public interface WebsitePackage extends EPackage {
 	int SELECTION__LIMIT = NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION__SELECTED = NAMED_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Selection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int SELECTION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -20326,6 +20335,17 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getSelection_Limit();
 
 	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.Selection#isSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Selection#isSelected()
+	 * @see #getSelection()
+	 * @generated
+	 */
+	EAttribute getSelection_Selected();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter <em>Selection Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -25346,6 +25366,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SELECTION__LIMIT = eINSTANCE.getSelection_Limit();
+
+		/**
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SELECTION__SELECTED = eINSTANCE.getSelection_Selected();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionParameterImpl <em>Selection Parameter</em>}' class.

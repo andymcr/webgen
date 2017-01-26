@@ -53,6 +53,7 @@ public class SelectionItemProvider
 			addFieldsPropertyDescriptor(object);
 			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
+			addSelectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -168,6 +169,28 @@ public class SelectionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Selected feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Selection_selected_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_selected_feature", "_UI_Selection_type"),
+				 WafPackage.Literals.SELECTION__SELECTED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -238,6 +261,7 @@ public class SelectionItemProvider
 		switch (notification.getFeatureID(Selection.class)) {
 			case WafPackage.SELECTION__DISTINCT:
 			case WafPackage.SELECTION__LIMIT:
+			case WafPackage.SELECTION__SELECTED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.SELECTION__PARAMETERS:

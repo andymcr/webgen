@@ -59,6 +59,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 			addFieldsPropertyDescriptor(object);
 			addJoinsPropertyDescriptor(object);
 			addLimitPropertyDescriptor(object);
+			addSelectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -176,6 +177,28 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Selected feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Selection_selected_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Selection_selected_feature", "_UI_Selection_type"),
+				 WebsitePackage.Literals.SELECTION__SELECTED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_ModelPropertyCategory"),
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -246,6 +269,7 @@ public class SelectionItemProvider extends NamedElementItemProvider {
 		switch (notification.getFeatureID(Selection.class)) {
 			case WebsitePackage.SELECTION__DISTINCT:
 			case WebsitePackage.SELECTION__LIMIT:
+			case WebsitePackage.SELECTION__SELECTED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebsitePackage.SELECTION__PARAMETERS:

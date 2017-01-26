@@ -1336,6 +1336,15 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSelection_Selected() {
+		return (EAttribute)selectionEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSelectionParameter() {
 		return selectionParameterEClass;
 	}
@@ -3850,6 +3859,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		createEReference(selectionEClass, SELECTION__FILTER);
 		createEReference(selectionEClass, SELECTION__ORDERING);
 		createEAttribute(selectionEClass, SELECTION__LIMIT);
+		createEAttribute(selectionEClass, SELECTION__SELECTED);
 
 		selectionParameterEClass = createEClass(SELECTION_PARAMETER);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__OPTIONAL);
@@ -4382,6 +4392,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEReference(getSelection_Filter(), theExpressionPackage.getPredicate(), null, "filter", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Ordering(), theExpressionPackage.getOrder(), null, "ordering", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelection_Limit(), theEcorePackage.getEInt(), "limit", "0", 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSelection_Selected(), theEcorePackage.getEBoolean(), "selected", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionParameterEClass, SelectionParameter.class, "SelectionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSelectionParameter_Optional(), theEcorePackage.getEBoolean(), "optional", null, 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

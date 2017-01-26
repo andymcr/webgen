@@ -132,6 +132,7 @@ class Selection extends NamedElement {
 	contains Predicate filter
 	contains Order[] ordering
 	int limit = "0"
+	boolean selected
 }
 
 class SelectionParameter extends NamedElement {

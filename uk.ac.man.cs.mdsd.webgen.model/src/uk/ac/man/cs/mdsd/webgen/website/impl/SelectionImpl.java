@@ -46,6 +46,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getFilter <em>Filter</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#getLimit <em>Limit</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.SelectionImpl#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @generated
@@ -140,6 +141,26 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * @ordered
 	 */
 	protected int limit = LIMIT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SELECTED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean selected = SELECTED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -339,6 +360,27 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSelected() {
+		return selected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelected(boolean newSelected) {
+		boolean oldSelected = selected;
+		selected = newSelected;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.SELECTION__SELECTED, oldSelected, selected));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -408,6 +450,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return getOrdering();
 			case WebsitePackage.SELECTION__LIMIT:
 				return getLimit();
+			case WebsitePackage.SELECTION__SELECTED:
+				return isSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -449,6 +493,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WebsitePackage.SELECTION__LIMIT:
 				setLimit((Integer)newValue);
 				return;
+			case WebsitePackage.SELECTION__SELECTED:
+				setSelected((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -485,6 +532,9 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 			case WebsitePackage.SELECTION__LIMIT:
 				setLimit(LIMIT_EDEFAULT);
 				return;
+			case WebsitePackage.SELECTION__SELECTED:
+				setSelected(SELECTED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -513,6 +563,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				return ordering != null && !ordering.isEmpty();
 			case WebsitePackage.SELECTION__LIMIT:
 				return limit != LIMIT_EDEFAULT;
+			case WebsitePackage.SELECTION__SELECTED:
+				return selected != SELECTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -531,6 +583,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 		result.append(distinct);
 		result.append(", limit: ");
 		result.append(limit);
+		result.append(", selected: ");
+		result.append(selected);
 		result.append(')');
 		return result.toString();
 	}

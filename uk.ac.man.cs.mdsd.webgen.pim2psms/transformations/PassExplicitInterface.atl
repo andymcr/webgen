@@ -388,7 +388,8 @@ rule Selection {
 			endif,
 		filter <- website.filter,
 		ordering <- website.ordering,
-		limit <- website.limit
+		limit <- website.limit,
+		selected <- website.selected
 	)
 }
 

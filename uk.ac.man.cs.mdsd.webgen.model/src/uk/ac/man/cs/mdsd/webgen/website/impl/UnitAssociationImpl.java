@@ -250,9 +250,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 		if (newChildFeature != childFeature) {
 			NotificationChain msgs = null;
 			if (childFeature != null)
-				msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE, null, msgs);
+				msgs = ((InternalEObject)childFeature).eInverseRemove(this, WebsitePackage.CHILD_FEATURE__PART_OF, ChildFeature.class, msgs);
 			if (newChildFeature != null)
-				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE, null, msgs);
+				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, WebsitePackage.CHILD_FEATURE__PART_OF, ChildFeature.class, msgs);
 			msgs = basicSetChildFeature(newChildFeature, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -392,6 +392,10 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 		switch (featureID) {
 			case WebsitePackage.UNIT_ASSOCIATION__UNITS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUnits()).basicAdd(otherEnd, msgs);
+			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
+				if (childFeature != null)
+					msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE, null, msgs);
+				return basicSetChildFeature((ChildFeature)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

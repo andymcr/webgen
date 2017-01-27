@@ -23,28 +23,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface ChildFeature extends EObject {
 
 	/**
-	 * Returns the value of the '<em><b>Part Of</b></em>' reference.
+	 * Returns the value of the '<em><b>Part Of</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationReference#getChildFeature <em>Child Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Part Of</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Part Of</em>' reference.
-	 * @see #setPartOf(FeaturePathAssociation)
+	 * @return the value of the '<em>Part Of</em>' container reference.
+	 * @see #setPartOf(AssociationReference)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getChildFeature_PartOf()
-	 * @model
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationReference#getChildFeature
+	 * @model opposite="childFeature" transient="false"
 	 * @generated
 	 */
-	FeaturePathAssociation getPartOf();
+	AssociationReference getPartOf();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ChildFeature#getPartOf <em>Part Of</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ChildFeature#getPartOf <em>Part Of</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Part Of</em>' reference.
+	 * @param value the new value of the '<em>Part Of</em>' container reference.
 	 * @see #getPartOf()
 	 * @generated
 	 */
-	void setPartOf(FeaturePathAssociation value);
+	void setPartOf(AssociationReference value);
 } // ChildFeature

@@ -3,13 +3,18 @@
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import uk.ac.man.cs.mdsd.webgen.website.Association;
+import uk.ac.man.cs.mdsd.webgen.website.AssociationReference;
 import uk.ac.man.cs.mdsd.webgen.website.ChildAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
+import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
@@ -21,22 +26,71 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildAssociationImpl#getPartOf <em>Part Of</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildAssociationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildAssociationImpl#getAssociation <em>Association</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildAssociationImpl#isIsSourceAssociation <em>Is Source Association</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildAssociationImpl#getSourceEntity <em>Source Entity</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ChildAssociationImpl extends FeaturePathAssociationImpl implements ChildAssociation {
+public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssociation {
 	/**
-	 * The cached value of the '{@link #getPartOf() <em>Part Of</em>}' reference.
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPartOf()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeaturePathAssociation partOf;
-
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.ASSOCIATION_REFERENCE__NAME).getSettingDelegate();
+	/**
+	 * The cached value of the '{@link #getAssociation() <em>Association</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssociation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Association association;
+	/**
+	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChildFeature()
+	 * @generated
+	 * @ordered
+	 */
+	protected ChildFeature childFeature;
+	/**
+	 * The cached setting delegate for the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsSourceAssociation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #getSourceEntity() <em>Source Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SOURCE_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.CHILD_ASSOCIATION__SOURCE_ENTITY).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #getTargetEntity() <em>Target Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.CHILD_ASSOCIATION__TARGET_ENTITY).getSettingDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,16 +115,25 @@ public class ChildAssociationImpl extends FeaturePathAssociationImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeaturePathAssociation getPartOf() {
-		if (partOf != null && partOf.eIsProxy()) {
-			InternalEObject oldPartOf = (InternalEObject)partOf;
-			partOf = (FeaturePathAssociation)eResolveProxy(oldPartOf);
-			if (partOf != oldPartOf) {
+	public String getName() {
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Association getAssociation() {
+		if (association != null && association.eIsProxy()) {
+			InternalEObject oldAssociation = (InternalEObject)association;
+			association = (Association)eResolveProxy(oldAssociation);
+			if (association != oldAssociation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.CHILD_ASSOCIATION__PART_OF, oldPartOf, partOf));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.CHILD_ASSOCIATION__ASSOCIATION, oldAssociation, association));
 			}
 		}
-		return partOf;
+		return association;
 	}
 
 	/**
@@ -78,8 +141,8 @@ public class ChildAssociationImpl extends FeaturePathAssociationImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeaturePathAssociation basicGetPartOf() {
-		return partOf;
+	public Association basicGetAssociation() {
+		return association;
 	}
 
 	/**
@@ -87,11 +150,129 @@ public class ChildAssociationImpl extends FeaturePathAssociationImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPartOf(FeaturePathAssociation newPartOf) {
-		FeaturePathAssociation oldPartOf = partOf;
-		partOf = newPartOf;
+	public void setAssociation(Association newAssociation) {
+		Association oldAssociation = association;
+		association = newAssociation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CHILD_ASSOCIATION__PART_OF, oldPartOf, partOf));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CHILD_ASSOCIATION__ASSOCIATION, oldAssociation, association));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildFeature getChildFeature() {
+		return childFeature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetChildFeature(ChildFeature newChildFeature, NotificationChain msgs) {
+		ChildFeature oldChildFeature = childFeature;
+		childFeature = newChildFeature;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setChildFeature(ChildFeature newChildFeature) {
+		if (newChildFeature != childFeature) {
+			NotificationChain msgs = null;
+			if (childFeature != null)
+				msgs = ((InternalEObject)childFeature).eInverseRemove(this, WebsitePackage.CHILD_FEATURE__PART_OF, ChildFeature.class, msgs);
+			if (newChildFeature != null)
+				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, WebsitePackage.CHILD_FEATURE__PART_OF, ChildFeature.class, msgs);
+			msgs = basicSetChildFeature(newChildFeature, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE, newChildFeature, newChildFeature));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsSourceAssociation() {
+		return (Boolean)IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getSourceEntity() {
+		return (EntityOrView)SOURCE_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetSourceEntity() {
+		return (EntityOrView)SOURCE_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView getTargetEntity() {
+		return (EntityOrView)TARGET_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EntityOrView basicGetTargetEntity() {
+		return (EntityOrView)TARGET_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE:
+				if (childFeature != null)
+					msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE, null, msgs);
+				return basicSetChildFeature((ChildFeature)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE:
+				return basicSetChildFeature(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -102,9 +283,21 @@ public class ChildAssociationImpl extends FeaturePathAssociationImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.CHILD_ASSOCIATION__PART_OF:
-				if (resolve) return getPartOf();
-				return basicGetPartOf();
+			case WebsitePackage.CHILD_ASSOCIATION__NAME:
+				return getName();
+			case WebsitePackage.CHILD_ASSOCIATION__ASSOCIATION:
+				if (resolve) return getAssociation();
+				return basicGetAssociation();
+			case WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE:
+				return getChildFeature();
+			case WebsitePackage.CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+				return isIsSourceAssociation();
+			case WebsitePackage.CHILD_ASSOCIATION__SOURCE_ENTITY:
+				if (resolve) return getSourceEntity();
+				return basicGetSourceEntity();
+			case WebsitePackage.CHILD_ASSOCIATION__TARGET_ENTITY:
+				if (resolve) return getTargetEntity();
+				return basicGetTargetEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,8 +310,11 @@ public class ChildAssociationImpl extends FeaturePathAssociationImpl implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.CHILD_ASSOCIATION__PART_OF:
-				setPartOf((FeaturePathAssociation)newValue);
+			case WebsitePackage.CHILD_ASSOCIATION__ASSOCIATION:
+				setAssociation((Association)newValue);
+				return;
+			case WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE:
+				setChildFeature((ChildFeature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,8 +328,11 @@ public class ChildAssociationImpl extends FeaturePathAssociationImpl implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.CHILD_ASSOCIATION__PART_OF:
-				setPartOf((FeaturePathAssociation)null);
+			case WebsitePackage.CHILD_ASSOCIATION__ASSOCIATION:
+				setAssociation((Association)null);
+				return;
+			case WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE:
+				setChildFeature((ChildFeature)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -147,8 +346,18 @@ public class ChildAssociationImpl extends FeaturePathAssociationImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.CHILD_ASSOCIATION__PART_OF:
-				return partOf != null;
+			case WebsitePackage.CHILD_ASSOCIATION__NAME:
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.CHILD_ASSOCIATION__ASSOCIATION:
+				return association != null;
+			case WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE:
+				return childFeature != null;
+			case WebsitePackage.CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+				return IS_SOURCE_ASSOCIATION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.CHILD_ASSOCIATION__SOURCE_ENTITY:
+				return SOURCE_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case WebsitePackage.CHILD_ASSOCIATION__TARGET_ENTITY:
+				return TARGET_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -160,9 +369,11 @@ public class ChildAssociationImpl extends FeaturePathAssociationImpl implements 
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == ChildFeature.class) {
+		if (baseClass == AssociationReference.class) {
 			switch (derivedFeatureID) {
-				case WebsitePackage.CHILD_ASSOCIATION__PART_OF: return WebsitePackage.CHILD_FEATURE__PART_OF;
+				case WebsitePackage.CHILD_ASSOCIATION__NAME: return WebsitePackage.ASSOCIATION_REFERENCE__NAME;
+				case WebsitePackage.CHILD_ASSOCIATION__ASSOCIATION: return WebsitePackage.ASSOCIATION_REFERENCE__ASSOCIATION;
+				case WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION_REFERENCE__CHILD_FEATURE;
 				default: return -1;
 			}
 		}
@@ -176,9 +387,11 @@ public class ChildAssociationImpl extends FeaturePathAssociationImpl implements 
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == ChildFeature.class) {
+		if (baseClass == AssociationReference.class) {
 			switch (baseFeatureID) {
-				case WebsitePackage.CHILD_FEATURE__PART_OF: return WebsitePackage.CHILD_ASSOCIATION__PART_OF;
+				case WebsitePackage.ASSOCIATION_REFERENCE__NAME: return WebsitePackage.CHILD_ASSOCIATION__NAME;
+				case WebsitePackage.ASSOCIATION_REFERENCE__ASSOCIATION: return WebsitePackage.CHILD_ASSOCIATION__ASSOCIATION;
+				case WebsitePackage.ASSOCIATION_REFERENCE__CHILD_FEATURE: return WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE;
 				default: return -1;
 			}
 		}

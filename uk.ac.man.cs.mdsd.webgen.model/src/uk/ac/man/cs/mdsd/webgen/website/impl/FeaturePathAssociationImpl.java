@@ -196,9 +196,9 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 		if (newChildFeature != childFeature) {
 			NotificationChain msgs = null;
 			if (childFeature != null)
-				msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE, null, msgs);
+				msgs = ((InternalEObject)childFeature).eInverseRemove(this, WebsitePackage.CHILD_FEATURE__PART_OF, ChildFeature.class, msgs);
 			if (newChildFeature != null)
-				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE, null, msgs);
+				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, WebsitePackage.CHILD_FEATURE__PART_OF, ChildFeature.class, msgs);
 			msgs = basicSetChildFeature(newChildFeature, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -249,6 +249,22 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	 */
 	public EntityOrView basicGetTargetEntity() {
 		return (EntityOrView)TARGET_ENTITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE:
+				if (childFeature != null)
+					msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE, null, msgs);
+				return basicSetChildFeature((ChildFeature)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

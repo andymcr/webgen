@@ -920,9 +920,7 @@ public class WebsiteSwitch<T> extends Switch<T> {
 			case WebsitePackage.CHILD_ASSOCIATION: {
 				ChildAssociation childAssociation = (ChildAssociation)theEObject;
 				T result = caseChildAssociation(childAssociation);
-				if (result == null) result = caseFeaturePathAssociation(childAssociation);
 				if (result == null) result = caseChildFeature(childAssociation);
-				if (result == null) result = caseFeaturePath(childAssociation);
 				if (result == null) result = caseAssociationReference(childAssociation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

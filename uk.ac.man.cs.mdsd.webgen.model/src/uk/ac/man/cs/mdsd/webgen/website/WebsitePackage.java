@@ -14220,7 +14220,7 @@ public interface WebsitePackage extends EPackage {
 	int FEATURE_PATH_ASSOCIATION_FEATURE_COUNT = FEATURE_PATH_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' reference.
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -14238,7 +14238,7 @@ public interface WebsitePackage extends EPackage {
 	int CHILD_FEATURE_FEATURE_COUNT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' reference.
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -14274,13 +14274,22 @@ public interface WebsitePackage extends EPackage {
 	int CHILD_ATTRIBUTE_FEATURE_COUNT = CHILD_FEATURE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_ASSOCIATION__PART_OF = CHILD_FEATURE__PART_OF;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__NAME = FEATURE_PATH_ASSOCIATION__NAME;
+	int CHILD_ASSOCIATION__NAME = CHILD_FEATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Association</b></em>' reference.
@@ -14289,7 +14298,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__ASSOCIATION = FEATURE_PATH_ASSOCIATION__ASSOCIATION;
+	int CHILD_ASSOCIATION__ASSOCIATION = CHILD_FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Child Feature</b></em>' containment reference.
@@ -14298,7 +14307,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__CHILD_FEATURE = FEATURE_PATH_ASSOCIATION__CHILD_FEATURE;
+	int CHILD_ASSOCIATION__CHILD_FEATURE = CHILD_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Source Association</b></em>' attribute.
@@ -14307,7 +14316,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION = FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION;
+	int CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION = CHILD_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Source Entity</b></em>' reference.
@@ -14316,7 +14325,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__SOURCE_ENTITY = FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY;
+	int CHILD_ASSOCIATION__SOURCE_ENTITY = CHILD_FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Target Entity</b></em>' reference.
@@ -14325,16 +14334,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION__TARGET_ENTITY = FEATURE_PATH_ASSOCIATION__TARGET_ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Part Of</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILD_ASSOCIATION__PART_OF = FEATURE_PATH_ASSOCIATION_FEATURE_COUNT + 0;
+	int CHILD_ASSOCIATION__TARGET_ENTITY = CHILD_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Child Association</em>' class.
@@ -14343,7 +14343,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHILD_ASSOCIATION_FEATURE_COUNT = FEATURE_PATH_ASSOCIATION_FEATURE_COUNT + 1;
+	int CHILD_ASSOCIATION_FEATURE_COUNT = CHILD_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageIndexUnitImpl <em>Image Index Unit</em>}' class.
@@ -20211,10 +20211,10 @@ public interface WebsitePackage extends EPackage {
 	EClass getChildFeature();
 
 	/**
-	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ChildFeature#getPartOf <em>Part Of</em>}'.
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.website.ChildFeature#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Part Of</em>'.
+	 * @return the meta object for the container reference '<em>Part Of</em>'.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildFeature#getPartOf()
 	 * @see #getChildFeature()
 	 * @generated
@@ -20262,6 +20262,39 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getChildAssociation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link uk.ac.man.cs.mdsd.webgen.website.ChildAssociation#isIsSourceAssociation <em>Is Source Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Source Association</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildAssociation#isIsSourceAssociation()
+	 * @see #getChildAssociation()
+	 * @generated
+	 */
+	EAttribute getChildAssociation_IsSourceAssociation();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ChildAssociation#getSourceEntity <em>Source Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source Entity</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildAssociation#getSourceEntity()
+	 * @see #getChildAssociation()
+	 * @generated
+	 */
+	EReference getChildAssociation_SourceEntity();
+
+	/**
+	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.ChildAssociation#getTargetEntity <em>Target Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target Entity</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildAssociation#getTargetEntity()
+	 * @see #getChildAssociation()
+	 * @generated
+	 */
+	EReference getChildAssociation_TargetEntity();
 
 	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.ImageIndexUnit <em>Image Index Unit</em>}'.
@@ -25309,7 +25342,7 @@ public interface WebsitePackage extends EPackage {
 		EClass CHILD_FEATURE = eINSTANCE.getChildFeature();
 
 		/**
-		 * The meta object literal for the '<em><b>Part Of</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Part Of</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -25351,6 +25384,30 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CHILD_ASSOCIATION = eINSTANCE.getChildAssociation();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Source Association</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION = eINSTANCE.getChildAssociation_IsSourceAssociation();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHILD_ASSOCIATION__SOURCE_ENTITY = eINSTANCE.getChildAssociation_SourceEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHILD_ASSOCIATION__TARGET_ENTITY = eINSTANCE.getChildAssociation_TargetEntity();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.ImageIndexUnitImpl <em>Image Index Unit</em>}' class.

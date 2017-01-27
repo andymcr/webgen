@@ -67,6 +67,7 @@ public interface AssociationReference extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Child Feature</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.ChildFeature#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Child Feature</em>' containment reference isn't clear,
@@ -76,7 +77,8 @@ public interface AssociationReference extends EObject {
 	 * @return the value of the '<em>Child Feature</em>' containment reference.
 	 * @see #setChildFeature(ChildFeature)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationReference_ChildFeature()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildFeature#getPartOf
+	 * @model opposite="partOf" containment="true"
 	 * @generated
 	 */
 	ChildFeature getChildFeature();

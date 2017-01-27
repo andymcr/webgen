@@ -209,7 +209,11 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 
 	protected List<Association> getAssociations(final ChildAssociation association) {
 		if (association.getPartOf().getAssociation() != null) {
-			return association.getPartOf().getTargetEntity().getAllAssociations();
+			if (association.getPartOf() instanceof FeaturePathAssociation) {
+				return ((FeaturePathAssociation) association.getPartOf()).getTargetEntity().getAllAssociations();
+			} else {
+				return ((ChildAssociation) association.getPartOf()).getTargetEntity().getAllAssociations();
+			}
 		}
 
 		return Collections.emptyList();

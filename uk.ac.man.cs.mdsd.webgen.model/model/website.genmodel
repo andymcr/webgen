@@ -743,7 +743,14 @@
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//ChildAttribute/attribute"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//ChildAssociation"/>
+    <genClasses ecoreClass="website.ecore#//ChildAssociation">
+      <genFeatures property="Readonly" createChild="false" propertyCategory="Debug"
+          ecoreFeature="ecore:EAttribute website.ecore#//ChildAssociation/isSourceAssociation"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="Debug"
+          ecoreFeature="ecore:EReference website.ecore#//ChildAssociation/sourceEntity"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="Debug"
+          ecoreFeature="ecore:EReference website.ecore#//ChildAssociation/targetEntity"/>
+    </genClasses>
     <genClasses ecoreClass="website.ecore#//ImageIndexUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//ImageIndexUnit/styleClass"/>
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//ImageIndexUnit/contentClass"/>

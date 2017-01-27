@@ -642,11 +642,6 @@ public class ImageUnitItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
-				 WebsiteFactory.eINSTANCE.createChildAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(WebsitePackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
 				 WebsiteFactory.eINSTANCE.createFeaturePathAttribute()));
 
@@ -654,11 +649,6 @@ public class ImageUnitItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
 				 WebsiteFactory.eINSTANCE.createFeaturePathAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
-				 WebsiteFactory.eINSTANCE.createChildAssociation()));
 	}
 
 	/**

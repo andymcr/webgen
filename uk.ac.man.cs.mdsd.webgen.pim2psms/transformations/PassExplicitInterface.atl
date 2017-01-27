@@ -227,7 +227,7 @@ helper context Website!Feature def: findOrmFeature(reference : Website!FeatureRe
 			OclUndefined
 		endif endif;
 
-helper context Website!UnitAssociation def: findOrmAssociation() : ORM!Association
+helper context Website!AssociationReference def: findOrmAssociation() : ORM!Association
 	= if self.association.oclIsUndefined() then
 			OclUndefined
 		else
@@ -237,15 +237,6 @@ helper context Website!UnitAssociation def: findOrmAssociation() : ORM!Associati
 				self.association.findOrmTargetAssociation()
 			endif
 		endif;
-
-helper context Website!FeaturePathAssociation def: findOrmAssociation() : ORM!Association
-	= if self.association.oclIsUndefined() then
-			OclUndefined
-		else if self.isSourceAssociation then
-			self.association.findOrmSourceAssociation()
-		else
-			self.association.findOrmTargetAssociation()
-		endif endif;
 
 helper context Website!Label def: findOrmLabel() : ORM!Label
 	= if self.oclIsKindOf(Website!Attribute) then
@@ -1176,10 +1167,12 @@ rule ChildAttribute {
 	)
 }
 
--- @extends FeaturePathAssociation, ChildFeature
+-- @extends ChildFeature
 rule ChildAssociation {
 	from website : Website!ChildAssociation
 	to waf : WAF!ChildAssociation (
+		association <- website.findOrmAssociation(),
+		childFeature <- website.childFeature
 	)
 }
 

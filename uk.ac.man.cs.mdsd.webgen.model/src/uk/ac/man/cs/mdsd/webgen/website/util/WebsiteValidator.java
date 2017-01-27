@@ -234,6 +234,8 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateUnitElement((UnitElement)value, diagnostics, context);
 			case WebsitePackage.UNIT_ASSOCIATION:
 				return validateUnitAssociation((UnitAssociation)value, diagnostics, context);
+			case WebsitePackage.ASSOCIATION_REFERENCE:
+				return validateAssociationReference((AssociationReference)value, diagnostics, context);
 			case WebsitePackage.INTERFACE_FIELD:
 				return validateInterfaceField((InterfaceField)value, diagnostics, context);
 			case WebsitePackage.DATA_TYPE_FIELD:
@@ -1781,6 +1783,15 @@ public class WebsiteValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssociationReference(AssociationReference associationReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(associationReference, diagnostics, context);
 	}
 
 	/**

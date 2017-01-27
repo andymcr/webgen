@@ -52,38 +52,14 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
 			addIsSourceAssociationPropertyDescriptor(object);
 			addSourceEntityPropertyDescriptor(object);
 			addTargetEntityPropertyDescriptor(object);
 			addValueDisplayPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
-			addFiltersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FeaturePathAssociation_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_name_feature", "_UI_FeaturePathAssociation_type"),
-				 WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__NAME,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 getString("_UI_ModelPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -96,9 +72,9 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_FeaturePathAssociation_association_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_association_feature", "_UI_FeaturePathAssociation_type"),
-			WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__ASSOCIATION,
+			getString("_UI_AssociationReference_association_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_association_feature", "_UI_AssociationReference_type"),
+			WebsitePackage.Literals.ASSOCIATION_REFERENCE__ASSOCIATION,
 			true, false, true, null,
 			getString("_UI_ModelPropertyCategory"),
 			null) {
@@ -125,9 +101,9 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_FeaturePathAssociation_isSourceAssociation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_isSourceAssociation_feature", "_UI_FeaturePathAssociation_type"),
-				 WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION,
+				 getString("_UI_UnitAssociation_isSourceAssociation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_isSourceAssociation_feature", "_UI_UnitAssociation_type"),
+				 WebsitePackage.Literals.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION,
 				 false,
 				 false,
 				 false,
@@ -147,9 +123,9 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_FeaturePathAssociation_sourceEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_sourceEntity_feature", "_UI_FeaturePathAssociation_type"),
-				 WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__SOURCE_ENTITY,
+				 getString("_UI_UnitAssociation_sourceEntity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_sourceEntity_feature", "_UI_UnitAssociation_type"),
+				 WebsitePackage.Literals.UNIT_ASSOCIATION__SOURCE_ENTITY,
 				 false,
 				 false,
 				 false,
@@ -169,9 +145,9 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_FeaturePathAssociation_targetEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_targetEntity_feature", "_UI_FeaturePathAssociation_type"),
-				 WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__TARGET_ENTITY,
+				 getString("_UI_UnitAssociation_targetEntity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_targetEntity_feature", "_UI_UnitAssociation_type"),
+				 WebsitePackage.Literals.UNIT_ASSOCIATION__TARGET_ENTITY,
 				 false,
 				 false,
 				 false,
@@ -243,37 +219,6 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Filters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addFiltersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_UnitAssociation_filters_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_filters_feature", "_UI_UnitAssociation_type"),
-			WebsitePackage.Literals.UNIT_ASSOCIATION__FILTERS,
-			true, false, true, null,
-			getString("_UI_InterfacePropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof UnitAssociation) {
-						final Set<Label> filters = new HashSet<Label>();
-//						for (Service service : getSourceServices((UnitAssociation) object)) {
-//							filters.addAll(getFeatureAttributes(service));
-//						}
-						return filters;
-					}
-
-					return Collections.emptySet();
-				}
-			});
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -286,7 +231,7 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebsitePackage.Literals.UNIT_CONTAINER__UNITS);
-			childrenFeatures.add(WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE);
+			childrenFeatures.add(WebsitePackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -441,12 +386,12 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE,
+				(WebsitePackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebsitePackage.Literals.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE,
+				(WebsitePackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAssociation()));
 	}
 

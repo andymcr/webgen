@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSingletonUnit()
- * @model abstract="true"
+ * @model interface="true" abstract="true"
  * @generated
  */
 public interface SingletonUnit extends EObject {

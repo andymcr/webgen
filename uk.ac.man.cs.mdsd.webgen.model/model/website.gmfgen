@@ -836,7 +836,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1114,7 +1114,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1594,7 +1594,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -1762,7 +1762,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2154,7 +2154,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2322,7 +2322,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2489,7 +2489,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2656,7 +2656,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2824,7 +2824,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -2991,7 +2991,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3158,7 +3158,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -3903,7 +3903,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4069,7 +4069,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4234,7 +4234,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -4780,7 +4780,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5113,7 +5113,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>
@@ -5278,7 +5278,7 @@
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
           <metaFeatures
-              href="website.genmodel#//website/FeaturePathAssociation/name"/>
+              href="website.genmodel#//website/AssociationReference/name"/>
         </modelFacet>
       </labels>
     </childNodes>

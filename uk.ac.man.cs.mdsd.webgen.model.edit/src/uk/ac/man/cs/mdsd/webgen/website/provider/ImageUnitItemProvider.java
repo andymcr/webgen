@@ -633,11 +633,6 @@ public class ImageUnitItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
-				 WebsiteFactory.eINSTANCE.createUnitAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
 				 WebsiteFactory.eINSTANCE.createFeaturePathAttribute()));
 
 		newChildDescriptors.add
@@ -649,11 +644,6 @@ public class ImageUnitItemProvider
 			(createChildParameter
 				(WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
 				 WebsiteFactory.eINSTANCE.createChildAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebsitePackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
-				 WebsiteFactory.eINSTANCE.createUnitAssociation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -683,7 +673,6 @@ public class ImageUnitItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == WebsitePackage.Literals.DYNAMIC_UNIT__DISPLAY_FIELDS ||
 			childFeature == WebsitePackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE ||
 			childFeature == WebsitePackage.Literals.IMAGE_UNIT__TITLE_FEATURE;
 

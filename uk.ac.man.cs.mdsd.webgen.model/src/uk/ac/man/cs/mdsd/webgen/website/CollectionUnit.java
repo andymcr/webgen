@@ -31,7 +31,7 @@ import java.util.List;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getCollectionUnit()
- * @model abstract="true"
+ * @model interface="true" abstract="true"
  * @generated
  */
 public interface CollectionUnit extends SelectableUnit {

@@ -3,14 +3,12 @@
 package uk.ac.man.cs.mdsd.webgen.website.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
 import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -29,6 +27,16 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * @generated
  */
 public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeature {
+	/**
+	 * The cached value of the '{@link #getPartOf() <em>Part Of</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartOf()
+	 * @generated
+	 * @ordered
+	 */
+	protected FeaturePathAssociation partOf;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -54,8 +62,15 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 	 * @generated
 	 */
 	public FeaturePathAssociation getPartOf() {
-		if (eContainerFeatureID() != WebsitePackage.CHILD_FEATURE__PART_OF) return null;
-		return (FeaturePathAssociation)eInternalContainer();
+		if (partOf != null && partOf.eIsProxy()) {
+			InternalEObject oldPartOf = (InternalEObject)partOf;
+			partOf = (FeaturePathAssociation)eResolveProxy(oldPartOf);
+			if (partOf != oldPartOf) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.CHILD_FEATURE__PART_OF, oldPartOf, partOf));
+			}
+		}
+		return partOf;
 	}
 
 	/**
@@ -63,9 +78,8 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPartOf(FeaturePathAssociation newPartOf, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPartOf, WebsitePackage.CHILD_FEATURE__PART_OF, msgs);
-		return msgs;
+	public FeaturePathAssociation basicGetPartOf() {
+		return partOf;
 	}
 
 	/**
@@ -74,63 +88,10 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 	 * @generated
 	 */
 	public void setPartOf(FeaturePathAssociation newPartOf) {
-		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.CHILD_FEATURE__PART_OF && newPartOf != null)) {
-			if (EcoreUtil.isAncestor(this, newPartOf))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newPartOf != null)
-				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE, FeaturePathAssociation.class, msgs);
-			msgs = basicSetPartOf(newPartOf, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CHILD_FEATURE__PART_OF, newPartOf, newPartOf));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case WebsitePackage.CHILD_FEATURE__PART_OF:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetPartOf((FeaturePathAssociation)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case WebsitePackage.CHILD_FEATURE__PART_OF:
-				return basicSetPartOf(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case WebsitePackage.CHILD_FEATURE__PART_OF:
-				return eInternalContainer().eInverseRemove(this, WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE, FeaturePathAssociation.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
+		FeaturePathAssociation oldPartOf = partOf;
+		partOf = newPartOf;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CHILD_FEATURE__PART_OF, oldPartOf, partOf));
 	}
 
 	/**
@@ -142,7 +103,8 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case WebsitePackage.CHILD_FEATURE__PART_OF:
-				return getPartOf();
+				if (resolve) return getPartOf();
+				return basicGetPartOf();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -186,7 +148,7 @@ public abstract class ChildFeatureImpl extends EObjectImpl implements ChildFeatu
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case WebsitePackage.CHILD_FEATURE__PART_OF:
-				return getPartOf() != null;
+				return partOf != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -362,6 +362,10 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createUnitAssociationAdapter();
 			}
 			@Override
+			public Adapter caseAssociationReference(AssociationReference object) {
+				return createAssociationReferenceAdapter();
+			}
+			@Override
 			public Adapter caseInterfaceField(InterfaceField object) {
 				return createInterfaceFieldAdapter();
 			}
@@ -1408,6 +1412,20 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUnitAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationReference <em>Association Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.AssociationReference
+	 * @generated
+	 */
+	public Adapter createAssociationReferenceAdapter() {
 		return null;
 	}
 

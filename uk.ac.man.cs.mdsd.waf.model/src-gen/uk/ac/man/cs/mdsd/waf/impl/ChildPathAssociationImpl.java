@@ -13,29 +13,30 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.orm.Association;
+import uk.ac.man.cs.mdsd.orm.Label;
 
-import uk.ac.man.cs.mdsd.waf.ChildAssociation;
-import uk.ac.man.cs.mdsd.waf.ChildFeature;
-import uk.ac.man.cs.mdsd.waf.FeaturePath;
-import uk.ac.man.cs.mdsd.waf.FeaturePathAssociation;
+import uk.ac.man.cs.mdsd.waf.AssociationReference;
+import uk.ac.man.cs.mdsd.waf.ChildPath;
+import uk.ac.man.cs.mdsd.waf.ChildPathAssociation;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Child Association</b></em>'.
+ * An implementation of the model object '<em><b>Child Path Association</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getAssociation <em>Association</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl#getAssociation <em>Association</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl#getValueDisplay <em>Value Display</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssociation {
+public class ChildPathAssociationImpl extends ChildPathImpl implements ChildPathAssociation {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -57,6 +58,16 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	protected Association association;
 
 	/**
+	 * The cached value of the '{@link #getValueDisplay() <em>Value Display</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValueDisplay()
+	 * @generated
+	 * @ordered
+	 */
+	protected Label valueDisplay;
+
+	/**
 	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,14 +75,14 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	 * @generated
 	 * @ordered
 	 */
-	protected ChildFeature childFeature;
+	protected ChildPath childFeature;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildAssociationImpl() {
+	protected ChildPathAssociationImpl() {
 		super();
 	}
 
@@ -82,7 +93,7 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WafPackage.Literals.CHILD_ASSOCIATION;
+		return WafPackage.Literals.CHILD_PATH_ASSOCIATION;
 	}
 
 	/**
@@ -112,7 +123,7 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 			association = (Association)eResolveProxy(oldAssociation);
 			if (association != oldAssociation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.CHILD_ASSOCIATION__ASSOCIATION, oldAssociation, association));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.CHILD_PATH_ASSOCIATION__ASSOCIATION, oldAssociation, association));
 			}
 		}
 		return association;
@@ -136,7 +147,7 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 		Association oldAssociation = association;
 		association = newAssociation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_ASSOCIATION__ASSOCIATION, oldAssociation, association));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_PATH_ASSOCIATION__ASSOCIATION, oldAssociation, association));
 	}
 
 	/**
@@ -144,7 +155,45 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildFeature getChildFeature() {
+	public Label getValueDisplay() {
+		if (valueDisplay != null && valueDisplay.eIsProxy()) {
+			InternalEObject oldValueDisplay = (InternalEObject)valueDisplay;
+			valueDisplay = (Label)eResolveProxy(oldValueDisplay);
+			if (valueDisplay != oldValueDisplay) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.CHILD_PATH_ASSOCIATION__VALUE_DISPLAY, oldValueDisplay, valueDisplay));
+			}
+		}
+		return valueDisplay;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Label basicGetValueDisplay() {
+		return valueDisplay;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValueDisplay(Label newValueDisplay) {
+		Label oldValueDisplay = valueDisplay;
+		valueDisplay = newValueDisplay;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_PATH_ASSOCIATION__VALUE_DISPLAY, oldValueDisplay, valueDisplay));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildPath getChildFeature() {
 		return childFeature;
 	}
 
@@ -153,11 +202,11 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetChildFeature(ChildFeature newChildFeature, NotificationChain msgs) {
-		ChildFeature oldChildFeature = childFeature;
+	public NotificationChain basicSetChildFeature(ChildPath newChildFeature, NotificationChain msgs) {
+		ChildPath oldChildFeature = childFeature;
 		childFeature = newChildFeature;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -168,18 +217,18 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setChildFeature(ChildFeature newChildFeature) {
+	public void setChildFeature(ChildPath newChildFeature) {
 		if (newChildFeature != childFeature) {
 			NotificationChain msgs = null;
 			if (childFeature != null)
-				msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE, null, msgs);
+				msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE, null, msgs);
 			if (newChildFeature != null)
-				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE, null, msgs);
+				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE, null, msgs);
 			msgs = basicSetChildFeature(newChildFeature, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE, newChildFeature, newChildFeature));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE, newChildFeature, newChildFeature));
 	}
 
 	/**
@@ -190,7 +239,7 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE:
+			case WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE:
 				return basicSetChildFeature(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -204,12 +253,15 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WafPackage.CHILD_ASSOCIATION__NAME:
+			case WafPackage.CHILD_PATH_ASSOCIATION__NAME:
 				return getName();
-			case WafPackage.CHILD_ASSOCIATION__ASSOCIATION:
+			case WafPackage.CHILD_PATH_ASSOCIATION__ASSOCIATION:
 				if (resolve) return getAssociation();
 				return basicGetAssociation();
-			case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE:
+			case WafPackage.CHILD_PATH_ASSOCIATION__VALUE_DISPLAY:
+				if (resolve) return getValueDisplay();
+				return basicGetValueDisplay();
+			case WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE:
 				return getChildFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -223,11 +275,14 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WafPackage.CHILD_ASSOCIATION__ASSOCIATION:
+			case WafPackage.CHILD_PATH_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)newValue);
 				return;
-			case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)newValue);
+			case WafPackage.CHILD_PATH_ASSOCIATION__VALUE_DISPLAY:
+				setValueDisplay((Label)newValue);
+				return;
+			case WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE:
+				setChildFeature((ChildPath)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -241,11 +296,14 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WafPackage.CHILD_ASSOCIATION__ASSOCIATION:
+			case WafPackage.CHILD_PATH_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)null);
 				return;
-			case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)null);
+			case WafPackage.CHILD_PATH_ASSOCIATION__VALUE_DISPLAY:
+				setValueDisplay((Label)null);
+				return;
+			case WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE:
+				setChildFeature((ChildPath)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -259,11 +317,13 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WafPackage.CHILD_ASSOCIATION__NAME:
+			case WafPackage.CHILD_PATH_ASSOCIATION__NAME:
 				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
-			case WafPackage.CHILD_ASSOCIATION__ASSOCIATION:
+			case WafPackage.CHILD_PATH_ASSOCIATION__ASSOCIATION:
 				return association != null;
-			case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE:
+			case WafPackage.CHILD_PATH_ASSOCIATION__VALUE_DISPLAY:
+				return valueDisplay != null;
+			case WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE:
 				return childFeature != null;
 		}
 		return super.eIsSet(featureID);
@@ -276,16 +336,12 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == FeaturePath.class) {
+		if (baseClass == AssociationReference.class) {
 			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == FeaturePathAssociation.class) {
-			switch (derivedFeatureID) {
-				case WafPackage.CHILD_ASSOCIATION__NAME: return WafPackage.FEATURE_PATH_ASSOCIATION__NAME;
-				case WafPackage.CHILD_ASSOCIATION__ASSOCIATION: return WafPackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION;
-				case WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE: return WafPackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE;
+				case WafPackage.CHILD_PATH_ASSOCIATION__NAME: return WafPackage.ASSOCIATION_REFERENCE__NAME;
+				case WafPackage.CHILD_PATH_ASSOCIATION__ASSOCIATION: return WafPackage.ASSOCIATION_REFERENCE__ASSOCIATION;
+				case WafPackage.CHILD_PATH_ASSOCIATION__VALUE_DISPLAY: return WafPackage.ASSOCIATION_REFERENCE__VALUE_DISPLAY;
+				case WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE: return WafPackage.ASSOCIATION_REFERENCE__CHILD_FEATURE;
 				default: return -1;
 			}
 		}
@@ -299,20 +355,16 @@ public class ChildAssociationImpl extends ChildFeatureImpl implements ChildAssoc
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == FeaturePath.class) {
+		if (baseClass == AssociationReference.class) {
 			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == FeaturePathAssociation.class) {
-			switch (baseFeatureID) {
-				case WafPackage.FEATURE_PATH_ASSOCIATION__NAME: return WafPackage.CHILD_ASSOCIATION__NAME;
-				case WafPackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION: return WafPackage.CHILD_ASSOCIATION__ASSOCIATION;
-				case WafPackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE: return WafPackage.CHILD_ASSOCIATION__CHILD_FEATURE;
+				case WafPackage.ASSOCIATION_REFERENCE__NAME: return WafPackage.CHILD_PATH_ASSOCIATION__NAME;
+				case WafPackage.ASSOCIATION_REFERENCE__ASSOCIATION: return WafPackage.CHILD_PATH_ASSOCIATION__ASSOCIATION;
+				case WafPackage.ASSOCIATION_REFERENCE__VALUE_DISPLAY: return WafPackage.CHILD_PATH_ASSOCIATION__VALUE_DISPLAY;
+				case WafPackage.ASSOCIATION_REFERENCE__CHILD_FEATURE: return WafPackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE;
 				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
-} //ChildAssociationImpl
+} //ChildPathAssociationImpl

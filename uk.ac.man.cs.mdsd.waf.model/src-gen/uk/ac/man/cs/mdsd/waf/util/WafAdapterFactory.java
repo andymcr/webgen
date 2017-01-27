@@ -202,6 +202,10 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createUnitAssociationAdapter();
 			}
 			@Override
+			public Adapter caseAssociationReference(AssociationReference object) {
+				return createAssociationReferenceAdapter();
+			}
+			@Override
 			public Adapter caseInterfaceField(InterfaceField object) {
 				return createInterfaceFieldAdapter();
 			}
@@ -298,16 +302,16 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createFeaturePathAssociationAdapter();
 			}
 			@Override
-			public Adapter caseChildFeature(ChildFeature object) {
-				return createChildFeatureAdapter();
+			public Adapter caseChildPath(ChildPath object) {
+				return createChildPathAdapter();
 			}
 			@Override
-			public Adapter caseChildAttribute(ChildAttribute object) {
-				return createChildAttributeAdapter();
+			public Adapter caseChildPathAttribute(ChildPathAttribute object) {
+				return createChildPathAttributeAdapter();
 			}
 			@Override
-			public Adapter caseChildAssociation(ChildAssociation object) {
-				return createChildAssociationAdapter();
+			public Adapter caseChildPathAssociation(ChildPathAssociation object) {
+				return createChildPathAssociationAdapter();
 			}
 			@Override
 			public Adapter caseImageIndexUnit(ImageIndexUnit object) {
@@ -862,6 +866,20 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.AssociationReference <em>Association Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.waf.AssociationReference
+	 * @generated
+	 */
+	public Adapter createAssociationReferenceAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.InterfaceField <em>Interface Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1198,44 +1216,44 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildFeature <em>Child Feature</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildPath <em>Child Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ChildFeature
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPath
 	 * @generated
 	 */
-	public Adapter createChildFeatureAdapter() {
+	public Adapter createChildPathAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildAttribute <em>Child Attribute</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute <em>Child Path Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ChildAttribute
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAttribute
 	 * @generated
 	 */
-	public Adapter createChildAttributeAdapter() {
+	public Adapter createChildPathAttributeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildAssociation <em>Child Association</em>}'.
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ChildPathAssociation <em>Child Path Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ChildAssociation
+	 * @see uk.ac.man.cs.mdsd.waf.ChildPathAssociation
 	 * @generated
 	 */
-	public Adapter createChildAssociationAdapter() {
+	public Adapter createChildPathAssociationAdapter() {
 		return null;
 	}
 

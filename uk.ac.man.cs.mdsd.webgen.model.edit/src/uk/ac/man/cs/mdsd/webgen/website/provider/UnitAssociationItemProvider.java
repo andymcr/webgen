@@ -53,10 +53,10 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addAssociationPropertyDescriptor(object);
+			addValueDisplayPropertyDescriptor(object);
 			addIsSourceAssociationPropertyDescriptor(object);
 			addSourceEntityPropertyDescriptor(object);
 			addTargetEntityPropertyDescriptor(object);
-			addValueDisplayPropertyDescriptor(object);
 			addSelectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -166,9 +166,9 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
 			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(),
-			getString("_UI_UnitAssociation_valueDisplay_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_valueDisplay_feature", "_UI_UnitAssociation_type"),
-			WebsitePackage.Literals.UNIT_ASSOCIATION__VALUE_DISPLAY,
+			getString("_UI_AssociationReference_valueDisplay_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_valueDisplay_feature", "_UI_AssociationReference_type"),
+			WebsitePackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
 			true, false, true, null,
 			getString("_UI_InterfacePropertyCategory"),
 			null) {
@@ -387,12 +387,12 @@ public class UnitAssociationItemProvider extends UnitFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
-				 WebsiteFactory.eINSTANCE.createChildAttribute()));
+				 WebsiteFactory.eINSTANCE.createChildPathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
-				 WebsiteFactory.eINSTANCE.createChildAssociation()));
+				 WebsiteFactory.eINSTANCE.createChildPathAssociation()));
 	}
 
 }

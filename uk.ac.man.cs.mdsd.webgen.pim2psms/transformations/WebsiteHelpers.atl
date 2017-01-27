@@ -269,8 +269,8 @@ helper context Website!UnitField def: dateFormat() : String
 			OclUndefined
 		endif endif endif endif;
 
-helper context Website!ChildFeature def: dateFormat() : String
-	= if self.oclIsTypeOf(Website!ChildAttribute) then
+helper context Website!ChildPath def: dateFormat() : String
+	= if self.oclIsTypeOf(Website!ChildPathAttribute) then
 			self.attribute.dateFormat()
 		else
 			if self.childFeature.oclIsUndefined() then

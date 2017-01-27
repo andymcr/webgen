@@ -512,24 +512,6 @@ public interface WebsiteFactory extends EFactory {
 	UnitAssociation createUnitAssociation();
 
 	/**
-	 * Returns a new object of class '<em>Child Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Child Attribute</em>'.
-	 * @generated
-	 */
-	ChildAttribute createChildAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Child Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Child Association</em>'.
-	 * @generated
-	 */
-	ChildAssociation createChildAssociation();
-
-	/**
 	 * Returns a new object of class '<em>Image Index Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -600,6 +582,24 @@ public interface WebsiteFactory extends EFactory {
 	 * @generated
 	 */
 	FeaturePathAssociation createFeaturePathAssociation();
+
+	/**
+	 * Returns a new object of class '<em>Child Path Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child Path Attribute</em>'.
+	 * @generated
+	 */
+	ChildPathAttribute createChildPathAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Child Path Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child Path Association</em>'.
+	 * @generated
+	 */
+	ChildPathAssociation createChildPathAssociation();
 
 	/**
 	 * Returns a new object of class '<em>Slider Unit</em>'.

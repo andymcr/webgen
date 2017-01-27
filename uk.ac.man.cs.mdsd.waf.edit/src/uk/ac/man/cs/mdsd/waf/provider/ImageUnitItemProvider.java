@@ -645,11 +645,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.IMAGE_UNIT__IMAGE_PATH_FEATURE,
-				 WafFactory.eINSTANCE.createChildAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
 				 WafFactory.eINSTANCE.createFeaturePathAttribute()));
 
@@ -657,11 +652,6 @@ public class ImageUnitItemProvider extends DynamicUnitItemProvider {
 			(createChildParameter
 				(WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
 				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.IMAGE_UNIT__TITLE_FEATURE,
-				 WafFactory.eINSTANCE.createChildAssociation()));
 	}
 
 	/**

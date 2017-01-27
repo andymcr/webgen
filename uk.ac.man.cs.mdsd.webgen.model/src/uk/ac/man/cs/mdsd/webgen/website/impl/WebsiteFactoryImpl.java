@@ -122,8 +122,8 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 			case WebsitePackage.SEARCH_UNIT: return createSearchUnit();
 			case WebsitePackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
-			case WebsitePackage.CHILD_ATTRIBUTE: return createChildAttribute();
-			case WebsitePackage.CHILD_ASSOCIATION: return createChildAssociation();
+			case WebsitePackage.CHILD_PATH_ATTRIBUTE: return createChildPathAttribute();
+			case WebsitePackage.CHILD_PATH_ASSOCIATION: return createChildPathAssociation();
 			case WebsitePackage.IMAGE_INDEX_UNIT: return createImageIndexUnit();
 			case WebsitePackage.SLIDER_UNIT: return createSliderUnit();
 			case WebsitePackage.GALLERY_UNIT: return createGalleryUnit();
@@ -766,26 +766,6 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildAttribute createChildAttribute() {
-		ChildAttributeImpl childAttribute = new ChildAttributeImpl();
-		return childAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChildAssociation createChildAssociation() {
-		ChildAssociationImpl childAssociation = new ChildAssociationImpl();
-		return childAssociation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ImageIndexUnit createImageIndexUnit() {
 		ImageIndexUnitImpl imageIndexUnit = new ImageIndexUnitImpl();
 		return imageIndexUnit;
@@ -859,6 +839,26 @@ public class WebsiteFactoryImpl extends EFactoryImpl implements WebsiteFactory {
 	public FeaturePathAssociation createFeaturePathAssociation() {
 		FeaturePathAssociationImpl featurePathAssociation = new FeaturePathAssociationImpl();
 		return featurePathAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildPathAttribute createChildPathAttribute() {
+		ChildPathAttributeImpl childPathAttribute = new ChildPathAttributeImpl();
+		return childPathAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildPathAssociation createChildPathAssociation() {
+		ChildPathAssociationImpl childPathAssociation = new ChildPathAssociationImpl();
+		return childPathAssociation;
 	}
 
 	/**

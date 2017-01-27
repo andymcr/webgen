@@ -13,12 +13,11 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationReference;
-import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
+import uk.ac.man.cs.mdsd.webgen.website.ChildPath;
 import uk.ac.man.cs.mdsd.webgen.website.ContentUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
@@ -38,11 +37,11 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getUnits <em>Units</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getAssociation <em>Association</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#isIsSourceAssociation <em>Is Source Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getSourceEntity <em>Source Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getTargetEntity <em>Target Entity</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.UnitAssociationImpl#getSelection <em>Selection</em>}</li>
  * </ul>
  *
@@ -80,6 +79,16 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	protected Association association;
 
 	/**
+	 * The cached value of the '{@link #getValueDisplay() <em>Value Display</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValueDisplay()
+	 * @generated
+	 * @ordered
+	 */
+	protected Label valueDisplay;
+
+	/**
 	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,7 +96,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @generated
 	 * @ordered
 	 */
-	protected ChildFeature childFeature;
+	protected ChildPath childFeature;
 
 	/**
 	 * The cached setting delegate for the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
@@ -118,16 +127,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate TARGET_ENTITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.UNIT_ASSOCIATION__TARGET_ENTITY).getSettingDelegate();
-
-	/**
-	 * The cached value of the '{@link #getValueDisplay() <em>Value Display</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValueDisplay()
-	 * @generated
-	 * @ordered
-	 */
-	protected Label valueDisplay;
 
 	/**
 	 * The cached value of the '{@link #getSelection() <em>Selection</em>}' reference.
@@ -222,7 +221,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildFeature getChildFeature() {
+	public ChildPath getChildFeature() {
 		return childFeature;
 	}
 
@@ -231,8 +230,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetChildFeature(ChildFeature newChildFeature, NotificationChain msgs) {
-		ChildFeature oldChildFeature = childFeature;
+	public NotificationChain basicSetChildFeature(ChildPath newChildFeature, NotificationChain msgs) {
+		ChildPath oldChildFeature = childFeature;
 		childFeature = newChildFeature;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
@@ -246,13 +245,13 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setChildFeature(ChildFeature newChildFeature) {
+	public void setChildFeature(ChildPath newChildFeature) {
 		if (newChildFeature != childFeature) {
 			NotificationChain msgs = null;
 			if (childFeature != null)
-				msgs = ((InternalEObject)childFeature).eInverseRemove(this, WebsitePackage.CHILD_FEATURE__PART_OF, ChildFeature.class, msgs);
+				msgs = ((InternalEObject)childFeature).eInverseRemove(this, WebsitePackage.CHILD_PATH__PART_OF, ChildPath.class, msgs);
 			if (newChildFeature != null)
-				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, WebsitePackage.CHILD_FEATURE__PART_OF, ChildFeature.class, msgs);
+				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, WebsitePackage.CHILD_PATH__PART_OF, ChildPath.class, msgs);
 			msgs = basicSetChildFeature(newChildFeature, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -395,7 +394,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				if (childFeature != null)
 					msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE, null, msgs);
-				return basicSetChildFeature((ChildFeature)otherEnd, msgs);
+				return basicSetChildFeature((ChildPath)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -431,6 +430,9 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION:
 				if (resolve) return getAssociation();
 				return basicGetAssociation();
+			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
+				if (resolve) return getValueDisplay();
+				return basicGetValueDisplay();
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				return getChildFeature();
 			case WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION:
@@ -441,9 +443,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebsitePackage.UNIT_ASSOCIATION__TARGET_ENTITY:
 				if (resolve) return getTargetEntity();
 				return basicGetTargetEntity();
-			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
-				if (resolve) return getValueDisplay();
-				return basicGetValueDisplay();
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				if (resolve) return getSelection();
 				return basicGetSelection();
@@ -467,11 +466,11 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)newValue);
 				return;
-			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)newValue);
-				return;
 			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				setValueDisplay((Label)newValue);
+				return;
+			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
+				setChildFeature((ChildPath)newValue);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)newValue);
@@ -494,11 +493,11 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)null);
 				return;
-			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)null);
-				return;
 			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
 				setValueDisplay((Label)null);
+				return;
+			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
+				setChildFeature((ChildPath)null);
 				return;
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				setSelection((Selection)null);
@@ -521,6 +520,8 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION:
 				return association != null;
+			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
+				return valueDisplay != null;
 			case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				return childFeature != null;
 			case WebsitePackage.UNIT_ASSOCIATION__IS_SOURCE_ASSOCIATION:
@@ -529,8 +530,6 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 				return SOURCE_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.UNIT_ASSOCIATION__TARGET_ENTITY:
 				return TARGET_ENTITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY:
-				return valueDisplay != null;
 			case WebsitePackage.UNIT_ASSOCIATION__SELECTION:
 				return selection != null;
 		}
@@ -554,6 +553,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			switch (derivedFeatureID) {
 				case WebsitePackage.UNIT_ASSOCIATION__NAME: return WebsitePackage.ASSOCIATION_REFERENCE__NAME;
 				case WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION: return WebsitePackage.ASSOCIATION_REFERENCE__ASSOCIATION;
+				case WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY: return WebsitePackage.ASSOCIATION_REFERENCE__VALUE_DISPLAY;
 				case WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION_REFERENCE__CHILD_FEATURE;
 				default: return -1;
 			}
@@ -578,6 +578,7 @@ public class UnitAssociationImpl extends UnitFeatureImpl implements UnitAssociat
 			switch (baseFeatureID) {
 				case WebsitePackage.ASSOCIATION_REFERENCE__NAME: return WebsitePackage.UNIT_ASSOCIATION__NAME;
 				case WebsitePackage.ASSOCIATION_REFERENCE__ASSOCIATION: return WebsitePackage.UNIT_ASSOCIATION__ASSOCIATION;
+				case WebsitePackage.ASSOCIATION_REFERENCE__VALUE_DISPLAY: return WebsitePackage.UNIT_ASSOCIATION__VALUE_DISPLAY;
 				case WebsitePackage.ASSOCIATION_REFERENCE__CHILD_FEATURE: return WebsitePackage.UNIT_ASSOCIATION__CHILD_FEATURE;
 				default: return -1;
 			}

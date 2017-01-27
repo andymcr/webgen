@@ -5,22 +5,22 @@ package uk.ac.man.cs.mdsd.webgen.website;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Child Attribute</b></em>'.
+ * A representation of the model object '<em><b>Child Path Attribute</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ChildAttribute#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ChildAttribute#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ChildPathAttribute#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.ChildPathAttribute#getAttribute <em>Attribute</em>}</li>
  * </ul>
  *
- * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getChildAttribute()
+ * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getChildPathAttribute()
  * @model
  * @generated
  */
-public interface ChildAttribute extends ChildFeature {
+public interface ChildPathAttribute extends ChildPath {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ public interface ChildAttribute extends ChildFeature {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getChildAttribute_Name()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getChildPathAttribute_Name()
 	 * @model changeable="false" volatile="true" derived="true" ordered="false"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if attribute.oclIsUndefined() then\r\n\t\'\'\r\nelse if attribute.oclIsKindOf(EntityAttribute) then\r\n\tattribute.oclAsType(EntityAttribute).name\r\nelse\r\n\tattribute.oclAsType(EncapsulatedAttribute).name\r\nendif endif\r\n'"
 	 * @generated
@@ -47,14 +47,14 @@ public interface ChildAttribute extends ChildFeature {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attribute</em>' reference.
 	 * @see #setAttribute(Attribute)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getChildAttribute_Attribute()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getChildPathAttribute_Attribute()
 	 * @model ordered="false"
 	 * @generated
 	 */
 	Attribute getAttribute();
 
 	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ChildAttribute#getAttribute <em>Attribute</em>}' reference.
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.ChildPathAttribute#getAttribute <em>Attribute</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Attribute</em>' reference.
@@ -63,4 +63,4 @@ public interface ChildAttribute extends ChildFeature {
 	 */
 	void setAttribute(Attribute value);
 
-} // ChildAttribute
+} // ChildPathAttribute

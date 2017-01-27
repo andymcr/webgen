@@ -346,22 +346,22 @@ public interface WafFactory extends EFactory {
 	FeaturePathAssociation createFeaturePathAssociation();
 
 	/**
-	 * Returns a new object of class '<em>Child Attribute</em>'.
+	 * Returns a new object of class '<em>Child Path Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Child Attribute</em>'.
+	 * @return a new object of class '<em>Child Path Attribute</em>'.
 	 * @generated
 	 */
-	ChildAttribute createChildAttribute();
+	ChildPathAttribute createChildPathAttribute();
 
 	/**
-	 * Returns a new object of class '<em>Child Association</em>'.
+	 * Returns a new object of class '<em>Child Path Association</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Child Association</em>'.
+	 * @return a new object of class '<em>Child Path Association</em>'.
 	 * @generated
 	 */
-	ChildAssociation createChildAssociation();
+	ChildPathAssociation createChildPathAssociation();
 
 	/**
 	 * Returns a new object of class '<em>Image Index Unit</em>'.

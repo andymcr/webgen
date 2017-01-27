@@ -567,8 +567,6 @@
           ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/sourceEntity"/>
       <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="Debug"
           ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/targetEntity"/>
-      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
-          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/valueDisplay"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//UnitAssociation/selection"/>
     </genClasses>
@@ -576,6 +574,8 @@
       <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//AssociationReference/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
           ecoreFeature="ecore:EReference website.ecore#//AssociationReference/association"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Interface"
+          propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//AssociationReference/valueDisplay"/>
       <genFeatures property="None" children="true" createChild="true" propertyCategory="Model"
           ecoreFeature="ecore:EReference website.ecore#//AssociationReference/childFeature"/>
     </genClasses>
@@ -735,21 +735,22 @@
       <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="Debug"
           ecoreFeature="ecore:EReference website.ecore#//FeaturePathAssociation/targetEntity"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="website.ecore#//ChildFeature">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//ChildFeature/partOf"/>
+    <genClasses image="false" ecoreClass="website.ecore#//ChildPath">
+      <genFeatures property="None" notify="false" createChild="false" propertyCategory="Model"
+          ecoreFeature="ecore:EReference website.ecore#//ChildPath/partOf"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//ChildAttribute">
-      <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//ChildAttribute/name"/>
+    <genClasses ecoreClass="website.ecore#//ChildPathAttribute">
+      <genFeatures property="None" createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//ChildPathAttribute/name"/>
       <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
-          ecoreFeature="ecore:EReference website.ecore#//ChildAttribute/attribute"/>
+          ecoreFeature="ecore:EReference website.ecore#//ChildPathAttribute/attribute"/>
     </genClasses>
-    <genClasses ecoreClass="website.ecore#//ChildAssociation">
+    <genClasses ecoreClass="website.ecore#//ChildPathAssociation">
       <genFeatures property="Readonly" createChild="false" propertyCategory="Debug"
-          ecoreFeature="ecore:EAttribute website.ecore#//ChildAssociation/isSourceAssociation"/>
+          ecoreFeature="ecore:EAttribute website.ecore#//ChildPathAssociation/isSourceAssociation"/>
       <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="Debug"
-          ecoreFeature="ecore:EReference website.ecore#//ChildAssociation/sourceEntity"/>
+          ecoreFeature="ecore:EReference website.ecore#//ChildPathAssociation/sourceEntity"/>
       <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="Debug"
-          ecoreFeature="ecore:EReference website.ecore#//ChildAssociation/targetEntity"/>
+          ecoreFeature="ecore:EReference website.ecore#//ChildPathAssociation/targetEntity"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//ImageIndexUnit">
       <genFeatures createChild="false" propertyCategory="Style" ecoreFeature="ecore:EAttribute website.ecore#//ImageIndexUnit/styleClass"/>

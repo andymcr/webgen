@@ -49,8 +49,9 @@ public class UnitAssociationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addSelectionPropertyDescriptor(object);
+			addAssociationPropertyDescriptor(object);
 			addValueDisplayPropertyDescriptor(object);
+			addSelectionPropertyDescriptor(object);
 			addFiltersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -67,13 +68,35 @@ public class UnitAssociationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_name_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.Literals.UNIT_ASSOCIATION__NAME,
+				 getString("_UI_AssociationReference_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_name_feature", "_UI_AssociationReference_type"),
+				 WafPackage.Literals.ASSOCIATION_REFERENCE__NAME,
 				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+		/**
+	 * This adds a property descriptor for the Association feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssociationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationReference_association_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_association_feature", "_UI_AssociationReference_type"),
+				 WafPackage.Literals.ASSOCIATION_REFERENCE__ASSOCIATION,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -112,9 +135,9 @@ public class UnitAssociationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_UnitAssociation_valueDisplay_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UnitAssociation_valueDisplay_feature", "_UI_UnitAssociation_type"),
-				 WafPackage.Literals.UNIT_ASSOCIATION__VALUE_DISPLAY,
+				 getString("_UI_AssociationReference_valueDisplay_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_valueDisplay_feature", "_UI_AssociationReference_type"),
+				 WafPackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
 				 true,
 				 false,
 				 true,
@@ -159,7 +182,7 @@ public class UnitAssociationItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WafPackage.Literals.UNIT_CONTAINER__UNITS);
-			childrenFeatures.add(WafPackage.Literals.UNIT_ASSOCIATION__PATH);
+			childrenFeatures.add(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -222,7 +245,7 @@ public class UnitAssociationItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WafPackage.UNIT_ASSOCIATION__UNITS:
-			case WafPackage.UNIT_ASSOCIATION__PATH:
+			case WafPackage.UNIT_ASSOCIATION__CHILD_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -323,13 +346,13 @@ public class UnitAssociationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ASSOCIATION__PATH,
-				 WafFactory.eINSTANCE.createFeaturePathAssociation()));
+				(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
+				 WafFactory.eINSTANCE.createChildPathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.UNIT_ASSOCIATION__PATH,
-				 WafFactory.eINSTANCE.createChildAssociation()));
+				(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
+				 WafFactory.eINSTANCE.createChildPathAssociation()));
 	}
 
 }

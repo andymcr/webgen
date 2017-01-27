@@ -260,7 +260,7 @@ class StaticUnit extends ContentUnit {
 }
 
 abstract class DynamicUnit extends ContentUnit {
-	refers EntityOrView[1..*] entities
+	refers EntityOrView[] entities
 	contains UnitField[] displayFields opposite displayedOn
 	contains UnitSupportAction[] supportActions
 	String header
@@ -315,16 +315,20 @@ class UnitAttribute extends UnitFeature {
 	String validationPattern
 }
 
-class UnitAssociation extends UnitFeature, UnitContainer {
-	derived String[1] name get {
-		if (path != null)
-			path.name
-	}
-	contains FeaturePathAssociation[1] path
+class UnitAssociation extends UnitFeature, UnitContainer, AssociationReference {
 	refers Selection selection
-	refers Label valueDisplay
 	// for selecting inputs
 	refers Label[] filters
+}
+
+abstract class AssociationReference {
+	derived String name get {
+		if (association != null)
+			association.name
+	}
+	refers Association[1] association
+	refers Label valueDisplay
+	contains ChildPath childFeature
 }
 
 abstract class InterfaceField extends NamedElement, UnitField {
@@ -352,16 +356,16 @@ class DateField extends InterfaceField {
 class CaptchaField extends InterfaceField {
 }
 
-abstract class SelectableUnit {
+interface SelectableUnit {
 	refers EntityOrView selectionType
 	refers SelectAction[] selectors opposite target
 }
 
-abstract class SingletonUnit {
+interface SingletonUnit {
 	refers EntityOrView[1] contentType
 }
 
-abstract class CollectionUnit extends SelectableUnit {
+interface CollectionUnit extends SelectableUnit {
 	refers Feature containingFeature
 	refers EntityOrView[1..*] contentType
 	refers Selection selection
@@ -464,19 +468,13 @@ class FeaturePathAttribute extends FeaturePath {
 	refers Attribute[1] attribute
 }
 
-class FeaturePathAssociation extends FeaturePath {
-	derived String name get {
-		if (association != null)
-			association.name
-	}
-	refers Association[1] association
-	contains ChildFeature childFeature
+class FeaturePathAssociation extends FeaturePath, AssociationReference {
 }
 
-abstract class ChildFeature {
+abstract class ChildPath {
 }
 
-class ChildAttribute extends ChildFeature {
+class ChildPathAttribute extends ChildPath {
 	derived String name get {
 		if (attribute != null)
 			attribute.name
@@ -484,7 +482,7 @@ class ChildAttribute extends ChildFeature {
 	refers Attribute[1] attribute
 }
 
-class ChildAssociation extends ChildFeature, FeaturePathAssociation {
+class ChildPathAssociation extends ChildPath, AssociationReference {
 }
 
 

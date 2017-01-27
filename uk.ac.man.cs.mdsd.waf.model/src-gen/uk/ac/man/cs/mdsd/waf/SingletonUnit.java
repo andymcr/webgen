@@ -19,7 +19,7 @@ import uk.ac.man.cs.mdsd.orm.EntityOrView;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getSingletonUnit()
- * @model abstract="true"
+ * @model interface="true" abstract="true"
  * @generated
  */
 public interface SingletonUnit extends EObject {

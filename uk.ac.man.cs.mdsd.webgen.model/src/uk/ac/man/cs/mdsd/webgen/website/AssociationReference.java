@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationReference#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationReference#getAssociation <em>Association</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationReference#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.AssociationReference#getChildFeature <em>Child Feature</em>}</li>
  * </ul>
  *
@@ -66,8 +67,34 @@ public interface AssociationReference extends EObject {
 	void setAssociation(Association value);
 
 	/**
+	 * Returns the value of the '<em><b>Value Display</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Value Display</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value Display</em>' reference.
+	 * @see #setValueDisplay(Label)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationReference_ValueDisplay()
+	 * @model
+	 * @generated
+	 */
+	Label getValueDisplay();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationReference#getValueDisplay <em>Value Display</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value Display</em>' reference.
+	 * @see #getValueDisplay()
+	 * @generated
+	 */
+	void setValueDisplay(Label value);
+
+	/**
 	 * Returns the value of the '<em><b>Child Feature</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.ChildFeature#getPartOf <em>Part Of</em>}'.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.ChildPath#getPartOf <em>Part Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Child Feature</em>' containment reference isn't clear,
@@ -75,13 +102,13 @@ public interface AssociationReference extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Child Feature</em>' containment reference.
-	 * @see #setChildFeature(ChildFeature)
+	 * @see #setChildFeature(ChildPath)
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getAssociationReference_ChildFeature()
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildFeature#getPartOf
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildPath#getPartOf
 	 * @model opposite="partOf" containment="true"
 	 * @generated
 	 */
-	ChildFeature getChildFeature();
+	ChildPath getChildFeature();
 
 	/**
 	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.AssociationReference#getChildFeature <em>Child Feature</em>}' containment reference.
@@ -91,6 +118,6 @@ public interface AssociationReference extends EObject {
 	 * @see #getChildFeature()
 	 * @generated
 	 */
-	void setChildFeature(ChildFeature value);
+	void setChildFeature(ChildPath value);
 
 } // AssociationReference

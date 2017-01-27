@@ -11,28 +11,30 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import uk.ac.man.cs.mdsd.webgen.website.ChildAssociation;
+
+import uk.ac.man.cs.mdsd.webgen.website.ChildPathAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.WebsiteFactory;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ChildAssociation} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ChildPathAssociation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
+public class ChildPathAssociationItemProvider extends ChildPathItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildAssociationItemProvider(AdapterFactory adapterFactory) {
+	public ChildPathAssociationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -48,6 +50,7 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addAssociationPropertyDescriptor(object);
+			addValueDisplayPropertyDescriptor(object);
 			addIsSourceAssociationPropertyDescriptor(object);
 			addSourceEntityPropertyDescriptor(object);
 			addTargetEntityPropertyDescriptor(object);
@@ -73,13 +76,35 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 			null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof ChildAssociation) {
-						return getAssociations((ChildAssociation) object);
+					if (object instanceof ChildPathAssociation) {
+						return getAssociations((ChildPathAssociation) object);
 					}
 
 					return Collections.emptyList();
 				}
 			});
+	}
+
+	/**
+	 * This adds a property descriptor for the Value Display feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValueDisplayPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationReference_valueDisplay_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_valueDisplay_feature", "_UI_AssociationReference_type"),
+				 WebsitePackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -93,9 +118,9 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ChildAssociation_isSourceAssociation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChildAssociation_isSourceAssociation_feature", "_UI_ChildAssociation_type"),
-				 WebsitePackage.Literals.CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION,
+				 getString("_UI_ChildPathAssociation_isSourceAssociation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAssociation_isSourceAssociation_feature", "_UI_ChildPathAssociation_type"),
+				 WebsitePackage.Literals.CHILD_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION,
 				 false,
 				 false,
 				 false,
@@ -115,9 +140,9 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ChildAssociation_sourceEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChildAssociation_sourceEntity_feature", "_UI_ChildAssociation_type"),
-				 WebsitePackage.Literals.CHILD_ASSOCIATION__SOURCE_ENTITY,
+				 getString("_UI_ChildPathAssociation_sourceEntity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAssociation_sourceEntity_feature", "_UI_ChildPathAssociation_type"),
+				 WebsitePackage.Literals.CHILD_PATH_ASSOCIATION__SOURCE_ENTITY,
 				 false,
 				 false,
 				 false,
@@ -137,9 +162,9 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ChildAssociation_targetEntity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChildAssociation_targetEntity_feature", "_UI_ChildAssociation_type"),
-				 WebsitePackage.Literals.CHILD_ASSOCIATION__TARGET_ENTITY,
+				 getString("_UI_ChildPathAssociation_targetEntity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAssociation_targetEntity_feature", "_UI_ChildPathAssociation_type"),
+				 WebsitePackage.Literals.CHILD_PATH_ASSOCIATION__TARGET_ENTITY,
 				 false,
 				 false,
 				 false,
@@ -179,14 +204,14 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 	}
 
 	/**
-	 * This returns ChildAssociation.gif.
+	 * This returns ChildPathAssociation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChildAssociation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChildPathAssociation"));
 	}
 
 	/**
@@ -197,10 +222,10 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ChildAssociation)object).getName();
+		String label = ((ChildPathAssociation)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ChildAssociation_type") :
-			getString("_UI_ChildAssociation_type") + " " + label;
+			getString("_UI_ChildPathAssociation_type") :
+			getString("_UI_ChildPathAssociation_type") + " " + label;
 	}
 	
 
@@ -215,12 +240,12 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ChildAssociation.class)) {
-			case WebsitePackage.CHILD_ASSOCIATION__NAME:
-			case WebsitePackage.CHILD_ASSOCIATION__IS_SOURCE_ASSOCIATION:
+		switch (notification.getFeatureID(ChildPathAssociation.class)) {
+			case WebsitePackage.CHILD_PATH_ASSOCIATION__NAME:
+			case WebsitePackage.CHILD_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebsitePackage.CHILD_ASSOCIATION__CHILD_FEATURE:
+			case WebsitePackage.CHILD_PATH_ASSOCIATION__CHILD_FEATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -241,12 +266,12 @@ public class ChildAssociationItemProvider extends ChildFeatureItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
-				 WebsiteFactory.eINSTANCE.createChildAttribute()));
+				 WebsiteFactory.eINSTANCE.createChildPathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
-				 WebsiteFactory.eINSTANCE.createChildAssociation()));
+				 WebsiteFactory.eINSTANCE.createChildPathAssociation()));
 	}
 
 }

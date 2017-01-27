@@ -50,6 +50,7 @@ public class FeaturePathAssociationItemProvider
 
 			addNamePropertyDescriptor(object);
 			addAssociationPropertyDescriptor(object);
+			addValueDisplayPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -65,9 +66,9 @@ public class FeaturePathAssociationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_FeaturePathAssociation_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_name_feature", "_UI_FeaturePathAssociation_type"),
-				 WafPackage.Literals.FEATURE_PATH_ASSOCIATION__NAME,
+				 getString("_UI_AssociationReference_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_name_feature", "_UI_AssociationReference_type"),
+				 WafPackage.Literals.ASSOCIATION_REFERENCE__NAME,
 				 false,
 				 false,
 				 false,
@@ -87,9 +88,31 @@ public class FeaturePathAssociationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_FeaturePathAssociation_association_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeaturePathAssociation_association_feature", "_UI_FeaturePathAssociation_type"),
-				 WafPackage.Literals.FEATURE_PATH_ASSOCIATION__ASSOCIATION,
+				 getString("_UI_AssociationReference_association_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_association_feature", "_UI_AssociationReference_type"),
+				 WafPackage.Literals.ASSOCIATION_REFERENCE__ASSOCIATION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Value Display feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValueDisplayPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationReference_valueDisplay_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_valueDisplay_feature", "_UI_AssociationReference_type"),
+				 WafPackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
 				 true,
 				 false,
 				 true,
@@ -110,7 +133,7 @@ public class FeaturePathAssociationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE);
+			childrenFeatures.add(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE);
 		}
 		return childrenFeatures;
 	}
@@ -189,13 +212,13 @@ public class FeaturePathAssociationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE,
-				 WafFactory.eINSTANCE.createChildAttribute()));
+				(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
+				 WafFactory.eINSTANCE.createChildPathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WafPackage.Literals.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE,
-				 WafFactory.eINSTANCE.createChildAssociation()));
+				(WafPackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
+				 WafFactory.eINSTANCE.createChildPathAssociation()));
 	}
 
 }

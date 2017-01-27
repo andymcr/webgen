@@ -610,52 +610,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ChildAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildAttributeItemProvider childAttributeItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ChildAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChildAttributeAdapter() {
-		if (childAttributeItemProvider == null) {
-			childAttributeItemProvider = new ChildAttributeItemProvider(this);
-		}
-
-		return childAttributeItemProvider;
-	}
-
-		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ChildAssociation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChildAssociationItemProvider childAssociationItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ChildAssociation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChildAssociationAdapter() {
-		if (childAssociationItemProvider == null) {
-			childAssociationItemProvider = new ChildAssociationItemProvider(this);
-		}
-
-		return childAssociationItemProvider;
-	}
-
-		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ImageIndexUnit} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1010,6 +964,52 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		}
 
 		return featurePathAssociationItemProvider;
+	}
+
+		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildPathAttributeItemProvider childPathAttributeItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildPathAttributeAdapter() {
+		if (childPathAttributeItemProvider == null) {
+			childPathAttributeItemProvider = new ChildPathAttributeItemProvider(this);
+		}
+
+		return childPathAttributeItemProvider;
+	}
+
+		/**
+	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ChildPathAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildPathAssociationItemProvider childPathAssociationItemProvider;
+
+		/**
+	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.ChildPathAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildPathAssociationAdapter() {
+		if (childPathAssociationItemProvider == null) {
+			childPathAssociationItemProvider = new ChildPathAssociationItemProvider(this);
+		}
+
+		return childPathAssociationItemProvider;
 	}
 
 		/**
@@ -1464,8 +1464,8 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (searchUnitItemProvider != null) searchUnitItemProvider.dispose();
 		if (featurePathAttributeItemProvider != null) featurePathAttributeItemProvider.dispose();
 		if (featurePathAssociationItemProvider != null) featurePathAssociationItemProvider.dispose();
-		if (childAttributeItemProvider != null) childAttributeItemProvider.dispose();
-		if (childAssociationItemProvider != null) childAssociationItemProvider.dispose();
+		if (childPathAttributeItemProvider != null) childPathAttributeItemProvider.dispose();
+		if (childPathAssociationItemProvider != null) childPathAssociationItemProvider.dispose();
 		if (imageIndexUnitItemProvider != null) imageIndexUnitItemProvider.dispose();
 		if (sliderUnitItemProvider != null) sliderUnitItemProvider.dispose();
 		if (galleryUnitItemProvider != null) galleryUnitItemProvider.dispose();

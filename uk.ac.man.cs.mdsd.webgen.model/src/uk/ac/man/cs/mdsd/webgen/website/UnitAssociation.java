@@ -2,8 +2,6 @@
  */
 package uk.ac.man.cs.mdsd.webgen.website;
 
-import java.util.List;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +15,6 @@ import java.util.List;
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#isIsSourceAssociation <em>Is Source Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getSourceEntity <em>Source Entity</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getTargetEntity <em>Target Entity</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getSelection <em>Selection</em>}</li>
  * </ul>
  *
@@ -74,32 +71,6 @@ public interface UnitAssociation extends UnitFeature, UnitContainer, Association
 	 * @generated
 	 */
 	EntityOrView getTargetEntity();
-
-	/**
-	 * Returns the value of the '<em><b>Value Display</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value Display</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value Display</em>' reference.
-	 * @see #setValueDisplay(Label)
-	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getUnitAssociation_ValueDisplay()
-	 * @model
-	 * @generated
-	 */
-	Label getValueDisplay();
-
-	/**
-	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.UnitAssociation#getValueDisplay <em>Value Display</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value Display</em>' reference.
-	 * @see #getValueDisplay()
-	 * @generated
-	 */
-	void setValueDisplay(Label value);
 
 	/**
 	 * Returns the value of the '<em><b>Selection</b></em>' reference.

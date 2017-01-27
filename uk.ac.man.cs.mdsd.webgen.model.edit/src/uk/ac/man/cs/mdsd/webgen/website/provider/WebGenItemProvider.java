@@ -12,8 +12,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import uk.ac.man.cs.mdsd.webgen.website.ActionMenuEntry;
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.Attribute;
-import uk.ac.man.cs.mdsd.webgen.website.ChildAssociation;
-import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
+import uk.ac.man.cs.mdsd.webgen.website.ChildPathAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.ChildPathAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicMenu;
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
@@ -186,7 +186,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return associations;
 	}
 
-	protected List<Attribute> getAttributes(final ChildAttribute attribute) {
+	protected List<Attribute> getAttributes(final ChildPathAttribute attribute) {
 		if (attribute.eContainer() instanceof UnitAssociation) {
 			final UnitAssociation parent = ((UnitAssociation) attribute.eContainer());
 			if (parent.getAssociation() != null) {
@@ -198,7 +198,7 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 					return parent.getTargetEntity().getAttributes();
 				}
 		} else {
-			final ChildAssociation parent = (ChildAssociation) attribute.eContainer();
+			final ChildPathAssociation parent = (ChildPathAssociation) attribute.eContainer();
 			if (parent.getAssociation() != null) {
 				return parent.getTargetEntity().getAttributes();
 			}
@@ -207,12 +207,12 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		return Collections.emptyList();
 	}
 
-	protected List<Association> getAssociations(final ChildAssociation association) {
+	protected List<Association> getAssociations(final ChildPathAssociation association) {
 		if (association.getPartOf().getAssociation() != null) {
 			if (association.getPartOf() instanceof FeaturePathAssociation) {
 				return ((FeaturePathAssociation) association.getPartOf()).getTargetEntity().getAllAssociations();
 			} else {
-				return ((ChildAssociation) association.getPartOf()).getTargetEntity().getAllAssociations();
+				return ((ChildPathAssociation) association.getPartOf()).getTargetEntity().getAllAssociations();
 			}
 		}
 

@@ -1,43 +1,45 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.website.impl;
+package uk.ac.man.cs.mdsd.waf.impl;
+
+import com.google.common.base.Objects;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import uk.ac.man.cs.mdsd.webgen.website.Attribute;
-import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
+import uk.ac.man.cs.mdsd.orm.Attribute;
+
+import uk.ac.man.cs.mdsd.waf.ChildPathAttribute;
+import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Child Attribute</b></em>'.
+ * An implementation of the model object '<em><b>Child Path Attribute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildAttributeImpl#getName <em>Name</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.ChildAttributeImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAttributeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.ChildPathAttributeImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ChildAttributeImpl extends ChildFeatureImpl implements ChildAttribute {
+public class ChildPathAttributeImpl extends ChildPathImpl implements ChildPathAttribute {
 	/**
-	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)WebsitePackage.Literals.CHILD_ATTRIBUTE__NAME).getSettingDelegate();
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
@@ -54,7 +56,7 @@ public class ChildAttributeImpl extends ChildFeatureImpl implements ChildAttribu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildAttributeImpl() {
+	protected ChildPathAttributeImpl() {
 		super();
 	}
 
@@ -65,7 +67,7 @@ public class ChildAttributeImpl extends ChildFeatureImpl implements ChildAttribu
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WebsitePackage.Literals.CHILD_ATTRIBUTE;
+		return WafPackage.Literals.CHILD_PATH_ATTRIBUTE;
 	}
 
 	/**
@@ -74,7 +76,14 @@ public class ChildAttributeImpl extends ChildFeatureImpl implements ChildAttribu
 	 * @generated
 	 */
 	public String getName() {
-		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		String _xifexpression = null;
+		Attribute _attribute = this.getAttribute();
+		boolean _notEquals = (!Objects.equal(_attribute, null));
+		if (_notEquals) {
+			Attribute _attribute_1 = this.getAttribute();
+			_xifexpression = _attribute_1.getName();
+		}
+		return _xifexpression;
 	}
 
 	/**
@@ -88,7 +97,7 @@ public class ChildAttributeImpl extends ChildFeatureImpl implements ChildAttribu
 			attribute = (Attribute)eResolveProxy(oldAttribute);
 			if (attribute != oldAttribute) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.CHILD_PATH_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
 			}
 		}
 		return attribute;
@@ -112,7 +121,7 @@ public class ChildAttributeImpl extends ChildFeatureImpl implements ChildAttribu
 		Attribute oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.CHILD_PATH_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
 	}
 
 	/**
@@ -123,9 +132,9 @@ public class ChildAttributeImpl extends ChildFeatureImpl implements ChildAttribu
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebsitePackage.CHILD_ATTRIBUTE__NAME:
+			case WafPackage.CHILD_PATH_ATTRIBUTE__NAME:
 				return getName();
-			case WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE:
+			case WafPackage.CHILD_PATH_ATTRIBUTE__ATTRIBUTE:
 				if (resolve) return getAttribute();
 				return basicGetAttribute();
 		}
@@ -140,7 +149,7 @@ public class ChildAttributeImpl extends ChildFeatureImpl implements ChildAttribu
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE:
+			case WafPackage.CHILD_PATH_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)newValue);
 				return;
 		}
@@ -155,7 +164,7 @@ public class ChildAttributeImpl extends ChildFeatureImpl implements ChildAttribu
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE:
+			case WafPackage.CHILD_PATH_ATTRIBUTE__ATTRIBUTE:
 				setAttribute((Attribute)null);
 				return;
 		}
@@ -170,12 +179,12 @@ public class ChildAttributeImpl extends ChildFeatureImpl implements ChildAttribu
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebsitePackage.CHILD_ATTRIBUTE__NAME:
-				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case WebsitePackage.CHILD_ATTRIBUTE__ATTRIBUTE:
+			case WafPackage.CHILD_PATH_ATTRIBUTE__NAME:
+				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+			case WafPackage.CHILD_PATH_ATTRIBUTE__ATTRIBUTE:
 				return attribute != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ChildAttributeImpl
+} //ChildPathAttributeImpl

@@ -280,12 +280,12 @@ public class WebsiteValidator extends EObjectValidator {
 				return validateFeaturePathAttribute((FeaturePathAttribute)value, diagnostics, context);
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION:
 				return validateFeaturePathAssociation((FeaturePathAssociation)value, diagnostics, context);
-			case WebsitePackage.CHILD_FEATURE:
-				return validateChildFeature((ChildFeature)value, diagnostics, context);
-			case WebsitePackage.CHILD_ATTRIBUTE:
-				return validateChildAttribute((ChildAttribute)value, diagnostics, context);
-			case WebsitePackage.CHILD_ASSOCIATION:
-				return validateChildAssociation((ChildAssociation)value, diagnostics, context);
+			case WebsitePackage.CHILD_PATH:
+				return validateChildPath((ChildPath)value, diagnostics, context);
+			case WebsitePackage.CHILD_PATH_ATTRIBUTE:
+				return validateChildPathAttribute((ChildPathAttribute)value, diagnostics, context);
+			case WebsitePackage.CHILD_PATH_ASSOCIATION:
+				return validateChildPathAssociation((ChildPathAssociation)value, diagnostics, context);
 			case WebsitePackage.IMAGE_INDEX_UNIT:
 				return validateImageIndexUnit((ImageIndexUnit)value, diagnostics, context);
 			case WebsitePackage.SLIDER_UNIT:
@@ -1799,33 +1799,6 @@ public class WebsiteValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateChildFeature(ChildFeature childFeature, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(childFeature, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateChildAttribute(ChildAttribute childAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(childAttribute, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateChildAssociation(ChildAssociation childAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(childAssociation, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateImageIndexUnit(ImageIndexUnit imageIndexUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(imageIndexUnit, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(imageIndexUnit, diagnostics, context);
@@ -2546,6 +2519,33 @@ public class WebsiteValidator extends EObjectValidator {
 	 */
 	public boolean validateFeaturePathAssociation(FeaturePathAssociation featurePathAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(featurePathAssociation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChildPath(ChildPath childPath, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(childPath, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChildPathAttribute(ChildPathAttribute childPathAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(childPathAttribute, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChildPathAssociation(ChildPathAssociation childPathAssociation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(childPathAssociation, diagnostics, context);
 	}
 
 	/**

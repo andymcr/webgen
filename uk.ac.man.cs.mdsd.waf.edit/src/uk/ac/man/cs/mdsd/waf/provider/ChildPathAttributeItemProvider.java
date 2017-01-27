@@ -1,10 +1,9 @@
 /**
  */
-package uk.ac.man.cs.mdsd.webgen.website.provider;
+package uk.ac.man.cs.mdsd.waf.provider;
 
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -15,23 +14,23 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import uk.ac.man.cs.mdsd.webgen.website.ChildAttribute;
-import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
+import uk.ac.man.cs.mdsd.waf.ChildPathAttribute;
+import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**
- * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.webgen.website.ChildAttribute} object.
+ * This is the item provider adapter for a {@link uk.ac.man.cs.mdsd.waf.ChildPathAttribute} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ChildAttributeItemProvider extends ChildFeatureItemProvider {
+public class ChildPathAttributeItemProvider extends ChildPathItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildAttributeItemProvider(AdapterFactory adapterFactory) {
+	public ChildPathAttributeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,47 +45,65 @@ public class ChildAttributeItemProvider extends ChildFeatureItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
 			addAttributePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Attribute feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	protected void addAttributePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_ChildAttribute_attribute_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ChildAttribute_attribute_feature", "_UI_ChildAttribute_type"),
-			WebsitePackage.Literals.CHILD_ATTRIBUTE__ATTRIBUTE,
-			true, false, true, null,
-			getString("_UI_ModelPropertyCategory"),
-			null) {
-				@Override
-				public Collection<?> getChoiceOfValues(Object object) {
-					if (object instanceof ChildAttribute) {
-						return getAttributes((ChildAttribute) object);
-					}
-
-					return Collections.emptyList();
-				}
-			});
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ChildPathAttribute_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAttribute_name_feature", "_UI_ChildPathAttribute_type"),
+				 WafPackage.Literals.CHILD_PATH_ATTRIBUTE__NAME,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns ChildAttribute.gif.
+	 * This adds a property descriptor for the Attribute feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttributePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ChildPathAttribute_attribute_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChildPathAttribute_attribute_feature", "_UI_ChildPathAttribute_type"),
+				 WafPackage.Literals.CHILD_PATH_ATTRIBUTE__ATTRIBUTE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns ChildPathAttribute.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChildAttribute"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChildPathAttribute"));
 	}
 
 	/**
@@ -97,10 +114,10 @@ public class ChildAttributeItemProvider extends ChildFeatureItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ChildAttribute)object).getName();
+		String label = ((ChildPathAttribute)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ChildAttribute_type") :
-			getString("_UI_ChildAttribute_type") + " " + label;
+			getString("_UI_ChildPathAttribute_type") :
+			getString("_UI_ChildPathAttribute_type") + " " + label;
 	}
 	
 
@@ -115,8 +132,8 @@ public class ChildAttributeItemProvider extends ChildFeatureItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ChildAttribute.class)) {
-			case WebsitePackage.CHILD_ATTRIBUTE__NAME:
+		switch (notification.getFeatureID(ChildPathAttribute.class)) {
+			case WafPackage.CHILD_PATH_ATTRIBUTE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

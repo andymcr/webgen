@@ -454,16 +454,16 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 				return createFeaturePathAssociationAdapter();
 			}
 			@Override
-			public Adapter caseChildFeature(ChildFeature object) {
-				return createChildFeatureAdapter();
+			public Adapter caseChildPath(ChildPath object) {
+				return createChildPathAdapter();
 			}
 			@Override
-			public Adapter caseChildAttribute(ChildAttribute object) {
-				return createChildAttributeAdapter();
+			public Adapter caseChildPathAttribute(ChildPathAttribute object) {
+				return createChildPathAttributeAdapter();
 			}
 			@Override
-			public Adapter caseChildAssociation(ChildAssociation object) {
-				return createChildAssociationAdapter();
+			public Adapter caseChildPathAssociation(ChildPathAssociation object) {
+				return createChildPathAssociationAdapter();
 			}
 			@Override
 			public Adapter caseImageIndexUnit(ImageIndexUnit object) {
@@ -1430,48 +1430,6 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ChildFeature <em>Child Feature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildFeature
-	 * @generated
-	 */
-	public Adapter createChildFeatureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ChildAttribute <em>Child Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildAttribute
-	 * @generated
-	 */
-	public Adapter createChildAttributeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ChildAssociation <em>Child Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildAssociation
-	 * @generated
-	 */
-	public Adapter createChildAssociationAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ImageIndexUnit <em>Image Index Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1916,6 +1874,48 @@ public class WebsiteAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFeaturePathAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ChildPath <em>Child Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildPath
+	 * @generated
+	 */
+	public Adapter createChildPathAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ChildPathAttribute <em>Child Path Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildPathAttribute
+	 * @generated
+	 */
+	public Adapter createChildPathAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.webgen.website.ChildPathAssociation <em>Child Path Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.ChildPathAssociation
+	 * @generated
+	 */
+	public Adapter createChildPathAssociationAdapter() {
 		return null;
 	}
 

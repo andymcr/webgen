@@ -13,9 +13,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import uk.ac.man.cs.mdsd.webgen.website.Association;
 import uk.ac.man.cs.mdsd.webgen.website.AssociationReference;
-import uk.ac.man.cs.mdsd.webgen.website.ChildFeature;
+import uk.ac.man.cs.mdsd.webgen.website.ChildPath;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation;
+import uk.ac.man.cs.mdsd.webgen.website.Label;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 
 /**
@@ -28,6 +29,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl#getAssociation <em>Association</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl#getValueDisplay <em>Value Display</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl#getChildFeature <em>Child Feature</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl#isIsSourceAssociation <em>Is Source Association</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FeaturePathAssociationImpl#getSourceEntity <em>Source Entity</em>}</li>
@@ -58,6 +60,16 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	protected Association association;
 
 	/**
+	 * The cached value of the '{@link #getValueDisplay() <em>Value Display</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValueDisplay()
+	 * @generated
+	 * @ordered
+	 */
+	protected Label valueDisplay;
+
+	/**
 	 * The cached value of the '{@link #getChildFeature() <em>Child Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,7 +77,7 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	 * @generated
 	 * @ordered
 	 */
-	protected ChildFeature childFeature;
+	protected ChildPath childFeature;
 
 	/**
 	 * The cached setting delegate for the '{@link #isIsSourceAssociation() <em>Is Source Association</em>}' attribute.
@@ -168,7 +180,45 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildFeature getChildFeature() {
+	public Label getValueDisplay() {
+		if (valueDisplay != null && valueDisplay.eIsProxy()) {
+			InternalEObject oldValueDisplay = (InternalEObject)valueDisplay;
+			valueDisplay = (Label)eResolveProxy(oldValueDisplay);
+			if (valueDisplay != oldValueDisplay) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebsitePackage.FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY, oldValueDisplay, valueDisplay));
+			}
+		}
+		return valueDisplay;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Label basicGetValueDisplay() {
+		return valueDisplay;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValueDisplay(Label newValueDisplay) {
+		Label oldValueDisplay = valueDisplay;
+		valueDisplay = newValueDisplay;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY, oldValueDisplay, valueDisplay));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildPath getChildFeature() {
 		return childFeature;
 	}
 
@@ -177,8 +227,8 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetChildFeature(ChildFeature newChildFeature, NotificationChain msgs) {
-		ChildFeature oldChildFeature = childFeature;
+	public NotificationChain basicSetChildFeature(ChildPath newChildFeature, NotificationChain msgs) {
+		ChildPath oldChildFeature = childFeature;
 		childFeature = newChildFeature;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE, oldChildFeature, newChildFeature);
@@ -192,13 +242,13 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setChildFeature(ChildFeature newChildFeature) {
+	public void setChildFeature(ChildPath newChildFeature) {
 		if (newChildFeature != childFeature) {
 			NotificationChain msgs = null;
 			if (childFeature != null)
-				msgs = ((InternalEObject)childFeature).eInverseRemove(this, WebsitePackage.CHILD_FEATURE__PART_OF, ChildFeature.class, msgs);
+				msgs = ((InternalEObject)childFeature).eInverseRemove(this, WebsitePackage.CHILD_PATH__PART_OF, ChildPath.class, msgs);
 			if (newChildFeature != null)
-				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, WebsitePackage.CHILD_FEATURE__PART_OF, ChildFeature.class, msgs);
+				msgs = ((InternalEObject)newChildFeature).eInverseAdd(this, WebsitePackage.CHILD_PATH__PART_OF, ChildPath.class, msgs);
 			msgs = basicSetChildFeature(newChildFeature, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -262,7 +312,7 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE:
 				if (childFeature != null)
 					msgs = ((InternalEObject)childFeature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE, null, msgs);
-				return basicSetChildFeature((ChildFeature)otherEnd, msgs);
+				return basicSetChildFeature((ChildPath)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -294,6 +344,9 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION:
 				if (resolve) return getAssociation();
 				return basicGetAssociation();
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY:
+				if (resolve) return getValueDisplay();
+				return basicGetValueDisplay();
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE:
 				return getChildFeature();
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION:
@@ -319,8 +372,11 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)newValue);
 				return;
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY:
+				setValueDisplay((Label)newValue);
+				return;
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)newValue);
+				setChildFeature((ChildPath)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -337,8 +393,11 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION:
 				setAssociation((Association)null);
 				return;
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY:
+				setValueDisplay((Label)null);
+				return;
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE:
-				setChildFeature((ChildFeature)null);
+				setChildFeature((ChildPath)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -356,6 +415,8 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION:
 				return association != null;
+			case WebsitePackage.FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY:
+				return valueDisplay != null;
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE:
 				return childFeature != null;
 			case WebsitePackage.FEATURE_PATH_ASSOCIATION__IS_SOURCE_ASSOCIATION:
@@ -379,6 +440,7 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 			switch (derivedFeatureID) {
 				case WebsitePackage.FEATURE_PATH_ASSOCIATION__NAME: return WebsitePackage.ASSOCIATION_REFERENCE__NAME;
 				case WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION: return WebsitePackage.ASSOCIATION_REFERENCE__ASSOCIATION;
+				case WebsitePackage.FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY: return WebsitePackage.ASSOCIATION_REFERENCE__VALUE_DISPLAY;
 				case WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE: return WebsitePackage.ASSOCIATION_REFERENCE__CHILD_FEATURE;
 				default: return -1;
 			}
@@ -397,6 +459,7 @@ public class FeaturePathAssociationImpl extends FeaturePathImpl implements Featu
 			switch (baseFeatureID) {
 				case WebsitePackage.ASSOCIATION_REFERENCE__NAME: return WebsitePackage.FEATURE_PATH_ASSOCIATION__NAME;
 				case WebsitePackage.ASSOCIATION_REFERENCE__ASSOCIATION: return WebsitePackage.FEATURE_PATH_ASSOCIATION__ASSOCIATION;
+				case WebsitePackage.ASSOCIATION_REFERENCE__VALUE_DISPLAY: return WebsitePackage.FEATURE_PATH_ASSOCIATION__VALUE_DISPLAY;
 				case WebsitePackage.ASSOCIATION_REFERENCE__CHILD_FEATURE: return WebsitePackage.FEATURE_PATH_ASSOCIATION__CHILD_FEATURE;
 				default: return -1;
 			}

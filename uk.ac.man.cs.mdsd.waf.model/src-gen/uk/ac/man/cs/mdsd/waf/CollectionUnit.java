@@ -34,7 +34,7 @@ import uk.ac.man.cs.mdsd.orm.Feature;
  * </ul>
  *
  * @see uk.ac.man.cs.mdsd.waf.WafPackage#getCollectionUnit()
- * @model abstract="true"
+ * @model interface="true" abstract="true"
  * @generated
  */
 public interface CollectionUnit extends SelectableUnit {

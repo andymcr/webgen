@@ -723,19 +723,12 @@ rule UnitAttribute {
 	)
 }
 
--- @extends UnitFeature, UnitContainer
+-- @extends UnitFeature, UnitContainer, AssociationReference
 rule UnitAssociation {
 	from website : Website!UnitAssociation
 	to waf : WAF!UnitAssociation (
-		path <- associationPath,
 		displayLabel <- website.associationLabel(),
 		selection <- website.selection,
-		valueDisplay <-
-			if website.valueDisplay.oclIsUndefined() then
-				OclUndefined
-			else
-				website.valueDisplay.findOrmLabel()
-			endif,
 		headerClass <-
 			if not website.headerClass.oclIsUndefined() and website.headerClass <> '' then
 				website.headerClass
@@ -776,9 +769,19 @@ rule UnitAssociation {
 					OclUndefined
 				endif
 			endif
-	),
-	associationPath : WAF!FeaturePathAssociation (
+	)
+}
+
+abstract rule AssociationReference {
+	from website : Website!AssociationReference
+	to waf : WAF!AssociationReference (
 		association <- website.findOrmAssociation(),
+		valueDisplay <-
+			if website.valueDisplay.oclIsUndefined() then
+				OclUndefined
+			else
+				website.valueDisplay.findOrmLabel()
+			endif,
 		childFeature <- website.childFeature
 	)
 }
@@ -1130,12 +1133,31 @@ rule FeaturePathAttribute {
 	)
 }
 
--- @extends FeaturePath
+-- @extends FeaturePath, AssociationReference
 rule FeaturePathAssociation {
 	from website : Website!FeaturePathAssociation
 	to waf : WAF!FeaturePathAssociation (
-		association <- website.findOrmAssociation(),
-		childFeature <- website.childFeature
+	)
+}
+
+abstract rule ChildPath {
+	from website : Website!ChildPath
+	to waf : WAF!ChildPath (
+	)
+}
+
+-- @extends ChildPath
+rule ChildPathAttribute {
+	from website : Website!ChildPathAttribute
+	to waf : WAF!ChildPathAttribute (
+		attribute <- website.attribute.findOrmAttribute()
+	)
+}
+
+-- @extends ChildPath, AssociationReference
+rule ChildPathAssociation {
+	from website : Website!ChildPathAssociation
+	to waf : WAF!ChildPathAssociation (
 	)
 }
 
@@ -1150,29 +1172,6 @@ rule ImageIndexUnit {
 rule SliderUnit {
 	from website : Website!SliderUnit
 	to waf : WAF!SliderUnit (
-	)
-}
-
-abstract rule ChildFeature {
-	from website : Website!ChildFeature
-	to waf : WAF!ChildFeature (
-	)
-}
-
--- @extends ChildFeature
-rule ChildAttribute {
-	from website : Website!ChildAttribute
-	to waf : WAF!ChildAttribute (
-		attribute <- website.attribute.findOrmAttribute()
-	)
-}
-
--- @extends ChildFeature
-rule ChildAssociation {
-	from website : Website!ChildAssociation
-	to waf : WAF!ChildAssociation (
-		association <- website.findOrmAssociation(),
-		childFeature <- website.childFeature
 	)
 }
 

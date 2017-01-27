@@ -51,6 +51,7 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 			super.getPropertyDescriptors(object);
 
 			addAssociationPropertyDescriptor(object);
+			addValueDisplayPropertyDescriptor(object);
 			addIsSourceAssociationPropertyDescriptor(object);
 			addSourceEntityPropertyDescriptor(object);
 			addTargetEntityPropertyDescriptor(object);
@@ -86,6 +87,28 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 					return Collections.emptySet();
 				}
 		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Value Display feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValueDisplayPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssociationReference_valueDisplay_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssociationReference_valueDisplay_feature", "_UI_AssociationReference_type"),
+				 WebsitePackage.Literals.ASSOCIATION_REFERENCE__VALUE_DISPLAY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_InterfacePropertyCategory"),
+				 null));
 	}
 
 	/**
@@ -247,12 +270,12 @@ public class FeaturePathAssociationItemProvider extends FeaturePathItemProvider 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
-				 WebsiteFactory.eINSTANCE.createChildAttribute()));
+				 WebsiteFactory.eINSTANCE.createChildPathAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WebsitePackage.Literals.ASSOCIATION_REFERENCE__CHILD_FEATURE,
-				 WebsiteFactory.eINSTANCE.createChildAssociation()));
+				 WebsiteFactory.eINSTANCE.createChildPathAssociation()));
 	}
 
 }

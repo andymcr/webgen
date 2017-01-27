@@ -93,8 +93,8 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.SEARCH_UNIT: return createSearchUnit();
 			case WafPackage.FEATURE_PATH_ATTRIBUTE: return createFeaturePathAttribute();
 			case WafPackage.FEATURE_PATH_ASSOCIATION: return createFeaturePathAssociation();
-			case WafPackage.CHILD_ATTRIBUTE: return createChildAttribute();
-			case WafPackage.CHILD_ASSOCIATION: return createChildAssociation();
+			case WafPackage.CHILD_PATH_ATTRIBUTE: return createChildPathAttribute();
+			case WafPackage.CHILD_PATH_ASSOCIATION: return createChildPathAssociation();
 			case WafPackage.IMAGE_INDEX_UNIT: return createImageIndexUnit();
 			case WafPackage.SLIDER_UNIT: return createSliderUnit();
 			case WafPackage.GALLERY_UNIT: return createGalleryUnit();
@@ -533,9 +533,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildAttribute createChildAttribute() {
-		ChildAttributeImpl childAttribute = new ChildAttributeImpl();
-		return childAttribute;
+	public ChildPathAttribute createChildPathAttribute() {
+		ChildPathAttributeImpl childPathAttribute = new ChildPathAttributeImpl();
+		return childPathAttribute;
 	}
 
 	/**
@@ -543,9 +543,9 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChildAssociation createChildAssociation() {
-		ChildAssociationImpl childAssociation = new ChildAssociationImpl();
-		return childAssociation;
+	public ChildPathAssociation createChildPathAssociation() {
+		ChildPathAssociationImpl childPathAssociation = new ChildPathAssociationImpl();
+		return childPathAssociation;
 	}
 
 	/**

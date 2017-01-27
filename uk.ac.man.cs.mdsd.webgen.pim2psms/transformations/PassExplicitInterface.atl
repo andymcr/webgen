@@ -898,7 +898,8 @@ abstract rule CollectionUnit {
 unique lazy rule PaginationFilter {
 	from website : Website!CollectionUnit
 	to waf : WAF!Filter (
-		name <- 'Pagination',
+		name <- 'pagination',
+		displayLabel <- 'Pagination',
 		parameters <- Sequence{pageParameter}
 	),
 	pageParameter : WAF!FilterParameter (

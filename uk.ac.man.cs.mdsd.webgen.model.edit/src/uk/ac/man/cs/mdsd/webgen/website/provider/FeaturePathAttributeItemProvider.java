@@ -17,7 +17,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.webgen.website.DynamicUnit;
-import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.webgen.website.FeaturePathAttribute;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
 

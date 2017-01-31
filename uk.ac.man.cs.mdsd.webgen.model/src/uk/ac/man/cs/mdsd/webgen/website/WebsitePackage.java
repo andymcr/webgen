@@ -8557,13 +8557,22 @@ public interface WebsitePackage extends EPackage {
 	int FILTER_PARAMETER__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Part Of</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILTER_PARAMETER__PART_OF = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Formal</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILTER_PARAMETER__FORMAL = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int FILTER_PARAMETER__FORMAL = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
@@ -8572,7 +8581,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILTER_PARAMETER__DATA_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int FILTER_PARAMETER__DATA_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -8581,7 +8590,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILTER_PARAMETER__DEFAULT_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int FILTER_PARAMETER__DEFAULT_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Placeholder</b></em>' attribute.
@@ -8590,7 +8599,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILTER_PARAMETER__PLACEHOLDER = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int FILTER_PARAMETER__PLACEHOLDER = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Filter Parameter</em>' class.
@@ -8599,7 +8608,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILTER_PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int FILTER_PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' reference.
@@ -19696,6 +19705,17 @@ public interface WebsitePackage extends EPackage {
 	EClass getFilterParameter();
 
 	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getPartOf <em>Part Of</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Part Of</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getPartOf()
+	 * @see #getFilterParameter()
+	 * @generated
+	 */
+	EReference getFilterParameter_PartOf();
+
+	/**
 	 * Returns the meta object for the reference '{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getFormal <em>Formal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -24951,6 +24971,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EClass FILTER_PARAMETER = eINSTANCE.getFilterParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Part Of</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FILTER_PARAMETER__PART_OF = eINSTANCE.getFilterParameter_PartOf();
 
 		/**
 		 * The meta object literal for the '<em><b>Formal</b></em>' reference feature.

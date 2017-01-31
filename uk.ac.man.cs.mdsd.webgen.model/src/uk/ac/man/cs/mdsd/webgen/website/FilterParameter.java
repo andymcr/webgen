@@ -12,6 +12,7 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getFormal <em>Formal</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getDefaultValue <em>Default Value</em>}</li>
@@ -23,6 +24,34 @@ package uk.ac.man.cs.mdsd.webgen.website;
  * @generated
  */
 public interface FilterParameter extends NamedElement {
+	/**
+	 * Returns the value of the '<em><b>Part Of</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.Filter#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Part Of</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Part Of</em>' container reference.
+	 * @see #setPartOf(Filter)
+	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getFilterParameter_PartOf()
+	 * @see uk.ac.man.cs.mdsd.webgen.website.Filter#getParameters
+	 * @model opposite="parameters" transient="false"
+	 * @generated
+	 */
+	Filter getPartOf();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.webgen.website.FilterParameter#getPartOf <em>Part Of</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Part Of</em>' container reference.
+	 * @see #getPartOf()
+	 * @generated
+	 */
+	void setPartOf(Filter value);
+
 	/**
 	 * Returns the value of the '<em><b>Formal</b></em>' reference.
 	 * <!-- begin-user-doc -->

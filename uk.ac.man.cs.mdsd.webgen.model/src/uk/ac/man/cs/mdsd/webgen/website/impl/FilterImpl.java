@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.webgen.website.Filter;
@@ -84,7 +85,7 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 	 */
 	public List<FilterParameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentEList<FilterParameter>(FilterParameter.class, this, WebsitePackage.FILTER__PARAMETERS);
+			parameters = new EObjectContainmentWithInverseEList<FilterParameter>(FilterParameter.class, this, WebsitePackage.FILTER__PARAMETERS, WebsitePackage.FILTER_PARAMETER__PART_OF);
 		}
 		return parameters;
 	}
@@ -125,6 +126,21 @@ public class FilterImpl extends NamedDisplayElementImpl implements Filter {
 		selection = newSelection;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FILTER__SELECTION, oldSelection, selection));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.FILTER__PARAMETERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameters()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

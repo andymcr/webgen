@@ -475,9 +475,12 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//Filter/selection"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//FilterParameter">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//FilterParameter/formal"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference website.ecore#//FilterParameter/dataType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute website.ecore#//FilterParameter/defaultValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//FilterParameter/partOf"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//FilterParameter/formal"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Model" propertySortChoices="true"
+          ecoreFeature="ecore:EReference website.ecore#//FilterParameter/dataType"/>
+      <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//FilterParameter/defaultValue"/>
       <genFeatures createChild="false" propertyCategory="Interface" ecoreFeature="ecore:EAttribute website.ecore#//FilterParameter/placeholder"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//Query">

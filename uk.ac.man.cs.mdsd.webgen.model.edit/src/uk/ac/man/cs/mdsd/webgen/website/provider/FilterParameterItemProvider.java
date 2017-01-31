@@ -4,6 +4,7 @@ package uk.ac.man.cs.mdsd.webgen.website.provider;
 
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -57,22 +58,29 @@ public class FilterParameterItemProvider extends NamedElementItemProvider {
 	 * This adds a property descriptor for the Formal feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addFormalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FilterParameter_formal_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FilterParameter_formal_feature", "_UI_FilterParameter_type"),
-				 WebsitePackage.Literals.FILTER_PARAMETER__FORMAL,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_FilterParameter_formal_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_FilterParameter_formal_feature", "_UI_FilterParameter_type"),
+			WebsitePackage.Literals.FILTER_PARAMETER__FORMAL,
+			true, false, true, null,
+			getString("_UI_InterfacePropertyCategory"),
+			null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					if (object instanceof FilterParameter) {
+						final FilterParameter parameter = (FilterParameter) object;
+						if (parameter.getPartOf().getSelection() != null) {
+							return parameter.getPartOf().getSelection().getParameters();
+						}
+					}
+					return Collections.emptySet();
+				}
+		});
 	}
 
 	/**
@@ -93,7 +101,7 @@ public class FilterParameterItemProvider extends NamedElementItemProvider {
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_ModelPropertyCategory"),
 				 null));
 	}
 
@@ -115,7 +123,7 @@ public class FilterParameterItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
+				 getString("_UI_InterfacePropertyCategory"),
 				 null));
 	}
 

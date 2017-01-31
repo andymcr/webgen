@@ -713,10 +713,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="MenuFeature" eSuperTypes="#//MenuEntry"/>
   <eClassifiers xsi:type="ecore:EClass" name="Filter" eSuperTypes="#//NamedDisplayElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//FilterParameter" containment="true"/>
+        eType="#//FilterParameter" containment="true" eOpposite="#//FilterParameter/partOf"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="#//Selection"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FilterParameter" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partOf" eType="#//Filter"
+        eOpposite="#//Filter/parameters"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="formal" eType="#//SelectionParameter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

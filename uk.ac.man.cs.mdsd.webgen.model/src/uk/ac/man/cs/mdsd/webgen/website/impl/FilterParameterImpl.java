@@ -4,12 +4,15 @@ package uk.ac.man.cs.mdsd.webgen.website.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import uk.ac.man.cs.mdsd.webgen.website.DataType;
+import uk.ac.man.cs.mdsd.webgen.website.Filter;
 import uk.ac.man.cs.mdsd.webgen.website.FilterParameter;
 import uk.ac.man.cs.mdsd.webgen.website.SelectionParameter;
 import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
@@ -22,6 +25,7 @@ import uk.ac.man.cs.mdsd.webgen.website.WebsitePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterParameterImpl#getPartOf <em>Part Of</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterParameterImpl#getFormal <em>Formal</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterParameterImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.webgen.website.impl.FilterParameterImpl#getDefaultValue <em>Default Value</em>}</li>
@@ -108,6 +112,47 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	@Override
 	protected EClass eStaticClass() {
 		return WebsitePackage.Literals.FILTER_PARAMETER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Filter getPartOf() {
+		if (eContainerFeatureID() != WebsitePackage.FILTER_PARAMETER__PART_OF) return null;
+		return (Filter)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPartOf(Filter newPartOf, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newPartOf, WebsitePackage.FILTER_PARAMETER__PART_OF, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPartOf(Filter newPartOf) {
+		if (newPartOf != eInternalContainer() || (eContainerFeatureID() != WebsitePackage.FILTER_PARAMETER__PART_OF && newPartOf != null)) {
+			if (EcoreUtil.isAncestor(this, newPartOf))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newPartOf != null)
+				msgs = ((InternalEObject)newPartOf).eInverseAdd(this, WebsitePackage.FILTER__PARAMETERS, Filter.class, msgs);
+			msgs = basicSetPartOf(newPartOf, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebsitePackage.FILTER_PARAMETER__PART_OF, newPartOf, newPartOf));
 	}
 
 	/**
@@ -234,8 +279,54 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.FILTER_PARAMETER__PART_OF:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetPartOf((Filter)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case WebsitePackage.FILTER_PARAMETER__PART_OF:
+				return basicSetPartOf(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case WebsitePackage.FILTER_PARAMETER__PART_OF:
+				return eInternalContainer().eInverseRemove(this, WebsitePackage.FILTER__PARAMETERS, Filter.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case WebsitePackage.FILTER_PARAMETER__PART_OF:
+				return getPartOf();
 			case WebsitePackage.FILTER_PARAMETER__FORMAL:
 				if (resolve) return getFormal();
 				return basicGetFormal();
@@ -258,6 +349,9 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case WebsitePackage.FILTER_PARAMETER__PART_OF:
+				setPartOf((Filter)newValue);
+				return;
 			case WebsitePackage.FILTER_PARAMETER__FORMAL:
 				setFormal((SelectionParameter)newValue);
 				return;
@@ -282,6 +376,9 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.FILTER_PARAMETER__PART_OF:
+				setPartOf((Filter)null);
+				return;
 			case WebsitePackage.FILTER_PARAMETER__FORMAL:
 				setFormal((SelectionParameter)null);
 				return;
@@ -306,6 +403,8 @@ public class FilterParameterImpl extends NamedElementImpl implements FilterParam
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case WebsitePackage.FILTER_PARAMETER__PART_OF:
+				return getPartOf() != null;
 			case WebsitePackage.FILTER_PARAMETER__FORMAL:
 				return formal != null;
 			case WebsitePackage.FILTER_PARAMETER__DATA_TYPE:

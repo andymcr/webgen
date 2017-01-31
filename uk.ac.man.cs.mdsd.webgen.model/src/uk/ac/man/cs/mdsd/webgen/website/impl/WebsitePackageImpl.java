@@ -3263,7 +3263,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFilterParameter_Formal() {
+	public EReference getFilterParameter_PartOf() {
 		return (EReference)filterParameterEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -3272,7 +3272,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFilterParameter_DataType() {
+	public EReference getFilterParameter_Formal() {
 		return (EReference)filterParameterEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -3281,8 +3281,17 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFilterParameter_DataType() {
+		return (EReference)filterParameterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getFilterParameter_DefaultValue() {
-		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -3291,7 +3300,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getFilterParameter_Placeholder() {
-		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)filterParameterEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -6339,6 +6348,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEReference(filterEClass, FILTER__SELECTION);
 
 		filterParameterEClass = createEClass(FILTER_PARAMETER);
+		createEReference(filterParameterEClass, FILTER_PARAMETER__PART_OF);
 		createEReference(filterParameterEClass, FILTER_PARAMETER__FORMAL);
 		createEReference(filterParameterEClass, FILTER_PARAMETER__DATA_TYPE);
 		createEAttribute(filterParameterEClass, FILTER_PARAMETER__DEFAULT_VALUE);
@@ -7147,10 +7157,11 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEClass(menuFeatureEClass, MenuFeature.class, "MenuFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(filterEClass, Filter.class, "Filter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFilter_Parameters(), this.getFilterParameter(), null, "parameters", null, 0, -1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFilter_Parameters(), this.getFilterParameter(), this.getFilterParameter_PartOf(), "parameters", null, 0, -1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFilter_Selection(), this.getSelection(), null, "selection", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(filterParameterEClass, FilterParameter.class, "FilterParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFilterParameter_PartOf(), this.getFilter(), this.getFilter_Parameters(), "partOf", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFilterParameter_Formal(), this.getSelectionParameter(), null, "formal", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFilterParameter_DataType(), this.getDataType(), null, "dataType", null, 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFilterParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", "", 0, 1, FilterParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

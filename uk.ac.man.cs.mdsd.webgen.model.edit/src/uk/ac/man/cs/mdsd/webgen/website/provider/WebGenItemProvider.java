@@ -211,8 +211,10 @@ public abstract class WebGenItemProvider extends ItemProviderAdapter {
 		if (association.getPartOf().getAssociation() != null) {
 			if (association.getPartOf() instanceof FeaturePathAssociation) {
 				return ((FeaturePathAssociation) association.getPartOf()).getTargetEntity().getAllAssociations();
-			} else {
+			} else if (association.getPartOf() instanceof ChildPathAssociation) {
 				return ((ChildPathAssociation) association.getPartOf()).getTargetEntity().getAllAssociations();
+			} else {
+				return ((UnitAssociation) association.getPartOf()).getTargetEntity().getAllAssociations();
 			}
 		}
 

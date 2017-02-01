@@ -67,6 +67,7 @@ lazy abstract rule implicitUnitFeature {
 	from partialWaf : WAF!EntityFeature
 	to waf : WAF!UnitFeature (
 		displayLabel <- partialWaf.displayLabel,
+		title <- partialWaf.name.createLabel(),
 		headerClass <-
 			let feature : Website!Feature
 				= thisModule.findWebsiteEntityOrView(partialWaf.partOf.name)
@@ -110,7 +111,8 @@ lazy abstract rule implicitUnitFeature {
 lazy rule implicitUnitAttribute {
 	from partialWaf : WAF!Attribute
 	to waf : WAF!UnitAttribute (
-		attribute <- partialWaf
+		attribute <- partialWaf,
+		placeholder <- partialWaf.name.createLabel()
 	)
 	do {
 		waf;

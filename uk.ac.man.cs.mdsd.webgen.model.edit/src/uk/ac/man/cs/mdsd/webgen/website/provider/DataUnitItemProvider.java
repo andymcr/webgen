@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import uk.ac.man.cs.mdsd.webgen.website.CollectionUnit;
 import uk.ac.man.cs.mdsd.webgen.website.DataUnit;
 import uk.ac.man.cs.mdsd.webgen.website.EntityOrView;
 import uk.ac.man.cs.mdsd.webgen.website.Label;
@@ -106,8 +107,11 @@ public class DataUnitItemProvider extends DynamicUnitItemProvider {
 					if (object instanceof DataUnit) {
 						final DataUnit unit = (DataUnit) object;
 						final Set<Label> labels = new HashSet<Label>();
-						for (EntityOrView entityOrView : unit.getEntities()) {
-							labels.addAll(getLabels(entityOrView));
+						for (EntityOrView entity : getContentType(unit)) {
+							labels.addAll(getLabels(entity));
+						}
+						if (unit instanceof CollectionUnit) {
+							labels.addAll(getLabels(((CollectionUnit) unit).getSelectionType()));
 						}
 						return labels;
 					}

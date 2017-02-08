@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import uk.ac.man.cs.mdsd.orm.Label;
 
+import uk.ac.man.cs.mdsd.service.Selection;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Unit Association</b></em>'.

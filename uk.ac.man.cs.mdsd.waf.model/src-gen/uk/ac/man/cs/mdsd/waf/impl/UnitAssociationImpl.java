@@ -23,10 +23,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uk.ac.man.cs.mdsd.orm.Association;
 import uk.ac.man.cs.mdsd.orm.Label;
 
+import uk.ac.man.cs.mdsd.service.Selection;
+
 import uk.ac.man.cs.mdsd.waf.AssociationReference;
 import uk.ac.man.cs.mdsd.waf.ChildPath;
 import uk.ac.man.cs.mdsd.waf.ContentUnit;
-import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.UnitAssociation;
 import uk.ac.man.cs.mdsd.waf.UnitContainer;
 import uk.ac.man.cs.mdsd.waf.WafPackage;

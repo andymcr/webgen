@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Waf -->
+      <package
+            uri="http://www.cs.man.ac.uk/mdsd/2017/Service"
+            class="uk.ac.man.cs.mdsd.service.ServicePackage"
+            genModel="model/Service.xcore"/>
+   </extension>
+
+</plugin>

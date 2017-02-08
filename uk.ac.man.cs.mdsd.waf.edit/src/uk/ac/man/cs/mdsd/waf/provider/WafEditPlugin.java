@@ -11,6 +11,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import uk.ac.man.cs.mdsd.expression.provider.ExpressionEditPlugin;
 import uk.ac.man.cs.mdsd.orm.provider.OrmEditPlugin;
+import uk.ac.man.cs.mdsd.service.provider.ServiceEditPlugin;
 
 /**
  * This is the central singleton for the Waf edit plugin.
@@ -45,6 +46,7 @@ public final class WafEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     OrmEditPlugin.INSTANCE,
+		     ServiceEditPlugin.INSTANCE,
 		     ExpressionEditPlugin.INSTANCE,
 		   });
 	}

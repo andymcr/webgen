@@ -67,6 +67,7 @@ public class WafModelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPersistencePropertyDescriptor(object);
+			addBusinessPropertyDescriptor(object);
 			addSiteNamePropertyDescriptor(object);
 			addSiteTitlePropertyDescriptor(object);
 			addDevelopmentVersionPropertyDescriptor(object);
@@ -116,6 +117,28 @@ public class WafModelItemProvider
 	}
 
   /**
+	 * This adds a property descriptor for the Business feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBusinessPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WafModel_business_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WafModel_business_feature", "_UI_WafModel_type"),
+				 WafPackage.Literals.WAF_MODEL__BUSINESS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+		/**
 	 * This adds a property descriptor for the Site Name feature.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -605,7 +628,6 @@ public class WafModelItemProvider
   {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__SERVICES);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__IMAGE_MANIPULATIONS);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__PAGES);
 			childrenFeatures.add(WafPackage.Literals.WAF_MODEL__MENUS);
@@ -688,7 +710,6 @@ public class WafModelItemProvider
 			case WafPackage.WAF_MODEL__STATIC_UNITS_EDITABLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WafPackage.WAF_MODEL__SERVICES:
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 			case WafPackage.WAF_MODEL__PAGES:
 			case WafPackage.WAF_MODEL__MENUS:
@@ -710,11 +731,6 @@ public class WafModelItemProvider
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
   {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.WAF_MODEL__SERVICES,
-				 WafFactory.eINSTANCE.createService()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -13,8 +13,9 @@ import uk.ac.man.cs.mdsd.orm.DataType;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedElementImpl;
 
+import uk.ac.man.cs.mdsd.service.SelectionParameter;
+
 import uk.ac.man.cs.mdsd.waf.FilterParameter;
-import uk.ac.man.cs.mdsd.waf.SelectionParameter;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**

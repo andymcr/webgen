@@ -27,7 +27,6 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import uk.ac.man.cs.mdsd.expression.ExpressionPackage;
-import uk.ac.man.cs.mdsd.expression.Order;
 import uk.ac.man.cs.mdsd.expression.PredicateComparisonOperator;
 import uk.ac.man.cs.mdsd.expression.PredicateEqualityOperator;
 import uk.ac.man.cs.mdsd.expression.PredicateIsEmpty;
@@ -38,6 +37,9 @@ import uk.ac.man.cs.mdsd.expression.util.ExpressionSwitch;
 import uk.ac.man.cs.mdsd.orm.Attribute;
 import uk.ac.man.cs.mdsd.orm.OrmPackage;
 import uk.ac.man.cs.mdsd.orm.util.OrmSwitch;
+import uk.ac.man.cs.mdsd.service.Order;
+import uk.ac.man.cs.mdsd.service.ServicePackage;
+import uk.ac.man.cs.mdsd.service.util.ServiceSwitch;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.util.WafAdapterFactory;
 
@@ -164,100 +166,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 	}
 
   /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Service} instances.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected ServiceItemProvider serviceItemProvider;
-
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Service}.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Adapter createServiceAdapter()
-  {
-		if (serviceItemProvider == null) {
-			serviceItemProvider = new ServiceItemProvider(this);
-		}
-
-		return serviceItemProvider;
-	}
-
-  /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.Selection} instances.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  protected SelectionItemProvider selectionItemProvider;
-
-  /**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.Selection}.
-	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-	 * @generated
-	 */
-  @Override
-  public Adapter createSelectionAdapter()
-  {
-		if (selectionItemProvider == null) {
-			selectionItemProvider = new SelectionItemProvider(this);
-		}
-
-		return selectionItemProvider;
-	}
-
-  /**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.SelectionParameter} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SelectionParameterItemProvider selectionParameterItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.SelectionParameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSelectionParameterAdapter() {
-		if (selectionParameterItemProvider == null) {
-			selectionParameterItemProvider = new SelectionParameterItemProvider(this);
-		}
-
-		return selectionParameterItemProvider;
-	}
-
-		/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.BusinessOperation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BusinessOperationItemProvider businessOperationItemProvider;
-
-		/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.waf.BusinessOperation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBusinessOperationAdapter() {
-		if (businessOperationItemProvider == null) {
-			businessOperationItemProvider = new BusinessOperationItemProvider(this);
-		}
-
-		return businessOperationItemProvider;
-	}
-
-		/**
 	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.waf.ImageManipulation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1431,10 +1339,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 		if (wafModelItemProvider != null) wafModelItemProvider.dispose();
 		if (localAuthenticationSystemItemProvider != null) localAuthenticationSystemItemProvider.dispose();
 		if (casAuthenticationItemProvider != null) casAuthenticationItemProvider.dispose();
-		if (serviceItemProvider != null) serviceItemProvider.dispose();
-		if (selectionItemProvider != null) selectionItemProvider.dispose();
-		if (selectionParameterItemProvider != null) selectionParameterItemProvider.dispose();
-		if (businessOperationItemProvider != null) businessOperationItemProvider.dispose();
 		if (imageManipulationItemProvider != null) imageManipulationItemProvider.dispose();
 		if (thumbnailFilterItemProvider != null) thumbnailFilterItemProvider.dispose();
 		if (staticMenuItemProvider != null) staticMenuItemProvider.dispose();
@@ -1557,6 +1461,112 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				return null;
 			}
  
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return WafEditPlugin.INSTANCE;
+		}
+	}
+
+		/**
+	 * A child creation extender for the {@link ServicePackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class ServiceChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends ServiceSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseOrder(Order object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(ServicePackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createModelReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ServicePackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createFeatureReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ServicePackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ServicePackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createRouteParameterReference()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(ServicePackage.Literals.ORDER__PATH,
+						 WafFactory.eINSTANCE.createCurrentUserReference()));
+
+				return null;
+			}
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
@@ -1929,40 +1939,6 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(ExpressionPackage.Literals.PREDICATE_IS_NULL__FEATURE,
-						 WafFactory.eINSTANCE.createCurrentUserReference()));
-
-				return null;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseOrder(Order object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createModelReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createFeatureReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.ORDER__PATH,
-						 WafFactory.eINSTANCE.createRouteParameterReference()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ExpressionPackage.Literals.ORDER__PATH,
 						 WafFactory.eINSTANCE.createCurrentUserReference()));
 
 				return null;

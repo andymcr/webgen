@@ -60,10 +60,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 			case WafPackage.WAF_MODEL: return createWafModel();
 			case WafPackage.LOCAL_AUTHENTICATION_SYSTEM: return createLocalAuthenticationSystem();
 			case WafPackage.CAS_AUTHENTICATION: return createCasAuthentication();
-			case WafPackage.SERVICE: return createService();
-			case WafPackage.SELECTION: return createSelection();
-			case WafPackage.SELECTION_PARAMETER: return createSelectionParameter();
-			case WafPackage.BUSINESS_OPERATION: return createBusinessOperation();
 			case WafPackage.IMAGE_MANIPULATION: return createImageManipulation();
 			case WafPackage.THUMBNAIL_FILTER: return createThumbnailFilter();
 			case WafPackage.STATIC_MENU: return createStaticMenu();
@@ -130,8 +126,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return createAjaxTechnologiesFromString(eDataType, initialValue);
 			case WafPackage.AUTHENTICATION_KEY_TYPES:
 				return createAuthenticationKeyTypesFromString(eDataType, initialValue);
-			case WafPackage.OPERATION_RESULT_TYPES:
-				return createOperationResultTypesFromString(eDataType, initialValue);
 			case WafPackage.PAGE_TOP_MENU_OPTIONS:
 				return createPageTopMenuOptionsFromString(eDataType, initialValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -157,8 +151,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 				return convertAjaxTechnologiesToString(eDataType, instanceValue);
 			case WafPackage.AUTHENTICATION_KEY_TYPES:
 				return convertAuthenticationKeyTypesToString(eDataType, instanceValue);
-			case WafPackage.OPERATION_RESULT_TYPES:
-				return convertOperationResultTypesToString(eDataType, instanceValue);
 			case WafPackage.PAGE_TOP_MENU_OPTIONS:
 				return convertPageTopMenuOptionsToString(eDataType, instanceValue);
 			case WafPackage.COLLECTION_DISPLAY_OPTIONS:
@@ -196,46 +188,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	public CasAuthentication createCasAuthentication() {
 		CasAuthenticationImpl casAuthentication = new CasAuthenticationImpl();
 		return casAuthentication;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Service createService() {
-		ServiceImpl service = new ServiceImpl();
-		return service;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Selection createSelection() {
-		SelectionImpl selection = new SelectionImpl();
-		return selection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SelectionParameter createSelectionParameter() {
-		SelectionParameterImpl selectionParameter = new SelectionParameterImpl();
-		return selectionParameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BusinessOperation createBusinessOperation() {
-		BusinessOperationImpl businessOperation = new BusinessOperationImpl();
-		return businessOperation;
 	}
 
 	/**
@@ -765,26 +717,6 @@ public class WafFactoryImpl extends EFactoryImpl implements WafFactory {
 	 * @generated
 	 */
 	public String convertAuthenticationKeyTypesToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OperationResultTypes createOperationResultTypesFromString(EDataType eDataType, String initialValue) {
-		OperationResultTypes result = OperationResultTypes.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertOperationResultTypesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

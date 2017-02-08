@@ -10,8 +10,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import uk.ac.man.cs.mdsd.service.SelectionParameter;
+
 import uk.ac.man.cs.mdsd.waf.ParameterReference;
-import uk.ac.man.cs.mdsd.waf.SelectionParameter;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Service -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="uk.ac.man.cs.mdsd.service.presentation.ServiceModelWizardID"
+            name="%_UI_ServiceModelWizard_label"
+            class="uk.ac.man.cs.mdsd.service.presentation.ServiceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ServiceModelFile.gif">
+         <description>%_UI_ServiceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Service -->
+      <editor
+            id="uk.ac.man.cs.mdsd.service.presentation.ServiceEditorID"
+            name="%_UI_ServiceEditor_label"
+            icon="icons/full/obj16/ServiceModelFile.gif"
+            extensions="service"
+            class="uk.ac.man.cs.mdsd.service.presentation.ServiceEditor"
+            contributorClass="uk.ac.man.cs.mdsd.service.presentation.ServiceActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -25,6 +25,8 @@ import uk.ac.man.cs.mdsd.orm.OrmModel;
 
 import uk.ac.man.cs.mdsd.rest.API;
 
+import uk.ac.man.cs.mdsd.service.ServiceModel;
+
 import uk.ac.man.cs.mdsd.waf.AjaxTechnologies;
 import uk.ac.man.cs.mdsd.waf.Authentication;
 import uk.ac.man.cs.mdsd.waf.FrameworkTechnologies;
@@ -32,7 +34,6 @@ import uk.ac.man.cs.mdsd.waf.ImageManipulation;
 import uk.ac.man.cs.mdsd.waf.InputTechnologies;
 import uk.ac.man.cs.mdsd.waf.Menu;
 import uk.ac.man.cs.mdsd.waf.Page;
-import uk.ac.man.cs.mdsd.waf.Service;
 import uk.ac.man.cs.mdsd.waf.WafModel;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
@@ -45,7 +46,7 @@ import uk.ac.man.cs.mdsd.waf.WafPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getPersistence <em>Persistence</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getBusiness <em>Business</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getImageManipulations <em>Image Manipulations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.impl.WafModelImpl#getMenus <em>Menus</em>}</li>
@@ -87,14 +88,14 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	protected OrmModel persistence;
 
 	/**
-	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
+	 * The cached value of the '{@link #getBusiness() <em>Business</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getServices()
+	 * @see #getBusiness()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Service> services;
+	protected ServiceModel business;
 
 	/**
 	 * The cached value of the '{@link #getImageManipulations() <em>Image Manipulations</em>}' containment reference list.
@@ -588,11 +589,37 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Service> getServices() {
-		if (services == null) {
-			services = new EObjectContainmentWithInverseEList<Service>(Service.class, this, WafPackage.WAF_MODEL__SERVICES, WafPackage.SERVICE__PART_OF);
+	public ServiceModel getBusiness() {
+		if (business != null && business.eIsProxy()) {
+			InternalEObject oldBusiness = (InternalEObject)business;
+			business = (ServiceModel)eResolveProxy(oldBusiness);
+			if (business != oldBusiness) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WafPackage.WAF_MODEL__BUSINESS, oldBusiness, business));
+			}
 		}
-		return services;
+		return business;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceModel basicGetBusiness() {
+		return business;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBusiness(ServiceModel newBusiness) {
+		ServiceModel oldBusiness = business;
+		business = newBusiness;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WafPackage.WAF_MODEL__BUSINESS, oldBusiness, business));
 	}
 
 	/**
@@ -1149,8 +1176,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.WAF_MODEL__SERVICES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getServices()).basicAdd(otherEnd, msgs);
 			case WafPackage.WAF_MODEL__PAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPages()).basicAdd(otherEnd, msgs);
 			case WafPackage.WAF_MODEL__AUTHENTICATION:
@@ -1169,8 +1194,6 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WafPackage.WAF_MODEL__SERVICES:
-				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 				return ((InternalEList<?>)getImageManipulations()).basicRemove(otherEnd, msgs);
 			case WafPackage.WAF_MODEL__PAGES:
@@ -1194,8 +1217,9 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__PERSISTENCE:
 				if (resolve) return getPersistence();
 				return basicGetPersistence();
-			case WafPackage.WAF_MODEL__SERVICES:
-				return getServices();
+			case WafPackage.WAF_MODEL__BUSINESS:
+				if (resolve) return getBusiness();
+				return basicGetBusiness();
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 				return getImageManipulations();
 			case WafPackage.WAF_MODEL__PAGES:
@@ -1264,9 +1288,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__PERSISTENCE:
 				setPersistence((OrmModel)newValue);
 				return;
-			case WafPackage.WAF_MODEL__SERVICES:
-				getServices().clear();
-				getServices().addAll((Collection<? extends Service>)newValue);
+			case WafPackage.WAF_MODEL__BUSINESS:
+				setBusiness((ServiceModel)newValue);
 				return;
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 				getImageManipulations().clear();
@@ -1362,8 +1385,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 			case WafPackage.WAF_MODEL__PERSISTENCE:
 				setPersistence((OrmModel)null);
 				return;
-			case WafPackage.WAF_MODEL__SERVICES:
-				getServices().clear();
+			case WafPackage.WAF_MODEL__BUSINESS:
+				setBusiness((ServiceModel)null);
 				return;
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 				getImageManipulations().clear();
@@ -1454,8 +1477,8 @@ public class WafModelImpl extends MinimalEObjectImpl.Container implements WafMod
 		switch (featureID) {
 			case WafPackage.WAF_MODEL__PERSISTENCE:
 				return persistence != null;
-			case WafPackage.WAF_MODEL__SERVICES:
-				return services != null && !services.isEmpty();
+			case WafPackage.WAF_MODEL__BUSINESS:
+				return business != null;
 			case WafPackage.WAF_MODEL__IMAGE_MANIPULATIONS:
 				return imageManipulations != null && !imageManipulations.isEmpty();
 			case WafPackage.WAF_MODEL__PAGES:

@@ -17,5 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  uk.ac.man.cs.mdsd.expression.model;visibility:=reexport,
  uk.ac.man.cs.mdsd.expression.edit;visibility:=reexport,
  uk.ac.man.cs.mdsd.orm.model;visibility:=reexport,
- uk.ac.man.cs.mdsd.orm.edit;visibility:=reexport
+ uk.ac.man.cs.mdsd.orm.edit;visibility:=reexport,
+ uk.ac.man.cs.mdsd.service.model;visibility:=reexport,
+ uk.ac.man.cs.mdsd.service.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

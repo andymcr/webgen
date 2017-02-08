@@ -19,9 +19,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.man.cs.mdsd.orm.impl.NamedDisplayElementImpl;
 
+import uk.ac.man.cs.mdsd.service.Selection;
+
 import uk.ac.man.cs.mdsd.waf.Filter;
 import uk.ac.man.cs.mdsd.waf.FilterParameter;
-import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**

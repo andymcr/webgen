@@ -2,6 +2,7 @@
  */
 package uk.ac.man.cs.mdsd.waf;
 
+import uk.ac.man.cs.mdsd.service.BusinessOperation;
 
 /**
  * <!-- begin-user-doc -->

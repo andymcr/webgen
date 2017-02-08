@@ -4,6 +4,8 @@ package uk.ac.man.cs.mdsd.waf;
 
 import uk.ac.man.cs.mdsd.expression.Path;
 
+import uk.ac.man.cs.mdsd.service.SelectionParameter;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Parameter Reference</b></em>'.

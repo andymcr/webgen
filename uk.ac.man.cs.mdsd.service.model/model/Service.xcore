@@ -1,0 +1,74 @@
+@Ecore(
+	nsURI="http://www.cs.man.ac.uk/mdsd/2017/Service",
+	nsPrefix="service"
+)
+@GenModel(
+	editDirectory="/uk.ac.man.cs.mdsd.service.edit/src",
+	editPluginID="uk.ac.man.cs.mdsd.service.edit",
+	childCreationExtenders="true",
+	complianceLevel="6.0",
+	editorDirectory="/uk.ac.man.cs.mdsd.service.editor/src")
+package uk.ac.man.cs.mdsd.service
+
+import uk.ac.man.cs.mdsd.expression.Path
+import uk.ac.man.cs.mdsd.expression.Predicate
+import uk.ac.man.cs.mdsd.orm.Association
+import uk.ac.man.cs.mdsd.orm.Entity
+import uk.ac.man.cs.mdsd.orm.Feature
+import uk.ac.man.cs.mdsd.orm.NamedElement
+import uk.ac.man.cs.mdsd.orm.OrmModel
+
+
+class ServiceModel {
+	refers OrmModel[1] persistence
+	contains Service[] services opposite partOf
+}
+
+class Service extends NamedElement {
+	refers ServiceModel[1] partOf opposite services
+	refers Entity[1] serves
+	contains Selection[] selections opposite partOf
+	contains BusinessOperation[] operations opposite partOf
+}
+
+
+class Selection extends NamedElement {
+	container Service partOf opposite selections
+	boolean distinct
+	contains SelectionParameter[] parameters
+	refers Feature[] fields
+	refers Association[] joins
+	contains Predicate filter
+	contains Order[] ordering
+	int limit = "0"
+	boolean selected
+}
+
+class SelectionParameter extends NamedElement {
+	boolean optional
+	String defaultValue
+}
+
+abstract class Order {
+	@GenModel(propertyCategory="")
+	contains Path[1] path
+}
+
+class Asc extends Order {
+}
+
+class Desc extends Order {
+}
+
+
+class BusinessOperation extends NamedElement {
+	container Service[1] partOf opposite operations
+	refers Service[] uses
+	OperationResultTypes[1] resultType
+	String resultMimeType
+}
+
+enum OperationResultTypes {
+	None
+	File = 1
+}

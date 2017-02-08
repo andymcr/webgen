@@ -12,8 +12,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.orm.Label;
 
+import uk.ac.man.cs.mdsd.service.Selection;
+
 import uk.ac.man.cs.mdsd.waf.DynamicMenu;
-import uk.ac.man.cs.mdsd.waf.Selection;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
 
 /**

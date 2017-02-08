@@ -11,6 +11,8 @@ import uk.ac.man.cs.mdsd.orm.OrmModel;
 
 import uk.ac.man.cs.mdsd.rest.API;
 
+import uk.ac.man.cs.mdsd.service.ServiceModel;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Model</b></em>'.
@@ -21,7 +23,7 @@ import uk.ac.man.cs.mdsd.rest.API;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getPersistence <em>Persistence</em>}</li>
- *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getServices <em>Services</em>}</li>
+ *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getBusiness <em>Business</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getImageManipulations <em>Image Manipulations</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getPages <em>Pages</em>}</li>
  *   <li>{@link uk.ac.man.cs.mdsd.waf.WafModel#getMenus <em>Menus</em>}</li>
@@ -81,22 +83,30 @@ public interface WafModel extends EObject {
 	void setPersistence(OrmModel value);
 
 	/**
-	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
-	 * The list contents are of type {@link uk.ac.man.cs.mdsd.waf.Service}.
-	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.waf.Service#getPartOf <em>Part Of</em>}'.
+	 * Returns the value of the '<em><b>Business</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Services</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Business</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Services</em>' containment reference list.
-	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_Services()
-	 * @see uk.ac.man.cs.mdsd.waf.Service#getPartOf
-	 * @model opposite="partOf" containment="true"
+	 * @return the value of the '<em>Business</em>' reference.
+	 * @see #setBusiness(ServiceModel)
+	 * @see uk.ac.man.cs.mdsd.waf.WafPackage#getWafModel_Business()
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Service> getServices();
+	ServiceModel getBusiness();
+
+	/**
+	 * Sets the value of the '{@link uk.ac.man.cs.mdsd.waf.WafModel#getBusiness <em>Business</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Business</em>' reference.
+	 * @see #getBusiness()
+	 * @generated
+	 */
+	void setBusiness(ServiceModel value);
 
 	/**
 	 * Returns the value of the '<em><b>Image Manipulations</b></em>' containment reference list.

@@ -11,7 +11,6 @@
 package uk.ac.man.cs.mdsd.waf
 
 import uk.ac.man.cs.mdsd.expression.Expression
-import uk.ac.man.cs.mdsd.expression.Order
 import uk.ac.man.cs.mdsd.expression.Path
 import uk.ac.man.cs.mdsd.expression.Predicate
 import uk.ac.man.cs.mdsd.orm.Association
@@ -26,6 +25,11 @@ import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
 import uk.ac.man.cs.mdsd.orm.SingletonLocation
 import uk.ac.man.cs.mdsd.rest.API
+import uk.ac.man.cs.mdsd.service.BusinessOperation
+import uk.ac.man.cs.mdsd.service.Selection
+import uk.ac.man.cs.mdsd.service.SelectionParameter
+import uk.ac.man.cs.mdsd.service.Service
+import uk.ac.man.cs.mdsd.service.ServiceModel
 
 
 enum FrameworkTechnologies {
@@ -50,7 +54,7 @@ enum AjaxTechnologies {
 
 class WafModel {
 	refers OrmModel[1] persistence
-	contains Service[] services opposite partOf
+	refers ServiceModel[1] business
 	contains ImageManipulation[] imageManipulations
 	contains Page[] pages opposite partOf
 	contains Menu[] menus
@@ -113,43 +117,6 @@ class CasAuthentication extends Authentication {
 
 abstract class DisplayElement {
 	String[1] displayLabel
-}
-
-
-class Service extends NamedElement {
-	refers WafModel[1] partOf opposite services
-	refers EntityOrView[1] serves
-	contains Selection[] selections opposite partOf
-	contains BusinessOperation[] operations opposite partOf
-}
-
-class Selection extends NamedElement {
-	container Service partOf opposite selections
-	boolean distinct
-	contains SelectionParameter[] parameters
-	refers Feature[] fields
-	refers Association[] joins
-	contains Predicate filter
-	contains Order[] ordering
-	int limit = "0"
-	boolean selected
-}
-
-class SelectionParameter extends NamedElement {
-	boolean optional
-	String defaultValue
-}
-
-class BusinessOperation extends NamedElement {
-	container Service[1] partOf opposite operations
-	refers Service[] uses
-	OperationResultTypes[1] resultType
-	String resultMimeType
-}
-
-enum OperationResultTypes {
-	None
-	File = 1
 }
 
 

@@ -4,6 +4,8 @@ package uk.ac.man.cs.mdsd.waf;
 
 import uk.ac.man.cs.mdsd.orm.Label;
 
+import uk.ac.man.cs.mdsd.service.Selection;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Data Unit</b></em>'.

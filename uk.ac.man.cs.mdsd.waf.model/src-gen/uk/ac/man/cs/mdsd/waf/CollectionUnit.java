@@ -7,6 +7,8 @@ import org.eclipse.emf.common.util.EList;
 import uk.ac.man.cs.mdsd.orm.EntityOrView;
 import uk.ac.man.cs.mdsd.orm.Feature;
 
+import uk.ac.man.cs.mdsd.service.Selection;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Collection Unit</b></em>'.

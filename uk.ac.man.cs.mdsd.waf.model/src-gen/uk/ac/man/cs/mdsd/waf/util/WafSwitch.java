@@ -104,34 +104,6 @@ public class WafSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WafPackage.SERVICE: {
-				Service service = (Service)theEObject;
-				T result = caseService(service);
-				if (result == null) result = caseNamedElement(service);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.SELECTION: {
-				Selection selection = (Selection)theEObject;
-				T result = caseSelection(selection);
-				if (result == null) result = caseNamedElement(selection);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.SELECTION_PARAMETER: {
-				SelectionParameter selectionParameter = (SelectionParameter)theEObject;
-				T result = caseSelectionParameter(selectionParameter);
-				if (result == null) result = caseNamedElement(selectionParameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case WafPackage.BUSINESS_OPERATION: {
-				BusinessOperation businessOperation = (BusinessOperation)theEObject;
-				T result = caseBusinessOperation(businessOperation);
-				if (result == null) result = caseNamedElement(businessOperation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WafPackage.IMAGE_MANIPULATION: {
 				ImageManipulation imageManipulation = (ImageManipulation)theEObject;
 				T result = caseImageManipulation(imageManipulation);
@@ -841,66 +813,6 @@ public class WafSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDisplayElement(DisplayElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Service</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseService(Service object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Selection</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Selection</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSelection(Selection object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Selection Parameter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSelectionParameter(SelectionParameter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Business Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Business Operation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBusinessOperation(BusinessOperation object) {
 		return null;
 	}
 

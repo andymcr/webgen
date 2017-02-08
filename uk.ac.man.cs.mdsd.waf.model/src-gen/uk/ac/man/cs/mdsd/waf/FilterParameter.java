@@ -5,6 +5,8 @@ package uk.ac.man.cs.mdsd.waf;
 import uk.ac.man.cs.mdsd.orm.DataType;
 import uk.ac.man.cs.mdsd.orm.NamedElement;
 
+import uk.ac.man.cs.mdsd.service.SelectionParameter;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Filter Parameter</b></em>'.

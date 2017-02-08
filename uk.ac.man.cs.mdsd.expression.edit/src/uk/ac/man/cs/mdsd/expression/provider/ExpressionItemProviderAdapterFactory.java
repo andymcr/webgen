@@ -411,52 +411,6 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.expression.Asc} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AscItemProvider ascItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.expression.Asc}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAscAdapter() {
-		if (ascItemProvider == null) {
-			ascItemProvider = new AscItemProvider(this);
-		}
-
-		return ascItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link uk.ac.man.cs.mdsd.expression.Desc} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DescItemProvider descItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link uk.ac.man.cs.mdsd.expression.Desc}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDescAdapter() {
-		if (descItemProvider == null) {
-			descItemProvider = new DescItemProvider(this);
-		}
-
-		return descItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -596,8 +550,6 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		if (predicateLikeOperatorItemProvider != null) predicateLikeOperatorItemProvider.dispose();
 		if (predicateIsEmptyItemProvider != null) predicateIsEmptyItemProvider.dispose();
 		if (predicateIsNullItemProvider != null) predicateIsNullItemProvider.dispose();
-		if (ascItemProvider != null) ascItemProvider.dispose();
-		if (descItemProvider != null) descItemProvider.dispose();
 	}
 
 }

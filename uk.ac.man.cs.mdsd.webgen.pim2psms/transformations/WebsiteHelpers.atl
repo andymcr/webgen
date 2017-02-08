@@ -32,6 +32,9 @@ helper context String def: cleanString() : String
 helper def: findWebGenModel() : Website!WebGenModel
 	= Website!WebGenModel.allInstancesFrom('website')->first();
 
+helper def: findOrmModel() : ORM!OrmModel
+	= ORM!OrmModel.allInstancesFrom('orm')->first();
+
 helper def: findWebsiteProperties() : Website!WebsiteProperties
 	= thisModule.findWebGenModel().websiteProperties;
 
@@ -221,7 +224,7 @@ helper context Website!Association def: findOrmAssociation(entityOrView : Websit
 			else
 				self.targetFeatureName()
 			endif
-		in self.findOrmEntityOrView(entityOrView).getOrmFeature(name);
+		in thisModule.findOrmEntityOrView(entityOrView.name).getOrmFeature(name);
 
 helper context ORM!EntityOrView def: getOrmLabel(labelName : String) : ORM!ModelLabel
 	= self.labels->any(l | l.name = labelName);

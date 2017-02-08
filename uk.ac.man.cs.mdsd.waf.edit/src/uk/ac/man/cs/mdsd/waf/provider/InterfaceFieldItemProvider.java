@@ -15,6 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import uk.ac.man.cs.mdsd.expression.ExpressionFactory;
 import uk.ac.man.cs.mdsd.orm.provider.NamedElementItemProvider;
+import uk.ac.man.cs.mdsd.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.waf.InterfaceField;
 import uk.ac.man.cs.mdsd.waf.WafFactory;
 import uk.ac.man.cs.mdsd.waf.WafPackage;
@@ -473,22 +474,22 @@ public class InterfaceFieldItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
-				 WafFactory.eINSTANCE.createFeatureReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
-				 WafFactory.eINSTANCE.createParameterReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
 				 WafFactory.eINSTANCE.createRouteParameterReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
-				 WafFactory.eINSTANCE.createCurrentUserReference()));
+				 ServiceFactory.eINSTANCE.createFeatureReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
+				 ServiceFactory.eINSTANCE.createParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WafPackage.Literals.INTERFACE_FIELD__DEFAULT_VALUE,
+				 ServiceFactory.eINSTANCE.createCurrentUserReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

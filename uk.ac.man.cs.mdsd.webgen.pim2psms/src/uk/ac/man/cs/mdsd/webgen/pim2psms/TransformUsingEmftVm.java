@@ -23,6 +23,7 @@ public class TransformUsingEmftVm {
 	private ResourceSet resourceSet = new ResourceSetImpl();
 	private Metamodel websiteMetamodel;
 	private Metamodel ormMetamodel;
+	private Metamodel serviceMetamodel;
 	private Metamodel wafMetamodel;
 	private IPath websiteModelPath;
 	private Model websiteModel;
@@ -46,6 +47,16 @@ public class TransformUsingEmftVm {
 		}
 
 		return ormMetamodel;
+	}
+
+	protected Metamodel getServiceMetamodel() {
+		if (serviceMetamodel == null) {
+			serviceMetamodel = EmftvmFactory.eINSTANCE.createMetamodel();
+			serviceMetamodel.setResource(resourceSet.getResource(
+				URI.createURI("http://www.cs.man.ac.uk/mdsd/2017/Service"), true));
+		}
+
+		return serviceMetamodel;
 	}
 
 	protected Metamodel getWafMetamodel() {
@@ -97,6 +108,7 @@ public class TransformUsingEmftVm {
 		final ExecEnv env = EmftvmFactory.eINSTANCE.createExecEnv();
 		env.registerMetaModel("Website", getWebsiteMetamodel());
 		env.registerMetaModel("ORM", getOrmMetamodel());
+		env.registerMetaModel("Service", getServiceMetamodel());
 		env.registerMetaModel("WAF", getWafMetamodel());
 
 		return env;
@@ -162,19 +174,25 @@ public class TransformUsingEmftVm {
 			ormModelName, ormModel, ormInputModels, null);
 		ormModel.getResource().save(Collections.emptyMap());
 
+		final Map<String, Model> serviceInputModels = new HashMap<String, Model>();
+		serviceInputModels.put("website", getWebsiteModel());
+		serviceInputModels.put("orm", ormModel);
+		final String serviceModelName = "service";
+		final Model serviceModel = executePassCreatingOutputModel("ServiceExplicit",
+			serviceModelName, "bl", serviceInputModels, null);
+		executeRefiningPass("ServiceImplicit", serviceModelName, serviceModel,
+			serviceInputModels, null);
+		serviceModel.getResource().save(Collections.emptyMap());
 
 		final Map<String, Model> wafInputModels = new HashMap<String, Model>();
 		wafInputModels.put("website", getWebsiteModel());
 		wafInputModels.put("orm", ormModel);
+		wafInputModels.put("service", serviceModel);
 		final String wafModelName = "waf";
 
 		final Model wafTraceModelP1 = createModel("trace_waf_p1");
 		final Model wafModel = executePassCreatingOutputModel("PassExplicitInterface",
 			wafModelName, "waf", wafInputModels, wafTraceModelP1);
-
-		final Model wafTraceModelP2 = createModel("trace_waf_p2");
-		executeRefiningPass("PassImplicitService", wafModelName, wafModel,
-			wafInputModels, wafTraceModelP2);
 
 		final Model wafTraceModelP5 = createModel("trace_waf_p5");
 		executeRefiningPass("PassImplicitStaticInterface", wafModelName,

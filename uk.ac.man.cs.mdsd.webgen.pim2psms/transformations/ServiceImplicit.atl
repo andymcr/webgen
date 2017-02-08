@@ -1,0 +1,35 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.xecore
+-- @path Service=/uk.ac.man.cs.mdsd.service.model/model/Waf.xecore
+
+module ServiceImplicit;
+create dummyService : Service refining service : Service, orm : ORM;
+
+
+rule ServiceModel {
+	from partialService : Service!ServiceModel
+	to service : Service!ServiceModel (
+		services <- partialService.services
+			->union(let servered : Sequence(ORM!EntityOrView)
+				= partialService.services->collect(s | s.serves)
+				in thisModule.findOrmModel().entitiesAndViews
+					->select(e | servered->excludes(e))
+					->collect(e | thisModule.implicitService(e))
+			)
+	)
+}
+
+
+lazy rule implicitService {
+	from orm : ORM!Entity
+	to service : Service!Service (
+-- TODO pularise
+		name <- orm.name, 
+		serves <- orm
+	)
+	do {
+		service;
+	}
+}

@@ -1,8 +1,8 @@
 -- @atlcompiler emftvm 
 --
 -- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
--- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.ecore
--- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.xecore
+-- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.xecore
 
 module PassExplicitInterface;
 create waf : WAF from website : Website, orm : ORM;
@@ -344,62 +344,6 @@ abstract rule NamedDisplayElement {
 	)
 }
 
-
--- @extends NamedElement
-rule Service {
-	from website : Website!Service
-	to waf : WAF!Service (
-		serves <-
-			if website.serves.oclIsUndefined() then
-				OclUndefined
-			else
-				thisModule.findOrmEntityOrView(website.serves.name)
-			endif,
-		selections <- website.selections,
-		operations <- website.operations
-	)
-} 
-
--- @extends NamedElement
-rule Selection {
-	from website : Website!Selection
-	to waf : WAF!Selection (
-		"distinct" <- website."distinct",
-		fields <- website.fields
-			->collect(f | f.findOrmFeature()),
-		parameters <- website.parameters,
-		joins <-
-			if website.usedBy.oclIsUndefined() then
-				Sequence{}
-			else
-				website.joins
-					->collect(a | a.findOrmAssociation(website.usedBy.serves))
-			endif,
-		filter <- website.filter,
-		ordering <- website.ordering,
-		limit <- website.limit,
-		selected <- website.selected
-	)
-}
-
--- @extends NamedElement
-rule SelectionParameter {
-	from website : Website!SelectionParameter
-	to waf : WAF!SelectionParameter (
-		optional <- website.optional,
-		defaultValue <- website.defaultValue
-	)
-}
-
--- @extends NamedElement
-rule BusinessOperation {
-	from website : Website!BusinessOperation
-	to waf : WAF!BusinessOperation (
-		uses <- website.uses,
-		resultType <- website.resultType,
-		resultMimeType <- website.resultMimeType
-	)
-}
 
 -- @extends NamedElement
 rule ImageManipulation {
@@ -1303,15 +1247,6 @@ helper context Website!Expression def: isInterfaceContainer() : Boolean
 			false
 		endif endif endif endif endif endif;
 
-helper context Website!Order def: isInterfaceContainer() : Boolean
-	= if self.refImmediateComposite().oclIsUndefined() then
-			false
-		else if self.refImmediateComposite().oclIsKindOf(Website!Selection) then
-			true
-		else
-			false
-		endif endif;
-
 
 abstract rule Literal {
 	from website : Website!Literal (website.isInterfaceContainer())
@@ -1380,7 +1315,7 @@ rule ModelReference {
 }
 
 rule FeatureReference {
-	from website : Website!FeatureReference
+	from website : Website!FeatureReference (website.isInterfaceContainer())
 	to waf : WAF!FeatureReference (
 		feature <-
 			if website.feature.oclIsUndefined() then
@@ -1388,19 +1323,6 @@ rule FeatureReference {
 			else
 				website.feature.findOrmFeature(website)
 			endif
-	)
-}
-
-rule ParameterReference {
-	from website : Website!ParameterReference
-	to waf : WAF!ParameterReference (
-		parameter <- website.parameter
-	)
-}
-
-rule CurrentUserReference {
-	from website : Website!CurrentUserReference
-	to waf : WAF!CurrentUserReference (
 	)
 }
 
@@ -1470,26 +1392,5 @@ rule PredicateIsEmptyOperator {
 	from website : Website!PredicateIsEmpty (website.isInterfaceContainer())
 	to waf : WAF!PredicateIsEmpty (
 		feature <- website.feature
-	)
-}
-
-abstract rule Order {
-	from website : Website!Order
-	to waf : WAF!Order (
-		path <- website.path
-	)
-}
-
--- @extends Order
-rule Asc {
-	from website : Website!Asc (website.isInterfaceContainer())
-	to waf : WAF!Asc (
-	)
-}
-
--- @extends Order
-rule Desc {
-	from website : Website!Desc (website.isInterfaceContainer())
-	to waf : WAF!Desc (
 	)
 }

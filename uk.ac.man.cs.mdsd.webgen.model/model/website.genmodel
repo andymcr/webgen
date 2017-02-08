@@ -404,6 +404,7 @@
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//Selection/selected"/>
     </genClasses>
     <genClasses ecoreClass="website.ecore#//SelectionParameter">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference website.ecore#//SelectionParameter/formalFor"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//SelectionParameter/optional"/>
       <genFeatures createChild="false" propertyCategory="Model" ecoreFeature="ecore:EAttribute website.ecore#//SelectionParameter/defaultValue"/>
     </genClasses>

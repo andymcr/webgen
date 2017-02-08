@@ -3876,7 +3876,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getSelectionParameter_Optional() {
-		return (EAttribute)selectionParameterEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)selectionParameterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -3885,7 +3885,16 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 	 * @generated
 	 */
 	public EAttribute getSelectionParameter_DefaultValue() {
-		return (EAttribute)selectionParameterEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)selectionParameterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSelectionParameter_FormalFor() {
+		return (EReference)selectionParameterEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -6285,6 +6294,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		createEAttribute(selectionEClass, SELECTION__SELECTED);
 
 		selectionParameterEClass = createEClass(SELECTION_PARAMETER);
+		createEReference(selectionParameterEClass, SELECTION_PARAMETER__FORMAL_FOR);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__OPTIONAL);
 		createEAttribute(selectionParameterEClass, SELECTION_PARAMETER__DEFAULT_VALUE);
 
@@ -7090,7 +7100,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEReference(getSelection_UsedBy(), this.getService(), this.getService_Selections(), "usedBy", null, 1, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelection_Distinct(), ecorePackage.getEBoolean(), "distinct", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Fields(), this.getFeature(), null, "fields", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSelection_Parameters(), this.getSelectionParameter(), null, "parameters", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSelection_Parameters(), this.getSelectionParameter(), this.getSelectionParameter_FormalFor(), "parameters", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Joins(), this.getAssociation(), null, "joins", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSelection_Filter(), theCriteriaPackage.getPredicate(), null, "filter", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSelection_Ordering(), theCriteriaPackage.getOrder(), null, "ordering", null, 0, -1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -7098,6 +7108,7 @@ public class WebsitePackageImpl extends EPackageImpl implements WebsitePackage {
 		initEAttribute(getSelection_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, Selection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(selectionParameterEClass, SelectionParameter.class, "SelectionParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSelectionParameter_FormalFor(), this.getSelection(), this.getSelection_Parameters(), "formalFor", null, 1, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelectionParameter_Optional(), ecorePackage.getEBoolean(), "optional", "false", 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSelectionParameter_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, SelectionParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

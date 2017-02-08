@@ -13,7 +13,7 @@ package uk.ac.man.cs.mdsd.service
 import uk.ac.man.cs.mdsd.expression.Path
 import uk.ac.man.cs.mdsd.expression.Predicate
 import uk.ac.man.cs.mdsd.orm.Association
-import uk.ac.man.cs.mdsd.orm.Entity
+import uk.ac.man.cs.mdsd.orm.EntityOrView
 import uk.ac.man.cs.mdsd.orm.Feature
 import uk.ac.man.cs.mdsd.orm.NamedElement
 import uk.ac.man.cs.mdsd.orm.OrmModel
@@ -26,7 +26,7 @@ class ServiceModel {
 
 class Service extends NamedElement {
 	refers ServiceModel[1] partOf opposite services
-	refers Entity[1] serves
+	refers EntityOrView[1] serves
 	contains Selection[] selections opposite partOf
 	contains BusinessOperation[] operations opposite partOf
 }
@@ -59,6 +59,18 @@ class Asc extends Order {
 
 class Desc extends Order {
 }
+
+
+class FeatureReference extends Path { 
+	refers Feature[1] feature 
+} 
+ 
+class ParameterReference extends Path { 
+	refers SelectionParameter[1] parameter 
+} 
+
+class CurrentUserReference extends Path { 
+ } 
 
 
 class BusinessOperation extends NamedElement {

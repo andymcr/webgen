@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -262,7 +263,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 */
 	public List<SelectionParameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentEList<SelectionParameter>(SelectionParameter.class, this, WebsitePackage.SELECTION__PARAMETERS);
+			parameters = new EObjectContainmentWithInverseEList<SelectionParameter>(SelectionParameter.class, this, WebsitePackage.SELECTION__PARAMETERS, WebsitePackage.SELECTION_PARAMETER__FORMAL_FOR);
 		}
 		return parameters;
 	}
@@ -381,6 +382,7 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -388,6 +390,8 @@ public class SelectionImpl extends NamedElementImpl implements Selection {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetUsedBy((Service)otherEnd, msgs);
+			case WebsitePackage.SELECTION__PARAMETERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParameters()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

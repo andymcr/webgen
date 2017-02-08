@@ -7769,13 +7769,22 @@ public interface WebsitePackage extends EPackage {
 	int SELECTION_PARAMETER__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Formal For</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SELECTION_PARAMETER__FORMAL_FOR = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_PARAMETER__OPTIONAL = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SELECTION_PARAMETER__OPTIONAL = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -7784,7 +7793,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_PARAMETER__DEFAULT_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SELECTION_PARAMETER__DEFAULT_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Selection Parameter</em>' class.
@@ -7793,7 +7802,7 @@ public interface WebsitePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SELECTION_PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SELECTION_PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.BusinessOperationImpl <em>Business Operation</em>}' class.
@@ -20464,6 +20473,17 @@ public interface WebsitePackage extends EPackage {
 	EAttribute getSelectionParameter_DefaultValue();
 
 	/**
+	 * Returns the meta object for the container reference '{@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter#getFormalFor <em>Formal For</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Formal For</em>'.
+	 * @see uk.ac.man.cs.mdsd.webgen.website.SelectionParameter#getFormalFor()
+	 * @see #getSelectionParameter()
+	 * @generated
+	 */
+	EReference getSelectionParameter_FormalFor();
+
+	/**
 	 * Returns the meta object for class '{@link uk.ac.man.cs.mdsd.webgen.website.BusinessOperation <em>Business Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -25553,6 +25573,14 @@ public interface WebsitePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SELECTION_PARAMETER__DEFAULT_VALUE = eINSTANCE.getSelectionParameter_DefaultValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Formal For</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SELECTION_PARAMETER__FORMAL_FOR = eINSTANCE.getSelectionParameter_FormalFor();
 
 		/**
 		 * The meta object literal for the '{@link uk.ac.man.cs.mdsd.webgen.website.impl.BusinessOperationImpl <em>Business Operation</em>}' class.

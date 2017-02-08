@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import uk.ac.man.cs.mdsd.service.Order;
+import uk.ac.man.cs.mdsd.service.ServiceFactory;
 import uk.ac.man.cs.mdsd.service.ServicePackage;
 
 /**
@@ -135,6 +136,21 @@ public class OrderItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.ORDER__PATH,
+				 ServiceFactory.eINSTANCE.createFeatureReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.ORDER__PATH,
+				 ServiceFactory.eINSTANCE.createParameterReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ServicePackage.Literals.ORDER__PATH,
+				 ServiceFactory.eINSTANCE.createCurrentUserReference()));
 	}
 
 	/**

@@ -36,7 +36,6 @@ import uk.ac.man.cs.mdsd.waf.ContentUnit;
 import uk.ac.man.cs.mdsd.waf.ControlUnit;
 import uk.ac.man.cs.mdsd.waf.CreateUnit;
 import uk.ac.man.cs.mdsd.waf.CreateUpdateUnit;
-import uk.ac.man.cs.mdsd.waf.CurrentUserReference;
 import uk.ac.man.cs.mdsd.waf.DataTypeField;
 import uk.ac.man.cs.mdsd.waf.DataUnit;
 import uk.ac.man.cs.mdsd.waf.DateField;
@@ -50,7 +49,6 @@ import uk.ac.man.cs.mdsd.waf.EditUnit;
 import uk.ac.man.cs.mdsd.waf.FeaturePath;
 import uk.ac.man.cs.mdsd.waf.FeaturePathAssociation;
 import uk.ac.man.cs.mdsd.waf.FeaturePathAttribute;
-import uk.ac.man.cs.mdsd.waf.FeatureReference;
 import uk.ac.man.cs.mdsd.waf.FeatureSupportAction;
 import uk.ac.man.cs.mdsd.waf.Filter;
 import uk.ac.man.cs.mdsd.waf.FilterParameter;
@@ -77,7 +75,6 @@ import uk.ac.man.cs.mdsd.waf.MenuEntry;
 import uk.ac.man.cs.mdsd.waf.ModelReference;
 import uk.ac.man.cs.mdsd.waf.Page;
 import uk.ac.man.cs.mdsd.waf.PageTopMenuOptions;
-import uk.ac.man.cs.mdsd.waf.ParameterReference;
 import uk.ac.man.cs.mdsd.waf.Query;
 import uk.ac.man.cs.mdsd.waf.QueryParameter;
 import uk.ac.man.cs.mdsd.waf.RegistrationUnit;
@@ -596,28 +593,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass featureReferenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass parameterReferenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass routeParameterReferenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass currentUserReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3395,42 +3371,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFeatureReference() {
-		return featureReferenceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFeatureReference_Feature() {
-		return (EReference)featureReferenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getParameterReference() {
-		return parameterReferenceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getParameterReference_Parameter() {
-		return (EReference)parameterReferenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRouteParameterReference() {
 		return routeParameterReferenceEClass;
 	}
@@ -3442,15 +3382,6 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 	 */
 	public EReference getRouteParameterReference_Parameter() {
 		return (EReference)routeParameterReferenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCurrentUserReference() {
-		return currentUserReferenceEClass;
 	}
 
 	/**
@@ -3900,16 +3831,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		modelReferenceEClass = createEClass(MODEL_REFERENCE);
 		createEReference(modelReferenceEClass, MODEL_REFERENCE__UNIT);
 
-		featureReferenceEClass = createEClass(FEATURE_REFERENCE);
-		createEReference(featureReferenceEClass, FEATURE_REFERENCE__FEATURE);
-
-		parameterReferenceEClass = createEClass(PARAMETER_REFERENCE);
-		createEReference(parameterReferenceEClass, PARAMETER_REFERENCE__PARAMETER);
-
 		routeParameterReferenceEClass = createEClass(ROUTE_PARAMETER_REFERENCE);
 		createEReference(routeParameterReferenceEClass, ROUTE_PARAMETER_REFERENCE__PARAMETER);
-
-		currentUserReferenceEClass = createEClass(CURRENT_USER_REFERENCE);
 
 		// Create enums
 		frameworkTechnologiesEEnum = createEEnum(FRAMEWORK_TECHNOLOGIES);
@@ -4033,10 +3956,7 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		deleteActionEClass.getESuperTypes().add(this.getInlineAction());
 		featureSupportActionEClass.getESuperTypes().add(this.getInlineAction());
 		modelReferenceEClass.getESuperTypes().add(theExpressionPackage.getPath());
-		featureReferenceEClass.getESuperTypes().add(theExpressionPackage.getPath());
-		parameterReferenceEClass.getESuperTypes().add(theExpressionPackage.getPath());
 		routeParameterReferenceEClass.getESuperTypes().add(theExpressionPackage.getPath());
-		currentUserReferenceEClass.getESuperTypes().add(theExpressionPackage.getPath());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(wafModelEClass, WafModel.class, "WafModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -4404,16 +4324,8 @@ public class WafPackageImpl extends EPackageImpl implements WafPackage {
 		initEClass(modelReferenceEClass, ModelReference.class, "ModelReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModelReference_Unit(), this.getDynamicUnit(), null, "unit", null, 1, 1, ModelReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(featureReferenceEClass, FeatureReference.class, "FeatureReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFeatureReference_Feature(), theOrmPackage.getFeature(), null, "feature", null, 1, 1, FeatureReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(parameterReferenceEClass, ParameterReference.class, "ParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getParameterReference_Parameter(), theServicePackage.getSelectionParameter(), null, "parameter", null, 1, 1, ParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(routeParameterReferenceEClass, RouteParameterReference.class, "RouteParameterReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRouteParameterReference_Parameter(), theOrmPackage.getAttribute(), null, "parameter", null, 1, 1, RouteParameterReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(currentUserReferenceEClass, CurrentUserReference.class, "CurrentUserReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(frameworkTechnologiesEEnum, FrameworkTechnologies.class, "FrameworkTechnologies");

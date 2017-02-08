@@ -5,7 +5,7 @@
 -- @path WAF=/uk.ac.man.cs.mdsd.waf.model/model/Waf.xecore
 
 module PassExplicitInterface;
-create waf : WAF from website : Website, orm : ORM;
+create waf : WAF from website : Website, orm : ORM, service : Service;
 
 uses WebsiteHelpers;
 
@@ -194,19 +194,6 @@ helper context Website!Association def: findOrmEntityOrView(entityOrView : Websi
 			thisModule.findOrmEntityOrView(self.partOf.name) -- TODO fix
 		endif endif;
 
-helper context Website!Association def: findOrmSourceAssociation() : ORM!Association
-	= self.findOrmAssociation(self.partOf);
-
-helper context Website!Association def: getTarget(): Website!EntityOrView
-	= if self.oclIsTypeOf(Website!EncapsulatedAssociation) then
-			self.association.getTarget()
-		else
-			self.targetEntity
-		endif;
-
-helper context Website!Association def: findOrmTargetAssociation() : ORM!Association
-	= self.findOrmAssociation(self.getTarget());
-
 helper context Website!Expression def: findContainingSelection() : Website!Selection
 	= if self.refImmediateComposite().oclIsUndefined() then
 			OclUndefined
@@ -281,10 +268,10 @@ helper context Website!EntityOrView def: container() : Website!EntityOrView
 
 
 rule WafModel {
-	from website : Website!WebGenModel, orm : ORM!OrmModel
+	from website : Website!WebGenModel, orm : ORM!OrmModel, service : Service!ServiceModel
 	to waf : WAF!WafModel (
 		persistence <- orm,
-		services <- website.services,
+		business <- service,
 		imageManipulations <- website.imageManipulations,
 		pages <- website.pages,
 		menus <- website.menus,
@@ -486,7 +473,7 @@ rule Filter {
 			else
 				Sequence{thisModule.implicitFilterParameter(website)}
 			endif,
-		selection <- website.selection
+		selection <- website.selection.findServiceSelection()
 	)
 }
 
@@ -494,7 +481,7 @@ rule Filter {
 rule FilterParameter {
 	from website : Website!FilterParameter
 	to waf : WAF!FilterParameter (
-		formal <- website.formal,
+		formal <- website.formal.findServiceSelectionParameter(),
 		dataType <- website.dataType,
 		defaultValue <- website.defaultValue,
 		placeholder <-
@@ -672,7 +659,12 @@ rule UnitAssociation {
 	from website : Website!UnitAssociation
 	to waf : WAF!UnitAssociation (
 		displayLabel <- website.associationLabel(),
-		selection <- website.selection,
+		selection <-
+			if website.selection.oclIsUndefined() then
+				website.selection
+			else
+				website.selection.findServiceSelection()
+			endif,
 		headerClass <-
 			if not website.headerClass.oclIsUndefined() and website.headerClass <> '' then
 				website.headerClass
@@ -813,7 +805,12 @@ abstract rule CollectionUnit {
 			else
 				website.containingFeature
 			endif,
-		selection <- website.selection,
+		selection <-
+			if website.selection.oclIsUndefined() then
+				website.selection
+			else
+				website.selection.findServiceSelection()
+			endif,
 		filters <- website.filters
 			->union(if website.pagination.oclIsUndefined() and website.defaultPaginationSize > 0 then
 					Sequence{thisModule.PaginationFilter(website)}
@@ -962,7 +959,12 @@ selectionType <- thisModule.findOrmEntityOrView(website.contentType.name)
 abstract rule DataUnit {
 	from website : Website!DataUnit
 	to waf : WAF!DataUnit (
-		defaultSelection <- website.defaultSelection,
+		defaultSelection <-
+			if website.defaultSelection.oclIsUndefined() then
+				website.defaultSelection
+			else
+				website.defaultSelection.findServiceSelection()
+			endif,
 		title <-
 			if website.title.oclIsUndefined() then
 				website.title
@@ -1054,7 +1056,12 @@ rule SearchUnit {
 abstract rule ImageUnit {
 	from website : Website!ImageUnit
 	to waf : WAF!ImageUnit (
-		defaultSelection <- website.defaultSelection,
+		defaultSelection <-
+			if website.defaultSelection.oclIsUndefined() then
+				website.defaultSelection
+			else
+				website.defaultSelection.findServiceSelection()
+			endif,
 		imagePathFeature <- website.imagePathFeature,
 		titleFeature <- website.titleFeature,
 		missingImagePath <- website.missingImagePath,
@@ -1212,7 +1219,7 @@ rule DeleteAction {
 rule FeatureSupportAction {
 	from website : Website!FeatureSupportAction 
 	to waf : WAF!FeatureSupportAction (
-		operation <- website.operation,
+		operation <- thisModule.findServiceBusinessOperation(website.operation.name),
 		confirmMessage <-
 			if not website.confirmMessage.oclIsUndefined() and website.confirmMessage <> '' then
 				website.confirmMessage

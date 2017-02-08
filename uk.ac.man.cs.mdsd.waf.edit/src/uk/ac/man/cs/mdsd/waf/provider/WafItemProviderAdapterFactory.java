@@ -1463,6 +1463,7 @@ public class WafItemProviderAdapterFactory extends WafAdapterFactory implements 
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

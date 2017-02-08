@@ -19,4 +19,14 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated Service -->
+      <extender
+            uri="http://www.cs.man.ac.uk/mdsd/2010/ObjectRelationalMapping"
+            class="uk.ac.man.cs.mdsd.service.provider.ServiceItemProviderAdapterFactory$OrmChildCreationExtender"/>
+      <extender
+            uri="http://www.cs.man.ac.uk/mdsd/2016/Expression"
+            class="uk.ac.man.cs.mdsd.service.provider.ServiceItemProviderAdapterFactory$ExpressionChildCreationExtender"/>
+   </extension>
+
 </plugin>

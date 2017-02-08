@@ -585,7 +585,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
         eType="#//Feature"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="#//SelectionParameter" containment="true"/>
+        eType="#//SelectionParameter" containment="true" eOpposite="#//SelectionParameter/formalFor"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="joins" upperBound="-1"
         eType="#//Association"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filter" ordered="false"
@@ -599,6 +599,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelectionParameter" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formalFor" lowerBound="1"
+        eType="#//Selection" eOpposite="#//Selection/parameters"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

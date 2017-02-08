@@ -105,6 +105,7 @@ public interface Selection extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter}.
+	 * It is bidirectional and its opposite is '{@link uk.ac.man.cs.mdsd.webgen.website.SelectionParameter#getFormalFor <em>Formal For</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameters</em>' containment reference isn't clear,
@@ -113,7 +114,8 @@ public interface Selection extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see uk.ac.man.cs.mdsd.webgen.website.WebsitePackage#getSelection_Parameters()
-	 * @model containment="true"
+	 * @see uk.ac.man.cs.mdsd.webgen.website.SelectionParameter#getFormalFor
+	 * @model opposite="formalFor" containment="true"
 	 * @generated
 	 */
 	List<SelectionParameter> getParameters();

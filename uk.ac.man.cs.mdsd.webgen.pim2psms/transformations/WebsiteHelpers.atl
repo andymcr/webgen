@@ -29,6 +29,7 @@ helper context String def: cleanString() : String
 			self.trim()
 		endif;
 
+
 helper def: findWebGenModel() : Website!WebGenModel
 	= Website!WebGenModel.allInstancesFrom('website')->first();
 
@@ -225,6 +226,39 @@ helper context Website!Association def: findOrmAssociation(entityOrView : Websit
 				self.targetFeatureName()
 			endif
 		in thisModule.findOrmEntityOrView(entityOrView.name).getOrmFeature(name);
+
+helper context Website!Association def: findOrmSourceAssociation() : ORM!Association
+	= self.findOrmAssociation(self.partOf);
+
+helper context Website!Association def: getTarget(): Website!EntityOrView
+	= if self.oclIsTypeOf(Website!EncapsulatedAssociation) then
+			self.association.getTarget()
+		else
+			self.targetEntity
+		endif;
+
+helper context Website!Association def: findOrmTargetAssociation() : ORM!Association
+	= self.findOrmAssociation(self.getTarget());
+
+
+helper def: findService(name : String) : Service!Service
+	= Service!Service.allInstancesFrom('service')->any(s | s.name = name);
+
+helper context Service!Service def: getServiceSelection(name : String) : Service!Selection
+	= self.selections->any(s | s.name = name);
+
+helper context Website!Selection def: findServiceSelection() : Service!Selection
+	= thisModule.findService(self.usedBy.name).getServiceSelection(self.name);
+
+helper context Service!Selection def: getServiceSelectionParameter(name : String) : Service!SelectionParameter
+	= self.parameters->any(p | p.name = name);
+
+helper context Website!SelectionParameter def: findServiceSelectionParameter() : Service!SelectionParameter
+	= self.formalFor.findServiceSelection().getServiceSelectionParameter(self.name);
+
+helper def: findServiceBusinessOperation(name : String) : Service!Service
+	= Service!BusinessOperation.allInstancesFrom('service')->any(bo | bo.name = name);
+
 
 helper context ORM!EntityOrView def: getOrmLabel(labelName : String) : ORM!ModelLabel
 	= self.labels->any(l | l.name = labelName);

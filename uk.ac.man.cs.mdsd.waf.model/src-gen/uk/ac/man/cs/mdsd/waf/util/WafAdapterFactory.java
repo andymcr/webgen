@@ -350,20 +350,8 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 				return createModelReferenceAdapter();
 			}
 			@Override
-			public Adapter caseFeatureReference(FeatureReference object) {
-				return createFeatureReferenceAdapter();
-			}
-			@Override
-			public Adapter caseParameterReference(ParameterReference object) {
-				return createParameterReferenceAdapter();
-			}
-			@Override
 			public Adapter caseRouteParameterReference(RouteParameterReference object) {
 				return createRouteParameterReferenceAdapter();
-			}
-			@Override
-			public Adapter caseCurrentUserReference(CurrentUserReference object) {
-				return createCurrentUserReferenceAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
@@ -1368,34 +1356,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.FeatureReference <em>Feature Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.FeatureReference
-	 * @generated
-	 */
-	public Adapter createFeatureReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.ParameterReference <em>Parameter Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.ParameterReference
-	 * @generated
-	 */
-	public Adapter createParameterReferenceAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.RouteParameterReference <em>Route Parameter Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1406,20 +1366,6 @@ public class WafAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRouteParameterReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link uk.ac.man.cs.mdsd.waf.CurrentUserReference <em>Current User Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see uk.ac.man.cs.mdsd.waf.CurrentUserReference
-	 * @generated
-	 */
-	public Adapter createCurrentUserReferenceAdapter() {
 		return null;
 	}
 

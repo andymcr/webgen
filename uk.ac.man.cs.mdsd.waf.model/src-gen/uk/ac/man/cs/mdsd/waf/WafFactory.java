@@ -418,24 +418,6 @@ public interface WafFactory extends EFactory {
 	ModelReference createModelReference();
 
 	/**
-	 * Returns a new object of class '<em>Feature Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Feature Reference</em>'.
-	 * @generated
-	 */
-	FeatureReference createFeatureReference();
-
-	/**
-	 * Returns a new object of class '<em>Parameter Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Parameter Reference</em>'.
-	 * @generated
-	 */
-	ParameterReference createParameterReference();
-
-	/**
 	 * Returns a new object of class '<em>Route Parameter Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -443,15 +425,6 @@ public interface WafFactory extends EFactory {
 	 * @generated
 	 */
 	RouteParameterReference createRouteParameterReference();
-
-	/**
-	 * Returns a new object of class '<em>Current User Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Current User Reference</em>'.
-	 * @generated
-	 */
-	CurrentUserReference createCurrentUserReference();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -522,17 +522,6 @@ class ModelReference extends Path {
 	refers DynamicUnit[1] unit
 }
 
-class FeatureReference extends Path {
-	refers Feature[1] feature
-}
-
-class ParameterReference extends Path {
-	refers SelectionParameter[1] parameter
-}
-
 class RouteParameterReference extends Path {
 	refers Attribute[1] parameter
-}
-
-class CurrentUserReference extends Path {
 }

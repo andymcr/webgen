@@ -7,7 +7,6 @@ module PassPersistenceViewAndLabelFeatures;
 create dummyOrm : ORM refining orm : ORM, website : Website;
 
 uses WebsiteHelpers;
-uses PersistenceExpression;
 
 
 abstract rule NamedElement {

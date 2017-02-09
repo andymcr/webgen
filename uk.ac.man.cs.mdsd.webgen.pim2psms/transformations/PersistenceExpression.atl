@@ -6,32 +6,34 @@
 module PersistenceExpression;
 create orm : ORM from website : Website;
 
-helper context Website!Expression def: isPersistentContainer() : Boolean
+helper context Website!Expression def: isPresistenceExpression() : Boolean
 	= if self.refImmediateComposite().oclIsUndefined() then
 			false
 		else if self.refImmediateComposite().oclIsKindOf(Website!Attribute) then
 			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
+			self.refImmediateComposite().isPresistenceExpression()
 		else
 			false
-		endif endif;
+		endif endif endif;
 
 
 abstract rule Literal {
-	from website : Website!Literal (website.isPersistentContainer())
+	from website : Website!Literal (website.isPresistenceExpression())
 	to orm : ORM!Literal (
 	)
 }
 
 -- @extends Literal
 rule NullLiteral {
-	from website : Website!NullLiteral (website.isPersistentContainer())
+	from website : Website!NullLiteral (website.isPresistenceExpression())
 	to orm : ORM!NullLiteral (
 	)
 }
 
 -- @extends Literal
 rule BooleanLiteral {
-	from website : Website!BooleanLiteral (website.isPersistentContainer())
+	from website : Website!BooleanLiteral (website.isPresistenceExpression())
 	to orm : ORM!BooleanLiteral (
 		value <- website.value
 	)
@@ -39,7 +41,7 @@ rule BooleanLiteral {
 
 -- @extends Literal
 rule IntegerLiteral {
-	from website : Website!IntegerLiteral (website.isPersistentContainer())
+	from website : Website!IntegerLiteral (website.isPresistenceExpression())
 	to orm : ORM!IntegerLiteral (
 		value <- website.value
 	)
@@ -47,7 +49,7 @@ rule IntegerLiteral {
 
 -- @extends Literal
 rule StringLiteral {
-	from website : Website!StringLiteral (website.isPersistentContainer())
+	from website : Website!StringLiteral (website.isPresistenceExpression())
 	to orm : ORM!StringLiteral (
 		value <- website.value
 	)
@@ -55,7 +57,7 @@ rule StringLiteral {
 
 -- @extends Literal
 rule TimeLiteral {
-	from website : Website!TimeLiteral (website.isPersistentContainer())
+	from website : Website!TimeLiteral (website.isPresistenceExpression())
 	to orm : ORM!TimeLiteral (
 		value <- website.value
 	)
@@ -63,7 +65,7 @@ rule TimeLiteral {
 
 -- @extends Literal
 rule CurrentTime {
-	from website : Website!CurrentTime (website.isPersistentContainer())
+	from website : Website!CurrentTime (website.isPresistenceExpression())
 	to orm : ORM!CurrentTime (
 	)
 }
@@ -77,7 +79,7 @@ abstract rule Predicate {
 
 -- @extends Predicate
 rule PredicateBooleanOperator {
-	from website : Website!PredicateBooleanOperator (website.isPersistentContainer())
+	from website : Website!PredicateBooleanOperator (website.isPresistenceExpression())
 	to orm : ORM!PredicateBooleanOperator (
 		expressions <- website.expressions,
 		operator <- website.operator
@@ -86,7 +88,7 @@ rule PredicateBooleanOperator {
 
 -- @extends Predicate
 rule PredicateEqualityOperator {
-	from website : Website!PredicateEqualityOperator (website.isPersistentContainer())
+	from website : Website!PredicateEqualityOperator (website.isPresistenceExpression())
 	to orm : ORM!PredicateEqualityOperator (
 		left <- website.left,
 		right <- website.right
@@ -95,7 +97,7 @@ rule PredicateEqualityOperator {
 
 -- @extends Predicate
 rule PredicateComparisonOperator {
-	from website : Website!PredicateComparisonOperator (website.isPersistentContainer())
+	from website : Website!PredicateComparisonOperator (website.isPresistenceExpression())
 	to orm : ORM!PredicateComparisonOperator (
 		left <- website.left,
 		operator <- website.operator,
@@ -105,7 +107,7 @@ rule PredicateComparisonOperator {
 
 -- @extends Predicate
 rule PredicateIsOperator {
-	from website : Website!PredicateIsOperator (website.isPersistentContainer())
+	from website : Website!PredicateIsOperator (website.isPresistenceExpression())
 	to orm : ORM!PredicateIsOperator (
 		left <- website.left,
 		right <- website.right
@@ -114,7 +116,7 @@ rule PredicateIsOperator {
 
 -- @extends Predicate
 rule PredicateLikeOperator {
-	from website : Website!PredicateLikeOperator (website.isPersistentContainer())
+	from website : Website!PredicateLikeOperator (website.isPresistenceExpression())
 	to orm : ORM!PredicateLikeOperator (
 		left <- website.left,
 		right <- website.right
@@ -123,7 +125,7 @@ rule PredicateLikeOperator {
 
 -- @extends Predicate
 rule PredicateIsEmptyOperator {
-	from website : Website!PredicateIsEmpty (website.isPersistentContainer())
+	from website : Website!PredicateIsEmpty (website.isPresistenceExpression())
 	to orm : ORM!PredicateIsEmpty (
 		feature <- website.feature
 	)

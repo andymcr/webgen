@@ -1,0 +1,148 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path Service=/uk.ac.man.cs.mdsd.service.model/model/Service.xecore
+
+module ServiceExpression;
+create service : Service from website : Website;
+
+
+helper context Website!Expression def: isServiceExpression() : Boolean
+	= if self.refImmediateComposite().oclIsUndefined() then
+			false
+		else if self.refImmediateComposite().oclIsKindOf(Website!Selection) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
+			self.refImmediateComposite().isServiceExpression()
+		else
+			false
+		endif endif endif;
+
+
+abstract rule Literal {
+	from website : Website!Literal (website.isServiceExpression())
+	to service : Service!Literal (
+	)
+}
+
+-- @extends Literal
+rule NullLiteral {
+	from website : Website!NullLiteral (website.isServiceExpression())
+	to service : Service!NullLiteral (
+	)
+}
+
+-- @extends Literal
+rule BooleanLiteral {
+	from website : Website!BooleanLiteral (website.isServiceExpression())
+	to service : Service!BooleanLiteral (
+		value <- website.value
+	)
+}
+
+-- @extends Literal
+rule IntegerLiteral {
+	from website : Website!IntegerLiteral (website.isServiceExpression())
+	to service : Service!IntegerLiteral (
+		value <- website.value
+	)
+}
+
+-- @extends Literal
+rule StringLiteral {
+	from website : Website!StringLiteral (website.isServiceExpression())
+	to service : Service!StringLiteral (
+		value <- website.value
+	)
+}
+
+-- @extends Literal
+rule TimeLiteral {
+	from website : Website!TimeLiteral (website.isServiceExpression())
+	to service : Service!TimeLiteral (
+		value <- website.value
+	)
+}
+
+-- @extends Literal
+rule CurrentTime {
+	from website : Website!CurrentTime (website.isServiceExpression())
+	to service : Service!CurrentTime (
+	)
+}
+
+rule Function {
+	from website : Website!Function
+	to service : Service!Function (
+		name <- website.name
+	)
+}
+
+abstract rule Predicate {
+	from website : Website!Predicate
+	to service : Service!Predicate (
+		negated <- website.negated
+	)
+}
+
+-- @extends Predicate
+rule PredicateBooleanOperator {
+	from website : Website!PredicateBooleanOperator (website.isServiceExpression())
+	to service : Service!PredicateBooleanOperator (
+		expressions <- website.expressions,
+		operator <- website.operator
+	)
+}
+
+-- @extends Predicate
+rule PredicateEqualityOperator {
+	from website : Website!PredicateEqualityOperator (website.isServiceExpression())
+	to service : Service!PredicateEqualityOperator (
+		left <- website.left,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateComparisonOperator {
+	from website : Website!PredicateComparisonOperator (website.isServiceExpression())
+	to service : Service!PredicateComparisonOperator (
+		left <- website.left,
+		operator <- website.operator,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsOperator {
+	from website : Website!PredicateIsOperator (website.isServiceExpression())
+	to service : Service!PredicateIsOperator (
+		left <- website.left,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateLikeOperator {
+	from website : Website!PredicateLikeOperator (website.isServiceExpression())
+	to service : Service!PredicateLikeOperator (
+		left <- website.left,
+		right <- website.right
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsNullOperator {
+	from website : Website!PredicateIsNull (website.isServiceExpression())
+	to service : Service!PredicateIsNull (
+		feature <- website.feature
+	)
+}
+
+-- @extends Predicate
+rule PredicateIsEmptyOperator {
+	from website : Website!PredicateIsEmpty (website.isServiceExpression())
+	to service : Service!PredicateIsEmpty (
+		feature <- website.feature
+	)
+}

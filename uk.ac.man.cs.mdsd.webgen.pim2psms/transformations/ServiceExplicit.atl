@@ -1,0 +1,201 @@
+-- @atlcompiler emftvm 
+--
+-- @path Website=/uk.ac.man.cs.mdsd.webgen.model/model/website.ecore
+-- @path ORM=/uk.ac.man.cs.mdsd.orm.model/model/orm.xecore
+-- @path Service=/uk.ac.man.cs.mdsd.service.model/model/Service.xecore
+
+module ServiceExplicit;
+create service : Service from website : Website, orm : ORM;
+
+uses WebsiteHelpers;
+uses ServiceExpression;
+
+
+helper context Website!Expression def: findContainingSelection() : Website!Selection
+	= if self.refImmediateComposite().oclIsUndefined() then
+			OclUndefined
+		else if self.refImmediateComposite().oclIsTypeOf(Website!Selection) then
+			self.refImmediateComposite()
+		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
+			self.refImmediateComposite().findContainingSelection()
+		else
+			OclUndefined
+		endif endif endif ;
+
+helper context Website!Feature def: findOrmFeature(reference : Website!FeatureReference) : ORM!Feature
+	= if self.oclIsKindOf(Website!Attribute) then
+			self.findOrmAttribute()
+		else if not reference.findContainingSelection().oclIsUndefined() then
+			self.findOrmAssociation(reference.findContainingSelection().usedBy.serves)
+		else
+			OclUndefined
+		endif endif;
+
+helper context Website!Selection def: entities(xx : Sequence(Website!Association)) : Sequence(Website!EntityOrView)
+	= if xx->isEmpty() then
+			Sequence{self.usedBy.serves}
+		else if xx->size() = 1 then
+			if xx->last().partOf = self.usedBy.serves then
+				Sequence{self.usedBy.serves, xx->last().targetEntity}
+			else
+				Sequence{self.usedBy.serves, xx->last().partOf}
+			endif
+		else
+			let yy : Sequence(Website!EntityOrView)
+				= self.entities(xx->subSequence(1, xx->size() -1))
+				in if yy->includes(xx->last().partOf) then
+						yy->union(Sequence{xx->last().targetEntity})
+					else
+						yy->union(Sequence{xx->last().partOf})
+					endif
+		endif endif;
+
+helper context Website!Selection def: findOrmJoins(xx : Sequence(Website!Association)) : Sequence(ORM!Association)
+	= if xx->isEmpty() then
+			Sequence{}
+		else if xx->size() = 1 then
+			if xx->last().partOf = self.usedBy.serves then
+				Sequence{xx->last().findOrmSourceAssociation()}
+			else
+				Sequence{xx->last().findOrmTargetAssociation()}
+			endif
+		else
+			let yy : Sequence(Website!EntityOrView)
+				= self.entities(xx->subSequence(1, xx->size() -1))
+				in let zz : Sequence(ORM!Association)
+					= self.findOrmJoins(xx->subSequence(1, xx->size() -1))
+					in if yy->includes(xx->last().partOf) then
+							zz->union(Sequence{xx->last().findOrmSourceAssociation()})
+						else
+							zz->union(Sequence{xx->last().findOrmTargetAssociation()})
+						endif
+			endif endif;
+
+
+rule ServiceModel {
+	from website : Website!WebGenModel, orm : ORM!OrmModel
+	to service : Service!ServiceModel (
+		services <- website.services
+	)
+}
+
+
+abstract rule NamedElement {
+	from website : Website!NamedElement
+	to service : Service!NamedElement (
+		name <- website.name
+	)
+}
+
+
+-- @extends NamedElement
+rule Service {
+	from website : Website!Service
+	to service : Service!Service (
+		serves <-
+			if website.serves.oclIsUndefined() then
+				OclUndefined
+			else
+				thisModule.findOrmEntityOrView(website.serves.name)
+			endif,
+		selections <- website.selections,
+		operations <- website.operations
+	)
+} 
+
+-- @extends NamedElement
+rule Selection {
+	from website : Website!Selection
+	to service : Service!Selection (
+		"distinct" <- website."distinct",
+		fields <- website.fields
+			->collect(f | f.findOrmFeature()),
+		parameters <- website.parameters,
+		joins <- website.findOrmJoins(website.joins),
+		filter <- website.filter,
+		ordering <- website.ordering,
+		limit <- website.limit,
+		selected <- website.selected
+	)
+}
+
+-- @extends NamedElement
+rule SelectionParameter {
+	from website : Website!SelectionParameter
+	to service : Service!SelectionParameter (
+		optional <- website.optional,
+		defaultValue <- website.defaultValue
+	)
+}
+
+-- @extends NamedElement
+rule BusinessOperation {
+	from website : Website!BusinessOperation
+	to service : Service!BusinessOperation (
+		uses <- website.uses,
+		resultType <- website.resultType,
+		resultMimeType <- website.resultMimeType
+	)
+}
+
+
+abstract rule Order {
+	from website : Website!Order
+	to service : Service!Order (
+		path <- website.path
+	)
+}
+
+-- @extends Order
+rule Asc {
+	from website : Website!Asc
+	to service : Service!Asc (
+	)
+}
+
+-- @extends Order
+rule Desc {
+	from website : Website!Desc
+	to service : Service!Desc (
+	)
+}
+
+
+helper context Website!Expression def: isServicePath() : Boolean
+	= if self.refImmediateComposite().oclIsUndefined() then
+			false
+		else if self.refImmediateComposite().oclIsKindOf(Website!Order) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!Selection) then
+			true
+		else if self.refImmediateComposite().oclIsKindOf(Website!Expression) then
+			self.refImmediateComposite().isServicePath()
+		else
+			false
+		endif endif endif endif;
+
+rule FeatureReference {
+	from website : Website!FeatureReference (website.isServicePath())
+	to service : Service!FeatureReference (
+		feature <-
+			if website.feature.oclIsUndefined() then
+				OclUndefined
+			else
+				website.feature.findOrmFeature(website)
+			endif
+	)
+}
+
+rule ParameterReference {
+	from website : Website!ParameterReference
+	to service : Service!ParameterReference (
+		parameter <- website.parameter
+	)
+}
+
+rule CurrentUserReference {
+	from website : Website!CurrentUserReference
+	to service : Service!CurrentUserReference (
+	)
+}
+
